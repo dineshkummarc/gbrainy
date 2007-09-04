@@ -1,0 +1,106 @@
+AC_INIT(gbrainy, 0.12)
+AC_CONFIG_SRCDIR(src/gbrainy.cs)
+
+AM_CONFIG_HEADER(config.h)
+
+AM_INIT_AUTOMAKE([tar-ustar])
+
+AM_MAINTAINER_MODE
+
+AC_PROG_INTLTOOL([0.21])
+
+AC_PROG_CC
+AC_ISC_POSIX
+AC_HEADER_STDC
+AM_PROG_LIBTOOL
+
+GNOME_COMPILE_WARNINGS
+AM_PATH_GLIB_2_0
+
+dnl --- Check for mono and gmcs
+
+AC_PATH_PROG(MONO, mono)
+AC_PATH_PROG(MCS, gmcs)
+
+CS="C#"
+if test ! -x "$MCS"; then
+	AC_MSG_ERROR([No $CS compiler found])
+fi
+
+
+dnl -- Check for mono pc file
+
+AC_MSG_CHECKING([for mono.pc])
+if test -z `$PKG_CONFIG --variable=prefix mono`; then
+  AC_MSG_ERROR([missing the mono.pc file, usually found in the mono-devel package])
+else
+  AC_MSG_RESULT([found])
+fi
+
+dnl -- check for various mono DLLs that we need.
+
+needed_dlls="Mono.Posix"
+for i in $needed_dlls; do
+  AC_MSG_CHECKING([for $i.dll])
+  if test ! \( -e `$PKG_CONFIG --variable=prefix mono`/lib/mono/2.0/$i.dll -o -e `$PKG_CONFIG --variable=prefix mono`/lib64/mono/2.0//$i.dll \); then
+    AC_MSG_ERROR([missing required mono 2.0 DLL: $i.dll])
+  else
+    AC_MSG_RESULT([found])
+  fi
+done
+
+dnl --- Required libraries
+
+LIBGNOME_REQUIRED=2.2
+LIBGNOMEUI_REQUIRED=2.2
+GTKSHARP_REQUIRED=2.8
+MONO_REQUIRED=1.1.7
+GTK_REQUIRED=2.8
+CAIRO_REQUIRED=1.2
+
+PKG_CHECK_MODULES(gbrainy, 
+	libgnome-2.0 >= $LIBGNOME_REQUIRED 
+	libgnomeui-2.0 >= $LIBGNOMEUI_REQUIRED  
+	gtk+-2.0 >= $GTK_REQUIRED 
+	cairo >= $CAIRO_REQUIRED
+	gtk-sharp-2.0 >= $GTKSHARP_REQUIRED
+	gnome-sharp-2.0 >= $GTKSHARP_REQUIRED
+	mono >= $MONO_REQUIRED)
+
+dnl -- Intl
+
+ALL_LINGUAS="ca"
+
+GETTEXT_PACKAGE=gbrainy
+AC_SUBST(GETTEXT_PACKAGE)
+AC_DEFINE_UNQUOTED(GETTEXT_PACKAGE,"$GETTEXT_PACKAGE", [Gettext package])
+AM_GLIB_GNU_GETTEXT
+
+dnl --- Prologue
+
+AC_SUBST(CFLAGS)
+AC_SUBST(CPPFLAGS)
+AC_SUBST(LDFLAGS)
+
+CSC=gmcs
+AC_SUBST(CSC)
+
+expanded_libdir=`( case $prefix in NONE) prefix=$ac_default_prefix ;; *) ;; esac
+		   case $exec_prefix in NONE) exec_prefix=$prefix ;; *) ;; esac
+		   eval echo $libdir )`
+AC_SUBST(expanded_libdir)
+
+AC_CONFIG_FILES([src/gbrainy],[chmod +x src/gbrainy])
+
+GNOME_ICON_THEME_PREFIX=`$PKG_CONFIG --variable=prefix gnome-icon-theme`
+AC_SUBST(GNOME_ICON_THEME_PREFIX)
+
+
+
+AC_OUTPUT([
+src/Defines.cs
+Makefile
+po/Makefile.in
+src/Makefile
+icons/Makefile
+])

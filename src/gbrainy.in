@@ -1,0 +1,9 @@
+#!/bin/sh
+
+bindir=@prefix@/@bindir@ 
+
+if [ -n "@extragac@" ]; then
+    export MONO_GAC_PREFIX="@extragac@:$MONO_GAC_PREFIX"
+fi
+
+exec  mono  "$bindir/gbrainy.exe"
