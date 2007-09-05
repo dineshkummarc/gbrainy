@@ -97,7 +97,7 @@ public class GameSession
 		get {
 			TimeSpan average;
 
-			average = (games_played > 0) ? TimeSpan.FromSeconds (game_time.Seconds / games_played) : game_time;
+			average = (games_played > 0) ? TimeSpan.FromSeconds (game_time.TotalSeconds / games_played) : game_time;
 			return TimeSpanToStr (average);
 		}
 	}

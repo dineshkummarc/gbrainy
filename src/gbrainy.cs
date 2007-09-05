@@ -128,7 +128,7 @@ public class gbrainy: Program
 		about.Copyright = "(c) 2007 Jordi Mas i Hernandez\n";
 		about.Copyright += "Based on ideas by Terry Stickels, MENSA books and myself.\n";
 
-		about.Comments = Catalog.GetString ("A brain teaser and trainner game to have fun and to keep your brain trained.");
+		about.Comments = Catalog.GetString ("A brain teaser and trainer game to have fun and to keep your brain trained.");
 		about.Website = "http://live.gnome.org/gbrainy";
 		about.WebsiteLabel = Catalog.GetString ("gbrainy web site");
 		about.TranslatorCredits = translators;

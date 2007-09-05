@@ -57,8 +57,8 @@ public class PuzzleSquareDots : Game
 		O, O, O, O, O, O,
 
 		// Wrong answer 1
-		O, O, X, O, O, O,
-		O, X, O, O, O, O,
+		O, X, X, O, O, O,
+		O, O, O, O, O, O,
 		O, O, O, O, O, O,
 		O, O, O, O, O, O,
 		O, O, O, O, O, O,

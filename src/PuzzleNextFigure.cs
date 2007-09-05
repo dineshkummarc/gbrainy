@@ -40,7 +40,7 @@ public class PuzzleNextFigure : Game
 	}
 
 	public override string Question {
-		get {return Catalog.GetString ("Which is the next logical figure for the next sequence?");} 
+		get {return Catalog.GetString ("Which is the next logical figure in the sequence (A, B, or C)?");} 
 	}
 
 	public override void Initialize ()

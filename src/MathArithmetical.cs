@@ -65,15 +65,15 @@ public class MathArithmetical : Game
 		operands = new int [operations];
 
 		if (operation == Operation.Percentage) {
-			operands[0] = 10 + random.Next (990);
+			operands[0] = 10 + random.Next (90);
 			operands[1] = 5 + random.Next (90);
 			result = (operands[0] * operands[1]) / 100;
 		} else
 		{
-			result = operands[0] = 10 + random.Next (990);
+			result = operands[0] = 10 + random.Next (90);
 			for (int i = 1; i < operands.Length; i ++)
 			{
-				operands[i] = 10 + random.Next (990);
+				operands[i] = 10 + random.Next (90);
 				switch (operation) {
 				case Operation.Addition:
 					result += operands[i];
