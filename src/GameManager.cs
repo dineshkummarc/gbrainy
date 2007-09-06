@@ -38,6 +38,7 @@ public class GameManager
 		typeof (PuzzleNumericRelation),
 		typeof (PuzzleNextFigure),
 		typeof (PuzzleSquareSheets),
+		typeof (PuzzleCube),
 	};
 
 	static Type[] MathTrainers = new Type[] 
