@@ -51,6 +51,7 @@ public class GameManager
 		typeof (MemoryColouredFigures),
 		typeof (MemoryNumbers),
 		typeof (MemoryColouredText),
+		typeof (MemoryWords),
 	};
 
 	private GameType game_type;
@@ -61,7 +62,9 @@ public class GameManager
 	public GameManager ()
 	{
 		game_type = GameType.None;
-		Console.WriteLine ("Total games registered: {0}", LogicPuzzles.Length + MathTrainers.Length + MemoryTrainers.Length);
+		Console.WriteLine ("Games registered: {0}: {1} logic puzzles, {2} math trainers, {3} memory trainers", 
+			LogicPuzzles.Length + MathTrainers.Length + MemoryTrainers.Length,
+			LogicPuzzles.Length, MathTrainers.Length, MemoryTrainers.Length);
 	}
 
 	public GameType GameType {
