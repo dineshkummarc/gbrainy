@@ -3,7 +3,6 @@ EXTRAFLAGS =  -nowarn:0169
 GBRAINY_CSDISTFILES =				\
 	$(srcdir)/ArrayListIndicesRandom.cs	\
 	$(srcdir)/GameManager.cs		\
-	$(srcdir)/PuzzleRectangles.cs		\
 	$(srcdir)/PuzzleCirclesRectangle.cs	\
 	$(srcdir)/Game.cs			\
 	$(srcdir)/PuzzleFigures.cs		\
