@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gbrainy\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-08-30 12:13+0200\n"
-"PO-Revision-Date: 2007-08-21 20:18+0200\n"
+"POT-Creation-Date: 2007-09-10 13:36+0200\n"
+"PO-Revision-Date: 2007-09-10 10:18+0200\n"
 "Last-Translator: Jordi Mas <jmas@softcatala.org>\n"
 "Language-Team: cap\n"
 "MIME-Version: 1.0\n"
@@ -76,8 +76,8 @@ msgstr "Només entrenadors (matemàtics i de memòria)"
 msgid "Your answer:"
 msgstr "Resposta:"
 
-#: ../src/gbrainy.glade.h:16
 #
+#: ../src/gbrainy.glade.h:16
 msgid "gbrainy"
 msgstr "gbrainy"
 
@@ -88,9 +88,10 @@ msgstr "Jordi Mas i Hernandez <jmas@softcatala.org>"
 
 #
 #
+#
 #: ../src/gbrainy.cs:131
 msgid ""
-"A brain teaser and trainner game to have fun and to keep your brain trained."
+"A brain teaser and trainer game to have fun and to keep your brain trained."
 msgstr ""
 "Un joc per demostrar el vostre enginy i mantenir el vostre cervell entrenat."
 
@@ -100,7 +101,7 @@ msgstr ""
 msgid "gbrainy web site"
 msgstr "Lloc web del gbrainy"
 
-#: ../src/gbrainy.cs:192
+#: ../src/gbrainy.cs:198
 msgid ""
 "Once you have an answer type it in \"Your Answer:\" entry box and press the "
 "\"Ok\" button."
@@ -108,16 +109,16 @@ msgstr ""
 "Un cop teniu la resposta teclegeu-la a la capsa «Resposta:» i premeu el botó "
 "«D'acord»."
 
-#: ../src/gbrainy.cs:233
+#: ../src/gbrainy.cs:239
 #, csharp-format
 msgid "{0} ({1} won)"
 msgstr "{0} ({1} guanyats)"
 
-#: ../src/gbrainy.cs:309
+#: ../src/gbrainy.cs:315
 msgid "Welcome to gbrainy"
 msgstr "Benvinguts al gbrainy"
 
-#: ../src/gbrainy.cs:313
+#: ../src/gbrainy.cs:319
 msgid "Use the Game menu to start a new game"
 msgstr "Useu el menú Joc per començar un joc nou"
 
@@ -151,12 +152,14 @@ msgstr "Cercles a un rectangle"
 #
 #
 #
-#: ../src/PuzzleCirclesRectangle.cs:31
 #
+#: ../src/PuzzleCirclesRectangle.cs:31
 msgid ""
 "What is the maximum number of circles (as the one showed) that can be feed "
 "in the rectangle bellow?"
-msgstr "Quin és el nombre màxim de cercles (com el mostrat) podeu encabir al rectangle d'abaix?"
+msgstr ""
+"Quin és el nombre màxim de cercles (com el mostrat) podeu encabir al "
+"rectangle d'abaix?"
 
 #
 #: ../src/PuzzleCirclesRectangle.cs:35
@@ -170,33 +173,6 @@ msgstr "5 unitats"
 #: ../src/PuzzleCirclesRectangle.cs:110 ../src/PuzzleCirclesRectangle.cs:131
 msgid "1 unit"
 msgstr "1 unitat"
-
-#
-#: ../src/PuzzleRectangles.cs:29
-msgid "Number of squares"
-msgstr "Nombre de quadrats"
-
-#
-#
-#: ../src/PuzzleRectangles.cs:33
-msgid "How many squares of any size can you count of in the figure bellow?"
-msgstr "Quants quadrats de qualsevol mida podeu comptar a la figura d'abaix?"
-
-#: ../src/PuzzleRectangles.cs:37
-msgid "A square can be also built from other squares."
-msgstr "Un quadrat es pot també construir usant altres quadrats."
-
-#: ../src/PuzzleRectangles.cs:46
-msgid ""
-"There are 16 single squares, 7 squares made by two single squares, 4 squares "
-"made by three squares and 1 square made by sixteen single squares."
-msgstr ""
-
-#: ../src/PuzzleRectangles.cs:49
-msgid ""
-"There are 9 single squares, 4 squares made by two single squaresand 1 square "
-"made by nine single squares."
-msgstr ""
 
 #: ../src/PuzzleMatrixNumbers.cs:38
 msgid "Matrix Numbers"
@@ -294,7 +270,7 @@ msgstr "Quants triangles de qualsevol mida podeu comptar a la figura d'abaix?"
 
 #: ../src/PuzzleTriangles.cs:35
 msgid "A triangle can be embedded inside another triangle."
-msgstr ""
+msgstr "Un triangle pot estar incrustat dins d'un altre triangle."
 
 #
 #: ../src/PuzzleCoverPercentage.cs:32
@@ -351,6 +327,8 @@ msgid ""
 "previous character and adding {0} to it to get the position of the new "
 "letter."
 msgstr ""
+"Cada lletra se calcula prenent la posició a l'alfabet del caràcter previ i "
+"afegint-hi «0», amb el que s'obté la posició de la nova lletra."
 
 #
 #
@@ -405,6 +383,38 @@ msgstr ""
 
 #
 #
+#: ../src/PuzzleSquares.cs:29
+msgid "Squares"
+msgstr "Quadrats"
+
+#
+#
+#: ../src/PuzzleSquares.cs:33
+msgid "How many squares of any size can you count of in the figure bellow?"
+msgstr "Quants quadrats de qualsevol mida podeu comptar a la figura d'abaix?"
+
+#: ../src/PuzzleSquares.cs:37
+msgid "A square can be also built from other squares."
+msgstr "Un quadrat es pot també construir usant altres quadrats."
+
+#: ../src/PuzzleSquares.cs:46
+msgid ""
+"There are 16 single squares, 7 squares made by two single squares, 4 squares "
+"made by three squares and 1 square made by sixteen single squares."
+msgstr ""
+"Hi ha 16 quadrats simples, 7 quadrats fets per dos quadrats simples, 4 "
+"quadratsfets per tres quadrats i un quadrat fet per setze quadrats simples."
+
+#: ../src/PuzzleSquares.cs:49
+msgid ""
+"There are 9 single squares, 4 squares made by two single squares and 1 "
+"square made by nine single squares."
+msgstr ""
+"Hi ha 9 quadrats simples, 4 quadrats fets per dos quadrats simples i 1 "
+"quadrat fet nou quadrats simples."
+
+#
+#
 #
 #: ../src/PuzzleNumericRelation.cs:35
 msgid "Numeric relation"
@@ -433,7 +443,7 @@ msgid ""
 "calculated by multiplying the two previous ones."
 msgstr ""
 "Dividiu la seqüència en grups de tres números. Cada tercer número es calcula "
-"multiplcant els dos anteriors."
+"multiplicant els dos anteriors."
 
 #: ../src/PuzzleNumericRelation.cs:59
 msgid ""
@@ -449,9 +459,10 @@ msgid "Next figure"
 msgstr "Figura següent"
 
 #
+#
 #: ../src/PuzzleNextFigure.cs:43
-msgid "Which is the next logical figure for the next sequence?"
-msgstr "Quina és la següent seqüència lògica d'objectes?"
+msgid "Which is the next logical figure in the sequence (A, B, or C)?"
+msgstr "Quina és la següent seqüència lògica d'objectes (A, B, o C)?"
 
 #
 #: ../src/PuzzleSquareSheets.cs:28
@@ -471,17 +482,19 @@ msgstr ""
 
 #: ../src/PuzzleSquareSheets.cs:36
 msgid "The sheets should overlap."
-msgstr ""
+msgstr "Els fulls han de sobreposar-se"
 
 #: ../src/PuzzleSquareSheets.cs:42
 msgid ""
 "The numbers in the figure reflect the different areas covered by each one of "
 "the sheets."
 msgstr ""
+"Els nombres en la figura reflecteixen les diferent àrees cobertes per cada "
+"un dels fulls."
 
 #: ../src/MathArithmetical.cs:40
 msgid "Arithmetical"
-msgstr "Artimetic"
+msgstr "Aritmètic"
 
 #: ../src/MathArithmetical.cs:44
 msgid "What is the result of the arithmetical operation?"
@@ -500,8 +513,8 @@ msgid "Memorize the following figure in the time given"
 msgstr "Memoritzeu la següent figura en el temps donat"
 
 #
-#: ../src/MemoryColouredFigures.cs:59
 #
+#: ../src/MemoryColouredFigures.cs:59
 msgid "Which of the following figures was the previous showed one?"
 msgstr "Quina de les següents figures era la mostrada anteriorment?"
 
@@ -537,25 +550,26 @@ msgid "Memorize the following numbers in the time given"
 msgstr "Memoritzeu els nombres següents en el temps donat"
 
 #
-#: ../src/MemoryNumbers.cs:45
 #
+#
+#: ../src/MemoryNumbers.cs:45
 msgid ""
-"Which one of the following squares was the one previosly showed (A, B, C or "
+"Which one of the following squares was the one previously showed (A, B, C or "
 "D)?"
 msgstr "Quin dels següents quadrats és el mostrat anteriorment (A, B, C o D)?"
 
 #
 #
-#: ../src/MemoryColouredText.cs:46
 #
+#: ../src/MemoryColouredText.cs:46 ../src/MemoryWords.cs:36
 msgid "Coloured text"
 msgstr "Text de colors"
 
 #
 #
 #
-#: ../src/MemoryColouredText.cs:50
 #
+#: ../src/MemoryColouredText.cs:50
 msgid "Memorize the colours associated to every word"
 msgstr "Memoritzeu els els colors associats a cada paraula"
 
@@ -588,4 +602,213 @@ msgstr "Groc"
 msgid "Brown"
 msgstr "Marró"
 
+#: ../src/PuzzleCube.cs:38
+msgid "Cube"
+msgstr "Cub"
+
+#: ../src/PuzzleCube.cs:42
+#, csharp-format
+msgid ""
+"When the figure bellow is folded as a cube, which face it is opposite to the "
+"face with a {0} draw on it (answer the number written on the face)?"
+msgstr ""
+"Quan la figura d'abaix es doblega com un cub, quina cara es la contraria a "
+"lacara amb un {0} dibuixa (respon el número escrit a la cara)?"
+
+#: ../src/MemoryWords.cs:40
+msgid "Memorize all the words."
+msgstr "Memoritzeu totes les paraules."
+
+#: ../src/MemoryWords.cs:45
+#, csharp-format
+msgid ""
+"There is a missing word from the previous list. Which one is the missing "
+"word?"
+msgstr ""
+"Hi ha una paraula que manca de la llista anterior. Quina és aquesta paraula "
+"que manca?"
+
+#. Body parts
+#: ../src/MemoryWords.cs:54
+msgid "wrist"
+msgstr "canell"
+
+#
+#: ../src/MemoryWords.cs:55
+msgid "elbow"
+msgstr "colze"
+
+#: ../src/MemoryWords.cs:56
+msgid "armpit"
+msgstr "aixella"
+
+#: ../src/MemoryWords.cs:57
+msgid "hand"
+msgstr "mà"
+
+#: ../src/MemoryWords.cs:58
+msgid "chest"
+msgstr "pit"
+
+#. Fishes
+#: ../src/MemoryWords.cs:61
+msgid "sardine"
+msgstr "sardina"
+
+#: ../src/MemoryWords.cs:62
+msgid "trout"
+msgstr "truita"
+
+#: ../src/MemoryWords.cs:63
+msgid "monkfish"
+msgstr "rap"
+
+#: ../src/MemoryWords.cs:64
+msgid "cod"
+msgstr "bacallà"
+
+#: ../src/MemoryWords.cs:65
+msgid "salmon"
+msgstr "salmó"
+
+#. Vegetables
+#: ../src/MemoryWords.cs:68
+msgid "potato"
+msgstr "patata"
+
+#: ../src/MemoryWords.cs:69
+msgid "ginger"
+msgstr "gingebre"
+
+#: ../src/MemoryWords.cs:70
+msgid "pepper"
+msgstr "pebre"
+
+#: ../src/MemoryWords.cs:71
+msgid "garlic"
+msgstr "all"
+
+#: ../src/MemoryWords.cs:72
+msgid "pumpkin"
+msgstr "carbassa"
+
+#. Bicycle
+#: ../src/MemoryWords.cs:75
+msgid "brake"
+msgstr "fre"
+
+#: ../src/MemoryWords.cs:76
+msgid "pedal"
+msgstr "pedal"
+
+#: ../src/MemoryWords.cs:77
+msgid "chain"
+msgstr "cadena"
+
+#: ../src/MemoryWords.cs:78
+msgid "wheel"
+msgstr "roda"
+
+#: ../src/MemoryWords.cs:79
+msgid "handlebar"
+msgstr "manillar"
+
+#. Music
+#: ../src/MemoryWords.cs:82
+msgid "drummer"
+msgstr "bateria"
+
+#: ../src/MemoryWords.cs:83
+msgid "speaker"
+msgstr "altaveu"
+
+#: ../src/MemoryWords.cs:84
+msgid "lyrics"
+msgstr "lletra"
+
+#: ../src/MemoryWords.cs:85
+msgid "beat"
+msgstr "batec"
+
+#: ../src/MemoryWords.cs:86
+msgid "song"
+msgstr "cançó"
+
+#. Weather
+#: ../src/MemoryWords.cs:89
+msgid "cloud"
+msgstr "núvol"
+
+#
+#
+#: ../src/MemoryWords.cs:90
+msgid "rain"
+msgstr "pluja"
+
+#: ../src/MemoryWords.cs:91
+msgid "storm"
+msgstr "tormenta"
+
+#: ../src/MemoryWords.cs:92
+msgid "fog"
+msgstr "boira"
+
+#: ../src/MemoryWords.cs:93
+msgid "rainbow"
+msgstr "iris"
+
+#
+#
+#
+#. Animals
+#: ../src/MemoryWords.cs:96
+msgid "rabbit"
+msgstr "conill"
+
+#: ../src/MemoryWords.cs:97
+msgid "mouse"
+msgstr "ratolí"
+
+#: ../src/MemoryWords.cs:98
+msgid "monkey"
+msgstr "mico"
+
+#
+#: ../src/MemoryWords.cs:99
+msgid "bear"
+msgstr "ós"
+
+#: ../src/MemoryWords.cs:100
+msgid "wolf"
+msgstr "llop"
+
+#
+#
+#
+#: ../src/PuzzleFigureLetter.cs:37
+msgid "Words and figures"
+msgstr "Paraules i figures"
+
+#: ../src/PuzzleFigureLetter.cs:41
+msgid ""
+"The figures and the text are related. Which text should go under the last "
+"figure?"
+msgstr ""
+"Les figures i el text estan relacionats. Quin text correspon a la última "
+"figura?"
+
+#: ../src/PuzzleFigureLetter.cs:45
+msgid "Every character of the word represents a property of the figure."
+msgstr "Cada caràcter de la paraula representa una propietat de la figura."
+
+#: ../src/PuzzleFigureLetter.cs:51
+#
+msgid ""
+"'A' indicates that the figures overlap, 'B' that are rectangles, 'C' that "
+"are circles, 'D' that the figures are separated, 'E' that there are three "
+"figures and 'F' that there are two figures."
+msgstr ""
+"«A» indica que les figures es solapen, '«B» que són rectangles, «C» "
+"que són cercles, «D» que són figures separades, «E» que hi ha tres figures i "
+"«F» que hi ha dues figures."
 
