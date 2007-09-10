@@ -28,6 +28,7 @@ GBRAINY_CSDISTFILES =				\
 	$(srcdir)/MemoryColouredText.cs		\
 	$(srcdir)/PuzzleCube.cs			\
 	$(srcdir)/MemoryWords.cs		\
+	$(srcdir)/PuzzleFigureLetter.cs		\
 	$(srcdir)/gbrainy.cs			
 
 ASSEMBLIES = \

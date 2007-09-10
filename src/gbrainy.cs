@@ -156,6 +156,7 @@ public class gbrainy: Program
 		}
 
 		session.EnableTimer = false;
+		answer_entry.Text = String.Empty;
 		UpdateStatusBar ();
 		answer_button.Sensitive = false;
 		solution_label.Text = session.CurrentGame.Answer;
@@ -175,6 +176,11 @@ public class gbrainy: Program
 
 	void OnNextButtonClicked (object sender, EventArgs args)
 	{
+		if (answer_entry.Text.Length > 0) {
+			OnAnswerButtonClicked (sender, args);
+			return;
+		}
+
 		GetNextGame ();
 		session.EnableTimer = true;
 	}
