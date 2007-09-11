@@ -49,7 +49,8 @@ bin_SCRIPTS = gbrainy \
 	      gbrainy.exe
 
 GBRAINY_CSFILES = $(GBRAINY_CSDISTFILES)	\
-	Defines.cs			
+	Defines.cs \
+	AssemblyInfo.cs
 
 gbrainy.exe: $(GBRAINY_CSFILES) 
 	$(CSC) -target:winexe -out:$@ $(EXTRAFLAGS) $(GBRAINY_CSFILES) $(ASSEMBLIES) $(RESOURCES)
