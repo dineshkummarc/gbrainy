@@ -29,16 +29,15 @@ using Mono.Unix;
 
 public class gbrainy: Program
 {
-	[Glade.Widget("gBrainy")] Gtk.Window app_window;
-	[Glade.Widget("drawing_vbox")] Box drawing_vbox;
-	[Glade.Widget("question_label")] Gtk.Label question_label;
-	[Glade.Widget("solution_label")] Gtk.Label solution_label;
+	[Glade.Widget("gbrainy")] Gtk.Window app_window;
+	[Glade.Widget] Box drawing_vbox;
+	[Glade.Widget] Gtk.Label question_label;
+	[Glade.Widget] Gtk.Label solution_label;
 	[Glade.Widget] Gtk.Entry answer_entry;
-	[Glade.Widget] Gtk.Label numgames_label;
 	[Glade.Widget] Gtk.Button answer_button;
 	[Glade.Widget] Gtk.Button tip_button;
 	[Glade.Widget] Gtk.Button next_button;
-	[Glade.Widget] AppBar appbar;
+	[Glade.Widget] Gtk.Statusbar statusbar;
 	CairoGraphic drawing_area;
 	GameSession session;
 
@@ -47,7 +46,7 @@ public class gbrainy: Program
 	{
 		Catalog.Init ("gbrainy", Defines.GNOME_LOCALE_DIR);
 
-		Glade.XML gXML = new Glade.XML (null, "gbrainy.glade", "gBrainy", null);
+		Glade.XML gXML = new Glade.XML (null, "gbrainy.glade", "gbrainy", null);
 		gXML.Autoconnect (this);
 		
 
@@ -68,7 +67,7 @@ public class gbrainy: Program
 
 	public void UpdateStatusBar ()
 	{
-		appbar.SetStatus (session.StatusText);
+		statusbar.Push (0, session.StatusText);
 	}
 
 	public void ActiveButtons (bool active)
