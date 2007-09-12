@@ -28,7 +28,7 @@ public class PuzzleTriangles : Game
 	}
 
 	public override string Question {
-		get {return Catalog.GetString ("How many triangles of any size can you count in the figure bellow?");} 
+		get {return Catalog.GetString ("How many triangles of any size can you count in the figure below?");} 
 	}
 
 	public override string Tip {

@@ -39,7 +39,7 @@ public class PuzzleCube : Game
 	}
 
 	public override string Question {
-		get {return String.Format (Catalog.GetString ("When the figure bellow is folded as a cube, which face it is opposite to the face with a {0} draw on it (answer the number written on the face)?" ), question);} 
+		get {return String.Format (Catalog.GetString ("When the figure below is folded as a cube, which face it is opposite to the face with a {0} draw on it (answer the number written on the face)?" ), question);} 
 	}
 
 	public override void Initialize ()

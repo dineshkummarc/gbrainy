@@ -52,13 +52,13 @@ public class PuzzleMatrixNumbers : Game
 
 			switch (operation) {
 			case Operation.MultiplyAndAdd:
-				answer += Catalog.GetString ("The four row is calculated multiplying the first two rows and adding the third row.");
+				answer += Catalog.GetString ("The fourth row is calculated multiplying the first two rows and adding the third row.");
 				break;
 			case Operation.MutilplyAndSubs:
-				answer += Catalog.GetString ("The four row is calculated multiplying the first two rows and subtracting the third row.");
+				answer += Catalog.GetString ("The fourth row is calculated multiplying the first two rows and subtracting the third row.");
 				break;
 			case Operation.AddAndSubs:
-				answer += Catalog.GetString ("The four row is calculated adding the first two rows and subtracting the third row.");
+				answer += Catalog.GetString ("The fourth row is calculated adding the first two rows and subtracting the third row.");
 				break;
 			}
 			return answer;

@@ -30,7 +30,7 @@ public class PuzzleSquares : Game
 	}
 
 	public override string Question {
-		get {return Catalog.GetString ("How many squares of any size can you count of in the figure bellow?");} 
+		get {return Catalog.GetString ("How many squares of any size can you count of in the figure below?");} 
 	}
 
 	public override string Tip {

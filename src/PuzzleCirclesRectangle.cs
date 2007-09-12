@@ -28,7 +28,7 @@ public class PuzzleCirclesRectangle : Game
 	}
 
 	public override string Question {
-		get {return Catalog.GetString ("What is the maximum number of circles (as the one showed) that can be feed in the rectangle bellow?");} 
+		get {return Catalog.GetString ("What is the maximum number of circles (as the one showed) that can be feed in the rectangle below?");} 
 	}
 
 	public override string Tip {
