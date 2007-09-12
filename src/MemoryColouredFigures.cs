@@ -56,7 +56,7 @@ public class MemoryColouredFigures : Memory
 	}
 
 	public override string MemoryQuestion {
-		get { return Catalog.GetString ("Which of the following figures was the previous showed one?");}
+		get { return Catalog.GetString ("Which of these figures was the one previously shown?");}
 	}
 
 	public override void Initialize ()

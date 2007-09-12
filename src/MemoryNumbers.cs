@@ -42,7 +42,7 @@ public class MemoryNumbers : Memory
 	}
 
 	public override string MemoryQuestion {
-		get { return Catalog.GetString ("Which one of the following squares was the one previously showed (A, B, C or D)?");}
+		get { return Catalog.GetString ("Which one of these squares was the one previously shown (A, B, C or D)?");}
 	}
 
 	public override void Initialize ()

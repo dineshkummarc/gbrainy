@@ -127,7 +127,7 @@ public class PuzzleFigureLetter : Game
 		gr.Arc (x + 0.11, y + 0.1, 0.05, 0, 2 * Math.PI);
 		gr.Stroke ();
 		gr.MoveTo (x + 0.02, y + 0.2);
-		gr.ShowText ("DCE");
+		gr.ShowText ("CDE");
 		gr.Stroke ();
 
 		// Two linked circles

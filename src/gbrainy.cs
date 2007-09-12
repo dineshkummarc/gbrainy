@@ -315,6 +315,7 @@ public class gbrainy: Program
 			gr.Stroke ();
 			
 			gr.MoveTo (0.1, 0.4);
+			// Keep the translated version of this string under 40 characters long 
 			gr.ShowText (Catalog.GetString ("Use the Game menu to start a new game"));
 			gr.Stroke ();
 
