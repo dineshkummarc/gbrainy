@@ -2,12 +2,14 @@
 # This file is distributed under the same license as the PACKAGE package.
 # (c) 2007 Jordi Mas i Hernandez, 2007
 #
+# Correccions per Gil Forcada
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: gbrainy\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-09-12 08:18+0200\n"
-"PO-Revision-Date: 2007-09-10 10:18+0200\n"
+"POT-Creation-Date: 2007-09-15 15:23+0200\n"
+"PO-Revision-Date: 2007-09-15 15:28+0200\n"
 "Last-Translator: Jordi Mas <jmas@softcatala.org>\n"
 "Language-Team: cap\n"
 "MIME-Version: 1.0\n"
@@ -29,7 +31,7 @@ msgstr "Joc finalitzat"
 #
 #: ../src/gbrainy.glade.h:4
 msgid "Games played:"
-msgstr "Jocs:"
+msgstr "Jocs jugats:"
 
 #: ../src/gbrainy.glade.h:5
 msgid "Logic Puzzles Only"
@@ -48,33 +50,36 @@ msgid "New Game"
 msgstr "Joc nou"
 
 #: ../src/gbrainy.glade.h:9
-msgid "Next"
-msgstr "Següent"
-
-#: ../src/gbrainy.glade.h:10
-msgid "Ok"
-msgstr "D'acord"
-
-#: ../src/gbrainy.glade.h:11
 msgid "Questions"
 msgstr "Preguntes"
 
-#: ../src/gbrainy.glade.h:12
+#: ../src/gbrainy.glade.h:10
 msgid "Time played:"
 msgstr "Temps de joc:"
 
-#: ../src/gbrainy.glade.h:13
-msgid "Tip"
-msgstr "Pista"
-
-#: ../src/gbrainy.glade.h:14
+#: ../src/gbrainy.glade.h:11
 msgid "Trainers Only (Mathematical and Memory)"
 msgstr "Només entrenadors (matemàtics i de memòria)"
 
 #
-#: ../src/gbrainy.glade.h:15
+#: ../src/gbrainy.glade.h:12
 msgid "Your answer:"
 msgstr "Resposta:"
+
+#
+#: ../src/gbrainy.glade.h:13
+msgid "_Next"
+msgstr "_Següent"
+
+#
+#: ../src/gbrainy.glade.h:14
+msgid "_Ok"
+msgstr "_D'acord"
+
+#
+#: ../src/gbrainy.glade.h:15
+msgid "_Tip"
+msgstr "_Pista"
 
 #
 #: ../src/gbrainy.glade.h:16
@@ -118,7 +123,8 @@ msgstr "{0} ({1} guanyats)"
 msgid "Welcome to gbrainy"
 msgstr "Benvinguts al gbrainy"
 
-#: ../src/gbrainy.cs:318
+#. Keep the translated version of this string under 40 characters long
+#: ../src/gbrainy.cs:319
 msgid "Use the Game menu to start a new game"
 msgstr "Useu el menú Joc per començar un joc nou"
 
@@ -163,8 +169,8 @@ msgstr ""
 
 #
 #
-#: ../src/PuzzleCirclesRectangle.cs:35
 #
+#: ../src/PuzzleCirclesRectangle.cs:35
 msgid "You can feed more than 25 circles."
 msgstr "Podeu encabir més de 25 cercles."
 
@@ -188,7 +194,7 @@ msgid ""
 "replace the question mark?"
 msgstr ""
 "Els nombres a la matriu d'abaix segueixen una lògica. Quin és el número que "
-"ha de reemplaçar el interrogant?"
+"ha de reemplaçar l'interrogant?"
 
 #
 #: ../src/PuzzleMatrixNumbers.cs:46
@@ -272,7 +278,7 @@ msgstr "Quants triangles de qualsevol mida podeu comptar a la figura d'abaix?"
 
 #: ../src/PuzzleTriangles.cs:35
 msgid "A triangle can be embedded inside another triangle."
-msgstr "Un triangle pot estar incrustat dins d'un altre triangle."
+msgstr "Un triangle pot estar incrustat dins d'un altre."
 
 #
 #: ../src/PuzzleCoverPercentage.cs:32
@@ -283,7 +289,7 @@ msgstr "Percentatge covert"
 #
 #: ../src/PuzzleCoverPercentage.cs:36
 msgid "What is the coloured percentage covered in the figure?"
-msgstr "Quin és el percentatge colorejat covert a la figura?"
+msgstr "Quin és el percentatge covert de color a la figura?"
 
 #: ../src/PuzzleSquareDots.cs:86
 msgid "Square with dots"
@@ -291,9 +297,10 @@ msgstr "Quadrat amb punts"
 
 #
 #: ../src/PuzzleSquareDots.cs:90
+#
 msgid ""
 "What is the letter of the figure that represents the next logical figure in "
-"the sequence? (A, B or C)"
+"the sequence (A, B or C)?"
 msgstr ""
 "Quina és la lletra de la figura que representa la següent figura lògica a la "
 "seqüència (A, B o C)?"
@@ -329,7 +336,7 @@ msgid ""
 "previous character and adding {0} to it to get the position of the new "
 "letter."
 msgstr ""
-"Cada lletra se calcula prenent la posició a l'alfabet del caràcter previ i "
+"Cada lletra es calcula prenent la posició a l'alfabet del caràcter previ i "
 "afegint-hi {0}, amb el que s'obté la posició de la nova lletra."
 
 #
@@ -354,7 +361,8 @@ msgstr ""
 msgid ""
 "The sequence is built using the natural numbers from 1 to 6 as a source."
 msgstr ""
-"La seqüència es construeix usant els números naturals de l'1 al 6 com a font."
+"La seqüència es construeix utilitzant els números naturals de l'1 al 6 com a "
+"font."
 
 #
 #: ../src/PuzzleNumericSequence.cs:49
@@ -397,7 +405,7 @@ msgstr "Quants quadrats de qualsevol mida podeu comptar a la figura d'abaix?"
 
 #: ../src/PuzzleSquares.cs:37
 msgid "A square can be also built from other squares."
-msgstr "Un quadrat es pot també construir usant altres quadrats."
+msgstr "Un quadrat es pot també construir utilitzant altres quadrats."
 
 #: ../src/PuzzleSquares.cs:46
 msgid ""
@@ -405,7 +413,7 @@ msgid ""
 "made by three squares and 1 square made by sixteen single squares."
 msgstr ""
 "Hi ha 16 quadrats simples, 7 quadrats fets per dos quadrats simples, 4 "
-"quadratsfets per tres quadrats i un quadrat fet per setze quadrats simples."
+"quadrats fets per tres quadrats i un quadrat fet per setze quadrats simples."
 
 #: ../src/PuzzleSquares.cs:49
 msgid ""
@@ -484,14 +492,14 @@ msgstr ""
 
 #: ../src/PuzzleSquareSheets.cs:36
 msgid "The sheets should overlap."
-msgstr "Els fulls han de sobreposar-se"
+msgstr "Els fulls han de sobreposar-se."
 
 #: ../src/PuzzleSquareSheets.cs:42
 msgid ""
 "The numbers in the figure reflect the different areas covered by each one of "
 "the sheets."
 msgstr ""
-"Els nombres en la figura reflecteixen les diferent àrees cobertes per cada "
+"Els nombres en la figura reflecteixen les diferent àrees cobertes per a cada "
 "un dels fulls."
 
 #: ../src/MathArithmetical.cs:40
@@ -516,8 +524,9 @@ msgstr "Memoritzeu la següent figura en el temps donat"
 
 #
 #
+#
 #: ../src/MemoryColouredFigures.cs:59
-msgid "Which of the following figures was the previous showed one?"
+msgid "Which of these figures was the one previously shown?"
 msgstr "Quina de les següents figures era la mostrada anteriorment?"
 
 #: ../src/GameSession.cs:108
@@ -554,11 +563,10 @@ msgstr "Memoritzeu els nombres següents en el temps donat"
 #
 #
 #
+#
 #: ../src/MemoryNumbers.cs:45
-msgid ""
-"Which one of the following squares was the one previously showed (A, B, C or "
-"D)?"
-msgstr "Quin dels següents quadrats és el mostrat anteriorment (A, B, C o D)?"
+msgid "Which one of these squares was the one previously shown (A, B, C or D)?"
+msgstr "Quin dels següents quadrats era el mostrat anteriorment (A, B, C o D)?"
 
 #
 #
@@ -573,7 +581,7 @@ msgstr "Text de colors"
 #
 #: ../src/MemoryColouredText.cs:50
 msgid "Memorize the colours associated to every word"
-msgstr "Memoritzeu els els colors associats a cada paraula"
+msgstr "Memoritzeu els colors associats a cada paraula"
 
 #: ../src/MemoryColouredText.cs:55
 #, csharp-format
@@ -615,7 +623,7 @@ msgid ""
 "face with a {0} draw on it (answer the number written on the face)?"
 msgstr ""
 "Quan la figura d'abaix es doblega com un cub, quina cara es la contraria a "
-"lacara amb un {0} dibuixa (respon el número escrit a la cara)?"
+"la cara amb un overlap dibuixat (responeu el número escrit a la cara)?"
 
 #: ../src/MemoryWords.cs:40
 msgid "Memorize all the words."
@@ -749,7 +757,7 @@ msgstr "pluja"
 
 #: ../src/MemoryWords.cs:91
 msgid "storm"
-msgstr "tormenta"
+msgstr "tempesta"
 
 #: ../src/MemoryWords.cs:92
 msgid "fog"
