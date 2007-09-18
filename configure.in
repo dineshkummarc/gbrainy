@@ -39,7 +39,7 @@ fi
 
 dnl -- check for various mono DLLs that we need.
 
-needed_dlls="Mono.Posix"
+needed_dlls="Mono.Posix Mono.Cairo"
 for i in $needed_dlls; do
   AC_MSG_CHECKING([for $i.dll])
   if test ! \( -e `$PKG_CONFIG --variable=prefix mono`/lib/mono/2.0/$i.dll -o -e `$PKG_CONFIG --variable=prefix mono`/lib64/mono/2.0//$i.dll \); then
@@ -51,21 +51,17 @@ done
 
 dnl --- Required libraries
 
-LIBGNOME_REQUIRED=2.2
-LIBGNOMEUI_REQUIRED=2.2
 GTKSHARP_REQUIRED=2.8
 MONO_REQUIRED=1.1.7
-GTK_REQUIRED=2.8
-CAIRO_REQUIRED=1.2
 
-PKG_CHECK_MODULES(gbrainy, 
-	libgnome-2.0 >= $LIBGNOME_REQUIRED 
-	libgnomeui-2.0 >= $LIBGNOMEUI_REQUIRED  
-	gtk+-2.0 >= $GTK_REQUIRED 
-	cairo >= $CAIRO_REQUIRED
+PKG_CHECK_MODULES(GBRAINY_CORE, mono >= $MONO_REQUIRED)
+
+
+PKG_CHECK_MODULES(GBRAINY, 
 	gtk-sharp-2.0 >= $GTKSHARP_REQUIRED
 	gnome-sharp-2.0 >= $GTKSHARP_REQUIRED
-	mono >= $MONO_REQUIRED)
+	glade-sharp-2.0 >= $GTKSHARP_REQUIRED)
+AC_SUBST(GBRAINY_LIBS)
 
 dnl -- Intl
 

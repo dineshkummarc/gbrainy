@@ -32,10 +32,8 @@ GBRAINY_CSDISTFILES =				\
 	$(srcdir)/gbrainy.cs			
 
 ASSEMBLIES = \
+	 $(GBRAINY_LIBS)    		\
 	-r:Mono.Cairo.dll		\
-	-pkg:gtk-sharp-2.0		\
-	-pkg:glade-sharp-2.0		\
-	-pkg:gnome-sharp-2.0		\
 	-r:Mono.Posix
 
 
