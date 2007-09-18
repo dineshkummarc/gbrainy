@@ -230,6 +230,14 @@ public class gbrainy: Program
 		OnNewGame ();		
 	}
 
+	void OnAnswerActivate (object sender, EventArgs args)
+	{
+		if (answer_entry.Text.Length > 0) {
+			OnAnswerButtonClicked (sender, args);
+			return;
+		}
+	}
+
 	void OnEndGame (object sender, EventArgs args)
 	{
 		GameOverDialog dialog;

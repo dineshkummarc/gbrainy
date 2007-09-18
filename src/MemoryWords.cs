@@ -33,7 +33,7 @@ public class MemoryWords : Memory
 	private int answer;
 
 	public override string Name {
-		get {return Catalog.GetString ("Coloured text");}
+		get {return Catalog.GetString ("Memorize words");}
 	}
 
 	public override string Question {
