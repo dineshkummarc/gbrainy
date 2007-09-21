@@ -1,6 +1,6 @@
 SUBDIRS = 		\
 	src		\
-	icons		\
+	data		\
 	po		
 
 desktop_in_files=	\

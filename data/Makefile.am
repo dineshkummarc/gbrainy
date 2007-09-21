@@ -6,6 +6,8 @@ pixmap_DATA = gbrainy.png \
 
 hicolordir = $(datadir)/icons/hicolor
 
+man_MANS = gbrainy.1
+
 tango_icons = 				\
 	gbrainy.png		\
 	gbrainy.svg
@@ -38,4 +40,4 @@ uninstall-hook:
 
 noinst_DATA = 	
 
-EXTRA_DIST = $(pixmap_DATA) $(tango_icons)
+EXTRA_DIST = $(pixmap_DATA) $(tango_icons) $(man_MANS) 

@@ -40,8 +40,8 @@ ASSEMBLIES = \
 
 RESOURCES =										\
 -resource:$(srcdir)/gbrainy.glade  \
--resource:$(top_srcdir)/icons/gbrainy.png,  \
--resource:$(top_srcdir)/icons/gbrainy.svg
+-resource:$(top_srcdir)/data/gbrainy.png,  \
+-resource:$(top_srcdir)/data/gbrainy.svg
 
 bin_SCRIPTS = gbrainy \
 	      gbrainy.exe
