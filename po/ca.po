@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gbrainy\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-09-15 15:23+0200\n"
-"PO-Revision-Date: 2007-09-15 15:28+0200\n"
+"POT-Creation-Date: 2007-09-24 16:25+0200\n"
+"PO-Revision-Date: 2007-09-24 15:28+0200\n"
 "Last-Translator: Jordi Mas <jmas@softcatala.org>\n"
 "Language-Team: cap\n"
 "MIME-Version: 1.0\n"
@@ -25,64 +25,80 @@ msgid "Average time per game:"
 msgstr "Temps de mitjana per joc:"
 
 #: ../src/gbrainy.glade.h:3
+msgid "Custom Game"
+msgstr "Joc personalitzat"
+
+#: ../src/gbrainy.glade.h:4
+msgid "Custom game selection..."
+msgstr "Selecció del joc personalitzat..."
+
+#: ../src/gbrainy.glade.h:5
 msgid "Game Over"
 msgstr "Joc finalitzat"
 
 #
-#: ../src/gbrainy.glade.h:4
+#: ../src/gbrainy.glade.h:6
 msgid "Games played:"
 msgstr "Jocs jugats:"
 
-#: ../src/gbrainy.glade.h:5
+#: ../src/gbrainy.glade.h:7
 msgid "Logic Puzzles Only"
 msgstr "Només trencaclosques lògics"
 
-#: ../src/gbrainy.glade.h:6
+#: ../src/gbrainy.glade.h:8
 msgid "Mathematical Trainers Only"
 msgstr "Només entrenadors matemàtics"
 
-#: ../src/gbrainy.glade.h:7
+#: ../src/gbrainy.glade.h:9
 msgid "Memory Trainers Only"
 msgstr "Només entrenadors de memòria"
 
-#: ../src/gbrainy.glade.h:8
+#: ../src/gbrainy.glade.h:10
 msgid "New Game"
 msgstr "Joc nou"
 
-#: ../src/gbrainy.glade.h:9
+#: ../src/gbrainy.glade.h:11
 msgid "Questions"
 msgstr "Preguntes"
 
-#: ../src/gbrainy.glade.h:10
+#: ../src/gbrainy.glade.h:12
+msgid "Select All"
+msgstr "Selecciona-ho tot"
+
+#: ../src/gbrainy.glade.h:13
 msgid "Time played:"
 msgstr "Temps de joc:"
 
-#: ../src/gbrainy.glade.h:11
+#: ../src/gbrainy.glade.h:14
 msgid "Trainers Only (Mathematical and Memory)"
 msgstr "Només entrenadors (matemàtics i de memòria)"
 
+#: ../src/gbrainy.glade.h:15
+msgid "Unselect all"
+msgstr "Desselecciona-ho tot"
+
 #
-#: ../src/gbrainy.glade.h:12
+#: ../src/gbrainy.glade.h:16
 msgid "Your answer:"
 msgstr "Resposta:"
 
 #
-#: ../src/gbrainy.glade.h:13
+#: ../src/gbrainy.glade.h:17
 msgid "_Next"
 msgstr "_Següent"
 
 #
-#: ../src/gbrainy.glade.h:14
+#: ../src/gbrainy.glade.h:18
 msgid "_Ok"
 msgstr "_D'acord"
 
 #
-#: ../src/gbrainy.glade.h:15
+#: ../src/gbrainy.glade.h:19
 msgid "_Tip"
 msgstr "_Pista"
 
 #
-#: ../src/gbrainy.glade.h:16
+#: ../src/gbrainy.glade.h:20
 msgid "gbrainy"
 msgstr "gbrainy"
 
@@ -114,22 +130,22 @@ msgstr ""
 "Un cop teniu la resposta teclegeu-la a la capsa «Resposta:» i premeu el botó "
 "«D'acord»."
 
-#: ../src/gbrainy.cs:238
+#: ../src/gbrainy.cs:261
 #, csharp-format
 msgid "{0} ({1} won)"
 msgstr "{0} ({1} guanyats)"
 
-#: ../src/gbrainy.cs:314
+#: ../src/gbrainy.cs:337
 msgid "Welcome to gbrainy"
 msgstr "Benvinguts al gbrainy"
 
 #. Keep the translated version of this string under 40 characters long
-#: ../src/gbrainy.cs:319
+#: ../src/gbrainy.cs:342
 msgid "Use the Game menu to start a new game"
 msgstr "Useu el menú Joc per començar un joc nou"
 
 #
-#: ../src/Game.cs:44
+#: ../src/Game.cs:52
 #, csharp-format
 msgid "The correct answer is {0}."
 msgstr "La resposta correcta és {0}."
@@ -296,8 +312,8 @@ msgid "Square with dots"
 msgstr "Quadrat amb punts"
 
 #
-#: ../src/PuzzleSquareDots.cs:90
 #
+#: ../src/PuzzleSquareDots.cs:90
 msgid ""
 "What is the letter of the figure that represents the next logical figure in "
 "the sequence (A, B or C)?"
@@ -506,7 +522,7 @@ msgstr ""
 msgid "Arithmetical"
 msgstr "Aritmètic"
 
-#: ../src/MathArithmetical.cs:44
+#: ../src/MathArithmetical.cs:48
 msgid "What is the result of the arithmetical operation?"
 msgstr "Quin és el resultat de l'operació aritmètica?"
 
@@ -529,22 +545,22 @@ msgstr "Memoritzeu la següent figura en el temps donat"
 msgid "Which of these figures was the one previously shown?"
 msgstr "Quina de les següents figures era la mostrada anteriorment?"
 
-#: ../src/GameSession.cs:108
+#: ../src/GameSession.cs:123
 #, csharp-format
 msgid "Games played: {0} ({1} won)"
 msgstr "Jocs: {0} ({1} guanyats)"
 
-#: ../src/GameSession.cs:109
+#: ../src/GameSession.cs:124
 #, csharp-format
 msgid "- Time: {0}"
 msgstr "- Temps: {0}"
 
-#: ../src/GameSession.cs:112
+#: ../src/GameSession.cs:127
 #, csharp-format
 msgid "- Current game: {0}"
 msgstr "- Joc actual: {0}"
 
-#: ../src/GameSession.cs:153
+#: ../src/GameSession.cs:168
 msgid "Paused"
 msgstr "Pausat"
 
@@ -571,7 +587,7 @@ msgstr "Quin dels següents quadrats era el mostrat anteriorment (A, B, C o D)?"
 #
 #
 #
-#: ../src/MemoryColouredText.cs:46 ../src/MemoryWords.cs:36
+#: ../src/MemoryColouredText.cs:46
 msgid "Coloured text"
 msgstr "Text de colors"
 
@@ -624,6 +640,11 @@ msgid ""
 msgstr ""
 "Quan la figura d'abaix es doblega com un cub, quina és cara la contraria a "
 "la cara amb un «{0}» dibuixat (responeu el número escrit a la cara)?"
+
+#
+#: ../src/MemoryWords.cs:36
+msgid "Memorize words"
+msgstr "Memoritzeu paraules"
 
 #: ../src/MemoryWords.cs:40
 msgid "Memorize all the words."
@@ -821,3 +842,31 @@ msgstr ""
 "«A» indica que les figures es solapen, '«B» que són rectangles, «C» que són "
 "cercles, «D» que són figures separades, «E» que hi ha tres figures i «F» que "
 "hi ha dues figures."
+
+#
+#. Define columns
+#: ../src/CustomGameDialog.cs:61
+msgid "Game Name"
+msgstr "Nom del joc"
+
+#: ../src/CustomGameDialog.cs:67
+msgid "Type"
+msgstr "Tipus"
+
+#: ../src/CustomGameDialog.cs:74
+msgid "Enabled"
+msgstr "Habilitat"
+
+#: ../src/CustomGameDialog.cs:92
+msgid "Logic"
+msgstr "Lògic"
+
+#: ../src/CustomGameDialog.cs:95
+msgid "Memory"
+msgstr "Memòria"
+
+#: ../src/CustomGameDialog.cs:98
+msgid "Math"
+msgstr "Matemàtic"
+
+
