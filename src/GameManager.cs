@@ -55,20 +55,20 @@ public class GameManager
 		typeof (MemoryWords),
 	};
 
-	private GameType game_type;
+	private GameSession.Types game_type;
 	private ArrayListIndicesRandom list;
 	private IEnumerator enumerator;
 	private Type[] games;
 
 	public GameManager ()
 	{
-		game_type = GameType.None;
+		game_type = GameSession.Types.None;
 		Console.WriteLine ("Games registered: {0}: {1} logic puzzles, {2} math trainers, {3} memory trainers", 
 			LogicPuzzles.Length + MathTrainers.Length + MemoryTrainers.Length,
 			LogicPuzzles.Length, MathTrainers.Length, MemoryTrainers.Length);
 	}
 
-	public GameType GameType {
+	public GameSession.Types GameType {
 		get {return game_type; }
 		set {
 			if (game_type == value)
@@ -79,32 +79,44 @@ public class GameManager
 		}
 	}
 
+	public Type[] Games {
+		get { return games; }
+		set { 
+			games = value; 
+			list = new ArrayListIndicesRandom (games.Length);
+			Initialize ();
+		}
+	}
+
 	private void BuildGameList ()
 	{
 		int cnt = 0, index = 0;
 
-		if ((game_type & GameType.LogicPuzzles) == GameType.LogicPuzzles)
+		if (GameType == GameSession.Types.Custom)
+			return;
+
+		if ((game_type & GameSession.Types.LogicPuzzles) == GameSession.Types.LogicPuzzles)
 			cnt += LogicPuzzles.Length;
 
-		if ((game_type & GameType.MathTrainers) == GameType.MathTrainers)
+		if ((game_type & GameSession.Types.MathTrainers) == GameSession.Types.MathTrainers)
 			cnt += MathTrainers.Length;
 
-		if ((game_type & GameType.MemoryTrainers) == GameType.MemoryTrainers)
+		if ((game_type & GameSession.Types.MemoryTrainers) == GameSession.Types.MemoryTrainers)
 			cnt += MemoryTrainers.Length;
 		
 		games = new Type [cnt];
 
-		if ((game_type & GameType.LogicPuzzles) == GameType.LogicPuzzles) {
+		if ((game_type & GameSession.Types.LogicPuzzles) == GameSession.Types.LogicPuzzles) {
 			for (int i = 0; i < LogicPuzzles.Length; i++, index++)
 				games[index] = LogicPuzzles [i];
 		}
 
-		if ((game_type & GameType.MathTrainers) == GameType.MathTrainers) {
+		if ((game_type & GameSession.Types.MathTrainers) == GameSession.Types.MathTrainers) {
 			for (int i = 0; i < MathTrainers.Length; i++, index++)
 				games[index] = MathTrainers [i];
 		}
 
-		if ((game_type & GameType.MemoryTrainers) == GameType.MemoryTrainers) {
+		if ((game_type & GameSession.Types.MemoryTrainers) == GameSession.Types.MemoryTrainers) {
 			for (int i = 0; i < MemoryTrainers.Length; i++, index++)
 				games[index] = MemoryTrainers [i];
 		}

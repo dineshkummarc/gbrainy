@@ -40,6 +40,10 @@ public abstract class Memory : Game
 		get;
 	}
 
+	public override Types Type {
+		get { return Game.Types.MemoryTrainer;}
+	}
+
 	public override void Initialize ()
 	{	
 		time_left = total_time;
@@ -58,16 +62,19 @@ public abstract class Memory : Game
 				request_answer = true;
 				buttons_active = true;
 			}
-			Application.Invoke (delegate {	
-				App.UpdateQuestion (MemoryQuestion);
-				App.ActiveButtons (buttons_active);
-			});
+			if (App != null) {	
+				Application.Invoke (delegate {
+					App.UpdateQuestion (MemoryQuestion);
+					App.ActiveButtons (buttons_active);
+				});
+			}
 		} else {
 			lock (this) {
 				time_left--;
 			}
 		}
-		Application.Invoke (delegate {	App.QueueDraw (); });
+		if (App != null)
+			Application.Invoke (delegate {	App.QueueDraw (); });
 	}
 
 	public override void Finish ()
@@ -86,6 +93,14 @@ public abstract class Memory : Game
 		} else {
 			DrawObjectToMemorize (gr, area_width, area_height);			
 		}		
+	}
+
+	public override void DrawPreview (Cairo.Context gr, int width, int height)
+	{
+		gr.Scale (width, height);
+		DrawBackground (gr);
+		PrepareGC (gr);
+		DrawObjectToMemorize (gr, width, height);
 	}
 
 	public virtual void DrawPossibleAnswers (Cairo.Context gr, int area_width, int area_height) {}

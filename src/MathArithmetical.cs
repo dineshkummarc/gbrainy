@@ -40,6 +40,10 @@ public class MathArithmetical : Game
 		get {return Catalog.GetString ("Arithmetical");}
 	}
 
+	public override Types Type {
+		get { return Game.Types.MathTrainer;}
+	}
+
 	public override string Question {
 		get {return Catalog.GetString ("What is the result of the arithmetical operation?");} 
 	}

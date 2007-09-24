@@ -20,7 +20,6 @@ GBRAINY_CSDISTFILES =				\
 	$(srcdir)/GameOverDialog.cs		\
 	$(srcdir)/PuzzleSquareSheets.cs		\
 	$(srcdir)/MathArithmetical.cs		\
-	$(srcdir)/GameType.cs			\
 	$(srcdir)/MemoryColouredFigures.cs	\
 	$(srcdir)/GameSession.cs		\
 	$(srcdir)/MemoryNumbers.cs		\
@@ -29,6 +28,7 @@ GBRAINY_CSDISTFILES =				\
 	$(srcdir)/PuzzleCube.cs			\
 	$(srcdir)/MemoryWords.cs		\
 	$(srcdir)/PuzzleFigureLetter.cs		\
+	$(srcdir)/CustomGameDialog.cs		\
 	$(srcdir)/gbrainy.cs			
 
 ASSEMBLIES = \

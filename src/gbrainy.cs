@@ -40,6 +40,7 @@ public class gbrainy: Program
 	[Glade.Widget] Gtk.Statusbar statusbar;
 	CairoGraphic drawing_area;
 	GameSession session;
+	const int ok_buttonid = -5;
 
 	public gbrainy (string [] args, params object [] props)
 	: base ("gbrainy", Defines.VERSION, Modules.UI,  args, props)
@@ -57,7 +58,6 @@ public class gbrainy: Program
 		//app_window.SizeAllocated += new SizeAllocatedHandler (OnSizeAllocated);
 		app_window.IconName = "gbrainy";
 	        app_window.ShowAll ();		
-
 		
 		drawing_area.puzzle = null;
 		question_label.Text = string.Empty;
@@ -202,31 +202,46 @@ public class gbrainy: Program
 
 	void OnMathOnly (object sender, EventArgs args)
 	{
-		session.GameType = GameType.MathTrainers;
+		session.Type = GameSession.Types.MathTrainers;
 		OnNewGame ();
 	}
 
 	void OnMemoryOnly (object sender, EventArgs args)
 	{
-		session.GameType = GameType.MemoryTrainers;
+		session.Type = GameSession.Types.MemoryTrainers;
 		OnNewGame ();
+	}
+
+	void OnCustomGame (object sender, EventArgs args)
+	{
+		int rslt;
+		CustomGameDialog dialog;
+
+		dialog = new CustomGameDialog (session.GameManager);		
+		rslt = (int) dialog.Run ();
+		dialog.Dialog.Destroy ();
+
+		if (rslt == ok_buttonid && dialog.NumOfGames > 0) {
+			session.Type = GameSession.Types.Custom;
+			OnNewGame ();
+		}
 	}
 
 	void OnLogicOnly (object sender, EventArgs args)
 	{
-		session.GameType = GameType.LogicPuzzles;
+		session.Type = GameSession.Types.LogicPuzzles;
 		OnNewGame ();
 	}
 
 	void OnAllGames (object sender, EventArgs args)
 	{
-		session.GameType = GameType.AllGames;
+		session.Type = GameSession.Types.AllGames;
 		OnNewGame ();		
 	}
 
 	void OnTrainersOnly (object sender, EventArgs args)
 	{
-		session.GameType = GameType.TrainersOnly;
+		session.Type = GameSession.Types.TrainersOnly;
 		OnNewGame ();		
 	}
 

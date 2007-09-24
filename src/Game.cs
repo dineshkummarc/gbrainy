@@ -23,6 +23,14 @@ using Mono.Unix;
 
 abstract public class Game
 {
+	public enum Types
+	{	
+		None			= 0,
+		LogicPuzzle		= 2,
+		MemoryTrainer		= 4,
+		MathTrainer		= 8
+	}
+
 	private bool draw_answer;
 	private gbrainy application;
 	protected string right_answer;
@@ -62,6 +70,10 @@ abstract public class Game
 		get { return true;}
 	}
 
+	public virtual Types Type {
+		get { return Types.LogicPuzzle;}
+	}
+
 	public bool DrawAnswer {
 		get { return draw_answer; }
 		set { draw_answer = value; }
@@ -90,6 +102,11 @@ abstract public class Game
 	public abstract void Initialize ();
 	public abstract void Draw (Cairo.Context gr, int width, int height);
 	public virtual void Finish () {}
+
+	public virtual void DrawPreview (Cairo.Context gr, int width, int height)
+	{
+		Draw (gr, width, height);
+	}
 
 	public virtual bool CheckAnswer (string answer)
 	{

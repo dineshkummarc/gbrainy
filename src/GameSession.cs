@@ -25,6 +25,17 @@ using System.Timers;
 
 public class GameSession
 {
+	public enum Types
+	{	
+		None			= 0,
+		LogicPuzzles		= 2,
+		MemoryTrainers		= 4,
+		MathTrainers		= 8,
+		Custom			= 16,
+		TrainersOnly		= MemoryTrainers | MathTrainers,
+		AllGames		= MemoryTrainers | MathTrainers | LogicPuzzles
+	}
+
 	private gbrainy app;
 	private TimeSpan game_time;
 	private int games_played;
@@ -52,7 +63,7 @@ public class GameSession
 		timer.Interval = (1 * 1000); // 1 second
 	}
 
-	public GameType GameType {
+	public Types Type {
 		get {return game_manager.GameType; }
 		set {game_manager.GameType = value; }
 	}
@@ -85,6 +96,10 @@ public class GameSession
 	public bool EnableTimer {
 		get {return timer.Enabled; }
 		set {timer.Enabled = value; }
+	}
+
+	public GameManager GameManager {
+		get {return  game_manager;}
 	}
 
 	public string TimePlayed {
