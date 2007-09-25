@@ -94,7 +94,7 @@ public class PuzzleFigures : Game
 		gr.ShowText ("B ->");
 		gr.Stroke ();
 		pos_x += 0.1;
-		gr.Arc (pos_x + 0.05, y + 0.05, 0.05, 0, 2 * 3.14);	
+		gr.Arc (pos_x + 0.05, y + 0.05, 0.05, 0, 2 * Math.PI);	
 		gr.Stroke ();
 
 		pos_x += 0.2;
@@ -132,7 +132,7 @@ public class PuzzleFigures : Game
 						DrawDiamon (gr, x + 0.05, y);
 						break;
 					case 1:
-						gr.Arc (x + 0.05, y + 0.05, 0.05, 0, 2 * 3.14);	
+						gr.Arc (x + 0.05, y + 0.05, 0.05, 0, 2 * Math.PI);	
 						break;
 					case 2:
 						DrawTriangle (gr, x + 0.05, y);

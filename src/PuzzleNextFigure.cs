@@ -19,6 +19,7 @@
 
 using Cairo;
 using Mono.Unix;
+using System;
 
 public class PuzzleNextFigure : Game
 {
@@ -60,22 +61,22 @@ public class PuzzleNextFigure : Game
 		gr.Stroke ();
 
 		if ((cercles & CerclePosition.Top) == CerclePosition.Top) {
-			gr.Arc (x + figure_size / 2, y + distance, 0.01, 0, 2 * 3.14);	
+			gr.Arc (x + figure_size / 2, y + distance, 0.01, 0, 2 * Math.PI);	
 			gr.Stroke ();
 		}
 
 		if ((cercles & CerclePosition.Right) == CerclePosition.Right) {
-			gr.Arc (x + figure_size - distance, y + figure_size / 2, 0.01, 0, 2 * 3.14);	
+			gr.Arc (x + figure_size - distance, y + figure_size / 2, 0.01, 0, 2 * Math.PI);	
 			gr.Stroke ();
 		}
 
 		if ((cercles & CerclePosition.Bottom) == CerclePosition.Bottom) {
-			gr.Arc (x + figure_size / 2, y + figure_size - distance, 0.01, 0, 2 * 3.14);	
+			gr.Arc (x + figure_size / 2, y + figure_size - distance, 0.01, 0, 2 * Math.PI);	
 			gr.Stroke ();
 		}
 
 		if ((cercles & CerclePosition.Left) == CerclePosition.Left) {
-			gr.Arc (x + distance, y + figure_size / 2, 0.01, 0, 2 * 3.14);
+			gr.Arc (x + distance, y + figure_size / 2, 0.01, 0, 2 * Math.PI);
 			gr.Stroke ();
 		}
 	}

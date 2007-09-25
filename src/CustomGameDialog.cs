@@ -89,7 +89,7 @@ public class CustomGameDialog
 				game =  (Game) Activator.CreateInstance (games [i], true);
 				switch (game.Type) {
 				case Game.Types.LogicPuzzle:
-					type = Catalog.GetString ("Logic puzzle");
+					type = Catalog.GetString ("Logic");
 					break;
 				case Game.Types.MemoryTrainer:
 					type = Catalog.GetString ("Memory");

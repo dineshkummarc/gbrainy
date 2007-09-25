@@ -85,7 +85,7 @@ public class PuzzleMoveFigure: Game
 		{
 			for (int circles = 0; circles < line; circles++)
 			{
-				gr.Arc (x, y, figure_size / 2, 0, 2 * 3.14);	
+				gr.Arc (x, y, figure_size / 2, 0, 2 * Math.PI);	
 				gr.Stroke ();
 				x += figure_size;
 			}
@@ -101,7 +101,7 @@ public class PuzzleMoveFigure: Game
 			x = first_x = first_x + (figure_size / 2);
 			for (int circles = 0; circles < lines - line; circles++)
 			{
-				gr.Arc (x, y, figure_size / 2, 0, 2 * 3.14);	
+				gr.Arc (x, y, figure_size / 2, 0, 2 * Math.PI);	
 				gr.Stroke ();
 				x += figure_size;
 			}

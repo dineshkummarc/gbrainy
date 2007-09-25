@@ -29,6 +29,7 @@ GBRAINY_CSDISTFILES =				\
 	$(srcdir)/MemoryWords.cs		\
 	$(srcdir)/PuzzleFigureLetter.cs		\
 	$(srcdir)/CustomGameDialog.cs		\
+	$(srcdir)/PuzzleDivideCircle.cs		\
 	$(srcdir)/gbrainy.cs			
 
 ASSEMBLIES = \

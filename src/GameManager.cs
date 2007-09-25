@@ -40,6 +40,7 @@ public class GameManager
 		typeof (PuzzleSquareSheets),
 		typeof (PuzzleCube),
 		typeof (PuzzleFigureLetter),
+		typeof (PuzzleDivideCircle),
 	};
 
 	static Type[] MathTrainers = new Type[] 
