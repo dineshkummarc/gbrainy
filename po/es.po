@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gbrainy.HEAD.es\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-09-26 10:52+0100\n"
-"PO-Revision-Date: 2007-09-26 12:12+0200\n"
+"POT-Creation-Date: 2007-09-29 17:44+0100\n"
+"PO-Revision-Date: 2007-09-30 00:17+0200\n"
 "Last-Translator: Jorge González <jorgegonz@svn.gnome.org>\n"
 "Language-Team: Spanish <traductores@es.gnome.org>\n"
 "MIME-Version: 1.0\n"
@@ -112,7 +112,15 @@ msgstr "Un juego para divertirse y mantener el cerebro entrenado."
 msgid "gbrainy web site"
 msgstr "Página web de gbrainy"
 
-#: ../src/gbrainy.cs:197
+#: ../src/gbrainy.cs:156
+msgid "Congratulations."
+msgstr "Enhorabuena."
+
+#: ../src/gbrainy.cs:158
+msgid "Incorrect answer."
+msgstr "Respuesta incorrecta."
+
+#: ../src/gbrainy.cs:202
 msgid ""
 "Once you have an answer type it in \"Your Answer:\" entry box and press the "
 "\"Ok\" button."
@@ -120,23 +128,23 @@ msgstr ""
 "Una vez tengas las respuesta tecléala en «Respuesta:» y pulsa el botón "
 "«Aceptar»."
 
-#: ../src/gbrainy.cs:261
+#: ../src/gbrainy.cs:264
 #, csharp-format
 msgid "{0} ({1} won)"
 msgstr "{0} ({1} ganados)"
 
-#: ../src/gbrainy.cs:337
+#: ../src/gbrainy.cs:340
 msgid "Welcome to gbrainy"
 msgstr "Bienvenido a gbrainy"
 
 #. Keep the translated version of this string under 40 characters long
-#: ../src/gbrainy.cs:342
+#: ../src/gbrainy.cs:345
 msgid "Use the Game menu to start a new game"
 msgstr "Usa el menú Juego para comenzar un juego"
 
 #: ../src/Game.cs:52
 #, csharp-format
-msgid "The correct answer is {0}."
+msgid "The right answer is {0}."
 msgstr "La respuesta correcta es {0}."
 
 #: ../src/PuzzleFigures.cs:38
@@ -161,14 +169,12 @@ msgstr "Círculos en un rectángulo"
 
 #: ../src/PuzzleCirclesRectangle.cs:31
 msgid ""
-"What is the maximum number of circles (as the one showed) that can be feed "
-"in the rectangle below?"
-msgstr ""
-"¿Cuantos círculos (como el mostrado) puedes incluir en el rectángulo "
-"inferior?"
+"What is the maximum number of circles (as the one showed) that can be fit in "
+"the rectangle below?"
+msgstr "¿Cuantos círculos (como el mostrado) puedes incluir dentro del rectángulo inferior?"
 
 #: ../src/PuzzleCirclesRectangle.cs:35
-msgid "You can feed more than 25 circles."
+msgid "You can fit more than 25 circles."
 msgstr "Puedes incluir mas de 25 círculos."
 
 #: ../src/PuzzleCirclesRectangle.cs:69 ../src/PuzzleCirclesRectangle.cs:90
@@ -234,8 +240,8 @@ msgstr ""
 #: ../src/PuzzlePencil.cs:168 ../src/PuzzleSquareDots.cs:162
 #: ../src/PuzzleSquareDots.cs:167 ../src/PuzzleSquareDots.cs:172
 #: ../src/PuzzleNextFigure.cs:107 ../src/PuzzleNextFigure.cs:112
-#: ../src/PuzzleNextFigure.cs:117 ../src/MemoryColouredFigures.cs:124
-#: ../src/MemoryNumbers.cs:99
+#: ../src/PuzzleNextFigure.cs:117 ../src/MemoryColouredFigures.cs:148
+#: ../src/MemoryNumbers.cs:123
 msgid "Figure"
 msgstr "Figura"
 
@@ -259,19 +265,24 @@ msgstr ""
 "Moviendo cuatro círculos de la quinta línea a la primera y dos desde la "
 "cuarta a la segunda linea."
 
-#: ../src/PuzzleTriangles.cs:27
+#: ../src/PuzzleTriangles.cs:28
 msgid "Triangles"
 msgstr "Triángulos"
 
-#: ../src/PuzzleTriangles.cs:31
+#: ../src/PuzzleTriangles.cs:32
 msgid "How many triangles of any size can you count in the figure below?"
 msgstr ""
 "¿Cuantos triángulos de cualquier tamaño se pueden contar en la figura "
 "inferior?"
 
-#: ../src/PuzzleTriangles.cs:35
+#: ../src/PuzzleTriangles.cs:36
 msgid "A triangle can be embedded inside another triangle."
 msgstr "Un triángulo puede ser incluido dentro de otro triángulo."
+
+#: ../src/PuzzleTriangles.cs:43
+#, csharp-format
+msgid "The triangles are made by connecting the following points: {0}"
+msgstr "Los triángulos se hacen conectando los siguientes puntos: {0}"
 
 #: ../src/PuzzleCoverPercentage.cs:32
 msgid "Cover Percentage"
@@ -422,10 +433,10 @@ msgstr ""
 #: ../src/PuzzleNumericRelation.cs:59
 msgid ""
 "Divide the sequence in groups of tree numbers. Every third number is "
-"calculated by subtracting the two previous ones."
+"calculated by subtracting the second number from the first."
 msgstr ""
 "Divide la secuencia en grupos de tres números. Cada tercer numero se calcula "
-"restando los dos anteriores."
+"restando los dos anteriores del primero."
 
 #: ../src/PuzzleNextFigure.cs:40
 msgid "Next figure"
@@ -486,8 +497,8 @@ msgstr "Juegos jugados: {0} ({1} ganados)"
 
 #: ../src/GameSession.cs:124
 #, csharp-format
-msgid "- Time: {0}"
-msgstr "- Tiempo: {0}"
+msgid " - Time: {0}"
+msgstr " - Tiempo: {0}"
 
 #: ../src/GameSession.cs:127
 #, csharp-format
@@ -499,8 +510,8 @@ msgid "Paused"
 msgstr "Pausado"
 
 #: ../src/MemoryNumbers.cs:37
-msgid "Numbers"
-msgstr "Números"
+msgid "Memorize numbers"
+msgstr "Memoriza números"
 
 #: ../src/MemoryNumbers.cs:41
 msgid "Memorize the following numbers in the time given"
@@ -775,4 +786,38 @@ msgstr "Memoria"
 #: ../src/CustomGameDialog.cs:98
 msgid "Math"
 msgstr "Matemáticas"
+
+#: ../src/PuzzleDivideCircle.cs:42
+msgid "Divide circles"
+msgstr "Divide círculos"
+
+#: ../src/PuzzleDivideCircle.cs:46
+msgid ""
+"In the last figure, in how many regions is the circle divided when all the "
+"dots are connected?"
+msgstr ""
+"En la última figura, ¿en cuántas regiones está dividido el círculo cuando todos los "
+"puntos están conectados?"
+
+#: ../src/PuzzleDivideCircle.cs:110 ../src/PuzzleDivideCircle.cs:125
+#: ../src/PuzzleDivideCircle.cs:142
+#, csharp-format
+msgid "Has {0} regions"
+msgstr "Tiene {0} regiones"
+
+#: ../src/MathGreaterDivisor.cs:31
+msgid "Greater Divisor"
+msgstr ""
+
+#: ../src/MathGreaterDivisor.cs:39
+msgid "Which of the possible divisors is the greater that divides all the numbers?"
+msgstr ""
+
+#: ../src/MathGreaterDivisor.cs:189
+msgid "Numbers"
+msgstr "Números"
+
+#: ../src/MathGreaterDivisor.cs:204
+msgid "Possible divisors"
+msgstr "Posibles divisores"
 
