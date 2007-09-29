@@ -49,7 +49,7 @@ abstract public class Game
 
 	public virtual string Answer {
 		get {
-			return String.Format (Catalog.GetString ("The correct answer is {0}."), right_answer);
+			return String.Format (Catalog.GetString ("The right answer is {0}."), right_answer);
 		}
 	}
 

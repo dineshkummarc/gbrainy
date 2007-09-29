@@ -100,13 +100,37 @@ public class MemoryColouredFigures : Memory
 	private void Randomize (SquareColor []colours, int source, int target)
 	{	
 		int elements = 4 + random.Next (2);
+		bool done = false;
 
-		for (int i = 0; i < squares; i++) {
-			colours[i + target] = colours[i + source];
-		}
+		while (done == false) {
+			for (int i = 0; i < squares; i++) {
+				colours[i + target] = colours[i + source];
+			}
 
-		for (int i = 0; i < elements; i++) {
-			colours[target + random.Next (squares)] = (SquareColor) random.Next ((int) SquareColor.Length);
+			for (int i = 0; i < elements; i++) {
+				colours[target + random.Next (squares)] = (SquareColor) random.Next ((int) SquareColor.Length);
+			}
+
+			// Is not valid if it is already present
+			bool equals;
+			for (int answer = 0; answer < answers; answer++) {
+				if (answer * squares == target)
+					continue;
+
+				equals = true;
+				for (int i = 0; i < squares; i++) {
+					if (colours[i + target] != colours[i + (answer * squares)]) {
+						equals = false;
+						break;
+					}
+				}
+
+				if (equals == true)
+					break;
+			}
+
+			if (equals == false)
+				done = true;
 		}
 	}
 	

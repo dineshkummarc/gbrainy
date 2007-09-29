@@ -56,7 +56,7 @@ public class PuzzleNumericRelation : Game
 				break;
 
 			case 2:
-				answer += Catalog.GetString ("Divide the sequence in groups of tree numbers. Every third number is calculated by subtracting the two previous ones.");
+				answer += Catalog.GetString ("Divide the sequence in groups of tree numbers. Every third number is calculated by subtracting the second number from the first.");
 				break;
 			}
 			return answer;
@@ -82,7 +82,7 @@ public class PuzzleNumericRelation : Game
 					numbers[i] = numbers[i - 1] * numbers[i - 2];
 					break;
 				case 2:
-					numbers[i] = numbers[i - 1] - numbers[i - 2];
+					numbers[i] = numbers[i - 2] - numbers[i - 1];
 					break;
 				}
 				group = 0;

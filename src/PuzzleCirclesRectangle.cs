@@ -28,11 +28,11 @@ public class PuzzleCirclesRectangle : Game
 	}
 
 	public override string Question {
-		get {return Catalog.GetString ("What is the maximum number of circles (as the one showed) that can be feed in the rectangle below?");} 
+		get {return Catalog.GetString ("What is the maximum number of circles (as the one showed) that can be fit in the rectangle below?");} 
 	}
 
 	public override string Tip {
-		get { return Catalog.GetString ("You can feed more than 25 circles.");}
+		get { return Catalog.GetString ("You can fit more than 25 circles.");}
 	}
 
 	public override void Initialize ()

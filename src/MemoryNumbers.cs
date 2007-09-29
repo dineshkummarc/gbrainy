@@ -34,7 +34,7 @@ public class MemoryNumbers : Memory
 	private const int answers = 4;
 
 	public override string Name {
-		get {return Catalog.GetString ("Numbers");}
+		get {return Catalog.GetString ("Memorize numbers");}
 	}
 
 	public override string Question {
@@ -73,14 +73,38 @@ public class MemoryNumbers : Memory
 
 	private void Randomize (int []nums, int source, int target)
 	{	
-		int elements = 2 + random.Next (2);
+		int elements = 4 + random.Next (2);
+		bool done = false;
 
-		for (int i = 0; i < squares; i++) {
-			nums[i + target] = nums[i + source];
-		}
+		while (done == false) {
+			for (int i = 0; i < squares; i++) {
+				nums[i + target] = nums[i + source];
+			}
 
-		for (int i = 0; i < elements; i++) {
-			nums[target + random.Next (squares)] = random.Next (10) + random.Next (5);
+			for (int i = 0; i < elements; i++) {
+				nums[target + random.Next (squares)] = random.Next (10) + random.Next (5);
+			}
+
+			// Is not valid if it is already present
+			bool equals;
+			for (int answer = 0; answer < answers; answer++) {
+				if (answer * squares == target)
+					continue;
+
+				equals = true;
+				for (int i = 0; i < squares; i++) {
+					if (nums[i + target] != nums[i + (answer * squares)]) {
+						equals = false;
+						break;
+					}
+				}
+
+				if (equals == true)
+					break;
+			}
+
+			if (equals == false)
+				done = true;
 		}
 	}
 	

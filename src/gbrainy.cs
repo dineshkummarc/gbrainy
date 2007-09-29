@@ -147,18 +147,21 @@ public class gbrainy: Program
 
 	void OnAnswerButtonClicked (object sender, EventArgs args)
 	{
+		string answer;
 		if (session.CurrentGame == null)
 			return;
 	
 		if (answer_button.Sensitive == true && session.CurrentGame.CheckAnswer (answer_entry.Text) == true) {
 			session.GamesWon++;
-		}
+			answer = "<span color ='#00A000'>" + Catalog.GetString ("Congratulations.") + "</span>";
+		} else
+			answer = Catalog.GetString ("Incorrect answer.");
 
 		session.EnableTimer = false;
 		answer_entry.Text = String.Empty;
 		UpdateStatusBar ();
 		answer_button.Sensitive = false;
-		solution_label.Text = session.CurrentGame.Answer;
+		solution_label.Markup = answer + " " + session.CurrentGame.Answer;
 		session.CurrentGame.DrawAnswer = true;
 		drawing_area.QueueDraw ();
 	}		
@@ -194,9 +197,9 @@ public class gbrainy: Program
 
 	void OnNewGame ()
 	{
-		solution_label.Text = Catalog.GetString ("Once you have an answer type it in \"Your Answer:\" entry box and press the \"Ok\" button.");
 		session.NewSession ();
-		GetNextGame ();		
+		GetNextGame ();
+		solution_label.Text = Catalog.GetString ("Once you have an answer type it in \"Your Answer:\" entry box and press the \"Ok\" button.");
 		UpdateStatusBar ();
 	}
 
