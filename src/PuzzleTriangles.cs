@@ -18,6 +18,7 @@
  */
 
 
+using System;
 using Cairo;
 using Mono.Unix;
 
@@ -35,9 +36,20 @@ public class PuzzleTriangles : Game
 		get { return Catalog.GetString ("A triangle can be embedded inside another triangle.");}
 	}
 
+	public override string Answer {
+		get { 
+			string answer = base.Answer + " ";
+
+			answer += String.Format (Catalog.GetString ("The triangles are made by connecting the following points: {0}"),
+				"bdc, dcf, dfg, abd, ade, edg, acg, abg, bcg, afg, ecg, acd, acf, ace.");
+
+			return answer;
+		}
+	}
+
 	public override void Initialize ()
 	{
-		right_answer = "13";
+		right_answer = "14";
 	}
 
 	public override void Draw (Cairo.Context gr, int area_width, int area_height)
@@ -64,6 +76,32 @@ public class PuzzleTriangles : Game
 		gr.MoveTo (x + 0.152, y + 0.125);
 		gr.LineTo (x + witdh, y);
 		gr.Stroke ();
+
+		if (DrawAnswer == false)
+			return;
+
+		// References
+		gr.MoveTo (x - 0.02, y - 0.02);
+		gr.ShowText ("a");
+
+		gr.MoveTo (x + witdh /2  - 0.02, y - 0.02);
+		gr.ShowText ("b");
+
+		gr.MoveTo (x + witdh, y - 0.02);
+		gr.ShowText ("c");
+
+		gr.MoveTo (x + witdh /2  - 0.03, y + 0.09 - 0.02);
+		gr.ShowText ("d");
+
+		gr.MoveTo (x + 0.11, y + 0.16 - 0.02);
+		gr.ShowText ("e");
+
+		gr.MoveTo (x + 0.47, y + 0.16 - 0.02);
+		gr.ShowText ("f");
+
+		gr.MoveTo (x + (witdh /2) - 0.01, y + 0.28);
+		gr.ShowText ("g");
+
 	}
 
 }

@@ -121,10 +121,10 @@ public class GameSession
 		get {
 			String text;
 			text = String.Format (Catalog.GetString ("Games played: {0} ({1} won)"), games_played, games_won);
-			text += String.Format (Catalog.GetString ("- Time: {0}"), current_time);
+			text += String.Format (Catalog.GetString (" - Time: {0}"), current_time);
 
 			if (current_game != null)
-				text += " " + String.Format (Catalog.GetString ("- Current game: {0}"), current_game.Name);
+ 				text += " " + String.Format (Catalog.GetString ("- Current game: {0}"), current_game.Name);
 	
 			return text;
 		}

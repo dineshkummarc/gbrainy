@@ -46,6 +46,7 @@ public class GameManager
 	static Type[] MathTrainers = new Type[] 
 	{
 		typeof (MathArithmetical),
+		typeof (MathGreaterDivisor),
 	};
 
 	static Type[] MemoryTrainers = new Type[] 
@@ -136,7 +137,6 @@ public class GameManager
 	{
 		Game puzzle;
 		if (enumerator.MoveNext () == false) { // All the games have been played, restart again 
-			Console.WriteLine ("New games list");
 			Initialize ();
 			enumerator.MoveNext ();
 		}

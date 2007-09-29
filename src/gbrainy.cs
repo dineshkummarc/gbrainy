@@ -150,7 +150,7 @@ public class gbrainy: Program
 		if (session.CurrentGame == null)
 			return;
 	
-		if (session.CurrentGame.CheckAnswer (answer_entry.Text) == true) {
+		if (answer_button.Sensitive == true && session.CurrentGame.CheckAnswer (answer_entry.Text) == true) {
 			session.GamesWon++;
 		}
 
