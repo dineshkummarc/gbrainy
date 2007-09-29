@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gbrainy\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-09-29 16:07+0200\n"
+"POT-Creation-Date: 2007-09-29 18:37+0200\n"
 "PO-Revision-Date: 2007-09-29 15:28+0200\n"
 "Last-Translator: Jordi Mas <jmas@softcatala.org>\n"
 "Language-Team: Catalan\n"
@@ -122,7 +122,17 @@ msgstr ""
 msgid "gbrainy web site"
 msgstr "Lloc web del gbrainy"
 
-#: ../src/gbrainy.cs:197
+#: ../src/gbrainy.cs:156
+msgid "Congratulations."
+msgstr "Felicitats."
+
+#
+#: ../src/gbrainy.cs:158
+#
+msgid "Incorrect answer."
+msgstr "Resposta incorrecta."
+
+#: ../src/gbrainy.cs:202
 msgid ""
 "Once you have an answer type it in \"Your Answer:\" entry box and press the "
 "\"Ok\" button."
@@ -130,24 +140,24 @@ msgstr ""
 "Un cop teniu la resposta teclegeu-la a la capsa «Resposta:» i premeu el botó "
 "«D'acord»."
 
-#: ../src/gbrainy.cs:261
+#: ../src/gbrainy.cs:264
 #, csharp-format
 msgid "{0} ({1} won)"
 msgstr "{0} ({1} guanyats)"
 
-#: ../src/gbrainy.cs:337
+#: ../src/gbrainy.cs:340
 msgid "Welcome to gbrainy"
 msgstr "Benvinguts al gbrainy"
 
 #. Keep the translated version of this string under 40 characters long
-#: ../src/gbrainy.cs:342
+#: ../src/gbrainy.cs:345
 msgid "Use the Game menu to start a new game"
 msgstr "Useu el menú Joc per començar un joc nou"
 
 #
 #: ../src/Game.cs:52
-#, csharp-format
-msgid "The correct answer is {0}."
+#,  csharp-format
+msgid "The right answer is {0}."
 msgstr "La resposta correcta és {0}."
 
 #
@@ -176,9 +186,10 @@ msgstr "Cercles a un rectangle"
 #
 #
 #: ../src/PuzzleCirclesRectangle.cs:31
+#
 msgid ""
-"What is the maximum number of circles (as the one showed) that can be feed "
-"in the rectangle below?"
+"What is the maximum number of circles (as the one showed) that can be fit in "
+"the rectangle below?"
 msgstr ""
 "Quin és el nombre màxim de cercles (com el mostrat) podeu encabir al "
 "rectangle d'abaix?"
@@ -187,7 +198,8 @@ msgstr ""
 #
 #
 #: ../src/PuzzleCirclesRectangle.cs:35
-msgid "You can feed more than 25 circles."
+#
+msgid "You can fit more than 25 circles."
 msgstr "Podeu encabir més de 25 cercles."
 
 #: ../src/PuzzleCirclesRectangle.cs:69 ../src/PuzzleCirclesRectangle.cs:90
@@ -257,8 +269,8 @@ msgstr ""
 #: ../src/PuzzlePencil.cs:168 ../src/PuzzleSquareDots.cs:162
 #: ../src/PuzzleSquareDots.cs:167 ../src/PuzzleSquareDots.cs:172
 #: ../src/PuzzleNextFigure.cs:107 ../src/PuzzleNextFigure.cs:112
-#: ../src/PuzzleNextFigure.cs:117 ../src/MemoryColouredFigures.cs:124
-#: ../src/MemoryNumbers.cs:99
+#: ../src/PuzzleNextFigure.cs:117 ../src/MemoryColouredFigures.cs:148
+#: ../src/MemoryNumbers.cs:123
 msgid "Figure"
 msgstr "Figura"
 
@@ -477,12 +489,13 @@ msgstr ""
 "multiplicant els dos anteriors."
 
 #: ../src/PuzzleNumericRelation.cs:59
+#
 msgid ""
 "Divide the sequence in groups of tree numbers. Every third number is "
-"calculated by subtracting the two previous ones."
+"calculated by subtracting the second number from the first."
 msgstr ""
 "Dividiu la seqüència en grups de tres números. Cada tercer número es calcula "
-"restant els dos anteriors."
+"restant el segon número del primer."
 
 #
 #: ../src/PuzzleNextFigure.cs:40
@@ -570,9 +583,10 @@ msgid "Paused"
 msgstr "Pausat"
 
 #
-#: ../src/MemoryNumbers.cs:37 ../src/MathGreaterDivisor.cs:189
-msgid "Numbers"
-msgstr "Nombres"
+#: ../src/MemoryNumbers.cs:37
+#
+msgid "Memorize numbers"
+msgstr "Memoritzeu nombres"
 
 #
 #
@@ -897,14 +911,18 @@ msgid "Greater Divisor"
 msgstr "Divisor més gran"
 
 #: ../src/MathGreaterDivisor.cs:39
+#
 msgid ""
-"Which of the possible divisors is the greater that divides of all the "
-"numbers?"
+"Which of the possible divisors is the greater that divides all the numbers?"
 msgstr ""
 "Quin dels divisors possibles és el més gran que divideix tots els números?"
 
-#: ../src/MathGreaterDivisor.cs:204
 #
+#: ../src/MathGreaterDivisor.cs:189
+msgid "Numbers"
+msgstr "Nombres"
+
+#
+#: ../src/MathGreaterDivisor.cs:204
 msgid "Possible divisors"
 msgstr "Divisors possibles"
-
