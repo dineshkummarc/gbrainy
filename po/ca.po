@@ -8,10 +8,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gbrainy\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-09-24 16:25+0200\n"
-"PO-Revision-Date: 2007-09-24 15:28+0200\n"
+"POT-Creation-Date: 2007-09-29 16:07+0200\n"
+"PO-Revision-Date: 2007-09-29 15:28+0200\n"
 "Last-Translator: Jordi Mas <jmas@softcatala.org>\n"
-"Language-Team: cap\n"
+"Language-Team: Catalan\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -39,7 +39,7 @@ msgstr "Joc finalitzat"
 #
 #: ../src/gbrainy.glade.h:6
 msgid "Games played:"
-msgstr "Jocs jugats:"
+msgstr "Partides judades:"
 
 #: ../src/gbrainy.glade.h:7
 msgid "Logic Puzzles Only"
@@ -256,8 +256,8 @@ msgstr ""
 
 #: ../src/PuzzlePencil.cs:168 ../src/PuzzleSquareDots.cs:162
 #: ../src/PuzzleSquareDots.cs:167 ../src/PuzzleSquareDots.cs:172
-#: ../src/PuzzleNextFigure.cs:106 ../src/PuzzleNextFigure.cs:111
-#: ../src/PuzzleNextFigure.cs:116 ../src/MemoryColouredFigures.cs:124
+#: ../src/PuzzleNextFigure.cs:107 ../src/PuzzleNextFigure.cs:112
+#: ../src/PuzzleNextFigure.cs:117 ../src/MemoryColouredFigures.cs:124
 #: ../src/MemoryNumbers.cs:99
 msgid "Figure"
 msgstr "Figura"
@@ -282,19 +282,24 @@ msgid ""
 "to the second line."
 msgstr ""
 
-#: ../src/PuzzleTriangles.cs:27
+#: ../src/PuzzleTriangles.cs:28
 msgid "Triangles"
 msgstr "Triangles"
 
 #
 #
-#: ../src/PuzzleTriangles.cs:31
+#: ../src/PuzzleTriangles.cs:32
 msgid "How many triangles of any size can you count in the figure below?"
 msgstr "Quants triangles de qualsevol mida podeu comptar a la figura d'abaix?"
 
-#: ../src/PuzzleTriangles.cs:35
+#: ../src/PuzzleTriangles.cs:36
 msgid "A triangle can be embedded inside another triangle."
 msgstr "Un triangle pot estar incrustat dins d'un altre."
+
+#: ../src/PuzzleTriangles.cs:43
+#, csharp-format
+msgid "The triangles are made by connecting the following points: {0}"
+msgstr "Els triangles es fan connectant els següents punts: {0}"
 
 #
 #: ../src/PuzzleCoverPercentage.cs:32
@@ -321,7 +326,7 @@ msgstr ""
 "Quina és la lletra de la figura que representa la següent figura lògica a la "
 "seqüència (A, B o C)?"
 
-#: ../src/PuzzleSquareDots.cs:156 ../src/PuzzleNextFigure.cs:99
+#: ../src/PuzzleSquareDots.cs:156 ../src/PuzzleNextFigure.cs:100
 msgid "Possible answers are:"
 msgstr "Les respostes possibles són:"
 
@@ -338,7 +343,7 @@ msgid ""
 "The letters around the squares follow a logic. Which letter should replace "
 "the question mark in the last square?"
 msgstr ""
-"Els nombres al voltant dels quadrats segueixen una lògica. Quina és la "
+"Les lletres al voltant dels quadrats segueixen una lògica. Quina és la "
 "lletra que ha de reemplaçar el interrogant a l'últim quadrat?"
 
 #: ../src/PuzzleAlphabeticSequence.cs:40
@@ -404,7 +409,7 @@ msgid ""
 "Starting by the number 1, every number in the sequence is the result of "
 "adding it to the previous result and multiplying it by 2."
 msgstr ""
-"Començant pel número 1, cada número de la seqüència és el resultat de afegir-"
+"Començant pel número 1, cada número de la seqüència és el resultat d'afegir-"
 "lo al resultat previ i multiplicar-lo per dos."
 
 #
@@ -480,13 +485,13 @@ msgstr ""
 "restant els dos anteriors."
 
 #
-#: ../src/PuzzleNextFigure.cs:39
+#: ../src/PuzzleNextFigure.cs:40
 msgid "Next figure"
 msgstr "Figura següent"
 
 #
 #
-#: ../src/PuzzleNextFigure.cs:43
+#: ../src/PuzzleNextFigure.cs:44
 msgid "Which is the next logical figure in the sequence (A, B, or C)?"
 msgstr "Quina és la següent seqüència lògica d'objectes (A, B, o C)?"
 
@@ -504,7 +509,7 @@ msgid ""
 "below?"
 msgstr ""
 "Quin és el nombre mínim de fulls de paper que necessiteu per a crear la "
-"figure d'abaix?"
+"figura d'abaix?"
 
 #: ../src/PuzzleSquareSheets.cs:36
 msgid "The sheets should overlap."
@@ -552,8 +557,8 @@ msgstr "Jocs: {0} ({1} guanyats)"
 
 #: ../src/GameSession.cs:124
 #, csharp-format
-msgid "- Time: {0}"
-msgstr "- Temps: {0}"
+msgid " - Time: {0}"
+msgstr " - Temps: {0}"
 
 #: ../src/GameSession.cs:127
 #, csharp-format
@@ -565,7 +570,7 @@ msgid "Paused"
 msgstr "Pausat"
 
 #
-#: ../src/MemoryNumbers.cs:37
+#: ../src/MemoryNumbers.cs:37 ../src/MathGreaterDivisor.cs:189
 msgid "Numbers"
 msgstr "Nombres"
 
@@ -638,8 +643,8 @@ msgid ""
 "When the figure below is folded as a cube, which face it is opposite to the "
 "face with a {0} draw on it (answer the number written on the face)?"
 msgstr ""
-"Quan la figura d'abaix es doblega com un cub, quina és cara la contraria a "
-"la cara amb un «{0}» dibuixat (responeu el número escrit a la cara)?"
+"Quan la figura d'abaix es doblega com un cub, quina és la cara la contraria "
+"a la cara amb un {0} dibuixat (responeu el número escrit a la cara)?"
 
 #
 #: ../src/MemoryWords.cs:36
@@ -839,7 +844,7 @@ msgid ""
 "are circles, 'D' that the figures are separated, 'E' that there are three "
 "figures and 'F' that there are two figures."
 msgstr ""
-"«A» indica que les figures es solapen, '«B» que són rectangles, «C» que són "
+"«A» indica que les figures es solapen, «B» que són rectangles, «C» que són "
 "cercles, «D» que són figures separades, «E» que hi ha tres figures i «F» que "
 "hi ha dues figures."
 
@@ -869,4 +874,37 @@ msgstr "Memòria"
 msgid "Math"
 msgstr "Matemàtic"
 
+#: ../src/PuzzleDivideCircle.cs:42
+msgid "Divide circles"
+msgstr "Divideix cercles"
+
+#: ../src/PuzzleDivideCircle.cs:46
+msgid ""
+"In the last figure, in how many regions is the circle divided when all the "
+"dots are connected?"
+msgstr ""
+"A la última figura, en quantes regions es divideix el cercle quan tots els "
+"punts estan connectats?"
+
+#: ../src/PuzzleDivideCircle.cs:110 ../src/PuzzleDivideCircle.cs:125
+#: ../src/PuzzleDivideCircle.cs:142
+#, csharp-format
+msgid "Has {0} regions"
+msgstr "Té {0} regions"
+
+#: ../src/MathGreaterDivisor.cs:31
+msgid "Greater Divisor"
+msgstr "Divisor més gran"
+
+#: ../src/MathGreaterDivisor.cs:39
+msgid ""
+"Which of the possible divisors is the greater that divides of all the "
+"numbers?"
+msgstr ""
+"Quin dels divisors possibles és el més gran que divideix tots els números?"
+
+#: ../src/MathGreaterDivisor.cs:204
+#
+msgid "Possible divisors"
+msgstr "Divisors possibles"
 
