@@ -52,11 +52,11 @@ public class PuzzleNumericRelation : Game
 				answer += String.Format (Catalog.GetString ("Every group of {0} numbers sums exactly {1}."), group_size, sum_value);
 				break;
 			case 1:
-				answer += Catalog.GetString ("Divide the sequence in groups of tree numbers. Every third number is calculated by multiplying the two previous ones.");
+				answer += Catalog.GetString ("Divide the sequence in groups of three numbers. Every third number is calculated by multiplying the two previous ones.");
 				break;
 
 			case 2:
-				answer += Catalog.GetString ("Divide the sequence in groups of tree numbers. Every third number is calculated by subtracting the second number from the first.");
+				answer += Catalog.GetString ("Divide the sequence in groups of three numbers. Every third number is calculated by subtracting the second number from the first.");
 				break;
 			}
 			return answer;
