@@ -47,6 +47,7 @@ public class GameManager
 	{
 		typeof (MathArithmetical),
 		typeof (MathGreaterDivisor),
+		typeof (MathTwoNumbers),
 	};
 
 	static Type[] MemoryTrainers = new Type[] 

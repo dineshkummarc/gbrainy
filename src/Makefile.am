@@ -31,6 +31,7 @@ GBRAINY_CSDISTFILES =				\
 	$(srcdir)/CustomGameDialog.cs		\
 	$(srcdir)/PuzzleDivideCircle.cs		\
 	$(srcdir)/MathGreaterDivisor.cs		\
+	$(srcdir)/MathTwoNumbers.cs		\
 	$(srcdir)/gbrainy.cs			
 
 ASSEMBLIES = \
