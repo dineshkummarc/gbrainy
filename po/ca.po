@@ -8,13 +8,32 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gbrainy\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-09-29 18:37+0200\n"
+"POT-Creation-Date: 2007-10-01 22:06+0200\n"
 "PO-Revision-Date: 2007-09-29 15:28+0200\n"
 "Last-Translator: Jordi Mas <jmas@softcatala.org>\n"
 "Language-Team: Catalan\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+
+#
+#
+#
+#
+#: ../gbrainy.desktop.in.h:1
+msgid "A brain teaser game for fun and keep your brain trained"
+msgstr ""
+"Un joc per demostrar el vostre enginy i mantenir el vostre cervell entrenat."
+
+#
+#: ../gbrainy.desktop.in.h:2
+msgid "Game"
+msgstr "Joc"
+
+#
+#: ../gbrainy.desktop.in.h:3 ../src/gbrainy.glade.h:20
+msgid "gbrainy"
+msgstr "gbrainy"
 
 #: ../src/gbrainy.glade.h:1
 msgid "All Games and Trainers (Logic, Mathematical and Memory)"
@@ -97,11 +116,6 @@ msgstr "_D'acord"
 msgid "_Tip"
 msgstr "_Pista"
 
-#
-#: ../src/gbrainy.glade.h:20
-msgid "gbrainy"
-msgstr "gbrainy"
-
 #. Name of persons or people that translated the application
 #: ../src/gbrainy.cs:115
 msgid "translator-credits"
@@ -127,8 +141,8 @@ msgid "Congratulations."
 msgstr "Felicitats."
 
 #
-#: ../src/gbrainy.cs:158
 #
+#: ../src/gbrainy.cs:158
 msgid "Incorrect answer."
 msgstr "Resposta incorrecta."
 
@@ -156,7 +170,7 @@ msgstr "Useu el menú Joc per començar un joc nou"
 
 #
 #: ../src/Game.cs:52
-#,  csharp-format
+#, csharp-format
 msgid "The right answer is {0}."
 msgstr "La resposta correcta és {0}."
 
@@ -185,8 +199,8 @@ msgstr "Cercles a un rectangle"
 #
 #
 #
-#: ../src/PuzzleCirclesRectangle.cs:31
 #
+#: ../src/PuzzleCirclesRectangle.cs:31
 msgid ""
 "What is the maximum number of circles (as the one showed) that can be fit in "
 "the rectangle below?"
@@ -197,8 +211,8 @@ msgstr ""
 #
 #
 #
-#: ../src/PuzzleCirclesRectangle.cs:35
 #
+#: ../src/PuzzleCirclesRectangle.cs:35
 msgid "You can fit more than 25 circles."
 msgstr "Podeu encabir més de 25 cercles."
 
@@ -480,18 +494,20 @@ msgstr "La relació dels nombres és aritmètica."
 msgid "Every group of {0} numbers sums exactly {1}."
 msgstr "Cada grup de {0} nombres suma exactament {1}."
 
+#
 #: ../src/PuzzleNumericRelation.cs:55
 msgid ""
-"Divide the sequence in groups of tree numbers. Every third number is "
+"Divide the sequence in groups of three numbers. Every third number is "
 "calculated by multiplying the two previous ones."
 msgstr ""
 "Dividiu la seqüència en grups de tres números. Cada tercer número es calcula "
 "multiplicant els dos anteriors."
 
-#: ../src/PuzzleNumericRelation.cs:59
 #
+#
+#: ../src/PuzzleNumericRelation.cs:59
 msgid ""
-"Divide the sequence in groups of tree numbers. Every third number is "
+"Divide the sequence in groups of three numbers. Every third number is "
 "calculated by subtracting the second number from the first."
 msgstr ""
 "Dividiu la seqüència en grups de tres números. Cada tercer número es calcula "
@@ -583,8 +599,8 @@ msgid "Paused"
 msgstr "Pausat"
 
 #
-#: ../src/MemoryNumbers.cs:37
 #
+#: ../src/MemoryNumbers.cs:37
 msgid "Memorize numbers"
 msgstr "Memoritzeu nombres"
 
@@ -910,8 +926,8 @@ msgstr "Té {0} regions"
 msgid "Greater Divisor"
 msgstr "Divisor més gran"
 
-#: ../src/MathGreaterDivisor.cs:39
 #
+#: ../src/MathGreaterDivisor.cs:39
 msgid ""
 "Which of the possible divisors is the greater that divides all the numbers?"
 msgstr ""
@@ -926,3 +942,8 @@ msgstr "Nombres"
 #: ../src/MathGreaterDivisor.cs:204
 msgid "Possible divisors"
 msgstr "Divisors possibles"
+
+#
+#
+#~ msgid "gbrainy "
+#~ msgstr "gbrainy"
