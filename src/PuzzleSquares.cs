@@ -34,7 +34,7 @@ public class PuzzleSquares : Game
 	}
 
 	public override string Tip {
-		get { return Catalog.GetString ("A square can be also built from other squares.");}
+		get { return Catalog.GetString ("A square is a rectangle having all four sides of equal length. A square can be also built from other squares.");}
 	}
 
 	public override string Answer {

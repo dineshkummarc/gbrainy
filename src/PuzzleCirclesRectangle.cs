@@ -28,7 +28,7 @@ public class PuzzleCirclesRectangle : Game
 	}
 
 	public override string Question {
-		get {return Catalog.GetString ("What is the maximum number of circles (as the one showed) that can be fit in the rectangle below?");} 
+		get {return Catalog.GetString ("What is the maximum number of circles (as the one showed) that can be fit in the square below?");} 
 	}
 
 	public override string Tip {

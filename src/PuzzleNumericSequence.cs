@@ -37,7 +37,7 @@ public class PuzzleNumericSequence : Game
 	}
 
 	public override string Tip {
-		get { return Catalog.GetString ("The sequence is built using the natural numbers from 1 to 6 as a source.");}
+		get { return Catalog.GetString ("Every number in the sequence is related to the previous one.");}
 	}
 
 	public override string Answer {
@@ -46,14 +46,13 @@ public class PuzzleNumericSequence : Game
 
 			switch (formula) {
 			case 0:
-				answer += Catalog.GetString ("Starting by the number 1, every number in the sequence is the result of multiplying it by the previous number.");
+				answer += Catalog.GetString ("Every number in the sequence is the result of subtracting 1 to the previous number and multiplying it by 2.");
 				break;
 			case 1:
-				answer += Catalog.GetString ("Starting by the number 1, every number in the sequence is the result of subtracting it to the previous result and multiplying it by 2.");
+				answer += Catalog.GetString ("Every number in the sequence is the result of adding 1 to the previous number and multiplying it by 3.");
 				break;
-
 			case 2:
-				answer += Catalog.GetString ("Starting by the number 1, every number in the sequence is the result of adding it to the previous result and multiplying it by 2.");
+				answer += Catalog.GetString ("Every number in the sequence is the result of subtracting 2 to the previous number and multiplying it by -2.");
 				break;
 			}
 			return answer;
@@ -64,17 +63,17 @@ public class PuzzleNumericSequence : Game
 	{
 		formula = random.Next (3);
 		numbers =  new int [max_num];
-		numbers[0] = 1;
+		numbers[0] = 3 + random.Next (3);
 		for (int i = 1; i < max_num; i++) {
 			switch (formula) {
 			case 0:
-				numbers[i] = (i + 1) * numbers[i - 1];
+				numbers[i] = (numbers[i - 1] - 1) * 2;
 				break;
 			case 1:
-				numbers[i] = (i + 1 - numbers[i - 1]) * 2;
+				numbers[i] = (numbers[i - 1] + 1) * 3;
 				break;
 			case 2:
-				numbers[i] = ((i + 1) + numbers[i - 1]) * 2;
+				numbers[i] = (numbers[i -1] - 2) * (-2);
 				break;
 			}				
 		}
@@ -99,7 +98,7 @@ public class PuzzleNumericSequence : Game
 		}
 		sequence.Append ("?");
 
-		gr.MoveTo (DrawAreaX + 0.1, DrawAreaY + 0.3);
+		gr.MoveTo (DrawAreaX + 0.05, DrawAreaY + 0.3);
 		gr.ShowText (sequence.ToString ());
 		gr.Stroke ();
 	}

@@ -36,10 +36,6 @@ public class PuzzleAlphabeticSequence : Game
 		get {return Catalog.GetString ("The letters around the squares follow a logic. Which letter should replace the question mark in the last square?");} 
 	}
 
-	public override string Tip {
-		get { return Catalog.GetString ("The logic works clockwise.");}
-	}
-
 	public override string Answer {
 		get { 
 			string answer = base.Answer + " ";
