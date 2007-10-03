@@ -33,6 +33,7 @@ public class PuzzleMatrixNumbers : Game
 
 	private int [] numbers;
 	private Operation operation;
+	private const int rows = 4, columns = 4;
 
 	public override string Name {
 		get {return Catalog.GetString ("Matrix Numbers");}
@@ -95,7 +96,6 @@ public class PuzzleMatrixNumbers : Game
 
 	public override void Draw (Cairo.Context gr, int area_width, int area_height)
 	{
-		double rows = 4, columns = 4;
 		double rect_w = DrawAreaWidth / rows;
 		double rect_h = DrawAreaHeight / columns;
 
