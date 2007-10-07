@@ -27,9 +27,8 @@ public class MathArithmetical : Game
 	public enum Operation
 	{
 		Addition = 0,	
-		Substration,	
+		Substraction,	
 		Multiplication,
-		Percentage,
 		LastOperation
 	}
 
@@ -55,40 +54,30 @@ public class MathArithmetical : Game
 
 		switch (operation) {
 		case Operation.Addition:
-		case Operation.Substration:
+		case Operation.Substraction:
 			operations = 2 + random.Next (3);
 				break;
 		case Operation.Multiplication:
 			operations = 2 + random.Next (1);
 			break;
-		case Operation.Percentage:
-			operations = 2;
-			break;
 		}
 
 		operands = new int [operations];
 
-		if (operation == Operation.Percentage) {
-			operands[0] = 10 + random.Next (90);
-			operands[1] = 5 + random.Next (90);
-			result = (operands[0] * operands[1]) / 100;
-		} else
+		result = operands[0] = 10 + random.Next (90);
+		for (int i = 1; i < operands.Length; i ++)
 		{
-			result = operands[0] = 10 + random.Next (90);
-			for (int i = 1; i < operands.Length; i ++)
-			{
-				operands[i] = 10 + random.Next (90);
-				switch (operation) {
-				case Operation.Addition:
-					result += operands[i];
-					break;	
-				case Operation.Substration:
-					result -= operands[i];
-					break;
-				case Operation.Multiplication:
-					result *= operands[i];
-					break;
-				}
+			operands[i] = 10 + random.Next (90);
+			switch (operation) {
+			case Operation.Addition:
+				result += operands[i];
+				break;	
+			case Operation.Substraction:
+				result -= operands[i];
+				break;
+			case Operation.Multiplication:
+				result *= operands[i];
+				break;
 			}
 		}
 		right_answer = result.ToString ();
@@ -135,14 +124,11 @@ public class MathArithmetical : Game
 			case Operation.Addition:
 				gr.ShowText ("+");
 				break;	
-			case Operation.Substration:
+			case Operation.Substraction:
 				gr.ShowText ("-");
 				break;
 			case Operation.Multiplication:
 				gr.ShowText ("*");
-				break;
-			case Operation.Percentage:
-				gr.ShowText ("%");
 				break;
 			}
 

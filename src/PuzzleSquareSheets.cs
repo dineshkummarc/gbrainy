@@ -29,7 +29,7 @@ public class PuzzleSquareSheets : Game
 	}
 
 	public override string Question {
-		get {return Catalog.GetString ("What is the minimum number of sheets of paper needed to create the figure below?");} 
+		get {return Catalog.GetString ("What is the minimum number of square sheets of paper of any size needed to create the figure below?");} 
 	}
 
 	public override string Tip {

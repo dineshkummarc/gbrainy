@@ -24,6 +24,7 @@ using Mono.Unix;
 
 public class PuzzleTriangles : Game
 {
+	int type;
 	public override string Name {
 		get {return Catalog.GetString ("Triangles");}
 	}
@@ -41,7 +42,8 @@ public class PuzzleTriangles : Game
 			string answer = base.Answer + " ";
 
 			answer += String.Format (Catalog.GetString ("The triangles are made by connecting the following points: {0}"),
-				"bdc, dcf, dfg, abd, ade, edg, acg, abg, bcg, afg, ecg, acd, acf, ace.");
+				(type == 0) ? "bdc, dcf, dfg, abd, ade, edg, acg, abg, bcg, afg, ecg, acd, acf, ace, adg, cdg." : 
+				"dcf, ade, acg, afg, ecg, acd, acf, ace.");
 
 			return answer;
 		}
@@ -49,7 +51,12 @@ public class PuzzleTriangles : Game
 
 	public override void Initialize ()
 	{
-		right_answer = "14";
+		type = random.Next (2);
+
+		if (type == 0)	
+			right_answer = "16";
+		else
+			right_answer = "8";
 	}
 
 	public override void Draw (Cairo.Context gr, int area_width, int area_height)
@@ -69,9 +76,11 @@ public class PuzzleTriangles : Game
 		gr.LineTo (x + 0.45, y + height /4);
 		gr.Stroke ();
 	
-		gr.MoveTo (x + witdh / 2, y);
-		gr.LineTo (x + witdh / 2, y + height / 2);
-		gr.Stroke ();
+		if (type == 0) {
+			gr.MoveTo (x + witdh / 2, y);
+			gr.LineTo (x + witdh / 2, y + height / 2);
+			gr.Stroke ();
+		}
 
 		gr.MoveTo (x + 0.152, y + 0.125);
 		gr.LineTo (x + witdh, y);

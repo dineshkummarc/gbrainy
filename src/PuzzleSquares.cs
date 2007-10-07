@@ -43,10 +43,10 @@ public class PuzzleSquares : Game
 
 			switch (type) {
 			case 0:
-				answer += Catalog.GetString ("There are 16 single squares, 7 squares made by two single squares, 4 squares made by three squares and 1 square made by sixteen single squares.");
+				answer += Catalog.GetString ("There are 16 single squares, 9 squares made by 4 single squares, 4 squares made by 9 single squares and 1 square made by 16 single squares.");
 				break;
 			case 1:
-				answer += Catalog.GetString ("There are 9 single squares, 4 squares made by two single squares and 1 square made by nine single squares.");
+				answer += Catalog.GetString ("There are 9 single squares, 4 squares made by 4 single squares and 1 square made by 9 single squares.");
 				break;
 			}
 			return answer;

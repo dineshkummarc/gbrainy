@@ -40,9 +40,10 @@ public class PuzzleMoveFigure: Game
 
 			switch (type) {
 			case 0:
+				answer += Catalog.GetString ("Move the circle from the first line to the second and two circles from the fourth to the second and the fifth lines.");
 				break;
 			case 1:
-				answer += Catalog.GetString ("Moving four cercles from the fifth line to the first and two from the fourth to the second line.");
+				answer += Catalog.GetString ("Move the two first lines and the first and last circle of the last line to the third, sixth and seventh lines.");
 				break;
 			}
 			return answer;
@@ -60,7 +61,7 @@ public class PuzzleMoveFigure: Game
 				right_answer = "3";
 				break;
 			case 1:
-				right_answer = "6";
+				right_answer = "5";
 				break;
 		}
 		
