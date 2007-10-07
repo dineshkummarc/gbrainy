@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gbrainy\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-10-01 23:52+0200\n"
-"PO-Revision-Date: 2007-09-29 15:28+0200\n"
+"POT-Creation-Date: 2007-10-07 22:04+0200\n"
+"PO-Revision-Date: 2007-10-07 21:55+0200\n"
 "Last-Translator: Jordi Mas <jmas@softcatala.org>\n"
 "Language-Team: Catalan\n"
 "MIME-Version: 1.0\n"
@@ -41,19 +41,19 @@ msgstr "Tots els jocs i entrenadors (lògic, matemàtic i de memòria)"
 
 #: ../src/gbrainy.glade.h:2
 msgid "Average time per game:"
-msgstr "Temps de mitjana per joc:"
+msgstr "Temps de mitjana per partida:"
 
 #: ../src/gbrainy.glade.h:3
 msgid "Custom Game"
-msgstr "Joc personalitzat"
+msgstr "Partida personalitzada"
 
 #: ../src/gbrainy.glade.h:4
 msgid "Custom game selection..."
-msgstr "Selecció del joc personalitzat..."
+msgstr "Selecció de la partida personalitzada..."
 
 #: ../src/gbrainy.glade.h:5
 msgid "Game Over"
-msgstr "Joc finalitzat"
+msgstr "Partida finalitzada"
 
 #
 #: ../src/gbrainy.glade.h:6
@@ -74,7 +74,7 @@ msgstr "Només entrenadors de memòria"
 
 #: ../src/gbrainy.glade.h:10
 msgid "New Game"
-msgstr "Joc nou"
+msgstr "Partida nova"
 
 #: ../src/gbrainy.glade.h:11
 msgid "Questions"
@@ -146,9 +146,10 @@ msgstr "Felicitats."
 msgid "Incorrect answer."
 msgstr "Resposta incorrecta."
 
+#
 #: ../src/gbrainy.cs:202
 msgid ""
-"Once you have an answer type it in \"Your Answer:\" entry box and press the "
+"Once you have an answer type it in \"Your answer:\" entry box and press the "
 "\"Ok\" button."
 msgstr ""
 "Un cop teniu la resposta teclegeu-la a la capsa «Resposta:» i premeu el botó "
@@ -200,10 +201,11 @@ msgstr "Cercles a un rectangle"
 #
 #
 #
+#
 #: ../src/PuzzleCirclesRectangle.cs:31
 msgid ""
 "What is the maximum number of circles (as the one showed) that can be fit in "
-"the rectangle below?"
+"the square below?"
 msgstr ""
 "Quin és el nombre màxim de cercles (com el mostrat) podeu encabir al "
 "rectangle d'abaix?"
@@ -224,13 +226,13 @@ msgstr "5 unitats"
 msgid "1 unit"
 msgstr "1 unitat"
 
-#: ../src/PuzzleMatrixNumbers.cs:38
+#: ../src/PuzzleMatrixNumbers.cs:39
 msgid "Matrix Numbers"
 msgstr "Nombres a la matriu"
 
 #
 #
-#: ../src/PuzzleMatrixNumbers.cs:42
+#: ../src/PuzzleMatrixNumbers.cs:43
 msgid ""
 "The numbers in the matrix follow a logic. Which is the number that should "
 "replace the question mark?"
@@ -239,11 +241,11 @@ msgstr ""
 "ha de reemplaçar l'interrogant?"
 
 #
-#: ../src/PuzzleMatrixNumbers.cs:46
+#: ../src/PuzzleMatrixNumbers.cs:47
 msgid "The logic is arithmetical and works vertically."
 msgstr "La lògica és aritmètica i funciona verticalment."
 
-#: ../src/PuzzleMatrixNumbers.cs:55
+#: ../src/PuzzleMatrixNumbers.cs:56
 msgid ""
 "The fourth row is calculated multiplying the first two rows and adding the "
 "third row."
@@ -251,7 +253,7 @@ msgstr ""
 "La quarta fila es calcula multiplicant les primeres dues files i afegint-hi "
 "la tercera fila."
 
-#: ../src/PuzzleMatrixNumbers.cs:58
+#: ../src/PuzzleMatrixNumbers.cs:59
 msgid ""
 "The fourth row is calculated multiplying the first two rows and subtracting "
 "the third row."
@@ -259,7 +261,7 @@ msgstr ""
 "La quarta fila es calcula multiplicant les primeres dues files i restant-hi "
 "la tercera fila."
 
-#: ../src/PuzzleMatrixNumbers.cs:61
+#: ../src/PuzzleMatrixNumbers.cs:62
 msgid ""
 "The fourth row is calculated adding the first two rows and subtracting the "
 "third row."
@@ -302,27 +304,37 @@ msgstr ""
 "Quin és el nombre mínim de cercles que heu de moure per a convertir la "
 "figura de l'esquerra en la figura de la dreta?"
 
-#: ../src/PuzzleMoveFigure.cs:45
+#: ../src/PuzzleMoveFigure.cs:43
 msgid ""
-"Moving four cercles from the fifth line to the first and two from the fourth "
-"to the second line."
+"Move the circle from the first line to the second and two circles from the "
+"fourth to the second and the fifth lines."
 msgstr ""
+"Moveu el cercle de la primera línia a la segona i dos cercles de la quarta "
+"a la segona i cinquenes línies."
 
-#: ../src/PuzzleTriangles.cs:28
+#: ../src/PuzzleMoveFigure.cs:46
+msgid ""
+"Move the two first lines and the first and last circle of the last line to "
+"the third, sixth and seventh lines."
+msgstr ""
+"Moveu les dues primeres línies i el primer i últim cercle de l'última línia a "
+"la tercera, sisena i setena línies."
+
+#: ../src/PuzzleTriangles.cs:29
 msgid "Triangles"
 msgstr "Triangles"
 
 #
 #
-#: ../src/PuzzleTriangles.cs:32
+#: ../src/PuzzleTriangles.cs:33
 msgid "How many triangles of any size can you count in the figure below?"
 msgstr "Quants triangles de qualsevol mida podeu comptar a la figura d'abaix?"
 
-#: ../src/PuzzleTriangles.cs:36
+#: ../src/PuzzleTriangles.cs:37
 msgid "A triangle can be embedded inside another triangle."
 msgstr "Un triangle pot estar incrustat dins d'un altre."
 
-#: ../src/PuzzleTriangles.cs:43
+#: ../src/PuzzleTriangles.cs:44
 #, csharp-format
 msgid "The triangles are made by connecting the following points: {0}"
 msgstr "Els triangles es fan connectant els següents punts: {0}"
@@ -372,11 +384,7 @@ msgstr ""
 "Les lletres al voltant dels quadrats segueixen una lògica. Quina és la "
 "lletra que ha de reemplaçar el interrogant a l'últim quadrat?"
 
-#: ../src/PuzzleAlphabeticSequence.cs:40
-msgid "The logic works clockwise."
-msgstr "La lògica funciona en sentit horari."
-
-#: ../src/PuzzleAlphabeticSequence.cs:46
+#: ../src/PuzzleAlphabeticSequence.cs:42
 #, csharp-format
 msgid ""
 "Every letter is calculated taking the position in the alphabet of the "
@@ -404,39 +412,40 @@ msgstr ""
 "reemplaçar el interrogant?"
 
 #
+#
 #: ../src/PuzzleNumericSequence.cs:40
-msgid ""
-"The sequence is built using the natural numbers from 1 to 6 as a source."
-msgstr ""
-"La seqüència es construeix utilitzant els números naturals de l'1 al 6 com a "
-"font."
+msgid "Every number in the sequence is related to the previous one."
+msgstr "Cada número en la seqüència està relacionat amb l'anterior."
 
+#
 #
 #: ../src/PuzzleNumericSequence.cs:49
 msgid ""
-"Starting by the number 1, every number in the sequence is the result of "
-"multiplying it by the previous number."
+"Every number in the sequence is the result of subtracting 1 to the previous "
+"number and multiplying it by 2."
 msgstr ""
-"Començant pel número 1, cada número en la seqüència és el resultat de "
-"multiplicar-lo pel número anterior."
+"Cada número en la seqüència és el resultat de restar-ne 1 al número anterior "
+"i multiplicar-ho per 2."
 
+#
 #
 #: ../src/PuzzleNumericSequence.cs:52
 msgid ""
-"Starting by the number 1, every number in the sequence is the result of "
-"subtracting it to the previous result and multiplying it by 2."
+"Every number in the sequence is the result of adding 1 to the previous "
+"number and multiplying it by 3."
 msgstr ""
-"Començant pel número 1, cada número de la seqüència és el resultat de restar-"
-"lo al resultat previ i multiplicar-lo per dos."
+"Cada número en la seqüència és el resultat de afegir-ne 1 al número anterior "
+"i multiplicar-ho per 3."
 
 #
-#: ../src/PuzzleNumericSequence.cs:56
+#
+#: ../src/PuzzleNumericSequence.cs:55
 msgid ""
-"Starting by the number 1, every number in the sequence is the result of "
-"adding it to the previous result and multiplying it by 2."
+"Every number in the sequence is the result of subtracting 2 to the previous "
+"number and multiplying it by -2."
 msgstr ""
-"Començant pel número 1, cada número de la seqüència és el resultat d'afegir-"
-"lo al resultat previ i multiplicar-lo per dos."
+"Cada número en la seqüència és el resultat de restar-ne 1 al número anterior "
+"i multiplicar-ho per -2."
 
 #
 #
@@ -451,24 +460,30 @@ msgid "How many squares of any size can you count of in the figure below?"
 msgstr "Quants quadrats de qualsevol mida podeu comptar a la figura d'abaix?"
 
 #: ../src/PuzzleSquares.cs:37
-msgid "A square can be also built from other squares."
-msgstr "Un quadrat es pot també construir utilitzant altres quadrats."
+msgid ""
+"A square is a rectangle having all four sides of equal length. A square can "
+"be also built from other squares."
+msgstr ""
+"Un quadrat és un rectangle amb els quatre cantons de la mateixa llargària. "
+"Un quadrat es pot fer d'altres quadrats."
 
+#
 #: ../src/PuzzleSquares.cs:46
 msgid ""
-"There are 16 single squares, 7 squares made by two single squares, 4 squares "
-"made by three squares and 1 square made by sixteen single squares."
+"There are 16 single squares, 9 squares made by 4 single squares, 4 squares "
+"made by 9 single squares and 1 square made by 16 single squares."
 msgstr ""
-"Hi ha 16 quadrats simples, 7 quadrats fets per dos quadrats simples, 4 "
-"quadrats fets per tres quadrats i un quadrat fet per setze quadrats simples."
+"Hi ha 16 quadrats simples, 9 quadrats fets per dos quadrats simples, 4 "
+"quadrats fets per tres quadrats i un quadrat fet per 16 quadrats simples."
 
+#
 #: ../src/PuzzleSquares.cs:49
 msgid ""
-"There are 9 single squares, 4 squares made by two single squares and 1 "
-"square made by nine single squares."
+"There are 9 single squares, 4 squares made by 4 single squares and 1 square "
+"made by 9 single squares."
 msgstr ""
-"Hi ha 9 quadrats simples, 4 quadrats fets per dos quadrats simples i 1 "
-"quadrat fet nou quadrats simples."
+"Hi ha 9 quadrats simples, 4 quadrats fets per 4 quadrats simples i 1 quadrat "
+"fet per 9 quadrats simples."
 
 #
 #
@@ -532,13 +547,14 @@ msgstr "Quadrat amb fulls"
 #
 #
 #
+#
 #: ../src/PuzzleSquareSheets.cs:32
 msgid ""
-"What is the minimum number of sheets of paper needed to create the figure "
-"below?"
+"What is the minimum number of square sheets of paper of any size needed to "
+"create the figure below?"
 msgstr ""
-"Quin és el nombre mínim de fulls de paper que necessiteu per a crear la "
-"figura d'abaix?"
+"Quin és el nombre mínim de fulls de paper de qualsevol mida que necessiteu "
+"per a crear la figura d'abaix?"
 
 #: ../src/PuzzleSquareSheets.cs:36
 msgid "The sheets should overlap."
@@ -552,11 +568,11 @@ msgstr ""
 "Els nombres en la figura reflecteixen les diferent àrees cobertes per a cada "
 "un dels fulls."
 
-#: ../src/MathArithmetical.cs:40
+#: ../src/MathArithmetical.cs:39
 msgid "Arithmetical"
 msgstr "Aritmètic"
 
-#: ../src/MathArithmetical.cs:48
+#: ../src/MathArithmetical.cs:47
 msgid "What is the result of the arithmetical operation?"
 msgstr "Quin és el resultat de l'operació aritmètica?"
 
@@ -582,7 +598,7 @@ msgstr "Quina de les següents figures era la mostrada anteriorment?"
 #: ../src/GameSession.cs:123
 #, csharp-format
 msgid "Games played: {0} ({1} won)"
-msgstr "Jocs: {0} ({1} guanyats)"
+msgstr "Partides: {0} ({1} guanyades)"
 
 #: ../src/GameSession.cs:124
 #, csharp-format
@@ -945,15 +961,16 @@ msgstr "Divisors possibles"
 
 #
 #
-#: ../src/MathTwoNumbers.cs:31
 #
+#: ../src/MathTwoNumbers.cs:31
 msgid "Two numbers"
 msgstr "Dos números"
 
 #: ../src/MathTwoNumbers.cs:39
 #, csharp-format
 msgid "Which two numbers when added are {0} and when multiplied are {1}?"
-msgstr "Quins dos números quan se sumen donen {0} i quan es multipliquen donen {1}?"
+msgstr ""
+"Quins dos números quan se sumen donen {0} i quan es multipliquen donen {1}?"
 
 #: ../src/MathTwoNumbers.cs:50
 #, csharp-format
@@ -970,3 +987,39 @@ msgstr "número1 + número2 = {0}"
 msgid "number1 * number2 = {0}"
 msgstr "número1 * número2 = {0}"
 
+#
+#: ../src/PuzzleMatrixGroups.cs:32
+msgid "Matrix groups"
+msgstr "Matriu de grups"
+
+#: ../src/PuzzleMatrixGroups.cs:36
+msgid "One of the black numbers in the matrix should be blue. Which one?"
+msgstr "Un dels números negres a la matriu hauria de ser blau. Quin?"
+
+#
+#: ../src/PuzzleMatrixGroups.cs:40
+msgid "All the blue numbers share an arithmetical property."
+msgstr "Tots els números blaus comparteixen una propietat aritmètica."
+
+#: ../src/PuzzleMatrixGroups.cs:46
+#, csharp-format
+msgid "Every blue number can be divided by {0}."
+msgstr "Cada número blau pot ser dividir per {0}."
+
+#: ../src/PuzzleBalance.cs:41
+msgid "Balance"
+msgstr "Balança"
+
+#: ../src/PuzzleBalance.cs:45
+#
+msgid ""
+"How many triangles are needed in the right part of the last figure to keep "
+"it balanced?"
+msgstr ""
+"Quants triangles són necessaris en la part dreta de l'última balança per "
+"mantenir-ho balancejat?"
+
+#: ../src/PuzzleBalance.cs:51
+msgid "Every triangle counts as 1, each diamon as a 2 and each square as 3."
+msgstr ""
+"Cada triangle compta com a 1, cada diamant com a dos i cada quadrat com a 3."
