@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gbrainy.HEAD.es\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-09-29 17:44+0100\n"
-"PO-Revision-Date: 2007-09-30 00:17+0200\n"
+"POT-Creation-Date: 2007-10-03 19:31+0100\n"
+"PO-Revision-Date: 2007-10-07 15:04+0200\n"
 "Last-Translator: Jorge González <jorgegonz@svn.gnome.org>\n"
 "Language-Team: Spanish <traductores@es.gnome.org>\n"
 "MIME-Version: 1.0\n"
@@ -16,6 +16,18 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.4\n"
 "Plural-Forms:  nplurals=2; plural=(n != 1);\n"
+
+#: ../gbrainy.desktop.in.h:1
+msgid "A brain teaser game for fun and keep your brain trained"
+msgstr "Un juego para divertirse y mantener el cerebro entrenado"
+
+#: ../gbrainy.desktop.in.h:2
+msgid "Game"
+msgstr "Juego"
+
+#: ../gbrainy.desktop.in.h:3 ../src/gbrainy.glade.h:20
+msgid "gbrainy"
+msgstr "gbrainy"
 
 #: ../src/gbrainy.glade.h:1
 msgid "All Games and Trainers (Logic, Mathematical and Memory)"
@@ -93,10 +105,6 @@ msgstr "_Aceptar"
 msgid "_Tip"
 msgstr "_Pista"
 
-#: ../src/gbrainy.glade.h:20
-msgid "gbrainy"
-msgstr "gbrainy"
-
 #. Name of persons or people that translated the application
 #: ../src/gbrainy.cs:115
 msgid "translator-credits"
@@ -122,7 +130,7 @@ msgstr "Respuesta incorrecta."
 
 #: ../src/gbrainy.cs:202
 msgid ""
-"Once you have an answer type it in \"Your Answer:\" entry box and press the "
+"Once you have an answer type it in \"Your answer:\" entry box and press the "
 "\"Ok\" button."
 msgstr ""
 "Una vez tengas las respuesta tecléala en «Respuesta:» y pulsa el botón "
@@ -170,8 +178,8 @@ msgstr "Círculos en un rectángulo"
 #: ../src/PuzzleCirclesRectangle.cs:31
 msgid ""
 "What is the maximum number of circles (as the one showed) that can be fit in "
-"the rectangle below?"
-msgstr "¿Cuantos círculos (como el mostrado) puedes incluir dentro del rectángulo inferior?"
+"the square below?"
+msgstr "¿Cuantos círculos (como el mostrado) puedes incluir dentro del cuadrado inferior?"
 
 #: ../src/PuzzleCirclesRectangle.cs:35
 msgid "You can fit more than 25 circles."
@@ -185,11 +193,11 @@ msgstr "5 unidades"
 msgid "1 unit"
 msgstr "1 unidad"
 
-#: ../src/PuzzleMatrixNumbers.cs:38
+#: ../src/PuzzleMatrixNumbers.cs:39
 msgid "Matrix Numbers"
 msgstr "Números en la matriz"
 
-#: ../src/PuzzleMatrixNumbers.cs:42
+#: ../src/PuzzleMatrixNumbers.cs:43
 msgid ""
 "The numbers in the matrix follow a logic. Which is the number that should "
 "replace the question mark?"
@@ -197,11 +205,11 @@ msgstr ""
 "Los números de la matriz inferior siguen una lógica. ¿Cuál es el numero que "
 "ha de sustituir el interrogante?"
 
-#: ../src/PuzzleMatrixNumbers.cs:46
+#: ../src/PuzzleMatrixNumbers.cs:47
 msgid "The logic is arithmetical and works vertically."
 msgstr "La lógica es aritmética y funciona verticalmente."
 
-#: ../src/PuzzleMatrixNumbers.cs:55
+#: ../src/PuzzleMatrixNumbers.cs:56
 msgid ""
 "The fourth row is calculated multiplying the first two rows and adding the "
 "third row."
@@ -209,7 +217,7 @@ msgstr ""
 "La cuarta fila se calcula multiplicando las dos primeras filas y añadiendo "
 "la tercera fila."
 
-#: ../src/PuzzleMatrixNumbers.cs:58
+#: ../src/PuzzleMatrixNumbers.cs:59
 msgid ""
 "The fourth row is calculated multiplying the first two rows and subtracting "
 "the third row."
@@ -217,7 +225,7 @@ msgstr ""
 "La cuarta fila se calcula multiplicando las dos primeras filas y restando la "
 "tercera fila."
 
-#: ../src/PuzzleMatrixNumbers.cs:61
+#: ../src/PuzzleMatrixNumbers.cs:62
 msgid ""
 "The fourth row is calculated adding the first two rows and subtracting the "
 "third row."
@@ -320,11 +328,7 @@ msgstr ""
 "Las letras alrededor de los cuadrados siguen un orden lógico. ¿Qué letra "
 "debe reemplazar el interrogante en el ultimo cuadrado?"
 
-#: ../src/PuzzleAlphabeticSequence.cs:40
-msgid "The logic works clockwise."
-msgstr "La lógica funciona en sentido horario."
-
-#: ../src/PuzzleAlphabeticSequence.cs:46
+#: ../src/PuzzleAlphabeticSequence.cs:42
 #, csharp-format
 msgid ""
 "Every letter is calculated taking the position in the alphabet of the "
@@ -347,34 +351,32 @@ msgstr ""
 "interrogante?"
 
 #: ../src/PuzzleNumericSequence.cs:40
-msgid "The sequence is built using the natural numbers from 1 to 6 as a source."
-msgstr ""
-"La secuencia se construye usando los números naturales del 1 al 6 como "
-"fuente."
+msgid "Every number in the sequence is related to the previous one."
+msgstr "Cada numero de la secuencia está relacionado con el anterior."
 
 #: ../src/PuzzleNumericSequence.cs:49
 msgid ""
-"Starting by the number 1, every number in the sequence is the result of "
-"multiplying it by the previous number."
+"Every number in the sequence is the result of subtracting 1 to the previous "
+"number and multiplying it by 2."
 msgstr ""
-"Comenzando por el numero 1, cada numero de la secuencia es el resultado de "
-"multiplicarlo por el numero anterior."
+"Cada numero de la secuencia es el resultado de restar 1 al número anterior "
+"y multiplicarlo por 2."
 
 #: ../src/PuzzleNumericSequence.cs:52
 msgid ""
-"Starting by the number 1, every number in the sequence is the result of "
-"subtracting it to the previous result and multiplying it by 2."
+"Every number in the sequence is the result of adding 1 to the previous "
+"number and multiplying it by 3."
 msgstr ""
-"Comenzando por el numero 1, cada numero de la secuencia es el resultado de "
-"restarlo al resultado previo y multiplicarlo por dos."
+"Cada numero de la secuencia es el resultado de sumar 1 al número anterior "
+"y multiplicarlo por 3."
 
-#: ../src/PuzzleNumericSequence.cs:56
+#: ../src/PuzzleNumericSequence.cs:55
 msgid ""
-"Starting by the number 1, every number in the sequence is the result of "
-"adding it to the previous result and multiplying it by 2."
+"Every number in the sequence is the result of subtracting 2 to the previous "
+"number and multiplying it by -2."
 msgstr ""
-"Comenzando por el numero 1, cada numero de la secuencia es el resultado de "
-"añadirlo al resultado previo y multiplicarlo por dos."
+"Cada numero de la secuencia es el resultado de restar 2 al número anterior "
+"y multiplicarlo por -2."
 
 #: ../src/PuzzleSquares.cs:29
 msgid "Squares"
@@ -385,8 +387,12 @@ msgid "How many squares of any size can you count of in the figure below?"
 msgstr "¿Cuantos cuadrados de cualquier tamaño puedes contar en la figura inferior?"
 
 #: ../src/PuzzleSquares.cs:37
-msgid "A square can be also built from other squares."
-msgstr "Un cuadrado también se puede construir usando otros cuadrados."
+msgid ""
+"A square is a rectangle having all four sides of equal length. A square can "
+"be also built from other squares."
+msgstr ""
+"Un cuadrado es un rectángulo que tiene los cuatro lados de igual longitud. Un cuadrado también puede "
+"construirse a partir de otros cuadrados."
 
 #: ../src/PuzzleSquares.cs:46
 msgid ""
@@ -424,19 +430,19 @@ msgstr "Cada grupo de {0} números suma exactamente {1}."
 
 #: ../src/PuzzleNumericRelation.cs:55
 msgid ""
-"Divide the sequence in groups of tree numbers. Every third number is "
+"Divide the sequence in groups of three numbers. Every third number is "
 "calculated by multiplying the two previous ones."
 msgstr ""
-"Divide la secuencia en grupos de tres números. Cada tercer numero se calcula "
-"multiplicando los dos anteriores."
+"Divide la secuencia en grupos de tres números. Cada tercer numero se "
+"calcula multiplicando los dos anteriores."
 
 #: ../src/PuzzleNumericRelation.cs:59
 msgid ""
-"Divide the sequence in groups of tree numbers. Every third number is "
+"Divide the sequence in groups of three numbers. Every third number is "
 "calculated by subtracting the second number from the first."
 msgstr ""
-"Divide la secuencia en grupos de tres números. Cada tercer numero se calcula "
-"restando los dos anteriores del primero."
+"Divide la secuencia en grupos de tres números. Cada tercer numero se "
+"calcula restando el segundo número del primero."
 
 #: ../src/PuzzleNextFigure.cs:40
 msgid "Next figure"
@@ -796,8 +802,8 @@ msgid ""
 "In the last figure, in how many regions is the circle divided when all the "
 "dots are connected?"
 msgstr ""
-"En la última figura, ¿en cuántas regiones está dividido el círculo cuando todos los "
-"puntos están conectados?"
+"En la última figura, ¿en cuántas regiones está dividido el círculo cuando "
+"todos los puntos están conectados?"
 
 #: ../src/PuzzleDivideCircle.cs:110 ../src/PuzzleDivideCircle.cs:125
 #: ../src/PuzzleDivideCircle.cs:142
@@ -807,11 +813,11 @@ msgstr "Tiene {0} regiones"
 
 #: ../src/MathGreaterDivisor.cs:31
 msgid "Greater Divisor"
-msgstr ""
+msgstr "Máximo común divisor"
 
 #: ../src/MathGreaterDivisor.cs:39
 msgid "Which of the possible divisors is the greater that divides all the numbers?"
-msgstr ""
+msgstr "¿Cuál de los divisores posibles es el mayor que divide a todos los números?"
 
 #: ../src/MathGreaterDivisor.cs:189
 msgid "Numbers"
@@ -820,4 +826,45 @@ msgstr "Números"
 #: ../src/MathGreaterDivisor.cs:204
 msgid "Possible divisors"
 msgstr "Posibles divisores"
+
+#: ../src/MathTwoNumbers.cs:31
+msgid "Two numbers"
+msgstr "Dos números"
+
+#: ../src/MathTwoNumbers.cs:39
+#, csharp-format
+msgid "Which two numbers when added are {0} and when multiplied are {1}?"
+msgstr "¿Qué dos numeros al sumarse dan {0} y al multiplicarse dan {1}?"
+
+#: ../src/MathTwoNumbers.cs:50
+#, csharp-format
+msgid "{0} and {1}"
+msgstr "{0} y {1}"
+
+#: ../src/MathTwoNumbers.cs:63
+#, csharp-format
+msgid "number1 + number2 = {0}"
+msgstr "número1 + número2 = {0}"
+
+#: ../src/MathTwoNumbers.cs:66
+#, csharp-format
+msgid "number1 * number2 = {0}"
+msgstr "número1 * número2 = {0}"
+
+#: ../src/PuzzleMatrixGroups.cs:32
+msgid "Matrix groups"
+msgstr "Grupos de matriz"
+
+#: ../src/PuzzleMatrixGroups.cs:36
+msgid "One of the black numbers in the matrix should be blue. Which one?"
+msgstr "Uno de los números de la matriz debería ser azul. ¿Cuál?"
+
+#: ../src/PuzzleMatrixGroups.cs:40
+msgid "All the blue numbers share an arithmetical property."
+msgstr "Todos los números azules comparten una propiedad aritmética."
+
+#: ../src/PuzzleMatrixGroups.cs:46
+#, csharp-format
+msgid "Every blue number can be divided by {0}."
+msgstr "Cada número azul se puede dividir por {0}."
 
