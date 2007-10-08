@@ -48,7 +48,7 @@ public class PuzzleBalance : Game
 	public override string Answer {
 		get { 
 			string answer = base.Answer + " ";
-			answer += Catalog.GetString ("Every triangle counts as 1, each diamon as a 2 and each square as 3.");
+			answer += Catalog.GetString ("Every triangle counts as 1, each diamond as a 2 and each square as 3.");
 			return answer;
 		}
 	}
@@ -74,7 +74,7 @@ public class PuzzleBalance : Game
 		gr.Stroke ();
 	}
 
-	private void DrawDiamon (Cairo.Context gr, double x, double y, double size)
+	private void DrawDiamond (Cairo.Context gr, double x, double y, double size)
 	{
 		gr.MoveTo (x, y);
 		gr.LineTo (x - (size / 2), y + (size / 2));
@@ -101,7 +101,7 @@ public class PuzzleBalance : Game
 				DrawTriangle (gr, fig_x, fig_y, 0.05);
 				break;
 			case 2:
-				DrawDiamon (gr, fig_x, fig_y, 0.05);
+				DrawDiamond (gr, fig_x, fig_y, 0.05);
 				break;
 			case 3:
 				gr.Rectangle (fig_x - 0.02, fig_y + 0.005, 0.045, 0.045);
