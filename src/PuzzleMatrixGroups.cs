@@ -53,7 +53,7 @@ public class PuzzleMatrixGroups : Game
 		numbers = new int [rows * columns];
 		bool completed = false;
 		int count;
-		int good = random.Next (6);
+		int good = 1 + random.Next (5);
 
 		switch (random.Next (2)) {
 		case 0:
