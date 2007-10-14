@@ -95,7 +95,7 @@ public class CustomGameDialog
 					type = Catalog.GetString ("Memory");
 					break;
 				case Game.Types.MathTrainer:
-					type = Catalog.GetString ("Math");
+					type = Catalog.GetString ("Mental Calculation");
 					break;
 				default:
 					type = string.Empty;
