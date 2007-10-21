@@ -114,12 +114,24 @@ public class MemoryColouredText : Memory
 
 	public override void DrawPossibleAnswers (Cairo.Context gr, int area_width, int area_height)
 	{
-	}	
+	}
+
+
+	public override void DrawObjectToMemorizeFading (Cairo.Context gr, int area_width, int area_height)
+	{
+		base.DrawObjectToMemorizeFading (gr, area_width, area_height);
+		DrawObject (gr, area_width, area_height, alpha);
+	}
 	
 	public override void DrawObjectToMemorize (Cairo.Context gr, int area_width, int area_height)
 	{
-		double x= DrawAreaX + 0.2, y = DrawAreaY + 0.2;
 		base.DrawObjectToMemorize (gr, area_width, area_height);
+		DrawObject (gr, area_width, area_height, alpha);
+	}
+
+	public void DrawObject (Cairo.Context gr, int area_width, int area_height, double alpha)
+	{
+		double x= DrawAreaX + 0.2, y = DrawAreaY + 0.2;
 		Cairo.Color color = new Cairo.Color (0, 0, 0);
 		string name = null;
 
@@ -127,6 +139,7 @@ public class MemoryColouredText : Memory
 		{
 			GetColor ((Colors) i, out name, out color);
 			color = (Cairo.Color) colors_mapping[i];
+			color = new Cairo.Color (color.R, color.G, color.B, alpha);
 			gr.MoveTo (x, y);
 			gr.Color = color;
 			gr.ShowText (name);
@@ -140,6 +153,7 @@ public class MemoryColouredText : Memory
 			}
 		}
 	}
+
 }
 
 

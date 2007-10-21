@@ -115,7 +115,7 @@ public class PuzzleMatrixGroups : Game
 		for (int column = 0; column < columns; column++) {
 			for (int row = 0; row < rows; row++) {
 				
-				gr.Color = new Cairo.Color (0, 0, 0);
+				gr.Color = DefaultDrawingColor;
 				gr.Rectangle (DrawAreaX + row * rect_w, DrawAreaY + column * rect_h, rect_w, rect_h);
 				gr.Stroke ();
 				gr.MoveTo (0.04 + DrawAreaX + column * rect_w, (rect_h / 2) + DrawAreaY + row * rect_h);
@@ -123,7 +123,7 @@ public class PuzzleMatrixGroups : Game
 				if (numbers[column + (row * 4)] % divisor == 0 && good_pos != column + (row * 4))
 					gr.Color = new Cairo.Color (0, 0, 0.8);
 				else
-					gr.Color = new Cairo.Color (0, 0, 0);
+					gr.Color = DefaultDrawingColor;
 	
 				gr.ShowText ( (numbers[column + (row * 4)]).ToString() );
 				gr.Stroke ();

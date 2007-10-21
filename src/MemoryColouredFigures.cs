@@ -44,6 +44,7 @@ public class MemoryColouredFigures : Memory
 	private Cairo.Color color1 = new Cairo.Color (0, 0, 0.9);					
 	private Cairo.Color color2 = new Cairo.Color (0, 0, 0.4);
 	private Cairo.Color color3 = new Cairo.Color (0, 0.5, 0);
+	private int color_sheme;
 
 	public override string Name {
 		get {return Catalog.GetString ("Coloured Figures");}
@@ -62,19 +63,8 @@ public class MemoryColouredFigures : Memory
 	public override void Initialize ()
 	{
 		squares_colours = new SquareColor [squares * answers];
-
-		switch (random.Next (2)) {
-		case 0:
-			color1 = new Cairo.Color (0, 0, 0.9);					
-			color2 = new Cairo.Color (0, 0, 0.4);
-			color3 = new Cairo.Color (0, 0.5, 0);
-			break;
-		case 1:
-			color1 = new Cairo.Color (0.8, 0, 0);					
-			color2 = new Cairo.Color (0, 0.8, 0);
-			color3 = new Cairo.Color (0.4, 0.0, 0.5);
-			break;
-		}
+		color_sheme = random.Next (2);
+		SetColours (1);
 		
 		for (int i = 0; i < squares; i++)	
 			squares_colours[i] = (SquareColor) random.Next ((int) SquareColor.Length);
@@ -95,6 +85,22 @@ public class MemoryColouredFigures : Memory
 		}
 
 		base.Initialize ();
+	}
+
+	private void SetColours (double alpha)
+	{
+		switch (color_sheme) {
+		case 0:
+			color1 = new Cairo.Color (0, 0, 0.9, alpha);
+			color2 = new Cairo.Color (0, 0, 0.4, alpha);
+			color3 = new Cairo.Color (0, 0.5, 0, alpha);
+			break;
+		case 1:
+			color1 = new Cairo.Color (0.8, 0, 0, alpha);
+			color2 = new Cairo.Color (0, 0.8, 0, alpha);
+			color3 = new Cairo.Color (0.4, 0.0, 0.5, alpha);
+			break;
+		}
 	}
 
 	private void Randomize (SquareColor []colours, int source, int target)
@@ -133,10 +139,21 @@ public class MemoryColouredFigures : Memory
 				done = true;
 		}
 	}
+
+	public override void DrawObjectToMemorizeFading (Cairo.Context gr, int area_width, int area_height)
+	{
+		base.DrawObjectToMemorizeFading (gr, area_width, area_height);
+		SetColours (alpha);
+		gr.Color = new Color (DefaultDrawingColor.R, DefaultDrawingColor.G, DefaultDrawingColor.B, alpha);
+		DrawSquare (gr, DrawAreaX + 0.3, DrawAreaY + 0.1, squares_colours, 0);			
+	}
 	
 	public override void DrawPossibleAnswers (Cairo.Context gr, int area_width, int area_height)
 	{
 		double x = DrawAreaX + 0.05, y = DrawAreaY;
+	
+		gr.Color = new Color (DefaultDrawingColor.R, DefaultDrawingColor.G, DefaultDrawingColor.B, 1);
+		SetColours (1);
 
 		for (int i = 0; i < answers_order.Count; i++) {
 			if (i == 2) {

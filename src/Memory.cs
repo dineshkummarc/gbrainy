@@ -27,10 +27,14 @@ using Gtk;
 public abstract class Memory : Game
 {
 	protected int time_left;
-	protected const int total_time = 5 /*seconds*/ * 10;
+	protected const int total_time = 4 /*seconds*/ * 10;
 	protected System.Timers.Timer timer;
 	private bool request_answer = false;
 	private bool buttons_active;
+	protected bool shade = false;
+	protected const int shading_time = 15;
+	private LinearGradient gradient = null;
+	protected double alpha;
 
 	public override bool ButtonsActive {
 		get { return buttons_active;}
@@ -52,12 +56,20 @@ public abstract class Memory : Game
 		timer.Interval = (1 * 100); // 0.1 seconds
 		timer.Enabled = true;
 		buttons_active = false;
+		alpha = 1;
 	}
 
 	private void TimerUpdater (object source, ElapsedEventArgs e)
 	{
+		if (shade == false && time_left == 0) {
+			time_left = shading_time;
+			shade = true;
+			return;	
+		}	
+
 		if (time_left == 0) {
 			lock (this) {
+				shade = false;
 				timer.Enabled = false;
 				request_answer = true;
 				buttons_active = true;
@@ -88,6 +100,11 @@ public abstract class Memory : Game
 		DrawBackground (gr);
 		PrepareGC (gr);
 
+		if (shade) {
+			DrawObjectToMemorizeFading (gr, area_width, area_height);
+			return;
+		}
+
 		if (request_answer) {
 			DrawPossibleAnswers (gr, area_width, area_height);
 		} else {
@@ -104,6 +121,12 @@ public abstract class Memory : Game
 	}
 
 	public virtual void DrawPossibleAnswers (Cairo.Context gr, int area_width, int area_height) {}
+	public virtual void DrawObjectToMemorizeFading (Cairo.Context gr, int area_width, int area_height) 
+	{
+		if (alpha > 0 )
+			alpha -= (1 / (double) shading_time);
+
+	}
 
 	public virtual void DrawObjectToMemorize (Cairo.Context gr, int area_width, int area_height) 
 	{
@@ -117,8 +140,9 @@ public abstract class Memory : Game
 	{
 		double width = 0.04, height = 0.6;
 		double w = 0.003, h = 0.003;
-		
-		gr.Save ();	
+
+		gr.Save ();
+		gr.Color = new Color (0, 0, 0);	
 		gr.MoveTo (x, y);
 		gr.LineTo (x, y + height);
 		gr.LineTo (x + width, y + height);
@@ -133,15 +157,21 @@ public abstract class Memory : Game
 		y += height * (100 - percentage) / 100;
 		height *= percentage / 100;
 
-		gr.Color = new Cairo.Color (1, 0, 0);
+		if (gradient == null) {
+			gradient = new LinearGradient (0, 0, 0, 1);
+			gradient.AddColorStop (1, new Color (0.2, 0, 0, 1));
+			gradient.AddColorStop (0, new Color (1, 0, 0, 1));
+		}
+
+		gr.Source = gradient;			
 		gr.MoveTo (x, y);
 		gr.LineTo (x, y + height);
 		gr.LineTo (x + width, y + height);
 		gr.LineTo (x + width, y);
 		gr.LineTo (x, y);
-		gr.Fill ();
+		gr.FillPreserve ();
+		gr.Stroke ();
 		gr.Restore ();
-		
 	}
 
 }

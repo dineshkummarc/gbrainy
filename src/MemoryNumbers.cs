@@ -112,7 +112,7 @@ public class MemoryNumbers : Memory
 	public override void DrawPossibleAnswers (Cairo.Context gr, int area_width, int area_height)
 	{
 		double x = DrawAreaX + 0.05, y = DrawAreaY;
-
+		gr.Color = DefaultDrawingColor;
 		for (int i = 0; i < answers_order.Count; i++) {
 			if (i == 2) {
 				y += 0.4;
@@ -124,7 +124,15 @@ public class MemoryNumbers : Memory
 			gr.Stroke ();
 			x += 0.35;
 		}
-	}	
+	}
+
+
+	public override void DrawObjectToMemorizeFading (Cairo.Context gr, int area_width, int area_height)
+	{
+		base.DrawObjectToMemorizeFading (gr, area_width, area_height);
+		gr.Color = new Color (DefaultDrawingColor.R, DefaultDrawingColor.G, DefaultDrawingColor.B, alpha);
+		DrawSquare (gr, DrawAreaX + 0.3, DrawAreaY + 0.1, numbers, 0);
+	}
 	
 	public override void DrawObjectToMemorize (Cairo.Context gr, int area_width, int area_height)
 	{
@@ -134,7 +142,6 @@ public class MemoryNumbers : Memory
 
 	private void DrawSquare (Cairo.Context gr, double x, double y, int[] nums, int index)
 	{
-
 		for (int column = 0; column < columns; column++) {
 			for (int row = 0; row < rows; row++) {
 				gr.Rectangle (x + row * rect_w, y + column * rect_h, rect_w, rect_h);

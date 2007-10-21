@@ -33,6 +33,8 @@ abstract public class Game
 
 	private bool draw_answer;
 	private gbrainy application;
+	private Cairo.Color default_color;
+	private Cairo.Color default_background;
 	protected string right_answer;
 	protected Random random;
 
@@ -41,6 +43,8 @@ abstract public class Game
 		random = new Random ();
 		application = null;
 		draw_answer = false;
+		default_color = new Cairo.Color (0, 0, 0);
+		default_background = new Color (1, 1, 1);
 	}
 
 	public abstract string Question {
@@ -99,6 +103,10 @@ abstract public class Game
 		get {return 0.005; }
 	}
 
+	public virtual Cairo.Color DefaultDrawingColor {
+		get {return default_color; }
+	}
+	
 	public abstract void Initialize ();
 	public abstract void Draw (Cairo.Context gr, int width, int height);
 	public virtual void Finish () {}
@@ -116,7 +124,7 @@ abstract public class Game
 	virtual public void PrepareGC (Cairo.Context gr)
 	{
 		gr.LineWidth = LineWidth;
-		gr.Color = new Cairo.Color (0.1, 0.1, 0.1);
+		gr.Color = DefaultDrawingColor;
 		gr.SelectFontFace ("Sans", FontSlant.Normal, FontWeight.Bold);
 		gr.SetFontSize (0.03);
 	}
@@ -130,7 +138,7 @@ abstract public class Game
 
 		gr.Save ();
 
-		gr.Color = new Cairo.Color (1, 1, 1);
+		gr.Color = default_background;
 		gr.Paint ();	
 		
 		gr.Color = new Cairo.Color (0.8, 0.8, 0.8);
