@@ -1,5 +1,6 @@
 /*
  * Copyright (C) 2007 Jordi Mas i Hernàndez <jmas@softcatala.org>
+ * Copyright (C) 2007 Javier Mª Mora Merchán <jamarier@gmail.com>
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License as
@@ -33,6 +34,7 @@ public class PuzzleMatrixNumbers : Game
 
 	private int [] numbers;
 	private Operation operation;
+	private bool orientation;
 	private const int rows = 4, columns = 4;
 
 	public override string Name {
@@ -44,24 +46,46 @@ public class PuzzleMatrixNumbers : Game
 	}
 
 	public override string Tip {
-		get { return Catalog.GetString ("The logic is arithmetical and works vertically.");}
+		get { 
+			if (orientation) 
+				return Catalog.GetString ("The logic is arithmetical and works vertically.");
+			else 
+				return Catalog.GetString ("The logic is arithmetical and works horizontally.");
+		}
 	}
 
 	public override string Answer {
 		get { 
 			string answer = base.Answer + " ";
+			string line,lines;
+			string [] operationname = new String[2];
+			
+			if (orientation) {
+				line  = Catalog.GetString ("row");
+				lines = Catalog.GetString ("rows");
+			}
+			else {
+				line  = Catalog.GetString("column");
+				lines = Catalog.GetString("columns");
+			}
+
 
 			switch (operation) {
 			case Operation.MultiplyAndAdd:
-				answer += Catalog.GetString ("The fourth row is calculated multiplying the first two rows and adding the third row.");
+				operationname[0] = Catalog.GetString("multiplying");
+				operationname[1] = Catalog.GetString("adding");
 				break;
 			case Operation.MutilplyAndSubs:
-				answer += Catalog.GetString ("The fourth row is calculated multiplying the first two rows and subtracting the third row.");
+				operationname[0] = Catalog.GetString("multiplying");
+				operationname[1] = Catalog.GetString("subtracting");
 				break;
 			case Operation.AddAndSubs:
-				answer += Catalog.GetString ("The fourth row is calculated adding the first two rows and subtracting the third row.");
+				operationname[0] = Catalog.GetString("adding");
+				operationname[1] = Catalog.GetString("subtracting");
 				break;
 			}
+
+			answer += String.Format(Catalog.GetString("The fourth {0} is calculated {1} the first two {2} and {3} the third {4}."),line, operationname[0], lines, operationname[1], line);
 			return answer;
 		}
 	}
@@ -69,29 +93,42 @@ public class PuzzleMatrixNumbers : Game
 	public override void Initialize ()
 	{
 		operation = (Operation) random.Next ((int) Operation.LastOperation);
+		orientation = (random.Next ((int) 2) == 0) ? true : false;
 		numbers = new int [4 * 4];
+
+		int coordinateA, coordinateB;
+
+		if (orientation) {
+			coordinateA=4; 
+			coordinateB=1;
+		}
+		else {
+			coordinateA=1;
+			coordinateB=4;
+		}
+
 		
 		for (int n = 0; n < 3; n++)
-			for (int i = 0; i < 4; i++)
-				numbers[(n*4) + i] = random.Next (10) + random.Next (5);
+			for (int i = 0; i < 4; i++) 
+				numbers[n*coordinateA + i*coordinateB] = random.Next (10) + random.Next (5);
 
 		for (int i = 0; i < 4; i++) {
 			switch (operation) {
 			case Operation.MultiplyAndAdd:
-				numbers[(3 * 4) + i] = (numbers [0 + i ] * numbers[(4 * 1) + i]) + numbers[(4 * 2) + i];
+				numbers[3*coordinateA + i*coordinateB] = (numbers [0*coordinateA + i*coordinateB ] * numbers[1*coordinateA + i*coordinateB]) + numbers[2*coordinateA + i*coordinateB];
 				break;
 			case Operation.MutilplyAndSubs:
-				numbers[(3 * 4) + i] = (numbers [0 + i ] * numbers[(4 * 1) + i]) - numbers[(4 * 2) + i];
+				numbers[3*coordinateA + i*coordinateB] = (numbers [0*coordinateA + i*coordinateB ] * numbers[1*coordinateA + i*coordinateB]) - numbers[2*coordinateA + i*coordinateB];
 				break;
 			case Operation.AddAndSubs:
-				numbers[(3 * 4) + i] = (numbers [0 + i ] + numbers[(4 * 1) + i]) - numbers[(4 * 2) + i];
+				numbers[3*coordinateA + i*coordinateB] = (numbers [0*coordinateA + i*coordinateB ] + numbers[1*coordinateA + i*coordinateB]) - numbers[2*coordinateA + i*coordinateB];
 				break;
 			default:
 				break;
 			}			
 		}
 
-		right_answer = numbers[(3 * 4) + 3].ToString ();
+		right_answer = numbers[3*coordinateA + 3*coordinateB].ToString ();
 	}
 
 	public override void Draw (Cairo.Context gr, int area_width, int area_height)
