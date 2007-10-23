@@ -28,7 +28,7 @@ public class MathGreaterDivisor : Game
 	private int []answers;
 
 	public override string Name {
-		get {return Catalog.GetString ("Greater Divisor");}
+		get {return Catalog.GetString ("Greater divisor");}
 	}
 
 	public override Types Type {

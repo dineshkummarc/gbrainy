@@ -34,6 +34,7 @@ GBRAINY_CSDISTFILES =				\
 	$(srcdir)/PuzzleDivideCircle.cs		\
 	$(srcdir)/MathGreaterDivisor.cs		\
 	$(srcdir)/MathTwoNumbers.cs		\
+	$(srcdir)/MathWhichNumber.cs		\
 	$(srcdir)/PuzzleMatrixGroups.cs		\
 	$(srcdir)/PuzzleBalance.cs		\
 	$(srcdir)/gbrainy.cs			
