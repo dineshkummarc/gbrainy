@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gbrainy\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-10-08 17:56+0200\n"
+"POT-Creation-Date: 2007-10-23 19:36+0200\n"
 "PO-Revision-Date: 2007-10-07 21:55+0200\n"
 "Last-Translator: Jordi Mas <jmas@softcatala.org>\n"
 "Language-Team: Catalan\n"
@@ -35,9 +35,10 @@ msgstr "Joc"
 msgid "gbrainy"
 msgstr "gbrainy"
 
+#
 #: ../src/gbrainy.glade.h:1
-msgid "All Games and Trainers (Logic, Mathematical and Memory)"
-msgstr "Tots els jocs i entrenadors (lògic, matemàtic i de memòria)"
+msgid "All Games and Trainers (Logic, Mental Calculation and Memory)"
+msgstr "Tots els jocs i entrenadors (lògic, càlcul mental i memòria)"
 
 #: ../src/gbrainy.glade.h:2
 msgid "Average time per game:"
@@ -47,8 +48,9 @@ msgstr "Temps de mitjana per partida:"
 msgid "Custom Game"
 msgstr "Partida personalitzada"
 
+#
 #: ../src/gbrainy.glade.h:4
-msgid "Custom game selection..."
+msgid "Custom Game Selection..."
 msgstr "Selecció de la partida personalitzada..."
 
 #: ../src/gbrainy.glade.h:5
@@ -65,12 +67,13 @@ msgid "Logic Puzzles Only"
 msgstr "Només trencaclosques lògics"
 
 #: ../src/gbrainy.glade.h:8
-msgid "Mathematical Trainers Only"
-msgstr "Només entrenadors matemàtics"
-
-#: ../src/gbrainy.glade.h:9
 msgid "Memory Trainers Only"
 msgstr "Només entrenadors de memòria"
+
+#
+#: ../src/gbrainy.glade.h:9
+msgid "Mental Calculation Trainers Only"
+msgstr "Només entrenadors de càlcul mental"
 
 #: ../src/gbrainy.glade.h:10
 msgid "New Game"
@@ -88,9 +91,10 @@ msgstr "Selecciona-ho tot"
 msgid "Time played:"
 msgstr "Temps de joc:"
 
+#
 #: ../src/gbrainy.glade.h:14
-msgid "Trainers Only (Mathematical and Memory)"
-msgstr "Només entrenadors (matemàtics i de memòria)"
+msgid "Trainers Only (Mental Calculation and Memory)"
+msgstr "Només entrenadors (càlcul mental i memòria)"
 
 #: ../src/gbrainy.glade.h:15
 msgid "Unselect all"
@@ -170,7 +174,7 @@ msgid "Use the Game menu to start a new game"
 msgstr "Useu el menú Joc per començar un joc nou"
 
 #
-#: ../src/Game.cs:52
+#: ../src/Game.cs:56
 #, csharp-format
 msgid "The right answer is {0}."
 msgstr "La resposta correcta és {0}."
@@ -226,13 +230,13 @@ msgstr "5 unitats"
 msgid "1 unit"
 msgstr "1 unitat"
 
-#: ../src/PuzzleMatrixNumbers.cs:39
+#: ../src/PuzzleMatrixNumbers.cs:41
 msgid "Matrix Numbers"
 msgstr "Nombres a la matriu"
 
 #
 #
-#: ../src/PuzzleMatrixNumbers.cs:43
+#: ../src/PuzzleMatrixNumbers.cs:45
 msgid ""
 "The numbers in the matrix follow a logic. Which is the number that should "
 "replace the question mark?"
@@ -241,33 +245,53 @@ msgstr ""
 "ha de reemplaçar l'interrogant?"
 
 #
-#: ../src/PuzzleMatrixNumbers.cs:47
+#: ../src/PuzzleMatrixNumbers.cs:51
 msgid "The logic is arithmetical and works vertically."
 msgstr "La lògica és aritmètica i funciona verticalment."
 
-#: ../src/PuzzleMatrixNumbers.cs:56
-msgid ""
-"The fourth row is calculated multiplying the first two rows and adding the "
-"third row."
-msgstr ""
-"La quarta fila es calcula multiplicant les primeres dues files i afegint-hi "
-"la tercera fila."
+#
+#
+#: ../src/PuzzleMatrixNumbers.cs:53
+msgid "The logic is arithmetical and works horizontally."
+msgstr "La lògica és aritmètica i funciona verticalment."
 
-#: ../src/PuzzleMatrixNumbers.cs:59
-msgid ""
-"The fourth row is calculated multiplying the first two rows and subtracting "
-"the third row."
-msgstr ""
-"La quarta fila es calcula multiplicant les primeres dues files i restant-hi "
-"la tercera fila."
+#
+#: ../src/PuzzleMatrixNumbers.cs:64
+msgid "row"
+msgstr "fila"
 
-#: ../src/PuzzleMatrixNumbers.cs:62
+#
+#: ../src/PuzzleMatrixNumbers.cs:65
+msgid "rows"
+msgstr "files"
+
+#: ../src/PuzzleMatrixNumbers.cs:68
+msgid "column"
+msgstr "columna"
+
+#: ../src/PuzzleMatrixNumbers.cs:69
+msgid "columns"
+msgstr "columnes"
+
+#: ../src/PuzzleMatrixNumbers.cs:75 ../src/PuzzleMatrixNumbers.cs:79
+msgid "multiplying"
+msgstr "multiplicant"
+
+#
+#: ../src/PuzzleMatrixNumbers.cs:76 ../src/PuzzleMatrixNumbers.cs:83
+msgid "adding"
+msgstr "afegint"
+
+#: ../src/PuzzleMatrixNumbers.cs:80 ../src/PuzzleMatrixNumbers.cs:84
+msgid "subtracting"
+msgstr "restant"
+
+#: ../src/PuzzleMatrixNumbers.cs:88
+#, csharp-format
 msgid ""
-"The fourth row is calculated adding the first two rows and subtracting the "
-"third row."
+"The fourth {0} is calculated {1} the first two {2} and {3} the third {4}."
 msgstr ""
-"La quarta fila es calcula sumant les primeres dues files i restant-hi la "
-"tercera fila."
+"La quarta {0} es calcula {1} les primeres dues {2} i {3} la tercera {4}."
 
 #: ../src/PuzzlePencil.cs:33
 msgid "Pencil"
@@ -285,7 +309,7 @@ msgstr ""
 #: ../src/PuzzlePencil.cs:168 ../src/PuzzleSquareDots.cs:162
 #: ../src/PuzzleSquareDots.cs:167 ../src/PuzzleSquareDots.cs:172
 #: ../src/PuzzleNextFigure.cs:107 ../src/PuzzleNextFigure.cs:112
-#: ../src/PuzzleNextFigure.cs:117 ../src/MemoryColouredFigures.cs:148
+#: ../src/PuzzleNextFigure.cs:117 ../src/MemoryColouredFigures.cs:165
 #: ../src/MemoryNumbers.cs:123
 msgid "Figure"
 msgstr "Figura"
@@ -578,20 +602,20 @@ msgstr "Quin és el resultat de l'operació aritmètica?"
 
 #
 #
-#: ../src/MemoryColouredFigures.cs:49
+#: ../src/MemoryColouredFigures.cs:50
 msgid "Coloured Figures"
 msgstr "Figures de colors"
 
 #
 #
-#: ../src/MemoryColouredFigures.cs:54
+#: ../src/MemoryColouredFigures.cs:55
 msgid "Memorize the following figure in the time given"
 msgstr "Memoritzeu la següent figura en el temps donat"
 
 #
 #
 #
-#: ../src/MemoryColouredFigures.cs:59
+#: ../src/MemoryColouredFigures.cs:60
 msgid "Which of these figures was the one previously shown?"
 msgstr "Quina de les següents figures era la mostrada anteriorment?"
 
@@ -686,11 +710,11 @@ msgstr "Cub"
 #: ../src/PuzzleCube.cs:42
 #, csharp-format
 msgid ""
-"When the figure below is folded as a cube, which face it is opposite to the "
-"face with a {0} draw on it (answer the number written on the face)?"
+"When folded as a cube, which face on the figure is opposite the face with a "
+"{0} drawn on it (answer with number written on face)?"
 msgstr ""
-"Quan la figura d'abaix es doblega com un cub, quina és la cara la contrària "
-"a la cara amb un {0} dibuixat (responeu el número escrit a la cara)?"
+"Quan es doblega com un cub, quina és la cara la contrària a la cara amb un "
+"{0} dibuixat (responeu el número escrit a la cara)?"
 
 #
 #: ../src/MemoryWords.cs:36
@@ -917,8 +941,8 @@ msgid "Memory"
 msgstr "Memòria"
 
 #: ../src/CustomGameDialog.cs:98
-msgid "Math"
-msgstr "Matemàtic"
+msgid "Mental Calculation"
+msgstr "Càlcul mental"
 
 #: ../src/PuzzleDivideCircle.cs:42
 msgid "Divide circles"
@@ -938,8 +962,9 @@ msgstr ""
 msgid "Has {0} regions"
 msgstr "Té {0} regions"
 
+#
 #: ../src/MathGreaterDivisor.cs:31
-msgid "Greater Divisor"
+msgid "Greater divisor"
 msgstr "Divisor més gran"
 
 #
@@ -1019,8 +1044,45 @@ msgstr ""
 "Quants triangles són necessaris en la part dreta de l'última balança per "
 "mantenir-la balancejada?"
 
-#: ../src/PuzzleBalance.cs:51
 #
+#: ../src/PuzzleBalance.cs:51
 msgid "Every triangle counts as 1, each diamond as a 2 and each square as 3."
 msgstr ""
 "Cada triangle compta com a 1, cada rombe com a dos i cada quadrat com a 3."
+
+#
+#
+#
+#
+#: ../src/MathWhichNumber.cs:36
+msgid "Nearest fraction"
+msgstr "Fracció més propera"
+
+#: ../src/MathWhichNumber.cs:44
+#, csharp-format
+msgid ""
+"Which of the following numbers is more near to {0:###.###} (option A, B, C "
+"or D)? "
+msgstr "Quin dels següents números és el més proper a {0:###.###} (opció A, B, C o D)?"
+
+#: ../src/MathWhichNumber.cs:52
+#, csharp-format
+msgid "The result of the operation {0} / {1} is {2:###.###}"
+msgstr "El resultat de l'operació {0} / {1} és {2:###.###}"
+
+#~ msgid ""
+#~ "The fourth row is calculated multiplying the first two rows and "
+#~ "subtracting the third row."
+#~ msgstr ""
+#~ "La quarta fila es calcula multiplicant les primeres dues files i restant-"
+#~ "hi la tercera fila."
+
+#~ msgid ""
+#~ "The fourth row is calculated adding the first two rows and subtracting "
+#~ "the third row."
+#~ msgstr ""
+#~ "La quarta fila es calcula sumant les primeres dues files i restant-hi la "
+#~ "tercera fila."
+
+#~ msgid "Math"
+#~ msgstr "Matemàtic"
