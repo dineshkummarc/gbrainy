@@ -141,7 +141,6 @@ public class MemoryWords : Memory
 	
 	public override void DrawObjectToMemorize (Cairo.Context gr, int area_width, int area_height)
 	{
-		double x= DrawAreaX + 0.2, y = DrawAreaY + 0.2;
 		base.DrawObjectToMemorize (gr, area_width, area_height);
 		gr.Color = DefaultDrawingColor;
 		DrawObject (gr, area_width, area_height);

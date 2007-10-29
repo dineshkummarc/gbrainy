@@ -37,6 +37,7 @@ GBRAINY_CSDISTFILES =				\
 	$(srcdir)/MathWhichNumber.cs		\
 	$(srcdir)/PuzzleMatrixGroups.cs		\
 	$(srcdir)/PuzzleBalance.cs		\
+	$(srcdir)/PuzzlePairs.cs		\
 	$(srcdir)/gbrainy.cs			
 
 ASSEMBLIES = \
