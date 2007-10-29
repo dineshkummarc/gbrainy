@@ -38,6 +38,7 @@ GBRAINY_CSDISTFILES =				\
 	$(srcdir)/PuzzleMatrixGroups.cs		\
 	$(srcdir)/PuzzleBalance.cs		\
 	$(srcdir)/PuzzlePairs.cs		\
+	$(srcdir)/PuzzleOstracism.cs		\
 	$(srcdir)/gbrainy.cs			
 
 ASSEMBLIES = \
