@@ -61,6 +61,7 @@ public class GameManager
 		typeof (MemoryNumbers),
 		typeof (MemoryColouredText),
 		typeof (MemoryWords),
+		typeof (MemoryCountDots),
 	};
 
 	private GameSession.Types game_type;
