@@ -75,7 +75,7 @@ public class MemoryCountDots : Memory
 	}
 
 	public override string Question {
-		get {return Catalog.GetString ("Try to memorize how many dots of each color are."); }
+		get {return Catalog.GetString ("Try to memorize how many dots of each colour there are."); }
 	}
 
 	public override string MemoryQuestion {
