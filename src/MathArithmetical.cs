@@ -82,29 +82,11 @@ public class MathArithmetical : Game
 		}
 		right_answer = result.ToString ();
 	}
-
-	// This is a poor man's formatter using spaces
-	private string FormatNumber (int number)
-	{	
-		string str = string.Empty;
-
-		if (number < 1000)
-			str += "  ";
-
-		if (number < 100)
-			str += "  ";
-		
-		if (number < 10)
-			str += "  ";
-
-		str += number.ToString ();
-
-		return str;
-	}
 	
 	public override void Draw (Cairo.Context gr, int area_width, int area_height)
 	{	
 		double operand_y = DrawAreaY + 0.2, operand_space = 0.1;
+		double aligned_pos = 0.58;
 
 		gr.Scale (area_width, area_height);
 
@@ -114,11 +96,8 @@ public class MathArithmetical : Game
 		gr.SetFontSize (0.05);
 		for (int i = 0; i < operands.Length - 1; i++)
 		{
-			gr.MoveTo (DrawAreaX + 0.3, operand_y);
-			gr.ShowText (FormatNumber (operands[i]));
-			
-			gr.MoveTo (DrawAreaX + 0.2, operand_y + 0.05);
-			
+			DrawingHelpers.DrawTextAlignedRight (gr, aligned_pos, operand_y, operands[i].ToString ());
+			gr.MoveTo (DrawAreaX + 0.2, operand_y + 0.05);	
 
 			switch (operation) {
 			case Operation.Addition:
@@ -135,8 +114,7 @@ public class MathArithmetical : Game
 			operand_y += operand_space;
 		}
 
-		gr.MoveTo (DrawAreaX + 0.3, operand_y);
-		gr.ShowText (FormatNumber(operands[operands.Length - 1]));
+		DrawingHelpers.DrawTextAlignedRight (gr, aligned_pos, operand_y, operands[operands.Length - 1].ToString ());
 
 		operand_y += 0.05;
 		gr.MoveTo (DrawAreaX + 0.2, operand_y);
@@ -145,8 +123,7 @@ public class MathArithmetical : Game
 
 		if (DrawAnswer) {
 			operand_y += 0.05;
-			gr.MoveTo (DrawAreaX + 0.3, operand_y + 0.05);
-			gr.ShowText (FormatNumber(Int32.Parse (right_answer)));
+			DrawingHelpers.DrawTextAlignedRight (gr, aligned_pos, operand_y + 0.05, right_answer);
 			gr.Stroke ();
 		}
 
