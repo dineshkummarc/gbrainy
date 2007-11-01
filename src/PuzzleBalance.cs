@@ -65,24 +65,6 @@ public class PuzzleBalance : Game
 		right_answer = ans.ToString ();
 	}
 
-	private void DrawTriangle (Cairo.Context gr, double x, double y, double size)
-	{
-		gr.MoveTo (x, y);
-		gr.LineTo (x - (size / 2), y + size);
-		gr.LineTo (x + (size / 2), y + size);
-		gr.LineTo (x, y);
-		gr.Stroke ();
-	}
-
-	private void DrawDiamond (Cairo.Context gr, double x, double y, double size)
-	{
-		gr.MoveTo (x, y);
-		gr.LineTo (x - (size / 2), y + (size / 2));
-		gr.LineTo (x, y + size);
-		gr.LineTo (x + size / 2, y + (size / 2));
-		gr.LineTo (x, y);
-	}
-
 	public void DrawBalance (Cairo.Context gr, double x, double y, int index, bool full)
 	{
 		double width = 0.5;
@@ -98,13 +80,13 @@ public class PuzzleBalance : Game
 		for (int i = 0; i < total; i++) {
 			switch (balances[i + index * elements * 2]) {
 			case 1:
-				DrawTriangle (gr, fig_x, fig_y, 0.05);
+				DrawingHelpers.DrawEquilateralTriangle (gr, fig_x, fig_y, 0.05);
 				break;
 			case 2:
-				DrawDiamond (gr, fig_x, fig_y, 0.05);
+				DrawingHelpers.DrawDiamond (gr, fig_x, fig_y, 0.05);
 				break;
 			case 3:
-				gr.Rectangle (fig_x - 0.02, fig_y + 0.005, 0.045, 0.045);
+				gr.Rectangle (fig_x, fig_y + 0.005, 0.045, 0.045);
 				break;
 			}
 			
@@ -125,7 +107,7 @@ public class PuzzleBalance : Game
 		gr.LineTo (x , y - 0.05);
 		gr.Stroke ();
 		
-		DrawTriangle (gr, x + (width / 2), y, 0.08);
+		DrawingHelpers.DrawEquilateralTriangle (gr, x + (width / 2) - 0.04, y, 0.08);
 		gr.Stroke ();
 
 	}
