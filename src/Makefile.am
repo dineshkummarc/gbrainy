@@ -42,6 +42,7 @@ GBRAINY_CSDISTFILES =				\
 	$(srcdir)/MemoryCountDots.cs		\
 	$(srcdir)/DrawingHelpers.cs		\
 	$(srcdir)/MathOperator.cs		\
+	$(srcdir)/PuzzleFigurePattern.cs	\
 	$(srcdir)/gbrainy.cs			
 
 ASSEMBLIES = \

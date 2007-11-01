@@ -39,5 +39,24 @@ public class DrawingHelpers
 		gr.Stroke ();
 	}
 
+	static public void DrawEquilateralTriangle (Cairo.Context gr, double x, double y, double size)
+	{
+		gr.MoveTo (x + (size / 2), y);
+		gr.LineTo (x, y + size);
+		gr.LineTo (x + size, y + size);
+		gr.LineTo (x + (size / 2), y);
+		gr.Stroke ();	
+	}
+
+	static public void DrawDiamond (Cairo.Context gr, double x, double y, double size)
+	{
+		gr.MoveTo (x + size / 2, y);
+		gr.LineTo (x, y + size / 2);
+		gr.LineTo (x + size / 2, y + size);
+		gr.LineTo (x + size, y + size / 2);
+		gr.LineTo (x + size / 2, y);
+		gr.Stroke ();
+	}
+
 }
 
