@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gbrainy.HEAD.es\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-10-15 17:43+0100\n"
-"PO-Revision-Date: 2007-10-15 18:54+0200\n"
+"POT-Creation-Date: 2007-10-29 11:52+0000\n"
+"PO-Revision-Date: 2007-11-02 08:49+0100\n"
 "Last-Translator: Jorge González <jorgegonz@svn.gnome.org>\n"
 "Language-Team: Spanish <traductores@es.gnome.org>\n"
 "MIME-Version: 1.0\n"
@@ -150,7 +150,7 @@ msgstr "Bienvenido a gbrainy"
 msgid "Use the Game menu to start a new game"
 msgstr "Usa el menú Juego para comenzar un juego"
 
-#: ../src/Game.cs:52
+#: ../src/Game.cs:56
 #, csharp-format
 msgid "The right answer is {0}."
 msgstr "La respuesta correcta es {0}."
@@ -195,11 +195,11 @@ msgstr "5 unidades"
 msgid "1 unit"
 msgstr "1 unidad"
 
-#: ../src/PuzzleMatrixNumbers.cs:39
+#: ../src/PuzzleMatrixNumbers.cs:41
 msgid "Matrix Numbers"
 msgstr "Números en la matriz"
 
-#: ../src/PuzzleMatrixNumbers.cs:43
+#: ../src/PuzzleMatrixNumbers.cs:45
 msgid ""
 "The numbers in the matrix follow a logic. Which is the number that should "
 "replace the question mark?"
@@ -207,33 +207,46 @@ msgstr ""
 "Los números de la matriz inferior siguen una lógica. ¿Cuál es el número que "
 "ha de sustituir el interrogante?"
 
-#: ../src/PuzzleMatrixNumbers.cs:47
+#: ../src/PuzzleMatrixNumbers.cs:51
 msgid "The logic is arithmetical and works vertically."
 msgstr "La lógica es aritmética y funciona verticalmente."
 
-#: ../src/PuzzleMatrixNumbers.cs:56
-msgid ""
-"The fourth row is calculated multiplying the first two rows and adding the "
-"third row."
-msgstr ""
-"La cuarta fila se calcula multiplicando las dos primeras filas y añadiendo "
-"la tercera fila."
+#: ../src/PuzzleMatrixNumbers.cs:53
+msgid "The logic is arithmetical and works horizontally."
+msgstr "La lógica es aritmética y funciona horizontalmente."
 
-#: ../src/PuzzleMatrixNumbers.cs:59
-msgid ""
-"The fourth row is calculated multiplying the first two rows and subtracting "
-"the third row."
-msgstr ""
-"La cuarta fila se calcula multiplicando las dos primeras filas y restando la "
-"tercera fila."
+#: ../src/PuzzleMatrixNumbers.cs:64
+msgid "row"
+msgstr "fila"
 
-#: ../src/PuzzleMatrixNumbers.cs:62
-msgid ""
-"The fourth row is calculated adding the first two rows and subtracting the "
-"third row."
-msgstr ""
-"La cuarta fila se calcula sumando las dos primeras filas y restando la "
-"tercera fila."
+#: ../src/PuzzleMatrixNumbers.cs:65
+msgid "rows"
+msgstr "filas"
+
+#: ../src/PuzzleMatrixNumbers.cs:68
+msgid "column"
+msgstr "columna"
+
+#: ../src/PuzzleMatrixNumbers.cs:69
+msgid "columns"
+msgstr "columnas"
+
+#: ../src/PuzzleMatrixNumbers.cs:75 ../src/PuzzleMatrixNumbers.cs:79
+msgid "multiplying"
+msgstr "multiplicando"
+
+#: ../src/PuzzleMatrixNumbers.cs:76 ../src/PuzzleMatrixNumbers.cs:83
+msgid "adding"
+msgstr "sumando"
+
+#: ../src/PuzzleMatrixNumbers.cs:80 ../src/PuzzleMatrixNumbers.cs:84
+msgid "subtracting"
+msgstr "restando"
+
+#: ../src/PuzzleMatrixNumbers.cs:88
+#, csharp-format
+msgid "The fourth {0} is calculated {1} the first two {2} and {3} the third {4}."
+msgstr "La cuarta {0} se calcula {1} las dos primeras {2} y {3} la tercera {4}."
 
 #: ../src/PuzzlePencil.cs:33
 msgid "Pencil"
@@ -250,7 +263,7 @@ msgstr ""
 #: ../src/PuzzlePencil.cs:168 ../src/PuzzleSquareDots.cs:162
 #: ../src/PuzzleSquareDots.cs:167 ../src/PuzzleSquareDots.cs:172
 #: ../src/PuzzleNextFigure.cs:107 ../src/PuzzleNextFigure.cs:112
-#: ../src/PuzzleNextFigure.cs:117 ../src/MemoryColouredFigures.cs:148
+#: ../src/PuzzleNextFigure.cs:117 ../src/MemoryColouredFigures.cs:165
 #: ../src/MemoryNumbers.cs:123
 msgid "Figure"
 msgstr "Figura"
@@ -494,15 +507,15 @@ msgstr "Aritmética"
 msgid "What is the result of the arithmetical operation?"
 msgstr "¿Cuál es el resultado de la siguiente operación?"
 
-#: ../src/MemoryColouredFigures.cs:49
+#: ../src/MemoryColouredFigures.cs:50
 msgid "Coloured Figures"
 msgstr "Figuras coloreadas"
 
-#: ../src/MemoryColouredFigures.cs:54
+#: ../src/MemoryColouredFigures.cs:55
 msgid "Memorize the following figure in the time given"
 msgstr "Memoriza la siguiente figura en el tiempo disponible"
 
-#: ../src/MemoryColouredFigures.cs:59
+#: ../src/MemoryColouredFigures.cs:60
 msgid "Which of these figures was the one previously shown?"
 msgstr "¿Cuál de las siguientes figuras fue la mostrada previamente?"
 
@@ -822,7 +835,7 @@ msgid "Has {0} regions"
 msgstr "Tiene {0} regiones"
 
 #: ../src/MathGreaterDivisor.cs:31
-msgid "Greater Divisor"
+msgid "Greater divisor"
 msgstr "Máximo común divisor"
 
 #: ../src/MathGreaterDivisor.cs:39
@@ -893,4 +906,51 @@ msgstr ""
 #: ../src/PuzzleBalance.cs:51
 msgid "Every triangle counts as 1, each diamond as a 2 and each square as 3."
 msgstr "Cada triángulo cuenta como 1, cada diamante como 2 y cada cuadrado como 3."
+
+#: ../src/MathWhichNumber.cs:36
+msgid "Nearest fraction"
+msgstr "Fracción más próxima"
+
+#: ../src/MathWhichNumber.cs:44
+#, csharp-format
+msgid ""
+"Which of the following numbers is more near to {0:###.###} (option A, B, C "
+"or D)? "
+msgstr ""
+"¿Cuál de los siguientes números está más cerca de {0:###.###} (opción A, B, C "
+"o D)?"
+
+#: ../src/MathWhichNumber.cs:52
+#, csharp-format
+msgid "The result of the operation {0} / {1} is {2:###.###}"
+msgstr "El resultado de la operación {0} / {1} es {2:###.###}"
+
+#: ../src/PuzzlePairs.cs:55
+msgid "Pairs"
+msgstr "Pares"
+
+#: ../src/PuzzlePairs.cs:59
+msgid "Which number should replace the question mark below?"
+msgstr "¿Qué número ha de reemplazar el interrogante?"
+
+#: ../src/PuzzlePairs.cs:65
+#, csharp-format
+msgid "The result of multiply the two numbers inside every triangle is {0}."
+msgstr "El resultado de multiplicar los dos números dentro de cada triángulo es {0}."
+
+#: ../src/PuzzleOstracism.cs:38
+msgid "Ostracism"
+msgstr "Ostracismo"
+
+#: ../src/PuzzleOstracism.cs:42
+msgid "Which equation does not belong to the group (A, B, C, D or E)?"
+msgstr "¿Qué ecuación no pertenece al grupo (A, B, C, D o E)?"
+
+#: ../src/PuzzleOstracism.cs:48
+msgid ""
+"In all the equations the digits from the left side should also appear in the "
+"right side."
+msgstr ""
+"En todas las ecuaciones los dígitos de la parte izquierda deben aparecer también en la "
+"parte derecha."
 
