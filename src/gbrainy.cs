@@ -38,7 +38,7 @@ public class gbrainy: Program
 	[Glade.Widget] Gtk.Button tip_button;
 	[Glade.Widget] Gtk.Button next_button;
 	[Glade.Widget] Gtk.Statusbar statusbar;
-	CairoGraphic drawing_area;
+	GameDrawingArea drawing_area;
 	GameSession session;
 	const int ok_buttonid = -5;
 
@@ -52,7 +52,7 @@ public class gbrainy: Program
 		
 
 		session = new GameSession (this);		
-		drawing_area = new CairoGraphic ();
+		drawing_area = new GameDrawingArea ();
 		drawing_vbox.Add (drawing_area);
 		//app_window.Resize (500, 700);
 		//app_window.SizeAllocated += new SizeAllocatedHandler (OnSizeAllocated);
@@ -295,76 +295,8 @@ public class gbrainy: Program
 	
 	public static void Main (string [] args) 
 	{
-				
 		gbrainy gui = new gbrainy (args);
 		gui.Run ();	
-	}
-
-	public class CairoGraphic : DrawingArea 
-	{
-		public Game puzzle = null;
-
-		private void DrawBackground (Cairo.Context gr)
-		{
-			int columns = 40;
-			int rows = 40;
-			double rect_w = 1.0 / rows;
-			double rect_h = 1.0 / columns;
-
-			gr.Save ();
-
-			gr.Color = new Cairo.Color (1, 1, 1);
-			gr.Paint ();	
-	
-			gr.Color = new Cairo.Color (0.8, 0.8, 0.8);
-			gr.LineWidth = 0.001;
-			for (int column = 0; column < columns; column++) {
-				for (int row = 0; row < rows; row++) {			
-					gr.Rectangle (row * rect_w, column * rect_h, rect_w, rect_h);
-				}
-			}
-			gr.Stroke ();
-			gr.Restore ();		
-		}
-
-		private void DrawWelcome (Cairo.Context gr, int area_width, int area_height)
-		{
-			gr.Scale (area_width, area_height);
-			DrawBackground (gr);
-
-			gr.Color = new Cairo.Color (0.1, 0.1, 0.1);
-			gr.SelectFontFace ("Sans", Cairo.FontSlant.Normal, Cairo.FontWeight.Normal);
-			gr.SetFontSize (0.04);
-
-			gr.MoveTo (0.2, 0.2);
-			gr.ShowText (Catalog.GetString ("Welcome to gbrainy") + " " + Defines.VERSION);
-			gr.Stroke ();
-			
-			gr.MoveTo (0.1, 0.4);
-			// Keep the translated version of this string under 40 characters long 
-			gr.ShowText (Catalog.GetString ("Use the Game menu to start a new game"));
-			gr.Stroke ();
-
-		}
-
-		protected override bool OnExposeEvent (Gdk.EventExpose args)
-		{
-			if(!IsRealized)
-				return false;
-   
-			int w, h;
-			args.Window.GetSize (out w, out h);
-			Cairo.Context cr = Gdk.CairoHelper.Create (args.Window);
-		
-			if (puzzle == null)
-				DrawWelcome (cr, w, h);
-			else
-				puzzle.Draw (cr, w, h);
-
-   			((IDisposable)cr).Dispose();
-   			return base.OnExposeEvent(args);
-		}
-
 	}
 }
 
