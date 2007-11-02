@@ -43,6 +43,7 @@ GBRAINY_CSDISTFILES =				\
 	$(srcdir)/DrawingHelpers.cs		\
 	$(srcdir)/MathOperator.cs		\
 	$(srcdir)/PuzzleFigurePattern.cs	\
+	$(srcdir)/ColorPalette.cs		\
 	$(srcdir)/gbrainy.cs			
 
 ASSEMBLIES = \

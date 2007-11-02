@@ -41,9 +41,7 @@ public class MemoryColouredFigures : Memory
 	private SquareColor []squares_colours;
 	private ArrayListIndicesRandom answers_order;
 	private const int answers = 4;
-	private Cairo.Color color1 = new Cairo.Color (0, 0, 0.9);					
-	private Cairo.Color color2 = new Cairo.Color (0, 0, 0.4);
-	private Cairo.Color color3 = new Cairo.Color (0, 0.5, 0);
+	private ColorPalette palette;
 	private int color_sheme;
 
 	public override string Name {
@@ -64,8 +62,9 @@ public class MemoryColouredFigures : Memory
 	{
 		squares_colours = new SquareColor [squares * answers];
 		color_sheme = random.Next (2);
-		SetColours (1);
-		
+		palette = new ColorPalette(ColorPalette.Id.PrimarySecundaryColors);
+		palette.Initialize();
+
 		for (int i = 0; i < squares; i++)	
 			squares_colours[i] = (SquareColor) random.Next ((int) SquareColor.Length);
 		
@@ -85,22 +84,6 @@ public class MemoryColouredFigures : Memory
 		}
 
 		base.Initialize ();
-	}
-
-	private void SetColours (double alpha)
-	{
-		switch (color_sheme) {
-		case 0:
-			color1 = new Cairo.Color (0, 0, 0.9, alpha);
-			color2 = new Cairo.Color (0, 0, 0.4, alpha);
-			color3 = new Cairo.Color (0, 0.5, 0, alpha);
-			break;
-		case 1:
-			color1 = new Cairo.Color (0.8, 0, 0, alpha);
-			color2 = new Cairo.Color (0, 0.8, 0, alpha);
-			color3 = new Cairo.Color (0.4, 0.0, 0.5, alpha);
-			break;
-		}
 	}
 
 	private void Randomize (SquareColor []colours, int source, int target)
@@ -143,8 +126,8 @@ public class MemoryColouredFigures : Memory
 	public override void DrawObjectToMemorizeFading (Cairo.Context gr, int area_width, int area_height)
 	{
 		base.DrawObjectToMemorizeFading (gr, area_width, area_height);
-		SetColours (alpha);
-		gr.Color = new Color (DefaultDrawingColor.R, DefaultDrawingColor.G, DefaultDrawingColor.B, alpha);
+		palette.Alpha=alpha; 
+		gr.Color = palette.Cairo(DefaultDrawingColor);
 		DrawSquare (gr, DrawAreaX + 0.3, DrawAreaY + 0.1, squares_colours, 0);			
 	}
 	
@@ -152,9 +135,9 @@ public class MemoryColouredFigures : Memory
 	{
 		double x = DrawAreaX + 0.05, y = DrawAreaY;
 	
-		gr.Color = new Color (DefaultDrawingColor.R, DefaultDrawingColor.G, DefaultDrawingColor.B, 1);
-		SetColours (1);
-
+		palette.Alpha=1;
+		gr.Color = palette.Cairo(DefaultDrawingColor);
+		
 		for (int i = 0; i < answers_order.Count; i++) {
 			if (i == 2) {
 				y += 0.4;
@@ -179,17 +162,12 @@ public class MemoryColouredFigures : Memory
 		gr.Save ();
 		for (int column = 0; column < columns; column++) {
 			for (int row = 0; row < rows; row++) {
-				switch (colours[index + (columns * row) + column]) {
-				case SquareColor.Color1:
-					gr.Color = color1;
-					break;
-				case SquareColor.Color2:
-					gr.Color = color2;
-					break;
-				case SquareColor.Color3:
-					gr.Color = color3;
-					break;
-				}				
+
+				// if you want 2 schemes (primary or secundary colors)
+				gr.Color = palette.Cairo(ColorPalette.Id.First+ color_sheme*3 + (int)colours[index+(columns * row) + column] );
+				// if you want 3 colors at random
+				// gr.Color = palette.Cairo((int)colorus[index+(columns*row)+ column]);
+
 				gr.Rectangle (x + row * rect_w, y + column * rect_h, rect_w, rect_h);
 				gr.Fill ();
 				gr.Stroke ();

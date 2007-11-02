@@ -32,43 +32,9 @@ public class MemoryCountDots : Memory
 	private const int MAXDOTS = 25;
 
 	private ArrayListIndicesRandom location_order;
-	private ArrayListIndicesRandom color_order;
+	private ColorPalette palette;
 
 	private int [] dotsPerColor;
-
-	enum Colors
-	{
-		Blue, 
-		Red, 
-		Green, 
-		Pink, 
-		Yellow, 
-		Brown,
-		Black,
-		Last
-	}
-
-	//better if I define a struct with a string and a Cairo.color.
-
-	private static string[] ColorName= new string[] {
-		Catalog.GetString("blue"),
-		Catalog.GetString("red"),
-		Catalog.GetString("green"),
-		Catalog.GetString("pink"),
-		Catalog.GetString("yellow"),
-		Catalog.GetString("brown"),
-		Catalog.GetString("black")
-	};
-
-	private static Cairo.Color[] CairoColor= new Cairo.Color[] {
-		new Cairo.Color(0,0,1),
-		new Cairo.Color(1,0,0),
-		new Cairo.Color(0,1,0),
-		new Cairo.Color(1.0, 0.75, 0.79),
-		new Cairo.Color(1, 1, 0),
-		new Cairo.Color(0.64, 0.12, 0.12),
-		new Cairo.Color(0,0,0)
-	};
 
 	public override string Name {
 		get {return Catalog.GetString ("Counting dots");}
@@ -80,7 +46,7 @@ public class MemoryCountDots : Memory
 
 	public override string MemoryQuestion {
 		get { return String.Format(Catalog.GetString ("How many {0} balls were in the previous image?"),
-						ColorName[(int)color_order[0]])     ; }
+						palette.Name(0))     ; }
 	}
 
 	public override void Initialize ()
@@ -88,13 +54,13 @@ public class MemoryCountDots : Memory
 	        location_order = new ArrayListIndicesRandom (NUMCOLUMNS*NUMCOLUMNS);
 		location_order.Initialize();
 
-		color_order = new ArrayListIndicesRandom ((int)Colors.Last);
-		color_order.Initialize();
+		palette = new ColorPalette(ColorPalette.Id.Last);
+		palette.Initialize();
 
 		// dotsPerColor is compared with iterator of dots. (this iterator is 0 based, so I
 		// have to substract 1 to make dotsPerColor contents 0 based.
-		dotsPerColor = new int [(int)Colors.Last];
-		for (int i=0,before=-1; i<(int)Colors.Last; i++) {
+		dotsPerColor = new int [palette.Count];
+		for (int i=0,before=-1; i< palette.Count; i++) {
 			dotsPerColor[i] = before + MINDOTS + random.Next(MAXDOTSCOLOR-MINDOTS+1) ;
 			before = dotsPerColor[i];
 		}
@@ -120,17 +86,12 @@ public class MemoryCountDots : Memory
 		DrawObject (gr, area_width, area_height, alpha);
 	}
 
-	private Cairo.Color Fade(Cairo.Color color, double alpha)
-	{
-		return new Cairo.Color (color.R, color.G, color.B, alpha);
-	}
-
 	public void DrawObject (Cairo.Context gr, int area_width, int area_height, double alpha)
 	{
+		palette.Alpha = alpha;
 		double x = DrawAreaX + 0.15, y = DrawAreaY + 0.1 ;
 
-		Cairo.Color color= CairoColor[(int)Colors.Black];
-		color = Fade(color,alpha);
+		gr.Color = palette.Cairo(ColorPalette.Id.Black);
 		double pos_x = x, pos_y = y;
 		double figure_size = 0.6 ;
 		double square_size = figure_size / NUMCOLUMNS ;
@@ -160,14 +121,12 @@ public class MemoryCountDots : Memory
 		pos_y = y + center_square;
 		pos_x = x + center_square;
 
-		for (int i = 0,itcolor=0; i < MAXDOTS && itcolor<(int)Colors.Last; i++)
+		for (int i = 0,itcolor=0; i < MAXDOTS && itcolor<palette.Count; i++)
 		{
 			int dx,dy;
 			dx = ((int)location_order[i]) % NUMCOLUMNS;
 			dy = ((int)location_order[i]) / NUMCOLUMNS;
-			color = CairoColor[(int)color_order[itcolor]];
-			color = Fade(color, alpha);
-			gr.Color = color;
+			gr.Color = palette.Cairo(itcolor);
 			gr.Arc (pos_x+square_size*dx, pos_y+square_size*dy,radius_square,0,2*Math.PI);
 			gr.Fill ();
 
