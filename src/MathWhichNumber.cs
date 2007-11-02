@@ -33,7 +33,7 @@ public class MathWhichNumber : Game
 	private int which;
 
 	public override string Name {
-		get {return Catalog.GetString ("Nearest fraction");}
+		get {return Catalog.GetString ("Closer fraction");}
 	}
 
 	public override Types Type {
@@ -41,7 +41,7 @@ public class MathWhichNumber : Game
 	}
 
 	public override string Question {
-		get {return String.Format (Catalog.GetString ("Which of the following numbers is more near to {0:###.###} (option A, B, C or D)? "), question_num);} 
+		get {return String.Format (Catalog.GetString ("Which of the following numbers is closer to {0:###.###} (option A, B, C or D)? "), question_num);} 
 	}
 
 	public override string Answer {

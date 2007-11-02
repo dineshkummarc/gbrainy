@@ -45,7 +45,7 @@ public class MemoryColouredFigures : Memory
 	private int color_sheme;
 
 	public override string Name {
-		get {return Catalog.GetString ("Coloured Figures");}
+		get {return Catalog.GetString ("Colored Figures");}
 	}
 
 	public override string Question {

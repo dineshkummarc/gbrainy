@@ -31,16 +31,16 @@ public class MemoryColouredText : Memory
 	private string question_colorname;
 
 	public override string Name {
-		get {return Catalog.GetString ("Coloured text");}
+		get {return Catalog.GetString ("Colored text");}
 	}
 
 	public override string Question {
-		get {return Catalog.GetString ("Memorize the colours associated to every word"); }
+		get {return Catalog.GetString ("Memorize the colors associated to every word"); }
 	}
 
 	public override string MemoryQuestion {
 		get { 
-			return String.Format (Catalog.GetString ("Which was the colour of the text that said '{0}'?"), question_colorname);}
+			return String.Format (Catalog.GetString ("Which was the color of the text that said '{0}'?"), question_colorname);}
 	}
 
 	public override void Initialize ()
