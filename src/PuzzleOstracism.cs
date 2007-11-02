@@ -30,8 +30,8 @@ public class PuzzleOstracism : Game
 		"21 x 60 = 1260",
 		"15 x 93 = 1395",
 		"70 x 16 = 1120",
-		"30 x 51 = 1530",
-		"80 x 86 = 6886",
+		"43 x 51 = 1453",
+		"80 x 16 = 1806",
 	};
 
 	public override string Name {

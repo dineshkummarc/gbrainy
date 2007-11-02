@@ -59,6 +59,11 @@ public class PuzzlePairs : Game
 		get {return Catalog.GetString ("Which number should replace the question mark below?");} 
 	}
 
+
+	public override string Tip {
+		get { return Catalog.GetString ("All the triangles share a property and are independent of the rest.");}
+	}
+
 	public override string Answer {
 		get { 
 			string answer = base.Answer + " ";

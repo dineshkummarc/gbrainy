@@ -41,6 +41,10 @@ public class PuzzleFigurePattern : Game
 		get {return Catalog.GetString ("Which figure should replace the question mark (A, B or C)?");} 
 	}
 
+	public override string Tip {
+		get { return Catalog.GetString ("The third figure of every row involves combining somehow the first two figures.");}
+	}
+
 	public override string Answer {
 		get { 
 			string answer = base.Answer + " ";
@@ -121,7 +125,7 @@ public class PuzzleFigurePattern : Game
 		gr.Stroke ();
 
 		x += figure_size + space_x;
-		DrawRotatedCross (gr, x, y, figure_size);
+		DrawCross (gr, x, y, figure_size);
 
 		y += space_y;
 		x = org_x;
@@ -158,7 +162,7 @@ public class PuzzleFigurePattern : Game
 		
 		x += figure_size + space_x;
 		gr.Save ();
-		gr.MoveTo (x + 0.05, y + 0.1);
+		gr.MoveTo (x + 0.03, y + 0.1);
 		gr.SetFontSize (figure_size);	
 		gr.ShowText ("?");
 		gr.Stroke ();
