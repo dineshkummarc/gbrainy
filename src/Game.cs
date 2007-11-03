@@ -37,6 +37,9 @@ abstract public class Game
 	private Cairo.Color default_background;
 	protected string right_answer;
 	protected Random random;
+	private TimeSpan game_time;
+	private bool won;
+	private bool tip_used;
 
 	public Game ()
 	{
@@ -45,6 +48,8 @@ abstract public class Game
 		draw_answer = false;
 		default_color = new Cairo.Color (0, 0, 0);
 		default_background = new Color (1, 1, 1);
+		won = false;
+		tip_used = false;
 	}
 
 	public abstract string Question {
@@ -59,6 +64,17 @@ abstract public class Game
 
 	public abstract string Name {
 		get;
+	}
+
+	public string TipString {
+		get { 
+			string tip = Tip;
+	
+			if (tip != string.Empty)
+				tip_used = true;
+
+			return tip;
+		}
 	}
 
 	public virtual string Tip {
@@ -106,6 +122,62 @@ abstract public class Game
 	public virtual Cairo.Color DefaultDrawingColor {
 		get {return default_color; }
 	}
+
+	public TimeSpan GameTime {
+		get {return game_time; }
+		set {game_time = value; }
+	}
+
+	public bool Won {
+		get { return won; }
+		set { won = value; }
+	}
+
+	// Avergate time in second that a player is expected to complete this game
+	public int AverageTime {
+		get {
+			switch (Type) {
+			case Types.MemoryTrainer:
+				return 30;
+			case Types.MathTrainer:
+				return 60;				
+			}
+			return 120; // Default for all games (logic)
+		}
+	}
+
+	//
+	// Score algoritm return a value between 0 and 10
+	//
+	public virtual int Score {
+		get {
+
+			double score;
+			double seconds = GameTime.TotalSeconds;
+
+			if (won == false) {
+				score = 0;
+			} else {		
+				score = 10;
+			
+				// Time
+				if (seconds > AverageTime * 3) {
+					score = score * 0.6;
+				}
+				else if (seconds > AverageTime * 2) {
+					score = score * 0.7;
+				} else if (seconds > AverageTime) {
+					score = score * 0.8;
+				}
+		
+				if (tip_used) {
+					score = score * 0.8;
+				}
+			}
+			return (int) score;
+		}
+	}
+
 	
 	public abstract void Initialize ();
 	public abstract void Draw (Cairo.Context gr, int width, int height);

@@ -26,7 +26,35 @@ using Gtk;
 
 public class GameDrawingArea : DrawingArea
 {
-	public Game puzzle = null;
+
+	public enum Modes
+	{	
+		Welcome,
+		Scores,
+		Puzzle
+	}
+
+	public Game puzzle;
+	public Modes mode;
+	private GameSession session;
+	private ArrayListIndicesRandom random_indices;
+	const int tips_count = 5;
+	const int tips_shown = 4;
+
+	public GameDrawingArea ()
+	{
+		mode = Modes.Welcome;
+		puzzle = null;
+		session = null;
+	}
+
+	public GameSession GameSession {
+		set {
+			session = value;
+			random_indices = new ArrayListIndicesRandom (tips_count);
+			random_indices.Initialize ();
+		}
+	}
 
 	private void DrawBackground (Cairo.Context gr)
 	{
@@ -51,6 +79,15 @@ public class GameDrawingArea : DrawingArea
 		gr.Restore ();		
 	}
 
+	private void DrawBand (Cairo.Context gr, double x, double y)
+	{
+		gr.Save ();
+		gr.Rectangle (x, y, 1 - 0.06, 0.06);
+		gr.Color = new Cairo.Color (0, 0, 0.2, 0.2);
+		gr.Fill ();
+		gr.Restore ();		
+	}
+
 	private void DrawWelcome (Cairo.Context gr, int area_width, int area_height)
 	{
 		gr.Scale (area_width, area_height);
@@ -71,6 +108,98 @@ public class GameDrawingArea : DrawingArea
 
 	}
 
+	private void DrawScores (Cairo.Context gr, int area_width, int area_height)
+	{
+		double y = 0.08, x = 0.05;
+		double space_small = 0.06;
+		string str;
+
+		gr.Scale (area_width, area_height);
+		gr.Color = new Cairo.Color (1, 1, 1);
+		gr.Paint ();	
+		gr.Color = new Cairo.Color (0, 0, 0, 1);
+
+		gr.SetFontSize (0.035);
+		gr.MoveTo (x, y);
+		gr.ShowText (Catalog.GetString ("Score"));		
+		DrawBand (gr, 0.03, y - 0.04);
+
+		gr.SetFontSize (0.03);
+		y += 0.08;
+		gr.MoveTo (x, y);
+		gr.ShowText (String.Format (Catalog.GetString ("Your total is score {0}%"), session.TotalScore));
+
+		y += space_small;	
+		gr.MoveTo (x, y);
+		str = Catalog.GetString ("Logic puzzle score is {0}%");
+		if (session.LogicGamesPlayed == 0)  str += " " + Catalog.GetString ("(no games played)");
+		gr.ShowText (String.Format (str, session.LogicScore));
+
+		y += space_small;
+		gr.MoveTo (x, y);
+		str = Catalog.GetString ("Mental calculation score is {0}%");
+		if (session.MathGamesPlayed == 0)  str += " " + Catalog.GetString ("(no games played)");
+		gr.ShowText (String.Format (str, session.MathScore));
+
+		y += space_small;
+		gr.MoveTo (x, y);
+		str = Catalog.GetString ("Memory score is {0}%");
+		if (session.MemoryGamesPlayed == 0)  str += " " + Catalog.GetString ("(no games played)");
+		gr.ShowText (String.Format (str, session.MemoryScore));
+
+		y += 0.08;
+		gr.SetFontSize (0.035);
+		gr.MoveTo (x, y);
+		gr.ShowText (Catalog.GetString ("Game statistics"));
+		DrawBand (gr, 0.03, y - 0.04);
+
+		gr.SetFontSize (0.03);
+		y += 0.08;
+		gr.MoveTo (x, y);
+		gr.ShowText (String.Format (Catalog.GetString ("Total games won: {0} ({1} played)"), session.GamesWon, session.GamesPlayed));	
+		y += space_small;
+		gr.MoveTo (x, y);
+		gr.ShowText (String.Format (Catalog.GetString ("Total time played {0} (average per game {1})"), session.GameTime, session.TimePerGame));
+		y += 0.08;
+
+		gr.SetFontSize (0.035);
+		gr.MoveTo (x, y);
+		gr.ShowText (Catalog.GetString ("Tips for your next games"));
+		DrawBand (gr, 0.03, y - 0.04);
+
+		gr.SetFontSize (0.03);
+		y += 0.08;
+		for (int i = 0; i < tips_shown; i++)
+		{
+			y = DrawingHelpers.DrawStringWithWrapping (gr, x, y, space_small, "- " + GetTip ((int) random_indices[i]));
+			if (y > 0.85)
+				break;
+
+			y += space_small;
+		}
+	
+		gr.Stroke ();
+
+	}
+
+	private String GetTip (int tip)
+	{
+		switch (tip) {
+		case 0:
+			return Catalog.GetString ("Read the instructions carefully and identify the data and clues given.");
+		case 1:
+			return Catalog.GetString ("gbrainy uses the time and tips needed to complete each game to score the player.");
+		case 2:
+			return Catalog.GetString ("In logic games, elements that may seem irrelevant can be very important.");
+		case 3:
+			return Catalog.GetString ("Break the mental blocks and look into the boundaries of problems.");
+		case 4:
+			return Catalog.GetString ("Enjoy doing mistakes, they are part of the learning process.");
+		}
+
+		return string.Empty;
+	}
+
 	protected override bool OnExposeEvent (Gdk.EventExpose args)
 	{
 		if(!IsRealized)
@@ -80,13 +209,20 @@ public class GameDrawingArea : DrawingArea
 		args.Window.GetSize (out w, out h);
 		Cairo.Context cr = Gdk.CairoHelper.Create (args.Window);
 	
-		if (puzzle == null)
+		switch (mode) {
+		case Modes.Welcome:
 			DrawWelcome (cr, w, h);
-		else
+			break;
+		case Modes.Scores:
+			DrawScores (cr, w, h);
+			break;	
+		case Modes.Puzzle:
 			puzzle.Draw (cr, w, h);
+			break;
+		}
 
-			((IDisposable)cr).Dispose();
-			return base.OnExposeEvent(args);
+		((IDisposable)cr).Dispose();
+		return base.OnExposeEvent(args);
 	}
 
 }

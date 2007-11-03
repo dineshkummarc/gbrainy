@@ -1,5 +1,16 @@
 2007-11-03 Jordi Mas <jmas@softcatala.org>
 
+	* GameOverDialog.cs: Remove old game over dialog. We use the game 
+	 drawing area now.
+	* Game.cs: Add score system.
+	* GameSession.cs: Add score system.
+	* DrawingHelpers.cs: New common draw method.
+	* gbrainy.cs: New score system and remove old game over dialog.
+	* gbrainy.glade: Remove old game over dialog.
+	* Makefile.am: Remove old game over dialog.
+
+2007-11-03 Jordi Mas <jmas@softcatala.org>
+
 	* GameSession.cs: Shorter status bar text
 	* gbrainy.glade: Make gbrainy drawing area smaller
 	* gbrainy.cs: Do not use bold for the questions (more space)

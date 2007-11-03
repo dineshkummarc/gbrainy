@@ -58,8 +58,7 @@ public class gbrainy: Program
 		//app_window.SizeAllocated += new SizeAllocatedHandler (OnSizeAllocated);
 		app_window.IconName = "gbrainy";
 	        app_window.ShowAll ();		
-		
-		drawing_area.puzzle = null;
+
 		question_label.Text = string.Empty;
 		ActiveButtons (false);
 		//OnMemoryOnly (this, EventArgs.Empty); // temp
@@ -98,6 +97,7 @@ public class gbrainy: Program
 		session.NextGame ();
 		ActiveButtons (session.CurrentGame.ButtonsActive);
 		drawing_area.puzzle = session.CurrentGame;
+		drawing_area.mode = GameDrawingArea.Modes.Puzzle;
 		UpdateQuestion (session.CurrentGame.Question);
 		answer_entry.Text = string.Empty;
 		UpdateStatusBar ();
@@ -153,10 +153,12 @@ public class gbrainy: Program
 	
 		if (answer_button.Sensitive == true && session.CurrentGame.CheckAnswer (answer_entry.Text) == true) {
 			session.GamesWon++;
+			session.CurrentGame.Won = true;
 			answer = "<span color ='#00A000'>" + Catalog.GetString ("Congratulations.") + "</span>";
 		} else
 			answer = Catalog.GetString ("Incorrect answer.");
 
+		session.ScoreGame ();
 		session.EnableTimer = false;
 		answer_entry.Text = String.Empty;
 		UpdateStatusBar ();
@@ -183,6 +185,7 @@ public class gbrainy: Program
 			return;
 		}
 
+		session.ScoreGame ();
 		GetNextGame ();
 		session.EnableTimer = true;
 	}
@@ -192,7 +195,7 @@ public class gbrainy: Program
 		if (session.CurrentGame == null)
 			return;
 
-		solution_label.Text = session.CurrentGame.Tip;
+		solution_label.Text = session.CurrentGame.TipString;
 	}
 
 	void OnNewGame ()
@@ -258,11 +261,8 @@ public class gbrainy: Program
 
 	void OnEndGame (object sender, EventArgs args)
 	{
-		GameOverDialog dialog;
-		dialog = new GameOverDialog ();
-		dialog.TimePayed = session.TimePlayed;
-		dialog.GamesPlayed = String.Format (Catalog.GetString ("{0} ({1} won)"), session.GamesPlayed, session.GamesWon);
-		dialog.TimePerGame = session.TimePerGame;
+		drawing_area.mode = GameDrawingArea.Modes.Scores;
+		drawing_area.GameSession = session.Copy ();
 	
 		session.EndSession ();
 		drawing_area.puzzle = null;
@@ -271,9 +271,6 @@ public class gbrainy: Program
 		UpdateStatusBar ();
 		drawing_area.QueueDraw ();
 		ActiveButtons (false);
-		
-		dialog.Run ();
-		dialog.Dialog.Destroy ();
 	}
 
 	void OnPauseGame (object sender, EventArgs args)

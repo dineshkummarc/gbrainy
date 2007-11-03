@@ -20,6 +20,7 @@
 using System;
 using Cairo;
 using Mono.Unix;
+using System.Text;
 
 // Utility class for common drawing operations
 public class DrawingHelpers
@@ -37,6 +38,40 @@ public class DrawingHelpers
 		gr.MoveTo (x - extents.Width, y);
 		gr.ShowText (str);
 		gr.Stroke ();
+	}
+
+	static public double DrawStringWithWrapping (Cairo.Context gr, double x, double y, double line_space, string str)
+	{
+		TextExtents extents;
+		StringBuilder sb = new StringBuilder ();
+		int idx = 0, prev = 0;			
+
+		while (idx < str.Length) {
+			prev = idx;
+			idx = str.IndexOf (' ', prev + 1);
+			if (idx == -1)
+				idx = str.Length;
+
+			extents = gr.TextExtents (sb.ToString () + str.Substring (prev, idx - prev));
+			if (extents.Width > 1.0 - x - 0.05) {
+				gr.MoveTo (x, y);
+				gr.ShowText (sb.ToString ());
+				gr.Stroke ();
+				y += line_space;
+				sb = new StringBuilder ();
+				prev++;
+			} 
+
+			sb.Append (str.Substring (prev, idx - prev)); 
+
+			if (str.Length == idx) {
+				gr.MoveTo (x, y);
+				gr.ShowText (sb.ToString ());
+				gr.Stroke ();					
+			}				
+		}
+
+		return y;
 	}
 
 	static public void DrawEquilateralTriangle (Cairo.Context gr, double x, double y, double size)

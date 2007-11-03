@@ -19,7 +19,6 @@ GBRAINY_CSDISTFILES =				\
 	$(srcdir)/PuzzleSquareDots.cs		\
 	$(srcdir)/PuzzleNumericRelation.cs	\
 	$(srcdir)/PuzzleNextFigure.cs		\
-	$(srcdir)/GameOverDialog.cs		\
 	$(srcdir)/PuzzleSquareSheets.cs		\
 	$(srcdir)/MathArithmetical.cs		\
 	$(srcdir)/MemoryColouredFigures.cs	\
