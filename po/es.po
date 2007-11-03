@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gbrainy.HEAD.es\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-10-29 11:52+0000\n"
-"PO-Revision-Date: 2007-11-02 08:49+0100\n"
+"POT-Creation-Date: 2007-11-03 10:22+0000\n"
+"PO-Revision-Date: 2007-11-03 13:04+0100\n"
 "Last-Translator: Jorge González <jorgegonz@svn.gnome.org>\n"
 "Language-Team: Spanish <traductores@es.gnome.org>\n"
 "MIME-Version: 1.0\n"
@@ -141,15 +141,6 @@ msgstr ""
 msgid "{0} ({1} won)"
 msgstr "{0} ({1} ganados)"
 
-#: ../src/gbrainy.cs:340
-msgid "Welcome to gbrainy"
-msgstr "Bienvenido a gbrainy"
-
-#. Keep the translated version of this string under 40 characters long
-#: ../src/gbrainy.cs:345
-msgid "Use the Game menu to start a new game"
-msgstr "Usa el menú Juego para comenzar un juego"
-
 #: ../src/Game.cs:56
 #, csharp-format
 msgid "The right answer is {0}."
@@ -163,13 +154,13 @@ msgstr "Figuras"
 msgid "What is the next logical sequence of objects?"
 msgstr "¿Cuál es la siguiente secuencia lógica de objetos?"
 
-#: ../src/PuzzleFigures.cs:84
+#: ../src/PuzzleFigures.cs:65
 msgid "Convention when giving the answer is:"
 msgstr "Convención para dar la respuesta es:"
 
-#: ../src/PuzzleFigures.cs:110
-msgid "E.g: ACB (rectangle, circle, triangle)"
-msgstr "Por ejemplo: ACB (rectángulo, circulo, triángulo)"
+#: ../src/PuzzleFigures.cs:91
+msgid "E.g: ACB (diamond, circle, triangle)"
+msgstr "Por ejemplo: ACB (diamante, círculo, triángulo)"
 
 #: ../src/PuzzleCirclesRectangle.cs:27
 msgid "Circles in a rectangle"
@@ -263,8 +254,8 @@ msgstr ""
 #: ../src/PuzzlePencil.cs:168 ../src/PuzzleSquareDots.cs:162
 #: ../src/PuzzleSquareDots.cs:167 ../src/PuzzleSquareDots.cs:172
 #: ../src/PuzzleNextFigure.cs:107 ../src/PuzzleNextFigure.cs:112
-#: ../src/PuzzleNextFigure.cs:117 ../src/MemoryColouredFigures.cs:165
-#: ../src/MemoryNumbers.cs:123
+#: ../src/PuzzleNextFigure.cs:117 ../src/MemoryColouredFigures.cs:148
+#: ../src/MemoryNumbers.cs:123 ../src/PuzzleFigurePattern.cs:193
 msgid "Figure"
 msgstr "Figura"
 
@@ -320,8 +311,8 @@ msgid "Cover Percentage"
 msgstr "Porcentaje cubierto"
 
 #: ../src/PuzzleCoverPercentage.cs:36
-msgid "What is the coloured percentage covered in the figure?"
-msgstr "¿Cuál es el porcentaje coloreado cubierto de la figura?"
+msgid "What is the colored percentage covered in the figure?"
+msgstr "¿Cuál es el porcentaje coloreado cubierto en la figura?"
 
 #: ../src/PuzzleSquareDots.cs:86
 msgid "Square with dots"
@@ -336,6 +327,7 @@ msgstr ""
 "la secuencia (A, B o C)?"
 
 #: ../src/PuzzleSquareDots.cs:156 ../src/PuzzleNextFigure.cs:100
+#: ../src/PuzzleFigurePattern.cs:172
 msgid "Possible answers are:"
 msgstr "Respuestas posibles:"
 
@@ -507,15 +499,15 @@ msgstr "Aritmética"
 msgid "What is the result of the arithmetical operation?"
 msgstr "¿Cuál es el resultado de la siguiente operación?"
 
-#: ../src/MemoryColouredFigures.cs:50
-msgid "Coloured Figures"
+#: ../src/MemoryColouredFigures.cs:48
+msgid "Colored Figures"
 msgstr "Figuras coloreadas"
 
-#: ../src/MemoryColouredFigures.cs:55
+#: ../src/MemoryColouredFigures.cs:53
 msgid "Memorize the following figure in the time given"
 msgstr "Memoriza la siguiente figura en el tiempo disponible"
 
-#: ../src/MemoryColouredFigures.cs:60
+#: ../src/MemoryColouredFigures.cs:58
 msgid "Which of these figures was the one previously shown?"
 msgstr "¿Cuál de las siguientes figuras fue la mostrada previamente?"
 
@@ -531,8 +523,8 @@ msgstr " - Tiempo: {0}"
 
 #: ../src/GameSession.cs:127
 #, csharp-format
-msgid "- Current game: {0}"
-msgstr "- Juego actual: {0}"
+msgid "- Game: {0}"
+msgstr " - Juego: {0}"
 
 #: ../src/GameSession.cs:168
 msgid "Paused"
@@ -552,42 +544,18 @@ msgstr ""
 "¿Cuál de los siguientes cuadrados ha sido mostrado anteriormente (A, B, C o "
 "D)?"
 
-#: ../src/MemoryColouredText.cs:46
-msgid "Coloured text"
+#: ../src/MemoryColouredText.cs:34
+msgid "Colored text"
 msgstr "Texto coloreado"
 
-#: ../src/MemoryColouredText.cs:50
-msgid "Memorize the colours associated to every word"
+#: ../src/MemoryColouredText.cs:38
+msgid "Memorize the colors associated to every word"
 msgstr "Memoriza los colores asociados a cada palabra"
 
-#: ../src/MemoryColouredText.cs:55
+#: ../src/MemoryColouredText.cs:43
 #, csharp-format
-msgid "Which was the colour of the text that said '{0}'?"
-msgstr "¿Cuál es el color del texto que dice '{0}'?"
-
-#: ../src/MemoryColouredText.cs:63
-msgid "Blue"
-msgstr "Azul"
-
-#: ../src/MemoryColouredText.cs:67
-msgid "Red"
-msgstr "Rojo"
-
-#: ../src/MemoryColouredText.cs:71
-msgid "Green"
-msgstr "Verde"
-
-#: ../src/MemoryColouredText.cs:75
-msgid "Pink"
-msgstr "Rosa"
-
-#: ../src/MemoryColouredText.cs:79
-msgid "Yellow"
-msgstr "Amarillo"
-
-#: ../src/MemoryColouredText.cs:83
-msgid "Brown"
-msgstr "Marron"
+msgid "Which was the color of the text that said '{0}'?"
+msgstr "¿Cuál es el color del texto que dice «{0}»?"
 
 #: ../src/PuzzleCube.cs:38
 msgid "Cube"
@@ -908,17 +876,17 @@ msgid "Every triangle counts as 1, each diamond as a 2 and each square as 3."
 msgstr "Cada triángulo cuenta como 1, cada diamante como 2 y cada cuadrado como 3."
 
 #: ../src/MathWhichNumber.cs:36
-msgid "Nearest fraction"
+msgid "Closer fraction"
 msgstr "Fracción más próxima"
 
 #: ../src/MathWhichNumber.cs:44
 #, csharp-format
 msgid ""
-"Which of the following numbers is more near to {0:###.###} (option A, B, C "
-"or D)? "
+"Which of the following numbers is closer to {0:###.###} (option A, B, C or "
+"D)? "
 msgstr ""
-"¿Cuál de los siguientes números está más cerca de {0:###.###} (opción A, B, C "
-"o D)?"
+"¿Cuál de los siguientes números está más cerca de {0:###.###} (opción A, B, "
+"C o D)?"
 
 #: ../src/MathWhichNumber.cs:52
 #, csharp-format
@@ -933,7 +901,11 @@ msgstr "Pares"
 msgid "Which number should replace the question mark below?"
 msgstr "¿Qué número ha de reemplazar el interrogante?"
 
-#: ../src/PuzzlePairs.cs:65
+#: ../src/PuzzlePairs.cs:64
+msgid "All the triangles share a property and are independent of the rest."
+msgstr "Todos los triángulos comparten una propiedad y son independientes del resto."
+
+#: ../src/PuzzlePairs.cs:70
 #, csharp-format
 msgid "The result of multiply the two numbers inside every triangle is {0}."
 msgstr "El resultado de multiplicar los dos números dentro de cada triángulo es {0}."
@@ -951,6 +923,61 @@ msgid ""
 "In all the equations the digits from the left side should also appear in the "
 "right side."
 msgstr ""
-"En todas las ecuaciones los dígitos de la parte izquierda deben aparecer también en la "
-"parte derecha."
+"En todas las ecuaciones los dígitos de la parte izquierda deben aparecer "
+"también en la parte derecha."
+
+#: ../src/MathOperator.cs:33
+msgid "Operator"
+msgstr "Operador"
+
+#: ../src/MathOperator.cs:37
+#, csharp-format
+msgid "The first operator is {0}."
+msgstr "El primer operador es {0}."
+
+#: ../src/MathOperator.cs:45
+#, csharp-format
+msgid ""
+"Which operators make {0}, {1}, and {2} equal {3}? (The result is rounded to "
+"the nearest integer)"
+msgstr ""
+"¿Qué operadores hacen que {0}, {1} y {2} sean iguales a {3}? (El resultado se redondea "
+"al entero más próximo)"
+
+#: ../src/MemoryCountDots.cs:40
+msgid "Counting dots"
+msgstr "Contar puntos"
+
+#: ../src/MemoryCountDots.cs:44
+msgid "Try to memorize how many dots of each colour there are."
+msgstr "Intenta memorizar cuántos puntos hay de cada color."
+
+#: ../src/MemoryCountDots.cs:48
+#, csharp-format
+msgid "How many {0} dots were in the previous image?"
+msgstr "¿Cuántos puntos {0} había en la imagen anterior?"
+
+#: ../src/PuzzleFigurePattern.cs:37
+msgid "Figure pattern"
+msgstr "Patrones de figuras"
+
+#: ../src/PuzzleFigurePattern.cs:41
+msgid "Which figure should replace the question mark (A, B or C)?"
+msgstr "¿Qué figura debe reemplazar el interrogante (A, B o C)?"
+
+#: ../src/PuzzleFigurePattern.cs:45
+msgid ""
+"The third figure of every row involves combining somehow the first two "
+"figures."
+msgstr ""
+"La tercera figura de cada fila implica combinar de alguna manera las dos primeras "
+"figuras."
+
+#: ../src/PuzzleFigurePattern.cs:51
+msgid ""
+"Superpose the first and second figures and remove the lines that they have "
+"in common then rotate the resulting figure 45 degrees."
+msgstr ""
+"Superpón la primera y la segunda figuras y quita las líneas que tienen en común, después "
+"rota la figura resultante 45 grados."
 
