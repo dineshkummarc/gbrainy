@@ -83,7 +83,7 @@ public class gbrainy: Program
 
 	public void UpdateQuestion (string question)
 	{
-		question_label.Markup = "<span size='large' weight='bold'>" + question + "</span>";
+		question_label.Text = question;
 	}
 
 	public void QueueDraw ()

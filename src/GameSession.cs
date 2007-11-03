@@ -124,7 +124,7 @@ public class GameSession
 			text += String.Format (Catalog.GetString (" - Time: {0}"), current_time);
 
 			if (current_game != null)
- 				text += " " + String.Format (Catalog.GetString ("- Current game: {0}"), current_game.Name);
+ 				text += " " + String.Format (Catalog.GetString ("- Game: {0}"), current_game.Name);
 	
 			return text;
 		}
