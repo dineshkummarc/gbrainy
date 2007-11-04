@@ -26,6 +26,7 @@ public class PuzzleNextFigure : Game
 	private double rows, columns;
 	private int type;
 	private const double figure_size = 0.2;
+	private ArrayListIndicesRandom random_indices;
 
 	public enum CerclePosition 
 	{
@@ -35,6 +36,14 @@ public class PuzzleNextFigure : Game
 		Bottom		= 8,
 		Left		= 16,
 	}
+
+	enum Figures
+	{
+		First,
+		Second,
+		Third,
+		Last
+	};
 
 	public override string Name {
 		get {return Catalog.GetString ("Next figure");}
@@ -46,7 +55,16 @@ public class PuzzleNextFigure : Game
 
 	public override void Initialize ()
 	{
-		right_answer = "C";
+		random_indices = new ArrayListIndicesRandom ((int) Figures.Last);
+		random_indices.Initialize ();
+
+		for (int i = 0; i < (int) Figures.Last; i++)
+		{
+			if ((int) random_indices[i] == (int) Figures.Third) {
+				right_answer += (char) (65 + i);
+				break;
+			}
+		}
 	}
 
 	private void DrawDiamon (Cairo.Context gr, double x, double y, CerclePosition cercles)
@@ -101,20 +119,25 @@ public class PuzzleNextFigure : Game
 		gr.Stroke ();
 		y += 0.06;
 
-		
-		DrawDiamon (gr, x, y, CerclePosition.Right | CerclePosition.Left);
-		gr.MoveTo (x, y + figure_size + 0.05);
-		gr.ShowText (Catalog.GetString ("Figure") + " A");
-		gr.Stroke ();
+		for (int i = 0; i < (int) Figures.Last; i++)
+		{
+		 	switch ((Figures) random_indices[i]) {
+			case Figures.First:
+				DrawDiamon (gr, x, y, CerclePosition.Right | CerclePosition.Left);
+				break;
+			case Figures.Second:
+				DrawDiamon (gr, x, y, CerclePosition.Top | CerclePosition.Right);
+				break;
+			case Figures.Third:
+				DrawDiamon (gr, x, y, CerclePosition.Bottom | CerclePosition.Top);
+				break;
+			}
+			
+			gr.MoveTo (x + 0.02, y + 0.25);
+			gr.ShowText (Catalog.GetString ("Figure") + " " + (char) (65 + i));
+			x += space_figures;			
+		}
 
-		DrawDiamon (gr, x + space_figures, y, CerclePosition.Top | CerclePosition.Right);
-		gr.MoveTo (x + space_figures, y + figure_size + 0.05);
-		gr.ShowText (Catalog.GetString ("Figure") + " B");
-		gr.Stroke ();
-
-		DrawDiamon (gr, x+ space_figures * 2, y, CerclePosition.Bottom | CerclePosition.Top);
-		gr.MoveTo (x + space_figures * 2, y + figure_size + 0.05);
-		gr.ShowText (Catalog.GetString ("Figure") + " C");
 		gr.Stroke ();
 	}
 }

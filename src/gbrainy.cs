@@ -60,7 +60,7 @@ public class gbrainy: Program
 	        app_window.ShowAll ();		
 
 		question_label.Text = string.Empty;
-		ActiveButtons (false);
+		ActiveInputControls (false);
 		//OnMemoryOnly (this, EventArgs.Empty); // temp
 	}
 
@@ -69,10 +69,11 @@ public class gbrainy: Program
 		statusbar.Push (0, session.StatusText);
 	}
 
-	public void ActiveButtons (bool active)
+	public void ActiveInputControls (bool active)
 	{
 		answer_button.Sensitive = active;
 		next_button.Sensitive = active;
+		answer_entry.Sensitive = active;
 
 		if (active == true && session.CurrentGame != null && session.CurrentGame.ButtonsActive == true && session.CurrentGame.Tip != string.Empty)
 			tip_button.Sensitive = true;
@@ -95,7 +96,7 @@ public class gbrainy: Program
 	{
 		solution_label.Text = String.Empty;
 		session.NextGame ();
-		ActiveButtons (session.CurrentGame.ButtonsActive);
+		ActiveInputControls (session.CurrentGame.ButtonsActive);
 		drawing_area.puzzle = session.CurrentGame;
 		drawing_area.mode = GameDrawingArea.Modes.Puzzle;
 		UpdateQuestion (session.CurrentGame.Question);
@@ -270,17 +271,17 @@ public class gbrainy: Program
 		solution_label.Text = string.Empty;
 		UpdateStatusBar ();
 		drawing_area.QueueDraw ();
-		ActiveButtons (false);
+		ActiveInputControls (false);
 	}
 
 	void OnPauseGame (object sender, EventArgs args)
 	{
 		if (session.Paused) {
  			session.Resume ();
-			ActiveButtons (true);
+			ActiveInputControls (true);
 		} else {
 			session.Pause ();
-			ActiveButtons (false);
+			ActiveInputControls (false);
 		}
 		UpdateStatusBar ();
 	}

@@ -77,7 +77,7 @@ public abstract class Memory : Game
 			if (App != null) {	
 				Application.Invoke (delegate {
 					App.UpdateQuestion (MemoryQuestion);
-					App.ActiveButtons (buttons_active);
+					App.ActiveInputControls (buttons_active);
 				});
 			}
 		} else {

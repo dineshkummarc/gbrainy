@@ -88,7 +88,7 @@ public class PuzzleNumericRelation : Game
 				group = 0;
 				continue;
 			}
-			numbers[i] = random.Next (12);
+			numbers[i] = 1 + random.Next (12);
 			group++;
 		}
 
