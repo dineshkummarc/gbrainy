@@ -32,12 +32,20 @@ public class PuzzleCirclesRectangle : Game
 	}
 
 	public override string Tip {
-		get { return Catalog.GetString ("You can fit more than 25 circles.");}
+		get { return Catalog.GetString ("You can fit more than 64 circles.");}
+	}
+
+	public override string Answer {
+		get { 
+			string answer = base.Answer + " ";
+			answer += String.Format (Catalog.GetString ("In the layout shown {0} units of height are gained per line. This allows using an additional row."), 0.1340);
+			return answer;
+		}
 	}
 
 	public override void Initialize ()
 	{
-		right_answer = "27";
+		right_answer = "68";
 	}
 
 	public override void Draw (Cairo.Context gr, int area_width, int area_height)
@@ -45,13 +53,14 @@ public class PuzzleCirclesRectangle : Game
 		double first_x = DrawAreaX + 0.05;
 		double first_y = DrawAreaY + 0.1;
 		double space_fromrect = 0.02, space_fromcircle = 0.01;
-		int circles = 4;
+		int circles = 8;
+		double unit = 0.0625;
 
 		gr.Scale (area_width, area_height);
 
 		DrawBackground (gr);
 		PrepareGC (gr);
-		gr.Rectangle (first_x, first_y, 0.5, 0.5);
+		gr.Rectangle (first_x, first_y, unit * 8, unit * 8);
 		gr.Stroke ();
 
 		// |-------|
@@ -66,7 +75,7 @@ public class PuzzleCirclesRectangle : Game
 		gr.Stroke ();
 
 		gr.MoveTo (first_x + 0.2, first_y - 0.04 - space_fromrect);
-		gr.ShowText (Catalog.GetString ("5 units"));
+		gr.ShowText (Catalog.GetString ("8 units"));
 		gr.Stroke ();
 
 		//  ---
@@ -87,12 +96,12 @@ public class PuzzleCirclesRectangle : Game
 		gr.Save ();
 		gr.MoveTo (first_x - space_fromrect - 0.05, first_y + 0.3);
 		gr.Rotate (270 * Math.PI/180);
-		gr.ShowText (Catalog.GetString ("5 units"));
+		gr.ShowText (Catalog.GetString ("8 units"));
 		gr.Restore ();		
 		gr.Stroke ();
 		
 		// Sample circle
-		gr.Arc (first_x + 0.7, first_y + 0.1, 0.1 / 2, 0, 2 * Math.PI);
+		gr.Arc (first_x + 0.7, first_y + 0.1, unit / 2, 0, 2 * Math.PI);
 		gr.Stroke ();
 
 		// |-------|
@@ -137,24 +146,24 @@ public class PuzzleCirclesRectangle : Game
 			return;
 
 		double x;
-		for (int line = 0; line < 6; line++)
+		for (int line = 0; line < 9; line++)
 		{
 			for (int circle = 0; circle < circles; circle++) 
 			{
-				x = first_x + 0.05 + (circle * 0.1);
+				x = first_x + (unit / 2) + (circle * unit);
 				
-				if (circles == 4)
-					x+= 0.05;
+				if (circles == 7)
+					x+= unit / 2;
 
-				gr.Arc (x, 0.05 + first_y + (0.1 * line) - (0.1/5) * line, 
-						0.05 - 0.003, 0, 2 * Math.PI);
+				gr.Arc (x, (unit / 2) + first_y + (unit * line) - (unit / 8) * line, 
+						(unit / 2), 0, 2 * Math.PI);
 				gr.Stroke ();
 			}
 
-			if (circles ==5)
-				circles = 4;
+			if (circles ==8)
+				circles = 7;
 			else
-				circles = 5;
+				circles = 8;
 		}
 
 	}
