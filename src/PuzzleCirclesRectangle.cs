@@ -38,7 +38,7 @@ public class PuzzleCirclesRectangle : Game
 	public override string Answer {
 		get { 
 			string answer = base.Answer + " ";
-			answer += String.Format (Catalog.GetString ("In the layout shown {0} units of height are gained per line. This allows using an additional row."), 0.1340);
+			answer += String.Format (Catalog.GetString ("In the layout shown {0} units of height are gained in each row. This allows using an additional row."), 0.1340);
 			return answer;
 		}
 	}

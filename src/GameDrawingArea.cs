@@ -38,7 +38,7 @@ public class GameDrawingArea : DrawingArea
 	public Modes mode;
 	private GameSession session;
 	private ArrayListIndicesRandom random_indices;
-	const int tips_count = 5;
+	const int tips_count = 7;
 	const int tips_shown = 4;
 
 	public GameDrawingArea ()
@@ -195,6 +195,10 @@ public class GameDrawingArea : DrawingArea
 			return Catalog.GetString ("Break the mental blocks and look into the boundaries of problems.");
 		case 4:
 			return Catalog.GetString ("Enjoy doing mistakes, they are part of the learning process.");
+		case 5:
+			return Catalog.GetString ("Do all the problems, even the difficult ones. Improvement comes from practising.");
+		case 6:
+			return Catalog.GetString ("Play in daily basis, you will notice progress soon.");
 		}
 
 		return string.Empty;

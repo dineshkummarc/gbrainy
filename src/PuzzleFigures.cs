@@ -42,6 +42,17 @@ public class PuzzleFigures : Game
 		get {return Catalog.GetString ("What is the next logical sequence of objects?");} 
 	}
 
+
+	public override string Answer {
+		get { 
+			string answer = base.Answer + " ";
+
+			answer += Catalog.GetString ("It is the only combination that you can build with the giving elements without repeating them.");
+
+			return answer;
+		}
+	}
+
 	public override void Initialize ()
 	{
 		random_indices = new ArrayListIndicesRandom (6);
