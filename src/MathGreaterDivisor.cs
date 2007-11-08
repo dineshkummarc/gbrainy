@@ -183,7 +183,7 @@ public class MathGreaterDivisor : Game
 		gr.Scale (area_width, area_height);
 		DrawBackground (gr);
 		PrepareGC (gr);
-		gr.SetFontSize (0.05);
+		SetLargeFont (gr);
 
 		gr.MoveTo (0.05, y);
 		gr.ShowText (Catalog.GetString ("Numbers"));

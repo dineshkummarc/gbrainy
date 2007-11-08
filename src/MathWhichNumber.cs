@@ -130,7 +130,7 @@ public class MathWhichNumber : Game
 		gr.Scale (area_width, area_height);
 		DrawBackground (gr);
 		PrepareGC (gr);
-		gr.SetFontSize (0.05);
+		SetLargeFont (gr);
 
 		for (int i = 0; i < options_cnt; i++)
 		{

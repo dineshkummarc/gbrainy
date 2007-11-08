@@ -93,7 +93,7 @@ public class MathArithmetical : Game
 		DrawBackground (gr);
 		PrepareGC (gr);
 	
-		gr.SetFontSize (0.05);
+		SetLargeFont (gr);
 		for (int i = 0; i < operands.Length - 1; i++)
 		{
 			DrawingHelpers.DrawTextAlignedRight (gr, aligned_pos, operand_y, operands[i].ToString ());

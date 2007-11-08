@@ -114,7 +114,7 @@ public class MathOperator : Game
 		gr.Scale (area_width, area_height);
 		DrawBackground (gr);
 		PrepareGC (gr);
-		gr.SetFontSize (0.05);
+		SetLargeFont (gr);
 
 		DrawingHelpers.DrawTextAlignedRight (gr, aligned_pos, DrawAreaY + 0.2, number_a.ToString ());
 		DrawingHelpers.DrawTextAlignedRight (gr, aligned_pos, DrawAreaY + 0.3, number_b.ToString ());

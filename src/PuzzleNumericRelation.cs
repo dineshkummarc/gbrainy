@@ -103,7 +103,7 @@ public class PuzzleNumericRelation : Game
 		gr.Scale (area_width, area_height);
 		DrawBackground (gr);
 		PrepareGC (gr);
-		gr.SetFontSize (0.04);
+		SetLargeFont (gr);
 
 		for (int num = 0; num < max_num - 1; num++)
 		{
@@ -116,7 +116,7 @@ public class PuzzleNumericRelation : Game
 		}
 		sequence.Append (numbers[max_num - 1]);
 
-		gr.MoveTo (DrawAreaX + 0.1, DrawAreaY + 0.3);
+		gr.MoveTo (DrawAreaX, DrawAreaY + 0.3);
 		gr.ShowText (sequence.ToString ());
 		gr.Stroke ();
 	}

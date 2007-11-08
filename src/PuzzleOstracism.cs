@@ -67,11 +67,12 @@ public class PuzzleOstracism : Game
 
 	public override void Draw (Cairo.Context gr, int area_width, int area_height)
 	{
-		double x = DrawAreaX + 0.25, y = DrawAreaY + 0.2;
+		double x = DrawAreaX + 0.15, y = DrawAreaY + 0.2;
 
 		gr.Scale (area_width, area_height);
 		DrawBackground (gr);
 		PrepareGC (gr);
+		SetLargeFont (gr);
 		
 		for (int i = 0; i < random_indices.Count; i++)
 		{
