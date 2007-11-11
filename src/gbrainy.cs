@@ -55,8 +55,9 @@ public class gbrainy: Program
 		AddIcon (icon_factory, "math-games", "math-games-32.png");
 		AddIcon (icon_factory, "memory-games", "memory-games-32.png");
 		AddIcon (icon_factory, "pause", "pause.png");
-		AddIcon (icon_factory, "pause", "resume.png");
+		AddIcon (icon_factory, "resume", "resume.png");
 		AddIcon (icon_factory, "endgame", "endgame.png");
+		AddIcon (icon_factory, "allgames", "allgames.png");
 		icon_factory.AddDefault ();
 
 		Glade.XML gXML = new Glade.XML (null, "gbrainy.glade", "gbrainy", null);
@@ -65,7 +66,14 @@ public class gbrainy: Program
 		toolbar.IconSize = Gtk.IconSize.Dnd;
 	
 		Tooltips tooltips = new Tooltips ();
-		ToolButton button = new ToolButton ("logic-games");
+
+		ToolButton button = new ToolButton ("allgames");
+		button.SetTooltip (tooltips, Catalog.GetString ("Play all the games"), null);
+		button.Label = Catalog.GetString ("All Games");
+		button.Clicked += OnAllGames;
+		toolbar.Insert (button, -1);
+
+		button = new ToolButton ("logic-games");
 		button.SetTooltip (tooltips, Catalog.GetString ("Play games that challenge your reasoning and thinking"), null);
 		button.Label = Catalog.GetString ("Logic");
 		button.Clicked += OnLogicOnly;

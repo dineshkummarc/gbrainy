@@ -59,6 +59,7 @@ RESOURCES =										\
 -resource:$(top_srcdir)/data/resume.png  \
 -resource:$(top_srcdir)/data/endgame.png  \
 -resource:$(top_srcdir)/data/pause.png  \
+-resource:$(top_srcdir)/data/allgames.png  \
 -resource:$(top_srcdir)/data/gbrainy.png  \
 -resource:$(top_srcdir)/data/logic-games-32.png  \
 -resource:$(top_srcdir)/data/math-games-32.png  \

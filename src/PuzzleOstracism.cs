@@ -42,6 +42,11 @@ public class PuzzleOstracism : Game
 		get {return Catalog.GetString ("Which equation does not belong to the group (A, B, C, D or E)?");} 
 	}
 
+
+	public override string Tip {
+		get { return Catalog.GetString ("The criteria for deciding which equations if an equation belongs to the group is not arithmetical.");}
+	}
+
 	public override string Answer {
 		get { 
 			string answer = base.Answer + " ";

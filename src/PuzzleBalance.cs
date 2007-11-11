@@ -25,16 +25,22 @@ using Mono.Unix;
 public class PuzzleBalance : Game
 {
 	private const int elements = 5;
+	private int group;
 	private int [] balances = new int []
 	{
 		2,3,2,0,0,	1,3,1,1,1,
 		3,3,1,0,0,	2,2,2,1,0,
+		3,2,2,0,0,	0,0,0,0,0,
+
 		2,2,3,0,0,	3,2,1,1,0,
 		1,2,2,0,0,	3,1,1,0,0,
-		2,2,2,2,0,	3,1,1,3,0,
+		3,3,1,0,0,	0,0,0,0,0,
+
+		2,2,0,0,0,	2,1,1,0,0,
+		3,2,0,0,0,	1,1,1,2,0,
+		2,2,3,0,0,	0,0,0,0,0,
 	};
 
-	private ArrayListIndicesRandom random_indices;
 	private const double figure_width = 0.1, figure_height = 0.1, space_width = 0.05, space_height = 0;
 
 	public override string Name {
@@ -56,11 +62,10 @@ public class PuzzleBalance : Game
 	public override void Initialize ()
 	{
 		int ans = 0;
-		random_indices = new ArrayListIndicesRandom (5);
-		random_indices.Initialize ();
+		group = random.Next (3);
 
 		for (int i = 0; i < elements; i++)	
-			ans += balances [(((int) (random_indices[2])) * elements * 2) + i];
+			ans += balances [(group * elements * 6) + (4 * elements) + i];
 
 		right_answer = ans.ToString ();
 	}
@@ -78,7 +83,7 @@ public class PuzzleBalance : Game
 		gr.Stroke ();
 
 		for (int i = 0; i < total; i++) {
-			switch (balances[i + index * elements * 2]) {
+			switch (balances[i + index]) {
 			case 1:
 				DrawingHelpers.DrawEquilateralTriangle (gr, fig_x, fig_y, 0.05);
 				break;
@@ -120,13 +125,13 @@ public class PuzzleBalance : Game
 		DrawBackground (gr);
 		PrepareGC (gr);
 
-		DrawBalance (gr, x, y, (int) random_indices [0], true);
+		DrawBalance (gr, x, y, group * elements * 6, true);
 		y += 0.3;
 		
-		DrawBalance (gr, x, y, (int) random_indices [1], true);
+		DrawBalance (gr, x, y, (group * elements * 6) + 1 * elements * 2, true);
 		y += 0.3;
 
-		DrawBalance (gr, x, y, (int) random_indices [2], false);
+		DrawBalance (gr, x, y, (group * elements * 6) + 2 * elements * 2, false);
 	}
 
 }
