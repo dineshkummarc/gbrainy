@@ -19,6 +19,7 @@ tango_icons = 				\
 	memory-games-32.png	\	 
 	resume.png		\
 	endgame.png		\
+	allgames.png		\
 	pause.png
 
 
