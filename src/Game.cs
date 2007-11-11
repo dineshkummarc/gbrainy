@@ -223,7 +223,7 @@ abstract public class Game
 		gr.Color = default_background;
 		gr.Paint ();	
 		
-		gr.Color = new Cairo.Color (0.8, 0.8, 0.8);
+		gr.Color = new Cairo.Color (0.9, 0.9, 0.9);
 		gr.LineWidth = 0.001;
 		for (int column = 0; column < columns; column++) {
 			for (int row = 0; row < rows; row++) {			

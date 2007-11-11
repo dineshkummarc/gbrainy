@@ -38,18 +38,62 @@ public class gbrainy: Program
 	[Glade.Widget] Gtk.Button tip_button;
 	[Glade.Widget] Gtk.Button next_button;
 	[Glade.Widget] Gtk.Statusbar statusbar;
+	[Glade.Widget] Gtk.Toolbar toolbar;
+	[Glade.Widget] Gtk.CheckMenuItem toolbar_item;
 	GameDrawingArea drawing_area;
 	GameSession session;
 	const int ok_buttonid = -5;
-
+	ToolButton pause_tbbutton;    
+ 
 	public gbrainy (string [] args, params object [] props)
 	: base ("gbrainy", Defines.VERSION, Modules.UI,  args, props)
 	{
 		Catalog.Init ("gbrainy", Defines.GNOME_LOCALE_DIR);
 
+		IconFactory icon_factory = new IconFactory ();
+                AddIcon (icon_factory, "logic-games", "logic-games-32.png");
+		AddIcon (icon_factory, "math-games", "math-games-32.png");
+		AddIcon (icon_factory, "memory-games", "memory-games-32.png");
+		AddIcon (icon_factory, "pause", "pause.png");
+		AddIcon (icon_factory, "pause", "resume.png");
+		AddIcon (icon_factory, "endgame", "endgame.png");
+		icon_factory.AddDefault ();
+
 		Glade.XML gXML = new Glade.XML (null, "gbrainy.glade", "gbrainy", null);
 		gXML.Autoconnect (this);
-		
+
+		toolbar.IconSize = Gtk.IconSize.Dnd;
+	
+		Tooltips tooltips = new Tooltips ();
+		ToolButton button = new ToolButton ("logic-games");
+		button.SetTooltip (tooltips, Catalog.GetString ("Play games that challenge your reasoning and thinking"), null);
+		button.Label = Catalog.GetString ("Logic");
+		button.Clicked += OnLogicOnly;
+		toolbar.Insert (button, -1);
+
+		button = new ToolButton ("math-games");
+		button.Label = Catalog.GetString ("Calculation");
+		button.SetTooltip (tooltips, Catalog.GetString ("Play games that challenge your mental calculation skills"), null);
+		button.Clicked += OnMathOnly;
+		toolbar.Insert (button, -1);
+
+		button = new ToolButton ("memory-games");
+		button.Label = Catalog.GetString ("Memory");
+		button.SetTooltip (tooltips, Catalog.GetString ("Play games that challenge your short term memory"), null);
+		button.Clicked += OnMemoryOnly;
+		toolbar.Insert (button, -1);
+
+		pause_tbbutton = new ToolButton ("pause");
+		pause_tbbutton.Label = Catalog.GetString ("Pause");
+		pause_tbbutton.SetTooltip (tooltips, Catalog.GetString ("Pause the game"), null);
+		pause_tbbutton.Clicked += OnPauseGame;
+		toolbar.Insert (pause_tbbutton, -1);
+
+		button = new ToolButton ("endgame");
+		button.SetTooltip (tooltips, Catalog.GetString ("Ends the game and shows the score"), null);
+		button.Label = Catalog.GetString ("Finish Game");
+		button.Clicked += OnEndGame;
+		toolbar.Insert (button, -1);
 
 		session = new GameSession (this);		
 		drawing_area = new GameDrawingArea ();
@@ -57,7 +101,7 @@ public class gbrainy: Program
 		//app_window.Resize (500, 700);
 		//app_window.SizeAllocated += new SizeAllocatedHandler (OnSizeAllocated);
 		app_window.IconName = "gbrainy";
-	        app_window.ShowAll ();		
+		app_window.ShowAll ();
 
 		question_label.Text = string.Empty;
 		ActiveInputControls (false);
@@ -71,9 +115,17 @@ public class gbrainy: Program
 
 	public void ActiveInputControls (bool active)
 	{
-		answer_button.Sensitive = active;
+		if (session.CurrentGame != null && session.CurrentGame.DrawAnswer == true) {
+			answer_button.Sensitive = false;
+			answer_entry.Sensitive = false;
+		}
+		else {
+			answer_button.Sensitive = active;
+			answer_entry.Sensitive = active;
+		}
+
 		next_button.Sensitive = active;
-		answer_entry.Sensitive = active;
+
 
 		if (active == true && session.CurrentGame != null && session.CurrentGame.ButtonsActive == true && session.CurrentGame.Tip != string.Empty)
 			tip_button.Sensitive = true;
@@ -163,9 +215,9 @@ public class gbrainy: Program
 		session.EnableTimer = false;
 		answer_entry.Text = String.Empty;
 		UpdateStatusBar ();
-		answer_button.Sensitive = false;
 		solution_label.Markup = answer + " " + session.CurrentGame.Answer;
 		session.CurrentGame.DrawAnswer = true;
+		ActiveInputControls (true);
 		drawing_area.QueueDraw ();
 	}		
 
@@ -286,10 +338,37 @@ public class gbrainy: Program
 		UpdateStatusBar ();
 	}
 
+	private void OnToolbarActivate (object sender, System.EventArgs args)
+	{
+		int width, height;
+		Requisition requisition;
+
+		requisition =  toolbar.SizeRequest ();
+		app_window.GetSize (out width, out height);
+		toolbar.Visible = !toolbar.Visible;
+		app_window.Resize (width, height - requisition.Height);
+	}
+
 	private void OnSizeAllocated (object obj, SizeAllocatedArgs args)
 	{
 		//Console.WriteLine ("OnSizeAllocated");
 	}
+
+	private void AddIcon (IconFactory stock, string stockid, string resource)
+	{
+		Gtk.IconSet iconset = stock.Lookup (stockid);
+		
+		if (iconset != null)
+			return;
+
+		iconset = new Gtk.IconSet ();
+		Gdk.Pixbuf img = Gdk.Pixbuf.LoadFromResource (resource);
+		IconSource source = new IconSource ();
+		source.Pixbuf = img;
+		iconset.AddSource (source);
+		stock.Add (stockid, iconset);		
+	}
+
 	
 	public static void Main (string [] args) 
 	{

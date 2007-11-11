@@ -56,7 +56,13 @@ ASSEMBLIES = \
 
 RESOURCES =										\
 -resource:$(srcdir)/gbrainy.glade  \
--resource:$(top_srcdir)/data/gbrainy.png,  \
+-resource:$(top_srcdir)/data/resume.png  \
+-resource:$(top_srcdir)/data/endgame.png  \
+-resource:$(top_srcdir)/data/pause.png  \
+-resource:$(top_srcdir)/data/gbrainy.png  \
+-resource:$(top_srcdir)/data/logic-games-32.png  \
+-resource:$(top_srcdir)/data/math-games-32.png  \
+-resource:$(top_srcdir)/data/memory-games-32.png  \
 -resource:$(top_srcdir)/data/gbrainy.svg
 
 bin_SCRIPTS = $(WRAPPER) \

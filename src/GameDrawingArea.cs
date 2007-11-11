@@ -58,23 +58,9 @@ public class GameDrawingArea : DrawingArea
 
 	private void DrawBackground (Cairo.Context gr)
 	{
-		int columns = 40;
-		int rows = 40;
-		double rect_w = 1.0 / rows;
-		double rect_h = 1.0 / columns;
-
 		gr.Save ();
-
 		gr.Color = new Cairo.Color (1, 1, 1);
 		gr.Paint ();	
-
-		gr.Color = new Cairo.Color (0.8, 0.8, 0.8);
-		gr.LineWidth = 0.001;
-		for (int column = 0; column < columns; column++) {
-			for (int row = 0; row < rows; row++) {			
-				gr.Rectangle (row * rect_w, column * rect_h, rect_w, rect_h);
-			}
-		}
 		gr.Stroke ();
 		gr.Restore ();		
 	}
@@ -90,23 +76,62 @@ public class GameDrawingArea : DrawingArea
 
 	private void DrawWelcome (Cairo.Context gr, int area_width, int area_height)
 	{
+		double y = 0.07;
+		double space = 0.25;
+		double line_space = 0.06;
+		ImageSurface image;
+
 		gr.Scale (area_width, area_height);
 		DrawBackground (gr);
+		gr.Color = new Cairo.Color (0, 0, 0, 1);
+		gr.SetFontSize (0.035);
 
-		gr.Color = new Cairo.Color (0.1, 0.1, 0.1);
-		gr.SelectFontFace ("Sans", Cairo.FontSlant.Normal, Cairo.FontWeight.Normal);
-		gr.SetFontSize (0.04);
-
-		gr.MoveTo (0.2, 0.2);
+		gr.MoveTo (0.05, y);
+		Console.WriteLine ("DrawWelcome");
 		gr.ShowText (Catalog.GetString ("Welcome to gbrainy") + " " + Defines.VERSION);
 		gr.Stroke ();
-		
-		gr.MoveTo (0.1, 0.4);
-		// Keep the translated version of this string under 40 characters long 
-		gr.ShowText (Catalog.GetString ("Use the Game menu to start a new game"));
-		gr.Stroke ();
 
+		gr.SetFontSize (0.03);
+		DrawingHelpers.DrawStringWithWrapping (gr, 0.05, y + 0.08, line_space, "gbrainy is a brain teaser and trainer game to have fun. It provides the following types of games:");
+
+		y = 0.3;
+		image = new ImageSurface (Defines.DATA_DIR + "logic-games-80.png");
+		if (image.Width > 0) {
+			gr.Save ();
+			gr.Translate (0.05, y);
+			gr.Scale (0.8 / area_width, 0.8 / area_height);
+			gr.SetSourceSurface (image, 0, 0);
+			gr.Paint ();
+			gr.Restore ();
+		}
+		DrawingHelpers.DrawStringWithWrapping (gr, 0.21, y + 0.03, line_space, "Logic puzzles. Games designed to challenge your reasoning and thinking skills.");
+
+		y += space;
+		image = new ImageSurface (Defines.DATA_DIR + "math-games-80.png");
+		if (image.Width > 0) {
+			gr.Save ();
+			gr.Translate (0.05, y);
+			gr.Scale (0.8 / area_width, 0.8 / area_height);
+			gr.SetSourceSurface (image, 0, 0);
+			gr.Paint ();
+			gr.Restore ();
+		}
+		DrawingHelpers.DrawStringWithWrapping (gr, 0.21, y + 0.03, line_space, "Mental calculation. Games based on arithmetical operations designed to prove your mental calculation skills.");			
+
+		y += space;
+		image = new ImageSurface (Defines.DATA_DIR + "memory-games-80.png");
+		if (image.Width > 0) {
+			gr.Save ();
+			gr.Translate (0.05, y);
+			gr.Scale (0.8 / area_width, 0.8 / area_height);
+			gr.SetSourceSurface (image, 0, 0);
+			gr.Paint ();
+			gr.Restore ();
+		}
+		DrawingHelpers.DrawStringWithWrapping (gr, 0.21, y + 0.03, line_space, "Memory trainers. Games designed to challenge your short term memory.");
+		gr.Stroke ();
 	}
+
 
 	private void DrawScores (Cairo.Context gr, int area_width, int area_height)
 	{
@@ -119,7 +144,7 @@ public class GameDrawingArea : DrawingArea
 		gr.Paint ();	
 		gr.Color = new Cairo.Color (0, 0, 0, 1);
 
-		gr.SetFontSize (0.035);
+		gr.SetFontSize (0.03);
 		gr.MoveTo (x, y);
 		gr.ShowText (Catalog.GetString ("Score"));		
 		DrawBand (gr, 0.03, y - 0.04);
@@ -148,7 +173,7 @@ public class GameDrawingArea : DrawingArea
 		gr.ShowText (String.Format (str, session.MemoryScore));
 
 		y += 0.08;
-		gr.SetFontSize (0.035);
+		gr.SetFontSize (0.03);
 		gr.MoveTo (x, y);
 		gr.ShowText (Catalog.GetString ("Game statistics"));
 		DrawBand (gr, 0.03, y - 0.04);
@@ -162,7 +187,7 @@ public class GameDrawingArea : DrawingArea
 		gr.ShowText (String.Format (Catalog.GetString ("Total time played {0} (average per game {1})"), session.GameTime, session.TimePerGame));
 		y += 0.08;
 
-		gr.SetFontSize (0.035);
+		gr.SetFontSize (0.03);
 		gr.MoveTo (x, y);
 		gr.ShowText (Catalog.GetString ("Tips for your next games"));
 		DrawBand (gr, 0.03, y - 0.04);
@@ -212,7 +237,7 @@ public class GameDrawingArea : DrawingArea
 		int w, h;
 		args.Window.GetSize (out w, out h);
 		Cairo.Context cr = Gdk.CairoHelper.Create (args.Window);
-	
+		
 		switch (mode) {
 		case Modes.Welcome:
 			DrawWelcome (cr, w, h);

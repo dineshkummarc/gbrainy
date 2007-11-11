@@ -34,12 +34,13 @@
 	  <property name="child_pack_direction">GTK_PACK_DIRECTION_LTR</property>
 
 	  <child>
-	    <widget class="GtkMenuItem" id="menuitem1">
+	    <widget class="GtkMenuItem" id="item1">
 	      <property name="visible">True</property>
-	      <property name="stock_item">GNOMEUIINFO_MENU_GAME_TREE</property>
+	      <property name="label" translatable="yes">_Game</property>
+	      <property name="use_underline">True</property>
 
 	      <child>
-		<widget class="GtkMenu" id="menuitem1_menu">
+		<widget class="GtkMenu" id="item1_menu">
 
 		  <child>
 		    <widget class="GtkMenuItem" id="menuitem2">
@@ -143,6 +144,28 @@
 	  </child>
 
 	  <child>
+	    <widget class="GtkMenuItem" id="view1">
+	      <property name="visible">True</property>
+	      <property name="stock_item">GNOMEUIINFO_MENU_VIEW_TREE</property>
+
+	      <child>
+		<widget class="GtkMenu" id="view1_menu">
+
+		  <child>
+		    <widget class="GtkCheckMenuItem" id="toolbar_item">
+		      <property name="visible">True</property>
+		      <property name="label" translatable="yes">Toolbar</property>
+		      <property name="use_underline">True</property>
+		      <property name="active">True</property>
+		      <signal name="activate" handler="OnToolbarActivate" last_modification_time="Sun, 28 Oct 2007 18:51:20 GMT"/>
+		    </widget>
+		  </child>
+		</widget>
+	      </child>
+	    </widget>
+	  </child>
+
+	  <child>
 	    <widget class="GtkMenuItem" id="menuitem9">
 	      <property name="visible">True</property>
 	      <property name="stock_item">GNOMEUIINFO_MENU_HELP_TREE</property>
@@ -166,6 +189,21 @@
 	  <property name="padding">0</property>
 	  <property name="expand">True</property>
 	  <property name="fill">True</property>
+	</packing>
+      </child>
+
+      <child>
+	<widget class="GtkToolbar" id="toolbar">
+	  <property name="visible">True</property>
+	  <property name="orientation">GTK_ORIENTATION_HORIZONTAL</property>
+	  <property name="toolbar_style">GTK_TOOLBAR_BOTH</property>
+	  <property name="tooltips">True</property>
+	  <property name="show_arrow">True</property>
+	</widget>
+	<packing>
+	  <property name="padding">0</property>
+	  <property name="expand">False</property>
+	  <property name="fill">False</property>
 	</packing>
       </child>
 
