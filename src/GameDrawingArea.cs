@@ -91,7 +91,7 @@ public class GameDrawingArea : DrawingArea
 		gr.Stroke ();
 
 		gr.SetFontSize (0.03);
-		DrawingHelpers.DrawStringWithWrapping (gr, 0.05, y + 0.08, line_space, "gbrainy is a brain teaser and trainer game to have fun. It provides the following types of games:");
+		DrawingHelpers.DrawStringWithWrapping (gr, 0.05, y + 0.08, line_space, Catalog.GetString ("gbrainy is a brain teaser and trainer game to have fun. It provides the following types of games:"));
 
 		y = 0.3;
 		image = new ImageSurface (Defines.DATA_DIR + "logic-games-80.png");
@@ -103,7 +103,7 @@ public class GameDrawingArea : DrawingArea
 			gr.Paint ();
 			gr.Restore ();
 		}
-		DrawingHelpers.DrawStringWithWrapping (gr, 0.21, y + 0.03, line_space, "Logic puzzles. Games designed to challenge your reasoning and thinking skills.");
+		DrawingHelpers.DrawStringWithWrapping (gr, 0.21, y + 0.03, line_space, Catalog.GetString ("Logic puzzles. Games designed to challenge your reasoning and thinking skills."));
 
 		y += space;
 		image = new ImageSurface (Defines.DATA_DIR + "math-games-80.png");
@@ -115,7 +115,7 @@ public class GameDrawingArea : DrawingArea
 			gr.Paint ();
 			gr.Restore ();
 		}
-		DrawingHelpers.DrawStringWithWrapping (gr, 0.21, y + 0.03, line_space, "Mental calculation. Games based on arithmetical operations designed to prove your mental calculation skills.");			
+		DrawingHelpers.DrawStringWithWrapping (gr, 0.21, y + 0.03, line_space, Catalog.GetString ("Mental calculation. Games based on arithmetical operations designed to prove your mental calculation skills."));
 
 		y += space;
 		image = new ImageSurface (Defines.DATA_DIR + "memory-games-80.png");
@@ -127,7 +127,7 @@ public class GameDrawingArea : DrawingArea
 			gr.Paint ();
 			gr.Restore ();
 		}
-		DrawingHelpers.DrawStringWithWrapping (gr, 0.21, y + 0.03, line_space, "Memory trainers. Games designed to challenge your short term memory.");
+		DrawingHelpers.DrawStringWithWrapping (gr, 0.21, y + 0.03, line_space, Catalog.GetString ("Memory trainers. Games designed to challenge your short term memory."));
 		gr.Stroke ();
 	}
 
