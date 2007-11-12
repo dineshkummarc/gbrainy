@@ -69,7 +69,7 @@ public class gbrainy: Program
 
 		ToolButton button = new ToolButton ("allgames");
 		button.SetTooltip (tooltips, Catalog.GetString ("Play all the games"), null);
-		button.Label = Catalog.GetString ("All Games");
+		button.Label = Catalog.GetString ("All");
 		button.Clicked += OnAllGames;
 		toolbar.Insert (button, -1);
 
@@ -99,7 +99,7 @@ public class gbrainy: Program
 
 		button = new ToolButton ("endgame");
 		button.SetTooltip (tooltips, Catalog.GetString ("Ends the game and shows the score"), null);
-		button.Label = Catalog.GetString ("Finish Game");
+		button.Label = Catalog.GetString ("Finish");
 		button.Clicked += OnEndGame;
 		toolbar.Insert (button, -1);
 
@@ -123,22 +123,35 @@ public class gbrainy: Program
 
 	public void ActiveInputControls (bool active)
 	{
-		if (session.CurrentGame != null && session.CurrentGame.DrawAnswer == true) {
-			answer_button.Sensitive = false;
-			answer_entry.Sensitive = false;
-		}
-		else {
-			answer_button.Sensitive = active;
-			answer_entry.Sensitive = active;
-		}
+		bool answer, entry, next, tip;
 
-		next_button.Sensitive = active;
-
+		answer = entry = next = tip = active;
 
 		if (active == true && session.CurrentGame != null && session.CurrentGame.ButtonsActive == true && session.CurrentGame.Tip != string.Empty)
-			tip_button.Sensitive = true;
+			tip = true;
 		else
-			tip_button.Sensitive = false;
+			tip = false;
+	
+		switch (session.Status) {
+		case GameSession.SessionStatus.NotPlaying:
+			answer = false;
+			entry =  false;
+			next = false;
+			tip = false;
+			break;
+		case GameSession.SessionStatus.Playing:
+			break;
+		case GameSession.SessionStatus.Answered:
+			answer = false;
+			entry =  false;
+			tip = false;
+			break;
+		}
+
+		answer_button.Sensitive = answer;
+		answer_entry.Sensitive = entry;
+		next_button.Sensitive = next;
+		tip_button.Sensitive = tip;
 	}
 
 	public void UpdateQuestion (string question)
@@ -225,6 +238,7 @@ public class gbrainy: Program
 		UpdateStatusBar ();
 		solution_label.Markup = answer + " " + session.CurrentGame.Answer;
 		session.CurrentGame.DrawAnswer = true;
+		session.Status = GameSession.SessionStatus.Answered;
 		ActiveInputControls (true);
 		drawing_area.QueueDraw ();
 	}		

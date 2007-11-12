@@ -44,7 +44,7 @@ public class PuzzleOstracism : Game
 
 
 	public override string Tip {
-		get { return Catalog.GetString ("The criteria for deciding which equations if an equation belongs to the group is not arithmetical.");}
+		get { return Catalog.GetString ("The criteria for deciding if an equation belongs to the group is not arithmetical.");}
 	}
 
 	public override string Answer {

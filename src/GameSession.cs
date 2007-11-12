@@ -45,6 +45,13 @@ public class GameSession
 		Last			
 	}
 
+	public enum SessionStatus
+	{
+		NotPlaying,
+		Playing,
+		Answered,
+	}
+
 	private gbrainy app;
 	private TimeSpan game_time;
 	private int games_played;
@@ -59,6 +66,7 @@ public class GameSession
 	private int [] games;
 	private int total_score;
 	private bool scored_game;
+	private SessionStatus status;
 	
 	public GameSession (gbrainy brainy)
 	{
@@ -79,6 +87,7 @@ public class GameSession
 		games = new int [(int) ScoresType.Last];
 		total_score = 0;
 		scored_game = false;
+		status = SessionStatus.NotPlaying;
 	}
 
 	public GameSession Copy ()
@@ -130,6 +139,11 @@ public class GameSession
 	public bool EnableTimer {
 		get {return timer.Enabled; }
 		set {timer.Enabled = value; }
+	}
+
+	public SessionStatus Status {
+		get {return status; }
+		set {status = value; }
 	}
 
 	public GameManager GameManager {
@@ -196,6 +210,9 @@ public class GameSession
 
 	public string StatusText {
 		get {
+			if (status == SessionStatus.NotPlaying)
+				return string.Empty;
+
 			String text;
 			text = String.Format (Catalog.GetString ("Games played: {0} ({1}% score)"),games_played, total_score);
 			text += String.Format (Catalog.GetString (" - Time: {0}"), current_time);
@@ -231,6 +248,7 @@ public class GameSession
 		games = new int [(int) ScoresType.Last];
 		total_score = 0;
 		scored_game = false;
+		status = SessionStatus.NotPlaying;
 	}
 
 	public void NextGame ()
@@ -242,6 +260,7 @@ public class GameSession
 		current_game = game_manager.GetPuzzle (app);
 		current_game.GameTime = TimeSpan.Zero;
 		scored_game = false;
+		status = SessionStatus.Playing;
 	}
 
 	public void Pause ()
