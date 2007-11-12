@@ -17,10 +17,10 @@ tango_icons = 				\
 	math-games-32.png	\
 	logic-games-32.png	\
 	memory-games-32.png	\	 
-	resume.png		\
-	endgame.png		\
-	allgames.png		\
-	pause.png
+	resume-32.png		\
+	endgame-32.png		\
+	allgames-32.png		\
+	pause-32.png
 
 
 install-data-local:

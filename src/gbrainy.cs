@@ -54,10 +54,10 @@ public class gbrainy: Program
                 AddIcon (icon_factory, "logic-games", "logic-games-32.png");
 		AddIcon (icon_factory, "math-games", "math-games-32.png");
 		AddIcon (icon_factory, "memory-games", "memory-games-32.png");
-		AddIcon (icon_factory, "pause", "pause.png");
-		AddIcon (icon_factory, "resume", "resume.png");
-		AddIcon (icon_factory, "endgame", "endgame.png");
-		AddIcon (icon_factory, "allgames", "allgames.png");
+		AddIcon (icon_factory, "pause", "pause-32.png");
+		AddIcon (icon_factory, "resume", "resume-32.png");
+		AddIcon (icon_factory, "endgame", "endgame-32.png");
+		AddIcon (icon_factory, "allgames", "allgames-32.png");
 		icon_factory.AddDefault ();
 
 		Glade.XML gXML = new Glade.XML (null, "gbrainy.glade", "gbrainy", null);
