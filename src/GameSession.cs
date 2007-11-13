@@ -226,6 +226,9 @@ public class GameSession
 	
 	public void NewSession ()
 	{
+		if (status != SessionStatus.NotPlaying)
+			EndSession ();
+
 		games_played = 0;
 		games_won = 0;
 		game_time = TimeSpan.Zero;

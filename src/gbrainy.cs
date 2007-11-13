@@ -152,6 +152,9 @@ public class gbrainy: Program
 		answer_entry.Sensitive = entry;
 		next_button.Sensitive = next;
 		tip_button.Sensitive = tip;
+
+		if (entry == true)
+			answer_entry.GrabFocus ();
 	}
 
 	public void UpdateQuestion (string question)
