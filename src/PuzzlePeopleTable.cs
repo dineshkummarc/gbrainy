@@ -43,7 +43,7 @@ public class PuzzlePeopleTable : Game
 	}
 
 	public override string Question {
-		get {return String.Format (Catalog.GetString ("A group of people evenly separated is sat in a round table. How many people are if the {0} person is opposite to the {1}?"), ques1, ques2);} 
+		get {return String.Format (Catalog.GetString ("A group of people evenly separated is sat in a round table. How many people are if the {0} person is in front of the {1}?"), ques1, ques2);} 
 	}
 
 	public override string Answer {

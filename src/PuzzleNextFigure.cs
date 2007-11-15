@@ -53,6 +53,16 @@ public class PuzzleNextFigure : Game
 		get {return Catalog.GetString ("Which is the next logical figure in the sequence (A, B, or C)?");} 
 	}
 
+
+	public override string Answer {
+		get { 
+			string answer = base.Answer + " ";
+
+			answer += String.Format (Catalog.GetString ("From first figure the top circle advances two positions clockwise and the left circle goes backwards one position."));
+			return answer;
+		}
+	}
+
 	public override void Initialize ()
 	{
 		random_indices = new ArrayListIndicesRandom ((int) Figures.Last);
