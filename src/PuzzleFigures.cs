@@ -47,7 +47,7 @@ public class PuzzleFigures : Game
 		get { 
 			string answer = base.Answer + " ";
 
-			answer += Catalog.GetString ("It is the only combination that you can build with the giving elements without repeating them.");
+			answer += Catalog.GetString ("It is the only combination that you can build with the given elements without repeating them.");
 
 			return answer;
 		}
