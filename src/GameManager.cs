@@ -55,7 +55,7 @@ public class GameManager
 		typeof (MathGreaterDivisor),
 		typeof (MathTwoNumbers),
 		typeof (MathWhichNumber),
-		typeof (MathOperator),
+		//typeof (MathOperator), // Currently buggy. To be fixed in the next release
 	};
 
 	static Type[] MemoryTrainers = new Type[] 
