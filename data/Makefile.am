@@ -6,7 +6,7 @@ pixmap_DATA = gbrainy.png \
 
 hicolordir = $(datadir)/icons/hicolor
 
-man_MANS = gbrainy.1
+man_MANS = gbrainy.6
 
 tango_icons = 				\
 	gbrainy.png	\
