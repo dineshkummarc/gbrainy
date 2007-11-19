@@ -5,6 +5,7 @@ pixmap_DATA = gbrainy.png \
 		gbrainy16.png 
 
 hicolordir = $(datadir)/icons/hicolor
+images = $(datadir)/games/gbrainy
 
 man_MANS = gbrainy.6
 
@@ -30,10 +31,10 @@ install-data-local:
 	$(INSTALL_DATA) $(srcdir)/gbrainy16.png $(DESTDIR)$(hicolordir)/16x16/apps/gbrainy.png
 	@-$(mkinstalldirs) $(DESTDIR)$(hicolordir)/32x32/apps
 	$(INSTALL_DATA) $(srcdir)/gbrainy.png $(DESTDIR)$(hicolordir)/32x32/apps/gbrainy.png
-	@-$(mkinstalldirs) $(datadir)/gbrainy
-	$(INSTALL_DATA) $(srcdir)/math-games-80.png $(datadir)/gbrainy/math-games-80.png
-	$(INSTALL_DATA) $(srcdir)/logic-games-80.png $(datadir)/gbrainy/logic-games-80.png
-	$(INSTALL_DATA) $(srcdir)/memory-games-80.png $(datadir)/gbrainy/memory-games-80.png
+	@-$(mkinstalldirs) $(DESTDIR)$(images)
+	$(INSTALL_DATA) $(srcdir)/math-games-80.png $(DESTDIR)$(images)/math-games-80.png
+	$(INSTALL_DATA) $(srcdir)/logic-games-80.png $(DESTDIR)$(images)/logic-games-80.png
+	$(INSTALL_DATA) $(srcdir)/memory-games-80.png $(DESTDIR)$(images)/memory-games-80.png
 
 gtk_update_icon_cache = gtk-update-icon-cache -f -t $(datadir)/icons/hicolor
 
@@ -47,9 +48,9 @@ install-data-hook:
 	fi
 
 uninstall-hook:
-	rm -f $(DESTDIR)$(datadir)/gbrainy/math-games-80.png
-	rm -f $(DESTDIR)$(datadir)/gbrainy/logic-games-80.png
-	rm -f $(DESTDIR)$(datadir)/gbrainy/memory-games-80.png
+	rm -f $(DESTDIR)$(images)/math-games-80.png
+	rm -f $(DESTDIR)$(images)/logic-games-80.png
+	rm -f $(DESTDIR)$(images)/memory-games-80.png
 	rm -f $(DESTDIR)$(hicolordir)/32x32/apps/gbrainy.png
 	rm -f $(DESTDIR)$(hicolordir)/16x16/apps/gbrainy.png
 	rm -f $(DESTDIR)$(hicolordir)/scalable/apps/gbrainy.svg
