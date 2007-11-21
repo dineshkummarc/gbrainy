@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gbrainy.HEAD.es\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-11-13 21:16+0000\n"
-"PO-Revision-Date: 2007-11-14 19:26+0100\n"
+"POT-Creation-Date: 2007-11-15 13:30+0000\n"
+"PO-Revision-Date: 2007-11-21 21:56+0100\n"
 "Last-Translator: Jorge González <jorgegonz@svn.gnome.org>\n"
 "Language-Team: Spanish <traductores@es.gnome.org>\n"
 "MIME-Version: 1.0\n"
@@ -191,11 +191,11 @@ msgstr "¿Cuál es la siguiente secuencia lógica de objetos?"
 
 #: ../src/PuzzleFigures.cs:50
 msgid ""
-"It is the only combination that you can build with the giving elements "
+"It is the only combination that you can build with the given elements "
 "without repeating them."
 msgstr ""
-"Es la única combinación que puedes construir con los elementos dados y sin "
-"repetirlos."
+"Es la única combinación que puedes construir con los elementos dados "
+"sin repetirlos."
 
 #: ../src/PuzzleFigures.cs:76
 msgid "Convention when giving the answer is:"
@@ -305,7 +305,7 @@ msgstr ""
 
 #: ../src/PuzzlePencil.cs:168 ../src/PuzzleSquareDots.cs:162
 #: ../src/PuzzleSquareDots.cs:167 ../src/PuzzleSquareDots.cs:172
-#: ../src/PuzzleNextFigure.cs:137 ../src/MemoryColouredFigures.cs:148
+#: ../src/PuzzleNextFigure.cs:147 ../src/MemoryColouredFigures.cs:148
 #: ../src/MemoryNumbers.cs:123 ../src/PuzzleFigurePattern.cs:193
 msgid "Figure"
 msgstr "Figura"
@@ -377,7 +377,7 @@ msgstr ""
 "¿Cuál es la letra de la figura que representa la siguiente figura lógica en "
 "la secuencia (A, B o C)?"
 
-#: ../src/PuzzleSquareDots.cs:156 ../src/PuzzleNextFigure.cs:118
+#: ../src/PuzzleSquareDots.cs:156 ../src/PuzzleNextFigure.cs:128
 #: ../src/PuzzleFigurePattern.cs:172
 msgid "Possible answers are:"
 msgstr "Respuestas posibles:"
@@ -517,6 +517,15 @@ msgstr "Siguiente figura"
 #: ../src/PuzzleNextFigure.cs:53
 msgid "Which is the next logical figure in the sequence (A, B, or C)?"
 msgstr "¿Cuál es la siguiente figura lógica en la secuencia (A, B, o C)?"
+
+#: ../src/PuzzleNextFigure.cs:61
+#, csharp-format
+msgid ""
+"From first figure the top circle advances two positions clockwise and the "
+"left circle goes backwards one position."
+msgstr ""
+"Desde la primera figura el círculo superior avanza dos posiciones en sentido horario y el "
+"círculo izquierdo retrocede una posición."
 
 #: ../src/PuzzleSquareSheets.cs:28
 msgid "Squares Sheets"
@@ -911,8 +920,8 @@ msgid ""
 "How many triangles are needed in the right part of the last figure to keep "
 "it balanced?"
 msgstr ""
-"¿Cuántos triángulos se necesitan en la parte derecha de la última figura para "
-"mantener el balance?"
+"¿Cuántos triángulos se necesitan en la parte derecha de la última figura "
+"para mantener el balance?"
 
 #: ../src/PuzzleBalance.cs:57
 msgid "Every triangle counts as 1, each diamond as a 2 and each square as 3."
@@ -1189,10 +1198,10 @@ msgstr "Personas en una mesa"
 #, csharp-format
 msgid ""
 "A group of people evenly separated is sat in a round table. How many people "
-"are if the {0} person is opposite to the {1}?"
+"are if the {0} person is in front of the {1}?"
 msgstr ""
-"Un grupo de personas separadas a la misma distancia y sentadas en una tabla "
-"redonda. ¿Cuántas personas hay si la persona {0} está en frente de {1}?"
+"Un grupo de personas separadas la misma distancia y sentadas en una mesa redonda. ¿Cuántas personas "
+"hay si la persona {0} está en frente de {1}?"
 
 #: ../src/PuzzlePeopleTable.cs:52
 msgid ""
