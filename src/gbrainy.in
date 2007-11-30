@@ -5,5 +5,4 @@ exec_prefix="@exec_prefix@"
 bindir="@bindir@"
 
 
-cd ${bindir}
-exec  mono  "gbrainy.exe" "$@"
+exec  mono  "${bindir}/gbrainy.exe" "$@"

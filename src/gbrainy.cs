@@ -39,7 +39,6 @@ public class gbrainy: Program
 	[Glade.Widget] Gtk.Button next_button;
 	[Glade.Widget] Gtk.Statusbar statusbar;
 	[Glade.Widget] Gtk.Toolbar toolbar;
-	[Glade.Widget] Gtk.CheckMenuItem toolbar_item;
 	GameDrawingArea drawing_area;
 	GameSession session;
 	const int ok_buttonid = -5;

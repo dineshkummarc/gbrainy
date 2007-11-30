@@ -24,8 +24,6 @@ using Mono.Unix;
 
 public class MathWhichNumber : Game
 {
-	private int []numbers;
-	private int []answers;
 	private double question_num;
 	private const int options_cnt = 4;
 	private double []options;

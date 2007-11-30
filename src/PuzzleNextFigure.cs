@@ -23,8 +23,6 @@ using System;
 
 public class PuzzleNextFigure : Game
 {
-	private double rows, columns;
-	private int type;
 	private const double figure_size = 0.2;
 	private ArrayListIndicesRandom random_indices;
 
