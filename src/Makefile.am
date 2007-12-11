@@ -45,6 +45,7 @@ GBRAINY_CSDISTFILES =				\
 	$(srcdir)/ColorPalette.cs		\
 	$(srcdir)/PuzzlePeopleTable.cs		\
 	$(srcdir)/GameDrawingArea.cs		\
+	$(srcdir)/MemoryFigures.cs		\
 	$(srcdir)/gbrainy.cs			
 
 ASSEMBLIES = \
