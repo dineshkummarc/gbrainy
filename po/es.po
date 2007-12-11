@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gbrainy.HEAD.es\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-11-30 11:52+0000\n"
-"PO-Revision-Date: 2007-12-01 13:34+0100\n"
+"POT-Creation-Date: 2007-12-11 12:21+0000\n"
+"PO-Revision-Date: 2007-12-11 15:10+0100\n"
 "Last-Translator: Jorge González <jorgegonz@svn.gnome.org>\n"
 "Language-Team: Spanish <traductores@es.gnome.org>\n"
 "MIME-Version: 1.0\n"
@@ -39,7 +39,7 @@ msgstr "Juego personalizado"
 
 #: ../src/gbrainy.glade.h:3
 msgid "Custom Game Selection..."
-msgstr "Selección de juego personalizado..."
+msgstr "Selección de juego personalizado…"
 
 #: ../src/gbrainy.glade.h:4
 msgid "Logic Puzzles Only"
@@ -146,29 +146,29 @@ msgid "Finish"
 msgstr "Terminar"
 
 #. Name of persons or people that translated the application
-#: ../src/gbrainy.cs:191
+#: ../src/gbrainy.cs:205
 msgid "translator-credits"
 msgstr ""
 "Jorge González <jorgegonz@svn.gnome.org>, 2007\n"
 "Santiago Martinez Varela <smvarela@gmail.com>"
 
-#: ../src/gbrainy.cs:206
+#: ../src/gbrainy.cs:220
 msgid "A brain teaser and trainer game to have fun and to keep your brain trained."
 msgstr "Un juego para divertirse y mantener el cerebro entrenado."
 
-#: ../src/gbrainy.cs:208
+#: ../src/gbrainy.cs:222
 msgid "gbrainy web site"
 msgstr "Página web de gbrainy"
 
-#: ../src/gbrainy.cs:233
+#: ../src/gbrainy.cs:247
 msgid "Congratulations."
 msgstr "Enhorabuena."
 
-#: ../src/gbrainy.cs:235
+#: ../src/gbrainy.cs:249
 msgid "Incorrect answer."
 msgstr "Respuesta incorrecta."
 
-#: ../src/gbrainy.cs:282
+#: ../src/gbrainy.cs:296
 msgid ""
 "Once you have an answer type it in \"Your answer:\" entry box and press the "
 "\"Ok\" button."
@@ -536,8 +536,9 @@ msgid ""
 "What is the minimum number of square sheets of paper of any size needed to "
 "create the figure? (lines indicate frontiers between different sheets)"
 msgstr ""
-"¿Cuál es el mínimo número de hojas de papel cuadradas de cualquier tamaño necesarias "
-"para crear la figura? (las líneas indican los bordes entre las diferentes hojas)"
+"¿Cuál es el mínimo número de hojas de papel cuadradas de cualquier tamaño "
+"necesarias para crear la figura? (las líneas indican los bordes entre las "
+"diferentes hojas)"
 
 #: ../src/PuzzleSquareSheets.cs:36
 msgid "The sheets should overlap."
@@ -1039,11 +1040,11 @@ msgstr ""
 "Superpón la primera y la segunda figuras y quita las líneas que tienen en "
 "común, después rota la figura resultante 45 grados."
 
-#: ../src/GameDrawingArea.cs:90
+#: ../src/GameDrawingArea.cs:96
 msgid "Welcome to gbrainy"
 msgstr "Bienvenido a gbrainy"
 
-#: ../src/GameDrawingArea.cs:94
+#: ../src/GameDrawingArea.cs:100
 msgid ""
 "gbrainy is a brain teaser and trainer game to have fun. It provides the "
 "following types of games:"
@@ -1051,7 +1052,7 @@ msgstr ""
 "gbrainy es un entrenador de la memoria y un juego para divertirse. "
 "Proporciona los siguientes tipos de juegos:"
 
-#: ../src/GameDrawingArea.cs:106
+#: ../src/GameDrawingArea.cs:112
 msgid ""
 "Logic puzzles. Games designed to challenge your reasoning and thinking "
 "skills."
@@ -1059,7 +1060,7 @@ msgstr ""
 "Puzles lógicos. Juegos diseñados para retar a tus capacidades de  "
 "razonamiento y pensamiento."
 
-#: ../src/GameDrawingArea.cs:118
+#: ../src/GameDrawingArea.cs:124
 msgid ""
 "Mental calculation. Games based on arithmetical operations designed to prove "
 "your mental calculation skills."
@@ -1067,64 +1068,68 @@ msgstr ""
 "Cálculo mental. Juegos basados en operaciones aritméticas, diseñados para "
 "proporcionarte capacidades de cálculo mental."
 
-#: ../src/GameDrawingArea.cs:130
+#: ../src/GameDrawingArea.cs:136
 msgid "Memory trainers. Games designed to challenge your short term memory."
 msgstr ""
 "Entrenadores de memoria. Juegos diseñados para retar tu memoria a corto "
 "plazo."
 
-#: ../src/GameDrawingArea.cs:148
+#: ../src/GameDrawingArea.cs:178
+msgid "Get your memory ready..."
+msgstr "Prepara tu memoria…"
+
+#: ../src/GameDrawingArea.cs:206
 msgid "Score"
 msgstr "Puntuación"
 
-#: ../src/GameDrawingArea.cs:154
+#: ../src/GameDrawingArea.cs:212
 #, csharp-format
 msgid "Your total is score {0}%"
 msgstr "Tu puntuación total es {0}%"
 
-#: ../src/GameDrawingArea.cs:158
+#: ../src/GameDrawingArea.cs:216
 #, csharp-format
 msgid "Logic puzzle score is {0}%"
 msgstr "La puntuación de puzles lógicos es {0}%"
 
-#: ../src/GameDrawingArea.cs:159 ../src/GameDrawingArea.cs:165
-#: ../src/GameDrawingArea.cs:171
+#: ../src/GameDrawingArea.cs:217 ../src/GameDrawingArea.cs:223
+#: ../src/GameDrawingArea.cs:229
 msgid "(no games played)"
 msgstr "(no se ha jugado ninguna partida)"
 
-#: ../src/GameDrawingArea.cs:164
+#: ../src/GameDrawingArea.cs:222
 #, csharp-format
 msgid "Mental calculation score is {0}%"
 msgstr "La puntuación de cálculo mental es {0}%"
 
-#: ../src/GameDrawingArea.cs:170
+#: ../src/GameDrawingArea.cs:228
 #, csharp-format
 msgid "Memory score is {0}%"
 msgstr "La puntuación de memoria es {0}%"
 
-#: ../src/GameDrawingArea.cs:177
+#: ../src/GameDrawingArea.cs:235
 msgid "Game statistics"
 msgstr "Estadísticas de juego"
 
-#: ../src/GameDrawingArea.cs:183
+#: ../src/GameDrawingArea.cs:241
 #, csharp-format
 msgid "Total games won: {0} ({1} played)"
 msgstr "Total de partidas ganadas: {0} ({1} jugados)"
 
-#: ../src/GameDrawingArea.cs:186
+#: ../src/GameDrawingArea.cs:244
 #, csharp-format
 msgid "Total time played {0} (average per game {1})"
 msgstr "Total de tiempo jugado {0} (media por partida {1})"
 
-#: ../src/GameDrawingArea.cs:191
+#: ../src/GameDrawingArea.cs:249
 msgid "Tips for your next games"
 msgstr "Consejos para tus siguientes partidas"
 
-#: ../src/GameDrawingArea.cs:213
+#: ../src/GameDrawingArea.cs:271
 msgid "Read the instructions carefully and identify the data and clues given."
 msgstr "Lee las instrucciones cuidadosamente e identifica dos datos y pistas dadas."
 
-#: ../src/GameDrawingArea.cs:215
+#: ../src/GameDrawingArea.cs:273
 msgid ""
 "gbrainy uses the time and tips needed to complete each game to score the "
 "player."
@@ -1132,21 +1137,21 @@ msgstr ""
 "gbrainy usa el tiempo y los consejos necesitados para completar cada juego "
 "para puntuar al jugador."
 
-#: ../src/GameDrawingArea.cs:217
+#: ../src/GameDrawingArea.cs:275
 msgid "In logic games, elements that may seem irrelevant can be very important."
 msgstr ""
 "En los juegos de lógica, los elementos que pueden parecer irrelevantes "
 "pueden ser muy importantes."
 
-#: ../src/GameDrawingArea.cs:219
+#: ../src/GameDrawingArea.cs:277
 msgid "Break the mental blocks and look into the boundaries of problems."
 msgstr "Rompe los bloqueos mentales y mira los límites de los problemas."
 
-#: ../src/GameDrawingArea.cs:221
+#: ../src/GameDrawingArea.cs:279
 msgid "Enjoy doing mistakes, they are part of the learning process."
 msgstr "Diviértete cometiendo errores, son parte del proceso de aprendizaje."
 
-#: ../src/GameDrawingArea.cs:223
+#: ../src/GameDrawingArea.cs:281
 msgid ""
 "Do all the problems, even the difficult ones. Improvement comes from "
 "practising."
@@ -1154,7 +1159,7 @@ msgstr ""
 "Haz todos los problemas, incluso los difíciles. La mejora llega a través de "
 "la práctica."
 
-#: ../src/GameDrawingArea.cs:225
+#: ../src/GameDrawingArea.cs:283
 msgid "Play in daily basis, you will notice progress soon."
 msgstr "Juega diariamente, notarás pronto el progreso."
 
