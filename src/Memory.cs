@@ -54,9 +54,14 @@ public abstract class Memory : Game
 		timer = new System.Timers.Timer ();
 		timer.Elapsed += TimerUpdater;
 		timer.Interval = (1 * 100); // 0.1 seconds
-		timer.Enabled = true;
 		buttons_active = false;
+		timer.Enabled = false;
 		alpha = 1;
+	}
+
+	public void StartTimer ()
+	{
+		timer.Enabled = true;
 	}
 
 	private void TimerUpdater (object source, ElapsedEventArgs e)

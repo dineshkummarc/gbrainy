@@ -23,6 +23,8 @@ using Cairo;
 using Mono.Unix;
 using Gdk;
 using Gtk;
+using System.Threading;
+using System.Timers;
 
 public class GameDrawingArea : DrawingArea
 {
@@ -31,15 +33,19 @@ public class GameDrawingArea : DrawingArea
 	{	
 		Welcome,
 		Scores,
-		Puzzle
+		Puzzle,
+		CountDown,
 	}
 
 	public Game puzzle;
 	public Modes mode;
 	private GameSession session;
 	private ArrayListIndicesRandom random_indices;
-	const int tips_count = 7;
-	const int tips_shown = 4;
+	private const int tips_count = 7;
+	private const int tips_shown = 4;
+	private System.Timers.Timer timer;
+	private int countdown_time;
+	private EventHandler finish;
 
 	public GameDrawingArea ()
 	{
@@ -131,6 +137,58 @@ public class GameDrawingArea : DrawingArea
 		gr.Stroke ();
 	}
 
+	private void TimerUpdater (object source, ElapsedEventArgs e)
+	{
+		lock (this) {
+			if (countdown_time == 0) {
+				timer.Enabled = false;
+				timer.Dispose ();
+				finish (this, EventArgs.Empty);
+			}
+			countdown_time--;
+			Application.Invoke ( delegate { QueueDraw (); });
+		}
+	}
+
+	public void OnDrawCountDown (EventHandler OnFinish)
+	{
+		mode = Modes.CountDown;
+		QueueDraw ();
+		
+		countdown_time = 3;
+		timer = new System.Timers.Timer ();
+		timer.Elapsed += TimerUpdater;
+		timer.Interval = (1 * 1000); // 1 seconds
+		timer.Enabled = true;
+		finish = OnFinish;
+	}
+
+	private void DrawCountDown (Cairo.Context gr, int area_width, int area_height)
+	{
+		gr.Scale (area_width, area_height);
+
+		gr.Color = new Cairo.Color (0.8, 0.8, 0.8);
+		gr.Paint ();
+
+		gr.LineWidth = 0.01;
+		gr.Color = new Cairo.Color (0, 0, 0, 1);
+
+		gr.SetFontSize (0.05);
+		gr.MoveTo (0.2, 0.1);
+		gr.ShowText (Catalog.GetString ("Get your memory ready..."));
+		gr.Stroke ();
+
+		gr.SetFontSize (0.4);
+		gr.MoveTo (0.37, 0.63);
+		gr.ShowText (countdown_time.ToString ());
+		gr.Stroke ();
+
+		gr.Arc (0.5, 0.5, 0.25, 0, 2 * Math.PI);
+		gr.Stroke ();
+		gr.Arc (0.5, 0.5, 0.28, 0, 2 * Math.PI);
+		gr.Stroke ();
+
+	}
 
 	private void DrawScores (Cairo.Context gr, int area_width, int area_height)
 	{
@@ -246,6 +304,9 @@ public class GameDrawingArea : DrawingArea
 			break;	
 		case Modes.Puzzle:
 			puzzle.Draw (cr, w, h);
+			break;
+		case Modes.CountDown:
+			DrawCountDown (cr, w, h);
 			break;
 		}
 

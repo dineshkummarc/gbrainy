@@ -165,22 +165,36 @@ public class gbrainy: Program
 	{
 		drawing_area.QueueDraw ();
 	}
-	
 
-	private void GetNextGame ()
+	void OnNextGameAfterCountDown (object source, EventArgs e)
 	{
-		solution_label.Text = String.Empty;
-		session.NextGame ();
-		ActiveInputControls (session.CurrentGame.ButtonsActive);
-		drawing_area.puzzle = session.CurrentGame;
 		drawing_area.mode = GameDrawingArea.Modes.Puzzle;
+		ActiveInputControls (session.CurrentGame.ButtonsActive);
+		drawing_area.puzzle = session.CurrentGame;		
 		UpdateQuestion (session.CurrentGame.Question);
 		answer_entry.Text = string.Empty;
 		UpdateStatusBar ();
 		session.CurrentGame.DrawAnswer = false;
 		drawing_area.QueueDraw ();
-	}
 
+		if (session.CurrentGame as Memory != null)
+			(session.CurrentGame as Memory).StartTimer ();
+	}	
+
+	private void GetNextGame ()
+	{
+		solution_label.Text = String.Empty;
+		UpdateQuestion (String.Empty);
+		session.NextGame ();
+		
+		if (session.Type != GameSession.Types.MemoryTrainers && ((session.CurrentGame as Memory)  != null)) {
+			ActiveInputControls (false);
+			drawing_area.OnDrawCountDown (OnNextGameAfterCountDown);
+		}
+		else
+			OnNextGameAfterCountDown (this, EventArgs.Empty);
+	}
+	
 	void OnMenuAbout (object sender, EventArgs args)
 	{
 		string [] authors = new string [] {
@@ -289,10 +303,17 @@ public class gbrainy: Program
 		OnNewGame ();
 	}
 
+	void OnMemoryOnlyAfterCountDown (object source, EventArgs e)
+	{
+		OnNewGame ();
+	}
+
 	void OnMemoryOnly (object sender, EventArgs args)
 	{
+		question_label.Text = string.Empty;
+		solution_label.Text = string.Empty;
 		session.Type = GameSession.Types.MemoryTrainers;
-		OnNewGame ();
+		drawing_area.OnDrawCountDown (OnMemoryOnlyAfterCountDown);
 	}
 
 	void OnCustomGame (object sender, EventArgs args)
