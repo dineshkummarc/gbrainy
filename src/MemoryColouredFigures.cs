@@ -123,20 +123,12 @@ public class MemoryColouredFigures : Memory
 		}
 	}
 
-	public override void DrawObjectToMemorizeFading (Cairo.Context gr, int area_width, int area_height)
-	{
-		base.DrawObjectToMemorizeFading (gr, area_width, area_height);
-		palette.Alpha=alpha; 
-		gr.Color = palette.Cairo(DefaultDrawingColor);
-		DrawSquare (gr, DrawAreaX + 0.3, DrawAreaY + 0.1, squares_colours, 0);			
-	}
-	
 	public override void DrawPossibleAnswers (Cairo.Context gr, int area_width, int area_height)
 	{
 		double x = DrawAreaX + 0.05, y = DrawAreaY;
 	
-		palette.Alpha=1;
-		gr.Color = palette.Cairo(DefaultDrawingColor);
+		palette.Alpha = alpha;
+		//gr.Color = palette.Cairo(DefaultDrawingColor);
 		
 		for (int i = 0; i < answers_order.Count; i++) {
 			if (i == 2) {
@@ -154,6 +146,7 @@ public class MemoryColouredFigures : Memory
 	public override void DrawObjectToMemorize (Cairo.Context gr, int area_width, int area_height)
 	{
 		base.DrawObjectToMemorize (gr, area_width, area_height);
+		palette.Alpha = alpha; 
 		DrawSquare (gr, DrawAreaX + 0.3, DrawAreaY + 0.1, squares_colours, 0);
 	}
 

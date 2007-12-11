@@ -126,14 +126,6 @@ public class MemoryNumbers : Memory
 		}
 	}
 
-
-	public override void DrawObjectToMemorizeFading (Cairo.Context gr, int area_width, int area_height)
-	{
-		base.DrawObjectToMemorizeFading (gr, area_width, area_height);
-		gr.Color = new Color (DefaultDrawingColor.R, DefaultDrawingColor.G, DefaultDrawingColor.B, alpha);
-		DrawSquare (gr, DrawAreaX + 0.3, DrawAreaY + 0.1, numbers, 0);
-	}
-	
 	public override void DrawObjectToMemorize (Cairo.Context gr, int area_width, int area_height)
 	{
 		base.DrawObjectToMemorize (gr, area_width, area_height);
@@ -151,8 +143,5 @@ public class MemoryNumbers : Memory
 		}
 		gr.Stroke ();
 	}
-
-
-
 
 }

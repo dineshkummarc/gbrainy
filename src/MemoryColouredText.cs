@@ -54,25 +54,14 @@ public class MemoryColouredText : Memory
 		
 		base.Initialize ();
 	}
-
-	public override void DrawPossibleAnswers (Cairo.Context gr, int area_width, int area_height)
-	{
-	}
-
-
-	public override void DrawObjectToMemorizeFading (Cairo.Context gr, int area_width, int area_height)
-	{
-		base.DrawObjectToMemorizeFading (gr, area_width, area_height);
-		DrawObject (gr, area_width, area_height, alpha);
-	}
 	
 	public override void DrawObjectToMemorize (Cairo.Context gr, int area_width, int area_height)
 	{
 		base.DrawObjectToMemorize (gr, area_width, area_height);
-		DrawObject (gr, area_width, area_height, alpha);
+		DrawObject (gr, area_width, area_height);
 	}
 
-	public void DrawObject (Cairo.Context gr, int area_width, int area_height, double alpha)
+	public void DrawObject (Cairo.Context gr, int area_width, int area_height)
 	{
 		palette.Alpha=alpha;
 

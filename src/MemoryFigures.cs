@@ -96,10 +96,10 @@ public class MemoryFigures : Memory
 		int col = 1, fig;
 		double x = start_x, y = start_y;
 		gr.Color = new Color (DefaultDrawingColor.R, DefaultDrawingColor.G, DefaultDrawingColor.B, 1);
-		DrawGrid (gr, area_width, area_height, 1);
+		DrawGrid (gr, area_width, area_height);
 
 		if (DrawAnswer ==  true) {
-			DrawAllFigures (gr, area_width, area_height, 1);
+			DrawAllFigures (gr, area_width, area_height);
 			return;
 		}
 
@@ -110,7 +110,7 @@ public class MemoryFigures : Memory
 			if (fig >= (int) FigureType.Length) fig -= (int) FigureType.Length;
 
 			if (figure == question_pos)
-				DrawFigure (gr, x, y, alpha, (FigureType) fig);
+				DrawFigure (gr, x, y, (FigureType) fig);
 			else {
 				gr.MoveTo (x + 0.04, y + 0.1);
 				gr.ShowText ((figure + 1).ToString ());
@@ -127,21 +127,14 @@ public class MemoryFigures : Memory
 		}
 	}
 
-	public override void DrawObjectToMemorizeFading (Cairo.Context gr, int area_width, int area_height)
-	{
-		base.DrawObjectToMemorizeFading (gr, area_width, area_height);
-		DrawGrid (gr, area_width, area_height, alpha);
-		DrawAllFigures (gr, area_width, area_height, alpha);
-	}
-	
 	public override void DrawObjectToMemorize (Cairo.Context gr, int area_width, int area_height)
 	{
 		base.DrawObjectToMemorize (gr, area_width, area_height);
-		DrawGrid (gr, area_width, area_height, alpha);
-		DrawAllFigures (gr, area_width, area_height, alpha);
+		DrawGrid (gr, area_width, area_height);
+		DrawAllFigures (gr, area_width, area_height);
 	}
 
-	private void DrawAllFigures (Cairo.Context gr, int area_width, int area_height, double alpha)
+	private void DrawAllFigures (Cairo.Context gr, int area_width, int area_height)
 	{
 		int col = 1, fig;
 		double x = start_x, y = start_y;
@@ -152,7 +145,7 @@ public class MemoryFigures : Memory
 			if (fig >= (int) FigureType.Length) 
 				fig -= (int) FigureType.Length;
 
-			DrawFigure (gr, x, y, alpha, (FigureType) fig);
+			DrawFigure (gr, x, y, (FigureType) fig);
 
 			if (col >= columns) {
 				col = 0;
@@ -164,7 +157,7 @@ public class MemoryFigures : Memory
 		}
 	}
 
-	private void DrawFigure (Cairo.Context gr, double x, double y, double alpha, FigureType fig)
+	private void DrawFigure (Cairo.Context gr, double x, double y, FigureType fig)
 	{
 		double space_x = 0.04, space_y = 0.08;
 
@@ -213,7 +206,7 @@ public class MemoryFigures : Memory
 		}
 	}
 
-	private void DrawGrid (Cairo.Context gr, int area_width, int area_height, double alpha)
+	private void DrawGrid (Cairo.Context gr, int area_width, int area_height)
 	{
 		double x = start_x, y = start_y;
 		gr.Color = new Color (DefaultDrawingColor.R, DefaultDrawingColor.G, DefaultDrawingColor.B, alpha);

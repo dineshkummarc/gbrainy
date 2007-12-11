@@ -131,18 +131,10 @@ public class MemoryWords : Memory
 		}
 		
 	}
-
-	public override void DrawObjectToMemorizeFading (Cairo.Context gr, int area_width, int area_height)
-	{
-		base.DrawObjectToMemorizeFading (gr, area_width, area_height);
-		gr.Color = new Color (DefaultDrawingColor.R, DefaultDrawingColor.G, DefaultDrawingColor.B, alpha);
-		DrawObject (gr, area_width, area_height);
-	}
 	
 	public override void DrawObjectToMemorize (Cairo.Context gr, int area_width, int area_height)
 	{
 		base.DrawObjectToMemorize (gr, area_width, area_height);
-		gr.Color = DefaultDrawingColor;
 		DrawObject (gr, area_width, area_height);
 	}
 	

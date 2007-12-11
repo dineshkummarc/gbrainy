@@ -35,6 +35,7 @@ public abstract class Memory : Game
 	protected const int shading_time = 15;
 	private LinearGradient gradient = null;
 	protected double alpha;
+	private bool draw_timer;
 
 	public override bool ButtonsActive {
 		get { return buttons_active;}
@@ -57,18 +58,23 @@ public abstract class Memory : Game
 		buttons_active = false;
 		timer.Enabled = false;
 		alpha = 1;
+		draw_timer = false;
 	}
 
 	public void StartTimer ()
 	{
 		timer.Enabled = true;
+		draw_timer = true;
 	}
 
 	private void TimerUpdater (object source, ElapsedEventArgs e)
 	{
 		if (shade == false && time_left == 0) {
-			time_left = shading_time;
-			shade = true;
+			lock (this) {
+				time_left = shading_time;
+				shade = true;
+				draw_timer = false;
+			}
 			return;	
 		}	
 
@@ -106,11 +112,17 @@ public abstract class Memory : Game
 		PrepareGC (gr);
 
 		if (shade) {
-			DrawObjectToMemorizeFading (gr, area_width, area_height);
+			if (alpha > 0)
+				alpha -= (1 / (double) shading_time);
+
+			gr.Color = new Color (DefaultDrawingColor.R, DefaultDrawingColor.G, DefaultDrawingColor.B, alpha);
+			DrawObjectToMemorize (gr, area_width, area_height);
 			return;
 		}
-
-		if (request_answer) {
+		
+		alpha = 1;
+		gr.Color = new Color (DefaultDrawingColor.R, DefaultDrawingColor.G, DefaultDrawingColor.B, alpha);
+		if (request_answer && DrawAnswer == false) {
 			DrawPossibleAnswers (gr, area_width, area_height);
 		} else {
 			DrawObjectToMemorize (gr, area_width, area_height);			
@@ -126,16 +138,13 @@ public abstract class Memory : Game
 	}
 
 	public virtual void DrawPossibleAnswers (Cairo.Context gr, int area_width, int area_height) {}
-	public virtual void DrawObjectToMemorizeFading (Cairo.Context gr, int area_width, int area_height) 
-	{
-		if (alpha > 0 )
-			alpha -= (1 / (double) shading_time);
 
-	}
-
-	public virtual void DrawObjectToMemorize (Cairo.Context gr, int area_width, int area_height) 
+	public virtual void DrawObjectToMemorize (Cairo.Context gr, int area_width, int area_height)
 	{
 		double percentage;
+
+		if (draw_timer == false)
+			return;
 
 		percentage = 100 - ((time_left * 100) / total_time);
 		DrawTimeBar (gr, 0.1, 0.2, percentage);
