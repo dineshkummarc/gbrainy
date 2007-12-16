@@ -34,7 +34,7 @@ public class PuzzlePencil : Game
 	}
 
 	public override string Question {
-		get {return Catalog.GetString ("Which of the following figures cannot be drawn without crossing any previous lines and lifting the pen?");} 
+		get {return Catalog.GetString ("Which of the following figures cannot be drawn without crossing any previous lines and lifting the pencil?");} 
 	}
 
 	public override void Initialize ()
