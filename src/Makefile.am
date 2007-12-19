@@ -67,20 +67,9 @@ RESOURCES =										\
 -resource:$(top_srcdir)/data/memory-games-32.png  \
 -resource:$(top_srcdir)/data/gbrainy.svg
 
-bin_SCRIPTS = $(WRAPPER) \
-	      gbrainy.exe
-
-$(WRAPPER): $(srcdir)/$(WRAPPER).in Makefile
-	sed -e "s|\@prefix\@|$(prefix)|g" 		\
-	    -e "s|\@pkglibdir\@|$(pkglibdir)|g" 	\
-	    -e "s|\@bindir\@|$(bindir)|g"		\
-	    -e "s|\@target\@|$(TARGET)|g" 		\
-	    -e "s|\@wrapper\@|$(WRAPPER)|g"		\
-	    -e "s|\@extragac\@|$(EXTRA_GAC_PREFIX)|g"	\
-	    -e "s|\@exec_prefix\@|$(bindir)|g"			\
-	    -e "s|\@srcdir\@|$(PWD)|g"	\
-	    < $< > $@
-	chmod +x $(WRAPPER)
+gbrainydir = $(pkglibdir)
+gbrainy_SCRIPTS = gbrainy.exe
+bin_SCRIPTS = gbrainy
 
 GBRAINY_CSFILES = $(GBRAINY_CSDISTFILES)	\
 	Defines.cs \
@@ -104,5 +93,5 @@ CLEANFILES =					\
 
 
 DISTCLEANFILES = 				\
-	makefile
+	Makefile
 
