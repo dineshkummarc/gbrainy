@@ -86,7 +86,7 @@ public class MemoryNumbers : Memory
 			}
 
 			// Is not valid if it is already present
-			bool equals;
+			bool equals = true;
 			for (int answer = 0; answer < answers; answer++) {
 				if (answer * squares == target)
 					continue;
