@@ -67,7 +67,7 @@ RESOURCES =										\
 -resource:$(top_srcdir)/data/memory-games-32.png  \
 -resource:$(top_srcdir)/data/gbrainy.svg
 
-gbrainydir = $(pkglibdir)
+gbrainydir = $(libdir)/gbrainy
 gbrainy_SCRIPTS = gbrainy.exe
 bin_SCRIPTS = gbrainy
 
