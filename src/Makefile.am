@@ -46,6 +46,7 @@ GBRAINY_CSDISTFILES =				\
 	$(srcdir)/PuzzlePeopleTable.cs		\
 	$(srcdir)/GameDrawingArea.cs		\
 	$(srcdir)/MemoryFigures.cs		\
+	$(srcdir)/PuzzleMissingSlice.cs		\
 	$(srcdir)/gbrainy.cs			
 
 ASSEMBLIES = \

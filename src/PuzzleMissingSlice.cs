@@ -1,0 +1,208 @@
+/*
+ * Copyright (C) 2007 Jordi Mas i Hernàndez <jmas@softcatala.org>
+ *
+ * This program is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU General Public License as
+ * published by the Free Software Foundation; either version 2 of the
+ * License, or (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ * General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public
+ * License along with this program; if not, write to the
+ * Free Software Foundation, Inc., 59 Temple Place - Suite 330,
+ * Boston, MA 02111-1307, USA.
+ */
+
+using System;
+using Cairo;
+using System.Text;
+using Mono.Unix;
+
+public class PuzzleMissingSlice : Game
+{
+	private const int total_slices = 6;
+	private const int half_slices = total_slices / 2;
+	private const int items_per_slice = 3;
+	private const double radius = 0.22;
+	private const double radian = Math.PI / 180;
+	private const double arc_centerx = 0.2, arc_centery = 0.2;
+	private const int possible_answers = 3;
+	private ArrayListIndicesRandom random_indices;
+	private int ans_pos;
+	private int[] bad_answers;
+	private int sum_offset;
+
+	private int [] slices = new int []
+	{
+		2, 4, 3,
+		2, 3, 6,
+		1, 3, 4,
+		3, 7, 1,
+		6, 3, 2,
+	};
+
+	private int [] slices_opposite = new int []
+	{
+		6, 4, 5,
+		6, 5, 2,
+		7, 5, 4,
+		5, 1, 7,
+		2, 5, 6,
+	};
+
+	public override string Name {
+		get {return Catalog.GetString ("Missing slice");}
+	}
+
+	public override string Question {
+		get {return Catalog.GetString ("Some slices have a common property. Which is the missing slice (A, B, C)?");} 
+	}
+
+	public override string Tip {
+		get { return Catalog.GetString ("Each slice is related to the opposite one.");}
+	}
+
+	public override string Answer {
+		get { 
+			string answer = base.Answer + " ";
+			answer += String.Format (Catalog.GetString ("All the numbers of each slice when added to the ones of the opposite slice add always {0}."), sum_offset + 8);
+			return answer;
+		}
+	}
+
+	public override void Initialize ()
+	{
+		sum_offset = random.Next (3);
+		random_indices = new ArrayListIndicesRandom (slices.Length / items_per_slice);
+		random_indices.Initialize ();
+		ans_pos = random.Next (possible_answers);
+		right_answer += (char) (65 + (int) ans_pos);
+		
+		bad_answers = new int [possible_answers * items_per_slice];
+		for (int i = 0; i < bad_answers.Length; i++) {
+			bad_answers[i] = 1 + random.Next (9);
+		}
+	}
+
+	// From a giving point centers the text into it
+	private void DrawTextCentered (Cairo.Context gr, double x, double y, string str)
+	{
+		TextExtents extents;
+		extents = gr.TextExtents (str);
+		gr.MoveTo (x -extents.Width / 2, y + extents.Height / 2);
+		gr.ShowText (str);
+		gr.Stroke ();
+	}
+
+	private void DrawSlice (Cairo.Context gr, double x, double y)
+	{
+		double degrees, x1, y1;
+		
+		degrees = 0;
+		gr.MoveTo (x, y);
+		x1 = x + radius * Math.Cos (degrees);
+		y1 = y + radius * Math.Sin (degrees);
+		gr.LineTo (x1, y1);
+		gr.Stroke ();
+
+		degrees = radian * 60;
+		gr.MoveTo (x, y);
+		x1 = x + radius * Math.Cos (degrees);
+		y1 = y + radius * Math.Sin (degrees);
+		gr.LineTo (x1, y1);
+		gr.Stroke ();
+
+		gr.Arc (x, y, radius, 0, radian * 60);
+		gr.Stroke ();
+	}
+
+	private void DrawSliceText (Cairo.Context gr, double x, double y, int slice, string str1, string str2, string str3)
+	{	
+		double x0, y0, degrees;
+
+		// Number more near to the center;
+		degrees = radian * (slice * ((360 / total_slices)) + (360 / 12));
+		x0 = 0.35 * radius * Math.Cos (degrees);
+		y0 = 0.35 * radius * Math.Sin (degrees);
+		DrawTextCentered (gr, x + x0, y + y0, str1);
+	
+		// Number opposite to the center and at the top
+		degrees = radian * (slice * ((360 / total_slices)) + (360 / 24));
+		x0 = 0.8 * radius * Math.Cos (degrees);
+		y0 = 0.8 * radius * Math.Sin (degrees);
+		DrawTextCentered (gr, x + x0, y + y0, str2);
+	
+		// Number opposite to the center and at the bottom
+		degrees = radian * (slice * ((360 / total_slices)) + (360 / 8));			
+		x0 = 0.8 * radius * Math.Cos (degrees);
+		y0 = 0.8 * radius * Math.Sin (degrees);
+		DrawTextCentered (gr, x + x0, y + y0, str3);
+	}
+
+	public override void Draw (Cairo.Context gr, int area_width, int area_height)
+	{		
+		double x = DrawAreaX + 0.2, y = DrawAreaY;
+		double x0, y0, degrees;
+		int pos;
+
+		gr.Scale (area_width, area_height);
+		DrawBackground (gr);
+		PrepareGC (gr);
+			
+		gr.Arc (x + arc_centerx, y + arc_centery, radius, 0, 2 * Math.PI);
+		gr.Stroke ();
+
+		for (int slice = 0; slice < total_slices; slice++) 
+		{
+			degrees = radian * slice * (360 / total_slices);
+			gr.MoveTo (x + arc_centerx, y + arc_centery);
+			gr.LineTo (x + arc_centerx + (radius * Math.Cos (degrees)), y + arc_centery + (radius * Math.Sin (degrees)));
+	
+			if (slice > total_slices - 1) continue;
+
+			if (slice == 0) {
+				degrees = radian * (slice * ((360 / total_slices)) + (360 / 12));
+				x0 = 0.5 * radius * Math.Cos (degrees);
+				y0 = 0.5 * radius * Math.Sin (degrees);
+				DrawTextCentered (gr, x + arc_centerx + x0, y + arc_centery + y0, "?");
+				continue;
+			}
+			
+			if (slice < half_slices) {
+				pos = (int) random_indices [slice];
+				DrawSliceText (gr, x + arc_centerx, y + arc_centery, slice, (sum_offset + slices [pos * items_per_slice]).ToString (),
+					 (sum_offset + slices [1 + (pos * items_per_slice)]).ToString (), (sum_offset + slices [2 + (pos * items_per_slice)]).ToString ());
+			}
+			else {
+				pos = (int) random_indices [slice - half_slices];
+				DrawSliceText (gr, x + arc_centerx, y + arc_centery, slice, slices_opposite [pos * items_per_slice].ToString (),
+					 slices_opposite [2 + (pos * items_per_slice)].ToString (), slices_opposite [1 + (pos * items_per_slice)].ToString ());
+			}
+		}
+
+		gr.MoveTo (0.1, 0.61);
+		gr.ShowText (Catalog.GetString ("Possible answers are:"));
+
+		y = 0.68;
+ 		for (int i = 0; i < possible_answers; i++) 
+		{
+			DrawSlice (gr, 0.10 + i * 0.28, y);
+			if (i == ans_pos) {
+				pos = (int) random_indices [0];
+				DrawSliceText (gr, 0.10 + i * 0.28, y, 0, (sum_offset + slices [pos * items_per_slice]).ToString (),
+					 (sum_offset + slices [1 + (pos * items_per_slice)]).ToString (), (sum_offset + slices [2 + (pos * items_per_slice)]).ToString ());
+			} else {
+				DrawSliceText (gr, 0.10 + i * 0.28, y, 0, bad_answers [i * items_per_slice].ToString (),
+					 bad_answers [1 + (i * items_per_slice)].ToString (), bad_answers [2 + (i * items_per_slice)].ToString ());
+			}
+			
+			gr.MoveTo (0.10  + i * 0.28, y + 0.25);
+			gr.ShowText (Catalog.GetString ("Figure") + " " + (char) (65 + i));		
+		}
+	}
+}
+

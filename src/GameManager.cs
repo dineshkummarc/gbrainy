@@ -47,6 +47,7 @@ public class GameManager
 		typeof (PuzzleOstracism),
 		typeof (PuzzleFigurePattern),
 		typeof (PuzzlePeopleTable),
+		typeof (PuzzleMissingSlice),
 	};
 
 	static Type[] MathTrainers = new Type[] 
