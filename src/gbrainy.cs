@@ -25,6 +25,7 @@ using Gtk;
 using Gdk;
 using Gnome;
 using Mono.Unix;
+using System.Text;
 
 
 public class gbrainy: Program
@@ -414,9 +415,36 @@ public class gbrainy: Program
 		stock.Add (stockid, iconset);		
 	}
 
+	[DllImport ("libc")] // Linux
+	private static extern int prctl (int option, byte [] arg2, IntPtr arg3, IntPtr arg4, IntPtr arg5);
+
+	[DllImport ("libc")] // BSD
+	private static extern void setproctitle (byte [] fmt, byte [] str_arg);
+ 
+	public static void SetProcessName (string name)
+	{
+		int platform = (int) Environment.OSVersion.Platform;		
+		if (platform != 4 && platform != 128)
+			return;
+
+		try {
+			if (prctl (15 /* PR_SET_NAME */, Encoding.ASCII.GetBytes (name + "\0"),
+				IntPtr.Zero, IntPtr.Zero, IntPtr.Zero) != 0) {
+				throw new ApplicationException ("Error setting process name: " + 
+					Mono.Unix.Native.Stdlib.GetLastError ());
+			}
+		} catch (EntryPointNotFoundException) {
+			setproctitle (Encoding.ASCII.GetBytes ("%s\0"), 
+				Encoding.ASCII.GetBytes (name + "\0"));
+		}
+	}
 	
 	public static void Main (string [] args) 
 	{
+		try {
+			SetProcessName ("gbrainy");
+		} catch {}
+
 		gbrainy gui = new gbrainy (args);
 		gui.Run ();	
 	}
