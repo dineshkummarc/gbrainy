@@ -41,7 +41,7 @@ public class GameDrawingArea : DrawingArea
 	public Modes mode;
 	private GameSession session;
 	private ArrayListIndicesRandom random_indices;
-	private const int tips_count = 7;
+	private const int tips_count = 8;
 	private const int tips_shown = 4;
 	private System.Timers.Timer timer;
 	private int countdown_time;
@@ -281,6 +281,8 @@ public class GameDrawingArea : DrawingArea
 			return Catalog.GetString ("Do all the problems, even the difficult ones. Improvement comes from practising.");
 		case 6:
 			return Catalog.GetString ("Play in daily basis, you will notice progress soon.");
+		case 7:
+			return Catalog.GetString ("You can use the Custom Game Selection to choose exactly which games you want to train.");
 		}
 
 		return string.Empty;

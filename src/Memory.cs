@@ -27,7 +27,7 @@ using Gtk;
 public abstract class Memory : Game
 {
 	protected int time_left;
-	protected const int total_time = 4 /*seconds*/ * 10;
+	protected int total_time;
 	protected System.Timers.Timer timer;
 	private bool request_answer = false;
 	private bool buttons_active;
@@ -51,6 +51,7 @@ public abstract class Memory : Game
 
 	public override void Initialize ()
 	{	
+		total_time = App.MemQuestionTime * 10; // Seconds
 		time_left = total_time;
 		timer = new System.Timers.Timer ();
 		timer.Elapsed += TimerUpdater;

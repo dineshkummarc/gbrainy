@@ -43,7 +43,9 @@ public class gbrainy: Program
 	GameDrawingArea drawing_area;
 	GameSession session;
 	const int ok_buttonid = -5;
-	ToolButton pause_tbbutton;    
+	ToolButton pause_tbbutton;
+	int memquestion_time = 4;
+	bool memquestion_warn = true;
  
 	public gbrainy (string [] args, params object [] props)
 	: base ("gbrainy", Defines.VERSION, Modules.UI,  args, props)
@@ -115,7 +117,15 @@ public class gbrainy: Program
 		ActiveInputControls (false);
 		//OnMemoryOnly (this, EventArgs.Empty); // temp
 	}
+	
+	public virtual int MemQuestionTime {
+		get { return memquestion_time;}
+	}
 
+	public virtual bool MemQuestionWarn {
+		get { return memquestion_warn;}
+	}
+	
 	public void UpdateStatusBar ()
 	{
 		statusbar.Push (0, session.StatusText);
@@ -188,7 +198,7 @@ public class gbrainy: Program
 		UpdateQuestion (String.Empty);
 		session.NextGame ();
 		
-		if (session.Type != GameSession.Types.MemoryTrainers && ((session.CurrentGame as Memory)  != null)) {
+		if (MemQuestionWarn && session.Type != GameSession.Types.MemoryTrainers && ((session.CurrentGame as Memory)  != null)) {
 			ActiveInputControls (false);
 			drawing_area.OnDrawCountDown (OnNextGameAfterCountDown);
 		}
@@ -314,7 +324,25 @@ public class gbrainy: Program
 		question_label.Text = string.Empty;
 		solution_label.Text = string.Empty;
 		session.Type = GameSession.Types.MemoryTrainers;
-		drawing_area.OnDrawCountDown (OnMemoryOnlyAfterCountDown);
+
+		if (MemQuestionWarn)
+			drawing_area.OnDrawCountDown (OnMemoryOnlyAfterCountDown);
+		else
+			OnNewGame ();
+	}
+
+	void OnPreferences (object sender, EventArgs args)
+	{
+		PreferencesDialog dialog;
+
+		dialog = new PreferencesDialog ();
+		dialog.MemQuestionTime = MemQuestionTime;
+		dialog.MemQuestionWarn = MemQuestionWarn;
+		if (dialog.Run () == ok_buttonid) {
+			memquestion_warn = dialog.MemQuestionWarn;
+			memquestion_time = dialog.MemQuestionTime;
+		}
+		dialog.Dialog.Destroy ();
 	}
 
 	void OnCustomGame (object sender, EventArgs args)
