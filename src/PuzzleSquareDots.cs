@@ -159,17 +159,17 @@ public class PuzzleSquareDots : Game
 		
 		DrawFigure (gr, x, y, puzzle_A, columns * lines * 3);
 		gr.MoveTo (x, y + figure_size + 0.05);
-		gr.ShowText (Catalog.GetString ("Figure") + " A");
+		gr.ShowText (String.Format (Catalog.GetString ("Figure {0}"), "A"));
 		gr.Stroke ();
 
 		DrawFigure (gr, x + figure_size + space_figures, y, puzzle_A, columns * lines * 4);
 		gr.MoveTo (x + figure_size + space_figures, y + figure_size + 0.05);
-		gr.ShowText (Catalog.GetString ("Figure") + " B");
+		gr.ShowText (String.Format (Catalog.GetString ("Figure {0}"), "B"));
 		gr.Stroke ();
 
 		DrawFigure (gr, x + (figure_size + space_figures) * 2, y, puzzle_A, columns * lines * 5);
 		gr.MoveTo (x + (figure_size + space_figures) * 2, y + figure_size + 0.05);
-		gr.ShowText (Catalog.GetString ("Figure") + " C");
+		gr.ShowText (String.Format (Catalog.GetString ("Figure {0}"), "C"));
 		gr.Stroke ();
 
 	}

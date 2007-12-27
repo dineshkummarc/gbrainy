@@ -201,7 +201,7 @@ public class PuzzleMissingSlice : Game
 			}
 			
 			gr.MoveTo (0.10  + i * 0.28, y + 0.25);
-			gr.ShowText (Catalog.GetString ("Figure") + " " + (char) (65 + i));		
+			gr.ShowText (String.Format (Catalog.GetString ("Figure {0}"), (char) (65 + i)));
 		}
 	}
 }

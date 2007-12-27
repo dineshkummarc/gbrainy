@@ -142,7 +142,7 @@ public class PuzzleNextFigure : Game
 			}
 			
 			gr.MoveTo (x + 0.02, y + 0.25);
-			gr.ShowText (Catalog.GetString ("Figure") + " " + (char) (65 + i));
+			gr.ShowText (String.Format (Catalog.GetString ("Figure {0}"), (char) (65 + i)));
 			x += space_figures;			
 		}
 

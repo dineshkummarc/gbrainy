@@ -137,7 +137,7 @@ public class MemoryColouredFigures : Memory
 			}
 			DrawSquare (gr, x, y, squares_colours, squares * (int) answers_order[i]);
 			gr.MoveTo (x, y + 0.34);
-			gr.ShowText (Catalog.GetString ("Figure") + " " + (char) (65 + i));
+			gr.ShowText (String.Format (Catalog.GetString ("Figure {0}"), (char) (65 + i)));
 			gr.Stroke ();
 			x += 0.35;
 		}

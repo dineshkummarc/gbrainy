@@ -50,9 +50,7 @@ public abstract class Memory : Game
 	}
 
 	public override void Initialize ()
-	{	
-		total_time = App.MemQuestionTime * 10; // Seconds
-		time_left = total_time;
+	{
 		timer = new System.Timers.Timer ();
 		timer.Elapsed += TimerUpdater;
 		timer.Interval = (1 * 100); // 0.1 seconds
@@ -60,6 +58,9 @@ public abstract class Memory : Game
 		timer.Enabled = false;
 		alpha = 1;
 		draw_timer = false;
+
+		if (App != null)
+			time_left = total_time = App.MemQuestionTime * 10; // Seconds
 	}
 
 	public void StartTimer ()

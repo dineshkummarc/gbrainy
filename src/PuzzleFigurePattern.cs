@@ -190,7 +190,7 @@ public class PuzzleFigurePattern : Game
 			}
 			
 			gr.MoveTo (x, y + 0.2);
-			gr.ShowText (Catalog.GetString ("Figure") + " " + (char) (65 + i));
+			gr.ShowText (String.Format (Catalog.GetString ("Figure {0}"), (char) (65 + i)));
 
 			x += figure_size + space_x;			
 		}
