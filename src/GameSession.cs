@@ -304,10 +304,7 @@ public class GameSession
 			total_score += scores [i];
 		}
 
-		Console.WriteLine ("Score for this game {0}", current_game.Score);
-		Console.WriteLine ("Total scores {0}, maximum possible score {1}", total_score, games_played * 10);
 		total_score = total_score * 10 / games_played;
-
 		scored_game = true;
 	}	
 

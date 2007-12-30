@@ -77,12 +77,16 @@ public class GameManager
 	private IEnumerator enumerator;
 	private Type[] games;
 
-	public GameManager ()
+	static GameManager ()
 	{
-		game_type = GameSession.Types.None;
 		Console.WriteLine ("Games registered: {0}: {1} logic puzzles, {2} math trainers, {3} memory trainers", 
 			LogicPuzzles.Length + MathTrainers.Length + MemoryTrainers.Length,
 			LogicPuzzles.Length, MathTrainers.Length, MemoryTrainers.Length);
+	}
+
+	public GameManager ()
+	{
+		game_type = GameSession.Types.None;
 	}
 
 	public GameSession.Types GameType {
