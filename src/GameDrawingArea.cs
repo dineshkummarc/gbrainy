@@ -97,7 +97,7 @@ public class GameDrawingArea : DrawingArea
 		gr.Stroke ();
 
 		gr.SetFontSize (0.03);
-		DrawingHelpers.DrawStringWithWrapping (gr, 0.05, y + 0.08, line_space, Catalog.GetString ("gbrainy is a brain teaser and trainer game. It includes the following types of games:"));
+		DrawingHelpers.DrawStringWithWrapping (gr, 0.05, y + 0.08, line_space, Catalog.GetString ("gbrainy is a brain teaser game and trainer to have fun and to keep your brain trained. It includes:"));
 
 		y = 0.3;
 		image = new ImageSurface (Defines.DATA_DIR + "logic-games-80.png");

@@ -47,7 +47,10 @@ GBRAINY_CSDISTFILES =				\
 	$(srcdir)/GameDrawingArea.cs		\
 	$(srcdir)/MemoryFigures.cs		\
 	$(srcdir)/PuzzleMissingSlice.cs		\
+	$(srcdir)/PuzzleLines.cs		\
+	$(srcdir)/PuzzleTetris.cs		\
 	$(srcdir)/PreferencesDialog.cs		\
+	$(srcdir)/PuzzleMissingPiece.cs		\
 	$(srcdir)/gbrainy.cs			
 
 ASSEMBLIES = \

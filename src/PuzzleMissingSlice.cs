@@ -59,7 +59,7 @@ public class PuzzleMissingSlice : Game
 	}
 
 	public override string Question {
-		get {return Catalog.GetString ("Some slices have a common property. Which is the missing slice (A, B, C)?");} 
+		get {return Catalog.GetString ("Some slices have a common property. Which is the missing slice in the circle below (A, B, C)?");} 
 	}
 
 	public override string Tip {

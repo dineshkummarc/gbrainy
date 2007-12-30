@@ -48,6 +48,9 @@ public class GameManager
 		typeof (PuzzleFigurePattern),
 		typeof (PuzzlePeopleTable),
 		typeof (PuzzleMissingSlice),
+		typeof (PuzzleLines),
+		typeof (PuzzleTetris),
+		typeof (PuzzleMissingPiece),
 	};
 
 	static Type[] MathTrainers = new Type[] 
