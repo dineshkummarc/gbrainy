@@ -31,6 +31,8 @@ install-data-local:
 	$(INSTALL_DATA) $(srcdir)/gbrainy16.png $(DESTDIR)$(hicolordir)/16x16/apps/gbrainy.png
 	@-$(mkinstalldirs) $(DESTDIR)$(hicolordir)/32x32/apps
 	$(INSTALL_DATA) $(srcdir)/gbrainy.png $(DESTDIR)$(hicolordir)/32x32/apps/gbrainy.png
+	@-$(mkinstalldirs) $(DESTDIR)$(hicolordir)/48x48/apps
+	$(INSTALL_DATA) $(srcdir)/gbrainy.png $(DESTDIR)$(hicolordir)/48x48/apps/gbrainy.png
 	@-$(mkinstalldirs) $(DESTDIR)$(images)
 	$(INSTALL_DATA) $(srcdir)/math-games-80.png $(DESTDIR)$(images)/math-games-80.png
 	$(INSTALL_DATA) $(srcdir)/logic-games-80.png $(DESTDIR)$(images)/logic-games-80.png
@@ -51,11 +53,10 @@ uninstall-hook:
 	rm -f $(DESTDIR)$(images)/math-games-80.png
 	rm -f $(DESTDIR)$(images)/logic-games-80.png
 	rm -f $(DESTDIR)$(images)/memory-games-80.png
+	rm -f $(DESTDIR)$(hicolordir)/48x48/apps/gbrainy.png
 	rm -f $(DESTDIR)$(hicolordir)/32x32/apps/gbrainy.png
 	rm -f $(DESTDIR)$(hicolordir)/16x16/apps/gbrainy.png
 	rm -f $(DESTDIR)$(hicolordir)/scalable/apps/gbrainy.svg
-	rm -f $(DESTDIR)$(hicolordir)/32x32/apps/gbrainy.png
-
 
 noinst_DATA = 	
 
