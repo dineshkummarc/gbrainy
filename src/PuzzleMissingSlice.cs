@@ -88,16 +88,6 @@ public class PuzzleMissingSlice : Game
 		}
 	}
 
-	// From a giving point centers the text into it
-	private void DrawTextCentered (Cairo.Context gr, double x, double y, string str)
-	{
-		TextExtents extents;
-		extents = gr.TextExtents (str);
-		gr.MoveTo (x -extents.Width / 2, y + extents.Height / 2);
-		gr.ShowText (str);
-		gr.Stroke ();
-	}
-
 	private void DrawSlice (Cairo.Context gr, double x, double y)
 	{
 		double degrees, x1, y1;
@@ -128,19 +118,19 @@ public class PuzzleMissingSlice : Game
 		degrees = radian * (slice * ((360 / total_slices)) + (360 / 12));
 		x0 = 0.35 * radius * Math.Cos (degrees);
 		y0 = 0.35 * radius * Math.Sin (degrees);
-		DrawTextCentered (gr, x + x0, y + y0, str1);
+		DrawingHelpers.DrawTextCentered (gr, x + x0, y + y0, str1);
 	
 		// Number opposite to the center and at the top
 		degrees = radian * (slice * ((360 / total_slices)) + (360 / 24));
 		x0 = 0.8 * radius * Math.Cos (degrees);
 		y0 = 0.8 * radius * Math.Sin (degrees);
-		DrawTextCentered (gr, x + x0, y + y0, str2);
+		DrawingHelpers.DrawTextCentered (gr, x + x0, y + y0, str2);
 	
 		// Number opposite to the center and at the bottom
 		degrees = radian * (slice * ((360 / total_slices)) + (360 / 8));			
 		x0 = 0.8 * radius * Math.Cos (degrees);
 		y0 = 0.8 * radius * Math.Sin (degrees);
-		DrawTextCentered (gr, x + x0, y + y0, str3);
+		DrawingHelpers.DrawTextCentered (gr, x + x0, y + y0, str3);
 	}
 
 	public override void Draw (Cairo.Context gr, int area_width, int area_height)
@@ -168,7 +158,7 @@ public class PuzzleMissingSlice : Game
 				degrees = radian * (slice * ((360 / total_slices)) + (360 / 12));
 				x0 = 0.5 * radius * Math.Cos (degrees);
 				y0 = 0.5 * radius * Math.Sin (degrees);
-				DrawTextCentered (gr, x + arc_centerx + x0, y + arc_centery + y0, "?");
+				DrawingHelpers.DrawTextCentered (gr, x + arc_centerx + x0, y + arc_centery + y0, "?");
 				continue;
 			}
 			

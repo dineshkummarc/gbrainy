@@ -40,6 +40,16 @@ public class DrawingHelpers
 		gr.Stroke ();
 	}
 
+	// From a giving point centers the text into it
+	static public void DrawTextCentered (Cairo.Context gr, double x, double y, string str)
+	{
+		TextExtents extents;
+		extents = gr.TextExtents (str);
+		gr.MoveTo (x -extents.Width / 2, y + extents.Height / 2);
+		gr.ShowText (str);
+		gr.Stroke ();
+	}
+
 	static public double DrawStringWithWrapping (Cairo.Context gr, double x, double y, double line_space, string str)
 	{
 		TextExtents extents;
