@@ -1,6 +1,6 @@
 # 
 # This file is distributed under the same license as the PACKAGE package.
-# (c) 2007 Jordi Mas i Hernandez, 2007
+# (c) 2007-2008 Jordi Mas i Hernandez
 #
 # Correccions per Gil Forcada, Sílvia Miranda
 #
@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gbrainy\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-12-15 18:45+0100\n"
-"PO-Revision-Date: 2007-12-16 14:55+0200\n"
+"POT-Creation-Date: 2008-01-05 14:03+0100\n"
+"PO-Revision-Date: 2008-01-05 13:35+0200\n"
 "Last-Translator: Jordi Mas <jmas@softcatala.org>\n"
 "Language-Team: Catalan\n"
 "MIME-Version: 1.0\n"
@@ -33,145 +33,164 @@ msgid "Game"
 msgstr "Joc"
 
 #
-#: ../gbrainy.desktop.in.h:3 ../src/gbrainy.glade.h:17
+#: ../gbrainy.desktop.in.h:3 ../src/gbrainy.glade.h:21
 msgid "gbrainy"
 msgstr "gbrainy"
 
 #
+#
 #: ../src/gbrainy.glade.h:1
+msgid "<b>Memory games</b>"
+msgstr "<b>Jocs de memòria</b>"
+
+#
+#: ../src/gbrainy.glade.h:2
 msgid "All Games and Trainers (Logic, Mental Calculation and Memory)"
 msgstr "Tots els jocs i entrenadors (lògica, càlcul mental i memòria)"
 
-#: ../src/gbrainy.glade.h:2
+#: ../src/gbrainy.glade.h:3
 msgid "Custom Game"
 msgstr "Partida personalitzada"
 
 #
-#: ../src/gbrainy.glade.h:3
+#: ../src/gbrainy.glade.h:4
 msgid "Custom Game Selection..."
 msgstr "Selecció de la partida personalitzada..."
 
-#: ../src/gbrainy.glade.h:4
+#: ../src/gbrainy.glade.h:5
 msgid "Logic Puzzles Only"
 msgstr "Només trencaclosques lògics"
 
-#: ../src/gbrainy.glade.h:5
+#: ../src/gbrainy.glade.h:6
 msgid "Memory Trainers Only"
 msgstr "Només entrenadors de memòria"
 
 #
-#: ../src/gbrainy.glade.h:6
+#: ../src/gbrainy.glade.h:7
 msgid "Mental Calculation Trainers Only"
 msgstr "Només entrenadors de càlcul mental"
 
-#: ../src/gbrainy.glade.h:7
+#: ../src/gbrainy.glade.h:8
 msgid "New Game"
 msgstr "Partida nova"
 
-#: ../src/gbrainy.glade.h:8
+#: ../src/gbrainy.glade.h:9
+msgid "Preferences"
+msgstr "Preferències"
+
+#: ../src/gbrainy.glade.h:10
 msgid "Select All"
 msgstr "Selecciona-ho tot"
 
-#: ../src/gbrainy.glade.h:9
+#
+#: ../src/gbrainy.glade.h:11
+msgid "Show the countdown message before a memory question"
+msgstr "Mostra el missatge de compte enrere abans d'una pregunta de memòria"
+
+#: ../src/gbrainy.glade.h:12
+msgid "Time in seconds to memorize questions:"
+msgstr "Temps en segons per a memoritzar les preguntes:"
+
+#: ../src/gbrainy.glade.h:13
 msgid "Toolbar"
 msgstr "Barra d'eines"
 
 #
-#: ../src/gbrainy.glade.h:10
+#: ../src/gbrainy.glade.h:14
 msgid "Trainers Only (Mental Calculation and Memory)"
 msgstr "Només entrenadors (càlcul mental i memòria)"
 
-#: ../src/gbrainy.glade.h:11
+#: ../src/gbrainy.glade.h:15
 msgid "Unselect all"
 msgstr "Desselecciona-ho tot"
 
 #
-#: ../src/gbrainy.glade.h:12
+#: ../src/gbrainy.glade.h:16
 msgid "Your answer:"
 msgstr "Resposta:"
 
 #
 #
-#: ../src/gbrainy.glade.h:13
+#: ../src/gbrainy.glade.h:17
 msgid "_Game"
 msgstr "_Joc"
 
 #
-#: ../src/gbrainy.glade.h:14
+#: ../src/gbrainy.glade.h:18
 msgid "_Next"
 msgstr "_Següent"
 
 #
-#: ../src/gbrainy.glade.h:15
+#: ../src/gbrainy.glade.h:19
 msgid "_Ok"
 msgstr "_D'acord"
 
 #
-#: ../src/gbrainy.glade.h:16
+#: ../src/gbrainy.glade.h:20
 msgid "_Tip"
 msgstr "_Pista"
 
-#: ../src/gbrainy.cs:70
+#: ../src/gbrainy.cs:73
 msgid "Play all the games"
 msgstr "Jugueu a tots els tipus de jocs"
 
-#: ../src/gbrainy.cs:71
+#: ../src/gbrainy.cs:74
 msgid "All"
 msgstr "Tots"
 
-#: ../src/gbrainy.cs:76
+#: ../src/gbrainy.cs:79
 msgid "Play games that challenge your reasoning and thinking"
 msgstr ""
 "Jugueu a jocs que desafien les vostres habilitats de raonament i pensament"
 
-#: ../src/gbrainy.cs:77 ../src/CustomGameDialog.cs:92
+#: ../src/gbrainy.cs:80 ../src/CustomGameDialog.cs:92
 msgid "Logic"
 msgstr "Lògica"
 
 #
-#: ../src/gbrainy.cs:82
+#: ../src/gbrainy.cs:85
 msgid "Calculation"
 msgstr "Càlcul"
 
-#: ../src/gbrainy.cs:83
+#: ../src/gbrainy.cs:86
 msgid "Play games that challenge your mental calculation skills"
 msgstr "Jugueu a jocs que desafien les vostres habilitats de càlcul mental"
 
-#: ../src/gbrainy.cs:88 ../src/CustomGameDialog.cs:95
+#: ../src/gbrainy.cs:91 ../src/CustomGameDialog.cs:95
 msgid "Memory"
 msgstr "Memòria"
 
-#: ../src/gbrainy.cs:89
+#: ../src/gbrainy.cs:92
 msgid "Play games that challenge your short term memory"
 msgstr "Jugueu a jocs que desafien la vostra memòria a curt termini"
 
 #
-#: ../src/gbrainy.cs:94
+#: ../src/gbrainy.cs:97
 msgid "Pause"
 msgstr "Pausa"
 
-#: ../src/gbrainy.cs:95
+#: ../src/gbrainy.cs:98
 msgid "Pause the game"
 msgstr "Fes una pausa al joc"
 
-#: ../src/gbrainy.cs:100
+#: ../src/gbrainy.cs:103
 msgid "Ends the game and shows the score"
 msgstr "Finalitza el joc i mostra la puntuació"
 
 #
-#: ../src/gbrainy.cs:101
+#: ../src/gbrainy.cs:104
 msgid "Finish"
 msgstr "Finalitza"
 
 #. Name of persons or people that translated the application
-#: ../src/gbrainy.cs:205
+#: ../src/gbrainy.cs:216
 msgid "translator-credits"
 msgstr "Jordi Mas i Hernandez <jmas@softcatala.org>"
 
 #
 #
 #
-#: ../src/gbrainy.cs:220
+#: ../src/gbrainy.cs:231
 msgid ""
 "A brain teaser and trainer game to have fun and to keep your brain trained."
 msgstr ""
@@ -179,22 +198,22 @@ msgstr ""
 
 #
 #
-#: ../src/gbrainy.cs:222
+#: ../src/gbrainy.cs:233
 msgid "gbrainy web site"
 msgstr "Lloc web del gbrainy"
 
-#: ../src/gbrainy.cs:247
+#: ../src/gbrainy.cs:258
 msgid "Congratulations."
 msgstr "Felicitats."
 
 #
 #
-#: ../src/gbrainy.cs:249
+#: ../src/gbrainy.cs:260
 msgid "Incorrect answer."
 msgstr "Resposta incorrecta."
 
 #
-#: ../src/gbrainy.cs:296
+#: ../src/gbrainy.cs:307
 msgid ""
 "Once you have an answer type it in \"Your answer:\" entry box and press the "
 "\"Ok\" button."
@@ -305,51 +324,67 @@ msgstr "La lògica és aritmètica i funciona verticalment."
 msgid "The logic is arithmetical and works horizontally."
 msgstr "La lògica és aritmètica i funciona horitzontalment."
 
-#
 #: ../src/PuzzleMatrixNumbers.cs:64
-msgid "row"
-msgstr "fila"
-
-#
-#: ../src/PuzzleMatrixNumbers.cs:65
-msgid "rows"
-msgstr "files"
-
-#: ../src/PuzzleMatrixNumbers.cs:68
-msgid "column"
-msgstr "columna"
-
-#: ../src/PuzzleMatrixNumbers.cs:69
-msgid "columns"
-msgstr "columnes"
-
-#: ../src/PuzzleMatrixNumbers.cs:75 ../src/PuzzleMatrixNumbers.cs:79
-msgid "multiplying"
-msgstr "multiplicant"
-
-#
-#: ../src/PuzzleMatrixNumbers.cs:76 ../src/PuzzleMatrixNumbers.cs:83
-msgid "adding"
-msgstr "afegint"
-
-#: ../src/PuzzleMatrixNumbers.cs:80 ../src/PuzzleMatrixNumbers.cs:84
-msgid "subtracting"
-msgstr "restant"
-
-#: ../src/PuzzleMatrixNumbers.cs:88
 #, csharp-format
 msgid ""
-"The fourth {0} is calculated {1} the first two {2} and {3} the third {4}."
+"The fourth row is calculated multiplying the first two rows and adding the "
+"third."
 msgstr ""
-"La quarta {0} se calcula {1} les primeres dues {2} i {3} la tercera {4}."
+"La quarta fila se calcula multiplicant les primeres dues files i afegint la "
+"tercera."
+
+#: ../src/PuzzleMatrixNumbers.cs:66
+#, csharp-format
+msgid ""
+"The fourth column is calculated multiplying the first two columns and adding "
+"the third."
+msgstr ""
+"La quarta columna se calcula multiplicant les primeres dues columnes i "
+"afegint la tercera."
+
+#: ../src/PuzzleMatrixNumbers.cs:71
+#, csharp-format
+msgid ""
+"The fourth row is calculated multiplying the first two rows and subtracting "
+"the third."
+msgstr ""
+"La quarta fila se calcula multiplicant les primeres dues files i restant la "
+"tercera."
+
+#: ../src/PuzzleMatrixNumbers.cs:73
+#, csharp-format
+msgid ""
+"The fourth column is calculated multiplying the first two columns and "
+"subtracting the third."
+msgstr ""
+"La quarta columna se calcula multiplicant les primeres dues columnes i "
+"restant la tercera."
+
+#: ../src/PuzzleMatrixNumbers.cs:78
+#, csharp-format
+msgid ""
+"The fourth row is calculated adding the first two rows and subtracting the "
+"third."
+msgstr ""
+"La quarta fila se calcula afegint les primeres dues files i restant la "
+"tercera."
+
+#: ../src/PuzzleMatrixNumbers.cs:80
+#, csharp-format
+msgid ""
+"The fourth column is calculated adding the first two columns and subtracting "
+"the third."
+msgstr ""
+"La quarta columna se calcula afegint les primeres dues columnes i restant la "
+"tercera."
 
 #: ../src/PuzzlePencil.cs:33
 msgid "Pencil"
 msgstr "Llapis"
 
 #
-#: ../src/PuzzlePencil.cs:37
 #
+#: ../src/PuzzlePencil.cs:37
 msgid ""
 "Which of the following figures cannot be drawn without crossing any previous "
 "lines and lifting the pencil?"
@@ -357,12 +392,18 @@ msgstr ""
 "Quina de les següents figures no es pot dibuixar sense creuar una de les "
 "línies prèvies o llevar el llapis?"
 
+#. gr.ShowText ("Figure A");
 #: ../src/PuzzlePencil.cs:168 ../src/PuzzleSquareDots.cs:162
 #: ../src/PuzzleSquareDots.cs:167 ../src/PuzzleSquareDots.cs:172
 #: ../src/PuzzleNextFigure.cs:145 ../src/MemoryColouredFigures.cs:140
 #: ../src/MemoryNumbers.cs:123 ../src/PuzzleFigurePattern.cs:193
-msgid "Figure"
-msgstr "Figura"
+#: ../src/PuzzleMissingPiece.cs:156 ../src/PuzzleMissingSlice.cs:194
+#: ../src/PuzzleTetris.cs:156 ../src/MemoryIndications.cs:267
+#: ../src/MemoryIndications.cs:272 ../src/MemoryIndications.cs:277
+#: ../src/MemoryIndications.cs:282
+#, csharp-format
+msgid "Figure {0}"
+msgstr "Figura {0}"
 
 #: ../src/PuzzleMoveFigure.cs:30
 msgid "Move figure"
@@ -429,7 +470,7 @@ msgstr "Quin és el percentatge cobert de color a la figura?"
 msgid "Square with dots"
 msgstr "Quadrat amb punts"
 
-#
+# 
 #
 #: ../src/PuzzleSquareDots.cs:90
 msgid ""
@@ -440,7 +481,8 @@ msgstr ""
 "seqüència (A, B o C)?"
 
 #: ../src/PuzzleSquareDots.cs:156 ../src/PuzzleNextFigure.cs:126
-#: ../src/PuzzleFigurePattern.cs:172
+#: ../src/PuzzleFigurePattern.cs:172 ../src/PuzzleMissingPiece.cs:149
+#: ../src/PuzzleMissingSlice.cs:178 ../src/PuzzleTetris.cs:149
 msgid "Possible answers are:"
 msgstr "Les respostes possibles són:"
 
@@ -520,7 +562,7 @@ msgid ""
 "Every number in the sequence is the result of subtracting 2 to the previous "
 "number and multiplying it by -2."
 msgstr ""
-"Cada número en la seqüència és el resultat de restar 1 al número anterior i "
+"Cada número en la seqüència és el resultat de restar 2 al número anterior i "
 "multiplicar-lo resultat per -2."
 
 #
@@ -1227,128 +1269,139 @@ msgstr "Benvinguts al gbrainy"
 #
 #: ../src/GameDrawingArea.cs:100
 msgid ""
-"gbrainy is a brain teaser and trainer game to have fun. It provides the "
-"following types of games:"
+"gbrainy is a brain teaser game and trainer to have fun and to keep your "
+"brain trained. It includes:"
 msgstr ""
-"Un joc per demostrar el vostre enginy i mantenir el vostre cervell entrenat. "
-"Inclou els següents tipus de jocs:"
+"gbrainy és un joc per demostrar el vostre enginy i mantenir el vostre "
+"cervell entrenat. Inclou:"
 
+#
 #: ../src/GameDrawingArea.cs:112
 msgid ""
-"Logic puzzles. Games designed to challenge your reasoning and thinking "
-"skills."
+"Logic puzzles. Designed to challenge your reasoning and thinking skills."
 msgstr ""
-"Trencaclosques lògics. Jocs pensats per desafiar les vostres habilitats de "
+"Trencaclosques lògics. Dissenyats per a desafiar les vostres habilitats de "
 "raonament i pensament."
 
+#
 #: ../src/GameDrawingArea.cs:124
 msgid ""
-"Mental calculation. Games based on arithmetical operations designed to prove "
-"your mental calculation skills."
+"Mental calculation. Based on arithmetical operations that test your mental "
+"calculation abilities."
 msgstr ""
-"Càlcul mental. Jocs basats en operacions aritmètiques pensats per desafiar "
-"les vostres habilitats de càlcul mental."
+"Càlcul mental. Basats en operacions aritmètiques que proven les vostres "
+"habilitats de càlcul mental."
 
+#
 #: ../src/GameDrawingArea.cs:136
-msgid "Memory trainers. Games designed to challenge your short term memory."
+msgid "Memory trainers. To prove and enhance your short term memory."
 msgstr ""
-"Entrenadors de memòria. Jocs pensats per desafiar la vostra capacitat de "
-"memòria a curt termini."
+"Entrenadors de memòria. Per a posar a prova i millorar la vostra capacitat "
+"de memòria a curt termini."
 
-#: ../src/GameDrawingArea.cs:178
+#: ../src/GameDrawingArea.cs:177
 msgid "Get your memory ready..."
 msgstr "Prepareu la vostra memòria..."
 
-#: ../src/GameDrawingArea.cs:206
+#: ../src/GameDrawingArea.cs:205
 msgid "Score"
 msgstr "Puntuació"
 
-#: ../src/GameDrawingArea.cs:212
+#: ../src/GameDrawingArea.cs:211
 #, csharp-format
 msgid "Your total is score {0}%"
 msgstr "La puntuació total és {0}%"
 
-#: ../src/GameDrawingArea.cs:216
+#: ../src/GameDrawingArea.cs:215
 #, csharp-format
 msgid "Logic puzzle score is {0}%"
 msgstr "La puntuació en trencaclosques és {0}%"
 
 #
 #
-#: ../src/GameDrawingArea.cs:217 ../src/GameDrawingArea.cs:223
-#: ../src/GameDrawingArea.cs:229
+#: ../src/GameDrawingArea.cs:216 ../src/GameDrawingArea.cs:222
+#: ../src/GameDrawingArea.cs:228
 msgid "(no games played)"
 msgstr "(cap partida jugada)"
 
 #
-#: ../src/GameDrawingArea.cs:222
+#: ../src/GameDrawingArea.cs:221
 #, csharp-format
 msgid "Mental calculation score is {0}%"
 msgstr "La puntuació en càlcul mental és {0}%"
 
 # csharp-format
-#: ../src/GameDrawingArea.cs:228
+#: ../src/GameDrawingArea.cs:227
 #, csharp-format
 msgid "Memory score is {0}%"
 msgstr "La puntuació en memòria és {0}%"
 
-#: ../src/GameDrawingArea.cs:235
+#: ../src/GameDrawingArea.cs:234
 msgid "Game statistics"
 msgstr "Estadístiques de la partida"
 
-#: ../src/GameDrawingArea.cs:241
+#: ../src/GameDrawingArea.cs:240
 #, csharp-format
 msgid "Total games won: {0} ({1} played)"
 msgstr "Jocs guanyats: {0} ({1} jugats)"
 
-#: ../src/GameDrawingArea.cs:244
+#: ../src/GameDrawingArea.cs:243
 #, csharp-format
 msgid "Total time played {0} (average per game {1})"
 msgstr "Temps de joc: {0} (mitjana per joc {1})"
 
-#: ../src/GameDrawingArea.cs:249
+#: ../src/GameDrawingArea.cs:248
 msgid "Tips for your next games"
 msgstr "Consells per les vostres properes partides"
 
-#: ../src/GameDrawingArea.cs:271
+#: ../src/GameDrawingArea.cs:270
 msgid "Read the instructions carefully and identify the data and clues given."
 msgstr ""
 "Llegiu les instruccions curosament i identifiqueu les dades i pistes donades."
 
-#: ../src/GameDrawingArea.cs:273
+#
+#: ../src/GameDrawingArea.cs:272
 msgid ""
-"gbrainy uses the time and tips needed to complete each game to score the "
-"player."
+"To score the player gbrainy uses the time and tips needed to complete each "
+"game."
 msgstr ""
-"gbrainy utilitza el temps i els consells utilitzats per a resoldre cada joc "
-"per a puntar al jugador."
+"Per puntuar al jugador gbrainy utilitza el temps i els consells utilitzats "
+"per a resoldre cada joc."
 
-#: ../src/GameDrawingArea.cs:275
+#: ../src/GameDrawingArea.cs:274
 msgid ""
 "In logic games, elements that may seem irrelevant can be very important."
 msgstr ""
 "En els jocs de lògica, els elements que semblen irrellevants poden ser força "
 "importants."
 
-#: ../src/GameDrawingArea.cs:277
+#: ../src/GameDrawingArea.cs:276
 msgid "Break the mental blocks and look into the boundaries of problems."
 msgstr ""
 "Trenqueu els bloquejos mentals i mireu més enllà dels límits dels problemes."
 
-#: ../src/GameDrawingArea.cs:279
+#: ../src/GameDrawingArea.cs:278
 msgid "Enjoy doing mistakes, they are part of the learning process."
 msgstr "Gaudiu fent errades, és part del procés d'aprenentatge."
 
-#: ../src/GameDrawingArea.cs:281
+#: ../src/GameDrawingArea.cs:280
 msgid ""
 "Do all the problems, even the difficult ones. Improvement comes from "
 "practising."
 msgstr ""
 "Feu tots els problemes, inclús els difícils. La millora prové de la pràctica."
 
-#: ../src/GameDrawingArea.cs:283
+#: ../src/GameDrawingArea.cs:282
 msgid "Play in daily basis, you will notice progress soon."
 msgstr "Jugueu diàriament, us adonareu del vostre progrés aviat."
+
+#: ../src/GameDrawingArea.cs:284
+msgid ""
+"You can use the Custom Game Selection to choose exactly which games you want "
+"to train."
+msgstr ""
+"Podeu utilitzar la selecció de la partida personalitzada per a escollir "
+"exactament quins jocs voleu entrenar."
 
 #
 #: ../src/ColorPalette.cs:63
@@ -1363,7 +1416,7 @@ msgstr "verd"
 #
 #: ../src/ColorPalette.cs:65
 msgid "blue"
-msgstr "blau"
+msgstr "blau marí"
 
 #
 #: ../src/ColorPalette.cs:66
@@ -1413,7 +1466,7 @@ msgstr ""
 
 #: ../src/PuzzlePeopleTable.cs:61
 msgid "5th"
-msgstr "5è"
+msgstr "5ena"
 
 #: ../src/PuzzlePeopleTable.cs:62
 msgid "19th"
@@ -1421,7 +1474,7 @@ msgstr "19ena"
 
 #: ../src/PuzzlePeopleTable.cs:66
 msgid "4th"
-msgstr "4ena"
+msgstr "4a"
 
 #: ../src/PuzzlePeopleTable.cs:67
 msgid "12th"
@@ -1450,7 +1503,176 @@ msgid ""
 "number)"
 msgstr ""
 "En quina cel·la es troba l'altra figura com la mostrada a baix? (teclegeu "
-"només el número de la cel·la)\t"
+"només el número de la cel·la)"
+
+#: ../src/PuzzleLines.cs:31
+msgid "Lines"
+msgstr "Línies"
+
+#
+#
+#
+#
+#: ../src/PuzzleLines.cs:35
+msgid "How many lines can you count of in the figures below?"
+msgstr "Quantes línies podeu comptar a les figures de baix?"
+
+#: ../src/PuzzleLines.cs:41
+#, csharp-format
+msgid ""
+"There are {0} lines in the figure at the left and {1} in the figure at the "
+"right."
+msgstr ""
+"Hi ha {0} línies a la figura de l'esquerra i {1} línies a la figura de la "
+"dreta."
+
+#: ../src/PuzzleMissingPiece.cs:32
+msgid "Missing piece"
+msgstr "Peça que manca"
+
+#: ../src/PuzzleMissingPiece.cs:36
+msgid "Which square completes the figure below (A, B, C)?"
+msgstr "Quin quadrat completa la figura de baix (A, B, C)?"
+
+#: ../src/PuzzleMissingPiece.cs:40
+msgid "The logic works at row level."
+msgstr "La lògica funciona a nivell de fila."
+
+#: ../src/PuzzleMissingPiece.cs:46
+#
+msgid ""
+"In every row the third square is made by flipping the first square and "
+"superimposing it to the second square, removing the matching lines, and then "
+"flipping the resulting image."
+msgstr "A cada fila el tercer quadrat es construeix donant la volta al primer quadrat i sobreimposant-ho al segon quadrat, eliminat les línies coincidents, i llavors "
+"donant la volta a la imatge resultant."
+
+#: ../src/PuzzleMissingSlice.cs:58
+msgid "Missing slice"
+msgstr "Tall que manca"
+
+#: ../src/PuzzleMissingSlice.cs:62
+msgid ""
+"Some slices have a common property. Which is the missing slice in the circle "
+"below (A, B, C)?"
+msgstr ""
+"Alguns dels talls tenen una propietat en comú. Quin és el tall que manca en "
+"el cercle de baix (A, B, C)?"
+
+#
+#
+#
+#: ../src/PuzzleMissingSlice.cs:66
+msgid "Each slice is related to the opposite one."
+msgstr "Cada tall està relacionat amb el tall contrari."
+
+#: ../src/PuzzleMissingSlice.cs:72
+#, csharp-format
+msgid ""
+"All the numbers of each slice when added to the ones of the opposite slice "
+"add always {0}."
+msgstr ""
+"Tots els números de cada tall quan s'afegeixen als del tall contrari sumen "
+"sempre {0}."
+
+#: ../src/PuzzleTetris.cs:31
+msgid "Tetris"
+msgstr "Tetris"
+
+#
+#
+#
+#: ../src/PuzzleTetris.cs:35
+msgid "Which is the figure that completes the sequence below (A, B or C)?"
+msgstr "Quina és la figura que completa la seqüència de baix (A, B, o C)?"
+
+#: ../src/PuzzleTetris.cs:41
+msgid ""
+"It is the figure that completes all the possible combinations with four "
+"blocks without taking into account rotations."
+msgstr "És la figura que completa totes les possible combinacions amb quatre blocs sense tenir en compte les rotacions."
+
+#: ../src/MemoryIndications.cs:127
+#, csharp-format
+msgid "Start in point number {0}"
+msgstr "Inicia en el punt número {0}"
+
+#: ../src/MemoryIndications.cs:131
+msgid "Turn right"
+msgstr "Gira a la dreta"
+
+#: ../src/MemoryIndications.cs:133
+msgid "Turn left"
+msgstr "Gira a l'esquerra"
+
+#: ../src/MemoryIndications.cs:135
+msgid "Go up"
+msgstr "Vés cap a dalt"
+
+#: ../src/MemoryIndications.cs:137
+msgid "Go down"
+msgstr "Vés cap abaix"
+
+#: ../src/MemoryIndications.cs:142
+#, csharp-format
+msgid "End in point {0}"
+msgstr "Punt final {0}"
+
+#
+#
+#: ../src/MemoryIndications.cs:156
+msgid "Memorize indications"
+msgstr "Memoritzeu indicacions"
+
+#
+#: ../src/MemoryIndications.cs:160
+msgid "Memorize all the indications."
+msgstr "Memoritzeu totes les paraules."
+
+#
+#
+#
+#: ../src/MemoryIndications.cs:165
+#, csharp-format
+msgid ""
+"Which of the follow graphics represents the indications previously given?"
+msgstr ""
+"Quin de les següents gràfics representa les indicacions donades prèviament?"
+
+#
+#~ msgid "row"
+#~ msgstr "fila"
+
+#
+#~ msgid "rows"
+#~ msgstr "files"
+
+#~ msgid "column"
+#~ msgstr "columna"
+
+#~ msgid "columns"
+#~ msgstr "columnes"
+
+#~ msgid "multiplying"
+#~ msgstr "multiplicant"
+
+#
+#~ msgid "adding"
+#~ msgstr "afegint"
+
+#~ msgid "subtracting"
+#~ msgstr "restant"
+
+#
+#
+#
+#
+#~ msgid ""
+#~ "gbrainy is a brain teaser and trainer game to have fun. It provides the "
+#~ "following types of games:"
+#~ msgstr ""
+#~ "Un joc per demostrar el vostre enginy i mantenir el vostre cervell "
+#~ "entrenat. Inclou els següents tipus de jocs:"
 
 #~ msgid "Questions"
 #~ msgstr "Preguntes"
