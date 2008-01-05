@@ -269,7 +269,7 @@ public class GameDrawingArea : DrawingArea
 		case 0:
 			return Catalog.GetString ("Read the instructions carefully and identify the data and clues given.");
 		case 1:
-			return Catalog.GetString ("gbrainy uses the time and tips needed to complete each game to score the player.");
+			return Catalog.GetString ("To score the player gbrainy uses the time and tips needed to complete each game.");
 		case 2:
 			return Catalog.GetString ("In logic games, elements that may seem irrelevant can be very important.");
 		case 3:
