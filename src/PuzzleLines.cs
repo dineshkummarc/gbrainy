@@ -32,7 +32,7 @@ public class PuzzleLines : Game
 	}
 
 	public override string Question {
-		get {return Catalog.GetString ("How many lines can you count of in the figure below?");} 
+		get {return Catalog.GetString ("How many lines can you count of in the figures below?");} 
 	}
 
 	public override string Answer {

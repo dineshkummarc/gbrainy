@@ -57,35 +57,30 @@ public class PuzzleMatrixNumbers : Game
 	public override string Answer {
 		get { 
 			string answer = base.Answer + " ";
-			string line,lines;
-			string [] operationname = new String[2];
-			
-			if (orientation) {
-				line  = Catalog.GetString ("row");
-				lines = Catalog.GetString ("rows");
-			}
-			else {
-				line  = Catalog.GetString("column");
-				lines = Catalog.GetString("columns");
-			}
-
 
 			switch (operation) {
 			case Operation.MultiplyAndAdd:
-				operationname[0] = Catalog.GetString("multiplying");
-				operationname[1] = Catalog.GetString("adding");
+				if (orientation) {
+					answer += String.Format(Catalog.GetString("The fourth row is calculated multiplying the first two rows and adding the third."));
+				} else {
+					answer += String.Format(Catalog.GetString("The fourth column is calculated multiplying the first two columns and adding the third."));
+				}
 				break;
 			case Operation.MutilplyAndSubs:
-				operationname[0] = Catalog.GetString("multiplying");
-				operationname[1] = Catalog.GetString("subtracting");
+				if (orientation) {
+					answer += String.Format(Catalog.GetString("The fourth row is calculated multiplying the first two rows and subtracting the third."));
+				} else {
+					answer += String.Format(Catalog.GetString("The fourth column is calculated multiplying the first two columns and subtracting the third."));
+				}
 				break;
 			case Operation.AddAndSubs:
-				operationname[0] = Catalog.GetString("adding");
-				operationname[1] = Catalog.GetString("subtracting");
+				if (orientation) {
+					answer += String.Format(Catalog.GetString("The fourth row is calculated adding the first two rows and subtracting the third."));
+				} else {
+					answer += String.Format(Catalog.GetString("The fourth column is calculated adding the first two columns and subtracting the third."));
+				}
 				break;
 			}
-
-			answer += String.Format(Catalog.GetString("The fourth {0} is calculated {1} the first two {2} and {3} the third {4}."),line, operationname[0], lines, operationname[1], line);
 			return answer;
 		}
 	}

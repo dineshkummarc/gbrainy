@@ -70,6 +70,7 @@ public class GameManager
 		typeof (MemoryWords),
 		typeof (MemoryCountDots),
 		typeof (MemoryFigures),
+		typeof (MemoryIndications),
 	};
 
 	private GameSession.Types game_type;
