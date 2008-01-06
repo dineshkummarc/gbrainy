@@ -29,6 +29,8 @@ public class PuzzleSquareDots : Game
 	private const int figures = 6;
 	private static bool X = true;
 	private static bool O = false;
+	private const double space_figures = 0.05;
+	private ArrayListIndicesRandom possible_answers;
 
 	private bool [] puzzle_A  = new bool []
 	{
@@ -74,12 +76,11 @@ public class PuzzleSquareDots : Game
 
 		// Wrong answer 2
 		O, O, O, O, O, O,
-		O, O, X, O, O, O,
+		O, X, X, O, O, O,
 		O, O, O, O, O, O,
-		X, O, O, O, O, O,
+		O, O, O, O, O, O,
 		O, O, O, O, O, O,
 		O, X, X, O, O, O,
-
 	};
 
 	public override string Name {
@@ -92,7 +93,15 @@ public class PuzzleSquareDots : Game
 
 	public override void Initialize ()
 	{
-		right_answer = "B";
+		possible_answers = new ArrayListIndicesRandom (3);
+		possible_answers.Initialize ();
+
+		for (int i = 0; i < possible_answers.Count; i++) {
+			if ((int) possible_answers[i] == 0) {
+				right_answer += (char) (65 + (int) i);
+				break;
+			}
+		}
 	}
 
 	public void DrawFigure (Cairo.Context gr, double x, double y, bool [] puzzle, int index)
@@ -138,10 +147,25 @@ public class PuzzleSquareDots : Game
 			pos_y += square_size;
 		}
 	}
+
+	public void DrawPossibleAnswer (Cairo.Context gr, double x, double y, int figure)
+	{
+		switch (figure) {
+		case 0: // Good answer
+			DrawFigure (gr, x, y, puzzle_A, columns * lines * 4);
+			break;
+		case 1:
+			DrawFigure (gr, x, y, puzzle_A,  columns * lines * 3);
+			break;
+		case 2:
+			DrawFigure (gr, x, y, puzzle_A, columns * lines * 5);
+			break;
+		}
+	}
 	
 	public override void Draw (Cairo.Context gr, int area_width, int area_height)
 	{
-		double x = DrawAreaX, y = DrawAreaY, space_figures = 0.05;
+		double x = DrawAreaX, y = DrawAreaY;
 
 		gr.Scale (area_width, area_height);
 
@@ -156,24 +180,15 @@ public class PuzzleSquareDots : Game
 		gr.ShowText (Catalog.GetString ("Possible answers are:"));
 		gr.Stroke ();
 		y += 0.05;
-		
-		DrawFigure (gr, x, y, puzzle_A, columns * lines * 3);
-		gr.MoveTo (x, y + figure_size + 0.05);
-		gr.ShowText (String.Format (Catalog.GetString ("Figure {0}"), "A"));
-		gr.Stroke ();
 
-		DrawFigure (gr, x + figure_size + space_figures, y, puzzle_A, columns * lines * 4);
-		gr.MoveTo (x + figure_size + space_figures, y + figure_size + 0.05);
-		gr.ShowText (String.Format (Catalog.GetString ("Figure {0}"), "B"));
-		gr.Stroke ();
-
-		DrawFigure (gr, x + (figure_size + space_figures) * 2, y, puzzle_A, columns * lines * 5);
-		gr.MoveTo (x + (figure_size + space_figures) * 2, y + figure_size + 0.05);
-		gr.ShowText (String.Format (Catalog.GetString ("Figure {0}"), "C"));
-		gr.Stroke ();
-
+		for (int i = 0; i < possible_answers.Count; i++) {
+			DrawPossibleAnswer (gr, x, y, (int) possible_answers[i]);
+			gr.MoveTo (x, y + figure_size + 0.05);
+			gr.ShowText (String.Format (Catalog.GetString ("Figure {0}"), (char) (65 + i)));
+			gr.Stroke ();
+			x+= figure_size + space_figures;
+		}
 	}
-
 }
 
 
