@@ -1,4 +1,4 @@
-	# 
+# 
 # This file is distributed under the same license as the PACKAGE package.
 # (c) 2007-2008 Jordi Mas i Hernandez
 #
@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gbrainy\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-01-05 14:03+0100\n"
+"POT-Creation-Date: 2008-01-24 16:03+0100\n"
 "PO-Revision-Date: 2008-01-05 13:35+0200\n"
 "Last-Translator: Jordi Mas <jmas@softcatala.org>\n"
 "Language-Team: Catalan\n"
@@ -33,7 +33,7 @@ msgid "Game"
 msgstr "Joc"
 
 #
-#: ../gbrainy.desktop.in.h:3 ../src/gbrainy.glade.h:21
+#: ../gbrainy.desktop.in.h:3 ../src/gbrainy.glade.h:20
 msgid "gbrainy"
 msgstr "gbrainy"
 
@@ -48,66 +48,69 @@ msgstr "<b>Jocs de memòria</b>"
 msgid "All Games and Trainers (Logic, Mental Calculation and Memory)"
 msgstr "Tots els jocs i entrenadors (lògica, càlcul mental i memòria)"
 
+#
 #: ../src/gbrainy.glade.h:3
+#
+msgid "Answer:"
+msgstr "Resposta:"
+
+#: ../src/gbrainy.glade.h:4
 msgid "Custom Game"
 msgstr "Partida personalitzada"
 
 #
-#: ../src/gbrainy.glade.h:4
+#: ../src/gbrainy.glade.h:5
 msgid "Custom Game Selection..."
 msgstr "Selecció de la partida personalitzada..."
 
-#: ../src/gbrainy.glade.h:5
+#: ../src/gbrainy.glade.h:6
 msgid "Logic Puzzles Only"
 msgstr "Només trencaclosques lògics"
 
-#: ../src/gbrainy.glade.h:6
+#: ../src/gbrainy.glade.h:7
 msgid "Memory Trainers Only"
 msgstr "Només entrenadors de memòria"
 
 #
-#: ../src/gbrainy.glade.h:7
+#: ../src/gbrainy.glade.h:8
 msgid "Mental Calculation Trainers Only"
 msgstr "Només entrenadors de càlcul mental"
 
-#: ../src/gbrainy.glade.h:8
+#: ../src/gbrainy.glade.h:9
 msgid "New Game"
 msgstr "Partida nova"
 
-#: ../src/gbrainy.glade.h:9
+#: ../src/gbrainy.glade.h:10
 msgid "Preferences"
 msgstr "Preferències"
 
-#: ../src/gbrainy.glade.h:10
+#: ../src/gbrainy.glade.h:11
 msgid "Select All"
 msgstr "Selecciona-ho tot"
 
 #
-#: ../src/gbrainy.glade.h:11
-msgid "Show the countdown message before a memory question"
-msgstr "Mostra el missatge de compte enrere abans d'una pregunta de memòria"
-
 #: ../src/gbrainy.glade.h:12
-msgid "Time in seconds to memorize questions:"
-msgstr "Temps en segons per a memoritzar les preguntes:"
+#
+msgid "Show the countdown message"
+msgstr "Mostra el missatge de compte enrere"
 
 #: ../src/gbrainy.glade.h:13
+#
+msgid "Time in seconds to memorize the challenge:"
+msgstr "Temps en segons per a memoritzar el repte:"
+
+#: ../src/gbrainy.glade.h:14
 msgid "Toolbar"
 msgstr "Barra d'eines"
 
 #
-#: ../src/gbrainy.glade.h:14
+#: ../src/gbrainy.glade.h:15
 msgid "Trainers Only (Mental Calculation and Memory)"
 msgstr "Només entrenadors (càlcul mental i memòria)"
 
-#: ../src/gbrainy.glade.h:15
+#: ../src/gbrainy.glade.h:16
 msgid "Unselect all"
 msgstr "Desselecciona-ho tot"
-
-#
-#: ../src/gbrainy.glade.h:16
-msgid "Your answer:"
-msgstr "Resposta:"
 
 #
 #
@@ -122,11 +125,6 @@ msgstr "_Següent"
 
 #
 #: ../src/gbrainy.glade.h:19
-msgid "_Ok"
-msgstr "_D'acord"
-
-#
-#: ../src/gbrainy.glade.h:20
 msgid "_Tip"
 msgstr "_Pista"
 
@@ -214,9 +212,10 @@ msgstr "Resposta incorrecta."
 
 #
 #: ../src/gbrainy.cs:307
+#
 msgid ""
-"Once you have an answer type it in \"Your answer:\" entry box and press the "
-"\"Ok\" button."
+"Once you have an answer type it in \"Answer:\" entry box and press the \"Ok"
+"\" button."
 msgstr ""
 "Un cop teniu la resposta teclegeu-la al quadre «Resposta:» i premeu el botó "
 "«D'acord»."
@@ -393,8 +392,7 @@ msgstr ""
 "línies prèvies o llevar el llapis?"
 
 #. gr.ShowText ("Figure A");
-#: ../src/PuzzlePencil.cs:168 ../src/PuzzleSquareDots.cs:162
-#: ../src/PuzzleSquareDots.cs:167 ../src/PuzzleSquareDots.cs:172
+#: ../src/PuzzlePencil.cs:168 ../src/PuzzleSquareDots.cs:187
 #: ../src/PuzzleNextFigure.cs:145 ../src/MemoryColouredFigures.cs:140
 #: ../src/MemoryNumbers.cs:123 ../src/PuzzleFigurePattern.cs:193
 #: ../src/PuzzleMissingPiece.cs:156 ../src/PuzzleMissingSlice.cs:194
@@ -466,13 +464,13 @@ msgstr "Percentatge cobert"
 msgid "What is the colored percentage covered in the figure?"
 msgstr "Quin és el percentatge cobert de color a la figura?"
 
-#: ../src/PuzzleSquareDots.cs:86
+#: ../src/PuzzleSquareDots.cs:87
 msgid "Square with dots"
 msgstr "Quadrat amb punts"
 
 # 
 #
-#: ../src/PuzzleSquareDots.cs:90
+#: ../src/PuzzleSquareDots.cs:91
 msgid ""
 "What is the letter of the figure that represents the next logical figure in "
 "the sequence (A, B or C)?"
@@ -480,7 +478,7 @@ msgstr ""
 "Quina és la lletra de la figura que representa la següent figura lògica a la "
 "seqüència (A, B o C)?"
 
-#: ../src/PuzzleSquareDots.cs:156 ../src/PuzzleNextFigure.cs:126
+#: ../src/PuzzleSquareDots.cs:180 ../src/PuzzleNextFigure.cs:126
 #: ../src/PuzzleFigurePattern.cs:172 ../src/PuzzleMissingPiece.cs:149
 #: ../src/PuzzleMissingSlice.cs:178 ../src/PuzzleTetris.cs:149
 msgid "Possible answers are:"
@@ -1538,14 +1536,16 @@ msgstr "Quin quadrat completa la figura de baix (A, B, C)?"
 msgid "The logic works at row level."
 msgstr "La lògica funciona a nivell de fila."
 
-#: ../src/PuzzleMissingPiece.cs:46
 #
+#: ../src/PuzzleMissingPiece.cs:46
 msgid ""
 "In every row the third square is made by flipping the first square and "
 "superimposing it to the second square, removing the matching lines, and then "
 "flipping the resulting image."
-msgstr "A cada fila el tercer quadrat es construeix donant la volta al primer quadrat i sobreimposant-ho al segon quadrat, eliminat les línies coincidents, i llavors "
-"donant la volta a la imatge resultant."
+msgstr ""
+"A cada fila el tercer quadrat es construeix donant la volta al primer "
+"quadrat i sobreimposant-ho al segon quadrat, eliminat les línies "
+"coincidents, i llavors donant la volta a la imatge resultant."
 
 #: ../src/PuzzleMissingSlice.cs:58
 msgid "Missing slice"
@@ -1590,7 +1590,9 @@ msgstr "Quina és la figura que completa la seqüència de baix (A, B, o C)?"
 msgid ""
 "It is the figure that completes all the possible combinations with four "
 "blocks without taking into account rotations."
-msgstr "És la figura que completa totes les possible combinacions amb quatre blocs sense tenir en compte les rotacions."
+msgstr ""
+"És la figura que completa totes les possible combinacions amb quatre blocs "
+"sense tenir en compte les rotacions."
 
 #: ../src/MemoryIndications.cs:127
 #, csharp-format
@@ -1639,4 +1641,6 @@ msgid ""
 msgstr ""
 "Quin de les següents gràfics representa les indicacions donades prèviament?"
 
-
+#
+#~ msgid "_Ok"
+#~ msgstr "_D'acord"
