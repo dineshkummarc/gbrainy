@@ -304,7 +304,7 @@ public class gbrainy: Program
 	{
 		session.NewSession ();
 		GetNextGame ();
-		solution_label.Text = Catalog.GetString ("Once you have an answer type it in \"Your answer:\" entry box and press the \"Ok\" button.");
+		solution_label.Text = Catalog.GetString ("Once you have an answer type it in \"Answer:\" entry box and press the \"Ok\" button.");
 		UpdateStatusBar ();
 	}
 
