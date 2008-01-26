@@ -212,21 +212,33 @@ public class GameDrawingArea : DrawingArea
 
 		y += space_small;	
 		gr.MoveTo (x, y);
-		str = Catalog.GetString ("Logic puzzle score is {0}%");
-		if (session.LogicGamesPlayed == 0)  str += " " + Catalog.GetString ("(no games played)");
-		gr.ShowText (String.Format (str, session.LogicScore));
+
+		if (session.LogicGamesPlayed == 0)
+			str = Catalog.GetString ("No logic puzzle games played");
+		else
+			str = String.Format (Catalog.GetString ("Logic puzzle score is {0}%"), session.LogicScore);
+
+		gr.ShowText (str);
 
 		y += space_small;
 		gr.MoveTo (x, y);
-		str = Catalog.GetString ("Mental calculation score is {0}%");
-		if (session.MathGamesPlayed == 0)  str += " " + Catalog.GetString ("(no games played)");
-		gr.ShowText (String.Format (str, session.MathScore));
+
+		if (session.MathGamesPlayed == 0)
+			str = Catalog.GetString ("No mental calculation games played");
+		else
+			str = String.Format (Catalog.GetString ("Mental calculation score is {0}%"), session.MathScore);
+
+		gr.ShowText (str);
 
 		y += space_small;
 		gr.MoveTo (x, y);
-		str = Catalog.GetString ("Memory score is {0}%");
-		if (session.MemoryGamesPlayed == 0)  str += " " + Catalog.GetString ("(no games played)");
-		gr.ShowText (String.Format (str, session.MemoryScore));
+
+		if (session.MemoryGamesPlayed == 0)
+			str = Catalog.GetString ("No memory games played");
+		else
+			str = String.Format (Catalog.GetString ("Memory score is {0}%"),  session.MemoryScore);
+
+		gr.ShowText (str);
 
 		y += 0.08;
 		gr.SetFontSize (0.03);
