@@ -1,6 +1,6 @@
 /*
- * Copyright (C) 2007 Brandon Perry <bperry.volatile@gmail.com>
- * Copyright (C) 2007 Jordi Mas i Hernàndez <jmas@softcatala.org>
+ * Copyright (C) 2007-2008 Brandon Perry <bperry.volatile@gmail.com>
+ * Copyright (C) 2007-2008 Jordi Mas i Hernàndez <jmas@softcatala.org>
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License as
@@ -26,8 +26,8 @@ using Mono.Unix;
 public class MathOperator : Game
 {
 	private double number_a, number_b, number_c, total;
-	private string oper1, oper2, other_right_answer;
-	private string[] opers = {"*", "+", "-", "/"};
+	private char[] opers = {'*', '+', '-', '/'};
+	private char oper1, oper2;
 	
 	public override string Name {
 		get {return Catalog.GetString ("Operator");}
@@ -42,69 +42,43 @@ public class MathOperator : Game
 	}
 
 	public override string Question {
-		get {return String.Format (Catalog.GetString ("Which operators make {0}, {1}, and {2} equal {3}? (The result is rounded to the nearest integer)"), number_a, number_b, number_c, Round(total));} 
+		get {return String.Format (Catalog.GetString ("Which operators make {0}, {1}, and {2} equal {3}?"), number_a, number_b, number_c, total);} 
+	}
+
+	private double ProcessOperation (double total, double number, char op)
+	{
+		switch (op) {
+		case '-':
+			return total - number;
+		case '*':
+			return total * number;
+		case '/':
+			return total / number;
+		case '+':
+		default:
+			return total + number;
+		}
 	}
 
 	public override void Initialize ()
 	{
-		number_a = 5 + random.Next (1000);
-		number_b = 3 + random.Next (1000);
-		number_c = 7 + random.Next (1000);
+		bool done = false;
+		while (done == false) {
+			number_a = 5 + random.Next (1000);
+			number_b = 3 + random.Next (1000);
+			number_c = 7 + random.Next (1000);
 
-		oper1 = opers[random.Next(4)];
-		oper2 = opers[random.Next(4)];
-			
-		if (oper1 == "+") {
-			total = (number_a + number_b);
-			
-			if (oper2 == "+")
-				total = (total + number_c);
-			else if (oper2 == "-")
-				total = (total - number_c);
-			else if (oper2 == "*")
-				total = (total * number_c);
-			else if (oper2 == "/")
-				total = (total / number_c);
-		}
-		if (oper1 == "-"){
-			total = (number_a - number_b);
-			
-			if (oper2 == "+")
-				total = (total + number_c);
-			else if (oper2 == "-")
-				total = (total - number_c);
-			else if (oper2 == "*")
-				total = (total * number_c);
-			else if (oper2 == "/")
-				total = (total / number_c);
-		}
-		if (oper1 == "*"){
-			total = (number_a * number_b);
-			
-			if (oper2 == "+")
-				total = (total + number_c);
-			else if (oper2 == "-")
-				total = (total - number_c);
-			else if (oper2 == "*")
-				total = (total * number_c);
-			else if (oper2 == "/")
-				total = (total / number_c);
-		}
-		if (oper1 == "/"){
-			total = (number_a / number_b);
-			
-			if (oper2 == "+")
-				total = (total + number_c);
-			else if (oper2 == "-")
-				total = (total - number_c);
-			else if (oper2 == "*")
-				total = (total * number_c);
-			else if (oper2 == "/")
-				total = (total / number_c);
+			oper1 = opers[random.Next(4)];
+			oper2 = opers[random.Next(4)];
+
+			total = ProcessOperation (number_a, number_b, oper1);
+			total = ProcessOperation (total, number_c, oper2);
+
+			if (total < 20000 && total > -20000 && total != 0 && total == (int) total)
+				done = true;
 		}
 
-		right_answer = oper1 + oper2;
-		other_right_answer =  oper1 + " " + oper2;
+		right_answer = String.Format (Catalog.GetString ("{0} and {1}"), oper1, oper2);
 	}
 
 	public override void Draw (Cairo.Context gr, int area_width, int area_height)
@@ -124,36 +98,50 @@ public class MathOperator : Game
 		gr.LineTo (DrawAreaX + 0.5, DrawAreaY + 0.45);
 		gr.Stroke ();
 
-		DrawingHelpers.DrawTextAlignedRight (gr, aligned_pos, DrawAreaY + 0.55, Round(total).ToString ());
+		DrawingHelpers.DrawTextAlignedRight (gr, aligned_pos, DrawAreaY + 0.55, total.ToString ());
 
 		gr.MoveTo (DrawAreaX + 0.2, DrawAreaY + 0.25);
-		gr.ShowText ((DrawAnswer == true) ? oper1 : "?");
+		gr.ShowText ((DrawAnswer == true) ? oper1.ToString () : "?");
 
 		gr.MoveTo (DrawAreaX + 0.2, DrawAreaY + 0.35);
-		gr.ShowText ((DrawAnswer == true) ? oper2 : "?");
+		gr.ShowText ((DrawAnswer == true) ?  oper2.ToString () : "?");
 
+	}
+
+	private bool IndexOf (char c, char [] chars)
+	{
+		for (int i = 0; i < chars.Length; i++)
+			if (c == chars [i]) return true;
+
+		return false;
 	}
 
 	public override bool CheckAnswer (string answer)
 	{	
-		if (answer == right_answer || answer == other_right_answer) 
+		char op1 = '\0', op2 = '\0';
+		int c = 0;
+		
+		for (c = 0; c < answer.Length; c++)
+		{
+			if (IndexOf (answer[c], opers)) {
+				op1 = answer[c];
+				break;
+			}			
+		}
+
+		for (c++; c < answer.Length; c++)
+		{
+			if (IndexOf (answer[c], opers)) {
+				op2 = answer[c];
+				break;
+			}			
+		}
+
+		if (oper1 == op1 && oper2 == op2)
 			return true;
-		else
-			return false;	
-	}
 	
-	public static double Round(double value_to_round)
-    	{
-		double floor_value = Math.Floor(value_to_round);
-	      	if ((value_to_round - floor_value) > .5)
-      		{
-		        return (floor_value + 1);
-	      	}
-	      	else
-	      	{
-	        	return (floor_value);
-	      	}
-	}
+		return false;		
+	}	
 }
 
 
