@@ -93,7 +93,7 @@ public class GameDrawingArea : DrawingArea
 		gr.SetFontSize (0.035);
 
 		gr.MoveTo (0.05, y);
-		gr.ShowText (Catalog.GetString ("Welcome to gbrainy") + " " + Defines.VERSION);
+		gr.ShowText (String.Format (Catalog.GetString ("Welcome to gbrainy {0}"), Defines.VERSION));
 		gr.Stroke ();
 
 		gr.SetFontSize (0.03);

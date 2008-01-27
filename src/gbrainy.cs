@@ -226,7 +226,7 @@ public class gbrainy: Program
 		about.Logo = LoadFromAssembly ("gbrainy.svg");
 
 		about.Copyright = "(c) 2007-2008 Jordi Mas i Hernandez\n";
-		about.Copyright += "Based on ideas by Terry Stickels, MENSA books and myself.\n";
+		about.Copyright += Catalog.GetString ("Based on ideas by Terry Stickels, MENSA books and myself.");
 
 		about.Comments = Catalog.GetString ("A brain teaser and trainer game to have fun and to keep your brain trained.");
 		about.Website = "http://live.gnome.org/gbrainy";
