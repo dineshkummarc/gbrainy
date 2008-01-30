@@ -43,6 +43,12 @@ public class PuzzleCirclesRectangle : Game
 		}
 	}
 
+	public override Difficulty GameDifficulty {
+		get {
+			return Difficulty.Master;
+		}
+	}
+
 	public override void Initialize ()
 	{
 		right_answer = "68";

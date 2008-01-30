@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2007 Jordi Mas i Hernàndez <jmas@softcatala.org>
+ * Copyright (C) 2007-2008 Jordi Mas i Hernàndez <jmas@softcatala.org>
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License as
@@ -26,12 +26,11 @@ using Gtk;
 public class MemoryNumbers : Memory
 {
 	private int [] numbers;
-	private const int rows = 3, columns = 3;
-	private const double rect_w = 0.3 / rows;
-	private const double rect_h = 0.3 / columns;
-	private const int squares = rows * columns;
+	private int rows, columns, squares;
+	private double rect_w, rect_h;
 	private ArrayListIndicesRandom answers_order;
 	private const int answers = 4;
+	private const double block_space = 0.35;
 
 	public override string Name {
 		get {return Catalog.GetString ("Memorize numbers");}
@@ -47,6 +46,21 @@ public class MemoryNumbers : Memory
 
 	public override void Initialize ()
 	{
+		switch (CurrentDifficulty) {
+		case Difficulty.Easy:
+			columns = rows = 2;
+			break;
+		case Difficulty.Medium:
+			columns = rows = 3;
+			break;
+		case Difficulty.Master:
+			columns = rows = 4;
+			break;
+		}
+
+		rect_w = 0.3 / rows;
+		rect_h = 0.3 / columns;
+		squares = rows * columns;
 		numbers = new int [squares * 4];
 		
 		for (int n = 0; n < rows; n++)
@@ -111,18 +125,18 @@ public class MemoryNumbers : Memory
 
 	public override void DrawPossibleAnswers (Cairo.Context gr, int area_width, int area_height)
 	{
-		double x = DrawAreaX + 0.05, y = DrawAreaY;
+		double x = DrawAreaX , y = DrawAreaY;
 		gr.Color = DefaultDrawingColor;
 		for (int i = 0; i < answers_order.Count; i++) {
 			if (i == 2) {
-				y += 0.4;
-				x = DrawAreaX + 0.05;
+				y += 0.45;
+				x = DrawAreaX;
 			}
 			DrawSquare (gr, x, y, numbers, squares * (int) answers_order[i]);
-			gr.MoveTo (x, y + 0.34);
+			gr.MoveTo (x, y + block_space + 0.02);
 			gr.ShowText (String.Format (Catalog.GetString ("Figure {0}"), (char) (65 + i)));
 			gr.Stroke ();
-			x += 0.35;
+			x += block_space + 0.08;
 		}
 	}
 
@@ -137,8 +151,8 @@ public class MemoryNumbers : Memory
 		for (int column = 0; column < columns; column++) {
 			for (int row = 0; row < rows; row++) {
 				gr.Rectangle (x + row * rect_w, y + column * rect_h, rect_w, rect_h);
-				gr.MoveTo (x + 0.04 + column * rect_w, (rect_h / 2) + y + row * rect_h);
-				gr.ShowText ((nums[index + column + (row * columns)]).ToString() );
+				DrawingHelpers.DrawTextCentered (gr, x + (rect_w / 2) + column * rect_w, y + (rect_h / 2) + row * rect_h, 
+					(nums[index + column + (row * columns)]).ToString ());
 			}
 		}
 		gr.Stroke ();

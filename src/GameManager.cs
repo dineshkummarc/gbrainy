@@ -77,6 +77,7 @@ public class GameManager
 	private ArrayListIndicesRandom list;
 	private IEnumerator enumerator;
 	private Type[] games;
+	private Game.Difficulty difficulty;
 
 	static GameManager ()
 	{
@@ -88,6 +89,7 @@ public class GameManager
 	public GameManager ()
 	{
 		game_type = GameSession.Types.None;
+		difficulty = Game.Difficulty.Medium;
 	}
 
 	public GameSession.Types GameType {
@@ -98,6 +100,16 @@ public class GameManager
 			
 			game_type = value;
 			BuildGameList ();
+		}
+	}
+
+	public Game.Difficulty Difficulty {
+		set {
+			difficulty = value;
+			BuildGameList ();
+		}
+		get {
+			return difficulty;
 		}
 	}
 
@@ -164,6 +176,7 @@ public class GameManager
 		puzzle =  (Game) Activator.CreateInstance (games [(int) enumerator.Current], true);
 		//puzzle =  (Game) Activator.CreateInstance (MemoryTrainers [2], true);
 		puzzle.App = app;
+		puzzle.CurrentDifficulty = Difficulty;
 		puzzle.Initialize ();
 		return puzzle;
 	}

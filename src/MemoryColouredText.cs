@@ -29,6 +29,7 @@ public class MemoryColouredText : Memory
 	private ColorPalette palette;
 	private int question;
 	private string question_colorname;
+	private int colors_shown;
 
 	public override string Name {
 		get {return Catalog.GetString ("Colored text");}
@@ -45,12 +46,24 @@ public class MemoryColouredText : Memory
 
 	public override void Initialize ()
 	{
-		palette = new ColorPalette(ColorPalette.Id.PrimarySecundaryColors);
+		switch (CurrentDifficulty) {
+		case Difficulty.Easy:
+			colors_shown = 3;
+			break;
+		case Difficulty.Medium:
+			colors_shown = 4;
+			break;
+		case Difficulty.Master:
+			colors_shown = 6;
+			break;
+		}
+
+		palette = new ColorPalette (colors_shown);
 		palette.Initialize ();
 		
-		question = random.Next ( palette.Count );
-		right_answer = palette.Name( question );
-		question_colorname = palette.Name( (ColorPalette.Id) question );
+		question = random.Next (palette.Count);
+		right_answer = palette.Name (question);
+		question_colorname = palette.Name ((ColorPalette.Id) question);
 		
 		base.Initialize ();
 	}
@@ -83,5 +96,4 @@ public class MemoryColouredText : Memory
 		}
 	}
 }
-
 

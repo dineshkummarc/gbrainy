@@ -27,9 +27,9 @@ using System.Collections;
 public class MemoryCountDots : Memory
 {
         private const int NUMCOLUMNS = 7;
-	private const int MINDOTS = 3;
-	private const int MAXDOTSCOLOR = 7;
+	private const int MINDOTS = 1;
 	private const int MAXDOTS = 25;
+	private int maxdotscolor;
 
 	private ArrayListIndicesRandom location_order;
 	private ColorPalette palette;
@@ -45,12 +45,24 @@ public class MemoryCountDots : Memory
 	}
 
 	public override string MemoryQuestion {
-		get { return String.Format(Catalog.GetString ("How many {0} dots were in the previous image?"),
-						palette.Name(0))     ; }
+		get { return String.Format(Catalog.GetString ("How many {0} dots were in the previous image? (answer using numbers)"),
+						palette.Name(0)); }
 	}
 
 	public override void Initialize ()
 	{
+		switch (CurrentDifficulty) {
+		case Difficulty.Easy:
+			maxdotscolor = 2;
+			break;
+		case Difficulty.Medium:
+			maxdotscolor = 5;
+			break;
+		case Difficulty.Master:
+			maxdotscolor = 8;
+			break;
+		}
+
 	        location_order = new ArrayListIndicesRandom (NUMCOLUMNS*NUMCOLUMNS);
 		location_order.Initialize();
 
@@ -61,7 +73,7 @@ public class MemoryCountDots : Memory
 		// have to substract 1 to make dotsPerColor contents 0 based.
 		dotsPerColor = new int [palette.Count];
 		for (int i=0,before=-1; i< palette.Count; i++) {
-			dotsPerColor[i] = before + MINDOTS + random.Next(MAXDOTSCOLOR-MINDOTS+1) ;
+			dotsPerColor[i] = before + MINDOTS + random.Next(maxdotscolor-MINDOTS+1);
 			before = dotsPerColor[i];
 		}
 

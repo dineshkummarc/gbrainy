@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2007 Jordi Mas i Hernàndez <jmas@softcatala.org>
+ * Copyright (C) 2007-2008 Jordi Mas i Hernàndez <jmas@softcatala.org>
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License as
@@ -29,7 +29,7 @@ public class MemoryWords : Memory
 	private ArrayListIndicesRandom words_order;
 	private ArrayList words;
 	private const int total_words = 35;
-	private const int showed = 9;
+	private int showed;
 	private int answer;
 
 	public override string Name {
@@ -99,6 +99,18 @@ public class MemoryWords : Memory
 		words.Add (Catalog.GetString ("bear"));
 		words.Add (Catalog.GetString ("wolf"));
 
+		switch (CurrentDifficulty) {
+		case Difficulty.Easy:
+			showed = 6;
+			break;
+		case Difficulty.Medium:
+			showed = 9;
+			break;
+		case Difficulty.Master:
+			showed = 12;
+			break;
+		}
+
 		words_order = new ArrayListIndicesRandom (total_words);
 		words_order.Initialize ();
 		answer = random.Next (showed);
@@ -109,7 +121,7 @@ public class MemoryWords : Memory
 	
 	public override void DrawPossibleAnswers (Cairo.Context gr, int area_width, int area_height)
 	{
-		double x= DrawAreaX + 0.125, y = DrawAreaY + 0.2;
+		double x= DrawAreaX + 0.125, y = DrawAreaY + 0.1;
 		int cnt = 0;
 
 		for (int i = 0; i < showed; i++)
@@ -121,7 +133,7 @@ public class MemoryWords : Memory
 			gr.ShowText ((string) words[(int)words_order[i]]);
 			gr.Stroke ();
 
-			if (cnt  == 2 || cnt == 5) {
+			if ((cnt + 1) % 3 == 0) {
 				y += 0.2;
 				x = DrawAreaX + 0.125;
 			} else {
@@ -139,14 +151,14 @@ public class MemoryWords : Memory
 	
 	private void DrawObject (Cairo.Context gr, int area_width, int area_height)
 	{
-		double x= DrawAreaX + 0.125, y = DrawAreaY + 0.2;
+		double x= DrawAreaX + 0.125, y = DrawAreaY + 0.1;
 		for (int i = 0; i < showed; i++)
 		{
 			gr.MoveTo (x, y);
 			gr.ShowText ((string) words[(int)words_order[i]]);
 			gr.Stroke ();
 			
-			if (i  == 2 || i == 5) {
+			if ((i + 1) % 3 == 0) {
 				y += 0.2;
 				x = DrawAreaX + 0.125;
 			} else {

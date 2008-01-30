@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2007 Jordi Mas i Hernàndez <jmas@softcatala.org>
+ * Copyright (C) 2007-2008 Jordi Mas i Hernàndez <jmas@softcatala.org>
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License as
@@ -46,6 +46,7 @@ public class gbrainy: Program
 	ToolButton pause_tbbutton;
 	int memquestion_time = 4;
 	bool memquestion_warn = true;
+	Game.Difficulty difficulty = Game.Difficulty.Medium;
  
 	public gbrainy (string [] args, params object [] props)
 	: base ("gbrainy", Defines.VERSION, Modules.UI,  args, props)
@@ -118,14 +119,18 @@ public class gbrainy: Program
 		//OnMemoryOnly (this, EventArgs.Empty); // temp
 	}
 	
-	public virtual int MemQuestionTime {
+	public int MemQuestionTime {
 		get { return memquestion_time;}
 	}
 
-	public virtual bool MemQuestionWarn {
+	public bool MemQuestionWarn {
 		get { return memquestion_warn;}
 	}
 	
+	public Game.Difficulty Difficulty {
+		get { return difficulty;}
+	}
+
 	public void UpdateStatusBar ()
 	{
 		statusbar.Push (0, session.StatusText);
@@ -338,9 +343,12 @@ public class gbrainy: Program
 		dialog = new PreferencesDialog ();
 		dialog.MemQuestionTime = MemQuestionTime;
 		dialog.MemQuestionWarn = MemQuestionWarn;
+		dialog.Difficulty = Difficulty;
 		if (dialog.Run () == ok_buttonid) {
 			memquestion_warn = dialog.MemQuestionWarn;
 			memquestion_time = dialog.MemQuestionTime;
+			difficulty = dialog.Difficulty;
+			session.GameManager.Difficulty = difficulty;
 		}
 		dialog.Dialog.Destroy ();
 	}
