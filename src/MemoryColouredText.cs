@@ -61,11 +61,11 @@ public class MemoryColouredText : Memory
 		DrawObject (gr, area_width, area_height);
 	}
 
-	public void DrawObject (Cairo.Context gr, int area_width, int area_height)
+	private void DrawObject (Cairo.Context gr, int area_width, int area_height)
 	{
 		palette.Alpha=alpha;
 
-		double x= DrawAreaX + 0.2, y = DrawAreaY + 0.2;
+		double x= DrawAreaX + 0.125, y = DrawAreaY + 0.2;
 
 		for (int i = 0; i < palette.Count ; i++)
 		{
@@ -76,13 +76,12 @@ public class MemoryColouredText : Memory
 			
 			if (i == 2) {
 				y += 0.2;
-				x = DrawAreaX + 0.2;
+				x = DrawAreaX + 0.125;
 			} else {
-				x+= 0.2;
+				x+= 0.25;
 			}
 		}
 	}
-
 }
 
 

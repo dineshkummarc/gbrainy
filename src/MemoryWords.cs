@@ -109,7 +109,7 @@ public class MemoryWords : Memory
 	
 	public override void DrawPossibleAnswers (Cairo.Context gr, int area_width, int area_height)
 	{
-		double x= DrawAreaX + 0.1, y = DrawAreaY + 0.1;
+		double x= DrawAreaX + 0.125, y = DrawAreaY + 0.2;
 		int cnt = 0;
 
 		for (int i = 0; i < showed; i++)
@@ -123,13 +123,12 @@ public class MemoryWords : Memory
 
 			if (cnt  == 2 || cnt == 5) {
 				y += 0.2;
-				x = DrawAreaX + 0.1;
+				x = DrawAreaX + 0.125;
 			} else {
-				x+= 0.2;
+				x+= 0.25;
 			}
 			cnt++;
 		}
-		
 	}
 	
 	public override void DrawObjectToMemorize (Cairo.Context gr, int area_width, int area_height)
@@ -138,9 +137,9 @@ public class MemoryWords : Memory
 		DrawObject (gr, area_width, area_height);
 	}
 	
-	public void DrawObject (Cairo.Context gr, int area_width, int area_height)
+	private void DrawObject (Cairo.Context gr, int area_width, int area_height)
 	{
-		double x= DrawAreaX + 0.2, y = DrawAreaY + 0.2;
+		double x= DrawAreaX + 0.125, y = DrawAreaY + 0.2;
 		for (int i = 0; i < showed; i++)
 		{
 			gr.MoveTo (x, y);
@@ -149,9 +148,9 @@ public class MemoryWords : Memory
 			
 			if (i  == 2 || i == 5) {
 				y += 0.2;
-				x = DrawAreaX + 0.2;
+				x = DrawAreaX + 0.125;
 			} else {
-				x+= 0.2;
+				x+= 0.25;
 			}
 		}
 	}
