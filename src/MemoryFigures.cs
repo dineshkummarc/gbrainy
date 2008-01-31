@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2007 Jordi Mas i Hernàndez <jmas@softcatala.org>
+ * Copyright (C) 2007-2008 Jordi Mas i Hernàndez <jmas@softcatala.org>
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License as
@@ -26,15 +26,15 @@ using System.Collections;
 
 public class MemoryFigures : Memory
 {
-
 	private ArrayListIndicesRandom figures;
-	private const int rows = 3;
-	private const int columns = 4;
+	private int rows;
+	private int columns;
 	private const double start_x = 0.25;
 	private const double start_y = 0.1;
 	private const double figure_size = 0.08;
 	private double rect_w, rect_h;
 	private int question_pos, question_answer;
+	private int figures_active;
 
 	public enum FigureType
 	{
@@ -44,9 +44,8 @@ public class MemoryFigures : Memory
 		Cercle,
 		TriangleWithLine,
 		RectangleWithLine,
-		//DiamondWithLine,
-		//CercleWithLine,
-		Length
+		DiamondWithLine,
+		CercleWithLine,
 	}
 
 	public override string Name {
@@ -65,13 +64,30 @@ public class MemoryFigures : Memory
 	public override void Initialize ()
 	{
 		int fig1, fig2;
-		rect_w = 0.6 / columns;
-		rect_h = DrawAreaHeight / rows;
-		figures = new ArrayListIndicesRandom ((int) FigureType.Length * 2);
-		figures.Initialize ();
-		question_pos = (int) random.Next ((int) FigureType.Length * 2);
 
-		for (int figure = 0; figure < (int) FigureType.Length * 2; figure++)
+		switch (CurrentDifficulty) {
+		case Difficulty.Easy:
+			figures_active = 4;
+			rows = columns = 3;
+			break;
+		case Difficulty.Medium:
+			figures_active = 6;
+			rows = 3;
+			columns = 4;			
+			break;
+		case Difficulty.Master:
+			figures_active = 8;
+			columns = rows = 4;
+			break;
+		}
+
+		rect_w = 0.6 / columns;
+		rect_h = 0.8 / rows;
+		figures = new ArrayListIndicesRandom ((int) figures_active * 2);
+		figures.Initialize ();
+		question_pos = (int) random.Next ((int) figures_active * 2);
+
+		for (int figure = 0; figure < (int) figures_active * 2; figure++)
 		{	
 			if (figure == question_pos)
 				continue;
@@ -79,8 +95,8 @@ public class MemoryFigures : Memory
 			fig1 = (int) figures[figure];
 			fig2 = (int) figures[question_pos];
 
-			if (fig1 >= (int) FigureType.Length) fig1 -= (int) FigureType.Length;
-			if (fig2 >= (int) FigureType.Length) fig2 -= (int) FigureType.Length;
+			if (fig1 >= (int) figures_active) fig1 -= (int) figures_active;
+			if (fig2 >= (int) figures_active) fig2 -= (int) figures_active;
 
 			if (fig1 == fig2) {
 				question_answer = figure + 1;
@@ -107,13 +123,12 @@ public class MemoryFigures : Memory
 		for (int figure = 0; figure < figures.Count; figure++, col++)
 		{
 			fig = (int)figures[figure];
-			if (fig >= (int) FigureType.Length) fig -= (int) FigureType.Length;
+			if (fig >= figures_active) fig -= figures_active;
 
 			if (figure == question_pos)
 				DrawFigure (gr, x, y, (FigureType) fig);
 			else {
-				gr.MoveTo (x + 0.04, y + 0.1);
-				gr.ShowText ((figure + 1).ToString ());
+				DrawingHelpers.DrawTextCentered (gr, x + rect_w / 2, y + rect_h / 2, (figure + 1).ToString ());
 				gr.Stroke ();
 			}
 
@@ -142,8 +157,8 @@ public class MemoryFigures : Memory
 		for (int figure = 0; figure < figures.Count; figure++, col++)
 		{
 			fig = (int)figures[figure];
-			if (fig >= (int) FigureType.Length) 
-				fig -= (int) FigureType.Length;
+			if (fig >= figures_active) 
+				fig -= figures_active;
 
 			DrawFigure (gr, x, y, (FigureType) fig);
 
@@ -159,7 +174,10 @@ public class MemoryFigures : Memory
 
 	private void DrawFigure (Cairo.Context gr, double x, double y, FigureType fig)
 	{
-		double space_x = 0.04, space_y = 0.08;
+		double space_x, space_y;
+
+		space_x = (rect_w - figure_size) / 2;
+		space_y = (rect_h - figure_size) / 2;
 
 		switch (fig) {
 		case FigureType.Triangle:
@@ -190,7 +208,7 @@ public class MemoryFigures : Memory
 			gr.LineTo (x + space_x, y + space_y + figure_size);
 			gr.Stroke ();
 			break;
-		/*case FigureType.DiamondWithLine:
+		case FigureType.DiamondWithLine:
 			DrawingHelpers.DrawDiamond  (gr, x + space_x, y + space_y, figure_size);
 			gr.MoveTo (x + space_x + figure_size / 2, y + space_y);
 			gr.LineTo (x + space_x + figure_size / 2, y + space_y + figure_size);
@@ -202,7 +220,7 @@ public class MemoryFigures : Memory
 			gr.MoveTo (x + space_x + figure_size / 2, y + space_y);
 			gr.LineTo (x + space_x + figure_size / 2, y + space_y + figure_size);
 			gr.Stroke ();
-			break;*/
+			break;
 		}
 	}
 

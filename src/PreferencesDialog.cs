@@ -39,6 +39,7 @@ public class PreferencesDialog
 		dialog = null;
 		xml = new Glade.XML (null, "gbrainy.glade", dialog_name, "gbrainy");
 		xml.Autoconnect (this);
+		Dialog.IconName = "gbrainy";
 	}
 	
 	public virtual int MemQuestionTime {

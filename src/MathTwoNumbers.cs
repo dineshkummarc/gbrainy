@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2007 Jordi Mas i Hernàndez <jmas@softcatala.org>
+ * Copyright (C) 2007-2008 Jordi Mas i Hernàndez <jmas@softcatala.org>
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License as
@@ -25,7 +25,7 @@ using Mono.Unix;
 public class MathTwoNumbers : Game
 {
 	private int number_a, number_b;
-	private int op1, op2;
+	private int op1, op2, max_operand;
 
 	public override string Name {
 		get {return Catalog.GetString ("Two numbers");}
@@ -41,8 +41,20 @@ public class MathTwoNumbers : Game
 
 	public override void Initialize ()
 	{	
-		number_a = 5 + random.Next (15);
-		number_b = 3 + random.Next (10);
+		switch (CurrentDifficulty) {
+		case Difficulty.Easy:
+			max_operand = 8;
+			break;
+		case Difficulty.Medium:
+			max_operand = 12;
+			break;
+		case Difficulty.Master:
+			max_operand = 25;
+			break;
+		}
+
+		number_a = 5 + random.Next (max_operand);
+		number_b = 3 + random.Next (max_operand);
 
 		op1 = number_a + number_b;
 		op2 = number_a * number_b;

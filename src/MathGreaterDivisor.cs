@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2007 Jordi Mas i Hernàndez <jmas@softcatala.org>
+ * Copyright (C) 2007-2008 Jordi Mas i Hernàndez <jmas@softcatala.org>
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License as
@@ -26,6 +26,8 @@ public class MathGreaterDivisor : Game
 {
 	private int []numbers;
 	private int []answers;
+	private int max_num;
+	private int num_answ_ques;
 
 	public override string Name {
 		get {return Catalog.GetString ("Greater divisor");}
@@ -44,9 +46,24 @@ public class MathGreaterDivisor : Game
 		bool found;
 		int n, m;
 		int []mult = new int [3];
-		numbers = new int [4];
-		answers = new int [4];
-		
+
+		switch (CurrentDifficulty) {
+		case Difficulty.Easy:
+			max_num = 999;
+			num_answ_ques = 3;
+			break;
+		case Difficulty.Medium:
+			max_num = 999;
+			num_answ_ques = 4;
+			break;
+		case Difficulty.Master:
+			max_num = 9999;
+			num_answ_ques = 5;
+			break;
+		}
+
+		numbers = new int [num_answ_ques];
+		answers = new int [num_answ_ques];
 
 		// Common multiplayers for all numbers
 		for (m = 0; m < mult.Length; m++) {
@@ -64,7 +81,7 @@ public class MathGreaterDivisor : Game
 				numbers[n] = numbers [n] * mult[m];
 			}
 			
-			if (numbers[n] > 999 || numbers[n] < 50) 
+			if (numbers[n] > max_num || numbers[n] < 50) 
 				continue;
 
 			found = false;
@@ -178,7 +195,7 @@ public class MathGreaterDivisor : Game
 
 	public override void Draw (Cairo.Context gr, int area_width, int area_height)
 	{	
-		double x = DrawAreaX + 0.05, y = DrawAreaY + 0.1;
+		double x = DrawAreaX, y = DrawAreaY + 0.1;
 
 		gr.Scale (area_width, area_height);
 		DrawBackground (gr);
@@ -194,10 +211,10 @@ public class MathGreaterDivisor : Game
 			gr.MoveTo (x, y);
 			gr.ShowText (numbers[n].ToString ());
 			gr.Stroke ();
-			x += 0.2;
+			x += 0.17;
 		}
 		
-		x = DrawAreaX + 0.05;
+		x = DrawAreaX;
 		y += 0.3;
 
 		gr.MoveTo (0.05, y);
@@ -209,7 +226,7 @@ public class MathGreaterDivisor : Game
 			gr.MoveTo (x, y);
 			gr.ShowText (answers[n].ToString ());
 			gr.Stroke ();
-			x += 0.2;
+			x += 0.17;
 		}
 	}
 }

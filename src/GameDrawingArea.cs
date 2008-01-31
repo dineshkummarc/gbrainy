@@ -41,7 +41,7 @@ public class GameDrawingArea : DrawingArea
 	public Modes mode;
 	private GameSession session;
 	private ArrayListIndicesRandom random_indices;
-	private const int tips_count = 8;
+	private const int tips_count = 10;
 	private const int tips_shown = 4;
 	private System.Timers.Timer timer;
 	private int countdown_time;
@@ -140,7 +140,7 @@ public class GameDrawingArea : DrawingArea
 	private void TimerUpdater (object source, ElapsedEventArgs e)
 	{
 		lock (this) {
-			if (countdown_time == 0) {
+			if (countdown_time == 1) {
 				timer.Enabled = false;
 				timer.Dispose ();
 				finish (this, EventArgs.Empty);
@@ -294,6 +294,10 @@ public class GameDrawingArea : DrawingArea
 			return Catalog.GetString ("Play in daily basis, you will notice progress soon.");
 		case 7:
 			return Catalog.GetString ("You can use the Custom Game Selection to choose exactly which games you want to train.");
+		case 8:
+			return Catalog.GetString ("You can use the Preferences to adjust the difficulty level of the game.");
+		case 9:
+			return Catalog.GetString ("Association of elements is a common technique for remembering things.");
 		}
 
 		return string.Empty;

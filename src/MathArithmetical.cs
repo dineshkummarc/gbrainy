@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2007 Jordi Mas i Hernàndez <jmas@softcatala.org>
+ * Copyright (C) 2007-2008 Jordi Mas i Hernàndez <jmas@softcatala.org>
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License as
@@ -34,6 +34,8 @@ public class MathArithmetical : Game
 
 	private int []operands;
 	private Operation operation;
+	private int max_operand;
+	private int max_operations;
 
 	public override string Name {
 		get {return Catalog.GetString ("Arithmetical");}
@@ -52,10 +54,25 @@ public class MathArithmetical : Game
 		int result = 0, operations = 0;
 		operation = (Operation) random.Next ((int) Operation.LastOperation);
 
+		switch (CurrentDifficulty) {
+		case Difficulty.Easy:
+			max_operations = 2;
+			max_operand = 50;
+			break;
+		case Difficulty.Medium:
+			max_operations = 3;
+			max_operand = 100;
+			break;
+		case Difficulty.Master:
+			max_operations = 5;
+			max_operand = 500;
+			break;
+		}
+
 		switch (operation) {
 		case Operation.Addition:
 		case Operation.Substraction:
-			operations = 2 + random.Next (3);
+			operations = 2 + random.Next (max_operations);
 				break;
 		case Operation.Multiplication:
 			operations = 2 + random.Next (1);
@@ -64,10 +81,10 @@ public class MathArithmetical : Game
 
 		operands = new int [operations];
 
-		result = operands[0] = 10 + random.Next (90);
+		result = operands[0] = 10 + random.Next (max_operand);
 		for (int i = 1; i < operands.Length; i ++)
 		{
-			operands[i] = 10 + random.Next (90);
+			operands[i] = 10 + random.Next (max_operand);
 			switch (operation) {
 			case Operation.Addition:
 				result += operands[i];
