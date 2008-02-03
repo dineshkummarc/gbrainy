@@ -143,7 +143,9 @@ public class GameDrawingArea : DrawingArea
 			if (countdown_time == 1) {
 				timer.Enabled = false;
 				timer.Dispose ();
-				finish (this, EventArgs.Empty);
+				Application.Invoke ( delegate { 
+					finish (this, EventArgs.Empty);
+				});
 			}
 			countdown_time--;
 			Application.Invoke ( delegate { QueueDraw (); });
