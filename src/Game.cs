@@ -31,14 +31,6 @@ abstract public class Game
 		MathTrainer		= 8
 	}
 
-	public enum Difficulty
-	{
-		None			= 0,
-		Easy			= 2,
-		Medium			= 4,
-		Master			= 8,
-	}
-
 	private bool draw_answer;
 	private gbrainy application;
 	private Cairo.Color default_color;
@@ -48,7 +40,6 @@ abstract public class Game
 	private TimeSpan game_time;
 	private bool won;
 	private bool tip_used;
-	private Difficulty difficulty;
 
 	public Game ()
 	{
@@ -59,7 +50,6 @@ abstract public class Game
 		default_background = new Color (1, 1, 1);
 		won = false;
 		tip_used = false;
-		difficulty = Difficulty.Medium;
 	}
 
 	public abstract string Question {
@@ -69,23 +59,6 @@ abstract public class Game
 	public virtual string Answer {
 		get {
 			return String.Format (Catalog.GetString ("The right answer is {0}."), right_answer);
-		}
-	}
-
-	// Stores how difficult the game is
-	public virtual Difficulty GameDifficulty {
-		get {
-			return Difficulty.Master | Difficulty.Medium | Difficulty.Easy;
-		}
-	}
-
-	// The level of difficulty selected for the current game
-	public virtual Difficulty CurrentDifficulty {
-		set {
-			difficulty = value;
-		}
-		get {
-			return difficulty;
 		}
 	}
 

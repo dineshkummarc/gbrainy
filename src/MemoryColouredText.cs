@@ -29,7 +29,6 @@ public class MemoryColouredText : Memory
 	private ColorPalette palette;
 	private int question;
 	private string question_colorname;
-	private int colors_shown;
 
 	public override string Name {
 		get {return Catalog.GetString ("Colored text");}
@@ -46,24 +45,12 @@ public class MemoryColouredText : Memory
 
 	public override void Initialize ()
 	{
-		switch (CurrentDifficulty) {
-		case Difficulty.Easy:
-			colors_shown = 3;
-			break;
-		case Difficulty.Medium:
-			colors_shown = 4;
-			break;
-		case Difficulty.Master:
-			colors_shown = 6;
-			break;
-		}
-
-		palette = new ColorPalette (colors_shown);
+		palette = new ColorPalette(ColorPalette.Id.PrimarySecundaryColors);
 		palette.Initialize ();
 		
-		question = random.Next (palette.Count);
-		right_answer = palette.Name (question);
-		question_colorname = palette.Name ((ColorPalette.Id) question);
+		question = random.Next ( palette.Count );
+		right_answer = palette.Name( question );
+		question_colorname = palette.Name( (ColorPalette.Id) question );
 		
 		base.Initialize ();
 	}
@@ -74,11 +61,11 @@ public class MemoryColouredText : Memory
 		DrawObject (gr, area_width, area_height);
 	}
 
-	private void DrawObject (Cairo.Context gr, int area_width, int area_height)
+	public void DrawObject (Cairo.Context gr, int area_width, int area_height)
 	{
 		palette.Alpha=alpha;
 
-		double x= DrawAreaX + 0.125, y = DrawAreaY + 0.2;
+		double x= DrawAreaX + 0.2, y = DrawAreaY + 0.2;
 
 		for (int i = 0; i < palette.Count ; i++)
 		{
@@ -89,11 +76,13 @@ public class MemoryColouredText : Memory
 			
 			if (i == 2) {
 				y += 0.2;
-				x = DrawAreaX + 0.125;
+				x = DrawAreaX + 0.2;
 			} else {
-				x+= 0.25;
+				x+= 0.2;
 			}
 		}
 	}
+
 }
+
 

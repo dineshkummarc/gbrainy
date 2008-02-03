@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2007-2008 Jordi Mas i Hernàndez <jmas@softcatala.org>
+ * Copyright (C) 2007 Jordi Mas i Hernàndez <jmas@softcatala.org>
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License as
@@ -34,16 +34,15 @@ public class MemoryColouredFigures : Memory
 		Length
 	}
 
-	private int columns, rows;
-	private int squares;
-	private double rect_w;
-	private double rect_h;
+	private const int columns = 6, rows = 6;
+	private const int squares = columns * rows;
+	private const double rect_w = 0.3 / rows;
+	private const double rect_h = 0.3 / columns;
 	private SquareColor []squares_colours;
 	private ArrayListIndicesRandom answers_order;
 	private const int answers = 4;
 	private ColorPalette palette;
 	private int color_sheme;
-	private const double block_space = 0.35;
 
 	public override string Name {
 		get {return Catalog.GetString ("Colored Figures");}
@@ -61,21 +60,6 @@ public class MemoryColouredFigures : Memory
 
 	public override void Initialize ()
 	{
-		switch (CurrentDifficulty) {
-		case Difficulty.Easy:
-			columns = rows = 5;
-			break;
-		case Difficulty.Medium:
-			columns = rows = 6;
-			break;
-		case Difficulty.Master:
-			columns = rows = 7;
-			break;
-		}
-
-		squares = columns * rows;
-		rect_w = 0.3 / rows;
-		rect_h = 0.3 / columns;
 		squares_colours = new SquareColor [squares * answers];
 		color_sheme = random.Next (2);
 		palette = new ColorPalette(ColorPalette.Id.PrimarySecundaryColors);
@@ -141,20 +125,21 @@ public class MemoryColouredFigures : Memory
 
 	public override void DrawPossibleAnswers (Cairo.Context gr, int area_width, int area_height)
 	{
-		double x = DrawAreaX, y = DrawAreaY;
+		double x = DrawAreaX + 0.05, y = DrawAreaY;
 	
 		palette.Alpha = alpha;
+		//gr.Color = palette.Cairo(DefaultDrawingColor);
 		
 		for (int i = 0; i < answers_order.Count; i++) {
 			if (i == 2) {
-				y += 0.45;
-				x = DrawAreaX;
+				y += 0.4;
+				x = DrawAreaX + 0.05;
 			}
 			DrawSquare (gr, x, y, squares_colours, squares * (int) answers_order[i]);
-			gr.MoveTo (x, y + block_space + 0.02);
+			gr.MoveTo (x, y + 0.34);
 			gr.ShowText (String.Format (Catalog.GetString ("Figure {0}"), (char) (65 + i)));
 			gr.Stroke ();
-			x += block_space + 0.08;
+			x += 0.35;
 		}
 	}
 

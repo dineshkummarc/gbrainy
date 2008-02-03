@@ -41,7 +41,7 @@ public class GameDrawingArea : DrawingArea
 	public Modes mode;
 	private GameSession session;
 	private ArrayListIndicesRandom random_indices;
-	private const int tips_count = 10;
+	private const int tips_count = 8;
 	private const int tips_shown = 4;
 	private System.Timers.Timer timer;
 	private int countdown_time;
@@ -93,7 +93,7 @@ public class GameDrawingArea : DrawingArea
 		gr.SetFontSize (0.035);
 
 		gr.MoveTo (0.05, y);
-		gr.ShowText (String.Format (Catalog.GetString ("Welcome to gbrainy {0}"), Defines.VERSION));
+		gr.ShowText (Catalog.GetString ("Welcome to gbrainy") + " " + Defines.VERSION);
 		gr.Stroke ();
 
 		gr.SetFontSize (0.03);
@@ -140,10 +140,12 @@ public class GameDrawingArea : DrawingArea
 	private void TimerUpdater (object source, ElapsedEventArgs e)
 	{
 		lock (this) {
-			if (countdown_time == 1) {
+			if (countdown_time == 0) {
 				timer.Enabled = false;
 				timer.Dispose ();
-				finish (this, EventArgs.Empty);
+				Application.Invoke ( delegate { 
+					finish (this, EventArgs.Empty);
+				});
 			}
 			countdown_time--;
 			Application.Invoke ( delegate { QueueDraw (); });
@@ -212,33 +214,21 @@ public class GameDrawingArea : DrawingArea
 
 		y += space_small;	
 		gr.MoveTo (x, y);
-
-		if (session.LogicGamesPlayed == 0)
-			str = Catalog.GetString ("No logic puzzle games played");
-		else
-			str = String.Format (Catalog.GetString ("Logic puzzle score is {0}%"), session.LogicScore);
-
-		gr.ShowText (str);
+		str = Catalog.GetString ("Logic puzzle score is {0}%");
+		if (session.LogicGamesPlayed == 0)  str += " " + Catalog.GetString ("(no games played)");
+		gr.ShowText (String.Format (str, session.LogicScore));
 
 		y += space_small;
 		gr.MoveTo (x, y);
-
-		if (session.MathGamesPlayed == 0)
-			str = Catalog.GetString ("No mental calculation games played");
-		else
-			str = String.Format (Catalog.GetString ("Mental calculation score is {0}%"), session.MathScore);
-
-		gr.ShowText (str);
+		str = Catalog.GetString ("Mental calculation score is {0}%");
+		if (session.MathGamesPlayed == 0)  str += " " + Catalog.GetString ("(no games played)");
+		gr.ShowText (String.Format (str, session.MathScore));
 
 		y += space_small;
 		gr.MoveTo (x, y);
-
-		if (session.MemoryGamesPlayed == 0)
-			str = Catalog.GetString ("No memory games played");
-		else
-			str = String.Format (Catalog.GetString ("Memory score is {0}%"),  session.MemoryScore);
-
-		gr.ShowText (str);
+		str = Catalog.GetString ("Memory score is {0}%");
+		if (session.MemoryGamesPlayed == 0)  str += " " + Catalog.GetString ("(no games played)");
+		gr.ShowText (String.Format (str, session.MemoryScore));
 
 		y += 0.08;
 		gr.SetFontSize (0.03);
@@ -294,10 +284,6 @@ public class GameDrawingArea : DrawingArea
 			return Catalog.GetString ("Play in daily basis, you will notice progress soon.");
 		case 7:
 			return Catalog.GetString ("You can use the Custom Game Selection to choose exactly which games you want to train.");
-		case 8:
-			return Catalog.GetString ("You can use the Preferences to adjust the difficulty level of the game.");
-		case 9:
-			return Catalog.GetString ("Association of elements is a common technique for remembering things.");
 		}
 
 		return string.Empty;

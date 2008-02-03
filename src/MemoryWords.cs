@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2007-2008 Jordi Mas i Hernàndez <jmas@softcatala.org>
+ * Copyright (C) 2007 Jordi Mas i Hernàndez <jmas@softcatala.org>
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License as
@@ -29,7 +29,7 @@ public class MemoryWords : Memory
 	private ArrayListIndicesRandom words_order;
 	private ArrayList words;
 	private const int total_words = 35;
-	private int showed;
+	private const int showed = 9;
 	private int answer;
 
 	public override string Name {
@@ -99,18 +99,6 @@ public class MemoryWords : Memory
 		words.Add (Catalog.GetString ("bear"));
 		words.Add (Catalog.GetString ("wolf"));
 
-		switch (CurrentDifficulty) {
-		case Difficulty.Easy:
-			showed = 6;
-			break;
-		case Difficulty.Medium:
-			showed = 9;
-			break;
-		case Difficulty.Master:
-			showed = 12;
-			break;
-		}
-
 		words_order = new ArrayListIndicesRandom (total_words);
 		words_order.Initialize ();
 		answer = random.Next (showed);
@@ -121,7 +109,7 @@ public class MemoryWords : Memory
 	
 	public override void DrawPossibleAnswers (Cairo.Context gr, int area_width, int area_height)
 	{
-		double x= DrawAreaX + 0.125, y = DrawAreaY + 0.1;
+		double x= DrawAreaX + 0.1, y = DrawAreaY + 0.1;
 		int cnt = 0;
 
 		for (int i = 0; i < showed; i++)
@@ -133,14 +121,15 @@ public class MemoryWords : Memory
 			gr.ShowText ((string) words[(int)words_order[i]]);
 			gr.Stroke ();
 
-			if ((cnt + 1) % 3 == 0) {
+			if (cnt  == 2 || cnt == 5) {
 				y += 0.2;
-				x = DrawAreaX + 0.125;
+				x = DrawAreaX + 0.1;
 			} else {
-				x+= 0.25;
+				x+= 0.2;
 			}
 			cnt++;
 		}
+		
 	}
 	
 	public override void DrawObjectToMemorize (Cairo.Context gr, int area_width, int area_height)
@@ -149,20 +138,20 @@ public class MemoryWords : Memory
 		DrawObject (gr, area_width, area_height);
 	}
 	
-	private void DrawObject (Cairo.Context gr, int area_width, int area_height)
+	public void DrawObject (Cairo.Context gr, int area_width, int area_height)
 	{
-		double x= DrawAreaX + 0.125, y = DrawAreaY + 0.1;
+		double x= DrawAreaX + 0.2, y = DrawAreaY + 0.2;
 		for (int i = 0; i < showed; i++)
 		{
 			gr.MoveTo (x, y);
 			gr.ShowText ((string) words[(int)words_order[i]]);
 			gr.Stroke ();
 			
-			if ((i + 1) % 3 == 0) {
+			if (i  == 2 || i == 5) {
 				y += 0.2;
-				x = DrawAreaX + 0.125;
+				x = DrawAreaX + 0.2;
 			} else {
-				x+= 0.25;
+				x+= 0.2;
 			}
 		}
 	}

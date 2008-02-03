@@ -59,7 +59,7 @@ public class GameManager
 		typeof (MathGreaterDivisor),
 		typeof (MathTwoNumbers),
 		typeof (MathWhichNumber),
-		typeof (MathOperator),
+		//typeof (MathOperator), // Currently buggy. To be fixed in the next release
 	};
 
 	static Type[] MemoryTrainers = new Type[] 
@@ -76,8 +76,7 @@ public class GameManager
 	private GameSession.Types game_type;
 	private ArrayListIndicesRandom list;
 	private IEnumerator enumerator;
-	private ArrayList games;
-	private Game.Difficulty difficulty;
+	private Type[] games;
 
 	static GameManager ()
 	{
@@ -89,8 +88,6 @@ public class GameManager
 	public GameManager ()
 	{
 		game_type = GameSession.Types.None;
-		difficulty = Game.Difficulty.Medium;
-		games = new ArrayList ();
 	}
 
 	public GameSession.Types GameType {
@@ -104,52 +101,49 @@ public class GameManager
 		}
 	}
 
-	public Game.Difficulty Difficulty {
-		set {
-			difficulty = value;
-			BuildGameList ();
-		}
-		get {
-			return difficulty;
-		}
-	}
-
-	// Used from CustomGameDialog only
 	public Type[] Games {
-		get { return (Type []) games.ToArray (typeof (Type)); }
-		set {
-			games = new ArrayList (value.Length);
-			for (int i = 0; i < value.Length; i++)
-				games.Add (value[i]);
-
-			list = new ArrayListIndicesRandom (games.Count);
+		get { return games; }
+		set { 
+			games = value; 
+			list = new ArrayListIndicesRandom (games.Length);
 			Initialize ();
 		}
 	}
 
 	private void BuildGameList ()
 	{
+		int cnt = 0, index = 0;
+
 		if (GameType == GameSession.Types.Custom)
 			return;
+
+		if ((game_type & GameSession.Types.LogicPuzzles) == GameSession.Types.LogicPuzzles)
+			cnt += LogicPuzzles.Length;
+
+		if ((game_type & GameSession.Types.MathTrainers) == GameSession.Types.MathTrainers)
+			cnt += MathTrainers.Length;
+
+		if ((game_type & GameSession.Types.MemoryTrainers) == GameSession.Types.MemoryTrainers)
+			cnt += MemoryTrainers.Length;
 		
-		games.Clear ();
+		games = new Type [cnt];
 
 		if ((game_type & GameSession.Types.LogicPuzzles) == GameSession.Types.LogicPuzzles) {
-			for (int i = 0; i < LogicPuzzles.Length; i++)
-					games.Add (LogicPuzzles [i]);
+			for (int i = 0; i < LogicPuzzles.Length; i++, index++)
+				games[index] = LogicPuzzles [i];
 		}
 
 		if ((game_type & GameSession.Types.MathTrainers) == GameSession.Types.MathTrainers) {
-			for (int i = 0; i < MathTrainers.Length; i++)
-				games.Add (MathTrainers [i]);
+			for (int i = 0; i < MathTrainers.Length; i++, index++)
+				games[index] = MathTrainers [i];
 		}
 
 		if ((game_type & GameSession.Types.MemoryTrainers) == GameSession.Types.MemoryTrainers) {
-			for (int i = 0; i < MemoryTrainers.Length; i++)
-				games.Add (MemoryTrainers [i]);
+			for (int i = 0; i < MemoryTrainers.Length; i++, index++)
+				games[index] = MemoryTrainers [i];
 		}
 
-		list = new ArrayListIndicesRandom (games.Count);
+		list = new ArrayListIndicesRandom (cnt);
 		Initialize ();
 	}
 
@@ -161,28 +155,15 @@ public class GameManager
 	
 	public Game GetPuzzle (gbrainy app)
 	{
-		Game puzzle, first = null;
-
-		while (true) {
-			if (enumerator.MoveNext () == false) { // All the games have been played, restart again 
-				Initialize ();
-				enumerator.MoveNext ();
-			}
-
-			puzzle =  (Game) Activator.CreateInstance ((Type) games [(int) enumerator.Current], true);
-			//puzzle =  (Game) Activator.CreateInstance (MemoryTrainers [2], true);
-			if (first != null && first.GetType () == puzzle.GetType ())
-				break;
-				
-			if (first == null)
-				first = puzzle;
-
-			if ((puzzle.GameDifficulty & difficulty) == difficulty)
-				break;
+		Game puzzle;
+		if (enumerator.MoveNext () == false) { // All the games have been played, restart again 
+			Initialize ();
+			enumerator.MoveNext ();
 		}
 
+		puzzle =  (Game) Activator.CreateInstance (games [(int) enumerator.Current], true);
+		//puzzle =  (Game) Activator.CreateInstance (MemoryTrainers [2], true);
 		puzzle.App = app;
-		puzzle.CurrentDifficulty = Difficulty;
 		puzzle.Initialize ();
 		return puzzle;
 	}

@@ -39,7 +39,7 @@ public class MathWhichNumber : Game
 	}
 
 	public override string Question {
-		get {return String.Format (Catalog.GetString ("Which of the following numbers is closer to {0:###.###} (option A, B, C or D)?"), question_num);} 
+		get {return String.Format (Catalog.GetString ("Which of the following numbers is closer to {0:###.###} (option A, B, C or D)? "), question_num);} 
 	}
 
 	public override string Answer {

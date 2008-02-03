@@ -102,19 +102,13 @@ public class GameSession
 		session.total_score = total_score;
 		session.games_played = games_played;
 		session.games_won = games_won;
-		session.game_time = game_time;
-		session.Difficulty = Difficulty;
+		session.game_time = game_time;		
 		return session;
 	}
 
 	public Types Type {
 		get {return game_manager.GameType; }
 		set {game_manager.GameType = value; }
-	}
-
-	public Game.Difficulty Difficulty {
-		get {return game_manager.Difficulty; }
-		set {game_manager.Difficulty = value; }
 	}
 	
 	public TimeSpan GameTime {

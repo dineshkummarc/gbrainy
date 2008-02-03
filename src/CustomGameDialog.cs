@@ -107,7 +107,7 @@ public class CustomGameDialog
 		}
 
 		treeview.Model = games_store;
-		Dialog.IconName = "gbrainy";
+
 		game =  (Game) Activator.CreateInstance (games [0], true);
 		game.Initialize ();
 		drawing_area.puzzle = game;
