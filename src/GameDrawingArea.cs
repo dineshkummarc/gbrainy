@@ -210,7 +210,7 @@ public class GameDrawingArea : DrawingArea
 		gr.SetFontSize (0.03);
 		y += 0.08;
 		gr.MoveTo (x, y);
-		gr.ShowText (String.Format (Catalog.GetString ("Your total is score {0}%"), session.TotalScore));
+		gr.ShowText (String.Format (Catalog.GetString ("Your total score is {0}%"), session.TotalScore));
 
 		y += space_small;	
 		gr.MoveTo (x, y);

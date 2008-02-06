@@ -33,21 +33,28 @@ public class ArrayListIndicesRandom : ArrayList
 	}
 
 	public void Initialize ()
-	{	
-		int index, left;
-
-		Clear ();
-
+	{
 		ArrayList random_list = new ArrayList (Capacity);
 		for (int i = 0; i < Capacity; i++) {
 			random_list.Add (i);
 		}
+		RandomizeFromArray (random_list);
+	}
 
-		left = Capacity;
+	public void RandomizeFromArray (ArrayList ar)
+	{		
+		int left = Capacity;
+		int index;
+		object []array = (object []) ar.ToArray (typeof (object));
+		Clear ();
+
+		// Generate a random number that can be as big as the maximum -1
+		// Add the random element picked up element in the list
+		// The element just randomized gets out of pending list and replaced by the maximum -1 element 
 		for (int i = 0; i < Capacity; i++, left--) {
 			index = random.Next (left);
-			Add (random_list[index]);
-			random_list[index] = random_list[left - 1];
+			Add (array[index]);
+			array[index] = array[left - 1];
 		}
 	}
 }

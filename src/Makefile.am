@@ -52,6 +52,7 @@ GBRAINY_CSDISTFILES =				\
 	$(srcdir)/PreferencesDialog.cs		\
 	$(srcdir)/PuzzleMissingPiece.cs		\
 	$(srcdir)/MemoryIndications.cs		\
+	$(srcdir)/PuzzleMostInCommon.cs		\
 	$(srcdir)/gbrainy.cs			
 
 ASSEMBLIES = \
