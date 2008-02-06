@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gbrainy.HEAD\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-01-26 12:33+0000\n"
-"PO-Revision-Date: 2008-01-26 17:59+0100\n"
+"POT-Creation-Date: 2008-02-01 03:41+0000\n"
+"PO-Revision-Date: 2008-02-06 22:40+0100\n"
 "Last-Translator: Jorge González <jorgegonz@svn.gnome.org>\n"
 "Language-Team: Español <gnome-es-list@gnome.org>\n"
 "MIME-Version: 1.0\n"
@@ -27,160 +27,180 @@ msgstr "Un juego para divertirse y mantener el cerebro entrenado"
 msgid "Game"
 msgstr "Juego"
 
-#: ../gbrainy.desktop.in.h:3 ../src/gbrainy.glade.h:20
+#: ../gbrainy.desktop.in.h:3 ../src/gbrainy.glade.h:24
 msgid "gbrainy"
 msgstr "gbrainy"
 
 #: ../src/gbrainy.glade.h:1
+msgid "<b>Difficulty Level</b>"
+msgstr "<b>Nivel de dificultad</b>"
+
+#: ../src/gbrainy.glade.h:2
 msgid "<b>Memory games</b>"
 msgstr "<b>Juegos de memoria</b>"
 
-#: ../src/gbrainy.glade.h:2
+#: ../src/gbrainy.glade.h:3
 msgid "All Games and Trainers (Logic, Mental Calculation and Memory)"
 msgstr "Todos los juegos y entrenadores (lógica, cálculo mental y memoria)"
 
-#: ../src/gbrainy.glade.h:3
+#: ../src/gbrainy.glade.h:4
 msgid "Answer:"
 msgstr "Respuesta:"
 
-#: ../src/gbrainy.glade.h:4
+#: ../src/gbrainy.glade.h:5
 msgid "Custom Game"
 msgstr "Juego personalizado"
 
-#: ../src/gbrainy.glade.h:5
+#: ../src/gbrainy.glade.h:6
 msgid "Custom Game Selection..."
 msgstr "Selección de juego personalizado…"
 
-#: ../src/gbrainy.glade.h:6
+#: ../src/gbrainy.glade.h:7
+msgid "Easy"
+msgstr "Fácil"
+
+#: ../src/gbrainy.glade.h:8
 msgid "Logic Puzzles Only"
 msgstr "Solo rompecabezas lógicos"
 
-#: ../src/gbrainy.glade.h:7
+#: ../src/gbrainy.glade.h:9
+msgid "Master"
+msgstr "Avanzado"
+
+#: ../src/gbrainy.glade.h:10
+msgid "Medium"
+msgstr "Medio"
+
+#: ../src/gbrainy.glade.h:11
 msgid "Memory Trainers Only"
 msgstr "Solo entrenadores de memoria"
 
-#: ../src/gbrainy.glade.h:8
+#: ../src/gbrainy.glade.h:12
 msgid "Mental Calculation Trainers Only"
 msgstr "Solo entrenadores de cálculo mental"
 
-#: ../src/gbrainy.glade.h:9
+#: ../src/gbrainy.glade.h:13
 msgid "New Game"
 msgstr "Nuevo juego"
 
-#: ../src/gbrainy.glade.h:10
+#: ../src/gbrainy.glade.h:14
 msgid "Preferences"
 msgstr "Preferencias"
 
-#: ../src/gbrainy.glade.h:11
+#: ../src/gbrainy.glade.h:15
 msgid "Select All"
 msgstr "Seleccionar todo"
 
-#: ../src/gbrainy.glade.h:12
+#: ../src/gbrainy.glade.h:16
 msgid "Show the countdown message"
 msgstr "Mostrar el mensaje del tiempo restante"
 
-#: ../src/gbrainy.glade.h:13
+#: ../src/gbrainy.glade.h:17
 msgid "Time in seconds to memorize the challenge:"
 msgstr "Tiempo en segundos para memorizar el desafío:"
 
-#: ../src/gbrainy.glade.h:14
+#: ../src/gbrainy.glade.h:18
 msgid "Toolbar"
 msgstr "Barra de herramientas"
 
-#: ../src/gbrainy.glade.h:15
+#: ../src/gbrainy.glade.h:19
 msgid "Trainers Only (Mental Calculation and Memory)"
 msgstr "Solo entrenadores (cálculo mental y de memoria)"
 
-#: ../src/gbrainy.glade.h:16
+#: ../src/gbrainy.glade.h:20
 msgid "Unselect all"
 msgstr "Deseleccionar todo"
 
-#: ../src/gbrainy.glade.h:17
+#: ../src/gbrainy.glade.h:21
 msgid "_Game"
 msgstr "_Juego"
 
-#: ../src/gbrainy.glade.h:18
+#: ../src/gbrainy.glade.h:22
 msgid "_Next"
 msgstr "_Siguiente"
 
-#: ../src/gbrainy.glade.h:19
+#: ../src/gbrainy.glade.h:23
 msgid "_Tip"
 msgstr "_Pista"
 
-#: ../src/gbrainy.cs:73
+#: ../src/gbrainy.cs:74
 msgid "Play all the games"
 msgstr "Jugar a todos los juegos"
 
-#: ../src/gbrainy.cs:74
+#: ../src/gbrainy.cs:75
 msgid "All"
 msgstr "Todo"
 
-#: ../src/gbrainy.cs:79
+#: ../src/gbrainy.cs:80
 msgid "Play games that challenge your reasoning and thinking"
 msgstr "Jugar a los juegos que desafíen mi razonamiento y pensamiento"
 
-#: ../src/gbrainy.cs:80 ../src/CustomGameDialog.cs:92
+#: ../src/gbrainy.cs:81 ../src/CustomGameDialog.cs:92
 msgid "Logic"
 msgstr "Lógica"
 
-#: ../src/gbrainy.cs:85
+#: ../src/gbrainy.cs:86
 msgid "Calculation"
 msgstr "Cálculo"
 
-#: ../src/gbrainy.cs:86
+#: ../src/gbrainy.cs:87
 msgid "Play games that challenge your mental calculation skills"
 msgstr "Jugar a los juegos que desafíen mis capacidades de cálculo mental"
 
-#: ../src/gbrainy.cs:91 ../src/CustomGameDialog.cs:95
+#: ../src/gbrainy.cs:92 ../src/CustomGameDialog.cs:95
 msgid "Memory"
 msgstr "Memoria"
 
-#: ../src/gbrainy.cs:92
+#: ../src/gbrainy.cs:93
 msgid "Play games that challenge your short term memory"
 msgstr "Jugar a los juegos que desafíen mi memoria a corto plazo"
 
-#: ../src/gbrainy.cs:97
+#: ../src/gbrainy.cs:98
 msgid "Pause"
 msgstr "Pausar"
 
-#: ../src/gbrainy.cs:98
+#: ../src/gbrainy.cs:99
 msgid "Pause the game"
 msgstr "Pausar el juego"
 
-#: ../src/gbrainy.cs:103
+#: ../src/gbrainy.cs:104
 msgid "Ends the game and shows the score"
 msgstr "Terminar el juego y mostrar la puntuación"
 
-#: ../src/gbrainy.cs:104
+#: ../src/gbrainy.cs:105
 msgid "Finish"
 msgstr "Terminar"
 
 #. Name of persons or people that translated the application
-#: ../src/gbrainy.cs:216
+#: ../src/gbrainy.cs:221
 msgid "translator-credits"
 msgstr ""
 "Eduardo Retamales <eretamales@gnome.cl>, 2007, 2008\n"
 "Jorge González <jorgegonz@svn.gnome.org>, 2007, 2008\n"
 "QA: Jorge González <jorgegonz@svn.gnome.org>, 2007-2008."
 
-#: ../src/gbrainy.cs:231
+#: ../src/gbrainy.cs:234
+msgid "Based on ideas by Terry Stickels, MENSA books and myself."
+msgstr "Basado en ideas de por Terry Stickels, MENSA books y yo."
+
+#: ../src/gbrainy.cs:236
 msgid "A brain teaser and trainer game to have fun and to keep your brain trained."
 msgstr "Un juego para divertirse y mantener el cerebro entrenado."
 
-#: ../src/gbrainy.cs:233
+#: ../src/gbrainy.cs:238
 msgid "gbrainy web site"
 msgstr "Página web de gbrainy"
 
-#: ../src/gbrainy.cs:258
+#: ../src/gbrainy.cs:263
 msgid "Congratulations."
 msgstr "Enhorabuena."
 
-#: ../src/gbrainy.cs:260
+#: ../src/gbrainy.cs:265
 msgid "Incorrect answer."
 msgstr "Respuesta incorrecta."
 
 #
-#: ../src/gbrainy.cs:307
+#: ../src/gbrainy.cs:312
 msgid ""
 "Once you have an answer type it in \"Answer:\" entry box and press the \"Ok"
 "\" button."
@@ -188,7 +208,7 @@ msgstr ""
 "Una vez que tengas la respuesta escríbela en «Respuesta:» y pulsa el botón "
 "«Aceptar»."
 
-#: ../src/Game.cs:61
+#: ../src/Game.cs:71
 #, csharp-format
 msgid "The right answer is {0}."
 msgstr "La respuesta correcta es {0}."
@@ -242,11 +262,11 @@ msgstr ""
 "En el esquema mostrado {0} unidades de altura se ganan en cada fila. Esto "
 "permite usar otra fila adicional."
 
-#: ../src/PuzzleCirclesRectangle.cs:78 ../src/PuzzleCirclesRectangle.cs:99
+#: ../src/PuzzleCirclesRectangle.cs:84 ../src/PuzzleCirclesRectangle.cs:105
 msgid "8 units"
 msgstr "8 unidades"
 
-#: ../src/PuzzleCirclesRectangle.cs:119 ../src/PuzzleCirclesRectangle.cs:140
+#: ../src/PuzzleCirclesRectangle.cs:125 ../src/PuzzleCirclesRectangle.cs:146
 msgid "1 unit"
 msgstr "1 unidad"
 
@@ -338,8 +358,8 @@ msgstr ""
 
 #. gr.ShowText ("Figure A");
 #: ../src/PuzzlePencil.cs:168 ../src/PuzzleSquareDots.cs:187
-#: ../src/PuzzleNextFigure.cs:145 ../src/MemoryColouredFigures.cs:140
-#: ../src/MemoryNumbers.cs:123 ../src/PuzzleFigurePattern.cs:193
+#: ../src/PuzzleNextFigure.cs:145 ../src/MemoryColouredFigures.cs:155
+#: ../src/MemoryNumbers.cs:137 ../src/PuzzleFigurePattern.cs:193
 #: ../src/PuzzleMissingPiece.cs:156 ../src/PuzzleMissingSlice.cs:194
 #: ../src/PuzzleTetris.cs:156 ../src/MemoryIndications.cs:267
 #: ../src/MemoryIndications.cs:272 ../src/MemoryIndications.cs:277
@@ -591,68 +611,68 @@ msgstr ""
 "Los números en la figura reflejan las diferentes áreas cubiertas por cada "
 "una de las hojas."
 
-#: ../src/MathArithmetical.cs:39
+#: ../src/MathArithmetical.cs:41
 msgid "Arithmetical"
 msgstr "Aritmética"
 
-#: ../src/MathArithmetical.cs:47
+#: ../src/MathArithmetical.cs:49
 msgid "What is the result of the arithmetical operation?"
 msgstr "¿Cuál es el resultado de la siguiente operación?"
 
-#: ../src/MemoryColouredFigures.cs:48
+#: ../src/MemoryColouredFigures.cs:49
 msgid "Colored Figures"
 msgstr "Figuras coloreadas"
 
-#: ../src/MemoryColouredFigures.cs:53
+#: ../src/MemoryColouredFigures.cs:54
 msgid "Memorize the following figure in the time given"
 msgstr "Memoriza la siguiente figura en el tiempo disponible"
 
-#: ../src/MemoryColouredFigures.cs:58
+#: ../src/MemoryColouredFigures.cs:59
 msgid "Which of these figures was the one previously shown?"
 msgstr "¿Cuál de las siguientes figuras fue la mostrada previamente?"
 
-#: ../src/GameSession.cs:217
+#: ../src/GameSession.cs:223
 #, csharp-format
 msgid "Games played: {0} ({1}% score)"
 msgstr "Partidas jugadas: {0} (puntuación {1}%)"
 
-#: ../src/GameSession.cs:218
+#: ../src/GameSession.cs:224
 #, csharp-format
 msgid " - Time: {0}"
 msgstr " - Tiempo: {0}"
 
-#: ../src/GameSession.cs:221
+#: ../src/GameSession.cs:227
 #, csharp-format
 msgid "- Game: {0}"
 msgstr " - Juego: {0}"
 
-#: ../src/GameSession.cs:273
+#: ../src/GameSession.cs:279
 msgid "Paused"
 msgstr "Pausado"
 
-#: ../src/MemoryNumbers.cs:37
+#: ../src/MemoryNumbers.cs:36
 msgid "Memorize numbers"
 msgstr "Memoriza números"
 
-#: ../src/MemoryNumbers.cs:41
+#: ../src/MemoryNumbers.cs:40
 msgid "Memorize the following numbers in the time given"
 msgstr "Memoriza los siguientes números en el tiempo disponible"
 
-#: ../src/MemoryNumbers.cs:45
+#: ../src/MemoryNumbers.cs:44
 msgid "Which one of these squares was the one previously shown (A, B, C or D)?"
 msgstr ""
 "¿Cuál de los siguientes cuadrados ha sido mostrado anteriormente (A, B, C o "
 "D)?"
 
-#: ../src/MemoryColouredText.cs:34
+#: ../src/MemoryColouredText.cs:35
 msgid "Colored text"
 msgstr "Texto coloreado"
 
-#: ../src/MemoryColouredText.cs:38
+#: ../src/MemoryColouredText.cs:39
 msgid "Memorize the colors associated to every word"
 msgstr "Memoriza los colores asociados a cada palabra"
 
-#: ../src/MemoryColouredText.cs:43
+#: ../src/MemoryColouredText.cs:44
 #, csharp-format
 msgid "Which was the color of the text that said '{0}'?"
 msgstr "¿Cuál es el color del texto que dice «{0}»?"
@@ -894,19 +914,19 @@ msgstr ""
 msgid "Has {0} regions"
 msgstr "Tiene {0} regiones"
 
-#: ../src/MathGreaterDivisor.cs:31
+#: ../src/MathGreaterDivisor.cs:33
 msgid "Greater divisor"
 msgstr "Máximo común divisor"
 
-#: ../src/MathGreaterDivisor.cs:39
+#: ../src/MathGreaterDivisor.cs:41
 msgid "Which of the possible divisors is the greater that divides all the numbers?"
 msgstr "¿Cuál de los divisores posibles es el mayor que divide a todos los números?"
 
-#: ../src/MathGreaterDivisor.cs:189
+#: ../src/MathGreaterDivisor.cs:206
 msgid "Numbers"
 msgstr "Números"
 
-#: ../src/MathGreaterDivisor.cs:204
+#: ../src/MathGreaterDivisor.cs:221
 msgid "Possible divisors"
 msgstr "Posibles divisores"
 
@@ -919,17 +939,17 @@ msgstr "Dos números"
 msgid "Which two numbers when added are {0} and when multiplied are {1}?"
 msgstr "¿Qué dos números al sumarse dan {0} y al multiplicarse dan {1}?"
 
-#: ../src/MathTwoNumbers.cs:50
+#: ../src/MathTwoNumbers.cs:62 ../src/MathOperator.cs:81
 #, csharp-format
 msgid "{0} and {1}"
 msgstr "{0} y {1}"
 
-#: ../src/MathTwoNumbers.cs:63
+#: ../src/MathTwoNumbers.cs:75
 #, csharp-format
 msgid "number1 + number2 = {0}"
 msgstr "número1 + número2 = {0}"
 
-#: ../src/MathTwoNumbers.cs:66
+#: ../src/MathTwoNumbers.cs:78
 #, csharp-format
 msgid "number1 * number2 = {0}"
 msgstr "número1 * número2 = {0}"
@@ -975,7 +995,7 @@ msgstr "Fracción más próxima"
 #, csharp-format
 msgid ""
 "Which of the following numbers is closer to {0:###.###} (option A, B, C or "
-"D)? "
+"D)?"
 msgstr ""
 "¿Cuál de los siguientes números está más cerca de {0:###.###} (opción A, B, "
 "C o D)?"
@@ -1035,12 +1055,8 @@ msgstr "El primer operador es {0}."
 
 #: ../src/MathOperator.cs:45
 #, csharp-format
-msgid ""
-"Which operators make {0}, {1}, and {2} equal {3}? (The result is rounded to "
-"the nearest integer)"
-msgstr ""
-"¿Qué operadores hacen que {0}, {1} y {2} sean iguales a {3}? (El resultado "
-"se redondea al entero más próximo)"
+msgid "Which operators make {0}, {1}, and {2} equal {3}?"
+msgstr "¿Qué operadores hacen que {0}, {1} y {2} sean iguales a {3}?"
 
 #: ../src/MemoryCountDots.cs:40
 msgid "Counting dots"
@@ -1052,8 +1068,8 @@ msgstr "Intenta memorizar cuántos puntos de cada color hay."
 
 #: ../src/MemoryCountDots.cs:48
 #, csharp-format
-msgid "How many {0} dots were in the previous image?"
-msgstr "¿Cuántos puntos {0} había en la imagen anterior?"
+msgid "How many {0} dots were in the previous image? (answer using numbers)"
+msgstr "¿Cuántos puntos {0} había en la imagen anterior? (responde usando números)"
 
 #: ../src/PuzzleFigurePattern.cs:37
 msgid "Figure pattern"
@@ -1080,8 +1096,9 @@ msgstr ""
 "común, después rota la figura resultante 45 grados."
 
 #: ../src/GameDrawingArea.cs:96
-msgid "Welcome to gbrainy"
-msgstr "Bienvenido a gbrainy"
+#, csharp-format
+msgid "Welcome to gbrainy {0}"
+msgstr "Bienvenido a gbrainy {0}"
 
 #: ../src/GameDrawingArea.cs:100
 msgid ""
@@ -1107,63 +1124,71 @@ msgstr ""
 msgid "Memory trainers. To prove and enhance your short term memory."
 msgstr "Entrenadores de memoria. Para probar y mejorar tu memoria a corto plazo."
 
-#: ../src/GameDrawingArea.cs:177
+#: ../src/GameDrawingArea.cs:179
 msgid "Get your memory ready..."
 msgstr "Prepara tu memoria…"
 
-#: ../src/GameDrawingArea.cs:205
+#: ../src/GameDrawingArea.cs:207
 msgid "Score"
 msgstr "Puntuación"
 
-#: ../src/GameDrawingArea.cs:211
+#: ../src/GameDrawingArea.cs:213
 #, csharp-format
-msgid "Your total is score {0}%"
+msgid "Your total score is {0}%"
 msgstr "Tu puntuación total es {0}%"
 
-#: ../src/GameDrawingArea.cs:215
+# N.T.: Manter el texto corto para que se lea completo durante la ejecución
+#: ../src/GameDrawingArea.cs:219
+msgid "No logic puzzle games played"
+msgstr "Ninguna partida de puzle lógico jugada"
+
+#: ../src/GameDrawingArea.cs:221
 #, csharp-format
 msgid "Logic puzzle score is {0}%"
 msgstr "La puntuación de puzles lógicos es {0}%"
 
-# N.T.: Manter el texto corto para que se lea completo durante la ejecución
-#: ../src/GameDrawingArea.cs:216 ../src/GameDrawingArea.cs:222
-#: ../src/GameDrawingArea.cs:228
-msgid "(no games played)"
-msgstr "(ninguna partida jugada)"
+#: ../src/GameDrawingArea.cs:229
+msgid "No mental calculation games played"
+msgstr "Ninguna partida de cálculo mental jugada"
 
-#: ../src/GameDrawingArea.cs:221
+#: ../src/GameDrawingArea.cs:231
 #, csharp-format
 msgid "Mental calculation score is {0}%"
 msgstr "La puntuación de cálculo mental es {0}%"
 
-#: ../src/GameDrawingArea.cs:227
+# N.T.: Manter el texto corto para que se lea completo durante la ejecución
+#: ../src/GameDrawingArea.cs:239
+msgid "No memory games played"
+msgstr "Ninguna partida de memoria jugada"
+
+#: ../src/GameDrawingArea.cs:241
 #, csharp-format
 msgid "Memory score is {0}%"
 msgstr "La puntuación de memoria es {0}%"
 
-#: ../src/GameDrawingArea.cs:234
+#: ../src/GameDrawingArea.cs:246
 msgid "Game statistics"
 msgstr "Estadísticas de juego"
 
-#: ../src/GameDrawingArea.cs:240
+#: ../src/GameDrawingArea.cs:252
 #, csharp-format
 msgid "Total games won: {0} ({1} played)"
 msgstr "Total de partidas ganadas: {0} ({1} jugados)"
 
-#: ../src/GameDrawingArea.cs:243
+#: ../src/GameDrawingArea.cs:255
 #, csharp-format
 msgid "Total time played {0} (average per game {1})"
 msgstr "Total de tiempo jugado {0} (media por partida {1})"
 
-#: ../src/GameDrawingArea.cs:248
+#: ../src/GameDrawingArea.cs:260
 msgid "Tips for your next games"
 msgstr "Consejos para tus siguientes partidas"
 
-#: ../src/GameDrawingArea.cs:270
+#: ../src/GameDrawingArea.cs:282
 msgid "Read the instructions carefully and identify the data and clues given."
 msgstr "Lee las instrucciones cuidadosamente e identifica dos datos y pistas dadas."
 
-#: ../src/GameDrawingArea.cs:272
+#: ../src/GameDrawingArea.cs:284
 msgid ""
 "To score the player gbrainy uses the time and tips needed to complete each "
 "game."
@@ -1171,21 +1196,21 @@ msgstr ""
 "gbrainy usa el tiempo y los consejos necesitados para completar cada juego "
 "para puntuar al jugador."
 
-#: ../src/GameDrawingArea.cs:274
+#: ../src/GameDrawingArea.cs:286
 msgid "In logic games, elements that may seem irrelevant can be very important."
 msgstr ""
 "En los juegos de lógica, los elementos que pueden parecer irrelevantes "
 "pueden ser muy importantes."
 
-#: ../src/GameDrawingArea.cs:276
+#: ../src/GameDrawingArea.cs:288
 msgid "Break the mental blocks and look into the boundaries of problems."
 msgstr "Rompe los bloqueos mentales y mira los límites de los problemas."
 
-#: ../src/GameDrawingArea.cs:278
+#: ../src/GameDrawingArea.cs:290
 msgid "Enjoy doing mistakes, they are part of the learning process."
 msgstr "Diviértete cometiendo errores, son parte del proceso de aprendizaje."
 
-#: ../src/GameDrawingArea.cs:280
+#: ../src/GameDrawingArea.cs:292
 msgid ""
 "Do all the problems, even the difficult ones. Improvement comes from "
 "practising."
@@ -1193,17 +1218,25 @@ msgstr ""
 "Haz todos los problemas, incluso los difíciles. La mejora llega a través de "
 "la práctica."
 
-#: ../src/GameDrawingArea.cs:282
+#: ../src/GameDrawingArea.cs:294
 msgid "Play in daily basis, you will notice progress soon."
 msgstr "Juega diariamente, notarás pronto el progreso."
 
-#: ../src/GameDrawingArea.cs:284
+#: ../src/GameDrawingArea.cs:296
 msgid ""
 "You can use the Custom Game Selection to choose exactly which games you want "
 "to train."
 msgstr ""
 "Puedes utilizar la Selección de juego personalizado para elegir exactamente "
 "a que juegos quieres entrenar."
+
+#: ../src/GameDrawingArea.cs:298
+msgid "You can use the Preferences to adjust the difficulty level of the game."
+msgstr "Puedes usar las Preferencias para ajustar el nivel de dificultad del juego."
+
+#: ../src/GameDrawingArea.cs:300
+msgid "Association of elements is a common technique for remembering things."
+msgstr "La asociación de elementos es una técnica común para recordar cosas."
 
 #: ../src/ColorPalette.cs:63
 msgid "red"
@@ -1282,15 +1315,15 @@ msgstr "9º"
 msgid "22nd"
 msgstr "22º"
 
-#: ../src/MemoryFigures.cs:53
+#: ../src/MemoryFigures.cs:52
 msgid "Memory figures"
 msgstr "Memorizar figuras"
 
-#: ../src/MemoryFigures.cs:57
+#: ../src/MemoryFigures.cs:56
 msgid "Memorize in which position there is every figure"
 msgstr "Memorizar en que posición está cada figura"
 
-#: ../src/MemoryFigures.cs:62
+#: ../src/MemoryFigures.cs:61
 msgid ""
 "In which cell is the other figure like the one shown below? (type the cell "
 "number)"
