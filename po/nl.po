@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Gbrainy 0.41\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-01-05 19:34+0100\n"
+"POT-Creation-Date: 2008-02-09 15:12+0100\n"
 "PO-Revision-Date: 2008-01-06 13:32+0100\n"
 "Last-Translator: Reinout van Schouwen <reinouts@gnome.org>\n"
 "Language-Team: Dutch <vertaling@vrijschrift.org>\n"
@@ -25,7 +25,7 @@ msgstr "Een uitdagend spel voor de lol en om uw brein in vorm te houden"
 msgid "Game"
 msgstr "Spel"
 
-#: ../gbrainy.desktop.in.h:3 ../src/gbrainy.glade.h:21
+#: ../gbrainy.desktop.in.h:3 ../src/gbrainy.glade.h:20
 msgid "gbrainy"
 msgstr "gbrainy"
 
@@ -38,60 +38,63 @@ msgid "All Games and Trainers (Logic, Mental Calculation and Memory)"
 msgstr "Alle spellen en trainers (logica, hoofdrekenen en geheugen)"
 
 #: ../src/gbrainy.glade.h:3
+#, fuzzy
+msgid "Answer:"
+msgstr "Uw antwoord:"
+
+#: ../src/gbrainy.glade.h:4
 msgid "Custom Game"
 msgstr "Aangepast spel"
 
-#: ../src/gbrainy.glade.h:4
+#: ../src/gbrainy.glade.h:5
 msgid "Custom Game Selection..."
 msgstr "Handmatige spelselectie…"
 
-#: ../src/gbrainy.glade.h:5
+#: ../src/gbrainy.glade.h:6
 msgid "Logic Puzzles Only"
 msgstr "Enkel logica-puzzels"
 
-#: ../src/gbrainy.glade.h:6
+#: ../src/gbrainy.glade.h:7
 msgid "Memory Trainers Only"
 msgstr "Enkel geheugentrainers"
 
-#: ../src/gbrainy.glade.h:7
+#: ../src/gbrainy.glade.h:8
 msgid "Mental Calculation Trainers Only"
 msgstr "Enkel hoofdrekentraining"
 
-#: ../src/gbrainy.glade.h:8
+#: ../src/gbrainy.glade.h:9
 msgid "New Game"
 msgstr "Nieuw spel"
 
-#: ../src/gbrainy.glade.h:9
+#: ../src/gbrainy.glade.h:10
 msgid "Preferences"
 msgstr "Voorkeuren"
 
-#: ../src/gbrainy.glade.h:10
+#: ../src/gbrainy.glade.h:11
 msgid "Select All"
 msgstr "Alles selecteren"
 
-#: ../src/gbrainy.glade.h:11
-msgid "Show the countdown message before a memory question"
+#: ../src/gbrainy.glade.h:12
+#, fuzzy
+msgid "Show the countdown message"
 msgstr "Het aftel-bericht tonen vóór een geheugenvraag"
 
-#: ../src/gbrainy.glade.h:12
-msgid "Time in seconds to memorize questions:"
+#: ../src/gbrainy.glade.h:13
+#, fuzzy
+msgid "Time in seconds to memorize the challenge:"
 msgstr "Tijd in seconden om vragen uit het hoofd te leren:"
 
-#: ../src/gbrainy.glade.h:13
+#: ../src/gbrainy.glade.h:14
 msgid "Toolbar"
 msgstr "Werkbalk"
 
-#: ../src/gbrainy.glade.h:14
+#: ../src/gbrainy.glade.h:15
 msgid "Trainers Only (Mental Calculation and Memory)"
 msgstr "Alleen training (hoofdrekenen en geheugen)"
 
-#: ../src/gbrainy.glade.h:15
+#: ../src/gbrainy.glade.h:16
 msgid "Unselect all"
 msgstr "Alles deselecteren"
-
-#: ../src/gbrainy.glade.h:16
-msgid "Your answer:"
-msgstr "Uw antwoord:"
 
 #: ../src/gbrainy.glade.h:17
 msgid "_Game"
@@ -102,10 +105,6 @@ msgid "_Next"
 msgstr "V_olgende"
 
 #: ../src/gbrainy.glade.h:19
-msgid "_Ok"
-msgstr "_Ok"
-
-#: ../src/gbrainy.glade.h:20
 msgid "_Tip"
 msgstr "_Tip"
 
@@ -185,9 +184,10 @@ msgid "Incorrect answer."
 msgstr "Onjuist antwoord."
 
 #: ../src/gbrainy.cs:307
+#, fuzzy
 msgid ""
-"Once you have an answer type it in \"Your answer:\" entry box and press the "
-"\"Ok\" button."
+"Once you have an answer type it in \"Answer:\" entry box and press the \"Ok"
+"\" button."
 msgstr ""
 "Zodra u een antwoord heeft, typt u het in het ‘Uw antwoord:’-invoerveld en "
 "drukt u op de ‘Ok’-knop."
@@ -210,8 +210,8 @@ msgid ""
 "It is the only combination that you can build with the given elements "
 "without repeating them."
 msgstr ""
-"Het is de enige combinatie die u kunt bouwen met de gegeven elementen "
-"zonder ze te herhalen."
+"Het is de enige combinatie die u kunt bouwen met de gegeven elementen zonder "
+"ze te herhalen."
 
 #: ../src/PuzzleFigures.cs:76
 msgid "Convention when giving the answer is:"
@@ -289,8 +289,8 @@ msgid ""
 "The fourth column is calculated multiplying the first two columns and adding "
 "the third."
 msgstr ""
-"De vierde kolom wordt berekend door de eerste twee kolommen te vermenigvuldigen "
-"en de derde erbij op te tellen."
+"De vierde kolom wordt berekend door de eerste twee kolommen te "
+"vermenigvuldigen en de derde erbij op te tellen."
 
 #: ../src/PuzzleMatrixNumbers.cs:71
 #, csharp-format
@@ -307,8 +307,8 @@ msgid ""
 "The fourth column is calculated multiplying the first two columns and "
 "subtracting the third."
 msgstr ""
-"De vierde kolom wordt berekend door de eerste twee kolommen te vermenigvuldigen "
-"en de derde ervan af te trekken."
+"De vierde kolom wordt berekend door de eerste twee kolommen te "
+"vermenigvuldigen en de derde ervan af te trekken."
 
 #: ../src/PuzzleMatrixNumbers.cs:78
 #, csharp-format
@@ -316,8 +316,8 @@ msgid ""
 "The fourth row is calculated adding the first two rows and subtracting the "
 "third."
 msgstr ""
-"De vierde rij wordt berekend door de eerste twee rijen op te tellen "
-"en de derde ervan af te trekken."
+"De vierde rij wordt berekend door de eerste twee rijen op te tellen en de "
+"derde ervan af te trekken."
 
 #: ../src/PuzzleMatrixNumbers.cs:80
 #, csharp-format
@@ -325,8 +325,8 @@ msgid ""
 "The fourth column is calculated adding the first two columns and subtracting "
 "the third."
 msgstr ""
-"De vierde kolom wordt berekend door de eerste twee kolommen op te tellen "
-"en de derde ervan af te trekken."
+"De vierde kolom wordt berekend door de eerste twee kolommen op te tellen en "
+"de derde ervan af te trekken."
 
 #: ../src/PuzzlePencil.cs:33
 msgid "Pencil"
@@ -341,14 +341,13 @@ msgstr ""
 "lijnen te kruisen of het potlood op te tillen?"
 
 #. gr.ShowText ("Figure A");
-#: ../src/PuzzlePencil.cs:168 ../src/PuzzleSquareDots.cs:162
-#: ../src/PuzzleSquareDots.cs:167 ../src/PuzzleSquareDots.cs:172
-#: ../src/PuzzleNextFigure.cs:145 ../src/MemoryColouredFigures.cs:140
-#: ../src/MemoryNumbers.cs:123 ../src/PuzzleFigurePattern.cs:193
+#: ../src/PuzzlePencil.cs:168 ../src/PuzzleSquareDots.cs:187
+#: ../src/PuzzleNextFigure.cs:145 ../src/MemoryColouredFigures.cs:134
+#: ../src/MemoryNumbers.cs:119 ../src/PuzzleFigurePattern.cs:193
 #: ../src/PuzzleMissingPiece.cs:156 ../src/PuzzleMissingSlice.cs:194
-#: ../src/PuzzleTetris.cs:156 ../src/MemoryIndications.cs:267
-#: ../src/MemoryIndications.cs:272 ../src/MemoryIndications.cs:277
-#: ../src/MemoryIndications.cs:282
+#: ../src/PuzzleTetris.cs:156 ../src/MemoryIndications.cs:263
+#: ../src/MemoryIndications.cs:268 ../src/MemoryIndications.cs:273
+#: ../src/MemoryIndications.cs:278
 #, csharp-format
 msgid "Figure {0}"
 msgstr "Figuur {0}"
@@ -370,8 +369,8 @@ msgid ""
 "Move the circle from the first line to the second and two circles from the "
 "fourth to the second and the fifth lines."
 msgstr ""
-"Verplaats de cirkel van de eerste regel naar de tweede en twee cirkels "
-"van de vierde naar de tweede en de vijfde regel."
+"Verplaats de cirkel van de eerste regel naar de tweede en twee cirkels van "
+"de vierde naar de tweede en de vijfde regel."
 
 #: ../src/PuzzleMoveFigure.cs:46
 msgid ""
@@ -407,18 +406,18 @@ msgstr "Bedekkingspercentage"
 msgid "What is the colored percentage covered in the figure?"
 msgstr "Welk gekleurd percentage is bedekt in het figuur?"
 
-#: ../src/PuzzleSquareDots.cs:86
+#: ../src/PuzzleSquareDots.cs:87
 msgid "Square with dots"
 msgstr "Vierkant met puntjes"
 
-#: ../src/PuzzleSquareDots.cs:90
+#: ../src/PuzzleSquareDots.cs:91
 msgid ""
 "What is the letter of the figure that represents the next logical figure in "
 "the sequence (A, B or C)?"
 msgstr ""
 "Wat is de letter van de volgende logische figuur in de reeks (A, B, of C)?"
 
-#: ../src/PuzzleSquareDots.cs:156 ../src/PuzzleNextFigure.cs:126
+#: ../src/PuzzleSquareDots.cs:180 ../src/PuzzleNextFigure.cs:126
 #: ../src/PuzzleFigurePattern.cs:172 ../src/PuzzleMissingPiece.cs:149
 #: ../src/PuzzleMissingSlice.cs:178 ../src/PuzzleTetris.cs:149
 msgid "Possible answers are:"
@@ -444,8 +443,8 @@ msgid ""
 "letter."
 msgstr ""
 "Elke letter wordt berekend door de positie in het alfabet van het vorige "
-"teken te nemen en er {0} bij op te tellen om de positie van de nieuwe "
-"letter te verkrijgen."
+"teken te nemen en er {0} bij op te tellen om de positie van de nieuwe letter "
+"te verkrijgen."
 
 #: ../src/PuzzleNumericSequence.cs:32
 msgid "Numeric sequence"
@@ -476,8 +475,8 @@ msgid ""
 "Every number in the sequence is the result of adding 1 to the previous "
 "number and multiplying it by 3."
 msgstr ""
-"Elk getal in de reeks is het resultaat van 1 optellen bij het vorige "
-"getal en het met 3 te vermenigvuldigen."
+"Elk getal in de reeks is het resultaat van 1 optellen bij het vorige getal "
+"en het met 3 te vermenigvuldigen."
 
 #: ../src/PuzzleNumericSequence.cs:55
 msgid ""
@@ -603,11 +602,7 @@ msgstr "Wat is het resultaat van de rekenkundige operatie?"
 msgid "Colored Figures"
 msgstr "Gekleurde figuren"
 
-#: ../src/MemoryColouredFigures.cs:53
-msgid "Memorize the following figure in the time given"
-msgstr "Onthoud het volgende figuur in de gegeven tijd"
-
-#: ../src/MemoryColouredFigures.cs:58
+#: ../src/MemoryColouredFigures.cs:52
 msgid "Which of these figures was the one previously shown?"
 msgstr "Welk van deze figuren werd hiervoor getoond?"
 
@@ -635,22 +630,15 @@ msgid "Memorize numbers"
 msgstr "Getallen onthouden"
 
 #: ../src/MemoryNumbers.cs:41
-msgid "Memorize the following numbers in the time given"
-msgstr "Onthoud de volgende getallen binnen de gegeven tijd"
-
-#: ../src/MemoryNumbers.cs:45
 msgid "Which one of these squares was the one previously shown (A, B, C or D)?"
-msgstr "Welk van deze vierkanten is degene die hiervoor getoond werd (A, B, C of D)?"
+msgstr ""
+"Welk van deze vierkanten is degene die hiervoor getoond werd (A, B, C of D)?"
 
 #: ../src/MemoryColouredText.cs:34
 msgid "Colored text"
 msgstr "Gekleurde tekst"
 
-#: ../src/MemoryColouredText.cs:38
-msgid "Memorize the colors associated to every word"
-msgstr "Onthoud de kleuren die bij elk woord horen"
-
-#: ../src/MemoryColouredText.cs:43
+#: ../src/MemoryColouredText.cs:39
 #, csharp-format
 msgid "Which was the color of the text that said '{0}'?"
 msgstr "Wat was de kleur van de tekst waar ‚{0}’ stond?"
@@ -670,11 +658,7 @@ msgstr ""
 msgid "Memorize words"
 msgstr "Woorden onthouden"
 
-#: ../src/MemoryWords.cs:40
-msgid "Memorize all the words."
-msgstr "Alle woorden onthouden."
-
-#: ../src/MemoryWords.cs:45
+#: ../src/MemoryWords.cs:41
 #, csharp-format
 msgid ""
 "There is a missing word from the previous list. Which one is the missing "
@@ -683,149 +667,149 @@ msgstr ""
 "Er ontbreekt een woord uit de voorgaande lijst. Welk woord ontbreekt er?"
 
 #. Body parts
-#: ../src/MemoryWords.cs:54
+#: ../src/MemoryWords.cs:50
 msgid "wrist"
 msgstr "pols"
 
-#: ../src/MemoryWords.cs:55
+#: ../src/MemoryWords.cs:51
 msgid "elbow"
 msgstr "elleboog"
 
-#: ../src/MemoryWords.cs:56
+#: ../src/MemoryWords.cs:52
 msgid "armpit"
 msgstr "oksel"
 
-#: ../src/MemoryWords.cs:57
+#: ../src/MemoryWords.cs:53
 msgid "hand"
 msgstr "hand"
 
-#: ../src/MemoryWords.cs:58
+#: ../src/MemoryWords.cs:54
 msgid "chest"
 msgstr "borst"
 
 #. Fishes
-#: ../src/MemoryWords.cs:61
+#: ../src/MemoryWords.cs:57
 msgid "sardine"
 msgstr "sardine"
 
-#: ../src/MemoryWords.cs:62
+#: ../src/MemoryWords.cs:58
 msgid "trout"
 msgstr "forel"
 
-#: ../src/MemoryWords.cs:63
+#: ../src/MemoryWords.cs:59
 msgid "monkfish"
 msgstr "zeeduivel"
 
-#: ../src/MemoryWords.cs:64
+#: ../src/MemoryWords.cs:60
 msgid "cod"
 msgstr "kabeljauw"
 
-#: ../src/MemoryWords.cs:65
+#: ../src/MemoryWords.cs:61
 msgid "salmon"
 msgstr "zalm"
 
 #. Vegetables
-#: ../src/MemoryWords.cs:68
+#: ../src/MemoryWords.cs:64
 msgid "potato"
 msgstr "aardappel"
 
-#: ../src/MemoryWords.cs:69
+#: ../src/MemoryWords.cs:65
 msgid "ginger"
 msgstr "gember"
 
-#: ../src/MemoryWords.cs:70
+#: ../src/MemoryWords.cs:66
 msgid "pepper"
 msgstr "peper"
 
-#: ../src/MemoryWords.cs:71
+#: ../src/MemoryWords.cs:67
 msgid "garlic"
 msgstr "knoflook"
 
-#: ../src/MemoryWords.cs:72
+#: ../src/MemoryWords.cs:68
 msgid "pumpkin"
 msgstr "pompoen"
 
 #. Bicycle
-#: ../src/MemoryWords.cs:75
+#: ../src/MemoryWords.cs:71
 msgid "brake"
 msgstr "rem"
 
-#: ../src/MemoryWords.cs:76
+#: ../src/MemoryWords.cs:72
 msgid "pedal"
 msgstr "pedaal"
 
-#: ../src/MemoryWords.cs:77
+#: ../src/MemoryWords.cs:73
 msgid "chain"
 msgstr "ketting"
 
-#: ../src/MemoryWords.cs:78
+#: ../src/MemoryWords.cs:74
 msgid "wheel"
 msgstr "wiel"
 
-#: ../src/MemoryWords.cs:79
+#: ../src/MemoryWords.cs:75
 msgid "handlebar"
 msgstr "fietsstuur"
 
 #. Music
-#: ../src/MemoryWords.cs:82
+#: ../src/MemoryWords.cs:78
 msgid "drummer"
 msgstr "drummer"
 
-#: ../src/MemoryWords.cs:83
+#: ../src/MemoryWords.cs:79
 msgid "speaker"
 msgstr "luidspreker"
 
-#: ../src/MemoryWords.cs:84
+#: ../src/MemoryWords.cs:80
 msgid "lyrics"
 msgstr "liedteksten"
 
-#: ../src/MemoryWords.cs:85
+#: ../src/MemoryWords.cs:81
 msgid "beat"
 msgstr "ritme"
 
-#: ../src/MemoryWords.cs:86
+#: ../src/MemoryWords.cs:82
 msgid "song"
 msgstr "lied"
 
 #. Weather
-#: ../src/MemoryWords.cs:89
+#: ../src/MemoryWords.cs:85
 msgid "cloud"
 msgstr "wolk"
 
-#: ../src/MemoryWords.cs:90
+#: ../src/MemoryWords.cs:86
 msgid "rain"
 msgstr "regen"
 
-#: ../src/MemoryWords.cs:91
+#: ../src/MemoryWords.cs:87
 msgid "storm"
 msgstr "onweer"
 
-#: ../src/MemoryWords.cs:92
+#: ../src/MemoryWords.cs:88
 msgid "fog"
 msgstr "nevel"
 
-#: ../src/MemoryWords.cs:93
+#: ../src/MemoryWords.cs:89
 msgid "rainbow"
 msgstr "regenboog"
 
 #. Animals
-#: ../src/MemoryWords.cs:96
+#: ../src/MemoryWords.cs:92
 msgid "rabbit"
 msgstr "konijn"
 
-#: ../src/MemoryWords.cs:97
+#: ../src/MemoryWords.cs:93
 msgid "mouse"
 msgstr "muis"
 
-#: ../src/MemoryWords.cs:98
+#: ../src/MemoryWords.cs:94
 msgid "monkey"
 msgstr "aap"
 
-#: ../src/MemoryWords.cs:99
+#: ../src/MemoryWords.cs:95
 msgid "bear"
 msgstr "beer"
 
-#: ../src/MemoryWords.cs:100
+#: ../src/MemoryWords.cs:96
 msgid "wolf"
 msgstr "wolf"
 
@@ -914,7 +898,9 @@ msgstr "Twee getallen"
 #: ../src/MathTwoNumbers.cs:39
 #, csharp-format
 msgid "Which two numbers when added are {0} and when multiplied are {1}?"
-msgstr "Welke twee getallen zijn {0} als je ze optelt en {1} als je ze vermenigvuldigt?"
+msgstr ""
+"Welke twee getallen zijn {0} als je ze optelt en {1} als je ze "
+"vermenigvuldigt?"
 
 #: ../src/MathTwoNumbers.cs:50
 #, csharp-format
@@ -992,14 +978,15 @@ msgstr "Welk getal hoort het vraagteken hieronder te vervangen?"
 
 #: ../src/PuzzlePairs.cs:64
 msgid "All the triangles share a property and are independent of the rest."
-msgstr "Alle driehoeken delen een eigenschap en zijn onafhankelijk van de rest."
+msgstr ""
+"Alle driehoeken delen een eigenschap en zijn onafhankelijk van de rest."
 
 #: ../src/PuzzlePairs.cs:70
 #, csharp-format
 msgid "The result of multiply the two numbers inside every triangle is {0}."
 msgstr ""
-"Het resultaat van het vermenigvuldigen van de twee getallen in elke "
-"driehoek is {0}."
+"Het resultaat van het vermenigvuldigen van de twee getallen in elke driehoek "
+"is {0}."
 
 #: ../src/PuzzleOstracism.cs:38
 msgid "Ostracism"
@@ -1014,8 +1001,8 @@ msgid ""
 "The criteria for deciding if an equation belongs to the group is not "
 "arithmetical."
 msgstr ""
-"De criteria om te beslissen of een vergelijking bij de groep hoort zijn "
-"niet rekenkundig."
+"De criteria om te beslissen of een vergelijking bij de groep hoort zijn niet "
+"rekenkundig."
 
 #: ../src/PuzzleOstracism.cs:53
 msgid ""
@@ -1048,10 +1035,6 @@ msgid "Counting dots"
 msgstr "Puntjes tellen"
 
 #: ../src/MemoryCountDots.cs:44
-msgid "Try to memorize how many dots of each color there are."
-msgstr "Probeer te onthouden hoeveel puntjes van elke kleur er zijn."
-
-#: ../src/MemoryCountDots.cs:48
 #, csharp-format
 msgid "How many {0} dots were in the previous image?"
 msgstr "Hoeveel {0} puntjes stonden er in de vorige afbeelding?"
@@ -1110,64 +1093,64 @@ msgid "Memory trainers. To prove and enhance your short term memory."
 msgstr ""
 "Geheugentrainers. Om uw kortetermijngeheugen te bewijzen en te verbeteren."
 
-#: ../src/GameDrawingArea.cs:177
+#: ../src/GameDrawingArea.cs:179
 msgid "Get your memory ready..."
 msgstr "Bereid uw geheugen voor…"
 
-#: ../src/GameDrawingArea.cs:205
+#: ../src/GameDrawingArea.cs:207
 msgid "Score"
 msgstr "Score"
 
-#: ../src/GameDrawingArea.cs:211
-#, csharp-format
-msgid "Your total is score {0}%"
+#: ../src/GameDrawingArea.cs:213
+#,  csharp-format
+msgid "Your total score is {0}%"
 msgstr "Uw totaalscore is {0}%"
 
-#: ../src/GameDrawingArea.cs:215
+#: ../src/GameDrawingArea.cs:217
 #, csharp-format
 msgid "Logic puzzle score is {0}%"
 msgstr "Logicapuzzelscore is {0}%"
 
-#: ../src/GameDrawingArea.cs:216 ../src/GameDrawingArea.cs:222
-#: ../src/GameDrawingArea.cs:228
+#: ../src/GameDrawingArea.cs:218 ../src/GameDrawingArea.cs:224
+#: ../src/GameDrawingArea.cs:230
 msgid "(no games played)"
 msgstr "(geen spellen gespeeld)"
 
-#: ../src/GameDrawingArea.cs:221
+#: ../src/GameDrawingArea.cs:223
 #, csharp-format
 msgid "Mental calculation score is {0}%"
 msgstr "Hoofdrekenscore is {0}%"
 
-#: ../src/GameDrawingArea.cs:227
+#: ../src/GameDrawingArea.cs:229
 #, csharp-format
 msgid "Memory score is {0}%"
 msgstr "Geheugenscore is {0}%"
 
-#: ../src/GameDrawingArea.cs:234
+#: ../src/GameDrawingArea.cs:236
 msgid "Game statistics"
 msgstr "Spelstatistieken"
 
-#: ../src/GameDrawingArea.cs:240
+#: ../src/GameDrawingArea.cs:242
 #, csharp-format
 msgid "Total games won: {0} ({1} played)"
 msgstr "Aantal spellen gewonnen: {0} ({1} gespeeld)"
 
-#: ../src/GameDrawingArea.cs:243
+#: ../src/GameDrawingArea.cs:245
 #, csharp-format
 msgid "Total time played {0} (average per game {1})"
 msgstr "Totale tijd gespeeld {0} (gemiddelde per spel {1})"
 
-#: ../src/GameDrawingArea.cs:248
+#: ../src/GameDrawingArea.cs:250
 msgid "Tips for your next games"
 msgstr "Hints voor uw volgende spellen"
 
-#: ../src/GameDrawingArea.cs:270
+#: ../src/GameDrawingArea.cs:272
 msgid "Read the instructions carefully and identify the data and clues given."
 msgstr ""
 "Lees de instructies aandachtig en identificeer de gegevens en de "
 "aanwijzingen."
 
-#: ../src/GameDrawingArea.cs:272
+#: ../src/GameDrawingArea.cs:274
 msgid ""
 "To score the player gbrainy uses the time and tips needed to complete each "
 "game."
@@ -1175,33 +1158,33 @@ msgstr ""
 "Om de speler te beoordelen gebruikt gbrainy de benodigde tijd en tips om "
 "ieder spel te voltooien."
 
-#: ../src/GameDrawingArea.cs:274
+#: ../src/GameDrawingArea.cs:276
 msgid ""
 "In logic games, elements that may seem irrelevant can be very important."
 msgstr ""
-"In logica-spellen kunnen elementen die onbelangrijk lijken erg belangrijk zijn."
+"In logica-spellen kunnen elementen die onbelangrijk lijken erg belangrijk "
+"zijn."
 
-#: ../src/GameDrawingArea.cs:276
+#: ../src/GameDrawingArea.cs:278
 msgid "Break the mental blocks and look into the boundaries of problems."
 msgstr "Doorbreek de mentale blokkades en verken de grenzen van problemen."
 
-#: ../src/GameDrawingArea.cs:278
+#: ../src/GameDrawingArea.cs:280
 msgid "Enjoy doing mistakes, they are part of the learning process."
 msgstr ""
 "Heb er plezier in om fouten te maken, dat is onderdeel van het leerproces."
 
-#: ../src/GameDrawingArea.cs:280
+#: ../src/GameDrawingArea.cs:282
 msgid ""
 "Do all the problems, even the difficult ones. Improvement comes from "
 "practising."
-msgstr ""
-"Doe al de opdrachten, zelfs de moeilijkere. Oefening baart kunst."
+msgstr "Doe al de opdrachten, zelfs de moeilijkere. Oefening baart kunst."
 
-#: ../src/GameDrawingArea.cs:282
+#: ../src/GameDrawingArea.cs:284
 msgid "Play in daily basis, you will notice progress soon."
 msgstr "Als u dagelijks speelt, dan zult u snel voortgang boeken."
 
-#: ../src/GameDrawingArea.cs:284
+#: ../src/GameDrawingArea.cs:286
 msgid ""
 "You can use the Custom Game Selection to choose exactly which games you want "
 "to train."
@@ -1251,8 +1234,8 @@ msgid ""
 "A group of people evenly separated is sat in a round table. How many people "
 "are if the {0} person is in front of the {1}?"
 msgstr ""
-"Een gelijkmatig verdeelde groep mensen zit aan een ronde tafel. Hoeveel mensen "
-"zijn er als de {0} persoon tegenover de {1} zit?"
+"Een gelijkmatig verdeelde groep mensen zit aan een ronde tafel. Hoeveel "
+"mensen zijn er als de {0} persoon tegenover de {1} zit?"
 
 #: ../src/PuzzlePeopleTable.cs:52
 msgid ""
@@ -1290,17 +1273,13 @@ msgstr "22e"
 msgid "Memory figures"
 msgstr "Figuur-memory"
 
-#: ../src/MemoryFigures.cs:57
-msgid "Memorize in which position there is every figure"
-msgstr "Onthoud in welke positie elke figuur zich bevindt"
-
-#: ../src/MemoryFigures.cs:62
+#: ../src/MemoryFigures.cs:58
 msgid ""
 "In which cell is the other figure like the one shown below? (type the cell "
 "number)"
 msgstr ""
-"In welke cel bevindt zich het andere figuur zoals die hieronder zichtbaar is? "
-"(typ het celnummer)"
+"In welke cel bevindt zich het andere figuur zoals die hieronder zichtbaar "
+"is? (typ het celnummer)"
 
 #: ../src/PuzzleLines.cs:31
 msgid "Lines"
@@ -1316,8 +1295,8 @@ msgid ""
 "There are {0} lines in the figure at the left and {1} in the figure at the "
 "right."
 msgstr ""
-"Er zijn {0} lijnen in het figuur aan de linkerkant en {1} in het figuur "
-"aan de rechterkant."
+"Er zijn {0} lijnen in het figuur aan de linkerkant en {1} in het figuur aan "
+"de rechterkant."
 
 #: ../src/PuzzleMissingPiece.cs:32
 msgid "Missing piece"
@@ -1409,16 +1388,37 @@ msgstr "Eindig in punt {0}"
 msgid "Memorize indications"
 msgstr "Aanwijzingen onthouden"
 
-#: ../src/MemoryIndications.cs:160
-msgid "Memorize all the indications."
-msgstr "Alle aanwijzingen onthouden."
-
-#: ../src/MemoryIndications.cs:165
+#: ../src/MemoryIndications.cs:161
 #, csharp-format
 msgid ""
 "Which of the follow graphics represents the indications previously given?"
 msgstr ""
-"Welke van de volgende afbeeldingen representeert de eerder gegeven aanwijzingen?"
+"Welke van de volgende afbeeldingen representeert de eerder gegeven "
+"aanwijzingen?"
+
+#~ msgid "_Ok"
+#~ msgstr "_Ok"
+
+#~ msgid "Memorize the following figure in the time given"
+#~ msgstr "Onthoud het volgende figuur in de gegeven tijd"
+
+#~ msgid "Memorize the following numbers in the time given"
+#~ msgstr "Onthoud de volgende getallen binnen de gegeven tijd"
+
+#~ msgid "Memorize the colors associated to every word"
+#~ msgstr "Onthoud de kleuren die bij elk woord horen"
+
+#~ msgid "Memorize all the words."
+#~ msgstr "Alle woorden onthouden."
+
+#~ msgid "Try to memorize how many dots of each color there are."
+#~ msgstr "Probeer te onthouden hoeveel puntjes van elke kleur er zijn."
+
+#~ msgid "Memorize in which position there is every figure"
+#~ msgstr "Onthoud in welke positie elke figuur zich bevindt"
+
+#~ msgid "Memorize all the indications."
+#~ msgstr "Alle aanwijzingen onthouden."
 
 #~ msgid "row"
 #~ msgstr "rij"

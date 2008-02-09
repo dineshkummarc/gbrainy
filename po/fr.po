@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gbrainy\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-01-07 22:41+0100\n"
+"POT-Creation-Date: 2008-02-09 15:12+0100\n"
 "PO-Revision-Date: 2008-01-07 22:45+0100\n"
 "Last-Translator: Claude Paroz <claude@2xlibre.net>\n"
 "Language-Team: GNOME French Team <gnomefr@traduc.org>\n"
@@ -26,7 +26,7 @@ msgstr "Un jeu pour faire travailler un peu ses méninges en s'amusant."
 msgid "Game"
 msgstr "Jeu"
 
-#: ../gbrainy.desktop.in.h:3 ../src/gbrainy.glade.h:21
+#: ../gbrainy.desktop.in.h:3 ../src/gbrainy.glade.h:20
 msgid "gbrainy"
 msgstr "gbrainy"
 
@@ -39,60 +39,63 @@ msgid "All Games and Trainers (Logic, Mental Calculation and Memory)"
 msgstr "Tout type (Logique, Calcul et Mémorisation)"
 
 #: ../src/gbrainy.glade.h:3
+#, fuzzy
+msgid "Answer:"
+msgstr "Votre réponse :"
+
+#: ../src/gbrainy.glade.h:4
 msgid "Custom Game"
 msgstr "Partie personnalisée"
 
-#: ../src/gbrainy.glade.h:4
+#: ../src/gbrainy.glade.h:5
 msgid "Custom Game Selection..."
 msgstr "Partie personnalisée..."
 
-#: ../src/gbrainy.glade.h:5
+#: ../src/gbrainy.glade.h:6
 msgid "Logic Puzzles Only"
 msgstr "Logique"
 
-#: ../src/gbrainy.glade.h:6
+#: ../src/gbrainy.glade.h:7
 msgid "Memory Trainers Only"
 msgstr "Mémorisation"
 
-#: ../src/gbrainy.glade.h:7
+#: ../src/gbrainy.glade.h:8
 msgid "Mental Calculation Trainers Only"
 msgstr "Calcul mental"
 
-#: ../src/gbrainy.glade.h:8
+#: ../src/gbrainy.glade.h:9
 msgid "New Game"
 msgstr "Nouvelle partie"
 
-#: ../src/gbrainy.glade.h:9
+#: ../src/gbrainy.glade.h:10
 msgid "Preferences"
 msgstr "Préférences"
 
-#: ../src/gbrainy.glade.h:10
+#: ../src/gbrainy.glade.h:11
 msgid "Select All"
 msgstr "Tout sélectionner"
 
-#: ../src/gbrainy.glade.h:11
-msgid "Show the countdown message before a memory question"
+#: ../src/gbrainy.glade.h:12
+#, fuzzy
+msgid "Show the countdown message"
 msgstr "Afficher le compte à rebours avant une question de mémorisation"
 
-#: ../src/gbrainy.glade.h:12
-msgid "Time in seconds to memorize questions:"
+#: ../src/gbrainy.glade.h:13
+#, fuzzy
+msgid "Time in seconds to memorize the challenge:"
 msgstr "Temps de mémorisation des questions (en secondes) :"
 
-#: ../src/gbrainy.glade.h:13
+#: ../src/gbrainy.glade.h:14
 msgid "Toolbar"
 msgstr "Barre d'outils"
 
-#: ../src/gbrainy.glade.h:14
+#: ../src/gbrainy.glade.h:15
 msgid "Trainers Only (Mental Calculation and Memory)"
 msgstr "Entraînements (Calcul et Mémoire)"
 
-#: ../src/gbrainy.glade.h:15
+#: ../src/gbrainy.glade.h:16
 msgid "Unselect all"
 msgstr "Tout désélectionner"
-
-#: ../src/gbrainy.glade.h:16
-msgid "Your answer:"
-msgstr "Votre réponse :"
 
 #: ../src/gbrainy.glade.h:17
 msgid "_Game"
@@ -103,10 +106,6 @@ msgid "_Next"
 msgstr "Suiva_nt"
 
 #: ../src/gbrainy.glade.h:19
-msgid "_Ok"
-msgstr "_Valider"
-
-#: ../src/gbrainy.glade.h:20
 msgid "_Tip"
 msgstr "As_tuce"
 
@@ -183,9 +182,10 @@ msgid "Incorrect answer."
 msgstr "Réponse incorrecte."
 
 #: ../src/gbrainy.cs:307
+#, fuzzy
 msgid ""
-"Once you have an answer type it in \"Your answer:\" entry box and press the "
-"\"Ok\" button."
+"Once you have an answer type it in \"Answer:\" entry box and press the \"Ok"
+"\" button."
 msgstr ""
 "Une fois que vous avez une réponse, saisissez-la dans le champ « Votre "
 "réponse » et appuyez sur le bouton « Valider »."
@@ -340,12 +340,12 @@ msgstr ""
 
 #. gr.ShowText ("Figure A");
 #: ../src/PuzzlePencil.cs:168 ../src/PuzzleSquareDots.cs:187
-#: ../src/PuzzleNextFigure.cs:145 ../src/MemoryColouredFigures.cs:140
-#: ../src/MemoryNumbers.cs:123 ../src/PuzzleFigurePattern.cs:193
+#: ../src/PuzzleNextFigure.cs:145 ../src/MemoryColouredFigures.cs:134
+#: ../src/MemoryNumbers.cs:119 ../src/PuzzleFigurePattern.cs:193
 #: ../src/PuzzleMissingPiece.cs:156 ../src/PuzzleMissingSlice.cs:194
-#: ../src/PuzzleTetris.cs:156 ../src/MemoryIndications.cs:267
-#: ../src/MemoryIndications.cs:272 ../src/MemoryIndications.cs:277
-#: ../src/MemoryIndications.cs:282
+#: ../src/PuzzleTetris.cs:156 ../src/MemoryIndications.cs:263
+#: ../src/MemoryIndications.cs:268 ../src/MemoryIndications.cs:273
+#: ../src/MemoryIndications.cs:278
 #, csharp-format
 msgid "Figure {0}"
 msgstr "Dessin {0}"
@@ -608,11 +608,7 @@ msgstr "Quel est le résultat de l'opération arithmétique ?"
 msgid "Colored Figures"
 msgstr "Figures colorées"
 
-#: ../src/MemoryColouredFigures.cs:53
-msgid "Memorize the following figure in the time given"
-msgstr "Mémorisez le dessin suivant dans le temps imparti"
-
-#: ../src/MemoryColouredFigures.cs:58
+#: ../src/MemoryColouredFigures.cs:52
 msgid "Which of these figures was the one previously shown?"
 msgstr "Lequel de ces dessins a été montré précédemment ?"
 
@@ -640,10 +636,6 @@ msgid "Memorize numbers"
 msgstr "Mémorisation de nombres"
 
 #: ../src/MemoryNumbers.cs:41
-msgid "Memorize the following numbers in the time given"
-msgstr "Mémorisez les nombres suivants dans le temps imparti"
-
-#: ../src/MemoryNumbers.cs:45
 msgid "Which one of these squares was the one previously shown (A, B, C or D)?"
 msgstr "Lequel de ces carrés a été montré précédemment (A, B, C ou D) ?"
 
@@ -651,11 +643,7 @@ msgstr "Lequel de ces carrés a été montré précédemment (A, B, C ou D) ?"
 msgid "Colored text"
 msgstr "Text coloré"
 
-#: ../src/MemoryColouredText.cs:38
-msgid "Memorize the colors associated to every word"
-msgstr "Mémorisez les couleurs associées à chaque mot"
-
-#: ../src/MemoryColouredText.cs:43
+#: ../src/MemoryColouredText.cs:39
 #, csharp-format
 msgid "Which was the color of the text that said '{0}'?"
 msgstr "Quelle était la couleur du texte qui disait « {0} » ?"
@@ -677,11 +665,7 @@ msgstr ""
 msgid "Memorize words"
 msgstr "Mémorisation de mots"
 
-#: ../src/MemoryWords.cs:40
-msgid "Memorize all the words."
-msgstr "Mémorisez tous les mots."
-
-#: ../src/MemoryWords.cs:45
+#: ../src/MemoryWords.cs:41
 #, csharp-format
 msgid ""
 "There is a missing word from the previous list. Which one is the missing "
@@ -689,152 +673,152 @@ msgid ""
 msgstr "Il manque un mot dans la liste précédente. Lequel est-ce ?"
 
 #. Body parts
-#: ../src/MemoryWords.cs:54
+#: ../src/MemoryWords.cs:50
 msgid "wrist"
 msgstr "poignet"
 
-#: ../src/MemoryWords.cs:55
+#: ../src/MemoryWords.cs:51
 msgid "elbow"
 msgstr "coude"
 
-#: ../src/MemoryWords.cs:56
+#: ../src/MemoryWords.cs:52
 msgid "armpit"
 msgstr "aisselle"
 
-#: ../src/MemoryWords.cs:57
+#: ../src/MemoryWords.cs:53
 msgid "hand"
 msgstr "main"
 
-#: ../src/MemoryWords.cs:58
+#: ../src/MemoryWords.cs:54
 msgid "chest"
 msgstr "poitrine"
 
 #. Fishes
-#: ../src/MemoryWords.cs:61
+#: ../src/MemoryWords.cs:57
 msgid "sardine"
 msgstr "sardine"
 
-#: ../src/MemoryWords.cs:62
+#: ../src/MemoryWords.cs:58
 msgid "trout"
 msgstr "truite"
 
-#: ../src/MemoryWords.cs:63
+#: ../src/MemoryWords.cs:59
 msgid "monkfish"
 msgstr "seiche"
 
-#: ../src/MemoryWords.cs:64
+#: ../src/MemoryWords.cs:60
 msgid "cod"
 msgstr "morue"
 
-#: ../src/MemoryWords.cs:65
+#: ../src/MemoryWords.cs:61
 msgid "salmon"
 msgstr "saumon"
 
 # Note: je pense que "pomme-de-terre" est beaucoup trop facile à identifier cérébralement ;)
 #. Vegetables
-#: ../src/MemoryWords.cs:68
+#: ../src/MemoryWords.cs:64
 msgid "potato"
 msgstr "céleri"
 
-#: ../src/MemoryWords.cs:69
+#: ../src/MemoryWords.cs:65
 msgid "ginger"
 msgstr "gingembre"
 
-#: ../src/MemoryWords.cs:70
+#: ../src/MemoryWords.cs:66
 msgid "pepper"
 msgstr "poivre"
 
-#: ../src/MemoryWords.cs:71
+#: ../src/MemoryWords.cs:67
 msgid "garlic"
 msgstr "ail"
 
-#: ../src/MemoryWords.cs:72
+#: ../src/MemoryWords.cs:68
 msgid "pumpkin"
 msgstr "citrouille"
 
 #. Bicycle
-#: ../src/MemoryWords.cs:75
+#: ../src/MemoryWords.cs:71
 msgid "brake"
 msgstr "frein"
 
-#: ../src/MemoryWords.cs:76
+#: ../src/MemoryWords.cs:72
 msgid "pedal"
 msgstr "pédale"
 
-#: ../src/MemoryWords.cs:77
+#: ../src/MemoryWords.cs:73
 msgid "chain"
 msgstr "chaîne"
 
-#: ../src/MemoryWords.cs:78
+#: ../src/MemoryWords.cs:74
 msgid "wheel"
 msgstr "roue"
 
-#: ../src/MemoryWords.cs:79
+#: ../src/MemoryWords.cs:75
 msgid "handlebar"
 msgstr "guidon"
 
 #. Music
-#: ../src/MemoryWords.cs:82
+#: ../src/MemoryWords.cs:78
 msgid "drummer"
 msgstr "batteur"
 
 # Note: je pense qu'"haut-parleur" est beaucoup trop facile à identifier cérébralement ;)
-#: ../src/MemoryWords.cs:83
+#: ../src/MemoryWords.cs:79
 msgid "speaker"
 msgstr "tambour"
 
-#: ../src/MemoryWords.cs:84
+#: ../src/MemoryWords.cs:80
 msgid "lyrics"
 msgstr "paroles"
 
-#: ../src/MemoryWords.cs:85
+#: ../src/MemoryWords.cs:81
 msgid "beat"
 msgstr "rythme"
 
-#: ../src/MemoryWords.cs:86
+#: ../src/MemoryWords.cs:82
 msgid "song"
 msgstr "musique"
 
 #. Weather
-#: ../src/MemoryWords.cs:89
+#: ../src/MemoryWords.cs:85
 msgid "cloud"
 msgstr "nuage"
 
-#: ../src/MemoryWords.cs:90
+#: ../src/MemoryWords.cs:86
 msgid "rain"
 msgstr "pluie"
 
-#: ../src/MemoryWords.cs:91
+#: ../src/MemoryWords.cs:87
 msgid "storm"
 msgstr "orage"
 
-#: ../src/MemoryWords.cs:92
+#: ../src/MemoryWords.cs:88
 msgid "fog"
 msgstr "brouillard"
 
 # Note: je pense qu'"arc-en-ciel" est beaucoup trop facile à identifier cérébralement ;)
-#: ../src/MemoryWords.cs:93
+#: ../src/MemoryWords.cs:89
 msgid "rainbow"
 msgstr "vent"
 
 #. Animals
-#: ../src/MemoryWords.cs:96
+#: ../src/MemoryWords.cs:92
 msgid "rabbit"
 msgstr "lapin"
 
-#: ../src/MemoryWords.cs:97
+#: ../src/MemoryWords.cs:93
 msgid "mouse"
 msgstr "souris"
 
-#: ../src/MemoryWords.cs:98
+#: ../src/MemoryWords.cs:94
 msgid "monkey"
 msgstr "singe"
 
-#: ../src/MemoryWords.cs:99
+#: ../src/MemoryWords.cs:95
 msgid "bear"
 msgstr "ours"
 
-#: ../src/MemoryWords.cs:100
+#: ../src/MemoryWords.cs:96
 msgid "wolf"
 msgstr "loup"
 
@@ -1058,10 +1042,6 @@ msgid "Counting dots"
 msgstr "Compter les points"
 
 #: ../src/MemoryCountDots.cs:44
-msgid "Try to memorize how many dots of each color there are."
-msgstr "Essayez de mémoriser le nombre de points de chaque couleur."
-
-#: ../src/MemoryCountDots.cs:48
 #, csharp-format
 msgid "How many {0} dots were in the previous image?"
 msgstr "Combien de points {0} se trouvaient dans l'image précédente ?"
@@ -1121,64 +1101,64 @@ msgstr ""
 msgid "Memory trainers. To prove and enhance your short term memory."
 msgstr "Mémorisation. Pour tester et améliorer la mémoire à court terme."
 
-#: ../src/GameDrawingArea.cs:177
+#: ../src/GameDrawingArea.cs:179
 msgid "Get your memory ready..."
 msgstr "Préparez votre mémoire..."
 
-#: ../src/GameDrawingArea.cs:205
+#: ../src/GameDrawingArea.cs:207
 msgid "Score"
 msgstr "Score"
 
-#: ../src/GameDrawingArea.cs:211
+#: ../src/GameDrawingArea.cs:213
 #, csharp-format
-msgid "Your total is score {0}%"
+msgid "Your total score is {0}%"
 msgstr "Votre score total est {0}%"
 
-#: ../src/GameDrawingArea.cs:215
+#: ../src/GameDrawingArea.cs:217
 #, csharp-format
 msgid "Logic puzzle score is {0}%"
 msgstr "Le score des casse-têtes logiques est {0}%"
 
-#: ../src/GameDrawingArea.cs:216 ../src/GameDrawingArea.cs:222
-#: ../src/GameDrawingArea.cs:228
+#: ../src/GameDrawingArea.cs:218 ../src/GameDrawingArea.cs:224
+#: ../src/GameDrawingArea.cs:230
 msgid "(no games played)"
 msgstr "(aucune partie jouée)"
 
-#: ../src/GameDrawingArea.cs:221
+#: ../src/GameDrawingArea.cs:223
 #, csharp-format
 msgid "Mental calculation score is {0}%"
 msgstr "Le score du calcul mental est {0}%"
 
-#: ../src/GameDrawingArea.cs:227
+#: ../src/GameDrawingArea.cs:229
 #, csharp-format
 msgid "Memory score is {0}%"
 msgstr "Le score de mémorisation est {0}%"
 
-#: ../src/GameDrawingArea.cs:234
+#: ../src/GameDrawingArea.cs:236
 msgid "Game statistics"
 msgstr "Statistiques de jeu"
 
-#: ../src/GameDrawingArea.cs:240
+#: ../src/GameDrawingArea.cs:242
 #, csharp-format
 msgid "Total games won: {0} ({1} played)"
 msgstr "Nombre total de parties gagnées : {0} ({1} jouées)"
 
-#: ../src/GameDrawingArea.cs:243
+#: ../src/GameDrawingArea.cs:245
 #, csharp-format
 msgid "Total time played {0} (average per game {1})"
 msgstr "Temps total de jeu {0} (moyenne de {1} par jeu)"
 
-#: ../src/GameDrawingArea.cs:248
+#: ../src/GameDrawingArea.cs:250
 msgid "Tips for your next games"
 msgstr "Astuces pour vos prochaines parties"
 
-#: ../src/GameDrawingArea.cs:270
+#: ../src/GameDrawingArea.cs:272
 msgid "Read the instructions carefully and identify the data and clues given."
 msgstr ""
 "Lisez attentivement les instructions et identifiez les données et les "
 "indices donnés."
 
-#: ../src/GameDrawingArea.cs:272
+#: ../src/GameDrawingArea.cs:274
 msgid ""
 "To score the player gbrainy uses the time and tips needed to complete each "
 "game."
@@ -1186,23 +1166,23 @@ msgstr ""
 "Pour calculer les points du joueur, gbrainy tient compte du temps et des "
 "astuces nécessaires pour terminer chaque jeu."
 
-#: ../src/GameDrawingArea.cs:274
+#: ../src/GameDrawingArea.cs:276
 msgid ""
 "In logic games, elements that may seem irrelevant can be very important."
 msgstr ""
 "Dans les jeux de logique, les éléments semblant inutiles peuvent se révéler "
 "très importants."
 
-#: ../src/GameDrawingArea.cs:276
+#: ../src/GameDrawingArea.cs:278
 msgid "Break the mental blocks and look into the boundaries of problems."
 msgstr ""
 "Cassez les blocs mentaux et essayez de chercher aux limites du problème."
 
-#: ../src/GameDrawingArea.cs:278
+#: ../src/GameDrawingArea.cs:280
 msgid "Enjoy doing mistakes, they are part of the learning process."
 msgstr "C'est normal de faire des erreurs, c'est nécessaire pour s'améliorer."
 
-#: ../src/GameDrawingArea.cs:280
+#: ../src/GameDrawingArea.cs:282
 msgid ""
 "Do all the problems, even the difficult ones. Improvement comes from "
 "practising."
@@ -1210,11 +1190,11 @@ msgstr ""
 "Faites tous les problèmes, même les plus difficiles. L'amélioration vient en "
 "s'entraînant."
 
-#: ../src/GameDrawingArea.cs:282
+#: ../src/GameDrawingArea.cs:284
 msgid "Play in daily basis, you will notice progress soon."
 msgstr "Jouer un petit peu régulièrement, vous progresserez rapidement."
 
-#: ../src/GameDrawingArea.cs:284
+#: ../src/GameDrawingArea.cs:286
 msgid ""
 "You can use the Custom Game Selection to choose exactly which games you want "
 "to train."
@@ -1304,11 +1284,7 @@ msgstr "22ème"
 msgid "Memory figures"
 msgstr "Dessins à mémoriser"
 
-#: ../src/MemoryFigures.cs:57
-msgid "Memorize in which position there is every figure"
-msgstr "Mémorisez les emplacements dans chaque dessin"
-
-#: ../src/MemoryFigures.cs:62
+#: ../src/MemoryFigures.cs:58
 msgid ""
 "In which cell is the other figure like the one shown below? (type the cell "
 "number)"
@@ -1425,16 +1401,36 @@ msgstr "Finir au point {0}"
 msgid "Memorize indications"
 msgstr "Mémorisation de consignes"
 
-#: ../src/MemoryIndications.cs:160
-msgid "Memorize all the indications."
-msgstr "Mémorisez toutes les consignes."
-
-#: ../src/MemoryIndications.cs:165
+#: ../src/MemoryIndications.cs:161
 #, csharp-format
 msgid ""
 "Which of the follow graphics represents the indications previously given?"
 msgstr ""
 "Lequel de ces dessins correspond aux indications que vous avez reçues ?"
+
+#~ msgid "_Ok"
+#~ msgstr "_Valider"
+
+#~ msgid "Memorize the following figure in the time given"
+#~ msgstr "Mémorisez le dessin suivant dans le temps imparti"
+
+#~ msgid "Memorize the following numbers in the time given"
+#~ msgstr "Mémorisez les nombres suivants dans le temps imparti"
+
+#~ msgid "Memorize the colors associated to every word"
+#~ msgstr "Mémorisez les couleurs associées à chaque mot"
+
+#~ msgid "Memorize all the words."
+#~ msgstr "Mémorisez tous les mots."
+
+#~ msgid "Try to memorize how many dots of each color there are."
+#~ msgstr "Essayez de mémoriser le nombre de points de chaque couleur."
+
+#~ msgid "Memorize in which position there is every figure"
+#~ msgstr "Mémorisez les emplacements dans chaque dessin"
+
+#~ msgid "Memorize all the indications."
+#~ msgstr "Mémorisez toutes les consignes."
 
 #~ msgid "Questions"
 #~ msgstr "Questions"

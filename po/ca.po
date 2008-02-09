@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gbrainy\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-01-24 16:03+0100\n"
+"POT-Creation-Date: 2008-02-09 15:12+0100\n"
 "PO-Revision-Date: 2008-01-05 13:35+0200\n"
 "Last-Translator: Jordi Mas <jmas@softcatala.org>\n"
 "Language-Team: Catalan\n"
@@ -49,8 +49,8 @@ msgid "All Games and Trainers (Logic, Mental Calculation and Memory)"
 msgstr "Tots els jocs i entrenadors (lògica, càlcul mental i memòria)"
 
 #
-#: ../src/gbrainy.glade.h:3
 #
+#: ../src/gbrainy.glade.h:3
 msgid "Answer:"
 msgstr "Resposta:"
 
@@ -89,13 +89,13 @@ msgid "Select All"
 msgstr "Selecciona-ho tot"
 
 #
-#: ../src/gbrainy.glade.h:12
 #
+#: ../src/gbrainy.glade.h:12
 msgid "Show the countdown message"
 msgstr "Mostra el missatge de compte enrere"
 
-#: ../src/gbrainy.glade.h:13
 #
+#: ../src/gbrainy.glade.h:13
 msgid "Time in seconds to memorize the challenge:"
 msgstr "Temps en segons per a memoritzar el repte:"
 
@@ -211,8 +211,8 @@ msgid "Incorrect answer."
 msgstr "Resposta incorrecta."
 
 #
-#: ../src/gbrainy.cs:307
 #
+#: ../src/gbrainy.cs:307
 msgid ""
 "Once you have an answer type it in \"Answer:\" entry box and press the \"Ok"
 "\" button."
@@ -393,12 +393,12 @@ msgstr ""
 
 #. gr.ShowText ("Figure A");
 #: ../src/PuzzlePencil.cs:168 ../src/PuzzleSquareDots.cs:187
-#: ../src/PuzzleNextFigure.cs:145 ../src/MemoryColouredFigures.cs:140
-#: ../src/MemoryNumbers.cs:123 ../src/PuzzleFigurePattern.cs:193
+#: ../src/PuzzleNextFigure.cs:145 ../src/MemoryColouredFigures.cs:134
+#: ../src/MemoryNumbers.cs:119 ../src/PuzzleFigurePattern.cs:193
 #: ../src/PuzzleMissingPiece.cs:156 ../src/PuzzleMissingSlice.cs:194
-#: ../src/PuzzleTetris.cs:156 ../src/MemoryIndications.cs:267
-#: ../src/MemoryIndications.cs:272 ../src/MemoryIndications.cs:277
-#: ../src/MemoryIndications.cs:282
+#: ../src/PuzzleTetris.cs:156 ../src/MemoryIndications.cs:263
+#: ../src/MemoryIndications.cs:268 ../src/MemoryIndications.cs:273
+#: ../src/MemoryIndications.cs:278
 #, csharp-format
 msgid "Figure {0}"
 msgstr "Figura {0}"
@@ -712,14 +712,8 @@ msgstr "Figures de colors"
 
 #
 #
-#: ../src/MemoryColouredFigures.cs:53
-msgid "Memorize the following figure in the time given"
-msgstr "Memoritzeu la següent figura en el temps donat"
-
 #
-#
-#
-#: ../src/MemoryColouredFigures.cs:58
+#: ../src/MemoryColouredFigures.cs:52
 msgid "Which of these figures was the one previously shown?"
 msgstr "Quina de les següents figures era la mostrada anteriorment?"
 
@@ -751,15 +745,8 @@ msgstr "Memoritzeu números"
 #
 #
 #
+#
 #: ../src/MemoryNumbers.cs:41
-msgid "Memorize the following numbers in the time given"
-msgstr "Memoritzeu els números següents en el temps donat"
-
-#
-#
-#
-#
-#: ../src/MemoryNumbers.cs:45
 msgid "Which one of these squares was the one previously shown (A, B, C or D)?"
 msgstr "Quin dels següents quadrats era el mostrat anteriorment (A, B, C o D)?"
 
@@ -771,16 +758,7 @@ msgstr "Quin dels següents quadrats era el mostrat anteriorment (A, B, C o D)?"
 msgid "Colored text"
 msgstr "Text de colors"
 
-#
-#
-#
-#
-#
-#: ../src/MemoryColouredText.cs:38
-msgid "Memorize the colors associated to every word"
-msgstr "Memoritzeu els colors associats a cada paraula"
-
-#: ../src/MemoryColouredText.cs:43
+#: ../src/MemoryColouredText.cs:39
 #, csharp-format
 msgid "Which was the color of the text that said '{0}'?"
 msgstr "Quin és el color del text que deia «{0}»?"
@@ -803,11 +781,7 @@ msgstr ""
 msgid "Memorize words"
 msgstr "Memoritzeu paraules"
 
-#: ../src/MemoryWords.cs:40
-msgid "Memorize all the words."
-msgstr "Memoritzeu totes les paraules."
-
-#: ../src/MemoryWords.cs:45
+#: ../src/MemoryWords.cs:41
 #, csharp-format
 msgid ""
 "There is a missing word from the previous list. Which one is the missing "
@@ -817,131 +791,131 @@ msgstr ""
 "que manca?"
 
 #. Body parts
-#: ../src/MemoryWords.cs:54
+#: ../src/MemoryWords.cs:50
 msgid "wrist"
 msgstr "canell"
 
 #
-#: ../src/MemoryWords.cs:55
+#: ../src/MemoryWords.cs:51
 msgid "elbow"
 msgstr "colze"
 
-#: ../src/MemoryWords.cs:56
+#: ../src/MemoryWords.cs:52
 msgid "armpit"
 msgstr "aixella"
 
-#: ../src/MemoryWords.cs:57
+#: ../src/MemoryWords.cs:53
 msgid "hand"
 msgstr "mà"
 
-#: ../src/MemoryWords.cs:58
+#: ../src/MemoryWords.cs:54
 msgid "chest"
 msgstr "pit"
 
 #. Fishes
-#: ../src/MemoryWords.cs:61
+#: ../src/MemoryWords.cs:57
 msgid "sardine"
 msgstr "sardina"
 
-#: ../src/MemoryWords.cs:62
+#: ../src/MemoryWords.cs:58
 msgid "trout"
 msgstr "truita"
 
-#: ../src/MemoryWords.cs:63
+#: ../src/MemoryWords.cs:59
 msgid "monkfish"
 msgstr "rap"
 
-#: ../src/MemoryWords.cs:64
+#: ../src/MemoryWords.cs:60
 msgid "cod"
 msgstr "bacallà"
 
-#: ../src/MemoryWords.cs:65
+#: ../src/MemoryWords.cs:61
 msgid "salmon"
 msgstr "salmó"
 
 #. Vegetables
-#: ../src/MemoryWords.cs:68
+#: ../src/MemoryWords.cs:64
 msgid "potato"
 msgstr "patata"
 
-#: ../src/MemoryWords.cs:69
+#: ../src/MemoryWords.cs:65
 msgid "ginger"
 msgstr "gingebre"
 
-#: ../src/MemoryWords.cs:70
+#: ../src/MemoryWords.cs:66
 msgid "pepper"
 msgstr "pebre"
 
-#: ../src/MemoryWords.cs:71
+#: ../src/MemoryWords.cs:67
 msgid "garlic"
 msgstr "all"
 
-#: ../src/MemoryWords.cs:72
+#: ../src/MemoryWords.cs:68
 msgid "pumpkin"
 msgstr "carbassa"
 
 #. Bicycle
-#: ../src/MemoryWords.cs:75
+#: ../src/MemoryWords.cs:71
 msgid "brake"
 msgstr "fre"
 
-#: ../src/MemoryWords.cs:76
+#: ../src/MemoryWords.cs:72
 msgid "pedal"
 msgstr "pedal"
 
-#: ../src/MemoryWords.cs:77
+#: ../src/MemoryWords.cs:73
 msgid "chain"
 msgstr "cadena"
 
-#: ../src/MemoryWords.cs:78
+#: ../src/MemoryWords.cs:74
 msgid "wheel"
 msgstr "roda"
 
-#: ../src/MemoryWords.cs:79
+#: ../src/MemoryWords.cs:75
 msgid "handlebar"
 msgstr "manillar"
 
 #. Music
-#: ../src/MemoryWords.cs:82
+#: ../src/MemoryWords.cs:78
 msgid "drummer"
 msgstr "bateria"
 
-#: ../src/MemoryWords.cs:83
+#: ../src/MemoryWords.cs:79
 msgid "speaker"
 msgstr "altaveu"
 
-#: ../src/MemoryWords.cs:84
+#: ../src/MemoryWords.cs:80
 msgid "lyrics"
 msgstr "lletra"
 
-#: ../src/MemoryWords.cs:85
+#: ../src/MemoryWords.cs:81
 msgid "beat"
 msgstr "batec"
 
-#: ../src/MemoryWords.cs:86
+#: ../src/MemoryWords.cs:82
 msgid "song"
 msgstr "cançó"
 
 #. Weather
-#: ../src/MemoryWords.cs:89
+#: ../src/MemoryWords.cs:85
 msgid "cloud"
 msgstr "núvol"
 
 #
 #
-#: ../src/MemoryWords.cs:90
+#: ../src/MemoryWords.cs:86
 msgid "rain"
 msgstr "pluja"
 
-#: ../src/MemoryWords.cs:91
+#: ../src/MemoryWords.cs:87
 msgid "storm"
 msgstr "tempesta"
 
-#: ../src/MemoryWords.cs:92
+#: ../src/MemoryWords.cs:88
 msgid "fog"
 msgstr "boira"
 
-#: ../src/MemoryWords.cs:93
+#: ../src/MemoryWords.cs:89
 msgid "rainbow"
 msgstr "iris"
 
@@ -949,24 +923,24 @@ msgstr "iris"
 #
 #
 #. Animals
-#: ../src/MemoryWords.cs:96
+#: ../src/MemoryWords.cs:92
 msgid "rabbit"
 msgstr "conill"
 
-#: ../src/MemoryWords.cs:97
+#: ../src/MemoryWords.cs:93
 msgid "mouse"
 msgstr "ratolí"
 
-#: ../src/MemoryWords.cs:98
+#: ../src/MemoryWords.cs:94
 msgid "monkey"
 msgstr "mico"
 
 #
-#: ../src/MemoryWords.cs:99
+#: ../src/MemoryWords.cs:95
 msgid "bear"
 msgstr "ós"
 
-#: ../src/MemoryWords.cs:100
+#: ../src/MemoryWords.cs:96
 msgid "wolf"
 msgstr "llop"
 
@@ -1219,10 +1193,6 @@ msgid "Counting dots"
 msgstr "Comptar punts"
 
 #: ../src/MemoryCountDots.cs:44
-msgid "Try to memorize how many dots of each color there are."
-msgstr "Intenteu memoritzar quants punts de cada color hi ha."
-
-#: ../src/MemoryCountDots.cs:48
 #, csharp-format
 msgid "How many {0} dots were in the previous image?"
 msgstr "Quants punts de color {0} hi havia a la imatge prèvia?"
@@ -1297,68 +1267,68 @@ msgstr ""
 "Entrenadors de memòria. Per a posar a prova i millorar la vostra capacitat "
 "de memòria a curt termini."
 
-#: ../src/GameDrawingArea.cs:177
+#: ../src/GameDrawingArea.cs:179
 msgid "Get your memory ready..."
 msgstr "Prepareu la vostra memòria..."
 
-#: ../src/GameDrawingArea.cs:205
+#: ../src/GameDrawingArea.cs:207
 msgid "Score"
 msgstr "Puntuació"
 
-#: ../src/GameDrawingArea.cs:211
+#: ../src/GameDrawingArea.cs:213
 #, csharp-format
-msgid "Your total is score {0}%"
+msgid "Your total score is {0}%"
 msgstr "La puntuació total és {0}%"
 
-#: ../src/GameDrawingArea.cs:215
+#: ../src/GameDrawingArea.cs:217
 #, csharp-format
 msgid "Logic puzzle score is {0}%"
 msgstr "La puntuació en trencaclosques és {0}%"
 
 #
 #
-#: ../src/GameDrawingArea.cs:216 ../src/GameDrawingArea.cs:222
-#: ../src/GameDrawingArea.cs:228
+#: ../src/GameDrawingArea.cs:218 ../src/GameDrawingArea.cs:224
+#: ../src/GameDrawingArea.cs:230
 msgid "(no games played)"
 msgstr "(cap partida jugada)"
 
 #
-#: ../src/GameDrawingArea.cs:221
+#: ../src/GameDrawingArea.cs:223
 #, csharp-format
 msgid "Mental calculation score is {0}%"
 msgstr "La puntuació en càlcul mental és {0}%"
 
 # csharp-format
-#: ../src/GameDrawingArea.cs:227
+#: ../src/GameDrawingArea.cs:229
 #, csharp-format
 msgid "Memory score is {0}%"
 msgstr "La puntuació en memòria és {0}%"
 
-#: ../src/GameDrawingArea.cs:234
+#: ../src/GameDrawingArea.cs:236
 msgid "Game statistics"
 msgstr "Estadístiques de la partida"
 
-#: ../src/GameDrawingArea.cs:240
+#: ../src/GameDrawingArea.cs:242
 #, csharp-format
 msgid "Total games won: {0} ({1} played)"
 msgstr "Jocs guanyats: {0} ({1} jugats)"
 
-#: ../src/GameDrawingArea.cs:243
+#: ../src/GameDrawingArea.cs:245
 #, csharp-format
 msgid "Total time played {0} (average per game {1})"
 msgstr "Temps de joc: {0} (mitjana per joc {1})"
 
-#: ../src/GameDrawingArea.cs:248
+#: ../src/GameDrawingArea.cs:250
 msgid "Tips for your next games"
 msgstr "Consells per les vostres properes partides"
 
-#: ../src/GameDrawingArea.cs:270
+#: ../src/GameDrawingArea.cs:272
 msgid "Read the instructions carefully and identify the data and clues given."
 msgstr ""
 "Llegiu les instruccions curosament i identifiqueu les dades i pistes donades."
 
 #
-#: ../src/GameDrawingArea.cs:272
+#: ../src/GameDrawingArea.cs:274
 msgid ""
 "To score the player gbrainy uses the time and tips needed to complete each "
 "game."
@@ -1366,34 +1336,34 @@ msgstr ""
 "Per puntuar al jugador gbrainy utilitza el temps i els consells utilitzats "
 "per a resoldre cada joc."
 
-#: ../src/GameDrawingArea.cs:274
+#: ../src/GameDrawingArea.cs:276
 msgid ""
 "In logic games, elements that may seem irrelevant can be very important."
 msgstr ""
 "En els jocs de lògica, els elements que semblen irrellevants poden ser força "
 "importants."
 
-#: ../src/GameDrawingArea.cs:276
+#: ../src/GameDrawingArea.cs:278
 msgid "Break the mental blocks and look into the boundaries of problems."
 msgstr ""
 "Trenqueu els bloquejos mentals i mireu més enllà dels límits dels problemes."
 
-#: ../src/GameDrawingArea.cs:278
+#: ../src/GameDrawingArea.cs:280
 msgid "Enjoy doing mistakes, they are part of the learning process."
 msgstr "Gaudiu fent errades, és part del procés d'aprenentatge."
 
-#: ../src/GameDrawingArea.cs:280
+#: ../src/GameDrawingArea.cs:282
 msgid ""
 "Do all the problems, even the difficult ones. Improvement comes from "
 "practising."
 msgstr ""
 "Feu tots els problemes, inclús els difícils. La millora prové de la pràctica."
 
-#: ../src/GameDrawingArea.cs:282
+#: ../src/GameDrawingArea.cs:284
 msgid "Play in daily basis, you will notice progress soon."
 msgstr "Jugueu diàriament, us adonareu del vostre progrés aviat."
 
-#: ../src/GameDrawingArea.cs:284
+#: ../src/GameDrawingArea.cs:286
 msgid ""
 "You can use the Custom Game Selection to choose exactly which games you want "
 "to train."
@@ -1491,11 +1461,7 @@ msgstr "22ena"
 msgid "Memory figures"
 msgstr "Memoritza figures"
 
-#: ../src/MemoryFigures.cs:57
-msgid "Memorize in which position there is every figure"
-msgstr "Memoritzeu en quina posició es troba cada figura"
-
-#: ../src/MemoryFigures.cs:62
+#: ../src/MemoryFigures.cs:58
 msgid ""
 "In which cell is the other figure like the one shown below? (type the cell "
 "number)"
@@ -1627,19 +1593,46 @@ msgid "Memorize indications"
 msgstr "Memoritzeu indicacions"
 
 #
-#: ../src/MemoryIndications.cs:160
-msgid "Memorize all the indications."
-msgstr "Memoritzeu totes les indicacions."
-
 #
 #
-#
-#: ../src/MemoryIndications.cs:165
+#: ../src/MemoryIndications.cs:161
 #, csharp-format
 msgid ""
 "Which of the follow graphics represents the indications previously given?"
 msgstr ""
 "Quin de les següents gràfics representa les indicacions donades prèviament?"
+
+#
+#
+#~ msgid "Memorize the following figure in the time given"
+#~ msgstr "Memoritzeu la següent figura en el temps donat"
+
+#
+#
+#
+#~ msgid "Memorize the following numbers in the time given"
+#~ msgstr "Memoritzeu els números següents en el temps donat"
+
+#
+#
+#
+#
+#
+#~ msgid "Memorize the colors associated to every word"
+#~ msgstr "Memoritzeu els colors associats a cada paraula"
+
+#~ msgid "Memorize all the words."
+#~ msgstr "Memoritzeu totes les paraules."
+
+#~ msgid "Try to memorize how many dots of each color there are."
+#~ msgstr "Intenteu memoritzar quants punts de cada color hi ha."
+
+#~ msgid "Memorize in which position there is every figure"
+#~ msgstr "Memoritzeu en quina posició es troba cada figura"
+
+#
+#~ msgid "Memorize all the indications."
+#~ msgstr "Memoritzeu totes les indicacions."
 
 #
 #~ msgid "_Ok"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gbrainy\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-01-03 21:01+0100\n"
+"POT-Creation-Date: 2008-02-09 15:14+0100\n"
 "PO-Revision-Date: 2008-01-03 21:46+0100\n"
 "Last-Translator: Daniel Nylander <po@danielnylander.se>\n"
 "Language-Team: Swedish <tp-sv@listor.tp-sv.se>\n"
@@ -17,14 +17,14 @@ msgstr ""
 
 #: ../gbrainy.desktop.in.h:1
 msgid "A brain teaser game for fun and keep your brain trained"
-msgstr "En hjärnretare och lärande spel att ha kul med och träna dina hjärnmuskler"
+msgstr ""
+"En hjärnretare och lärande spel att ha kul med och träna dina hjärnmuskler"
 
 #: ../gbrainy.desktop.in.h:2
 msgid "Game"
 msgstr "Spel"
 
-#: ../gbrainy.desktop.in.h:3
-#: ../src/gbrainy.glade.h:21
+#: ../gbrainy.desktop.in.h:3 ../src/gbrainy.glade.h:20
 msgid "gbrainy"
 msgstr "gbrainy"
 
@@ -37,60 +37,62 @@ msgid "All Games and Trainers (Logic, Mental Calculation and Memory)"
 msgstr "Alla spel och träning (logiska, mental beräkning och minnesträning)"
 
 #: ../src/gbrainy.glade.h:3
+#, fuzzy
+msgid "Answer:"
+msgstr "Ditt svar:"
+
+#: ../src/gbrainy.glade.h:4
 msgid "Custom Game"
 msgstr "Anpassat spel"
 
-#: ../src/gbrainy.glade.h:4
+#: ../src/gbrainy.glade.h:5
 msgid "Custom Game Selection..."
 msgstr "Val av anpassade spel..."
 
-#: ../src/gbrainy.glade.h:5
+#: ../src/gbrainy.glade.h:6
 msgid "Logic Puzzles Only"
 msgstr "Endast logiska pussel"
 
-#: ../src/gbrainy.glade.h:6
+#: ../src/gbrainy.glade.h:7
 msgid "Memory Trainers Only"
 msgstr "Endast minnesträning"
 
-#: ../src/gbrainy.glade.h:7
+#: ../src/gbrainy.glade.h:8
 msgid "Mental Calculation Trainers Only"
 msgstr "Endast träning av mental beräkning"
 
-#: ../src/gbrainy.glade.h:8
+#: ../src/gbrainy.glade.h:9
 msgid "New Game"
 msgstr "Nytt spel"
 
-#: ../src/gbrainy.glade.h:9
+#: ../src/gbrainy.glade.h:10
 msgid "Preferences"
 msgstr "Inställningar"
 
-#: ../src/gbrainy.glade.h:10
+#: ../src/gbrainy.glade.h:11
 msgid "Select All"
 msgstr "Markera allt"
 
-#: ../src/gbrainy.glade.h:11
-msgid "Show get ready message before a memory question"
-msgstr "Visa meddelande innan en minnesfråga visas"
-
 #: ../src/gbrainy.glade.h:12
-msgid "Time in seconds to memorize questions:"
-msgstr "Tid i sekunder att memorera frågor:"
+msgid "Show the countdown message"
+msgstr ""
 
 #: ../src/gbrainy.glade.h:13
+#, fuzzy
+msgid "Time in seconds to memorize the challenge:"
+msgstr "Tid i sekunder att memorera frågor:"
+
+#: ../src/gbrainy.glade.h:14
 msgid "Toolbar"
 msgstr "Verktygsrad"
 
-#: ../src/gbrainy.glade.h:14
+#: ../src/gbrainy.glade.h:15
 msgid "Trainers Only (Mental Calculation and Memory)"
 msgstr "Endast träning (mental beräkning och minnesträning)"
 
-#: ../src/gbrainy.glade.h:15
+#: ../src/gbrainy.glade.h:16
 msgid "Unselect all"
 msgstr "Avmarkera allt"
-
-#: ../src/gbrainy.glade.h:16
-msgid "Your answer:"
-msgstr "Ditt svar:"
 
 #: ../src/gbrainy.glade.h:17
 msgid "_Game"
@@ -101,10 +103,6 @@ msgid "_Next"
 msgstr "_Nästa"
 
 #: ../src/gbrainy.glade.h:19
-msgid "_Ok"
-msgstr "_OK"
-
-#: ../src/gbrainy.glade.h:20
 msgid "_Tip"
 msgstr "_Tips"
 
@@ -120,8 +118,7 @@ msgstr "Alla"
 msgid "Play games that challenge your reasoning and thinking"
 msgstr "Spela spel som utmanar ditt resonemang och tänkande"
 
-#: ../src/gbrainy.cs:80
-#: ../src/CustomGameDialog.cs:92
+#: ../src/gbrainy.cs:80 ../src/CustomGameDialog.cs:92
 msgid "Logic"
 msgstr "Logik"
 
@@ -133,8 +130,7 @@ msgstr "Beräkning"
 msgid "Play games that challenge your mental calculation skills"
 msgstr "Spela spel som utmanar dina mentala beräkningsfärdigheter"
 
-#: ../src/gbrainy.cs:91
-#: ../src/CustomGameDialog.cs:95
+#: ../src/gbrainy.cs:91 ../src/CustomGameDialog.cs:95
 msgid "Memory"
 msgstr "Minne"
 
@@ -168,8 +164,10 @@ msgstr ""
 "tp-sv@listor.tp-sv.se"
 
 #: ../src/gbrainy.cs:231
-msgid "A brain teaser and trainer game to have fun and to keep your brain trained."
-msgstr "En hjärnretare och lärande spel att ha kul med och träna dina hjärnmuskler."
+msgid ""
+"A brain teaser and trainer game to have fun and to keep your brain trained."
+msgstr ""
+"En hjärnretare och lärande spel att ha kul med och träna dina hjärnmuskler."
 
 #: ../src/gbrainy.cs:233
 msgid "gbrainy web site"
@@ -184,8 +182,13 @@ msgid "Incorrect answer."
 msgstr "Felaktigt svar."
 
 #: ../src/gbrainy.cs:307
-msgid "Once you have an answer type it in \"Your answer:\" entry box and press the \"Ok\" button."
-msgstr "Så fort du har ett svar ska du ange det i \"Ditt svar:\"-fältet och trycka på \"OK\"-knappen."
+#, fuzzy
+msgid ""
+"Once you have an answer type it in \"Answer:\" entry box and press the \"Ok"
+"\" button."
+msgstr ""
+"Så fort du har ett svar ska du ange det i \"Ditt svar:\"-fältet och trycka "
+"på \"OK\"-knappen."
 
 #: ../src/Game.cs:61
 #, csharp-format
@@ -201,8 +204,12 @@ msgid "What is the next logical sequence of objects?"
 msgstr "Vad är nästa logiska sekvens av objekt?"
 
 #: ../src/PuzzleFigures.cs:50
-msgid "It is the only combination that you can build with the given elements without repeating them."
-msgstr "Det är den enda kombinationen som du kan bygga med givna element utan att upprepa dem."
+msgid ""
+"It is the only combination that you can build with the given elements "
+"without repeating them."
+msgstr ""
+"Det är den enda kombinationen som du kan bygga med givna element utan att "
+"upprepa dem."
 
 #: ../src/PuzzleFigures.cs:76
 msgid "Convention when giving the answer is:"
@@ -218,8 +225,12 @@ msgstr "Cirklar i en rektangel"
 
 #
 #: ../src/PuzzleCirclesRectangle.cs:31
-msgid "What is the maximum number of circles (as the one showed) that can be fit in the square below?"
-msgstr "Vad är det maximala antalet cirklar (som den som visas) som kan passas in i nedanstående fyrkant?"
+msgid ""
+"What is the maximum number of circles (as the one showed) that can be fit in "
+"the square below?"
+msgstr ""
+"Vad är det maximala antalet cirklar (som den som visas) som kan passas in i "
+"nedanstående fyrkant?"
 
 #: ../src/PuzzleCirclesRectangle.cs:35
 msgid "You can fit more than 64 circles."
@@ -227,16 +238,16 @@ msgstr "Du kan passa in fler än 64 cirklar."
 
 #: ../src/PuzzleCirclesRectangle.cs:41
 #, csharp-format
-msgid "In the layout shown {0} units of height are gained in each row. This allows using an additional row."
+msgid ""
+"In the layout shown {0} units of height are gained in each row. This allows "
+"using an additional row."
 msgstr ""
 
-#: ../src/PuzzleCirclesRectangle.cs:78
-#: ../src/PuzzleCirclesRectangle.cs:99
+#: ../src/PuzzleCirclesRectangle.cs:78 ../src/PuzzleCirclesRectangle.cs:99
 msgid "8 units"
 msgstr "8 enheter"
 
-#: ../src/PuzzleCirclesRectangle.cs:119
-#: ../src/PuzzleCirclesRectangle.cs:140
+#: ../src/PuzzleCirclesRectangle.cs:119 ../src/PuzzleCirclesRectangle.cs:140
 msgid "1 unit"
 msgstr "1 enhet"
 
@@ -245,8 +256,12 @@ msgid "Matrix Numbers"
 msgstr "Matristal"
 
 #: ../src/PuzzleMatrixNumbers.cs:45
-msgid "The numbers in the matrix follow a logic. Which is the number that should replace the question mark?"
-msgstr "Talen i matrisen följer en viss logik. Vilket är talet som ska ersätta frågetecknet?"
+msgid ""
+"The numbers in the matrix follow a logic. Which is the number that should "
+"replace the question mark?"
+msgstr ""
+"Talen i matrisen följer en viss logik. Vilket är talet som ska ersätta "
+"frågetecknet?"
 
 #: ../src/PuzzleMatrixNumbers.cs:51
 msgid "The logic is arithmetical and works vertically."
@@ -257,40 +272,45 @@ msgid "The logic is arithmetical and works horizontally."
 msgstr "Logiken är aritmetisk och fungerar horisontellt."
 
 #: ../src/PuzzleMatrixNumbers.cs:64
-msgid "row"
-msgstr "rad"
-
-#: ../src/PuzzleMatrixNumbers.cs:65
-msgid "rows"
-msgstr "rader"
-
-#: ../src/PuzzleMatrixNumbers.cs:68
-msgid "column"
-msgstr "kolumn"
-
-#: ../src/PuzzleMatrixNumbers.cs:69
-msgid "columns"
-msgstr "kolumner"
-
-#: ../src/PuzzleMatrixNumbers.cs:75
-#: ../src/PuzzleMatrixNumbers.cs:79
-msgid "multiplying"
+#, csharp-format
+msgid ""
+"The fourth row is calculated multiplying the first two rows and adding the "
+"third."
 msgstr ""
 
-#: ../src/PuzzleMatrixNumbers.cs:76
-#: ../src/PuzzleMatrixNumbers.cs:83
-#, fuzzy
-msgid "adding"
-msgstr "sardin"
+#: ../src/PuzzleMatrixNumbers.cs:66
+#, csharp-format
+msgid ""
+"The fourth column is calculated multiplying the first two columns and adding "
+"the third."
+msgstr ""
+
+#: ../src/PuzzleMatrixNumbers.cs:71
+#, csharp-format
+msgid ""
+"The fourth row is calculated multiplying the first two rows and subtracting "
+"the third."
+msgstr ""
+
+#: ../src/PuzzleMatrixNumbers.cs:73
+#, csharp-format
+msgid ""
+"The fourth column is calculated multiplying the first two columns and "
+"subtracting the third."
+msgstr ""
+
+#: ../src/PuzzleMatrixNumbers.cs:78
+#, csharp-format
+msgid ""
+"The fourth row is calculated adding the first two rows and subtracting the "
+"third."
+msgstr ""
 
 #: ../src/PuzzleMatrixNumbers.cs:80
-#: ../src/PuzzleMatrixNumbers.cs:84
-msgid "subtracting"
-msgstr ""
-
-#: ../src/PuzzleMatrixNumbers.cs:88
 #, csharp-format
-msgid "The fourth {0} is calculated {1} the first two {2} and {3} the third {4}."
+msgid ""
+"The fourth column is calculated adding the first two columns and subtracting "
+"the third."
 msgstr ""
 
 #: ../src/PuzzlePencil.cs:33
@@ -298,25 +318,21 @@ msgid "Pencil"
 msgstr "Penna"
 
 #: ../src/PuzzlePencil.cs:37
-msgid "Which of the following figures cannot be drawn without crossing any previous lines and lifting the pencil?"
-msgstr "Vilken av följande figurer kan inte ritas utan att korsa tidigare linjer och utan att lyfta pennan?"
+msgid ""
+"Which of the following figures cannot be drawn without crossing any previous "
+"lines and lifting the pencil?"
+msgstr ""
+"Vilken av följande figurer kan inte ritas utan att korsa tidigare linjer och "
+"utan att lyfta pennan?"
 
 #. gr.ShowText ("Figure A");
-#: ../src/PuzzlePencil.cs:168
-#: ../src/PuzzleSquareDots.cs:162
-#: ../src/PuzzleSquareDots.cs:167
-#: ../src/PuzzleSquareDots.cs:172
-#: ../src/PuzzleNextFigure.cs:145
-#: ../src/MemoryColouredFigures.cs:140
-#: ../src/MemoryNumbers.cs:123
-#: ../src/PuzzleFigurePattern.cs:193
-#: ../src/PuzzleMissingPiece.cs:156
-#: ../src/PuzzleMissingSlice.cs:194
-#: ../src/PuzzleTetris.cs:156
-#: ../src/MemoryIndications.cs:267
-#: ../src/MemoryIndications.cs:272
-#: ../src/MemoryIndications.cs:277
-#: ../src/MemoryIndications.cs:282
+#: ../src/PuzzlePencil.cs:168 ../src/PuzzleSquareDots.cs:187
+#: ../src/PuzzleNextFigure.cs:145 ../src/MemoryColouredFigures.cs:134
+#: ../src/MemoryNumbers.cs:119 ../src/PuzzleFigurePattern.cs:193
+#: ../src/PuzzleMissingPiece.cs:156 ../src/PuzzleMissingSlice.cs:194
+#: ../src/PuzzleTetris.cs:156 ../src/MemoryIndications.cs:263
+#: ../src/MemoryIndications.cs:268 ../src/MemoryIndications.cs:273
+#: ../src/MemoryIndications.cs:278
 #, csharp-format
 msgid "Figure {0}"
 msgstr "Figur {0}"
@@ -326,16 +342,26 @@ msgid "Move figure"
 msgstr "Flytta figuren"
 
 #: ../src/PuzzleMoveFigure.cs:34
-msgid "What is the minimum number of circles that you have to move to convert the left figure into the right figure?"
-msgstr "Vad är det minsta antalet cirklar som du måste flytta för att konvertera vänstra figuren till den högra figuren?"
+msgid ""
+"What is the minimum number of circles that you have to move to convert the "
+"left figure into the right figure?"
+msgstr ""
+"Vad är det minsta antalet cirklar som du måste flytta för att konvertera "
+"vänstra figuren till den högra figuren?"
 
 # Rad eller linje?
 #: ../src/PuzzleMoveFigure.cs:43
-msgid "Move the circle from the first line to the second and two circles from the fourth to the second and the fifth lines."
-msgstr "Flytta cirkeln från första raden till andra och två cirklar från fjärde till den andra och femte raden."
+msgid ""
+"Move the circle from the first line to the second and two circles from the "
+"fourth to the second and the fifth lines."
+msgstr ""
+"Flytta cirkeln från första raden till andra och två cirklar från fjärde till "
+"den andra och femte raden."
 
 #: ../src/PuzzleMoveFigure.cs:46
-msgid "Move the two first lines and the first and last circle of the last line to the third, sixth and seventh lines."
+msgid ""
+"Move the two first lines and the first and last circle of the last line to "
+"the third, sixth and seventh lines."
 msgstr ""
 
 #: ../src/PuzzleTriangles.cs:29
@@ -345,7 +371,9 @@ msgstr "Trianglar"
 #
 #: ../src/PuzzleTriangles.cs:33
 msgid "How many triangles of any size can you count in the figure below?"
-msgstr "Hur många trianglar av valfri storlek kan du räkna dig till i nedanstående figur?"
+msgstr ""
+"Hur många trianglar av valfri storlek kan du räkna dig till i nedanstående "
+"figur?"
 
 #: ../src/PuzzleTriangles.cs:37
 msgid "A triangle can be embedded inside another triangle."
@@ -364,20 +392,21 @@ msgstr "Täckningsprocent"
 msgid "What is the colored percentage covered in the figure?"
 msgstr "Hur stor procentandel är färgad i figuren?"
 
-#: ../src/PuzzleSquareDots.cs:86
+#: ../src/PuzzleSquareDots.cs:87
 msgid "Square with dots"
 msgstr "Fyrkant med punkter"
 
-#: ../src/PuzzleSquareDots.cs:90
-msgid "What is the letter of the figure that represents the next logical figure in the sequence (A, B or C)?"
-msgstr "Vilken är bokstaven för den figur som representerar nästa logiska figur i sekvensen (A, B eller C)?"
+#: ../src/PuzzleSquareDots.cs:91
+msgid ""
+"What is the letter of the figure that represents the next logical figure in "
+"the sequence (A, B or C)?"
+msgstr ""
+"Vilken är bokstaven för den figur som representerar nästa logiska figur i "
+"sekvensen (A, B eller C)?"
 
-#: ../src/PuzzleSquareDots.cs:156
-#: ../src/PuzzleNextFigure.cs:126
-#: ../src/PuzzleFigurePattern.cs:172
-#: ../src/PuzzleMissingPiece.cs:149
-#: ../src/PuzzleMissingSlice.cs:178
-#: ../src/PuzzleTetris.cs:149
+#: ../src/PuzzleSquareDots.cs:180 ../src/PuzzleNextFigure.cs:126
+#: ../src/PuzzleFigurePattern.cs:172 ../src/PuzzleMissingPiece.cs:149
+#: ../src/PuzzleMissingSlice.cs:178 ../src/PuzzleTetris.cs:149
 msgid "Possible answers are:"
 msgstr "Möjliga svar är:"
 
@@ -386,36 +415,53 @@ msgid "Alphabetic sequence"
 msgstr "Alfabetisk sekvens"
 
 #: ../src/PuzzleAlphabeticSequence.cs:36
-msgid "The letters around the squares follow a logic. Which letter should replace the question mark in the last square?"
+msgid ""
+"The letters around the squares follow a logic. Which letter should replace "
+"the question mark in the last square?"
 msgstr ""
 
 #: ../src/PuzzleAlphabeticSequence.cs:42
 #, csharp-format
-msgid "Every letter is calculated taking the position in the alphabet of the previous character and adding {0} to it to get the position of the new letter."
-msgstr "Varje bokstav beräknas genom att ta positionen i alfabetet för det tidigare tecknet och lägga till {0} till det för att få positionen för den nya bokstaven."
+msgid ""
+"Every letter is calculated taking the position in the alphabet of the "
+"previous character and adding {0} to it to get the position of the new "
+"letter."
+msgstr ""
+"Varje bokstav beräknas genom att ta positionen i alfabetet för det tidigare "
+"tecknet och lägga till {0} till det för att få positionen för den nya "
+"bokstaven."
 
 #: ../src/PuzzleNumericSequence.cs:32
 msgid "Numeric sequence"
 msgstr "Numerisk sekvens"
 
 #: ../src/PuzzleNumericSequence.cs:36
-msgid "The next sequence follows a logic. Which number should replace the question mark?"
-msgstr "Nästa sekvens följer en viss logik. Vilket tal ska ersätta frågetecknet?"
+msgid ""
+"The next sequence follows a logic. Which number should replace the question "
+"mark?"
+msgstr ""
+"Nästa sekvens följer en viss logik. Vilket tal ska ersätta frågetecknet?"
 
 #: ../src/PuzzleNumericSequence.cs:40
 msgid "Every number in the sequence is related to the previous one."
 msgstr "Varje tal i sekvensen är relaterad till det tidigare talet."
 
 #: ../src/PuzzleNumericSequence.cs:49
-msgid "Every number in the sequence is the result of subtracting 1 to the previous number and multiplying it by 2."
+msgid ""
+"Every number in the sequence is the result of subtracting 1 to the previous "
+"number and multiplying it by 2."
 msgstr ""
 
 #: ../src/PuzzleNumericSequence.cs:52
-msgid "Every number in the sequence is the result of adding 1 to the previous number and multiplying it by 3."
+msgid ""
+"Every number in the sequence is the result of adding 1 to the previous "
+"number and multiplying it by 3."
 msgstr ""
 
 #: ../src/PuzzleNumericSequence.cs:55
-msgid "Every number in the sequence is the result of subtracting 2 to the previous number and multiplying it by -2."
+msgid ""
+"Every number in the sequence is the result of subtracting 2 to the previous "
+"number and multiplying it by -2."
 msgstr ""
 
 #: ../src/PuzzleSquares.cs:29
@@ -425,19 +471,32 @@ msgstr "Fyrkanter"
 #
 #: ../src/PuzzleSquares.cs:33
 msgid "How many squares of any size can you count of in the figure below?"
-msgstr "Hur många fyrkanter, av valfri storlek, kan du räkna dig till i nedanstående figur?"
+msgstr ""
+"Hur många fyrkanter, av valfri storlek, kan du räkna dig till i nedanstående "
+"figur?"
 
 #: ../src/PuzzleSquares.cs:37
-msgid "A square is a rectangle having all four sides of equal length. A square can be also built from other squares."
+msgid ""
+"A square is a rectangle having all four sides of equal length. A square can "
+"be also built from other squares."
 msgstr ""
 
 #: ../src/PuzzleSquares.cs:46
-msgid "There are 16 single squares, 9 squares made by 4 single squares, 4 squares made by 9 single squares and 1 square made by 16 single squares."
-msgstr "Det finns 16 fristående fyrkanter, 9 fyrkanter skapade av fyra fristående fyrkanter, 4 fyrkanter skapade av nio fyrkanter och en fyrkant skapad av sexton fristående fyrkanter."
+msgid ""
+"There are 16 single squares, 9 squares made by 4 single squares, 4 squares "
+"made by 9 single squares and 1 square made by 16 single squares."
+msgstr ""
+"Det finns 16 fristående fyrkanter, 9 fyrkanter skapade av fyra fristående "
+"fyrkanter, 4 fyrkanter skapade av nio fyrkanter och en fyrkant skapad av "
+"sexton fristående fyrkanter."
 
 #: ../src/PuzzleSquares.cs:49
-msgid "There are 9 single squares, 4 squares made by 4 single squares and 1 square made by 9 single squares."
-msgstr "Det finns 9 fristående fyrkanter, 4 fyrkanter skapade av fyra fristående fyrkanter samt en fyrkant skapad av 9 fristående fyrkanter."
+msgid ""
+"There are 9 single squares, 4 squares made by 4 single squares and 1 square "
+"made by 9 single squares."
+msgstr ""
+"Det finns 9 fristående fyrkanter, 4 fyrkanter skapade av fyra fristående "
+"fyrkanter samt en fyrkant skapad av 9 fristående fyrkanter."
 
 #: ../src/PuzzleNumericRelation.cs:35
 msgid "Numeric relation"
@@ -457,11 +516,15 @@ msgid "Every group of {0} numbers sums exactly {1}."
 msgstr "Varje grupp av {0} numren har exakt summan {1}."
 
 #: ../src/PuzzleNumericRelation.cs:55
-msgid "Divide the sequence in groups of three numbers. Every third number is calculated by multiplying the two previous ones."
+msgid ""
+"Divide the sequence in groups of three numbers. Every third number is "
+"calculated by multiplying the two previous ones."
 msgstr ""
 
 #: ../src/PuzzleNumericRelation.cs:59
-msgid "Divide the sequence in groups of three numbers. Every third number is calculated by subtracting the second number from the first."
+msgid ""
+"Divide the sequence in groups of three numbers. Every third number is "
+"calculated by subtracting the second number from the first."
 msgstr ""
 
 #: ../src/PuzzleNextFigure.cs:47
@@ -474,7 +537,9 @@ msgstr "Vilken är nästa logiska figur i sekvensen (A, B eller C)?"
 
 #: ../src/PuzzleNextFigure.cs:59
 #, csharp-format
-msgid "From first figure the top circle advances two positions clockwise and the left circle goes backwards one position."
+msgid ""
+"From first figure the top circle advances two positions clockwise and the "
+"left circle goes backwards one position."
 msgstr ""
 
 #: ../src/PuzzleSquareSheets.cs:28
@@ -483,15 +548,21 @@ msgstr "Fyrkantsark"
 
 #
 #: ../src/PuzzleSquareSheets.cs:32
-msgid "What is the minimum number of square sheets of paper of any size needed to create the figure? (lines indicate frontiers between different sheets)"
-msgstr "Vad är minsta antalet pappersark som behövs för att skapa nedanstående figur? (linjer indikerar gränser mellan olika ark)"
+msgid ""
+"What is the minimum number of square sheets of paper of any size needed to "
+"create the figure? (lines indicate frontiers between different sheets)"
+msgstr ""
+"Vad är minsta antalet pappersark som behövs för att skapa nedanstående "
+"figur? (linjer indikerar gränser mellan olika ark)"
 
 #: ../src/PuzzleSquareSheets.cs:36
 msgid "The sheets should overlap."
 msgstr "Arken ska överlappa."
 
 #: ../src/PuzzleSquareSheets.cs:42
-msgid "The numbers in the figure reflect the different areas covered by each one of the sheets."
+msgid ""
+"The numbers in the figure reflect the different areas covered by each one of "
+"the sheets."
 msgstr "Numren i figuren återspeglar de olika områdena som täcks av varje ark."
 
 #: ../src/MathArithmetical.cs:39
@@ -506,11 +577,7 @@ msgstr "Vad är resultatet för den aritmetiska operationen?"
 msgid "Colored Figures"
 msgstr "Färgade figurer"
 
-#: ../src/MemoryColouredFigures.cs:53
-msgid "Memorize the following figure in the time given"
-msgstr "Memorera följande figur inom angiven tid"
-
-#: ../src/MemoryColouredFigures.cs:58
+#: ../src/MemoryColouredFigures.cs:52
 msgid "Which of these figures was the one previously shown?"
 msgstr "Vilken av dessa figurer visades tidigare?"
 
@@ -538,22 +605,15 @@ msgid "Memorize numbers"
 msgstr "Memorera tal"
 
 #: ../src/MemoryNumbers.cs:41
-msgid "Memorize the following numbers in the time given"
-msgstr "Memorera följande tal inom angiven tid"
-
-#: ../src/MemoryNumbers.cs:45
 msgid "Which one of these squares was the one previously shown (A, B, C or D)?"
-msgstr "Vilken av följande fyrkanter var den som sist visades (A, B, C eller D)?"
+msgstr ""
+"Vilken av följande fyrkanter var den som sist visades (A, B, C eller D)?"
 
 #: ../src/MemoryColouredText.cs:34
 msgid "Colored text"
 msgstr "Färgad text"
 
-#: ../src/MemoryColouredText.cs:38
-msgid "Memorize the colors associated to every word"
-msgstr "Memorera färgerna som associeras med varje ord"
-
-#: ../src/MemoryColouredText.cs:43
+#: ../src/MemoryColouredText.cs:39
 #, csharp-format
 msgid "Which was the color of the text that said '{0}'?"
 msgstr "Vilken var färgen på texten som sa \"{0}\"?"
@@ -564,168 +624,169 @@ msgstr "Kub"
 
 #: ../src/PuzzleCube.cs:42
 #, csharp-format
-msgid "When folded as a cube, which face on the figure is opposite the face with a {0} drawn on it (answer with number written on face)?"
+msgid ""
+"When folded as a cube, which face on the figure is opposite the face with a "
+"{0} drawn on it (answer with number written on face)?"
 msgstr ""
 
 #: ../src/MemoryWords.cs:36
 msgid "Memorize words"
 msgstr "Memorera ord"
 
-#: ../src/MemoryWords.cs:40
-msgid "Memorize all the words."
-msgstr "Memorera alla orden."
-
-#: ../src/MemoryWords.cs:45
+#: ../src/MemoryWords.cs:41
 #, csharp-format
-msgid "There is a missing word from the previous list. Which one is the missing word?"
-msgstr "Det saknas ett ord från föregående lista. Vilket är det ord som saknas?"
+msgid ""
+"There is a missing word from the previous list. Which one is the missing "
+"word?"
+msgstr ""
+"Det saknas ett ord från föregående lista. Vilket är det ord som saknas?"
 
 #. Body parts
-#: ../src/MemoryWords.cs:54
+#: ../src/MemoryWords.cs:50
 msgid "wrist"
 msgstr "handled"
 
-#: ../src/MemoryWords.cs:55
+#: ../src/MemoryWords.cs:51
 msgid "elbow"
 msgstr "armbåge"
 
-#: ../src/MemoryWords.cs:56
+#: ../src/MemoryWords.cs:52
 msgid "armpit"
 msgstr "armhåla"
 
-#: ../src/MemoryWords.cs:57
+#: ../src/MemoryWords.cs:53
 msgid "hand"
 msgstr "hand"
 
-#: ../src/MemoryWords.cs:58
+#: ../src/MemoryWords.cs:54
 msgid "chest"
 msgstr "bröst"
 
 #. Fishes
-#: ../src/MemoryWords.cs:61
+#: ../src/MemoryWords.cs:57
 msgid "sardine"
 msgstr "sardin"
 
 # Kan även vara forell
-#: ../src/MemoryWords.cs:62
+#: ../src/MemoryWords.cs:58
 msgid "trout"
 msgstr "öring"
 
 # Kallas även för ängelfisk på gammalsvenska
-#: ../src/MemoryWords.cs:63
+#: ../src/MemoryWords.cs:59
 msgid "monkfish"
 msgstr "munkfisk"
 
-#: ../src/MemoryWords.cs:64
+#: ../src/MemoryWords.cs:60
 msgid "cod"
 msgstr "torsk"
 
-#: ../src/MemoryWords.cs:65
+#: ../src/MemoryWords.cs:61
 msgid "salmon"
 msgstr "lax"
 
 #. Vegetables
-#: ../src/MemoryWords.cs:68
+#: ../src/MemoryWords.cs:64
 msgid "potato"
 msgstr "potatis"
 
-#: ../src/MemoryWords.cs:69
+#: ../src/MemoryWords.cs:65
 msgid "ginger"
 msgstr "ingefära"
 
-#: ../src/MemoryWords.cs:70
+#: ../src/MemoryWords.cs:66
 msgid "pepper"
 msgstr "peppar"
 
-#: ../src/MemoryWords.cs:71
+#: ../src/MemoryWords.cs:67
 msgid "garlic"
 msgstr "vitlök"
 
-#: ../src/MemoryWords.cs:72
+#: ../src/MemoryWords.cs:68
 msgid "pumpkin"
 msgstr "pumpa"
 
 #. Bicycle
-#: ../src/MemoryWords.cs:75
+#: ../src/MemoryWords.cs:71
 msgid "brake"
 msgstr "broms"
 
-#: ../src/MemoryWords.cs:76
+#: ../src/MemoryWords.cs:72
 msgid "pedal"
 msgstr "pedal"
 
-#: ../src/MemoryWords.cs:77
+#: ../src/MemoryWords.cs:73
 msgid "chain"
 msgstr "kedja"
 
-#: ../src/MemoryWords.cs:78
+#: ../src/MemoryWords.cs:74
 msgid "wheel"
 msgstr "hjul"
 
-#: ../src/MemoryWords.cs:79
+#: ../src/MemoryWords.cs:75
 msgid "handlebar"
 msgstr "handtag"
 
 #. Music
-#: ../src/MemoryWords.cs:82
+#: ../src/MemoryWords.cs:78
 msgid "drummer"
 msgstr "trumslagare"
 
-#: ../src/MemoryWords.cs:83
+#: ../src/MemoryWords.cs:79
 msgid "speaker"
 msgstr "talare"
 
-#: ../src/MemoryWords.cs:84
+#: ../src/MemoryWords.cs:80
 msgid "lyrics"
 msgstr "text"
 
-#: ../src/MemoryWords.cs:85
+#: ../src/MemoryWords.cs:81
 msgid "beat"
 msgstr "slag"
 
-#: ../src/MemoryWords.cs:86
+#: ../src/MemoryWords.cs:82
 msgid "song"
 msgstr "låt"
 
 #. Weather
-#: ../src/MemoryWords.cs:89
+#: ../src/MemoryWords.cs:85
 msgid "cloud"
 msgstr "moln"
 
-#: ../src/MemoryWords.cs:90
+#: ../src/MemoryWords.cs:86
 msgid "rain"
 msgstr "regn"
 
-#: ../src/MemoryWords.cs:91
+#: ../src/MemoryWords.cs:87
 msgid "storm"
 msgstr "storm"
 
-#: ../src/MemoryWords.cs:92
+#: ../src/MemoryWords.cs:88
 msgid "fog"
 msgstr "dimma"
 
-#: ../src/MemoryWords.cs:93
+#: ../src/MemoryWords.cs:89
 msgid "rainbow"
 msgstr "regnbåge"
 
 #. Animals
-#: ../src/MemoryWords.cs:96
+#: ../src/MemoryWords.cs:92
 msgid "rabbit"
 msgstr "kanin"
 
-#: ../src/MemoryWords.cs:97
+#: ../src/MemoryWords.cs:93
 msgid "mouse"
 msgstr "mus"
 
-#: ../src/MemoryWords.cs:98
+#: ../src/MemoryWords.cs:94
 msgid "monkey"
 msgstr "apa"
 
-#: ../src/MemoryWords.cs:99
+#: ../src/MemoryWords.cs:95
 msgid "bear"
 msgstr "björn"
 
-#: ../src/MemoryWords.cs:100
+#: ../src/MemoryWords.cs:96
 msgid "wolf"
 msgstr "varg"
 
@@ -734,15 +795,22 @@ msgid "Words and figures"
 msgstr "Ord och figurer"
 
 #: ../src/PuzzleFigureLetter.cs:41
-msgid "The figures and the text are related. Which text should go under the last figure?"
-msgstr "Figurerna och texten är relaterade. Vilken text ska gå under den sista figuren?"
+msgid ""
+"The figures and the text are related. Which text should go under the last "
+"figure?"
+msgstr ""
+"Figurerna och texten är relaterade. Vilken text ska gå under den sista "
+"figuren?"
 
 #: ../src/PuzzleFigureLetter.cs:45
 msgid "Every character of the word represents a property of the figure."
 msgstr "Varje tecken av ordet representerar en egenskap hos figuren."
 
 #: ../src/PuzzleFigureLetter.cs:51
-msgid "'A' indicates that the figures overlap, 'B' that are rectangles, 'C' that are circles, 'D' that the figures are separated, 'E' that there are three figures and 'F' that there are two figures."
+msgid ""
+"'A' indicates that the figures overlap, 'B' that are rectangles, 'C' that "
+"are circles, 'D' that the figures are separated, 'E' that there are three "
+"figures and 'F' that there are two figures."
 msgstr ""
 
 #. Define columns
@@ -767,11 +835,12 @@ msgid "Divide circles"
 msgstr "Dela cirklar"
 
 #: ../src/PuzzleDivideCircle.cs:46
-msgid "In the last figure, in how many regions is the circle divided when all the dots are connected?"
+msgid ""
+"In the last figure, in how many regions is the circle divided when all the "
+"dots are connected?"
 msgstr ""
 
-#: ../src/PuzzleDivideCircle.cs:110
-#: ../src/PuzzleDivideCircle.cs:125
+#: ../src/PuzzleDivideCircle.cs:110 ../src/PuzzleDivideCircle.cs:125
 #: ../src/PuzzleDivideCircle.cs:142
 #, csharp-format
 msgid "Has {0} regions"
@@ -782,7 +851,8 @@ msgid "Greater divisor"
 msgstr ""
 
 #: ../src/MathGreaterDivisor.cs:39
-msgid "Which of the possible divisors is the greater that divides all the numbers?"
+msgid ""
+"Which of the possible divisors is the greater that divides all the numbers?"
 msgstr ""
 
 #: ../src/MathGreaterDivisor.cs:189
@@ -840,12 +910,17 @@ msgid "Balance"
 msgstr "Balans"
 
 #: ../src/PuzzleBalance.cs:51
-msgid "How many triangles are needed in the right part of the last figure to keep it balanced?"
-msgstr "Hur många trianglar behövs på högra sidan av den sista figuren för att hålla den balanserad?"
+msgid ""
+"How many triangles are needed in the right part of the last figure to keep "
+"it balanced?"
+msgstr ""
+"Hur många trianglar behövs på högra sidan av den sista figuren för att hålla "
+"den balanserad?"
 
 #: ../src/PuzzleBalance.cs:57
 msgid "Every triangle counts as 1, each diamond as a 2 and each square as 3."
-msgstr "Varje triangel räknas som 1, varje diamant som en 2 och varje fyrkant som 3."
+msgstr ""
+"Varje triangel räknas som 1, varje diamant som en 2 och varje fyrkant som 3."
 
 #: ../src/MathWhichNumber.cs:34
 msgid "Closer fraction"
@@ -853,8 +928,11 @@ msgstr ""
 
 #: ../src/MathWhichNumber.cs:42
 #, csharp-format
-msgid "Which of the following numbers is closer to {0:###.###} (option A, B, C or D)? "
-msgstr "Vilket av följande tal är närmare {0:###.###} (alternativ A, B, C eller D)? "
+msgid ""
+"Which of the following numbers is closer to {0:###.###} (option A, B, C or "
+"D)? "
+msgstr ""
+"Vilket av följande tal är närmare {0:###.###} (alternativ A, B, C eller D)? "
 
 #: ../src/MathWhichNumber.cs:50
 #, csharp-format
@@ -887,11 +965,15 @@ msgid "Which equation does not belong to the group (A, B, C, D or E)?"
 msgstr "Vilken ekvation tillhör inte gruppen (A, B, C, D eller E)?"
 
 #: ../src/PuzzleOstracism.cs:47
-msgid "The criteria for deciding if an equation belongs to the group is not arithmetical."
+msgid ""
+"The criteria for deciding if an equation belongs to the group is not "
+"arithmetical."
 msgstr ""
 
 #: ../src/PuzzleOstracism.cs:53
-msgid "In all the equations the digits from the left side should also appear in the right side."
+msgid ""
+"In all the equations the digits from the left side should also appear in the "
+"right side."
 msgstr ""
 
 #: ../src/MathOperator.cs:33
@@ -905,7 +987,9 @@ msgstr "Den första operatorn är {0}."
 
 #: ../src/MathOperator.cs:45
 #, csharp-format
-msgid "Which operators make {0}, {1}, and {2} equal {3}? (The result is rounded to the nearest integer)"
+msgid ""
+"Which operators make {0}, {1}, and {2} equal {3}? (The result is rounded to "
+"the nearest integer)"
 msgstr ""
 
 #: ../src/MemoryCountDots.cs:40
@@ -913,10 +997,6 @@ msgid "Counting dots"
 msgstr "Räkna punkter"
 
 #: ../src/MemoryCountDots.cs:44
-msgid "Try to memorize how many dots of each color there are."
-msgstr "Försök att memorera hur många punkter av varje färg det finns."
-
-#: ../src/MemoryCountDots.cs:48
 #, csharp-format
 msgid "How many {0} dots were in the previous image?"
 msgstr "Hur många punkter med {0} färg fanns det i föregående bild?"
@@ -930,11 +1010,15 @@ msgid "Which figure should replace the question mark (A, B or C)?"
 msgstr "Vilken figur ska ersätta frågetecknet (A, B eller C)?"
 
 #: ../src/PuzzleFigurePattern.cs:45
-msgid "The third figure of every row involves combining somehow the first two figures."
+msgid ""
+"The third figure of every row involves combining somehow the first two "
+"figures."
 msgstr ""
 
 #: ../src/PuzzleFigurePattern.cs:51
-msgid "Superpose the first and second figures and remove the lines that they have in common then rotate the resulting figure 45 degrees."
+msgid ""
+"Superpose the first and second figures and remove the lines that they have "
+"in common then rotate the resulting figure 45 degrees."
 msgstr ""
 
 #: ../src/GameDrawingArea.cs:96
@@ -942,104 +1026,120 @@ msgid "Welcome to gbrainy"
 msgstr "Välkommen till gbrainy"
 
 #: ../src/GameDrawingArea.cs:100
-msgid "gbrainy is a brain teaser game and trainer to have fun and to keep your brain trained. It includes:"
-msgstr "gbrainy är en hjärnretare och lärande spel att ha kul med och träna dina hjärnmuskler. Det inkluderar:"
+msgid ""
+"gbrainy is a brain teaser game and trainer to have fun and to keep your "
+"brain trained. It includes:"
+msgstr ""
+"gbrainy är en hjärnretare och lärande spel att ha kul med och träna dina "
+"hjärnmuskler. Det inkluderar:"
 
 #: ../src/GameDrawingArea.cs:112
-msgid "Logic puzzles. Designed to challenge your reasoning and thinking skills."
+msgid ""
+"Logic puzzles. Designed to challenge your reasoning and thinking skills."
 msgstr ""
 
 #: ../src/GameDrawingArea.cs:124
-msgid "Mental calculation. Based on arithmetical operations that test your mental calculation abilities."
+msgid ""
+"Mental calculation. Based on arithmetical operations that test your mental "
+"calculation abilities."
 msgstr ""
 
 #: ../src/GameDrawingArea.cs:136
 msgid "Memory trainers. To prove and enhance your short term memory."
 msgstr "Minnestränare. För att testa och förbättra ditt korttidsminne."
 
-#: ../src/GameDrawingArea.cs:177
+#: ../src/GameDrawingArea.cs:179
 msgid "Get your memory ready..."
 msgstr "Koncentrera dig..."
 
-#: ../src/GameDrawingArea.cs:205
+#: ../src/GameDrawingArea.cs:207
 msgid "Score"
 msgstr "Poäng"
 
-#: ../src/GameDrawingArea.cs:211
+#: ../src/GameDrawingArea.cs:213
 #, csharp-format
-msgid "Your total is score {0}%"
+msgid "Your total score is {0}%"
 msgstr "Din totala poäng är {0}%"
 
-#: ../src/GameDrawingArea.cs:215
+#: ../src/GameDrawingArea.cs:217
 #, csharp-format
 msgid "Logic puzzle score is {0}%"
 msgstr "Poäng för logiska pussel är {0}%"
 
-#: ../src/GameDrawingArea.cs:216
-#: ../src/GameDrawingArea.cs:222
-#: ../src/GameDrawingArea.cs:228
+#: ../src/GameDrawingArea.cs:218 ../src/GameDrawingArea.cs:224
+#: ../src/GameDrawingArea.cs:230
 msgid "(no games played)"
 msgstr "(inga spel spelade)"
 
-#: ../src/GameDrawingArea.cs:221
+#: ../src/GameDrawingArea.cs:223
 #, csharp-format
 msgid "Mental calculation score is {0}%"
 msgstr "Poäng för mental beräkning är {0}%"
 
-#: ../src/GameDrawingArea.cs:227
+#: ../src/GameDrawingArea.cs:229
 #, csharp-format
 msgid "Memory score is {0}%"
 msgstr "Minnespoäng är {0}%"
 
-#: ../src/GameDrawingArea.cs:234
+#: ../src/GameDrawingArea.cs:236
 msgid "Game statistics"
 msgstr "Spelstatistik"
 
-#: ../src/GameDrawingArea.cs:240
+#: ../src/GameDrawingArea.cs:242
 #, csharp-format
 msgid "Total games won: {0} ({1} played)"
 msgstr "Totalt antal spel vunna: {0} ({1} spelade)"
 
-#: ../src/GameDrawingArea.cs:243
+#: ../src/GameDrawingArea.cs:245
 #, csharp-format
 msgid "Total time played {0} (average per game {1})"
 msgstr "Total tid spelad för {0} (genomsnitt per spel är {1})"
 
-#: ../src/GameDrawingArea.cs:248
+#: ../src/GameDrawingArea.cs:250
 msgid "Tips for your next games"
 msgstr "Tips för dina nästa spel"
 
-#: ../src/GameDrawingArea.cs:270
+#: ../src/GameDrawingArea.cs:272
 msgid "Read the instructions carefully and identify the data and clues given."
 msgstr ""
 
-#: ../src/GameDrawingArea.cs:272
-msgid "gbrainy uses the time and tips needed to complete each game to score the player."
-msgstr ""
-
 #: ../src/GameDrawingArea.cs:274
-msgid "In logic games, elements that may seem irrelevant can be very important."
+msgid ""
+"To score the player gbrainy uses the time and tips needed to complete each "
+"game."
 msgstr ""
 
 #: ../src/GameDrawingArea.cs:276
-msgid "Break the mental blocks and look into the boundaries of problems."
+msgid ""
+"In logic games, elements that may seem irrelevant can be very important."
 msgstr ""
 
 #: ../src/GameDrawingArea.cs:278
-msgid "Enjoy doing mistakes, they are part of the learning process."
+msgid "Break the mental blocks and look into the boundaries of problems."
 msgstr ""
 
 #: ../src/GameDrawingArea.cs:280
-msgid "Do all the problems, even the difficult ones. Improvement comes from practising."
-msgstr "Gå igenom alla problemen, även de svåra. Förbättring kommer genom träning."
+msgid "Enjoy doing mistakes, they are part of the learning process."
+msgstr ""
 
 #: ../src/GameDrawingArea.cs:282
+msgid ""
+"Do all the problems, even the difficult ones. Improvement comes from "
+"practising."
+msgstr ""
+"Gå igenom alla problemen, även de svåra. Förbättring kommer genom träning."
+
+#: ../src/GameDrawingArea.cs:284
 msgid "Play in daily basis, you will notice progress soon."
 msgstr "Spela på daglig basis och du kommer snart att märka skillnad."
 
-#: ../src/GameDrawingArea.cs:284
-msgid "You can use the Custom Game Selection to choose exactly which games you want to train."
-msgstr "Du kan använda Val av anpassade spel för att välja exakt vilka spel som du vill träna på."
+#: ../src/GameDrawingArea.cs:286
+msgid ""
+"You can use the Custom Game Selection to choose exactly which games you want "
+"to train."
+msgstr ""
+"Du kan använda Val av anpassade spel för att välja exakt vilka spel som du "
+"vill träna på."
 
 #: ../src/ColorPalette.cs:63
 msgid "red"
@@ -1080,11 +1180,15 @@ msgstr "Cirklar i en rektangel"
 
 #: ../src/PuzzlePeopleTable.cs:46
 #, csharp-format
-msgid "A group of people evenly separated is sat in a round table. How many people are if the {0} person is in front of the {1}?"
+msgid ""
+"A group of people evenly separated is sat in a round table. How many people "
+"are if the {0} person is in front of the {1}?"
 msgstr ""
 
 #: ../src/PuzzlePeopleTable.cs:52
-msgid "Substracting the two positions you get how many people is sat in half of the table then the double is the total amount of people."
+msgid ""
+"Substracting the two positions you get how many people is sat in half of the "
+"table then the double is the total amount of people."
 msgstr ""
 
 #: ../src/PuzzlePeopleTable.cs:61
@@ -1115,12 +1219,10 @@ msgstr "22:a"
 msgid "Memory figures"
 msgstr "Minnesfigurer"
 
-#: ../src/MemoryFigures.cs:57
-msgid "Memorize in which position there is every figure"
-msgstr ""
-
-#: ../src/MemoryFigures.cs:62
-msgid "In which cell is the other figure like the one shown below? (type the cell number)"
+#: ../src/MemoryFigures.cs:58
+msgid ""
+"In which cell is the other figure like the one shown below? (type the cell "
+"number)"
 msgstr ""
 
 #: ../src/PuzzleLines.cs:31
@@ -1129,13 +1231,17 @@ msgstr "Linjer"
 
 #
 #: ../src/PuzzleLines.cs:35
-msgid "How many lines can you count of in the figure below?"
+#, fuzzy
+msgid "How many lines can you count of in the figures below?"
 msgstr "Hur många linjer kan du räkna dig till i nedanstående figur?"
 
 #: ../src/PuzzleLines.cs:41
 #, csharp-format
-msgid "There are {0} lines in the figure at the left and {1} in the figure at the right."
-msgstr "Det finns {0} linjer i figuren till vänster och {1} i figuren till höger."
+msgid ""
+"There are {0} lines in the figure at the left and {1} in the figure at the "
+"right."
+msgstr ""
+"Det finns {0} linjer i figuren till vänster och {1} i figuren till höger."
 
 #: ../src/PuzzleMissingPiece.cs:32
 msgid "Missing piece"
@@ -1150,7 +1256,10 @@ msgid "The logic works at row level."
 msgstr "Logiken fungerar på radnivå."
 
 #: ../src/PuzzleMissingPiece.cs:46
-msgid "In every row the third square is made by flipping the first square and overlapping it to the second square, removing the matching lines, and then flipping the resulting image."
+msgid ""
+"In every row the third square is made by flipping the first square and "
+"superimposing it to the second square, removing the matching lines, and then "
+"flipping the resulting image."
 msgstr ""
 
 #: ../src/PuzzleMissingSlice.cs:58
@@ -1158,7 +1267,9 @@ msgid "Missing slice"
 msgstr ""
 
 #: ../src/PuzzleMissingSlice.cs:62
-msgid "Some slices have a common property. Which is the missing slice in the circle below (A, B, C)?"
+msgid ""
+"Some slices have a common property. Which is the missing slice in the circle "
+"below (A, B, C)?"
 msgstr ""
 
 #: ../src/PuzzleMissingSlice.cs:66
@@ -1168,7 +1279,9 @@ msgstr "Varje tal i sekvensen är relaterad till det tidigare talet."
 
 #: ../src/PuzzleMissingSlice.cs:72
 #, csharp-format
-msgid "All the numbers of each slice when added to the ones of the opposite slice add always {0}."
+msgid ""
+"All the numbers of each slice when added to the ones of the opposite slice "
+"add always {0}."
 msgstr ""
 
 #: ../src/PuzzleTetris.cs:31
@@ -1176,11 +1289,14 @@ msgid "Tetris"
 msgstr "Tetris"
 
 #: ../src/PuzzleTetris.cs:35
-msgid "Which is the next logical figure in the sequence below (A, B or C)?"
+#, fuzzy
+msgid "Which is the figure that completes the sequence below (A, B or C)?"
 msgstr "Vilken är nästa logiska figur i nedanstående sekvens (A, B eller C)?"
 
 #: ../src/PuzzleTetris.cs:41
-msgid "It is the figure that completes all the possible combinations with four blocks without taking into account rotations."
+msgid ""
+"It is the figure that completes all the possible combinations with four "
+"blocks without taking into account rotations."
 msgstr ""
 
 #: ../src/MemoryIndications.cs:127
@@ -1213,37 +1329,83 @@ msgstr "Sluta i punkt {0}"
 msgid "Memorize indications"
 msgstr "Memorera indikationer"
 
-#: ../src/MemoryIndications.cs:160
-msgid "Memorize all the indications."
-msgstr "Memorera alla indikationerna."
-
-#: ../src/MemoryIndications.cs:165
+#: ../src/MemoryIndications.cs:161
 #, csharp-format
-msgid "Which of the follow graphics represents the indications previously given?"
-msgstr "Vilken av följande bilder representerar indikationerna som angavs tidigare?"
+msgid ""
+"Which of the follow graphics represents the indications previously given?"
+msgstr ""
+"Vilken av följande bilder representerar indikationerna som angavs tidigare?"
+
+#~ msgid "Show get ready message before a memory question"
+#~ msgstr "Visa meddelande innan en minnesfråga visas"
+
+#~ msgid "_Ok"
+#~ msgstr "_OK"
+
+#~ msgid "row"
+#~ msgstr "rad"
+
+#~ msgid "rows"
+#~ msgstr "rader"
+
+#~ msgid "column"
+#~ msgstr "kolumn"
+
+#~ msgid "columns"
+#~ msgstr "kolumner"
+
+#, fuzzy
+#~ msgid "adding"
+#~ msgstr "sardin"
+
+#~ msgid "Memorize the following figure in the time given"
+#~ msgstr "Memorera följande figur inom angiven tid"
+
+#~ msgid "Memorize the following numbers in the time given"
+#~ msgstr "Memorera följande tal inom angiven tid"
+
+#~ msgid "Memorize the colors associated to every word"
+#~ msgstr "Memorera färgerna som associeras med varje ord"
+
+#~ msgid "Memorize all the words."
+#~ msgstr "Memorera alla orden."
+
+#~ msgid "Try to memorize how many dots of each color there are."
+#~ msgstr "Försök att memorera hur många punkter av varje färg det finns."
+
+#~ msgid "Memorize all the indications."
+#~ msgstr "Memorera alla indikationerna."
 
 #~ msgid "Questions"
 #~ msgstr "Frågor"
+
 #~ msgid ""
 #~ "gbrainy is a brain teaser and trainer game to have fun. It provides the "
 #~ "following types of games:"
 #~ msgstr ""
 #~ "gbrainy är en hjärnretare och lärande spel att ha kul med. Den "
 #~ "tillhandahåller följande speltyper:"
+
 #~ msgid "All Games"
 #~ msgstr "Alla spel"
+
 #~ msgid "Average time per game:"
 #~ msgstr "Genomsnittlig tid per spel:"
+
 #~ msgid "Time played:"
 #~ msgstr "Tid spelad:"
+
 #~ msgid "{0} ({1} won)"
 #~ msgstr "{0} ({1} vunna)"
+
 #~ msgid "Use the Game menu to start a new game"
 #~ msgstr "Använd menyn Spel för att starta ett nytt spel"
+
 #~ msgid "A square can be also built from other squares."
 #~ msgstr "En fyrkant kan även byggas från andra fyrkanter."
+
 #~ msgid "- Current game: {0}"
 #~ msgstr "- Aktuellt spel: {0}"
+
 #~ msgid "Pink"
 #~ msgstr "Rosa"
-

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gl\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-01-03 03:36+0000\n"
+"POT-Creation-Date: 2008-02-09 15:12+0100\n"
 "PO-Revision-Date: 2007-11-16 11:49+0100\n"
 "Last-Translator: Ignacio Casal Quinteiro <icq@svn.gnome.org>\n"
 "Language-Team: Galego <proxecto@trasno.net>\n"
@@ -25,7 +25,7 @@ msgstr "Un xogo para divertirse e manter entrenado o cerebro"
 msgid "Game"
 msgstr "Xogo"
 
-#: ../gbrainy.desktop.in.h:3 ../src/gbrainy.glade.h:21
+#: ../gbrainy.desktop.in.h:3 ../src/gbrainy.glade.h:20
 msgid "gbrainy"
 msgstr "gbrainy"
 
@@ -38,60 +38,62 @@ msgid "All Games and Trainers (Logic, Mental Calculation and Memory)"
 msgstr "Todos os xogos e entrenadores (Lóxica, cálculo mental e memoria)"
 
 #: ../src/gbrainy.glade.h:3
+#, fuzzy
+msgid "Answer:"
+msgstr "Resposta:"
+
+#: ../src/gbrainy.glade.h:4
 msgid "Custom Game"
 msgstr "Xogo personalizado"
 
-#: ../src/gbrainy.glade.h:4
+#: ../src/gbrainy.glade.h:5
 msgid "Custom Game Selection..."
 msgstr "Selección de xogo personalizado..."
 
-#: ../src/gbrainy.glade.h:5
+#: ../src/gbrainy.glade.h:6
 msgid "Logic Puzzles Only"
 msgstr "Só quebracabezas lóxicos"
 
-#: ../src/gbrainy.glade.h:6
+#: ../src/gbrainy.glade.h:7
 msgid "Memory Trainers Only"
 msgstr "Só entrenadores de memoria"
 
-#: ../src/gbrainy.glade.h:7
+#: ../src/gbrainy.glade.h:8
 msgid "Mental Calculation Trainers Only"
 msgstr "Só entrenadores de cálculo mental"
 
-#: ../src/gbrainy.glade.h:8
+#: ../src/gbrainy.glade.h:9
 msgid "New Game"
 msgstr "Novo xogo"
 
-#: ../src/gbrainy.glade.h:9
+#: ../src/gbrainy.glade.h:10
 msgid "Preferences"
 msgstr "Preferencias"
 
-#: ../src/gbrainy.glade.h:10
+#: ../src/gbrainy.glade.h:11
 msgid "Select All"
 msgstr "Seleccionar todo"
 
-#: ../src/gbrainy.glade.h:11
-msgid "Show get ready message before a memory question"
+#: ../src/gbrainy.glade.h:12
+msgid "Show the countdown message"
 msgstr ""
 
-#: ../src/gbrainy.glade.h:12
-msgid "Time in seconds to memorize questions:"
+#: ../src/gbrainy.glade.h:13
+#, fuzzy
+msgid "Time in seconds to memorize the challenge:"
 msgstr "Tempo en segundos para preguntas de memorizar:"
 
-#: ../src/gbrainy.glade.h:13
+#: ../src/gbrainy.glade.h:14
 msgid "Toolbar"
 msgstr "Barra de ferramentas"
 
-#: ../src/gbrainy.glade.h:14
+#: ../src/gbrainy.glade.h:15
 msgid "Trainers Only (Mental Calculation and Memory)"
 msgstr "Só entrenadores (cálculo mental e memoria)"
 
-#: ../src/gbrainy.glade.h:15
+#: ../src/gbrainy.glade.h:16
 msgid "Unselect all"
 msgstr "Deseleccionar todo"
-
-#: ../src/gbrainy.glade.h:16
-msgid "Your answer:"
-msgstr "Resposta:"
 
 #: ../src/gbrainy.glade.h:17
 msgid "_Game"
@@ -102,10 +104,6 @@ msgid "_Next"
 msgstr "_Seguinte"
 
 #: ../src/gbrainy.glade.h:19
-msgid "_Ok"
-msgstr "_Aceptar"
-
-#: ../src/gbrainy.glade.h:20
 msgid "_Tip"
 msgstr "_Consello"
 
@@ -180,9 +178,10 @@ msgid "Incorrect answer."
 msgstr "Resposta incorrecta."
 
 #: ../src/gbrainy.cs:307
+#, fuzzy
 msgid ""
-"Once you have an answer type it in \"Your answer:\" entry box and press the "
-"\"Ok\" button."
+"Once you have an answer type it in \"Answer:\" entry box and press the \"Ok"
+"\" button."
 msgstr ""
 "Unha vez teñas unha resposta tecléea en \"Resposta:\" e preme o botón "
 "\"Aceptar\"."
@@ -270,37 +269,45 @@ msgid "The logic is arithmetical and works horizontally."
 msgstr "A lóxica é aritmética e funciona horizontalmente."
 
 #: ../src/PuzzleMatrixNumbers.cs:64
-msgid "row"
-msgstr "fila"
-
-#: ../src/PuzzleMatrixNumbers.cs:65
-msgid "rows"
-msgstr "filas"
-
-#: ../src/PuzzleMatrixNumbers.cs:68
-msgid "column"
-msgstr "columna"
-
-#: ../src/PuzzleMatrixNumbers.cs:69
-msgid "columns"
-msgstr "columnas"
-
-#: ../src/PuzzleMatrixNumbers.cs:75 ../src/PuzzleMatrixNumbers.cs:79
-msgid "multiplying"
-msgstr "multiplicando"
-
-#: ../src/PuzzleMatrixNumbers.cs:76 ../src/PuzzleMatrixNumbers.cs:83
-msgid "adding"
-msgstr "sumando"
-
-#: ../src/PuzzleMatrixNumbers.cs:80 ../src/PuzzleMatrixNumbers.cs:84
-msgid "subtracting"
-msgstr "restando"
-
-#: ../src/PuzzleMatrixNumbers.cs:88
-#, csharp-format
+#, fuzzy, csharp-format
 msgid ""
-"The fourth {0} is calculated {1} the first two {2} and {3} the third {4}."
+"The fourth row is calculated multiplying the first two rows and adding the "
+"third."
+msgstr "A cuarta {0} calcúlase {1} as dúas primeiras {1} e {3} a {4} fila."
+
+#: ../src/PuzzleMatrixNumbers.cs:66
+#, fuzzy, csharp-format
+msgid ""
+"The fourth column is calculated multiplying the first two columns and adding "
+"the third."
+msgstr "A cuarta {0} calcúlase {1} as dúas primeiras {1} e {3} a {4} fila."
+
+#: ../src/PuzzleMatrixNumbers.cs:71
+#, fuzzy, csharp-format
+msgid ""
+"The fourth row is calculated multiplying the first two rows and subtracting "
+"the third."
+msgstr "A cuarta {0} calcúlase {1} as dúas primeiras {1} e {3} a {4} fila."
+
+#: ../src/PuzzleMatrixNumbers.cs:73
+#, fuzzy, csharp-format
+msgid ""
+"The fourth column is calculated multiplying the first two columns and "
+"subtracting the third."
+msgstr "A cuarta {0} calcúlase {1} as dúas primeiras {1} e {3} a {4} fila."
+
+#: ../src/PuzzleMatrixNumbers.cs:78
+#, fuzzy, csharp-format
+msgid ""
+"The fourth row is calculated adding the first two rows and subtracting the "
+"third."
+msgstr "A cuarta {0} calcúlase {1} as dúas primeiras {1} e {3} a {4} fila."
+
+#: ../src/PuzzleMatrixNumbers.cs:80
+#, fuzzy, csharp-format
+msgid ""
+"The fourth column is calculated adding the first two columns and subtracting "
+"the third."
 msgstr "A cuarta {0} calcúlase {1} as dúas primeiras {1} e {3} a {4} fila."
 
 #: ../src/PuzzlePencil.cs:33
@@ -316,14 +323,13 @@ msgstr ""
 "anteriores e sen levantar o bolígrafo?"
 
 #. gr.ShowText ("Figure A");
-#: ../src/PuzzlePencil.cs:168 ../src/PuzzleSquareDots.cs:162
-#: ../src/PuzzleSquareDots.cs:167 ../src/PuzzleSquareDots.cs:172
-#: ../src/PuzzleNextFigure.cs:145 ../src/MemoryColouredFigures.cs:140
-#: ../src/MemoryNumbers.cs:123 ../src/PuzzleFigurePattern.cs:193
+#: ../src/PuzzlePencil.cs:168 ../src/PuzzleSquareDots.cs:187
+#: ../src/PuzzleNextFigure.cs:145 ../src/MemoryColouredFigures.cs:134
+#: ../src/MemoryNumbers.cs:119 ../src/PuzzleFigurePattern.cs:193
 #: ../src/PuzzleMissingPiece.cs:156 ../src/PuzzleMissingSlice.cs:194
-#: ../src/PuzzleTetris.cs:156 ../src/MemoryIndications.cs:267
-#: ../src/MemoryIndications.cs:272 ../src/MemoryIndications.cs:277
-#: ../src/MemoryIndications.cs:282
+#: ../src/PuzzleTetris.cs:156 ../src/MemoryIndications.cs:263
+#: ../src/MemoryIndications.cs:268 ../src/MemoryIndications.cs:273
+#: ../src/MemoryIndications.cs:278
 #, csharp-format
 msgid "Figure {0}"
 msgstr "Figura {0}"
@@ -381,11 +387,11 @@ msgstr "Porcentaxe cuberta"
 msgid "What is the colored percentage covered in the figure?"
 msgstr "Cal é a porcentaxe coloreada cuberta na figura?"
 
-#: ../src/PuzzleSquareDots.cs:86
+#: ../src/PuzzleSquareDots.cs:87
 msgid "Square with dots"
 msgstr "Cadrado con puntos"
 
-#: ../src/PuzzleSquareDots.cs:90
+#: ../src/PuzzleSquareDots.cs:91
 msgid ""
 "What is the letter of the figure that represents the next logical figure in "
 "the sequence (A, B or C)?"
@@ -393,7 +399,7 @@ msgstr ""
 "Cal é a letra da figura que representa a seguinte figura lóxica na secuencia "
 "(A, B ou C)?"
 
-#: ../src/PuzzleSquareDots.cs:156 ../src/PuzzleNextFigure.cs:126
+#: ../src/PuzzleSquareDots.cs:180 ../src/PuzzleNextFigure.cs:126
 #: ../src/PuzzleFigurePattern.cs:172 ../src/PuzzleMissingPiece.cs:149
 #: ../src/PuzzleMissingSlice.cs:178 ../src/PuzzleTetris.cs:149
 msgid "Possible answers are:"
@@ -581,11 +587,7 @@ msgstr "Cal é o resultado da seguinte operación aritmética?"
 msgid "Colored Figures"
 msgstr "Figuras coloreadas"
 
-#: ../src/MemoryColouredFigures.cs:53
-msgid "Memorize the following figure in the time given"
-msgstr "Memoriza a seguinte figura no tempo dispoñible"
-
-#: ../src/MemoryColouredFigures.cs:58
+#: ../src/MemoryColouredFigures.cs:52
 msgid "Which of these figures was the one previously shown?"
 msgstr "Cal das seguintes figuras foi mostradas previamente?"
 
@@ -613,10 +615,6 @@ msgid "Memorize numbers"
 msgstr "Memoriza números"
 
 #: ../src/MemoryNumbers.cs:41
-msgid "Memorize the following numbers in the time given"
-msgstr "Memoriza os seguintes números no tempo dispoñible"
-
-#: ../src/MemoryNumbers.cs:45
 msgid "Which one of these squares was the one previously shown (A, B, C or D)?"
 msgstr "Cal dos seguintes cadrados foi mostrado anteriormente (A, B, C ou D)?"
 
@@ -624,11 +622,7 @@ msgstr "Cal dos seguintes cadrados foi mostrado anteriormente (A, B, C ou D)?"
 msgid "Colored text"
 msgstr "Texto coloreado"
 
-#: ../src/MemoryColouredText.cs:38
-msgid "Memorize the colors associated to every word"
-msgstr "Memoriza as cores asociadas a cada palabra"
-
-#: ../src/MemoryColouredText.cs:43
+#: ../src/MemoryColouredText.cs:39
 #, csharp-format
 msgid "Which was the color of the text that said '{0}'?"
 msgstr "Cal era a cor do texto que di '{0}'?"
@@ -650,11 +644,7 @@ msgstr ""
 msgid "Memorize words"
 msgstr "Memoriza palabras"
 
-#: ../src/MemoryWords.cs:40
-msgid "Memorize all the words."
-msgstr "Memoriza todas as palabras."
-
-#: ../src/MemoryWords.cs:45
+#: ../src/MemoryWords.cs:41
 #, csharp-format
 msgid ""
 "There is a missing word from the previous list. Which one is the missing "
@@ -662,149 +652,149 @@ msgid ""
 msgstr "Hai unha palabra que falta da lista anterior. Que palabra falta?"
 
 #. Body parts
-#: ../src/MemoryWords.cs:54
+#: ../src/MemoryWords.cs:50
 msgid "wrist"
 msgstr ""
 
-#: ../src/MemoryWords.cs:55
+#: ../src/MemoryWords.cs:51
 msgid "elbow"
 msgstr "cóbado"
 
-#: ../src/MemoryWords.cs:56
+#: ../src/MemoryWords.cs:52
 msgid "armpit"
 msgstr ""
 
-#: ../src/MemoryWords.cs:57
+#: ../src/MemoryWords.cs:53
 msgid "hand"
 msgstr "man"
 
-#: ../src/MemoryWords.cs:58
+#: ../src/MemoryWords.cs:54
 msgid "chest"
 msgstr "peito"
 
 #. Fishes
-#: ../src/MemoryWords.cs:61
+#: ../src/MemoryWords.cs:57
 msgid "sardine"
 msgstr "sardiña"
 
-#: ../src/MemoryWords.cs:62
+#: ../src/MemoryWords.cs:58
 msgid "trout"
 msgstr "troita"
 
-#: ../src/MemoryWords.cs:63
+#: ../src/MemoryWords.cs:59
 msgid "monkfish"
 msgstr "rape"
 
-#: ../src/MemoryWords.cs:64
+#: ../src/MemoryWords.cs:60
 msgid "cod"
 msgstr "bacallao"
 
-#: ../src/MemoryWords.cs:65
+#: ../src/MemoryWords.cs:61
 msgid "salmon"
 msgstr "salmón"
 
 #. Vegetables
-#: ../src/MemoryWords.cs:68
+#: ../src/MemoryWords.cs:64
 msgid "potato"
 msgstr "pataca"
 
-#: ../src/MemoryWords.cs:69
+#: ../src/MemoryWords.cs:65
 msgid "ginger"
 msgstr "xenxibre"
 
-#: ../src/MemoryWords.cs:70
+#: ../src/MemoryWords.cs:66
 msgid "pepper"
 msgstr "pementa"
 
-#: ../src/MemoryWords.cs:71
+#: ../src/MemoryWords.cs:67
 msgid "garlic"
 msgstr "allo"
 
-#: ../src/MemoryWords.cs:72
+#: ../src/MemoryWords.cs:68
 msgid "pumpkin"
 msgstr "calabaza"
 
 #. Bicycle
-#: ../src/MemoryWords.cs:75
+#: ../src/MemoryWords.cs:71
 msgid "brake"
 msgstr "freno"
 
-#: ../src/MemoryWords.cs:76
+#: ../src/MemoryWords.cs:72
 msgid "pedal"
 msgstr "pedal"
 
-#: ../src/MemoryWords.cs:77
+#: ../src/MemoryWords.cs:73
 msgid "chain"
 msgstr "cadea"
 
-#: ../src/MemoryWords.cs:78
+#: ../src/MemoryWords.cs:74
 msgid "wheel"
 msgstr "roda"
 
-#: ../src/MemoryWords.cs:79
+#: ../src/MemoryWords.cs:75
 msgid "handlebar"
 msgstr "manillar"
 
 #. Music
-#: ../src/MemoryWords.cs:82
+#: ../src/MemoryWords.cs:78
 msgid "drummer"
 msgstr "batería"
 
-#: ../src/MemoryWords.cs:83
+#: ../src/MemoryWords.cs:79
 msgid "speaker"
 msgstr "altavoz"
 
-#: ../src/MemoryWords.cs:84
+#: ../src/MemoryWords.cs:80
 msgid "lyrics"
 msgstr "letra"
 
-#: ../src/MemoryWords.cs:85
+#: ../src/MemoryWords.cs:81
 msgid "beat"
 msgstr "latido"
 
-#: ../src/MemoryWords.cs:86
+#: ../src/MemoryWords.cs:82
 msgid "song"
 msgstr "canción"
 
 #. Weather
-#: ../src/MemoryWords.cs:89
+#: ../src/MemoryWords.cs:85
 msgid "cloud"
 msgstr "nube"
 
-#: ../src/MemoryWords.cs:90
+#: ../src/MemoryWords.cs:86
 msgid "rain"
 msgstr "choiva"
 
-#: ../src/MemoryWords.cs:91
+#: ../src/MemoryWords.cs:87
 msgid "storm"
 msgstr "tormenta"
 
-#: ../src/MemoryWords.cs:92
+#: ../src/MemoryWords.cs:88
 msgid "fog"
 msgstr "néboa"
 
-#: ../src/MemoryWords.cs:93
+#: ../src/MemoryWords.cs:89
 msgid "rainbow"
 msgstr "arco da vella"
 
 #. Animals
-#: ../src/MemoryWords.cs:96
+#: ../src/MemoryWords.cs:92
 msgid "rabbit"
 msgstr "coello"
 
-#: ../src/MemoryWords.cs:97
+#: ../src/MemoryWords.cs:93
 msgid "mouse"
 msgstr "rato"
 
-#: ../src/MemoryWords.cs:98
+#: ../src/MemoryWords.cs:94
 msgid "monkey"
 msgstr "mono"
 
-#: ../src/MemoryWords.cs:99
+#: ../src/MemoryWords.cs:95
 msgid "bear"
 msgstr "oso"
 
-#: ../src/MemoryWords.cs:100
+#: ../src/MemoryWords.cs:96
 msgid "wolf"
 msgstr "lobo"
 
@@ -1026,10 +1016,6 @@ msgid "Counting dots"
 msgstr "Contando puntos"
 
 #: ../src/MemoryCountDots.cs:44
-msgid "Try to memorize how many dots of each color there are."
-msgstr "Tente memorizar cantos puntos de cada cor hai."
-
-#: ../src/MemoryCountDots.cs:48
 #, csharp-format
 msgid "How many {0} dots were in the previous image?"
 msgstr "Cantos {0} puntos había na imaxe anterior?"
@@ -1089,86 +1075,87 @@ msgid "Memory trainers. To prove and enhance your short term memory."
 msgstr ""
 "Entrenadores de memoria. Deseñados para retar a túa memoria a curto prazo."
 
-#: ../src/GameDrawingArea.cs:177
+#: ../src/GameDrawingArea.cs:179
 msgid "Get your memory ready..."
 msgstr "Prepara a túa memoria..."
 
-#: ../src/GameDrawingArea.cs:205
+#: ../src/GameDrawingArea.cs:207
 msgid "Score"
 msgstr "Puntuación"
 
-#: ../src/GameDrawingArea.cs:211
-#, csharp-format
-msgid "Your total is score {0}%"
+#: ../src/GameDrawingArea.cs:213
+#,  csharp-format
+msgid "Your total score is {0}%"
 msgstr "A súa puntación total é {0}%"
 
-#: ../src/GameDrawingArea.cs:215
+#: ../src/GameDrawingArea.cs:217
 #, csharp-format
 msgid "Logic puzzle score is {0}%"
 msgstr "A puntuación de quebracabezas lóxicos é {0}%"
 
-#: ../src/GameDrawingArea.cs:216 ../src/GameDrawingArea.cs:222
-#: ../src/GameDrawingArea.cs:228
+#: ../src/GameDrawingArea.cs:218 ../src/GameDrawingArea.cs:224
+#: ../src/GameDrawingArea.cs:230
 msgid "(no games played)"
 msgstr "(non se xogou ningunha partida)"
 
-#: ../src/GameDrawingArea.cs:221
+#: ../src/GameDrawingArea.cs:223
 #, csharp-format
 msgid "Mental calculation score is {0}%"
 msgstr "A puntuación do cálculo mental é {0}%"
 
-#: ../src/GameDrawingArea.cs:227
+#: ../src/GameDrawingArea.cs:229
 #, csharp-format
 msgid "Memory score is {0}%"
 msgstr "A puntuación de memoria é {0}%"
 
-#: ../src/GameDrawingArea.cs:234
+#: ../src/GameDrawingArea.cs:236
 msgid "Game statistics"
 msgstr "Estatísticas do xogo"
 
-#: ../src/GameDrawingArea.cs:240
+#: ../src/GameDrawingArea.cs:242
 #, csharp-format
 msgid "Total games won: {0} ({1} played)"
 msgstr "Xogos totais gañados: {0} ({1} xogados)"
 
-#: ../src/GameDrawingArea.cs:243
+#: ../src/GameDrawingArea.cs:245
 #, csharp-format
 msgid "Total time played {0} (average per game {1})"
 msgstr "Tempo total xogado {0} (media por xogo {1})"
 
-#: ../src/GameDrawingArea.cs:248
+#: ../src/GameDrawingArea.cs:250
 msgid "Tips for your next games"
 msgstr "Consellos para os teus seguintes xogos"
 
-#: ../src/GameDrawingArea.cs:270
+#: ../src/GameDrawingArea.cs:272
 msgid "Read the instructions carefully and identify the data and clues given."
 msgstr ""
 "Ler as instrucións coidadosamente e identificar os datos e pistas dadas."
 
-#: ../src/GameDrawingArea.cs:272
+#: ../src/GameDrawingArea.cs:274
+#, fuzzy
 msgid ""
-"gbrainy uses the time and tips needed to complete each game to score the "
-"player."
+"To score the player gbrainy uses the time and tips needed to complete each "
+"game."
 msgstr ""
 "gbrainy usa o tempo e os consellos necesitados para completar cada xogo para "
 "puntuar ao xogador."
 
-#: ../src/GameDrawingArea.cs:274
+#: ../src/GameDrawingArea.cs:276
 msgid ""
 "In logic games, elements that may seem irrelevant can be very important."
 msgstr ""
 "Nos xogos de lóxica, os elementos que poden parecer irrelevantes poden ser "
 "moi importantes."
 
-#: ../src/GameDrawingArea.cs:276
+#: ../src/GameDrawingArea.cs:278
 msgid "Break the mental blocks and look into the boundaries of problems."
 msgstr "Rompe os bloqueos mentais e mira os límites dos problemas."
 
-#: ../src/GameDrawingArea.cs:278
+#: ../src/GameDrawingArea.cs:280
 msgid "Enjoy doing mistakes, they are part of the learning process."
 msgstr "Divírtase cometendo erros, son parte do proceso de aprendizaxe."
 
-#: ../src/GameDrawingArea.cs:280
+#: ../src/GameDrawingArea.cs:282
 msgid ""
 "Do all the problems, even the difficult ones. Improvement comes from "
 "practising."
@@ -1176,11 +1163,11 @@ msgstr ""
 "Fai todos os problemas, incluso os difíciles. A mellora chega por medio da "
 "práctica."
 
-#: ../src/GameDrawingArea.cs:282
+#: ../src/GameDrawingArea.cs:284
 msgid "Play in daily basis, you will notice progress soon."
 msgstr "Xoga diariamente, notarás pronto o progreso."
 
-#: ../src/GameDrawingArea.cs:284
+#: ../src/GameDrawingArea.cs:286
 msgid ""
 "You can use the Custom Game Selection to choose exactly which games you want "
 "to train."
@@ -1269,11 +1256,7 @@ msgstr "22"
 msgid "Memory figures"
 msgstr "Memorizar figuras"
 
-#: ../src/MemoryFigures.cs:57
-msgid "Memorize in which position there is every figure"
-msgstr "Memorizar en que posición está cada figura"
-
-#: ../src/MemoryFigures.cs:62
+#: ../src/MemoryFigures.cs:58
 msgid ""
 "In which cell is the other figure like the one shown below? (type the cell "
 "number)"
@@ -1287,7 +1270,7 @@ msgstr "Liñas"
 
 #: ../src/PuzzleLines.cs:35
 #, fuzzy
-msgid "How many lines can you count of in the figure below?"
+msgid "How many lines can you count of in the figures below?"
 msgstr "Cantos cadrados de calquer tamaño podes contar na figura de embaixo?"
 
 #: ../src/PuzzleLines.cs:41
@@ -1312,7 +1295,7 @@ msgstr "A lóxica funciona a nivel de fila."
 #: ../src/PuzzleMissingPiece.cs:46
 msgid ""
 "In every row the third square is made by flipping the first square and "
-"overlapping it to the second square, removing the matching lines, and then "
+"superimposing it to the second square, removing the matching lines, and then "
 "flipping the resulting image."
 msgstr ""
 
@@ -1347,7 +1330,7 @@ msgstr "Tetris"
 
 #: ../src/PuzzleTetris.cs:35
 #, fuzzy
-msgid "Which is the next logical figure in the sequence below (A, B or C)?"
+msgid "Which is the figure that completes the sequence below (A, B or C)?"
 msgstr "Cal é a seguinte figura lóxica na secuencia (A, B, ou C)?"
 
 #: ../src/PuzzleTetris.cs:41
@@ -1388,16 +1371,57 @@ msgstr "Punto final {0}"
 msgid "Memorize indications"
 msgstr "Memorizar indicacións"
 
-#: ../src/MemoryIndications.cs:160
-msgid "Memorize all the indications."
-msgstr "Memorizar todas as indicacións."
-
-#: ../src/MemoryIndications.cs:165
+#: ../src/MemoryIndications.cs:161
 #, csharp-format
 msgid ""
 "Which of the follow graphics represents the indications previously given?"
 msgstr ""
 "Cal dos seguintes gráficos representa as indicacións dadas previamente?"
+
+#~ msgid "_Ok"
+#~ msgstr "_Aceptar"
+
+#~ msgid "row"
+#~ msgstr "fila"
+
+#~ msgid "rows"
+#~ msgstr "filas"
+
+#~ msgid "column"
+#~ msgstr "columna"
+
+#~ msgid "columns"
+#~ msgstr "columnas"
+
+#~ msgid "multiplying"
+#~ msgstr "multiplicando"
+
+#~ msgid "adding"
+#~ msgstr "sumando"
+
+#~ msgid "subtracting"
+#~ msgstr "restando"
+
+#~ msgid "Memorize the following figure in the time given"
+#~ msgstr "Memoriza a seguinte figura no tempo dispoñible"
+
+#~ msgid "Memorize the following numbers in the time given"
+#~ msgstr "Memoriza os seguintes números no tempo dispoñible"
+
+#~ msgid "Memorize the colors associated to every word"
+#~ msgstr "Memoriza as cores asociadas a cada palabra"
+
+#~ msgid "Memorize all the words."
+#~ msgstr "Memoriza todas as palabras."
+
+#~ msgid "Try to memorize how many dots of each color there are."
+#~ msgstr "Tente memorizar cantos puntos de cada cor hai."
+
+#~ msgid "Memorize in which position there is every figure"
+#~ msgstr "Memorizar en que posición está cada figura"
+
+#~ msgid "Memorize all the indications."
+#~ msgstr "Memorizar todas as indicacións."
 
 #~ msgid "Questions"
 #~ msgstr "Preguntas"
