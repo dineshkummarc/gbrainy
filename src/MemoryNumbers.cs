@@ -37,10 +37,6 @@ public class MemoryNumbers : Memory
 		get {return Catalog.GetString ("Memorize numbers");}
 	}
 
-	public override string Question {
-		get {return Catalog.GetString ("Memorize the following numbers in the time given"); }
-	}
-
 	public override string MemoryQuestion {
 		get { return Catalog.GetString ("Which one of these squares was the one previously shown (A, B, C or D)?");}
 	}

@@ -36,10 +36,6 @@ public class MemoryWords : Memory
 		get {return Catalog.GetString ("Memorize words");}
 	}
 
-	public override string Question {
-		get {return Catalog.GetString ("Memorize all the words."); }
-	}
-
 	public override string MemoryQuestion {
 		get { 
 			return String.Format (Catalog.GetString ("There is a missing word from the previous list. Which one is the missing word?"));}
