@@ -175,8 +175,8 @@ public class GameDrawingArea : DrawingArea
 		gr.LineWidth = 0.01;
 		gr.Color = new Cairo.Color (0, 0, 0, 1);
 
-		gr.SetFontSize (0.05);
-		DrawingHelpers.DrawTextCentered (gr, 0.5, 0.1, Catalog.GetString ("Get your memory ready..."));
+		gr.SetFontSize (0.033);
+		DrawingHelpers.DrawTextCentered (gr, 0.5, 0.1, Catalog.GetString ("Get ready to memorize the next objects..."));
 		gr.Stroke ();
 
 		gr.SetFontSize (0.4);

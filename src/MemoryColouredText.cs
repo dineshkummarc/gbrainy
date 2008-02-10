@@ -35,10 +35,6 @@ public class MemoryColouredText : Memory
 		get {return Catalog.GetString ("Colored text");}
 	}
 
-	public override string Question {
-		get {return Catalog.GetString ("Memorize the colors associated to every word"); }
-	}
-
 	public override string MemoryQuestion {
 		get { 
 			return String.Format (Catalog.GetString ("Which was the color of the text that said '{0}'?"), question_colorname);}

@@ -45,6 +45,12 @@ public abstract class Memory : Game
 		get;
 	}
 
+	public override string Question {
+		get {
+			return Catalog.GetString ("Memorize the objects below in the time given");
+		}
+	}
+
 	public override Types Type {
 		get { return Game.Types.MemoryTrainer;}
 	}

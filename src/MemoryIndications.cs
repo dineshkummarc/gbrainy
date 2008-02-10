@@ -156,10 +156,6 @@ public class MemoryIndications : Memory
 		get {return Catalog.GetString ("Memorize indications");}
 	}
 
-	public override string Question {
-		get {return Catalog.GetString ("Memorize all the indications."); }
-	}
-
 	public override string MemoryQuestion {
 		get { 
 			return String.Format (Catalog.GetString ("Which of the follow graphics represents the indications previously given?"));}

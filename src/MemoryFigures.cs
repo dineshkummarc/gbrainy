@@ -52,10 +52,6 @@ public class MemoryFigures : Memory
 		get {return Catalog.GetString ("Memory figures");}
 	}
 
-	public override string Question {
-		get {return Catalog.GetString ("Memorize in which position there is every figure"); }
-	}
-
 	public override string MemoryQuestion {
 		get { 
 			return Catalog.GetString ("In which cell is the other figure like the one shown below? (type the cell number)" );}

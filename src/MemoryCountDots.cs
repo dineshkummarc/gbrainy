@@ -40,10 +40,6 @@ public class MemoryCountDots : Memory
 		get {return Catalog.GetString ("Counting dots");}
 	}
 
-	public override string Question {
-		get {return Catalog.GetString ("Try to memorize how many dots of each color there are."); }
-	}
-
 	public override string MemoryQuestion {
 		get { return String.Format(Catalog.GetString ("How many {0} dots were in the previous image? (answer using numbers)"),
 						palette.Name(0)); }

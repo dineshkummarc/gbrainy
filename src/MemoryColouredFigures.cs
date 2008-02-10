@@ -49,12 +49,6 @@ public class MemoryColouredFigures : Memory
 		get {return Catalog.GetString ("Colored Figures");}
 	}
 
-	public override string Question {
-		get {
-			return Catalog.GetString ("Memorize the following figure in the time given");
-		}
-	}
-
 	public override string MemoryQuestion {
 		get { return Catalog.GetString ("Which of these figures was the one previously shown?");}
 	}
