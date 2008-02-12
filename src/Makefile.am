@@ -53,6 +53,7 @@ GBRAINY_CSDISTFILES =				\
 	$(srcdir)/PuzzleMissingPiece.cs		\
 	$(srcdir)/MemoryIndications.cs		\
 	$(srcdir)/PuzzleMostInCommon.cs		\
+	$(srcdir)/PuzzleBuildTriangle.cs	\
 	$(srcdir)/gbrainy.cs			
 
 ASSEMBLIES = \

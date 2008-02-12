@@ -43,13 +43,13 @@ public class PuzzlePeopleTable : Game
 	}
 
 	public override string Question {
-		get {return String.Format (Catalog.GetString ("A group of people evenly separated is sat in a round table. How many people are if the {0} person is in front of the {1}?"), ques1, ques2);} 
+		get {return String.Format (Catalog.GetString ("A group of people are sitting at round table, evenly spaced out. How many people are there if the {0} person is across from the {1}?"), ques1, ques2);} 
 	}
 
 	public override string Answer {
 		get { 
 			string answer = base.Answer + " ";
-			answer += Catalog.GetString ("Substracting the two positions you get how many people is sat in half of the table then the double is the total amount of people.");
+			answer += Catalog.GetString ("Subtracting the two positions you get how many people is sat in half of the table then the double is the total amount of people.");
 			return answer;
 		}
 	}
