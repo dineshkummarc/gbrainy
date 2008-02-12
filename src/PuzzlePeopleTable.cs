@@ -49,7 +49,7 @@ public class PuzzlePeopleTable : Game
 	public override string Answer {
 		get { 
 			string answer = base.Answer + " ";
-			answer += Catalog.GetString ("Subtracting the two positions you get how many people is sat in half of the table then the double is the total amount of people.");
+			answer += Catalog.GetString ("Subtracting the two positions you find out how many people are seated half way around the table. Doubling this number leaves you with the total amount of people.");
 			return answer;
 		}
 	}
