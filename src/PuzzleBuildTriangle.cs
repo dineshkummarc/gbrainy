@@ -52,6 +52,10 @@ public class PuzzleBuildTriangle : Game
 		get {return Catalog.GetString ("Which three pieces can you use together to build a triangle?");} 
 	}
 
+	public override string Tip {
+		get { return Catalog.GetString ("The resulting triangle is isosceles.");}
+	}
+
 	public override void Initialize ()
 	{
 		switch (CurrentDifficulty) {

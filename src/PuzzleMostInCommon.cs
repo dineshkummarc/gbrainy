@@ -86,7 +86,7 @@ public class PuzzleMostInCommon : Game
 			if (CurrentDifficulty ==  Difficulty.Easy) 
 				answer += Catalog.GetString ("It has the same number of elements inside the figure that the figures given.");
 			else
-				answer += Catalog.GetString ("It is the figure with more elements in common with the figures given.");
+				answer += Catalog.GetString ("It is the figure with more elements in common compared to the figures given.");
 			
 			return answer;
 		}
