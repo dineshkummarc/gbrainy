@@ -207,10 +207,10 @@ abstract public class Game
 
 	
 	public abstract void Initialize ();
-	public abstract void Draw (Cairo.Context gr, int width, int height);
+	public abstract void Draw (CairoContextEx gr, int width, int height);
 	public virtual void Finish () {}
 
-	public virtual void DrawPreview (Cairo.Context gr, int width, int height)
+	public virtual void DrawPreview (CairoContextEx gr, int width, int height)
 	{
 		Draw (gr, width, height);
 	}
@@ -220,17 +220,17 @@ abstract public class Game
 		return (String.Compare (answer, right_answer, true) == 0);
 	}
 	
-	public void SetLargeFont (Cairo.Context gr)
+	public void SetLargeFont (CairoContextEx gr)
 	{
 		gr.SetFontSize (0.05);
 	}
 
-	public void SetNormalFont (Cairo.Context gr)
+	public void SetNormalFont (CairoContextEx gr)
 	{
 		gr.SetFontSize (0.03);
 	}
 
-	virtual public void PrepareGC (Cairo.Context gr)
+	virtual public void PrepareGC (CairoContextEx gr)
 	{
 		gr.LineWidth = LineWidth;
 		gr.Color = DefaultDrawingColor;
@@ -238,7 +238,7 @@ abstract public class Game
 		SetNormalFont (gr);
 	}
 
-	protected void DrawBackground (Cairo.Context gr)
+	protected void DrawBackground (CairoContextEx gr)
 	{
 		int columns = 40;
 		int rows = 40;

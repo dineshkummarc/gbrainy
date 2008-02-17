@@ -70,7 +70,7 @@ public class PuzzleCoverPercentage : Game
 		right_answer = total.ToString ();
 	}
 
-	private void DrawSection (Cairo.Context gr, double x, double y)
+	private void DrawSection (CairoContextEx gr, double x, double y)
 	{
 		double w =  width / 2, h = height / 2;
 		double pos_x = x, pos_y = y;
@@ -99,7 +99,7 @@ public class PuzzleCoverPercentage : Game
 		gr.Restore ();
 	}
 
-	private void CoverZone (Cairo.Context gr, double x, double y)
+	private void CoverZone (CairoContextEx gr, double x, double y)
 	{
 		gr.Save ();
 		gr.Color = new Cairo.Color (0.90, 0.90, 0.90);
@@ -108,7 +108,7 @@ public class PuzzleCoverPercentage : Game
 		gr.Restore ();
 	}
 
-	public override void Draw (Cairo.Context gr, int area_width, int area_height)
+	public override void Draw (CairoContextEx gr, int area_width, int area_height)
 	{
 		double x = 0.25, y = 0.25;
 

@@ -70,7 +70,7 @@ public class PuzzleOstracism : Game
 		}
 	}
 
-	public override void Draw (Cairo.Context gr, int area_width, int area_height)
+	public override void Draw (CairoContextEx gr, int area_width, int area_height)
 	{
 		double x = DrawAreaX + 0.15, y = DrawAreaY + 0.2;
 

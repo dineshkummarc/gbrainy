@@ -215,7 +215,7 @@ public class PuzzleMostInCommon : Game
 		return element;
 	}
 
-	private void DrawFigureElement (Cairo.Context gr, double x, double y, FigureElement figure)
+	private void DrawFigureElement (CairoContextEx gr, double x, double y, FigureElement figure)
 	{
 		switch (figure.element) {
 		case Element.SmallCircle:
@@ -233,7 +233,7 @@ public class PuzzleMostInCommon : Game
 		gr.Stroke ();
 	}
 
-	private void DrawFigure (Cairo.Context gr, double x, double y, FigureElement[] figure)
+	private void DrawFigure (CairoContextEx gr, double x, double y, FigureElement[] figure)
 	{
 		double cercle_size = 0.15;
 		gr.Stroke ();
@@ -246,7 +246,7 @@ public class PuzzleMostInCommon : Game
 		gr.Stroke ();
 	}
 
-	public override void Draw (Cairo.Context gr, int area_width, int area_height)
+	public override void Draw (CairoContextEx gr, int area_width, int area_height)
 	{
 		double x = DrawAreaX, y = DrawAreaY + 0.1;
 

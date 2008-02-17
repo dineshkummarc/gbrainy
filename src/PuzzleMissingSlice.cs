@@ -88,7 +88,7 @@ public class PuzzleMissingSlice : Game
 		}
 	}
 
-	private void DrawSlice (Cairo.Context gr, double x, double y)
+	private void DrawSlice (CairoContextEx gr, double x, double y)
 	{
 		double degrees, x1, y1;
 		
@@ -110,7 +110,7 @@ public class PuzzleMissingSlice : Game
 		gr.Stroke ();
 	}
 
-	private void DrawSliceText (Cairo.Context gr, double x, double y, int slice, string str1, string str2, string str3)
+	private void DrawSliceText (CairoContextEx gr, double x, double y, int slice, string str1, string str2, string str3)
 	{	
 		double x0, y0, degrees;
 
@@ -118,22 +118,22 @@ public class PuzzleMissingSlice : Game
 		degrees = radian * (slice * ((360 / total_slices)) + (360 / 12));
 		x0 = 0.35 * radius * Math.Cos (degrees);
 		y0 = 0.35 * radius * Math.Sin (degrees);
-		DrawingHelpers.DrawTextCentered (gr, x + x0, y + y0, str1);
+		gr.DrawTextCentered (x + x0, y + y0, str1);
 	
 		// Number opposite to the center and at the top
 		degrees = radian * (slice * ((360 / total_slices)) + (360 / 24));
 		x0 = 0.8 * radius * Math.Cos (degrees);
 		y0 = 0.8 * radius * Math.Sin (degrees);
-		DrawingHelpers.DrawTextCentered (gr, x + x0, y + y0, str2);
+		gr.DrawTextCentered (x + x0, y + y0, str2);
 	
 		// Number opposite to the center and at the bottom
 		degrees = radian * (slice * ((360 / total_slices)) + (360 / 8));			
 		x0 = 0.8 * radius * Math.Cos (degrees);
 		y0 = 0.8 * radius * Math.Sin (degrees);
-		DrawingHelpers.DrawTextCentered (gr, x + x0, y + y0, str3);
+		gr.DrawTextCentered (x + x0, y + y0, str3);
 	}
 
-	public override void Draw (Cairo.Context gr, int area_width, int area_height)
+	public override void Draw (CairoContextEx gr, int area_width, int area_height)
 	{		
 		double x = DrawAreaX + 0.2, y = DrawAreaY;
 		double x0, y0, degrees;
@@ -158,7 +158,7 @@ public class PuzzleMissingSlice : Game
 				degrees = radian * (slice * ((360 / total_slices)) + (360 / 12));
 				x0 = 0.5 * radius * Math.Cos (degrees);
 				y0 = 0.5 * radius * Math.Sin (degrees);
-				DrawingHelpers.DrawTextCentered (gr, x + arc_centerx + x0, y + arc_centery + y0, "?");
+				gr.DrawTextCentered (x + arc_centerx + x0, y + arc_centery + y0, "?");
 				continue;
 			}
 			

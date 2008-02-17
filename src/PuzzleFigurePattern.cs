@@ -67,7 +67,7 @@ public class PuzzleFigurePattern : Game
 		}
 	}
 
-	private void DrawRotatedCross (Cairo.Context gr, double x, double y, double size)
+	private void DrawRotatedCross (CairoContextEx gr, double x, double y, double size)
 	{
 		gr.MoveTo (x, y);
 		gr.LineTo (x + size, y + size);
@@ -76,7 +76,7 @@ public class PuzzleFigurePattern : Game
 		gr.Stroke ();
 	}
 
-	private void DrawTwoLines (Cairo.Context gr, double x, double y, double size)
+	private void DrawTwoLines (CairoContextEx gr, double x, double y, double size)
 	{
 		gr.MoveTo (x, y);
 		gr.LineTo (x + size, y);
@@ -85,7 +85,7 @@ public class PuzzleFigurePattern : Game
 		gr.Stroke ();
 	}
 
-	private void DrawCross (Cairo.Context gr, double x, double y, double size)
+	private void DrawCross (CairoContextEx gr, double x, double y, double size)
 	{
 		gr.MoveTo (x + size / 2, y);
 		gr.LineTo (x + size / 2, y + size);
@@ -94,7 +94,7 @@ public class PuzzleFigurePattern : Game
 		gr.Stroke ();
 	}
 	
-	public override void Draw (Cairo.Context gr, int area_width, int area_height)
+	public override void Draw (CairoContextEx gr, int area_width, int area_height)
 	{
 		double org_x = DrawAreaX + 0.1;
 		double x = org_x, y = 0.08;
@@ -141,7 +141,7 @@ public class PuzzleFigurePattern : Game
 		DrawRotatedCross (gr, x, y, figure_size);
 
 		x += figure_size + space_x;
-		DrawingHelpers.DrawDiamond (gr, x, y, figure_size);
+		gr.DrawDiamond (x, y, figure_size);
 
 		y += space_y;
 		x = org_x;

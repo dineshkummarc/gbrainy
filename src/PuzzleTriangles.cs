@@ -59,7 +59,7 @@ public class PuzzleTriangles : Game
 			right_answer = "8";
 	}
 
-	public override void Draw (Cairo.Context gr, int area_width, int area_height)
+	public override void Draw (CairoContextEx gr, int area_width, int area_height)
 	{
 		double x = DrawAreaX + 0.1, y = DrawAreaY + 0.2;
 		double witdh = 0.6, height = 0.5;

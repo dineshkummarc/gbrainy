@@ -39,7 +39,6 @@ GBRAINY_CSDISTFILES =				\
 	$(srcdir)/PuzzlePairs.cs		\
 	$(srcdir)/PuzzleOstracism.cs		\
 	$(srcdir)/MemoryCountDots.cs		\
-	$(srcdir)/DrawingHelpers.cs		\
 	$(srcdir)/MathOperator.cs		\
 	$(srcdir)/PuzzleFigurePattern.cs	\
 	$(srcdir)/ColorPalette.cs		\
@@ -54,6 +53,7 @@ GBRAINY_CSDISTFILES =				\
 	$(srcdir)/MemoryIndications.cs		\
 	$(srcdir)/PuzzleMostInCommon.cs		\
 	$(srcdir)/PuzzleBuildTriangle.cs	\
+	$(srcdir)/CairoContextEx.cs		\
 	$(srcdir)/gbrainy.cs			
 
 ASSEMBLIES = \

@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2007 Jordi Mas i Hernàndez <jmas@softcatala.org>
+ * Copyright (C) 2007-2008 Jordi Mas i Hernàndez <jmas@softcatala.org>
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License as
@@ -62,7 +62,7 @@ public class GameDrawingArea : DrawingArea
 		}
 	}
 
-	private void DrawBackground (Cairo.Context gr)
+	private void DrawBackground (CairoContextEx gr)
 	{
 		gr.Save ();
 		gr.Color = new Cairo.Color (1, 1, 1);
@@ -71,7 +71,7 @@ public class GameDrawingArea : DrawingArea
 		gr.Restore ();		
 	}
 
-	private void DrawBand (Cairo.Context gr, double x, double y)
+	private void DrawBand (CairoContextEx gr, double x, double y)
 	{
 		gr.Save ();
 		gr.Rectangle (x, y, 1 - 0.06, 0.06);
@@ -80,7 +80,7 @@ public class GameDrawingArea : DrawingArea
 		gr.Restore ();		
 	}
 
-	private void DrawWelcome (Cairo.Context gr, int area_width, int area_height)
+	private void DrawWelcome (CairoContextEx gr, int area_width, int area_height)
 	{
 		double y = 0.07;
 		double space = 0.25;
@@ -97,7 +97,7 @@ public class GameDrawingArea : DrawingArea
 		gr.Stroke ();
 
 		gr.SetFontSize (0.03);
-		DrawingHelpers.DrawStringWithWrapping (gr, 0.05, y + 0.08, line_space, Catalog.GetString ("gbrainy is a brain teaser game and trainer to have fun and to keep your brain trained. It includes:"));
+		gr.DrawStringWithWrapping (0.05, y + 0.08, line_space, Catalog.GetString ("gbrainy is a brain teaser game and trainer to have fun and to keep your brain trained. It includes:"));
 
 		y = 0.3;
 		image = new ImageSurface (Defines.DATA_DIR + "logic-games-80.png");
@@ -109,7 +109,7 @@ public class GameDrawingArea : DrawingArea
 			gr.Paint ();
 			gr.Restore ();
 		}
-		DrawingHelpers.DrawStringWithWrapping (gr, 0.21, y + 0.03, line_space, Catalog.GetString ("Logic puzzles. Designed to challenge your reasoning and thinking skills."));
+		gr.DrawStringWithWrapping (0.21, y + 0.03, line_space, Catalog.GetString ("Logic puzzles. Designed to challenge your reasoning and thinking skills."));
 
 		y += space;
 		image = new ImageSurface (Defines.DATA_DIR + "math-games-80.png");
@@ -121,7 +121,7 @@ public class GameDrawingArea : DrawingArea
 			gr.Paint ();
 			gr.Restore ();
 		}
-		DrawingHelpers.DrawStringWithWrapping (gr, 0.21, y + 0.03, line_space, Catalog.GetString ("Mental calculation. Based on arithmetical operations that test your mental calculation abilities."));
+		gr.DrawStringWithWrapping (0.21, y + 0.03, line_space, Catalog.GetString ("Mental calculation. Based on arithmetical operations that test your mental calculation abilities."));
 
 		y += space;
 		image = new ImageSurface (Defines.DATA_DIR + "memory-games-80.png");
@@ -133,7 +133,7 @@ public class GameDrawingArea : DrawingArea
 			gr.Paint ();
 			gr.Restore ();
 		}
-		DrawingHelpers.DrawStringWithWrapping (gr, 0.21, y + 0.03, line_space, Catalog.GetString ("Memory trainers. To prove and enhance your short term memory."));
+		gr.DrawStringWithWrapping (0.21, y + 0.03, line_space, Catalog.GetString ("Memory trainers. To prove and enhance your short term memory."));
 		gr.Stroke ();
 	}
 
@@ -165,7 +165,7 @@ public class GameDrawingArea : DrawingArea
 		finish = OnFinish;
 	}
 
-	private void DrawCountDown (Cairo.Context gr, int area_width, int area_height)
+	private void DrawCountDown (CairoContextEx gr, int area_width, int area_height)
 	{
 		gr.Scale (area_width, area_height);
 
@@ -176,7 +176,7 @@ public class GameDrawingArea : DrawingArea
 		gr.Color = new Cairo.Color (0, 0, 0, 1);
 
 		gr.SetFontSize (0.033);
-		DrawingHelpers.DrawTextCentered (gr, 0.5, 0.1, Catalog.GetString ("Get ready to memorize the next objects..."));
+		gr.DrawTextCentered (0.5, 0.1, Catalog.GetString ("Get ready to memorize the next objects..."));
 		gr.Stroke ();
 
 		gr.SetFontSize (0.4);
@@ -191,7 +191,7 @@ public class GameDrawingArea : DrawingArea
 
 	}
 
-	private void DrawScores (Cairo.Context gr, int area_width, int area_height)
+	private void DrawScores (CairoContextEx gr, int area_width, int area_height)
 	{
 		double y = 0.08, x = 0.05;
 		double space_small = 0.06;
@@ -266,7 +266,7 @@ public class GameDrawingArea : DrawingArea
 		y += 0.08;
 		for (int i = 0; i < tips_shown; i++)
 		{
-			y = DrawingHelpers.DrawStringWithWrapping (gr, x, y, space_small, "- " + GetTip ((int) random_indices[i]));
+			y = gr.DrawStringWithWrapping (x, y, space_small, "- " + GetTip ((int) random_indices[i]));
 			if (y > 0.85)
 				break;
 
@@ -312,7 +312,7 @@ public class GameDrawingArea : DrawingArea
 
 		int w, h;
 		args.Window.GetSize (out w, out h);
-		Cairo.Context cr = Gdk.CairoHelper.Create (args.Window);
+		CairoContextEx cr = CairoContextEx.CreateFromGdk (args.Window);
 		
 		switch (mode) {
 		case Modes.Welcome:

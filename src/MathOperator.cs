@@ -81,7 +81,7 @@ public class MathOperator : Game
 		right_answer = String.Format (Catalog.GetString ("{0} and {1}"), oper1, oper2);
 	}
 
-	public override void Draw (Cairo.Context gr, int area_width, int area_height)
+	public override void Draw (CairoContextEx gr, int area_width, int area_height)
 	{	
 		double aligned_pos = 0.58;
 
@@ -90,15 +90,15 @@ public class MathOperator : Game
 		PrepareGC (gr);
 		SetLargeFont (gr);
 
-		DrawingHelpers.DrawTextAlignedRight (gr, aligned_pos, DrawAreaY + 0.2, number_a.ToString ());
-		DrawingHelpers.DrawTextAlignedRight (gr, aligned_pos, DrawAreaY + 0.3, number_b.ToString ());
-		DrawingHelpers.DrawTextAlignedRight (gr, aligned_pos, DrawAreaY + 0.4, number_c.ToString ());
+		gr.DrawTextAlignedRight (aligned_pos, DrawAreaY + 0.2, number_a.ToString ());
+		gr.DrawTextAlignedRight (aligned_pos, DrawAreaY + 0.3, number_b.ToString ());
+		gr.DrawTextAlignedRight (aligned_pos, DrawAreaY + 0.4, number_c.ToString ());
 
 		gr.MoveTo (DrawAreaX + 0.2, DrawAreaY + 0.45);
 		gr.LineTo (DrawAreaX + 0.5, DrawAreaY + 0.45);
 		gr.Stroke ();
 
-		DrawingHelpers.DrawTextAlignedRight (gr, aligned_pos, DrawAreaY + 0.55, total.ToString ());
+		gr.DrawTextAlignedRight (aligned_pos, DrawAreaY + 0.55, total.ToString ());
 
 		gr.MoveTo (DrawAreaX + 0.2, DrawAreaY + 0.25);
 		gr.ShowText ((DrawAnswer == true) ? oper1.ToString () : "?");

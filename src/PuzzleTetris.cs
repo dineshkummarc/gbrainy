@@ -59,7 +59,7 @@ public class PuzzleTetris : Game
 		}
 	}
 
-	private void DrawQuestionFigures (Cairo.Context gr, double x, double y, int figure)
+	private void DrawQuestionFigures (CairoContextEx gr, double x, double y, int figure)
 	{
 		switch (figure) {
 		case 0:
@@ -99,7 +99,7 @@ public class PuzzleTetris : Game
 		}
 	}
 
-	private void DrawAnswerFigures (Cairo.Context gr, double x, double y, int figure)
+	private void DrawAnswerFigures (CairoContextEx gr, double x, double y, int figure)
 	{
 		switch (figure) {
 		case 0:
@@ -131,7 +131,7 @@ public class PuzzleTetris : Game
 		gr.Stroke ();
 	}
 
-	public override void Draw (Cairo.Context gr, int area_width, int area_height)
+	public override void Draw (CairoContextEx gr, int area_width, int area_height)
 	{
 		double x = DrawAreaX, y = DrawAreaY + 0.1;
 

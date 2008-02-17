@@ -113,7 +113,7 @@ public abstract class Memory : Game
 		timer.Enabled = false;
 	}		
 
-	public override void Draw (Cairo.Context gr, int area_width, int area_height)
+	public override void Draw (CairoContextEx gr, int area_width, int area_height)
 	{	
 		gr.Scale (area_width, area_height);
 		DrawBackground (gr);
@@ -137,7 +137,7 @@ public abstract class Memory : Game
 		}		
 	}
 
-	public override void DrawPreview (Cairo.Context gr, int width, int height)
+	public override void DrawPreview (CairoContextEx gr, int width, int height)
 	{
 		gr.Scale (width, height);
 		DrawBackground (gr);
@@ -145,9 +145,9 @@ public abstract class Memory : Game
 		DrawObjectToMemorize (gr, width, height);
 	}
 
-	public virtual void DrawPossibleAnswers (Cairo.Context gr, int area_width, int area_height) {}
+	public virtual void DrawPossibleAnswers (CairoContextEx gr, int area_width, int area_height) {}
 
-	public virtual void DrawObjectToMemorize (Cairo.Context gr, int area_width, int area_height)
+	public virtual void DrawObjectToMemorize (CairoContextEx gr, int area_width, int area_height)
 	{
 		double percentage;
 
@@ -158,7 +158,7 @@ public abstract class Memory : Game
 		DrawTimeBar (gr, 0.1, 0.2, percentage);
 	}
 
-	public void DrawTimeBar (Cairo.Context gr, double x, double y, double percentage)
+	public void DrawTimeBar (CairoContextEx gr, double x, double y, double percentage)
 	{
 		double width = 0.04, height = 0.6;
 		double w = 0.003, h = 0.003;

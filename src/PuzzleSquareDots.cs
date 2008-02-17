@@ -104,7 +104,7 @@ public class PuzzleSquareDots : Game
 		}
 	}
 
-	public void DrawFigure (Cairo.Context gr, double x, double y, bool [] puzzle, int index)
+	public void DrawFigure (CairoContextEx gr, double x, double y, bool [] puzzle, int index)
 	{
 		double pos_x = x, pos_y = y;
 		double square_size = figure_size / lines;
@@ -148,7 +148,7 @@ public class PuzzleSquareDots : Game
 		}
 	}
 
-	public void DrawPossibleAnswer (Cairo.Context gr, double x, double y, int figure)
+	public void DrawPossibleAnswer (CairoContextEx gr, double x, double y, int figure)
 	{
 		switch (figure) {
 		case 0: // Good answer
@@ -163,7 +163,7 @@ public class PuzzleSquareDots : Game
 		}
 	}
 	
-	public override void Draw (Cairo.Context gr, int area_width, int area_height)
+	public override void Draw (CairoContextEx gr, int area_width, int area_height)
 	{
 		double x = DrawAreaX, y = DrawAreaY;
 

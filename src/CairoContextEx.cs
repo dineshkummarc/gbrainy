@@ -1,0 +1,116 @@
+/*
+ * Copyright (C) 2007-2008 Jordi Mas i Hernàndez <jmas@softcatala.org>
+ *
+ * This program is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU General Public License as
+ * published by the Free Software Foundation; either version 2 of the
+ * License, or (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ * General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public
+ * License along with this program; if not, write to the
+ * Free Software Foundation, Inc., 59 Temple Place - Suite 330,
+ * Boston, MA 02111-1307, USA.
+ */
+
+using System;
+using Cairo;
+using Mono.Unix;
+using System.Text;
+using System.Runtime.InteropServices;
+
+
+public class CairoContextEx : Cairo.Context
+{
+	public CairoContextEx (IntPtr state) : base (state)
+	{
+
+	}
+	
+	[DllImport("libgdk-x11-2.0.so")]
+	static extern IntPtr gdk_cairo_create(IntPtr drawable);
+	
+	public static CairoContextEx CreateFromGdk (Gdk.Drawable drawable) 
+	{
+		IntPtr raw_ret = gdk_cairo_create (drawable == null ? IntPtr.Zero : drawable.Handle);
+		return new CairoContextEx (raw_ret);
+	}
+	
+	public void DrawTextAlignedRight (double x, double y, string str)
+	{
+		TextExtents extents;	
+
+		extents = TextExtents (str);
+		MoveTo (x - extents.Width, y);
+		ShowText (str);
+		Stroke ();
+	}
+
+	// From a giving point centers the text into it
+	public void DrawTextCentered (double x, double y, string str)
+	{
+		TextExtents extents;
+		extents = TextExtents (str);
+		MoveTo (x -extents.Width / 2, y + extents.Height / 2);
+		ShowText (str);
+		Stroke ();
+	}
+
+	public double DrawStringWithWrapping (double x, double y, double line_space, string str)
+	{
+		TextExtents extents;
+		StringBuilder sb = new StringBuilder ();
+		int idx = 0, prev = 0;			
+
+		while (idx < str.Length) {
+			prev = idx;
+			idx = str.IndexOf (' ', prev + 1);
+			if (idx == -1)
+				idx = str.Length;
+
+			extents = TextExtents (sb.ToString () + str.Substring (prev, idx - prev));
+			if (extents.Width > 1.0 - x - 0.05) {
+				MoveTo (x, y);
+				ShowText (sb.ToString ());
+				Stroke ();
+				y += line_space;
+				sb = new StringBuilder ();
+				prev++;
+			} 
+
+			sb.Append (str.Substring (prev, idx - prev)); 
+
+			if (str.Length == idx) {
+				MoveTo (x, y);
+				ShowText (sb.ToString ());
+				Stroke ();					
+			}				
+		}
+
+		return y;
+	}
+
+	public void DrawEquilateralTriangle (double x, double y, double size)
+	{
+		MoveTo (x + (size / 2), y);
+		LineTo (x, y + size);
+		LineTo (x + size, y + size);
+		LineTo (x + (size / 2), y);
+		Stroke ();	
+	}
+
+	public void DrawDiamond (double x, double y, double size)
+	{
+		MoveTo (x + size / 2, y);
+		LineTo (x, y + size / 2);
+		LineTo (x + size / 2, y + size);
+		LineTo (x + size, y + size / 2);
+		LineTo (x + size / 2, y);
+		Stroke ();
+	}
+}
+

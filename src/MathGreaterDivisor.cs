@@ -193,7 +193,7 @@ public class MathGreaterDivisor : Game
 		return rslt;
 	}
 
-	public override void Draw (Cairo.Context gr, int area_width, int area_height)
+	public override void Draw (CairoContextEx gr, int area_width, int area_height)
 	{	
 		double x = DrawAreaX, y = DrawAreaY + 0.1;
 

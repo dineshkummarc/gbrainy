@@ -67,7 +67,7 @@ public class PuzzleFigures : Game
 		right_answer = sb.ToString ();
 	}
 
-	private void AnswerCoding (Cairo.Context gr, double x, double y)
+	private void AnswerCoding (CairoContextEx gr, double x, double y)
 	{
 		double pos_x = x;
 
@@ -78,7 +78,7 @@ public class PuzzleFigures : Game
 		gr.MoveTo (pos_x, y + 0.05);
 		gr.ShowText ("A ->");
 		gr.Stroke ();
-		DrawingHelpers.DrawDiamond (gr, x + 0.1, y, 0.1);
+		gr.DrawDiamond (x + 0.1, y, 0.1);
 		gr.Stroke ();
 	
 		pos_x += 0.3;
@@ -94,7 +94,7 @@ public class PuzzleFigures : Game
 		gr.ShowText ("C ->");
 		gr.Stroke ();
 		pos_x += 0.1;
-		DrawingHelpers.DrawEquilateralTriangle (gr, pos_x, y, 0.1);
+		gr.DrawEquilateralTriangle (pos_x, y, 0.1);
 		gr.Stroke ();
 
 		y += 0.18;
@@ -102,7 +102,7 @@ public class PuzzleFigures : Game
 		gr.ShowText (Catalog.GetString ("E.g: ACB (diamond, circle, triangle)"));	
 	}
 
-	public override void Draw (Cairo.Context gr, int area_width, int area_height)
+	public override void Draw (CairoContextEx gr, int area_width, int area_height)
 	{		
 		int element;
 		double figure_width = 0.1, figure_height = 0.1, space_width = 0.05, space_height = 0.1;
@@ -121,13 +121,13 @@ public class PuzzleFigures : Game
 				switch ((int) figures[(n * 6) + element])
 				{
 					case 0:
-						DrawingHelpers.DrawDiamond (gr, x, y, 0.1);
+						gr.DrawDiamond (x, y, 0.1);
 						break;
 					case 1:
 						gr.Arc (x + 0.05, y + 0.05, 0.05, 0, 2 * Math.PI);	
 						break;
 					case 2:
-						DrawingHelpers.DrawEquilateralTriangle (gr, x, y, 0.1);
+						gr.DrawEquilateralTriangle (x, y, 0.1);
 						break;
 					default:
 						break;

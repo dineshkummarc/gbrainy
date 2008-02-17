@@ -92,7 +92,7 @@ public class PuzzlePairs : Game
 	}
 
 
-	private void DrawTriangle (Cairo.Context gr, double x, double y, int index, bool question)
+	private void DrawTriangle (CairoContextEx gr, double x, double y, int index, bool question)
 	{
 		gr.MoveTo (x + figure_size / 2, y);
 		gr.LineTo (x, y + figure_size);
@@ -111,7 +111,7 @@ public class PuzzlePairs : Game
 			gr.ShowText (numbers [(elements_group * group) + (index * 2) + 1].ToString ());	
 	}
 
-	public override void Draw (Cairo.Context gr, int area_width, int area_height)
+	public override void Draw (CairoContextEx gr, int area_width, int area_height)
 	{
 		double x = DrawAreaX, y = DrawAreaY + 0.1;
 

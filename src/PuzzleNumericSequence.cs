@@ -82,7 +82,7 @@ public class PuzzleNumericSequence : Game
 	}
 
 
-	public override void Draw (Cairo.Context gr, int area_width, int area_height)
+	public override void Draw (CairoContextEx gr, int area_width, int area_height)
 	{
 		StringBuilder sequence = new StringBuilder (64);
 

@@ -119,7 +119,7 @@ public class MemoryNumbers : Memory
 	}
 	
 
-	public override void DrawPossibleAnswers (Cairo.Context gr, int area_width, int area_height)
+	public override void DrawPossibleAnswers (CairoContextEx gr, int area_width, int area_height)
 	{
 		double x = DrawAreaX , y = DrawAreaY;
 		gr.Color = DefaultDrawingColor;
@@ -136,18 +136,18 @@ public class MemoryNumbers : Memory
 		}
 	}
 
-	public override void DrawObjectToMemorize (Cairo.Context gr, int area_width, int area_height)
+	public override void DrawObjectToMemorize (CairoContextEx gr, int area_width, int area_height)
 	{
 		base.DrawObjectToMemorize (gr, area_width, area_height);
 		DrawSquare (gr, 0.3 + DrawAreaX, DrawAreaY + 0.1, numbers, 0);
 	}
 
-	private void DrawSquare (Cairo.Context gr, double x, double y, int[] nums, int index)
+	private void DrawSquare (CairoContextEx gr, double x, double y, int[] nums, int index)
 	{
 		for (int column = 0; column < columns; column++) {
 			for (int row = 0; row < rows; row++) {
 				gr.Rectangle (x + row * rect_w, y + column * rect_h, rect_w, rect_h);
-				DrawingHelpers.DrawTextCentered (gr, x + (rect_w / 2) + column * rect_w, y + (rect_h / 2) + row * rect_h, 
+				gr.DrawTextCentered (x + (rect_w / 2) + column * rect_w, y + (rect_h / 2) + row * rect_h, 
 					(nums[index + column + (row * columns)]).ToString ());
 			}
 		}

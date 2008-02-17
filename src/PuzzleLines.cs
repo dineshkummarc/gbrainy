@@ -64,14 +64,14 @@ public class PuzzleLines : Game
 		right_answer = (fig1 + fig2).ToString ();
 	}
 
-	private void DrawLine (Cairo.Context gr, double x, double y, double w, double h)
+	private void DrawLine (CairoContextEx gr, double x, double y, double w, double h)
 	{
 		gr.MoveTo (x, y);
 		gr.LineTo (x + w, y + h);
 		gr.Stroke ();
 	}
 
-	public override void Draw (Cairo.Context gr, int area_width, int area_height)
+	public override void Draw (CairoContextEx gr, int area_width, int area_height)
 	{
 		gr.Scale (area_width, area_height);
 

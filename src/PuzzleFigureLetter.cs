@@ -109,7 +109,7 @@ public class PuzzleFigureLetter : Game
 		return false;
 	}
 
-	public override void Draw (Cairo.Context gr, int area_width, int area_height)
+	public override void Draw (CairoContextEx gr, int area_width, int area_height)
 	{
 		double x = DrawAreaX + 0.05;
 		double y = DrawAreaY + 0.1;

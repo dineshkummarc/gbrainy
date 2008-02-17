@@ -126,7 +126,7 @@ public class PuzzleMatrixNumbers : Game
 		right_answer = numbers[3*coordinateA + 3*coordinateB].ToString ();
 	}
 
-	public override void Draw (Cairo.Context gr, int area_width, int area_height)
+	public override void Draw (CairoContextEx gr, int area_width, int area_height)
 	{
 		double rect_w = DrawAreaWidth / rows;
 		double rect_h = DrawAreaHeight / columns;

@@ -60,7 +60,7 @@ public class PuzzleDivideCircle : Game
 		}			
 	}
 
-	private void DrawAndConnectPoints (Cairo.Context gr, double x, double y, Cercle[] cercles, bool connect)
+	private void DrawAndConnectPoints (CairoContextEx gr, double x, double y, Cercle[] cercles, bool connect)
 	{
 		double point_size = 0.01;
 		for (int i = 0; i < cercles.Length; i++) {
@@ -85,7 +85,7 @@ public class PuzzleDivideCircle : Game
 		gr.Restore ();
 	}
 
-	public override void Draw (Cairo.Context gr, int area_width, int area_height)
+	public override void Draw (CairoContextEx gr, int area_width, int area_height)
 	{
 		double x = DrawAreaX + 0.05, y = DrawAreaY;
 		double pos_x = x;

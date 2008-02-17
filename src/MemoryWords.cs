@@ -115,7 +115,7 @@ public class MemoryWords : Memory
 		base.Initialize ();
 	}
 	
-	public override void DrawPossibleAnswers (Cairo.Context gr, int area_width, int area_height)
+	public override void DrawPossibleAnswers (CairoContextEx gr, int area_width, int area_height)
 	{
 		double x= DrawAreaX + 0.125, y = DrawAreaY + 0.1;
 		int cnt = 0;
@@ -139,13 +139,13 @@ public class MemoryWords : Memory
 		}
 	}
 	
-	public override void DrawObjectToMemorize (Cairo.Context gr, int area_width, int area_height)
+	public override void DrawObjectToMemorize (CairoContextEx gr, int area_width, int area_height)
 	{
 		base.DrawObjectToMemorize (gr, area_width, area_height);
 		DrawObject (gr, area_width, area_height);
 	}
 	
-	private void DrawObject (Cairo.Context gr, int area_width, int area_height)
+	private void DrawObject (CairoContextEx gr, int area_width, int area_height)
 	{
 		double x= DrawAreaX + 0.125, y = DrawAreaY + 0.1;
 		for (int i = 0; i < showed; i++)

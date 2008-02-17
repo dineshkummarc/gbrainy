@@ -62,7 +62,7 @@ public class MathTwoNumbers : Game
 		right_answer = String.Format (Catalog.GetString ("{0} and {1}"), number_a, number_b);
 	}
 
-	public override void Draw (Cairo.Context gr, int area_width, int area_height)
+	public override void Draw (CairoContextEx gr, int area_width, int area_height)
 	{	
 		double x = DrawAreaX;
 

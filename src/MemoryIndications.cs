@@ -52,14 +52,14 @@ public class MemoryIndications : Memory
 			Up
 		}
 
-		public void Draw (Cairo.Context gr, ref double x, ref double y, Indication next_prev)
+		public void Draw (CairoContextEx gr, ref double x, ref double y, Indication next_prev)
 		{
 			double line_length = 0.050;
 			double points = 0.050;
 
 			if (type == Type.Start) {
 				gr.Rectangle (x, y, points, points);
-				DrawingHelpers.DrawTextCentered (gr, x + points /2 , y + points /2, ((int)obj).ToString ());
+				gr.DrawTextCentered (x + points /2 , y + points /2, ((int)obj).ToString ());
 				switch ((TurnDirection) next_prev.obj) {
 				case TurnDirection.Right:
 					x += points;
@@ -116,7 +116,7 @@ public class MemoryIndications : Memory
 					break;
 				}
 				gr.Rectangle (x, y, points, points);
-				DrawingHelpers.DrawTextCentered (gr, x + points /2 , y + points /2, ((int)obj).ToString ());
+				gr.DrawTextCentered (x + points /2 , y + points /2, ((int)obj).ToString ());
 			}
 		}	
 	
@@ -228,7 +228,7 @@ public class MemoryIndications : Memory
 		return answer;
 	}
 
-	private void DrawPossibleAnswers (Cairo.Context gr, double x, double y, Indication[] indications)
+	private void DrawPossibleAnswers (CairoContextEx gr, double x, double y, Indication[] indications)
 	{		
 		for (int i = 0; i < indications.Length - 1; i++)
 			indications[i].Draw (gr, ref x, ref y, indications[i + 1]);
@@ -252,7 +252,7 @@ public class MemoryIndications : Memory
 		return null;
 	}
 
-	public override void DrawPossibleAnswers (Cairo.Context gr, int area_width, int area_height)
+	public override void DrawPossibleAnswers (CairoContextEx gr, int area_width, int area_height)
 	{
 		double x, y;
 
@@ -278,7 +278,7 @@ public class MemoryIndications : Memory
 		gr.ShowText (String.Format (Catalog.GetString ("Figure {0}"), "D"));
 	}
 	
-	public override void DrawObjectToMemorize (Cairo.Context gr, int area_width, int area_height)
+	public override void DrawObjectToMemorize (CairoContextEx gr, int area_width, int area_height)
 	{
 		base.DrawObjectToMemorize (gr, area_width, area_height);
 

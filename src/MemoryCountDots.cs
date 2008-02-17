@@ -78,13 +78,13 @@ public class MemoryCountDots : Memory
 		base.Initialize ();
 	}
 
-	public override void DrawObjectToMemorize (Cairo.Context gr, int area_width, int area_height)
+	public override void DrawObjectToMemorize (CairoContextEx gr, int area_width, int area_height)
 	{
 		base.DrawObjectToMemorize (gr, area_width, area_height);
 		DrawObject (gr, area_width, area_height);
 	}
 
-	private void DrawObject (Cairo.Context gr, int area_width, int area_height)
+	private void DrawObject (CairoContextEx gr, int area_width, int area_height)
 	{
 		palette.Alpha = alpha;
 		double x = DrawAreaX + 0.15, y = DrawAreaY + 0.1 ;

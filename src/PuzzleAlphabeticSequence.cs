@@ -73,7 +73,7 @@ public class PuzzleAlphabeticSequence : Game
 		return s;
 	}
 
-	private void DrawRectangleWithText (Cairo.Context gr, double x, double y, int index)
+	private void DrawRectangleWithText (CairoContextEx gr, double x, double y, int index)
 	{
 		gr.Rectangle (x, y, figure_size, figure_size);
 
@@ -95,7 +95,7 @@ public class PuzzleAlphabeticSequence : Game
 	}
 
 
-	public override void Draw (Cairo.Context gr, int area_width, int area_height)
+	public override void Draw (CairoContextEx gr, int area_width, int area_height)
 	{
 		double x = DrawAreaX + 0.05, y = DrawAreaY + 0.1;
 

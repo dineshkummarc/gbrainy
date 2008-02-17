@@ -49,7 +49,7 @@ public class PuzzleSquareSheets : Game
 		right_answer = "5";
 	}
 
-	public override void Draw (Cairo.Context gr, int area_width, int area_height)
+	public override void Draw (CairoContextEx gr, int area_width, int area_height)
 	{
 		double x = DrawAreaX + 0.2, y = DrawAreaY + 0.2, width = 0.4, height = 0.4;
 

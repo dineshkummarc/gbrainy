@@ -92,11 +92,11 @@ public class PuzzleBuildTriangle : Game
 		right_answer = answers[0].ToString () + answers[1].ToString () + answers[2].ToString ();		
 	}
 
-	private void DrawFigure (Cairo.Context gr, double x, double y, Figures figure)
+	private void DrawFigure (CairoContextEx gr, double x, double y, Figures figure)
 	{
 		switch (figure) {
 		case Figures.TriangleA:
-			DrawingHelpers.DrawEquilateralTriangle (gr, x, y, figure_size);
+			gr.DrawEquilateralTriangle (x, y, figure_size);
 			break;
 		case Figures.TriangleB:
 			gr.MoveTo (x, y);
@@ -125,7 +125,7 @@ public class PuzzleBuildTriangle : Game
 			gr.Stroke ();
 			break;
 		case Figures.Diamon:
-			DrawingHelpers.DrawDiamond (gr, x, y, figure_size);
+			gr.DrawDiamond (x, y, figure_size);
 			break;
 		case Figures.TriangleD:
 			gr.MoveTo (x, y);
@@ -137,7 +137,7 @@ public class PuzzleBuildTriangle : Game
 		}
 	}
 
-	public override void Draw (Cairo.Context gr, int area_width, int area_height)
+	public override void Draw (CairoContextEx gr, int area_width, int area_height)
 	{
 		double x = DrawAreaX + 0.05, y = DrawAreaY + 0.05;
 		double degrees, x1, x2, dist;

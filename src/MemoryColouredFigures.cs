@@ -133,7 +133,7 @@ public class MemoryColouredFigures : Memory
 		}
 	}
 
-	public override void DrawPossibleAnswers (Cairo.Context gr, int area_width, int area_height)
+	public override void DrawPossibleAnswers (CairoContextEx gr, int area_width, int area_height)
 	{
 		double x = DrawAreaX, y = DrawAreaY;
 	
@@ -152,14 +152,14 @@ public class MemoryColouredFigures : Memory
 		}
 	}
 
-	public override void DrawObjectToMemorize (Cairo.Context gr, int area_width, int area_height)
+	public override void DrawObjectToMemorize (CairoContextEx gr, int area_width, int area_height)
 	{
 		base.DrawObjectToMemorize (gr, area_width, area_height);
 		palette.Alpha = alpha; 
 		DrawSquare (gr, DrawAreaX + 0.3, DrawAreaY + 0.1, squares_colours, 0);
 	}
 
-	private void DrawSquare (Cairo.Context gr, double x, double y, SquareColor []colours, int index)
+	private void DrawSquare (CairoContextEx gr, double x, double y, SquareColor []colours, int index)
 	{
 		gr.Save ();
 		for (int column = 0; column < columns; column++) {

@@ -75,7 +75,7 @@ public class PuzzleNextFigure : Game
 		}
 	}
 
-	private void DrawDiamon (Cairo.Context gr, double x, double y, CerclePosition cercles)
+	private void DrawDiamon (CairoContextEx gr, double x, double y, CerclePosition cercles)
 	{	
 		double distance = 0.04;
 
@@ -107,7 +107,7 @@ public class PuzzleNextFigure : Game
 		}
 	}
 
-	public override void Draw (Cairo.Context gr, int area_width, int area_height)
+	public override void Draw (CairoContextEx gr, int area_width, int area_height)
 	{
 		double x = DrawAreaX;
 		double y = DrawAreaY;

@@ -54,7 +54,7 @@ public class PuzzleCirclesRectangle : Game
 		right_answer = "68";
 	}
 
-	public override void Draw (Cairo.Context gr, int area_width, int area_height)
+	public override void Draw (CairoContextEx gr, int area_width, int area_height)
 	{
 		double first_x = DrawAreaX + 0.05;
 		double first_y = DrawAreaY + 0.1;

@@ -119,7 +119,7 @@ public class MathWhichNumber : Game
 		right_answer += (char) (65 + which);
 	}
 
-	public override void Draw (Cairo.Context gr, int area_width, int area_height)
+	public override void Draw (CairoContextEx gr, int area_width, int area_height)
 	{	
 		double x = DrawAreaX + 0.25, y = DrawAreaY + 0.2;
 		char option;

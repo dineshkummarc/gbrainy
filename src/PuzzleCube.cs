@@ -49,7 +49,7 @@ public class PuzzleCube : Game
 		right_answer += (char) (48 + question_answer[(pair * 2) + 1]);
 	}
 
-	public override void Draw (Cairo.Context gr, int area_width, int area_height)
+	public override void Draw (CairoContextEx gr, int area_width, int area_height)
 	{
 		double x = DrawAreaX + 0.1;
 		double y = DrawAreaY + 0.1;

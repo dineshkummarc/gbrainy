@@ -67,7 +67,7 @@ public class PuzzleMoveFigure: Game
 		
 	}
 
-	public override void Draw (Cairo.Context gr, int area_width, int area_height)
+	public override void Draw (CairoContextEx gr, int area_width, int area_height)
 	{
 		double first_x, x, y;
 		double figure_size = 0.07 + (0.01 * (5 - lines));

@@ -68,7 +68,7 @@ public class PuzzleSquares : Game
 		}
 	}
 
-	public override void Draw (Cairo.Context gr, int area_width, int area_height)
+	public override void Draw (CairoContextEx gr, int area_width, int area_height)
 	{
 		double rect_w = DrawAreaWidth / rows;
 		double rect_h = DrawAreaHeight / columns;

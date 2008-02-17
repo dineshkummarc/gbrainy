@@ -103,7 +103,7 @@ public class MemoryFigures : Memory
 		base.Initialize ();
 	}
 
-	public override void DrawPossibleAnswers (Cairo.Context gr, int area_width, int area_height)
+	public override void DrawPossibleAnswers (CairoContextEx gr, int area_width, int area_height)
 	{
 		int col = 1, fig;
 		double x = start_x, y = start_y;
@@ -124,7 +124,7 @@ public class MemoryFigures : Memory
 			if (figure == question_pos)
 				DrawFigure (gr, x, y, (FigureType) fig);
 			else {
-				DrawingHelpers.DrawTextCentered (gr, x + rect_w / 2, y + rect_h / 2, (figure + 1).ToString ());
+				gr.DrawTextCentered (x + rect_w / 2, y + rect_h / 2, (figure + 1).ToString ());
 				gr.Stroke ();
 			}
 
@@ -138,14 +138,14 @@ public class MemoryFigures : Memory
 		}
 	}
 
-	public override void DrawObjectToMemorize (Cairo.Context gr, int area_width, int area_height)
+	public override void DrawObjectToMemorize (CairoContextEx gr, int area_width, int area_height)
 	{
 		base.DrawObjectToMemorize (gr, area_width, area_height);
 		DrawGrid (gr, area_width, area_height);
 		DrawAllFigures (gr, area_width, area_height);
 	}
 
-	private void DrawAllFigures (Cairo.Context gr, int area_width, int area_height)
+	private void DrawAllFigures (CairoContextEx gr, int area_width, int area_height)
 	{
 		int col = 1, fig;
 		double x = start_x, y = start_y;
@@ -168,7 +168,7 @@ public class MemoryFigures : Memory
 		}
 	}
 
-	private void DrawFigure (Cairo.Context gr, double x, double y, FigureType fig)
+	private void DrawFigure (CairoContextEx gr, double x, double y, FigureType fig)
 	{
 		double space_x, space_y;
 
@@ -177,21 +177,21 @@ public class MemoryFigures : Memory
 
 		switch (fig) {
 		case FigureType.Triangle:
-			DrawingHelpers.DrawEquilateralTriangle (gr, x + space_x, y + space_y, figure_size);
+			gr.DrawEquilateralTriangle (x + space_x, y + space_y, figure_size);
 			break;
 		case FigureType.Rectangle:
 			gr.Rectangle (x + space_x, y + space_y, figure_size, figure_size);
 			gr.Stroke ();
 			break;
 		case FigureType.Diamond:
-			DrawingHelpers.DrawDiamond  (gr, x + space_x, y + space_y, figure_size);
+			gr.DrawDiamond (x + space_x, y + space_y, figure_size);
 			break;
 		case FigureType.Cercle:
 			gr.Arc (x + space_x + figure_size / 2, y + space_y + figure_size / 2, figure_size / 2, 0, 2 * Math.PI);	
 			gr.Stroke ();
 			break;
 		case FigureType.TriangleWithLine:
-			DrawingHelpers.DrawEquilateralTriangle (gr, x + space_x, y + space_y, figure_size);
+			gr.DrawEquilateralTriangle (x + space_x, y + space_y, figure_size);
 			gr.MoveTo (x + space_x + figure_size / 2, y + space_y);
 			gr.LineTo (x + space_x + figure_size / 2, y + space_y + figure_size);
 			gr.Stroke ();
@@ -205,7 +205,7 @@ public class MemoryFigures : Memory
 			gr.Stroke ();
 			break;
 		case FigureType.DiamondWithLine:
-			DrawingHelpers.DrawDiamond  (gr, x + space_x, y + space_y, figure_size);
+			gr.DrawDiamond (x + space_x, y + space_y, figure_size);
 			gr.MoveTo (x + space_x + figure_size / 2, y + space_y);
 			gr.LineTo (x + space_x + figure_size / 2, y + space_y + figure_size);
 			gr.Stroke ();
@@ -220,7 +220,7 @@ public class MemoryFigures : Memory
 		}
 	}
 
-	private void DrawGrid (Cairo.Context gr, int area_width, int area_height)
+	private void DrawGrid (CairoContextEx gr, int area_width, int area_height)
 	{
 		double x = start_x, y = start_y;
 		gr.Color = new Color (DefaultDrawingColor.R, DefaultDrawingColor.G, DefaultDrawingColor.B, alpha);

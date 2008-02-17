@@ -100,7 +100,7 @@ public class MathArithmetical : Game
 		right_answer = result.ToString ();
 	}
 	
-	public override void Draw (Cairo.Context gr, int area_width, int area_height)
+	public override void Draw (CairoContextEx gr, int area_width, int area_height)
 	{	
 		double operand_y = DrawAreaY + 0.2, operand_space = 0.1;
 		double aligned_pos = 0.58;
@@ -113,7 +113,7 @@ public class MathArithmetical : Game
 		SetLargeFont (gr);
 		for (int i = 0; i < operands.Length - 1; i++)
 		{
-			DrawingHelpers.DrawTextAlignedRight (gr, aligned_pos, operand_y, operands[i].ToString ());
+			gr.DrawTextAlignedRight (aligned_pos, operand_y, operands[i].ToString ());
 			gr.MoveTo (DrawAreaX + 0.2, operand_y + 0.05);	
 
 			switch (operation) {
@@ -131,7 +131,7 @@ public class MathArithmetical : Game
 			operand_y += operand_space;
 		}
 
-		DrawingHelpers.DrawTextAlignedRight (gr, aligned_pos, operand_y, operands[operands.Length - 1].ToString ());
+		gr.DrawTextAlignedRight (aligned_pos, operand_y, operands[operands.Length - 1].ToString ());
 
 		operand_y += 0.05;
 		gr.MoveTo (DrawAreaX + 0.2, operand_y);
@@ -140,7 +140,7 @@ public class MathArithmetical : Game
 
 		if (DrawAnswer) {
 			operand_y += 0.05;
-			DrawingHelpers.DrawTextAlignedRight (gr, aligned_pos, operand_y + 0.05, right_answer);
+			gr.DrawTextAlignedRight (aligned_pos, operand_y + 0.05, right_answer);
 			gr.Stroke ();
 		}
 

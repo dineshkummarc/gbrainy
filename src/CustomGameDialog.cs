@@ -217,7 +217,7 @@ public class CustomGameDialog
    
 			int w, h;
 			args.Window.GetSize (out w, out h);
-			Cairo.Context cr = Gdk.CairoHelper.Create (args.Window);
+			CairoContextEx cr = CairoContextEx.CreateFromGdk (args.Window);
 			puzzle.DrawPreview (cr, w, h);
 
    			((IDisposable)cr).Dispose();

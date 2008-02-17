@@ -61,7 +61,7 @@ public class PuzzleMissingPiece : Game
 		}
 	}
 
-	private void DrawFigureSequence (Cairo.Context gr, double x, double y, int sequence, bool last_block)
+	private void DrawFigureSequence (CairoContextEx gr, double x, double y, int sequence, bool last_block)
 	{
 		gr.Rectangle (x, y, sub_figure, sub_figure);
 		gr.Rectangle (x + sub_figure, y, sub_figure, sub_figure);
@@ -109,7 +109,7 @@ public class PuzzleMissingPiece : Game
 		gr.Stroke ();
 	}
 
-	private void DrawAnswerFigures (Cairo.Context gr, double x, double y, int figure)
+	private void DrawAnswerFigures (CairoContextEx gr, double x, double y, int figure)
 	{
 		gr.Rectangle (x, y, sub_figure, sub_figure);
 
@@ -131,7 +131,7 @@ public class PuzzleMissingPiece : Game
 		gr.Stroke ();
 	}
 
-	public override void Draw (Cairo.Context gr, int area_width, int area_height)
+	public override void Draw (CairoContextEx gr, int area_width, int area_height)
 	{
 		double x = DrawAreaX + 0.15, y = DrawAreaY;
 		int figure;

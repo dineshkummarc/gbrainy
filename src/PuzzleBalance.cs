@@ -70,7 +70,7 @@ public class PuzzleBalance : Game
 		right_answer = ans.ToString ();
 	}
 
-	public void DrawBalance (Cairo.Context gr, double x, double y, int index, bool full)
+	public void DrawBalance (CairoContextEx gr, double x, double y, int index, bool full)
 	{
 		double width = 0.5;
 		double fig_x = x + 0.1, fig_y = y - 0.11;
@@ -85,10 +85,10 @@ public class PuzzleBalance : Game
 		for (int i = 0; i < total; i++) {
 			switch (balances[i + index]) {
 			case 1:
-				DrawingHelpers.DrawEquilateralTriangle (gr, fig_x, fig_y, 0.05);
+				gr.DrawEquilateralTriangle (fig_x, fig_y, 0.05);
 				break;
 			case 2:
-				DrawingHelpers.DrawDiamond (gr, fig_x, fig_y, 0.05);
+				gr.DrawDiamond (fig_x, fig_y, 0.05);
 				break;
 			case 3:
 				gr.Rectangle (fig_x, fig_y + 0.005, 0.045, 0.045);
@@ -112,12 +112,12 @@ public class PuzzleBalance : Game
 		gr.LineTo (x , y - 0.05);
 		gr.Stroke ();
 		
-		DrawingHelpers.DrawEquilateralTriangle (gr, x + (width / 2) - 0.04, y, 0.08);
+		gr.DrawEquilateralTriangle (x + (width / 2) - 0.04, y, 0.08);
 		gr.Stroke ();
 
 	}
 
-	public override void Draw (Cairo.Context gr, int area_width, int area_height)
+	public override void Draw (CairoContextEx gr, int area_width, int area_height)
 	{		
 		double x = 0.05, y = DrawAreaY + 0.1;
 
