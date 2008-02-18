@@ -27,7 +27,7 @@ public class MathArithmetical : Game
 	public enum Operation
 	{
 		Addition = 0,	
-		Substraction,	
+		Subtraction,	
 		Multiplication,
 		LastOperation
 	}
@@ -71,7 +71,7 @@ public class MathArithmetical : Game
 
 		switch (operation) {
 		case Operation.Addition:
-		case Operation.Substraction:
+		case Operation.Subtraction:
 			operations = 2 + random.Next (max_operations);
 				break;
 		case Operation.Multiplication:
@@ -89,7 +89,7 @@ public class MathArithmetical : Game
 			case Operation.Addition:
 				result += operands[i];
 				break;	
-			case Operation.Substraction:
+			case Operation.Subtraction:
 				result -= operands[i];
 				break;
 			case Operation.Multiplication:
@@ -120,7 +120,7 @@ public class MathArithmetical : Game
 			case Operation.Addition:
 				gr.ShowText ("+");
 				break;	
-			case Operation.Substraction:
+			case Operation.Subtraction:
 				gr.ShowText ("-");
 				break;
 			case Operation.Multiplication:
