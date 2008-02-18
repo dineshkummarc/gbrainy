@@ -31,7 +31,7 @@ public class PuzzleMoveFigure: Game
 	}
 
 	public override string Question {
-		get {return Catalog.GetString ("What is the minimum number of circles that you have to move to convert the left figure into the right figure?");} 
+		get {return Catalog.GetString ("What is the minimum number of circles to be moved in order to convert the left figure into the right figure?");} 
 	}
 	
 	public override string Answer {
@@ -40,10 +40,10 @@ public class PuzzleMoveFigure: Game
 
 			switch (type) {
 			case 0:
-				answer += Catalog.GetString ("Move the circle from the first line to the second and two circles from the fourth to the second and the fifth lines.");
+				answer += Catalog.GetString ("Move the circle from the first line to the second; move two circles from the fourth to the second line; and move the fifth line.");
 				break;
 			case 1:
-				answer += Catalog.GetString ("Move the two first lines and the first and last circle of the last line to the third, sixth and seventh lines.");
+				answer += Catalog.GetString ("Move the two first lines; move the first and last circle of the last line to the third line; and move sixth and seventh lines.");
 				break;
 			}
 			return answer;

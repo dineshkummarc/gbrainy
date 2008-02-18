@@ -30,11 +30,11 @@ public class PuzzleSquares : Game
 	}
 
 	public override string Question {
-		get {return Catalog.GetString ("How many squares of any size can you count of in the figure below?");} 
+		get {return Catalog.GetString ("How many squares of any size do you count of in the figure below?");} 
 	}
 
 	public override string Tip {
-		get { return Catalog.GetString ("A square is a rectangle having all four sides of equal length. A square can be also built from other squares.");}
+		get { return Catalog.GetString ("A square is a rectangle with sides of equal length. A square can also be built from other squares.");}
 	}
 
 	public override string Answer {

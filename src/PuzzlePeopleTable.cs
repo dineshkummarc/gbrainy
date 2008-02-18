@@ -39,7 +39,7 @@ public class PuzzlePeopleTable : Game
 	}
 
 	public override string Name {
-		get {return Catalog.GetString ("People in a table");}
+		get {return Catalog.GetString ("People at a table");}
 	}
 
 	public override string Question {

@@ -72,11 +72,11 @@ public class PuzzleMostInCommon : Game
 	}
 
 	public override string Question {
-		get {return Catalog.GetString ("Which of the possible answers has the most in common with the four given figures?");} 
+		get {return Catalog.GetString ("Which of the possible answers have the most in common with the four given figures?");} 
 	}
 
 	public override string Tip {
-		get { return Catalog.GetString ("Think of the common elements that the given figures have inside.");}
+		get { return Catalog.GetString ("Think of the common elements that the given figures have inside them.");}
 	}
 
 	public override string Answer {
@@ -84,9 +84,9 @@ public class PuzzleMostInCommon : Game
 			string answer = base.Answer + " ";
 
 			if (CurrentDifficulty ==  Difficulty.Easy) 
-				answer += Catalog.GetString ("It has the same number of elements inside the figure that the figures given.");
+				answer += Catalog.GetString ("It has the same number of elements inside the figure as the given figures.");
 			else
-				answer += Catalog.GetString ("It is the figure with more elements in common compared to the figures given.");
+				answer += Catalog.GetString ("It is the figure with the most elements in common compared to the given figures.");
 			
 			return answer;
 		}

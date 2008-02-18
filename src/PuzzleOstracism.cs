@@ -50,7 +50,7 @@ public class PuzzleOstracism : Game
 	public override string Answer {
 		get { 
 			string answer = base.Answer + " ";
-			answer += Catalog.GetString ("In all the equations the digits from the left side should also appear in the right side.");
+			answer += Catalog.GetString ("In all equations the digits from the left side should also appear in the right side.");
 			return answer;
 		}
 	}

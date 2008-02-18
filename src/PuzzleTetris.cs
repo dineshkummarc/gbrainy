@@ -32,13 +32,13 @@ public class PuzzleTetris : Game
 	}
 
 	public override string Question {
-		get {return Catalog.GetString ("Which is the figure that completes the sequence below (A, B or C)?");} 
+		get {return Catalog.GetString ("What figure completes the sequence below (A, B or C)?");} 
 	}
 
 	public override string Answer {
 		get { 
 			string answer = base.Answer + " ";
-			answer += Catalog.GetString ("It is the figure that completes all the possible combinations with four blocks without taking into account rotations.");
+			answer += Catalog.GetString ("It is the figure that completes all possible combinations with four blocks without taking into account rotations.");
 			return answer;
 		}
 	}

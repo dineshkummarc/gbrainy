@@ -101,7 +101,7 @@ public class gbrainy: Program
 		toolbar.Insert (pause_tbbutton, -1);
 
 		button = new ToolButton ("endgame");
-		button.SetTooltip (tooltips, Catalog.GetString ("Ends the game and shows the score"), null);
+		button.SetTooltip (tooltips, Catalog.GetString ("End the game and show score"), null);
 		button.Label = Catalog.GetString ("Finish");
 		button.Clicked += OnEndGame;
 		toolbar.Insert (button, -1);

@@ -33,7 +33,7 @@ public class PuzzleNumericSequence : Game
 	}
 
 	public override string Question {
-		get {return Catalog.GetString ("The next sequence follows a logic. Which number should replace the question mark?");} 
+		get {return Catalog.GetString ("The next sequence follows a logic. What number should replace the question mark?");} 
 	}
 
 	public override string Tip {
@@ -46,13 +46,13 @@ public class PuzzleNumericSequence : Game
 
 			switch (formula) {
 			case 0:
-				answer += Catalog.GetString ("Every number in the sequence is the result of subtracting 1 to the previous number and multiplying it by 2.");
+				answer += Catalog.GetString ("Every number in the sequence is the result of subtracting 1 from the previous number and multiplying it by 2.");
 				break;
 			case 1:
 				answer += Catalog.GetString ("Every number in the sequence is the result of adding 1 to the previous number and multiplying it by 3.");
 				break;
 			case 2:
-				answer += Catalog.GetString ("Every number in the sequence is the result of subtracting 2 to the previous number and multiplying it by -2.");
+				answer += Catalog.GetString ("Every number in the sequence is the result of subtracting 2 from the previous number and multiplying it by -2.");
 				break;
 			}
 			return answer;

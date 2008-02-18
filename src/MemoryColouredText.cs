@@ -37,7 +37,7 @@ public class MemoryColouredText : Memory
 
 	public override string MemoryQuestion {
 		get { 
-			return String.Format (Catalog.GetString ("Which was the color of the text that said '{0}'?"), question_colorname);}
+			return String.Format (Catalog.GetString ("What was the color of the text that said '{0}'?"), question_colorname);}
 	}
 
 	public override void Initialize ()

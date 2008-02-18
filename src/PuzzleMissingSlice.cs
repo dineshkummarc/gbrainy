@@ -69,7 +69,7 @@ public class PuzzleMissingSlice : Game
 	public override string Answer {
 		get { 
 			string answer = base.Answer + " ";
-			answer += String.Format (Catalog.GetString ("All the numbers of each slice when added to the ones of the opposite slice add always {0}."), sum_offset + 8);
+			answer += String.Format (Catalog.GetString ("All numbers of each slice, when added to the ones of the opposite slice, add always {0}."), sum_offset + 8);
 			return answer;
 		}
 	}

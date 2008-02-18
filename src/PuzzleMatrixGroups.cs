@@ -37,7 +37,7 @@ public class PuzzleMatrixGroups : Game
 	}
 
 	public override string Tip {
-		get { return Catalog.GetString ("All the blue numbers share an arithmetical property.");}
+		get { return Catalog.GetString ("All blue numbers share an arithmetical property.");}
 	}
 
 	public override string Answer {

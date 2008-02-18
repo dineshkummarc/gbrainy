@@ -32,13 +32,13 @@ public class PuzzleLines : Game
 	}
 
 	public override string Question {
-		get {return Catalog.GetString ("How many lines can you count of in the figures below?");} 
+		get {return Catalog.GetString ("How many lines do you count of in the figures below?");} 
 	}
 
 	public override string Answer {
 		get { 
 			string answer = base.Answer + " ";
-			answer += String.Format (Catalog.GetString ("There are {0} lines in the figure at the left and {1} in the figure at the right."), fig1, fig2);
+			answer += String.Format (Catalog.GetString ("There are {0} lines in the figure to the left and {1} in the figure to the right."), fig1, fig2);
 			return answer;
 		}
 	}

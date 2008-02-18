@@ -43,7 +43,7 @@ public class PuzzleMissingPiece : Game
 	public override string Answer {
 		get { 
 			string answer = base.Answer + " ";
-			answer += Catalog.GetString ("In every row the third square is made by flipping the first square and superimposing it to the second square, removing the matching lines, and then flipping the resulting image.");
+			answer += Catalog.GetString ("In every row the third square is made by flipping the first square and superimposing it on the second square, followed by removing the matching lines, and then flipping the resulting image.");
 			return answer;
 		}
 	}

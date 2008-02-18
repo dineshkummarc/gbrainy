@@ -33,7 +33,7 @@ public class PuzzleCoverPercentage : Game
 	}
 
 	public override string Question {
-		get {return Catalog.GetString ("What is the colored percentage covered in the figure?");} 
+		get {return Catalog.GetString ("What percentage of the figure is colored?");} 
 	}
 
 	public override void Initialize ()

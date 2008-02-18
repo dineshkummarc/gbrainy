@@ -54,7 +54,7 @@ public class PuzzleBalance : Game
 	public override string Answer {
 		get { 
 			string answer = base.Answer + " ";
-			answer += Catalog.GetString ("Every triangle counts as 1, each diamond as a 2 and each square as 3.");
+			answer += Catalog.GetString ("Every triangle counts as 1, each diamond as 2 and each square as 3.");
 			return answer;
 		}
 	}

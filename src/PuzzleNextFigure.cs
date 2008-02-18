@@ -56,7 +56,7 @@ public class PuzzleNextFigure : Game
 		get { 
 			string answer = base.Answer + " ";
 
-			answer += String.Format (Catalog.GetString ("From first figure the top circle advances two positions clockwise and the left circle goes backwards one position."));
+			answer += String.Format (Catalog.GetString ("From first figure, the top circle advances by two positions clockwise, while the left circle goes backwards one position."));
 			return answer;
 		}
 	}

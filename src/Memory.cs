@@ -47,7 +47,7 @@ public abstract class Memory : Game
 
 	public override string Question {
 		get {
-			return Catalog.GetString ("Memorize the objects below in the time given");
+			return Catalog.GetString ("Memorize the objects below in the given time");
 		}
 	}
 

@@ -281,7 +281,7 @@ public class GameDrawingArea : DrawingArea
 	{
 		switch (tip) {
 		case 0:
-			return Catalog.GetString ("Read the instructions carefully and identify the data and clues given.");
+			return Catalog.GetString ("Read the instructions carefully and identify the data and given clues.");
 		case 1:
 			return Catalog.GetString ("To score the player gbrainy uses the time and tips needed to complete each game.");
 		case 2:
@@ -289,15 +289,15 @@ public class GameDrawingArea : DrawingArea
 		case 3:
 			return Catalog.GetString ("Break the mental blocks and look into the boundaries of problems.");
 		case 4:
-			return Catalog.GetString ("Enjoy doing mistakes, they are part of the learning process.");
+			return Catalog.GetString ("Enjoy making mistakes, they are part of the learning process.");
 		case 5:
 			return Catalog.GetString ("Do all the problems, even the difficult ones. Improvement comes from practising.");
 		case 6:
-			return Catalog.GetString ("Play in daily basis, you will notice progress soon.");
+			return Catalog.GetString ("Play on a daily basis, you will notice progress soon.");
 		case 7:
-			return Catalog.GetString ("You can use the Custom Game Selection to choose exactly which games you want to train.");
+			return Catalog.GetString ("You can use the Custom Game Selection to choose exactly which games you want to play.");
 		case 8:
-			return Catalog.GetString ("You can use the Preferences to adjust the difficulty level of the game.");
+			return Catalog.GetString ("You may use the Preferences to adjust the difficulty level of the game.");
 		case 9:
 			return Catalog.GetString ("Association of elements is a common technique for remembering things.");
 		}
@@ -313,7 +313,7 @@ public class GameDrawingArea : DrawingArea
 		int w, h;
 		args.Window.GetSize (out w, out h);
 		CairoContextEx cr = CairoContextEx.CreateFromGdk (args.Window);
-		
+
 		switch (mode) {
 		case Modes.Welcome:
 			DrawWelcome (cr, w, h);

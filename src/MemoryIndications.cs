@@ -124,7 +124,7 @@ public class MemoryIndications : Memory
 		{
 			switch (type) {
 			case Type.Start:
-				return String.Format (Catalog.GetString ("Start in point number {0}"), (int) obj);
+				return String.Format (Catalog.GetString ("Start at point number {0}"), (int) obj);
 			case Type.Turn: {
 				switch ((TurnDirection) obj) {
 				case TurnDirection.Right:
@@ -139,7 +139,7 @@ public class MemoryIndications : Memory
 				break;
 			}
 			case Type.End:
-				return String.Format (Catalog.GetString ("End in point {0}"), obj);
+				return String.Format (Catalog.GetString ("End at point {0}"), obj);
 			}
 			return null;
 		}
@@ -158,7 +158,7 @@ public class MemoryIndications : Memory
 
 	public override string MemoryQuestion {
 		get { 
-			return String.Format (Catalog.GetString ("Which of the follow graphics represents the indications previously given?"));}
+			return String.Format (Catalog.GetString ("Which of the following graphics represent the indications previously given?"));}
 	}
 
 	public override void Initialize ()
