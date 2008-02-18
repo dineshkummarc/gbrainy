@@ -22,7 +22,7 @@ using Cairo;
 using System.Text;
 using Mono.Unix;
 
-public class MathGreaterDivisor : Game
+public class CalculationGreatestDivisor : Game
 {
 	private int []numbers;
 	private int []answers;

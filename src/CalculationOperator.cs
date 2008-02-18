@@ -23,7 +23,7 @@ using Cairo;
 using System.Text;
 using Mono.Unix;
 
-public class MathOperator : Game
+public class CalculationOperator : Game
 {
 	private double number_a, number_b, number_c, total;
 	private char[] opers = {'*', '+', '-', '/'};

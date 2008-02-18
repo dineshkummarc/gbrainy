@@ -55,13 +55,13 @@ public class GameManager
 		typeof (PuzzleBuildTriangle),
 	};
 
-	static Type[] MathTrainers = new Type[] 
+	static Type[] CalculationTrainers = new Type[] 
 	{
-		typeof (MathArithmetical),
-		typeof (MathGreaterDivisor),
-		typeof (MathTwoNumbers),
-		typeof (MathWhichNumber),
-		typeof (MathOperator),
+		typeof (CalculationArithmetical),
+		typeof (CalculationGreatestDivisor),
+		typeof (CalculationTwoNumbers),
+		typeof (CalculationWhichNumber),
+		typeof (CalculationOperator),
 	};
 
 	static Type[] MemoryTrainers = new Type[] 
@@ -84,8 +84,8 @@ public class GameManager
 	static GameManager ()
 	{
 		Console.WriteLine ("Games registered: {0}: {1} logic puzzles, {2} math trainers, {3} memory trainers", 
-			LogicPuzzles.Length + MathTrainers.Length + MemoryTrainers.Length,
-			LogicPuzzles.Length, MathTrainers.Length, MemoryTrainers.Length);
+			LogicPuzzles.Length + CalculationTrainers.Length + MemoryTrainers.Length,
+			LogicPuzzles.Length, CalculationTrainers.Length, MemoryTrainers.Length);
 	}
 
 	public GameManager ()
@@ -141,9 +141,9 @@ public class GameManager
 					games.Add (LogicPuzzles [i]);
 		}
 
-		if ((game_type & GameSession.Types.MathTrainers) == GameSession.Types.MathTrainers) {
-			for (int i = 0; i < MathTrainers.Length; i++)
-				games.Add (MathTrainers [i]);
+		if ((game_type & GameSession.Types.CalculationTrainers) == GameSession.Types.CalculationTrainers) {
+			for (int i = 0; i < CalculationTrainers.Length; i++)
+				games.Add (CalculationTrainers [i]);
 		}
 
 		if ((game_type & GameSession.Types.MemoryTrainers) == GameSession.Types.MemoryTrainers) {

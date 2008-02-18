@@ -22,7 +22,7 @@ using Cairo;
 using System.Text;
 using Mono.Unix;
 
-public class MathArithmetical : Game
+public class CalculationArithmetical : Game
 {
 	public enum Operation
 	{

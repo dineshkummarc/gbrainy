@@ -20,7 +20,7 @@ GBRAINY_CSDISTFILES =				\
 	$(srcdir)/PuzzleNumericRelation.cs	\
 	$(srcdir)/PuzzleNextFigure.cs		\
 	$(srcdir)/PuzzleSquareSheets.cs		\
-	$(srcdir)/MathArithmetical.cs		\
+	$(srcdir)/CalculationArithmetical.cs	\
 	$(srcdir)/MemoryColouredFigures.cs	\
 	$(srcdir)/GameSession.cs		\
 	$(srcdir)/MemoryNumbers.cs		\
@@ -31,15 +31,15 @@ GBRAINY_CSDISTFILES =				\
 	$(srcdir)/PuzzleFigureLetter.cs		\
 	$(srcdir)/CustomGameDialog.cs		\
 	$(srcdir)/PuzzleDivideCircle.cs		\
-	$(srcdir)/MathGreaterDivisor.cs		\
-	$(srcdir)/MathTwoNumbers.cs		\
-	$(srcdir)/MathWhichNumber.cs		\
+	$(srcdir)/CalculationGreatestDivisor.cs	\
+	$(srcdir)/CalculationTwoNumbers.cs	\
+	$(srcdir)/CalculationWhichNumber.cs	\
 	$(srcdir)/PuzzleMatrixGroups.cs		\
 	$(srcdir)/PuzzleBalance.cs		\
 	$(srcdir)/PuzzlePairs.cs		\
 	$(srcdir)/PuzzleOstracism.cs		\
 	$(srcdir)/MemoryCountDots.cs		\
-	$(srcdir)/MathOperator.cs		\
+	$(srcdir)/CalculationOperator.cs	\
 	$(srcdir)/PuzzleFigurePattern.cs	\
 	$(srcdir)/ColorPalette.cs		\
 	$(srcdir)/PuzzlePeopleTable.cs		\

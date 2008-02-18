@@ -315,7 +315,7 @@ public class gbrainy: Program
 
 	void OnMathOnly (object sender, EventArgs args)
 	{
-		session.Type = GameSession.Types.MathTrainers;
+		session.Type = GameSession.Types.CalculationTrainers;
 		OnNewGame ();
 	}
 

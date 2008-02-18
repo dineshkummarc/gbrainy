@@ -30,10 +30,10 @@ public class GameSession
 		None			= 0,
 		LogicPuzzles		= 2,
 		MemoryTrainers		= 4,
-		MathTrainers		= 8,
+		CalculationTrainers		= 8,
 		Custom			= 16,
-		TrainersOnly		= MemoryTrainers | MathTrainers,
-		AllGames		= MemoryTrainers | MathTrainers | LogicPuzzles
+		TrainersOnly		= MemoryTrainers | CalculationTrainers,
+		AllGames		= MemoryTrainers | CalculationTrainers | LogicPuzzles
 	}
 
 	private enum ScoresType
@@ -41,7 +41,7 @@ public class GameSession
 		None = 0,
 		LogicPuzzles,
 		MemoryTrainers,
-		MathTrainers,
+		CalculationTrainers,
 		Last			
 	}
 
@@ -180,10 +180,10 @@ public class GameSession
 
 	public int MathScore {
 		get {
-			if (games [(int) ScoresType.MathTrainers] == 0)
+			if (games [(int) ScoresType.CalculationTrainers] == 0)
 				return 0;
 			
-			return scores [(int) ScoresType.MathTrainers] * 10 / games [(int) ScoresType.MathTrainers];
+			return scores [(int) ScoresType.CalculationTrainers] * 10 / games [(int) ScoresType.CalculationTrainers];
 		}
 	}
 
@@ -196,7 +196,7 @@ public class GameSession
 	}
 
 	public int MathGamesPlayed {
-		get { return games [(int) ScoresType.MathTrainers]; }
+		get { return games [(int) ScoresType.CalculationTrainers]; }
 	}
 
 	public string TimePlayed {
@@ -300,8 +300,8 @@ public class GameSession
 			games [(int) ScoresType.MemoryTrainers]++;
 			break;
 		case Game.Types.MathTrainer:
-			scores [(int) ScoresType.MathTrainers] += current_game.Score;
-			games [(int) ScoresType.MathTrainers]++;
+			scores [(int) ScoresType.CalculationTrainers] += current_game.Score;
+			games [(int) ScoresType.CalculationTrainers]++;
 			break;
 		}
 		

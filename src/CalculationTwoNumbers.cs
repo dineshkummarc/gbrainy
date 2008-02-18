@@ -22,7 +22,7 @@ using Cairo;
 using System.Text;
 using Mono.Unix;
 
-public class MathTwoNumbers : Game
+public class CalculationTwoNumbers : Game
 {
 	private int number_a, number_b;
 	private int op1, op2, max_operand;

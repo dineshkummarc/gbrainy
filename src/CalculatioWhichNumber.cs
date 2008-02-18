@@ -22,7 +22,7 @@ using Cairo;
 using System.Text;
 using Mono.Unix;
 
-public class MathWhichNumber : Game
+public class CalculationWhichNumber : Game
 {
 	private double question_num;
 	private const int options_cnt = 4;
