@@ -43,7 +43,7 @@ public class PuzzleDivideCircle : Game
 	}
 
 	public override string Question {
-		get {return Catalog.GetString ("In the last figure, in how many regions is the circle divided when all the dots are connected?");} 
+		get {return Catalog.GetString ("In the last figure, in how many regions is the circle divided into when all dots are connected?");} 
 	}
 
 	public override void Initialize ()

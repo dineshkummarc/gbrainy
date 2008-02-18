@@ -67,7 +67,7 @@ public class PuzzlePairs : Game
 	public override string Answer {
 		get { 
 			string answer = base.Answer + " ";
-			answer += String.Format (Catalog.GetString ("The result of multiply the two numbers inside every triangle is {0}."), answer_number);
+			answer += String.Format (Catalog.GetString ("The result of multiplying the two numbers inside every triangle is {0}."), answer_number);
 			return answer;
 		}
 	}

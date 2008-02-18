@@ -39,7 +39,7 @@ public class PuzzleAlphabeticSequence : Game
 	public override string Answer {
 		get { 
 			string answer = base.Answer + " ";
-			answer += String.Format (Catalog.GetString ("Every letter is calculated taking the position in the alphabet of the previous character and adding {0} to it to get the position of the new letter."), step);
+			answer += String.Format (Catalog.GetString ("Every letter is calculated by taking the alphabetical position of the previous character and adding {0} to it in order to get the position of the new letter."), step);
 
 			return answer;
 		}

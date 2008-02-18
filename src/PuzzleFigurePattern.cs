@@ -42,13 +42,13 @@ public class PuzzleFigurePattern : Game
 	}
 
 	public override string Tip {
-		get { return Catalog.GetString ("The third figure of every row involves combining somehow the first two figures.");}
+		get { return Catalog.GetString ("The third figure of every row involves somehow combining the first two figures.");}
 	}
 
 	public override string Answer {
 		get { 
 			string answer = base.Answer + " ";
-			answer += Catalog.GetString ("Superpose the first and second figures and remove the lines that they have in common then rotate the resulting figure 45 degrees.");
+			answer += Catalog.GetString ("Superpose the first and second figures and remove the lines that they have in common, then rotate the resulting figure 45 degrees.");
 			return answer;
 		}
 	}

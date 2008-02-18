@@ -38,7 +38,7 @@ public class MathGreaterDivisor : Game
 	}
 
 	public override string Question {
-		get {return Catalog.GetString ("Which of the possible divisors is the greater that divides all the numbers?");} 
+		get {return Catalog.GetString ("Which of the possible divisors is the greatest that divides all numbers?");} 
 	}
 
 	public override void Initialize ()
