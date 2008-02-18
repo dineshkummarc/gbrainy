@@ -38,7 +38,7 @@ public class PuzzleMatrixNumbers : Game
 	private const int rows = 4, columns = 4;
 
 	public override string Name {
-		get {return Catalog.GetString ("Matrix Numbers");}
+		get {return Catalog.GetString ("Matrix numbers");}
 	}
 
 	public override string Question {

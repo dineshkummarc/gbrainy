@@ -29,7 +29,7 @@ public class PuzzleCoverPercentage : Game
 	private double line_width = 0.001;
 
 	public override string Name {
-		get {return Catalog.GetString ("Cover Percentage");}
+		get {return Catalog.GetString ("Cover percentage");}
 	}
 
 	public override string Question {

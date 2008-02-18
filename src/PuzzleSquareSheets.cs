@@ -25,7 +25,7 @@ public class PuzzleSquareSheets : Game
 {
 
 	public override string Name {
-		get {return Catalog.GetString ("Squares Sheets");}
+		get {return Catalog.GetString ("Squares sheets");}
 	}
 
 	public override string Question {

@@ -46,7 +46,7 @@ public class MemoryColouredFigures : Memory
 	private const double block_space = 0.35;
 
 	public override string Name {
-		get {return Catalog.GetString ("Colored Figures");}
+		get {return Catalog.GetString ("Colored figures");}
 	}
 
 	public override string MemoryQuestion {
