@@ -214,13 +214,15 @@ public class CustomGameDialog
 		{
 			if(!IsRealized)
 				return false;
-   
+
 			int w, h;
+			Cairo.Context cc = Gdk.CairoHelper.Create (args.Window);
+			CairoContextEx cr = new CairoContextEx (cc.Handle);   
 			args.Window.GetSize (out w, out h);
-			CairoContextEx cr = CairoContextEx.CreateFromGdk (args.Window);
 			puzzle.DrawPreview (cr, w, h);
 
-   			((IDisposable)cr).Dispose();
+			((IDisposable)cc).Dispose();
+			((IDisposable)cr).Dispose();
    			return base.OnExposeEvent(args);
 		}
 	}	

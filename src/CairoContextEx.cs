@@ -31,13 +31,9 @@ public class CairoContextEx : Cairo.Context
 
 	}
 	
-	[DllImport("libgdk-x11-2.0.so")]
-	static extern IntPtr gdk_cairo_create(IntPtr drawable);
-	
-	public static CairoContextEx CreateFromGdk (Gdk.Drawable drawable) 
+	// No dispose of resources on this class
+	protected override void Dispose (bool disposing)
 	{
-		IntPtr raw_ret = gdk_cairo_create (drawable == null ? IntPtr.Zero : drawable.Handle);
-		return new CairoContextEx (raw_ret);
 	}
 	
 	public void DrawTextAlignedRight (double x, double y, string str)

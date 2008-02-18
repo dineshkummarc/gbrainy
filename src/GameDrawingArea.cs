@@ -312,7 +312,8 @@ public class GameDrawingArea : DrawingArea
 
 		int w, h;
 		args.Window.GetSize (out w, out h);
-		CairoContextEx cr = CairoContextEx.CreateFromGdk (args.Window);
+		Cairo.Context cc = Gdk.CairoHelper.Create (args.Window);
+		CairoContextEx cr = new CairoContextEx (cc.Handle);
 
 		switch (mode) {
 		case Modes.Welcome:
@@ -329,6 +330,7 @@ public class GameDrawingArea : DrawingArea
 			break;
 		}
 
+		((IDisposable)cc).Dispose();
 		((IDisposable)cr).Dispose();
 		return base.OnExposeEvent(args);
 	}
