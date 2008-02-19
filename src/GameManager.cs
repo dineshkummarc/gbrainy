@@ -172,8 +172,8 @@ public class GameManager
 				enumerator.MoveNext ();
 			}
 
-			//puzzle =  (Game) Activator.CreateInstance ((Type) games [(int) enumerator.Current], true);
-			puzzle =  (Game) Activator.CreateInstance (LogicPuzzles [29], true);
+			puzzle =  (Game) Activator.CreateInstance ((Type) games [(int) enumerator.Current], true);
+			//puzzle =  (Game) Activator.CreateInstance (LogicPuzzles [29], true);
 			if (first != null && first.GetType () == puzzle.GetType ())
 				break;
 				
