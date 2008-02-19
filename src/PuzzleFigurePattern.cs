@@ -38,7 +38,7 @@ public class PuzzleFigurePattern : Game
 	}
 
 	public override string Question {
-		get {return Catalog.GetString ("Which figure should replace the question mark (A, B or C)?");} 
+		get {return Catalog.GetString ("What figure should replace the question mark (A, B or C)?");} 
 	}
 
 	public override string Tip {

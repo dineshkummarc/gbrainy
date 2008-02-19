@@ -34,11 +34,11 @@ public class PuzzleFigureLetter : Game
 	}
 
 	public override string Name {
-		get {return Catalog.GetString ("Words and figures");}
+		get {return Catalog.GetString ("Figures and letters");}
 	}
 
 	public override string Question {
-		get {return Catalog.GetString ("The figures and the text are related. Which text should go under the last figure?");} 
+		get {return Catalog.GetString ("The figures and the text are related. What text should go under the last figure?");} 
 	}
 
 	public override string Tip {
