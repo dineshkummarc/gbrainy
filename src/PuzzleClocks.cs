@@ -52,10 +52,8 @@ public class PuzzleClocks : Game
 
 	public override void Initialize ()
 	{
-		int position = 11 + random.Next (2);
-		addition = 11 + random.Next (5);
-
-		if (addition == 12) addition ++;
+		int position = 12 + random.Next (2);
+		addition = 11 + random.Next (3);
 
 		handles = new int [clocks * handle_num];
 
