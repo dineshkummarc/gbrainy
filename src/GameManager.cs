@@ -53,6 +53,7 @@ public class GameManager
 		typeof (PuzzleMissingPiece),
 		typeof (PuzzleMostInCommon),
 		typeof (PuzzleBuildTriangle),
+		typeof (PuzzleClocks),
 	};
 
 	static Type[] CalculationTrainers = new Type[] 
@@ -171,8 +172,8 @@ public class GameManager
 				enumerator.MoveNext ();
 			}
 
-			puzzle =  (Game) Activator.CreateInstance ((Type) games [(int) enumerator.Current], true);
-			//puzzle =  (Game) Activator.CreateInstance (MemoryTrainers [2], true);
+			//puzzle =  (Game) Activator.CreateInstance ((Type) games [(int) enumerator.Current], true);
+			puzzle =  (Game) Activator.CreateInstance (LogicPuzzles [29], true);
 			if (first != null && first.GetType () == puzzle.GetType ())
 				break;
 				

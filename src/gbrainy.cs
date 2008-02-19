@@ -44,8 +44,8 @@ public class gbrainy: Program
 	GameSession session;
 	const int ok_buttonid = -5;
 	ToolButton pause_tbbutton;
-	int memquestion_time = 4;
-	bool memquestion_warn = true;
+	int memquestion_time = 0;
+	bool memquestion_warn = false;
 	Game.Difficulty difficulty = Game.Difficulty.Medium;
  
 	public gbrainy (string [] args, params object [] props)
@@ -116,7 +116,7 @@ public class gbrainy: Program
 
 		question_label.Text = string.Empty;
 		ActiveInputControls (false);
-		//OnMemoryOnly (this, EventArgs.Empty); // temp
+		OnMemoryOnly (this, EventArgs.Empty); // temp
 	}
 	
 	public int MemQuestionTime {
