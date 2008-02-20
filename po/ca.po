@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gbrainy\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-02-10 14:57+0100\n"
-"PO-Revision-Date: 2008-02-10 15:00+0200\n"
+"POT-Creation-Date: 2008-02-20 18:40+0100\n"
+"PO-Revision-Date: 2008-02-20 19:00+0200\n"
 "Last-Translator: Jordi Mas <jmas@softcatala.org>\n"
 "Language-Team: Catalan\n"
 "MIME-Version: 1.0\n"
@@ -39,7 +39,7 @@ msgstr "gbrainy"
 
 #: ../src/gbrainy.glade.h:1
 msgid "<b>Difficulty Level</b>"
-msgstr ""
+msgstr "<b>Nivell de dificultat</b>"
 
 #
 #
@@ -69,7 +69,7 @@ msgstr "Selecció de la partida personalitzada..."
 
 #: ../src/gbrainy.glade.h:7
 msgid "Easy"
-msgstr ""
+msgstr "Fàcil"
 
 #: ../src/gbrainy.glade.h:8
 msgid "Logic Puzzles Only"
@@ -77,11 +77,11 @@ msgstr "Només trencaclosques lògics"
 
 #: ../src/gbrainy.glade.h:9
 msgid "Master"
-msgstr ""
+msgstr "Mestre"
 
 #: ../src/gbrainy.glade.h:10
 msgid "Medium"
-msgstr ""
+msgstr "Mitjà"
 
 #: ../src/gbrainy.glade.h:11
 msgid "Memory Trainers Only"
@@ -106,8 +106,9 @@ msgstr "Selecciona-ho tot"
 
 #
 #
+#
 #: ../src/gbrainy.glade.h:16
-msgid "Show the countdown message"
+msgid "Show countdown message"
 msgstr "Mostra el missatge de compte enrere"
 
 #
@@ -187,8 +188,9 @@ msgstr "Pausa"
 msgid "Pause the game"
 msgstr "Fes una pausa al joc"
 
+#
 #: ../src/gbrainy.cs:104
-msgid "Ends the game and shows the score"
+msgid "End the game and show score"
 msgstr "Finalitza el joc i mostra la puntuació"
 
 #
@@ -203,7 +205,7 @@ msgstr "Jordi Mas i Hernandez <jmas@softcatala.org>"
 
 #: ../src/gbrainy.cs:234
 msgid "Based on ideas by Terry Stickels, MENSA books and myself."
-msgstr ""
+msgstr "Basat en idees de Terry Stickels, llibres de MENSA i meves."
 
 #
 #
@@ -243,7 +245,7 @@ msgstr ""
 #
 #: ../src/Game.cs:71
 #, csharp-format
-msgid "The right answer is {0}."
+msgid "The correct answer is {0}."
 msgstr "La resposta correcta és {0}."
 
 #
@@ -283,10 +285,11 @@ msgstr "Cercles en un rectangle"
 #
 #
 #
+#
 #: ../src/PuzzleCirclesRectangle.cs:31
 msgid ""
-"What is the maximum number of circles (as the one showed) that can be fit in "
-"the square below?"
+"What is the maximum number of circles (as shown) that fit in the square "
+"below?"
 msgstr ""
 "Quin és el nombre màxim de cercles (com el mostrat) que podeu encabir al "
 "rectangle de baix?"
@@ -318,8 +321,9 @@ msgstr "8 unitats"
 msgid "1 unit"
 msgstr "1 unitat"
 
+#
 #: ../src/PuzzleMatrixNumbers.cs:41
-msgid "Matrix Numbers"
+msgid "Matrix numbers"
 msgstr "Números a la matriu"
 
 #
@@ -346,8 +350,8 @@ msgstr "La lògica és aritmètica i funciona horitzontalment."
 #: ../src/PuzzleMatrixNumbers.cs:64
 #, csharp-format
 msgid ""
-"The fourth row is calculated multiplying the first two rows and adding the "
-"third."
+"The fourth row is calculated by multiplying the first two rows and adding "
+"the third."
 msgstr ""
 "La quarta fila se calcula multiplicant les primeres dues files i afegint la "
 "tercera."
@@ -355,8 +359,8 @@ msgstr ""
 #: ../src/PuzzleMatrixNumbers.cs:66
 #, csharp-format
 msgid ""
-"The fourth column is calculated multiplying the first two columns and adding "
-"the third."
+"The fourth column is calculated by multiplying the first two columns and "
+"adding the third."
 msgstr ""
 "La quarta columna se calcula multiplicant les primeres dues columnes i "
 "afegint la tercera."
@@ -364,8 +368,8 @@ msgstr ""
 #: ../src/PuzzleMatrixNumbers.cs:71
 #, csharp-format
 msgid ""
-"The fourth row is calculated multiplying the first two rows and subtracting "
-"the third."
+"The fourth row is calculated by multiplying the first two rows and "
+"subtracting the third."
 msgstr ""
 "La quarta fila se calcula multiplicant les primeres dues files i restant la "
 "tercera."
@@ -373,7 +377,7 @@ msgstr ""
 #: ../src/PuzzleMatrixNumbers.cs:73
 #, csharp-format
 msgid ""
-"The fourth column is calculated multiplying the first two columns and "
+"The fourth column is calculated by multiplying the first two columns and "
 "subtracting the third."
 msgstr ""
 "La quarta columna se calcula multiplicant les primeres dues columnes i "
@@ -382,8 +386,8 @@ msgstr ""
 #: ../src/PuzzleMatrixNumbers.cs:78
 #, csharp-format
 msgid ""
-"The fourth row is calculated adding the first two rows and subtracting the "
-"third."
+"The fourth row is calculated by adding the first two rows and subtracting "
+"the third."
 msgstr ""
 "La quarta fila se calcula afegint les primeres dues files i restant la "
 "tercera."
@@ -391,8 +395,8 @@ msgstr ""
 #: ../src/PuzzleMatrixNumbers.cs:80
 #, csharp-format
 msgid ""
-"The fourth column is calculated adding the first two columns and subtracting "
-"the third."
+"The fourth column is calculated by adding the first two columns and "
+"subtracting the third."
 msgstr ""
 "La quarta columna se calcula afegint les primeres dues columnes i restant la "
 "tercera."
@@ -403,22 +407,24 @@ msgstr "Llapis"
 
 #
 #
+#
 #: ../src/PuzzlePencil.cs:37
 msgid ""
 "Which of the following figures cannot be drawn without crossing any previous "
-"lines and lifting the pencil?"
+"lines nor lifting the pencil?"
 msgstr ""
 "Quina de les següents figures no es pot dibuixar sense creuar una de les "
-"línies prèvies o llevar el llapis?"
+"línies prèvies ni llevar el llapis?"
 
 #. gr.ShowText ("Figure A");
 #: ../src/PuzzlePencil.cs:168 ../src/PuzzleSquareDots.cs:187
-#: ../src/PuzzleNextFigure.cs:145 ../src/MemoryColouredFigures.cs:155
-#: ../src/MemoryNumbers.cs:137 ../src/PuzzleFigurePattern.cs:193
+#: ../src/PuzzleNextFigure.cs:145 ../src/MemoryColouredFigures.cs:149
+#: ../src/MemoryNumbers.cs:133 ../src/PuzzleFigurePattern.cs:193
 #: ../src/PuzzleMissingPiece.cs:156 ../src/PuzzleMissingSlice.cs:194
-#: ../src/PuzzleTetris.cs:156 ../src/MemoryIndications.cs:267
-#: ../src/MemoryIndications.cs:272 ../src/MemoryIndications.cs:277
-#: ../src/MemoryIndications.cs:282 ../src/PuzzleMostInCommon.cs:273
+#: ../src/PuzzleTetris.cs:156 ../src/MemoryIndications.cs:263
+#: ../src/MemoryIndications.cs:268 ../src/MemoryIndications.cs:273
+#: ../src/MemoryIndications.cs:278 ../src/PuzzleMostInCommon.cs:273
+#: ../src/PuzzleBuildTriangle.cs:153
 #, csharp-format
 msgid "Figure {0}"
 msgstr "Figura {0}"
@@ -429,29 +435,32 @@ msgstr "Mou la figura"
 
 #
 #
+#
 #: ../src/PuzzleMoveFigure.cs:34
 msgid ""
-"What is the minimum number of circles that you have to move to convert the "
+"What is the minimum number of circles to be moved in order to convert the "
 "left figure into the right figure?"
 msgstr ""
 "Quin és el nombre mínim de cercles que heu de moure per a convertir la "
 "figura de l'esquerra en la figura de la dreta?"
 
+#
 #: ../src/PuzzleMoveFigure.cs:43
 msgid ""
-"Move the circle from the first line to the second and two circles from the "
-"fourth to the second and the fifth lines."
+"Move the circle from the first line to the second; move two circles from the "
+"fourth to the second line; and move the fifth line."
 msgstr ""
-"Moveu el cercle de la primera línia a la segona i dos cercles de la quarta a "
-"la segona línia i a la cinquena."
+"Moveu el cercle de la primera línia a la segona; dos cercles de la quarta a "
+"la segona línia; i moveu la cinquena línia."
 
+#
 #: ../src/PuzzleMoveFigure.cs:46
 msgid ""
-"Move the two first lines and the first and last circle of the last line to "
-"the third, sixth and seventh lines."
+"Move the two first lines; move the first and last circle of the last line to "
+"the third line; and move sixth and seventh lines."
 msgstr ""
-"Moveu les dues primeres línies i el primer i últim cercle de l'última línia "
-"a la tercera línia, a la sisena i a la setena."
+"Moveu les dues primeres línies; i el primer i últim cercle de l'última línia "
+"a la tercera línia; i moveu la sisena i la setena línies."
 
 #: ../src/PuzzleTriangles.cs:29
 msgid "Triangles"
@@ -459,9 +468,10 @@ msgstr "Triangles"
 
 #
 #
+#
 #: ../src/PuzzleTriangles.cs:33
-msgid "How many triangles of any size can you count in the figure below?"
-msgstr "Quants triangles de qualsevol mida podeu comptar a la figura de baix?"
+msgid "How many triangles of any size do you count in the figure below?"
+msgstr "Quants triangles de qualsevol mida compteu a la figura de baix?"
 
 #: ../src/PuzzleTriangles.cs:37
 msgid "A triangle can be embedded inside another triangle."
@@ -473,16 +483,18 @@ msgid "The triangles are made by connecting the following points: {0}"
 msgstr "Els triangles es fan connectant els següents punts: {0}"
 
 #
+#
 #: ../src/PuzzleCoverPercentage.cs:32
-msgid "Cover Percentage"
+msgid "Cover percentage"
 msgstr "Percentatge cobert"
 
 #
 #
 #
+#
 #: ../src/PuzzleCoverPercentage.cs:36
-msgid "What is the colored percentage covered in the figure?"
-msgstr "Quin és el percentatge cobert de color a la figura?"
+msgid "What percentage of the figure is colored?"
+msgstr "Quin és el percentatge colorejat de la figura?"
 
 #: ../src/PuzzleSquareDots.cs:87
 msgid "Square with dots"
@@ -524,12 +536,12 @@ msgstr ""
 #: ../src/PuzzleAlphabeticSequence.cs:42
 #, csharp-format
 msgid ""
-"Every letter is calculated taking the position in the alphabet of the "
-"previous character and adding {0} to it to get the position of the new "
-"letter."
+"Every letter is calculated by taking the alphabetical position of the "
+"previous character and adding {0} to it in order to get the position of the "
+"new letter."
 msgstr ""
 "Cada lletra se calcula prenent la posició a l'alfabet del caràcter previ i "
-"afegint {0} per a obtenir la posició de la nova lletra."
+"afegint {0} per a obtenir la posició de la lletra nova."
 
 #
 #
@@ -540,9 +552,10 @@ msgstr "Seqüència numèrica"
 #
 #
 #
+#
 #: ../src/PuzzleNumericSequence.cs:36
 msgid ""
-"The next sequence follows a logic. Which number should replace the question "
+"The next sequence follows a logic. What number should replace the question "
 "mark?"
 msgstr ""
 "La següent seqüència segueix una lògica. Quin és el número que ha de "
@@ -556,10 +569,11 @@ msgstr "Cada número en la seqüència està relacionat amb l'anterior."
 
 #
 #
+#
 #: ../src/PuzzleNumericSequence.cs:49
 msgid ""
-"Every number in the sequence is the result of subtracting 1 to the previous "
-"number and multiplying it by 2."
+"Every number in the sequence is the result of subtracting 1 from the "
+"previous number and multiplying it by 2."
 msgstr ""
 "Cada número en la seqüència és el resultat de restar 1 al número anterior i "
 "multiplicar-lo per 2."
@@ -576,13 +590,14 @@ msgstr ""
 
 #
 #
+#
 #: ../src/PuzzleNumericSequence.cs:55
 msgid ""
-"Every number in the sequence is the result of subtracting 2 to the previous "
-"number and multiplying it by -2."
+"Every number in the sequence is the result of subtracting 2 from the "
+"previous number and multiplying it by -2."
 msgstr ""
 "Cada número en la seqüència és el resultat de restar 2 al número anterior i "
-"multiplicar-lo resultat per -2."
+"multiplicar-lo per -2."
 
 #
 #
@@ -592,14 +607,16 @@ msgstr "Quadrats"
 
 #
 #
+#
 #: ../src/PuzzleSquares.cs:33
-msgid "How many squares of any size can you count of in the figure below?"
-msgstr "Quants quadrats de qualsevol mida podeu comptar a la figura de baix?"
+msgid "How many squares of any size do you count of in the figure below?"
+msgstr "Quants quadrats de qualsevol mida compteu a la figura de baix?"
 
+#
 #: ../src/PuzzleSquares.cs:37
 msgid ""
-"A square is a rectangle having all four sides of equal length. A square can "
-"be also built from other squares."
+"A square is a rectangle with sides of equal length. A square can also be "
+"built from other squares."
 msgstr ""
 "Un quadrat és un rectangle amb els quatre costats de la mateixa llargària. "
 "Un quadrat es pot fer d'altres quadrats."
@@ -633,8 +650,9 @@ msgstr "Relació numèrica"
 #
 #
 #
+#
 #: ../src/PuzzleNumericRelation.cs:39
-msgid "Which number should replace the question mark?"
+msgid "What number should replace the question mark?"
 msgstr "Quin és el número que ha de reemplaçar l'interrogant?"
 
 #: ../src/PuzzleNumericRelation.cs:43
@@ -647,10 +665,11 @@ msgid "Every group of {0} numbers sums exactly {1}."
 msgstr "Cada grup de {0} números suma exactament {1}."
 
 #
+#
 #: ../src/PuzzleNumericRelation.cs:55
 msgid ""
 "Divide the sequence in groups of three numbers. Every third number is "
-"calculated by multiplying the two previous ones."
+"calculated by multiplying by the two previous ones."
 msgstr ""
 "Dividiu la seqüència en grups de tres números. Cada tercer número se calcula "
 "multiplicant els dos anteriors."
@@ -679,25 +698,23 @@ msgstr "Quina és la següent seqüència lògica d'objectes (A, B, o C)?"
 #: ../src/PuzzleNextFigure.cs:59
 #, csharp-format
 msgid ""
-"From first figure the top circle advances two positions clockwise and the "
-"left circle goes backwards one position."
+"From first figure, the top circle advances by two positions clockwise, while "
+"the left circle goes backwards one position."
 msgstr ""
-"Des de la primera figura el cercle superior avança dues posicions en sentit "
-"de les agulles del rellotge i el cercle esquerre va cap enrere una posició."
+"Des de la primera figura, el cercle superior avança dues posicions en sentit "
+"de les agulles del rellotge, mentre que el cercle esquerre va cap enrere una "
+"posició."
 
 #
+#
 #: ../src/PuzzleSquareSheets.cs:28
-msgid "Squares Sheets"
+msgid "Squares sheets"
 msgstr "Quadrat amb fulls"
 
 #
-#
-#
-#
-#
 #: ../src/PuzzleSquareSheets.cs:32
 msgid ""
-"What is the minimum number of square sheets of paper of any size needed to "
+"What is the minimum number of square sheets of paper of any size required to "
 "create the figure? (lines indicate frontiers between different sheets)"
 msgstr ""
 "Quin és el nombre mínim de fulls de paper quadrats de qualsevol mida "
@@ -716,32 +733,28 @@ msgstr ""
 "Els números en la figura reflecteixen les diferent àrees cobertes per a cada "
 "un dels fulls."
 
-#: ../src/MathArithmetical.cs:41
+#: ../src/CalculationArithmetical.cs:41
 msgid "Arithmetical"
 msgstr "Aritmètic"
 
-#: ../src/MathArithmetical.cs:49
+#: ../src/CalculationArithmetical.cs:49
 msgid "What is the result of the arithmetical operation?"
 msgstr "Quin és el resultat de l'operació aritmètica?"
 
 #
 #
 #
+#
 #: ../src/MemoryColouredFigures.cs:49
-msgid "Colored Figures"
+msgid "Colored figures"
 msgstr "Figures de colors"
 
 #
 #
-#: ../src/MemoryColouredFigures.cs:54
-msgid "Memorize the following figure in the time given"
-msgstr "Memoritzeu la següent figura en el temps donat"
-
 #
 #
-#
-#: ../src/MemoryColouredFigures.cs:59
-msgid "Which of these figures was the one previously shown?"
+#: ../src/MemoryColouredFigures.cs:53
+msgid "Which of these figures was previously shown?"
 msgstr "Quina de les següents figures era la mostrada anteriorment?"
 
 #: ../src/GameSession.cs:223
@@ -772,16 +785,10 @@ msgstr "Memoritzeu números"
 #
 #
 #
+#
+#
 #: ../src/MemoryNumbers.cs:40
-msgid "Memorize the following numbers in the time given"
-msgstr "Memoritzeu els números següents en el temps donat"
-
-#
-#
-#
-#
-#: ../src/MemoryNumbers.cs:44
-msgid "Which one of these squares was the one previously shown (A, B, C or D)?"
+msgid "Which one of these squares was previously shown (A, B, C or D)?"
 msgstr "Quin dels següents quadrats era el mostrat anteriorment (A, B, C o D)?"
 
 #
@@ -792,19 +799,10 @@ msgstr "Quin dels següents quadrats era el mostrat anteriorment (A, B, C o D)?"
 msgid "Colored text"
 msgstr "Text de colors"
 
-#
-#
-#
-#
-#
-#: ../src/MemoryColouredText.cs:39
-msgid "Memorize the colors associated to every word"
-msgstr "Memoritzeu els colors associats a cada paraula"
-
-#: ../src/MemoryColouredText.cs:44
+#: ../src/MemoryColouredText.cs:40
 #, csharp-format
-msgid "Which was the color of the text that said '{0}'?"
-msgstr "Quin és el color del text que deia «{0}»?"
+msgid "What was the color of the text that said '{0}'?"
+msgstr "Quin era el color del text que deia «{0}»?"
 
 #: ../src/PuzzleCube.cs:38
 msgid "Cube"
@@ -824,11 +822,7 @@ msgstr ""
 msgid "Memorize words"
 msgstr "Memoritzeu paraules"
 
-#: ../src/MemoryWords.cs:40
-msgid "Memorize all the words."
-msgstr "Memoritzeu totes les paraules."
-
-#: ../src/MemoryWords.cs:45
+#: ../src/MemoryWords.cs:41
 #, csharp-format
 msgid ""
 "There is a missing word from the previous list. Which one is the missing "
@@ -838,131 +832,131 @@ msgstr ""
 "que manca?"
 
 #. Body parts
-#: ../src/MemoryWords.cs:54
+#: ../src/MemoryWords.cs:50
 msgid "wrist"
 msgstr "canell"
 
 #
-#: ../src/MemoryWords.cs:55
+#: ../src/MemoryWords.cs:51
 msgid "elbow"
 msgstr "colze"
 
-#: ../src/MemoryWords.cs:56
+#: ../src/MemoryWords.cs:52
 msgid "armpit"
 msgstr "aixella"
 
-#: ../src/MemoryWords.cs:57
+#: ../src/MemoryWords.cs:53
 msgid "hand"
 msgstr "mà"
 
-#: ../src/MemoryWords.cs:58
+#: ../src/MemoryWords.cs:54
 msgid "chest"
 msgstr "pit"
 
 #. Fishes
-#: ../src/MemoryWords.cs:61
+#: ../src/MemoryWords.cs:57
 msgid "sardine"
 msgstr "sardina"
 
-#: ../src/MemoryWords.cs:62
+#: ../src/MemoryWords.cs:58
 msgid "trout"
 msgstr "truita"
 
-#: ../src/MemoryWords.cs:63
+#: ../src/MemoryWords.cs:59
 msgid "monkfish"
 msgstr "rap"
 
-#: ../src/MemoryWords.cs:64
+#: ../src/MemoryWords.cs:60
 msgid "cod"
 msgstr "bacallà"
 
-#: ../src/MemoryWords.cs:65
+#: ../src/MemoryWords.cs:61
 msgid "salmon"
 msgstr "salmó"
 
 #. Vegetables
-#: ../src/MemoryWords.cs:68
+#: ../src/MemoryWords.cs:64
 msgid "potato"
 msgstr "patata"
 
-#: ../src/MemoryWords.cs:69
+#: ../src/MemoryWords.cs:65
 msgid "ginger"
 msgstr "gingebre"
 
-#: ../src/MemoryWords.cs:70
+#: ../src/MemoryWords.cs:66
 msgid "pepper"
 msgstr "pebre"
 
-#: ../src/MemoryWords.cs:71
+#: ../src/MemoryWords.cs:67
 msgid "garlic"
 msgstr "all"
 
-#: ../src/MemoryWords.cs:72
+#: ../src/MemoryWords.cs:68
 msgid "pumpkin"
 msgstr "carbassa"
 
 #. Bicycle
-#: ../src/MemoryWords.cs:75
+#: ../src/MemoryWords.cs:71
 msgid "brake"
 msgstr "fre"
 
-#: ../src/MemoryWords.cs:76
+#: ../src/MemoryWords.cs:72
 msgid "pedal"
 msgstr "pedal"
 
-#: ../src/MemoryWords.cs:77
+#: ../src/MemoryWords.cs:73
 msgid "chain"
 msgstr "cadena"
 
-#: ../src/MemoryWords.cs:78
+#: ../src/MemoryWords.cs:74
 msgid "wheel"
 msgstr "roda"
 
-#: ../src/MemoryWords.cs:79
+#: ../src/MemoryWords.cs:75
 msgid "handlebar"
 msgstr "manillar"
 
 #. Music
-#: ../src/MemoryWords.cs:82
+#: ../src/MemoryWords.cs:78
 msgid "drummer"
 msgstr "bateria"
 
-#: ../src/MemoryWords.cs:83
+#: ../src/MemoryWords.cs:79
 msgid "speaker"
 msgstr "altaveu"
 
-#: ../src/MemoryWords.cs:84
+#: ../src/MemoryWords.cs:80
 msgid "lyrics"
 msgstr "lletra"
 
-#: ../src/MemoryWords.cs:85
+#: ../src/MemoryWords.cs:81
 msgid "beat"
 msgstr "batec"
 
-#: ../src/MemoryWords.cs:86
+#: ../src/MemoryWords.cs:82
 msgid "song"
 msgstr "cançó"
 
 #. Weather
-#: ../src/MemoryWords.cs:89
+#: ../src/MemoryWords.cs:85
 msgid "cloud"
 msgstr "núvol"
 
 #
 #
-#: ../src/MemoryWords.cs:90
+#: ../src/MemoryWords.cs:86
 msgid "rain"
 msgstr "pluja"
 
-#: ../src/MemoryWords.cs:91
+#: ../src/MemoryWords.cs:87
 msgid "storm"
 msgstr "tempesta"
 
-#: ../src/MemoryWords.cs:92
+#: ../src/MemoryWords.cs:88
 msgid "fog"
 msgstr "boira"
 
-#: ../src/MemoryWords.cs:93
+#: ../src/MemoryWords.cs:89
 msgid "rainbow"
 msgstr "iris"
 
@@ -970,37 +964,37 @@ msgstr "iris"
 #
 #
 #. Animals
-#: ../src/MemoryWords.cs:96
+#: ../src/MemoryWords.cs:92
 msgid "rabbit"
 msgstr "conill"
 
-#: ../src/MemoryWords.cs:97
+#: ../src/MemoryWords.cs:93
 msgid "mouse"
 msgstr "ratolí"
 
-#: ../src/MemoryWords.cs:98
+#: ../src/MemoryWords.cs:94
 msgid "monkey"
 msgstr "mico"
 
 #
-#: ../src/MemoryWords.cs:99
+#: ../src/MemoryWords.cs:95
 msgid "bear"
 msgstr "ós"
 
-#: ../src/MemoryWords.cs:100
+#: ../src/MemoryWords.cs:96
 msgid "wolf"
 msgstr "llop"
 
 #
 #
-#
 #: ../src/PuzzleFigureLetter.cs:37
-msgid "Words and figures"
-msgstr "Paraules i figures"
+msgid "Figures and letters"
+msgstr "Figures i lletres"
 
+#
 #: ../src/PuzzleFigureLetter.cs:41
 msgid ""
-"The figures and the text are related. Which text should go under the last "
+"The figures and the text are related. What text should go under the last "
 "figure?"
 msgstr ""
 "Les figures i el text estan relacionats. Quin text correspon a l'última "
@@ -1043,9 +1037,10 @@ msgstr "Càlcul mental"
 msgid "Divide circles"
 msgstr "Divideix cercles"
 
+#
 #: ../src/PuzzleDivideCircle.cs:46
 msgid ""
-"In the last figure, in how many regions is the circle divided when all the "
+"In the last figure, in how many regions is the circle divided into when all "
 "dots are connected?"
 msgstr ""
 "A l'última figura, en quantes regions es divideix el cercle quan tots els "
@@ -1058,51 +1053,53 @@ msgid "Has {0} regions"
 msgstr "Té {0} regions"
 
 #
-#: ../src/MathGreaterDivisor.cs:33
-msgid "Greater divisor"
+#
+#: ../src/CalculationGreatestDivisor.cs:33
+msgid "Greatest divisor"
 msgstr "Divisor més gran"
 
 #
-#: ../src/MathGreaterDivisor.cs:41
+#
+#: ../src/CalculationGreatestDivisor.cs:41
 msgid ""
-"Which of the possible divisors is the greater that divides all the numbers?"
+"Which of the possible divisors is the greatest that divides all numbers?"
 msgstr ""
 "Quin dels divisors possibles és el més gran que divideix tots els números?"
 
 #
-#: ../src/MathGreaterDivisor.cs:206
+#: ../src/CalculationGreatestDivisor.cs:206
 msgid "Numbers"
 msgstr "Números"
 
 #
-#: ../src/MathGreaterDivisor.cs:221
+#: ../src/CalculationGreatestDivisor.cs:221
 msgid "Possible divisors"
 msgstr "Divisors possibles"
 
 #
 #
 #
-#: ../src/MathTwoNumbers.cs:31
+#: ../src/CalculationTwoNumbers.cs:31
 msgid "Two numbers"
 msgstr "Dos números"
 
-#: ../src/MathTwoNumbers.cs:39
+#: ../src/CalculationTwoNumbers.cs:39
 #, csharp-format
 msgid "Which two numbers when added are {0} and when multiplied are {1}?"
 msgstr ""
 "Quins dos números quan es sumen donen {0} i quan es multipliquen donen {1}?"
 
-#: ../src/MathTwoNumbers.cs:62 ../src/MathOperator.cs:81
+#: ../src/CalculationTwoNumbers.cs:62 ../src/CalculationOperator.cs:81
 #, csharp-format
 msgid "{0} and {1}"
 msgstr "{0} i {1}"
 
-#: ../src/MathTwoNumbers.cs:75
+#: ../src/CalculationTwoNumbers.cs:75
 #, csharp-format
 msgid "number1 + number2 = {0}"
 msgstr "número1 + número2 = {0}"
 
-#: ../src/MathTwoNumbers.cs:78
+#: ../src/CalculationTwoNumbers.cs:78
 #, csharp-format
 msgid "number1 * number2 = {0}"
 msgstr "número1 * número2 = {0}"
@@ -1117,8 +1114,9 @@ msgid "One of the black numbers in the matrix should be blue. Which one?"
 msgstr "Un dels números negres a la matriu hauria de ser blau. Quin?"
 
 #
+#
 #: ../src/PuzzleMatrixGroups.cs:40
-msgid "All the blue numbers share an arithmetical property."
+msgid "All blue numbers share an arithmetical property."
 msgstr "Tots els números blaus comparteixen una propietat aritmètica."
 
 #: ../src/PuzzleMatrixGroups.cs:46
@@ -1140,21 +1138,18 @@ msgstr ""
 "mantenir-la balancejada?"
 
 #
+#
 #: ../src/PuzzleBalance.cs:57
-msgid "Every triangle counts as 1, each diamond as a 2 and each square as 3."
+msgid "Every triangle counts as 1, each diamond as 2 and each square as 3."
 msgstr ""
 "Cada triangle compta com a 1, cada rombe com a 2 i cada quadrat com a 3."
 
 #
-#
-#
-#
-#
-#: ../src/MathWhichNumber.cs:34
+#: ../src/CalculationWhichNumber.cs:34
 msgid "Closer fraction"
 msgstr "Fracció més propera"
 
-#: ../src/MathWhichNumber.cs:42
+#: ../src/CalculationWhichNumber.cs:42
 #, csharp-format
 msgid ""
 "Which of the following numbers is closer to {0:###.###} (option A, B, C or "
@@ -1163,7 +1158,7 @@ msgstr ""
 "Quin dels següents números és el més proper a {0:###.###} (opció A, B, C o "
 "D)?"
 
-#: ../src/MathWhichNumber.cs:50
+#: ../src/CalculationWhichNumber.cs:50
 #, csharp-format
 msgid "The result of the operation {0} / {1} is {2:###.###}"
 msgstr "El resultat de l'operació {0} / {1} és {2:###.###}"
@@ -1188,7 +1183,7 @@ msgstr ""
 
 #: ../src/PuzzlePairs.cs:70
 #, csharp-format
-msgid "The result of multiply the two numbers inside every triangle is {0}."
+msgid "The result of multiplying the two numbers inside every triangle is {0}."
 msgstr ""
 "El resultat de multiplicar els dos números de dins de cada triangle és {0}."
 
@@ -1208,25 +1203,26 @@ msgid ""
 msgstr ""
 "El criteri per a decidir si una equació pertany al grup no és aritmètic."
 
+#
 #: ../src/PuzzleOstracism.cs:53
 msgid ""
-"In all the equations the digits from the left side should also appear in the "
+"In all equations the digits from the left side should also appear in the "
 "right side."
 msgstr ""
 "En totes els equacions els dígits de la part esquerra han d'aparèixer també "
 "a la part dreta."
 
-#: ../src/MathOperator.cs:33
+#: ../src/CalculationOperator.cs:33
 msgid "Operator"
 msgstr "Operador"
 
 #
-#: ../src/MathOperator.cs:37
+#: ../src/CalculationOperator.cs:37
 #, csharp-format
 msgid "The first operator is {0}."
 msgstr "El primer operador és {0}."
 
-#: ../src/MathOperator.cs:45
+#: ../src/CalculationOperator.cs:45
 #, csharp-format
 msgid "Which operators make {0}, {1}, and {2} equal {3}?"
 msgstr "Quins operadors fan {0}, {1} i {2} igual a {3}?"
@@ -1236,13 +1232,11 @@ msgid "Counting dots"
 msgstr "Comptar punts"
 
 #: ../src/MemoryCountDots.cs:44
-msgid "Try to memorize how many dots of each color there are."
-msgstr "Intenteu memoritzar quants punts de cada color hi ha."
-
-#: ../src/MemoryCountDots.cs:48
-#,  csharp-format
+#, csharp-format
 msgid "How many {0} dots were in the previous image? (answer using numbers)"
-msgstr "Quants punts de color {0} hi havia a la imatge prèvia? (responeu utilitzant números)"
+msgstr ""
+"Quants punts de color {0} hi havia a la imatge prèvia? (responeu utilitzant "
+"números)"
 
 #
 #: ../src/PuzzleFigurePattern.cs:37
@@ -1254,22 +1248,25 @@ msgstr "Patró figura"
 #
 #
 #
+#
 #: ../src/PuzzleFigurePattern.cs:41
-msgid "Which figure should replace the question mark (A, B or C)?"
+msgid "What figure should replace the question mark (A, B or C)?"
 msgstr "Quina figura ha de reemplaçar l'interrogant (A, B o C)?"
 
+#
 #: ../src/PuzzleFigurePattern.cs:45
 msgid ""
-"The third figure of every row involves combining somehow the first two "
+"The third figure of every row involves somehow combining the first two "
 "figures."
 msgstr ""
 "La tercera figura de cada fila és el resultat de combinar d'alguna manera "
 "les primeres dues figures."
 
+#
 #: ../src/PuzzleFigurePattern.cs:51
 msgid ""
 "Superpose the first and second figures and remove the lines that they have "
-"in common then rotate the resulting figure 45 degrees."
+"in common, then rotate the resulting figure 45 degrees."
 msgstr ""
 "Superposeu la primera i la segona figures i suprimiu les línies que tenen en "
 "comú i roteu la figura resultant 45 graus."
@@ -1316,8 +1313,8 @@ msgstr ""
 "de memòria a curt termini."
 
 #: ../src/GameDrawingArea.cs:179
-msgid "Get your memory ready..."
-msgstr "Prepareu la vostra memòria..."
+msgid "Get ready to memorize the next objects..."
+msgstr "Prepareu-vos per a memoritzar els objectes següents..."
 
 #: ../src/GameDrawingArea.cs:207
 msgid "Score"
@@ -1330,8 +1327,8 @@ msgstr "La puntuació total és {0}%"
 
 #
 #
-#: ../src/GameDrawingArea.cs:219
 #
+#: ../src/GameDrawingArea.cs:219
 msgid "No logic puzzle games played"
 msgstr "No s'ha jugat a cap trencaclosques"
 
@@ -1341,8 +1338,8 @@ msgid "Logic puzzle score is {0}%"
 msgstr "La puntuació en trencaclosques és {0}%"
 
 #
-#: ../src/GameDrawingArea.cs:229
 #
+#: ../src/GameDrawingArea.cs:229
 msgid "No mental calculation games played"
 msgstr "No s'ha jugat a cap joc de càlcul mental"
 
@@ -1354,8 +1351,8 @@ msgstr "La puntuació en càlcul mental és {0}%"
 
 #
 #
-#: ../src/GameDrawingArea.cs:239
 #
+#: ../src/GameDrawingArea.cs:239
 msgid "No memory games played"
 msgstr "No s'ha jugat a cap joc de memòria"
 
@@ -1383,8 +1380,9 @@ msgstr "Temps de joc: {0} (mitjana per joc {1})"
 msgid "Tips for your next games"
 msgstr "Consells per les vostres properes partides"
 
+#
 #: ../src/GameDrawingArea.cs:284
-msgid "Read the instructions carefully and identify the data and clues given."
+msgid "Read the instructions carefully and identify the data and given clues."
 msgstr ""
 "Llegiu les instruccions curosament i identifiqueu les dades i pistes donades."
 
@@ -1409,8 +1407,9 @@ msgid "Break the mental blocks and look into the boundaries of problems."
 msgstr ""
 "Trenqueu els bloquejos mentals i mireu més enllà dels límits dels problemes."
 
+#
 #: ../src/GameDrawingArea.cs:292
-msgid "Enjoy doing mistakes, they are part of the learning process."
+msgid "Enjoy making mistakes, they are part of the learning process."
 msgstr "Gaudiu fent errades, és part del procés d'aprenentatge."
 
 #: ../src/GameDrawingArea.cs:294
@@ -1420,25 +1419,29 @@ msgid ""
 msgstr ""
 "Feu tots els problemes, inclús els difícils. La millora prové de la pràctica."
 
+#
 #: ../src/GameDrawingArea.cs:296
-msgid "Play in daily basis, you will notice progress soon."
+msgid "Play on a daily basis, you will notice progress soon."
 msgstr "Jugueu diàriament, us adonareu del vostre progrés aviat."
 
+#
 #: ../src/GameDrawingArea.cs:298
 msgid ""
 "You can use the Custom Game Selection to choose exactly which games you want "
-"to train."
+"to play."
 msgstr ""
 "Podeu utilitzar la selecció de la partida personalitzada per a escollir "
 "exactament quins jocs voleu entrenar."
 
 #: ../src/GameDrawingArea.cs:300
-msgid "You can use the Preferences to adjust the difficulty level of the game."
+msgid "You may use the Preferences to adjust the difficulty level of the game."
 msgstr ""
+"Podeu utilitzar les Preferències per a ajustar el nivell de dificultat del "
+"joc."
 
 #: ../src/GameDrawingArea.cs:302
 msgid "Association of elements is a common technique for remembering things."
-msgstr ""
+msgstr "L'associació d'elements és una tècnica comuna per a recordar coses."
 
 #
 #: ../src/ColorPalette.cs:63
@@ -1480,26 +1483,29 @@ msgid "white"
 msgstr "blanc"
 
 #
+#
 #: ../src/PuzzlePeopleTable.cs:42
-msgid "People in a table"
-msgstr "Gent a una taula"
+msgid "People at a table"
+msgstr "Gent a la taula"
 
 #: ../src/PuzzlePeopleTable.cs:46
 #, csharp-format
 msgid ""
-"A group of people evenly separated is sat in a round table. How many people "
-"are if the {0} person is in front of the {1}?"
+"A group of people are sitting at round table, evenly spaced out. How many "
+"people are there if the {0} person is across from the {1}?"
 msgstr ""
 "Un grup de persones igualment separades s'asseu en una taula rodona. Quantes "
 "persones hi ha si la {0} persona és davant de la persona {1}?"
 
+#
 #: ../src/PuzzlePeopleTable.cs:52
 msgid ""
-"Substracting the two positions you get how many people is sat in half of the "
-"table then the double is the total amount of people."
+"Subtracting the two positions you find out how many people are seated half "
+"way around the table. Doubling this number leaves you with the total amount "
+"of people."
 msgstr ""
 "Restant les dues posicions obteniu quanta gent és asseguda a la meitat de la "
-"taula i llavors el doble és el nombre total de persones."
+"taula. El doble d'aquest número us dóna el nombre total de persones."
 
 #: ../src/PuzzlePeopleTable.cs:61
 msgid "5th"
@@ -1530,11 +1536,7 @@ msgstr "22ena"
 msgid "Memory figures"
 msgstr "Memoritza figures"
 
-#: ../src/MemoryFigures.cs:56
-msgid "Memorize in which position there is every figure"
-msgstr "Memoritzeu en quina posició es troba cada figura"
-
-#: ../src/MemoryFigures.cs:61
+#: ../src/MemoryFigures.cs:57
 msgid ""
 "In which cell is the other figure like the one shown below? (type the cell "
 "number)"
@@ -1550,14 +1552,15 @@ msgstr "Línies"
 #
 #
 #
+#
 #: ../src/PuzzleLines.cs:35
-msgid "How many lines can you count of in the figures below?"
-msgstr "Quantes línies podeu comptar a les figures de baix?"
+msgid "How many lines do you count of in the figures below?"
+msgstr "Quantes línies compteu a les figures de baix?"
 
 #: ../src/PuzzleLines.cs:41
 #, csharp-format
 msgid ""
-"There are {0} lines in the figure at the left and {1} in the figure at the "
+"There are {0} lines in the figure to the left and {1} in the figure to the "
 "right."
 msgstr ""
 "Hi ha {0} línies a la figura de l'esquerra i {1} línies a la figura de la "
@@ -1576,11 +1579,12 @@ msgid "The logic works at row level."
 msgstr "La lògica funciona a nivell de fila."
 
 #
+#
 #: ../src/PuzzleMissingPiece.cs:46
 msgid ""
 "In every row the third square is made by flipping the first square and "
-"superimposing it to the second square, removing the matching lines, and then "
-"flipping the resulting image."
+"superimposing it on the second square, followed by removing the matching "
+"lines, and then flipping the resulting image."
 msgstr ""
 "A cada fila el tercer quadrat es construeix donant la volta al primer "
 "quadrat i sobreimposant-ho al segon quadrat, eliminat les línies "
@@ -1608,8 +1612,8 @@ msgstr "Cada tall està relacionat amb el tall contrari."
 #: ../src/PuzzleMissingSlice.cs:72
 #, csharp-format
 msgid ""
-"All the numbers of each slice when added to the ones of the opposite slice "
-"add always {0}."
+"All numbers of each slice, when added to the ones of the opposite slice, add "
+"always {0}."
 msgstr ""
 "Tots els números de cada tall quan s'afegeixen als del tall contrari sumen "
 "sempre {0}."
@@ -1621,22 +1625,25 @@ msgstr "Tetris"
 #
 #
 #
+#
 #: ../src/PuzzleTetris.cs:35
-msgid "Which is the figure that completes the sequence below (A, B or C)?"
+msgid "What figure completes the sequence below (A, B or C)?"
 msgstr "Quina és la figura que completa la seqüència de baix (A, B, o C)?"
 
+#
 #: ../src/PuzzleTetris.cs:41
 msgid ""
-"It is the figure that completes all the possible combinations with four "
-"blocks without taking into account rotations."
+"It is the figure that completes all possible combinations with four blocks "
+"without taking into account rotations."
 msgstr ""
 "És la figura que completa totes les possible combinacions amb quatre blocs "
 "sense tenir en compte les rotacions."
 
+# csharp-format
 #: ../src/MemoryIndications.cs:127
 #, csharp-format
-msgid "Start in point number {0}"
-msgstr "Inicia en el punt número {0}"
+msgid "Start at point number {0}"
+msgstr "Inicia al punt número {0}"
 
 #: ../src/MemoryIndications.cs:131
 msgid "Turn right"
@@ -1656,8 +1663,8 @@ msgstr "Vés cap abaix"
 
 #: ../src/MemoryIndications.cs:142
 #, csharp-format
-msgid "End in point {0}"
-msgstr "Punt final {0}"
+msgid "End at point {0}"
+msgstr "Finalitza al punt {0}"
 
 #
 #
@@ -1666,41 +1673,83 @@ msgid "Memorize indications"
 msgstr "Memoritzeu indicacions"
 
 #
-#: ../src/MemoryIndications.cs:160
-msgid "Memorize all the indications."
-msgstr "Memoritzeu totes les indicacions."
-
 #
 #
-#
-#: ../src/MemoryIndications.cs:165
+# csharp-format
+#: ../src/MemoryIndications.cs:161
 #, csharp-format
 msgid ""
-"Which of the follow graphics represents the indications previously given?"
+"Which of the following graphics represent the indications previously given?"
 msgstr ""
 "Quin dels següents gràfics representa les indicacions donades prèviament?"
 
 #: ../src/PuzzleMostInCommon.cs:71
 msgid "Most in common"
-msgstr ""
+msgstr "Més en comú"
 
 #: ../src/PuzzleMostInCommon.cs:75
 msgid ""
-"Which of the possible answers has the most in common with the four given "
+"Which of the possible answers have the most in common with the four given "
 "figures?"
 msgstr ""
+"Quina de les possibles respostes té més en comú amb les quatre figures "
+"donades?"
 
 #: ../src/PuzzleMostInCommon.cs:79
-msgid "Think of the common elements that the given figures have inside."
+msgid "Think of the common elements that the given figures have inside them."
 msgstr ""
+"Penseu en els elements comuns que les figures donades tenen dins d'elles."
 
 #: ../src/PuzzleMostInCommon.cs:87
 msgid ""
-"It has the same number of elements inside the figure that the figures given."
+"It has the same number of elements inside the figure as the given figures."
 msgstr ""
+"Té el mateix nombre d'elements dins de la figura que les figures donades."
 
 #: ../src/PuzzleMostInCommon.cs:89
-msgid "It is the figure with more elements in common with the figures given."
+msgid ""
+"It is the figure with the most elements in common compared to the given "
+"figures."
 msgstr ""
 
+#: ../src/PuzzleBuildTriangle.cs:48
+msgid "Build a triangle"
+msgstr "Construir un triangle"
 
+#: ../src/PuzzleBuildTriangle.cs:52
+msgid "Which three pieces can you use together to build a triangle?"
+msgstr "Quines tres peces podeu utilitzar per a construir un triangle?"
+
+#: ../src/PuzzleBuildTriangle.cs:56
+msgid "The resulting triangle is isosceles."
+msgstr "El triangle resultant és isòsceles."
+
+#
+#: ../src/PuzzleBuildTriangle.cs:167
+msgid "The triangle is:"
+msgstr "El triangle és:"
+
+#
+#
+#
+#: ../src/Memory.cs:50
+msgid "Memorize the objects below in the given time"
+msgstr "Memoritzeu els objectes d'abaix en el temps donat"
+
+#: ../src/PuzzleClocks.cs:34
+msgid "Clocks"
+msgstr "Rellotges"
+
+#: ../src/PuzzleClocks.cs:38
+msgid "To what number should the large handle of the last clock point?"
+msgstr "A quin número hauria d'apuntar la maneta gran de l'últim rellotge?"
+
+#: ../src/PuzzleClocks.cs:44
+#, csharp-format
+msgid ""
+"Starting from the first clock sum {0} to the value indicated by the hands."
+msgstr ""
+
+#: ../src/PuzzleClocks.cs:50
+msgid "The clocks do not follow the time logic."
+msgstr "Els rellotges no segueixen la lògica horària."
