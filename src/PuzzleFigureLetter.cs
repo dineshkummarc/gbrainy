@@ -34,7 +34,7 @@ public class PuzzleFigureLetter : Game
 	}
 
 	public override string Name {
-		get {return Catalog.GetString ("Figures and letters");}
+		get {return Catalog.GetString ("Figures and text");}
 	}
 
 	public override string Question {
@@ -42,7 +42,7 @@ public class PuzzleFigureLetter : Game
 	}
 
 	public override string Tip {
-		get { return Catalog.GetString ("Every character of the word represents a property of the figure.");}
+		get { return Catalog.GetString ("Every character of the text represents a property of the figure.");}
 	}
 
 	public override string Answer {
