@@ -52,8 +52,24 @@ public class PuzzleClocks : Game
 
 	public override void Initialize ()
 	{
-		int position = 12 + random.Next (2);
-		addition = 11 + random.Next (3);
+		int position;
+
+		// In all these cases the clock logic clearly do not work since the small hand is in the next hour
+		switch (random.Next (3)) {
+		case 0:
+			position = 48;
+			addition = 5;
+			break;
+		case 1:
+			position = 38;
+			addition = 15;
+			break;
+		case 2:
+		default:
+			position = 24;
+			addition = 5;
+			break;
+		}
 
 		handles = new int [clocks * handle_num];
 
@@ -63,7 +79,27 @@ public class PuzzleClocks : Game
 			handles [i + 1] = position - ((position / 10) * 10);
 			position += addition;
 		}
+		
 		right_answer = handles[7].ToString ();
+
+		/*DateTime dt1 = new DateTime (2008, 2, 20, handles[0], handles[1] * 5, 0);
+		DateTime dt2 = new DateTime (2008, 2, 20, handles[2], handles[3] * 5, 0);
+		Console.WriteLine ("t1 {0}", dt1);
+		Console.WriteLine ("t2 {0}", dt2);
+		Console.WriteLine ("Time diff {0} from 1st to 2nd", dt2-dt1);
+
+		dt1 = new DateTime (2008, 2, 20, handles[2], handles[3] * 5, 0);
+		dt2 = new DateTime (2008, 2, 20, handles[4], handles[5] * 5, 0);
+		Console.WriteLine ("t1 {0}", dt1);
+		Console.WriteLine ("t2 {0}", dt2);
+		Console.WriteLine ("Time diff {0} from 1st to 2nd", dt2-dt1);
+
+		dt1 = new DateTime (2008, 2, 20, handles[4], handles[5] * 5, 0);
+		dt2 = new DateTime (2008, 2, 20, handles[6], handles[7] * 5, 0);
+		Console.WriteLine ("t1 {0}", dt1);
+		Console.WriteLine ("t2 {0}", dt2);
+		Console.WriteLine ("Time diff {0} from 1st to 2nd", dt2-dt1);*/
+
 	}	
 
 	public void DrawClock (CairoContextEx gr, double x, double y, int hand_short, int hand_large, bool draw_large)
