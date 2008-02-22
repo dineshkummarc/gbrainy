@@ -145,7 +145,7 @@ public class PuzzleClocks : Game
 
 	public override void Draw (CairoContextEx gr, int area_width, int area_height)
 	{
-		double x = DrawAreaX + 0.1, y = DrawAreaY + 0.1;
+		double x = DrawAreaX + 0.1, y = DrawAreaY + 0.05;
 
 		gr.Scale (area_width, area_height);
 
@@ -153,10 +153,25 @@ public class PuzzleClocks : Game
 		PrepareGC (gr);
 		
 		DrawClock (gr, x + 0.1, y + 0.1, handles[0], handles[1], true);
+		gr.MoveTo (x + 0.03, y + 0.31);
+		gr.ShowText (String.Format (Catalog.GetString ("Figure {0}"), 'A'));
+		gr.Stroke ();
+	
 		DrawClock (gr, x + 0.5, y + 0.1, handles[2], handles[3], true);
+		gr.MoveTo (x + 0.43, y + 0.31);
+		gr.ShowText (String.Format (Catalog.GetString ("Figure {0}"), 'B'));
+		gr.Stroke ();
 
-		DrawClock (gr, x + 0.1, y + 0.5, handles[4], handles[5], true);
-		DrawClock (gr, x + 0.5, y + 0.5, handles[6], handles[7], DrawAnswer == true);
+		DrawClock (gr, x + 0.1, y + 0.52, handles[4], handles[5], true);
+		gr.MoveTo (x + 0.03, y + 0.73);
+		gr.ShowText (String.Format (Catalog.GetString ("Figure {0}"), 'C'));
+		gr.Stroke ();
+
+		DrawClock (gr, x + 0.5, y + 0.52, handles[6], handles[7], DrawAnswer == true);
+		gr.MoveTo (x + 0.43, y + 0.73);
+		gr.ShowText (String.Format (Catalog.GetString ("Figure {0}"), 'D'));
+		gr.Stroke ();
+
 	}
 }
 
