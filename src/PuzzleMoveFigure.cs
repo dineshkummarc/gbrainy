@@ -40,10 +40,10 @@ public class PuzzleMoveFigure: Game
 
 			switch (type) {
 			case 0:
-				answer += Catalog.GetString ("Move the circle from the first line to the second; move two circles from the fourth to the second line; and move the fifth line.");
+				answer += Catalog.GetString ("Move the circle from the first line to the second and move two circles from the fourth line to the second and the fifth lines.");
 				break;
 			case 1:
-				answer += Catalog.GetString ("Move the two first lines; move the first and last circle of the last line to the third line; and move sixth and seventh lines.");
+				answer += Catalog.GetString ("Move the first line to the seventh; move the two circles of the second line to third; and move first and last circles of the fifth line to the sixth.");
 				break;
 			}
 			return answer;
