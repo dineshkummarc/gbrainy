@@ -99,7 +99,7 @@ public class PuzzleFigures : Game
 
 		y += 0.18;
 		gr.MoveTo (x, y);		
-		gr.ShowText (Catalog.GetString ("E.g: ACB (diamond, circle, triangle)"));	
+		gr.ShowText (Catalog.GetString ("E.g: ACB (diamond, triangle, circle)"));	
 	}
 
 	public override void Draw (CairoContextEx gr, int area_width, int area_height)
