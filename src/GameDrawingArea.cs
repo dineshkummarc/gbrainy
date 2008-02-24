@@ -83,7 +83,7 @@ public class GameDrawingArea : DrawingArea
 	private void DrawWelcome (CairoContextEx gr, int area_width, int area_height)
 	{
 		double y = 0.07;
-		double space = 0.25;
+		double space = 0.21;
 		double line_space = 0.06;
 		ImageSurface image;
 
@@ -99,7 +99,7 @@ public class GameDrawingArea : DrawingArea
 		gr.SetFontSize (0.03);
 		gr.DrawStringWithWrapping (0.05, y + 0.08, line_space, Catalog.GetString ("gbrainy is a brain teaser game and trainer to have fun and to keep your brain trained. It includes:"));
 
-		y = 0.3;
+		y = 0.26;
 		image = new ImageSurface (Defines.DATA_DIR + "logic-games-80.png");
 		if (image.Width > 0) {
 			gr.Save ();
@@ -134,6 +134,9 @@ public class GameDrawingArea : DrawingArea
 			gr.Restore ();
 		}
 		gr.DrawStringWithWrapping (0.21, y + 0.03, line_space, Catalog.GetString ("Memory trainers. To prove and enhance your short term memory."));
+		gr.Stroke ();
+
+		gr.DrawStringWithWrapping (0.05, y + 0.23, line_space, Catalog.GetString ("Use the Settings to adjust the difficulty level of the game."));
 		gr.Stroke ();
 	}
 
@@ -295,9 +298,9 @@ public class GameDrawingArea : DrawingArea
 		case 6:
 			return Catalog.GetString ("Play on a daily basis, you will notice progress soon.");
 		case 7:
-			return Catalog.GetString ("You can use the Custom Game Selection to choose exactly which games you want to play.");
+			return Catalog.GetString ("Use the Custom Game Selection to choose exactly which games you want to play.");
 		case 8:
-			return Catalog.GetString ("You may use the Preferences to adjust the difficulty level of the game.");
+			return Catalog.GetString ("Use the Preferences to adjust the difficulty level of the game.");
 		case 9:
 			return Catalog.GetString ("Association of elements is a common technique for remembering things.");
 		}
