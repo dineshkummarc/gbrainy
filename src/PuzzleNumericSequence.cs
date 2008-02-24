@@ -61,7 +61,7 @@ public class PuzzleNumericSequence : Game
 
 	public override void Initialize ()
 	{
-		formula = random.Next (3);
+		formula = random.Next (CurrentDifficulty == Difficulty.Easy ? 2 : 3);
 		numbers =  new int [max_num];
 		numbers[0] = 3 + random.Next (3);
 		for (int i = 1; i < max_num; i++) {
@@ -98,9 +98,7 @@ public class PuzzleNumericSequence : Game
 		}
 		sequence.Append ("?");
 
-		gr.MoveTo (DrawAreaX + 0.05, DrawAreaY + 0.3);
-		gr.ShowText (sequence.ToString ());
-		gr.Stroke ();
+		gr.DrawTextCentered (0.5, DrawAreaY + 0.3, sequence.ToString ());
 	}
 
 }

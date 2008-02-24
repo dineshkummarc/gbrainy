@@ -58,12 +58,29 @@ public class CalculationWhichNumber : Game
 		options = new double [options_cnt * 2];
 		bool duplicated;
 		bool done = false;
-		int i, ans_idx;
+		int i, ans_idx, basenum, randnum;
+
+		switch (CurrentDifficulty) {
+		case Difficulty.Easy:
+			basenum = 5;
+			randnum = 10;
+			break;
+		default:
+		case Difficulty.Medium:
+			basenum = 5;
+			randnum = 30;
+			break;
+		case Difficulty.Master:
+			basenum = 9;
+			randnum = 60;
+			break;
+		}
+
 
 		while (done == false) {
 			duplicated = false;
-			options[0 + 0] = 5 + random.Next (30);
-			options[0 + 1] = 5 + random.Next (30);
+			options[0 + 0] = basenum + random.Next (randnum);
+			options[0 + 1] = basenum + random.Next (randnum);
 				
 			options[2 + 0] = options[0 + 0] + random.Next (2);
 			options[2 + 1] = options[0 + 1] + random.Next (2);

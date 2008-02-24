@@ -24,12 +24,12 @@ using Mono.Unix;
 
 public class PuzzleNumericRelation : Game
 {
-	private const int max_num = 9;
 	private const int group_size = 3;
 	private int sum_value;
 	private int question;
 	private int[] numbers;
 	private int formula;
+	private const int max_num = 9;
 
 	public override string Name {
 		get {return Catalog.GetString ("Numeric relation");}
@@ -65,12 +65,20 @@ public class PuzzleNumericRelation : Game
 
 	public override void Initialize ()
 	{
-		int group = 0;
+		int group = 0, inc = 0;
+
+		if (CurrentDifficulty == Difficulty.Easy) {
+			sum_value = 10 + random.Next (10);
+			inc = 5;
+		}
+		else {
+			sum_value = 30 + random.Next (10);
+			inc = 12;
+		}
 
 		question = 1 + random.Next (max_num - 2);
 		formula = random.Next (3);
 		numbers =  new int [max_num];
-		sum_value = 30 + random.Next (10);
 		
 		for (int i = 0; i < max_num; i++) {
 			if (group == group_size - 1) {	
@@ -88,7 +96,7 @@ public class PuzzleNumericRelation : Game
 				group = 0;
 				continue;
 			}
-			numbers[i] = 1 + random.Next (12);
+			numbers[i] = 1 + random.Next (inc);
 			group++;
 		}
 
@@ -115,10 +123,7 @@ public class PuzzleNumericRelation : Game
 			}
 		}
 		sequence.Append (numbers[max_num - 1]);
-
-		gr.MoveTo (DrawAreaX, DrawAreaY + 0.3);
-		gr.ShowText (sequence.ToString ());
-		gr.Stroke ();
+		gr.DrawTextCentered (0.5, DrawAreaY + 0.3, sequence.ToString ());
 	}
 
 }

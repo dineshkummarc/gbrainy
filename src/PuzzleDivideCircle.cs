@@ -48,7 +48,10 @@ public class PuzzleDivideCircle : Game
 
 	public override void Initialize ()
 	{
-		dots = 5 + random.Next (2);
+		if (CurrentDifficulty==Difficulty.Easy)
+			dots = 5;
+		else
+			dots = 5 + random.Next (2);
 
 		switch (dots) {
 		case 5:

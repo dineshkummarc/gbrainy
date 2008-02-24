@@ -51,7 +51,10 @@ public class PuzzleTriangles : Game
 
 	public override void Initialize ()
 	{
-		type = random.Next (2);
+		if (CurrentDifficulty==Difficulty.Easy)
+			type = 1;
+		else
+			type = random.Next (2);
 
 		if (type == 0)	
 			right_answer = "16";

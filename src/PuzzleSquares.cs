@@ -55,7 +55,11 @@ public class PuzzleSquares : Game
 
 	public override void Initialize ()
 	{
-		type = random.Next (2);
+		if (CurrentDifficulty==Difficulty.Easy)
+			type = 0;
+		else
+			type = random.Next (2);
+
 		rows = 3;
 		columns = 3;		
 

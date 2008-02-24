@@ -150,7 +150,6 @@ public class MemoryIndications : Memory
 	private Indication[] indications_wrongB;
 	private Indication[] indications_wrongC;
 	private ArrayListIndicesRandom answers;
-	const int steps = 7;
 
 	public override string Name {
 		get {return Catalog.GetString ("Memorize indications");}
@@ -162,8 +161,8 @@ public class MemoryIndications : Memory
 	}
 
 	public override void Initialize ()
-	{			
-		indications = new Indication [steps];
+	{
+		indications = new Indication [CurrentDifficulty == Difficulty.Easy ? 5 : 7];
 		Indication.TurnDirection second_turn = (Indication.TurnDirection) 2 +  random.Next (2);
 		
 		indications[0] = new Indication (Indication.Type.Start, 0);
@@ -171,13 +170,17 @@ public class MemoryIndications : Memory
 		indications[2] = new Indication (Indication.Type.Turn, second_turn); // up or down
 		indications[3] = new Indication (Indication.Type.Turn, random.Next (2)); // right or left
 
-		if (second_turn == Indication.TurnDirection.Up)
-			indications[4] = new Indication (Indication.Type.Turn, Indication.TurnDirection.Up);
-		else
-			indications[4] = new Indication (Indication.Type.Turn, Indication.TurnDirection.Down);
+		if (CurrentDifficulty==Difficulty.Easy) {
+			indications[4] = new Indication (Indication.Type.End, 1);		
+		} else {
+			if (second_turn == Indication.TurnDirection.Up)
+				indications[4] = new Indication (Indication.Type.Turn, Indication.TurnDirection.Up);
+			else
+				indications[4] = new Indication (Indication.Type.Turn, Indication.TurnDirection.Down);
 
-		indications[5] = new Indication (Indication.Type.Turn, random.Next (2)); // right or left
-		indications[6] = new Indication (Indication.Type.End, 1);
+			indications[5] = new Indication (Indication.Type.Turn, random.Next (2)); // right or left
+			indications[6] = new Indication (Indication.Type.End, 1);
+		}
 		
 		indications_wrongA = CopyAnswer ();
 		indications_wrongB = CopyAnswer ();
@@ -190,12 +193,22 @@ public class MemoryIndications : Memory
 			indications_wrongA[3] = new Indication (Indication.Type.Turn, Indication.TurnDirection.Right);
 		}
 
-		if ((Indication.TurnDirection) indications[5].obj == Indication.TurnDirection.Right) {
-			indications_wrongB[5] = new Indication (Indication.Type.Turn, Indication.TurnDirection.Left);
+		if (CurrentDifficulty == Difficulty.Easy) {
+			if ((Indication.TurnDirection) indications[2].obj == Indication.TurnDirection.Up) {
+				indications_wrongB[2] = new Indication (Indication.Type.Turn, Indication.TurnDirection.Down);
+			}
+			else {
+				indications_wrongB[2] = new Indication (Indication.Type.Turn, Indication.TurnDirection.Up);
+			}
+		} else {
+			if ((Indication.TurnDirection) indications[5].obj == Indication.TurnDirection.Right) {
+				indications_wrongB[5] = new Indication (Indication.Type.Turn, Indication.TurnDirection.Left);
+			}
+			else {
+				indications_wrongB[5] = new Indication (Indication.Type.Turn, Indication.TurnDirection.Right);
+			}
 		}
-		else {
-			indications_wrongB[5] = new Indication (Indication.Type.Turn, Indication.TurnDirection.Right);
-		}
+
 		if ((Indication.TurnDirection) indications[1].obj == Indication.TurnDirection.Right) {
 			indications_wrongC[1] = new Indication (Indication.Type.Turn, Indication.TurnDirection.Left);
 		}
@@ -221,8 +234,8 @@ public class MemoryIndications : Memory
 
 	private Indication[] CopyAnswer ()
 	{
-		Indication[] answer = new Indication [steps];
-		for (int i = 0; i < steps; i++)
+		Indication[] answer = new Indication [indications.Length];
+		for (int i = 0; i < indications.Length; i++)
 			answer[i] = new Indication (indications[i].type, indications[i].obj);
 
 		return answer;
@@ -259,7 +272,6 @@ public class MemoryIndications : Memory
 		x = 0.22; y = 0.3;
 		DrawPossibleAnswers (gr, x, y, WhichAnswer (answers[0]));
 		gr.MoveTo (x, y + 0.2);
-		//gr.ShowText ("Figure A");
 		gr.ShowText (String.Format (Catalog.GetString ("Figure {0}"), "A"));
 
 		x = 0.7; y = 0.3;

@@ -45,7 +45,11 @@ public class PuzzleLines : Game
 
 	public override void Initialize ()
 	{
-		type = random.Next (max_types);
+		if (CurrentDifficulty==Difficulty.Easy)
+			type = 0;
+		else
+			type = random.Next (max_types);		
+
 		switch (type) {
 		case 0:
 			fig1 = 15;
