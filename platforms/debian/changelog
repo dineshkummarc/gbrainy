@@ -1,0 +1,68 @@
+gbrainy (0.53-1) unstable; urgency=low
+
+  * New upstream version.
+
+ -- Siegfried-Angel Gevatter Pujals (RainCT) <rainct@ubuntu.com>  Mon, 11 Feb 2008 21:16:15 +0100
+
+gbrainy (0.52-1) unstable; urgency=low
+
+  * New upstream version (game freezed with modern mono versions).
+  * debian/control: Fix a typo in the long description.
+
+ -- Siegfried-Angel Gevatter Pujals (RainCT) <rainct@ubuntu.com>  Sun, 03 Feb 2008 19:01:16 +0100
+
+gbrainy (0.51-1) unstable; urgency=low
+
+  * New upstream version (bug fixes and translation updates).
+  * Change Maintainer's email address (mine), again.
+
+ -- Siegfried-Angel Gevatter Pujals (RainCT) <rainct@ubuntu.com>  Sat, 26 Jan 2008 15:34:10 +0100
+
+gbrainy (0.50-1) unstable; urgency=low
+
+  * New upstream version (Closes: #460320). Packaging changes:
+     - Drop patches/05_exe-file-location.patch.
+     - Little modifications to debian/rules.
+  * debian/control:
+     - Rename XS-Vcs-{Svn,Browser} fields to Vcs-{Svn,Browser}
+     - Rewrite the description.
+     - Bump Standards Version to 3.7.3.
+
+ -- Siegfried-Angel Gevatter Pujals (RainCT) <sgevatter@ubuntu.cat>  Sat, 12 Jan 2008 11:49:51 +0100
+
+gbrainy (0.41-1) unstable; urgency=low
+
+  * New upstream release (Closes: #451844)
+     - Fixes "circles in a rectangle"'s answer (Closes: #449062)
+  * debian/control:
+     - move homepage to its own field
+     - push up debhelper and cdbs' mininum versions
+     - add XS-Vcs-Svn field
+  * debian/gbrainy.6: drop it, file has been adopted by upstream
+  * debian/watch: push version up to 3
+  * debian/gbrainy.install: drop it, replaced with a cp in debian/rules
+  * debian/rules:
+     - installing the binary to /usr/games (instead of /usr/bin)
+     - some cleanup
+
+ -- Siegfried-Angel Gevatter Pujals (RainCT) <sgevatter@ubuntu.cat>  Sun, 18 Nov 2007 18:15:22 +0100
+
+gbrainy (0.3-1) unstable; urgency=low
+
+  * New upstream version (Closes: #446408)
+  * Change maintainer email
+
+ -- Siegfried-Angel Gevatter Pujals (RainCT) <sgevatter@ubuntu.cat>  Sat, 13 Oct 2007 11:41:20 +0200
+
+gbrainy (0.2-2) unstable; urgency=low
+
+  * Fix grammatical error in package description (Closes: #443842)
+
+ -- Siegfried-Angel Gevatter Pujals (RainCT) <siggi.gevatter@gmail.com>  Mon, 24 Sep 2007 16:52:30 +0200
+
+gbrainy (0.2-1) unstable; urgency=low
+
+  * Initial release (Closes: #440982)
+  * Fix gbrainy.exe's installation location (patches/05_exe-file-location.patch)
+
+ -- Siegfried-Angel Gevatter Pujals (RainCT) <siggi.gevatter@gmail.com>  Tue, 11 Sep 2007 19:41:13 +0200

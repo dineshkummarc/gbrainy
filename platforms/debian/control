@@ -1,0 +1,43 @@
+Source: gbrainy
+Section: games
+Priority: optional
+Maintainer: Siegfried-Angel Gevatter Pujals (RainCT) <rainct@ubuntu.com>
+Homepage: http://live.gnome.org/gbrainy
+Vcs-Svn: svn://svn.debian.org/pkg-mono/non-group/gbrainy/trunk
+Vcs-Browser: http://svn.debian.org/wsvn/pkg-mono/non-group/gbrainy/?op=log
+Build-Depends: cdbs (>= 0.4.49), debhelper (>= 5.0.37.1)
+Build-Depends-Indep: autotools-dev,
+ cli-common-dev (>= 0.4.0),
+ intltool (>= 0.35),
+ libcairo2-dev (>= 1.2),
+ libglade2.0-cil (>= 2.8),
+ libgnome2-dev (>= 2.2),
+ libgnomeui-dev (>= 2.2),
+ libgnome2.0-cil (>= 2.8),
+ libgtk2.0-cil (>= 2.8),
+ libgtk2.0-dev (>= 2.8),
+ libmono-dev (>= 1.1.7),
+ libmono2.0-cil,
+ libmono-cairo2.0-cil,
+ mono-gmcs (>= 1.1.8)
+Standards-Version: 3.7.3
+
+Package: gbrainy
+Architecture: all
+Depends: ${shlibs:Depends}, ${misc:Depends}, ${cli:Depends}
+Description: brain teaser game and trainer to have fun and to keep your brain trained
+ gbrainy is a platform to train memory, arithmetical and logical
+ capabilities with many sorts of different exercises of different
+ difficulty levels. It should have something for all ages and purposes:
+ kids whose parents want them to develop their capabilities, adults that
+ want to keep their mind in form or just try it out for fun, older people
+ that might need to do some memory exercises, etc.
+ .
+ It provides the following types of games:
+ .
+  * Logic Puzzles: games designed to challenge your reasoning and
+    thinking skills.
+  * Mental Calculation: games based on arithmetical operations designed
+    to prove your mental calculation skills.
+  * Memory Trainers: games designerd to challenge your short term
+    memory.
