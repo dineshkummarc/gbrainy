@@ -300,7 +300,7 @@ public class GameDrawingArea : DrawingArea
 		case 7:
 			return Catalog.GetString ("Use the Custom Game Selection to choose exactly which games you want to play.");
 		case 8:
-			return Catalog.GetString ("Use the Preferences to adjust the difficulty level of the game.");
+			return Catalog.GetString ("Use the Settings to adjust the difficulty level of the game.");
 		case 9:
 			return Catalog.GetString ("Association of elements is a common technique for remembering things.");
 		}
