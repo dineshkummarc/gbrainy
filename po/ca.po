@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gbrainy\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-02-20 18:40+0100\n"
-"PO-Revision-Date: 2008-02-20 19:00+0200\n"
+"POT-Creation-Date: 2008-02-24 11:13+0100\n"
+"PO-Revision-Date: 2008-02-24 12:00+0200\n"
 "Last-Translator: Jordi Mas <jmas@softcatala.org>\n"
 "Language-Team: Catalan\n"
 "MIME-Version: 1.0\n"
@@ -424,7 +424,9 @@ msgstr ""
 #: ../src/PuzzleTetris.cs:156 ../src/MemoryIndications.cs:263
 #: ../src/MemoryIndications.cs:268 ../src/MemoryIndications.cs:273
 #: ../src/MemoryIndications.cs:278 ../src/PuzzleMostInCommon.cs:273
-#: ../src/PuzzleBuildTriangle.cs:153
+#: ../src/PuzzleBuildTriangle.cs:153 ../src/PuzzleClocks.cs:157
+#: ../src/PuzzleClocks.cs:162 ../src/PuzzleClocks.cs:167
+#: ../src/PuzzleClocks.cs:172
 #, csharp-format
 msgid "Figure {0}"
 msgstr "Figura {0}"
@@ -446,21 +448,23 @@ msgstr ""
 
 #
 #: ../src/PuzzleMoveFigure.cs:43
+#
 msgid ""
-"Move the circle from the first line to the second; move two circles from the "
-"fourth to the second line; and move the fifth line."
+"Move the circle from the first line to the second and move two circles from "
+"the fourth line to the second and the fifth lines."
 msgstr ""
-"Moveu el cercle de la primera línia a la segona; dos cercles de la quarta a "
-"la segona línia; i moveu la cinquena línia."
+"Moveu el cercle de la primera línia a la segona i moveu dos cercles de la quarta a "
+"la segona i cinquena línia."
 
 #
 #: ../src/PuzzleMoveFigure.cs:46
+#
 msgid ""
-"Move the two first lines; move the first and last circle of the last line to "
-"the third line; and move sixth and seventh lines."
+"Move the first line to the seventh; move the two circles of the second line "
+"to third; and move first and last circles of the fifth line to the sixth."
 msgstr ""
-"Moveu les dues primeres línies; i el primer i últim cercle de l'última línia "
-"a la tercera línia; i moveu la sisena i la setena línies."
+"Moveu la primera línia a la setena; moveu dos cercles de la segona línia a la "
+"tercera; i moveu el primer i últim cercle de la cinquena línia a la sisena."
 
 #: ../src/PuzzleTriangles.cs:29
 msgid "Triangles"
@@ -988,8 +992,9 @@ msgstr "llop"
 #
 #
 #: ../src/PuzzleFigureLetter.cs:37
-msgid "Figures and letters"
-msgstr "Figures i lletres"
+#
+msgid "Figures and text"
+msgstr "Figures i text"
 
 #
 #: ../src/PuzzleFigureLetter.cs:41
@@ -1000,9 +1005,10 @@ msgstr ""
 "Les figures i el text estan relacionats. Quin text correspon a l'última "
 "figura?"
 
+#
 #: ../src/PuzzleFigureLetter.cs:45
-msgid "Every character of the word represents a property of the figure."
-msgstr "Cada caràcter de la paraula representa una propietat de la figura."
+msgid "Every character of the text represents a property of the figure."
+msgstr "Cada caràcter del text representa una propietat de la figura."
 
 #
 #: ../src/PuzzleFigureLetter.cs:51
@@ -1505,7 +1511,7 @@ msgid ""
 "of people."
 msgstr ""
 "Restant les dues posicions obteniu quanta gent és asseguda a la meitat de la "
-"taula. El doble d'aquest número us dóna el nombre total de persones."
+"taula. El doble d'aquest número és el nombre total de persones."
 
 #: ../src/PuzzlePeopleTable.cs:61
 msgid "5th"
@@ -1711,6 +1717,7 @@ msgid ""
 "It is the figure with the most elements in common compared to the given "
 "figures."
 msgstr ""
+"És la figura amb més elements en comú quan es compara a les figures donades."
 
 #: ../src/PuzzleBuildTriangle.cs:48
 msgid "Build a triangle"
@@ -1749,7 +1756,10 @@ msgstr "A quin número hauria d'apuntar la maneta gran de l'últim rellotge?"
 msgid ""
 "Starting from the first clock sum {0} to the value indicated by the hands."
 msgstr ""
+"Començant des del primer rellotge sumeu {0} al valor indicat per les manetes."
 
 #: ../src/PuzzleClocks.cs:50
 msgid "The clocks do not follow the time logic."
 msgstr "Els rellotges no segueixen la lògica horària."
+
+
