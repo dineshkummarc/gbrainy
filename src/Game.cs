@@ -49,6 +49,7 @@ abstract public class Game
 	private bool won;
 	private bool tip_used;
 	private Difficulty difficulty;
+	private bool trace_score = false; // Set to true to debug scoring
 
 	public Game ()
 	{
@@ -160,25 +161,39 @@ abstract public class Game
 		set { won = value; }
 	}
 
-	// Avergate time in second that a player is expected to complete this game
+	// Average time in seconds that a player is expected to complete this game
 	public int AverageTime {
 		get {
+			double factor;
+
+			switch (CurrentDifficulty) {
+			case Difficulty.Easy:
+				factor = 1.3;
+				break;
+			case Difficulty.Master:
+				factor = 0.7;
+				break;		
+			case Difficulty.Medium:
+			default:
+				factor = 1.0;
+				break;		
+			}
+				
 			switch (Type) {
 			case Types.MemoryTrainer:
-				return 30;
+				return (int) (30 * factor);
 			case Types.MathTrainer:
-				return 60;				
+				return (int) (60 * factor);
 			}
-			return 120; // Default for all games (logic)
+			return (int) (120 * factor); // Default for all games (logic)
 		}
 	}
 
 	//
-	// Score algoritm return a value between 0 and 10
+	// Score algorithm return a value between 0 and 10
 	//
 	public virtual int Score {
 		get {
-
 			double score;
 			double seconds = GameTime.TotalSeconds;
 
@@ -201,6 +216,12 @@ abstract public class Game
 					score = score * 0.8;
 				}
 			}
+
+			if (trace_score) {
+				Console.WriteLine ("Score for game {0} is {1}. Used tip {2}, time used {3}, time expected {4}", 
+					this, (int) score, tip_used, seconds, AverageTime);
+			}
+
 			return (int) score;
 		}
 	}
