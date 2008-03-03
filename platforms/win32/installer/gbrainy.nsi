@@ -26,6 +26,7 @@
 !define MUI_LANGDLL_REGISTRY_KEY "${PRODUCT_UNINST_KEY}"
 !define MUI_LANGDLL_REGISTRY_VALUENAME "NSIS:Language"
 
+
 ; Welcome page
 !insertmacro MUI_PAGE_WELCOME
 ; License page
@@ -35,6 +36,7 @@
 ; Instfiles page
 !insertmacro MUI_PAGE_INSTFILES
 ; Finish page
+!define MUI_FINISHPAGE_RUN "$INSTDIR\gbrainy.bat"
 !insertmacro MUI_PAGE_FINISH
 
 ; Uninstaller pages
