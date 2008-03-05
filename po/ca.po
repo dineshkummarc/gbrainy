@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gbrainy\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-02-24 11:13+0100\n"
-"PO-Revision-Date: 2008-02-24 12:00+0200\n"
+"POT-Creation-Date: 2008-03-05 15:43+0100\n"
+"PO-Revision-Date: 2008-03-05 15:45+0200\n"
 "Last-Translator: Jordi Mas <jmas@softcatala.org>\n"
 "Language-Team: Catalan\n"
 "MIME-Version: 1.0\n"
@@ -243,7 +243,7 @@ msgstr ""
 "«D'acord»."
 
 #
-#: ../src/Game.cs:71
+#: ../src/Game.cs:72
 #, csharp-format
 msgid "The correct answer is {0}."
 msgstr "La resposta correcta és {0}."
@@ -271,9 +271,10 @@ msgid "Convention when giving the answer is:"
 msgstr "Convenció per a donar la resposta:"
 
 #
+#
 #: ../src/PuzzleFigures.cs:102
-msgid "E.g: ACB (diamond, circle, triangle)"
-msgstr "P.ex.: ACB (rombe, cercle, triangle)"
+msgid "E.g: ACB (diamond, triangle, circle)"
+msgstr "P.ex.: ACB (rombe, triangle, cercle)"
 
 #: ../src/PuzzleCirclesRectangle.cs:27
 msgid "Circles in a rectangle"
@@ -416,14 +417,13 @@ msgstr ""
 "Quina de les següents figures no es pot dibuixar sense creuar una de les "
 "línies prèvies ni llevar el llapis?"
 
-#. gr.ShowText ("Figure A");
 #: ../src/PuzzlePencil.cs:168 ../src/PuzzleSquareDots.cs:187
 #: ../src/PuzzleNextFigure.cs:145 ../src/MemoryColouredFigures.cs:149
 #: ../src/MemoryNumbers.cs:133 ../src/PuzzleFigurePattern.cs:193
 #: ../src/PuzzleMissingPiece.cs:156 ../src/PuzzleMissingSlice.cs:194
-#: ../src/PuzzleTetris.cs:156 ../src/MemoryIndications.cs:263
-#: ../src/MemoryIndications.cs:268 ../src/MemoryIndications.cs:273
-#: ../src/MemoryIndications.cs:278 ../src/PuzzleMostInCommon.cs:273
+#: ../src/PuzzleTetris.cs:156 ../src/MemoryIndications.cs:275
+#: ../src/MemoryIndications.cs:280 ../src/MemoryIndications.cs:285
+#: ../src/MemoryIndications.cs:290 ../src/PuzzleMostInCommon.cs:273
 #: ../src/PuzzleBuildTriangle.cs:153 ../src/PuzzleClocks.cs:157
 #: ../src/PuzzleClocks.cs:162 ../src/PuzzleClocks.cs:167
 #: ../src/PuzzleClocks.cs:172
@@ -447,24 +447,25 @@ msgstr ""
 "figura de l'esquerra en la figura de la dreta?"
 
 #
-#: ../src/PuzzleMoveFigure.cs:43
 #
+#: ../src/PuzzleMoveFigure.cs:43
 msgid ""
 "Move the circle from the first line to the second and move two circles from "
 "the fourth line to the second and the fifth lines."
 msgstr ""
-"Moveu el cercle de la primera línia a la segona i moveu dos cercles de la quarta a "
-"la segona i cinquena línia."
+"Moveu el cercle de la primera línia a la segona i moveu dos cercles de la "
+"quarta a la segona i cinquena línia."
 
 #
-#: ../src/PuzzleMoveFigure.cs:46
 #
+#: ../src/PuzzleMoveFigure.cs:46
 msgid ""
 "Move the first line to the seventh; move the two circles of the second line "
 "to third; and move first and last circles of the fifth line to the sixth."
 msgstr ""
-"Moveu la primera línia a la setena; moveu dos cercles de la segona línia a la "
-"tercera; i moveu el primer i últim cercle de la cinquena línia a la sisena."
+"Moveu la primera línia a la setena; moveu dos cercles de la segona línia a "
+"la tercera; i moveu el primer i últim cercle de la cinquena línia a la "
+"sisena."
 
 #: ../src/PuzzleTriangles.cs:29
 msgid "Triangles"
@@ -991,8 +992,8 @@ msgstr "llop"
 
 #
 #
-#: ../src/PuzzleFigureLetter.cs:37
 #
+#: ../src/PuzzleFigureLetter.cs:37
 msgid "Figures and text"
 msgstr "Figures i text"
 
@@ -1052,8 +1053,8 @@ msgstr ""
 "A l'última figura, en quantes regions es divideix el cercle quan tots els "
 "punts estan connectats?"
 
-#: ../src/PuzzleDivideCircle.cs:110 ../src/PuzzleDivideCircle.cs:125
-#: ../src/PuzzleDivideCircle.cs:142
+#: ../src/PuzzleDivideCircle.cs:113 ../src/PuzzleDivideCircle.cs:128
+#: ../src/PuzzleDivideCircle.cs:145
 #, csharp-format
 msgid "Has {0} regions"
 msgstr "Té {0} regions"
@@ -1318,15 +1319,21 @@ msgstr ""
 "Entrenadors de memòria. Per a posar a prova i millorar la vostra capacitat "
 "de memòria a curt termini."
 
-#: ../src/GameDrawingArea.cs:179
+#
+#: ../src/GameDrawingArea.cs:139 ../src/GameDrawingArea.cs:303
+msgid "Use the Settings to adjust the difficulty level of the game."
+msgstr ""
+"Utilitzeu les Preferències per a ajustar el nivell de dificultat del joc."
+
+#: ../src/GameDrawingArea.cs:182
 msgid "Get ready to memorize the next objects..."
 msgstr "Prepareu-vos per a memoritzar els objectes següents..."
 
-#: ../src/GameDrawingArea.cs:207
+#: ../src/GameDrawingArea.cs:210
 msgid "Score"
 msgstr "Puntuació"
 
-#: ../src/GameDrawingArea.cs:213
+#: ../src/GameDrawingArea.cs:216
 #, csharp-format
 msgid "Your total score is {0}%"
 msgstr "La puntuació total és {0}%"
@@ -1334,23 +1341,23 @@ msgstr "La puntuació total és {0}%"
 #
 #
 #
-#: ../src/GameDrawingArea.cs:219
+#: ../src/GameDrawingArea.cs:222
 msgid "No logic puzzle games played"
 msgstr "No s'ha jugat a cap trencaclosques"
 
-#: ../src/GameDrawingArea.cs:221
+#: ../src/GameDrawingArea.cs:224
 #, csharp-format
 msgid "Logic puzzle score is {0}%"
 msgstr "La puntuació en trencaclosques és {0}%"
 
 #
 #
-#: ../src/GameDrawingArea.cs:229
+#: ../src/GameDrawingArea.cs:232
 msgid "No mental calculation games played"
 msgstr "No s'ha jugat a cap joc de càlcul mental"
 
 #
-#: ../src/GameDrawingArea.cs:231
+#: ../src/GameDrawingArea.cs:234
 #, csharp-format
 msgid "Mental calculation score is {0}%"
 msgstr "La puntuació en càlcul mental és {0}%"
@@ -1358,42 +1365,42 @@ msgstr "La puntuació en càlcul mental és {0}%"
 #
 #
 #
-#: ../src/GameDrawingArea.cs:239
+#: ../src/GameDrawingArea.cs:242
 msgid "No memory games played"
 msgstr "No s'ha jugat a cap joc de memòria"
 
 # csharp-format
-#: ../src/GameDrawingArea.cs:241
+#: ../src/GameDrawingArea.cs:244
 #, csharp-format
 msgid "Memory score is {0}%"
 msgstr "La puntuació en memòria és {0}%"
 
-#: ../src/GameDrawingArea.cs:248
+#: ../src/GameDrawingArea.cs:251
 msgid "Game statistics"
 msgstr "Estadístiques de la partida"
 
-#: ../src/GameDrawingArea.cs:254
+#: ../src/GameDrawingArea.cs:257
 #, csharp-format
 msgid "Total games won: {0} ({1} played)"
 msgstr "Jocs guanyats: {0} ({1} jugats)"
 
-#: ../src/GameDrawingArea.cs:257
+#: ../src/GameDrawingArea.cs:260
 #, csharp-format
 msgid "Total time played {0} (average per game {1})"
 msgstr "Temps de joc: {0} (mitjana per joc {1})"
 
-#: ../src/GameDrawingArea.cs:262
+#: ../src/GameDrawingArea.cs:265
 msgid "Tips for your next games"
 msgstr "Consells per les vostres properes partides"
 
 #
-#: ../src/GameDrawingArea.cs:284
+#: ../src/GameDrawingArea.cs:287
 msgid "Read the instructions carefully and identify the data and given clues."
 msgstr ""
 "Llegiu les instruccions curosament i identifiqueu les dades i pistes donades."
 
 #
-#: ../src/GameDrawingArea.cs:286
+#: ../src/GameDrawingArea.cs:289
 msgid ""
 "To score the player gbrainy uses the time and tips needed to complete each "
 "game."
@@ -1401,24 +1408,24 @@ msgstr ""
 "Per puntuar al jugador gbrainy utilitza el temps i els consells utilitzats "
 "per a resoldre cada joc."
 
-#: ../src/GameDrawingArea.cs:288
+#: ../src/GameDrawingArea.cs:291
 msgid ""
 "In logic games, elements that may seem irrelevant can be very important."
 msgstr ""
 "En els jocs de lògica, els elements que semblen irrellevants poden ser força "
 "importants."
 
-#: ../src/GameDrawingArea.cs:290
+#: ../src/GameDrawingArea.cs:293
 msgid "Break the mental blocks and look into the boundaries of problems."
 msgstr ""
 "Trenqueu els bloquejos mentals i mireu més enllà dels límits dels problemes."
 
 #
-#: ../src/GameDrawingArea.cs:292
+#: ../src/GameDrawingArea.cs:295
 msgid "Enjoy making mistakes, they are part of the learning process."
 msgstr "Gaudiu fent errades, és part del procés d'aprenentatge."
 
-#: ../src/GameDrawingArea.cs:294
+#: ../src/GameDrawingArea.cs:297
 msgid ""
 "Do all the problems, even the difficult ones. Improvement comes from "
 "practising."
@@ -1426,26 +1433,20 @@ msgstr ""
 "Feu tots els problemes, inclús els difícils. La millora prové de la pràctica."
 
 #
-#: ../src/GameDrawingArea.cs:296
+#: ../src/GameDrawingArea.cs:299
 msgid "Play on a daily basis, you will notice progress soon."
 msgstr "Jugueu diàriament, us adonareu del vostre progrés aviat."
 
 #
-#: ../src/GameDrawingArea.cs:298
+#
+#: ../src/GameDrawingArea.cs:301
 msgid ""
-"You can use the Custom Game Selection to choose exactly which games you want "
-"to play."
+"Use the Custom Game Selection to choose exactly which games you want to play."
 msgstr ""
-"Podeu utilitzar la selecció de la partida personalitzada per a escollir "
-"exactament quins jocs voleu entrenar."
+"Utilitzeu la selecció de la partida personalitzada per a escollir exactament "
+"quins jocs voleu entrenar."
 
-#: ../src/GameDrawingArea.cs:300
-msgid "You may use the Preferences to adjust the difficulty level of the game."
-msgstr ""
-"Podeu utilitzar les Preferències per a ajustar el nivell de dificultat del "
-"joc."
-
-#: ../src/GameDrawingArea.cs:302
+#: ../src/GameDrawingArea.cs:305
 msgid "Association of elements is a common technique for remembering things."
 msgstr "L'associació d'elements és una tècnica comuna per a recordar coses."
 
@@ -1586,15 +1587,15 @@ msgstr "La lògica funciona a nivell de fila."
 
 #
 #
+#
 #: ../src/PuzzleMissingPiece.cs:46
 msgid ""
 "In every row the third square is made by flipping the first square and "
 "superimposing it on the second square, followed by removing the matching "
-"lines, and then flipping the resulting image."
+"lines."
 msgstr ""
 "A cada fila el tercer quadrat es construeix donant la volta al primer "
-"quadrat i sobreimposant-ho al segon quadrat, eliminat les línies "
-"coincidents, i llavors donant la volta a la imatge resultant."
+"quadrat i sobreimposant-ho al segon quadrat, eliminat les línies coincidents."
 
 #: ../src/PuzzleMissingSlice.cs:58
 msgid "Missing slice"
@@ -1674,7 +1675,7 @@ msgstr "Finalitza al punt {0}"
 
 #
 #
-#: ../src/MemoryIndications.cs:156
+#: ../src/MemoryIndications.cs:155
 msgid "Memorize indications"
 msgstr "Memoritzeu indicacions"
 
@@ -1682,7 +1683,7 @@ msgstr "Memoritzeu indicacions"
 #
 #
 # csharp-format
-#: ../src/MemoryIndications.cs:161
+#: ../src/MemoryIndications.cs:160
 #, csharp-format
 msgid ""
 "Which of the following graphics represent the indications previously given?"
@@ -1762,4 +1763,8 @@ msgstr ""
 msgid "The clocks do not follow the time logic."
 msgstr "Els rellotges no segueixen la lògica horària."
 
-
+#
+#~ msgid "Use the Preferences to adjust the difficulty level of the game."
+#~ msgstr ""
+#~ "Podeu utilitzar les Preferències per a ajustar el nivell de dificultat "
+#~ "del joc."
