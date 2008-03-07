@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gbrainy\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-02-24 11:41+0000\n"
+"POT-Creation-Date: 2008-03-07 18:51+0100\n"
 "PO-Revision-Date: 2008-03-06 23:12+0100\n"
 "Last-Translator: Jordi Mas <jmas@softcatala.org>\n"
 "Language-Team: Catalan\n"
@@ -239,11 +239,11 @@ msgid ""
 "Once you have an answer type it in \"Answer:\" entry box and press the \"Ok"
 "\" button."
 msgstr ""
-"Un cop tingueu la resposta introduïu-la al quadre «Resposta:» i premeu el botó "
-"«D'acord»."
+"Un cop tingueu la resposta introduïu-la al quadre «Resposta:» i premeu el "
+"botó «D'acord»."
 
 #
-#: ../src/Game.cs:71
+#: ../src/Game.cs:72
 #, csharp-format
 msgid "The correct answer is {0}."
 msgstr "La resposta correcta és {0}."
@@ -354,8 +354,8 @@ msgid ""
 "The fourth row is calculated by multiplying the first two rows and adding "
 "the third."
 msgstr ""
-"La quarta fila es calcula multiplicant les primeres dues files i afegint-hi la "
-"tercera."
+"La quarta fila es calcula multiplicant les primeres dues files i afegint-hi "
+"la tercera."
 
 #: ../src/PuzzleMatrixNumbers.cs:66
 #, csharp-format
@@ -372,8 +372,8 @@ msgid ""
 "The fourth row is calculated by multiplying the first two rows and "
 "subtracting the third."
 msgstr ""
-"La quarta fila se calcula multiplicant les primeres dues files i restant-hi la "
-"tercera."
+"La quarta fila se calcula multiplicant les primeres dues files i restant-hi "
+"la tercera."
 
 #: ../src/PuzzleMatrixNumbers.cs:73
 #, csharp-format
@@ -399,8 +399,8 @@ msgid ""
 "The fourth column is calculated by adding the first two columns and "
 "subtracting the third."
 msgstr ""
-"La quarta columna se calcula afegint les primeres dues columnes i restant-hi la "
-"tercera."
+"La quarta columna se calcula afegint les primeres dues columnes i restant-hi "
+"la tercera."
 
 #: ../src/PuzzlePencil.cs:33
 msgid "Pencil"
@@ -417,14 +417,13 @@ msgstr ""
 "Quina de les següents figures no es pot dibuixar sense creuar una de les "
 "línies prèvies ni aixecar el llapis?"
 
-#. gr.ShowText ("Figure A");
 #: ../src/PuzzlePencil.cs:168 ../src/PuzzleSquareDots.cs:187
 #: ../src/PuzzleNextFigure.cs:145 ../src/MemoryColouredFigures.cs:149
 #: ../src/MemoryNumbers.cs:133 ../src/PuzzleFigurePattern.cs:193
 #: ../src/PuzzleMissingPiece.cs:156 ../src/PuzzleMissingSlice.cs:194
-#: ../src/PuzzleTetris.cs:156 ../src/MemoryIndications.cs:263
-#: ../src/MemoryIndications.cs:268 ../src/MemoryIndications.cs:273
-#: ../src/MemoryIndications.cs:278 ../src/PuzzleMostInCommon.cs:273
+#: ../src/PuzzleTetris.cs:156 ../src/MemoryIndications.cs:275
+#: ../src/MemoryIndications.cs:280 ../src/MemoryIndications.cs:285
+#: ../src/MemoryIndications.cs:290 ../src/PuzzleMostInCommon.cs:273
 #: ../src/PuzzleBuildTriangle.cs:153 ../src/PuzzleClocks.cs:157
 #: ../src/PuzzleClocks.cs:162 ../src/PuzzleClocks.cs:167
 #: ../src/PuzzleClocks.cs:172
@@ -820,8 +819,8 @@ msgid ""
 "When folded as a cube, which face on the figure is opposite the face with a "
 "{0} drawn on it (answer with number written on face)?"
 msgstr ""
-"Quan es doblega com un cub, quina és la cara contrària a la que té un "
-"{0} dibuixat (responeu amb el número escrit a la cara)?"
+"Quan es doblega com un cub, quina és la cara contrària a la que té un {0} "
+"dibuixat (responeu amb el número escrit a la cara)?"
 
 #
 #: ../src/MemoryWords.cs:36
@@ -833,8 +832,7 @@ msgstr "Memoritzeu paraules"
 msgid ""
 "There is a missing word from the previous list. Which one is the missing "
 "word?"
-msgstr ""
-"Hi ha una paraula que manca a la llista anterior. Quina és?"
+msgstr "Hi ha una paraula que manca a la llista anterior. Quina és?"
 
 #. Body parts
 #: ../src/MemoryWords.cs:50
@@ -1053,8 +1051,8 @@ msgstr ""
 "A l'última figura, en quantes regions es divideix el cercle quan tots els "
 "punts estan connectats?"
 
-#: ../src/PuzzleDivideCircle.cs:110 ../src/PuzzleDivideCircle.cs:125
-#: ../src/PuzzleDivideCircle.cs:142
+#: ../src/PuzzleDivideCircle.cs:113 ../src/PuzzleDivideCircle.cs:128
+#: ../src/PuzzleDivideCircle.cs:145
 #, csharp-format
 msgid "Has {0} regions"
 msgstr "Té {0} regions"
@@ -1212,8 +1210,9 @@ msgstr ""
 
 #
 #: ../src/PuzzleOstracism.cs:53
+#
 msgid ""
-"In all equations the digits from the left side should also appear on the "
+"In all equations the digits from the left side should also appear in the "
 "right side."
 msgstr ""
 "En totes els equacions els dígits de la part esquerra han d'aparèixer també "
@@ -1319,15 +1318,22 @@ msgstr ""
 "Entrenadors de memòria. Per a posar a prova i millorar la vostra capacitat "
 "de memòria a curt termini."
 
-#: ../src/GameDrawingArea.cs:179
+#: ../src/GameDrawingArea.cs:139 ../src/GameDrawingArea.cs:303
+#
+msgid "Use the Settings to adjust the difficulty level of the game."
+msgstr ""
+"Utilitzeu les Preferències per a ajustar el nivell de dificultat del "
+"joc."
+
+#: ../src/GameDrawingArea.cs:182
 msgid "Get ready to memorize the next objects..."
 msgstr "Prepareu-vos per a memoritzar els objectes següents..."
 
-#: ../src/GameDrawingArea.cs:207
+#: ../src/GameDrawingArea.cs:210
 msgid "Score"
 msgstr "Puntuació"
 
-#: ../src/GameDrawingArea.cs:213
+#: ../src/GameDrawingArea.cs:216
 #, csharp-format
 msgid "Your total score is {0}%"
 msgstr "La puntuació total és {0}%"
@@ -1335,23 +1341,23 @@ msgstr "La puntuació total és {0}%"
 #
 #
 #
-#: ../src/GameDrawingArea.cs:219
+#: ../src/GameDrawingArea.cs:222
 msgid "No logic puzzle games played"
 msgstr "No s'ha jugat a cap trencaclosques"
 
-#: ../src/GameDrawingArea.cs:221
+#: ../src/GameDrawingArea.cs:224
 #, csharp-format
 msgid "Logic puzzle score is {0}%"
 msgstr "La puntuació en trencaclosques és {0}%"
 
 #
 #
-#: ../src/GameDrawingArea.cs:229
+#: ../src/GameDrawingArea.cs:232
 msgid "No mental calculation games played"
 msgstr "No s'ha jugat a cap joc de càlcul mental"
 
 #
-#: ../src/GameDrawingArea.cs:231
+#: ../src/GameDrawingArea.cs:234
 #, csharp-format
 msgid "Mental calculation score is {0}%"
 msgstr "La puntuació en càlcul mental és {0}%"
@@ -1359,42 +1365,43 @@ msgstr "La puntuació en càlcul mental és {0}%"
 #
 #
 #
-#: ../src/GameDrawingArea.cs:239
+#: ../src/GameDrawingArea.cs:242
 msgid "No memory games played"
 msgstr "No s'ha jugat a cap joc de memòria"
 
 # csharp-format
-#: ../src/GameDrawingArea.cs:241
+#: ../src/GameDrawingArea.cs:244
 #, csharp-format
 msgid "Memory score is {0}%"
 msgstr "La puntuació en memòria és {0}%"
 
-#: ../src/GameDrawingArea.cs:248
+#: ../src/GameDrawingArea.cs:251
 msgid "Game statistics"
 msgstr "Estadístiques de la partida"
 
-#: ../src/GameDrawingArea.cs:254
+#: ../src/GameDrawingArea.cs:257
 #, csharp-format
 msgid "Total games won: {0} ({1} played)"
 msgstr "Jocs guanyats: {0} ({1} jugats)"
 
-#: ../src/GameDrawingArea.cs:257
+#: ../src/GameDrawingArea.cs:260
 #, csharp-format
 msgid "Total time played {0} (average per game {1})"
 msgstr "Temps de joc: {0} (mitjana per joc {1})"
 
-#: ../src/GameDrawingArea.cs:262
+#: ../src/GameDrawingArea.cs:265
 msgid "Tips for your next games"
 msgstr "Consells per les vostres properes partides"
 
 #
-#: ../src/GameDrawingArea.cs:284
+#: ../src/GameDrawingArea.cs:287
 msgid "Read the instructions carefully and identify the data and given clues."
 msgstr ""
-"Llegiu les instruccions amb deteniment i identifiqueu les dades i pistes donades."
+"Llegiu les instruccions amb deteniment i identifiqueu les dades i pistes "
+"donades."
 
 #
-#: ../src/GameDrawingArea.cs:286
+#: ../src/GameDrawingArea.cs:289
 msgid ""
 "To score the player gbrainy uses the time and tips needed to complete each "
 "game."
@@ -1402,51 +1409,46 @@ msgstr ""
 "Per puntuar al jugador gbrainy utilitza el temps i els consells utilitzats "
 "per a resoldre cada joc."
 
-#: ../src/GameDrawingArea.cs:288
+#: ../src/GameDrawingArea.cs:291
 msgid ""
 "In logic games, elements that may seem irrelevant can be very important."
 msgstr ""
 "En els jocs de lògica, els elements que semblen irrellevants poden ser força "
 "importants."
 
-#: ../src/GameDrawingArea.cs:290
+#: ../src/GameDrawingArea.cs:293
 msgid "Break the mental blocks and look into the boundaries of problems."
 msgstr ""
 "Trenqueu els bloquejos mentals i mireu més enllà dels límits dels problemes."
 
 #
-#: ../src/GameDrawingArea.cs:292
+#: ../src/GameDrawingArea.cs:295
 msgid "Enjoy making mistakes, they are part of the learning process."
 msgstr "Gaudiu fent errades, és part del procés d'aprenentatge."
 
-#: ../src/GameDrawingArea.cs:294
+#: ../src/GameDrawingArea.cs:297
 msgid ""
 "Do all the problems, even the difficult ones. Improvement comes from "
 "practising."
 msgstr ""
-"Feu tots els problemes, fins i tot els difícils. La millora prové de la pràctica."
+"Feu tots els problemes, fins i tot els difícils. La millora prové de la "
+"pràctica."
 
 #
-#: ../src/GameDrawingArea.cs:296
+#: ../src/GameDrawingArea.cs:299
 msgid "Play on a daily basis, you will notice progress soon."
 msgstr "Jugueu diàriament, us adonareu del vostre progrés en poc temps."
 
 #
-#: ../src/GameDrawingArea.cs:298
+#: ../src/GameDrawingArea.cs:301
+#
 msgid ""
-"You can use the Custom Game Selection to choose exactly which games you want "
-"to play."
+"Use the Custom Game Selection to choose exactly which games you want to play."
 msgstr ""
-"Podeu utilitzar la selecció de la partida personalitzada per a escollir "
+"Utilitzeu la selecció de la partida personalitzada per a escollir "
 "exactament quins jocs voleu entrenar."
 
-#: ../src/GameDrawingArea.cs:300
-msgid "You may use the Preferences to adjust the difficulty level of the game."
-msgstr ""
-"Podeu utilitzar les Preferències per a ajustar el nivell de dificultat del "
-"joc."
-
-#: ../src/GameDrawingArea.cs:302
+#: ../src/GameDrawingArea.cs:305
 msgid "Association of elements is a common technique for remembering things."
 msgstr "L'associació d'elements és una tècnica habitual per a recordar coses."
 
@@ -1511,8 +1513,8 @@ msgid ""
 "way around the table. Doubling this number leaves you with the total amount "
 "of people."
 msgstr ""
-"Restant les dues posicions obteniu quanta gent està asseguda a la meitat de la "
-"taula. El doble d'aquest número és el nombre total de persones."
+"Restant les dues posicions obteniu quanta gent està asseguda a la meitat de "
+"la taula. El doble d'aquest número és el nombre total de persones."
 
 #: ../src/PuzzlePeopleTable.cs:61
 msgid "5th"
@@ -1588,14 +1590,15 @@ msgstr "La lògica funciona a nivell de fila."
 #
 #
 #: ../src/PuzzleMissingPiece.cs:46
+#
 msgid ""
 "In every row the third square is made by flipping the first square and "
 "superimposing it on the second square, followed by removing the matching "
-"lines, and then flipping the resulting image."
+"lines."
 msgstr ""
 "A cada fila el tercer quadrat es construeix donant la volta al primer "
 "quadrat i sobreimposant-lo al segon, llavors eliminat les línies "
-"coincidents, i finalment donant la volta a la imatge resultant."
+"coincidents."
 
 #: ../src/PuzzleMissingSlice.cs:58
 msgid "Missing slice"
@@ -1675,7 +1678,7 @@ msgstr "Finalitza al punt {0}"
 
 #
 #
-#: ../src/MemoryIndications.cs:156
+#: ../src/MemoryIndications.cs:155
 msgid "Memorize indications"
 msgstr "Memoritzeu indicacions"
 
@@ -1683,7 +1686,7 @@ msgstr "Memoritzeu indicacions"
 #
 #
 # csharp-format
-#: ../src/MemoryIndications.cs:161
+#: ../src/MemoryIndications.cs:160
 #, csharp-format
 msgid ""
 "Which of the following graphics represent the indications previously given?"
