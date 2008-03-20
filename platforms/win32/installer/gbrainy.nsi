@@ -2,7 +2,7 @@
 
 ; HM NIS Edit Wizard helper defines
 !define PRODUCT_NAME "gbrainy"
-!define PRODUCT_VERSION "0.54"
+!define PRODUCT_VERSION "0.61"
 !define PRODUCT_WEB_SITE "http://live.gnome.org/gbrainy"
 !define PRODUCT_DIR_REGKEY "Software\Microsoft\Windows\CurrentVersion\App Paths\gbrainy.exe"
 !define PRODUCT_UNINST_KEY "Software\Microsoft\Windows\CurrentVersion\Uninstall\${PRODUCT_NAME}"
@@ -61,6 +61,7 @@ ShowInstDetails show
 ShowUnInstDetails show
 
 
+
 Function .onInit
   !insertmacro MUI_LANGDLL_DISPLAY
 
@@ -90,6 +91,9 @@ Section "MainSection" SEC01
   
   SetOutPath "$INSTDIR\locale\nl\LC_MESSAGES\"
   File "/oname=gbrainy.mo" "..\topack\locale\nl.gmo"
+  
+  SetOutPath "$INSTDIR\locale\gl\LC_MESSAGES\"
+  File "/oname=gbrainy.mo" "..\topack\locale\gl.gmo"
   
   SetOutPath "$INSTDIR"
   File "..\topack\gbrainy.exe"
