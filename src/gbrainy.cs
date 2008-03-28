@@ -213,17 +213,22 @@ public class gbrainy: Program
 	
 	void OnMenuAbout (object sender, EventArgs args)
 	{
+		Gtk.AboutDialog about = new Gtk.AboutDialog ();
+		StringBuilder license = new StringBuilder (256);
 		string [] authors = new string [] {
 			"Jordi Mas i Hernandez <jmas@softcatala.org>",
 		};
 
-		// Name of persons or people that translated the application
+		// Name of the people that translated the application
 		string translators = Catalog.GetString ("translator-credits");
 
 		if (translators == "translator-credits")
 			translators = null;
 
-		Gtk.AboutDialog about = new Gtk.AboutDialog ();
+		license.Append (Catalog.GetString ("This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as  published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version.\n\n"));
+		license.Append (Catalog.GetString ("This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details.\n\n"));
+		license.Append (Catalog.GetString ("You should have received a copy of the GNU General Public License along with this program; if not, write to the Free Software Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA."));
+
 		about.Name = "gbrainy";
 		about.Version = Defines.VERSION;
 		about.Authors = authors;
@@ -231,13 +236,15 @@ public class gbrainy: Program
 		about.Logo = LoadFromAssembly ("gbrainy.svg");
 
 		about.Copyright = "(c) 2007-2008 Jordi Mas i Hernandez\n";
-		about.Copyright += Catalog.GetString ("Based on ideas by Terry Stickels, MENSA books and myself.");
+		about.Copyright += Catalog.GetString ("Based on ideas by Terry Stickels, MENSA books and Jordi Mas.");
 
 		about.Comments = Catalog.GetString ("A brain teaser and trainer game to have fun and to keep your brain trained.");
 		about.Website = "http://live.gnome.org/gbrainy";
 		about.WebsiteLabel = Catalog.GetString ("gbrainy web site");
 		about.TranslatorCredits = translators;
 		about.IconName = null;
+		about.License = license.ToString ();
+		about.WrapLicense = true;
 		about.Run ();
 		about.Destroy ();
 	}
