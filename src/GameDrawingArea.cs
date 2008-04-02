@@ -163,7 +163,7 @@ public class GameDrawingArea : DrawingArea
 		countdown_time = 3;
 		timer = new System.Timers.Timer ();
 		timer.Elapsed += TimerUpdater;
-		timer.Interval = (1 * 1000); // 1 seconds
+		timer.Interval = (1 * 1000); // 1 second
 		timer.Enabled = true;
 		finish = OnFinish;
 	}
@@ -198,7 +198,7 @@ public class GameDrawingArea : DrawingArea
 	{
 		double y = 0.08, x = 0.05;
 		double space_small = 0.06;
-		string str;
+		string str, s;
 
 		gr.Scale (area_width, area_height);
 		gr.Color = new Cairo.Color (1, 1, 1);
@@ -213,8 +213,22 @@ public class GameDrawingArea : DrawingArea
 		gr.SetFontSize (0.03);
 		y += 0.08;
 		gr.MoveTo (x, y);
-		gr.ShowText (String.Format (Catalog.GetString ("Your total score is {0}%"), session.TotalScore));
 
+		if (session.GamesPlayed >= 10) {
+			if (session.TotalScore >= 90)
+				s = String.Format (Catalog.GetString ("Outstanding results, your total score is {0}%"), session.TotalScore);
+			else if (session.TotalScore >= 80) 
+				s = String.Format (Catalog.GetString ("Excellent results, your total score is {0}%"), session.TotalScore);
+			else if (session.TotalScore >= 50) 
+				s = String.Format (Catalog.GetString ("Good results, your total score is {0}%"), session.TotalScore);
+			else if (session.TotalScore >= 30) 
+				s = String.Format (Catalog.GetString ("Poor results, your total score is {0}%"), session.TotalScore);
+			
+			else s = String.Format (Catalog.GetString ("Disappointing results, your total score is {0}%"), session.TotalScore);
+		} else
+			s = String.Format (Catalog.GetString ("Your total score is {0}%"), session.TotalScore);
+
+		gr.ShowText (s);
 		y += space_small;	
 		gr.MoveTo (x, y);
 
