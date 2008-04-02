@@ -54,6 +54,7 @@ public class GameManager
 		typeof (PuzzleMostInCommon),
 		typeof (PuzzleBuildTriangle),
 		typeof (PuzzleClocks),
+		typeof (PuzzleCountCircles),
 	};
 
 	static Type[] CalculationTrainers = new Type[] 
