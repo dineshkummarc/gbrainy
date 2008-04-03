@@ -36,8 +36,7 @@
 	  <child>
 	    <widget class="GtkMenuItem" id="item1">
 	      <property name="visible">True</property>
-	      <property name="label" translatable="yes">_Game</property>
-	      <property name="use_underline">True</property>
+	      <property name="stock_item">GNOMEUIINFO_MENU_GAME_TREE</property>
 
 	      <child>
 		<widget class="GtkMenu" id="item1_menu">
@@ -45,8 +44,7 @@
 		  <child>
 		    <widget class="GtkMenuItem" id="menuitem2">
 		      <property name="visible">True</property>
-		      <property name="label" translatable="yes">New Game</property>
-		      <property name="use_underline">True</property>
+		      <property name="stock_item">GNOMEUIINFO_MENU_NEW_GAME_ITEM</property>
 
 		      <child>
 			<widget class="GtkMenu" id="menuitem2_menu">
