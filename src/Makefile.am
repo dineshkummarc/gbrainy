@@ -56,6 +56,7 @@ GBRAINY_CSDISTFILES =				\
 	$(srcdir)/CairoContextEx.cs		\
 	$(srcdir)/PuzzleClocks.cs		\
 	$(srcdir)/PuzzleCountCircles.cs		\
+	$(srcdir)/PuzzleEquation.cs		\
 	$(srcdir)/gbrainy.cs			
 
 ASSEMBLIES = \
