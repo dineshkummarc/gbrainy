@@ -110,7 +110,7 @@ public class CalculationArithmetical : Game
 		DrawBackground (gr);
 		PrepareGC (gr);
 	
-		SetLargeFont (gr);
+		gr.SetLargeFont ();
 		for (int i = 0; i < operands.Length - 1; i++)
 		{
 			gr.DrawTextAlignedRight (aligned_pos, operand_y, operands[i].ToString ());

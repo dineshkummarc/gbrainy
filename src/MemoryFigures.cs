@@ -115,7 +115,7 @@ public class MemoryFigures : Memory
 			return;
 		}
 
-		SetLargeFont (gr);
+		gr.SetLargeFont ();
 		for (int figure = 0; figure < figures.Count; figure++, col++)
 		{
 			fig = (int)figures[figure];

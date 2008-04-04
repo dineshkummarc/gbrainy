@@ -241,22 +241,13 @@ abstract public class Game
 		return (String.Compare (answer, right_answer, true) == 0);
 	}
 	
-	public void SetLargeFont (CairoContextEx gr)
-	{
-		gr.SetFontSize (0.05);
-	}
-
-	public void SetNormalFont (CairoContextEx gr)
-	{
-		gr.SetFontSize (0.03);
-	}
 
 	virtual public void PrepareGC (CairoContextEx gr)
 	{
 		gr.LineWidth = LineWidth;
 		gr.Color = DefaultDrawingColor;
 		gr.SelectFontFace ("Sans", FontSlant.Normal, FontWeight.Bold);
-		SetNormalFont (gr);
+		gr.SetNormalFont ();
 	}
 
 	protected void DrawBackground (CairoContextEx gr)

@@ -88,7 +88,7 @@ public class CalculationOperator : Game
 		gr.Scale (area_width, area_height);
 		DrawBackground (gr);
 		PrepareGC (gr);
-		SetLargeFont (gr);
+		gr.SetLargeFont ();
 
 		gr.DrawTextAlignedRight (aligned_pos, DrawAreaY + 0.2, number_a.ToString ());
 		gr.DrawTextAlignedRight (aligned_pos, DrawAreaY + 0.3, number_b.ToString ());

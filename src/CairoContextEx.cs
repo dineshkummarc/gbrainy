@@ -108,5 +108,15 @@ public class CairoContextEx : Cairo.Context
 		LineTo (x + size / 2, y);
 		Stroke ();
 	}
+
+	public void SetLargeFont ()
+	{
+		SetFontSize (0.05);
+	}
+
+	public void SetNormalFont ()
+	{
+		SetFontSize (0.03);
+	}
 }
 

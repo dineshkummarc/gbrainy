@@ -111,7 +111,7 @@ public class PuzzleNumericRelation : Game
 		gr.Scale (area_width, area_height);
 		DrawBackground (gr);
 		PrepareGC (gr);
-		SetLargeFont (gr);
+		gr.SetLargeFont ();
 
 		for (int num = 0; num < max_num - 1; num++)
 		{

@@ -69,7 +69,7 @@ public class CalculationTwoNumbers : Game
 		gr.Scale (area_width, area_height);
 		DrawBackground (gr);
 		PrepareGC (gr);
-		SetLargeFont (gr);
+		gr.SetLargeFont ();
 
 		gr.MoveTo (x, DrawAreaY + 0.2);
 		gr.ShowText (String.Format (Catalog.GetString ("number1 + number2 = {0}"), op1));

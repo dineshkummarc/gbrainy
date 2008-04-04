@@ -200,7 +200,7 @@ public class CalculationGreatestDivisor : Game
 		gr.Scale (area_width, area_height);
 		DrawBackground (gr);
 		PrepareGC (gr);
-		SetLargeFont (gr);
+		gr.SetLargeFont ();
 
 		gr.MoveTo (0.05, y);
 		gr.ShowText (Catalog.GetString ("Numbers"));

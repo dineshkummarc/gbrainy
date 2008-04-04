@@ -145,7 +145,7 @@ public class CalculationWhichNumber : Game
 		gr.Scale (area_width, area_height);
 		DrawBackground (gr);
 		PrepareGC (gr);
-		SetLargeFont (gr);
+		gr.SetLargeFont ();
 
 		for (int i = 0; i < options_cnt; i++)
 		{
