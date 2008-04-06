@@ -118,5 +118,16 @@ public class CairoContextEx : Cairo.Context
 	{
 		SetFontSize (0.03);
 	}
+
+	public void FillGradient (double x, double y, double w, double h)
+	{
+		Save ();
+		LinearGradient shadow = new LinearGradient (x, y, x + w, y + h);
+		shadow.AddColorStop (0, new Color (0, 0, 0, 0.3));
+		shadow.AddColorStop (0.5, new Color (0, 0, 0, 0.1));
+		Source = shadow;
+		Fill ();
+		Restore ();
+	}
 }
 

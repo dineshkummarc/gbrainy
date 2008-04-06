@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2007 Jordi Mas i Hernàndez <jmas@softcatala.org>
+ * Copyright (C) 2007-2008 Jordi Mas i Hernàndez <jmas@softcatala.org>
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License as
@@ -70,6 +70,12 @@ public class PuzzleCoverPercentage : Game
 		right_answer = total.ToString ();
 	}
 
+	private void Fill (CairoContextEx gr, double x, double y, double w, double h)
+	{
+		gr.Rectangle (x, y, w, h);
+		gr.FillGradient (x, y, w, h);
+	}
+
 	private void DrawSection (CairoContextEx gr, double x, double y)
 	{
 		double w =  width / 2, h = height / 2;
@@ -88,12 +94,10 @@ public class PuzzleCoverPercentage : Game
 		gr.Save ();
 		gr.Color = new Cairo.Color (0.90, 0.90, 0.90);
 		for (int i = 0; i < partial_zones; i++) {
-			gr.Rectangle (x + line_width, line_width + y, 
+			Fill (gr, x + line_width, line_width + y, 
 				(w / 2) - (line_width * 2) , (h / 5) - (line_width * 2));
-			gr.Fill ();
-			gr.Rectangle (x + (w / 2) + line_width * 2, line_width + y, 
+			Fill (gr, x + (w / 2) + line_width * 2, line_width + y, 
 				(w / 2) - (line_width * 4) , (h / 5) - (line_width * 2));
-			gr.Fill ();			
 			y += h / 5;
 		}
 		gr.Restore ();
@@ -101,11 +105,7 @@ public class PuzzleCoverPercentage : Game
 
 	private void CoverZone (CairoContextEx gr, double x, double y)
 	{
-		gr.Save ();
-		gr.Color = new Cairo.Color (0.90, 0.90, 0.90);
-		gr.Rectangle (x + line_width, y + line_width , (width / 2) - (line_width * 2), (height / 2) - (line_width * 2));
-		gr.Fill ();
-		gr.Restore ();
+		Fill (gr, x + line_width, y + line_width , (width / 2) - (line_width * 2), (height / 2) - (line_width * 2));
 	}
 
 	public override void Draw (CairoContextEx gr, int area_width, int area_height)

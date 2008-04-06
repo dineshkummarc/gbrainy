@@ -180,9 +180,9 @@ public abstract class Memory : Game
 		height *= percentage / 100;
 
 		if (gradient == null) {
-			gradient = new LinearGradient (0, 0, 0, 1);
-			gradient.AddColorStop (1, new Color (0.2, 0, 0, 1));
+			gradient = new LinearGradient (x, y, x + width, y + height);
 			gradient.AddColorStop (0, new Color (1, 0, 0, 1));
+			gradient.AddColorStop (1, new Color (0.2, 0, 0, 1));
 		}
 
 		gr.Source = gradient;			

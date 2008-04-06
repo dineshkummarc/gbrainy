@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2007 Jordi Mas i Hernàndez <jmas@softcatala.org>
+ * Copyright (C) 2007-2008 Jordi Mas i Hernàndez <jmas@softcatala.org>
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License as
@@ -33,17 +33,17 @@ public class PuzzleMatrixGroups : Game
 	}
 
 	public override string Question {
-		get {return Catalog.GetString ("One of the black numbers in the matrix should be blue. Which one?");}
+		get {return Catalog.GetString ("There is a missing circled number in the matrix. Which one?");}
 	}
 
 	public override string Tip {
-		get { return Catalog.GetString ("All blue numbers share an arithmetical property.");}
+		get { return Catalog.GetString ("All circled numbers share an arithmetical property.");}
 	}
 
 	public override string Answer {
 		get { 
 			string answer = base.Answer + " ";
-			answer += String.Format (Catalog.GetString ("Every blue number can be divided by {0}."), divisor);
+			answer += String.Format (Catalog.GetString ("Every circled number can be divided by {0}."), divisor);
 			return answer;
 		}
 	}
@@ -101,7 +101,7 @@ public class PuzzleMatrixGroups : Game
 				found = true;
 		}
 		return unique;
-	}	
+	}
 
 	public override void Draw (CairoContextEx gr, int area_width, int area_height)
 	{
@@ -118,14 +118,17 @@ public class PuzzleMatrixGroups : Game
 				gr.Color = DefaultDrawingColor;
 				gr.Rectangle (DrawAreaX + row * rect_w, DrawAreaY + column * rect_h, rect_w, rect_h);
 				gr.Stroke ();
-				gr.MoveTo (0.04 + DrawAreaX + column * rect_w, (rect_h / 2) + DrawAreaY + row * rect_h);
 
-				if (numbers[column + (row * 4)] % divisor == 0 && good_pos != column + (row * 4))
-					gr.Color = new Cairo.Color (0, 0, 0.8);
-				else
-					gr.Color = DefaultDrawingColor;
-	
-				gr.ShowText ( (numbers[column + (row * 4)]).ToString() );
+				gr.DrawTextCentered (DrawAreaX + (rect_w / 2) + column * rect_w, (rect_h / 2) + DrawAreaY + row * rect_h, 
+					(numbers[column + (row * 4)]).ToString() );
+
+				if (numbers[column + (row * 4)] % divisor == 0 && good_pos != column + (row * 4)) {
+					gr.Arc (DrawAreaX + (rect_w / 2) + column * rect_w, (rect_h / 2) + DrawAreaY + row * rect_h,
+						0.05, 0, 2 * Math.PI);
+					gr.FillGradient (DrawAreaX + (rect_w / 2) + column * rect_w, (rect_h / 2) + DrawAreaY + row * rect_h,
+						0.05, 0.05);
+
+				}		
 				gr.Stroke ();
 			}
 		}
