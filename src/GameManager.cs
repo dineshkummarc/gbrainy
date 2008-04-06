@@ -56,6 +56,7 @@ public class GameManager
 		typeof (PuzzleClocks),
 		typeof (PuzzleCountCircles),
 		typeof (PuzzleEquation),
+		typeof (PuzzleQuadrilaterals),
 	};
 
 	static Type[] CalculationTrainers = new Type[] 
@@ -175,7 +176,7 @@ public class GameManager
 			}
 
 			puzzle =  (Game) Activator.CreateInstance ((Type) games [(int) enumerator.Current], true);
-			//puzzle =  (Game) Activator.CreateInstance (LogicPuzzles [31], true);
+			//puzzle =  (Game) Activator.CreateInstance (LogicPuzzles [32], true);
 			if (first != null && first.GetType () == puzzle.GetType ())
 				break;
 				
