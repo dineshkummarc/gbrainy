@@ -71,6 +71,6 @@ public class PuzzleEquation : Game
 		DrawBackground (gr);
 		PrepareGC (gr);
 		gr.SetLargeFont ();
-		gr.DrawTextCentered (0.5, 0.5, formula);
+		gr.DrawTextCentered (0.5, DrawAreaY + 0.3, formula);
 	}
 }
