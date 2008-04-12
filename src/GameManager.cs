@@ -19,6 +19,7 @@
 
 using System;
 using System.Collections;
+using Cairo;
 
 public class GameManager
 {
@@ -192,7 +193,49 @@ public class GameManager
 		puzzle.Initialize ();
 		return puzzle;
 	}
-	
-}
 
+#if _PDF_
+	// Generates a single PDF document with all the puzzles contained in gbrainy (4 games per page)
+	public void GeneratePDF ()
+	{
+		int width = 300, height = 400, margin = 20, x, y, cnt, games_page = 4;
+		Game puzzle;
+		game_type = GameSession.Types.AllGames;
+		BuildGameList ();
+		PdfSurface pdf = new PdfSurface ("games.pdf", (width + margin) * 2, (height + margin) * games_page / 2);
+		x = y = cnt = 0;
+		CairoContextEx cr = new CairoContextEx (pdf);
+		for (int game = 0; game < games.Count; game++)
+		{
+			puzzle =  (Game) Activator.CreateInstance ((Type) games [game], true);
+			puzzle.Initialize ();
+			cnt++;
+			cr.Save ();
+			cr.Translate (x, y);
+			cr.Rectangle (0, 0, width, height);;	
+			cr.Clip ();
+			cr.Save ();
+			puzzle.DrawPreview (cr, width, height);
+			x += width + margin;
+			if (x > (width + margin) * 2) {
+				x = 0;
+				y += height + margin;
+			}
+			cr.Restore ();
+			cr.MoveTo (50,  height - 10);
+			cr.ShowText (String.Format ("Game: {0} / D:{1}", puzzle.Name, puzzle.GameDifficulty));
+			cr.Stroke ();
+			cr.Restore ();
+
+			if (cnt > games_page) {
+				cr.ShowPage ();
+				cnt = x = y = 0;
+			}
+		}
+		pdf.Finish ();
+		((IDisposable)cr).Dispose();
+		return;
+	}
+#endif
+}
 
