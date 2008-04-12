@@ -217,7 +217,7 @@ public class GameManager
 			cr.Save ();
 			puzzle.DrawPreview (cr, width, height);
 			x += width + margin;
-			if (x > (width + margin) * 2) {
+			if (x > width + margin) {
 				x = 0;
 				y += height + margin;
 			}
@@ -227,7 +227,7 @@ public class GameManager
 			cr.Stroke ();
 			cr.Restore ();
 
-			if (cnt > games_page) {
+			if (cnt >= games_page) {
 				cr.ShowPage ();
 				cnt = x = y = 0;
 			}
