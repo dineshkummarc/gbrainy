@@ -26,12 +26,12 @@ public class PuzzlePeopleTable : Game
 	private const double figure_size = 0.15;
 	private string ques1, ques2;
 	
-	private class Cercle
+	private class Circle
 	{	
 		public double x;
 		public double y;
 
-		public Cercle (double x, double y) 
+		public Circle (double x, double y) 
 		{
 			this.x = x;
 			this.y = y;
@@ -80,35 +80,35 @@ public class PuzzlePeopleTable : Game
 		double x = DrawAreaX + 0.22, y = DrawAreaY + 0.2;
 		double pos_x = x;
 		double pos_y = y;
-		Cercle[] cercles = null;
+		Circle[] circles = null;
 
 		gr.Scale (area_width, area_height);
 
 		DrawBackground (gr);
 		PrepareGC (gr);
 	
-		cercles =  new Cercle [] {
-			new Cercle (0.01, 0.06),
-			new Cercle (0.27, 0.06),
-			new Cercle (0.01, 0.21),
-			new Cercle (0.27, 0.21),
-			new Cercle (0.14, 0),
-			new Cercle (0.14, 0.29)
+		circles =  new Circle [] {
+			new Circle (0.01, 0.06),
+			new Circle (0.27, 0.06),
+			new Circle (0.01, 0.21),
+			new Circle (0.27, 0.21),
+			new Circle (0.14, 0),
+			new Circle (0.14, 0.29)
 		};
 
-		// Cercle
+		// Circle
 		gr.Arc (pos_x + figure_size, pos_y + figure_size, figure_size, 0, 2 * Math.PI);
 		gr.Stroke ();		
 
 		double point_size = 0.01;
-		for (int i = 0; i < cercles.Length; i++) {
-			gr.Arc (x + point_size + cercles[i].x, y + point_size + cercles[i].y, point_size, 0, 2 * Math.PI);
+		for (int i = 0; i < circles.Length; i++) {
+			gr.Arc (x + point_size + circles[i].x, y + point_size + circles[i].y, point_size, 0, 2 * Math.PI);
 			gr.Fill ();
 			gr.Stroke ();
 		}
 
-		gr.MoveTo (x + cercles[2].x + 0.01, y + cercles[2].y + 0.01);
-		gr.LineTo (x + cercles[1].x + 0.01, y + cercles[1].y + 0.01);
+		gr.MoveTo (x + circles[2].x + 0.01, y + circles[2].y + 0.01);
+		gr.LineTo (x + circles[1].x + 0.01, y + circles[1].y + 0.01);
 		gr.Stroke ();
 	}
 
