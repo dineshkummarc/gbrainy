@@ -67,6 +67,7 @@ public class GameManager
 		typeof (CalculationTwoNumbers),
 		typeof (CalculationWhichNumber),
 		typeof (CalculationOperator),
+		typeof (CalculationFractions),
 	};
 
 	static Type[] MemoryTrainers = new Type[] 
