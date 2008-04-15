@@ -129,5 +129,16 @@ public class CairoContextEx : Cairo.Context
 		Fill ();
 		Restore ();
 	}
+
+	public void FillGradient (double x, double y, double w, double h, Color color)
+	{
+		Save ();
+		LinearGradient shadow = new LinearGradient (x, y, x + w, y + h);
+		shadow.AddColorStop (0, new Color (color.R, color.G, color.B, color.A));
+		shadow.AddColorStop (0.5, new Color (color.R, color.G, color.B, color.A * 0.7));
+		Source = shadow;
+		Fill ();
+		Restore ();
+	}
 }
 

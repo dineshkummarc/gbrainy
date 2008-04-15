@@ -166,13 +166,12 @@ public class MemoryColouredFigures : Memory
 			for (int row = 0; row < rows; row++) {
 
 				// if you want 2 schemes (primary or secundary colors)
-				gr.Color = palette.Cairo(ColorPalette.Id.First+ color_sheme*3 + (int)colours[index+(columns * row) + column] );
+				Color c = palette.Cairo(ColorPalette.Id.First+ color_sheme*3 + (int)colours[index+(columns * row) + column] );
 				// if you want 3 colors at random
 				// gr.Color = palette.Cairo((int)colorus[index+(columns*row)+ column]);
 
 				gr.Rectangle (x + row * rect_w, y + column * rect_h, rect_w, rect_h);
-				gr.Fill ();
-				gr.Stroke ();
+				gr.FillGradient (x + row * rect_w, y + column * rect_h, rect_w, rect_h, c);
 			}
 		}
 		gr.Restore ();

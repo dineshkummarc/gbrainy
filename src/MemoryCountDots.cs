@@ -122,11 +122,12 @@ public class MemoryCountDots : Memory
 		for (int i = 0,itcolor=0; i < MAXDOTS && itcolor<palette.Count; i++)
 		{
 			int dx,dy;
+			Color color = palette.Cairo(itcolor);
 			dx = ((int)location_order[i]) % NUMCOLUMNS;
 			dy = ((int)location_order[i]) / NUMCOLUMNS;
-			gr.Color = palette.Cairo(itcolor);
+
 			gr.Arc (pos_x+square_size*dx, pos_y+square_size*dy,radius_square,0,2*Math.PI);
-			gr.Fill ();
+			gr.FillGradient (pos_x+square_size*dx, pos_y+square_size*dy, radius_square, radius_square, color);
 
 			if (i==dotsPerColor[itcolor]) itcolor++;
 		}
