@@ -215,12 +215,24 @@ public class CustomGameDialog
 			if(!IsRealized)
 				return false;
 
-			int w, h;
+			int w, h, nw, nh;
+			double x = 0, y = 0;
 			Cairo.Context cc = Gdk.CairoHelper.Create (args.Window);
 			CairoContextEx cr = new CairoContextEx (cc.Handle);   
 			args.Window.GetSize (out w, out h);
-			puzzle.DrawPreview (cr, w, h);
 
+			nh = nw = Math.Min (w, h);
+
+			if (nw < w) {
+				x = (w - nw) / 2;
+			}
+
+			if (nh < h) {
+				y = (h - nh) / 2;
+			}
+
+			cr.Translate (x, y);
+			puzzle.DrawPreview (cr, nw, nh);
 			((IDisposable)cc).Dispose();
 			((IDisposable)cr).Dispose();
    			return base.OnExposeEvent(args);

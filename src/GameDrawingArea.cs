@@ -109,7 +109,7 @@ public class GameDrawingArea : DrawingArea
 			gr.Paint ();
 			gr.Restore ();
 		}
-		gr.DrawStringWithWrapping (0.21, y + 0.03, line_space, Catalog.GetString ("Logic puzzles. Designed to challenge your reasoning and thinking skills."));
+		gr.DrawStringWithWrapping (0.23, y + 0.03, line_space, Catalog.GetString ("Logic puzzles. Designed to challenge your reasoning and thinking skills."));
 
 		y += space;
 		image = new ImageSurface (Defines.DATA_DIR + "math-games-80.png");
@@ -121,7 +121,7 @@ public class GameDrawingArea : DrawingArea
 			gr.Paint ();
 			gr.Restore ();
 		}
-		gr.DrawStringWithWrapping (0.21, y + 0.03, line_space, Catalog.GetString ("Mental calculation. Based on arithmetical operations that test your mental calculation abilities."));
+		gr.DrawStringWithWrapping (0.23, y + 0.03, line_space, Catalog.GetString ("Mental calculation. Based on arithmetical operations that test your mental calculation abilities."));
 
 		y += space;
 		image = new ImageSurface (Defines.DATA_DIR + "memory-games-80.png");
@@ -133,7 +133,7 @@ public class GameDrawingArea : DrawingArea
 			gr.Paint ();
 			gr.Restore ();
 		}
-		gr.DrawStringWithWrapping (0.21, y + 0.03, line_space, Catalog.GetString ("Memory trainers. To prove and enhance your short term memory."));
+		gr.DrawStringWithWrapping (0.23, y + 0.03, line_space, Catalog.GetString ("Memory trainers. To prove and enhance your short term memory."));
 		gr.Stroke ();
 
 		gr.DrawStringWithWrapping (0.05, y + 0.23, line_space, Catalog.GetString ("Use the Settings to adjust the difficulty level of the game."));
@@ -327,23 +327,37 @@ public class GameDrawingArea : DrawingArea
 		if(!IsRealized)
 			return false;
 
-		int w, h;
+		int w, h, nw, nh;
+		double x = 0, y = 0;
 		args.Window.GetSize (out w, out h);
 		Cairo.Context cc = Gdk.CairoHelper.Create (args.Window);
 		CairoContextEx cr = new CairoContextEx (cc.Handle);
 
+		// We want a square drawing area for the puzzles then the figures are shown as designed. 
+		// For example, squares are squares. This also makes sure that proportions are kept when resizing
+		nh = nw = Math.Min (w, h);
+
+		if (nw < w) {
+			x = (w - nw) / 2;
+		}
+
+		if (nh < h) {
+			y = (h - nh) / 2;
+		}
+
+		cr.Translate (x, y);
 		switch (mode) {
 		case Modes.Welcome:
-			DrawWelcome (cr, w, h);
+			DrawWelcome (cr, nw, nh);
 			break;
 		case Modes.Scores:
-			DrawScores (cr, w, h);
+			DrawScores (cr, nw, nh);
 			break;	
 		case Modes.Puzzle:
-			puzzle.Draw (cr, w, h);
+			puzzle.Draw (cr, nw, nh);
 			break;
 		case Modes.CountDown:
-			DrawCountDown (cr, w, h);
+			DrawCountDown (cr, nw, nh);
 			break;
 		}
 
