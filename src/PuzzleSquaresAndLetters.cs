@@ -21,7 +21,7 @@ using System;
 using Cairo;
 using Mono.Unix;
 
-public class PuzzleAlphabeticSequence : Game
+public class PuzzleSquaresAndLetters : Game
 {
 	private char[] characters;
 	private int step;
@@ -29,7 +29,7 @@ public class PuzzleAlphabeticSequence : Game
 	private const int figures = 3;
 
 	public override string Name {
-		get {return Catalog.GetString ("Alphabetic sequence");}
+		get {return Catalog.GetString ("Squares and letters");}
 	}
 
 	public override string Question {

@@ -21,7 +21,7 @@ using System;
 using Cairo;
 using Mono.Unix;
 
-public class PuzzlePairs : Game
+public class PuzzleTrianglesWithNumbers : Game
 {
 	private const double figure_size = 0.2;
 	private const int elements_group = 12;
@@ -52,7 +52,7 @@ public class PuzzlePairs : Game
 	};
 
 	public override string Name {
-		get {return Catalog.GetString ("Pairs");}
+		get {return Catalog.GetString ("Triangles with numbers");}
 	}
 
 	public override string Question {

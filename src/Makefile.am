@@ -15,7 +15,7 @@ GBRAINY_CSDISTFILES =				\
 	$(srcdir)/PuzzleTriangles.cs		\
 	$(srcdir)/PuzzleCoverPercentage.cs	\
 	$(srcdir)/PuzzleNumericSequence.cs	\
-	$(srcdir)/PuzzleAlphabeticSequence.cs	\
+	$(srcdir)/PuzzleSquaresAndLetters.cs	\
 	$(srcdir)/PuzzleSquareDots.cs		\
 	$(srcdir)/PuzzleNumericRelation.cs	\
 	$(srcdir)/PuzzleNextFigure.cs		\
@@ -36,7 +36,7 @@ GBRAINY_CSDISTFILES =				\
 	$(srcdir)/CalculationWhichNumber.cs	\
 	$(srcdir)/PuzzleMatrixGroups.cs		\
 	$(srcdir)/PuzzleBalance.cs		\
-	$(srcdir)/PuzzlePairs.cs		\
+	$(srcdir)/PuzzleTrianglesWithNumbers.cs	\
 	$(srcdir)/PuzzleOstracism.cs		\
 	$(srcdir)/MemoryCountDots.cs		\
 	$(srcdir)/CalculationOperator.cs	\
