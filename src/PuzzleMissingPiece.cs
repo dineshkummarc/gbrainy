@@ -33,7 +33,7 @@ public class PuzzleMissingPiece : Game
 	}
 
 	public override string Question {
-		get {return Catalog.GetString ("Which square completes the figure below (A, B, C)?");} 
+		get {return Catalog.GetString ("Which square completes the figure below (A, B or C)?");} 
 	}
 
 	public override string Tip {

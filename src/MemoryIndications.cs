@@ -157,7 +157,7 @@ public class MemoryIndications : Memory
 
 	public override string MemoryQuestion {
 		get { 
-			return String.Format (Catalog.GetString ("Which of the following graphics represent the indications previously given?"));}
+			return String.Format (Catalog.GetString ("Which of the following graphics represent the indications previously given (A, B, C or D)?"));}
 	}
 
 	public override void Initialize ()

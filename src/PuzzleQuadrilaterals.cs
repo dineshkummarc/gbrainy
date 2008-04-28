@@ -42,7 +42,7 @@ public class PuzzleQuadrilaterals : Game
 	}
 
 	public override string Question {
-		get {return Catalog.GetString ("Which of the following figures does not belong to the group?");} 
+		get {return Catalog.GetString ("Which of the following figures does not belong to the group (A, B, C, D, E or F)?");} 
 	}
 
 	public override string Answer {

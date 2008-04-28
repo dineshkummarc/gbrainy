@@ -41,7 +41,7 @@ public class MemoryCountDots : Memory
 	}
 
 	public override string MemoryQuestion {
-		get { return String.Format(Catalog.GetString ("How many {0} dots were in the previous image? (answer using numbers)"),
+		get { return String.Format(Catalog.GetString ("How many {0} dots were in the previous image (answer using numbers)?"),
 						palette.Name(0)); }
 	}
 

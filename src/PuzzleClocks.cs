@@ -35,7 +35,7 @@ public class PuzzleClocks : Game
 	}
 
 	public override string Question {
-		get {return Catalog.GetString ("To what number should the large handle of the last clock point?");} 
+		get {return Catalog.GetString ("To what number should the large handle of the last clock point (A, B, C or D)?");} 
 	}
 
 	public override string Answer {
