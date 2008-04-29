@@ -58,6 +58,7 @@ public class GameManager
 		typeof (PuzzleCountCircles),
 		typeof (PuzzleEquation),
 		typeof (PuzzleQuadrilaterals),
+		typeof (PuzzleExtraCircle),
 	};
 
 	static Type[] CalculationTrainers = new Type[] 

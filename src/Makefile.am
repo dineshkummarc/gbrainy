@@ -59,6 +59,7 @@ GBRAINY_CSDISTFILES =				\
 	$(srcdir)/PuzzleEquation.cs		\
 	$(srcdir)/PuzzleQuadrilaterals.cs	\
 	$(srcdir)/CalculationFractions.cs	\
+	$(srcdir)/PuzzleExtraCircle.cs		\
 	$(srcdir)/gbrainy.cs			
 
 ASSEMBLIES = \
