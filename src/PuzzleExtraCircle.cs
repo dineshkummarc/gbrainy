@@ -86,22 +86,28 @@ public class PuzzleExtraCircle : Game
 
 	private void DrawSlice (CairoContextEx gr, double x, double y, double dg, Color color)
 	{
-		double x1, y1, degrees;
+		double x1, y1, smallest_x, smallest_y, degrees;
 
+		smallest_x = x;
+		smallest_y = y;
 		degrees = radian * (60 + dg);
 		gr.MoveTo (x, y);
 		x1 = x + radius * Math.Cos (degrees);
 		y1 = y + radius * Math.Sin (degrees);
 		gr.LineTo (x1, y1);
+		if (x1 < smallest_x) smallest_x = x1;
+		if (y1 < smallest_y) smallest_y = y1;
 		
 		degrees = dg * radian;
 		gr.MoveTo (x, y);
 		x1 = x + radius * Math.Cos (degrees);
 		y1 = y + radius * Math.Sin (degrees);
 		gr.LineTo (x1, y1);
+		if (x1 < smallest_x) smallest_x = x1;
+		if (y1 < smallest_y) smallest_y = y1;
 
 		gr.Arc (x, y, radius, dg * radian, radian * (60 + dg));
-		gr.FillGradient (x, y, radius, radius, color);
+		gr.FillGradient (smallest_x, smallest_y, radius, radius, color);
 		gr.Stroke ();
 	}
 
