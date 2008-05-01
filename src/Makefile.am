@@ -60,14 +60,13 @@ GBRAINY_CSDISTFILES =				\
 	$(srcdir)/PuzzleQuadrilaterals.cs	\
 	$(srcdir)/CalculationFractions.cs	\
 	$(srcdir)/PuzzleExtraCircle.cs		\
+	$(srcdir)/PuzzleCountSeries.cs		\
 	$(srcdir)/gbrainy.cs			
 
 ASSEMBLIES = \
 	 $(GBRAINY_LIBS)    		\
 	-r:Mono.Cairo.dll		\
 	-r:Mono.Posix
-
-
 
 RESOURCES =										\
 -resource:$(srcdir)/gbrainy.glade  \
