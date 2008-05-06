@@ -194,6 +194,57 @@ public class GameDrawingArea : DrawingArea
 
 	}
 
+	public void DrawBar (CairoContextEx gr, double x, double y, double w, double h, double percentage)
+	{
+		double per = percentage / 100;
+	
+		gr.Rectangle (x, y - h * per, w, h * per);
+		gr.FillGradient (x, y - h * per, w, h * per, new Cairo.Color (0, 0, 1));
+		gr.MoveTo (x, (y - 0.02) - h * per);
+		gr.ShowText (String.Format ("{0}%", percentage));
+		gr.Stroke ();
+
+		gr.Save ();
+		gr.Color = new Cairo.Color (0, 0, 0);	
+		gr.MoveTo (x, y);
+		gr.LineTo (x, y - h * per);
+		gr.LineTo (x + w, y - h * per);
+		gr.LineTo (x + w, y);
+		gr.LineTo (x, y);
+		gr.Stroke ();
+		gr.Restore ();
+	}
+
+	private void DrawGraphicBar (CairoContextEx gr, double x, double y)
+	{
+		double area_w = 0.8, area_h = 0.28;
+		double bar_w = 0.05, bar_h = area_h - 0.02;
+		
+		gr.LineWidth = 0.005;
+
+		// Axis
+		gr.MoveTo (x, y);
+		gr.LineTo (x, y + area_h);
+		gr.LineTo (x + area_w, y + area_h);
+		gr.Stroke ();
+
+		x = x + 0.1;
+		DrawBar (gr, x, y + area_h, bar_w, bar_h, session.TotalScore);
+		gr.DrawTextCentered (x + bar_w / 2, y + area_h + 0.05, Catalog.GetString ("Score"));
+
+		x = x + 0.2;
+		DrawBar (gr, x, y + area_h, bar_w, bar_h, session.LogicScore);
+		gr.DrawTextCentered (x + bar_w / 2, y + area_h + 0.05, Catalog.GetString ("Logic")); 
+
+		x = x + 0.2;
+		DrawBar (gr, x, y + area_h, bar_w, bar_h, session.MathScore);
+		gr.DrawTextCentered (x + bar_w / 2, y + area_h + 0.05, Catalog.GetString ("Calculation"));
+
+		x = x + 0.2;
+		DrawBar (gr, x, y + area_h, bar_w, bar_h, session.MemoryScore);
+		gr.DrawTextCentered (x + bar_w / 2, y + area_h + 0.05, Catalog.GetString ("Memory"));
+	}
+
 	private void DrawScores (CairoContextEx gr, int area_width, int area_height)
 	{
 		double y = 0.08, x = 0.05;
@@ -207,7 +258,7 @@ public class GameDrawingArea : DrawingArea
 
 		gr.SetFontSize (0.03);
 		gr.MoveTo (x, y);
-		gr.ShowText (Catalog.GetString ("Score"));		
+		gr.ShowText (Catalog.GetString ("Score"));
 		DrawBand (gr, 0.03, y - 0.04);
 
 		gr.SetFontSize (0.03);
@@ -216,63 +267,32 @@ public class GameDrawingArea : DrawingArea
 
 		if (session.GamesPlayed >= 10) {
 			if (session.TotalScore >= 90)
-				s = String.Format (Catalog.GetString ("Outstanding results, your total score is {0}%"), session.TotalScore);
+				s = String.Format (Catalog.GetString ("Outstanding results"));
 			else if (session.TotalScore >= 80) 
-				s = String.Format (Catalog.GetString ("Excellent results, your total score is {0}%"), session.TotalScore);
+				s = String.Format (Catalog.GetString ("Excellent results"));
 			else if (session.TotalScore >= 50) 
-				s = String.Format (Catalog.GetString ("Good results, your total score is {0}%"), session.TotalScore);
+				s = String.Format (Catalog.GetString ("Good results"));
 			else if (session.TotalScore >= 30) 
-				s = String.Format (Catalog.GetString ("Poor results, your total score is {0}%"), session.TotalScore);
-			
-			else s = String.Format (Catalog.GetString ("Disappointing results, your total score is {0}%"), session.TotalScore);
-		} else
-			s = String.Format (Catalog.GetString ("Your total score is {0}%"), session.TotalScore);
-
-		gr.ShowText (s);
-		y += space_small;	
-		gr.MoveTo (x, y);
-
-		if (session.LogicGamesPlayed == 0)
-			str = Catalog.GetString ("No logic puzzle games played");
-		else
-			str = String.Format (Catalog.GetString ("Logic puzzle score is {0}%"), session.LogicScore);
-
-		gr.ShowText (str);
-
-		y += space_small;
-		gr.MoveTo (x, y);
-
-		if (session.MathGamesPlayed == 0)
-			str = Catalog.GetString ("No mental calculation games played");
-		else
-			str = String.Format (Catalog.GetString ("Mental calculation score is {0}%"), session.MathScore);
-
-		gr.ShowText (str);
-
-		y += space_small;
-		gr.MoveTo (x, y);
-
-		if (session.MemoryGamesPlayed == 0)
-			str = Catalog.GetString ("No memory games played");
-		else
-			str = String.Format (Catalog.GetString ("Memory score is {0}%"),  session.MemoryScore);
-
-		gr.ShowText (str);
-
-		y += 0.08;
-		gr.SetFontSize (0.03);
-		gr.MoveTo (x, y);
-		gr.ShowText (Catalog.GetString ("Game statistics"));
-		DrawBand (gr, 0.03, y - 0.04);
+				s = String.Format (Catalog.GetString ("Poor results"));
+			else s = String.Format (Catalog.GetString ("Disappointing results"));
+		} else 
+			s = String.Empty;
 
 		gr.SetFontSize (0.03);
-		y += 0.08;
 		gr.MoveTo (x, y);
-		gr.ShowText (String.Format (Catalog.GetString ("Total games won: {0} ({1} played)"), session.GamesWon, session.GamesPlayed));	
+
+		if (s == String.Empty)
+			gr.ShowText (String.Format (Catalog.GetString ("Games won: {0} ({1} played)"), session.GamesWon, session.GamesPlayed));	
+		else 
+			gr.ShowText (String.Format (Catalog.GetString ("{0}. Games won: {1} ({2} played)"), s, session.GamesWon, session.GamesPlayed));	
+
 		y += space_small;
 		gr.MoveTo (x, y);
-		gr.ShowText (String.Format (Catalog.GetString ("Total time played {0} (average per game {1})"), session.GameTime, session.TimePerGame));
-		y += 0.08;
+		gr.ShowText (String.Format (Catalog.GetString ("Time played {0} (average per game {1})"), session.GameTime, session.TimePerGame));
+		
+		y += 0.06;
+		DrawGraphicBar (gr, x + 0.05, y);
+		y += 0.42;
 
 		gr.SetFontSize (0.03);
 		gr.MoveTo (x, y);
@@ -291,7 +311,6 @@ public class GameDrawingArea : DrawingArea
 		}
 	
 		gr.Stroke ();
-
 	}
 
 	private String GetTip (int tip)
