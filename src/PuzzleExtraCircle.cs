@@ -49,7 +49,7 @@ public class PuzzleExtraCircle : Game
 	public override string Answer {
 		get { 
 			string answer = base.Answer + " ";
-			answer += String.Format (Catalog.GetString ("In all the circles the colour slides follow the same order except for this one."));
+			answer += String.Format (Catalog.GetString ("In all the circles the color slides follow the same order except for this one."));
 			return answer;
 		}
 	}
