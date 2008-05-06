@@ -249,7 +249,7 @@ public class GameDrawingArea : DrawingArea
 	{
 		double y = 0.08, x = 0.05;
 		double space_small = 0.06;
-		string str, s;
+		string s;
 
 		gr.Scale (area_width, area_height);
 		gr.Color = new Cairo.Color (1, 1, 1);
