@@ -47,6 +47,7 @@ public class gbrainy: Program
 	int memquestion_time = 4;
 	bool memquestion_warn = true;
 	Game.Difficulty difficulty = Game.Difficulty.Medium;
+	public static PlayerHistory history = null;
  
 	public gbrainy (string [] args, params object [] props)
 	: base ("gbrainy", Defines.VERSION, Modules.UI,  args, props)
@@ -106,7 +107,11 @@ public class gbrainy: Program
 		button.Clicked += OnEndGame;
 		toolbar.Insert (button, -1);
 
-		session = new GameSession (this);		
+		session = new GameSession (this);	
+
+		if (history == null)
+			history = new PlayerHistory ();
+
 		drawing_area = new GameDrawingArea ();
 		drawing_vbox.Add (drawing_area);
 		//app_window.Resize (500, 700);
@@ -406,6 +411,7 @@ public class gbrainy: Program
 		drawing_area.mode = GameDrawingArea.Modes.Scores;
 		drawing_area.GameSession = session.Copy ();
 	
+		history.SaveGameSession (session);
 		session.EndSession ();
 		drawing_area.puzzle = null;
 		question_label.Text = string.Empty;
@@ -437,6 +443,15 @@ public class gbrainy: Program
 		toolbar.Visible = !toolbar.Visible;
 		app_window.Resize (width, height - requisition.Height);
 	}
+
+	void OnHistory (object sender, EventArgs args)
+	{
+		PlayerHistoryDialog dialog;
+
+		dialog = new PlayerHistoryDialog ();
+		dialog.Run ();
+		dialog.Dialog.Destroy ();	
+	}	
 
 	private void OnSizeAllocated (object obj, SizeAllocatedArgs args)
 	{

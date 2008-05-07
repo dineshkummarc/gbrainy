@@ -23,12 +23,9 @@ using Gtk;
 using Mono.Unix;
 using System.Collections;
 
-public class CustomGameDialog
+public class CustomGameDialog : GtkDialog
 {
 	static ListStore games_store;
-	private Glade.XML xml;
-	private Gtk.Dialog dialog;
-	private const string dialog_name = "customgame";
 	[Glade.Widget] Gtk.TreeView treeview;
 	[Glade.Widget] Box preview_vbox;
 	[Glade.Widget] Label preview_question;
@@ -37,8 +34,7 @@ public class CustomGameDialog
 	int ngames, npos;
 	Type [] custom_games;
 
-
-	public CustomGameDialog (GameManager manager)
+	public CustomGameDialog (GameManager manager) : base ("customgame")
 	{
 		Game game;
 		Type[] games;
@@ -50,8 +46,6 @@ public class CustomGameDialog
 		gm.GameType = GameSession.Types.AllGames;
 		games = gm.Games;
 		dialog = null;
-		xml = new Glade.XML (null, "gbrainy.glade", dialog_name, "gbrainy");
-		xml.Autoconnect (this);
 
 		drawing_area = new CairoPreview ();
 		preview_vbox.Add (drawing_area);
@@ -107,26 +101,11 @@ public class CustomGameDialog
 		}
 
 		treeview.Model = games_store;
-		Dialog.IconName = "gbrainy";
 		game =  (Game) Activator.CreateInstance (games [0], true);
 		game.Initialize ();
 		drawing_area.puzzle = game;
 		preview_question.Markup = game.Question;
 		treeview.ColumnsAutosize ();
-	}
-
-	public int Run ()
-	{
-		return Dialog.Run ();
-	}
-
-	public Gtk.Dialog Dialog {
-		get {
-			if (dialog == null)
-				dialog = (Gtk.Dialog) xml.GetWidget (dialog_name);
-				
-			return dialog;
-		}
 	}
 
 	public int NumOfGames {

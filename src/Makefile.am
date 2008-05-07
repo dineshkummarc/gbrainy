@@ -61,6 +61,9 @@ GBRAINY_CSDISTFILES =				\
 	$(srcdir)/CalculationFractions.cs	\
 	$(srcdir)/PuzzleExtraCircle.cs		\
 	$(srcdir)/PuzzleCountSeries.cs		\
+	$(srcdir)/PlayerHistory.cs		\
+	$(srcdir)/PlayerHistoryDialog.cs	\
+	$(srcdir)/GtkDialog.cs			\
 	$(srcdir)/gbrainy.cs			
 
 ASSEMBLIES = \

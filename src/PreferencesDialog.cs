@@ -23,23 +23,16 @@ using Gtk;
 using Mono.Unix;
 using System.Collections;
 
-public class PreferencesDialog
+public class PreferencesDialog : GtkDialog
 {
-	private Glade.XML xml;
-	private Gtk.Dialog dialog;
-	private const string dialog_name = "preferences";
 	[Glade.Widget] Gtk.SpinButton prefspinbutton;
 	[Glade.Widget] Gtk.CheckButton prefcheckbutton;
 	[Glade.Widget] Gtk.RadioButton rb_easy;
 	[Glade.Widget] Gtk.RadioButton rb_medium;
 	[Glade.Widget] Gtk.RadioButton rb_master;
 
-	public PreferencesDialog ()
+	public PreferencesDialog () : base ("preferences")
 	{
-		dialog = null;
-		xml = new Glade.XML (null, "gbrainy.glade", dialog_name, "gbrainy");
-		xml.Autoconnect (this);
-		Dialog.IconName = "gbrainy";
 	}
 	
 	public virtual int MemQuestionTime {
@@ -76,19 +69,4 @@ public class PreferencesDialog
 			}
 		}
 	}
-
-	public Gtk.Dialog Dialog {
-		get {
-			if (dialog == null)
-				dialog = (Gtk.Dialog) xml.GetWidget (dialog_name);
-				
-			return dialog;
-		}
-	}
-
-	public int Run ()
-	{
-		return Dialog.Run ();
-	}
-        
 }

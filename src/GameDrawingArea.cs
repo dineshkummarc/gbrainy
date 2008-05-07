@@ -230,7 +230,7 @@ public class GameDrawingArea : DrawingArea
 
 		x = x + 0.1;
 		DrawBar (gr, x, y + area_h, bar_w, bar_h, session.TotalScore);
-		gr.DrawTextCentered (x + bar_w / 2, y + area_h + 0.05, Catalog.GetString ("Score"));
+		gr.DrawTextCentered (x + bar_w / 2, y + area_h + 0.05, Catalog.GetString ("Total"));
 
 		x = x + 0.2;
 		DrawBar (gr, x, y + area_h, bar_w, bar_h, session.LogicScore);
