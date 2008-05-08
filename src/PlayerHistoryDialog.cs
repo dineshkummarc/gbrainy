@@ -167,7 +167,7 @@ public class PlayerHistoryDialog : GtkDialog
 				cr.Stroke ();
 			}
 
-			if (dlg.checkbutton_memory.Active) { // Total			
+			if (dlg.checkbutton_total.Active) { // Total			
 				cr.Color = total_color;
 				cr.MoveTo (x, area_h - (area_h * history.Games[0].total_score / 100));
 				for (int i = 1; i < history.Games.Count; i++)
