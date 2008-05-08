@@ -66,7 +66,7 @@ public abstract class Memory : Game
 		draw_timer = false;
 
 		if (App != null)
-			time_left = total_time = App.MemQuestionTime * 10; // Seconds
+			time_left = total_time = gbrainy.preferences.GetIntValue (Preferences.MemQuestionTimeKey) * 10; // Seconds
 	}
 
 	public void StartTimer ()

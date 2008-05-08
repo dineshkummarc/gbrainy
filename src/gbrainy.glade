@@ -881,7 +881,7 @@
 	  </child>
 
 	  <child>
-	    <widget class="GtkButton" id="okbutton1">
+	    <widget class="GtkButton" id="okbutton">
 	      <property name="visible">True</property>
 	      <property name="can_default">True</property>
 	      <property name="can_focus">True</property>
@@ -890,6 +890,7 @@
 	      <property name="relief">GTK_RELIEF_NORMAL</property>
 	      <property name="focus_on_click">True</property>
 	      <property name="response_id">-5</property>
+	      <signal name="clicked" handler="OnOK" last_modification_time="Thu, 08 May 2008 14:12:40 GMT"/>
 	    </widget>
 	  </child>
 	</widget>

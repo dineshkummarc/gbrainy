@@ -33,19 +33,24 @@ public class PreferencesDialog : GtkDialog
 
 	public PreferencesDialog () : base ("preferences")
 	{
-	}
-	
-	public virtual int MemQuestionTime {
-		get { return prefspinbutton.ValueAsInt;}
-		set { prefspinbutton.Value = value; }
+		prefspinbutton.Value = gbrainy.preferences.GetIntValue (Preferences.MemQuestionTimeKey);
+		prefcheckbutton.Active = gbrainy.preferences.GetBoolValue (Preferences.MemQuestionWarnKey);
+			
+		switch ((Game.Difficulty) gbrainy.preferences.GetIntValue (Preferences.DifficultyKey)) {
+		case Game.Difficulty.Easy:
+			rb_easy.Active = rb_easy.HasFocus = true;
+			break;		
+		case Game.Difficulty.Medium:
+			rb_medium.Active = rb_medium.HasFocus = true;
+			break;
+		case Game.Difficulty.Master:
+			rb_master.Active = rb_master.HasFocus = true;
+			break;
+		}
+
 	}
 
-	public virtual bool MemQuestionWarn {
-		get { return prefcheckbutton.Active;}
-		set { prefcheckbutton.Active = value;}
-	}
-
-	public virtual Game.Difficulty Difficulty {
+	private Game.Difficulty Difficulty {
 		get {
 			if (rb_easy.Active)
 				return Game.Difficulty.Easy;
@@ -55,18 +60,14 @@ public class PreferencesDialog : GtkDialog
 
 			return Game.Difficulty.Medium;			
 		}
-		set {
-			switch (value) {
-			case Game.Difficulty.Easy:
-				rb_easy.Active = rb_easy.HasFocus = true;
-				break;		
-			case Game.Difficulty.Medium:
-				rb_medium.Active = rb_medium.HasFocus = true;
-				break;
-			case Game.Difficulty.Master:
-				rb_master.Active = rb_master.HasFocus = true;
-				break;
-			}
-		}
+	}
+
+	private void OnOK (object sender, EventArgs args)
+	{
+		gbrainy.preferences.SetIntValue (Preferences.MemQuestionTimeKey, (int) prefspinbutton.Value);
+		gbrainy.preferences.SetBoolValue (Preferences.MemQuestionWarnKey, prefcheckbutton.Active);
+		gbrainy.preferences.SetIntValue (Preferences.DifficultyKey, (int) Difficulty);
+		gbrainy.preferences.Save ();
 	}
 }
+

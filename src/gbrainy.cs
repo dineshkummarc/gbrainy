@@ -44,10 +44,8 @@ public class gbrainy: Program
 	GameSession session;
 	const int ok_buttonid = -5;
 	ToolButton pause_tbbutton;
-	int memquestion_time = 4;
-	bool memquestion_warn = true;
-	Game.Difficulty difficulty = Game.Difficulty.Medium;
 	public static PlayerHistory history = null;
+	public static Preferences preferences = null;
  
 	public gbrainy (string [] args, params object [] props)
 	: base ("gbrainy", Defines.VERSION, Modules.UI,  args, props)
@@ -112,6 +110,9 @@ public class gbrainy: Program
 		if (history == null)
 			history = new PlayerHistory ();
 
+		if (preferences == null)
+			preferences = new Preferences ();
+
 		drawing_area = new GameDrawingArea ();
 		drawing_vbox.Add (drawing_area);
 		//app_window.Resize (500, 700);
@@ -122,18 +123,6 @@ public class gbrainy: Program
 		question_label.Text = string.Empty;
 		ActiveInputControls (false);
 		//OnMemoryOnly (this, EventArgs.Empty); // temp
-	}
-	
-	public int MemQuestionTime {
-		get { return memquestion_time;}
-	}
-
-	public bool MemQuestionWarn {
-		get { return memquestion_warn;}
-	}
-	
-	public Game.Difficulty Difficulty {
-		get { return difficulty;}
 	}
 
 	public void UpdateStatusBar ()
@@ -208,7 +197,7 @@ public class gbrainy: Program
 		UpdateQuestion (String.Empty);
 		session.NextGame ();
 		
-		if (MemQuestionWarn && session.Type != GameSession.Types.MemoryTrainers && ((session.CurrentGame as Memory)  != null)) {
+		if (preferences.GetBoolValue (Preferences.MemQuestionWarnKey) && session.Type != GameSession.Types.MemoryTrainers && ((session.CurrentGame as Memory)  != null)) {
 			ActiveInputControls (false);
 			drawing_area.OnDrawCountDown (OnNextGameAfterCountDown);
 		}
@@ -342,7 +331,7 @@ public class gbrainy: Program
 		solution_label.Text = string.Empty;
 		session.Type = GameSession.Types.MemoryTrainers;
 
-		if (MemQuestionWarn)
+		if (preferences.GetBoolValue (Preferences.MemQuestionWarnKey))
 			drawing_area.OnDrawCountDown (OnMemoryOnlyAfterCountDown);
 		else
 			OnNewGame ();
@@ -353,14 +342,8 @@ public class gbrainy: Program
 		PreferencesDialog dialog;
 
 		dialog = new PreferencesDialog ();
-		dialog.MemQuestionTime = MemQuestionTime;
-		dialog.MemQuestionWarn = MemQuestionWarn;
-		dialog.Difficulty = Difficulty;
 		if (dialog.Run () == ok_buttonid) {
-			memquestion_warn = dialog.MemQuestionWarn;
-			memquestion_time = dialog.MemQuestionTime;
-			difficulty = dialog.Difficulty;
-			session.GameManager.Difficulty = difficulty;
+			session.GameManager.Difficulty = (Game.Difficulty) preferences.GetIntValue (Preferences.DifficultyKey);
 		}
 		dialog.Dialog.Destroy ();
 	}
