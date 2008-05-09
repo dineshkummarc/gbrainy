@@ -52,11 +52,17 @@ public class PlayerHistory
 		get { return games; }
 	}
 
+	public void Clean ()
+	{
+		games.Clear ();
+		Save ();
+	}
+
 	public void SaveGameSession (GameSession session)
 	{
 		GameHistory history = new GameHistory ();
 
-		if (session.GamesPlayed == 0)
+		if (session.GamesPlayed < gbrainy.preferences.GetIntValue (Preferences.MinPlayedGamesKey))
 			return;
 	
 		history.games_played = session.GamesPlayed;
@@ -69,11 +75,15 @@ public class PlayerHistory
 		if (!Directory.Exists (config_path))
 			Directory.CreateDirectory (config_path);
 
-		if (games.Count >= 20) // Record the last 20 games
+		if (games.Count >= gbrainy.preferences.GetIntValue (Preferences.MaxStoredGamesKey))
 			games.RemoveAt (0);
 
 		games.Add (history);
+		Save ();
+	}
 
+	private void Save ()
+	{
 		try {
 
 			using (FileStream str = File.Create (file))

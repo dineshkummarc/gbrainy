@@ -32,6 +32,8 @@ public class Preferences
 	static public string MemQuestionWarnKey = "MemQuestionWarn";
 	static public string MemQuestionTimeKey = "MemQuestionTime";
 	static public string DifficultyKey = "Difficulty";
+	static public string MinPlayedGamesKey = "MinPlayedGames";
+	static public string MaxStoredGamesKey = "MaxStoredGamesKey";
 
 	static private string element_item = "item";
 	static private string element_key = "key";
@@ -150,19 +152,22 @@ public class Preferences
 	{
 		properties.Add (MemQuestionWarnKey, true.ToString ());
 		properties.Add (MemQuestionTimeKey, "4");
-		properties.Add (DifficultyKey, ((int)(Game.Difficulty.Medium)).ToString ());		
+		properties.Add (DifficultyKey, ((int)(Game.Difficulty.Medium)).ToString ());
+		properties.Add (MinPlayedGamesKey, "5");
+		properties.Add (MaxStoredGamesKey, "50");	
 	}
 
 	private void Load ()
 	{
 		try {
+			LoadDefaultValues ();
 			XmlTextReader reader = new XmlTextReader (file);
 			properties.ReadXml (reader);
 			reader.Close ();
 		}
 		catch (Exception)
 		{
-			LoadDefaultValues ();
+			
 		}
 	}
 	

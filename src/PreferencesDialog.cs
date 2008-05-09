@@ -26,6 +26,8 @@ using System.Collections;
 public class PreferencesDialog : GtkDialog
 {
 	[Glade.Widget] Gtk.SpinButton prefspinbutton;
+	[Glade.Widget] Gtk.SpinButton maxstoredspinbutton;
+	[Glade.Widget] Gtk.SpinButton minplayedspinbutton;
 	[Glade.Widget] Gtk.CheckButton prefcheckbutton;
 	[Glade.Widget] Gtk.RadioButton rb_easy;
 	[Glade.Widget] Gtk.RadioButton rb_medium;
@@ -35,6 +37,8 @@ public class PreferencesDialog : GtkDialog
 	{
 		prefspinbutton.Value = gbrainy.preferences.GetIntValue (Preferences.MemQuestionTimeKey);
 		prefcheckbutton.Active = gbrainy.preferences.GetBoolValue (Preferences.MemQuestionWarnKey);
+		maxstoredspinbutton.Value = gbrainy.preferences.GetIntValue (Preferences.MaxStoredGamesKey);
+		minplayedspinbutton.Value = gbrainy.preferences.GetIntValue (Preferences.MinPlayedGamesKey);
 			
 		switch ((Game.Difficulty) gbrainy.preferences.GetIntValue (Preferences.DifficultyKey)) {
 		case Game.Difficulty.Easy:
@@ -62,11 +66,19 @@ public class PreferencesDialog : GtkDialog
 		}
 	}
 
+
+	private void OnCleanHistory (object sender, EventArgs args)
+	{
+		gbrainy.history.Clean ();
+	}
+
 	private void OnOK (object sender, EventArgs args)
 	{
 		gbrainy.preferences.SetIntValue (Preferences.MemQuestionTimeKey, (int) prefspinbutton.Value);
 		gbrainy.preferences.SetBoolValue (Preferences.MemQuestionWarnKey, prefcheckbutton.Active);
 		gbrainy.preferences.SetIntValue (Preferences.DifficultyKey, (int) Difficulty);
+		gbrainy.preferences.SetIntValue (Preferences.MaxStoredGamesKey, (int) maxstoredspinbutton.Value);
+		gbrainy.preferences.SetIntValue (Preferences.MinPlayedGamesKey, (int) minplayedspinbutton.Value);
 		gbrainy.preferences.Save ();
 	}
 }
