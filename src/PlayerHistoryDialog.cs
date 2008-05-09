@@ -179,6 +179,23 @@ public class PlayerHistoryDialog : GtkDialog
 				cr.Stroke ();
 			}
 		}
+
+		private void DrawGrid (CairoContextEx cr, double x, double y)
+		{
+			// Draw Axis
+			cr.MoveTo (x, y);
+			cr.LineTo (x, y + area_h);
+			cr.LineTo (x + area_w, y + area_h);
+			cr.Stroke ();
+
+			cr.Color = new Cairo.Color (0.8, 0.8, 0.8);
+			cr.LineWidth = 0.001;
+			for (double line_y = y; line_y < area_h + y; line_y += area_h / 10) {
+				cr.MoveTo (x, line_y);
+				cr.LineTo (x + area_w, line_y);
+				cr.Stroke ();
+			}
+		}		
 		
 		protected override bool OnExposeEvent (Gdk.EventExpose args)
 		{
@@ -216,14 +233,12 @@ public class PlayerHistoryDialog : GtkDialog
 			cr.LineWidth = point_size;
 			cr.Color = axis_color;
 
+			cr.Rectangle (x, y, area_w, area_h);
+			cr.Clip ();
 			DrawLines (cr, x, y);
+			cr.ResetClip ();
 			DrawLegend (cr, x, y + area_h + 0.05);
-
-			// Draw Axis
-			cr.MoveTo (x, y);
-			cr.LineTo (x, y + area_h);
-			cr.LineTo (x + area_w, y + area_h);
-			cr.Stroke ();
+			DrawGrid (cr, x, y);
 
 			((IDisposable)cc).Dispose();
 			((IDisposable)cr).Dispose();
