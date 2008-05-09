@@ -39,7 +39,7 @@ public class PuzzleExtraCircle : Game
 	}
 
 	public override string Question {
-		get {return Catalog.GetString ("Which is the circle that does not belong to the group (it is not a sequence)? (A, B, C or D)");} 
+		get {return Catalog.GetString ("Which is the circle that does not belong to the group (A, B, C or D)?. It is not a sequence of elements.");} 
 	}
 
 	public override string Tip {
@@ -49,7 +49,7 @@ public class PuzzleExtraCircle : Game
 	public override string Answer {
 		get { 
 			string answer = base.Answer + " ";
-			answer += String.Format (Catalog.GetString ("In all the circles the color slides follow the same order except for this one."));
+			answer += String.Format (Catalog.GetString ("In all the circles the color slices follow the same order except for this one."));
 			return answer;
 		}
 	}
