@@ -48,7 +48,7 @@ public class PuzzleQuadrilaterals : Game
 	public override string Answer {
 		get { 
 			string answer = base.Answer + " ";
-			answer += Catalog.GetString ("It is the only figure with all lines of equal size.");
+			answer += Catalog.GetString ("It is the only figure with all lines of equal length.");
 			return answer;
 		}
 	}
