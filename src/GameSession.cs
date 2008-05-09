@@ -30,7 +30,7 @@ public class GameSession
 		None			= 0,
 		LogicPuzzles		= 2,
 		MemoryTrainers		= 4,
-		CalculationTrainers		= 8,
+		CalculationTrainers	= 8,
 		Custom			= 16,
 		TrainersOnly		= MemoryTrainers | CalculationTrainers,
 		AllGames		= MemoryTrainers | CalculationTrainers | LogicPuzzles

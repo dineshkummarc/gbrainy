@@ -144,19 +144,46 @@ public class GameManager
 		
 		games.Clear ();
 
-		if ((game_type & GameSession.Types.LogicPuzzles) == GameSession.Types.LogicPuzzles) {
-			for (int i = 0; i < LogicPuzzles.Length; i++)
+		// For all games, 1/3 of the total are logic, 1/3 Memory, 1/3 calculation
+		if ((game_type & GameSession.Types.AllGames) == GameSession.Types.AllGames) {
+
+			int idx;
+			for (int i = 0; i < LogicPuzzles.Length; i++) {
+				games.Add (LogicPuzzles [i]);
+			}
+			
+			idx = 0;
+			for (int i = 0; i < LogicPuzzles.Length; i++, idx++) {
+				if (idx == CalculationTrainers.Length)
+					idx = 0;
+
+				games.Add (CalculationTrainers [idx]);
+			}
+
+			idx = 0;
+			for (int i = 0; i < LogicPuzzles.Length; i++, idx++) {
+				if (idx == MemoryTrainers.Length)
+					idx = 0;
+
+				games.Add (MemoryTrainers [idx]);
+			}
+
+		} else {
+
+			if ((game_type & GameSession.Types.LogicPuzzles) == GameSession.Types.LogicPuzzles) {
+				for (int i = 0; i < LogicPuzzles.Length; i++)
 					games.Add (LogicPuzzles [i]);
-		}
+			}
 
-		if ((game_type & GameSession.Types.CalculationTrainers) == GameSession.Types.CalculationTrainers) {
-			for (int i = 0; i < CalculationTrainers.Length; i++)
-				games.Add (CalculationTrainers [i]);
-		}
+			if ((game_type & GameSession.Types.CalculationTrainers) == GameSession.Types.CalculationTrainers) {
+				for (int i = 0; i < CalculationTrainers.Length; i++)
+					games.Add (CalculationTrainers [i]);
+			}
 
-		if ((game_type & GameSession.Types.MemoryTrainers) == GameSession.Types.MemoryTrainers) {
-			for (int i = 0; i < MemoryTrainers.Length; i++)
-				games.Add (MemoryTrainers [i]);
+			if ((game_type & GameSession.Types.MemoryTrainers) == GameSession.Types.MemoryTrainers) {
+				for (int i = 0; i < MemoryTrainers.Length; i++)
+					games.Add (MemoryTrainers [i]);
+			}
 		}
 
 		list = new ArrayListIndicesRandom (games.Count);
