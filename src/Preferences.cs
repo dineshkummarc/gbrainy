@@ -72,7 +72,7 @@ public class Preferences
 				TValue value = (TValue) value_serializer.Deserialize (reader);
 				reader.ReadEndElement();
 
-				this.Add(key, value);
+				this[key] = value; // already created in DefaultValues
 				reader.ReadEndElement();
 
 				reader.MoveToContent();
@@ -117,6 +117,10 @@ public class Preferences
 	public void Save ()
 	{
 		try {
+
+			if (!Directory.Exists (config_path))
+				Directory.CreateDirectory (config_path);
+
 			XmlTextWriter writer = new XmlTextWriter (file, Encoding.UTF8);
 			writer.Formatting = Formatting.Indented;
 
@@ -167,7 +171,6 @@ public class Preferences
 		}
 		catch (Exception)
 		{
-			
 		}
 	}
 	

@@ -72,9 +72,6 @@ public class PlayerHistory
 		history.memory_score = session.MemoryScore;
 		history.total_score = session.TotalScore;
 
-		if (!Directory.Exists (config_path))
-			Directory.CreateDirectory (config_path);
-
 		if (games.Count >= gbrainy.preferences.GetIntValue (Preferences.MaxStoredGamesKey))
 			games.RemoveAt (0);
 
@@ -85,6 +82,9 @@ public class PlayerHistory
 	private void Save ()
 	{
 		try {
+
+			if (!Directory.Exists (config_path))
+				Directory.CreateDirectory (config_path);
 
 			using (FileStream str = File.Create (file))
 			{
