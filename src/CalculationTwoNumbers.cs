@@ -46,10 +46,10 @@ public class CalculationTwoNumbers : Game
 			max_operand = 8;
 			break;
 		case Difficulty.Medium:
-			max_operand = 12;
+			max_operand = 10;
 			break;
 		case Difficulty.Master:
-			max_operand = 25;
+			max_operand = 15;
 			break;
 		}
 

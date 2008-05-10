@@ -42,7 +42,7 @@ public class CalculationOperator : Game
 	}
 
 	public override string Question {
-		get {return String.Format (Catalog.GetString ("Which operators make {0}, {1}, and {2} equal {3}?"), number_a, number_b, number_c, total);} 
+		get {return String.Format (Catalog.GetString ("Which operators make {0}, {1}, and {2} equal {3} (answer using +-/*)?"), number_a, number_b, number_c, total);} 
 	}
 
 	private double ProcessOperation (double total, double number, char op)

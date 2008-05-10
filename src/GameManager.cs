@@ -125,8 +125,22 @@ public class GameManager
 	}
 
 	// Used from CustomGameDialog only
-	public Type[] Games {
-		get { return (Type []) games.ToArray (typeof (Type)); }
+	public Type[] CustomGames {
+		get { 
+			Type[] list = new Type [LogicPuzzles.Length + CalculationTrainers.Length + MemoryTrainers.Length];
+			int idx = 0;
+
+			for (int i = 0; i < LogicPuzzles.Length; i++, idx++)
+				list[idx] = LogicPuzzles [i];
+
+			for (int i = 0; i < CalculationTrainers.Length; i++, idx++)
+				list[idx] = CalculationTrainers [i];
+
+			for (int i = 0; i < MemoryTrainers.Length; i++, idx++)
+				list[idx] = MemoryTrainers [i];
+
+			return list;
+		}
 		set {
 			games = new ArrayList (value.Length);
 			for (int i = 0; i < value.Length; i++)

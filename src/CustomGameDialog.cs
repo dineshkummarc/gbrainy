@@ -44,7 +44,7 @@ public class CustomGameDialog : GtkDialog
 		this.manager = manager;
 		gm = new GameManager ();
 		gm.GameType = GameSession.Types.AllGames;
-		games = gm.Games;
+		games = gm.CustomGames;
 		dialog = null;
 
 		drawing_area = new CairoPreview ();
@@ -182,7 +182,7 @@ public class CustomGameDialog : GtkDialog
 		});
 
 		
-		manager.Games = custom_games;
+		manager.CustomGames = custom_games;
 	}
 
 	public class CairoPreview : DrawingArea 
