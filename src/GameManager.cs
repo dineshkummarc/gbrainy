@@ -19,6 +19,7 @@
 
 using System;
 using System.Collections;
+using System.Collections.Generic;
 using Cairo;
 
 public class GameManager
@@ -86,7 +87,7 @@ public class GameManager
 	private GameSession.Types game_type;
 	private ArrayListIndicesRandom list;
 	private IEnumerator enumerator;
-	private ArrayList games;
+	private List <Type> games;
 	private Game.Difficulty difficulty;
 
 	static GameManager ()
@@ -100,7 +101,7 @@ public class GameManager
 	{
 		game_type = GameSession.Types.None;
 		difficulty = Game.Difficulty.Medium;
-		games = new ArrayList ();
+		games = new List <Type> ();
 	}
 
 	public GameSession.Types GameType {
@@ -142,7 +143,7 @@ public class GameManager
 			return list;
 		}
 		set {
-			games = new ArrayList (value.Length);
+			games = new List <Type> (value.Length);
 			for (int i = 0; i < value.Length; i++)
 				games.Add (value[i]);
 
@@ -157,31 +158,51 @@ public class GameManager
 			return;
 		
 		games.Clear ();
+		Random random = new Random ();
 
 		// For all games, 1/3 of the total are logic, 1/3 Memory, 1/3 calculation
 		if ((game_type & GameSession.Types.AllGames) == GameSession.Types.AllGames) {
-
-			int idx;
-			for (int i = 0; i < LogicPuzzles.Length; i++) {
-				games.Add (LogicPuzzles [i]);
-			}
 			
-			idx = 0;
-			for (int i = 0; i < LogicPuzzles.Length; i++, idx++) {
-				if (idx == CalculationTrainers.Length)
-					idx = 0;
+			int idx_cal = 0, idx_mem = 0;
+			ArrayListIndicesRandom idx_logic = new ArrayListIndicesRandom (LogicPuzzles.Length);
+			ArrayListIndicesRandom idx_memory = new ArrayListIndicesRandom (MemoryTrainers.Length);
+			ArrayListIndicesRandom idx_calculation = new ArrayListIndicesRandom (CalculationTrainers.Length);
 
-				games.Add (CalculationTrainers [idx]);
+			games.Clear ();
+			idx_memory.Initialize ();
+			idx_logic.Initialize ();
+			idx_calculation.Initialize ();
+
+			for (int i = 0; i < LogicPuzzles.Length; i++, idx_mem++, idx_cal++) {
+
+				if (idx_cal == CalculationTrainers.Length) {
+					idx_cal = 0;
+					idx_calculation.Initialize ();
+				}
+
+				if (idx_mem == MemoryTrainers.Length) {
+					idx_mem = 0;
+					idx_memory.Initialize ();
+				}
+
+				switch (random.Next (3)) {
+				case 0:
+					games.Add (CalculationTrainers [idx_calculation[idx_cal]]);
+					games.Add (LogicPuzzles [idx_logic[i]]);
+					games.Add (MemoryTrainers [idx_memory[idx_mem]]);
+					break;
+				case 1:
+					games.Add (MemoryTrainers [idx_memory[idx_mem]]);
+					games.Add (CalculationTrainers [idx_calculation[idx_cal]]);
+					games.Add (LogicPuzzles [idx_logic[i]]);
+					break;
+				case 2:
+					games.Add (CalculationTrainers [idx_calculation[idx_cal]]);
+					games.Add (MemoryTrainers [idx_memory[idx_mem]]);
+					games.Add (LogicPuzzles [idx_logic[i]]);
+					break;
+				}
 			}
-
-			idx = 0;
-			for (int i = 0; i < LogicPuzzles.Length; i++, idx++) {
-				if (idx == MemoryTrainers.Length)
-					idx = 0;
-
-				games.Add (MemoryTrainers [idx]);
-			}
-
 		} else {
 
 			if ((game_type & GameSession.Types.LogicPuzzles) == GameSession.Types.LogicPuzzles) {
@@ -206,7 +227,13 @@ public class GameManager
 
 	private void Initialize ()
 	{
-		list.Initialize ();
+		if ((game_type & GameSession.Types.AllGames) == GameSession.Types.AllGames) { // The game list has been already randomized
+			list.Clear ();
+			for (int i = 0; i < games.Count; i++)
+				list.Add (i);
+		} else
+			list.Initialize ();
+
 		enumerator = list.GetEnumerator ();
 	}
 	
