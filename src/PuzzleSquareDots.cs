@@ -97,7 +97,7 @@ public class PuzzleSquareDots : Game
 		possible_answers.Initialize ();
 
 		for (int i = 0; i < possible_answers.Count; i++) {
-			if ((int) possible_answers[i] == 0) {
+			if (possible_answers[i] == 0) {
 				right_answer += (char) (65 + (int) i);
 				break;
 			}
@@ -182,7 +182,7 @@ public class PuzzleSquareDots : Game
 		y += 0.05;
 
 		for (int i = 0; i < possible_answers.Count; i++) {
-			DrawPossibleAnswer (gr, x, y, (int) possible_answers[i]);
+			DrawPossibleAnswer (gr, x, y, possible_answers[i]);
 			gr.MoveTo (x, y + figure_size + 0.05);
 			gr.ShowText (String.Format (Catalog.GetString ("Figure {0}"), (char) (65 + i)));
 			gr.Stroke ();

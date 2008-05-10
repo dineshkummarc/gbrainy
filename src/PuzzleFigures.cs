@@ -60,9 +60,9 @@ public class PuzzleFigures : Game
 
 		StringBuilder sb = new StringBuilder (3);
 		
-		sb.Append ((char) (65 + figures[(int) random_indices [5]]));
-		sb.Append ((char) (65 + figures[6 + (int) random_indices [5]]));
-		sb.Append ((char) (65 + figures[(2 * 6) + (int) random_indices [5]]));
+		sb.Append ((char) (65 + figures[random_indices [5]]));
+		sb.Append ((char) (65 + figures[6 + random_indices [5]]));
+		sb.Append ((char) (65 + figures[(2 * 6) + random_indices [5]]));
 
 		right_answer = sb.ToString ();
 	}
@@ -114,7 +114,7 @@ public class PuzzleFigures : Game
 
 		for (int i = 0; i < (DrawAnswer ? 6 : 5) ; i++)
 		{
-			element = (int) random_indices [i];
+			element = random_indices [i];
 			y = DrawAreaY;
 			for (int n = 0; n < 3; n++) 
 			{

@@ -54,7 +54,7 @@ public class PuzzleMissingPiece : Game
 		random_indices.Initialize ();
 
 		for (int i = 0; i < random_indices.Count; i++) {
-			if ((int) random_indices [i] == 0) {
+			if (random_indices [i] == 0) {
 				right_answer += (char) (65 + i);
 				break;
 			}
@@ -150,7 +150,7 @@ public class PuzzleMissingPiece : Game
 
 		x = DrawAreaX + 0.1;
 		for (int i = 0; i < random_indices.Count; i++) {
-			figure = (int) random_indices [i];
+			figure = random_indices [i];
 			DrawAnswerFigures (gr, x + (0.08 + sub_figure) * i, 0.70, figure);
 			gr.MoveTo (x + (0.08 + sub_figure) * i, 0.9);
 			gr.ShowText (String.Format (Catalog.GetString ("Figure {0}"), (char) (65 + i)));

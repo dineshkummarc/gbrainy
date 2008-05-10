@@ -79,20 +79,20 @@ public class MemoryFigures : Memory
 
 		rect_w = 0.6 / columns;
 		rect_h = 0.8 / rows;
-		figures = new ArrayListIndicesRandom ((int) figures_active * 2);
+		figures = new ArrayListIndicesRandom (figures_active * 2);
 		figures.Initialize ();
-		question_pos = (int) random.Next ((int) figures_active * 2);
+		question_pos = random.Next (figures_active * 2);
 
-		for (int figure = 0; figure < (int) figures_active * 2; figure++)
+		for (int figure = 0; figure < figures_active * 2; figure++)
 		{	
 			if (figure == question_pos)
 				continue;
 	
-			fig1 = (int) figures[figure];
-			fig2 = (int) figures[question_pos];
+			fig1 = figures[figure];
+			fig2 = figures[question_pos];
 
-			if (fig1 >= (int) figures_active) fig1 -= (int) figures_active;
-			if (fig2 >= (int) figures_active) fig2 -= (int) figures_active;
+			if (fig1 >= figures_active) fig1 -= figures_active;
+			if (fig2 >= figures_active) fig2 -= figures_active;
 
 			if (fig1 == fig2) {
 				question_answer = figure + 1;

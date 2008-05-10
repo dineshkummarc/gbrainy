@@ -141,7 +141,7 @@ public class PuzzleTetris : Game
 		PrepareGC (gr);
 		
 		for (int i = 0; i < 4; i++) {
-			DrawQuestionFigures (gr, x, y, (int) random_indices_questions [i]);
+			DrawQuestionFigures (gr, x, y, random_indices_questions [i]);
 			x += space_figures;
 		}
 
@@ -151,7 +151,7 @@ public class PuzzleTetris : Game
 		x = 0.2;
 		y = 0.6;
 		for (int i = 0; i < 3; i++) {
-			DrawAnswerFigures (gr, x, y, (int) random_indices_answers [i]);
+			DrawAnswerFigures (gr, x, y, random_indices_answers [i]);
 			gr.MoveTo (x, y + 0.15);
 			gr.ShowText (String.Format (Catalog.GetString ("Figure {0}"), (char) (65 + i)));
 			x += space_figures;

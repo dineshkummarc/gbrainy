@@ -45,7 +45,7 @@ public class CalculationWhichNumber : Game
 	public override string Answer {
 		get { 
 			string answer = base.Answer + " ";
-			int ans_idx = (int) random_indices[which];
+			int ans_idx = random_indices[which];
 
 			answer += String.Format (Catalog.GetString ("The result of the operation {0} / {1} is {2:###.###}"), 
 				options[ans_idx * 2], options[(ans_idx * 2) + 1], question_num);
@@ -131,7 +131,7 @@ public class CalculationWhichNumber : Game
 		random_indices.Initialize ();
 		
 		which = random.Next (options_cnt);
-		ans_idx = (int) random_indices[which];
+		ans_idx = random_indices[which];
 		question_num = options[ans_idx * 2] / options[(ans_idx * 2) + 1];
 		right_answer += (char) (65 + which);
 	}
@@ -151,7 +151,7 @@ public class CalculationWhichNumber : Game
 		{
 			gr.MoveTo (x, y);
 			option = (char) (65 + i);
-			indx = (int) random_indices[i];
+			indx = random_indices[i];
 			gr.ShowText (option + ") " + options [indx * 2] +  " / " + options [(indx  * 2) +1]);
 			
 			y = y + 0.15;

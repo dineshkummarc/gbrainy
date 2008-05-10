@@ -22,12 +22,12 @@ using Cairo;
 using Mono.Unix;
 using System.Timers;
 using Gtk;
-using System.Collections;
+using System.Collections.Generic;
 
 public class MemoryWords : Memory
 {
 	private ArrayListIndicesRandom words_order;
-	private ArrayList words;
+	private List <string> words;
 	private const int total_words = 35;
 	private int showed;
 	private int answer;
@@ -44,7 +44,7 @@ public class MemoryWords : Memory
 	public override void Initialize ()
 	{
 		int tmp;
-		words = new ArrayListIndicesRandom (total_words);
+		words = new List <string> (total_words);
 
 		// Body parts
 		words.Add (Catalog.GetString ("wrist"));
@@ -110,8 +110,8 @@ public class MemoryWords : Memory
 		words_order = new ArrayListIndicesRandom (total_words);
 		words_order.Initialize ();
 		answer = random.Next (showed);
-		tmp = (int) words_order [answer];
-		right_answer = (string) words [tmp];
+		tmp = words_order [answer];
+		right_answer = words [tmp];
 		base.Initialize ();
 	}
 	
@@ -126,7 +126,7 @@ public class MemoryWords : Memory
 				continue;
 
 			gr.MoveTo (x, y);
-			gr.ShowText ((string) words[(int)words_order[i]]);
+			gr.ShowText (words[words_order[i]]);
 			gr.Stroke ();
 
 			if ((cnt + 1) % 3 == 0) {
@@ -151,7 +151,7 @@ public class MemoryWords : Memory
 		for (int i = 0; i < showed; i++)
 		{
 			gr.MoveTo (x, y);
-			gr.ShowText ((string) words[(int)words_order[i]]);
+			gr.ShowText (words[words_order[i]]);
 			gr.Stroke ();
 			
 			if ((i + 1) % 3 == 0) {

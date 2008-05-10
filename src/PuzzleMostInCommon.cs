@@ -169,6 +169,25 @@ public class PuzzleMostInCommon : Game
 		answers.Add (BuildFigure (array, answers));
 	}
 
+	private ArrayListIndicesRandom RandomizeFromArray (ArrayList ar)
+	{		
+		int index;
+		object []array = (object []) ar.ToArray (typeof (object));
+		ArrayListIndicesRandom elements = new ArrayListIndicesRandom (ar.Count);
+		int left = ar.Count;
+		elements.Clear ();
+
+		// Generate a random number that can be as big as the maximum -1
+		// Add the random element picked up element in the list
+		// The element just randomized gets out of pending list and replaced by the maximum -1 element 
+		for (int i = 0; i < ar.Count; i++, left--) {
+			index = random.Next (left);
+			elements.Add ((int) array[index]);
+			array[index] = array[left - 1];
+		}
+		return elements;
+	}
+
 	// Generates a new figure that was not generated before
 	private FigureElement [] BuildFigure (ArrayList array, ArrayList figures)
 	{
@@ -179,7 +198,7 @@ public class PuzzleMostInCommon : Game
 
 		while (done == false) {
 
-			elements.RandomizeFromArray (array);
+			elements = RandomizeFromArray (array);
 			element = new FigureElement []
 			{
 				new FigureElement (pos1_x, pos1_y, (Element) elements[0]),

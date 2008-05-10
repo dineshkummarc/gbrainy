@@ -71,14 +71,14 @@ public class PuzzleExtraCircle : Game
 		
 		// Correct answer
 		random_indices.Initialize ();
-		clr = badcercle_colors [(int) random_indices[0]];
-		badcercle_colors [(int) random_indices[0]] =  badcercle_colors [(int) random_indices[1]];
-		badcercle_colors [(int) random_indices[1]] = clr;
+		clr = badcercle_colors [random_indices[0]];
+		badcercle_colors [random_indices[0]] =  badcercle_colors [random_indices[1]];
+		badcercle_colors [random_indices[1]] = clr;
 
 		// Indices
 		start_indices = new int [circles];
 		for (int i = 0; i < circles; i++)
-			start_indices[i] = (int) random_indices[i];
+			start_indices[i] = (random_indices[i]);
 
 		ans_pos = random.Next (circles);
 		right_answer += (char) (65 + ans_pos);

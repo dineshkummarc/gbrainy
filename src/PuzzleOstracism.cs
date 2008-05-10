@@ -63,7 +63,7 @@ public class PuzzleOstracism : Game
 
 		for (int i = 0; i < random_indices.Count; i++)
 		{
-			if ((int) random_indices[i] == wrong_answer) {
+			if (random_indices[i] == wrong_answer) {
 				right_answer += ((char) (65 + i));
 				break;
 			}
@@ -82,7 +82,7 @@ public class PuzzleOstracism : Game
 		for (int i = 0; i < random_indices.Count; i++)
 		{
 			gr.MoveTo (x, y);
-			gr.ShowText (((char)( 65 + i)) + ") " +  equations [(int)random_indices[i]]);
+			gr.ShowText (((char)( 65 + i)) + ") " +  equations [random_indices[i]]);
 			y += 0.1;
 		}
 	}

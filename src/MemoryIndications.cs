@@ -222,7 +222,7 @@ public class MemoryIndications : Memory
 		answers.Initialize ();
 
 		for (int i = 0; i < answers.Count; i++) {
-			if ((int) answers [i] == 0) {
+			if (answers [i] == 0) {
 				right_answer += (char) (65 + i);
 				break;
 			}

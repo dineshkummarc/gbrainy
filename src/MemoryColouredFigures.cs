@@ -87,7 +87,7 @@ public class MemoryColouredFigures : Memory
 
 		right_answer = string.Empty;
 		for (int i = 0; i < answers_order.Count; i++) {
-			if ((int) answers_order[i] == 0) {
+			if (answers_order[i] == 0) {
 				right_answer += (char) (65 + (int) i);
 				break;
 			}
@@ -144,7 +144,7 @@ public class MemoryColouredFigures : Memory
 				y += 0.45;
 				x = DrawAreaX;
 			}
-			DrawSquare (gr, x, y, squares_colours, squares * (int) answers_order[i]);
+			DrawSquare (gr, x, y, squares_colours, squares * answers_order[i]);
 			gr.MoveTo (x, y + block_space + 0.02);
 			gr.ShowText (String.Format (Catalog.GetString ("Figure {0}"), (char) (65 + i)));
 			gr.Stroke ();

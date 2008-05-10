@@ -163,12 +163,12 @@ public class PuzzleMissingSlice : Game
 			}
 			
 			if (slice < half_slices) {
-				pos = (int) random_indices [slice];
+				pos = random_indices [slice];
 				DrawSliceText (gr, x + arc_centerx, y + arc_centery, slice, (sum_offset + slices [pos * items_per_slice]).ToString (),
 					 (sum_offset + slices [1 + (pos * items_per_slice)]).ToString (), (sum_offset + slices [2 + (pos * items_per_slice)]).ToString ());
 			}
 			else {
-				pos = (int) random_indices [slice - half_slices];
+				pos = random_indices [slice - half_slices];
 				DrawSliceText (gr, x + arc_centerx, y + arc_centery, slice, slices_opposite [pos * items_per_slice].ToString (),
 					 slices_opposite [2 + (pos * items_per_slice)].ToString (), slices_opposite [1 + (pos * items_per_slice)].ToString ());
 			}
@@ -182,7 +182,7 @@ public class PuzzleMissingSlice : Game
 		{
 			DrawSlice (gr, 0.10 + i * 0.28, y);
 			if (i == ans_pos) {
-				pos = (int) random_indices [0];
+				pos = random_indices [0];
 				DrawSliceText (gr, 0.10 + i * 0.28, y, 0, (sum_offset + slices [pos * items_per_slice]).ToString (),
 					 (sum_offset + slices [1 + (pos * items_per_slice)]).ToString (), (sum_offset + slices [2 + (pos * items_per_slice)]).ToString ());
 			} else {

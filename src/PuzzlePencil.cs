@@ -44,7 +44,7 @@ public class PuzzlePencil : Game
 		right_answer = string.Empty;
 
 		for (int i = 0; i < random_indices.Count; i++) {
-			if ((int) random_indices[i] != answer_index)
+			if (random_indices[i] != answer_index)
 				continue;
 			
 			right_answer += (char) (65 + (int) i);
@@ -142,7 +142,7 @@ public class PuzzlePencil : Game
 
 		for (int figure = 0; figure < figures; figure++)
 		{
-			switch ((int) random_indices[figure]) {
+			switch (random_indices[figure]) {
 			case 0:
 				DrawTriangle (gr, x, y);
 				break;

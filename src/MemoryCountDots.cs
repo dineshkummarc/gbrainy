@@ -123,8 +123,8 @@ public class MemoryCountDots : Memory
 		{
 			int dx,dy;
 			Color color = palette.Cairo(itcolor);
-			dx = ((int)location_order[i]) % NUMCOLUMNS;
-			dy = ((int)location_order[i]) / NUMCOLUMNS;
+			dx = (location_order[i]) % NUMCOLUMNS;
+			dy = (location_order[i]) / NUMCOLUMNS;
 
 			gr.Arc (pos_x+square_size*dx, pos_y+square_size*dy,radius_square,0,2*Math.PI);
 			gr.FillGradient (pos_x+square_size*dx, pos_y+square_size*dy, radius_square, radius_square, color);

@@ -56,7 +56,7 @@ public class PuzzleSquaresAndLetters : Game
 
 		characters = new char [(1 + figures) * 4]; 
 		for (int figure = 0; figure < figures; figure++) {
-			first_letter = (int) first_letters [figure];
+			first_letter = first_letters [figure];
 			for (int letter = 0; letter < 4; letter++) {
 				characters[(figure * 4) + letter] = (char) (65 + first_letter + (step * letter));
 			}				

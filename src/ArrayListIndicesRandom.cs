@@ -18,12 +18,12 @@
  */
 
 using System;
-using System.Collections;
+using System.Collections.Generic;
 
 //
 // Returns a list of indexes in random order
 //
-public class ArrayListIndicesRandom : ArrayList
+public class ArrayListIndicesRandom : List <int>
 {
 	protected Random random;
 
@@ -34,18 +34,18 @@ public class ArrayListIndicesRandom : ArrayList
 
 	public void Initialize ()
 	{
-		ArrayList random_list = new ArrayList (Capacity);
+		List <int> random_list = new List <int> (Capacity);
 		for (int i = 0; i < Capacity; i++) {
 			random_list.Add (i);
 		}
 		RandomizeFromArray (random_list);
 	}
 
-	public void RandomizeFromArray (ArrayList ar)
+	public void RandomizeFromArray (List <int> ar)
 	{		
 		int left = Capacity;
 		int index;
-		object []array = (object []) ar.ToArray (typeof (object));
+		int []array = ar.ToArray ();
 		Clear ();
 
 		// Generate a random number that can be as big as the maximum -1
