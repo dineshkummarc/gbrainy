@@ -26,7 +26,7 @@ using System.Xml.Serialization;
 public class PlayerHistory
 {
 	private string file, config_path;
-	private List <GameHistory> games = new List <GameHistory> ();
+	private List <GameHistory> games;
 
 	[Serializable]
 	public class GameHistory
