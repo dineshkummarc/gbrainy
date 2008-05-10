@@ -55,17 +55,17 @@ public class PuzzleCountSeries : Game
 		switch ((GameType) random.Next ((int) GameType.Length))
 		{
 			case GameType.HowManyNines:
-				question = "How many 9 digits are needed to represent the the numbers between 10 to 100?";
+				question = Catalog.GetString ("How many 9 digits are needed to represent the numbers between 10 to 100?");
 				right_answer = "20";
 				break;
 
 			case GameType.HowManyBiggerDigits:
-				question = "How many numbers of two digits have the first digit bigger than the second (e.g.: 20 and 21)?";
+				question = Catalog.GetString ("How many numbers of two digits have the first digit bigger than the second (e.g.: 20 and 21)?");
 				right_answer = "45";
 				break;
 
 			case GameType.HowManySmallerDigits:
-				question = "How many numbers of two digits have the first digit smaller than the second (e.g.: 12 and 13)?";
+				question = Catalog.GetString ("How many numbers of two digits have the first digit smaller than the second (e.g.: 12 and 13)?");
 				right_answer = "36";
 				break;
 		}
