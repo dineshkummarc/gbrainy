@@ -303,7 +303,7 @@ public class GameDrawingArea : DrawingArea
 		y += 0.08;
 		for (int i = 0; i < tips_shown; i++)
 		{
-			y = gr.DrawStringWithWrapping (x, y, space_small, "- " + GetTip ((int) random_indices[i]));
+			y = gr.DrawStringWithWrapping (x, y, space_small, "- " + GetTip (random_indices[i]));
 			if (y > 0.85)
 				break;
 

@@ -117,7 +117,6 @@ public class Preferences
 	public void Save ()
 	{
 		try {
-
 			if (!Directory.Exists (config_path))
 				Directory.CreateDirectory (config_path);
 

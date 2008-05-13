@@ -55,8 +55,8 @@ public class PuzzleCountSeries : Game
 		switch ((GameType) random.Next ((int) GameType.Length))
 		{
 			case GameType.HowManyNines:
-				question = Catalog.GetString ("How many 9 digits are needed to represent the numbers between 10 to 100?");
-				right_answer = "20";
+				question = Catalog.GetString ("How many numbers 9 are needed to represent the numbers between 10 to 100?");
+				right_answer = "19";
 				break;
 
 			case GameType.HowManyBiggerDigits:

@@ -65,6 +65,7 @@ GBRAINY_CSDISTFILES =				\
 	$(srcdir)/PlayerHistoryDialog.cs	\
 	$(srcdir)/GtkDialog.cs			\
 	$(srcdir)/Preferences.cs		\
+	$(srcdir)/PuzzleFourSided.cs		\
 	$(srcdir)/gbrainy.cs			
 
 ASSEMBLIES = \
