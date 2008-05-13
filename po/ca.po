@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gbrainy\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-05-10 16:18+0200\n"
-"PO-Revision-Date: 2008-05-09 18:40+0100\n"
+"POT-Creation-Date: 2008-05-13 11:38+0200\n"
+"PO-Revision-Date: 2008-05-13 11:50+0100\n"
 "Last-Translator: Jordi Mas <jmas@softcatala.org>\n"
 "Language-Team: Catalan\n"
 "MIME-Version: 1.0\n"
@@ -489,7 +489,7 @@ msgstr ""
 #: ../src/PuzzleMissingPiece.cs:156 ../src/PuzzleMissingSlice.cs:194
 #: ../src/PuzzleTetris.cs:156 ../src/MemoryIndications.cs:275
 #: ../src/MemoryIndications.cs:280 ../src/MemoryIndications.cs:285
-#: ../src/MemoryIndications.cs:290 ../src/PuzzleMostInCommon.cs:273
+#: ../src/MemoryIndications.cs:290 ../src/PuzzleMostInCommon.cs:292
 #: ../src/PuzzleBuildTriangle.cs:153 ../src/PuzzleClocks.cs:157
 #: ../src/PuzzleClocks.cs:162 ../src/PuzzleClocks.cs:167
 #: ../src/PuzzleClocks.cs:172 ../src/PuzzleQuadrilaterals.cs:134
@@ -585,7 +585,7 @@ msgstr ""
 #: ../src/PuzzleSquareDots.cs:180 ../src/PuzzleNextFigure.cs:126
 #: ../src/PuzzleFigurePattern.cs:172 ../src/PuzzleMissingPiece.cs:149
 #: ../src/PuzzleMissingSlice.cs:178 ../src/PuzzleTetris.cs:149
-#: ../src/PuzzleMostInCommon.cs:265
+#: ../src/PuzzleMostInCommon.cs:284
 msgid "Possible answers are:"
 msgstr "Les respostes possibles són:"
 
@@ -1430,7 +1430,7 @@ msgstr "Resultats pobres"
 #: ../src/GameDrawingArea.cs:277
 #, csharp-format
 msgid "Disappointing results"
-msgstr "Resultat decebedors"
+msgstr "Resultats decebedors"
 
 #: ../src/GameDrawingArea.cs:285
 #, csharp-format
@@ -1917,21 +1917,27 @@ msgid "Count series"
 msgstr "Comptar sèries"
 
 #: ../src/PuzzleCountSeries.cs:58
+#
 msgid ""
-"How many 9 digits are needed to represent the numbers between 10 to 100?"
-msgstr "Quants dígits 9 són necessaris per a representar els números entre 10 i 100?"
+"How many numbers 9 are needed to represent the numbers between 10 to 100?"
+msgstr ""
+"Quants números 9 són necessaris per a representar els números entre 10 i 100?"
 
 #: ../src/PuzzleCountSeries.cs:63
 msgid ""
 "How many numbers of two digits have the first digit bigger than the second "
 "(e.g.: 20 and 21)?"
-msgstr "Quants números de dos dígits tenen el primer dígit més gran que el segon (p.ex.: 20 i 21)?"
+msgstr ""
+"Quants números de dos dígits tenen el primer dígit més gran que el segon (p."
+"ex.: 20 i 21)?"
 
 #: ../src/PuzzleCountSeries.cs:68
 msgid ""
 "How many numbers of two digits have the first digit smaller than the second "
 "(e.g.: 12 and 13)?"
-msgstr "Quants números de dos dígits tenen el primer dígit més petit que el segon (p.ex.: 12 i 13)?"
+msgstr ""
+"Quants números de dos dígits tenen el primer dígit més petit que el segon (p."
+"ex.: 12 i 13)?"
 
 #
 #: ../src/PuzzleExtraCircle.cs:38
@@ -1971,6 +1977,30 @@ msgstr ""
 "El gràfic de baix mostra l'evolució de la puntuació del jugador. S'ha "
 "elaborat utilitzant els resultats de les darreres {0} partides "
 "emmagatzemades."
+
+#: ../src/PuzzleFourSided.cs:29
+msgid "Four sided"
+msgstr "Quatre costats"
+
+#
+#
+#
+#
+#
+#: ../src/PuzzleFourSided.cs:33
+#
+msgid "How many four sided figures do you count in the figure below?"
+msgstr "Quantes figures de quatre costats compteu a la figura de baix?"
+
+#: ../src/PuzzleFourSided.cs:37
+#
+msgid "A four sided figure can be embedded inside another figure."
+msgstr "Una figura de quatre costats pot estar incrustada dins d'un altre."
+
+#: ../src/PuzzleFourSided.cs:44
+#, csharp-format
+msgid "The four sided figures are made by connecting the following points: {0}"
+msgstr "Les figures de quatre costats es fan connectant els següents punts: {0}"
 
 #~ msgid "Alphabetic sequence"
 #~ msgstr "Seqüència alfabètica"
@@ -2030,14 +2060,6 @@ msgstr ""
 
 #~ msgid "Game statistics"
 #~ msgstr "Estadístiques de la partida"
-
-#
-#
-#
-#
-#
-#~ msgid "How many lines do you count of in the figures below?"
-#~ msgstr "Quantes línies compteu a les figures de baix?"
 
 #~ msgid "New Game"
 #~ msgstr "Partida nova"
