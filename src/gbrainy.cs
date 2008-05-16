@@ -32,24 +32,31 @@ public class gbrainy: Program
 {
 	[Glade.Widget("gbrainy")] Gtk.Window app_window;
 	[Glade.Widget] Box drawing_vbox;
-	[Glade.Widget] Gtk.Label question_label;
-	[Glade.Widget] Gtk.Label solution_label;
+	[Glade.Widget] Gtk.TextView question_textview;
+	[Glade.Widget] Gtk.TextView solution_textview;
 	[Glade.Widget] Gtk.Entry answer_entry;
 	[Glade.Widget] Gtk.Button answer_button;
 	[Glade.Widget] Gtk.Button tip_button;
 	[Glade.Widget] Gtk.Button next_button;
 	[Glade.Widget] Gtk.Statusbar statusbar;
 	[Glade.Widget] Gtk.Toolbar toolbar;
+	[Glade.Widget] Gtk.Label label_answser;
 	GameDrawingArea drawing_area;
 	GameSession session;
 	const int ok_buttonid = -5;
 	ToolButton pause_tbbutton;
+	Gtk.TextBuffer question_buffer;
+	Gtk.TextBuffer solution_buffer;
+	TextTag tag_green;
+	
 	public static PlayerHistory history = null;
 	public static Preferences preferences = null;
  
 	public gbrainy (string [] args, params object [] props)
 	: base ("gbrainy", Defines.VERSION, Modules.UI,  args, props)
 	{
+		Gdk.Color color;
+
 		Catalog.Init ("gbrainy", Defines.GNOME_LOCALE_DIR);
 
 		IconFactory icon_factory = new IconFactory ();
@@ -68,6 +75,13 @@ public class gbrainy: Program
 		toolbar.IconSize = Gtk.IconSize.Dnd;
 	
 		Tooltips tooltips = new Tooltips ();
+		question_buffer = new Gtk.TextBuffer (new Gtk.TextTagTable ());
+		solution_buffer = new Gtk.TextBuffer (new Gtk.TextTagTable ());
+		question_textview.Buffer = question_buffer;
+		solution_textview.Buffer = solution_buffer;
+		tag_green = new TextTag ("Congratulations");
+		tag_green.Foreground = "#00A000";
+		solution_buffer.TagTable.Add (tag_green);
 
 		ToolButton button = new ToolButton ("allgames");
 		button.SetTooltip (tooltips, Catalog.GetString ("Play all the games"), null);
@@ -119,8 +133,11 @@ public class gbrainy: Program
 		//app_window.SizeAllocated += new SizeAllocatedHandler (OnSizeAllocated);
 		app_window.IconName = "gbrainy";
 		app_window.ShowAll ();
+	
+		color = label_answser.Style.Background (StateType.Normal);
+		question_textview.ModifyBase (Gtk.StateType.Normal, color);
+		solution_textview.ModifyBase (Gtk.StateType.Normal, color);
 
-		question_label.Text = string.Empty;
 		ActiveInputControls (false);
 		//OnMemoryOnly (this, EventArgs.Empty); // temp
 	}
@@ -168,7 +185,12 @@ public class gbrainy: Program
 
 	public void UpdateQuestion (string question)
 	{
-		question_label.Text = question;
+		question_buffer.Text = question;
+	}
+
+	private void UpdateSolution (string question)
+	{		
+		solution_buffer.Text = question;
 	}
 
 	public void QueueDraw ()
@@ -193,7 +215,7 @@ public class gbrainy: Program
 
 	private void GetNextGame ()
 	{
-		solution_label.Text = String.Empty;
+		UpdateSolution (String.Empty);
 		UpdateQuestion (String.Empty);
 		session.NextGame ();
 		
@@ -255,13 +277,17 @@ public class gbrainy: Program
 	void OnAnswerButtonClicked (object sender, EventArgs args)
 	{
 		string answer;
+		bool congratulations = false;
+		TextIter begin_iter, end_iter;
+
 		if (session.CurrentGame == null)
 			return;
 	
 		if (answer_button.Sensitive == true && session.CurrentGame.CheckAnswer (answer_entry.Text) == true) {
+			congratulations = true;
 			session.GamesWon++;
 			session.CurrentGame.Won = true;
-			answer = "<span color ='#00A000'>" + Catalog.GetString ("Congratulations.") + "</span>";
+			answer = Catalog.GetString ("Congratulations.");
 		} else
 			answer = Catalog.GetString ("Incorrect answer.");
 
@@ -269,7 +295,16 @@ public class gbrainy: Program
 		session.EnableTimer = false;
 		answer_entry.Text = String.Empty;
 		UpdateStatusBar ();
-		solution_label.Markup = answer + " " + session.CurrentGame.Answer;
+		UpdateSolution (answer + " " + session.CurrentGame.Answer);
+		begin_iter = solution_buffer.GetIterAtOffset (0);
+		end_iter = solution_buffer.GetIterAtOffset (answer.Length);
+
+		if (congratulations) {
+			solution_buffer.ApplyTag (tag_green, begin_iter, end_iter);
+		} else {
+			solution_buffer.RemoveTag (tag_green, begin_iter, end_iter);
+		}
+
 		session.CurrentGame.DrawAnswer = true;
 		session.Status = GameSession.SessionStatus.Answered;
 		ActiveInputControls (true);
@@ -303,14 +338,14 @@ public class gbrainy: Program
 		if (session.CurrentGame == null)
 			return;
 
-		solution_label.Text = session.CurrentGame.TipString;
+		UpdateSolution (session.CurrentGame.TipString);
 	}
 
 	void OnNewGame ()
 	{
 		session.NewSession ();
 		GetNextGame ();
-		solution_label.Text = Catalog.GetString ("Once you have an answer type it in the \"Answer:\" entry box and press the \"OK\" button.");
+		UpdateSolution (Catalog.GetString ("Once you have an answer type it in the \"Answer:\" entry box and press the \"OK\" button."));
 		UpdateStatusBar ();
 	}
 
@@ -327,9 +362,9 @@ public class gbrainy: Program
 
 	void OnMemoryOnly (object sender, EventArgs args)
 	{
-		question_label.Text = string.Empty;
-		solution_label.Text = string.Empty;
 		session.Type = GameSession.Types.MemoryTrainers;
+		UpdateSolution (String.Empty);
+ 		UpdateQuestion (String.Empty);
 
 		if (preferences.GetBoolValue (Preferences.MemQuestionWarnKey))
 			drawing_area.OnDrawCountDown (OnMemoryOnlyAfterCountDown);
@@ -397,8 +432,9 @@ public class gbrainy: Program
 		history.SaveGameSession (session);
 		session.EndSession ();
 		drawing_area.puzzle = null;
-		question_label.Text = string.Empty;
-		solution_label.Text = string.Empty;
+
+		UpdateSolution (String.Empty);
+		UpdateQuestion (String.Empty);
 		UpdateStatusBar ();
 		drawing_area.QueueDraw ();
 		ActiveInputControls (false);
