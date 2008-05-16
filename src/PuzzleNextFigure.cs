@@ -48,7 +48,7 @@ public class PuzzleNextFigure : Game
 	}
 
 	public override string Question {
-		get {return Catalog.GetString ("Which is the next logical figure in the sequence (A, B, or C)?");} 
+		get {return Catalog.GetString ("Which is the next logical figure in the sequence? Answer A, B or C.");} 
 	}
 
 

@@ -72,7 +72,7 @@ public class PuzzleMostInCommon : Game
 	}
 
 	public override string Question {
-		get {return Catalog.GetString ("Which of the possible answers have the most in common with the four given figures  (A, B, C or D)?");} 
+		get {return Catalog.GetString ("Which of the possible answers have the most in common with the four given figures? Answer A, B, C or D.");} 
 	}
 
 	public override string Tip {

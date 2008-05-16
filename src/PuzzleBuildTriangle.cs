@@ -49,7 +49,7 @@ public class PuzzleBuildTriangle : Game
 	}
 
 	public override string Question {
-		get {return Catalog.GetString ("Which three pieces can you use together to build a triangle (e.g.: ABE)?");} 
+		get {return Catalog.GetString ("Which three pieces can you use together to build a triangle? Answer using the three figure names, e.g.: ABE.");} 
 	}
 
 	public override string Tip {

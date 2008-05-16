@@ -32,7 +32,7 @@ public class PuzzleLines : Game
 	}
 
 	public override string Question {
-		get {return Catalog.GetString ("How many lines do you count of in the figures below? (consider a line a segment between two points with no crossing lines)");} 
+		get {return Catalog.GetString ("How many lines do you count of in the figures below? Consider a line a segment between two points with no crossing lines.");} 
 	}
 
 	public override string Answer {
@@ -44,7 +44,7 @@ public class PuzzleLines : Game
 	}
 
 	public override string Tip {
-		get { return Catalog.GetString ("It is an easy exercise if you use a systematic way of counting the lines.");}
+		get { return Catalog.GetString ("It is an easy exercise if you systematically count the lines.");}
 	}
 
 	public override void Initialize ()

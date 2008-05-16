@@ -88,7 +88,7 @@ public class PuzzleSquareDots : Game
 	}
 
 	public override string Question {
-		get {return Catalog.GetString ("What is the letter of the figure that represents the next logical figure in the sequence (A, B or C)?");} 
+		get {return Catalog.GetString ("What is the letter of the figure that represents the next logical figure in the sequence? Answer A, B or C.");} 
 	}
 
 	public override void Initialize ()

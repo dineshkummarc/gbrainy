@@ -29,7 +29,7 @@ public class PuzzleSquareSheets : Game
 	}
 
 	public override string Question {
-		get {return Catalog.GetString ("What is the minimum number of square sheets of paper of any size required to create the figure? (lines indicate frontiers between different sheets)");} 
+		get {return Catalog.GetString ("What is the minimum number of square sheets of paper of any size required to create the figure? Lines indicate frontiers between different sheets.");} 
 	}
 
 	public override string Tip {

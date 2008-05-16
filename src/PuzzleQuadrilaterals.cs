@@ -42,7 +42,7 @@ public class PuzzleQuadrilaterals : Game
 	}
 
 	public override string Question {
-		get {return Catalog.GetString ("Which of the following figures does not belong to the group (A, B, C, D, E or F)?");} 
+		get {return Catalog.GetString ("Which of the following figures does not belong to the group? Answer A, B, C, D, E or F.");} 
 	}
 
 	public override string Answer {
@@ -71,11 +71,19 @@ public class PuzzleQuadrilaterals : Game
 	{
 		switch (figure) {
 		case Figures.FigureA:
+			double x105, y105;
+
+			x105 = figure_size * Math.Cos (105 * Math.PI / 180);
+			y105 = figure_size * Math.Sin (105 * Math.PI / 180);
+			gr.MoveTo (x, y);
+			gr.LineTo (x + x105, y + y105);
+			gr.LineTo (x + x105 + figure_size, y + y105);
+			gr.Stroke ();
+			gr.MoveTo (x + figure_size, y);
+			gr.LineTo (x + figure_size + x105, y + y105);
+			gr.Stroke ();
 			gr.MoveTo (x, y);
 			gr.LineTo (x + figure_size, y);
-			gr.LineTo (x + figure_size * 0.6, y + figure_size + 0.02);
-			gr.LineTo (x - figure_size * 0.4, y + figure_size + 0.02);
-			gr.LineTo (x, y);
 			break;
 
 		case Figures.FigureB:
@@ -103,7 +111,7 @@ public class PuzzleQuadrilaterals : Game
 			gr.LineTo (x + figure_size - 0.04, y);
 			gr.LineTo (x + figure_size - 0.04, y + figure_size);
 			gr.LineTo (x , y + figure_size);
-			gr.LineTo (x + 0.03, y);
+			gr.LineTo (x + 0.03, y);;
 			break;
 
 		case Figures.FigureF:

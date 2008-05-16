@@ -39,17 +39,17 @@ public class PuzzleExtraCircle : Game
 	}
 
 	public override string Question {
-		get {return Catalog.GetString ("Which is the circle that does not belong to the group (A, B, C or D)?. It is not a sequence of elements.");} 
+		get {return Catalog.GetString ("Which circle does not belong to the group? It is not a sequence of elements. Answer A, B, C or D.");} 
 	}
 
 	public override string Tip {
-		get { return Catalog.GetString ("All the circles share a common property except for one.");}
+		get { return Catalog.GetString ("All circles share a common property except for one.");}
 	}
 
 	public override string Answer {
 		get { 
 			string answer = base.Answer + " ";
-			answer += String.Format (Catalog.GetString ("In all the circles the color slices follow the same order except for this one."));
+			answer += String.Format (Catalog.GetString ("In all circles the color slices follow the same order except for this one."));
 			return answer;
 		}
 	}

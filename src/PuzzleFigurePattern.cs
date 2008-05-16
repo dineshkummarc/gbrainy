@@ -38,7 +38,7 @@ public class PuzzleFigurePattern : Game
 	}
 
 	public override string Question {
-		get {return Catalog.GetString ("What figure should replace the question mark (A, B or C)?");} 
+		get {return Catalog.GetString ("What figure should replace the question mark? Answer A, B or C");} 
 	}
 
 	public override string Tip {
@@ -99,6 +99,7 @@ public class PuzzleFigurePattern : Game
 		double org_x = DrawAreaX + 0.1;
 		double x = org_x, y = 0.08;
 		double figure_size = 0.13, space_x = 0.1, space_y = 0.2;
+		double x45, y45, x135, y135, offset;
 
 		gr.Scale (area_width, area_height);
 		DrawBackground (gr);
@@ -140,8 +141,25 @@ public class PuzzleFigurePattern : Game
 		x += figure_size + space_x;
 		DrawRotatedCross (gr, x, y, figure_size);
 
+		// Rotated rectangle
 		x += figure_size + space_x;
-		gr.DrawDiamond (x, y, figure_size);
+		x45 = figure_size * Math.Cos (45 * Math.PI / 180);
+		y45 = figure_size * Math.Sin (45 * Math.PI / 180);
+		x135 = figure_size * Math.Cos (135 * Math.PI / 180);
+		y135 = figure_size * Math.Sin (135 * Math.PI / 180);
+		offset = - 0.03;
+		// Down-right
+		gr.MoveTo (x + figure_size / 2, y + offset);
+		gr.LineTo (x + figure_size / 2 + x45, y + offset + y45);
+		// Up right
+		gr.LineTo ((x + figure_size / 2 + x45) + x135, (y + offset +  y45) + y135);
+		gr.Stroke ();
+		// Down left
+		gr.MoveTo (x + figure_size / 2, y + offset);
+		gr.LineTo (x + figure_size / 2 + x135, y + offset + y135);
+		// Up left
+		gr.LineTo (x + figure_size / 2 + x135 + x45, y + offset + y135 + y45);
+		gr.Stroke ();
 
 		y += space_y;
 		x = org_x;

@@ -32,7 +32,7 @@ public class PuzzleTetris : Game
 	}
 
 	public override string Question {
-		get {return Catalog.GetString ("What figure completes the sequence below (A, B or C)?");} 
+		get {return Catalog.GetString ("What figure completes the sequence below? Answer A, B or C.");} 
 	}
 
 	public override string Answer {

@@ -46,11 +46,11 @@ public class PuzzleCountCircles : Game
 	}
 
 	public override string Question {
-		get {return Catalog.GetString ("How many circles can you count?");} 
+		get {return Catalog.GetString ("How many circles do you count?");} 
 	}
 
 	public override string Tip {
-		get { return Catalog.GetString ("It is an easy exercise if you use a systematic way of counting the circles.");}
+		get { return Catalog.GetString ("It is an easy exercise if you systematically count the circles.");}
 	}
 
 	public override void Initialize ()

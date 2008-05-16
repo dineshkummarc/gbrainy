@@ -39,7 +39,7 @@ public class PuzzleFigures : Game
 	}
 
 	public override string Question {
-		get {return Catalog.GetString ("What is the next logical sequence of objects?");} 
+		get {return Catalog.GetString ("What is the next logical sequence of objects in the last column? See below the convention when giving the answer.");} 
 	}
 
 

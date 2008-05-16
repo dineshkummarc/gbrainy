@@ -37,7 +37,7 @@ public class PuzzleEquation : Game
 	public override string Answer {
 		get { 
 			string answer = base.Answer + " ";
-			answer += Catalog.GetString ("The order of arithmetical operations is always: exponents and roots, multiplication and division, addition and subtraction");
+			answer += Catalog.GetString ("The order of arithmetical operations is always as follows: exponents and roots, multiplication and division, addition and subtraction.");
 			return answer;
 		}
 	}

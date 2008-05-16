@@ -59,6 +59,10 @@ public class PuzzleBalance : Game
 		}
 	}
 
+	public override string Tip {
+		get { return Catalog.GetString ("Every diamond counts as two triangles.");}
+	}
+
 	public override void Initialize ()
 	{
 		int ans = 0;

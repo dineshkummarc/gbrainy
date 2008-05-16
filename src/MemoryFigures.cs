@@ -54,7 +54,7 @@ public class MemoryFigures : Memory
 
 	public override string MemoryQuestion {
 		get { 
-			return Catalog.GetString ("In which cell is the other figure like the one shown below (answer the cell number)?" );}
+			return Catalog.GetString ("In which cell is the other figure like the one shown below? Answer the cell number." );}
 	}
 
 	public override void Initialize ()

@@ -39,7 +39,7 @@ public class PuzzleOstracism : Game
 	}
 
 	public override string Question {
-		get {return Catalog.GetString ("Which equation does not belong to the group (A, B, C, D or E)?");} 
+		get {return Catalog.GetString ("Which equation does not belong to the group? Answer A, B, C, D or E.");} 
 	}
 
 
