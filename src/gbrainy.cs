@@ -431,6 +431,7 @@ public class gbrainy: Program
 	
 		history.SaveGameSession (session);
 		session.EndSession ();
+		drawing_area.EndDrawCountDown ();
 		drawing_area.puzzle = null;
 
 		UpdateSolution (String.Empty);

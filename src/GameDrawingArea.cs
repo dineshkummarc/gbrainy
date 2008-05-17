@@ -144,8 +144,7 @@ public class GameDrawingArea : DrawingArea
 	{
 		lock (this) {
 			if (countdown_time == 1) {
-				timer.Enabled = false;
-				timer.Dispose ();
+				EndDrawCountDown ();
 				Application.Invoke ( delegate { 
 					finish (this, EventArgs.Empty);
 				});
@@ -153,6 +152,16 @@ public class GameDrawingArea : DrawingArea
 			countdown_time--;
 			Application.Invoke ( delegate { QueueDraw (); });
 		}
+	}
+
+	public void EndDrawCountDown ()
+	{
+		if (timer == null)
+			return;
+
+		timer.Enabled = false;
+		timer.Dispose ();
+		timer = null;
 	}
 
 	public void OnDrawCountDown (EventHandler OnFinish)
