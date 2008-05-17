@@ -79,6 +79,8 @@ public class gbrainy: Program
 		solution_buffer = new Gtk.TextBuffer (new Gtk.TextTagTable ());
 		question_textview.Buffer = question_buffer;
 		solution_textview.Buffer = solution_buffer;
+		solution_textview.Visible = false;
+		question_textview.Visible = false;
 		tag_green = new TextTag ("Congratulations");
 		tag_green.Foreground = "#00A000";
 		solution_buffer.TagTable.Add (tag_green);
