@@ -126,7 +126,7 @@ public class CalculationFractions : Game
 				break;
 			}			
 		}
-		
+
 		right_answer = String.Format (format_string, rslt);
 	}
 
@@ -174,14 +174,14 @@ public class CalculationFractions : Game
 	{	
 		string num_a = string.Empty;
 		string num_b = string.Empty;
-		int a, b;
+		double a, b;
 		double rslt;
 		bool first = true;		
 
 		for (int c = 0; c < answer.Length; c++)
 		{
 			if (answer[c] < '0' || answer[c] > '9') {
-				if (answer[c] != '-') {
+				if (answer[c] != '-' && answer[c] != '.' && answer[c] != ',') {
 					first = false;
 					continue;
 				}
@@ -196,12 +196,13 @@ public class CalculationFractions : Game
 		try {
 
 			if (num_b != string.Empty) {
-				a = Int32.Parse (num_a);
-				b = Int32.Parse (num_b);
+				a = Double.Parse (num_a);
+				b = Double.Parse (num_b);
 				rslt = (double) a / (double) b;
 			} else {
-				rslt = Int32.Parse (num_a);
+				rslt = Double.Parse (num_a);
 			}
+
 		}
 
 		catch (FormatException) {
