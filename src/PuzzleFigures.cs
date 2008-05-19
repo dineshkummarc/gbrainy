@@ -155,6 +155,11 @@ public class PuzzleFigures : Game
 		AnswerCoding (gr, DrawAreaX, y);
 	}
 
+	public override bool CheckAnswer (string answer)
+	{
+		answer = TrimAnswer (answer);
+		return base.CheckAnswer (answer);
+	}
 }
 
 

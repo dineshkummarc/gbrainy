@@ -220,7 +220,10 @@ public class PuzzleBuildTriangle : Game
 		char [] ans = new char [answer_num];
 		int c = 0, matches = 0;
 		char[] opers = {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'};
-		string answer = a.ToUpper ();
+		string answer;
+
+		a = TrimAnswer (a);
+		answer = a.ToUpper ();
 
 		for (int i = 0; i < answer_num; i++)
 			ans[i] = answers[i];

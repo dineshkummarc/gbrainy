@@ -72,7 +72,7 @@ public class PuzzleFigureLetter : Game
 
 	public override bool CheckAnswer (string answer)
 	{	
-
+		answer = TrimAnswer (answer);
 		switch (question) {
 		case QuestionType.TwoRectangles:		
 			if ((String.Compare (answer, "ABF", true) == 0) 

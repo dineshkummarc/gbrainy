@@ -240,8 +240,23 @@ abstract public class Game
 	{
 		return (String.Compare (answer, right_answer, true) == 0);
 	}
-	
 
+	// When asking for a list of figures people trends to use spaces or commas
+	// to separate the elements
+	static public string TrimAnswer (string answer)
+	{
+		string rslt = string.Empty;
+
+		for (int i = 0; i < answer.Length; i++)
+		{
+			if (answer[i]==' ' || answer[i] == ',')
+				continue;
+
+			rslt += answer[i];
+		}
+		return rslt;
+	}
+	
 	virtual public void PrepareGC (CairoContextEx gr)
 	{
 		gr.LineWidth = LineWidth;
