@@ -157,7 +157,7 @@ public class Preferences
 		properties.Add (MemQuestionTimeKey, "4");
 		properties.Add (DifficultyKey, ((int)(Game.Difficulty.Medium)).ToString ());
 		properties.Add (MinPlayedGamesKey, "5");
-		properties.Add (MaxStoredGamesKey, "50");	
+		properties.Add (MaxStoredGamesKey, "20");	
 	}
 
 	private void Load ()
