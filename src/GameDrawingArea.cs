@@ -90,12 +90,15 @@ public class GameDrawingArea : DrawingArea
 		gr.Scale (area_width, area_height);
 		DrawBackground (gr);
 		gr.Color = new Cairo.Color (0, 0, 0, 1);
+		gr.Save ();
 		gr.SetFontSize (0.035);
+		gr.SelectFontFace ("Sans", FontSlant.Normal, FontWeight.Bold);
 
 		gr.MoveTo (0.05, y);
 		gr.ShowText (String.Format (Catalog.GetString ("Welcome to gbrainy {0}"), Defines.VERSION));
 		gr.Stroke ();
 
+		gr.Restore ();
 		gr.SetFontSize (0.03);
 		gr.DrawStringWithWrapping (0.05, y + 0.08, line_space, Catalog.GetString ("gbrainy is a brain teaser game and trainer to have fun and to keep your brain trained. It includes:"));
 
