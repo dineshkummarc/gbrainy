@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gbrainy.HEAD\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-05-18 11:04+0000\n"
-"PO-Revision-Date: 2008-05-29 20:51+0200\n"
+"POT-Creation-Date: 2008-05-29 08:15+0000\n"
+"PO-Revision-Date: 2008-05-31 11:06+0200\n"
 "Last-Translator: Jorge González <jorgegonz@svn.gnome.org>\n"
 "Language-Team: Español <gnome-es-list@gnome.org>\n"
 "MIME-Version: 1.0\n"
@@ -88,7 +88,7 @@ msgstr "Avanzado"
 
 #: ../src/gbrainy.glade.h:14
 msgid "Maximum number of stored games in the player's history:"
-msgstr "Máximo número de juegos almacenados en el histórico del jugador:"
+msgstr "Máximo número de partidas almacenadas en el histórico del jugador:"
 
 #: ../src/gbrainy.glade.h:15
 msgid "Medium"
@@ -110,7 +110,7 @@ msgstr "Solo entrenadores de cálculo mental"
 
 #: ../src/gbrainy.glade.h:19
 msgid "Minimum number of played games to store the game:"
-msgstr "Mínimo número de juegos almacenados en el histórico del jugador:"
+msgstr "Mínimo número de partidas jugadas para almacenar la partida:"
 
 #: ../src/gbrainy.glade.h:20
 msgid "Player's Game History"
@@ -201,7 +201,6 @@ msgstr "Terminar"
 #: ../src/gbrainy.cs:241
 msgid "translator-credits"
 msgstr ""
-"Jordi Mas <jmas@softcatala.org>, 2008\n"
 "Gabriel Felipe Cornejo Salas <gnomeusr@gmail.com>, 2008\n"
 "Eduardo Retamales <eretamales@gnome.cl>, 2007, 2008\n"
 "Jorge González <jorgegonz@svn.gnome.org>, 2007, 2008\n"
@@ -288,8 +287,8 @@ msgid ""
 "What is the next logical sequence of objects in the last column? See below "
 "the convention when giving the answer."
 msgstr ""
-"¿Cuál es la siguiente secuencia lógica de objetos en la última columna? Consulta la "
-"convención debajo para dar la respuesta."
+"¿Cuál es la siguiente secuencia lógica de objetos en la última columna? Mira debajo "
+"la convención para dar la respuesta."
 
 #: ../src/PuzzleFigures.cs:50
 msgid ""
@@ -419,12 +418,13 @@ msgid "Pencil"
 msgstr "Bolígrafo"
 
 #: ../src/PuzzlePencil.cs:37
+#, fuzzy
 msgid ""
 "Which of the following figures cannot be drawn without crossing any previous "
 "lines nor lifting the pencil? Answer A, B, C, D or E."
 msgstr ""
-"¿Cuál de las siguientes figuras no se puede dibujar sin cruzar ninguna de las "
-"líneas anteriores o levantar el bolígrafo? Responde A, B, C, D o E."
+"¿Cuál de las siguientes figuras no se puede dibujar sin cruzar una de las "
+"líneas anteriores o levantar el bolígrafo?"
 
 #: ../src/PuzzlePencil.cs:168 ../src/PuzzleSquareDots.cs:187
 #: ../src/PuzzleNextFigure.cs:145 ../src/MemoryColouredFigures.cs:149
@@ -502,12 +502,13 @@ msgid "Square with dots"
 msgstr "Cuadrado con puntos"
 
 #: ../src/PuzzleSquareDots.cs:91
+#, fuzzy
 msgid ""
 "What is the letter of the figure that represents the next logical figure in "
 "the sequence? Answer A, B or C."
 msgstr ""
 "¿Cuál es la letra de la figura que representa la siguiente figura lógica en "
-"la secuencia? Responde A, B o C."
+"la secuencia (A, B o C)?"
 
 #: ../src/PuzzleSquareDots.cs:180 ../src/PuzzleNextFigure.cs:126
 #: ../src/PuzzleFigurePattern.cs:190 ../src/PuzzleMissingPiece.cs:149
@@ -517,8 +518,9 @@ msgid "Possible answers are:"
 msgstr "Respuestas posibles:"
 
 #: ../src/PuzzleSquaresAndLetters.cs:32
+#, fuzzy
 msgid "Squares and letters"
-msgstr "Cuadrados y letras"
+msgstr "Cuadrados con hojas"
 
 #: ../src/PuzzleSquaresAndLetters.cs:36
 msgid ""
@@ -649,8 +651,9 @@ msgid "Next figure"
 msgstr "Siguiente figura"
 
 #: ../src/PuzzleNextFigure.cs:51
+#, fuzzy
 msgid "Which is the next logical figure in the sequence? Answer A, B or C."
-msgstr "¿Cuál es la siguiente figura lógica en la secuencia? Responde A, B, o C."
+msgstr "¿Cuál es la siguiente figura lógica en la secuencia (A, B, o C)?"
 
 #: ../src/PuzzleNextFigure.cs:59
 #, csharp-format
@@ -700,8 +703,11 @@ msgid "Colored figures"
 msgstr "Figuras coloreadas"
 
 #: ../src/MemoryColouredFigures.cs:53
+#, fuzzy
 msgid "Which of these figures was previously shown? Answer A, B, C or D."
-msgstr "¿Cuál de las siguientes figuras se ha mostrado anteriormente? Responde A, B, C o D."
+msgstr ""
+"¿Cuál de los siguientes cuadrados ha sido mostrado anteriormente (A, B, C o "
+"D)?"
 
 #: ../src/GameSession.cs:223
 #, csharp-format
@@ -1049,16 +1055,18 @@ msgstr "Cada triángulo cuenta como 1, cada diamante como 2 y cada cuadrado como
 
 #: ../src/PuzzleBalance.cs:63
 msgid "Every diamond counts as two triangles."
-msgstr "Cada diamante cuenta como dos triángulos."
+msgstr ""
 
 #: ../src/CalculationWhichNumber.cs:34
 msgid "Closer fraction"
 msgstr "Fracción más próxima"
 
 #: ../src/CalculationWhichNumber.cs:42
-#, csharp-format
+#, fuzzy, csharp-format
 msgid "Which of the following numbers is closer to {0:###.###} (A, B, C or D)?"
-msgstr "¿Cuál de los siguientes números está más cerca de {0:###.###} (A, B, C o D)?"
+msgstr ""
+"¿Cuál de los siguientes números está más cerca de {0:###.###} (opción A, B, "
+"C o D)?"
 
 #: ../src/CalculationWhichNumber.cs:50
 #, csharp-format
@@ -1066,8 +1074,9 @@ msgid "The result of the operation {0} / {1} is {2:###.###}"
 msgstr "El resultado de la operación {0} / {1} es {2:###.###}"
 
 #: ../src/PuzzleTrianglesWithNumbers.cs:55
+#, fuzzy
 msgid "Triangles with numbers"
-msgstr "Triángulos con números"
+msgstr "Dos números"
 
 #: ../src/PuzzleTrianglesWithNumbers.cs:59
 msgid "Which number should replace the question mark below?"
@@ -1197,42 +1206,42 @@ msgstr "Puntuación"
 #: ../src/GameDrawingArea.cs:279
 #, csharp-format
 msgid "Outstanding results"
-msgstr "Resultados asombrosos"
+msgstr ""
 
 #: ../src/GameDrawingArea.cs:281
 #, csharp-format
 msgid "Excellent results"
-msgstr "Resultados excelentes"
+msgstr ""
 
 #: ../src/GameDrawingArea.cs:283
 #, csharp-format
 msgid "Good results"
-msgstr "Buenos resultados"
+msgstr ""
 
 #: ../src/GameDrawingArea.cs:285
 #, csharp-format
 msgid "Poor results"
-msgstr "Resultados pobres"
+msgstr ""
 
 #: ../src/GameDrawingArea.cs:286
-#, csharp-format
+#, fuzzy, csharp-format
 msgid "Disappointing results"
-msgstr "Resultados decepcionantes"
+msgstr "Resultado decepcionante, tu puntuación total es {0}%"
 
 #: ../src/GameDrawingArea.cs:294
-#, csharp-format
+#, fuzzy, csharp-format
 msgid "Games won: {0} ({1} played)"
-msgstr "Partidas ganadas: {0} ({1} jugadas)"
+msgstr "Total de partidas ganadas: {0} ({1} jugados)"
 
 #: ../src/GameDrawingArea.cs:296
-#, csharp-format
+#, fuzzy, csharp-format
 msgid "{0}. Games won: {1} ({2} played)"
-msgstr "{0}. Partidas ganadas: {1} ({2} jugadas)"
+msgstr "Total de partidas ganadas: {0} ({1} jugados)"
 
 #: ../src/GameDrawingArea.cs:300
-#, csharp-format
+#, fuzzy, csharp-format
 msgid "Time played {0} (average per game {1})"
-msgstr "Tiempo jugado {0} (media por partida {1})"
+msgstr "Total de tiempo jugado {0} (media por partida {1})"
 
 #: ../src/GameDrawingArea.cs:308
 msgid "Tips for your next games"
@@ -1558,16 +1567,19 @@ msgstr "Memoriza los siguientes objetos en el tiempo dado"
 msgid "Clocks"
 msgstr "Relojes"
 
+# FIXME: Wrong translation. Meaning lost. Suggestion: A qué número debe apuntar la aguja grande del último reloj? ...
 #: ../src/PuzzleClocks.cs:38
+#, fuzzy
 msgid ""
 "To what number should the large handle of the last clock point? Answer A, B, "
 "C or D."
-msgstr "¿A qué número debe apuntar la aguja grande del último reloj? Responde A, B, C o D."
+msgstr "¿En qué número debe manejar el gran reloj del último punto?"
 
+# FIXME: Wrong translation. Meaning lost. Suggestion: A partir del primer reloj suma {0} al valor indicado... (hand es aguja en este contexto)
 #: ../src/PuzzleClocks.cs:44
 #, csharp-format
 msgid "Starting from the first clock sum {0} to the value indicated by the hands."
-msgstr "A partir del primer reloj suma {0} al valor indicado por las agujas."
+msgstr "A partir de la primera suma de reloj {0} con el valor indicado por las manos."
 
 #: ../src/PuzzleClocks.cs:50
 msgid "The clocks do not follow the time logic."
@@ -1578,6 +1590,7 @@ msgid "Count circles"
 msgstr "Contar los círculos"
 
 #: ../src/PuzzleCountCircles.cs:49
+#, fuzzy
 msgid "How many circles do you count?"
 msgstr "¿Cuántos círculos puedes contar?"
 
@@ -1595,18 +1608,16 @@ msgid "What is the result of the equation below?"
 msgstr "¿Cuál es el resultado de la siguiente ecuación?"
 
 #: ../src/PuzzleEquation.cs:40
-#, fuzzy
 msgid ""
 "The order of arithmetical operations is always as follows: exponents and "
 "roots, multiplication and division, addition and subtraction."
 msgstr ""
 "EL orden de las operaciones aritméticas siempre es: exponentes y raíces,"
-"multiplicación y  división, suma y resta"
+"multiplicación y división, suma y resta."
 
 #: ../src/CalculationFractions.cs:58
-#, fuzzy
 msgid "Fractions"
-msgstr "lluvia"
+msgstr "Fracciones"
 
 #: ../src/CalculationFractions.cs:66
 #, csharp-format
@@ -1620,11 +1631,12 @@ msgid "Quadrilaterals"
 msgstr ""
 
 #: ../src/PuzzleQuadrilaterals.cs:45
-#, fuzzy
 msgid ""
 "Which of the following figures does not belong to the group? Answer A, B, C, "
 "D, E or F."
-msgstr "¿Qué ecuación no pertenece al grupo (A, B, C, D o E)?"
+msgstr ""
+"¿Cuál de las siguientes figuras no pertenece al grupo? Responde A, B, C, D, "
+"E o F."
 
 #: ../src/PuzzleQuadrilaterals.cs:51
 msgid "It is the only figure with all lines of equal length."
@@ -1639,35 +1651,39 @@ msgstr "Contar los círculos"
 msgid ""
 "How many numbers \"9\" are required to represent the numbers between 10 to "
 "100?"
-msgstr ""
+msgstr "¿Cuántos números «9» son necesarios para representar los números entre 10 y 100?"
 
 #: ../src/PuzzleCountSeries.cs:63
 msgid ""
 "How many two digit numbers occur where the first digit is larger than the "
 "second (e.g.: 20 and 21)?"
 msgstr ""
+"¿Cuańtos números de dos dígitos existen donde el primer dígito es mayor que el "
+"segundo (ej. 20 y 21)?"
 
 #: ../src/PuzzleCountSeries.cs:68
 msgid ""
 "How many two digit numbers occur where the first digit is smaller than the "
 "second (e.g.: 12 and 13)?"
 msgstr ""
+"¿Cuántos números de dos dígitos existen donde el primer dígito es más pequeño que el "
+"segundo (ej. 12 y 13)?"
 
 #: ../src/PuzzleExtraCircle.cs:38
 msgid "Extra circle"
 msgstr "Círculo adicional"
 
 #: ../src/PuzzleExtraCircle.cs:42
-#, fuzzy
 msgid ""
 "Which circle does not belong to the group? It is not a sequence of elements. "
 "Answer A, B, C or D."
-msgstr "¿Qué ecuación no pertenece al grupo (A, B, C, D o E)?"
+msgstr ""
+"¿Qué círculo no pertenece al grupo? No es una secuencia de elementos. "
+"Responde A, B, C o D."
 
 #: ../src/PuzzleExtraCircle.cs:46
-#, fuzzy
 msgid "All circles share a common property except for one."
-msgstr "Todos los círculos numerados comparten una propiedad aritmética."
+msgstr "Todos los círculos comparten una propiedad común excepto uno."
 
 #: ../src/PuzzleExtraCircle.cs:52
 #, csharp-format
@@ -1683,20 +1699,18 @@ msgstr ""
 
 #: ../src/PuzzleFourSided.cs:29
 msgid "Four sided"
-msgstr ""
+msgstr "Cuatro caras"
 
 #: ../src/PuzzleFourSided.cs:33
-#, fuzzy
 msgid "How many four sided figures do you count in the figure below?"
-msgstr "¿Cuántas líneas puedes contar en las figuras inferiores?"
+msgstr "¿Cuántas figuras de cuatro caras cuentas en la figura de abajo?"
 
 #: ../src/PuzzleFourSided.cs:37
-#, fuzzy
 msgid "A four sided figure can be embedded inside another figure."
-msgstr "Un triángulo puede ser incluido dentro de otro triángulo."
+msgstr "Una figura de cuatro caras se puede empotrar dentro de otra figura."
 
 #: ../src/PuzzleFourSided.cs:44
-#, fuzzy, csharp-format
+#, csharp-format
 msgid "The four sided figures are made by connecting the following points: {0}"
-msgstr "Los triángulos se forman conectando los siguientes puntos: {0}"
+msgstr "Las figuras de cuatro caras se construyen conectando los siguientes puntos: {0}"
 
