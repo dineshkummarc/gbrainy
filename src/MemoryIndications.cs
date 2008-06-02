@@ -150,6 +150,7 @@ public class MemoryIndications : Memory
 	private Indication[] indications_wrongB;
 	private Indication[] indications_wrongC;
 	private ArrayListIndicesRandom answers;
+	private int ans;
 
 	public override string Name {
 		get {return Catalog.GetString ("Memorize indications");}
@@ -224,6 +225,7 @@ public class MemoryIndications : Memory
 		for (int i = 0; i < answers.Count; i++) {
 			if (answers [i] == 0) {
 				right_answer += (char) (65 + i);
+				ans = i;
 				break;
 			}
 		}
@@ -294,11 +296,24 @@ public class MemoryIndications : Memory
 	{
 		base.DrawObjectToMemorize (gr, area_width, area_height);
 
-		for (int i = 0; i < indications.Length; i++)
-		{
-			gr.MoveTo (0.3, 0.2 + i * 0.08);
-			gr.ShowText (indications[i].ToString ());
-			gr.Stroke ();
+		if (DrawAnswer == false) {
+			for (int i = 0; i < indications.Length; i++)
+			{
+				gr.MoveTo (0.3, 0.2 + i * 0.08);
+				gr.ShowText (indications[i].ToString ());
+				gr.Stroke ();
+			}
+		} else {
+				for (int i = 0; i < indications.Length; i++)
+				{
+					gr.MoveTo (0.1, 0.2 + i * 0.08);
+					gr.ShowText (indications[i].ToString ());
+					gr.Stroke ();
+				}
+				DrawPossibleAnswers (gr, 0.7, 0.3, WhichAnswer (answers[ans]));
+				gr.MoveTo (0.7, 0.5);
+				gr.ShowText (String.Format (Catalog.GetString ("Figure {0}"), (char) (65 + ans)));
+				gr.Stroke ();
 		}
 	}
 }
