@@ -22,7 +22,7 @@ using System.Reflection;
 
 public class Defines
 {
-	public static string VERSION = "0.54";
+	public static string VERSION = "0.70";
 	public const string GNOME_LOCALE_DIR = "locale/";
 	public static string DATA_DIR = "";
 }

@@ -1,0 +1,99 @@
+Index: gbrainy.cs
+===================================================================
+--- gbrainy.cs	(revision 360)
++++ gbrainy.cs	(working copy)
+@@ -23,12 +23,11 @@
+ using Cairo;
+ using Gtk;
+ using Gdk;
+-using Gnome;
+ using Mono.Unix;
+ using System.Text;
+ 
+ 
+-public class gbrainy: Program
++public class gbrainy
+ {
+ 	[Glade.Widget("gbrainy")] Gtk.Window app_window;
+ 	[Glade.Widget] Box drawing_vbox;
+@@ -41,6 +40,14 @@
+ 	[Glade.Widget] Gtk.Statusbar statusbar;
+ 	[Glade.Widget] Gtk.Toolbar toolbar;
+ 	[Glade.Widget] Gtk.Label label_answser;
++	[Glade.Widget] Gtk.MenuItem menuitem3;
++	[Glade.Widget] Gtk.MenuItem menuitem4;
++	[Glade.Widget] Gtk.MenuItem menuitem5;
++	[Glade.Widget] Gtk.MenuItem menuitem6;
++	[Glade.Widget] Gtk.MenuItem menuitem7;	
++	[Glade.Widget] Gtk.MenuItem custom_game;
++	[Glade.Widget] Gtk.MenuItem toolbar_item;
++	[Glade.Widget] Gtk.MenuItem players_game_history;
+ 	GameDrawingArea drawing_area;
+ 	GameSession session;
+ 	const int ok_buttonid = -5;
+@@ -53,12 +60,10 @@
+ 	public static Preferences preferences = null;
+  
+ 	public gbrainy (string [] args, params object [] props)
+-	: base ("gbrainy", Defines.VERSION, Modules.UI,  args, props)
+ 	{
+ 		Gdk.Color color;
++		Gtk.Application.Init ();
+ 
+-		Catalog.Init ("gbrainy", Defines.GNOME_LOCALE_DIR);
+-
+ 		IconFactory icon_factory = new IconFactory ();
+                 AddIcon (icon_factory, "logic-games", "logic-games-32.png");
+ 		AddIcon (icon_factory, "math-games", "math-games-32.png");
+@@ -67,11 +72,24 @@
+ 		AddIcon (icon_factory, "resume", "resume-32.png");
+ 		AddIcon (icon_factory, "endgame", "endgame-32.png");
+ 		AddIcon (icon_factory, "allgames", "allgames-32.png");
+-		icon_factory.AddDefault ();
+-
+-		Glade.XML gXML = new Glade.XML (null, "gbrainy.glade", "gbrainy", null);
++		icon_factory.AddDefault ();		
++	
++		//libgnomeui-2.0.mo		
++		Catalog.Init ("libgnomeui-2.0", "mono/lib/locale");
++		Glade.XML gXML = new Glade.XML (null, "gbrainy.glade", "gbrainy", null);		
+ 		gXML.Autoconnect (this);
++		
++		Catalog.Init ("gbrainy", Defines.GNOME_LOCALE_DIR);
+ 
++		(((Gtk.Label)menuitem3.Child)).Text = Catalog.GetString ("All Games and Trainers (Logic, Mental Calculation and Memory)");
++		(((Gtk.Label)menuitem4.Child)).Text = Catalog.GetString ("Trainers Only (Mental Calculation and Memory)");
++		(((Gtk.Label)menuitem5.Child)).Text = Catalog.GetString ("Logic Puzzles Only");
++		(((Gtk.Label)menuitem6.Child)).Text = Catalog.GetString ("Mental Calculation Trainers Only");
++		(((Gtk.Label)menuitem7.Child)).Text = Catalog.GetString ("Memory Trainers Only");
++		(((Gtk.Label)custom_game.Child)).Text = Catalog.GetString ("Custom Game Selection...");
++		(((Gtk.Label)toolbar_item.Child)).Text = Catalog.GetString ("Toolbar");
++		(((Gtk.Label)players_game_history.Child)).Text = Catalog.GetString ("Player's Game History");
++
+ 		toolbar.IconSize = Gtk.IconSize.Dnd;
+ 	
+ 		Tooltips tooltips = new Tooltips ();
+@@ -315,12 +333,12 @@
+ 
+ 	void OnQuit (object sender, EventArgs args)
+ 	{
+-		Quit ();	
++		Gtk.Application.Quit ();
+ 	}	
+ 
+ 	void OnDeleteWindow (object sender, DeleteEventArgs args)
+ 	{
+-		Quit ();	
++		Gtk.Application.Quit ();
+ 	}	
+ 
+ 	void OnNextButtonClicked (object sender, EventArgs args)
+@@ -526,7 +544,7 @@
+ 		} catch {}
+ 
+ 		gbrainy gui = new gbrainy (args);
+-		gui.Run ();	
++		Gtk.Application.Run ();
+ 	}
+ }
+ 
