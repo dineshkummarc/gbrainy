@@ -103,6 +103,7 @@ public class GameManager
 		game_type = GameSession.Types.None;
 		difficulty = Game.Difficulty.Medium;
 		games = new List <Type> ();
+		//GeneratePDF ();
 	}
 
 	public GameSession.Types GameType {
@@ -270,10 +271,14 @@ public class GameManager
 	// Generates a single PDF document with all the puzzles contained in gbrainy (4 games per page)
 	public void GeneratePDF ()
 	{
-		int width = 300, height = 400, margin = 20, x, y, cnt, games_page = 4;
+		int width = 400, height = 400, margin = 20, x, y, cnt, games_page = 4;
 		Game puzzle;
 		game_type = GameSession.Types.AllGames;
-		BuildGameList ();
+		Type [] allgames = CustomGames;
+		
+		for (int i = 0; i < allgames.Length; i++)
+			games.Add (allgames [i]);
+
 		PdfSurface pdf = new PdfSurface ("games.pdf", (width + margin) * 2, (height + margin) * games_page / 2);
 		x = y = cnt = 0;
 		CairoContextEx cr = new CairoContextEx (pdf);

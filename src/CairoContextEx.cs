@@ -30,6 +30,12 @@ public class CairoContextEx : Cairo.Context
 	{
 
 	}
+
+	// Used by GeneratePDF
+	public CairoContextEx (Cairo.Surface s) : base (s)
+	{
+
+	}
 	
 	// No dispose of resources on this class
 	protected override void Dispose (bool disposing)
