@@ -98,8 +98,8 @@ public class CalculationWhichNumber : Game
 				{
 					if (n == num) continue;
 
-					if (options [(num * 2) + 0] == options [(n * 2) + 0] &&
-						options [(num * 2) + 1] == options [(n * 2) + 1]) {
+					if (options [(num * 2) + 0] / options [(num * 2) + 1] ==
+						options [(n * 2) + 0] / options [(n * 2) + 1]) {
 						duplicated = true;
 						break;
 					}
