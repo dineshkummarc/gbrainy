@@ -31,6 +31,7 @@ using System.Text;
 public class gbrainy: Program
 {
 	[Glade.Widget("gbrainy")] Gtk.Window app_window;
+	[Glade.Widget ("toolbar_item")] Gtk.CheckMenuItem toolbar_menuitem;
 	[Glade.Widget] Box drawing_vbox;
 	[Glade.Widget] Gtk.TextView question_textview;
 	[Glade.Widget] Gtk.TextView solution_textview;
@@ -135,7 +136,10 @@ public class gbrainy: Program
 		//app_window.SizeAllocated += new SizeAllocatedHandler (OnSizeAllocated);
 		app_window.IconName = "gbrainy";
 		app_window.ShowAll ();
-	
+
+		if (preferences.GetBoolValue (Preferences.Toolbar) == false)
+			toolbar_menuitem.Active = false;
+
 		color = label_answser.Style.Background (StateType.Normal);
 		question_textview.ModifyBase (Gtk.StateType.Normal, color);
 		solution_textview.ModifyBase (Gtk.StateType.Normal, color);
@@ -463,6 +467,8 @@ public class gbrainy: Program
 		requisition =  toolbar.SizeRequest ();
 		app_window.GetSize (out width, out height);
 		toolbar.Visible = !toolbar.Visible;
+		preferences.SetBoolValue (Preferences.Toolbar, toolbar.Visible);
+		preferences.Save ();
 		app_window.Resize (width, height - requisition.Height);
 	}
 

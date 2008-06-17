@@ -34,6 +34,7 @@ public class Preferences
 	static public string DifficultyKey = "Difficulty";
 	static public string MinPlayedGamesKey = "MinPlayedGames";
 	static public string MaxStoredGamesKey = "MaxStoredGamesKey";
+	static public string Toolbar = "Toolbar";
 
 	static private string element_item = "item";
 	static private string element_key = "key";
@@ -157,7 +158,8 @@ public class Preferences
 		properties.Add (MemQuestionTimeKey, "4");
 		properties.Add (DifficultyKey, ((int)(Game.Difficulty.Medium)).ToString ());
 		properties.Add (MinPlayedGamesKey, "5");
-		properties.Add (MaxStoredGamesKey, "20");	
+		properties.Add (MaxStoredGamesKey, "20");
+		properties.Add (Toolbar, true.ToString ());
 	}
 
 	private void Load ()
