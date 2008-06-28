@@ -29,8 +29,9 @@ public class MemoryFigures : Memory
 	private ArrayListIndicesRandom figures;
 	private int rows;
 	private int columns;
-	private const double start_x = 0.25;
-	private const double start_y = 0.1;
+	private const double start_x_ques = 0.25;
+	private const double start_x_ans = 0.25;
+	private const double start_y = 0.15;
 	private const double figure_size = 0.08;
 	private double rect_w, rect_h;
 	private int question_pos, question_answer;
@@ -77,8 +78,8 @@ public class MemoryFigures : Memory
 			break;
 		}
 
-		rect_w = 0.6 / columns;
-		rect_h = 0.8 / rows;
+		rect_w = 0.65 / columns;
+		rect_h = 0.65 / rows;
 		figures = new ArrayListIndicesRandom (figures_active * 2);
 		figures.Initialize ();
 		question_pos = random.Next (figures_active * 2);
@@ -106,16 +107,16 @@ public class MemoryFigures : Memory
 	public override void DrawPossibleAnswers (CairoContextEx gr, int area_width, int area_height)
 	{
 		int col = 1, fig;
-		double x = start_x, y = start_y;
+		double x = start_x_ans, y = start_y;
 		gr.Color = new Color (DefaultDrawingColor.R, DefaultDrawingColor.G, DefaultDrawingColor.B, 1);
-		DrawGrid (gr, area_width, area_height);
 
 		if (DrawAnswer ==  true) {
-			DrawAllFigures (gr, area_width, area_height);
+			DrawAllFigures (gr, start_x_ans, start_y, area_width, area_height);
 			return;
 		}
 
 		gr.SetLargeFont ();
+		DrawGrid (gr, x, y, area_width, area_height);
 		for (int figure = 0; figure < figures.Count; figure++, col++)
 		{
 			fig = (int)figures[figure];
@@ -131,7 +132,7 @@ public class MemoryFigures : Memory
 			if (col >= columns) {
 				col = 0;
 				y += rect_h;
-				x = start_x;
+				x = start_x_ans;
 			} else {
 				x += rect_w;
 			}
@@ -141,14 +142,15 @@ public class MemoryFigures : Memory
 	public override void DrawObjectToMemorize (CairoContextEx gr, int area_width, int area_height)
 	{
 		base.DrawObjectToMemorize (gr, area_width, area_height);
-		DrawGrid (gr, area_width, area_height);
-		DrawAllFigures (gr, area_width, area_height);
+		DrawAllFigures (gr, start_x_ques, start_y, area_width, area_height);
 	}
 
-	private void DrawAllFigures (CairoContextEx gr, int area_width, int area_height)
+	private void DrawAllFigures (CairoContextEx gr, double x, double y, int area_width, int area_height)
 	{
 		int col = 1, fig;
-		double x = start_x, y = start_y;
+		double org_x = x;
+
+		DrawGrid (gr, x, y, area_width, area_height);
 		gr.Color = new Color (DefaultDrawingColor.R, DefaultDrawingColor.G, DefaultDrawingColor.B, alpha);
 		for (int figure = 0; figure < figures.Count; figure++, col++)
 		{
@@ -161,7 +163,7 @@ public class MemoryFigures : Memory
 			if (col >= columns) {
 				col = 0;
 				y += rect_h;
-				x = start_x;
+				x = org_x;
 			} else {
 				x += rect_w;
 			}
@@ -220,9 +222,8 @@ public class MemoryFigures : Memory
 		}
 	}
 
-	private void DrawGrid (CairoContextEx gr, int area_width, int area_height)
+	private void DrawGrid (CairoContextEx gr, double x, double y, int area_width, int area_height)
 	{
-		double x = start_x, y = start_y;
 		gr.Color = new Color (DefaultDrawingColor.R, DefaultDrawingColor.G, DefaultDrawingColor.B, alpha);
 		for (int column = 0; column < columns; column++) {
 			for (int row = 0; row < rows; row++) {
