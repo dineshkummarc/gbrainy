@@ -12,6 +12,7 @@ man_MANS = gbrainy.6
 tango_icons = 				\
 	gbrainy.png	\
 	gbrainy.svg	\
+	background.svg	\
 	math-games-80.png	\
 	logic-games-80.png	\		
 	memory-games-80.png	\ 
@@ -37,6 +38,7 @@ install-data-local:
 	$(INSTALL_DATA) $(srcdir)/math-games-80.png $(DESTDIR)$(images)/math-games-80.png
 	$(INSTALL_DATA) $(srcdir)/logic-games-80.png $(DESTDIR)$(images)/logic-games-80.png
 	$(INSTALL_DATA) $(srcdir)/memory-games-80.png $(DESTDIR)$(images)/memory-games-80.png
+	$(INSTALL_DATA) $(srcdir)/background.svg $(DESTDIR)$(images)/background.svg
 
 gtk_update_icon_cache = gtk-update-icon-cache -f -t $(datadir)/icons/hicolor
 
@@ -53,6 +55,7 @@ uninstall-hook:
 	rm -f $(DESTDIR)$(images)/math-games-80.png
 	rm -f $(DESTDIR)$(images)/logic-games-80.png
 	rm -f $(DESTDIR)$(images)/memory-games-80.png
+	rm -f $(DESTDIR)$(images)/background.svg
 	rm -f $(DESTDIR)$(hicolordir)/48x48/apps/gbrainy.png
 	rm -f $(DESTDIR)$(hicolordir)/32x32/apps/gbrainy.png
 	rm -f $(DESTDIR)$(hicolordir)/16x16/apps/gbrainy.png
