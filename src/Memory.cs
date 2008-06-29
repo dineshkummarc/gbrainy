@@ -142,6 +142,8 @@ public abstract class Memory : Game
 		gr.Color = new Cairo.Color (0, 0, 0);
 		gr.SelectFontFace ("Sans", FontSlant.Normal, FontWeight.Bold);
 		gr.SetNormalFont ();
+		gr.LineWidth = LineWidth;
+		DrawObjectToMemorize (gr, width, height);
 	}
 
 	public virtual void DrawPossibleAnswers (CairoContextEx gr, int area_width, int area_height) {}
