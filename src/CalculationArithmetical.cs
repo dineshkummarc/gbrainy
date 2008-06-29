@@ -105,10 +105,7 @@ public class CalculationArithmetical : Game
 		double operand_y = DrawAreaY + 0.2, operand_space = 0.1;
 		double aligned_pos = 0.58;
 
-		gr.Scale (area_width, area_height);
-
-		DrawBackground (gr);
-		PrepareGC (gr);
+		base.Draw (gr, area_width, area_height);
 	
 		gr.SetLargeFont ();
 		for (int i = 0; i < operands.Length - 1; i++)

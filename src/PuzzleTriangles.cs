@@ -67,10 +67,7 @@ public class PuzzleTriangles : Game
 		double x = DrawAreaX + 0.1, y = DrawAreaY + 0.2;
 		double witdh = 0.6, height = 0.5;
 
-		gr.Scale (area_width, area_height);
-
-		DrawBackground (gr);
-		PrepareGC (gr);
+		base.Draw (gr, area_width, area_height);
 		
 		gr.MoveTo (x, y);
 		gr.LineTo (x + witdh, y);		

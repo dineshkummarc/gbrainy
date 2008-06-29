@@ -95,10 +95,7 @@ public class PuzzleDivideCircle : Game
 		double pos_y = y;
 		Circle[] circles = null;
 
-		gr.Scale (area_width, area_height);
-
-		DrawBackground (gr);
-		PrepareGC (gr);
+		base.Draw (gr, area_width, area_height);
 
 		// First circle
 		gr.Arc (pos_x + figure_size, y + figure_size, figure_size, 0, 2 * Math.PI);

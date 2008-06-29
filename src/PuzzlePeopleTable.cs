@@ -82,11 +82,8 @@ public class PuzzlePeopleTable : Game
 		double pos_y = y;
 		Circle[] circles = null;
 
-		gr.Scale (area_width, area_height);
+		base.Draw (gr, area_width, area_height);
 
-		DrawBackground (gr);
-		PrepareGC (gr);
-	
 		circles =  new Circle [] {
 			new Circle (0.01, 0.06),
 			new Circle (0.27, 0.06),

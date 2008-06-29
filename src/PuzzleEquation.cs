@@ -66,10 +66,8 @@ public class PuzzleEquation : Game
 
 	public override void Draw (CairoContextEx gr, int area_width, int area_height)
 	{
-		gr.Scale (area_width, area_height);
+		base.Draw (gr, area_width, area_height);
 
-		DrawBackground (gr);
-		PrepareGC (gr);
 		gr.SetLargeFont ();
 		gr.DrawTextCentered (0.5, DrawAreaY + 0.3, formula);
 	}

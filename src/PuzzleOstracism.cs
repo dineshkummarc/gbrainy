@@ -74,11 +74,9 @@ public class PuzzleOstracism : Game
 	{
 		double x = DrawAreaX + 0.15, y = DrawAreaY + 0.2;
 
-		gr.Scale (area_width, area_height);
-		DrawBackground (gr);
-		PrepareGC (gr);
-		gr.SetLargeFont ();
-		
+		base.Draw (gr, area_width, area_height);
+
+		gr.SetLargeFont ();		
 		for (int i = 0; i < random_indices.Count; i++)
 		{
 			gr.MoveTo (x, y);

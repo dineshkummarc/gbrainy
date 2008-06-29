@@ -73,8 +73,7 @@ public class PuzzleCountSeries : Game
 
 	public override void Draw (CairoContextEx gr, int area_width, int area_height)
 	{
-		gr.Scale (area_width, area_height);
-		DrawBackground (gr);
+		base.Draw (gr, area_width, area_height);
 	}
 }
 

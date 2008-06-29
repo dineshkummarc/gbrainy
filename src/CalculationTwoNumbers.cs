@@ -66,9 +66,8 @@ public class CalculationTwoNumbers : Game
 	{	
 		double x = DrawAreaX;
 
-		gr.Scale (area_width, area_height);
-		DrawBackground (gr);
-		PrepareGC (gr);
+		base.Draw (gr, area_width, area_height);
+
 		gr.SetLargeFont ();
 
 		gr.MoveTo (x, DrawAreaY + 0.2);

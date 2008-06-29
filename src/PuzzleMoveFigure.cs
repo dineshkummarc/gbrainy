@@ -73,9 +73,7 @@ public class PuzzleMoveFigure: Game
 		double figure_size = 0.07 + (0.01 * (5 - lines));
 		double margin = 0;
 
-		gr.Scale (area_width, area_height);
-		DrawBackground (gr);
-		PrepareGC (gr);
+		base.Draw (gr, area_width, area_height);
 
 		// Figure 1
 		margin = ((1.0 - (figure_size * lines * 2)) / 2);

@@ -147,11 +147,8 @@ public class PuzzleClocks : Game
 	{
 		double x = DrawAreaX + 0.1, y = DrawAreaY + 0.05;
 
-		gr.Scale (area_width, area_height);
+		base.Draw (gr, area_width, area_height);
 
-		DrawBackground (gr);
-		PrepareGC (gr);
-		
 		DrawClock (gr, x + 0.1, y + 0.1, handles[0], handles[1], true);
 		gr.MoveTo (x + 0.03, y + 0.31);
 		gr.ShowText (String.Format (Catalog.GetString ("Figure {0}"), 'A'));

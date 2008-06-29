@@ -112,10 +112,8 @@ public class PuzzleNextFigure : Game
 		double x = DrawAreaX;
 		double y = DrawAreaY;
 		double space_figures = figure_size + 0.1;
-
-		gr.Scale (area_width, area_height);
-		DrawBackground (gr);
-		PrepareGC (gr);
+		
+		base.Draw (gr, area_width, area_height);
 
 		DrawDiamon (gr, x, y, CerclePosition.Top | CerclePosition.Left);
 		DrawDiamon (gr, x + space_figures , y, CerclePosition.Bottom);

@@ -56,10 +56,7 @@ public class PuzzleCube : Game
 		double txtoff_x = 0.04;
 		double txtoff_y = 0.06;
 
-		gr.Scale (area_width, area_height);
-
-		DrawBackground (gr);
-		PrepareGC (gr);
+		base.Draw (gr, area_width, area_height);
 
 		gr.Rectangle (x + 0.1, y, 0.1, 0.1);
 		gr.MoveTo (x + 0.1 + txtoff_x, y + txtoff_y);

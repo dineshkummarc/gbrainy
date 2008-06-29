@@ -114,11 +114,8 @@ public class PuzzleFigureLetter : Game
 		double x = DrawAreaX + 0.05;
 		double y = DrawAreaY + 0.1;
 
-		gr.Scale (area_width, area_height);
-
-		DrawBackground (gr);
-		PrepareGC (gr);
-
+		base.Draw (gr, area_width, area_height);
+		
 		// Three circles
 		gr.Arc (x + 0.06, y, 0.05, 0, 2 * Math.PI);
 		gr.Stroke ();

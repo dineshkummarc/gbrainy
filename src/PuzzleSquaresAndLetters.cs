@@ -99,9 +99,7 @@ public class PuzzleSquaresAndLetters : Game
 	{
 		double x = DrawAreaX + 0.05, y = DrawAreaY + 0.1;
 
-		gr.Scale (area_width, area_height);
-		DrawBackground (gr);
-		PrepareGC (gr);
+		base.Draw (gr, area_width, area_height);
 		
 		DrawRectangleWithText (gr, x, y, 0);
 		DrawRectangleWithText (gr, x + figure_size + 0.2, y, 4);

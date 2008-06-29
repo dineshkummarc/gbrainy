@@ -136,9 +136,7 @@ public class PuzzlePencil : Game
 	{
 		double x = DrawAreaX, y = DrawAreaY;
 
-		gr.Scale (area_width, area_height);
-		DrawBackground (gr);
-		PrepareGC (gr);
+		base.Draw (gr, area_width, area_height);
 
 		for (int figure = 0; figure < figures; figure++)
 		{

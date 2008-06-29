@@ -197,9 +197,8 @@ public class CalculationGreatestDivisor : Game
 	{	
 		double x = DrawAreaX, y = DrawAreaY + 0.1;
 
-		gr.Scale (area_width, area_height);
-		DrawBackground (gr);
-		PrepareGC (gr);
+		base.Draw (gr, area_width, area_height);
+
 		gr.SetLargeFont ();
 
 		gr.MoveTo (0.05, y);

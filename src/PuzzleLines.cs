@@ -81,10 +81,7 @@ public class PuzzleLines : Game
 
 	public override void Draw (CairoContextEx gr, int area_width, int area_height)
 	{
-		gr.Scale (area_width, area_height);
-
-		DrawBackground (gr);
-		PrepareGC (gr);
+		base.Draw (gr, area_width, area_height);
 	
 		DrawLine (gr, 0.1, 0.2, 0.4, 0.38);
 		DrawLine (gr, 0.1, 0.3, 0.4, 0.3);

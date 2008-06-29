@@ -89,9 +89,7 @@ public class PuzzleCountCircles : Game
 	{
 		double x = DrawAreaX + 0.1, y = DrawAreaY + 0.05;
 
-		gr.Scale (area_width, area_height);
-		DrawBackground (gr);
-		PrepareGC (gr);
+		base.Draw (gr, area_width, area_height);
 
 		for (int i = 0; i < circles.Length; i++)
 		{

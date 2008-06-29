@@ -125,9 +125,7 @@ public class PuzzleBalance : Game
 	{		
 		double x = 0.05, y = DrawAreaY + 0.1;
 
-		gr.Scale (area_width, area_height);
-		DrawBackground (gr);
-		PrepareGC (gr);
+		base.Draw (gr, area_width, area_height);
 
 		DrawBalance (gr, x, y, group * elements * 6, true);
 		y += 0.3;

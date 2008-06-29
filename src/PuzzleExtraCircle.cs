@@ -136,9 +136,7 @@ public class PuzzleExtraCircle : Game
 		double x = DrawAreaX, y = DrawAreaY;
 		Color [] colors;
 
-		gr.Scale (area_width, area_height);
-		DrawBackground (gr);
-		PrepareGC (gr);
+		base.Draw (gr, area_width, area_height);
 
 		x+= radius / 2;
 		y+= radius / 2;

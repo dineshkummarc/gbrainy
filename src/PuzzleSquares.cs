@@ -77,10 +77,7 @@ public class PuzzleSquares : Game
 		double rect_w = DrawAreaWidth / rows;
 		double rect_h = DrawAreaHeight / columns;
 
-		gr.Scale (area_width, area_height);
-
-		DrawBackground (gr);
-		PrepareGC (gr);
+		base.Draw (gr, area_width, area_height);
 
 		for (int column = 0; column < columns; column++) {
 			for (int row = 0; row < rows; row++) {

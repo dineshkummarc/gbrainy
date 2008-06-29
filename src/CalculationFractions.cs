@@ -136,9 +136,8 @@ public class CalculationFractions : Game
 		double x =  0.5  - (fractions_num * fraction_size / 2), y = DrawAreaY + 0.3;
 		double offset_x = 0.12;
 
-		gr.Scale (area_width, area_height);
-		DrawBackground (gr);
-		PrepareGC (gr);
+		base.Draw (gr, area_width, area_height);
+
 		gr.SetLargeFont ();
 
 		for (int i = 0; i < fractions_num; i++) 

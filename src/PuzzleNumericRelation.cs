@@ -108,9 +108,8 @@ public class PuzzleNumericRelation : Game
 	{
 		StringBuilder sequence = new StringBuilder (64);
 
-		gr.Scale (area_width, area_height);
-		DrawBackground (gr);
-		PrepareGC (gr);
+		base.Draw (gr, area_width, area_height);
+
 		gr.SetLargeFont ();
 
 		for (int num = 0; num < max_num - 1; num++)

@@ -112,10 +112,7 @@ public class PuzzleCoverPercentage : Game
 	{
 		double x = 0.25, y = 0.25;
 
-		gr.Scale (area_width, area_height);
-
-		DrawBackground (gr);
-		PrepareGC (gr);
+		base.Draw (gr, area_width, area_height);
 		
 		gr.Rectangle (x, y, width, height);
 		gr.Stroke ();

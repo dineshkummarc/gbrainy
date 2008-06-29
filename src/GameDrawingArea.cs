@@ -88,7 +88,7 @@ public class GameDrawingArea : DrawingArea
 		ImageSurface image;
 
 		gr.Scale (area_width, area_height);
-		DrawBackground (gr);
+		gr.DrawBackground ();
 		gr.Color = new Cairo.Color (0, 0, 0, 1);
 		gr.Save ();
 		gr.SetFontSize (0.035);
@@ -264,8 +264,7 @@ public class GameDrawingArea : DrawingArea
 		string s;
 
 		gr.Scale (area_width, area_height);
-		gr.Color = new Cairo.Color (1, 1, 1);
-		gr.Paint ();	
+		gr.DrawBackground ();
 		gr.Color = new Cairo.Color (0, 0, 0, 1);
 
 		gr.SetFontSize (0.03);

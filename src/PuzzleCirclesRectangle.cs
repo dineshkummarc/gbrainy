@@ -62,10 +62,8 @@ public class PuzzleCirclesRectangle : Game
 		int circles = 8;
 		double unit = 0.0625;
 
-		gr.Scale (area_width, area_height);
+		base.Draw (gr, area_width, area_height);
 
-		DrawBackground (gr);
-		PrepareGC (gr);
 		gr.Rectangle (first_x, first_y, unit * 8, unit * 8);
 		gr.Stroke ();
 

@@ -1,5 +1,14 @@
 2008-06-29 Jordi Mas <jmas@softcatala.org>
 
+	* Game.cs: Move generic drawing operations to CairoContextEx
+	* CairoContextEx.cs: Background drawing
+	* SVGImage.cs: SVG image support
+	* GameDrawingArea.cs: Use the same background always
+	* Makefile.am: Adds SVGImage.cs
+	* Puzzle*, Calculation*, Memory.cs: call base.Draw
+
+2008-06-29 Jordi Mas <jmas@softcatala.org>
+
 	*  MemoryFigures.cs: Better since in different difficulty levels
 
 2008-06-17 Jordi Mas <jmas@softcatala.org>

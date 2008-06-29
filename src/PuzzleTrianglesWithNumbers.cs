@@ -115,9 +115,7 @@ public class PuzzleTrianglesWithNumbers : Game
 	{
 		double x = DrawAreaX, y = DrawAreaY + 0.1;
 
-		gr.Scale (area_width, area_height);
-		DrawBackground (gr);
-		PrepareGC (gr);
+		base.Draw (gr, area_width, area_height);
 		
 		DrawTriangle (gr, x, y, 0, false);
 		x += 0.3;

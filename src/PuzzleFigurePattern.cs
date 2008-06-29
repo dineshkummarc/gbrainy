@@ -101,9 +101,7 @@ public class PuzzleFigurePattern : Game
 		double figure_size = 0.13, space_x = 0.1, space_y = 0.2;
 		double x45, y45, x135, y135, offset;
 
-		gr.Scale (area_width, area_height);
-		DrawBackground (gr);
-		PrepareGC (gr);
+		base.Draw (gr, area_width, area_height);
 
 		// First pattern
 		gr.Rectangle (x, y, figure_size, figure_size);

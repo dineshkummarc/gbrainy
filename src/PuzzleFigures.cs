@@ -108,9 +108,7 @@ public class PuzzleFigures : Game
 		double figure_width = 0.1, figure_height = 0.1, space_width = 0.05, space_height = 0.1;
 		double x = DrawAreaX, y = DrawAreaY;
 
-		gr.Scale (area_width, area_height);
-		DrawBackground (gr);
-		PrepareGC (gr);
+		base.Draw (gr, area_width, area_height);
 
 		for (int i = 0; i < (DrawAnswer ? 6 : 5) ; i++)
 		{

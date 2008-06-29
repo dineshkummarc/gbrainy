@@ -66,6 +66,7 @@ GBRAINY_CSDISTFILES =				\
 	$(srcdir)/GtkDialog.cs			\
 	$(srcdir)/Preferences.cs		\
 	$(srcdir)/PuzzleFourSided.cs		\
+	$(srcdir)/SVGImage.cs			\
 	$(srcdir)/gbrainy.cs			
 
 ASSEMBLIES = \

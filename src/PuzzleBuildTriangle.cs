@@ -142,9 +142,7 @@ public class PuzzleBuildTriangle : Game
 		double x = DrawAreaX + 0.05, y = DrawAreaY + 0.05;
 		double degrees, x1, x2, dist;
 
-		gr.Scale (area_width, area_height);
-		DrawBackground (gr);
-		PrepareGC (gr);
+		base.Draw (gr, area_width, area_height);
 
 		for (int i = 0; i < random_indices_answers.Count; i++)	
 		{

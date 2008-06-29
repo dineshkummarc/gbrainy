@@ -167,10 +167,8 @@ public class PuzzleSquareDots : Game
 	{
 		double x = DrawAreaX, y = DrawAreaY;
 
-		gr.Scale (area_width, area_height);
+		base.Draw (gr, area_width, area_height);
 
-		DrawBackground (gr);
-		PrepareGC (gr);
 		DrawFigure (gr, x, y, puzzle_A, 0);
 		DrawFigure (gr, x + figure_size + space_figures, y, puzzle_A, columns * lines);
 		DrawFigure (gr, x + (figure_size + space_figures) * 2, y, puzzle_A, columns * lines * 2);

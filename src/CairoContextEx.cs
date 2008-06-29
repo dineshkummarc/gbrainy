@@ -23,7 +23,6 @@ using Mono.Unix;
 using System.Text;
 using System.Runtime.InteropServices;
 
-
 public class CairoContextEx : Cairo.Context
 {
 	public CairoContextEx (IntPtr state) : base (state)
@@ -146,5 +145,23 @@ public class CairoContextEx : Cairo.Context
 		Fill ();
 		Restore ();
 	}
+
+	virtual public void DrawBackground ()
+	{
+		try {
+			using (SVGImage image = new SVGImage (Defines.DATA_DIR + "background.svg")) 
+			{
+				Save ();
+				Scale (0.999 / image.Width, 0.999 / image.Height);
+				image.RenderToCairo (Handle);
+				Restore ();
+			}
+
+		} catch {
+		}
+	}
+
 }
+
+
 

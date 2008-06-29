@@ -67,9 +67,7 @@ public class PuzzleFourSided : Game
 	{
 		double x = DrawAreaX + 0.1, y = DrawAreaY + 0.1, w = 0.6, h = 0.6;
 
-		gr.Scale (area_width, area_height);
-		DrawBackground (gr);
-		PrepareGC (gr);
+		base.Draw (gr, area_width, area_height);
 		
 		gr.Rectangle (x, y, w, h);
 		gr.Stroke ();

@@ -131,10 +131,7 @@ public class PuzzleQuadrilaterals : Game
 	{
 		double x = DrawAreaX, y = DrawAreaY, space_x = 0.15;
 
-		gr.Scale (area_width, area_height);
-
-		DrawBackground (gr);
-		PrepareGC (gr);
+		base.Draw (gr, area_width, area_height);
 
 		for (int i = 0; i < random_indices.Count; i++) {
 			DrawFigure (gr, x, y, (Figures) random_indices[i]);

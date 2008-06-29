@@ -20,6 +20,7 @@
 using System;
 using Cairo;
 using Mono.Unix;
+using System.Runtime.InteropServices;
 
 abstract public class Game
 {
@@ -42,7 +43,6 @@ abstract public class Game
 	private bool draw_answer;
 	private gbrainy application;
 	private Cairo.Color default_color;
-	private Cairo.Color default_background;
 	protected string right_answer;
 	protected Random random;
 	private TimeSpan game_time;
@@ -57,7 +57,6 @@ abstract public class Game
 		application = null;
 		draw_answer = false;
 		default_color = new Cairo.Color (0, 0, 0);
-		default_background = new Color (1, 1, 1);
 		won = false;
 		tip_used = false;
 		difficulty = Difficulty.Medium;
@@ -228,8 +227,18 @@ abstract public class Game
 
 	
 	public abstract void Initialize ();
-	public abstract void Draw (CairoContextEx gr, int width, int height);
 	public virtual void Finish () {}
+
+
+	public virtual void Draw (CairoContextEx gr, int width, int height)
+	{
+		gr.Scale (width, height);
+		gr.DrawBackground ();
+		gr.Color = new Cairo.Color (0, 0, 0);
+		gr.SelectFontFace ("Sans", FontSlant.Normal, FontWeight.Bold);
+		gr.SetNormalFont ();
+		gr.LineWidth = LineWidth;
+	}
 
 	public virtual void DrawPreview (CairoContextEx gr, int width, int height)
 	{
@@ -255,37 +264,6 @@ abstract public class Game
 			rslt += answer[i];
 		}
 		return rslt;
-	}
-	
-	virtual public void PrepareGC (CairoContextEx gr)
-	{
-		gr.LineWidth = LineWidth;
-		gr.Color = DefaultDrawingColor;
-		gr.SelectFontFace ("Sans", FontSlant.Normal, FontWeight.Bold);
-		gr.SetNormalFont ();
-	}
-
-	protected void DrawBackground (CairoContextEx gr)
-	{
-		int columns = 40;
-		int rows = 40;
-		double rect_w = 1.0 / rows;
-		double rect_h = 1.0 / columns;
-
-		gr.Save ();
-
-		gr.Color = default_background;
-		gr.Paint ();	
-		
-		gr.Color = new Cairo.Color (0.9, 0.9, 0.9);
-		gr.LineWidth = 0.001;
-		for (int column = 0; column < columns; column++) {
-			for (int row = 0; row < rows; row++) {			
-				gr.Rectangle (row * rect_w, column * rect_h, rect_w, rect_h);
-			}
-		}
-		gr.Stroke ();
-		gr.Restore ();		
 	}
 }
 

@@ -136,9 +136,7 @@ public class PuzzleMissingPiece : Game
 		double x = DrawAreaX + 0.15, y = DrawAreaY;
 		int figure;
 
-		gr.Scale (area_width, area_height);
-		DrawBackground (gr);
-		PrepareGC (gr);
+		base.Draw (gr, area_width, area_height);
 		
 		for (int i = 0; i < 2; i++)
 			DrawFigureSequence (gr, x, y + sub_figure * i , i, true);

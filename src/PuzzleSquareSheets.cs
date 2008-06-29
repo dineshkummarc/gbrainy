@@ -53,10 +53,7 @@ public class PuzzleSquareSheets : Game
 	{
 		double x = DrawAreaX + 0.2, y = DrawAreaY + 0.2, width = 0.4, height = 0.4;
 
-		gr.Scale (area_width, area_height);
-
-		DrawBackground (gr);
-		PrepareGC (gr);
+		base.Draw (gr, area_width, area_height);
 
 		gr.Rectangle (x, y, width, height);
 		gr.Stroke ();

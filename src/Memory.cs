@@ -115,9 +115,7 @@ public abstract class Memory : Game
 
 	public override void Draw (CairoContextEx gr, int area_width, int area_height)
 	{	
-		gr.Scale (area_width, area_height);
-		DrawBackground (gr);
-		PrepareGC (gr);
+		base.Draw (gr, area_width, area_height);
 
 		if (shade) {
 			if (alpha > 0)
@@ -140,9 +138,10 @@ public abstract class Memory : Game
 	public override void DrawPreview (CairoContextEx gr, int width, int height)
 	{
 		gr.Scale (width, height);
-		DrawBackground (gr);
-		PrepareGC (gr);
-		DrawObjectToMemorize (gr, width, height);
+		gr.DrawBackground ();
+		gr.Color = new Cairo.Color (0, 0, 0);
+		gr.SelectFontFace ("Sans", FontSlant.Normal, FontWeight.Bold);
+		gr.SetNormalFont ();
 	}
 
 	public virtual void DrawPossibleAnswers (CairoContextEx gr, int area_width, int area_height) {}

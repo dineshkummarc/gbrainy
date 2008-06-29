@@ -135,10 +135,7 @@ public class PuzzleTetris : Game
 	{
 		double x = DrawAreaX, y = DrawAreaY + 0.1;
 
-		gr.Scale (area_width, area_height);
-
-		DrawBackground (gr);
-		PrepareGC (gr);
+		base.Draw (gr, area_width, area_height);
 		
 		for (int i = 0; i < 4; i++) {
 			DrawQuestionFigures (gr, x, y, random_indices_questions [i]);

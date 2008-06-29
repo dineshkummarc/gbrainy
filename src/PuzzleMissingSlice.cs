@@ -139,9 +139,7 @@ public class PuzzleMissingSlice : Game
 		double x0, y0, degrees;
 		int pos;
 
-		gr.Scale (area_width, area_height);
-		DrawBackground (gr);
-		PrepareGC (gr);
+		base.Draw (gr, area_width, area_height);
 			
 		gr.Arc (x + arc_centerx, y + arc_centery, radius, 0, 2 * Math.PI);
 		gr.Stroke ();
