@@ -28,7 +28,6 @@ using System.Timers;
 
 public class GameDrawingArea : DrawingArea
 {
-
 	public enum Modes
 	{	
 		Welcome,
@@ -43,15 +42,14 @@ public class GameDrawingArea : DrawingArea
 	private ArrayListIndicesRandom random_indices;
 	private const int tips_count = 10;
 	private const int tips_shown = 4;
-	private System.Timers.Timer timer;
-	private int countdown_time;
-	private EventHandler finish;
+	private CountDown countdown;
 
 	public GameDrawingArea ()
 	{
 		mode = Modes.Welcome;
 		puzzle = null;
 		session = null;
+		countdown = null;
 	}
 
 	public GameSession GameSession {
@@ -62,15 +60,6 @@ public class GameDrawingArea : DrawingArea
 		}
 	}
 
-	private void DrawBackground (CairoContextEx gr)
-	{
-		gr.Save ();
-		gr.Color = new Cairo.Color (1, 1, 1);
-		gr.Paint ();	
-		gr.Stroke ();
-		gr.Restore ();		
-	}
-
 	private void DrawBand (CairoContextEx gr, double x, double y)
 	{
 		gr.Save ();
@@ -78,6 +67,21 @@ public class GameDrawingArea : DrawingArea
 		gr.Color = new Cairo.Color (0, 0, 0.2, 0.2);
 		gr.Fill ();
 		gr.Restore ();		
+	}
+
+	public void OnDrawCountDown (EventHandler OnFinish)
+	{
+		mode = Modes.CountDown;
+		QueueDraw ();	
+		countdown = new CountDown (this, OnFinish);
+	}
+
+	public void EndDrawCountDown ()
+	{
+		if (countdown == null)
+			return;
+
+		countdown.EndDrawCountDown ();
 	}
 
 	private void DrawWelcome (CairoContextEx gr, int area_width, int area_height)
@@ -143,68 +147,6 @@ public class GameDrawingArea : DrawingArea
 		gr.Stroke ();
 	}
 
-	private void TimerUpdater (object source, ElapsedEventArgs e)
-	{
-		lock (this) {
-			if (countdown_time == 1) {
-				EndDrawCountDown ();
-				Application.Invoke ( delegate { 
-					finish (this, EventArgs.Empty);
-				});
-			}
-			countdown_time--;
-			Application.Invoke ( delegate { QueueDraw (); });
-		}
-	}
-
-	public void EndDrawCountDown ()
-	{
-		if (timer == null)
-			return;
-
-		timer.Enabled = false;
-		timer.Dispose ();
-		timer = null;
-	}
-
-	public void OnDrawCountDown (EventHandler OnFinish)
-	{
-		mode = Modes.CountDown;
-		QueueDraw ();
-		
-		countdown_time = 3;
-		timer = new System.Timers.Timer ();
-		timer.Elapsed += TimerUpdater;
-		timer.Interval = (1 * 1000); // 1 second
-		timer.Enabled = true;
-		finish = OnFinish;
-	}
-
-	private void DrawCountDown (CairoContextEx gr, int area_width, int area_height)
-	{
-		gr.Scale (area_width, area_height);
-
-		gr.Color = new Cairo.Color (0.8, 0.8, 0.8);
-		gr.Paint ();
-
-		gr.LineWidth = 0.01;
-		gr.Color = new Cairo.Color (0, 0, 0, 1);
-
-		gr.SetFontSize (0.033);
-		gr.DrawTextCentered (0.5, 0.1, Catalog.GetString ("Get ready to memorize the next objects..."));
-		gr.Stroke ();
-
-		gr.SetFontSize (0.4);
-		gr.MoveTo (0.37, 0.63);
-		gr.ShowText (countdown_time.ToString ());
-		gr.Stroke ();
-
-		gr.Arc (0.5, 0.5, 0.25, 0, 2 * Math.PI);
-		gr.Stroke ();
-		gr.Arc (0.5, 0.5, 0.28, 0, 2 * Math.PI);
-		gr.Stroke ();
-
-	}
 
 	public void DrawBar (CairoContextEx gr, double x, double y, double w, double h, double percentage)
 	{
@@ -314,7 +256,7 @@ public class GameDrawingArea : DrawingArea
 		y += 0.08;
 		for (int i = 0; i < tips_shown; i++)
 		{
-			y = gr.DrawStringWithWrapping (x, y, space_small, "- " + GetTip (random_indices[i]));
+			y = gr.DrawStringWithWrapping (x, y, space_small, "- " + GameTips.GetTip (random_indices[i]));
 			if (y > 0.85)
 				break;
 
@@ -322,34 +264,6 @@ public class GameDrawingArea : DrawingArea
 		}
 	
 		gr.Stroke ();
-	}
-
-	private String GetTip (int tip)
-	{
-		switch (tip) {
-		case 0:
-			return Catalog.GetString ("Read the instructions carefully and identify the data and given clues.");
-		case 1:
-			return Catalog.GetString ("To score the player gbrainy uses the time and tips needed to complete each game.");
-		case 2:
-			return Catalog.GetString ("In logic games, elements that may seem irrelevant can be very important.");
-		case 3:
-			return Catalog.GetString ("Break the mental blocks and look into the boundaries of problems.");
-		case 4:
-			return Catalog.GetString ("Enjoy making mistakes, they are part of the learning process.");
-		case 5:
-			return Catalog.GetString ("Do all the problems, even the difficult ones. Improvement comes from practising.");
-		case 6:
-			return Catalog.GetString ("Play on a daily basis, you will notice progress soon.");
-		case 7:
-			return Catalog.GetString ("Use the Custom Game Selection to choose exactly which games you want to play.");
-		case 8:
-			return Catalog.GetString ("Use the Settings to adjust the difficulty level of the game.");
-		case 9:
-			return Catalog.GetString ("Association of elements is a common technique for remembering things.");
-		}
-
-		return string.Empty;
 	}
 
 	protected override bool OnExposeEvent (Gdk.EventExpose args)
@@ -387,7 +301,7 @@ public class GameDrawingArea : DrawingArea
 			puzzle.Draw (cr, nw, nh);
 			break;
 		case Modes.CountDown:
-			DrawCountDown (cr, nw, nh);
+			CountDown.Draw (cr, nw, nh);
 			break;
 		}
 
@@ -395,7 +309,105 @@ public class GameDrawingArea : DrawingArea
 		((IDisposable)cr).Dispose();
 		return base.OnExposeEvent(args);
 	}
-
 }
 
+public class CountDown
+{
+	static int countdown_time;
+	System.Timers.Timer timer;
+	EventHandler finish;
+	GameDrawingArea area;
+
+	public CountDown (GameDrawingArea area, EventHandler OnFinish)
+	{
+		countdown_time = 3;
+		timer = new System.Timers.Timer ();
+		timer.Elapsed += TimerUpdater;
+		timer.Interval = (1 * 1000); // 1 second
+		timer.Enabled = true;
+		finish = OnFinish;
+		this.area = area;
+	}
+
+	public void EndDrawCountDown ()
+	{
+		if (timer == null)
+			return;
+
+		timer.Enabled = false;
+		timer.Dispose ();
+		timer = null;
+	}
+
+	static public void Draw (CairoContextEx gr, int area_width, int area_height)
+	{
+		gr.Scale (area_width, area_height);
+
+		gr.Color = new Cairo.Color (0.8, 0.8, 0.8);
+		gr.Paint ();
+
+		gr.LineWidth = 0.01;
+		gr.Color = new Cairo.Color (0, 0, 0, 1);
+
+		gr.SetFontSize (0.033);
+		gr.DrawTextCentered (0.5, 0.1, Catalog.GetString ("Get ready to memorize the next objects..."));
+		gr.Stroke ();
+
+		gr.SetFontSize (0.4);
+		gr.MoveTo (0.37, 0.63);
+		gr.ShowText (countdown_time.ToString ());
+		gr.Stroke ();
+
+		gr.Arc (0.5, 0.5, 0.25, 0, 2 * Math.PI);
+		gr.Stroke ();
+		gr.Arc (0.5, 0.5, 0.28, 0, 2 * Math.PI);
+		gr.Stroke ();
+	}
+
+	void TimerUpdater (object source, ElapsedEventArgs e)
+	{
+		lock (this) {
+			if (countdown_time == 1) {
+				EndDrawCountDown ();
+				Application.Invoke ( delegate { 
+					finish (this, EventArgs.Empty);
+				});
+			}
+			countdown_time--;
+			Application.Invoke ( delegate { area.QueueDraw (); });
+		}
+	}
+}
+
+
+class GameTips
+{
+	static public String GetTip (int tip)
+	{
+		switch (tip) {
+		case 0:
+			return Catalog.GetString ("Read the instructions carefully and identify the data and given clues.");
+		case 1:
+			return Catalog.GetString ("To score the player gbrainy uses the time and tips needed to complete each game.");
+		case 2:
+			return Catalog.GetString ("In logic games, elements that may seem irrelevant can be very important.");
+		case 3:
+			return Catalog.GetString ("Break the mental blocks and look into the boundaries of problems.");
+		case 4:
+			return Catalog.GetString ("Enjoy making mistakes, they are part of the learning process.");
+		case 5:
+			return Catalog.GetString ("Do all the problems, even the difficult ones. Improvement comes from practising.");
+		case 6:
+			return Catalog.GetString ("Play on a daily basis, you will notice progress soon.");
+		case 7:
+			return Catalog.GetString ("Use the Custom Game Selection to choose exactly which games you want to play.");
+		case 8:
+			return Catalog.GetString ("Use the Settings to adjust the difficulty level of the game.");
+		case 9:
+			return Catalog.GetString ("Association of elements is a common technique for remembering things.");
+		}
+
+		return string.Empty;
+	}
+}
 
