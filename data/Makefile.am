@@ -14,11 +14,11 @@ tango_icons = 				\
 	gbrainy.svg	\
 	background.svg	\
 	math-games-80.png	\
-	logic-games-80.png	\		
-	memory-games-80.png	\ 
+	logic-games-80.png	\
+	memory-games-80.png	\
 	math-games-32.png	\
 	logic-games-32.png	\
-	memory-games-32.png	\	 
+	memory-games-32.png	\
 	resume-32.png		\
 	endgame-32.png		\
 	allgames-32.png		\
