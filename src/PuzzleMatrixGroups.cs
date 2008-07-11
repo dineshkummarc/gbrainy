@@ -33,7 +33,7 @@ public class PuzzleMatrixGroups : Game
 	}
 
 	public override string Question {
-		get {return Catalog.GetString ("There is a missing circled number in the matrix. Which one?");}
+		get {return Catalog.GetString ("One of numbers in the matrix must be circled. Which one?");}
 	}
 
 	public override string Tip {
