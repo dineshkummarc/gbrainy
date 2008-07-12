@@ -31,9 +31,7 @@ public class PuzzleCountSeries : Game
 		Length		
 	}
 
-	private Game game;
 	private string question;
-	private string answer;
 
 	public override string Name {
 		get {return Catalog.GetString ("Count series");}
