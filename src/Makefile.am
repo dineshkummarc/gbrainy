@@ -5,67 +5,67 @@ WRAPPER = gbrainy
 GBRAINY_CSDISTFILES =				\
 	$(srcdir)/ArrayListIndicesRandom.cs	\
 	$(srcdir)/GameManager.cs		\
-	$(srcdir)/PuzzleCirclesRectangle.cs	\
+	$(srcdir)/PuzzleGames/PuzzleCirclesRectangle.cs	\
 	$(srcdir)/Game.cs			\
-	$(srcdir)/PuzzleFigures.cs		\
-	$(srcdir)/PuzzleMatrixNumbers.cs	\
-	$(srcdir)/PuzzleMoveFigure.cs		\
-	$(srcdir)/PuzzlePencil.cs		\
-	$(srcdir)/PuzzleSquares.cs		\
-	$(srcdir)/PuzzleTriangles.cs		\
-	$(srcdir)/PuzzleCoverPercentage.cs	\
-	$(srcdir)/PuzzleNumericSequence.cs	\
-	$(srcdir)/PuzzleSquaresAndLetters.cs	\
-	$(srcdir)/PuzzleSquareDots.cs		\
-	$(srcdir)/PuzzleNumericRelation.cs	\
-	$(srcdir)/PuzzleNextFigure.cs		\
-	$(srcdir)/PuzzleSquareSheets.cs		\
-	$(srcdir)/CalculationArithmetical.cs	\
-	$(srcdir)/MemoryColouredFigures.cs	\
+	$(srcdir)/PuzzleGames/PuzzleFigures.cs		\
+	$(srcdir)/PuzzleGames/PuzzleMatrixNumbers.cs	\
+	$(srcdir)/PuzzleGames/PuzzleMoveFigure.cs		\
+	$(srcdir)/PuzzleGames/PuzzlePencil.cs		\
+	$(srcdir)/PuzzleGames/PuzzleSquares.cs		\
+	$(srcdir)/PuzzleGames/PuzzleTriangles.cs		\
+	$(srcdir)/PuzzleGames/PuzzleCoverPercentage.cs	\
+	$(srcdir)/PuzzleGames/PuzzleNumericSequence.cs	\
+	$(srcdir)/PuzzleGames/PuzzleSquaresAndLetters.cs	\
+	$(srcdir)/PuzzleGames/PuzzleSquareDots.cs		\
+	$(srcdir)/PuzzleGames/PuzzleNumericRelation.cs	\
+	$(srcdir)/PuzzleGames/PuzzleNextFigure.cs		\
+	$(srcdir)/PuzzleGames/PuzzleSquareSheets.cs		\
+	$(srcdir)/CalculationGames/CalculationArithmetical.cs	\
+	$(srcdir)/MemoryGames/MemoryColouredFigures.cs	\
 	$(srcdir)/GameSession.cs		\
-	$(srcdir)/MemoryNumbers.cs		\
+	$(srcdir)/MemoryGames/MemoryNumbers.cs		\
 	$(srcdir)/Memory.cs			\
-	$(srcdir)/MemoryColouredText.cs		\
-	$(srcdir)/PuzzleCube.cs			\
-	$(srcdir)/MemoryWords.cs		\
-	$(srcdir)/PuzzleFigureLetter.cs		\
+	$(srcdir)/MemoryGames/MemoryColouredText.cs		\
+	$(srcdir)/PuzzleGames/PuzzleCube.cs			\
+	$(srcdir)/MemoryGames/MemoryWords.cs		\
+	$(srcdir)/PuzzleGames/PuzzleFigureLetter.cs		\
 	$(srcdir)/CustomGameDialog.cs		\
-	$(srcdir)/PuzzleDivideCircle.cs		\
-	$(srcdir)/CalculationGreatestDivisor.cs	\
-	$(srcdir)/CalculationTwoNumbers.cs	\
-	$(srcdir)/CalculationWhichNumber.cs	\
-	$(srcdir)/PuzzleMatrixGroups.cs		\
-	$(srcdir)/PuzzleBalance.cs		\
-	$(srcdir)/PuzzleTrianglesWithNumbers.cs	\
-	$(srcdir)/PuzzleOstracism.cs		\
-	$(srcdir)/MemoryCountDots.cs		\
-	$(srcdir)/CalculationOperator.cs	\
-	$(srcdir)/PuzzleFigurePattern.cs	\
+	$(srcdir)/PuzzleGames/PuzzleDivideCircle.cs		\
+	$(srcdir)/CalculationGames/CalculationGreatestDivisor.cs	\
+	$(srcdir)/CalculationGames/CalculationTwoNumbers.cs	\
+	$(srcdir)/CalculationGames/CalculationWhichNumber.cs	\
+	$(srcdir)/PuzzleGames/PuzzleMatrixGroups.cs		\
+	$(srcdir)/PuzzleGames/PuzzleBalance.cs		\
+	$(srcdir)/PuzzleGames/PuzzleTrianglesWithNumbers.cs	\
+	$(srcdir)/PuzzleGames/PuzzleOstracism.cs		\
+	$(srcdir)/MemoryGames/MemoryCountDots.cs		\
+	$(srcdir)/CalculationGames/CalculationOperator.cs	\
+	$(srcdir)/PuzzleGames/PuzzleFigurePattern.cs	\
 	$(srcdir)/ColorPalette.cs		\
-	$(srcdir)/PuzzlePeopleTable.cs		\
+	$(srcdir)/PuzzleGames/PuzzlePeopleTable.cs		\
 	$(srcdir)/GameDrawingArea.cs		\
-	$(srcdir)/MemoryFigures.cs		\
-	$(srcdir)/PuzzleMissingSlice.cs		\
-	$(srcdir)/PuzzleLines.cs		\
-	$(srcdir)/PuzzleTetris.cs		\
+	$(srcdir)/MemoryGames/MemoryFigures.cs		\
+	$(srcdir)/PuzzleGames/PuzzleMissingSlice.cs		\
+	$(srcdir)/PuzzleGames/PuzzleLines.cs		\
+	$(srcdir)/PuzzleGames/PuzzleTetris.cs		\
 	$(srcdir)/PreferencesDialog.cs		\
-	$(srcdir)/PuzzleMissingPiece.cs		\
-	$(srcdir)/MemoryIndications.cs		\
-	$(srcdir)/PuzzleMostInCommon.cs		\
-	$(srcdir)/PuzzleBuildTriangle.cs	\
+	$(srcdir)/PuzzleGames/PuzzleMissingPiece.cs		\
+	$(srcdir)/MemoryGames/MemoryIndications.cs		\
+	$(srcdir)/PuzzleGames/PuzzleMostInCommon.cs		\
+	$(srcdir)/PuzzleGames/PuzzleBuildTriangle.cs	\
 	$(srcdir)/CairoContextEx.cs		\
-	$(srcdir)/PuzzleClocks.cs		\
-	$(srcdir)/PuzzleCountCircles.cs		\
-	$(srcdir)/PuzzleEquation.cs		\
-	$(srcdir)/PuzzleQuadrilaterals.cs	\
-	$(srcdir)/CalculationFractions.cs	\
-	$(srcdir)/PuzzleExtraCircle.cs		\
-	$(srcdir)/PuzzleCountSeries.cs		\
+	$(srcdir)/PuzzleGames/PuzzleClocks.cs		\
+	$(srcdir)/PuzzleGames/PuzzleCountCircles.cs		\
+	$(srcdir)/PuzzleGames/PuzzleEquation.cs		\
+	$(srcdir)/PuzzleGames/PuzzleQuadrilaterals.cs	\
+	$(srcdir)/CalculationGames/CalculationFractions.cs	\
+	$(srcdir)/PuzzleGames/PuzzleExtraCircle.cs		\
+	$(srcdir)/PuzzleGames/PuzzleCountSeries.cs		\
 	$(srcdir)/PlayerHistory.cs		\
 	$(srcdir)/PlayerHistoryDialog.cs	\
 	$(srcdir)/GtkDialog.cs			\
 	$(srcdir)/Preferences.cs		\
-	$(srcdir)/PuzzleFourSided.cs		\
+	$(srcdir)/PuzzleGames/PuzzleFourSided.cs		\
 	$(srcdir)/SVGImage.cs			\
 	$(srcdir)/gbrainy.cs			
 
