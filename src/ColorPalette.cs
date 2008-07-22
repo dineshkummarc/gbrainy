@@ -52,7 +52,7 @@ public class ColorPalette
 		PrimaryColors,
 		Yellow=PrimaryColors, 
 		Magenta,
-		Cyan,
+		Orange,
 		PrimarySecundaryColors,
 		Black=PrimarySecundaryColors,
 		Last,
@@ -60,14 +60,14 @@ public class ColorPalette
 	};
 
 	private static string[] ColorName= new string[] {
-		Catalog.GetString("red"),
-		Catalog.GetString("green"),
-		Catalog.GetString("blue"),
-		Catalog.GetString("yellow"),
-		Catalog.GetString("magenta"),
-		Catalog.GetString("cyan"),
-		Catalog.GetString("black"),
-		Catalog.GetString("white")
+		Catalog.GetString ("red"),
+		Catalog.GetString ("green"),
+		Catalog.GetString ("blue"),
+		Catalog.GetString ("yellow"),
+		Catalog.GetString ("magenta"),
+		Catalog.GetString ("orange"),
+		Catalog.GetString ("black"),
+		Catalog.GetString ("white")
 	};
 
 	private static Cairo.Color[] CairoColor = new Cairo.Color[] {
@@ -76,7 +76,7 @@ public class ColorPalette
 		new Cairo.Color (0.17, 0.23 ,0.56),
 		new Cairo.Color (0.94, 0.93, 0.25),
 		new Cairo.Color (0.82, 0.25, 0.59),
-		new Cairo.Color (0.31, 0.68, 0.95),
+		new Cairo.Color (1, 0.54, 0),
 		new Cairo.Color (0, 0, 0),
 		new Cairo.Color (.9, .9, .9)
 	};
