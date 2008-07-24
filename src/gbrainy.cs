@@ -41,7 +41,7 @@ public class gbrainy: Program
 	[Glade.Widget] Gtk.Button next_button;
 	[Glade.Widget] Gtk.Statusbar statusbar;
 	[Glade.Widget] Gtk.Toolbar toolbar;
-	[Glade.Widget] Gtk.Label label_answser;
+	[Glade.Widget] Gtk.Label label_answer;
 	GameDrawingArea drawing_area;
 	GameSession session;
 	const int ok_buttonid = -5;
@@ -140,7 +140,7 @@ public class gbrainy: Program
 		if (preferences.GetBoolValue (Preferences.Toolbar) == false)
 			toolbar_menuitem.Active = false;
 
-		color = label_answser.Style.Background (StateType.Normal);
+		color = label_answer.Style.Background (StateType.Normal);
 		question_textview.ModifyBase (Gtk.StateType.Normal, color);
 		solution_textview.ModifyBase (Gtk.StateType.Normal, color);
 
