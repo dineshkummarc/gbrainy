@@ -271,8 +271,6 @@ public class GameDrawingArea : DrawingArea
 		if(!IsRealized)
 			return false;
 
-		Console.WriteLine ("Expose");
-
 		int w, h, nw, nh;
 		double x = 0, y = 0;
 		args.Window.GetSize (out w, out h);
