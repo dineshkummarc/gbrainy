@@ -150,23 +150,23 @@ public class PuzzleClocks : Game
 		base.Draw (gr, area_width, area_height);
 
 		DrawClock (gr, x + 0.1, y + 0.1, handles[0], handles[1], true);
-		gr.MoveTo (x + 0.03, y + 0.31);
-		gr.ShowText (String.Format (Catalog.GetString ("Figure {0}"), 'A'));
+		gr.MoveTo (x + 0.03, y + 0.29);
+		gr.ShowPangoText (String.Format (Catalog.GetString ("Figure {0}"), 'A'));
 		gr.Stroke ();
 	
 		DrawClock (gr, x + 0.5, y + 0.1, handles[2], handles[3], true);
-		gr.MoveTo (x + 0.43, y + 0.31);
-		gr.ShowText (String.Format (Catalog.GetString ("Figure {0}"), 'B'));
+		gr.MoveTo (x + 0.43, y + 0.29);
+		gr.ShowPangoText (String.Format (Catalog.GetString ("Figure {0}"), 'B'));
 		gr.Stroke ();
 
 		DrawClock (gr, x + 0.1, y + 0.52, handles[4], handles[5], true);
-		gr.MoveTo (x + 0.03, y + 0.73);
-		gr.ShowText (String.Format (Catalog.GetString ("Figure {0}"), 'C'));
+		gr.MoveTo (x + 0.03, y + 0.71);
+		gr.ShowPangoText (String.Format (Catalog.GetString ("Figure {0}"), 'C'));
 		gr.Stroke ();
 
 		DrawClock (gr, x + 0.5, y + 0.52, handles[6], handles[7], DrawAnswer == true);
-		gr.MoveTo (x + 0.43, y + 0.73);
-		gr.ShowText (String.Format (Catalog.GetString ("Figure {0}"), 'D'));
+		gr.MoveTo (x + 0.43, y + 0.71);
+		gr.ShowPangoText (String.Format (Catalog.GetString ("Figure {0}"), 'D'));
 		gr.Stroke ();
 
 	}

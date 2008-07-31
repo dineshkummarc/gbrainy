@@ -68,13 +68,13 @@ public class CalculationTwoNumbers : Game
 
 		base.Draw (gr, area_width, area_height);
 
-		gr.SetLargeFont ();
+		gr.SetPangoLargeFontSize ();
 
-		gr.MoveTo (x, DrawAreaY + 0.2);
-		gr.ShowText (String.Format (Catalog.GetString ("number1 + number2 = {0}"), op1));
+		gr.MoveTo (x, DrawAreaY + 0.22);
+		gr.ShowPangoText (String.Format (Catalog.GetString ("number1 + number2 = {0}"), op1));
 		
-		gr.MoveTo (x, DrawAreaY + 0.4);
-		gr.ShowText (String.Format (Catalog.GetString ("number1 * number2 = {0}"), op2));
+		gr.MoveTo (x, DrawAreaY + 0.44);
+		gr.ShowPangoText (String.Format (Catalog.GetString ("number1 * number2 = {0}"), op2));
 	}
 
 	public override bool CheckAnswer (string answer)

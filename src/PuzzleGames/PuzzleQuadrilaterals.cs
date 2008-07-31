@@ -135,8 +135,8 @@ public class PuzzleQuadrilaterals : Game
 
 		for (int i = 0; i < random_indices.Count; i++) {
 			DrawFigure (gr, x, y, (Figures) random_indices[i]);
-			gr.MoveTo (x, y + figure_size * 1.6);
-			gr.ShowText (String.Format (Catalog.GetString ("Figure {0}"), (char) (65 + i)));
+			gr.MoveTo (x, y - 0.02 + figure_size * 1.6);
+			gr.ShowPangoText (String.Format (Catalog.GetString ("Figure {0}"), (char) (65 + i)));
 
 			if (i == 2) {
 				x = DrawAreaX;

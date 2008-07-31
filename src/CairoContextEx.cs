@@ -22,77 +22,156 @@ using Cairo;
 using Mono.Unix;
 using System.Text;
 using System.Runtime.InteropServices;
+using Pango;
 
 public class CairoContextEx : Cairo.Context
 {
-	public CairoContextEx (IntPtr state) : base (state)
-	{
+	Pango.Layout layout;
+	double font_size;
 
+	const double line_space = 0.018;
+
+	public CairoContextEx (IntPtr state, Gtk.Widget widget) : base (state)
+	{
+		double resolution = widget.Screen.Resolution;
+		CommonConstructor ();
+
+		if (resolution != -1) 
+			CairoHelper.ContextSetResolution (layout.Context, resolution);
 	}
 
 	// Used by GeneratePDF
 	public CairoContextEx (Cairo.Surface s) : base (s)
 	{
-
+		CommonConstructor ();
 	}
-	
+
+	private void CommonConstructor ()
+	{
+		layout = Pango.CairoHelper.CreateLayout (this);
+		layout.FontDescription = FontDescription.FromString ("Sans");
+		SetPangoNormalFontSize ();
+	}
+
 	// No dispose of resources on this class
 	protected override void Dispose (bool disposing)
 	{
+
 	}
-	
+
+	private void UpdateFontSize ()
+	{
+		layout.FontDescription.Size = (int) (font_size * Pango.Scale.PangoScale * Matrix.Xx);	
+	}
+
+	/*
+		Font drawing using Pango
+
+		* Pango does not work well with float numbers. We should work on 
+		the device unit space and then translate to our user space.
+
+		* Cairo Show.Text paints on the bottom-left of the coordinates
+		and Pango paints on the top-left of the coordinate
+	*/
+
+	public void ShowPangoText (string str)
+	{
+		Cairo.Matrix old = Matrix;
+
+		UpdateFontSize ();
+		Matrix = new Cairo.Matrix ();		
+		layout.SetText (str);
+		layout.SingleParagraphMode = true;
+		layout.Width = -1;
+		Pango.CairoHelper.UpdateLayout (this, layout);
+		Pango.CairoHelper.ShowLayout (this, layout);
+		Matrix = old;
+	}
+
+	public void ShowPangoText (string str, bool bold)
+	{
+		if (bold) {
+			layout.FontDescription.Weight = Pango.Weight.Bold;
+		}
+
+		ShowPangoText (str);
+		layout.FontDescription.Weight = Pango.Weight.Normal;
+	}
+
+	public void SetPangoNormalFontSize ()
+	{
+		font_size = 0.022;
+	}
+
+	public void SetPangoLargeFontSize ()
+	{
+		font_size = 0.0325;
+	}
+
+	public void SetPangoFontSize (double size)
+	{
+		font_size = size;
+	}
+
+	/*
+		Draw text functions
+	*/		
+		
 	public void DrawTextAlignedRight (double x, double y, string str)
 	{
-		TextExtents extents;	
+		int w, h;
+		Cairo.Matrix old = Matrix;
 
-		extents = TextExtents (str);
-		MoveTo (x - extents.Width, y);
-		ShowText (str);
-		Stroke ();
+		UpdateFontSize ();
+		Matrix = new Cairo.Matrix ();
+
+		layout.SetText (str);
+		layout.SingleParagraphMode = true;
+		layout.Width = -1;
+		Pango.CairoHelper.UpdateLayout (this, layout);
+		layout.GetPixelSize (out w, out h);
+		MoveTo ((old.X0 + x * old.Xx) - w, y * old.Xx);
+		Pango.CairoHelper.ShowLayout (this, layout);
+		Matrix = old;
 	}
 
 	// From a giving point centers the text into it
 	public void DrawTextCentered (double x, double y, string str)
 	{
-		TextExtents extents;
-		extents = TextExtents (str);
-		MoveTo (x -extents.Width / 2, y + extents.Height / 2);
-		ShowText (str);
-		Stroke ();
+		int w, h;
+		Cairo.Matrix old = Matrix;
+
+		UpdateFontSize ();
+		Matrix = new Cairo.Matrix ();
+
+		layout.SetText (str);
+		layout.SingleParagraphMode = true;
+		layout.Width = -1;
+		Pango.CairoHelper.UpdateLayout (this, layout);
+		layout.GetPixelSize (out w, out h);
+		MoveTo ((old.X0 + x * old.Xx) - w / 2, (y - font_size / 2) * old.Xx);
+		Pango.CairoHelper.ShowLayout (this, layout);
+		Matrix = old;
 	}
 
-	public double DrawStringWithWrapping (double x, double y, double line_space, string str)
+	public double DrawStringWithWrapping (double x, double y, string str)
 	{
-		TextExtents extents;
-		StringBuilder sb = new StringBuilder ();
-		int idx = 0, prev = 0;			
+		int w, h;
+		Cairo.Matrix old = Matrix;
 
-		while (idx < str.Length) {
-			prev = idx;
-			idx = str.IndexOf (' ', prev + 1);
-			if (idx == -1)
-				idx = str.Length;
+		MoveTo (x, y);
+		UpdateFontSize ();
+		Matrix = new Cairo.Matrix ();
 
-			extents = TextExtents (sb.ToString () + str.Substring (prev, idx - prev));
-			if (extents.Width > 1.0 - x - 0.05) {
-				MoveTo (x, y);
-				ShowText (sb.ToString ());
-				Stroke ();
-				y += line_space;
-				sb = new StringBuilder ();
-				prev++;
-			} 
-
-			sb.Append (str.Substring (prev, idx - prev)); 
-
-			if (str.Length == idx) {
-				MoveTo (x, y);
-				ShowText (sb.ToString ());
-				Stroke ();					
-			}				
-		}
-
-		return y;
+		layout.Width = (int) ((1.0 - x - 0.02) * old.Xx * Pango.Scale.PangoScale);
+		layout.Spacing = (int) (line_space * (old.Xx * Pango.Scale.PangoScale));
+		layout.SingleParagraphMode = false;
+		layout.SetText (str);
+		Pango.CairoHelper.UpdateLayout (this, layout);
+		Pango.CairoHelper.ShowLayout (this, layout);
+		layout.GetPixelSize (out w, out h);
+		Matrix = old;
+		return y + h / old.Xx;
 	}
 
 	public void DrawEquilateralTriangle (double x, double y, double size)
@@ -114,33 +193,23 @@ public class CairoContextEx : Cairo.Context
 		Stroke ();
 	}
 
-	public void SetLargeFont ()
-	{
-		SetFontSize (0.05);
-	}
-
-	public void SetNormalFont ()
-	{
-		SetFontSize (0.03);
-	}
-
 	public void FillGradient (double x, double y, double w, double h)
 	{
 		Save ();
 		LinearGradient shadow = new LinearGradient (x, y, x + w, y + h);
-		shadow.AddColorStop (0, new Color (0, 0, 0, 0.3));
-		shadow.AddColorStop (0.5, new Color (0, 0, 0, 0.1));
+		shadow.AddColorStop (0, new Cairo.Color (0, 0, 0, 0.3));
+		shadow.AddColorStop (0.5, new Cairo.Color (0, 0, 0, 0.1));
 		Source = shadow;
 		Fill ();
 		Restore ();
 	}
 
-	public void FillGradient (double x, double y, double w, double h, Color color)
+	public void FillGradient (double x, double y, double w, double h, Cairo.Color color)
 	{
 		Save ();
 		LinearGradient shadow = new LinearGradient (x, y, x + w, y + h);
-		shadow.AddColorStop (0, new Color (color.R, color.G, color.B, color.A));
-		shadow.AddColorStop (0.5, new Color (color.R, color.G, color.B, color.A * 0.7));
+		shadow.AddColorStop (0, new Cairo.Color (color.R, color.G, color.B, color.A));
+		shadow.AddColorStop (0.5, new Cairo.Color (color.R, color.G, color.B, color.A * 0.7));
 		Source = shadow;
 		Fill ();
 		Restore ();

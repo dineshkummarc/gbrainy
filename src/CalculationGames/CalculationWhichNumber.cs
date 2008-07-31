@@ -138,20 +138,20 @@ public class CalculationWhichNumber : Game
 
 	public override void Draw (CairoContextEx gr, int area_width, int area_height)
 	{	
-		double x = DrawAreaX + 0.25, y = DrawAreaY + 0.2;
+		double x = DrawAreaX + 0.25, y = DrawAreaY + 0.16;
 		char option;
 		int indx;
 
 		base.Draw (gr, area_width, area_height);
 
-		gr.SetLargeFont ();
+		gr.SetPangoLargeFontSize ();
 
 		for (int i = 0; i < options_cnt; i++)
 		{
 			gr.MoveTo (x, y);
 			option = (char) (65 + i);
 			indx = random_indices[i];
-			gr.ShowText (option + ") " + options [indx * 2] +  " / " + options [(indx  * 2) +1]);
+			gr.ShowPangoText (option + ") " + options [indx * 2] +  " / " + options [(indx  * 2) +1]);
 			
 			y = y + 0.15;
 		}

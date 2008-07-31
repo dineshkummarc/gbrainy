@@ -78,19 +78,19 @@ public class PuzzleSquaresAndLetters : Game
 		gr.Rectangle (x, y, figure_size, figure_size);
 
 		gr.MoveTo (x - 0.04, y);
-		gr.ShowText (ToStr (characters [index]));
+		gr.ShowPangoText (ToStr (characters [index]));
 		gr.Stroke ();
 
 		gr.MoveTo (x + 0.01 + figure_size, y);
-		gr.ShowText (ToStr (characters [index + 1]));
+		gr.ShowPangoText (ToStr (characters [index + 1]));
 		gr.Stroke ();
 
 		gr.MoveTo (x - 0.04, y + figure_size);
-		gr.ShowText (ToStr (characters [index + 2]));
+		gr.ShowPangoText (ToStr (characters [index + 2]));
 		gr.Stroke ();
 
 		gr.MoveTo (x + 0.01 + figure_size, y + figure_size);
-		gr.ShowText (ToStr (characters [index + 3]));
+		gr.ShowPangoText (ToStr (characters [index + 3]));
 		gr.Stroke ();
 	}
 

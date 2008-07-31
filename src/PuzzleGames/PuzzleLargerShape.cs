@@ -216,8 +216,8 @@ public class PuzzleLargerShape : Game
 			}
 		}
 
-		gr.MoveTo (x, y + 0.2);
-		gr.ShowText (String.Format (Catalog.GetString ("Figure {0}"), (char) (65 + seq)));
+		gr.MoveTo (x, y + 0.18);
+		gr.ShowPangoText (String.Format (Catalog.GetString ("Figure {0}"), (char) (65 + seq)));
 		gr.Stroke ();
 	}
 
@@ -230,8 +230,8 @@ public class PuzzleLargerShape : Game
 		DrawSquare (gr, x, y);
 		DrawLShape (gr, x + 0.4, y);
 
-		gr.MoveTo (0.1, 0.35);
-		gr.ShowText (Catalog.GetString ("Possible answers are:"));
+		gr.MoveTo (0.1, 0.3);
+		gr.ShowPangoText (Catalog.GetString ("Possible answers are:"));
 		gr.Stroke ();
 		
 		DrawPossibleAnswer (gr, x, y + 0.32, answer, random_indices [0], 0);

@@ -76,11 +76,11 @@ public class PuzzleOstracism : Game
 
 		base.Draw (gr, area_width, area_height);
 
-		gr.SetLargeFont ();		
+		gr.SetPangoLargeFontSize ();		
 		for (int i = 0; i < random_indices.Count; i++)
 		{
 			gr.MoveTo (x, y);
-			gr.ShowText (((char)( 65 + i)) + ") " +  equations [random_indices[i]]);
+			gr.ShowPangoText (((char)( 65 + i)) + ") " +  equations [random_indices[i]]);
 			y += 0.1;
 		}
 	}

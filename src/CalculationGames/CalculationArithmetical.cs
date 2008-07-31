@@ -107,21 +107,21 @@ public class CalculationArithmetical : Game
 
 		base.Draw (gr, area_width, area_height);
 	
-		gr.SetLargeFont ();
+		gr.SetPangoLargeFontSize ();
 		for (int i = 0; i < operands.Length - 1; i++)
 		{
 			gr.DrawTextAlignedRight (aligned_pos, operand_y, operands[i].ToString ());
-			gr.MoveTo (DrawAreaX + 0.2, operand_y + 0.05);	
+			gr.MoveTo (DrawAreaX + 0.2, operand_y + 0.03);	
 
 			switch (operation) {
 			case Operation.Addition:
-				gr.ShowText ("+");
+				gr.ShowPangoText ("+");
 				break;	
 			case Operation.Subtraction:
-				gr.ShowText ("-");
+				gr.ShowPangoText ("-");
 				break;
 			case Operation.Multiplication:
-				gr.ShowText ("*");
+				gr.ShowPangoText ("*");
 				break;
 			}
 
@@ -130,17 +130,14 @@ public class CalculationArithmetical : Game
 
 		gr.DrawTextAlignedRight (aligned_pos, operand_y, operands[operands.Length - 1].ToString ());
 
-		operand_y += 0.05;
+		operand_y += 0.08;
 		gr.MoveTo (DrawAreaX + 0.2, operand_y);
 		gr.LineTo (DrawAreaX + 0.5, operand_y);
 		gr.Stroke ();
 
 		if (DrawAnswer) {
-			operand_y += 0.05;
-			gr.DrawTextAlignedRight (aligned_pos, operand_y + 0.05, right_answer);
-			gr.Stroke ();
+			gr.DrawTextAlignedRight (aligned_pos, operand_y + 0.03, right_answer);
 		}
-
 	}
 
 }

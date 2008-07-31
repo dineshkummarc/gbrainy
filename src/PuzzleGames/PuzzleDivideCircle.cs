@@ -107,7 +107,7 @@ public class PuzzleDivideCircle : Game
 			}, true);
 
 		gr.MoveTo (pos_x, pos_y + figure_size * 2 + 0.05);
-		gr.ShowText (String.Format (Catalog.GetString ("Has {0} regions"), 2));
+		gr.ShowPangoText (String.Format (Catalog.GetString ("Has {0} regions"), 2));
 		gr.Stroke ();
 
 		// Second circle
@@ -122,7 +122,7 @@ public class PuzzleDivideCircle : Game
 			}, true);
 
 		gr.MoveTo (pos_x, pos_y + figure_size * 2 + 0.05);
-		gr.ShowText (String.Format (Catalog.GetString ("Has {0} regions"), 4));
+		gr.ShowPangoText (String.Format (Catalog.GetString ("Has {0} regions"), 4));
 		gr.Stroke ();
 
 		// Third circle
@@ -139,7 +139,7 @@ public class PuzzleDivideCircle : Game
 			}, true);
 
 		gr.MoveTo (pos_x, pos_y + figure_size * 2 + 0.05);
-		gr.ShowText (String.Format (Catalog.GetString ("Has {0} regions"), 8));
+		gr.ShowPangoText (String.Format (Catalog.GetString ("Has {0} regions"), 8));
 		gr.Stroke ();
 
 		switch (dots) {

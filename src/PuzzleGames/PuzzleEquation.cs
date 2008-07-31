@@ -68,7 +68,7 @@ public class PuzzleEquation : Game
 	{
 		base.Draw (gr, area_width, area_height);
 
-		gr.SetLargeFont ();
+		gr.SetPangoLargeFontSize ();
 		gr.DrawTextCentered (0.5, DrawAreaY + 0.3, formula);
 	}
 }

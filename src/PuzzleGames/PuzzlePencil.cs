@@ -163,7 +163,7 @@ public class PuzzlePencil : Game
 			}			
 						
 			gr.MoveTo (x, y + figure_size + 0.05);
-			gr.ShowText (String.Format (Catalog.GetString ("Figure {0}"), (char) (65 + figure)));
+			gr.ShowPangoText (String.Format (Catalog.GetString ("Figure {0}"), (char) (65 + figure)));
 
 			if (figure == 2) {
 				x = DrawAreaX;

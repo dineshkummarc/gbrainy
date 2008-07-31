@@ -78,25 +78,25 @@ public class PuzzleSquareSheets : Game
 			return;
 
 		gr.LineTo (x + 0.04, y + 0.06);
-		gr.ShowText ("1");
+		gr.ShowPangoText ("1");
 
 		gr.LineTo (x + 0.18, y + 0.06);
-		gr.ShowText ("2");
+		gr.ShowPangoText ("2");
 
 		gr.LineTo (x + 0.34, y + 0.06);
-		gr.ShowText ("3");
+		gr.ShowPangoText ("3");
 		
 		gr.LineTo (x + 0.04, y + 0.2);
-		gr.ShowText ("2");
+		gr.ShowPangoText ("2");
 
 		gr.LineTo (x + 0.18, y + 0.2);
-		gr.ShowText ("4");
+		gr.ShowPangoText ("4");
 
 		gr.LineTo (x + 0.34, y + 0.2);
-		gr.ShowText ("5");
+		gr.ShowPangoText ("5");
 
 		gr.LineTo (x + 0.04, y + 0.36);
-		gr.ShowText ("3");
+		gr.ShowPangoText ("3");
 
 	}
 

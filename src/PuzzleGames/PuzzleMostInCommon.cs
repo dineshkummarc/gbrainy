@@ -276,10 +276,10 @@ public class PuzzleMostInCommon : Game
 			 x+= 0.22;
 		}
 
-		y += 0.3;
+		y += 0.28;
 		x = DrawAreaX;
-		gr.MoveTo (x - 0.04, y);
-		gr.ShowText (Catalog.GetString ("Possible answers are:"));
+		gr.MoveTo (x - 0.06, y);
+		gr.ShowPangoText (Catalog.GetString ("Possible answers are:"));
 		gr.Stroke ();
 	
 		y += 0.08;
@@ -287,7 +287,7 @@ public class PuzzleMostInCommon : Game
 			DrawFigure (gr, x, y, (FigureElement []) answers[(int)random_indices_answers[i]]);
 			gr.MoveTo (x, y + 0.2);
 			x+= 0.22;
-			gr.ShowText (String.Format (Catalog.GetString ("Figure {0}"), (char) (65 + i)));
+			gr.ShowPangoText (String.Format (Catalog.GetString ("Figure {0}"), (char) (65 + i)));
 		}
 	}
 }

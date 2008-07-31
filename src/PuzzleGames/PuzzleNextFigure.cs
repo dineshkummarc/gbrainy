@@ -119,11 +119,11 @@ public class PuzzleNextFigure : Game
 		DrawDiamon (gr, x + space_figures , y, CerclePosition.Bottom);
 		DrawDiamon (gr, x + space_figures * 2, y, CerclePosition.Top | CerclePosition.Right);
 		
-		y += figure_size + 0.10;
+		y += figure_size + 0.06;
 		gr.MoveTo (x, y);
-		gr.ShowText (Catalog.GetString ("Possible answers are:"));
+		gr.ShowPangoText (Catalog.GetString ("Possible answers are:"));
 		gr.Stroke ();
-		y += 0.06;
+		y += 0.10;
 
 		for (int i = 0; i < (int) Figures.Last; i++)
 		{
@@ -140,7 +140,7 @@ public class PuzzleNextFigure : Game
 			}
 			
 			gr.MoveTo (x + 0.02, y + 0.25);
-			gr.ShowText (String.Format (Catalog.GetString ("Figure {0}"), (char) (65 + i)));
+			gr.ShowPangoText (String.Format (Catalog.GetString ("Figure {0}"), (char) (65 + i)));
 			x += space_figures;			
 		}
 

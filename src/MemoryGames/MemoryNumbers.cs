@@ -129,8 +129,8 @@ public class MemoryNumbers : Memory
 				x = DrawAreaX;
 			}
 			DrawSquare (gr, x, y, numbers, squares * (int) answers_order[i]);
-			gr.MoveTo (x, y + block_space + 0.02);
-			gr.ShowText (String.Format (Catalog.GetString ("Figure {0}"), (char) (65 + i)));
+			gr.MoveTo (x, y + block_space);
+			gr.ShowPangoText (String.Format (Catalog.GetString ("Figure {0}"), (char) (65 + i)));
 			gr.Stroke ();
 			x += block_space + 0.08;
 		}

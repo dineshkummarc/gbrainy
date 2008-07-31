@@ -139,7 +139,7 @@ public class PuzzleBuildTriangle : Game
 
 	public override void Draw (CairoContextEx gr, int area_width, int area_height)
 	{
-		double x = DrawAreaX + 0.05, y = DrawAreaY + 0.05;
+		double x = DrawAreaX + 0.05, y = DrawAreaY + 0.1;
 		double degrees, x1, x2, dist;
 
 		base.Draw (gr, area_width, area_height);
@@ -147,8 +147,8 @@ public class PuzzleBuildTriangle : Game
 		for (int i = 0; i < random_indices_answers.Count; i++)	
 		{
 			DrawFigure (gr, x, y, (Figures) random_indices_answers[i]);
-			gr.MoveTo (x, y + 0.15);
-			gr.ShowText (String.Format (Catalog.GetString ("Figure {0}"), (char) (65 + i)));
+			gr.MoveTo (x, y + 0.13);
+			gr.ShowPangoText (String.Format (Catalog.GetString ("Figure {0}"), (char) (65 + i)));
 
 			if (i  == (total_figures / 2) - 1) {
 				y+= 0.25;
@@ -162,7 +162,7 @@ public class PuzzleBuildTriangle : Game
 			return;
 
 		gr.MoveTo (DrawAreaX, y + 0.28);
-		gr.ShowText (Catalog.GetString ("The triangle is:"));
+		gr.ShowPangoText (Catalog.GetString ("The triangle is:"));
 		gr.Stroke ();
 		
 		x = DrawAreaX + 0.35;

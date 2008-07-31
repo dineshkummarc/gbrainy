@@ -54,33 +54,33 @@ public class PuzzleCube : Game
 		double x = DrawAreaX + 0.1;
 		double y = DrawAreaY + 0.1;
 		double txtoff_x = 0.04;
-		double txtoff_y = 0.06;
+		double txtoff_y = 0.03;
 
 		base.Draw (gr, area_width, area_height);
 
 		gr.Rectangle (x + 0.1, y, 0.1, 0.1);
 		gr.MoveTo (x + 0.1 + txtoff_x, y + txtoff_y);
-		gr.ShowText ("1");
+		gr.ShowPangoText ("1");
 
 		gr.Rectangle (x + 0.2, y, 0.1, 0.1);
 		gr.MoveTo (x + 0.2 + txtoff_x, y + txtoff_y);
-		gr.ShowText ("2");
+		gr.ShowPangoText ("2");
 
 		gr.Rectangle (x + 0.2, y + 0.1, 0.1, 0.1);
 		gr.MoveTo (x + 0.2 + txtoff_x, y + 0.1 + txtoff_y);
-		gr.ShowText ("3");
+		gr.ShowPangoText ("3");
 
 		gr.Rectangle (x + 0.3, y + 0.1, 0.1, 0.1);
 		gr.MoveTo (x + 0.3 + txtoff_x, y + 0.1 + txtoff_y);
-		gr.ShowText ("4");
+		gr.ShowPangoText ("4");
 
 		gr.Rectangle (x + 0.4, y + 0.1, 0.1, 0.1);
 		gr.MoveTo (x + 0.4 + txtoff_x, y + 0.1 + txtoff_y);
-		gr.ShowText ("5");
+		gr.ShowPangoText ("5");
 
 		gr.Rectangle (x + 0.4, y + 0.2, 0.1, 0.1);
 		gr.MoveTo (x + 0.4 + txtoff_x, y + 0.2 + txtoff_y);
-		gr.ShowText ("6");
+		gr.ShowPangoText ("6");
 
 		gr.Stroke ();
 	}

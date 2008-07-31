@@ -150,8 +150,8 @@ public class PuzzleExtraCircle : Game
 
 			DrawCircle (gr, x + i * 0.23, y + 0.2, colors, start_indices[i]);
 
-			gr.MoveTo (x - 0.07 + i * 0.22, y + 0.38);
-			gr.ShowText (String.Format (Catalog.GetString ("Figure {0}"), (char) (65 + i)));
+			gr.MoveTo (x - 0.07 + i * 0.22, y + 0.36);
+			gr.ShowPangoText (String.Format (Catalog.GetString ("Figure {0}"), (char) (65 + i)));
 			gr.Stroke ();
 		}
 	}

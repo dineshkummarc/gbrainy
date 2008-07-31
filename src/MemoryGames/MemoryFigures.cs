@@ -115,7 +115,7 @@ public class MemoryFigures : Memory
 			return;
 		}
 
-		gr.SetLargeFont ();
+		gr.SetPangoLargeFontSize ();
 		DrawGrid (gr, x, y, area_width, area_height);
 		for (int figure = 0; figure < figures.Count; figure++, col++)
 		{

@@ -197,7 +197,7 @@ public class CustomGameDialog : GtkDialog
 			int w, h, nw, nh;
 			double x = 0, y = 0;
 			Cairo.Context cc = Gdk.CairoHelper.Create (args.Window);
-			CairoContextEx cr = new CairoContextEx (cc.Handle);   
+			CairoContextEx cr = new CairoContextEx (cc.Handle, this);
 			args.Window.GetSize (out w, out h);
 
 			nh = nw = Math.Min (w, h);

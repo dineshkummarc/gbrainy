@@ -173,7 +173,7 @@ public class PuzzleMissingSlice : Game
 		}
 
 		gr.MoveTo (0.1, 0.61);
-		gr.ShowText (Catalog.GetString ("Possible answers are:"));
+		gr.ShowPangoText (Catalog.GetString ("Possible answers are:"));
 
 		y = 0.68;
  		for (int i = 0; i < possible_answers; i++) 
@@ -189,7 +189,7 @@ public class PuzzleMissingSlice : Game
 			}
 			
 			gr.MoveTo (0.10  + i * 0.28, y + 0.25);
-			gr.ShowText (String.Format (Catalog.GetString ("Figure {0}"), (char) (65 + i)));
+			gr.ShowPangoText (String.Format (Catalog.GetString ("Figure {0}"), (char) (65 + i)));
 		}
 	}
 }

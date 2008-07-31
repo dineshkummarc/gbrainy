@@ -177,15 +177,14 @@ public class PuzzleFigurePattern : Game
 		gr.Stroke ();
 		
 		x += figure_size + space_x;
-		gr.Save ();
-		gr.MoveTo (x + 0.03, y + 0.1);
-		gr.SetFontSize (figure_size);	
-		gr.ShowText ("?");
+		gr.MoveTo (x + 0.03, y - 0.02);
+		gr.SetPangoFontSize (figure_size);
+		gr.ShowPangoText ("?");
+		gr.SetPangoNormalFontSize ();
 		gr.Stroke ();
-		gr.Restore ();
 	
-		gr.MoveTo (0.05, y + 0.01 + space_y);
-		gr.ShowText (Catalog.GetString ("Possible answers are:"));
+		gr.MoveTo (0.05, y - 0.01 + space_y);
+		gr.ShowPangoText (Catalog.GetString ("Possible answers are:"));
 
 		// Answers
 		x = org_x;
@@ -205,8 +204,8 @@ public class PuzzleFigurePattern : Game
 				break;
 			}
 			
-			gr.MoveTo (x, y + 0.2);
-			gr.ShowText (String.Format (Catalog.GetString ("Figure {0}"), (char) (65 + i)));
+			gr.MoveTo (x, y + 0.18);
+			gr.ShowPangoText (String.Format (Catalog.GetString ("Figure {0}"), (char) (65 + i)));
 
 			x += figure_size + space_x;			
 		}

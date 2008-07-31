@@ -123,8 +123,8 @@ public class PuzzleFigureLetter : Game
 		gr.Stroke ();
 		gr.Arc (x + 0.11, y + 0.1, 0.05, 0, 2 * Math.PI);
 		gr.Stroke ();
-		gr.MoveTo (x + 0.02, y + 0.2);
-		gr.ShowText ("CDE");
+		gr.MoveTo (x + 0.02, y + 0.18);
+		gr.ShowPangoText ("CDE");
 		gr.Stroke ();
 
 		// Two linked circles
@@ -132,16 +132,16 @@ public class PuzzleFigureLetter : Game
 		gr.Stroke ();
 		gr.Arc (x + 0.3 + 0.06, y + 0.05, 0.05, 0, 2 * Math.PI);
 		gr.Stroke ();
-		gr.MoveTo (x + 0.30, y + 0.2);
-		gr.ShowText ("ACF");
+		gr.MoveTo (x + 0.30, y + 0.18);
+		gr.ShowPangoText ("ACF");
 		gr.Stroke ();
 
 		// Two rectangles
 		gr.Rectangle (x + 0.5, y, 0.1, 0.1);
 		gr.Rectangle (x + 0.62, y, 0.1, 0.1);
 		gr.Stroke ();
-		gr.MoveTo (x + 0.58, y + 0.2);
-		gr.ShowText ("BDF");
+		gr.MoveTo (x + 0.58, y + 0.18);
+		gr.ShowPangoText ("BDF");
 		gr.Stroke ();
 
 	
@@ -150,8 +150,8 @@ public class PuzzleFigureLetter : Game
 		gr.Rectangle (x + 0.06 - 0.05, y + 0.37, 0.1, 0.1);
 		gr.Rectangle (x + 0.12 - 0.05, y + 0.39, 0.1, 0.1);
 		gr.Stroke ();
-		gr.MoveTo (x + 0.04, y + 0.55);
-		gr.ShowText ("ABE");
+		gr.MoveTo (x + 0.04, y + 0.53);
+		gr.ShowPangoText ("ABE");
 		gr.Stroke ();
 
 		x += 0.25;
@@ -162,14 +162,14 @@ public class PuzzleFigureLetter : Game
 			gr.Rectangle (x, y, 0.1, 0.1);
 			gr.Rectangle (x + 0.05, y + 0.03, 0.1, 0.1);
 			gr.Stroke ();
-			gr.MoveTo (x + 0.05, y + 0.2);
+			gr.MoveTo (x + 0.05, y + 0.18);
 			break;
 		case QuestionType.TwoCercles:
 			gr.Arc (x + 0.05, y + 0.05, 0.05, 0, 2 * Math.PI);
 			gr.Stroke ();
 			gr.Arc (x + 0.12 + 0.05, y + 0.05, 0.05, 0, 2 * Math.PI);
 			gr.Stroke ();
-			gr.MoveTo (x + 0.1, y + 0.2);
+			gr.MoveTo (x + 0.1, y + 0.18);
 			break;
 		case QuestionType.ThreeCercles:
 			gr.Arc (x + 0.05 + 0.06, y + 0.04, 0.05, 0, 2 * Math.PI);
@@ -178,11 +178,11 @@ public class PuzzleFigureLetter : Game
 			gr.Stroke ();
 			gr.Arc (x + 0.05  + 0.11, y + 0.06 + 0.04, 0.05, 0, 2 * Math.PI);
 			gr.Stroke ();
-			gr.MoveTo (x + 0.1, y + 0.2);
+			gr.MoveTo (x + 0.1, y + 0.18);
 			break;
 		}
 
-		gr.ShowText ("?");
+		gr.ShowPangoText ("?");
 		gr.Stroke ();		
 	}
 

@@ -143,15 +143,15 @@ public class PuzzleMissingPiece : Game
 
 		DrawFigureSequence (gr, x, y + sub_figure * 2 , 2, false);
 
-		gr.MoveTo (0.1, 0.66);
-		gr.ShowText (Catalog.GetString ("Possible answers are:"));
+		gr.MoveTo (0.1, 0.62);
+		gr.ShowPangoText (Catalog.GetString ("Possible answers are:"));
 
 		x = DrawAreaX + 0.1;
 		for (int i = 0; i < random_indices.Count; i++) {
 			figure = random_indices [i];
 			DrawAnswerFigures (gr, x + (0.08 + sub_figure) * i, 0.70, figure);
 			gr.MoveTo (x + (0.08 + sub_figure) * i, 0.9);
-			gr.ShowText (String.Format (Catalog.GetString ("Figure {0}"), (char) (65 + i)));
+			gr.ShowPangoText (String.Format (Catalog.GetString ("Figure {0}"), (char) (65 + i)));
 		}
 	}
 }

@@ -274,22 +274,22 @@ public class MemoryIndications : Memory
 		x = 0.22; y = 0.3;
 		DrawPossibleAnswers (gr, x, y, WhichAnswer (answers[0]));
 		gr.MoveTo (x, y + 0.2);
-		gr.ShowText (String.Format (Catalog.GetString ("Figure {0}"), "A"));
+		gr.ShowPangoText (String.Format (Catalog.GetString ("Figure {0}"), "A"));
 
 		x = 0.7; y = 0.3;
 		DrawPossibleAnswers (gr, x, y, WhichAnswer (answers[1]));
 		gr.MoveTo (x, y + 0.2);
-		gr.ShowText (String.Format (Catalog.GetString ("Figure {0}"), "B"));
+		gr.ShowPangoText (String.Format (Catalog.GetString ("Figure {0}"), "B"));
 
 		x = 0.22; y = 0.7;
 		DrawPossibleAnswers (gr, x, y, WhichAnswer (answers[2]));
 		gr.MoveTo (x, y + 0.2);
-		gr.ShowText (String.Format (Catalog.GetString ("Figure {0}"), "C"));
+		gr.ShowPangoText (String.Format (Catalog.GetString ("Figure {0}"), "C"));
 
 		x = 0.7; y = 0.7;
 		DrawPossibleAnswers (gr, x, y, WhichAnswer (answers[3]));
 		gr.MoveTo (x, y + 0.2);
-		gr.ShowText (String.Format (Catalog.GetString ("Figure {0}"), "D"));
+		gr.ShowPangoText (String.Format (Catalog.GetString ("Figure {0}"), "D"));
 	}
 	
 	public override void DrawObjectToMemorize (CairoContextEx gr, int area_width, int area_height)
@@ -300,19 +300,19 @@ public class MemoryIndications : Memory
 			for (int i = 0; i < indications.Length; i++)
 			{
 				gr.MoveTo (0.3, 0.2 + i * 0.08);
-				gr.ShowText (indications[i].ToString ());
+				gr.ShowPangoText (indications[i].ToString ());
 				gr.Stroke ();
 			}
 		} else {
 				for (int i = 0; i < indications.Length; i++)
 				{
 					gr.MoveTo (0.1, 0.2 + i * 0.08);
-					gr.ShowText (indications[i].ToString ());
+					gr.ShowPangoText (indications[i].ToString ());
 					gr.Stroke ();
 				}
 				DrawPossibleAnswers (gr, 0.7, 0.3, WhichAnswer (answers[ans]));
 				gr.MoveTo (0.7, 0.5);
-				gr.ShowText (String.Format (Catalog.GetString ("Figure {0}"), (char) (65 + ans)));
+				gr.ShowPangoText (String.Format (Catalog.GetString ("Figure {0}"), (char) (65 + ans)));
 				gr.Stroke ();
 		}
 	}

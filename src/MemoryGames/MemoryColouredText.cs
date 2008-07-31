@@ -80,7 +80,7 @@ public class MemoryColouredText : Memory
 		{
 			gr.Color = palette.Cairo(i);
 			gr.MoveTo (x, y);
-			gr.ShowText ( palette.Name((ColorPalette.Id)i) );
+			gr.ShowPangoText ( palette.Name((ColorPalette.Id)i) );
 			gr.Stroke ();
 			
 			if (i == 2) {

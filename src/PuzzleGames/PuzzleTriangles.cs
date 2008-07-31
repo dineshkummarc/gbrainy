@@ -90,26 +90,26 @@ public class PuzzleTriangles : Game
 			return;
 
 		// References
-		gr.MoveTo (x - 0.02, y - 0.02);
-		gr.ShowText ("a");
+		gr.MoveTo (x - 0.02, y);
+		gr.ShowPangoText ("a");
 
-		gr.MoveTo (x + witdh /2  - 0.02, y - 0.02);
-		gr.ShowText ("b");
+		gr.MoveTo (x + witdh /2  - 0.02, y);
+		gr.ShowPangoText ("b");
 
-		gr.MoveTo (x + witdh, y - 0.02);
-		gr.ShowText ("c");
+		gr.MoveTo (x + witdh, y);
+		gr.ShowPangoText ("c");
 
-		gr.MoveTo (x + witdh /2  - 0.03, y + 0.09 - 0.02);
-		gr.ShowText ("d");
+		gr.MoveTo (x + witdh /2  - 0.03, y + 0.07 - 0.02);
+		gr.ShowPangoText ("d");
 
-		gr.MoveTo (x + 0.11, y + 0.16 - 0.02);
-		gr.ShowText ("e");
+		gr.MoveTo (x + 0.11, y + 0.16);
+		gr.ShowPangoText ("e");
 
-		gr.MoveTo (x + 0.47, y + 0.16 - 0.02);
-		gr.ShowText ("f");
+		gr.MoveTo (x + 0.47, y + 0.16);
+		gr.ShowPangoText ("f");
 
-		gr.MoveTo (x + (witdh /2) - 0.01, y + 0.28);
-		gr.ShowText ("g");
+		gr.MoveTo (x + (witdh /2) - 0.01, y + 0.26);
+		gr.ShowPangoText ("g");
 
 	}
 

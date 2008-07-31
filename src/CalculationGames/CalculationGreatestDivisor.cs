@@ -199,16 +199,16 @@ public class CalculationGreatestDivisor : Game
 
 		base.Draw (gr, area_width, area_height);
 
-		gr.SetLargeFont ();
+		gr.SetPangoLargeFontSize ();
 
 		gr.MoveTo (0.05, y);
-		gr.ShowText (Catalog.GetString ("Numbers"));
+		gr.ShowPangoText (Catalog.GetString ("Numbers"));
 		y += 0.12;
 
 		for (int n = 0; n < numbers.Length; n++)
 		{
 			gr.MoveTo (x, y);
-			gr.ShowText (numbers[n].ToString ());
+			gr.ShowPangoText (numbers[n].ToString ());
 			gr.Stroke ();
 			x += 0.17;
 		}
@@ -217,13 +217,13 @@ public class CalculationGreatestDivisor : Game
 		y += 0.3;
 
 		gr.MoveTo (0.05, y);
-		gr.ShowText (Catalog.GetString ("Possible divisors"));
+		gr.ShowPangoText (Catalog.GetString ("Possible divisors"));
 		y += 0.12;
 
 		for (int n = 0; n < answers.Length; n++)
 		{
 			gr.MoveTo (x, y);
-			gr.ShowText (answers[n].ToString ());
+			gr.ShowPangoText (answers[n].ToString ());
 			gr.Stroke ();
 			x += 0.17;
 		}

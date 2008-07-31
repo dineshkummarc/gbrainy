@@ -71,19 +71,19 @@ public class PuzzleFigures : Game
 	{
 		double pos_x = x;
 
-		gr.MoveTo (pos_x, y);
+		gr.MoveTo (pos_x, y - 0.01);
 		y += 0.05;
-		gr.ShowText (Catalog.GetString ("Convention when giving the answer is:"));
+		gr.ShowPangoText (Catalog.GetString ("Convention when giving the answer is:"));
 
 		gr.MoveTo (pos_x, y + 0.05);
-		gr.ShowText ("A ->");
+		gr.ShowPangoText ("A ->");
 		gr.Stroke ();
 		gr.DrawDiamond (x + 0.1, y, 0.1);
 		gr.Stroke ();
 	
 		pos_x += 0.3;
 		gr.MoveTo (pos_x, y + 0.05);
-		gr.ShowText ("B ->");
+		gr.ShowPangoText ("B ->");
 		gr.Stroke ();
 		pos_x += 0.1;
 		gr.Arc (pos_x + 0.05, y + 0.05, 0.05, 0, 2 * Math.PI);	
@@ -91,15 +91,15 @@ public class PuzzleFigures : Game
 
 		pos_x += 0.2;
 		gr.MoveTo (pos_x, y + 0.05);
-		gr.ShowText ("C ->");
+		gr.ShowPangoText ("C ->");
 		gr.Stroke ();
 		pos_x += 0.1;
 		gr.DrawEquilateralTriangle (pos_x, y, 0.1);
 		gr.Stroke ();
 
-		y += 0.18;
+		y += 0.16;
 		gr.MoveTo (x, y);		
-		gr.ShowText (Catalog.GetString ("E.g: ACB (diamond, triangle, circle)"));	
+		gr.ShowPangoText (Catalog.GetString ("E.g: ACB (diamond, triangle, circle)"));	
 	}
 
 	public override void Draw (CairoContextEx gr, int area_width, int area_height)
@@ -137,17 +137,17 @@ public class PuzzleFigures : Game
 		}
 
 		if (DrawAnswer == false) {
-			y = DrawAreaY + 0.08;
+			y = DrawAreaY;
 			gr.Save ();
-			gr.SetFontSize (0.1);
+			gr.SetPangoFontSize (0.1);
 			for (int n = 0; n < 3; n++) {
-				gr.MoveTo (x, y);
-				gr.ShowText ("?");
+				gr.MoveTo (x, y - 0.02);
+				gr.ShowPangoText ("?");
 				gr.Stroke ();
-				y+= figure_height + space_height;		
+				y+= figure_height + space_height;
 			}
+			gr.SetPangoNormalFontSize ();
 			gr.Restore ();	
-			y -= 0.08;
 		}
 
 		AnswerCoding (gr, DrawAreaX, y);

@@ -140,8 +140,6 @@ public abstract class Memory : Game
 		gr.Scale (width, height);
 		gr.DrawBackground ();
 		gr.Color = new Cairo.Color (0, 0, 0);
-		gr.SelectFontFace ("Sans", FontSlant.Normal, FontWeight.Bold);
-		gr.SetNormalFont ();
 		gr.LineWidth = LineWidth;
 		DrawObjectToMemorize (gr, width, height);
 	}

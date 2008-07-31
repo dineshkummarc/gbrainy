@@ -126,7 +126,7 @@ public class MemoryWords : Memory
 				continue;
 
 			gr.MoveTo (x, y);
-			gr.ShowText (words[words_order[i]]);
+			gr.ShowPangoText (words[words_order[i]]);
 			gr.Stroke ();
 
 			if ((cnt + 1) % 3 == 0) {
@@ -151,7 +151,7 @@ public class MemoryWords : Memory
 		for (int i = 0; i < showed; i++)
 		{
 			gr.MoveTo (x, y);
-			gr.ShowText (words[words_order[i]]);
+			gr.ShowPangoText (words[words_order[i]]);
 			gr.Stroke ();
 			
 			if ((i + 1) % 3 == 0) {

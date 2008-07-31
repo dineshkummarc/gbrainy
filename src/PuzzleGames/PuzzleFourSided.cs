@@ -96,39 +96,39 @@ public class PuzzleFourSided : Game
 
 		// References
 		gr.MoveTo (x - 0.04, y - 0.02);
-		gr.ShowText ("a");
+		gr.ShowPangoText ("a");
 		gr.Stroke ();
 
 		gr.MoveTo (x + w / 2 - 0.02, y - 0.02);
-		gr.ShowText ("b");
+		gr.ShowPangoText ("b");
 		gr.Stroke ();
 
 		gr.MoveTo (x + w + 0.02, y - 0.02);
-		gr.ShowText ("c");
+		gr.ShowPangoText ("c");
 		gr.Stroke ();
 
 		gr.MoveTo (x - 0.04, y + h /2 - 0.02);
-		gr.ShowText ("d");
+		gr.ShowPangoText ("d");
 		gr.Stroke ();
 
 		gr.MoveTo (x + w / 2 - 0.04, y  + h /2 - 0.04);
-		gr.ShowText ("e");
+		gr.ShowPangoText ("e");
 		gr.Stroke ();
 
 		gr.MoveTo (x + w + 0.02, y  + h /2 - 0.02);
-		gr.ShowText ("f");
+		gr.ShowPangoText ("f");
 		gr.Stroke ();
 
 		gr.MoveTo (x - 0.04, y + h + 0.04);
-		gr.ShowText ("g");
+		gr.ShowPangoText ("g");
 		gr.Stroke ();
 
 		gr.MoveTo (x + w / 2 - 0.02, y + h + 0.04);
-		gr.ShowText ("h");
+		gr.ShowPangoText ("h");
 		gr.Stroke ();
 
 		gr.MoveTo (x + w + 0.02, y + h + 0.04);
-		gr.ShowText ("i");
+		gr.ShowPangoText ("i");
 		gr.Stroke ();
 
 	}

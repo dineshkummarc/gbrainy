@@ -138,7 +138,7 @@ public class CalculationFractions : Game
 
 		base.Draw (gr, area_width, area_height);
 
-		gr.SetLargeFont ();
+		gr.SetPangoLargeFontSize ();
 
 		for (int i = 0; i < fractions_num; i++) 
 		{
@@ -146,20 +146,20 @@ public class CalculationFractions : Game
 			gr.DrawTextAlignedRight (x + offset_x, y, fractions[i].numerator.ToString ());
 
 			// Sign
-			gr.MoveTo (x, y + 0.03);	
+			gr.MoveTo (x, y + 0.04);
 			switch (fractions[i].operation) {
 			case Operation.Addition:
-				gr.ShowText ("+");
+				gr.ShowPangoText ("+");
 				break;	
 			case Operation.Subtraction:
-				gr.ShowText ("-");
+				gr.ShowPangoText ("-");
 				break;
 			}
 			gr.Stroke ();
 
 			// Line
-			gr.MoveTo (x + 0.05, y + 0.02);
-			gr.LineTo (x + offset_x + 0.02,  y + 0.02);
+			gr.MoveTo (x + 0.05, y + 0.08);
+			gr.LineTo (x + offset_x + 0.02,  y + 0.08);
 			gr.Stroke ();
 
 			// Denominator

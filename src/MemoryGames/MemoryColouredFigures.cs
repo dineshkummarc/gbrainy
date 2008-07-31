@@ -145,8 +145,8 @@ public class MemoryColouredFigures : Memory
 				x = DrawAreaX;
 			}
 			DrawSquare (gr, x, y, squares_colours, squares * answers_order[i]);
-			gr.MoveTo (x, y + block_space + 0.02);
-			gr.ShowText (String.Format (Catalog.GetString ("Figure {0}"), (char) (65 + i)));
+			gr.MoveTo (x, y + block_space - 0.02);
+			gr.ShowPangoText (String.Format (Catalog.GetString ("Figure {0}"), (char) (65 + i)));
 			gr.Stroke ();
 			x += block_space + 0.08;
 		}
@@ -166,10 +166,7 @@ public class MemoryColouredFigures : Memory
 			for (int row = 0; row < rows; row++) {
 
 				// if you want 2 schemes (primary or secundary colors)
-				Color c = palette.Cairo(ColorPalette.Id.First+ color_sheme*3 + (int)colours[index+(columns * row) + column] );
-				// if you want 3 colors at random
-				// gr.Color = palette.Cairo((int)colorus[index+(columns*row)+ column]);
-
+				Color c = palette.Cairo(ColorPalette.Id.First+ color_sheme*3 + (int)colours[index+(columns * row) + column]);
 				gr.Rectangle (x + row * rect_w, y + column * rect_h, rect_w, rect_h);
 				gr.FillGradient (x + row * rect_w, y + column * rect_h, rect_w, rect_h, c);
 			}

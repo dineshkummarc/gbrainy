@@ -89,8 +89,8 @@ public class PlayerHistoryDialog : GtkDialog
 			cr.LineTo (x + line_size, y);
 			cr.Stroke ();
 			cr.Color = text_color;
-			cr.MoveTo (x + line_size + offset_x, y + 0.01);
-			cr.ShowText (Catalog.GetString ("Total"));
+			cr.MoveTo (x + line_size + offset_x, y - 0.01);
+			cr.ShowPangoText (Catalog.GetString ("Total"));
 			cr.Stroke ();
 
 			cr.Color = logic_color;
@@ -98,8 +98,8 @@ public class PlayerHistoryDialog : GtkDialog
 			cr.LineTo (x + line_size, y + second_row);
 			cr.Stroke ();
 			cr.Color = text_color;
-			cr.MoveTo (x + line_size + offset_x, y + 0.01 + second_row);
-			cr.ShowText (Catalog.GetString ("Logic"));
+			cr.MoveTo (x + line_size + offset_x, y - 0.01 + second_row);
+			cr.ShowPangoText (Catalog.GetString ("Logic"));
 			cr.Stroke ();
 
 			x += 0.5;
@@ -108,8 +108,8 @@ public class PlayerHistoryDialog : GtkDialog
 			cr.LineTo (x + line_size, y);
 			cr.Stroke ();
 			cr.Color = text_color;
-			cr.MoveTo (x + line_size + offset_x, y + 0.01);
-			cr.ShowText (Catalog.GetString ("Memory"));
+			cr.MoveTo (x + line_size + offset_x, y - 0.01);
+			cr.ShowPangoText (Catalog.GetString ("Memory"));
 			cr.Stroke ();
 
 			cr.Color = math_color;
@@ -117,8 +117,8 @@ public class PlayerHistoryDialog : GtkDialog
 			cr.LineTo (x + line_size, y + second_row);
 			cr.Stroke ();
 			cr.Color = text_color;
-			cr.MoveTo (x + line_size + offset_x, y + 0.01 + second_row);
-			cr.ShowText (Catalog.GetString ("Calculation"));
+			cr.MoveTo (x + line_size + offset_x, y - 0.01 + second_row);
+			cr.ShowPangoText (Catalog.GetString ("Calculation"));
 			cr.Stroke ();
 		}
 
@@ -206,7 +206,7 @@ public class PlayerHistoryDialog : GtkDialog
 			double x = 0, y = 0;
 
 			Cairo.Context cc = Gdk.CairoHelper.Create (args.Window);
-			CairoContextEx cr = new CairoContextEx (cc.Handle);   
+			CairoContextEx cr = new CairoContextEx (cc.Handle, this);
 			args.Window.GetSize (out w, out h);
 
 			nh = nw = Math.Min (w, h);
@@ -221,7 +221,6 @@ public class PlayerHistoryDialog : GtkDialog
 		
 			cr.Translate (x, y);
 			cr.Scale (nw, nh);
-			cr.SetNormalFont ();
 
 			// Background
 			cr.Color = new Cairo.Color (1, 1, 1);

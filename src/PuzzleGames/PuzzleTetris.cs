@@ -142,15 +142,15 @@ public class PuzzleTetris : Game
 			x += space_figures;
 		}
 
-		gr.MoveTo (0.1, 0.4);
-		gr.ShowText (Catalog.GetString ("Possible answers are:"));
+		gr.MoveTo (0.1, 0.4 - 0.02);
+		gr.ShowPangoText (Catalog.GetString ("Possible answers are:"));
 
 		x = 0.2;
 		y = 0.6;
 		for (int i = 0; i < 3; i++) {
 			DrawAnswerFigures (gr, x, y, random_indices_answers [i]);
-			gr.MoveTo (x, y + 0.15);
-			gr.ShowText (String.Format (Catalog.GetString ("Figure {0}"), (char) (65 + i)));
+			gr.MoveTo (x, y + 0.13);
+			gr.ShowPangoText (String.Format (Catalog.GetString ("Figure {0}"), (char) (65 + i)));
 			x += space_figures;
 		}
 	}

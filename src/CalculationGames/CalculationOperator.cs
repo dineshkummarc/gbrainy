@@ -87,22 +87,22 @@ public class CalculationOperator : Game
 
 		base.Draw (gr, area_width, area_height);
 
-		gr.SetLargeFont ();
+		gr.SetPangoLargeFontSize ();
 		gr.DrawTextAlignedRight (aligned_pos, DrawAreaY + 0.2, number_a.ToString ());
 		gr.DrawTextAlignedRight (aligned_pos, DrawAreaY + 0.3, number_b.ToString ());
 		gr.DrawTextAlignedRight (aligned_pos, DrawAreaY + 0.4, number_c.ToString ());
 
-		gr.MoveTo (DrawAreaX + 0.2, DrawAreaY + 0.45);
-		gr.LineTo (DrawAreaX + 0.5, DrawAreaY + 0.45);
+		gr.MoveTo (DrawAreaX + 0.2, DrawAreaY + 0.5);
+		gr.LineTo (DrawAreaX + 0.5, DrawAreaY + 0.5);
 		gr.Stroke ();
 
 		gr.DrawTextAlignedRight (aligned_pos, DrawAreaY + 0.55, total.ToString ());
 
 		gr.MoveTo (DrawAreaX + 0.2, DrawAreaY + 0.25);
-		gr.ShowText ((DrawAnswer == true) ? oper1.ToString () : "?");
+		gr.ShowPangoText ((DrawAnswer == true) ? oper1.ToString () : "?");
 
 		gr.MoveTo (DrawAreaX + 0.2, DrawAreaY + 0.35);
-		gr.ShowText ((DrawAnswer == true) ?  oper2.ToString () : "?");
+		gr.ShowPangoText ((DrawAnswer == true) ?  oper2.ToString () : "?");
 
 	}
 

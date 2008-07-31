@@ -101,14 +101,14 @@ public class PuzzleTrianglesWithNumbers : Game
 		gr.LineTo (x + figure_size / 2, y + figure_size);
 		gr.Stroke ();
 
-		gr.MoveTo (x + 0.04, y + 0.17);
-		gr.ShowText (numbers [(elements_group * group) + index * 2].ToString ());	
-		gr.MoveTo (x + 0.12, y + 0.17);
+		gr.MoveTo (x + 0.04, y + 0.15);
+		gr.ShowPangoText (numbers [(elements_group * group) + index * 2].ToString ());	
+		gr.MoveTo (x + 0.12, y + 0.15);
 
 		if (question == true)
-			gr.ShowText ("?");	
+			gr.ShowPangoText ("?");	
 		else
-			gr.ShowText (numbers [(elements_group * group) + (index * 2) + 1].ToString ());	
+			gr.ShowPangoText (numbers [(elements_group * group) + (index * 2) + 1].ToString ());	
 	}
 
 	public override void Draw (CairoContextEx gr, int area_width, int area_height)

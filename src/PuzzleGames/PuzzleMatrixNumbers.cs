@@ -139,13 +139,13 @@ public class PuzzleMatrixNumbers : Game
 
 				if (row != 3  || column != 3) {
 					gr.MoveTo (0.04 + DrawAreaX + column * rect_w, (rect_h / 2) + DrawAreaY + row * rect_h);
-					gr.ShowText ( (numbers[column + (row * 4)]).ToString() );
+					gr.ShowPangoText ( (numbers[column + (row * 4)]).ToString() );
 				}
 			}
 		}
 
 		gr.MoveTo (0.04 + DrawAreaX + 3 * rect_w, (rect_h / 2) + DrawAreaY + 3 * rect_h);
-		gr.ShowText ("?");
+		gr.ShowPangoText ("?");
 		gr.Stroke ();
 	}
 

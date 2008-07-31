@@ -79,7 +79,7 @@ public class PuzzleMoveFigure: Game
 		margin = ((1.0 - (figure_size * lines * 2)) / 2);
 
 		x = first_x = margin + (figure_size * lines / 2) + figure_size / 2;
-		y = DrawAreaY;
+		y = DrawAreaY + 0.2;
 		for (int line = 0; line < lines + 1; line++)
 		{
 			for (int circles = 0; circles < line; circles++)
@@ -94,7 +94,7 @@ public class PuzzleMoveFigure: Game
 
 		// Figure 2
 		first_x = margin + (figure_size * lines);
-		y = DrawAreaY + figure_size;
+		y = DrawAreaY + 0.2 + figure_size;
 		for (int line = 0; line < lines; line++)
 		{
 			x = first_x = first_x + (figure_size / 2);

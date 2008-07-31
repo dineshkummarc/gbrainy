@@ -174,15 +174,15 @@ public class PuzzleSquareDots : Game
 		DrawFigure (gr, x + (figure_size + space_figures) * 2, y, puzzle_A, columns * lines * 2);
 	
 		y += figure_size + 0.10;
-		gr.MoveTo (x, y);
-		gr.ShowText (Catalog.GetString ("Possible answers are:"));
+		gr.MoveTo (x, y - 0.02);
+		gr.ShowPangoText (Catalog.GetString ("Possible answers are:"));
 		gr.Stroke ();
 		y += 0.05;
 
 		for (int i = 0; i < possible_answers.Count; i++) {
 			DrawPossibleAnswer (gr, x, y, possible_answers[i]);
 			gr.MoveTo (x, y + figure_size + 0.05);
-			gr.ShowText (String.Format (Catalog.GetString ("Figure {0}"), (char) (65 + i)));
+			gr.ShowPangoText (String.Format (Catalog.GetString ("Figure {0}"), (char) (65 + i)));
 			gr.Stroke ();
 			x+= figure_size + space_figures;
 		}
