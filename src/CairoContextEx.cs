@@ -28,6 +28,7 @@ public class CairoContextEx : Cairo.Context
 {
 	Pango.Layout layout;
 	double font_size;
+	static SVGImage image = null;
 
 	const double line_space = 0.018;
 
@@ -218,13 +219,13 @@ public class CairoContextEx : Cairo.Context
 	virtual public void DrawBackground ()
 	{
 		try {
-			using (SVGImage image = new SVGImage (Defines.DATA_DIR + "background.svg")) 
-			{
-				Save ();
-				Scale (0.999 / image.Width, 0.999 / image.Height);
-				image.RenderToCairo (Handle);
-				Restore ();
-			}
+			if (image == null)
+				image = new SVGImage (Defines.DATA_DIR + "background.svg");
+
+			Save ();
+			Scale (0.999 / image.Width, 0.999 / image.Height);
+			image.RenderToCairo (Handle);
+			Restore ();
 
 		} catch {
 		}

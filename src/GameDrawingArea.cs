@@ -109,6 +109,7 @@ public class GameDrawingArea : DrawingArea
 			gr.SetSourceSurface (image, 0, 0);
 			gr.Paint ();
 			gr.Restore ();
+			image.Destroy ();
 		}
 		gr.DrawStringWithWrapping (0.23, y + 0.01, Catalog.GetString ("Logic puzzles. Designed to challenge your reasoning and thinking skills."));
 
@@ -121,6 +122,7 @@ public class GameDrawingArea : DrawingArea
 			gr.SetSourceSurface (image, 0, 0);
 			gr.Paint ();
 			gr.Restore ();
+			image.Destroy ();
 		}
 		gr.DrawStringWithWrapping (0.23, y + 0.01, Catalog.GetString ("Mental calculation. Based on arithmetical operations that test your mental calculation abilities."));
 
@@ -133,6 +135,7 @@ public class GameDrawingArea : DrawingArea
 			gr.SetSourceSurface (image, 0, 0);
 			gr.Paint ();
 			gr.Restore ();
+			image.Destroy ();
 		}
 		gr.DrawStringWithWrapping (0.23, y + 0.01, Catalog.GetString ("Memory trainers. To prove and enhance your short term memory."));
 		gr.Stroke ();
