@@ -23,7 +23,7 @@ using Mono.Unix;
 using System.Timers;
 using Gtk;
 
-public class MemoryNumbers : Memory
+public class MemoryFiguresNumbers : Memory
 {
 	private int [] numbers;
 	private int rows, columns, squares;

@@ -78,7 +78,7 @@ public class GameManager
 	static Type[] MemoryTrainers = new Type[] 
 	{
 		typeof (MemoryColouredFigures),
-		typeof (MemoryNumbers),
+		typeof (MemoryFiguresNumbers),
 		typeof (MemoryColouredText),
 		typeof (MemoryWords),
 		typeof (MemoryCountDots),
