@@ -43,6 +43,7 @@ public class GameDrawingArea : DrawingArea
 	private const int tips_count = 10;
 	private const int tips_shown = 4;
 	private CountDown countdown;
+	private bool rtl;
 
 	public GameDrawingArea ()
 	{
@@ -50,6 +51,7 @@ public class GameDrawingArea : DrawingArea
 		puzzle = null;
 		session = null;
 		countdown = null;
+		rtl = Direction == Gtk.TextDirection.Rtl;
 	}
 
 	public GameSession GameSession {
@@ -95,7 +97,7 @@ public class GameDrawingArea : DrawingArea
 		gr.Color = new Cairo.Color (0, 0, 0, 1);
 
 		gr.MoveTo (0.05, y);
-		gr.ShowPangoText (String.Format (Catalog.GetString ("Welcome to gbrainy {0}"), Defines.VERSION), true);
+		gr.ShowPangoText (String.Format (Catalog.GetString ("Welcome to gbrainy {0}"), Defines.VERSION), true, -1);
 		gr.Stroke ();
 
 		gr.DrawStringWithWrapping (0.05, y + 0.07, Catalog.GetString ("gbrainy is a brain teaser game and trainer to have fun and to keep your brain trained. It includes:"));
@@ -104,41 +106,46 @@ public class GameDrawingArea : DrawingArea
 		image = new ImageSurface (Defines.DATA_DIR + "logic-games-80.png");
 		if (image.Width > 0) {
 			gr.Save ();
-			gr.Translate (0.05, y);
+			gr.Translate (rtl ? 0.75 : 0.05, y);
 			gr.Scale (0.8 / area_width, 0.8 / area_height);
 			gr.SetSourceSurface (image, 0, 0);
 			gr.Paint ();
 			gr.Restore ();
 			image.Destroy ();
 		}
-		gr.DrawStringWithWrapping (0.23, y + 0.01, Catalog.GetString ("Logic puzzles. Designed to challenge your reasoning and thinking skills."));
+		gr.DrawStringWithWrapping (rtl ? 0.05 : 0.23, y + 0.01, 
+			Catalog.GetString ("Logic puzzles. Designed to challenge your reasoning and thinking skills."), 
+			rtl ? 0.65 : -1);
 
 		y += space;
 		image = new ImageSurface (Defines.DATA_DIR + "math-games-80.png");
 		if (image.Width > 0) {
 			gr.Save ();
-			gr.Translate (0.05, y);
+			gr.Translate (rtl ? 0.75 : 0.05, y);
 			gr.Scale (0.8 / area_width, 0.8 / area_height);
 			gr.SetSourceSurface (image, 0, 0);
 			gr.Paint ();
 			gr.Restore ();
 			image.Destroy ();
 		}
-		gr.DrawStringWithWrapping (0.23, y + 0.01, Catalog.GetString ("Mental calculation. Based on arithmetical operations that test your mental calculation abilities."));
+		gr.DrawStringWithWrapping (rtl ? 0.05 : 0.23, y + 0.01, 
+			Catalog.GetString ("Mental calculation. Based on arithmetical operations that test your mental calculation abilities."),
+			rtl ? 0.65 : -1);
 
 		y += space;
 		image = new ImageSurface (Defines.DATA_DIR + "memory-games-80.png");
 		if (image.Width > 0) {
 			gr.Save ();
-			gr.Translate (0.05, y);
+			gr.Translate (rtl ? 0.75 : 0.05, y);
 			gr.Scale (0.8 / area_width, 0.8 / area_height);
 			gr.SetSourceSurface (image, 0, 0);
 			gr.Paint ();
 			gr.Restore ();
 			image.Destroy ();
 		}
-		gr.DrawStringWithWrapping (0.23, y + 0.01, Catalog.GetString ("Memory trainers. To prove and enhance your short term memory."));
-		gr.Stroke ();
+		gr.DrawStringWithWrapping (rtl ? 0.05 : 0.23, y + 0.01, 
+			Catalog.GetString ("Memory trainers. To prove and enhance your short term memory."),
+			rtl ? 0.65 : -1);
 
 		gr.DrawStringWithWrapping (0.05, y + 0.2,  Catalog.GetString ("Use the Settings to adjust the difficulty level of the game."));
 		gr.Stroke ();
@@ -207,7 +214,7 @@ public class GameDrawingArea : DrawingArea
 		gr.Color = new Cairo.Color (0, 0, 0, 1);
 
 		gr.MoveTo (x, y);
-		gr.ShowPangoText (Catalog.GetString ("Score"));
+		gr.ShowPangoText (Catalog.GetString ("Score"), false, -1);
 		DrawBand (gr, 0.03, y - 0.01);
 
 		y += 0.08;
@@ -241,7 +248,7 @@ public class GameDrawingArea : DrawingArea
 		y += 0.4;
 
 		gr.MoveTo (x, y);
-		gr.ShowPangoText (Catalog.GetString ("Tips for your next games"));
+		gr.ShowPangoText (Catalog.GetString ("Tips for your next games"), false, -1);
 		DrawBand (gr, 0.03, y - 0.01);
 
 		y += 0.08;

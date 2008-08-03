@@ -31,6 +31,7 @@ public class CairoContextEx : Cairo.Context
 	static SVGImage image = null;
 
 	const double line_space = 0.018;
+	const double width_margin = 0.04;
 
 	public CairoContextEx (IntPtr state, Gtk.Widget widget) : base (state)
 	{
@@ -75,6 +76,8 @@ public class CairoContextEx : Cairo.Context
 		and Pango paints on the top-left of the coordinate
 	*/
 
+
+	// Shows a text from the current position. No Width defined then no RTL positioning
 	public void ShowPangoText (string str)
 	{
 		Cairo.Matrix old = Matrix;
@@ -83,20 +86,29 @@ public class CairoContextEx : Cairo.Context
 		Matrix = new Cairo.Matrix ();		
 		layout.SetText (str);
 		layout.SingleParagraphMode = true;
-		layout.Width = -1;
 		Pango.CairoHelper.UpdateLayout (this, layout);
 		Pango.CairoHelper.ShowLayout (this, layout);
 		Matrix = old;
 	}
 
-	public void ShowPangoText (string str, bool bold)
+	// Shows a text from the current position. Defines all the line as text drawing box
+	public void ShowPangoText (string str, bool bold, double width)
 	{
+		Pango.Alignment align = layout.Alignment;
+
 		if (bold) {
 			layout.FontDescription.Weight = Pango.Weight.Bold;
 		}
 
+		if (width == -1) { // Calculates maximum width in the user space
+			layout.Width = (int) (((1 - width_margin) * Matrix.Xx - (CurrentPoint.X * Matrix.Xx)) * Pango.Scale.PangoScale);
+		} else 
+			layout.Width = (int) (width * Matrix.Xx * Pango.Scale.PangoScale);
+
 		ShowPangoText (str);
 		layout.FontDescription.Weight = Pango.Weight.Normal;
+		layout.Width = -1;
+		layout.Alignment = align;
 	}
 
 	public void SetPangoNormalFontSize ()
@@ -118,6 +130,7 @@ public class CairoContextEx : Cairo.Context
 		Draw text functions
 	*/		
 		
+	// Used for fractions that right align is needed
 	public void DrawTextAlignedRight (double x, double y, string str)
 	{
 		int w, h;
@@ -157,6 +170,11 @@ public class CairoContextEx : Cairo.Context
 
 	public double DrawStringWithWrapping (double x, double y, string str)
 	{
+		return DrawStringWithWrapping (x, y, str, -1);
+	}
+
+	public double DrawStringWithWrapping (double x, double y, string str, double width)
+	{
 		int w, h;
 		Cairo.Matrix old = Matrix;
 
@@ -164,7 +182,11 @@ public class CairoContextEx : Cairo.Context
 		UpdateFontSize ();
 		Matrix = new Cairo.Matrix ();
 
-		layout.Width = (int) ((1.0 - x - 0.02) * old.Xx * Pango.Scale.PangoScale);
+		if (width == -1)
+			layout.Width = (int) ((1.0 - x -  width_margin) * old.Xx * Pango.Scale.PangoScale);
+		else	
+			layout.Width = (int) (width * old.Xx * Pango.Scale.PangoScale);
+
 		layout.Spacing = (int) (line_space * (old.Xx * Pango.Scale.PangoScale));
 		layout.SingleParagraphMode = false;
 		layout.SetText (str);
@@ -232,6 +254,4 @@ public class CairoContextEx : Cairo.Context
 	}
 
 }
-
-
 
