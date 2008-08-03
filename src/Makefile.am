@@ -23,7 +23,7 @@ GBRAINY_CSDISTFILES =				\
 	$(srcdir)/CalculationGames/CalculationArithmetical.cs	\
 	$(srcdir)/MemoryGames/MemoryColouredFigures.cs	\
 	$(srcdir)/GameSession.cs		\
-	$(srcdir)/MemoryGames/MemoryNumbers.cs		\
+	$(srcdir)/MemoryGames/MemoryFiguresNumbers.cs		\
 	$(srcdir)/Memory.cs			\
 	$(srcdir)/MemoryGames/MemoryColouredText.cs		\
 	$(srcdir)/PuzzleGames/PuzzleCube.cs			\

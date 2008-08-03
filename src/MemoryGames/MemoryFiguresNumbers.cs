@@ -33,7 +33,7 @@ public class MemoryNumbers : Memory
 	private const double block_space = 0.35;
 
 	public override string Name {
-		get {return Catalog.GetString ("Memorize numbers");}
+		get {return Catalog.GetString ("Figures with numbers");}
 	}
 
 	public override string MemoryQuestion {
