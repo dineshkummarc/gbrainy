@@ -68,6 +68,7 @@ GBRAINY_CSDISTFILES =				\
 	$(srcdir)/PuzzleGames/PuzzleFourSided.cs		\
 	$(srcdir)/PuzzleGames/PuzzleLargerShape.cs		\
 	$(srcdir)/SVGImage.cs			\
+	$(srcdir)/MemoryGames/MemoryNumbers.cs		\
 	$(srcdir)/gbrainy.cs			
 
 ASSEMBLIES = \

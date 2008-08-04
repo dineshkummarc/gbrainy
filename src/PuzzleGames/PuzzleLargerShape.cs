@@ -111,7 +111,7 @@ public class PuzzleLargerShape : Game
 	}
 
 	public override string Question {
-		get {return Catalog.GetString ("Which larger shape can you make combining the first two figures?");} 
+		get {return Catalog.GetString ("Which larger shape can you make combining the first two figures?  Answer A, B, C or D.");} 
 	}
 
 	public override void Initialize ()
