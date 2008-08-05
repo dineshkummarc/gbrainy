@@ -116,6 +116,7 @@ public class MemoryIndications : Memory
 					break;
 				}
 				gr.Rectangle (x, y, points, points);
+				gr.Stroke ();
 				gr.DrawTextCentered (x + points /2 , y + points /2, ((int)obj).ToString ());
 			}
 		}	

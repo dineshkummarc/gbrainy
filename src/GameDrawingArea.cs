@@ -243,7 +243,7 @@ public class GameDrawingArea : DrawingArea
 		gr.MoveTo (x, y);
 		gr.ShowPangoText (String.Format (Catalog.GetString ("Time played {0} (average per game {1})"), session.GameTime, session.TimePerGame));
 		
-		y += 0.06;
+		y += 0.1;
 		DrawGraphicBar (gr, x + 0.05, y);
 		y += 0.4;
 
