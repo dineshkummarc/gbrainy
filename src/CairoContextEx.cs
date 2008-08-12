@@ -245,6 +245,7 @@ public class CairoContextEx : Cairo.Context
 				image = new SVGImage (Defines.DATA_DIR + "background.svg");
 
 			Save ();
+			Rectangle (0, 0, 1, 1);
 			Scale (0.999 / image.Width, 0.999 / image.Height);
 			image.RenderToCairo (Handle);
 			Restore ();
