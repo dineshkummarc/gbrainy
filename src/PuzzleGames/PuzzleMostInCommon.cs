@@ -72,7 +72,9 @@ public class PuzzleMostInCommon : Game
 	}
 
 	public override string Question {
-		get {return Catalog.GetString ("Which of the possible answers have the most in common with the four given figures? Answer A, B, C or D.");} 
+		get {return String.Format (
+			Catalog.GetString ("Which of the possible answers have the most in common with the four given figures? Answer {0}, {1}, {2} or {3}."),
+				GetPossibleAnswer (0), GetPossibleAnswer (1), GetPossibleAnswer (2), GetPossibleAnswer (3));}
 	}
 
 	public override string Tip {
@@ -112,7 +114,7 @@ public class PuzzleMostInCommon : Game
 
 		for (int i = 0; i < random_indices_answers.Count; i++) {
 			if ((int) random_indices_answers [i] == 0) {
-				right_answer += (char) (65 + i);
+				right_answer = GetPossibleAnswer (i);
 				break;
 			}
 		}
@@ -287,7 +289,7 @@ public class PuzzleMostInCommon : Game
 			DrawFigure (gr, x, y, (FigureElement []) answers[(int)random_indices_answers[i]]);
 			gr.MoveTo (x, y + 0.2);
 			x+= 0.22;
-			gr.ShowPangoText (String.Format (Catalog.GetString ("Figure {0}"), (char) (65 + i)));
+			gr.ShowPangoText (GetPossibleFigureAnswer (i));
 		}
 	}
 }

@@ -38,7 +38,7 @@ public class PuzzleBuildTriangle : Game
 
 	private const double figure_size = 0.1;
 	private ArrayListIndicesRandom random_indices_answers;
-	private char [] answers;
+	private string [] answers;
 	private const int answer_num = 3;
 	private int total_figures;
 	private double space_figures;
@@ -49,7 +49,9 @@ public class PuzzleBuildTriangle : Game
 	}
 
 	public override string Question {
-		get {return Catalog.GetString ("Which three pieces can you use together to build a triangle? Answer using the three figure names, e.g.: ABE.");} 
+		get {return String.Format (
+			Catalog.GetString ("Which three pieces can you use together to build a triangle? Answer using the three figure names, e.g.: {0}{1}{2}."),
+				GetPossibleAnswer (0), GetPossibleAnswer (1), GetPossibleAnswer (2));}
 	}
 
 	public override string Tip {
@@ -72,24 +74,24 @@ public class PuzzleBuildTriangle : Game
 
 		random_indices_answers = new ArrayListIndicesRandom (total_figures);
 		random_indices_answers.Initialize ();
-		answers = new char[answer_num];
+		answers = new string[answer_num];
 
 		for (int i = 0; i < random_indices_answers.Count; i++)
 		{
 			switch ((Figures) random_indices_answers[i]) {
 			case Figures.TriangleB:
-				answers[0] =  (char) (65 + i);
+				answers[0] =  GetPossibleAnswer (i);
 				break;
 			case Figures.TriangleC:
-				answers[1] =  (char) (65 + i);
+				answers[1] =  GetPossibleAnswer (i);
 				break;
 			case Figures.Square:
-				answers[2] =  (char) (65 + i);
+				answers[2] =  GetPossibleAnswer (i);
 				break;
 			}
 		}
 
-		right_answer = answers[0].ToString () + answers[1].ToString () + answers[2].ToString ();		
+		right_answer = answers[0] + answers[1] + answers[2];
 	}
 
 	private void DrawFigure (CairoContextEx gr, double x, double y, Figures figure)
@@ -148,7 +150,7 @@ public class PuzzleBuildTriangle : Game
 		{
 			DrawFigure (gr, x, y, (Figures) random_indices_answers[i]);
 			gr.MoveTo (x, y + 0.13);
-			gr.ShowPangoText (String.Format (Catalog.GetString ("Figure {0}"), (char) (65 + i)));
+			gr.ShowPangoText (GetPossibleFigureAnswer (i));
 
 			if (i  == (total_figures / 2) - 1) {
 				y+= 0.25;
@@ -204,90 +206,24 @@ public class PuzzleBuildTriangle : Game
 		gr.Stroke ();	
 	}
 
-	private bool IndexOf (char c, char [] chars)
-	{
-		for (int i = 0; i < chars.Length; i++)
-			if (c == chars [i]) return true;
-
-		return false;
-	}
-
 	public override bool CheckAnswer (string a)
 	{	
-		char fig1 = '\0', fig2 = '\0', fig3 = '\0';
-		char [] ans = new char [answer_num];
-		int c = 0, matches = 0;
-		char[] opers = {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'};
-		string answer;
+		int matches = 0;
 
-		a = TrimAnswer (a);
-		answer = a.ToUpper ();
+		a = TrimAnswer (a.ToUpper ());
 
-		for (int i = 0; i < answer_num; i++)
-			ans[i] = answers[i];
-		
-		for (c = 0; c < answer.Length; c++)
-		{
-			if (IndexOf (answer[c], opers)) {
-				fig1 = answer[c];
-				break;
-			}			
-		}
-
-		for (c++; c < answer.Length; c++)
-		{
-			if (IndexOf (answer[c], opers)) {
-				fig2 = answer[c];
-				break;
-			}
-		}
-
-		for (c++; c < answer.Length; c++)
-		{
-			if (IndexOf (answer[c], opers)) {
-				fig3 = answer[c];
-				break;
-			}
-		}
-
-		if (fig1 == '\0' || fig2 == '\0' || fig3 == '\0')
-			return false;
+		for (int i = 0; i < answer_num; i++) {
+			answers [i] = answers [i].ToUpper ();
 	
-		for (int i = 0; i < answer_num; i++)
-		{
-			if (fig1 != ans[i] || ans[i] == '\0')
-				continue;
-
-			matches++;
-			ans[i] = '\0';
-			break;			
-		}
-
-		for (int i = 0; i < answer_num; i++)
-		{
-			if (fig2 != ans[i] || ans[i] == '\0')
-				continue;
-
-			matches++;
-			ans[i] = '\0';
-			break;			
-		}
-
-		for (int i = 0; i < answer_num; i++)
-		{
-			if (fig3 != ans[i] || ans[i] == '\0')
-				continue;
-
-			matches++;
-			ans[i] = '\0';
-			break;			
+			if (a.Contains (answers[i]))
+				matches++;
 		}
 
 		if (matches == answer_num)
 			return true;
 
 		return false;
-	}	
+	}
 }
 
 

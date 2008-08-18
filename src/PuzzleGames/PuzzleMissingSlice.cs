@@ -59,7 +59,9 @@ public class PuzzleMissingSlice : Game
 	}
 
 	public override string Question {
-		get {return Catalog.GetString ("Some slices have a common property. Which is the missing slice in the circle below? Answer A, B or C.");} 
+		get {return String.Format (
+			Catalog.GetString ("Some slices have a common property. Which is the missing slice in the circle below? Answer {0}, {1} or {2}."),
+			GetPossibleAnswer (0), GetPossibleAnswer (1), GetPossibleAnswer (2));}
 	}
 
 	public override string Tip {
@@ -80,7 +82,7 @@ public class PuzzleMissingSlice : Game
 		random_indices = new ArrayListIndicesRandom (slices.Length / items_per_slice);
 		random_indices.Initialize ();
 		ans_pos = random.Next (possible_answers);
-		right_answer += (char) (65 + (int) ans_pos);
+		right_answer = GetPossibleAnswer (ans_pos);
 		
 		bad_answers = new int [possible_answers * items_per_slice];
 		for (int i = 0; i < bad_answers.Length; i++) {
@@ -189,7 +191,7 @@ public class PuzzleMissingSlice : Game
 			}
 			
 			gr.MoveTo (0.10  + i * 0.28, y + 0.25);
-			gr.ShowPangoText (String.Format (Catalog.GetString ("Figure {0}"), (char) (65 + i)));
+			gr.ShowPangoText (GetPossibleFigureAnswer (i));
 		}
 	}
 }

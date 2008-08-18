@@ -39,7 +39,9 @@ public class CalculationWhichNumber : Game
 	}
 
 	public override string Question {
-		get {return String.Format (Catalog.GetString ("Which of the following numbers is closer to {0:###.###} (A, B, C or D)?"), question_num);} 
+		get {return String.Format (
+			Catalog.GetString ("Which of the following numbers is closer to {0:###.###}? Answer {1}, {2}, {3} or {4}."), question_num,
+			GetPossibleAnswer (0), GetPossibleAnswer (1), GetPossibleAnswer (2), GetPossibleAnswer (3));}
 	}
 
 	public override string Answer {
@@ -133,13 +135,12 @@ public class CalculationWhichNumber : Game
 		which = random.Next (options_cnt);
 		ans_idx = random_indices[which];
 		question_num = options[ans_idx * 2] / options[(ans_idx * 2) + 1];
-		right_answer += (char) (65 + which);
+		right_answer += GetPossibleAnswer (which);
 	}
 
 	public override void Draw (CairoContextEx gr, int area_width, int area_height)
 	{	
 		double x = DrawAreaX + 0.25, y = DrawAreaY + 0.16;
-		char option;
 		int indx;
 
 		base.Draw (gr, area_width, area_height);
@@ -149,13 +150,11 @@ public class CalculationWhichNumber : Game
 		for (int i = 0; i < options_cnt; i++)
 		{
 			gr.MoveTo (x, y);
-			option = (char) (65 + i);
 			indx = random_indices[i];
-			gr.ShowPangoText (option + ") " + options [indx * 2] +  " / " + options [(indx  * 2) +1]);
+			gr.ShowPangoText (String.Format ("{0}) {1}", GetPossibleAnswer (i) , options [indx * 2] +  " / " + options [(indx  * 2) +1]));
 			
 			y = y + 0.15;
 		}
-	
 	}
 }
 

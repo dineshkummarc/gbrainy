@@ -34,7 +34,9 @@ public class PuzzlePencil : Game
 	}
 
 	public override string Question {
-		get {return Catalog.GetString ("Which of the following figures cannot be drawn without crossing any previous lines nor lifting the pencil? Answer A, B, C, D or E.");} 
+		get {return String.Format ( Catalog.GetString 
+			("Which of the following figures cannot be drawn without crossing any previous lines nor lifting the pencil? Answer {0}, {1}, {2}, {3} or {4}."),
+			GetPossibleAnswer (0), GetPossibleAnswer (1), GetPossibleAnswer (2), GetPossibleAnswer (3), GetPossibleAnswer (4));} 
 	}
 
 	public override void Initialize ()
@@ -47,7 +49,7 @@ public class PuzzlePencil : Game
 			if (random_indices[i] != answer_index)
 				continue;
 			
-			right_answer += (char) (65 + (int) i);
+			right_answer = GetPossibleAnswer (i);
 			break;
 		}	
 	}
@@ -163,7 +165,7 @@ public class PuzzlePencil : Game
 			}			
 						
 			gr.MoveTo (x, y + figure_size + 0.05);
-			gr.ShowPangoText (String.Format (Catalog.GetString ("Figure {0}"), (char) (65 + figure)));
+			gr.ShowPangoText (GetPossibleFigureAnswer (figure));
 
 			if (figure == 2) {
 				x = DrawAreaX;

@@ -111,7 +111,9 @@ public class PuzzleLargerShape : Game
 	}
 
 	public override string Question {
-		get {return Catalog.GetString ("Which larger shape can you make combining the first two figures?  Answer A, B, C or D.");} 
+		get {return String.Format (
+			Catalog.GetString ("Which larger shape can you make combining the first two figures?  Answer {0}, {1}, {2} or {3}."),
+			GetPossibleAnswer (0), GetPossibleAnswer (1), GetPossibleAnswer (2), GetPossibleAnswer (3));}
 	}
 
 	public override void Initialize ()
@@ -140,7 +142,7 @@ public class PuzzleLargerShape : Game
 		for (int i = 0; i < answers; i++)
 		{
 			if ((int) random_indices[i] == ranswer) {
-				right_answer += (char) (65 + i);
+				right_answer = GetPossibleAnswer (i);
 				break;
 			}
 		}
@@ -217,7 +219,7 @@ public class PuzzleLargerShape : Game
 		}
 
 		gr.MoveTo (x, y + 0.18);
-		gr.ShowPangoText (String.Format (Catalog.GetString ("Figure {0}"), (char) (65 + seq)));
+		gr.ShowPangoText (GetPossibleFigureAnswer (seq));
 		gr.Stroke ();
 	}
 

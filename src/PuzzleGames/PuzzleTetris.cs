@@ -32,7 +32,9 @@ public class PuzzleTetris : Game
 	}
 
 	public override string Question {
-		get {return Catalog.GetString ("What figure completes the sequence below? Answer A, B or C.");} 
+		get {return String.Format (
+			Catalog.GetString ("What figure completes the sequence below? Answer {0}, {1} or {2}."),
+			GetPossibleAnswer (0), GetPossibleAnswer (1), GetPossibleAnswer (2));}
 	}
 
 	public override string Answer {
@@ -53,7 +55,7 @@ public class PuzzleTetris : Game
 
 		for (int i = 0; i < random_indices_answers.Count; i++) {
 			if ((int) random_indices_answers [i] == 0) {
-				right_answer += (char) (65 + i);
+				right_answer = GetPossibleAnswer (i);
 				break;
 			}
 		}
@@ -150,7 +152,7 @@ public class PuzzleTetris : Game
 		for (int i = 0; i < 3; i++) {
 			DrawAnswerFigures (gr, x, y, random_indices_answers [i]);
 			gr.MoveTo (x, y + 0.13);
-			gr.ShowPangoText (String.Format (Catalog.GetString ("Figure {0}"), (char) (65 + i)));
+			gr.ShowPangoText (GetPossibleFigureAnswer (i));
 			x += space_figures;
 		}
 	}

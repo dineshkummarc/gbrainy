@@ -35,7 +35,9 @@ public class PuzzleClocks : Game
 	}
 
 	public override string Question {
-		get {return Catalog.GetString ("To what number should the large handle of the last clock point? Answer A, B, C or D.");} 
+		get {return (String.Format (
+			Catalog.GetString ("To what number should the large handle of the '{0}' clock point? Answer using numbers."),
+			GetPossibleFigureAnswer (3)));}
 	}
 
 	public override string Answer {
@@ -151,22 +153,22 @@ public class PuzzleClocks : Game
 
 		DrawClock (gr, x + 0.1, y + 0.1, handles[0], handles[1], true);
 		gr.MoveTo (x + 0.03, y + 0.29);
-		gr.ShowPangoText (String.Format (Catalog.GetString ("Figure {0}"), 'A'));
+		gr.ShowPangoText (GetPossibleFigureAnswer (0));
 		gr.Stroke ();
 	
 		DrawClock (gr, x + 0.5, y + 0.1, handles[2], handles[3], true);
 		gr.MoveTo (x + 0.43, y + 0.29);
-		gr.ShowPangoText (String.Format (Catalog.GetString ("Figure {0}"), 'B'));
+		gr.ShowPangoText (GetPossibleFigureAnswer (1));
 		gr.Stroke ();
 
 		DrawClock (gr, x + 0.1, y + 0.52, handles[4], handles[5], true);
 		gr.MoveTo (x + 0.03, y + 0.71);
-		gr.ShowPangoText (String.Format (Catalog.GetString ("Figure {0}"), 'C'));
+		gr.ShowPangoText (GetPossibleFigureAnswer (2));
 		gr.Stroke ();
 
 		DrawClock (gr, x + 0.5, y + 0.52, handles[6], handles[7], DrawAnswer == true);
 		gr.MoveTo (x + 0.43, y + 0.71);
-		gr.ShowPangoText (String.Format (Catalog.GetString ("Figure {0}"), 'D'));
+		gr.ShowPangoText (GetPossibleFigureAnswer (3));
 		gr.Stroke ();
 
 	}

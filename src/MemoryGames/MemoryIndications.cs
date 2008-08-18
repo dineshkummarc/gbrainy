@@ -159,7 +159,9 @@ public class MemoryIndications : Memory
 
 	public override string MemoryQuestion {
 		get { 
-			return String.Format (Catalog.GetString ("Which of the following graphics represent the indications previously given? Answer A, B, C or D."));}
+			return String.Format (
+				Catalog.GetString ("Which of the following graphics represent the indications previously given? Answer {0}, {1}, {2} or {3}."),
+				GetPossibleAnswer (0), GetPossibleAnswer (1), GetPossibleAnswer (2), GetPossibleAnswer (3));}
 	}
 
 	public override void Initialize ()
@@ -225,7 +227,7 @@ public class MemoryIndications : Memory
 
 		for (int i = 0; i < answers.Count; i++) {
 			if (answers [i] == 0) {
-				right_answer += (char) (65 + i);
+				right_answer = GetPossibleAnswer (i);
 				ans = i;
 				break;
 			}
@@ -275,22 +277,22 @@ public class MemoryIndications : Memory
 		x = 0.22; y = 0.3;
 		DrawPossibleAnswers (gr, x, y, WhichAnswer (answers[0]));
 		gr.MoveTo (x, y + 0.2);
-		gr.ShowPangoText (String.Format (Catalog.GetString ("Figure {0}"), "A"));
+		gr.ShowPangoText (GetPossibleFigureAnswer (0));
 
 		x = 0.7; y = 0.3;
 		DrawPossibleAnswers (gr, x, y, WhichAnswer (answers[1]));
 		gr.MoveTo (x, y + 0.2);
-		gr.ShowPangoText (String.Format (Catalog.GetString ("Figure {0}"), "B"));
+		gr.ShowPangoText (GetPossibleFigureAnswer (1));
 
 		x = 0.22; y = 0.7;
 		DrawPossibleAnswers (gr, x, y, WhichAnswer (answers[2]));
 		gr.MoveTo (x, y + 0.2);
-		gr.ShowPangoText (String.Format (Catalog.GetString ("Figure {0}"), "C"));
+		gr.ShowPangoText (GetPossibleFigureAnswer (2));
 
 		x = 0.7; y = 0.7;
 		DrawPossibleAnswers (gr, x, y, WhichAnswer (answers[3]));
 		gr.MoveTo (x, y + 0.2);
-		gr.ShowPangoText (String.Format (Catalog.GetString ("Figure {0}"), "D"));
+		gr.ShowPangoText (GetPossibleFigureAnswer (3));
 	}
 	
 	public override void DrawObjectToMemorize (CairoContextEx gr, int area_width, int area_height)
@@ -313,7 +315,7 @@ public class MemoryIndications : Memory
 				}
 				DrawPossibleAnswers (gr, 0.7, 0.3, WhichAnswer (answers[ans]));
 				gr.MoveTo (0.7, 0.5);
-				gr.ShowPangoText (String.Format (Catalog.GetString ("Figure {0}"), (char) (65 + ans)));
+				gr.ShowPangoText (GetPossibleFigureAnswer (ans));
 				gr.Stroke ();
 		}
 	}

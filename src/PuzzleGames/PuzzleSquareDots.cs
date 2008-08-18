@@ -88,7 +88,9 @@ public class PuzzleSquareDots : Game
 	}
 
 	public override string Question {
-		get {return Catalog.GetString ("What is the letter of the figure that represents the next logical figure in the sequence? Answer A, B or C.");} 
+		get {return (String.Format (
+			Catalog.GetString ("What is the letter of the figure that represents the next logical figure in the sequence? Answer {0}, {1} or {2}."),
+			GetPossibleAnswer (0), GetPossibleAnswer (1), GetPossibleAnswer (2)));} 
 	}
 
 	public override void Initialize ()
@@ -98,7 +100,7 @@ public class PuzzleSquareDots : Game
 
 		for (int i = 0; i < possible_answers.Count; i++) {
 			if (possible_answers[i] == 0) {
-				right_answer += (char) (65 + (int) i);
+				right_answer = GetPossibleAnswer (i);
 				break;
 			}
 		}
@@ -182,7 +184,7 @@ public class PuzzleSquareDots : Game
 		for (int i = 0; i < possible_answers.Count; i++) {
 			DrawPossibleAnswer (gr, x, y, possible_answers[i]);
 			gr.MoveTo (x, y + figure_size + 0.05);
-			gr.ShowPangoText (String.Format (Catalog.GetString ("Figure {0}"), (char) (65 + i)));
+			gr.ShowPangoText (GetPossibleFigureAnswer (i));
 			gr.Stroke ();
 			x+= figure_size + space_figures;
 		}

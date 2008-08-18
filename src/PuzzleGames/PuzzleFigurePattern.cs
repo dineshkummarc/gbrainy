@@ -38,7 +38,9 @@ public class PuzzleFigurePattern : Game
 	}
 
 	public override string Question {
-		get {return Catalog.GetString ("What figure should replace the question mark? Answer A, B or C.");} 
+		get {return String.Format (
+			Catalog.GetString ("What figure should replace the question mark? Answer {0}, {1} or {2}."),
+			GetPossibleAnswer (0), GetPossibleAnswer (1), GetPossibleAnswer (2));}
 	}
 
 	public override string Tip {
@@ -61,7 +63,7 @@ public class PuzzleFigurePattern : Game
 		for (int i = 0; i < (int) Figures.Last; i++)
 		{
 			if ((int) random_indices[i] == (int) Figures.Cross) {
-				right_answer += (char) (65 + i);
+				right_answer = GetPossibleAnswer (i);
 				break;
 			}
 		}
@@ -205,7 +207,7 @@ public class PuzzleFigurePattern : Game
 			}
 			
 			gr.MoveTo (x, y + 0.18);
-			gr.ShowPangoText (String.Format (Catalog.GetString ("Figure {0}"), (char) (65 + i)));
+			gr.ShowPangoText (GetPossibleFigureAnswer (i));
 
 			x += figure_size + space_x;			
 		}

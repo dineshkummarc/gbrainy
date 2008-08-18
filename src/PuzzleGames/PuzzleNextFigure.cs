@@ -48,7 +48,9 @@ public class PuzzleNextFigure : Game
 	}
 
 	public override string Question {
-		get {return Catalog.GetString ("Which is the next logical figure in the sequence? Answer A, B or C.");} 
+		get {return String.Format (
+			Catalog.GetString ("Which is the next logical figure in the sequence? Answer {0}, {1} or {2}."),
+			GetPossibleAnswer (0), GetPossibleAnswer (1), GetPossibleAnswer (2));} 
 	}
 
 
@@ -69,7 +71,7 @@ public class PuzzleNextFigure : Game
 		for (int i = 0; i < (int) Figures.Last; i++)
 		{
 			if ((int) random_indices[i] == (int) Figures.Third) {
-				right_answer += (char) (65 + i);
+				right_answer = GetPossibleAnswer (i);
 				break;
 			}
 		}
@@ -140,7 +142,7 @@ public class PuzzleNextFigure : Game
 			}
 			
 			gr.MoveTo (x + 0.02, y + 0.25);
-			gr.ShowPangoText (String.Format (Catalog.GetString ("Figure {0}"), (char) (65 + i)));
+			gr.ShowPangoText (GetPossibleFigureAnswer (i));
 			x += space_figures;			
 		}
 

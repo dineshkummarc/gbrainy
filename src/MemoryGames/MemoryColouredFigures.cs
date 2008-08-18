@@ -50,7 +50,9 @@ public class MemoryColouredFigures : Memory
 	}
 
 	public override string MemoryQuestion {
-		get { return Catalog.GetString ("Which of these figures was previously shown? Answer A, B, C or D.");}
+		get { return String.Format (
+			Catalog.GetString ("Which of these figures was previously shown? Answer {0}, {1}, {2} or {3}."),
+			GetPossibleAnswer (0), GetPossibleAnswer (1), GetPossibleAnswer (2), GetPossibleAnswer (3));}
 	}
 
 	public override void Initialize ()
@@ -85,10 +87,9 @@ public class MemoryColouredFigures : Memory
 		answers_order = new ArrayListIndicesRandom (answers);
 		answers_order.Initialize ();
 
-		right_answer = string.Empty;
 		for (int i = 0; i < answers_order.Count; i++) {
 			if (answers_order[i] == 0) {
-				right_answer += (char) (65 + (int) i);
+				right_answer += GetPossibleAnswer (i);
 				break;
 			}
 		}
@@ -146,7 +147,7 @@ public class MemoryColouredFigures : Memory
 			}
 			DrawSquare (gr, x, y, squares_colours, squares * answers_order[i]);
 			gr.MoveTo (x, y + block_space - 0.02);
-			gr.ShowPangoText (String.Format (Catalog.GetString ("Figure {0}"), (char) (65 + i)));
+			gr.ShowPangoText (GetPossibleFigureAnswer (i));
 			gr.Stroke ();
 			x += block_space + 0.08;
 		}

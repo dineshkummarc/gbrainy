@@ -42,7 +42,10 @@ public class PuzzleQuadrilaterals : Game
 	}
 
 	public override string Question {
-		get {return Catalog.GetString ("Which of the following figures does not belong to the group? Answer A, B, C, D, E or F.");} 
+		get {return String.Format (
+			Catalog.GetString ("Which of the following figures does not belong to the group? Answer {0}, {1}, {2}, {3}, {4} or {5}."),
+				GetPossibleAnswer (0), GetPossibleAnswer (1), GetPossibleAnswer (2), GetPossibleAnswer (3), GetPossibleAnswer (4), 
+				GetPossibleAnswer (5));}
 	}
 
 	public override string Answer {
@@ -61,7 +64,7 @@ public class PuzzleQuadrilaterals : Game
 		for (int i = 0; i < (int) Figures.Last; i++)
 		{
 			if ((Figures) random_indices[i] == Figures.FigureA) {
-				right_answer += (char) (65 + i);
+				right_answer = GetPossibleAnswer (i);
 				break;
 			}
 		}
@@ -136,7 +139,7 @@ public class PuzzleQuadrilaterals : Game
 		for (int i = 0; i < random_indices.Count; i++) {
 			DrawFigure (gr, x, y, (Figures) random_indices[i]);
 			gr.MoveTo (x, y - 0.02 + figure_size * 1.6);
-			gr.ShowPangoText (String.Format (Catalog.GetString ("Figure {0}"), (char) (65 + i)));
+			gr.ShowPangoText (GetPossibleFigureAnswer (i));
 
 			if (i == 2) {
 				x = DrawAreaX;

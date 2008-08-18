@@ -59,10 +59,10 @@ public class PuzzleFigures : Game
 		random_indices.Initialize ();
 
 		StringBuilder sb = new StringBuilder (3);
-		
-		sb.Append ((char) (65 + figures[random_indices [5]]));
-		sb.Append ((char) (65 + figures[6 + random_indices [5]]));
-		sb.Append ((char) (65 + figures[(2 * 6) + random_indices [5]]));
+	
+		sb.Append (GetPossibleAnswer (figures[random_indices [5]]));
+		sb.Append (GetPossibleAnswer (figures[6 + random_indices [5]]));
+		sb.Append (GetPossibleAnswer (figures[(2 * 6) + random_indices [5]]));
 
 		right_answer = sb.ToString ();
 	}
@@ -76,14 +76,14 @@ public class PuzzleFigures : Game
 		gr.ShowPangoText (Catalog.GetString ("Convention when giving the answer is:"));
 
 		gr.MoveTo (pos_x, y + 0.05);
-		gr.ShowPangoText ("A ->");
+		gr.ShowPangoText (String.Format (Catalog.GetString ("{0} ->"), GetPossibleAnswer (0)));
 		gr.Stroke ();
 		gr.DrawDiamond (x + 0.1, y, 0.1);
 		gr.Stroke ();
 	
 		pos_x += 0.3;
 		gr.MoveTo (pos_x, y + 0.05);
-		gr.ShowPangoText ("B ->");
+		gr.ShowPangoText (String.Format (Catalog.GetString ("{0} ->"), GetPossibleAnswer (1)));
 		gr.Stroke ();
 		pos_x += 0.1;
 		gr.Arc (pos_x + 0.05, y + 0.05, 0.05, 0, 2 * Math.PI);	
@@ -91,7 +91,7 @@ public class PuzzleFigures : Game
 
 		pos_x += 0.2;
 		gr.MoveTo (pos_x, y + 0.05);
-		gr.ShowPangoText ("C ->");
+		gr.ShowPangoText (String.Format (Catalog.GetString ("{0} ->"), GetPossibleAnswer (2)));
 		gr.Stroke ();
 		pos_x += 0.1;
 		gr.DrawEquilateralTriangle (pos_x, y, 0.1);
@@ -99,7 +99,9 @@ public class PuzzleFigures : Game
 
 		y += 0.16;
 		gr.MoveTo (x, y);		
-		gr.ShowPangoText (Catalog.GetString ("E.g: ACB (diamond, triangle, circle)"));	
+		gr.ShowPangoText (String.Format (Catalog.GetString ("E.g: {0}{1}{2} (diamond, triangle, circle)"),
+			GetPossibleAnswer (0), GetPossibleAnswer (1), GetPossibleAnswer (2)));
+
 	}
 
 	public override void Draw (CairoContextEx gr, int area_width, int area_height)

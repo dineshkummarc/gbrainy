@@ -37,7 +37,9 @@ public class MemoryFiguresNumbers : Memory
 	}
 
 	public override string MemoryQuestion {
-		get { return Catalog.GetString ("Which one of these squares was previously shown (A, B, C or D)?");}
+		get { return String.Format (
+			Catalog.GetString ("Which one of these squares was previously shown?  Answer {0}, {1}, {2} or {3}."),
+			GetPossibleAnswer (0), GetPossibleAnswer (1), GetPossibleAnswer (2), GetPossibleAnswer (3));}
 	}
 
 	public override void Initialize ()
@@ -70,10 +72,9 @@ public class MemoryFiguresNumbers : Memory
 		answers_order = new ArrayListIndicesRandom (answers);
 		answers_order.Initialize ();
 
-		right_answer = string.Empty;
 		for (int i = 0; i < answers_order.Count; i++) {
 			if ((int) answers_order[i] == 0) {
-				right_answer += (char) (65 + (int) i);
+				right_answer = GetPossibleAnswer (i);
 				break;
 			}
 		}
@@ -130,7 +131,7 @@ public class MemoryFiguresNumbers : Memory
 			}
 			DrawSquare (gr, x, y, numbers, squares * (int) answers_order[i]);
 			gr.MoveTo (x, y + block_space);
-			gr.ShowPangoText (String.Format (Catalog.GetString ("Figure {0}"), (char) (65 + i)));
+			gr.ShowPangoText (GetPossibleFigureAnswer (i));
 			gr.Stroke ();
 			x += block_space + 0.08;
 		}

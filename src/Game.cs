@@ -224,11 +224,42 @@ abstract public class Game
 			return (int) score;
 		}
 	}
-
 	
 	public abstract void Initialize ();
 	public virtual void Finish () {}
 
+	public string GetPossibleAnswer (int answer)
+	{
+		switch (answer) {
+			// The following serie of answers can be different
+			// in cultures with alphabets different to the Latin one.
+			// The idea is to enumerate a sequence of possible answers
+			// For languages that use the Latin alphabet use leave the defaults
+		case 0: // First possible answer for a serie (e.g.: Figure A)
+			return Catalog.GetString ("A");
+		case 1: // Second possible answer for a serie
+			return Catalog.GetString ("B");
+		case 2: // Third possible answer for a serie
+			return Catalog.GetString ("C");
+		case 3: // Fourth possible answer for a serie
+			return Catalog.GetString ("D");
+		case 4: // Fifth possible answer for a serie
+			return Catalog.GetString ("E");
+		case 5: // Sixth possible answer for a serie
+			return Catalog.GetString ("F");
+		case 6: // Seventh possible answer for a serie
+			return Catalog.GetString ("G");
+		case 7: // Eighth possible answer for a serie
+			return Catalog.GetString ("H");
+		default:
+			return string.Empty;
+		}
+	}
+
+	public string GetPossibleFigureAnswer (int answer)
+	{
+		return String.Format (Catalog.GetString ("Figure {0}"), GetPossibleAnswer (answer));
+	}
 
 	public virtual void Draw (CairoContextEx gr, int width, int height)
 	{

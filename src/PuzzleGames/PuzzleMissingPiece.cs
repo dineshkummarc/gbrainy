@@ -33,7 +33,9 @@ public class PuzzleMissingPiece : Game
 	}
 
 	public override string Question {
-		get {return Catalog.GetString ("Which square completes the figure below? Answer A, B or C.");} 
+		get {return String.Format (
+			Catalog.GetString ("Which square completes the figure below? Answer {0}, {1} or {2}."),
+			GetPossibleAnswer (0), GetPossibleAnswer (1), GetPossibleAnswer (2));}
 	}
 
 	public override string Tip {
@@ -55,7 +57,7 @@ public class PuzzleMissingPiece : Game
 
 		for (int i = 0; i < random_indices.Count; i++) {
 			if (random_indices [i] == 0) {
-				right_answer += (char) (65 + i);
+				right_answer = GetPossibleAnswer (i);
 				break;
 			}
 		}
@@ -151,7 +153,7 @@ public class PuzzleMissingPiece : Game
 			figure = random_indices [i];
 			DrawAnswerFigures (gr, x + (0.08 + sub_figure) * i, 0.70, figure);
 			gr.MoveTo (x + (0.08 + sub_figure) * i, 0.9);
-			gr.ShowPangoText (String.Format (Catalog.GetString ("Figure {0}"), (char) (65 + i)));
+			gr.ShowPangoText (GetPossibleFigureAnswer (i));
 		}
 	}
 }

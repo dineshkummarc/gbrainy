@@ -39,7 +39,9 @@ public class PuzzleExtraCircle : Game
 	}
 
 	public override string Question {
-		get {return Catalog.GetString ("Which circle does not belong to the group? It is not a sequence of elements. Answer A, B, C or D.");} 
+		get {return String.Format (
+			Catalog.GetString ("Which circle does not belong to the group? It is not a sequence of elements. Answer {0}, {1}, {2} or {3}."),
+				GetPossibleAnswer (0), GetPossibleAnswer (1), GetPossibleAnswer (2), GetPossibleAnswer (3));}
 	}
 
 	public override string Tip {
@@ -81,7 +83,7 @@ public class PuzzleExtraCircle : Game
 			start_indices[i] = (random_indices[i]);
 
 		ans_pos = random.Next (circles);
-		right_answer += (char) (65 + ans_pos);
+		right_answer = GetPossibleAnswer (ans_pos);
 	}
 
 	private void DrawSlice (CairoContextEx gr, double x, double y, double dg, Color color)
@@ -151,7 +153,7 @@ public class PuzzleExtraCircle : Game
 			DrawCircle (gr, x + i * 0.23, y + 0.2, colors, start_indices[i]);
 
 			gr.MoveTo (x - 0.07 + i * 0.22, y + 0.36);
-			gr.ShowPangoText (String.Format (Catalog.GetString ("Figure {0}"), (char) (65 + i)));
+			gr.ShowPangoText (GetPossibleFigureAnswer (i));
 			gr.Stroke ();
 		}
 	}
