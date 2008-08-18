@@ -231,7 +231,7 @@ abstract public class Game
 	public string GetPossibleAnswer (int answer)
 	{
 		switch (answer) {
-			// The following serie of answers can be different
+			// The following serie of answers may need to be adapted
 			// in cultures with alphabets different to the Latin one.
 			// The idea is to enumerate a sequence of possible answers
 			// For languages that use the Latin alphabet use leave the defaults
