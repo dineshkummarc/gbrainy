@@ -399,8 +399,8 @@ class GameTips
 			return Catalog.GetString ("Do all the problems, even the difficult ones. Improvement comes from practising.");
 		case 6:
 			return Catalog.GetString ("Play on a daily basis, you will notice progress soon.");
-		case 7:
-			return Catalog.GetString ("Use the Custom Game Selection to choose exactly which games you want to play.");
+		case 7: // Translators: Custom Game Selection is a menu option
+			return Catalog.GetString ("Use the 'Custom Game Selection' to choose exactly which games you want to play.");
 		case 8:
 			return Catalog.GetString ("Use the Settings to adjust the difficulty level of the game.");
 		case 9:

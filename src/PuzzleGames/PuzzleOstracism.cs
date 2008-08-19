@@ -39,7 +39,9 @@ public class PuzzleOstracism : Game
 	}
 
 	public override string Question {
-		get {return Catalog.GetString ("Which equation does not belong to the group? Answer A, B, C, D or E.");} 
+		get {return String.Format (
+			Catalog.GetString ("Which equation does not belong to the group? Answer {0}, {1}, {2}, {3} or {4}."),
+			GetPossibleAnswer (0), GetPossibleAnswer (1), GetPossibleAnswer (2), GetPossibleAnswer (3), GetPossibleAnswer (4));}
 	}
 
 
@@ -64,7 +66,7 @@ public class PuzzleOstracism : Game
 		for (int i = 0; i < random_indices.Count; i++)
 		{
 			if (random_indices[i] == wrong_answer) {
-				right_answer += ((char) (65 + i));
+				right_answer = GetPossibleAnswer (i);
 				break;
 			}
 		}
@@ -80,7 +82,7 @@ public class PuzzleOstracism : Game
 		for (int i = 0; i < random_indices.Count; i++)
 		{
 			gr.MoveTo (x, y);
-			gr.ShowPangoText (((char)( 65 + i)) + ") " +  equations [random_indices[i]]);
+			gr.ShowPangoText (String.Format ("{0}) {1}", GetPossibleAnswer (i), equations [random_indices[i]]));
 			y += 0.1;
 		}
 	}

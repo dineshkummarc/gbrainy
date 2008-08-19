@@ -38,7 +38,7 @@ public class MemoryFiguresNumbers : Memory
 
 	public override string MemoryQuestion {
 		get { return String.Format (
-			Catalog.GetString ("Which one of these squares was previously shown?  Answer {0}, {1}, {2} or {3}."),
+			Catalog.GetString ("Which one of these squares was previously shown? Answer {0}, {1}, {2} or {3}."),
 			GetPossibleAnswer (0), GetPossibleAnswer (1), GetPossibleAnswer (2), GetPossibleAnswer (3));}
 	}
 
