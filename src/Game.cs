@@ -231,10 +231,12 @@ abstract public class Game
 	public string GetPossibleAnswer (int answer)
 	{
 		switch (answer) {
+			// Translators Note
 			// The following serie of answers may need to be adapted
 			// in cultures with alphabets different to the Latin one.
 			// The idea is to enumerate a sequence of possible answers
-			// For languages that use the Latin alphabet use leave the defaults
+			// For languages represented with the Latin alphabet use 
+			// the same than English
 		case 0: // First possible answer for a serie (e.g.: Figure A)
 			return Catalog.GetString ("A");
 		case 1: // Second possible answer for a serie
