@@ -63,10 +63,9 @@ public class PuzzleLargerShape : Game
 		A, B, X,
 		B, X, X,
 		X, B, A,
-
 		// Figure D
 		X, X, X,
-		A, B, A,
+		B, B, A,
 		X, A, B,
 	};
 
@@ -99,7 +98,6 @@ public class PuzzleLargerShape : Game
 		A, B, X,
 		B, A, B,
 		X, B, A,
-
 		// Figure D
 		X, X, X,
 		A, A, A,
