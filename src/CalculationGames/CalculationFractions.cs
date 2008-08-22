@@ -52,7 +52,7 @@ public class CalculationFractions : Game
 
 	private int fractions_num, demominator_max, factor_max;
 	private FormulaFraction[] fractions;
-	private const string format_string = "{0:###.###}";
+	private const string format_string = "{0:##0.###}";
 
 	public override string Name {
 		get {return Catalog.GetString ("Fractions");}
