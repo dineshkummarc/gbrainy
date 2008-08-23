@@ -64,7 +64,7 @@ public class CalculationTwoNumbers : Game
 
 	public override void Draw (CairoContextEx gr, int area_width, int area_height)
 	{	
-		double x = DrawAreaX;
+		double x = DrawAreaX + 0.1;
 
 		base.Draw (gr, area_width, area_height);
 
