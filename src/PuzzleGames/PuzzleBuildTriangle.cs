@@ -153,7 +153,7 @@ public class PuzzleBuildTriangle : Game
 			gr.ShowPangoText (GetPossibleFigureAnswer (i));
 
 			if (i  == (total_figures / 2) - 1) {
-				y+= 0.25;
+				y+= 0.30;
 				x= DrawAreaX + 0.05;
 			}
 			else

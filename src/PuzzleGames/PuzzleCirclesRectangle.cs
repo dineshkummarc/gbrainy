@@ -78,9 +78,11 @@ public class PuzzleCirclesRectangle : Game
 		gr.LineTo (first_x + 0.5, first_y - space_fromrect);
 		gr.Stroke ();
 
-		gr.MoveTo (first_x + 0.2, first_y - 0.04 - space_fromrect);
+		gr.MoveTo (first_x + 0.2, first_y - 0.06 - space_fromrect);
 		gr.ShowPangoText (Catalog.GetString ("8 units"));
 		gr.Stroke ();
+
+
 
 		//  ---
 		//	 |
@@ -97,13 +99,10 @@ public class PuzzleCirclesRectangle : Game
 		gr.LineTo (first_x - space_fromrect - 0.04, first_y + 0.5);
 		gr.Stroke ();
 
-		gr.Save ();
-		gr.MoveTo (first_x - space_fromrect - 0.05, first_y + 0.3);
-		gr.Rotate (270 * Math.PI/180);
-		gr.ShowPangoText (Catalog.GetString ("8 units"));
-		gr.Restore ();		
+		gr.MoveTo (first_x - space_fromrect - 0.07, first_y + 0.3);
+		gr.ShowPangoText (Catalog.GetString ("8 units"), false, -1, 270 * Math.PI/180);
 		gr.Stroke ();
-		
+
 		// Sample circle
 		gr.Arc (first_x + 0.7, first_y + 0.1, unit / 2, 0, 2 * Math.PI);
 		gr.Stroke ();
@@ -119,7 +118,7 @@ public class PuzzleCirclesRectangle : Game
 		gr.LineTo (first_x + 0.65 + 0.1, first_y + 0.05 - space_fromcircle);
 		gr.Stroke ();
 
-		gr.MoveTo (first_x + 0.65, first_y - space_fromcircle);
+		gr.MoveTo (first_x + 0.65, first_y - 0.04 - space_fromcircle);
 		gr.ShowPangoText (Catalog.GetString ("1 unit"));
 		gr.Stroke ();
 
@@ -138,13 +137,9 @@ public class PuzzleCirclesRectangle : Game
 		gr.LineTo (first_x + 0.65 - space_fromcircle - 0.04, first_y + 0.1 + 0.05);
 		gr.Stroke ();
 
-		gr.Save ();
-		gr.MoveTo (first_x + 0.65 - space_fromcircle - 0.05, first_y + 0.15);
-		gr.Rotate (270 * Math.PI/180);
-		gr.ShowPangoText (Catalog.GetString ("1 unit"));
-		gr.Restore ();		
+		gr.MoveTo (first_x + 0.65 - space_fromcircle - 0.08, first_y + 0.15);
+		gr.ShowPangoText (Catalog.GetString ("1 unit"), false, -1, 270 * Math.PI/180);
 		gr.Stroke ();
-
 
 		if (DrawAnswer == false)
 			return;

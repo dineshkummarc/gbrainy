@@ -92,7 +92,7 @@ public class CairoContextEx : Cairo.Context
 	}
 
 	// Shows a text from the current position. Defines all the line as text drawing box
-	public void ShowPangoText (string str, bool bold, double width)
+	public void ShowPangoText (string str, bool bold, double width, double rotation)
 	{
 		Pango.Alignment align = layout.Alignment;
 
@@ -105,7 +105,22 @@ public class CairoContextEx : Cairo.Context
 		} else 
 			layout.Width = (int) (width * Matrix.Xx * Pango.Scale.PangoScale);
 
-		ShowPangoText (str);
+		if (rotation != 0) {
+
+			Cairo.Matrix old = Matrix;
+
+			UpdateFontSize ();
+			Matrix = new Cairo.Matrix ();
+			Rotate (rotation);
+			layout.SetText (str);
+			layout.SingleParagraphMode = true;
+			Pango.CairoHelper.UpdateLayout (this, layout);
+			Pango.CairoHelper.ShowLayout (this, layout);
+			Matrix = old;
+		}
+		else
+			ShowPangoText (str);
+				
 		layout.FontDescription.Weight = Pango.Weight.Normal;
 		layout.Width = -1;
 		layout.Alignment = align;

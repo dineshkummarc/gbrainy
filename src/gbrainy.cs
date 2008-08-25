@@ -130,6 +130,7 @@ public class gbrainy: Program
 		if (preferences == null)
 			preferences = new Preferences ();
 
+		session.GameManager.Difficulty = (Game.Difficulty) preferences.GetIntValue (Preferences.DifficultyKey);
 		drawing_area = new GameDrawingArea ();
 		drawing_vbox.Add (drawing_area);
 		//app_window.Resize (500, 700);

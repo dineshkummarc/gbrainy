@@ -97,7 +97,7 @@ public class GameDrawingArea : DrawingArea
 		gr.Color = new Cairo.Color (0, 0, 0, 1);
 
 		gr.MoveTo (0.05, y);
-		gr.ShowPangoText (String.Format (Catalog.GetString ("Welcome to gbrainy {0}"), Defines.VERSION), true, -1);
+		gr.ShowPangoText (String.Format (Catalog.GetString ("Welcome to gbrainy {0}"), Defines.VERSION), true, -1, 0);
 		gr.Stroke ();
 
 		gr.DrawStringWithWrapping (0.05, y + 0.07, Catalog.GetString ("gbrainy is a brain teaser game and trainer to have fun and to keep your brain trained. It includes:"));
@@ -214,7 +214,7 @@ public class GameDrawingArea : DrawingArea
 		gr.Color = new Cairo.Color (0, 0, 0, 1);
 
 		gr.MoveTo (x, y);
-		gr.ShowPangoText (Catalog.GetString ("Score"), false, -1);
+		gr.ShowPangoText (Catalog.GetString ("Score"), false, -1, 0);
 		DrawBand (gr, 0.03, y - 0.01);
 
 		y += 0.08;
@@ -248,7 +248,7 @@ public class GameDrawingArea : DrawingArea
 		y += 0.4;
 
 		gr.MoveTo (x, y);
-		gr.ShowPangoText (Catalog.GetString ("Tips for your next games"), false, -1);
+		gr.ShowPangoText (Catalog.GetString ("Tips for your next games"), false, -1, 0);
 		DrawBand (gr, 0.03, y - 0.01);
 
 		y += 0.08;
