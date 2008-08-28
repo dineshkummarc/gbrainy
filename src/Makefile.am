@@ -89,7 +89,7 @@ RESOURCES =										\
 -resource:$(top_srcdir)/data/gbrainy.svg
 
 gbrainydir = $(libdir)/gbrainy
-gbrainy_SCRIPTS = gbrainy.exe
+gbrainy_SCRIPTS = gbrainy.exe ../data/gbrainy.exe.config
 bin_SCRIPTS = gbrainy
 
 GBRAINY_CSFILES = $(GBRAINY_CSDISTFILES)	\
