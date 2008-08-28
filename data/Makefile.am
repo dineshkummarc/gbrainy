@@ -63,4 +63,4 @@ uninstall-hook:
 
 noinst_DATA = 	
 
-EXTRA_DIST = $(pixmap_DATA) $(tango_icons) $(man_MANS) 
+EXTRA_DIST = $(pixmap_DATA) $(tango_icons) $(man_MANS) gbrainy.exe.config
