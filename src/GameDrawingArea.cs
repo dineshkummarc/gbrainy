@@ -86,6 +86,20 @@ public class GameDrawingArea : DrawingArea
 		countdown.EndDrawCountDown ();
 	}
 
+	private void DrawImage (CairoContextEx gr, double x, double y, string img)
+	{
+		SVGImage image = new SVGImage (img);
+		if (image == null)
+			return;
+
+		gr.Save ();
+		gr.Translate (x, y);
+		gr.Scale (0.15 / image.Width, 0.15 / image.Height);
+		image.RenderToCairo (gr.Handle);
+		gr.Restore ();
+		image.Dispose ();
+	}
+
 	private void DrawWelcome (CairoContextEx gr, int area_width, int area_height)
 	{
 		double y = 0.05;
@@ -103,46 +117,21 @@ public class GameDrawingArea : DrawingArea
 		gr.DrawStringWithWrapping (0.05, y + 0.07, Catalog.GetString ("gbrainy is a brain teaser game and trainer to have fun and to keep your brain trained. It includes:"));
 
 		y = 0.25;
-		image = new ImageSurface (Defines.DATA_DIR + "logic-games-80.png");
-		if (image.Width > 0) {
-			gr.Save ();
-			gr.Translate (rtl ? 0.75 : 0.05, y);
-			gr.Scale (0.8 / area_width, 0.8 / area_height);
-			gr.SetSourceSurface (image, 0, 0);
-			gr.Paint ();
-			gr.Restore ();
-			image.Destroy ();
-		}
+
+		DrawImage (gr, rtl ? 0.75 : 0.05, y, Defines.DATA_DIR + "logic-games.svg");
 		gr.DrawStringWithWrapping (rtl ? 0.05 : 0.23, y + 0.01, 
 			Catalog.GetString ("Logic puzzles. Designed to challenge your reasoning and thinking skills."), 
 			rtl ? 0.65 : -1);
 
 		y += space;
-		image = new ImageSurface (Defines.DATA_DIR + "math-games-80.png");
-		if (image.Width > 0) {
-			gr.Save ();
-			gr.Translate (rtl ? 0.75 : 0.05, y);
-			gr.Scale (0.8 / area_width, 0.8 / area_height);
-			gr.SetSourceSurface (image, 0, 0);
-			gr.Paint ();
-			gr.Restore ();
-			image.Destroy ();
-		}
+
+		DrawImage (gr, rtl ? 0.75 : 0.05, y, Defines.DATA_DIR + "math-games.svg");
 		gr.DrawStringWithWrapping (rtl ? 0.05 : 0.23, y + 0.01, 
 			Catalog.GetString ("Mental calculation. Based on arithmetical operations that test your mental calculation abilities."),
 			rtl ? 0.65 : -1);
 
 		y += space;
-		image = new ImageSurface (Defines.DATA_DIR + "memory-games-80.png");
-		if (image.Width > 0) {
-			gr.Save ();
-			gr.Translate (rtl ? 0.75 : 0.05, y);
-			gr.Scale (0.8 / area_width, 0.8 / area_height);
-			gr.SetSourceSurface (image, 0, 0);
-			gr.Paint ();
-			gr.Restore ();
-			image.Destroy ();
-		}
+		DrawImage (gr, rtl ? 0.75 : 0.05, y, Defines.DATA_DIR + "memory-games.svg");
 		gr.DrawStringWithWrapping (rtl ? 0.05 : 0.23, y + 0.01, 
 			Catalog.GetString ("Memory trainers. To prove and enhance your short term memory."),
 			rtl ? 0.65 : -1);
