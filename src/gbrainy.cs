@@ -138,7 +138,7 @@ public class gbrainy: Program
 
 		// For low resolutions, hide the toolbar and made the drawing area smaller
 		if (drawing_area.Screen.Width> 0 && drawing_area.Screen.Height > 0) {
-			if (drawing_area.Screen.Height < 800) {
+			if (drawing_area.Screen.Height < 700) {
 				drawing_vbox.HeightRequest = 300;
 				low_res = true;
 			}
