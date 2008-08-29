@@ -204,7 +204,7 @@ public class gbrainy: Program
 	// 
 	private void FixLocaleInfo ()
 	{
-		IntPtr st;
+		IntPtr st = IntPtr.Zero;
 		lconv lv;
 		int platform = (int) Environment.OSVersion.Platform;
 		
@@ -216,7 +216,7 @@ public class gbrainy: Program
 
 		try {
 			st = localeconv ();
-			if (st == null) return;
+			if (st == IntPtr.Zero) return;
 
 			lv = (lconv) Marshal.PtrToStructure (st, typeof (lconv));
 			CultureInfo culture =  (CultureInfo) CultureInfo.CurrentCulture.Clone ();
