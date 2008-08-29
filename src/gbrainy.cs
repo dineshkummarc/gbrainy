@@ -50,6 +50,7 @@ public class gbrainy: Program
 	Gtk.TextBuffer question_buffer;
 	Gtk.TextBuffer solution_buffer;
 	TextTag tag_green;
+	bool low_res = false;
 	
 	public static PlayerHistory history = null;
 	public static Preferences preferences = null;
@@ -134,13 +135,22 @@ public class gbrainy: Program
 
 		session.GameManager.Difficulty = (Game.Difficulty) preferences.GetIntValue (Preferences.DifficultyKey);
 		drawing_area = new GameDrawingArea ();
+
+		// For low resolutions, hide the toolbar and made the drawing area smaller
+		if (drawing_area.Screen.Width> 0 && drawing_area.Screen.Height > 0) {
+			if (drawing_area.Screen.Height < 800) {
+				drawing_vbox.HeightRequest = 300;
+				low_res = true;
+			}
+		}
+
 		drawing_vbox.Add (drawing_area);
 		//app_window.Resize (500, 700);
 		//app_window.SizeAllocated += new SizeAllocatedHandler (OnSizeAllocated);
 		app_window.IconName = "gbrainy";
 		app_window.ShowAll ();
 
-		if (preferences.GetBoolValue (Preferences.Toolbar) == false)
+		if (preferences.GetBoolValue (Preferences.Toolbar) == false || low_res == true)
 			toolbar_menuitem.Active = false;
 
 		color = label_answer.Style.Background (StateType.Normal);
