@@ -88,9 +88,15 @@ public class GameDrawingArea : DrawingArea
 
 	private void DrawImage (CairoContextEx gr, double x, double y, string img)
 	{
-		SVGImage image = new SVGImage (img);
-		if (image == null)
+		SVGImage image;
+
+		try {
+			image = new SVGImage (img);
+		}
+		catch (Exception e)
+		{
 			return;
+		}
 
 		gr.Save ();
 		gr.Translate (x, y);

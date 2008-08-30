@@ -56,14 +56,22 @@ public class SVGImage : IDisposable
 	public SVGImage (string file)
 	{
 		int error = 0;
-
-		handle = rsvg_handle_new_from_file (file, out error);
-
-		if (handle == IntPtr.Zero)
-			throw new System.IO.IOException ("File not found: " + file);
-
 		dimension = new RsvgDimensionData ();
-		rsvg_handle_get_dimensions (handle, ref dimension);
+
+		try {
+			handle = rsvg_handle_new_from_file (file, out error);
+
+			if (handle != IntPtr.Zero)		
+				rsvg_handle_get_dimensions (handle, ref dimension);
+
+		}
+
+		finally
+		{
+			if (handle == IntPtr.Zero)
+				throw new System.IO.IOException ("File not found: " + file);
+
+		}
 	}
 
 	public int Width {
@@ -85,7 +93,8 @@ public class SVGImage : IDisposable
 
 	public void RenderToCairo (IntPtr cairo_surface)
 	{
-		rsvg_handle_render_cairo (handle, cairo_surface);
+		if (handle != IntPtr.Zero)
+			rsvg_handle_render_cairo (handle, cairo_surface);
 	}
 }
 
