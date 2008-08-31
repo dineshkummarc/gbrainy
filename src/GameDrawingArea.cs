@@ -93,7 +93,7 @@ public class GameDrawingArea : DrawingArea
 		try {
 			image = new SVGImage (img);
 		}
-		catch (Exception e)
+		catch (Exception)
 		{
 			return;
 		}
@@ -110,7 +110,6 @@ public class GameDrawingArea : DrawingArea
 	{
 		double y = 0.05;
 		double space = 0.20;
-		ImageSurface image;
 
 		gr.Scale (area_width, area_height);
 		gr.DrawBackground ();
