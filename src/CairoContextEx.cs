@@ -24,6 +24,58 @@ using System.Text;
 using System.Runtime.InteropServices;
 using Pango;
 
+#if GTK_2_8 // For GTK < 2.10
+
+public static class PangoCairoHelper
+{
+	[DllImport ("libpangocairo-1.0.so.0")]
+	private static extern void pango_cairo_show_layout (IntPtr cr, IntPtr layout);
+
+	public static void ShowLayout (Cairo.Context cr, Pango.Layout layout)
+	{
+		pango_cairo_show_layout (cr == null ? IntPtr.Zero : cr.Handle,
+		layout == null ? IntPtr.Zero : layout.Handle);
+	}
+
+	[DllImport ("libpangocairo-1.0.so.0")]
+	private static extern IntPtr pango_cairo_create_layout (IntPtr cr);
+
+	public static Pango.Layout CreateLayout (Cairo.Context cr)
+	{
+		IntPtr raw_ret = pango_cairo_create_layout (cr == null ? IntPtr.Zero : cr.Handle);
+		return GLib.Object.GetObject (raw_ret) as Pango.Layout;
+	}
+
+	[DllImport ("libpangocairo-1.0.so.0")]
+	private static extern void pango_cairo_layout_path (IntPtr cr, IntPtr layout);
+
+	public static void LayoutPath (Cairo.Context cr, Pango.Layout layout,
+	bool iUnderstandThePerformanceImplications)
+	{
+		pango_cairo_layout_path (cr == null ? IntPtr.Zero : cr.Handle,
+		layout == null ? IntPtr.Zero : layout.Handle);
+	}
+
+	[DllImport ("libpangocairo-1.0.so.0")]
+	private static extern void pango_cairo_context_set_resolution (IntPtr pango_context, double dpi);
+
+	public static void ContextSetResolution (Pango.Context context, double dpi)
+	{
+		pango_cairo_context_set_resolution (context == null ? IntPtr.Zero : context.Handle, dpi);
+	}
+
+	[DllImport ("libpangocairo-1.0.so.0")]
+	private static extern IntPtr pango_layout_get_context (IntPtr layout);
+
+	public static Pango.Context LayoutGetContext (Pango.Layout layout)
+	{
+		IntPtr handle = pango_layout_get_context (layout.Handle);
+		return handle.Equals (IntPtr.Zero) ? null : GLib.Object.GetObject (handle) as Pango.Context;
+	}
+}
+
+#endif
+
 public class CairoContextEx : Cairo.Context
 {
 	Pango.Layout layout;
@@ -35,11 +87,15 @@ public class CairoContextEx : Cairo.Context
 
 	public CairoContextEx (IntPtr state, Gtk.Widget widget) : base (state)
 	{
-		double resolution = widget.Screen.Resolution;
 		CommonConstructor ();
 
+	#if GTK_2_8
+	#else
+		double resolution = widget.Screen.Resolution;
 		if (resolution != -1) 
-			CairoHelper.ContextSetResolution (layout.Context, resolution);
+			Pango.CairoHelper.ContextSetResolution (layout.Context, resolution);		
+	#endif
+
 	}
 
 	// Used by GeneratePDF
@@ -50,7 +106,11 @@ public class CairoContextEx : Cairo.Context
 
 	private void CommonConstructor ()
 	{
+#if GTK_2_8
+		layout = PangoCairoHelper.CreateLayout (this);
+#else
 		layout = Pango.CairoHelper.CreateLayout (this);
+#endif
 		layout.FontDescription = FontDescription.FromString ("Sans");
 		SetPangoNormalFontSize ();
 	}
@@ -86,8 +146,11 @@ public class CairoContextEx : Cairo.Context
 		Matrix = new Cairo.Matrix ();		
 		layout.SetText (str);
 		layout.SingleParagraphMode = true;
-		Pango.CairoHelper.UpdateLayout (this, layout);
+#if GTK_2_8
+		PangoCairoHelper.ShowLayout (this, layout);
+#else
 		Pango.CairoHelper.ShowLayout (this, layout);
+#endif
 		Matrix = old;
 	}
 
@@ -114,8 +177,11 @@ public class CairoContextEx : Cairo.Context
 			Rotate (rotation);
 			layout.SetText (str);
 			layout.SingleParagraphMode = true;
-			Pango.CairoHelper.UpdateLayout (this, layout);
-			Pango.CairoHelper.ShowLayout (this, layout);
+#if GTK_2_8
+		PangoCairoHelper.ShowLayout  (this, layout);
+#else
+		Pango.CairoHelper.ShowLayout (this, layout);
+#endif
 			Matrix = old;
 		}
 		else
@@ -157,10 +223,13 @@ public class CairoContextEx : Cairo.Context
 		layout.SetText (str);
 		layout.SingleParagraphMode = true;
 		layout.Width = -1;
-		Pango.CairoHelper.UpdateLayout (this, layout);
 		layout.GetPixelSize (out w, out h);
 		MoveTo ((old.X0 + x * old.Xx) - w, y * old.Xx);
+#if GTK_2_8
+		PangoCairoHelper.ShowLayout (this, layout);
+#else
 		Pango.CairoHelper.ShowLayout (this, layout);
+#endif
 		Matrix = old;
 	}
 
@@ -176,10 +245,13 @@ public class CairoContextEx : Cairo.Context
 		layout.SetText (str);
 		layout.SingleParagraphMode = true;
 		layout.Width = -1;
-		Pango.CairoHelper.UpdateLayout (this, layout);
 		layout.GetPixelSize (out w, out h);
 		MoveTo ((old.X0 + x * old.Xx) - w / 2, (y - font_size / 2) * old.Xx);
+#if GTK_2_8
+		PangoCairoHelper.ShowLayout  (this, layout);
+#else
 		Pango.CairoHelper.ShowLayout (this, layout);
+#endif
 		Matrix = old;
 	}
 
@@ -205,8 +277,11 @@ public class CairoContextEx : Cairo.Context
 		layout.Spacing = (int) (line_space * (old.Xx * Pango.Scale.PangoScale));
 		layout.SingleParagraphMode = false;
 		layout.SetText (str);
-		Pango.CairoHelper.UpdateLayout (this, layout);
+#if GTK_2_8
+		PangoCairoHelper.ShowLayout (this, layout);
+#else
 		Pango.CairoHelper.ShowLayout (this, layout);
+#endif
 		layout.GetPixelSize (out w, out h);
 		Matrix = old;
 		return y + h / old.Xx;

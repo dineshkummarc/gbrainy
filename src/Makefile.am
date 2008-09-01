@@ -1,4 +1,4 @@
-EXTRAFLAGS =  -nowarn:0169
+EXTRAFLAGS =  -nowarn:0169 $(CSC_DEFINES)
 
 WRAPPER = gbrainy
 
