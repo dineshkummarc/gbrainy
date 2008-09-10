@@ -392,6 +392,7 @@ public class gbrainy: Program
 		session.CurrentGame.DrawAnswer = true;
 		session.Status = GameSession.SessionStatus.Answered;
 		ActiveInputControls (true);
+		next_button.GrabFocus ();
 		drawing_area.QueueDraw ();
 	}		
 
