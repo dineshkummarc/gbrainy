@@ -45,7 +45,6 @@ public class gbrainy: Program
 	[Glade.Widget] Gtk.Label label_answer;
 	GameDrawingArea drawing_area;
 	GameSession session;
-	const int ok_buttonid = -5;
 	ToolButton pause_tbbutton;
 	Gtk.TextBuffer question_buffer;
 	Gtk.TextBuffer solution_buffer;
@@ -462,7 +461,7 @@ public class gbrainy: Program
 		PreferencesDialog dialog;
 
 		dialog = new PreferencesDialog ();
-		if (dialog.Run () == ok_buttonid) {
+		if (dialog.Run () == ResponseType.Ok) {
 			session.GameManager.Difficulty = (Game.Difficulty) preferences.GetIntValue (Preferences.DifficultyKey);
 		}
 		dialog.Dialog.Destroy ();
@@ -470,14 +469,14 @@ public class gbrainy: Program
 
 	void OnCustomGame (object sender, EventArgs args)
 	{
-		int rslt;
+		ResponseType rslt;
 		CustomGameDialog dialog;
 
 		dialog = new CustomGameDialog (session.GameManager);		
-		rslt = (int) dialog.Run ();
+		rslt = dialog.Run ();
 		dialog.Dialog.Destroy ();
 
-		if (rslt == ok_buttonid && dialog.NumOfGames > 0) {
+		if (rslt == ResponseType.Ok && dialog.NumOfGames > 0) {
 			session.Type = GameSession.Types.Custom;
 			OnNewGame ();
 		}

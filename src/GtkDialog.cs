@@ -38,9 +38,9 @@ public class GtkDialog
 		dialog = null;
 	}
 
-	public int Run ()
+	public ResponseType Run ()
 	{
-		return Dialog.Run ();
+		return (ResponseType) Dialog.Run ();
 	}
 
 	public Gtk.Dialog Dialog {
