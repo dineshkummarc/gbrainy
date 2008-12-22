@@ -18,7 +18,6 @@
  */
 
 using System;
-using Cairo;
 using Mono.Unix;
 using System.IO;
 using System.Runtime.InteropServices;

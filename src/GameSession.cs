@@ -19,7 +19,6 @@
 
 using Gtk;
 using System;
-using Cairo;
 using Mono.Unix;
 using System.Timers;
 

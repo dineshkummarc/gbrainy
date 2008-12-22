@@ -18,9 +18,7 @@
  */
 
 using System;
-using Cairo;
 using Mono.Unix;
-using System.Runtime.InteropServices;
 
 abstract public class Game
 {

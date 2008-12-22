@@ -18,7 +18,6 @@
  */
 
 using System;
-using Glade;
 using Gtk;
 using Mono.Unix;
 using System.Collections;

@@ -21,7 +21,6 @@
 using System;
 using Cairo;
 using Mono.Unix;
-using Gdk;
 using Gtk;
 using System.Threading;
 using System.Timers;

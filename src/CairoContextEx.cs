@@ -20,7 +20,6 @@
 using System;
 using Cairo;
 using Mono.Unix;
-using System.Text;
 using System.Runtime.InteropServices;
 using Pango;
 
