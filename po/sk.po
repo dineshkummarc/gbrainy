@@ -1,9 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gbrainy\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-08-22 18:32+0200\n"
-"PO-Revision-Date: 2008-07-29 10:00:01\n"
+"POT-Creation-Date: 2008-11-15 15:13+0000\n"
+"PO-Revision-Date: 2008-12-22 18:49+0100\n"
 "Last-Translator: Jaroslav Ryník <jrynik@yahoo.co.uk>\n"
 "Language-Team: Slovak <http://telka.sk/linux/sk-l10n/>\n"
 "MIME-Version: 1.0\n"
@@ -12,16 +11,53 @@ msgstr ""
 
 #: ../gbrainy.desktop.in.h:1
 msgid "A brain teaser game for fun and keep your brain trained"
-msgstr ""
-"Hra na lámanie hlavy, pobavenie a udržanie mozgu v dobrej kondícii"
+msgstr "Hra na lámanie hlavy, pobavenie a udržanie mozgu v dobrej kondícii"
 
 #: ../gbrainy.desktop.in.h:2
 msgid "Game"
 msgstr "Hra"
 
-#: ../gbrainy.desktop.in.h:3 ../src/gbrainy.glade.h:32
+#: ../gbrainy.desktop.in.h:3
+#: ../src/gbrainy.glade.h:32
 msgid "gbrainy"
 msgstr "gbrainy"
+
+#. Name of the people that translated the application
+#: ../src/AboutDialog.cs:41
+msgid "translator-credits"
+msgstr "Jaroslav Ryník, jrynik@yahoo.co.uk, 2008"
+
+#: ../src/AboutDialog.cs:46
+msgid ""
+"This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as  published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version.\n"
+"\n"
+msgstr ""
+"Tento program je bezplatný; môžete ho rozširovať a/lebo upravovať pri rešpektovaní licencie GNU General Public License vydanej organizáciou Free Software Foundation, a to buď verzie 2 tejto licencie alebo (podľa vlastného uváženia) ktorejkoľvek neskoršej verzie.\n"
+"\n"
+
+#: ../src/AboutDialog.cs:47
+msgid ""
+"This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details.\n"
+"\n"
+msgstr ""
+"Tento program sa distribuuje s nádejou, že bude užitočnž, ale BEZ AKEJKOĽVEK ZĂRUKY; dokonca aj bez nepriamej záruky OBCHODOVATEĽNOSTI alebo VHODNOSTI NA NEJAKĂť ĂšČEL. Viac podrobností nájdete v licencii GNU General Public License.\n"
+"\n"
+
+#: ../src/AboutDialog.cs:48
+msgid "You should have received a copy of the GNU General Public License along with this program; if not, write to the Free Software Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA."
+msgstr "Spolu s programom ste mali dostať kópiu licencie GNU General Public License; ak sa tak nestalo, napíšte organizácii Free Software Foundation, Inc. na adresu 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA."
+
+#: ../src/AboutDialog.cs:57
+msgid "Based on ideas by Terry Stickels, MENSA books and Jordi Mas."
+msgstr "Založené na nápadoch Terryho Stickelsa, kníh od MENSY a Jordiho Masa."
+
+#: ../src/AboutDialog.cs:59
+msgid "A brain teaser and trainer game to have fun and to keep your brain trained."
+msgstr "Hra na lámanie hlavy, pobavenie a aby ste si udržanie mozgu v dobrej kondícii"
+
+#: ../src/AboutDialog.cs:61
+msgid "gbrainy web site"
+msgstr "Internetová stránka programu gbrainy"
 
 #: ../src/CalculationGames/CalculationArithmetical.cs:41
 msgid "Arithmetical"
@@ -37,22 +73,16 @@ msgstr "Zlomky"
 
 #: ../src/CalculationGames/CalculationFractions.cs:66
 #, csharp-format
-msgid ""
-"What is the result of the given operation? You can answer using either a "
-"fraction or a number."
-msgstr ""
-"Aký výsledok má tento príklad? Pri odpovedi napíšte buď zlomok (cez lomku"
-"(/)) alebo des. číslo."
+msgid "What is the result of the given operation? You can answer using either a fraction or a number."
+msgstr "Aký výsledok má tento príklad? Pri odpovedi napíšte buď zlomok (cez lomku(/)) alebo des. číslo."
 
 #: ../src/CalculationGames/CalculationGreatestDivisor.cs:33
 msgid "Greatest divisor"
 msgstr "Najväčší deliteľ"
 
 #: ../src/CalculationGames/CalculationGreatestDivisor.cs:41
-msgid ""
-"Which of the possible divisors is the greatest that divides all numbers?"
-msgstr ""
-"Ktorý z možných deliteľov je najväčší, a dajú sa ním vydeliť všetky číslá?"
+msgid "Which of the possible divisors is the greatest that divides all numbers?"
+msgstr "Ktorý z možných deliteľov je najväčší, a dajú sa ním vydeliť všetky číslá?"
 
 #: ../src/CalculationGames/CalculationGreatestDivisor.cs:205
 msgid "Numbers"
@@ -74,9 +104,7 @@ msgstr "Prvé znamienko je {0}."
 #: ../src/CalculationGames/CalculationOperator.cs:45
 #, csharp-format
 msgid "Which operators make {0}, {1}, and {2} equal {3}? Answer using '+-/*'."
-msgstr ""
-"Ktoré znamienka spôsobia, že sa čísla {0}, {1}, a {2} budú rovnať číslu {3}? "
-"(Napíšte + - * alebo /.)"
+msgstr "Ktoré znamienka spôsobia, že sa čísla {0}, {1}, a {2} budú rovnať číslu {3}? (Napíšte + - * alebo /.)"
 
 #: ../src/CalculationGames/CalculationOperator.cs:81
 #: ../src/CalculationGames/CalculationTwoNumbers.cs:62
@@ -109,12 +137,8 @@ msgstr "Najbližší zlomok"
 
 #: ../src/CalculationGames/CalculationWhichNumber.cs:43
 #, csharp-format
-msgid ""
-"Which of the following numbers is closer to {0:###.###}? Answer {1}, {2}, "
-"{3} or {4}."
-msgstr ""
-"Ktoré z týchto čísel je najbližšie k {0:###.###}? Odpovedzte {1}, {2}, {3} "
-"alebo {4}. (,77 = 0,77)"
+msgid "Which of the following numbers is closer to {0:###.###}? Answer {1}, {2}, {3} or {4}."
+msgstr "Ktoré z týchto čísel je najbližšie k {0:###.###}? Odpovedzte {1}, {2}, {3} alebo {4}. (,77 = 0,77)"
 
 #: ../src/CalculationGames/CalculationWhichNumber.cs:52
 #, csharp-format
@@ -141,8 +165,8 @@ msgstr "žltá"
 msgid "magenta"
 msgstr "fialová"
 
-#: ../src/ColorPalette.cs:68
 #
+#: ../src/ColorPalette.cs:68
 msgid "orange"
 msgstr "oranžová"
 
@@ -167,14 +191,18 @@ msgstr "Druh"
 msgid "Enabled"
 msgstr "Vybratá"
 
-#: ../src/CustomGameDialog.cs:86 ../src/GameDrawingArea.cs:195
-#: ../src/gbrainy.cs:97 ../src/gbrainy.glade.h:11
+#: ../src/CustomGameDialog.cs:86
+#: ../src/GameDrawingArea.cs:189
+#: ../src/gbrainy.cs:99
+#: ../src/gbrainy.glade.h:11
 #: ../src/PlayerHistoryDialog.cs:102
 msgid "Logic"
 msgstr "Logické"
 
-#: ../src/CustomGameDialog.cs:89 ../src/GameDrawingArea.cs:203
-#: ../src/gbrainy.cs:108 ../src/gbrainy.glade.h:16
+#: ../src/CustomGameDialog.cs:89
+#: ../src/GameDrawingArea.cs:197
+#: ../src/gbrainy.cs:110
+#: ../src/gbrainy.glade.h:16
 #: ../src/PlayerHistoryDialog.cs:112
 msgid "Memory"
 msgstr "Pamäťové"
@@ -193,7 +221,7 @@ msgstr "Správna odpoveď je {0}."
 #. in cultures with alphabets different to the Latin one.
 #. The idea is to enumerate a sequence of possible answers
 #. For languages represented with the Latin alphabet use
-#. the same as English
+#. the same than English
 #. First possible answer for a serie (e.g.: Figure A)
 #: ../src/Game.cs:241
 msgid "A"
@@ -239,157 +267,134 @@ msgstr "H"
 msgid "Figure {0}"
 msgstr "Obrázok {0}"
 
-#: ../src/GameDrawingArea.cs:100
+#: ../src/GameDrawingArea.cs:119
 #, csharp-format
 msgid "Welcome to gbrainy {0}"
 msgstr "Vitajte v programe gbrainy {0}"
 
-#: ../src/GameDrawingArea.cs:103
-msgid ""
-"gbrainy is a brain teaser game and trainer to have fun and to keep your "
-"brain trained. It includes:"
-msgstr ""
-"gbrainy je hra na lámanie hlavy, aby ste sa zabavili a udržali "
-"svoj mozog v dobrej kondícii. Nájdete tu:"
+#: ../src/GameDrawingArea.cs:122
+msgid "gbrainy is a brain teaser game and trainer to have fun and to keep your brain trained. It includes:"
+msgstr "gbrainy je hra na lámanie hlavy, aby ste sa zabavili a udržali svoj mozog v dobrej kondícii. Nájdete tu:"
 
-#: ../src/GameDrawingArea.cs:117
-msgid ""
-"Logic puzzles. Designed to challenge your reasoning and thinking skills."
-msgstr ""
-"Logické obrazce: vymyslené tak, aby precvičili schopnosť dedukcie a myslenia."
+#: ../src/GameDrawingArea.cs:128
+msgid "Logic puzzles. Designed to challenge your reasoning and thinking skills."
+msgstr "Logické obrazce: vymyslené tak, aby precvičili schopnosť dedukcie a myslenia."
 
-#: ../src/GameDrawingArea.cs:132
-msgid ""
-"Mental calculation. Based on arithmetical operations that test your mental "
-"calculation abilities."
-msgstr ""
-"Počítanie z hlavy: zložené z matematických úloh, ktoré preveria, ako viete "
-"počítať z hlavy."
+#: ../src/GameDrawingArea.cs:135
+msgid "Mental calculation. Based on arithmetical operations that test your mental calculation abilities."
+msgstr "Počítanie z hlavy: zložené z matematických úloh, ktoré preveria, ako viete počítať z hlavy."
 
-#: ../src/GameDrawingArea.cs:147
+#: ../src/GameDrawingArea.cs:141
 msgid "Memory trainers. To prove and enhance your short term memory."
 msgstr "Pamäťové cvičenia: na preskúšanie a vylepšenie krátkodobej pamäti."
 
-#: ../src/GameDrawingArea.cs:150 ../src/GameDrawingArea.cs:405
+#: ../src/GameDrawingArea.cs:144
+#: ../src/GameDrawingArea.cs:399
 msgid "Use the Settings to adjust the difficulty level of the game."
 msgstr "Choďte na Nastavenia a prispôsobte si náročnosť hry,"
 
-#: ../src/GameDrawingArea.cs:191 ../src/gbrainy.glade.h:27
+#: ../src/GameDrawingArea.cs:185
+#: ../src/gbrainy.glade.h:27
 #: ../src/PlayerHistoryDialog.cs:93
 msgid "Total"
 msgstr "Celkovo"
 
-#: ../src/GameDrawingArea.cs:199 ../src/gbrainy.cs:102
-#: ../src/gbrainy.glade.h:6 ../src/PlayerHistoryDialog.cs:121
+#: ../src/GameDrawingArea.cs:193
+#: ../src/gbrainy.cs:104
+#: ../src/gbrainy.glade.h:6
+#: ../src/PlayerHistoryDialog.cs:121
 msgid "Calculation"
 msgstr "Matematické"
 
-#: ../src/GameDrawingArea.cs:217
+#: ../src/GameDrawingArea.cs:211
 msgid "Score"
 msgstr "Počet bodov"
 
-#: ../src/GameDrawingArea.cs:225
+#: ../src/GameDrawingArea.cs:219
 #, csharp-format
 msgid "Outstanding results"
 msgstr "Vynikajúci výsledok"
 
-#: ../src/GameDrawingArea.cs:227
+#: ../src/GameDrawingArea.cs:221
 #, csharp-format
 msgid "Excellent results"
 msgstr "Výborný výsledok"
 
-#: ../src/GameDrawingArea.cs:229
+#: ../src/GameDrawingArea.cs:223
 #, csharp-format
 msgid "Good results"
 msgstr "Dobrý výsledok"
 
-#: ../src/GameDrawingArea.cs:231
+#: ../src/GameDrawingArea.cs:225
 #, csharp-format
 msgid "Poor results"
 msgstr "Slabý výsledok"
 
-#: ../src/GameDrawingArea.cs:232
+#: ../src/GameDrawingArea.cs:226
 #, csharp-format
 msgid "Disappointing results"
 msgstr "Neuspokojivý výsledok"
 
-#: ../src/GameDrawingArea.cs:238
+#: ../src/GameDrawingArea.cs:232
 #, csharp-format
 msgid "Games won: {0} ({1} played)"
 msgstr "Počet vyhraných hier: {0} (z(o) {1} hraných)"
 
-#: ../src/GameDrawingArea.cs:240
+#: ../src/GameDrawingArea.cs:234
 #, csharp-format
 msgid "{0}. Games won: {1} ({2} played)"
 msgstr "{0}. Počet vyhraných hier: {1} (z(o) {2} hraných)"
 
-#: ../src/GameDrawingArea.cs:244
+#: ../src/GameDrawingArea.cs:238
 #, csharp-format
 msgid "Time played {0} (average per game {1})"
 msgstr "Strávený čas {0} (priemerne/1 hru {1})"
 
-#: ../src/GameDrawingArea.cs:251
+#: ../src/GameDrawingArea.cs:245
 msgid "Tips for your next games"
 msgstr "Rady do ďalších hier:"
 
-#: ../src/GameDrawingArea.cs:353
+#: ../src/GameDrawingArea.cs:347
 msgid "Get ready to memorize the next objects..."
 msgstr "Pripravte sa na to, že si budete musieť zapamätať niekoľko vecí..."
 
-#: ../src/GameDrawingArea.cs:389
+#: ../src/GameDrawingArea.cs:383
 msgid "Read the instructions carefully and identify the data and given clues."
-msgstr ""
-"pozorne si prečítajte zadanie a pomôcky a určte, ktoré informácie sú "
-"dôležité,"
+msgstr "pozorne si prečítajte zadanie a pomôcky a určte, ktoré informácie sú dôležité,"
 
-#: ../src/GameDrawingArea.cs:391
-#
-msgid ""
-"To score the player gbrainy uses the time and tips needed to complete each "
-"game."
-msgstr ""
-"pri hodnotení gbrainy berie do úvahy čas a pomôcky, využité na dokončenie "
-"každej hry,"
+#: ../src/GameDrawingArea.cs:385
+msgid "To score the player gbrainy uses the time and tips needed to complete each game."
+msgstr "pri hodnotení gbrainy berie do úvahy čas a pomôcky, využité na dokončenie každej hry,"
 
-#: ../src/GameDrawingArea.cs:393
-msgid ""
-"In logic games, elements that may seem irrelevant can be very important."
-msgstr ""
-"prvky, ktoré sa v log. hrách zdajú nepodstatné, môžu byť veľmi dôležité,"
+#: ../src/GameDrawingArea.cs:387
+msgid "In logic games, elements that may seem irrelevant can be very important."
+msgstr "prvky, ktoré sa v log. hrách zdajú nepodstatné, môžu byť veľmi dôležité,"
 
-#: ../src/GameDrawingArea.cs:395
+#: ../src/GameDrawingArea.cs:389
 msgid "Break the mental blocks and look into the boundaries of problems."
 msgstr "prelomte myšlienkové bariéry a pozrite sa za hranice problémov."
 
-#: ../src/GameDrawingArea.cs:397
+#: ../src/GameDrawingArea.cs:391
 msgid "Enjoy making mistakes, they are part of the learning process."
 msgstr "tešte sa z chýb, patria k učeniu,"
 
-#: ../src/GameDrawingArea.cs:399
-msgid ""
-"Do all the problems, even the difficult ones. Improvement comes from "
-"practising."
+#: ../src/GameDrawingArea.cs:393
+msgid "Do all the problems, even the difficult ones. Improvement comes from practising."
 msgstr "riešte všetky úlohy, aj tie ťažké; zlepšenie prichádza s praxou,"
 
-#: ../src/GameDrawingArea.cs:401
+#: ../src/GameDrawingArea.cs:395
 msgid "Play on a daily basis, you will notice progress soon."
 msgstr "hrajte denne a čoskoro si všimnete pokrok,"
 
-#. Translators: Custom Game Selection is a menu option
-#: ../src/GameDrawingArea.cs:403
 #
-msgid ""
-"Use the 'Custom Game Selection' to choose exactly which games you want to "
-"play."
-msgstr ""
-"v ponuke Vl. kombinácia hier si vyberte presne také hry, aké si chcete "
-"zahrať,"
+#. Translators: Custom Game Selection is a menu option
+#: ../src/GameDrawingArea.cs:397
+msgid "Use the 'Custom Game Selection' to choose exactly which games you want to play."
+msgstr "v ponuke Vl. kombinácia hier si vyberte presne také hry, aké si chcete zahrať,"
 
-#: ../src/GameDrawingArea.cs:407
+#: ../src/GameDrawingArea.cs:401
 msgid "Association of elements is a common technique for remembering things."
-msgstr ""
-"vytváranie logických spojení medzi vecami je bežný spôsob na ich "
-"zapamätanie."
+msgstr "vytváranie logických spojení medzi vecami je bežný spôsob na ich zapamätanie."
 
 #: ../src/GameSession.cs:223
 #, csharp-format
@@ -410,116 +415,53 @@ msgstr "- Hra: {0}"
 msgid "Paused"
 msgstr "Prestávka"
 
-#: ../src/gbrainy.cs:90
+#: ../src/gbrainy.cs:92
 msgid "Play all the games"
 msgstr "Hraj všetky hry"
 
-#: ../src/gbrainy.cs:91
+#: ../src/gbrainy.cs:93
 msgid "All"
 msgstr "Všetky"
 
-#: ../src/gbrainy.cs:96
+#: ../src/gbrainy.cs:98
 msgid "Play games that challenge your reasoning and thinking"
 msgstr "Hrajte hry, ktoré preskúšajú vašu dedukciu a myslenie"
 
-#: ../src/gbrainy.cs:103
+#: ../src/gbrainy.cs:105
 msgid "Play games that challenge your mental calculation skills"
 msgstr "Hrajte hry, ktoré preveria, ako viete počítať z hlavy"
 
-#: ../src/gbrainy.cs:109
+#: ../src/gbrainy.cs:111
 msgid "Play games that challenge your short term memory"
 msgstr "Hrajte hry, ktoré preskúšajú vašu krátkodobú pamäť"
 
-#: ../src/gbrainy.cs:114
+#: ../src/gbrainy.cs:116
 msgid "Pause"
 msgstr "Prestávka"
 
-#: ../src/gbrainy.cs:115
+#: ../src/gbrainy.cs:117
 msgid "Pause the game"
 msgstr "Pozastaviť hru"
 
-#: ../src/gbrainy.cs:120
+#: ../src/gbrainy.cs:122
 msgid "End the game and show score"
 msgstr "Skončiť hru a obodovať ju"
 
-#: ../src/gbrainy.cs:121
+#: ../src/gbrainy.cs:123
 msgid "Finish"
 msgstr "Skončiť"
 
-#. Name of the people that translated the application
-#: ../src/gbrainy.cs:245
-msgid "translator-credits"
-msgstr "Jaroslav Ryník, jrynik@yahoo.co.uk, 2008"
-
-#: ../src/gbrainy.cs:250
-msgid ""
-"This program is free software; you can redistribute it and/or modify it "
-"under the terms of the GNU General Public License as  published by the Free "
-"Software Foundation; either version 2 of the License, or (at your option) "
-"any later version.\n"
-"\n"
-msgstr ""
-"Tento program je bezplatný; môžete ho rozširovať a/lebo upravovať pri "
-"rešpektovaní licencie GNU General Public License vydanej organizáciou Free "
-"Software Foundation, a to buď verzie 2 tejto licencie alebo (podľa vlastného "
-"uváženia) ktorejkoľvek neskoršej verzie.\n"
-"\n"
-
-#: ../src/gbrainy.cs:251
-msgid ""
-"This program is distributed in the hope that it will be useful, but WITHOUT "
-"ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or "
-"FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for "
-"more details.\n"
-"\n"
-msgstr ""
-"Tento program sa distribuuje s nádejou, že bude užitočnž, ale BEZ AKEJKOĽVEK "
-"ZĂRUKY; dokonca aj bez nepriamej záruky OBCHODOVATEĽNOSTI alebo VHODNOSTI NA "
-"NEJAKĂť ĂšČEL. Viac podrobností nájdete v licencii GNU General Public "
-"License.\n"
-"\n"
-
-#: ../src/gbrainy.cs:252
-msgid ""
-"You should have received a copy of the GNU General Public License along with "
-"this program; if not, write to the Free Software Foundation, Inc., 59 Temple "
-"Place - Suite 330, Boston, MA 02111-1307, USA."
-msgstr ""
-"Spolu s programom ste mali dostať kópiu licencie GNU General Public License; "
-"ak sa tak nestalo, napíšte organizácii Free Software Foundation, Inc. na "
-"adresu 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA."
-
-
-#: ../src/gbrainy.cs:261
-msgid "Based on ideas by Terry Stickels, MENSA books and Jordi Mas."
-msgstr "Založené na nápadoch Terryho Stickelsa, kníh od MENSY a Jordiho Masa."
-
-#: ../src/gbrainy.cs:263
-msgid ""
-"A brain teaser and trainer game to have fun and to keep your brain trained."
-msgstr ""
-"Hra na lámanie hlavy, pobavenie a aby ste si udržanie mozgu v dobrej "
-"kondícii"
-
-#: ../src/gbrainy.cs:265
-msgid "gbrainy web site"
-msgstr "Internetová stránka programu gbrainy"
-
-#: ../src/gbrainy.cs:296
+#: ../src/gbrainy.cs:330
 msgid "Congratulations."
 msgstr "Blahoželáme!"
 
-#: ../src/gbrainy.cs:298
+#: ../src/gbrainy.cs:332
 msgid "Incorrect answer."
 msgstr "Nesprávna odpoveď."
 
-#: ../src/gbrainy.cs:354
-msgid ""
-"Once you have an answer type it in the \"Answer:\" entry box and press the "
-"\"OK\" button."
-msgstr ""
-"Ak poznáte odpoveď, napíšte ju do do políčka \"Odpoveď:\" a stlačte tlačidlo "
-"\"OK\"."
+#: ../src/gbrainy.cs:389
+msgid "Once you have an answer type it in the \"Answer:\" entry box and press the \"OK\" button."
+msgstr "Ak poznáte odpoveď, napíšte ju do do políčka \"Odpoveď:\" a stlačte tlačidlo \"OK\"."
 
 #: ../src/gbrainy.glade.h:1
 msgid "<b>Difficulty Level</b>"
@@ -637,12 +579,11 @@ msgstr "V časovom limite si zapamätajte tieto veci."
 msgid "Colored figures"
 msgstr "Farebné geom. útvary"
 
-#: ../src/MemoryGames/MemoryColouredFigures.cs:54
 #
-msgid ""
-"Which of these figures was previously shown? Answer {0}, {1}, {2} or {3}."
-msgstr ""
-"Ktoré z týchto geom. útvarov ste predtým videli? Odpovedzte {0}, {1}, {2} alebo {3}."
+#: ../src/MemoryGames/MemoryColouredFigures.cs:54
+#, csharp-format
+msgid "Which of these figures was previously shown? Answer {0}, {1}, {2} or {3}."
+msgstr "Ktoré z týchto geom. útvarov ste predtým videli? Odpovedzte {0}, {1}, {2} alebo {3}."
 
 #: ../src/MemoryGames/MemoryColouredText.cs:35
 msgid "Colored text"
@@ -667,9 +608,7 @@ msgid "Memory figures"
 msgstr "Pamätanie si geom. útvarov"
 
 #: ../src/MemoryGames/MemoryFigures.cs:58
-msgid ""
-"In which cell is the other figure like the one shown below? Answer the cell "
-"number."
+msgid "In which cell is the other figure like the one shown below? Answer the cell number."
 msgstr "V ktorom obdlžníku bol tento geom. útvar? Napíšte číslo obdlžníka."
 
 #: ../src/MemoryGames/MemoryIndications.cs:128
@@ -704,39 +643,31 @@ msgstr "Pamätanie si pokynov"
 
 #: ../src/MemoryGames/MemoryIndications.cs:163
 #, csharp-format
-msgid ""
-"Which of the following graphics represent the indications previously given? "
-"Answer {0}, {1}, {2} or {3}."
-msgstr ""
-"Ktorá z týchto schém zodpovedá zadaným pokynom? Odpovedzte {0}, {1}, {2} alebo {3}."
+msgid "Which of the following graphics represent the indications previously given? Answer {0}, {1}, {2} or {3}."
+msgstr "Ktorá z týchto schém zodpovedá zadaným pokynom? Odpovedzte {0}, {1}, {2} alebo {3}."
 
-#: ../src/MemoryGames/MemoryFiguresNumbers.cs:36
 #
+#: ../src/MemoryGames/MemoryFiguresNumbers.cs:36
 msgid "Figures with numbers"
 msgstr "Trojuholníky s číslami"
 
 #: ../src/MemoryGames/MemoryFiguresNumbers.cs:41
 #, csharp-format
-msgid ""
-"Which one of these squares was previously shown? Answer {0}, {1}, {2} or {3}."
-msgstr ""
-"Ktoré z týchto geom. útvarov ste predtým videli? Odpovedzte {0}, {1}, {2} alebo {3}."
+msgid "Which one of these squares was previously shown? Answer {0}, {1}, {2} or {3}."
+msgstr "Ktoré z týchto geom. útvarov ste predtým videli? Odpovedzte {0}, {1}, {2} alebo {3}."
 
-#: ../src/MemoryGames/MemoryNumbers.cs:54
 #
+#: ../src/MemoryGames/MemoryNumbers.cs:54
 msgid "How many odd numbers were in the previous image? Answer using numbers."
 msgstr "Na koľkých guličkách na obrázku bola {0} farba? Napíšte číslom."
 
-#: ../src/MemoryGames/MemoryNumbers.cs:74
 #
+#: ../src/MemoryGames/MemoryNumbers.cs:74
 msgid "How many even numbers were in the previous image? Answer using numbers."
 msgstr "Na koľkých guličkách na obrázku bola {0} farba? Napíšte číslom."
 
 #: ../src/MemoryGames/MemoryNumbers.cs:94
-#, fuzzy
-msgid ""
-"How many numbers with more than one digit were in the previous image? Answer "
-"using numbers."
+msgid "How many numbers with more than one digit were in the previous image? Answer using numbers."
 msgstr "Na koľkých guličkách na obrázku bola {0} farba? Napíšte číslom."
 
 #: ../src/MemoryGames/MemoryNumbers.cs:111
@@ -749,9 +680,7 @@ msgstr "Pamätanie si slov"
 
 #: ../src/MemoryGames/MemoryWords.cs:41
 #, csharp-format
-msgid ""
-"There is a missing word from the previous list. Which one is the missing "
-"word?"
+msgid "There is a missing word from the previous list. Which one is the missing word?"
 msgstr "Z predchádzajúceho zoznamu tu chýba jedno slovo. Ktoré?"
 
 #. Body parts
@@ -903,29 +832,20 @@ msgstr "vlk"
 
 #: ../src/PlayerHistoryDialog.cs:39
 #, csharp-format
-msgid ""
-"The graphic below shows the player's game score evolution. It is built using "
-"the results of {0} last recorded games."
-msgstr ""
-"Graf ukazuje, ako sa vyvíjal počet bodov u hráča. Vychádza z posledných  {0} "
-"zaznamenaných hier."
+msgid "The graphic below shows the player's game score evolution. It is built using the results of {0} last recorded games."
+msgstr "Graf ukazuje, ako sa vyvíjal počet bodov u hráča. Vychádza z posledných  {0} zaznamenaných hier."
 
 #: ../src/PuzzleGames/PuzzleBalance.cs:47
 msgid "Balance"
 msgstr "Rovnováha"
 
 #: ../src/PuzzleGames/PuzzleBalance.cs:51
-msgid ""
-"How many triangles are needed in the right part of the last figure to keep "
-"it balanced?"
-msgstr ""
-"Koľko trojuholníkov treba napravo na poslednom obrázku, aby bola váha "
-"vyvážená?"
+msgid "How many triangles are needed in the right part of the last figure to keep it balanced?"
+msgstr "Koľko trojuholníkov treba napravo na poslednom obrázku, aby bola váha vyvážená?"
 
 #: ../src/PuzzleGames/PuzzleBalance.cs:57
 msgid "Every triangle counts as 1, each diamond as 2 and each square as 3."
-msgstr ""
-"Každý trojuholník sa počíta za 1, kosoštvorec za 2 a každý štvorec za 3."
+msgstr "Každý trojuholník sa počíta za 1, kosoštvorec za 2 a každý štvorec za 3."
 
 #: ../src/PuzzleGames/PuzzleBalance.cs:63
 msgid "Every diamond counts as two triangles."
@@ -937,12 +857,8 @@ msgstr "Vytvorenie trojuholníka"
 
 #: ../src/PuzzleGames/PuzzleBuildTriangle.cs:53
 #, csharp-format
-msgid ""
-"Which three pieces can you use together to build a triangle? Answer using "
-"the three figure names, e.g.: {0}{1}{2}."
-msgstr ""
-"Ktoré tri geometrické útvary môžete spojiť, aby ste vytvorili trojuholník? "
-"Odpovedzte pomocou 3 písmen, ktoré sú pod geom. útvarmi, napr. {0}{1}{2}."
+msgid "Which three pieces can you use together to build a triangle? Answer using the three figure names, e.g.: {0}{1}{2}."
+msgstr "Ktoré tri geometrické útvary môžete spojiť, aby ste vytvorili trojuholník? Odpovedzte pomocou 3 písmen, ktoré sú pod geom. útvarmi, napr. {0}{1}{2}."
 
 #: ../src/PuzzleGames/PuzzleBuildTriangle.cs:58
 msgid "The resulting triangle is isosceles."
@@ -957,12 +873,8 @@ msgid "Circles in a rectangle"
 msgstr "Počet kruhov v obdlžníku"
 
 #: ../src/PuzzleGames/PuzzleCirclesRectangle.cs:31
-msgid ""
-"What is the maximum number of circles (as shown) that fit in the square "
-"below?"
-msgstr ""
-"Aký najväčší počet kruhov (takých ako na obrázku) sa zmestí do štvorca "
-"na obrázku?"
+msgid "What is the maximum number of circles (as shown) that fit in the square below?"
+msgstr "Aký najväčší počet kruhov (takých ako na obrázku) sa zmestí do štvorca na obrázku?"
 
 #: ../src/PuzzleGames/PuzzleCirclesRectangle.cs:35
 msgid "You can fit more than 64 circles."
@@ -970,20 +882,16 @@ msgstr "Do štvorca sa zmestí 64 kruhov."
 
 #: ../src/PuzzleGames/PuzzleCirclesRectangle.cs:41
 #, csharp-format
-msgid ""
-"In the layout shown {0} units of height are gained in each row. This allows "
-"using an additional row."
-msgstr ""
-"Na obrázku získame v každom riadku výšky {0} jednotiek. To nám umožňuje "
-"použiť jeden riadok naviac."
+msgid "In the layout shown {0} units of height are gained in each row. This allows using an additional row."
+msgstr "Na obrázku získame v každom riadku výšky {0} jednotiek. To nám umožňuje použiť jeden riadok naviac."
 
 #: ../src/PuzzleGames/PuzzleCirclesRectangle.cs:82
 #: ../src/PuzzleGames/PuzzleCirclesRectangle.cs:103
 msgid "8 units"
 msgstr "8 jednotiek"
 
-#: ../src/PuzzleGames/PuzzleCirclesRectangle.cs:123
-#: ../src/PuzzleGames/PuzzleCirclesRectangle.cs:144
+#: ../src/PuzzleGames/PuzzleCirclesRectangle.cs:122
+#: ../src/PuzzleGames/PuzzleCirclesRectangle.cs:141
 msgid "1 unit"
 msgstr "1 jednotka"
 
@@ -993,20 +901,13 @@ msgstr "Hodiny"
 
 #: ../src/PuzzleGames/PuzzleClocks.cs:39
 #, csharp-format
-msgid ""
-"To what number should the large handle of the '{0}' clock point? Answer "
-"using numbers."
-msgstr ""
-"Na aké číslo má ukazovať veľká ručička na posledných hodinách, na obrázku {0}? "
-"Napíšte číslom."
+msgid "To what number should the large handle of the '{0}' clock point? Answer using numbers."
+msgstr "Na aké číslo má ukazovať veľká ručička na posledných hodinách, na obrázku {0}? Napíšte číslom."
 
 #: ../src/PuzzleGames/PuzzleClocks.cs:46
 #, csharp-format
-msgid ""
-"Starting from the first clock sum {0} to the value indicated by the hands."
-msgstr ""
-"K číslu, na ktoré ukazujú ručičky, pripočítajte na všetkých hodinách {0}-ku. "
-"Začnite od prvých."
+msgid "Starting from the first clock sum {0} to the value indicated by the hands."
+msgstr "K číslu, na ktoré ukazujú ručičky, pripočítajte na všetkých hodinách {0}-ku. Začnite od prvých."
 
 #: ../src/PuzzleGames/PuzzleClocks.cs:52
 msgid "The clocks do not follow the time logic."
@@ -1029,26 +930,16 @@ msgid "Count series"
 msgstr "Počítanie radov čísel"
 
 #: ../src/PuzzleGames/PuzzleCountSeries.cs:56
-msgid ""
-"How many numbers \"9\" are required to represent the numbers between 10 to "
-"100?"
+msgid "How many numbers \"9\" are required to represent the numbers between 10 to 100?"
 msgstr "Koľko deviatok potrebujeme, aby sme zapísali čísla medzi 10 a 100?"
 
 #: ../src/PuzzleGames/PuzzleCountSeries.cs:61
-msgid ""
-"How many two digit numbers occur where the first digit is larger than the "
-"second (e.g.: 20 and 21)?"
-msgstr ""
-"Koľko je dvojmiestnych čísel, v ktorých prvá číslica je väčšia ako druhá "
-"(napr. 20 a 21)?"
+msgid "How many two digit numbers occur where the first digit is larger than the second (e.g.: 20 and 21)?"
+msgstr "Koľko je dvojmiestnych čísel, v ktorých prvá číslica je väčšia ako druhá (napr. 20 a 21)?"
 
 #: ../src/PuzzleGames/PuzzleCountSeries.cs:66
-msgid ""
-"How many two digit numbers occur where the first digit is smaller than the "
-"second (e.g.: 12 and 13)?"
-msgstr ""
-"Koľko je dvojmiestnych čísel, v ktorých prvá číslica je menšia ako druhá "
-"(napr. 12 a 13)?"
+msgid "How many two digit numbers occur where the first digit is smaller than the second (e.g.: 12 and 13)?"
+msgstr "Koľko je dvojmiestnych čísel, v ktorých prvá číslica je menšia ako druhá (napr. 12 a 13)?"
 
 #: ../src/PuzzleGames/PuzzleCoverPercentage.cs:32
 msgid "Cover percentage"
@@ -1064,24 +955,16 @@ msgstr "Skladanie kocky"
 
 #: ../src/PuzzleGames/PuzzleCube.cs:42
 #, csharp-format
-msgid ""
-"When folded as a cube, which face on the figure is opposite the face with a "
-"{0} drawn on it? Answer the number written on face."
-msgstr ""
-"Ktorý štvorec bude oproti štvorcu s číslom {0}, keď tento obrazec poskladáme "
-"do kocky? Napíšte číslo toho štvorca."
+msgid "When folded as a cube, which face on the figure is opposite the face with a {0} drawn on it? Answer the number written on face."
+msgstr "Ktorý štvorec bude oproti štvorcu s číslom {0}, keď tento obrazec poskladáme do kocky? Napíšte číslo toho štvorca."
 
 #: ../src/PuzzleGames/PuzzleDivideCircle.cs:42
 msgid "Divide circles"
 msgstr "Delenie kruhov"
 
 #: ../src/PuzzleGames/PuzzleDivideCircle.cs:46
-msgid ""
-"In the last figure, in how many regions is the circle divided into when all "
-"dots are connected?"
-msgstr ""
-"Na koľko častí sa rozdelí kruh na poslednom obrázku, keď spojíme všetky "
-"bodky navzájom?"
+msgid "In the last figure, in how many regions is the circle divided into when all dots are connected?"
+msgstr "Na koľko častí sa rozdelí kruh na poslednom obrázku, keď spojíme všetky bodky navzájom?"
 
 #: ../src/PuzzleGames/PuzzleDivideCircle.cs:110
 #: ../src/PuzzleGames/PuzzleDivideCircle.cs:125
@@ -1099,22 +982,16 @@ msgid "What is the result of the equation below?"
 msgstr "Čo je riešením tejto rovnice? (* = krát, / = delené.)"
 
 #: ../src/PuzzleGames/PuzzleEquation.cs:40
-msgid ""
-"The order of arithmetical operations is always as follows: exponents and "
-"roots, multiplication and division, addition and subtraction."
-msgstr ""
-"Poradie matematických operácií je vždy takéto: 1. mocniny a odmocniny, "
-"2. násobenie a delenie, 3. sčítanie a odčítanie."
+msgid "The order of arithmetical operations is always as follows: exponents and roots, multiplication and division, addition and subtraction."
+msgstr "Poradie matematických operácií je vždy takéto: 1. mocniny a odmocniny, 2. násobenie a delenie, 3. sčítanie a odčítanie."
 
 #: ../src/PuzzleGames/PuzzleExtraCircle.cs:38
 msgid "Extra circle"
 msgstr "Kruh naviac"
 
 #: ../src/PuzzleGames/PuzzleExtraCircle.cs:43
-#,csharp-format
-msgid ""
-"Which circle does not belong to the group? It is not a sequence of elements. "
-"Answer {0}, {1}, {2} or {3}."
+#, csharp-format
+msgid "Which circle does not belong to the group? It is not a sequence of elements. Answer {0}, {1}, {2} or {3}."
 msgstr "Ktorý kruh nepatrí do tejto skupiny? Odpovedzte {0}, {1}, {2} alebo {3}."
 
 #: ../src/PuzzleGames/PuzzleExtraCircle.cs:48
@@ -1123,36 +1000,24 @@ msgstr "Všetky kruhy okrem jedného majú spoločnú vlastnosť."
 
 #: ../src/PuzzleGames/PuzzleExtraCircle.cs:54
 #, csharp-format
-msgid ""
-"In all circles the color slices follow the same order except for this one."
-msgstr ""
-"Vo všetkých kruhoch okrem jedného majú farby rovnaké poradie."
+msgid "In all circles the color slices follow the same order except for this one."
+msgstr "Vo všetkých kruhoch okrem jedného majú farby rovnaké poradie."
 
 #: ../src/PuzzleGames/PuzzleFigureLetter.cs:37
 msgid "Figures and text"
 msgstr "Geom. útvary a text"
 
 #: ../src/PuzzleGames/PuzzleFigureLetter.cs:41
-msgid ""
-"The figures and the text are related. What text should go under the last "
-"figure?"
-msgstr ""
-"Medzi geom. útvarmi a textom je nejaký vzťah. Čo treba napísať pod posledný  "
-"obrázok?"
+msgid "The figures and the text are related. What text should go under the last figure?"
+msgstr "Medzi geom. útvarmi a textom je nejaký vzťah. Čo treba napísať pod posledný  obrázok?"
 
 #: ../src/PuzzleGames/PuzzleFigureLetter.cs:45
 msgid "Every character of the text represents a property of the figure."
 msgstr "Každé písmeno naznačuje nejakú vlastnosť geom. útvarov."
 
 #: ../src/PuzzleGames/PuzzleFigureLetter.cs:51
-msgid ""
-"'A' indicates that the figures overlap, 'B' that are rectangles, 'C' that "
-"are circles, 'D' that the figures are separated, 'E' that there are three "
-"figures and 'F' that there are two figures."
-msgstr ""
-"A naznačuje, že sa geom. útvary pretínajú; B, že sú to obdlžníky; C, že sú "
-"to kruhy; D, že geom. útvary sa nepretínajú; E, že tam sú tri geometrické "
-"útvary a F, že tam sú dva geometrické útvary."
+msgid "'A' indicates that the figures overlap, 'B' that are rectangles, 'C' that are circles, 'D' that the figures are separated, 'E' that there are three figures and 'F' that there are two figures."
+msgstr "A naznačuje, že sa geom. útvary pretínajú; B, že sú to obdlžníky; C, že sú to kruhy; D, že geom. útvary sa nepretínajú; E, že tam sú tri geometrické útvary a F, že tam sú dva geometrické útvary."
 
 #: ../src/PuzzleGames/PuzzleFigurePattern.cs:37
 msgid "Figure pattern"
@@ -1164,18 +1029,12 @@ msgid "What figure should replace the question mark? Answer {0}, {1} or {2}."
 msgstr "Akým vzorom treba nahradiť otáznik? Odpovedzte {0}, {1} alebo {2}."
 
 #: ../src/PuzzleGames/PuzzleFigurePattern.cs:47
-msgid ""
-"The third figure of every row involves somehow combining the first two "
-"figures."
+msgid "The third figure of every row involves somehow combining the first two figures."
 msgstr "Tretí obrazec v každom riadku v sebe nejako spája prvé dva obrazce."
 
 #: ../src/PuzzleGames/PuzzleFigurePattern.cs:53
-msgid ""
-"Superpose the first and second figures and remove the lines that they have "
-"in common, then rotate the resulting figure 45 degrees."
-msgstr ""
-"Pozrite sa na prvé a druhé  obrazce v poradí, vymažte  čiary, ktoré sú "
-"u oboch rovnaké a obrazec, ktorý vznikne, otočte o 45 stupňov."
+msgid "Superpose the first and second figures and remove the lines that they have in common, then rotate the resulting figure 45 degrees."
+msgstr "Pozrite sa na prvé a druhé  obrazce v poradí, vymažte  čiary, ktoré sú u oboch rovnaké a obrazec, ktorý vznikne, otočte o 45 stupňov."
 
 #: ../src/PuzzleGames/PuzzleFigurePattern.cs:189
 #: ../src/PuzzleGames/PuzzleLargerShape.cs:234
@@ -1193,20 +1052,12 @@ msgid "Figures"
 msgstr "Geom. útvary"
 
 #: ../src/PuzzleGames/PuzzleFigures.cs:42
-msgid ""
-"What is the next logical sequence of objects in the last column? See below "
-"the convention when giving the answer."
-msgstr ""
-"Aké je ďalšie logické poradie geom. útvarov v poslednom stĺpci? Pri písaní "
-"odpovede sa pozrite na kód zápisu odpovede pod obrázkom."
+msgid "What is the next logical sequence of objects in the last column? See below the convention when giving the answer."
+msgstr "Aké je ďalšie logické poradie geom. útvarov v poslednom stĺpci? Pri písaní odpovede sa pozrite na kód zápisu odpovede pod obrázkom."
 
 #: ../src/PuzzleGames/PuzzleFigures.cs:50
-msgid ""
-"It is the only combination that you can build with the given elements "
-"without repeating them."
-msgstr ""
-"Toto je jediná kombinácia, ktorú môžete vytvoriť z daných prvkov bez toho, "
-"aby ste ich opakovali. "
+msgid "It is the only combination that you can build with the given elements without repeating them."
+msgstr "Toto je jediná kombinácia, ktorú môžete vytvoriť z daných prvkov bez toho, aby ste ich opakovali. "
 
 #: ../src/PuzzleGames/PuzzleFigures.cs:76
 msgid "Convention when giving the answer is:"
@@ -1246,34 +1097,22 @@ msgid "Larger shape"
 msgstr "Väčší (ú)tvar"
 
 #: ../src/PuzzleGames/PuzzleLargerShape.cs:113
-#,csharp-format
-msgid ""
-"Which larger shape can you make combining the first two figures? Answer {0}, "
-"{1}, {2} or {3}."
-msgstr ""
-"Ktorý útvar vytvoríte, ak spojíte prvé dva geom. útvary? Odpovedzte "
-"{1}, {2} alebo {3}."
+#, csharp-format
+msgid "Which larger shape can you make combining the first two figures? Answer {0}, {1}, {2} or {3}."
+msgstr "Ktorý útvar vytvoríte, ak spojíte prvé dva geom. útvary? Odpovedzte {1}, {2} alebo {3}."
 
 #: ../src/PuzzleGames/PuzzleLines.cs:31
 msgid "Lines"
 msgstr "Čiary"
 
 #: ../src/PuzzleGames/PuzzleLines.cs:35
-msgid ""
-"How many lines do you count of in the figures below? Consider a line a "
-"segment between two points with no crossing lines."
-msgstr ""
-"Koľko čiar je na obrázku? Za čiaru považujte prvok medzi dvoma bodmi, "
-"cez ktorý neprechádza žiadna iná čiara."
+msgid "How many lines do you count of in the figures below? Consider a line a segment between two points with no crossing lines."
+msgstr "Koľko čiar je na obrázku? Za čiaru považujte prvok medzi dvoma bodmi, cez ktorý neprechádza žiadna iná čiara."
 
 #: ../src/PuzzleGames/PuzzleLines.cs:41
 #, csharp-format
-msgid ""
-"There are {0} lines in the figure to the left and {1} in the figure to the "
-"right."
-msgstr ""
-"Na obrázku vľavo je (sú) {0} čiar(y) a na obrázku vpravo je (sú) "
-"{1} čiar(y)."
+msgid "There are {0} lines in the figure to the left and {1} in the figure to the right."
+msgstr "Na obrázku vľavo je (sú) {0} čiar(y) a na obrázku vpravo je (sú) {1} čiar(y)."
 
 #: ../src/PuzzleGames/PuzzleLines.cs:47
 msgid "It is an easy exercise if you systematically count the lines."
@@ -1283,8 +1122,8 @@ msgstr "Táto hra je ľahká, ak čiary počítate systematicky."
 msgid "Matrix groups"
 msgstr "Skupiny čísel v mriežke"
 
-#: ../src/PuzzleGames/PuzzleMatrixGroups.cs:36
 #
+#: ../src/PuzzleGames/PuzzleMatrixGroups.cs:36
 msgid "One of numbers in the matrix must be circled. Which one?"
 msgstr "V mriežke treba zakrúžkovať ešte jedno číslo. Ktoré?"
 
@@ -1302,12 +1141,8 @@ msgid "Matrix numbers"
 msgstr "Čísla v mriežke"
 
 #: ../src/PuzzleGames/PuzzleMatrixNumbers.cs:45
-msgid ""
-"The numbers in the matrix follow a logic. Which is the number that should "
-"replace the question mark?"
-msgstr ""
-"Čísla v mriežke sú usporiadané podľa určitej logiky. Aké číslo treba "
-"doplniť namiesto otáznika?"
+msgid "The numbers in the matrix follow a logic. Which is the number that should replace the question mark?"
+msgstr "Čísla v mriežke sú usporiadané podľa určitej logiky. Aké číslo treba doplniť namiesto otáznika?"
 
 #: ../src/PuzzleGames/PuzzleMatrixNumbers.cs:51
 msgid "The logic is arithmetical and works vertically."
@@ -1319,57 +1154,33 @@ msgstr "Logika je založená na aritmetike a funguje horizontálne (vodorovne)."
 
 #: ../src/PuzzleGames/PuzzleMatrixNumbers.cs:64
 #, csharp-format
-msgid ""
-"The fourth row is calculated by multiplying the first two rows and adding "
-"the third."
-msgstr ""
-"Štvrtý riadok vypočítate tak, že vynásobíte prvé dva riadky a pripočítate "
-"tretí."
+msgid "The fourth row is calculated by multiplying the first two rows and adding the third."
+msgstr "Štvrtý riadok vypočítate tak, že vynásobíte prvé dva riadky a pripočítate tretí."
 
 #: ../src/PuzzleGames/PuzzleMatrixNumbers.cs:66
 #, csharp-format
-msgid ""
-"The fourth column is calculated by multiplying the first two columns and "
-"adding the third."
-msgstr ""
-"Štvrtý stĺpec vypočítate tak, že vynásobíte prvé dva stĺpce a pripočítate "
-"tretí."
+msgid "The fourth column is calculated by multiplying the first two columns and adding the third."
+msgstr "Štvrtý stĺpec vypočítate tak, že vynásobíte prvé dva stĺpce a pripočítate tretí."
 
 #: ../src/PuzzleGames/PuzzleMatrixNumbers.cs:71
 #, csharp-format
-msgid ""
-"The fourth row is calculated by multiplying the first two rows and "
-"subtracting the third."
-msgstr ""
-"Štvrtý riadok vypočítate tak, že vynásobíte prvé dva riadky a odčítate "
-"tretí."
+msgid "The fourth row is calculated by multiplying the first two rows and subtracting the third."
+msgstr "Štvrtý riadok vypočítate tak, že vynásobíte prvé dva riadky a odčítate tretí."
 
 #: ../src/PuzzleGames/PuzzleMatrixNumbers.cs:73
 #, csharp-format
-msgid ""
-"The fourth column is calculated by multiplying the first two columns and "
-"subtracting the third."
-msgstr ""
-"Štvrtý stĺpec vypočítate tak, že vynásobíte prvé dva stĺpce a odčítate "
-"tretí."
+msgid "The fourth column is calculated by multiplying the first two columns and subtracting the third."
+msgstr "Štvrtý stĺpec vypočítate tak, že vynásobíte prvé dva stĺpce a odčítate tretí."
 
 #: ../src/PuzzleGames/PuzzleMatrixNumbers.cs:78
 #, csharp-format
-msgid ""
-"The fourth row is calculated by adding the first two rows and subtracting "
-"the third."
-msgstr ""
-"Štvrtý riadok vypočítate tak, že sčítate prvé dva riadky a odčítate "
-"tretí."
+msgid "The fourth row is calculated by adding the first two rows and subtracting the third."
+msgstr "Štvrtý riadok vypočítate tak, že sčítate prvé dva riadky a odčítate tretí."
 
 #: ../src/PuzzleGames/PuzzleMatrixNumbers.cs:80
 #, csharp-format
-msgid ""
-"The fourth column is calculated by adding the first two columns and "
-"subtracting the third."
-msgstr ""
-"Štvrtý stĺpec vypočítate tak, že sčítate prvé dva stĺpce a odčítate "
-"tretí."
+msgid "The fourth column is calculated by adding the first two columns and subtracting the third."
+msgstr "Štvrtý stĺpec vypočítate tak, že sčítate prvé dva stĺpce a odčítate tretí."
 
 #: ../src/PuzzleGames/PuzzleMissingPiece.cs:32
 msgid "Missing piece"
@@ -1385,13 +1196,8 @@ msgid "The logic works at row level."
 msgstr "Logiku usporiadania hľadajte v riadkoch."
 
 #: ../src/PuzzleGames/PuzzleMissingPiece.cs:48
-msgid ""
-"In every row the third square is made by flipping the first square and "
-"superimposing it on the second square, followed by removing the matching "
-"lines."
-msgstr ""
-"Tretí štvorec v každom riadku je vytvorený prevrátením prvého štvorca a jeho "
-"priložením na druhý štvorec, a následným vymazaním rovnakých čiar."
+msgid "In every row the third square is made by flipping the first square and superimposing it on the second square, followed by removing the matching lines."
+msgstr "Tretí štvorec v každom riadku je vytvorený prevrátením prvého štvorca a jeho priložením na druhý štvorec, a následným vymazaním rovnakých čiar."
 
 #: ../src/PuzzleGames/PuzzleMissingSlice.cs:58
 msgid "Missing slice"
@@ -1399,12 +1205,8 @@ msgstr "Chýbajúca časť"
 
 #: ../src/PuzzleGames/PuzzleMissingSlice.cs:63
 #, csharp-format
-msgid ""
-"Some slices have a common property. Which is the missing slice in the circle "
-"below? Answer {0}, {1} or {2}."
-msgstr ""
-"Časti kruhu majú spoločnú vlastnosť. Ktorá z možností je chýbajúcou časťou "
-"kruhu? Odpovedzte {0}, {1} alebo {2}."
+msgid "Some slices have a common property. Which is the missing slice in the circle below? Answer {0}, {1} or {2}."
+msgstr "Časti kruhu majú spoločnú vlastnosť. Ktorá z možností je chýbajúcou časťou kruhu? Odpovedzte {0}, {1} alebo {2}."
 
 #: ../src/PuzzleGames/PuzzleMissingSlice.cs:68
 msgid "Each slice is related to the opposite one."
@@ -1412,12 +1214,8 @@ msgstr "Každá časť kruhu nejako súvisí s tou oproti."
 
 #: ../src/PuzzleGames/PuzzleMissingSlice.cs:74
 #, csharp-format
-msgid ""
-"All numbers of each slice, when added to the ones of the opposite slice, add "
-"always {0}."
-msgstr ""
-"Keď spočítame všetky čísla v každej časti kruhu s číslami v časti kruhu, "
-"ktorá je oproti, vždy dostameme {0}."
+msgid "All numbers of each slice, when added to the ones of the opposite slice, add always {0}."
+msgstr "Keď spočítame všetky čísla v každej časti kruhu s číslami v časti kruhu, ktorá je oproti, vždy dostameme {0}."
 
 #: ../src/PuzzleGames/PuzzleMostInCommon.cs:71
 msgid "Most in common"
@@ -1425,56 +1223,36 @@ msgstr "Najviac spoločných prvkov"
 
 #: ../src/PuzzleGames/PuzzleMostInCommon.cs:76
 #, csharp-format
-msgid ""
-"Which of the possible answers have the most in common with the four given "
-"figures? Answer {0}, {1}, {2} or {3}."
-msgstr ""
-"Ktorá z odpovedí má najviac spoločných vlastností so štyrmi zadanými "
-"obrazcami? Odpovedzte {0}, {1}, {2} alebo {3}."
+msgid "Which of the possible answers have the most in common with the four given figures? Answer {0}, {1}, {2} or {3}."
+msgstr "Ktorá z odpovedí má najviac spoločných vlastností so štyrmi zadanými obrazcami? Odpovedzte {0}, {1}, {2} alebo {3}."
 
 #: ../src/PuzzleGames/PuzzleMostInCommon.cs:81
 msgid "Think of the common elements that the given figures have inside them."
 msgstr "Hľadajte spoločné prvky, ktoré sa nachádzajú vnútri obrázkov."
 
 #: ../src/PuzzleGames/PuzzleMostInCommon.cs:89
-msgid ""
-"It has the same number of elements inside the figure as the given figures."
+msgid "It has the same number of elements inside the figure as the given figures."
 msgstr "Má rovnaký počet prvkov vnútri ako zadané obrazce."
 
 #: ../src/PuzzleGames/PuzzleMostInCommon.cs:91
-msgid ""
-"It is the figure with the most elements in common compared to the given "
-"figures."
-msgstr ""
-"Pri porovnaní so zadanými je to obrazec s najväčším počtom spoločných prvkov."
+msgid "It is the figure with the most elements in common compared to the given figures."
+msgstr "Pri porovnaní so zadanými je to obrazec s najväčším počtom spoločných prvkov."
 
 #: ../src/PuzzleGames/PuzzleMoveFigure.cs:30
 msgid "Move figure"
 msgstr "Presúvanie geom. útvarov"
 
 #: ../src/PuzzleGames/PuzzleMoveFigure.cs:34
-msgid ""
-"What is the minimum number of circles to be moved in order to convert the "
-"left figure into the right figure?"
-msgstr ""
-"Aký najmenší počet kruhov musíte premiestniť, aby sa geometrický obrazec, "
-"ktorý je vľavo, presunul doprava?"
+msgid "What is the minimum number of circles to be moved in order to convert the left figure into the right figure?"
+msgstr "Aký najmenší počet kruhov musíte premiestniť, aby sa geometrický obrazec, ktorý je vľavo, presunul doprava?"
 
 #: ../src/PuzzleGames/PuzzleMoveFigure.cs:43
-msgid ""
-"Move the circle from the first line to the second and move two circles from "
-"the fourth line to the second and the fifth lines."
-msgstr ""
-"Presuňte kruh z prvého riadka do druhého a presuňte dva kruhy zo štvrtého "
-"riadka do druhého a piateho riadka. "
+msgid "Move the circle from the first line to the second and move two circles from the fourth line to the second and the fifth lines."
+msgstr "Presuňte kruh z prvého riadka do druhého a presuňte dva kruhy zo štvrtého riadka do druhého a piateho riadka. "
 
 #: ../src/PuzzleGames/PuzzleMoveFigure.cs:46
-msgid ""
-"Move the first line to the seventh; move the two circles of the second line "
-"to third; and move first and last circles of the fifth line to the sixth."
-msgstr ""
-"Presuňte prvý riadok do siedmeho, dva kruhy zo siedmeho riadka do tretieho a "
-"prvý a posledný kruh z piateho riadka do šiesteho."
+msgid "Move the first line to the seventh; move the two circles of the second line to third; and move first and last circles of the fifth line to the sixth."
+msgstr "Presuňte prvý riadok do siedmeho, dva kruhy zo siedmeho riadka do tretieho a prvý a posledný kruh z piateho riadka do šiesteho."
 
 #: ../src/PuzzleGames/PuzzleNextFigure.cs:47
 msgid "Next figure"
@@ -1482,18 +1260,13 @@ msgstr "Ďalší obrázok"
 
 #: ../src/PuzzleGames/PuzzleNextFigure.cs:52
 #, csharp-format
-msgid ""
-"Which is the next logical figure in the sequence? Answer {0}, {1} or {2}."
+msgid "Which is the next logical figure in the sequence? Answer {0}, {1} or {2}."
 msgstr "Ktorý obrázok je ďalší v poradí? Odpovedzte {0}, {1} alebo {2}."
 
 #: ../src/PuzzleGames/PuzzleNextFigure.cs:61
 #, csharp-format
-msgid ""
-"From first figure, the top circle advances by two positions clockwise, while "
-"the left circle goes backwards one position."
-msgstr ""
-"Vrchný kruh prvého obrázka postupuje o dva body v smere hodinových ručičiek, "
-"zatiaľčo ľavý kruh ide dozadu o jeden bod."
+msgid "From first figure, the top circle advances by two positions clockwise, while the left circle goes backwards one position."
+msgstr "Vrchný kruh prvého obrázka postupuje o dva body v smere hodinových ručičiek, zatiaľčo ľavý kruh ide dozadu o jeden bod."
 
 #: ../src/PuzzleGames/PuzzleNumericRelation.cs:35
 msgid "Numeric relation"
@@ -1513,60 +1286,36 @@ msgid "Every group of {0} numbers sums exactly {1}."
 msgstr "Súčet každej skupiny {0} čísel je presne {1}."
 
 #: ../src/PuzzleGames/PuzzleNumericRelation.cs:55
-msgid ""
-"Divide the sequence in groups of three numbers. Every third number is "
-"calculated by multiplying by the two previous ones."
-msgstr ""
-"Rozdeľte celý číselný rad na trojčlenné skupiny čísel. Každé tretie číslo "
-"vypočítate tak, že vynásobíte dve predchádzajúce čísla."
+msgid "Divide the sequence in groups of three numbers. Every third number is calculated by multiplying by the two previous ones."
+msgstr "Rozdeľte celý číselný rad na trojčlenné skupiny čísel. Každé tretie číslo vypočítate tak, že vynásobíte dve predchádzajúce čísla."
 
 #: ../src/PuzzleGames/PuzzleNumericRelation.cs:59
-msgid ""
-"Divide the sequence in groups of three numbers. Every third number is "
-"calculated by subtracting the second number from the first."
-msgstr ""
-"Rozdeľte celý číselný rad na trojčlenné skupiny čísel. Každé tretie číslo "
-"vypočítate tak,  že odčítate druhé číslo od prvého."
+msgid "Divide the sequence in groups of three numbers. Every third number is calculated by subtracting the second number from the first."
+msgstr "Rozdeľte celý číselný rad na trojčlenné skupiny čísel. Každé tretie číslo vypočítate tak,  že odčítate druhé číslo od prvého."
 
 #: ../src/PuzzleGames/PuzzleNumericSequence.cs:32
 msgid "Numeric sequence"
 msgstr "Číselné rady"
 
 #: ../src/PuzzleGames/PuzzleNumericSequence.cs:36
-msgid ""
-"The next sequence follows a logic. What number should replace the question "
-"mark?"
-msgstr ""
-"Tento rad čísel je zostavený podľa určitej logiky. Aké číslo treba doplniť "
-"namiesto otáznika?"
+msgid "The next sequence follows a logic. What number should replace the question mark?"
+msgstr "Tento rad čísel je zostavený podľa určitej logiky. Aké číslo treba doplniť namiesto otáznika?"
 
 #: ../src/PuzzleGames/PuzzleNumericSequence.cs:40
 msgid "Every number in the sequence is related to the previous one."
 msgstr "Každé číslo v tomto rade má nejaký vzťah k predchádzajúcemu."
 
 #: ../src/PuzzleGames/PuzzleNumericSequence.cs:49
-msgid ""
-"Every number in the sequence is the result of subtracting 1 from the "
-"previous number and multiplying it by 2."
-msgstr ""
-"Každé číslo v tomto rade vzniklo tak, že sa predchádzajúce zmenšilo o 1a "
-"vynásobilo dvoma."
+msgid "Every number in the sequence is the result of subtracting 1 from the previous number and multiplying it by 2."
+msgstr "Každé číslo v tomto rade vzniklo tak, že sa predchádzajúce zmenšilo o 1a vynásobilo dvoma."
 
 #: ../src/PuzzleGames/PuzzleNumericSequence.cs:52
-msgid ""
-"Every number in the sequence is the result of adding 1 to the previous "
-"number and multiplying it by 3."
-msgstr ""
-"Každé číslo v tomto rade vzniklo tak, že sa predchádzajúce zväčšilo o 1 a "
-"vynásobilo troma."
+msgid "Every number in the sequence is the result of adding 1 to the previous number and multiplying it by 3."
+msgstr "Každé číslo v tomto rade vzniklo tak, že sa predchádzajúce zväčšilo o 1 a vynásobilo troma."
 
 #: ../src/PuzzleGames/PuzzleNumericSequence.cs:55
-msgid ""
-"Every number in the sequence is the result of subtracting 2 from the "
-"previous number and multiplying it by -2."
-msgstr ""
-"Každé číslo v tomto rade vzniklo tak, že sa predchádzajúce zmenšilo o 2 a "
-"vynásobilo sa číslom -2."
+msgid "Every number in the sequence is the result of subtracting 2 from the previous number and multiplying it by -2."
+msgstr "Každé číslo v tomto rade vzniklo tak, že sa predchádzajúce zmenšilo o 2 a vynásobilo sa číslom -2."
 
 #: ../src/PuzzleGames/PuzzleOstracism.cs:38
 msgid "Ostracism"
@@ -1574,41 +1323,25 @@ msgstr "Ostrakizmus"
 
 #: ../src/PuzzleGames/PuzzleOstracism.cs:43
 #, csharp-format
-msgid ""
-"Which equation does not belong to the group? Answer {0}, {1}, {2}, {3} or "
-"{4}."
-msgstr ""
-"Ktorá rovnica nepatrí do tejto skupiny? Odpovedzte {0}, {1}, {2}, {3} "
-"alebo {4}."
+msgid "Which equation does not belong to the group? Answer {0}, {1}, {2}, {3} or {4}."
+msgstr "Ktorá rovnica nepatrí do tejto skupiny? Odpovedzte {0}, {1}, {2}, {3} alebo {4}."
 
 #: ../src/PuzzleGames/PuzzleOstracism.cs:49
-msgid ""
-"The criteria for deciding if an equation belongs to the group is not "
-"arithmetical."
-msgstr ""
-"Vlastnosť, na základe ktorej treba rozhodnúť, či rovnica patrí do skupiny, "
-"nie je matematická."
+msgid "The criteria for deciding if an equation belongs to the group is not arithmetical."
+msgstr "Vlastnosť, na základe ktorej treba rozhodnúť, či rovnica patrí do skupiny, nie je matematická."
 
 #: ../src/PuzzleGames/PuzzleOstracism.cs:55
-msgid ""
-"In all equations the digits from the left side should also appear in the "
-"right side."
-msgstr ""
-"Vo všetkých rovniciach sa aspoň dve rôzne číslice z ľavej strany musia "
-"objaviť aj na pravej strane."
+msgid "In all equations the digits from the left side should also appear in the right side."
+msgstr "Vo všetkých rovniciach sa aspoň dve rôzne číslice z ľavej strany musia objaviť aj na pravej strane."
 
 #: ../src/PuzzleGames/PuzzlePencil.cs:33
 msgid "Pencil"
 msgstr "Kreslenie"
 
 #: ../src/PuzzleGames/PuzzlePencil.cs:38
-#,csharp-format
-msgid ""
-"Which of the following figures cannot be drawn without crossing any previous "
-"lines nor lifting the pencil? Answer {0}, {1}, {2}, {3} or {4}."
-msgstr ""
-"Ktorý z obrázkov sa nedá nakresliť bez toho, aby ste prekrížili nakreslené "
-"čiary alebo zdvihli ceruzku? Odpovedzte {0}, {1}, {2}, {3} alebo {4}."
+#, csharp-format
+msgid "Which of the following figures cannot be drawn without crossing any previous lines nor lifting the pencil? Answer {0}, {1}, {2}, {3} or {4}."
+msgstr "Ktorý z obrázkov sa nedá nakresliť bez toho, aby ste prekrížili nakreslené čiary alebo zdvihli ceruzku? Odpovedzte {0}, {1}, {2}, {3} alebo {4}."
 
 #: ../src/PuzzleGames/PuzzlePeopleTable.cs:42
 msgid "People at a table"
@@ -1616,21 +1349,12 @@ msgstr "Ľudia za stolom"
 
 #: ../src/PuzzleGames/PuzzlePeopleTable.cs:46
 #, csharp-format
-msgid ""
-"A group of people are sitting at round table, evenly spaced out. How many "
-"people are there if the {0} person is across from the {1}?"
-msgstr ""
-"Za stolom sedí skupina rovnomerne rozmiestnených ľudí. Koľko ich je spolu, "
-"ak {0} hosť v poradí sedí oproti {1}?"
+msgid "A group of people are sitting at round table, evenly spaced out. How many people are there if the {0} person is across from the {1}?"
+msgstr "Za stolom sedí skupina rovnomerne rozmiestnených ľudí. Koľko ich je spolu, ak {0} hosť v poradí sedí oproti {1}?"
 
 #: ../src/PuzzleGames/PuzzlePeopleTable.cs:52
-msgid ""
-"Subtracting the two positions you find out how many people are seated half "
-"way around the table. Doubling this number leaves you with the total amount "
-"of people."
-msgstr ""
-"Odpočítaním daných čísel zistíte, koľko ľudí sedí za stolom v polovičnej "
-"vzdialenosti. Ak výsledok vynásobíte dvomi, dostanete celkový počet ľudí."
+msgid "Subtracting the two positions you find out how many people are seated half way around the table. Doubling this number leaves you with the total amount of people."
+msgstr "Odpočítaním daných čísel zistíte, koľko ľudí sedí za stolom v polovičnej vzdialenosti. Ak výsledok vynásobíte dvomi, dostanete celkový počet ľudí."
 
 #: ../src/PuzzleGames/PuzzlePeopleTable.cs:61
 msgid "5th"
@@ -1662,13 +1386,8 @@ msgstr "Štvoruholník naviac"
 
 #: ../src/PuzzleGames/PuzzleQuadrilaterals.cs:46
 #, csharp-format
-msgid ""
-"Which of the following figures does not belong to the group? Answer {0}, "
-"{1}, {2}, {3}, {4} or {5}."
-msgstr ""
-"Ktorý z týchto geometrických útvarov nepatrí do skupiny? Odpovedzte {0}, "
-"{1}, {2}, {3}, {4} alebo {5}."
-
+msgid "Which of the following figures does not belong to the group? Answer {0}, {1}, {2}, {3}, {4} or {5}."
+msgstr "Ktorý z týchto geometrických útvarov nepatrí do skupiny? Odpovedzte {0}, {1}, {2}, {3}, {4} alebo {5}."
 
 #: ../src/PuzzleGames/PuzzleQuadrilaterals.cs:54
 msgid "It is the only figure with all lines of equal length."
@@ -1680,92 +1399,56 @@ msgstr "Štvorce s kruhmi"
 
 #: ../src/PuzzleGames/PuzzleSquareDots.cs:92
 #, csharp-format
-msgid ""
-"What is the letter of the figure that represents the next logical figure in "
-"the sequence? Answer {0}, {1} or {2}."
-msgstr ""
-"Aké písmeno má obrázok, ktorý ďalej logicky dopĺňa poradie obrázkov? "
-"Odpovedzte {0}, {1} alebo {2}."
+msgid "What is the letter of the figure that represents the next logical figure in the sequence? Answer {0}, {1} or {2}."
+msgstr "Aké písmeno má obrázok, ktorý ďalej logicky dopĺňa poradie obrázkov? Odpovedzte {0}, {1} alebo {2}."
 
 #: ../src/PuzzleGames/PuzzleSquaresAndLetters.cs:32
 msgid "Squares and letters"
 msgstr "Štvorce a písmená"
 
 #: ../src/PuzzleGames/PuzzleSquaresAndLetters.cs:36
-msgid ""
-"The letters around the squares follow a logic. Which letter should replace "
-"the question mark in the last square?"
-msgstr ""
-"Písmená okolo štvorcov sú usporiadané podľa určitej logiky. Aké písmeno "
-"treba doplniť namiesto otáznika?"
+msgid "The letters around the squares follow a logic. Which letter should replace the question mark in the last square?"
+msgstr "Písmená okolo štvorcov sú usporiadané podľa určitej logiky. Aké písmeno treba doplniť namiesto otáznika?"
 
 #: ../src/PuzzleGames/PuzzleSquaresAndLetters.cs:42
 #, csharp-format
-msgid ""
-"Every letter is calculated by taking the alphabetical position of the "
-"previous character and adding {0} to it in order to get the position of the "
-"new letter."
-msgstr ""
-"Poradie nového písmena v anglickej abecede vypočítate tak, že k poradiu "
-"(v anglickej abecede) predchádzajúceho písmena pripočítate {0}."
+msgid "Every letter is calculated by taking the alphabetical position of the previous character and adding {0} to it in order to get the position of the new letter."
+msgstr "Poradie nového písmena v anglickej abecede vypočítate tak, že k poradiu (v anglickej abecede) predchádzajúceho písmena pripočítate {0}."
 
 #: ../src/PuzzleGames/PuzzleSquares.cs:29
 msgid "Squares"
 msgstr "Štvorce"
 
 #: ../src/PuzzleGames/PuzzleSquares.cs:33
-#
 msgid "How many squares of any size do you count in the figure below?"
-msgstr ""
-"Koľko štvorcov rôznej veľkosti sa dá vytvoriť na obrázku? (Štvorce "
-"nakreslené bielou farbou nerátajte.)"
+msgstr "Koľko štvorcov rôznej veľkosti sa dá vytvoriť na obrázku? (Štvorce nakreslené bielou farbou nerátajte.)"
 
 #: ../src/PuzzleGames/PuzzleSquares.cs:37
-msgid ""
-"A square is a rectangle with sides of equal length. A square can also be "
-"built from other squares."
-msgstr ""
-"Štvorec je pravouhlý štvoruholník, ktorého všetky strany majú rovnakú dĺžku. "
-"Štvorec môže byť tiež zložený z iných štvorcov."
+msgid "A square is a rectangle with sides of equal length. A square can also be built from other squares."
+msgstr "Štvorec je pravouhlý štvoruholník, ktorého všetky strany majú rovnakú dĺžku. Štvorec môže byť tiež zložený z iných štvorcov."
 
 #: ../src/PuzzleGames/PuzzleSquares.cs:46
-msgid ""
-"There are 16 single squares, 9 squares made by 4 single squares, 4 squares "
-"made by 9 single squares and 1 square made by 16 single squares."
-msgstr ""
-"Na obrázku je 16 samostatných štvorcov, 9 vytvorených zo 4 samostatných "
-"štvorcov, 4 štvorce vytvorené pomocou 9 samostatných štvorcov a 1 "
-"štvorec, ktorý sa skladá zo 16 samost. štvorcov. "
+msgid "There are 16 single squares, 9 squares made by 4 single squares, 4 squares made by 9 single squares and 1 square made by 16 single squares."
+msgstr "Na obrázku je 16 samostatných štvorcov, 9 vytvorených zo 4 samostatných štvorcov, 4 štvorce vytvorené pomocou 9 samostatných štvorcov a 1 štvorec, ktorý sa skladá zo 16 samost. štvorcov. "
 
 #: ../src/PuzzleGames/PuzzleSquares.cs:49
-msgid ""
-"There are 9 single squares, 4 squares made by 4 single squares and 1 square "
-"made by 9 single squares."
-msgstr ""
-"Na obrázku je 9 samostatných štvorcov, 4 štvorce vytvorené pomocou 4 "
-"samostatných štvorcov a 1 štvorec, ktorý sa skladá z 9-tich samostatných "
-"štvorcov. "
+msgid "There are 9 single squares, 4 squares made by 4 single squares and 1 square made by 9 single squares."
+msgstr "Na obrázku je 9 samostatných štvorcov, 4 štvorce vytvorené pomocou 4 samostatných štvorcov a 1 štvorec, ktorý sa skladá z 9-tich samostatných štvorcov. "
 
 #: ../src/PuzzleGames/PuzzleSquareSheets.cs:28
 msgid "Squares sheets"
 msgstr "Pošet papierov"
 
 #: ../src/PuzzleGames/PuzzleSquareSheets.cs:32
-msgid ""
-"What is the minimum number of square sheets of paper of any size required to "
-"create the figure? Lines indicate frontiers between different sheets."
-msgstr ""
-"Aký najmenší počet hárkov papiera v tvare štvorca potrebujeme na vytvorenie "
-"tohto obrazca? Čiary ukazujú hranice medzi jednotlivými hárkami papiera."
+msgid "What is the minimum number of square sheets of paper of any size required to create the figure? Lines indicate frontiers between different sheets."
+msgstr "Aký najmenší počet hárkov papiera v tvare štvorca potrebujeme na vytvorenie tohto obrazca? Čiary ukazujú hranice medzi jednotlivými hárkami papiera."
 
 #: ../src/PuzzleGames/PuzzleSquareSheets.cs:36
 msgid "The sheets should overlap."
 msgstr "Hárky papiera by sa mali prekrývať."
 
 #: ../src/PuzzleGames/PuzzleSquareSheets.cs:42
-msgid ""
-"The numbers in the figure reflect the different areas covered by each one of "
-"the sheets."
+msgid "The numbers in the figure reflect the different areas covered by each one of the sheets."
 msgstr "Čísla na obrázku ukazujú rôzne časti pokryté každým hárkom papiera."
 
 #: ../src/PuzzleGames/PuzzleTetris.cs:31
@@ -1778,12 +1461,8 @@ msgid "What figure completes the sequence below? Answer {0}, {1} or {2}."
 msgstr "Ktorý obrázok dopĺňa túto postupnosť? Odpovedzte {0}, {1} alebo {2}."
 
 #: ../src/PuzzleGames/PuzzleTetris.cs:43
-msgid ""
-"It is the figure that completes all possible combinations with four blocks "
-"without taking into account rotations."
-msgstr ""
-"Je to obrázok, ktorý dopĺňa všetky možné kombinácie vytvorené zo štyroch "
-"prvkov, ak neberieme do úvahy otáčanie."
+msgid "It is the figure that completes all possible combinations with four blocks without taking into account rotations."
+msgstr "Je to obrázok, ktorý dopĺňa všetky možné kombinácie vytvorené zo štyroch prvkov, ak neberieme do úvahy otáčanie."
 
 #: ../src/PuzzleGames/PuzzleTriangles.cs:29
 msgid "Triangles"
@@ -1812,16 +1491,17 @@ msgstr "Aké číslo treba doplniť namiesto otáznika?"
 
 #: ../src/PuzzleGames/PuzzleTrianglesWithNumbers.cs:64
 msgid "All the triangles share a property and are independent of the rest."
-msgstr ""
-"Všetky trojuholníky majú spoločnú vlastnosť a od ostatných sú nezávislé."
+msgstr "Všetky trojuholníky majú spoločnú vlastnosť a od ostatných sú nezávislé."
 
 #: ../src/PuzzleGames/PuzzleTrianglesWithNumbers.cs:70
 #, csharp-format
 msgid "The result of multiplying the two numbers inside every triangle is {0}."
 msgstr "Vynásobením čísel vnútri trojuholníkov vždy dostaneme číslo {0}."
 
-#~ msgid "Which one of these squares was previously shown ({0}, {1}, {2} or {3})?"
-#~ msgstr "Ktoré z týchto štvorcov ste videli predtým ({0}, {1}, {2} alebo {3})?"
-
+#~ msgid ""
+#~ "Which one of these squares was previously shown ({0}, {1}, {2} or {3})?"
+#~ msgstr ""
+#~ "Ktoré z týchto štvorcov ste videli predtým ({0}, {1}, {2} alebo {3})?"
 #~ msgid "cyan"
 #~ msgstr "svetlomodrá"
+
