@@ -28,7 +28,7 @@ public class CalculationSample : Game
 	private int op1, op2, max_operand;
 
 	public override string Name {
-		get {return Catalog.GetString ("Calculation sample");}
+		get {return "Calculation sample";}
 	}
 
 	public override Types Type {
@@ -36,7 +36,7 @@ public class CalculationSample : Game
 	}
 
 	public override string Question {
-		get {return String.Format (Catalog.GetString ("Which two numbers when added are {0} and when multiplied are {1}?"), op1, op2);} 
+		get {return String.Format ("Which two numbers when added are {0} and when multiplied are {1}?", op1, op2);} 
 	}
 
 	public override void Initialize ()
@@ -71,13 +71,13 @@ public class CalculationSample : Game
 		gr.SetPangoLargeFontSize ();
 
 		gr.MoveTo (x, DrawAreaY + 0.22);
-		gr.ShowPangoText (String.Format (Catalog.GetString ("number1 + number2 = {0}"), op1));
+		gr.ShowPangoText (String.Format ("number1 + number2 = {0}", op1));
 		
 		gr.MoveTo (x, DrawAreaY + 0.44);
-		gr.ShowPangoText (String.Format (Catalog.GetString ("number1 * number2 = {0}"), op2));
+		gr.ShowPangoText (String.Format ("number1 * number2 = {0}", op2));
 
 		gr.Color = new Color (0.9, 0.9, 0.9);
-		gr.DrawTextCentered (0.5, DrawAreaY, String.Format (Catalog.GetString ("This is an extension sample")));
+		gr.DrawTextCentered (0.5, DrawAreaY, "This is an extension sample");
 	}
 
 	public override bool CheckAnswer (string answer)

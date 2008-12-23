@@ -31,12 +31,12 @@ public class MemorySample : Memory
 	int answer;
 
 	public override string Name {
-		get {return Catalog.GetString ("Memory sample");}
+		get {return "Memory sample";}
 	}
 
 	public override string MemoryQuestion {
 		get { 
-			return String.Format (Catalog.GetString ("There is a missing animal name from the previous list. Which one is missing?"));}
+			return "There is a missing animal name from the previous list. Which one is missing?";}
 	}
 
 	public override void Initialize ()
@@ -98,7 +98,7 @@ public class MemorySample : Memory
 		}
 
 		gr.Color = new Color (0.9, 0.9, 0.9);
-		gr.DrawTextCentered (0.5, DrawAreaY, String.Format (Catalog.GetString ("This is an extension sample")));
+		gr.DrawTextCentered (0.5, DrawAreaY, "This is an extension sample");
 	}
 	
 	public override void DrawObjectToMemorize (CairoContextEx gr, int area_width, int area_height)

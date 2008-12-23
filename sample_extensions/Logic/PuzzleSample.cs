@@ -24,11 +24,11 @@ using System;
 public class PuzzleSample : Game
 {
 	public override string Name {
-		get {return Catalog.GetString ("Puzzle sample");}
+		get {return "Puzzle sample";}
 	}
 
 	public override string Question {
-		get {return Catalog.GetString ("In a party all the people is introduced to the rest. There are 28 handeshakes. How many people is in the party?");} 
+		get {return "In a party all the people is introduced to the rest. There are 28 handeshakes. How many people is in the party?";} 
 	}
 
 	public override void Initialize ()
@@ -41,6 +41,6 @@ public class PuzzleSample : Game
 		base.Draw (gr, area_width, area_height);
 
 		gr.Color = new Color (0.4, 0.4, 0.4);
-		gr.DrawTextCentered (0.5, DrawAreaY, String.Format (Catalog.GetString ("This is an extension sample")));
+		gr.DrawTextCentered (0.5, DrawAreaY, "This is an extension sample");
 	}
 }
