@@ -59,7 +59,7 @@ public class CalculationSample : Game
 		op1 = number_a + number_b;
 		op2 = number_a * number_b;
 
-		right_answer = String.Format (Catalog.GetString ("{0} and {1}"), number_a, number_b);
+		right_answer = String.Format ("{0} and {1}", number_a, number_b);
 	}
 
 	public override void Draw (CairoContextEx gr, int area_width, int area_height)

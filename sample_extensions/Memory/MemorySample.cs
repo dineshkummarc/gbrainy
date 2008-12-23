@@ -44,15 +44,15 @@ public class MemorySample : Memory
 		int tmp;
 		animals = new List <string> ();
 
-		animals.Add (Catalog.GetString ("dog"));
-		animals.Add (Catalog.GetString ("cat"));
-		animals.Add (Catalog.GetString ("rat"));
-		animals.Add (Catalog.GetString ("bird"));
-		animals.Add (Catalog.GetString ("sardine"));
-		animals.Add (Catalog.GetString ("trout"));
-		animals.Add (Catalog.GetString ("monkfish"));
-		animals.Add (Catalog.GetString ("cod"));
-		animals.Add (Catalog.GetString ("salmon"));
+		animals.Add ("dog");
+		animals.Add ("cat");
+		animals.Add ("rat");
+		animals.Add ("bird");
+		animals.Add ("sardine");
+		animals.Add ("trout");
+		animals.Add ("monkfish");
+		animals.Add ("cod");
+		animals.Add ("salmon");
 
 		switch (CurrentDifficulty) {
 		case Difficulty.Easy:
