@@ -74,6 +74,7 @@ GBRAINY_CSDISTFILES =				\
 
 ASSEMBLIES = \
 	 $(GBRAINY_LIBS)    		\
+	 $(MONO_ADDINS_LIBS)    	\
 	-r:Mono.Cairo.dll		\
 	-r:Mono.Posix
 
@@ -87,7 +88,8 @@ RESOURCES =										\
 -resource:$(top_srcdir)/data/logic-games-32.png  \
 -resource:$(top_srcdir)/data/math-games-32.png  \
 -resource:$(top_srcdir)/data/memory-games-32.png  \
--resource:$(top_srcdir)/data/gbrainy.svg
+-resource:$(top_srcdir)/data/gbrainy.svg  \
+-resource:$(srcdir)/gbrainy.addin.xml
 
 gbrainydir = $(libdir)/gbrainy
 gbrainy_SCRIPTS = gbrainy.exe ../data/gbrainy.exe.config
@@ -104,6 +106,7 @@ all: gbrainy.exe
 
 EXTRA_DIST =					\
 	gbrainy.glade \
+	$(srcdir)/gbrainy.addin.xml \
 	$(GBRAINY_CSDISTFILES)			
 
 

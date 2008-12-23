@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2007 Jordi Mas i Hernàndez <jmas@softcatala.org>
+ * Copyright (C) 2008 Jordi Mas i Hernàndez <jmas@softcatala.org>
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License as
@@ -17,14 +17,30 @@
  * Boston, MA 02111-1307, USA.
  */
 
+using Cairo;
+using Mono.Unix;
 using System;
 
-public class Defines
+public class PuzzleSample : Game
 {
-	public static string VERSION = "@VERSION@";
-	public const string GNOME_LOCALE_DIR = "@prefix@/share/locale";
-	public static string DATA_DIR = "@prefix@/share/games/gbrainy/";
+	public override string Name {
+		get {return Catalog.GetString ("Puzzle sample");}
+	}
+
+	public override string Question {
+		get {return Catalog.GetString ("In a party all the people is introduced to the rest. There are 28 handeshakes. How many people is in the party?");} 
+	}
+
+	public override void Initialize ()
+	{
+		right_answer = "8";
+	}
+
+	public override void Draw (CairoContextEx gr, int area_width, int area_height)
+	{
+		base.Draw (gr, area_width, area_height);
+
+		gr.Color = new Color (0.4, 0.4, 0.4);
+		gr.DrawTextCentered (0.5, DrawAreaY, String.Format (Catalog.GetString ("This is an extension sample")));
+	}
 }
-
-
-

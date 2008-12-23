@@ -1,4 +1,4 @@
-AC_INIT(gbrainy, 1.00)
+AC_INIT(gbrainy, 1.02)
 AC_CONFIG_SRCDIR(src/gbrainy.cs)
 
 AM_CONFIG_HEADER(config.h)
@@ -54,15 +54,15 @@ dnl --- Required libraries
 
 GTKSHARP_REQUIRED=2.8
 MONO_REQUIRED=1.1.7
+MONO_ADDINS=0.3
 
 if ! pkg-config --atleast-version=2.10 gtk-sharp-2.0; then
-   AC_MSG_RESULT([GTK_2_8 defined])
    CSC_DEFINES="$CSC_DEFINES -d:GTK_2_8"
+   enable_gtk_28="true"
 else
-  AC_MSG_RESULT([GTK_2_8 not defined])
+   enable_gtk_28="false"
 fi
 
-AC_SUBST(CSC_DEFINES)
 
 PKG_CHECK_MODULES(GBRAINY_CORE, mono >= $MONO_REQUIRED)
 
@@ -73,7 +73,30 @@ PKG_CHECK_MODULES(GBRAINY,
 	glade-sharp-2.0 >= $GTKSHARP_REQUIRED)
 AC_SUBST(GBRAINY_LIBS)
 
+AC_ARG_ENABLE(addins, AC_HELP_STRING([--disable-addins], [Disable mono-addins support]), , enable_addins="yes")
+
+enable_addins_sharp="${enable_addins}"
+
+PKG_CHECK_MODULES(MONO_ADDINS,
+	mono-addins >= $MONO_ADDINS
+	mono-addins-setup >= $MONO_ADDINS
+	mono-addins-gui >= $MONO_ADDINS,
+	enable_addins_sharp="$enable_addins_sharp", enable_addins_sharp=no)
+
+if test "x$enable_addins" = "xyes" -a "x$enable_addins_sharp" = "xno"; then
+	AC_MSG_ERROR([mono-addins was not found or is not up to date. Please install mono-addins of at least version $MONO_ADDINS, or disable mono-addins support by --disable-addins])
+fi
+
+if test "x$enable_addins_sharp" = "xyes"; then
+	AC_SUBST(MONO_ADDINS_LIBS)
+	CSC_DEFINES="$CSC_DEFINES -d:MONO_ADDINS"
+fi
+
+AM_CONDITIONAL(ENABLE_ADDINS, test "x$enable_addins_sharp" = "xyes")
+
 PKG_CHECK_MODULES(GBRAINY_CHECK, librsvg-2.0)
+
+AC_SUBST(CSC_DEFINES)
 
 dnl -- Intl
 
@@ -102,7 +125,6 @@ GNOME_ICON_THEME_PREFIX=`$PKG_CONFIG --variable=prefix gnome-icon-theme`
 AC_SUBST(GNOME_ICON_THEME_PREFIX)
 
 
-
 AC_OUTPUT([
 src/Defines.cs
 src/AssemblyInfo.cs
@@ -111,3 +133,6 @@ po/Makefile.in
 src/Makefile
 data/Makefile
 ])
+
+echo "Support for older GTK:  ${enable_gtk_28}"
+echo "Mono-addins:            ${enable_addins_sharp}"

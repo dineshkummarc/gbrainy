@@ -1,0 +1,17 @@
+<Addin namespace="gbrainy"
+	version="1.00"
+	name="CalculationSample"
+	description="Calculation game Sample"
+	author="Jordi Mas"
+	url=""
+	defaultEnabled="true"
+	category="Calculation">
+
+	<Dependencies>
+		<Addin id="gbrainy" version="1.00"/>
+	</Dependencies>
+
+	<Extension path="/gbrainy/games/calculation">
+		<Calculation type="CalculationSample" />
+	</Extension>
+</Addin>

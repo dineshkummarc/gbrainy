@@ -28,6 +28,12 @@ using Mono.Unix;
 using System.Text;
 using System.Globalization;
 using System.Threading;
+using System.Diagnostics;
+
+#if MONO_ADDINS
+using Mono.Addins;
+using Mono.Addins.Setup;
+#endif
 
 public class gbrainy: Program
 {
@@ -43,6 +49,8 @@ public class gbrainy: Program
 	[Glade.Widget] Gtk.Statusbar statusbar;
 	[Glade.Widget] Gtk.Toolbar toolbar;
 	[Glade.Widget] Gtk.Label label_answer;
+	[Glade.Widget] Gtk.Menu settings_menu;
+	[Glade.Widget] Gtk.Menu help_menu;
 	GameDrawingArea drawing_area;
 	GameSession session;
 	ToolButton pause_tbbutton;
@@ -143,6 +151,18 @@ public class gbrainy: Program
 			}
 		}
 
+
+	#if MONO_ADDINS
+		Gtk.MenuItem item = new Gtk.MenuItem (Catalog.GetString ("Extensions"));
+		settings_menu.Append (item);
+		item.Activated += delegate (object sender, EventArgs ar) { Mono.Addins.Gui.AddinManagerWindow.Run (app_window);};
+
+		item = new Gtk.MenuItem (Catalog.GetString ("Develop your own puzzles for gbrainy"));
+		help_menu.Prepend (item);
+		item.Activated += delegate (object sender, EventArgs ar) { Process.Start ("http://live.gnome.org/gbrainy/Extensions");};
+
+	#endif
+
 		drawing_vbox.Add (drawing_area);
 		app_window.IconName = "gbrainy";
 		app_window.ShowAll ();
@@ -158,36 +178,35 @@ public class gbrainy: Program
 		//OnMemoryOnly (this, EventArgs.Empty); // temp
 	}
 
-		/* Taken from locale.h  */
-		[StructLayout (LayoutKind.Sequential)]
-		public struct lconv
-		{
-			public string decimal_point;
-			public string thousands_sep;		
-			public string grouping;
-			public string int_curr_symbol;
-			public string currency_symbol;
-			public string mon_decimal_point;
-			public string mon_thousands_sep;
-			public string mon_grouping;
-			public string positive_sign;
-			public string negative_sign;
-			char int_frac_digits;
-			char frac_digits;
-			char p_cs_precedes;
-			char p_sep_by_space;
-			char n_cs_precedes;
-			char n_sep_by_space;
-			char p_sign_posn;
-			char n_sign_posn;
-			char int_p_cs_precedes;
-			char int_p_sep_by_space;
-			char int_n_cs_precedes;
-			char int_n_sep_by_space;
-			char int_p_sign_posn;
-			char int_n_sign_posn;
-		}
-
+	/* Taken from locale.h  */
+	[StructLayout (LayoutKind.Sequential)]
+	public struct lconv
+	{
+		public string decimal_point;
+		public string thousands_sep;		
+		public string grouping;
+		public string int_curr_symbol;
+		public string currency_symbol;
+		public string mon_decimal_point;
+		public string mon_thousands_sep;
+		public string mon_grouping;
+		public string positive_sign;
+		public string negative_sign;
+		char int_frac_digits;
+		char frac_digits;
+		char p_cs_precedes;
+		char p_sep_by_space;
+		char n_cs_precedes;
+		char n_sep_by_space;
+		char p_sign_posn;
+		char n_sign_posn;
+		char int_p_cs_precedes;
+		char int_p_sep_by_space;
+		char int_n_cs_precedes;
+		char int_n_sep_by_space;
+		char int_p_sign_posn;
+		char int_n_sign_posn;
+	}
 
 	[DllImport("libc")]
 	static extern IntPtr localeconv ();

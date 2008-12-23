@@ -1,0 +1,17 @@
+<Addin namespace="gbrainy"
+	version="1.00"
+	name="Puzzle Sample"
+	description="Puzzle Sample description"
+	author="Jordi Mas"
+	url=""
+	defaultEnabled="true"
+	category="Logic">
+
+	<Dependencies>
+		<Addin id="gbrainy" version="1.00"/>
+	</Dependencies>
+
+	<Extension path="/gbrainy/games/logic">
+		<Logic type="PuzzleSample" />
+	</Extension>
+</Addin>

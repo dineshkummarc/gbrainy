@@ -1,0 +1,17 @@
+<Addin namespace="gbrainy"
+	version="1.00"
+	name="MemorySample"
+	description="Memory game Sample"
+	author="Jordi Mas"
+	url=""
+	defaultEnabled="true"
+	category="Memory">
+
+	<Dependencies>
+		<Addin id="gbrainy" version="1.00"/>
+	</Dependencies>
+
+	<Extension path="/gbrainy/games/memory">
+		<Memory type="MemorySample" />
+	</Extension>
+</Addin>

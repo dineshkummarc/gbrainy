@@ -20,10 +20,17 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Mono.Posix;
+
+#if MONO_ADDINS
+using Mono.Addins;
+using Mono.Addins.Setup;
+#endif
+
 
 public class GameManager
 {
-	static Type[] LogicPuzzles = new Type[] 
+	static Type[] LogicPuzzlesInternal = new Type[] 
 	{
 		typeof (PuzzleMatrixNumbers),
 		typeof (PuzzleSquares),
@@ -64,7 +71,7 @@ public class GameManager
 		typeof (PuzzleLargerShape),	
 	};
 
-	static Type[] CalculationTrainers = new Type[] 
+	static Type[] CalculationTrainersInternal = new Type[] 
 	{
 		typeof (CalculationArithmetical),
 		typeof (CalculationGreatestDivisor),
@@ -74,7 +81,7 @@ public class GameManager
 		typeof (CalculationFractions),
 	};
 
-	static Type[] MemoryTrainers = new Type[] 
+	static Type[] MemoryTrainersInternal = new Type[] 
 	{
 		typeof (MemoryColouredFigures),
 		typeof (MemoryFiguresNumbers),
@@ -86,24 +93,32 @@ public class GameManager
 		typeof (MemoryNumbers),
 	};
 
-	private GameSession.Types game_type;
-	private ArrayListIndicesRandom list;
-	private IEnumerator enumerator;
-	private List <Type> games;
-	private Game.Difficulty difficulty;
-
-	static GameManager ()
-	{
-		Console.WriteLine ("Games registered: {0}: {1} logic puzzles, {2} math trainers, {3} memory trainers", 
-			LogicPuzzles.Length + CalculationTrainers.Length + MemoryTrainers.Length,
-			LogicPuzzles.Length, CalculationTrainers.Length, MemoryTrainers.Length);
-	}
-
+	bool once;
+	GameSession.Types game_type;
+	ArrayListIndicesRandom list;
+	IEnumerator enumerator;
+	List <Type> games;
+	Game.Difficulty difficulty;
+	List <Type> LogicPuzzles;
+	List <Type> CalculationTrainers;
+	List <Type> MemoryTrainers;
+	
 	public GameManager ()
 	{
 		game_type = GameSession.Types.None;
 		difficulty = Game.Difficulty.Medium;
 		games = new List <Type> ();
+		LogicPuzzles = new List <Type> (LogicPuzzlesInternal);
+		CalculationTrainers = new List <Type> (CalculationTrainersInternal);
+		MemoryTrainers = new List <Type> (MemoryTrainersInternal);
+		LoadPlugins ();
+
+		if (once == false) {
+			once = true;
+			Console.WriteLine ("Games registered: {0}: {1} logic puzzles, {2} math trainers, {3} memory trainers", 
+				LogicPuzzles.Count + CalculationTrainers.Count + MemoryTrainers.Count,
+				LogicPuzzles.Count, CalculationTrainers.Count, MemoryTrainers.Count);
+		}
 		//GeneratePDF ();
 	}
 
@@ -131,16 +146,16 @@ public class GameManager
 	// Used from CustomGameDialog only
 	public Type[] CustomGames {
 		get { 
-			Type[] list = new Type [LogicPuzzles.Length + CalculationTrainers.Length + MemoryTrainers.Length];
+			Type[] list = new Type [LogicPuzzles.Count + CalculationTrainers.Count + MemoryTrainers.Count];
 			int idx = 0;
 
-			for (int i = 0; i < LogicPuzzles.Length; i++, idx++)
+			for (int i = 0; i < LogicPuzzles.Count; i++, idx++)
 				list[idx] = LogicPuzzles [i];
 
-			for (int i = 0; i < CalculationTrainers.Length; i++, idx++)
+			for (int i = 0; i < CalculationTrainers.Count; i++, idx++)
 				list[idx] = CalculationTrainers [i];
 
-			for (int i = 0; i < MemoryTrainers.Length; i++, idx++)
+			for (int i = 0; i < MemoryTrainers.Count; i++, idx++)
 				list[idx] = MemoryTrainers [i];
 
 			return list;
@@ -155,7 +170,50 @@ public class GameManager
 		}
 	}
 
-	private void BuildGameList ()
+	void LoadPlugins ()
+	{
+
+#if MONO_ADDINS
+		try {
+			ExtensionNodeList addins;
+			Game game;
+			string dir = System.IO.Path.Combine (Environment.GetFolderPath (Environment.SpecialFolder.ApplicationData), "gbrainy");
+		
+			AddinManager.Initialize (dir);
+			Console.WriteLine ("Pluggin database:" + dir);
+			AddinManager.Registry.Update (null);
+			SetupService setupService = new SetupService (AddinManager.Registry);
+
+			addins = AddinManager.GetExtensionNodes ("/gbrainy/games/logic");
+			foreach (TypeExtensionNode node in addins) {
+				game = (Game) node.CreateInstance ();
+				Console.WriteLine ("Loading external logic game: {0}", game);
+				LogicPuzzles.Add (game.GetType ());
+			}
+		
+			addins = AddinManager.GetExtensionNodes ("/gbrainy/games/memory");
+			foreach (TypeExtensionNode node in addins) {
+				game = (Game) node.CreateInstance ();
+				Console.WriteLine ("Loading external memory game: {0}", game);
+				MemoryTrainers.Add (game.GetType ());
+			}
+
+			addins = AddinManager.GetExtensionNodes ("/gbrainy/games/calculation");
+			foreach (TypeExtensionNode node in addins) {
+				game = (Game) node.CreateInstance ();
+				Console.WriteLine ("Loading external calculation game: {0}", game);
+				CalculationTrainers.Add (game.GetType ());
+			}
+		}
+		catch (Exception e)
+		{
+			Console.WriteLine (String.Format ("Exception {0} when loading the plugins", e));
+		}
+#endif
+	}
+
+
+	void BuildGameList ()
 	{
 		if (GameType == GameSession.Types.Custom)
 			return;
@@ -167,23 +225,23 @@ public class GameManager
 		if ((game_type & GameSession.Types.AllGames) == GameSession.Types.AllGames) {
 			
 			int idx_cal = 0, idx_mem = 0;
-			ArrayListIndicesRandom idx_logic = new ArrayListIndicesRandom (LogicPuzzles.Length);
-			ArrayListIndicesRandom idx_memory = new ArrayListIndicesRandom (MemoryTrainers.Length);
-			ArrayListIndicesRandom idx_calculation = new ArrayListIndicesRandom (CalculationTrainers.Length);
+			ArrayListIndicesRandom idx_logic = new ArrayListIndicesRandom (LogicPuzzles.Count);
+			ArrayListIndicesRandom idx_memory = new ArrayListIndicesRandom (MemoryTrainers.Count);
+			ArrayListIndicesRandom idx_calculation = new ArrayListIndicesRandom (CalculationTrainers.Count);
 
 			games.Clear ();
 			idx_memory.Initialize ();
 			idx_logic.Initialize ();
 			idx_calculation.Initialize ();
 
-			for (int i = 0; i < LogicPuzzles.Length; i++, idx_mem++, idx_cal++) {
+			for (int i = 0; i < LogicPuzzles.Count; i++, idx_mem++, idx_cal++) {
 
-				if (idx_cal == CalculationTrainers.Length) {
+				if (idx_cal == CalculationTrainers.Count) {
 					idx_cal = 0;
 					idx_calculation.Initialize ();
 				}
 
-				if (idx_mem == MemoryTrainers.Length) {
+				if (idx_mem == MemoryTrainers.Count) {
 					idx_mem = 0;
 					idx_memory.Initialize ();
 				}
@@ -209,17 +267,17 @@ public class GameManager
 		} else {
 
 			if ((game_type & GameSession.Types.LogicPuzzles) == GameSession.Types.LogicPuzzles) {
-				for (int i = 0; i < LogicPuzzles.Length; i++)
+				for (int i = 0; i < LogicPuzzles.Count; i++)
 					games.Add (LogicPuzzles [i]);
 			}
 
 			if ((game_type & GameSession.Types.CalculationTrainers) == GameSession.Types.CalculationTrainers) {
-				for (int i = 0; i < CalculationTrainers.Length; i++)
+				for (int i = 0; i < CalculationTrainers.Count; i++)
 					games.Add (CalculationTrainers [i]);
 			}
 
 			if ((game_type & GameSession.Types.MemoryTrainers) == GameSession.Types.MemoryTrainers) {
-				for (int i = 0; i < MemoryTrainers.Length; i++)
+				for (int i = 0; i < MemoryTrainers.Count; i++)
 					games.Add (MemoryTrainers [i]);
 			}
 		}
@@ -228,7 +286,7 @@ public class GameManager
 		Initialize ();
 	}
 
-	private void Initialize ()
+	void Initialize ()
 	{
 		if ((game_type & GameSession.Types.AllGames) == GameSession.Types.AllGames) { // The game list has been already randomized
 			list.Clear ();
