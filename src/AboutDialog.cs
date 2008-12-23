@@ -61,6 +61,7 @@ public class AboutDialog : Gtk.AboutDialog
 		IconName = null;
 		License = license.ToString ();
 		WrapLicense = true;
+		Response += delegate (object o, Gtk.ResponseArgs e) {Destroy ();};
 	}
 
 	Pixbuf LoadFromAssembly (string resource)
