@@ -157,7 +157,7 @@ public class gbrainy: Program
 		settings_menu.Append (item);
 		item.Activated += delegate (object sender, EventArgs ar) { Mono.Addins.Gui.AddinManagerWindow.Run (app_window);};
 
-		item = new Gtk.MenuItem (Catalog.GetString ("Develop your own puzzles for gbrainy"));
+		item = new Gtk.MenuItem (Catalog.GetString ("Develop your own puzzles"));
 		help_menu.Prepend (item);
 		item.Activated += delegate (object sender, EventArgs ar) { Process.Start ("http://live.gnome.org/gbrainy/Extensions");};
 

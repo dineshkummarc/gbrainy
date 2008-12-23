@@ -107,6 +107,7 @@ all: gbrainy.exe
 EXTRA_DIST =					\
 	gbrainy.glade \
 	$(srcdir)/gbrainy.addin.xml \
+	$(srcdir)/mono-addins-strings.xml \
 	$(GBRAINY_CSDISTFILES)			
 
 
