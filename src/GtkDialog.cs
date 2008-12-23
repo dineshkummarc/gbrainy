@@ -21,7 +21,6 @@ using System;
 using Glade;
 using Gtk;
 using Mono.Unix;
-using System.Collections;
 
 public class GtkDialog
 {
@@ -38,9 +37,9 @@ public class GtkDialog
 		dialog = null;
 	}
 
-	public int Run ()
+	public ResponseType Run ()
 	{
-		return Dialog.Run ();
+		return (ResponseType) Dialog.Run ();
 	}
 
 	public Gtk.Dialog Dialog {

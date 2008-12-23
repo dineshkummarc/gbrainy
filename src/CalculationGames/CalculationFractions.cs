@@ -19,7 +19,6 @@
 
 using System;
 using Cairo;
-using System.Text;
 using Mono.Unix;
 
 public class CalculationFractions : Game

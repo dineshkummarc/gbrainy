@@ -20,8 +20,6 @@
 using System;
 using Cairo;
 using Mono.Unix;
-using System.Timers;
-using Gtk;
 
 public class MemoryFiguresNumbers : Memory
 {

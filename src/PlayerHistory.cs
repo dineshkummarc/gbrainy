@@ -60,10 +60,10 @@ public class PlayerHistory
 
 	public void SaveGameSession (GameSession session)
 	{
-		GameHistory history = new GameHistory ();
-
 		if (session.GamesPlayed < gbrainy.preferences.GetIntValue (Preferences.MinPlayedGamesKey))
 			return;
+
+		GameHistory history = new GameHistory ();
 	
 		history.games_played = session.GamesPlayed;
 		history.games_won = session.GamesWon;

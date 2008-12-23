@@ -45,7 +45,6 @@ public class gbrainy: Program
 	[Glade.Widget] Gtk.Label label_answer;
 	GameDrawingArea drawing_area;
 	GameSession session;
-	const int ok_buttonid = -5;
 	ToolButton pause_tbbutton;
 	Gtk.TextBuffer question_buffer;
 	Gtk.TextBuffer solution_buffer;
@@ -145,8 +144,6 @@ public class gbrainy: Program
 		}
 
 		drawing_vbox.Add (drawing_area);
-		//app_window.Resize (500, 700);
-		//app_window.SizeAllocated += new SizeAllocatedHandler (OnSizeAllocated);
 		app_window.IconName = "gbrainy";
 		app_window.ShowAll ();
 
@@ -313,50 +310,9 @@ public class gbrainy: Program
 	
 	void OnMenuAbout (object sender, EventArgs args)
 	{
-		Gtk.AboutDialog about = new Gtk.AboutDialog ();
-		StringBuilder license = new StringBuilder (256);
-		string [] authors = new string [] {
-			"Jordi Mas i Hernandez <jmas@softcatala.org>",
-		};
-
-		// Name of the people that translated the application
-		string translators = Catalog.GetString ("translator-credits");
-
-		if (translators == "translator-credits")
-			translators = null;
-
-		license.Append (Catalog.GetString ("This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as  published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version.\n\n"));
-		license.Append (Catalog.GetString ("This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details.\n\n"));
-		license.Append (Catalog.GetString ("You should have received a copy of the GNU General Public License along with this program; if not, write to the Free Software Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA."));
-
-		about.Name = "gbrainy";
-		about.Version = Defines.VERSION;
-		about.Authors = authors;
-		about.Documenters = null;
-		about.Logo = LoadFromAssembly ("gbrainy.svg");
-
-		about.Copyright = "(c) 2007-2008 Jordi Mas i Hernandez\n";
-		about.Copyright += Catalog.GetString ("Based on ideas by Terry Stickels, MENSA books and Jordi Mas.");
-
-		about.Comments = Catalog.GetString ("A brain teaser and trainer game to have fun and to keep your brain trained.");
-		about.Website = "http://live.gnome.org/gbrainy";
-		about.WebsiteLabel = Catalog.GetString ("gbrainy web site");
-		about.TranslatorCredits = translators;
-		about.IconName = null;
-		about.License = license.ToString ();
-		about.WrapLicense = true;
+		AboutDialog about = new AboutDialog ();
 		about.Run ();
-		about.Destroy ();
-	}
-
-	static public Pixbuf LoadFromAssembly (string resource)
-	{
-		try {
-			return new Pixbuf (System.Reflection.Assembly.GetEntryAssembly (), resource);
-		} catch {
-			return null;
-		}
-	}
+	}	
 
 	void OnAnswerButtonClicked (object sender, EventArgs args)
 	{
@@ -392,6 +348,7 @@ public class gbrainy: Program
 		session.CurrentGame.DrawAnswer = true;
 		session.Status = GameSession.SessionStatus.Answered;
 		ActiveInputControls (true);
+		next_button.GrabFocus ();
 		drawing_area.QueueDraw ();
 	}		
 
@@ -461,7 +418,7 @@ public class gbrainy: Program
 		PreferencesDialog dialog;
 
 		dialog = new PreferencesDialog ();
-		if (dialog.Run () == ok_buttonid) {
+		if (dialog.Run () == ResponseType.Ok) {
 			session.GameManager.Difficulty = (Game.Difficulty) preferences.GetIntValue (Preferences.DifficultyKey);
 		}
 		dialog.Dialog.Destroy ();
@@ -469,14 +426,14 @@ public class gbrainy: Program
 
 	void OnCustomGame (object sender, EventArgs args)
 	{
-		int rslt;
+		ResponseType rslt;
 		CustomGameDialog dialog;
 
 		dialog = new CustomGameDialog (session.GameManager);		
-		rslt = (int) dialog.Run ();
+		rslt = dialog.Run ();
 		dialog.Dialog.Destroy ();
 
-		if (rslt == ok_buttonid && dialog.NumOfGames > 0) {
+		if (rslt == ResponseType.Ok && dialog.NumOfGames > 0) {
 			session.Type = GameSession.Types.Custom;
 			OnNewGame ();
 		}
@@ -559,11 +516,6 @@ public class gbrainy: Program
 		dialog.Dialog.Destroy ();	
 	}	
 
-	private void OnSizeAllocated (object obj, SizeAllocatedArgs args)
-	{
-		//Console.WriteLine ("OnSizeAllocated");
-	}
-
 	private void AddIcon (IconFactory stock, string stockid, string resource)
 	{
 		Gtk.IconSet iconset = stock.Lookup (stockid);
@@ -613,6 +565,4 @@ public class gbrainy: Program
 		gui.Run ();	
 	}
 }
-
-
 

@@ -20,7 +20,6 @@
 using System;
 using Cairo;
 using Mono.Unix;
-using System.Text;
 using System.Runtime.InteropServices;
 using Pango;
 
@@ -92,8 +91,11 @@ public class CairoContextEx : Cairo.Context
 	#if GTK_2_8
 	#else
 		double resolution = widget.Screen.Resolution;
-		if (resolution != -1) 
-			Pango.CairoHelper.ContextSetResolution (layout.Context, resolution);		
+		if (resolution != -1)  {
+			Pango.Context c = layout.Context;
+			Pango.CairoHelper.ContextSetResolution (c, resolution);
+			c.Dispose ();
+		}
 	#endif
 
 	}
@@ -118,7 +120,7 @@ public class CairoContextEx : Cairo.Context
 	// No dispose of resources on this class
 	protected override void Dispose (bool disposing)
 	{
-
+		layout.Dispose ();
 	}
 
 	private void UpdateFontSize ()
@@ -315,6 +317,7 @@ public class CairoContextEx : Cairo.Context
 		Source = shadow;
 		Fill ();
 		Restore ();
+		((IDisposable)shadow).Dispose ();
 	}
 
 	public void FillGradient (double x, double y, double w, double h, Cairo.Color color)
@@ -326,6 +329,7 @@ public class CairoContextEx : Cairo.Context
 		Source = shadow;
 		Fill ();
 		Restore ();
+		((IDisposable)shadow).Dispose ();
 	}
 
 	virtual public void DrawBackground ()

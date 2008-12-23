@@ -1,4 +1,4 @@
-AC_INIT(gbrainy, 1.00)
+AC_INIT(gbrainy, 1.01)
 AC_CONFIG_SRCDIR(src/gbrainy.cs)
 
 AM_CONFIG_HEADER(config.h)
@@ -88,7 +88,7 @@ AC_SUBST(CFLAGS)
 AC_SUBST(CPPFLAGS)
 AC_SUBST(LDFLAGS)
 
-CSC=gmcs
+AC_PATH_PROG(CSC, gmcs)
 AC_SUBST(CSC)
 
 expanded_libdir=`( case $prefix in NONE) prefix=$ac_default_prefix ;; *) ;; esac

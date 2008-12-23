@@ -20,9 +20,6 @@
 using System;
 using Cairo;
 using Mono.Unix;
-using System.Timers;
-using Gtk;
-using System.Collections;
 
 public class MemoryCountDots : Memory
 {

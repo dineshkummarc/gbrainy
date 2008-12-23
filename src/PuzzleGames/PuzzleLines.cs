@@ -61,7 +61,7 @@ public class PuzzleLines : Game
 			break;
 		case 1:
 			fig1 = 33;
-			fig2 = 21;
+			fig2 = 39;
 			break;
 		case 2:
 			fig1 = 15;
