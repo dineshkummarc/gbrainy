@@ -42,7 +42,7 @@
 		<widget class="GtkMenu" id="item1_menu">
 
 		  <child>
-		    <widget class="GtkMenuItem" id="menuitem2">
+		    <widget class="GtkMenuItem" id="newgame_menuitem">
 		      <property name="visible">True</property>
 		      <property name="stock_item">GNOMEUIINFO_MENU_NEW_GAME_ITEM</property>
 
@@ -108,7 +108,7 @@
 		  </child>
 
 		  <child>
-		    <widget class="GtkImageMenuItem" id="imagemenuitem1">
+		    <widget class="GtkImageMenuItem" id="pause_menuitem">
 		      <property name="visible">True</property>
 		      <property name="stock_item">GNOMEUIINFO_MENU_PAUSE_GAME_ITEM</property>
 		      <signal name="activate" handler="OnPauseGame" last_modification_time="Tue, 07 Aug 2007 11:50:41 GMT"/>
@@ -116,7 +116,7 @@
 		  </child>
 
 		  <child>
-		    <widget class="GtkMenuItem" id="menuitem8">
+		    <widget class="GtkMenuItem" id="finish_menuitem">
 		      <property name="visible">True</property>
 		      <property name="stock_item">GNOMEUIINFO_MENU_END_GAME_ITEM</property>
 		      <signal name="activate" handler="OnEndGame" last_modification_time="Tue, 07 Aug 2007 11:50:41 GMT"/>

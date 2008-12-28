@@ -39,7 +39,6 @@ public class GameDrawingArea : DrawingArea
 	public Modes mode;
 	private GameSession session;
 	private ArrayListIndicesRandom random_indices;
-	private const int tips_count = 10;
 	private const int tips_shown = 4;
 	private CountDown countdown;
 	private bool rtl;
@@ -56,7 +55,7 @@ public class GameDrawingArea : DrawingArea
 	public GameSession GameSession {
 		set {
 			session = value;
-			random_indices = new ArrayListIndicesRandom (tips_count);
+			random_indices = new ArrayListIndicesRandom (GameTips.Count);
 			random_indices.Initialize ();
 		}
 	}
@@ -375,6 +374,10 @@ public class CountDown
 
 class GameTips
 {
+	static public int Count {
+		get { return 11; }
+	}
+
 	static public String GetTip (int tip)
 	{
 		switch (tip) {
@@ -398,6 +401,8 @@ class GameTips
 			return Catalog.GetString ("Use the Settings to adjust the difficulty level of the game.");
 		case 9:
 			return Catalog.GetString ("Association of elements is a common technique for remembering things.");
+		case 10:
+			return Catalog.GetString ("Grouping elements into categories is a common technique for remembering things.");
 		}
 
 		return string.Empty;

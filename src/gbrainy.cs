@@ -51,9 +51,12 @@ public class gbrainy: Program
 	[Glade.Widget] Gtk.Label label_answer;
 	[Glade.Widget] Gtk.Menu settings_menu;
 	[Glade.Widget] Gtk.Menu help_menu;
+	[Glade.Widget] Gtk.MenuItem pause_menuitem;
+	[Glade.Widget] Gtk.MenuItem finish_menuitem;
+	[Glade.Widget] Gtk.MenuItem newgame_menuitem;
 	GameDrawingArea drawing_area;
 	GameSession session;
-	ToolButton pause_tbbutton;
+	ToolButton all_tbbutton, logic_tbbutton, calculation_tbbutton, memory_tbbutton, pause_tbbutton, finish_tbbutton;
 	Gtk.TextBuffer question_buffer;
 	Gtk.TextBuffer solution_buffer;
 	TextTag tag_green;
@@ -96,43 +99,44 @@ public class gbrainy: Program
 		tag_green.Foreground = "#00A000";
 		solution_buffer.TagTable.Add (tag_green);
 
-		ToolButton button = new ToolButton ("allgames");
-		button.SetTooltip (tooltips, Catalog.GetString ("Play all the games"), null);
-		button.Label = Catalog.GetString ("All");
-		button.Clicked += OnAllGames;
-		toolbar.Insert (button, -1);
+		all_tbbutton = new ToolButton ("allgames");
+		all_tbbutton.SetTooltip (tooltips, Catalog.GetString ("Play all the games"), null);
+		all_tbbutton.Label = Catalog.GetString ("All");
+		all_tbbutton.Clicked += OnAllGames;
+		toolbar.Insert (all_tbbutton, -1);
 
-		button = new ToolButton ("logic-games");
-		button.SetTooltip (tooltips, Catalog.GetString ("Play games that challenge your reasoning and thinking"), null);
-		button.Label = Catalog.GetString ("Logic");
-		button.Clicked += OnLogicOnly;
-		toolbar.Insert (button, -1);
+		logic_tbbutton = new ToolButton ("logic-games");
+		logic_tbbutton.SetTooltip (tooltips, Catalog.GetString ("Play games that challenge your reasoning and thinking"), null);
+		logic_tbbutton.Label = Catalog.GetString ("Logic");
+		logic_tbbutton.Clicked += OnLogicOnly;
+		toolbar.Insert (logic_tbbutton, -1);
 
-		button = new ToolButton ("math-games");
-		button.Label = Catalog.GetString ("Calculation");
-		button.SetTooltip (tooltips, Catalog.GetString ("Play games that challenge your mental calculation skills"), null);
-		button.Clicked += OnMathOnly;
-		toolbar.Insert (button, -1);
+		calculation_tbbutton = new ToolButton ("math-games");
+		calculation_tbbutton.Label = Catalog.GetString ("Calculation");
+		calculation_tbbutton.SetTooltip (tooltips, Catalog.GetString ("Play games that challenge your mental calculation skills"), null);
+		calculation_tbbutton.Clicked += OnMathOnly;
+		toolbar.Insert (calculation_tbbutton, -1);
 
-		button = new ToolButton ("memory-games");
-		button.Label = Catalog.GetString ("Memory");
-		button.SetTooltip (tooltips, Catalog.GetString ("Play games that challenge your short term memory"), null);
-		button.Clicked += OnMemoryOnly;
-		toolbar.Insert (button, -1);
+		memory_tbbutton = new ToolButton ("memory-games");
+		memory_tbbutton.Label = Catalog.GetString ("Memory");
+		memory_tbbutton.SetTooltip (tooltips, Catalog.GetString ("Play games that challenge your short term memory"), null);
+		memory_tbbutton.Clicked += OnMemoryOnly;
+		toolbar.Insert (memory_tbbutton, -1);
 
 		pause_tbbutton = new ToolButton ("pause");
 		pause_tbbutton.Label = Catalog.GetString ("Pause");
-		pause_tbbutton.SetTooltip (tooltips, Catalog.GetString ("Pause the game"), null);
+		pause_tbbutton.SetTooltip (tooltips, Catalog.GetString ("Pause or resume the game"), null);
 		pause_tbbutton.Clicked += OnPauseGame;
 		toolbar.Insert (pause_tbbutton, -1);
 
-		button = new ToolButton ("endgame");
-		button.SetTooltip (tooltips, Catalog.GetString ("End the game and show score"), null);
-		button.Label = Catalog.GetString ("Finish");
-		button.Clicked += OnEndGame;
-		toolbar.Insert (button, -1);
+		finish_tbbutton = new ToolButton ("endgame");
+		finish_tbbutton.SetTooltip (tooltips, Catalog.GetString ("End the game and show score"), null);
+		finish_tbbutton.Label = Catalog.GetString ("Finish");
+		finish_tbbutton.Clicked += OnEndGame;
+		toolbar.Insert (finish_tbbutton, -1);
 
-		session = new GameSession (this);	
+		session = new GameSession (this);
+		GameSensitiveUI ();
 
 		if (history == null)
 			history = new PlayerHistory ();
@@ -150,7 +154,6 @@ public class gbrainy: Program
 				low_res = true;
 			}
 		}
-
 
 	#if MONO_ADDINS
 		Gtk.MenuItem item = new Gtk.MenuItem (Catalog.GetString ("Extensions"));
@@ -298,6 +301,17 @@ public class gbrainy: Program
 		drawing_area.QueueDraw ();
 	}
 
+	void GameSensitiveUI () 
+	{
+		//Toolbar buttons and menu items sensitive when there is or not a game
+		bool playing = session.Status != GameSession.SessionStatus.NotPlaying;
+		
+		finish_tbbutton.Sensitive = pause_tbbutton.Sensitive = playing;
+		all_tbbutton.Sensitive = calculation_tbbutton.Sensitive = memory_tbbutton.Sensitive = logic_tbbutton.Sensitive = !playing;
+		pause_menuitem.Sensitive = finish_menuitem.Sensitive = playing;
+		newgame_menuitem.Sensitive = !playing;
+	}
+
 	void OnNextGameAfterCountDown (object source, EventArgs e)
 	{
 		drawing_area.mode = GameDrawingArea.Modes.Puzzle;
@@ -405,6 +419,7 @@ public class gbrainy: Program
 	{
 		session.NewSession ();
 		GetNextGame ();
+		GameSensitiveUI ();
 		UpdateSolution (Catalog.GetString ("Once you have an answer type it in the \"Answer:\" entry box and press the \"OK\" button."));
 		UpdateStatusBar ();
 	}
@@ -497,20 +512,31 @@ public class gbrainy: Program
 		UpdateSolution (String.Empty);
 		UpdateQuestion (String.Empty);
 		UpdateStatusBar ();
+		GameSensitiveUI ();
 		drawing_area.QueueDraw ();
 		ActiveInputControls (false);
+		SetPauseResumeButton (true);
 	}
 
-	void OnPauseGame (object sender, EventArgs args)
+	void SetPauseResumeButton (bool pause)
 	{
-		if (session.Paused) {
+		if (pause) {
+			pause_tbbutton.StockId = "pause";
+			pause_tbbutton.Label = Catalog.GetString ("Pause");
  			session.Resume ();
 			ActiveInputControls (true);
 		} else {
+			pause_tbbutton.StockId = "resume";
+			pause_tbbutton.Label = Catalog.GetString ("Resume");
 			session.Pause ();
 			ActiveInputControls (false);
 		}
 		UpdateStatusBar ();
+	}
+
+	void OnPauseGame (object sender, EventArgs args)
+	{
+		SetPauseResumeButton (session.Paused);
 	}
 
 	private void OnToolbarActivate (object sender, System.EventArgs args)
