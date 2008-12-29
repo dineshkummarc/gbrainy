@@ -68,7 +68,8 @@ public class GameManager
 		typeof (PuzzleExtraCircle),
 		typeof (PuzzleCountSeries),
 		typeof (PuzzleFourSided),
-		typeof (PuzzleLargerShape),	
+		typeof (PuzzleLargerShape),
+		typeof (PuzzleHandshakes),
 	};
 
 	static Type[] CalculationTrainersInternal = new Type[] 
@@ -182,7 +183,7 @@ public class GameManager
 			AddinManager.Initialize (dir);
 			Console.WriteLine ("Pluggin database:" + dir);
 			AddinManager.Registry.Update (null);
-			SetupService setupService = new SetupService (AddinManager.Registry);
+			new SetupService (AddinManager.Registry);
 
 			addins = AddinManager.GetExtensionNodes ("/gbrainy/games/logic");
 			foreach (TypeExtensionNode node in addins) {
@@ -309,7 +310,7 @@ public class GameManager
 			}
 
 			puzzle =  (Game) Activator.CreateInstance ((Type) games [(int) enumerator.Current], true);
-			//puzzle =  (Game) Activator.CreateInstance (LogicPuzzles [32], true);
+			//puzzle =  (Game) Activator.CreateInstance (LogicPuzzles [37], true);
 			if (first != null && first.GetType () == puzzle.GetType ())
 				break;
 				
