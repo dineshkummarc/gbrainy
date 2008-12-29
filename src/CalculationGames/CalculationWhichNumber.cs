@@ -39,7 +39,7 @@ public class CalculationWhichNumber : Game
 
 	public override string Question {
 		get {return String.Format (
-			Catalog.GetString ("Which of the following numbers is closer to {0:###.###}? Answer {1}, {2}, {3} or {4}."), question_num,
+			Catalog.GetString ("Which of the following numbers is closer to {0:##0.###}? Answer {1}, {2}, {3} or {4}."), question_num,
 			GetPossibleAnswer (0), GetPossibleAnswer (1), GetPossibleAnswer (2), GetPossibleAnswer (3));}
 	}
 
@@ -48,7 +48,7 @@ public class CalculationWhichNumber : Game
 			string answer = base.Answer + " ";
 			int ans_idx = random_indices[which];
 
-			answer += String.Format (Catalog.GetString ("The result of the operation {0} / {1} is {2:###.###}"), 
+			answer += String.Format (Catalog.GetString ("The result of the operation {0} / {1} is {2:##0.###}"), 
 				options[ans_idx * 2], options[(ans_idx * 2) + 1], question_num);
 			return answer;
 		}
