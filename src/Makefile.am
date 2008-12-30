@@ -29,7 +29,7 @@ GBRAINY_CSDISTFILES =				\
 	$(srcdir)/PuzzleGames/PuzzleCube.cs			\
 	$(srcdir)/MemoryGames/MemoryWords.cs		\
 	$(srcdir)/PuzzleGames/PuzzleFigureLetter.cs		\
-	$(srcdir)/CustomGameDialog.cs		\
+	$(srcdir)/Dialogs/CustomGameDialog.cs		\
 	$(srcdir)/PuzzleGames/PuzzleDivideCircle.cs		\
 	$(srcdir)/CalculationGames/CalculationGreatestDivisor.cs	\
 	$(srcdir)/CalculationGames/CalculationTwoNumbers.cs	\
@@ -48,7 +48,7 @@ GBRAINY_CSDISTFILES =				\
 	$(srcdir)/PuzzleGames/PuzzleMissingSlice.cs		\
 	$(srcdir)/PuzzleGames/PuzzleLines.cs		\
 	$(srcdir)/PuzzleGames/PuzzleTetris.cs		\
-	$(srcdir)/PreferencesDialog.cs		\
+	$(srcdir)/Dialogs/PreferencesDialog.cs		\
 	$(srcdir)/PuzzleGames/PuzzleMissingPiece.cs		\
 	$(srcdir)/MemoryGames/MemoryIndications.cs		\
 	$(srcdir)/PuzzleGames/PuzzleMostInCommon.cs		\
@@ -62,14 +62,14 @@ GBRAINY_CSDISTFILES =				\
 	$(srcdir)/PuzzleGames/PuzzleExtraCircle.cs		\
 	$(srcdir)/PuzzleGames/PuzzleCountSeries.cs		\
 	$(srcdir)/PlayerHistory.cs		\
-	$(srcdir)/PlayerHistoryDialog.cs	\
-	$(srcdir)/GtkDialog.cs			\
+	$(srcdir)/Dialogs/PlayerHistoryDialog.cs	\
+	$(srcdir)/Dialogs/GtkDialog.cs			\
 	$(srcdir)/Preferences.cs		\
 	$(srcdir)/PuzzleGames/PuzzleFourSided.cs		\
 	$(srcdir)/PuzzleGames/PuzzleLargerShape.cs		\
 	$(srcdir)/SVGImage.cs			\
 	$(srcdir)/MemoryGames/MemoryNumbers.cs		\
-	$(srcdir)/AboutDialog.cs	\
+	$(srcdir)/Dialogs/AboutDialog.cs	\
 	$(srcdir)/PuzzleGames/PuzzleHandshakes.cs	\
 	$(srcdir)/gbrainy.cs			
 
