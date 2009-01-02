@@ -4,14 +4,14 @@
 #
 # (c) 2007 Santiago Martinez Varela, 2007.
 # Eduardo Retamales <eretamales@gnome.cl>, 2007, 2008.
-# Jorge González <jorgegonz@svn.gnome.org>, 2007, 2008.
+# Jorge González <jorgegonz@svn.gnome.org>, 2007, 200, 2009.
 msgid ""
 msgstr ""
 "Project-Id-Version: gbrainy.HEAD\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
-"product=gbrainy&amp;component=general\n"
-"POT-Creation-Date: 2008-12-28 10:00+0000\n"
-"PO-Revision-Date: 2008-12-28 12:16+0100\n"
+"product=gbrainy&component=general\n"
+"POT-Creation-Date: 2008-12-29 23:26+0000\n"
+"PO-Revision-Date: 2009-01-02 11:37+0100\n"
 "Last-Translator: Jorge González <jorgegonz@svn.gnome.org>\n"
 "Language-Team: Español <gnome-es-list@gnome.org>\n"
 "MIME-Version: 1.0\n"
@@ -38,8 +38,8 @@ msgid "translator-credits"
 msgstr ""
 "Gabriel Felipe Cornejo Salas <gnomeusr@gmail.com>, 2008\n"
 "Eduardo Retamales <eretamales@gnome.cl>, 2007, 2008\n"
-"Jorge González <jorgegonz@svn.gnome.org>, 2007, 2008\n"
-"QA: Jorge González <jorgegonz@svn.gnome.org>, 2007-2008"
+"Jorge González <jorgegonz@svn.gnome.org>, 2007-2009\n"
+"QA: Jorge González <jorgegonz@svn.gnome.org>, 2007-2009"
 
 #: ../src/AboutDialog.cs:44
 msgid ""
@@ -179,16 +179,16 @@ msgstr "Fracción más próxima"
 #: ../src/CalculationGames/CalculationWhichNumber.cs:42
 #, csharp-format
 msgid ""
-"Which of the following numbers is closer to {0:###.###}? Answer {1}, {2}, "
+"Which of the following numbers is closer to {0:##0.###}? Answer {1}, {2}, "
 "{3} or {4}."
 msgstr ""
-"¿Cuál de los siguientes números está más cerca de {0:###.###}? Responde {1}, "
-"{2}, {3} o {4}."
+"¿Cuál de los siguientes números está más cerca de {0:###0.###}? Responde "
+"{1}, {2}, {3} o {4}."
 
 #: ../src/CalculationGames/CalculationWhichNumber.cs:51
 #, csharp-format
-msgid "The result of the operation {0} / {1} is {2:###.###}"
-msgstr "El resultado de la operación {0} / {1} es {2:###.###}"
+msgid "The result of the operation {0} / {1} is {2:##0.###}"
+msgstr "El resultado de la operación {0} / {1} es {2:###0.###}"
 
 #: ../src/ColorPalette.cs:63
 msgid "red"
@@ -1400,6 +1400,26 @@ msgid "The four sided figures are made by connecting the following points: {0}"
 msgstr ""
 "Las figuras de cuatro caras se construyen conectando los siguientes puntos: "
 "{0}"
+
+#: ../src/PuzzleGames/PuzzleHandshakes.cs:29
+msgid "Handshakes"
+msgstr "Apretones de manos"
+
+#: ../src/PuzzleGames/PuzzleHandshakes.cs:34
+#, csharp-format
+msgid ""
+"In a party all the people is introduced to the others. There are {0} "
+"handeshakes in total. How many people is in the party?"
+msgstr ""
+"En una fiesta todas las personas se presentan las unas a los otras. Existen "
+"{0} apretones de manos en total. ¿Cuántas personas hay en la fiesta?"
+
+#: ../src/PuzzleGames/PuzzleHandshakes.cs:39
+msgid ""
+"Try to imagine a situation where you were meeting a smaller number of people."
+msgstr ""
+"Intenta imaginar una situación en la que estuvieses conociendo un pequeño "
+"grupo de personas."
 
 #: ../src/PuzzleGames/PuzzleLargerShape.cs:108
 msgid "Larger shape"
