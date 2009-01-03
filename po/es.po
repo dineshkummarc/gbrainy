@@ -10,8 +10,8 @@ msgstr ""
 "Project-Id-Version: gbrainy.HEAD\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=gbrainy&component=general\n"
-"POT-Creation-Date: 2008-12-29 23:26+0000\n"
-"PO-Revision-Date: 2009-01-02 11:37+0100\n"
+"POT-Creation-Date: 2009-01-02 13:10+0000\n"
+"PO-Revision-Date: 2009-01-03 16:30+0100\n"
 "Last-Translator: Jorge González <jorgegonz@svn.gnome.org>\n"
 "Language-Team: Español <gnome-es-list@gnome.org>\n"
 "MIME-Version: 1.0\n"
@@ -33,7 +33,7 @@ msgid "gbrainy"
 msgstr "gbrainy"
 
 #. Name of the people that translated the application
-#: ../src/AboutDialog.cs:39
+#: ../src/Dialogs/AboutDialog.cs:39
 msgid "translator-credits"
 msgstr ""
 "Gabriel Felipe Cornejo Salas <gnomeusr@gmail.com>, 2008\n"
@@ -41,7 +41,7 @@ msgstr ""
 "Jorge González <jorgegonz@svn.gnome.org>, 2007-2009\n"
 "QA: Jorge González <jorgegonz@svn.gnome.org>, 2007-2009"
 
-#: ../src/AboutDialog.cs:44
+#: ../src/Dialogs/AboutDialog.cs:44
 msgid ""
 "This program is free software; you can redistribute it and/or modify it "
 "under the terms of the GNU General Public License as  published by the Free "
@@ -55,7 +55,7 @@ msgstr ""
 "elección) cualquier versión posterior. \n"
 "\n"
 
-#: ../src/AboutDialog.cs:45
+#: ../src/Dialogs/AboutDialog.cs:45
 msgid ""
 "This program is distributed in the hope that it will be useful, but WITHOUT "
 "ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or "
@@ -69,7 +69,7 @@ msgstr ""
 "para más detalles. \n"
 "\n"
 
-#: ../src/AboutDialog.cs:46
+#: ../src/Dialogs/AboutDialog.cs:46
 msgid ""
 "You should have received a copy of the GNU General Public License along with "
 "this program; if not, write to the Free Software Foundation, Inc., 59 Temple "
@@ -79,16 +79,16 @@ msgstr ""
 "coneste programa, si no, escriba a la Fundación del Sofware Libre, en 59 "
 "Temple 59 Place - Suite 330, Boston, MA 02111-1307, EE. UU."
 
-#: ../src/AboutDialog.cs:55
+#: ../src/Dialogs/AboutDialog.cs:55
 msgid "Based on ideas by Terry Stickels, MENSA books and Jordi Mas."
 msgstr "Basado en ideas de Terry Stickels, MENSA books y Jordi Mas."
 
-#: ../src/AboutDialog.cs:57
+#: ../src/Dialogs/AboutDialog.cs:57
 msgid ""
 "A brain teaser and trainer game to have fun and to keep your brain trained."
 msgstr "Un juego para divertirse y mantener el cerebro entrenado."
 
-#: ../src/AboutDialog.cs:59
+#: ../src/Dialogs/AboutDialog.cs:59
 msgid "gbrainy web site"
 msgstr "Página web de gbrainy"
 
@@ -124,6 +124,7 @@ msgstr ""
 "¿Cuál de los divisores posibles es el mayor que divide a todos los números?"
 
 #: ../src/CalculationGames/CalculationGreatestDivisor.cs:204
+#: ../src/CalculationGames/CalculationPrimes.cs:206
 msgid "Numbers"
 msgstr "Números"
 
@@ -152,6 +153,29 @@ msgstr ""
 #, csharp-format
 msgid "{0} and {1}"
 msgstr "{0} y {1}"
+
+#: ../src/CalculationGames/CalculationPrimes.cs:148
+msgid "Primes"
+msgstr "Primos"
+
+#: ../src/CalculationGames/CalculationPrimes.cs:156
+msgid ""
+"Which of the following numbers is a prime number? A primer number is any "
+"natural number greater than 1 that can only be divided by 1 and itself."
+msgstr ""
+"¿Cuál de los siguientes números es un número primo? Un número primo es "
+"cualquier número natural mayor que 1 y que sólo se puede dividir por 1 y por "
+"si mismo."
+
+#: ../src/CalculationGames/CalculationPrimes.cs:160
+msgid ""
+"You can check easily if a number can be divided by 3 by adding together each "
+"digit and then take the sum of them. If the final number is divisible by 3, "
+"then the original number is too."
+msgstr ""
+"Puedes comprobar fácilmente si un número se puede dividir por 3 sumando los "
+"dígitos del número. Si el número final es divisible entre 3, entonces el "
+"número original también lo es."
 
 #: ../src/CalculationGames/CalculationTwoNumbers.cs:30
 msgid "Two numbers"
@@ -223,31 +247,31 @@ msgid "white"
 msgstr "blanco"
 
 #. Define columns
-#: ../src/CustomGameDialog.cs:54
+#: ../src/Dialogs/CustomGameDialog.cs:54
 msgid "Game Name"
 msgstr "Nombre del juego"
 
-#: ../src/CustomGameDialog.cs:60
+#: ../src/Dialogs/CustomGameDialog.cs:60
 msgid "Type"
 msgstr "Tipo"
 
-#: ../src/CustomGameDialog.cs:67
+#: ../src/Dialogs/CustomGameDialog.cs:67
 msgid "Enabled"
 msgstr "Activado"
 
-#: ../src/CustomGameDialog.cs:85 ../src/GameDrawingArea.cs:187
+#: ../src/Dialogs/CustomGameDialog.cs:85 ../src/GameDrawingArea.cs:187
 #: ../src/gbrainy.cs:110 ../src/gbrainy.glade.h:11
-#: ../src/PlayerHistoryDialog.cs:101
+#: ../src/Dialogs/PlayerHistoryDialog.cs:101
 msgid "Logic"
 msgstr "Lógica"
 
-#: ../src/CustomGameDialog.cs:88 ../src/GameDrawingArea.cs:195
+#: ../src/Dialogs/CustomGameDialog.cs:88 ../src/GameDrawingArea.cs:195
 #: ../src/gbrainy.cs:121 ../src/gbrainy.glade.h:16
-#: ../src/PlayerHistoryDialog.cs:111
+#: ../src/Dialogs/PlayerHistoryDialog.cs:111
 msgid "Memory"
 msgstr "Memoria"
 
-#: ../src/CustomGameDialog.cs:91
+#: ../src/Dialogs/CustomGameDialog.cs:91
 msgid "Mental Calculation"
 msgstr "Cálculo mental"
 
@@ -343,12 +367,12 @@ msgid "Use the Settings to adjust the difficulty level of the game."
 msgstr "Usar las Preferencias para ajustar el nivel de dificultad del juego."
 
 #: ../src/GameDrawingArea.cs:183 ../src/gbrainy.glade.h:27
-#: ../src/PlayerHistoryDialog.cs:92
+#: ../src/Dialogs/PlayerHistoryDialog.cs:92
 msgid "Total"
 msgstr "Total"
 
 #: ../src/GameDrawingArea.cs:191 ../src/gbrainy.cs:115
-#: ../src/gbrainy.glade.h:6 ../src/PlayerHistoryDialog.cs:120
+#: ../src/gbrainy.glade.h:6 ../src/Dialogs/PlayerHistoryDialog.cs:120
 msgid "Calculation"
 msgstr "Cálculo"
 
@@ -1051,7 +1075,7 @@ msgstr "_Desinstalar…"
 msgid "_Unselect All"
 msgstr "_Deseleccionar todo"
 
-#: ../src/PlayerHistoryDialog.cs:38
+#: ../src/Dialogs/PlayerHistoryDialog.cs:38
 #, csharp-format
 msgid ""
 "The graphic below shows the player's game score evolution. It is built using "
