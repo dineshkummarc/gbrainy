@@ -51,7 +51,7 @@ public class AboutDialog : Gtk.AboutDialog
 		Documenters = null;
 		Logo = LoadFromAssembly ("gbrainy.svg");
 
-		Copyright = "(c) 2007-2008 Jordi Mas i Hernandez\n";
+		Copyright = "(c) 2007-2009 Jordi Mas i Hernandez\n";
 		Copyright += Catalog.GetString ("Based on ideas by Terry Stickels, MENSA books and Jordi Mas.");
 
 		Comments = Catalog.GetString ("A brain teaser and trainer game to have fun and to keep your brain trained.");

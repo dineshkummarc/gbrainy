@@ -286,7 +286,7 @@ public class GameSession
 
 	public void ScoreGame ()
 	{
-		if (scored_game == true)
+		if (current_game == null || scored_game == true)
 			return;
 
 		switch (current_game.Type) {

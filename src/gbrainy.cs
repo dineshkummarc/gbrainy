@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2007-2008 Jordi Mas i Hernàndez <jmas@softcatala.org>
+ * Copyright (C) 2007-2009 Jordi Mas i Hernàndez <jmas@softcatala.org>
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License as
@@ -136,7 +136,6 @@ public class gbrainy: Program
 		toolbar.Insert (finish_tbbutton, -1);
 
 		session = new GameSession (this);
-		GameSensitiveUI ();
 
 		if (history == null)
 			history = new PlayerHistory ();
@@ -146,6 +145,7 @@ public class gbrainy: Program
 
 		session.GameManager.Difficulty = (Game.Difficulty) preferences.GetIntValue (Preferences.DifficultyKey);
 		drawing_area = new GameDrawingArea ();
+		GameSensitiveUI ();
 
 		// For low resolutions, hide the toolbar and made the drawing area smaller
 		if (drawing_area.Screen.Width> 0 && drawing_area.Screen.Height > 0) {
@@ -178,7 +178,6 @@ public class gbrainy: Program
 		solution_textview.ModifyBase (Gtk.StateType.Normal, color);
 
 		ActiveInputControls (false);
-		//OnMemoryOnly (this, EventArgs.Empty); // temp
 	}
 
 	/* Taken from locale.h  */
@@ -304,8 +303,13 @@ public class gbrainy: Program
 	void GameSensitiveUI () 
 	{
 		//Toolbar buttons and menu items sensitive when there is or not a game
-		bool playing = session.Status != GameSession.SessionStatus.NotPlaying;
-		
+		bool playing;
+
+		if (session.Status != GameSession.SessionStatus.NotPlaying || drawing_area.Mode == GameDrawingArea.Modes.CountDown)
+			playing = true;
+		else
+			playing = false;
+	
 		finish_tbbutton.Sensitive = pause_tbbutton.Sensitive = playing;
 		all_tbbutton.Sensitive = calculation_tbbutton.Sensitive = memory_tbbutton.Sensitive = logic_tbbutton.Sensitive = !playing;
 		pause_menuitem.Sensitive = finish_menuitem.Sensitive = playing;
@@ -314,8 +318,9 @@ public class gbrainy: Program
 
 	void OnNextGameAfterCountDown (object source, EventArgs e)
 	{
-		drawing_area.mode = GameDrawingArea.Modes.Puzzle;
+		drawing_area.Mode = GameDrawingArea.Modes.Puzzle;
 		ActiveInputControls (session.CurrentGame.ButtonsActive);
+		next_button.Sensitive = true;
 		drawing_area.puzzle = session.CurrentGame;		
 		UpdateQuestion (session.CurrentGame.Question);
 		answer_entry.Text = string.Empty;
@@ -334,7 +339,6 @@ public class gbrainy: Program
 		session.NextGame ();
 		
 		if (preferences.GetBoolValue (Preferences.MemQuestionWarnKey) && session.Type != GameSession.Types.MemoryTrainers && ((session.CurrentGame as Memory)  != null)) {
-			ActiveInputControls (false);
 			drawing_area.OnDrawCountDown (OnNextGameAfterCountDown);
 		}
 		else
@@ -441,8 +445,11 @@ public class gbrainy: Program
 		UpdateSolution (String.Empty);
  		UpdateQuestion (String.Empty);
 
-		if (preferences.GetBoolValue (Preferences.MemQuestionWarnKey))
+		if (preferences.GetBoolValue (Preferences.MemQuestionWarnKey)) {
 			drawing_area.OnDrawCountDown (OnMemoryOnlyAfterCountDown);
+			GameSensitiveUI ();
+			next_button.Sensitive = true;
+		}
 		else
 			OnNewGame ();
 	}
@@ -501,7 +508,7 @@ public class gbrainy: Program
 
 	void OnEndGame (object sender, EventArgs args)
 	{
-		drawing_area.mode = GameDrawingArea.Modes.Scores;
+		drawing_area.Mode = GameDrawingArea.Modes.Scores;
 		drawing_area.GameSession = session.Copy ();
 	
 		history.SaveGameSession (session);

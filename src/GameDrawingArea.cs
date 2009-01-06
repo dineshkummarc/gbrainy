@@ -35,13 +35,13 @@ public class GameDrawingArea : DrawingArea
 		CountDown,
 	}
 
+	GameSession session;
+	ArrayListIndicesRandom random_indices;
+	const int tips_shown = 4;
+	CountDown countdown;
+	bool rtl;
 	public Game puzzle;
-	public Modes mode;
-	private GameSession session;
-	private ArrayListIndicesRandom random_indices;
-	private const int tips_shown = 4;
-	private CountDown countdown;
-	private bool rtl;
+	Modes mode;
 
 	public GameDrawingArea ()
 	{
@@ -57,6 +57,16 @@ public class GameDrawingArea : DrawingArea
 			session = value;
 			random_indices = new ArrayListIndicesRandom (GameTips.Count);
 			random_indices.Initialize ();
+		}
+	}
+
+	public Modes Mode {
+		get { return mode;}
+		set {
+			if (mode == Modes.CountDown && countdown != null)
+				countdown.EndDrawCountDown ();
+
+			mode = value;
 		}
 	}
 
@@ -82,6 +92,7 @@ public class GameDrawingArea : DrawingArea
 			return;
 
 		countdown.EndDrawCountDown ();
+		countdown = null;
 	}
 
 	private void DrawImage (CairoContextEx gr, double x, double y, string img)
