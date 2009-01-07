@@ -72,6 +72,7 @@ GBRAINY_CSDISTFILES =				\
 	$(srcdir)/Dialogs/AboutDialog.cs	\
 	$(srcdir)/PuzzleGames/PuzzleHandshakes.cs	\
 	$(srcdir)/CalculationGames/CalculationPrimes.cs	\
+	$(srcdir)/MemoryGames/MemoryFacts.cs		\
 	$(srcdir)/gbrainy.cs			
 
 ASSEMBLIES = \

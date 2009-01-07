@@ -31,12 +31,12 @@ public class PuzzleHandshakes : Game
 
 	public override string Question {
 		get {return String.Format (
-			Catalog.GetString ("In a party all the people is introduced to the others. There are {0} handeshakes in total. How many people is in the party?"), 				handshakes);
+			Catalog.GetString ("All attendees to a party are introduced to one another. {0} handshakes are made in total. How many people are attending the party? "), 				handshakes);
 		}
 	}
 
 	public override string Tip {
-		get { return Catalog.GetString ("Try to imagine a situation where you were meeting a smaller number of people.");}
+		get { return Catalog.GetString ("Try to imagine a situation in which you are meeting a small number of people.");}
 	}
 
 	public override void Initialize ()

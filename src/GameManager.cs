@@ -93,6 +93,7 @@ public class GameManager
 		typeof (MemoryFigures),
 		typeof (MemoryIndications),
 		typeof (MemoryNumbers),
+		typeof (MemoryFacts),
 	};
 
 	bool once;

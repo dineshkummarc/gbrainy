@@ -153,11 +153,11 @@ public class CalculationPrimes : Game
 	}
 
 	public override string Question {
-		get {return Catalog.GetString ("Which of the following numbers is a prime number? A primer number is any natural number greater than 1 that can only be divided by 1 and itself.");}
+		get {return Catalog.GetString ("In the set of numbers below, which of the following numbers is a prime? A prime number is a positive integer that has exactly two different positive divisors, 1 and itself.");}
 	}
 
 	public override string Tip {
-		get { return Catalog.GetString ("You can check easily if a number can be divided by 3 by adding together each digit and then take the sum of them. If the final number is divisible by 3, then the original number is too.");}
+		get { return Catalog.GetString ("If the sum of all digits in a given number is divisible by 3, then so is the number. For example 15 = 1 + 5 = 6, which is divisible by 3.");}
 	}
 
 	public override void Initialize ()
