@@ -31,7 +31,7 @@ public class PuzzleHandshakes : Game
 
 	public override string Question {
 		get {return String.Format (
-			Catalog.GetString ("All attendees to a party are introduced to one another. {0} handshakes are made in total. How many people are attending the party? "), 				handshakes);
+			Catalog.GetString ("All attendees to a party are introduced to one another. {0} handshakes are made in total. How many people are attending the party?"), 				handshakes);
 		}
 	}
 
