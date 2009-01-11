@@ -1,9 +1,10 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gbrainy\n"
-"POT-Creation-Date: 2008-11-15 15:13+0000\n"
-"PO-Revision-Date: 2008-12-22 18:49+0100\n"
-"Last-Translator: Jaroslav Ryník <jrynik@yahoo.co.uk>\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gbrainy&component=general\n"
+"POT-Creation-Date: 2009-01-07 21:23+0000\n"
+"PO-Revision-Date: 2009-01-11 13:44+0100\n"
+"Last-Translator: Jaroslav Ryník <jrynik <at> [jahu:] <dot> co <dot> uk>\n"
 "Language-Team: Slovak <http://telka.sk/linux/sk-l10n/>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
@@ -23,11 +24,11 @@ msgid "gbrainy"
 msgstr "gbrainy"
 
 #. Name of the people that translated the application
-#: ../src/AboutDialog.cs:41
+#: ../src/Dialogs/AboutDialog.cs:39
 msgid "translator-credits"
-msgstr "Jaroslav Ryník, jrynik@yahoo.co.uk, 2008"
+msgstr "Preložili"
 
-#: ../src/AboutDialog.cs:46
+#: ../src/Dialogs/AboutDialog.cs:44
 msgid ""
 "This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as  published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version.\n"
 "\n"
@@ -35,7 +36,7 @@ msgstr ""
 "Tento program je bezplatný; môžete ho rozširovať a/lebo upravovať pri rešpektovaní licencie GNU General Public License vydanej organizáciou Free Software Foundation, a to buď verzie 2 tejto licencie alebo (podľa vlastného uváženia) ktorejkoľvek neskoršej verzie.\n"
 "\n"
 
-#: ../src/AboutDialog.cs:47
+#: ../src/Dialogs/AboutDialog.cs:45
 msgid ""
 "This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details.\n"
 "\n"
@@ -43,106 +44,120 @@ msgstr ""
 "Tento program sa distribuuje s nádejou, že bude užitočnž, ale BEZ AKEJKOĽVEK ZĂRUKY; dokonca aj bez nepriamej záruky OBCHODOVATEĽNOSTI alebo VHODNOSTI NA NEJAKĂť ĂšČEL. Viac podrobností nájdete v licencii GNU General Public License.\n"
 "\n"
 
-#: ../src/AboutDialog.cs:48
+#: ../src/Dialogs/AboutDialog.cs:46
 msgid "You should have received a copy of the GNU General Public License along with this program; if not, write to the Free Software Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA."
 msgstr "Spolu s programom ste mali dostať kópiu licencie GNU General Public License; ak sa tak nestalo, napíšte organizácii Free Software Foundation, Inc. na adresu 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA."
 
-#: ../src/AboutDialog.cs:57
+#: ../src/Dialogs/AboutDialog.cs:55
 msgid "Based on ideas by Terry Stickels, MENSA books and Jordi Mas."
 msgstr "Založené na nápadoch Terryho Stickelsa, kníh od MENSY a Jordiho Masa."
 
-#: ../src/AboutDialog.cs:59
+#: ../src/Dialogs/AboutDialog.cs:57
 msgid "A brain teaser and trainer game to have fun and to keep your brain trained."
 msgstr "Hra na lámanie hlavy, pobavenie a aby ste si udržanie mozgu v dobrej kondícii"
 
-#: ../src/AboutDialog.cs:61
+#: ../src/Dialogs/AboutDialog.cs:59
 msgid "gbrainy web site"
 msgstr "Internetová stránka programu gbrainy"
 
-#: ../src/CalculationGames/CalculationArithmetical.cs:41
+#: ../src/CalculationGames/CalculationArithmetical.cs:40
 msgid "Arithmetical"
 msgstr "Počtová"
 
-#: ../src/CalculationGames/CalculationArithmetical.cs:49
+#: ../src/CalculationGames/CalculationArithmetical.cs:48
 msgid "What is the result of the arithmetical operation?"
 msgstr "Aký je výsledok tohto príkladu? (* = krát, / = delené.)"
 
-#: ../src/CalculationGames/CalculationFractions.cs:58
+#: ../src/CalculationGames/CalculationFractions.cs:57
 msgid "Fractions"
 msgstr "Zlomky"
 
-#: ../src/CalculationGames/CalculationFractions.cs:66
+#: ../src/CalculationGames/CalculationFractions.cs:65
 #, csharp-format
 msgid "What is the result of the given operation? You can answer using either a fraction or a number."
 msgstr "Aký výsledok má tento príklad? Pri odpovedi napíšte buď zlomok (cez lomku(/)) alebo des. číslo."
 
-#: ../src/CalculationGames/CalculationGreatestDivisor.cs:33
+#: ../src/CalculationGames/CalculationGreatestDivisor.cs:32
 msgid "Greatest divisor"
 msgstr "Najväčší deliteľ"
 
-#: ../src/CalculationGames/CalculationGreatestDivisor.cs:41
+#: ../src/CalculationGames/CalculationGreatestDivisor.cs:40
 msgid "Which of the possible divisors is the greatest that divides all numbers?"
 msgstr "Ktorý z možných deliteľov je najväčší, a dajú sa ním vydeliť všetky číslá?"
 
-#: ../src/CalculationGames/CalculationGreatestDivisor.cs:205
+#: ../src/CalculationGames/CalculationGreatestDivisor.cs:204
+#: ../src/CalculationGames/CalculationPrimes.cs:206
 msgid "Numbers"
 msgstr "Číslá"
 
-#: ../src/CalculationGames/CalculationGreatestDivisor.cs:220
+#: ../src/CalculationGames/CalculationGreatestDivisor.cs:219
 msgid "Possible divisors"
 msgstr "Možné delitele"
 
-#: ../src/CalculationGames/CalculationOperator.cs:33
+#: ../src/CalculationGames/CalculationOperator.cs:32
 msgid "Operator"
 msgstr "Znamienko"
 
-#: ../src/CalculationGames/CalculationOperator.cs:37
+#: ../src/CalculationGames/CalculationOperator.cs:36
 #, csharp-format
 msgid "The first operator is {0}."
 msgstr "Prvé znamienko je {0}."
 
-#: ../src/CalculationGames/CalculationOperator.cs:45
+#: ../src/CalculationGames/CalculationOperator.cs:44
 #, csharp-format
 msgid "Which operators make {0}, {1}, and {2} equal {3}? Answer using '+-/*'."
 msgstr "Ktoré znamienka spôsobia, že sa čísla {0}, {1}, a {2} budú rovnať číslu {3}? (Napíšte + - * alebo /.)"
 
-#: ../src/CalculationGames/CalculationOperator.cs:81
-#: ../src/CalculationGames/CalculationTwoNumbers.cs:62
+#: ../src/CalculationGames/CalculationOperator.cs:80
+#: ../src/CalculationGames/CalculationTwoNumbers.cs:61
 #, csharp-format
 msgid "{0} and {1}"
 msgstr "{0} a {1}"
 
-#: ../src/CalculationGames/CalculationTwoNumbers.cs:31
+#: ../src/CalculationGames/CalculationPrimes.cs:148
+msgid "Primes"
+msgstr "Prvočíslá"
+
+#: ../src/CalculationGames/CalculationPrimes.cs:156
+msgid "In the set of numbers below, which of the following numbers is a prime? A prime number is a positive integer that has exactly two different positive divisors, 1 and itself."
+msgstr "Ktoré z týchto čísel je prvočíslo? Prvočíslo je kladné celé číslo, ktoré má iba dvoch deliteľov, jednotku a samo seba."
+
+#: ../src/CalculationGames/CalculationPrimes.cs:160
+msgid "If the sum of all digits in a given number is divisible by 3, then so is the number. For example 15 = 1 + 5 = 6, which is divisible by 3."
+msgstr "Ak sa dá súčet cifier nejakého čísla vydeliť troma, potom to isté platí aj o tom čísle. Napríklad 15 -> 1 + 5 = 6, ktoré je deliteľné 3-mi."
+
+#: ../src/CalculationGames/CalculationTwoNumbers.cs:30
 msgid "Two numbers"
 msgstr "Dve čísla"
 
-#: ../src/CalculationGames/CalculationTwoNumbers.cs:39
+#: ../src/CalculationGames/CalculationTwoNumbers.cs:38
 #, csharp-format
 msgid "Which two numbers when added are {0} and when multiplied are {1}?"
 msgstr "Ktoré dve čísla dávajú pri sčítaní {0} a pri vynásobení {1}?"
 
-#: ../src/CalculationGames/CalculationTwoNumbers.cs:74
+#: ../src/CalculationGames/CalculationTwoNumbers.cs:73
 #, csharp-format
 msgid "number1 + number2 = {0}"
 msgstr "číslo 1 + číslo 2 = {0}"
 
-#: ../src/CalculationGames/CalculationTwoNumbers.cs:77
+#: ../src/CalculationGames/CalculationTwoNumbers.cs:76
 #, csharp-format
 msgid "number1 * number2 = {0}"
 msgstr "číslo 1 . číslo 2 = {0}"
 
-#: ../src/CalculationGames/CalculationWhichNumber.cs:34
+#: ../src/CalculationGames/CalculationWhichNumber.cs:33
 msgid "Closer fraction"
 msgstr "Najbližší zlomok"
 
-#: ../src/CalculationGames/CalculationWhichNumber.cs:43
+#: ../src/CalculationGames/CalculationWhichNumber.cs:42
 #, csharp-format
-msgid "Which of the following numbers is closer to {0:###.###}? Answer {1}, {2}, {3} or {4}."
-msgstr "Ktoré z týchto čísel je najbližšie k {0:###.###}? Odpovedzte {1}, {2}, {3} alebo {4}. (,77 = 0,77)"
+msgid "Which of the following numbers is closer to {0:##0.###}? Answer {1}, {2}, {3} or {4}."
+msgstr "Ktoré z týchto čísel je najbližšie k {0:###.###}? Odpovedzte {1}, {2}, {3} alebo {4}."
 
-#: ../src/CalculationGames/CalculationWhichNumber.cs:52
+# This is the most natural translation I could make.
+#: ../src/CalculationGames/CalculationWhichNumber.cs:51
 #, csharp-format
-msgid "The result of the operation {0} / {1} is {2:###.###}"
+msgid "The result of the operation {0} / {1} is {2:##0.###}"
 msgstr "Ak vydelíme {0} a {1}, vyjde nám {2:###.###}"
 
 #: ../src/ColorPalette.cs:63
@@ -165,7 +180,6 @@ msgstr "žltá"
 msgid "magenta"
 msgstr "fialová"
 
-#
 #: ../src/ColorPalette.cs:68
 msgid "orange"
 msgstr "oranžová"
@@ -179,39 +193,39 @@ msgid "white"
 msgstr "biela"
 
 #. Define columns
-#: ../src/CustomGameDialog.cs:55
+#: ../src/Dialogs/CustomGameDialog.cs:54
 msgid "Game Name"
 msgstr "Názov hry"
 
-#: ../src/CustomGameDialog.cs:61
+#: ../src/Dialogs/CustomGameDialog.cs:60
 msgid "Type"
 msgstr "Druh"
 
-#: ../src/CustomGameDialog.cs:68
+#: ../src/Dialogs/CustomGameDialog.cs:67
 msgid "Enabled"
 msgstr "Vybratá"
 
-#: ../src/CustomGameDialog.cs:86
-#: ../src/GameDrawingArea.cs:189
-#: ../src/gbrainy.cs:99
+#: ../src/Dialogs/CustomGameDialog.cs:85
+#: ../src/GameDrawingArea.cs:198
+#: ../src/gbrainy.cs:110
 #: ../src/gbrainy.glade.h:11
-#: ../src/PlayerHistoryDialog.cs:102
+#: ../src/Dialogs/PlayerHistoryDialog.cs:101
 msgid "Logic"
 msgstr "Logické"
 
-#: ../src/CustomGameDialog.cs:89
-#: ../src/GameDrawingArea.cs:197
-#: ../src/gbrainy.cs:110
+#: ../src/Dialogs/CustomGameDialog.cs:88
+#: ../src/GameDrawingArea.cs:206
+#: ../src/gbrainy.cs:121
 #: ../src/gbrainy.glade.h:16
-#: ../src/PlayerHistoryDialog.cs:112
+#: ../src/Dialogs/PlayerHistoryDialog.cs:111
 msgid "Memory"
 msgstr "Pamäťové"
 
-#: ../src/CustomGameDialog.cs:92
+#: ../src/Dialogs/CustomGameDialog.cs:91
 msgid "Mental Calculation"
 msgstr "Počítanie z hlavy"
 
-#: ../src/Game.cs:71
+#: ../src/Game.cs:69
 #, csharp-format
 msgid "The correct answer is {0}."
 msgstr "Správna odpoveď je {0}."
@@ -223,245 +237,263 @@ msgstr "Správna odpoveď je {0}."
 #. For languages represented with the Latin alphabet use
 #. the same than English
 #. First possible answer for a serie (e.g.: Figure A)
-#: ../src/Game.cs:241
+#: ../src/Game.cs:239
 msgid "A"
 msgstr "A"
 
 #. Second possible answer for a serie
-#: ../src/Game.cs:243
+#: ../src/Game.cs:241
 msgid "B"
 msgstr "B"
 
 #. Third possible answer for a serie
-#: ../src/Game.cs:245
+#: ../src/Game.cs:243
 msgid "C"
 msgstr "C"
 
 #. Fourth possible answer for a serie
-#: ../src/Game.cs:247
+#: ../src/Game.cs:245
 msgid "D"
 msgstr "D"
 
 #. Fifth possible answer for a serie
-#: ../src/Game.cs:249
+#: ../src/Game.cs:247
 msgid "E"
 msgstr "E"
 
 #. Sixth possible answer for a serie
-#: ../src/Game.cs:251
+#: ../src/Game.cs:249
 msgid "F"
 msgstr "F"
 
 #. Seventh possible answer for a serie
-#: ../src/Game.cs:253
+#: ../src/Game.cs:251
 msgid "G"
 msgstr "G"
 
 #. Eighth possible answer for a serie
-#: ../src/Game.cs:255
+#: ../src/Game.cs:253
 msgid "H"
 msgstr "H"
 
-#: ../src/Game.cs:263
+#: ../src/Game.cs:261
 #, csharp-format
 msgid "Figure {0}"
 msgstr "Obrázok {0}"
 
-#: ../src/GameDrawingArea.cs:119
+#: ../src/GameDrawingArea.cs:128
 #, csharp-format
 msgid "Welcome to gbrainy {0}"
 msgstr "Vitajte v programe gbrainy {0}"
 
-#: ../src/GameDrawingArea.cs:122
+#: ../src/GameDrawingArea.cs:131
 msgid "gbrainy is a brain teaser game and trainer to have fun and to keep your brain trained. It includes:"
 msgstr "gbrainy je hra na lámanie hlavy, aby ste sa zabavili a udržali svoj mozog v dobrej kondícii. Nájdete tu:"
 
-#: ../src/GameDrawingArea.cs:128
+#: ../src/GameDrawingArea.cs:137
 msgid "Logic puzzles. Designed to challenge your reasoning and thinking skills."
 msgstr "Logické obrazce: vymyslené tak, aby precvičili schopnosť dedukcie a myslenia."
 
-#: ../src/GameDrawingArea.cs:135
+#: ../src/GameDrawingArea.cs:144
 msgid "Mental calculation. Based on arithmetical operations that test your mental calculation abilities."
 msgstr "Počítanie z hlavy: zložené z matematických úloh, ktoré preveria, ako viete počítať z hlavy."
 
-#: ../src/GameDrawingArea.cs:141
+#: ../src/GameDrawingArea.cs:150
 msgid "Memory trainers. To prove and enhance your short term memory."
 msgstr "Pamäťové cvičenia: na preskúšanie a vylepšenie krátkodobej pamäti."
 
-#: ../src/GameDrawingArea.cs:144
-#: ../src/GameDrawingArea.cs:399
+#: ../src/GameDrawingArea.cs:153
+#: ../src/GameDrawingArea.cs:412
 msgid "Use the Settings to adjust the difficulty level of the game."
 msgstr "Choďte na Nastavenia a prispôsobte si náročnosť hry,"
 
-#: ../src/GameDrawingArea.cs:185
+#: ../src/GameDrawingArea.cs:194
 #: ../src/gbrainy.glade.h:27
-#: ../src/PlayerHistoryDialog.cs:93
+#: ../src/Dialogs/PlayerHistoryDialog.cs:92
 msgid "Total"
 msgstr "Celkovo"
 
-#: ../src/GameDrawingArea.cs:193
-#: ../src/gbrainy.cs:104
+#: ../src/GameDrawingArea.cs:202
+#: ../src/gbrainy.cs:115
 #: ../src/gbrainy.glade.h:6
-#: ../src/PlayerHistoryDialog.cs:121
+#: ../src/Dialogs/PlayerHistoryDialog.cs:120
 msgid "Calculation"
 msgstr "Matematické"
 
-#: ../src/GameDrawingArea.cs:211
+#: ../src/GameDrawingArea.cs:220
 msgid "Score"
 msgstr "Počet bodov"
 
-#: ../src/GameDrawingArea.cs:219
+#: ../src/GameDrawingArea.cs:228
 #, csharp-format
 msgid "Outstanding results"
 msgstr "Vynikajúci výsledok"
 
-#: ../src/GameDrawingArea.cs:221
+#: ../src/GameDrawingArea.cs:230
 #, csharp-format
 msgid "Excellent results"
 msgstr "Výborný výsledok"
 
-#: ../src/GameDrawingArea.cs:223
+#: ../src/GameDrawingArea.cs:232
 #, csharp-format
 msgid "Good results"
 msgstr "Dobrý výsledok"
 
-#: ../src/GameDrawingArea.cs:225
+#: ../src/GameDrawingArea.cs:234
 #, csharp-format
 msgid "Poor results"
 msgstr "Slabý výsledok"
 
-#: ../src/GameDrawingArea.cs:226
+#: ../src/GameDrawingArea.cs:235
 #, csharp-format
 msgid "Disappointing results"
 msgstr "Neuspokojivý výsledok"
 
-#: ../src/GameDrawingArea.cs:232
+#: ../src/GameDrawingArea.cs:241
 #, csharp-format
 msgid "Games won: {0} ({1} played)"
 msgstr "Počet vyhraných hier: {0} (z(o) {1} hraných)"
 
-#: ../src/GameDrawingArea.cs:234
+#: ../src/GameDrawingArea.cs:243
 #, csharp-format
 msgid "{0}. Games won: {1} ({2} played)"
 msgstr "{0}. Počet vyhraných hier: {1} (z(o) {2} hraných)"
 
-#: ../src/GameDrawingArea.cs:238
+#: ../src/GameDrawingArea.cs:247
 #, csharp-format
 msgid "Time played {0} (average per game {1})"
 msgstr "Strávený čas {0} (priemerne/1 hru {1})"
 
-#: ../src/GameDrawingArea.cs:245
+#: ../src/GameDrawingArea.cs:254
 msgid "Tips for your next games"
 msgstr "Rady do ďalších hier:"
 
-#: ../src/GameDrawingArea.cs:347
+#: ../src/GameDrawingArea.cs:356
 msgid "Get ready to memorize the next objects..."
 msgstr "Pripravte sa na to, že si budete musieť zapamätať niekoľko vecí..."
 
-#: ../src/GameDrawingArea.cs:383
+#: ../src/GameDrawingArea.cs:396
 msgid "Read the instructions carefully and identify the data and given clues."
 msgstr "pozorne si prečítajte zadanie a pomôcky a určte, ktoré informácie sú dôležité,"
 
-#: ../src/GameDrawingArea.cs:385
+#: ../src/GameDrawingArea.cs:398
 msgid "To score the player gbrainy uses the time and tips needed to complete each game."
 msgstr "pri hodnotení gbrainy berie do úvahy čas a pomôcky, využité na dokončenie každej hry,"
 
-#: ../src/GameDrawingArea.cs:387
+#: ../src/GameDrawingArea.cs:400
 msgid "In logic games, elements that may seem irrelevant can be very important."
 msgstr "prvky, ktoré sa v log. hrách zdajú nepodstatné, môžu byť veľmi dôležité,"
 
-#: ../src/GameDrawingArea.cs:389
+#: ../src/GameDrawingArea.cs:402
 msgid "Break the mental blocks and look into the boundaries of problems."
 msgstr "prelomte myšlienkové bariéry a pozrite sa za hranice problémov."
 
-#: ../src/GameDrawingArea.cs:391
+#: ../src/GameDrawingArea.cs:404
 msgid "Enjoy making mistakes, they are part of the learning process."
 msgstr "tešte sa z chýb, patria k učeniu,"
 
-#: ../src/GameDrawingArea.cs:393
+#: ../src/GameDrawingArea.cs:406
 msgid "Do all the problems, even the difficult ones. Improvement comes from practising."
 msgstr "riešte všetky úlohy, aj tie ťažké; zlepšenie prichádza s praxou,"
 
-#: ../src/GameDrawingArea.cs:395
+#: ../src/GameDrawingArea.cs:408
 msgid "Play on a daily basis, you will notice progress soon."
 msgstr "hrajte denne a čoskoro si všimnete pokrok,"
 
 #
 #. Translators: Custom Game Selection is a menu option
-#: ../src/GameDrawingArea.cs:397
+#: ../src/GameDrawingArea.cs:410
 msgid "Use the 'Custom Game Selection' to choose exactly which games you want to play."
 msgstr "v ponuke Vl. kombinácia hier si vyberte presne také hry, aké si chcete zahrať,"
 
-#: ../src/GameDrawingArea.cs:401
+#: ../src/GameDrawingArea.cs:414
 msgid "Association of elements is a common technique for remembering things."
 msgstr "vytváranie logických spojení medzi vecami je bežný spôsob na ich zapamätanie."
 
-#: ../src/GameSession.cs:223
+# OK - the most natural I could come up with.
+#: ../src/GameDrawingArea.cs:416
+msgid "Grouping elements into categories is a common technique for remembering things."
+msgstr "Vytváranie logických spojení medzi vecami je bežný spôsob na ich zapamätanie."
+
+#: ../src/GameSession.cs:222
 #, csharp-format
 msgid "Games played: {0} ({1}% score)"
 msgstr "Počet odohraných hier: {0} ({1} % bodov)"
 
-#: ../src/GameSession.cs:224
+#: ../src/GameSession.cs:223
 #, csharp-format
 msgid " - Time: {0}"
 msgstr " - Čas:{0}"
 
-#: ../src/GameSession.cs:227
+#: ../src/GameSession.cs:226
 #, csharp-format
 msgid "- Game: {0}"
 msgstr "- Hra: {0}"
 
-#: ../src/GameSession.cs:279
+#: ../src/GameSession.cs:278
 msgid "Paused"
 msgstr "Prestávka"
 
-#: ../src/gbrainy.cs:92
+#: ../src/gbrainy.cs:103
 msgid "Play all the games"
 msgstr "Hraj všetky hry"
 
-#: ../src/gbrainy.cs:93
+#: ../src/gbrainy.cs:104
 msgid "All"
 msgstr "Všetky"
 
-#: ../src/gbrainy.cs:98
+#: ../src/gbrainy.cs:109
 msgid "Play games that challenge your reasoning and thinking"
 msgstr "Hrajte hry, ktoré preskúšajú vašu dedukciu a myslenie"
 
-#: ../src/gbrainy.cs:105
+#: ../src/gbrainy.cs:116
 msgid "Play games that challenge your mental calculation skills"
 msgstr "Hrajte hry, ktoré preveria, ako viete počítať z hlavy"
 
-#: ../src/gbrainy.cs:111
+#: ../src/gbrainy.cs:122
 msgid "Play games that challenge your short term memory"
 msgstr "Hrajte hry, ktoré preskúšajú vašu krátkodobú pamäť"
 
-#: ../src/gbrainy.cs:116
+#: ../src/gbrainy.cs:127
+#: ../src/gbrainy.cs:532
 msgid "Pause"
 msgstr "Prestávka"
 
-#: ../src/gbrainy.cs:117
-msgid "Pause the game"
-msgstr "Pozastaviť hru"
+#: ../src/gbrainy.cs:128
+msgid "Pause or resume the game"
+msgstr "Dať si prestávku"
 
-#: ../src/gbrainy.cs:122
+#: ../src/gbrainy.cs:133
 msgid "End the game and show score"
 msgstr "Skončiť hru a obodovať ju"
 
-#: ../src/gbrainy.cs:123
+#: ../src/gbrainy.cs:134
 msgid "Finish"
 msgstr "Skončiť"
 
-#: ../src/gbrainy.cs:330
+#: ../src/gbrainy.cs:159
+msgid "Extensions"
+msgstr "Rozšírené moduly"
+
+#: ../src/gbrainy.cs:163
+msgid "Develop your own puzzles"
+msgstr "Vymýšľajte vlastné logické obrazce"
+
+#: ../src/gbrainy.cs:367
 msgid "Congratulations."
 msgstr "Blahoželáme!"
 
-#: ../src/gbrainy.cs:332
+#: ../src/gbrainy.cs:369
 msgid "Incorrect answer."
 msgstr "Nesprávna odpoveď."
 
-#: ../src/gbrainy.cs:389
+#: ../src/gbrainy.cs:427
 msgid "Once you have an answer type it in the \"Answer:\" entry box and press the \"OK\" button."
 msgstr "Ak poznáte odpoveď, napíšte ju do do políčka \"Odpoveď:\" a stlačte tlačidlo \"OK\"."
+
+#: ../src/gbrainy.cs:537
+msgid "Resume"
+msgstr "Záver"
 
 #: ../src/gbrainy.glade.h:1
 msgid "<b>Difficulty Level</b>"
@@ -571,90 +603,142 @@ msgstr "_Ďalej"
 msgid "_Tip"
 msgstr "_Pomôcka"
 
-#: ../src/Memory.cs:50
+#: ../src/Memory.cs:49
 msgid "Memorize the objects below in the given time"
 msgstr "V časovom limite si zapamätajte tieto veci."
 
-#: ../src/MemoryGames/MemoryColouredFigures.cs:49
+#: ../src/MemoryGames/MemoryColouredFigures.cs:47
 msgid "Colored figures"
 msgstr "Farebné geom. útvary"
 
-#
-#: ../src/MemoryGames/MemoryColouredFigures.cs:54
+#: ../src/MemoryGames/MemoryColouredFigures.cs:52
 #, csharp-format
 msgid "Which of these figures was previously shown? Answer {0}, {1}, {2} or {3}."
-msgstr "Ktoré z týchto geom. útvarov ste predtým videli? Odpovedzte {0}, {1}, {2} alebo {3}."
+msgstr "Ktorý z týchto obrázkov ste videli? Odpovedzte {0}, {1}, {2} alebo {3}."
 
-#: ../src/MemoryGames/MemoryColouredText.cs:35
+#: ../src/MemoryGames/MemoryColouredText.cs:31
 msgid "Colored text"
 msgstr "Farebný text"
 
-#: ../src/MemoryGames/MemoryColouredText.cs:40
+#: ../src/MemoryGames/MemoryColouredText.cs:36
 #, csharp-format
 msgid "What was the color of the text that said '{0}'?"
 msgstr "Akú farbu malo slovo {0} (napíšte v nominatíve jednotného čísla)?"
 
-#: ../src/MemoryGames/MemoryCountDots.cs:40
+#: ../src/MemoryGames/MemoryCountDots.cs:37
 msgid "Counting dots"
 msgstr "Počítanie guličiek"
 
-#: ../src/MemoryGames/MemoryCountDots.cs:44
+#: ../src/MemoryGames/MemoryCountDots.cs:41
 #, csharp-format
 msgid "How many {0} dots were in the previous image? Answer using numbers."
 msgstr "Na koľkých guličkách na obrázku bola {0} farba? Napíšte číslom."
 
-#: ../src/MemoryGames/MemoryFigures.cs:53
+#: ../src/MemoryGames/MemoryFacts.cs:48
+msgid "Memorize facts"
+msgstr "Pamätanie si vecí"
+
+#. Translators: {0} is replaced by a number, {1} by a year (like 1940)
+#: ../src/MemoryGames/MemoryFacts.cs:99
+#, csharp-format
+msgid "Shiny Cars had already announced a {0} days production halt next month, but before that it had not cut production since {1}."
+msgstr "Spoločnosť Nablýskané fára už oznámila, že na budúci mesiac preruší výrobu na {0} dní, čo sa nestalo od {1}."
+
+#: ../src/MemoryGames/MemoryFacts.cs:101
+msgid "For how many days did Shiny Cars halt its production?"
+msgstr "Na koľko dní pozastavila spoločnosť Nablýskané fára výrobu?"
+
+#: ../src/MemoryGames/MemoryFacts.cs:102
+msgid "In what year did Shiny Cars last halt its production?"
+msgstr "V ktorom roku firma Nablýskané fára naposledy prerušila výrobu?"
+
+#. Translators: {0} is replaced by a number, {1} by a year (like 1940)
+#: ../src/MemoryGames/MemoryFacts.cs:110
+#, csharp-format
+msgid "Shiny Cars sales fell {0}% this past December, the worse decline since {1}."
+msgstr "Tržby spoločnosti Nablýskané fára klesli v decembri minulého roka o {0}% , čo bol najhorší výsledok od {1}"
+
+#: ../src/MemoryGames/MemoryFacts.cs:112
+msgid "By how much did company sales fall last December?"
+msgstr "O koľko klesli tržby firmy v decembri minulého roka?"
+
+#: ../src/MemoryGames/MemoryFacts.cs:113
+msgid "In what year did Shiny Cars record a sales total lower than that of last December?"
+msgstr "V ktorom roku boli tržby spoločnosti Nablýskané fára nižšie ako tie v decembri minulého roka?"
+
+#: ../src/MemoryGames/MemoryFacts.cs:118
+#, csharp-format
+msgid "About {0}% of Shiny Cars produced worldwide are sold in Europe"
+msgstr "Asi {0}% áut, ktoré spoločnosť Nablýskané fára vyrába po celom svete,  sa predáva v Európe."
+
+#: ../src/MemoryGames/MemoryFacts.cs:120
+msgid "What percentage of all Shiny Cars produced worldwide are sold in Europe?"
+msgstr "Koľko percent všetkých áut, ktoré sa firma Nablýskané fára vyrába po celom svete, sa predáva v Európe?"
+
+#: ../src/MemoryGames/MemoryFacts.cs:126
+#, csharp-format
+msgid "About {0}% of Shiny Cars use diesel, {1}% use gasoline and the remainder use electric."
+msgstr "Asi {0} % áut od firmy Nablýskané fára ide na diesel, {1} % na bežný benzín a zvyšok na elektrinu."
+
+#: ../src/MemoryGames/MemoryFacts.cs:128
+msgid "What percentage of Shiny Cars use diesel?"
+msgstr "Koľko percent áut, ktoré vyrába firma Nablýskané fára, ide na diesel?"
+
+#: ../src/MemoryGames/MemoryFacts.cs:129
+msgid "What percentage of Shiny Cars use gasoline?"
+msgstr "Koľko percent áut firmy Nablýskané fára ide na normálny benzín?"
+
+#: ../src/MemoryGames/MemoryFigures.cs:50
 msgid "Memory figures"
 msgstr "Pamätanie si geom. útvarov"
 
-#: ../src/MemoryGames/MemoryFigures.cs:58
+#: ../src/MemoryGames/MemoryFigures.cs:55
 msgid "In which cell is the other figure like the one shown below? Answer the cell number."
 msgstr "V ktorom obdlžníku bol tento geom. útvar? Napíšte číslo obdlžníka."
 
-#: ../src/MemoryGames/MemoryIndications.cs:128
+#: ../src/MemoryGames/MemoryFiguresNumbers.cs:34
+msgid "Figures with numbers"
+msgstr "Trojuholníky s číslami"
+
+#: ../src/MemoryGames/MemoryFiguresNumbers.cs:39
+#, csharp-format
+msgid "Which one of these squares was previously shown? Answer {0}, {1}, {2} or {3}."
+msgstr "Ktoré z týchto geom. útvarov ste predtým videli? Odpovedzte {0}, {1}, {2} alebo {3}."
+
+#: ../src/MemoryGames/MemoryIndications.cs:125
 #, csharp-format
 msgid "Start at point number {0}"
 msgstr "Začnite v bode {0}"
 
-#: ../src/MemoryGames/MemoryIndications.cs:132
+#: ../src/MemoryGames/MemoryIndications.cs:129
 msgid "Turn right"
 msgstr "Zabočte doprava"
 
-#: ../src/MemoryGames/MemoryIndications.cs:134
+#: ../src/MemoryGames/MemoryIndications.cs:131
 msgid "Turn left"
 msgstr "Zabočte doľava"
 
-#: ../src/MemoryGames/MemoryIndications.cs:136
+#: ../src/MemoryGames/MemoryIndications.cs:133
 msgid "Go up"
 msgstr "Choďte hore"
 
-#: ../src/MemoryGames/MemoryIndications.cs:138
+#: ../src/MemoryGames/MemoryIndications.cs:135
 msgid "Go down"
 msgstr "Choďte dolu"
 
-#: ../src/MemoryGames/MemoryIndications.cs:143
+#: ../src/MemoryGames/MemoryIndications.cs:140
 #, csharp-format
 msgid "End at point {0}"
 msgstr "Skončte v bode {0}"
 
-#: ../src/MemoryGames/MemoryIndications.cs:157
+#: ../src/MemoryGames/MemoryIndications.cs:154
 msgid "Memorize indications"
 msgstr "Pamätanie si pokynov"
 
-#: ../src/MemoryGames/MemoryIndications.cs:163
+#: ../src/MemoryGames/MemoryIndications.cs:160
 #, csharp-format
 msgid "Which of the following graphics represent the indications previously given? Answer {0}, {1}, {2} or {3}."
 msgstr "Ktorá z týchto schém zodpovedá zadaným pokynom? Odpovedzte {0}, {1}, {2} alebo {3}."
-
-#
-#: ../src/MemoryGames/MemoryFiguresNumbers.cs:36
-msgid "Figures with numbers"
-msgstr "Trojuholníky s číslami"
-
-#: ../src/MemoryGames/MemoryFiguresNumbers.cs:41
-#, csharp-format
-msgid "Which one of these squares was previously shown? Answer {0}, {1}, {2} or {3}."
-msgstr "Ktoré z týchto geom. útvarov ste predtým videli? Odpovedzte {0}, {1}, {2} alebo {3}."
 
 #
 #: ../src/MemoryGames/MemoryNumbers.cs:54
@@ -674,180 +758,296 @@ msgstr "Na koľkých guličkách na obrázku bola {0} farba? Napíšte číslom.
 msgid "Memorize numbers"
 msgstr "Pamätanie si čísel"
 
-#: ../src/MemoryGames/MemoryWords.cs:36
+#: ../src/MemoryGames/MemoryWords.cs:34
 msgid "Memorize words"
 msgstr "Pamätanie si slov"
 
-#: ../src/MemoryGames/MemoryWords.cs:41
+#: ../src/MemoryGames/MemoryWords.cs:39
 #, csharp-format
 msgid "There is a missing word from the previous list. Which one is the missing word?"
 msgstr "Z predchádzajúceho zoznamu tu chýba jedno slovo. Ktoré?"
 
 #. Body parts
-#: ../src/MemoryGames/MemoryWords.cs:50
+#: ../src/MemoryGames/MemoryWords.cs:48
 msgid "wrist"
 msgstr "zápästie"
 
-#: ../src/MemoryGames/MemoryWords.cs:51
+#: ../src/MemoryGames/MemoryWords.cs:49
 msgid "elbow"
 msgstr "lakeť"
 
-#: ../src/MemoryGames/MemoryWords.cs:52
+#: ../src/MemoryGames/MemoryWords.cs:50
 msgid "armpit"
 msgstr "pazucha"
 
-#: ../src/MemoryGames/MemoryWords.cs:53
+#: ../src/MemoryGames/MemoryWords.cs:51
 msgid "hand"
 msgstr "ruka"
 
-#: ../src/MemoryGames/MemoryWords.cs:54
+#: ../src/MemoryGames/MemoryWords.cs:52
 msgid "chest"
 msgstr "hruď"
 
 #. Fishes
-#: ../src/MemoryGames/MemoryWords.cs:57
+#: ../src/MemoryGames/MemoryWords.cs:55
 msgid "sardine"
 msgstr "sardinka"
 
-#: ../src/MemoryGames/MemoryWords.cs:58
+#: ../src/MemoryGames/MemoryWords.cs:56
 msgid "trout"
 msgstr "pstruh"
 
-#: ../src/MemoryGames/MemoryWords.cs:59
+#: ../src/MemoryGames/MemoryWords.cs:57
 msgid "monkfish"
 msgstr "žralok"
 
-#: ../src/MemoryGames/MemoryWords.cs:60
+#: ../src/MemoryGames/MemoryWords.cs:58
 msgid "cod"
 msgstr "treska"
 
-#: ../src/MemoryGames/MemoryWords.cs:61
+#: ../src/MemoryGames/MemoryWords.cs:59
 msgid "salmon"
 msgstr "losos"
 
 #. Vegetables
-#: ../src/MemoryGames/MemoryWords.cs:64
+#: ../src/MemoryGames/MemoryWords.cs:62
 msgid "potato"
 msgstr "zemiak"
 
-#: ../src/MemoryGames/MemoryWords.cs:65
+#: ../src/MemoryGames/MemoryWords.cs:63
 msgid "ginger"
 msgstr "zázvor"
 
-#: ../src/MemoryGames/MemoryWords.cs:66
+#: ../src/MemoryGames/MemoryWords.cs:64
 msgid "pepper"
 msgstr "paprika"
 
-#: ../src/MemoryGames/MemoryWords.cs:67
+#: ../src/MemoryGames/MemoryWords.cs:65
 msgid "garlic"
 msgstr "cesnak"
 
-#: ../src/MemoryGames/MemoryWords.cs:68
+#: ../src/MemoryGames/MemoryWords.cs:66
 msgid "pumpkin"
 msgstr "tekvica"
 
 #. Bicycle
-#: ../src/MemoryGames/MemoryWords.cs:71
+#: ../src/MemoryGames/MemoryWords.cs:69
 msgid "brake"
 msgstr "brzda"
 
-#: ../src/MemoryGames/MemoryWords.cs:72
+#: ../src/MemoryGames/MemoryWords.cs:70
 msgid "pedal"
 msgstr "pedál"
 
-#: ../src/MemoryGames/MemoryWords.cs:73
+#: ../src/MemoryGames/MemoryWords.cs:71
 msgid "chain"
 msgstr "reťaz"
 
-#: ../src/MemoryGames/MemoryWords.cs:74
+#: ../src/MemoryGames/MemoryWords.cs:72
 msgid "wheel"
 msgstr "koleso"
 
-#: ../src/MemoryGames/MemoryWords.cs:75
+#: ../src/MemoryGames/MemoryWords.cs:73
 msgid "handlebar"
 msgstr "riadidlá"
 
 #. Music
-#: ../src/MemoryGames/MemoryWords.cs:78
+#: ../src/MemoryGames/MemoryWords.cs:76
 msgid "drummer"
 msgstr "bubeník"
 
-#: ../src/MemoryGames/MemoryWords.cs:79
+#: ../src/MemoryGames/MemoryWords.cs:77
 msgid "speaker"
 msgstr "reproduktor"
 
-#: ../src/MemoryGames/MemoryWords.cs:80
+#: ../src/MemoryGames/MemoryWords.cs:78
 msgid "lyrics"
 msgstr "text"
 
-#: ../src/MemoryGames/MemoryWords.cs:81
+#: ../src/MemoryGames/MemoryWords.cs:79
 msgid "beat"
 msgstr "búchať"
 
-#: ../src/MemoryGames/MemoryWords.cs:82
+#: ../src/MemoryGames/MemoryWords.cs:80
 msgid "song"
 msgstr "pesnička"
 
 #. Weather
-#: ../src/MemoryGames/MemoryWords.cs:85
+#: ../src/MemoryGames/MemoryWords.cs:83
 msgid "cloud"
 msgstr "mrak"
 
-#: ../src/MemoryGames/MemoryWords.cs:86
+#: ../src/MemoryGames/MemoryWords.cs:84
 msgid "rain"
 msgstr "dážď"
 
-#: ../src/MemoryGames/MemoryWords.cs:87
+#: ../src/MemoryGames/MemoryWords.cs:85
 msgid "storm"
 msgstr "búrka"
 
-#: ../src/MemoryGames/MemoryWords.cs:88
+#: ../src/MemoryGames/MemoryWords.cs:86
 msgid "fog"
 msgstr "hmla"
 
-#: ../src/MemoryGames/MemoryWords.cs:89
+#: ../src/MemoryGames/MemoryWords.cs:87
 msgid "rainbow"
 msgstr "dúha"
 
 #. Animals
-#: ../src/MemoryGames/MemoryWords.cs:92
+#: ../src/MemoryGames/MemoryWords.cs:90
 msgid "rabbit"
 msgstr "zajac"
 
-#: ../src/MemoryGames/MemoryWords.cs:93
+#: ../src/MemoryGames/MemoryWords.cs:91
 msgid "mouse"
 msgstr "myš"
 
-#: ../src/MemoryGames/MemoryWords.cs:94
+#: ../src/MemoryGames/MemoryWords.cs:92
 msgid "monkey"
 msgstr "opica"
 
-#: ../src/MemoryGames/MemoryWords.cs:95
+#: ../src/MemoryGames/MemoryWords.cs:93
 msgid "bear"
 msgstr "medveď"
 
-#: ../src/MemoryGames/MemoryWords.cs:96
+#: ../src/MemoryGames/MemoryWords.cs:94
 msgid "wolf"
 msgstr "vlk"
 
-#: ../src/PlayerHistoryDialog.cs:39
+#: ../src/mono-addins-strings.xml.h:1
+msgid "<b>Select the add-ins to install and click on Next</b>"
+msgstr "<b>Označte doplnky, ktoré si chcete nainštalovať a kliknite na tlačidlo Ďalej</b>"
+
+#: ../src/mono-addins-strings.xml.h:2
+msgid "<big><b>Add-in Manager</b></big>"
+msgstr "<big><b>Nástroj na prácu s doplnkami</b></big>"
+
+#: ../src/mono-addins-strings.xml.h:3
+msgid "Add-in"
+msgstr "Doplnok"
+
+#: ../src/mono-addins-strings.xml.h:4
+msgid "Add-in Dependencies:"
+msgstr "Závislosti medzi doplnkami:"
+
+#: ../src/mono-addins-strings.xml.h:5
+msgid "Add-in Installation"
+msgstr "Inštalácia doplnkov"
+
+#: ../src/mono-addins-strings.xml.h:6
+msgid "Add-in Manager"
+msgstr "Nástroj na prácu s doplnkami"
+
+#: ../src/mono-addins-strings.xml.h:7
+msgid "Additional extensions are required to perform this operation."
+msgstr "Na vykonanie tejto operácie treba rozšírené moduly."
+
+#: ../src/mono-addins-strings.xml.h:8
+msgid "All registered repositories"
+msgstr "Všetky registrované zdroje"
+
+#: ../src/mono-addins-strings.xml.h:9
+msgid "Author:"
+msgstr "Autor:"
+
+#: ../src/mono-addins-strings.xml.h:10
+msgid "Copyright:"
+msgstr "Autorské práva:"
+
+#: ../src/mono-addins-strings.xml.h:11
+msgid "Disable"
+msgstr "Vypnúť"
+
+#: ../src/mono-addins-strings.xml.h:12
+msgid "Enable"
+msgstr "Vybrať si"
+
+#: ../src/mono-addins-strings.xml.h:13
+msgid "Install from:"
+msgstr "Nainštalovať zo stránky:"
+
+#: ../src/mono-addins-strings.xml.h:14
+msgid "Name"
+msgstr "Názov"
+
+#: ../src/mono-addins-strings.xml.h:15
+msgid "Other"
+msgstr "Iné"
+
+#: ../src/mono-addins-strings.xml.h:16
+msgid "Repository"
+msgstr "Priečinok"
+
+#: ../src/mono-addins-strings.xml.h:17
+msgid "Select _All"
+msgstr "Označiť _všetky"
+
+#: ../src/mono-addins-strings.xml.h:18
+msgid "Show all packages"
+msgstr "Zobraziť všetky balíky"
+
+#: ../src/mono-addins-strings.xml.h:19
+msgid "Show new versions only"
+msgstr "Zobraziť len nové verzie"
+
+#: ../src/mono-addins-strings.xml.h:20
+msgid "Show updates only"
+msgstr "Zobraziť len aktualizácie"
+
+#: ../src/mono-addins-strings.xml.h:21
+msgid "The following add-ins are currently installed:"
+msgstr "Teraz máte nainštalované tieto doplnky:"
+
+#: ../src/mono-addins-strings.xml.h:22
+msgid "The following add-ins will be installed:"
+msgstr "Nainštalujú sa tieto doplnky:"
+
+#: ../src/mono-addins-strings.xml.h:23
+msgid "Url"
+msgstr "Adresa"
+
+#: ../src/mono-addins-strings.xml.h:24
+msgid "Version"
+msgstr "Verzia"
+
+#: ../src/mono-addins-strings.xml.h:25
+msgid "Version:"
+msgstr "Verzia:"
+
+#: ../src/mono-addins-strings.xml.h:26
+msgid "_Install Add-ins..."
+msgstr "_Nainštalovať doplnky..."
+
+#: ../src/mono-addins-strings.xml.h:27
+msgid "_Repositories..."
+msgstr "_Priečinky..."
+
+#: ../src/mono-addins-strings.xml.h:28
+msgid "_Uninstall..."
+msgstr "_Odinštalovať..."
+
+#: ../src/mono-addins-strings.xml.h:29
+msgid "_Unselect All"
+msgstr "_Odznačiť všetky"
+
+#: ../src/Dialogs/PlayerHistoryDialog.cs:38
 #, csharp-format
 msgid "The graphic below shows the player's game score evolution. It is built using the results of {0} last recorded games."
 msgstr "Graf ukazuje, ako sa vyvíjal počet bodov u hráča. Vychádza z posledných  {0} zaznamenaných hier."
 
-#: ../src/PuzzleGames/PuzzleBalance.cs:47
+#: ../src/PuzzleGames/PuzzleBalance.cs:46
 msgid "Balance"
 msgstr "Rovnováha"
 
-#: ../src/PuzzleGames/PuzzleBalance.cs:51
+#: ../src/PuzzleGames/PuzzleBalance.cs:50
 msgid "How many triangles are needed in the right part of the last figure to keep it balanced?"
 msgstr "Koľko trojuholníkov treba napravo na poslednom obrázku, aby bola váha vyvážená?"
 
-#: ../src/PuzzleGames/PuzzleBalance.cs:57
+#: ../src/PuzzleGames/PuzzleBalance.cs:56
 msgid "Every triangle counts as 1, each diamond as 2 and each square as 3."
 msgstr "Každý trojuholník sa počíta za 1, kosoštvorec za 2 a každý štvorec za 3."
 
-#: ../src/PuzzleGames/PuzzleBalance.cs:63
+#: ../src/PuzzleGames/PuzzleBalance.cs:62
 msgid "Every diamond counts as two triangles."
 msgstr "Každý kosoštvorec sa počíta za dva trojuholníky."
 
@@ -985,20 +1185,20 @@ msgstr "Čo je riešením tejto rovnice? (* = krát, / = delené.)"
 msgid "The order of arithmetical operations is always as follows: exponents and roots, multiplication and division, addition and subtraction."
 msgstr "Poradie matematických operácií je vždy takéto: 1. mocniny a odmocniny, 2. násobenie a delenie, 3. sčítanie a odčítanie."
 
-#: ../src/PuzzleGames/PuzzleExtraCircle.cs:38
+#: ../src/PuzzleGames/PuzzleExtraCircle.cs:37
 msgid "Extra circle"
 msgstr "Kruh naviac"
 
-#: ../src/PuzzleGames/PuzzleExtraCircle.cs:43
+#: ../src/PuzzleGames/PuzzleExtraCircle.cs:42
 #, csharp-format
 msgid "Which circle does not belong to the group? It is not a sequence of elements. Answer {0}, {1}, {2} or {3}."
 msgstr "Ktorý kruh nepatrí do tejto skupiny? Odpovedzte {0}, {1}, {2} alebo {3}."
 
-#: ../src/PuzzleGames/PuzzleExtraCircle.cs:48
+#: ../src/PuzzleGames/PuzzleExtraCircle.cs:47
 msgid "All circles share a common property except for one."
 msgstr "Všetky kruhy okrem jedného majú spoločnú vlastnosť."
 
-#: ../src/PuzzleGames/PuzzleExtraCircle.cs:54
+#: ../src/PuzzleGames/PuzzleExtraCircle.cs:53
 #, csharp-format
 msgid "In all circles the color slices follow the same order except for this one."
 msgstr "Vo všetkých kruhoch okrem jedného majú farby rovnaké poradie."
@@ -1038,8 +1238,8 @@ msgstr "Pozrite sa na prvé a druhé  obrazce v poradí, vymažte  čiary, ktor�
 
 #: ../src/PuzzleGames/PuzzleFigurePattern.cs:189
 #: ../src/PuzzleGames/PuzzleLargerShape.cs:234
-#: ../src/PuzzleGames/PuzzleMissingPiece.cs:149
-#: ../src/PuzzleGames/PuzzleMissingSlice.cs:178
+#: ../src/PuzzleGames/PuzzleMissingPiece.cs:148
+#: ../src/PuzzleGames/PuzzleMissingSlice.cs:177
 #: ../src/PuzzleGames/PuzzleMostInCommon.cs:284
 #: ../src/PuzzleGames/PuzzleNextFigure.cs:126
 #: ../src/PuzzleGames/PuzzleSquareDots.cs:180
@@ -1091,6 +1291,19 @@ msgstr "Štvoruholník môže byť nakreslený v inom štvoruholníku."
 #, csharp-format
 msgid "The four sided figures are made by connecting the following points: {0}"
 msgstr "Štvoruholníky možno vytvoriť spojením týchto bodov: {0}"
+
+#: ../src/PuzzleGames/PuzzleHandshakes.cs:29
+msgid "Handshakes"
+msgstr "si podali ruky"
+
+#: ../src/PuzzleGames/PuzzleHandshakes.cs:34
+#, csharp-format
+msgid "All attendees to a party are introduced to one another. {0} handshakes are made in total. How many people are attending the party?"
+msgstr "Všetkých hostí, čo prišli na oslavu, navzájom predstavia. Dokopy si podajú ruky {0}-krát. Koľko ľudí je na oslave?"
+
+#: ../src/PuzzleGames/PuzzleHandshakes.cs:39
+msgid "Try to imagine a situation in which you are meeting a small number of people."
+msgstr "Predstavte si situáciu, v ktorej stretávate malý počete ľudí"
 
 #: ../src/PuzzleGames/PuzzleLargerShape.cs:108
 msgid "Larger shape"
@@ -1182,37 +1395,37 @@ msgstr "Štvrtý riadok vypočítate tak, že sčítate prvé dva riadky a odč�
 msgid "The fourth column is calculated by adding the first two columns and subtracting the third."
 msgstr "Štvrtý stĺpec vypočítate tak, že sčítate prvé dva stĺpce a odčítate tretí."
 
-#: ../src/PuzzleGames/PuzzleMissingPiece.cs:32
+#: ../src/PuzzleGames/PuzzleMissingPiece.cs:31
 msgid "Missing piece"
 msgstr "Chýbajúci kus"
 
-#: ../src/PuzzleGames/PuzzleMissingPiece.cs:37
+#: ../src/PuzzleGames/PuzzleMissingPiece.cs:36
 #, csharp-format
 msgid "Which square completes the figure below? Answer {0}, {1} or {2}."
 msgstr "Ktorý štvorec treba doplniť do obrázka? Odpovedzte {0}, {1} alebo {2}."
 
-#: ../src/PuzzleGames/PuzzleMissingPiece.cs:42
+#: ../src/PuzzleGames/PuzzleMissingPiece.cs:41
 msgid "The logic works at row level."
 msgstr "Logiku usporiadania hľadajte v riadkoch."
 
-#: ../src/PuzzleGames/PuzzleMissingPiece.cs:48
+#: ../src/PuzzleGames/PuzzleMissingPiece.cs:47
 msgid "In every row the third square is made by flipping the first square and superimposing it on the second square, followed by removing the matching lines."
 msgstr "Tretí štvorec v každom riadku je vytvorený prevrátením prvého štvorca a jeho priložením na druhý štvorec, a následným vymazaním rovnakých čiar."
 
-#: ../src/PuzzleGames/PuzzleMissingSlice.cs:58
+#: ../src/PuzzleGames/PuzzleMissingSlice.cs:57
 msgid "Missing slice"
 msgstr "Chýbajúca časť"
 
-#: ../src/PuzzleGames/PuzzleMissingSlice.cs:63
+#: ../src/PuzzleGames/PuzzleMissingSlice.cs:62
 #, csharp-format
 msgid "Some slices have a common property. Which is the missing slice in the circle below? Answer {0}, {1} or {2}."
 msgstr "Časti kruhu majú spoločnú vlastnosť. Ktorá z možností je chýbajúcou časťou kruhu? Odpovedzte {0}, {1} alebo {2}."
 
-#: ../src/PuzzleGames/PuzzleMissingSlice.cs:68
+#: ../src/PuzzleGames/PuzzleMissingSlice.cs:67
 msgid "Each slice is related to the opposite one."
 msgstr "Každá časť kruhu nejako súvisí s tou oproti."
 
-#: ../src/PuzzleGames/PuzzleMissingSlice.cs:74
+#: ../src/PuzzleGames/PuzzleMissingSlice.cs:73
 #, csharp-format
 msgid "All numbers of each slice, when added to the ones of the opposite slice, add always {0}."
 msgstr "Keď spočítame všetky čísla v každej časti kruhu s číslami v časti kruhu, ktorá je oproti, vždy dostameme {0}."
