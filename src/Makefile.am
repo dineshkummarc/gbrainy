@@ -83,15 +83,15 @@ ASSEMBLIES = \
 
 RESOURCES =										\
 -resource:$(srcdir)/gbrainy.glade  \
--resource:$(top_srcdir)/data/resume-32.png  \
--resource:$(top_srcdir)/data/endgame-32.png  \
--resource:$(top_srcdir)/data/pause-32.png  \
--resource:$(top_srcdir)/data/allgames-32.png  \
--resource:$(top_srcdir)/data/gbrainy.png  \
--resource:$(top_srcdir)/data/logic-games-32.png  \
--resource:$(top_srcdir)/data/math-games-32.png  \
--resource:$(top_srcdir)/data/memory-games-32.png  \
--resource:$(top_srcdir)/data/gbrainy.svg  \
+-resource:$(top_srcdir)/data/app-graphics/resume-32.png  \
+-resource:$(top_srcdir)/data/app-graphics/endgame-32.png  \
+-resource:$(top_srcdir)/data/app-graphics/pause-32.png  \
+-resource:$(top_srcdir)/data/app-graphics/allgames-32.png  \
+-resource:$(top_srcdir)/data/app-graphics/gbrainy.png  \
+-resource:$(top_srcdir)/data/app-graphics/logic-games-32.png  \
+-resource:$(top_srcdir)/data/app-graphics/math-games-32.png  \
+-resource:$(top_srcdir)/data/app-graphics/memory-games-32.png  \
+-resource:$(top_srcdir)/data/app-graphics/gbrainy.svg  \
 -resource:$(srcdir)/gbrainy.addin.xml
 
 gbrainydir = $(libdir)/gbrainy
