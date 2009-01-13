@@ -7,9 +7,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gbrainy VERSION\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gbrainy&amp;component=general\n"
-"POT-Creation-Date: 2008-11-15 15:13+0000\n"
-"PO-Revision-Date: 2009-01-13 21:18+0700\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gbrainy&component=general\n"
+"POT-Creation-Date: 2009-01-13 13:19+0000\n"
+"PO-Revision-Date: 2009-01-13 22:27+0700\n"
 "Last-Translator: 甘露(Gan Lu) <rhythm.gan@gmail.com>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -30,11 +30,11 @@ msgid "gbrainy"
 msgstr "gbrainy"
 
 #. Name of the people that translated the application
-#: ../src/AboutDialog.cs:41
+#: ../src/Dialogs/AboutDialog.cs:39
 msgid "translator-credits"
 msgstr "甘露(Gan Lu) <rhythm.gan@gmail.com>"
 
-#: ../src/AboutDialog.cs:46
+#: ../src/Dialogs/AboutDialog.cs:44
 msgid ""
 "This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as  published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version.\n"
 "\n"
@@ -42,7 +42,7 @@ msgstr ""
 "本程序是自由软件；您可以在自由软件基金会发布的 GNU 通用公共许可证的条款下重新分发和(或)修改它；您可以选择使用 GPL 第二版，或(按照您的意愿)任何更新的版本。\n"
 "\n"
 
-#: ../src/AboutDialog.cs:47
+#: ../src/Dialogs/AboutDialog.cs:45
 msgid ""
 "This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details.\n"
 "\n"
@@ -50,107 +50,124 @@ msgstr ""
 "本程序分发的目的是希望它物有所用，但是没有任何担保；没有对其适销性和某一特定目的下的适用性的任何即便是暗示的担保。请查阅 GNU 通用公共许可证以获得更多信息。\n"
 "\n"
 
-#: ../src/AboutDialog.cs:48
+#: ../src/Dialogs/AboutDialog.cs:46
 msgid "You should have received a copy of the GNU General Public License along with this program; if not, write to the Free Software Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA."
 msgstr "你应当已经跟本程序一起收到一份 GNU 通用公众许可证的副本；如果没有，请写信至：Free Software Foundation, Inc.，59 Temple Place - Suite 330, Boston, MA 02111-1307, USA."
 
-#: ../src/AboutDialog.cs:57
+#: ../src/Dialogs/AboutDialog.cs:55
 msgid "Based on ideas by Terry Stickels, MENSA books and Jordi Mas."
 msgstr "基于 Terry Stickels, MENSA 书籍和 Jordi Mas 的主意。"
 
-#: ../src/AboutDialog.cs:59
+#: ../src/Dialogs/AboutDialog.cs:57
 msgid "A brain teaser and trainer game to have fun and to keep your brain trained."
 msgstr "头脑难题和训练游戏，充满乐趣并使你大脑训练有素。"
 
-#: ../src/AboutDialog.cs:61
+#: ../src/Dialogs/AboutDialog.cs:59
 msgid "gbrainy web site"
 msgstr "gbrainy 网站"
 
-#: ../src/CalculationGames/CalculationArithmetical.cs:41
+#: ../src/CalculationGames/CalculationArithmetical.cs:40
 msgid "Arithmetical"
 msgstr "算术的"
 
-#: ../src/CalculationGames/CalculationArithmetical.cs:49
+#: ../src/CalculationGames/CalculationArithmetical.cs:48
 msgid "What is the result of the arithmetical operation?"
 msgstr "算术操作的结果是什么？"
 
-#: ../src/CalculationGames/CalculationFractions.cs:58
+#: ../src/CalculationGames/CalculationFractions.cs:57
 msgid "Fractions"
 msgstr "分数"
 
-#: ../src/CalculationGames/CalculationFractions.cs:66
+#: ../src/CalculationGames/CalculationFractions.cs:65
 #, csharp-format
 msgid "What is the result of the given operation? You can answer using either a fraction or a number."
 msgstr "给定操作的结果是什么？使用一个分数或数字回答。"
 
-#: ../src/CalculationGames/CalculationGreatestDivisor.cs:33
+#: ../src/CalculationGames/CalculationGreatestDivisor.cs:32
 msgid "Greatest divisor"
 msgstr "最大的除数"
 
-#: ../src/CalculationGames/CalculationGreatestDivisor.cs:41
+#: ../src/CalculationGames/CalculationGreatestDivisor.cs:40
 msgid "Which of the possible divisors is the greatest that divides all numbers?"
 msgstr "所有数字的最大除数是哪个？"
 
-#: ../src/CalculationGames/CalculationGreatestDivisor.cs:205
+#: ../src/CalculationGames/CalculationGreatestDivisor.cs:204
+#: ../src/CalculationGames/CalculationPrimes.cs:206
 msgid "Numbers"
 msgstr "数字"
 
-#: ../src/CalculationGames/CalculationGreatestDivisor.cs:220
+#: ../src/CalculationGames/CalculationGreatestDivisor.cs:219
 msgid "Possible divisors"
 msgstr "可能的除数"
 
-#: ../src/CalculationGames/CalculationOperator.cs:33
+#: ../src/CalculationGames/CalculationOperator.cs:32
 msgid "Operator"
 msgstr "运算符"
 
-#: ../src/CalculationGames/CalculationOperator.cs:37
+#: ../src/CalculationGames/CalculationOperator.cs:36
 #, csharp-format
 msgid "The first operator is {0}."
 msgstr "第一个运算符是 {0}。"
 
-#: ../src/CalculationGames/CalculationOperator.cs:45
+#: ../src/CalculationGames/CalculationOperator.cs:44
 #, csharp-format
 msgid "Which operators make {0}, {1}, and {2} equal {3}? Answer using '+-/*'."
 msgstr "哪个运算符能使{0}, {1}, 及 {2} 等于 {3} ？使用 '+-/*' 回答。"
 
-#: ../src/CalculationGames/CalculationOperator.cs:81
-#: ../src/CalculationGames/CalculationTwoNumbers.cs:62
+#: ../src/CalculationGames/CalculationOperator.cs:80
+#: ../src/CalculationGames/CalculationTwoNumbers.cs:61
 #, csharp-format
 msgid "{0} and {1}"
 msgstr "{0} 和 {1}"
 
-#: ../src/CalculationGames/CalculationTwoNumbers.cs:31
+#: ../src/CalculationGames/CalculationPrimes.cs:148
+msgid "Primes"
+msgstr "素数"
+
+#: ../src/CalculationGames/CalculationPrimes.cs:156
+msgid "In the set of numbers below, which of the following numbers is a prime? A prime number is a positive integer that has exactly two different positive divisors, 1 and itself."
+msgstr "在下面的数字中，哪一个是素数？素数是只能被自身和1整除的正整数。"
+
+#: ../src/CalculationGames/CalculationPrimes.cs:160
+msgid "If the sum of all digits in a given number is divisible by 3, then so is the number. For example 15 = 1 + 5 = 6, which is divisible by 3."
+msgstr "如果一个给定数字的所有位数相加之和能被3除尽，则即为该数。比如 15 = 1 + 5 = 6，可被3除尽。"
+
+#: ../src/CalculationGames/CalculationTwoNumbers.cs:30
 msgid "Two numbers"
 msgstr "两数字"
 
-#: ../src/CalculationGames/CalculationTwoNumbers.cs:39
+#: ../src/CalculationGames/CalculationTwoNumbers.cs:38
 #, csharp-format
 msgid "Which two numbers when added are {0} and when multiplied are {1}?"
 msgstr "哪两个数字当相加时是 {0} 而相乘时是 {1}？"
 
-#: ../src/CalculationGames/CalculationTwoNumbers.cs:74
+#: ../src/CalculationGames/CalculationTwoNumbers.cs:73
 #, csharp-format
 msgid "number1 + number2 = {0}"
 msgstr "数字1 + 数字2 = {0}"
 
-#: ../src/CalculationGames/CalculationTwoNumbers.cs:77
+#: ../src/CalculationGames/CalculationTwoNumbers.cs:76
 #, csharp-format
 msgid "number1 * number2 = {0}"
 msgstr "数字1 * 数字 2 = {0}"
 
-#: ../src/CalculationGames/CalculationWhichNumber.cs:34
+#: ../src/CalculationGames/CalculationWhichNumber.cs:33
 msgid "Closer fraction"
 msgstr "最接近的分数"
 
-#: ../src/CalculationGames/CalculationWhichNumber.cs:43
+#: ../src/CalculationGames/CalculationWhichNumber.cs:42
 #, csharp-format
-msgid "Which of the following numbers is closer to {0:###.###}? Answer {1}, {2}, {3} or {4}."
-msgstr "下面哪一个数字更接近于 {0:###.###} ？用 {1}, {2}, {3} 或 {4} 回答。"
+#| msgid ""
+#| "Which of the following numbers is closer to {0:###.###}? Answer {1}, {2}, "
+#| "{3} or {4}."
+msgid "Which of the following numbers is closer to {0:##0.###}? Answer {1}, {2}, {3} or {4}."
+msgstr "下面哪一个数字更接近于  {0:##0.###}？回答 {1}, {2}, {3} 或 {4}。"
 
-#: ../src/CalculationGames/CalculationWhichNumber.cs:52
+#: ../src/CalculationGames/CalculationWhichNumber.cs:51
 #, csharp-format
-msgid "The result of the operation {0} / {1} is {2:###.###}"
-msgstr " {0} / {1} 操作的结果是 {2:###.###}"
+#| msgid "The result of the operation {0} / {1} is {2:###.###}"
+msgid "The result of the operation {0} / {1} is {2:##0.###}"
+msgstr " {0} / {1} 操作的结果是 {2:##0.###}"
 
 #: ../src/ColorPalette.cs:63
 msgid "red"
@@ -185,39 +202,39 @@ msgid "white"
 msgstr "白"
 
 #. Define columns
-#: ../src/CustomGameDialog.cs:55
+#: ../src/Dialogs/CustomGameDialog.cs:54
 msgid "Game Name"
 msgstr "游戏名字"
 
-#: ../src/CustomGameDialog.cs:61
+#: ../src/Dialogs/CustomGameDialog.cs:60
 msgid "Type"
 msgstr "类型"
 
-#: ../src/CustomGameDialog.cs:68
+#: ../src/Dialogs/CustomGameDialog.cs:67
 msgid "Enabled"
 msgstr "启用"
 
-#: ../src/CustomGameDialog.cs:86
-#: ../src/GameDrawingArea.cs:189
-#: ../src/gbrainy.cs:99
+#: ../src/Dialogs/CustomGameDialog.cs:85
+#: ../src/GameDrawingArea.cs:198
+#: ../src/gbrainy.cs:110
 #: ../src/gbrainy.glade.h:11
-#: ../src/PlayerHistoryDialog.cs:102
+#: ../src/Dialogs/PlayerHistoryDialog.cs:101
 msgid "Logic"
 msgstr "逻辑"
 
-#: ../src/CustomGameDialog.cs:89
-#: ../src/GameDrawingArea.cs:197
-#: ../src/gbrainy.cs:110
+#: ../src/Dialogs/CustomGameDialog.cs:88
+#: ../src/GameDrawingArea.cs:206
+#: ../src/gbrainy.cs:121
 #: ../src/gbrainy.glade.h:16
-#: ../src/PlayerHistoryDialog.cs:112
+#: ../src/Dialogs/PlayerHistoryDialog.cs:111
 msgid "Memory"
 msgstr "记忆"
 
-#: ../src/CustomGameDialog.cs:92
+#: ../src/Dialogs/CustomGameDialog.cs:91
 msgid "Mental Calculation"
 msgstr "心算"
 
-#: ../src/Game.cs:71
+#: ../src/Game.cs:69
 #, csharp-format
 msgid "The correct answer is {0}."
 msgstr "正确答案是 {0}。"
@@ -229,244 +246,264 @@ msgstr "正确答案是 {0}。"
 #. For languages represented with the Latin alphabet use
 #. the same than English
 #. First possible answer for a serie (e.g.: Figure A)
-#: ../src/Game.cs:241
+#: ../src/Game.cs:239
 msgid "A"
 msgstr "A"
 
 #. Second possible answer for a serie
-#: ../src/Game.cs:243
+#: ../src/Game.cs:241
 msgid "B"
 msgstr "B"
 
 #. Third possible answer for a serie
-#: ../src/Game.cs:245
+#: ../src/Game.cs:243
 msgid "C"
 msgstr "C"
 
 #. Fourth possible answer for a serie
-#: ../src/Game.cs:247
+#: ../src/Game.cs:245
 msgid "D"
 msgstr "D"
 
 #. Fifth possible answer for a serie
-#: ../src/Game.cs:249
+#: ../src/Game.cs:247
 msgid "E"
 msgstr "E"
 
 #. Sixth possible answer for a serie
-#: ../src/Game.cs:251
+#: ../src/Game.cs:249
 msgid "F"
 msgstr "F"
 
 #. Seventh possible answer for a serie
-#: ../src/Game.cs:253
+#: ../src/Game.cs:251
 msgid "G"
 msgstr "G"
 
 #. Eighth possible answer for a serie
-#: ../src/Game.cs:255
+#: ../src/Game.cs:253
 msgid "H"
 msgstr "H"
 
-#: ../src/Game.cs:263
+#: ../src/Game.cs:261
 #, csharp-format
 msgid "Figure {0}"
 msgstr "图形 {0}"
 
-#: ../src/GameDrawingArea.cs:119
+#: ../src/GameDrawingArea.cs:128
 #, csharp-format
 msgid "Welcome to gbrainy {0}"
 msgstr "欢迎来到 gbrainy {0}"
 
-#: ../src/GameDrawingArea.cs:122
+#: ../src/GameDrawingArea.cs:131
 msgid "gbrainy is a brain teaser game and trainer to have fun and to keep your brain trained. It includes:"
 msgstr "gbrainy 头脑难题游戏，充满乐趣并使你大脑训练有素。它包括："
 
-#: ../src/GameDrawingArea.cs:128
+#: ../src/GameDrawingArea.cs:137
 msgid "Logic puzzles. Designed to challenge your reasoning and thinking skills."
 msgstr "逻辑拼图。设计为挑战你的推理和思考技巧。"
 
-#: ../src/GameDrawingArea.cs:135
+#: ../src/GameDrawingArea.cs:144
 msgid "Mental calculation. Based on arithmetical operations that test your mental calculation abilities."
 msgstr "心算，基于算术操作能测试你的心算能力。"
 
-#: ../src/GameDrawingArea.cs:141
+#: ../src/GameDrawingArea.cs:150
 msgid "Memory trainers. To prove and enhance your short term memory."
 msgstr "记忆训练。证明和增强你的短期记忆。"
 
-#: ../src/GameDrawingArea.cs:144
-#: ../src/GameDrawingArea.cs:399
+#: ../src/GameDrawingArea.cs:153
+#: ../src/GameDrawingArea.cs:412
 msgid "Use the Settings to adjust the difficulty level of the game."
 msgstr "使用设置来调整游戏的难度。"
 
-#: ../src/GameDrawingArea.cs:185
+#: ../src/GameDrawingArea.cs:194
 #: ../src/gbrainy.glade.h:27
-#: ../src/PlayerHistoryDialog.cs:93
+#: ../src/Dialogs/PlayerHistoryDialog.cs:92
 msgid "Total"
 msgstr "总计"
 
-#: ../src/GameDrawingArea.cs:193
-#: ../src/gbrainy.cs:104
+#: ../src/GameDrawingArea.cs:202
+#: ../src/gbrainy.cs:115
 #: ../src/gbrainy.glade.h:6
-#: ../src/PlayerHistoryDialog.cs:121
+#: ../src/Dialogs/PlayerHistoryDialog.cs:120
 msgid "Calculation"
 msgstr "计算"
 
-#: ../src/GameDrawingArea.cs:211
+#: ../src/GameDrawingArea.cs:220
 msgid "Score"
 msgstr "得分"
 
-#: ../src/GameDrawingArea.cs:219
+#: ../src/GameDrawingArea.cs:228
 #, csharp-format
 msgid "Outstanding results"
 msgstr "杰出"
 
-#: ../src/GameDrawingArea.cs:221
+#: ../src/GameDrawingArea.cs:230
 #, csharp-format
 msgid "Excellent results"
 msgstr "优秀"
 
-#: ../src/GameDrawingArea.cs:223
+#: ../src/GameDrawingArea.cs:232
 #, csharp-format
 msgid "Good results"
 msgstr "好"
 
-#: ../src/GameDrawingArea.cs:225
+#: ../src/GameDrawingArea.cs:234
 #, csharp-format
 msgid "Poor results"
 msgstr "差"
 
-#: ../src/GameDrawingArea.cs:226
+#: ../src/GameDrawingArea.cs:235
 #, csharp-format
 msgid "Disappointing results"
 msgstr "让人失望"
 
-#: ../src/GameDrawingArea.cs:232
+#: ../src/GameDrawingArea.cs:241
 #, csharp-format
 msgid "Games won: {0} ({1} played)"
 msgstr "总共获胜的游戏 {0} ({1} 玩过)"
 
-#: ../src/GameDrawingArea.cs:234
+#: ../src/GameDrawingArea.cs:243
 #, csharp-format
 msgid "{0}. Games won: {1} ({2} played)"
 msgstr "{0}，总共获胜的游戏 {1} ({2} 玩过)"
 
-#: ../src/GameDrawingArea.cs:238
+#: ../src/GameDrawingArea.cs:247
 #, csharp-format
 msgid "Time played {0} (average per game {1})"
 msgstr "总共花费的时间 {0} (每个游戏平均 {1})"
 
-#: ../src/GameDrawingArea.cs:245
+#: ../src/GameDrawingArea.cs:254
 msgid "Tips for your next games"
 msgstr "下个游戏的提示"
 
-#: ../src/GameDrawingArea.cs:347
+#: ../src/GameDrawingArea.cs:356
 msgid "Get ready to memorize the next objects..."
 msgstr "准备好记忆下一个对象..."
 
-#: ../src/GameDrawingArea.cs:383
+#: ../src/GameDrawingArea.cs:396
 msgid "Read the instructions carefully and identify the data and given clues."
 msgstr "仔细阅读指示，验明数据和提供的线索。"
 
-#: ../src/GameDrawingArea.cs:385
+#: ../src/GameDrawingArea.cs:398
 msgid "To score the player gbrainy uses the time and tips needed to complete each game."
 msgstr "Gbrainy 使用完成每个游戏花费的时间及需要的提示来为玩家打分。"
 
-#: ../src/GameDrawingArea.cs:387
+#: ../src/GameDrawingArea.cs:400
 msgid "In logic games, elements that may seem irrelevant can be very important."
 msgstr "在逻辑游戏中，一些看上去毫无关系的元素可能非常重要。"
 
-#: ../src/GameDrawingArea.cs:389
+#: ../src/GameDrawingArea.cs:402
 msgid "Break the mental blocks and look into the boundaries of problems."
 msgstr "打破头脑封闭，更广泛的看待问题。"
 
-#: ../src/GameDrawingArea.cs:391
+#: ../src/GameDrawingArea.cs:404
 msgid "Enjoy making mistakes, they are part of the learning process."
 msgstr "享受错误，它们是学习过程的一部分。"
 
-#: ../src/GameDrawingArea.cs:393
+#: ../src/GameDrawingArea.cs:406
 msgid "Do all the problems, even the difficult ones. Improvement comes from practising."
 msgstr "所有的问题，甚至是困难的问题，都是从实践中得到的改进。"
 
-#: ../src/GameDrawingArea.cs:395
+#: ../src/GameDrawingArea.cs:408
 msgid "Play on a daily basis, you will notice progress soon."
 msgstr "每天玩一下，进步即可见。"
 
 #. Translators: Custom Game Selection is a menu option
-#: ../src/GameDrawingArea.cs:397
+#: ../src/GameDrawingArea.cs:410
 msgid "Use the 'Custom Game Selection' to choose exactly which games you want to play."
 msgstr "使用“自定义游戏选择“来选择你想玩的游戏。"
 
-#: ../src/GameDrawingArea.cs:401
+#: ../src/GameDrawingArea.cs:414
 msgid "Association of elements is a common technique for remembering things."
 msgstr "元素之间的联系是记忆东西的常见方法。"
 
-#: ../src/GameSession.cs:223
+#: ../src/GameDrawingArea.cs:416
+#| msgid ""
+#| "Association of elements is a common technique for remembering things."
+msgid "Grouping elements into categories is a common technique for remembering things."
+msgstr "按组将元素分类别是记忆东西的常见方法。"
+
+#: ../src/GameSession.cs:222
 #, csharp-format
 msgid "Games played: {0} ({1}% score)"
 msgstr "已玩过的游戏： {0} ({1}% 分)"
 
-#: ../src/GameSession.cs:224
+#: ../src/GameSession.cs:223
 #, csharp-format
 msgid " - Time: {0}"
 msgstr "- 时间： {0}"
 
-#: ../src/GameSession.cs:227
+#: ../src/GameSession.cs:226
 #, csharp-format
 msgid "- Game: {0}"
 msgstr "- 游戏： {0}"
 
-#: ../src/GameSession.cs:279
+#: ../src/GameSession.cs:278
 msgid "Paused"
 msgstr "暂停的"
 
-#: ../src/gbrainy.cs:92
+#: ../src/gbrainy.cs:103
 msgid "Play all the games"
 msgstr "玩所有游戏"
 
-#: ../src/gbrainy.cs:93
+#: ../src/gbrainy.cs:104
 msgid "All"
 msgstr "全部"
 
-#: ../src/gbrainy.cs:98
+#: ../src/gbrainy.cs:109
 msgid "Play games that challenge your reasoning and thinking"
 msgstr "玩挑战你推理和思考的游戏"
 
-#: ../src/gbrainy.cs:105
+#: ../src/gbrainy.cs:116
 msgid "Play games that challenge your mental calculation skills"
 msgstr "湾挑战你心算技巧的游戏"
 
-#: ../src/gbrainy.cs:111
+#: ../src/gbrainy.cs:122
 msgid "Play games that challenge your short term memory"
 msgstr "玩挑战你短期记忆的游戏"
 
-#: ../src/gbrainy.cs:116
+#: ../src/gbrainy.cs:127
+#: ../src/gbrainy.cs:532
 msgid "Pause"
 msgstr "暂停"
 
-#: ../src/gbrainy.cs:117
-msgid "Pause the game"
-msgstr "暂停游戏"
+#: ../src/gbrainy.cs:128
+#| msgid "Pause the game"
+msgid "Pause or resume the game"
+msgstr "暂停或恢复游戏"
 
-#: ../src/gbrainy.cs:122
+#: ../src/gbrainy.cs:133
 msgid "End the game and show score"
 msgstr "结束游戏并显示得分"
 
-#: ../src/gbrainy.cs:123
+#: ../src/gbrainy.cs:134
 msgid "Finish"
 msgstr "完成"
 
-#: ../src/gbrainy.cs:330
+#: ../src/gbrainy.cs:159
+msgid "Extensions"
+msgstr "扩展"
+
+#: ../src/gbrainy.cs:163
+msgid "Develop your own puzzles"
+msgstr "开发你自己的拼图"
+
+#: ../src/gbrainy.cs:367
 msgid "Congratulations."
 msgstr "恭喜。"
 
-#: ../src/gbrainy.cs:332
+#: ../src/gbrainy.cs:369
 msgid "Incorrect answer."
 msgstr "答案不正确。"
 
-#: ../src/gbrainy.cs:389
+#: ../src/gbrainy.cs:427
 msgid "Once you have an answer type it in the \"Answer:\" entry box and press the \"OK\" button."
 msgstr "有了答案就输入\"答案：\"输入框中，然后按下 \"Ok\" 按钮。"
+
+#: ../src/gbrainy.cs:537
+msgid "Resume"
+msgstr "恢复"
 
 #: ../src/gbrainy.glade.h:1
 msgid "<b>Difficulty Level</b>"
@@ -576,88 +613,145 @@ msgstr "下一个(_N)"
 msgid "_Tip"
 msgstr "提示(_T)"
 
-#: ../src/Memory.cs:50
+#: ../src/Memory.cs:49
 msgid "Memorize the objects below in the given time"
 msgstr "在指定时间内记忆以下对象"
 
-#: ../src/MemoryGames/MemoryColouredFigures.cs:49
+#: ../src/MemoryGames/MemoryColouredFigures.cs:47
 msgid "Colored figures"
 msgstr "彩色图形"
 
-#: ../src/MemoryGames/MemoryColouredFigures.cs:54
+#: ../src/MemoryGames/MemoryColouredFigures.cs:52
 #, csharp-format
 msgid "Which of these figures was previously shown? Answer {0}, {1}, {2} or {3}."
 msgstr "这些图形的哪一个是前面显示过的？回答 {0}, {1}, {2} 或 {3}。"
 
-#: ../src/MemoryGames/MemoryColouredText.cs:35
+#: ../src/MemoryGames/MemoryColouredText.cs:31
 msgid "Colored text"
 msgstr "彩色文字"
 
-#: ../src/MemoryGames/MemoryColouredText.cs:40
+#: ../src/MemoryGames/MemoryColouredText.cs:36
 #, csharp-format
 msgid "What was the color of the text that said '{0}'?"
 msgstr "内容是 '{0}' 的文字的颜色是什么？"
 
-#: ../src/MemoryGames/MemoryCountDots.cs:40
+#: ../src/MemoryGames/MemoryCountDots.cs:37
 msgid "Counting dots"
 msgstr "计算圆点"
 
-#: ../src/MemoryGames/MemoryCountDots.cs:44
+#: ../src/MemoryGames/MemoryCountDots.cs:41
 #, csharp-format
 msgid "How many {0} dots were in the previous image? Answer using numbers."
 msgstr "在前面的图像中有多少 {0} 圆点？用数字回答"
 
-#: ../src/MemoryGames/MemoryFigures.cs:53
+#: ../src/MemoryGames/MemoryFacts.cs:48
+#| msgid "Memorize words"
+msgid "Memorize facts"
+msgstr "记忆事实"
+
+#. Translators: {0} is replaced by a number, {1} by a year (like 1940)
+#: ../src/MemoryGames/MemoryFacts.cs:99
+#, csharp-format
+msgid "Shiny Cars had already announced a {0} days production halt next month, but before that it had not cut production since {1}."
+msgstr "Shiny 轿车已宣布在下个月的 {0} 天减产一半。，但在那之前它自从 {1} 以来没有缩减过生产。"
+
+#: ../src/MemoryGames/MemoryFacts.cs:101
+msgid "For how many days did Shiny Cars halt its production?"
+msgstr "到多少天 Shiny 轿车会停止生产？"
+
+#: ../src/MemoryGames/MemoryFacts.cs:102
+msgid "In what year did Shiny Cars last halt its production?"
+msgstr "到哪一年 Shiny 轿车将最终停止生产？"
+
+#. Translators: {0} is replaced by a number, {1} by a year (like 1940)
+#: ../src/MemoryGames/MemoryFacts.cs:110
+#, csharp-format
+msgid "Shiny Cars sales fell {0}% this past December, the worse decline since {1}."
+msgstr "在过去的11月，Shiny 轿车的销量下降了 {0}% ，是自从 {1} 年以来最糟的下降。"
+
+#: ../src/MemoryGames/MemoryFacts.cs:112
+msgid "By how much did company sales fall last December?"
+msgstr "上个11月有多少公司销售在下降？"
+
+#: ../src/MemoryGames/MemoryFacts.cs:113
+msgid "In what year did Shiny Cars record a sales total lower than that of last December?"
+msgstr "在哪一年 Shiny 轿车的总销量将低于最后一个11月？"
+
+#: ../src/MemoryGames/MemoryFacts.cs:118
+#, csharp-format
+msgid "About {0}% of Shiny Cars produced worldwide are sold in Europe"
+msgstr "全球生产的 Shiny 轿车有大约 {0}% 销往了欧洲。"
+
+#: ../src/MemoryGames/MemoryFacts.cs:120
+msgid "What percentage of all Shiny Cars produced worldwide are sold in Europe?"
+msgstr "所有全球生产的 Shiny 轿车有大约多少百分比销往了欧洲。"
+
+#: ../src/MemoryGames/MemoryFacts.cs:126
+#, csharp-format
+msgid "About {0}% of Shiny Cars use diesel, {1}% use gasoline and the remainder use electric."
+msgstr "大约有 {0}% 的 Shiny 轿车使用柴油，{1}% 使用汽油，其余则使用电力。"
+
+#: ../src/MemoryGames/MemoryFacts.cs:128
+#| msgid "What percentage of the figure is colored?"
+msgid "What percentage of Shiny Cars use diesel?"
+msgstr "有多少百分比的 Shiny 轿车用柴油？"
+
+#: ../src/MemoryGames/MemoryFacts.cs:129
+#| msgid "What percentage of the figure is colored?"
+msgid "What percentage of Shiny Cars use gasoline?"
+msgstr "有多少百分比的 Shiny 轿车用汽油？"
+
+#: ../src/MemoryGames/MemoryFigures.cs:50
 msgid "Memory figures"
 msgstr "记忆图形"
 
-#: ../src/MemoryGames/MemoryFigures.cs:58
+#: ../src/MemoryGames/MemoryFigures.cs:55
 msgid "In which cell is the other figure like the one shown below? Answer the cell number."
 msgstr "在哪个格子里的图形像下面显示的这个图形？回答格子数字。"
 
-#: ../src/MemoryGames/MemoryIndications.cs:128
+#: ../src/MemoryGames/MemoryFiguresNumbers.cs:34
+msgid "Figures with numbers"
+msgstr "有数字的图形"
+
+#: ../src/MemoryGames/MemoryFiguresNumbers.cs:39
+#, csharp-format
+msgid "Which one of these squares was previously shown? Answer {0}, {1}, {2} or {3}."
+msgstr "下面哪一个正方形是前面显示过的？用 {0}, {1}, {2} 或 {3} 回答。"
+
+#: ../src/MemoryGames/MemoryIndications.cs:125
 #, csharp-format
 msgid "Start at point number {0}"
 msgstr "开始于点 {0}"
 
-#: ../src/MemoryGames/MemoryIndications.cs:132
+#: ../src/MemoryGames/MemoryIndications.cs:129
 msgid "Turn right"
 msgstr "向右"
 
-#: ../src/MemoryGames/MemoryIndications.cs:134
+#: ../src/MemoryGames/MemoryIndications.cs:131
 msgid "Turn left"
 msgstr "向左"
 
-#: ../src/MemoryGames/MemoryIndications.cs:136
+#: ../src/MemoryGames/MemoryIndications.cs:133
 msgid "Go up"
 msgstr "向上"
 
-#: ../src/MemoryGames/MemoryIndications.cs:138
+#: ../src/MemoryGames/MemoryIndications.cs:135
 msgid "Go down"
 msgstr "向下"
 
-#: ../src/MemoryGames/MemoryIndications.cs:143
+#: ../src/MemoryGames/MemoryIndications.cs:140
 #, csharp-format
 msgid "End at point {0}"
 msgstr "结束于点 {0}"
 
-#: ../src/MemoryGames/MemoryIndications.cs:157
+#: ../src/MemoryGames/MemoryIndications.cs:154
 msgid "Memorize indications"
 msgstr "记住指示符"
 
-#: ../src/MemoryGames/MemoryIndications.cs:163
+#: ../src/MemoryGames/MemoryIndications.cs:160
 #, csharp-format
 msgid "Which of the following graphics represent the indications previously given? Answer {0}, {1}, {2} or {3}."
 msgstr "下面哪一个图描述了之前给的指示？回答 {0}, {1}, {2} 或 {3}。"
-
-#: ../src/MemoryGames/MemoryFiguresNumbers.cs:36
-msgid "Figures with numbers"
-msgstr "有数字的图形"
-
-#: ../src/MemoryGames/MemoryFiguresNumbers.cs:41
-#, csharp-format
-msgid "Which one of these squares was previously shown? Answer {0}, {1}, {2} or {3}."
-msgstr "下面哪一个正方形是前面显示过的？用 {0}, {1}, {2} 或 {3} 回答。"
 
 #: ../src/MemoryGames/MemoryNumbers.cs:54
 msgid "How many odd numbers were in the previous image? Answer using numbers."
@@ -675,180 +769,300 @@ msgstr "在前面的图像中有多少大于1位数的数字？（用数字回�
 msgid "Memorize numbers"
 msgstr "记忆数字"
 
-#: ../src/MemoryGames/MemoryWords.cs:36
+#: ../src/MemoryGames/MemoryWords.cs:34
 msgid "Memorize words"
 msgstr "记忆单词"
 
-#: ../src/MemoryGames/MemoryWords.cs:41
+#: ../src/MemoryGames/MemoryWords.cs:39
 #, csharp-format
 msgid "There is a missing word from the previous list. Which one is the missing word?"
 msgstr "这里比前一个列表少一个单词。哪一个是缺少的单词？"
 
 #. Body parts
-#: ../src/MemoryGames/MemoryWords.cs:50
+#: ../src/MemoryGames/MemoryWords.cs:48
 msgid "wrist"
 msgstr "手腕"
 
-#: ../src/MemoryGames/MemoryWords.cs:51
+#: ../src/MemoryGames/MemoryWords.cs:49
 msgid "elbow"
 msgstr "手肘"
 
-#: ../src/MemoryGames/MemoryWords.cs:52
+#: ../src/MemoryGames/MemoryWords.cs:50
 msgid "armpit"
 msgstr "腋窝"
 
-#: ../src/MemoryGames/MemoryWords.cs:53
+#: ../src/MemoryGames/MemoryWords.cs:51
 msgid "hand"
 msgstr "手"
 
-#: ../src/MemoryGames/MemoryWords.cs:54
+#: ../src/MemoryGames/MemoryWords.cs:52
 msgid "chest"
 msgstr "胸"
 
 #. Fishes
-#: ../src/MemoryGames/MemoryWords.cs:57
+#: ../src/MemoryGames/MemoryWords.cs:55
 msgid "sardine"
 msgstr "沙丁鱼"
 
-#: ../src/MemoryGames/MemoryWords.cs:58
+#: ../src/MemoryGames/MemoryWords.cs:56
 msgid "trout"
 msgstr "鳟鱼"
 
-#: ../src/MemoryGames/MemoryWords.cs:59
+#: ../src/MemoryGames/MemoryWords.cs:57
 msgid "monkfish"
 msgstr "琵琶鱼"
 
-#: ../src/MemoryGames/MemoryWords.cs:60
+#: ../src/MemoryGames/MemoryWords.cs:58
 msgid "cod"
 msgstr "鳕鱼"
 
-#: ../src/MemoryGames/MemoryWords.cs:61
+#: ../src/MemoryGames/MemoryWords.cs:59
 msgid "salmon"
 msgstr "大马哈鱼"
 
 #. Vegetables
-#: ../src/MemoryGames/MemoryWords.cs:64
+#: ../src/MemoryGames/MemoryWords.cs:62
 msgid "potato"
 msgstr "土豆"
 
-#: ../src/MemoryGames/MemoryWords.cs:65
+#: ../src/MemoryGames/MemoryWords.cs:63
 msgid "ginger"
 msgstr "姜"
 
-#: ../src/MemoryGames/MemoryWords.cs:66
+#: ../src/MemoryGames/MemoryWords.cs:64
 msgid "pepper"
 msgstr "胡椒"
 
-#: ../src/MemoryGames/MemoryWords.cs:67
+#: ../src/MemoryGames/MemoryWords.cs:65
 msgid "garlic"
 msgstr "大蒜"
 
-#: ../src/MemoryGames/MemoryWords.cs:68
+#: ../src/MemoryGames/MemoryWords.cs:66
 msgid "pumpkin"
 msgstr "南瓜"
 
 #. Bicycle
-#: ../src/MemoryGames/MemoryWords.cs:71
+#: ../src/MemoryGames/MemoryWords.cs:69
 msgid "brake"
 msgstr "刹车"
 
-#: ../src/MemoryGames/MemoryWords.cs:72
+#: ../src/MemoryGames/MemoryWords.cs:70
 msgid "pedal"
 msgstr "脚踏板"
 
-#: ../src/MemoryGames/MemoryWords.cs:73
+#: ../src/MemoryGames/MemoryWords.cs:71
 msgid "chain"
 msgstr "锁链"
 
-#: ../src/MemoryGames/MemoryWords.cs:74
+#: ../src/MemoryGames/MemoryWords.cs:72
 msgid "wheel"
 msgstr "轮子"
 
-#: ../src/MemoryGames/MemoryWords.cs:75
+#: ../src/MemoryGames/MemoryWords.cs:73
 msgid "handlebar"
 msgstr "车把手"
 
 #. Music
-#: ../src/MemoryGames/MemoryWords.cs:78
+#: ../src/MemoryGames/MemoryWords.cs:76
 msgid "drummer"
 msgstr "鼓手"
 
-#: ../src/MemoryGames/MemoryWords.cs:79
+#: ../src/MemoryGames/MemoryWords.cs:77
 msgid "speaker"
 msgstr "喇叭"
 
-#: ../src/MemoryGames/MemoryWords.cs:80
+#: ../src/MemoryGames/MemoryWords.cs:78
 msgid "lyrics"
 msgstr "歌词"
 
-#: ../src/MemoryGames/MemoryWords.cs:81
+#: ../src/MemoryGames/MemoryWords.cs:79
 msgid "beat"
 msgstr "打击"
 
-#: ../src/MemoryGames/MemoryWords.cs:82
+#: ../src/MemoryGames/MemoryWords.cs:80
 msgid "song"
 msgstr "歌曲"
 
 #. Weather
-#: ../src/MemoryGames/MemoryWords.cs:85
+#: ../src/MemoryGames/MemoryWords.cs:83
 msgid "cloud"
 msgstr "云"
 
-#: ../src/MemoryGames/MemoryWords.cs:86
+#: ../src/MemoryGames/MemoryWords.cs:84
 msgid "rain"
 msgstr "雨"
 
-#: ../src/MemoryGames/MemoryWords.cs:87
+#: ../src/MemoryGames/MemoryWords.cs:85
 msgid "storm"
 msgstr "暴风雨"
 
-#: ../src/MemoryGames/MemoryWords.cs:88
+#: ../src/MemoryGames/MemoryWords.cs:86
 msgid "fog"
 msgstr "雾"
 
-#: ../src/MemoryGames/MemoryWords.cs:89
+#: ../src/MemoryGames/MemoryWords.cs:87
 msgid "rainbow"
 msgstr "彩虹"
 
 #. Animals
-#: ../src/MemoryGames/MemoryWords.cs:92
+#: ../src/MemoryGames/MemoryWords.cs:90
 msgid "rabbit"
 msgstr "兔子"
 
-#: ../src/MemoryGames/MemoryWords.cs:93
+#: ../src/MemoryGames/MemoryWords.cs:91
 msgid "mouse"
 msgstr "老鼠"
 
-#: ../src/MemoryGames/MemoryWords.cs:94
+#: ../src/MemoryGames/MemoryWords.cs:92
 msgid "monkey"
 msgstr "猴子"
 
-#: ../src/MemoryGames/MemoryWords.cs:95
+#: ../src/MemoryGames/MemoryWords.cs:93
 msgid "bear"
 msgstr "熊"
 
-#: ../src/MemoryGames/MemoryWords.cs:96
+#: ../src/MemoryGames/MemoryWords.cs:94
 msgid "wolf"
 msgstr "狼"
 
-#: ../src/PlayerHistoryDialog.cs:39
+#: ../src/mono-addins-strings.xml.h:1
+msgid "<b>Select the add-ins to install and click on Next</b>"
+msgstr "<b>选择要安装的附加程序并单击“下一步“</b>"
+
+#: ../src/mono-addins-strings.xml.h:2
+msgid "<big><b>Add-in Manager</b></big>"
+msgstr "<big><b>附加程序管理器</b></big>"
+
+#: ../src/mono-addins-strings.xml.h:3
+msgid "Add-in"
+msgstr "附加程序"
+
+#: ../src/mono-addins-strings.xml.h:4
+msgid "Add-in Dependencies:"
+msgstr "附加程序依赖："
+
+#: ../src/mono-addins-strings.xml.h:5
+msgid "Add-in Installation"
+msgstr "附加程序安装"
+
+#: ../src/mono-addins-strings.xml.h:6
+msgid "Add-in Manager"
+msgstr "附加程序管理器"
+
+#: ../src/mono-addins-strings.xml.h:7
+msgid "Additional extensions are required to perform this operation."
+msgstr "执行该操作需要额外的扩展。"
+
+#: ../src/mono-addins-strings.xml.h:8
+msgid "All registered repositories"
+msgstr "所有注册的库"
+
+#: ../src/mono-addins-strings.xml.h:9
+msgid "Author:"
+msgstr "作者："
+
+#: ../src/mono-addins-strings.xml.h:10
+msgid "Copyright:"
+msgstr "版权所有："
+
+#: ../src/mono-addins-strings.xml.h:11
+msgid "Disable"
+msgstr "禁用"
+
+#: ../src/mono-addins-strings.xml.h:12
+#| msgid "Enabled"
+msgid "Enable"
+msgstr "启用"
+
+#: ../src/mono-addins-strings.xml.h:13
+msgid "Install from:"
+msgstr "安装从："
+
+#: ../src/mono-addins-strings.xml.h:14
+#| msgid "Game"
+msgid "Name"
+msgstr "名字"
+
+#: ../src/mono-addins-strings.xml.h:15
+msgid "Other"
+msgstr "其他"
+
+#: ../src/mono-addins-strings.xml.h:16
+msgid "Repository"
+msgstr "库"
+
+#: ../src/mono-addins-strings.xml.h:17
+#| msgid "Select All"
+msgid "Select _All"
+msgstr "全部选择(_A)"
+
+#: ../src/mono-addins-strings.xml.h:18
+msgid "Show all packages"
+msgstr "显示所有包"
+
+#: ../src/mono-addins-strings.xml.h:19
+msgid "Show new versions only"
+msgstr "仅显示新版本"
+
+#: ../src/mono-addins-strings.xml.h:20
+msgid "Show updates only"
+msgstr "仅显示更新"
+
+#: ../src/mono-addins-strings.xml.h:21
+msgid "The following add-ins are currently installed:"
+msgstr "下列附加程序已安装："
+
+#: ../src/mono-addins-strings.xml.h:22
+msgid "The following add-ins will be installed:"
+msgstr "下列附加程序将被安装："
+
+#: ../src/mono-addins-strings.xml.h:23
+msgid "Url"
+msgstr "Url"
+
+#: ../src/mono-addins-strings.xml.h:24
+msgid "Version"
+msgstr "版本"
+
+#: ../src/mono-addins-strings.xml.h:25
+msgid "Version:"
+msgstr "版本："
+
+#: ../src/mono-addins-strings.xml.h:26
+msgid "_Install Add-ins..."
+msgstr "安装附加程序(_I)..."
+
+#: ../src/mono-addins-strings.xml.h:27
+msgid "_Repositories..."
+msgstr "库(_R)..."
+
+#: ../src/mono-addins-strings.xml.h:28
+msgid "_Uninstall..."
+msgstr "卸载(_U)..."
+
+#: ../src/mono-addins-strings.xml.h:29
+#| msgid "Unselect all"
+msgid "_Unselect All"
+msgstr "全部不选(_U)"
+
+#: ../src/Dialogs/PlayerHistoryDialog.cs:38
 #, csharp-format
 msgid "The graphic below shows the player's game score evolution. It is built using the results of {0} last recorded games."
 msgstr "已面的图形显示玩家的游戏得分进展。使用最后 {0} 个已记录游戏的结果创建。"
 
-#: ../src/PuzzleGames/PuzzleBalance.cs:47
+#: ../src/PuzzleGames/PuzzleBalance.cs:46
 msgid "Balance"
 msgstr "平衡"
 
-#: ../src/PuzzleGames/PuzzleBalance.cs:51
+#: ../src/PuzzleGames/PuzzleBalance.cs:50
 msgid "How many triangles are needed in the right part of the last figure to keep it balanced?"
 msgstr "在最后一个图形的右边需要多少个三角形才能使其平衡？"
 
-#: ../src/PuzzleGames/PuzzleBalance.cs:57
+#: ../src/PuzzleGames/PuzzleBalance.cs:56
 msgid "Every triangle counts as 1, each diamond as 2 and each square as 3."
 msgstr "每个三角形计为1，每个菱形计为2，每个正方形计为3。"
 
-#: ../src/PuzzleGames/PuzzleBalance.cs:63
+#: ../src/PuzzleGames/PuzzleBalance.cs:62
 msgid "Every diamond counts as two triangles."
 msgstr "每个钻石形算作两个三角形。"
 
@@ -986,20 +1200,20 @@ msgstr "下列等式的结果是什么？"
 msgid "The order of arithmetical operations is always as follows: exponents and roots, multiplication and division, addition and subtraction."
 msgstr "算术操作的顺序一直如下：指数和开方，乘和除，加和减。"
 
-#: ../src/PuzzleGames/PuzzleExtraCircle.cs:38
+#: ../src/PuzzleGames/PuzzleExtraCircle.cs:37
 msgid "Extra circle"
 msgstr "额外的圆圈"
 
-#: ../src/PuzzleGames/PuzzleExtraCircle.cs:43
+#: ../src/PuzzleGames/PuzzleExtraCircle.cs:42
 #, csharp-format
 msgid "Which circle does not belong to the group? It is not a sequence of elements. Answer {0}, {1}, {2} or {3}."
 msgstr "哪一个圆圈不属于该组？非元素顺序。回答{0}, {1}, {2} 或 {3}。"
 
-#: ../src/PuzzleGames/PuzzleExtraCircle.cs:48
+#: ../src/PuzzleGames/PuzzleExtraCircle.cs:47
 msgid "All circles share a common property except for one."
 msgstr "除了一个外所有的圆圈都分享一个共有属性。"
 
-#: ../src/PuzzleGames/PuzzleExtraCircle.cs:54
+#: ../src/PuzzleGames/PuzzleExtraCircle.cs:53
 #, csharp-format
 msgid "In all circles the color slices follow the same order except for this one."
 msgstr "在所有的圆环内，除了这个以外的颜色条都遵循同样的顺序。"
@@ -1039,8 +1253,8 @@ msgstr "重叠第一个和第二个图形，移除两者之间相同的线，然
 
 #: ../src/PuzzleGames/PuzzleFigurePattern.cs:189
 #: ../src/PuzzleGames/PuzzleLargerShape.cs:234
-#: ../src/PuzzleGames/PuzzleMissingPiece.cs:149
-#: ../src/PuzzleGames/PuzzleMissingSlice.cs:178
+#: ../src/PuzzleGames/PuzzleMissingPiece.cs:148
+#: ../src/PuzzleGames/PuzzleMissingSlice.cs:177
 #: ../src/PuzzleGames/PuzzleMostInCommon.cs:284
 #: ../src/PuzzleGames/PuzzleNextFigure.cs:126
 #: ../src/PuzzleGames/PuzzleSquareDots.cs:180
@@ -1092,6 +1306,19 @@ msgstr "一个四边图形可以嵌入在一个图形的内部。"
 #, csharp-format
 msgid "The four sided figures are made by connecting the following points: {0}"
 msgstr "四边图形是通过连接下列点得来：{0}"
+
+#: ../src/PuzzleGames/PuzzleHandshakes.cs:29
+msgid "Handshakes"
+msgstr "握手"
+
+#: ../src/PuzzleGames/PuzzleHandshakes.cs:34
+#, csharp-format
+msgid "All attendees to a party are introduced to one another. {0} handshakes are made in total. How many people are attending the party?"
+msgstr "所有聚会的参加者都相互介绍。一共握了 {0} 次手。总共有多少人参加聚会？"
+
+#: ../src/PuzzleGames/PuzzleHandshakes.cs:39
+msgid "Try to imagine a situation in which you are meeting a small number of people."
+msgstr "试着想想你正在和一些人会晤的场景。"
 
 #: ../src/PuzzleGames/PuzzleLargerShape.cs:108
 msgid "Larger shape"
@@ -1182,37 +1409,37 @@ msgstr "头2排相加并减去第3排可计算出第4排。"
 msgid "The fourth column is calculated by adding the first two columns and subtracting the third."
 msgstr "头2行相加并减去第3行可计算出第4行。"
 
-#: ../src/PuzzleGames/PuzzleMissingPiece.cs:32
+#: ../src/PuzzleGames/PuzzleMissingPiece.cs:31
 msgid "Missing piece"
 msgstr "缺少的一块"
 
-#: ../src/PuzzleGames/PuzzleMissingPiece.cs:37
+#: ../src/PuzzleGames/PuzzleMissingPiece.cs:36
 #, csharp-format
 msgid "Which square completes the figure below? Answer {0}, {1} or {2}."
 msgstr "哪一个方形可补完下列图形？回答 {0}, {1} 或 {2}。"
 
-#: ../src/PuzzleGames/PuzzleMissingPiece.cs:42
+#: ../src/PuzzleGames/PuzzleMissingPiece.cs:41
 msgid "The logic works at row level."
 msgstr "逻辑在低层次上作用。"
 
-#: ../src/PuzzleGames/PuzzleMissingPiece.cs:48
+#: ../src/PuzzleGames/PuzzleMissingPiece.cs:47
 msgid "In every row the third square is made by flipping the first square and superimposing it on the second square, followed by removing the matching lines."
 msgstr "翻转第一个方形并重叠在第二个方形上，接着移除匹配的线，即可得来每排的第三个方形，"
 
-#: ../src/PuzzleGames/PuzzleMissingSlice.cs:58
+#: ../src/PuzzleGames/PuzzleMissingSlice.cs:57
 msgid "Missing slice"
 msgstr "缺失的小片"
 
-#: ../src/PuzzleGames/PuzzleMissingSlice.cs:63
+#: ../src/PuzzleGames/PuzzleMissingSlice.cs:62
 #, csharp-format
 msgid "Some slices have a common property. Which is the missing slice in the circle below? Answer {0}, {1} or {2}."
 msgstr "一些小片有共同的属性。在下面圆圈中哪一个是缺失的小片？回答使用 {0}, {1} 或 {2}."
 
-#: ../src/PuzzleGames/PuzzleMissingSlice.cs:68
+#: ../src/PuzzleGames/PuzzleMissingSlice.cs:67
 msgid "Each slice is related to the opposite one."
 msgstr "每一片都与相对的小片相关"
 
-#: ../src/PuzzleGames/PuzzleMissingSlice.cs:74
+#: ../src/PuzzleGames/PuzzleMissingSlice.cs:73
 #, csharp-format
 msgid "All numbers of each slice, when added to the ones of the opposite slice, add always {0}."
 msgstr "每一片的所有数字，当加到对面的一片时，永远加 {0}。"
