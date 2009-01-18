@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2007-2008 Jordi Mas i Hernàndez <jmas@softcatala.org>
+ * Copyright (C) 2007-2009 Jordi Mas i Hernàndez <jmas@softcatala.org>
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License as
@@ -70,6 +70,7 @@ public class GameManager
 		typeof (PuzzleFourSided),
 		typeof (PuzzleLargerShape),
 		typeof (PuzzleHandshakes),
+		typeof (PuzzleCounting),
 	};
 
 	static Type[] CalculationTrainersInternal = new Type[] 

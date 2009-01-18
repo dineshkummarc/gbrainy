@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2008 Jordi Mas i Hernàndez <jmas@softcatala.org>
+ * Copyright (C) 2008-2009 Jordi Mas i Hernàndez <jmas@softcatala.org>
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License as
@@ -40,6 +40,9 @@ public class SVGImage : IDisposable
 	[DllImport("rsvg-2")]
 	static extern void rsvg_handle_get_dimensions (IntPtr handle, ref RsvgDimensionData dimension);
 
+	[DllImport("rsvg-2")]
+	static extern IntPtr rsvg_handle_new_from_data (byte[] data, int len, out int error);
+
 	[StructLayout(LayoutKind.Sequential)]
 	protected struct RsvgDimensionData
 	{
@@ -51,6 +54,28 @@ public class SVGImage : IDisposable
 
 	private RsvgDimensionData dimension;
 	private IntPtr handle;
+
+	public SVGImage (System.Reflection.Assembly _assembly, string resource)
+	{
+		try {
+			byte[] array;
+			Stream stream;
+			int error = 0;
+
+			stream =  _assembly.GetManifestResourceStream (resource);
+			array = new byte [stream.Length];
+
+			stream.Read (array, 0, (int) stream.Length);
+			
+			handle = rsvg_handle_new_from_data (array, array.Length, out error);
+			rsvg_handle_get_dimensions (handle, ref dimension);
+		} 
+		finally
+		{
+			if (handle == IntPtr.Zero)
+				throw new System.IO.IOException ("Resource not found: " + resource);
+		}
+	}
 	
 	public SVGImage (string file)
 	{

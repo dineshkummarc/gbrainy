@@ -348,5 +348,45 @@ public class CairoContextEx : Cairo.Context
 		}
 	}
 
+	public void DrawImageFromAssembly (string  resource, double x, double y, double width, double height)
+	{
+		SVGImage image;
+
+		try {
+			image = new SVGImage (System.Reflection.Assembly.GetCallingAssembly (), resource);
+		}
+		catch (Exception)
+		{
+			return;
+		}
+
+		DrawImage (image, x, y, width, height);
+		image.Dispose ();
+	}
+
+	public void DrawImageFromFile (string filename, double x, double y, double width, double height)
+	{
+		SVGImage image;
+
+		try {
+			image = new SVGImage (filename);
+		}
+		catch (Exception)
+		{
+			return;
+		}
+
+		DrawImage (image, x, y, width, height);
+		image.Dispose ();
+	}
+
+	void DrawImage (SVGImage image, double x, double y, double width, double height)
+	{		
+		Save ();
+		Translate (x, y);
+		Scale (width / image.Width, height / image.Height);
+		image.RenderToCairo (Handle);
+		Restore ();
+	}
 }
 

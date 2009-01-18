@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2008 Jordi Mas i Hernàndez <jmas@softcatala.org>
+ * Copyright (C) 2008-2009 Jordi Mas i Hernàndez <jmas@softcatala.org>
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License as
@@ -35,6 +35,13 @@ public class AboutDialog : Gtk.AboutDialog
 			"Jordi Mas i Hernandez <jmas@softcatala.org>",
 		};
 
+		string [] artists = new string [] {
+			"Anna Barberà Maré",
+			"Carme Cabal Sardà",
+			"Jordi Mas i Hernandez",
+			"Openclipart.org"
+		};
+
 		// Name of the people that translated the application
 		string translators = Catalog.GetString ("translator-credits");
 
@@ -58,6 +65,7 @@ public class AboutDialog : Gtk.AboutDialog
 		Website = "http://live.gnome.org/gbrainy";
 		WebsiteLabel = Catalog.GetString ("gbrainy web site");
 		TranslatorCredits = translators;
+		Artists = artists;
 		IconName = null;
 		License = license.ToString ();
 		WrapLicense = true;

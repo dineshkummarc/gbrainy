@@ -65,5 +65,6 @@ public class PuzzleHandshakes : Game
 	public override void Draw (CairoContextEx gr, int area_width, int area_height)
 	{
 		base.Draw (gr, area_width, area_height);
+		gr.DrawImageFromAssembly ("handshake.svg", 0.2, 0.6, 0.6, 0.3);
 	}
 }

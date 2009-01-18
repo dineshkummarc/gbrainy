@@ -24,6 +24,9 @@ tango_icons = 				\
 	app-graphics/allgames-32.png		\
 	app-graphics/pause-32.png
 
+game_graphics = \
+	game-graphics/present.svg	\
+	game-graphics/handshake.svg
 
 install-data-local:
 	@-$(mkinstalldirs) $(DESTDIR)$(hicolordir)/scalable/apps
@@ -63,4 +66,4 @@ uninstall-hook:
 
 noinst_DATA = 	
 
-EXTRA_DIST = $(pixmap_DATA) $(tango_icons) $(man_MANS) gbrainy.exe.config
+EXTRA_DIST = $(pixmap_DATA) $(tango_icons) $(game_graphics) $(man_MANS) gbrainy.exe.config

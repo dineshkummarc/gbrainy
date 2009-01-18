@@ -73,6 +73,7 @@ GBRAINY_CSDISTFILES =				\
 	$(srcdir)/PuzzleGames/PuzzleHandshakes.cs	\
 	$(srcdir)/CalculationGames/CalculationPrimes.cs	\
 	$(srcdir)/MemoryGames/MemoryFacts.cs		\
+	$(srcdir)/PuzzleGames/PuzzleCounting.cs	\
 	$(srcdir)/gbrainy.cs			
 
 ASSEMBLIES = \
@@ -92,6 +93,8 @@ RESOURCES =										\
 -resource:$(top_srcdir)/data/app-graphics/math-games-32.png  \
 -resource:$(top_srcdir)/data/app-graphics/memory-games-32.png  \
 -resource:$(top_srcdir)/data/app-graphics/gbrainy.svg  \
+-resource:$(top_srcdir)/data/game-graphics/present.svg  \
+-resource:$(top_srcdir)/data/game-graphics/handshake.svg  \
 -resource:$(srcdir)/gbrainy.addin.xml
 
 gbrainydir = $(libdir)/gbrainy
