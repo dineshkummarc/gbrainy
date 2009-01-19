@@ -83,6 +83,10 @@ public class MemoryFacts : Memory
 		quest_idx = random.Next (facts [fact_idx].Length);
 		question = facts [fact_idx].questions [quest_idx];
 		right_answer = (facts [fact_idx].answers [quest_idx]).ToString ();
+
+		// Since this particular test requires to read and understand text
+		// lets give the user twice time to be able to understand the text properly
+		TotalTime = TotalTime * 2;
 	}
 
 	Fact GetFact (int index)

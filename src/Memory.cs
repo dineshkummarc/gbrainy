@@ -54,6 +54,14 @@ public abstract class Memory : Game
 		get { return Game.Types.MemoryTrainer;}
 	}
 
+	public int TotalTime {
+		get { return total_time;}
+		set { 
+			total_time = value;
+			time_left = value;
+		}
+	}
+
 	public override void Initialize ()
 	{
 		timer = new System.Timers.Timer ();
