@@ -58,9 +58,11 @@ public class PuzzleCounting : Game
 			var = 2 + random.Next (5);
 			total = 50 + random.Next (100);
 			question = String.Format (
-				Catalog.GetString ("We have a {0} meter piece of fabric. Machine A takes {1} seconds to cut 1 meter of this fabric. How many seconds does Machine A take to cut the entire piece of fabric into 1 meter pieces?"),
+				// Translators: {0} and {1} are always numbers greater than 1
+				Catalog.GetString ("We have a {0} meters piece of fabric. Machine A takes {1} seconds to cut 1 meter of this fabric. How many seconds does Machine A take to cut the entire piece of fabric into 1 meter pieces?"),
 				total, var);
 			answer = String.Format (
+				// Translators: {0} is always a number greater than 1
 				Catalog.GetString ("With the {0} cut, Machine A creates two 1 meter pieces."), (total - 1));
 	
 			ans = (total - 1) * var;
@@ -70,8 +72,10 @@ public class PuzzleCounting : Game
 			total = 20 + random.Next (20);
 			ans = total - 4;
 			question = String.Format (
+				// Translators: {0} is always a number greater than 20
 				Catalog.GetString ("A fence is built to enclose a square shaped region. {0} fence poles are used in each side of the square. How many fence poles are used in total?"),
 				total);
+				// Translators: {0} is always a number greater than 20
 			answer = String.Format (
 				Catalog.GetString ("There are {0} fence poles since the poles on the corners of the square are shared."), ans);
 			break;
@@ -81,6 +85,7 @@ public class PuzzleCounting : Game
 			total = present + 2;
 			ans = total;
 			question = String.Format (
+				// Translators: {0} is always a number greater than 5
 				Catalog.GetString ("Wrapping an anniversary present costs one euro. The anniversary present costs {0} euros more than the cost to wrap it. How much does it cost to both purchase and wrap the present?"),
 				present);
 			answer = String.Format (
