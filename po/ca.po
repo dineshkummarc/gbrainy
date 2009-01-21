@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gbrainy\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-01-07 13:45+0100\n"
-"PO-Revision-Date: 2009-01-07 14:00+0100\n"
+"POT-Creation-Date: 2009-01-21 20:08+0100\n"
+"PO-Revision-Date: 2009-01-21 20:30+0100\n"
 "Last-Translator: Jordi Mas <jmas@softcatala.org>\n"
 "Language-Team: Catalan\n"
 "MIME-Version: 1.0\n"
@@ -32,11 +32,11 @@ msgid "gbrainy"
 msgstr "gbrainy"
 
 #. Name of the people that translated the application
-#: ../src/Dialogs/AboutDialog.cs:39
+#: ../src/Dialogs/AboutDialog.cs:46
 msgid "translator-credits"
 msgstr "Jordi Mas i Hernandez <jmas@softcatala.org>"
 
-#: ../src/Dialogs/AboutDialog.cs:44
+#: ../src/Dialogs/AboutDialog.cs:51
 msgid ""
 "This program is free software; you can redistribute it and/or modify it "
 "under the terms of the GNU General Public License as  published by the Free "
@@ -50,7 +50,7 @@ msgstr ""
 "Llicència o (si ho preferiu) qualsevol versió posterior.\n"
 "\n"
 
-#: ../src/Dialogs/AboutDialog.cs:45
+#: ../src/Dialogs/AboutDialog.cs:52
 msgid ""
 "This program is distributed in the hope that it will be useful, but WITHOUT "
 "ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or "
@@ -64,7 +64,7 @@ msgstr ""
 "Llicència Pública General GNU per obtenir-ne més detalls.\n"
 "\n"
 
-#: ../src/Dialogs/AboutDialog.cs:46
+#: ../src/Dialogs/AboutDialog.cs:53
 msgid ""
 "You should have received a copy of the GNU General Public License along with "
 "this program; if not, write to the Free Software Foundation, Inc., 59 Temple "
@@ -75,14 +75,14 @@ msgstr ""
 "Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA."
 
 #
-#: ../src/Dialogs/AboutDialog.cs:55
+#: ../src/Dialogs/AboutDialog.cs:62
 msgid "Based on ideas by Terry Stickels, MENSA books and Jordi Mas."
 msgstr "Basat en idees de Terry Stickels, llibres de MENSA i Jordi Mas."
 
 #
 #
 #
-#: ../src/Dialogs/AboutDialog.cs:57
+#: ../src/Dialogs/AboutDialog.cs:64
 msgid ""
 "A brain teaser and trainer game to have fun and to keep your brain trained."
 msgstr ""
@@ -90,7 +90,7 @@ msgstr ""
 
 #
 #
-#: ../src/Dialogs/AboutDialog.cs:59
+#: ../src/Dialogs/AboutDialog.cs:66
 msgid "gbrainy web site"
 msgstr "Lloc web del gbrainy"
 
@@ -283,13 +283,13 @@ msgstr "Tipus"
 msgid "Enabled"
 msgstr "Habilitat"
 
-#: ../src/Dialogs/CustomGameDialog.cs:85 ../src/GameDrawingArea.cs:198
+#: ../src/Dialogs/CustomGameDialog.cs:85 ../src/GameDrawingArea.cs:178
 #: ../src/gbrainy.cs:110 ../src/gbrainy.glade.h:11
 #: ../src/Dialogs/PlayerHistoryDialog.cs:101
 msgid "Logic"
 msgstr "Lògica"
 
-#: ../src/Dialogs/CustomGameDialog.cs:88 ../src/GameDrawingArea.cs:206
+#: ../src/Dialogs/CustomGameDialog.cs:88 ../src/GameDrawingArea.cs:186
 #: ../src/gbrainy.cs:121 ../src/gbrainy.glade.h:16
 #: ../src/Dialogs/PlayerHistoryDialog.cs:111
 msgid "Memory"
@@ -356,7 +356,7 @@ msgstr "H"
 msgid "Figure {0}"
 msgstr "Figura {0}"
 
-#: ../src/GameDrawingArea.cs:128
+#: ../src/GameDrawingArea.cs:108
 #, csharp-format
 msgid "Welcome to gbrainy {0}"
 msgstr "Benvinguts al gbrainy {0}"
@@ -365,7 +365,7 @@ msgstr "Benvinguts al gbrainy {0}"
 #
 #
 #
-#: ../src/GameDrawingArea.cs:131
+#: ../src/GameDrawingArea.cs:111
 msgid ""
 "gbrainy is a brain teaser game and trainer to have fun and to keep your "
 "brain trained. It includes:"
@@ -374,7 +374,7 @@ msgstr ""
 "Inclou:"
 
 #
-#: ../src/GameDrawingArea.cs:137
+#: ../src/GameDrawingArea.cs:117
 msgid ""
 "Logic puzzles. Designed to challenge your reasoning and thinking skills."
 msgstr ""
@@ -382,7 +382,7 @@ msgstr ""
 "raonament i pensament."
 
 #
-#: ../src/GameDrawingArea.cs:144
+#: ../src/GameDrawingArea.cs:124
 msgid ""
 "Mental calculation. Based on arithmetical operations that test your mental "
 "calculation abilities."
@@ -391,90 +391,90 @@ msgstr ""
 "habilitats de càlcul mental."
 
 #
-#: ../src/GameDrawingArea.cs:150
+#: ../src/GameDrawingArea.cs:130
 msgid "Memory trainers. To prove and enhance your short term memory."
 msgstr ""
 "Entrenadors de memòria. Per a posar a prova i millorar la vostra capacitat "
 "de memòria a curt termini."
 
 #
-#: ../src/GameDrawingArea.cs:153 ../src/GameDrawingArea.cs:412
+#: ../src/GameDrawingArea.cs:133 ../src/GameDrawingArea.cs:392
 msgid "Use the Settings to adjust the difficulty level of the game."
 msgstr ""
 "Utilitzeu les Preferències per a ajustar el nivell de dificultat del joc."
 
-#: ../src/GameDrawingArea.cs:194 ../src/gbrainy.glade.h:27
+#: ../src/GameDrawingArea.cs:174 ../src/gbrainy.glade.h:27
 #: ../src/Dialogs/PlayerHistoryDialog.cs:92
 msgid "Total"
 msgstr "Total"
 
 #
-#: ../src/GameDrawingArea.cs:202 ../src/gbrainy.cs:115
+#: ../src/GameDrawingArea.cs:182 ../src/gbrainy.cs:115
 #: ../src/gbrainy.glade.h:6 ../src/Dialogs/PlayerHistoryDialog.cs:120
 msgid "Calculation"
 msgstr "Càlcul"
 
-#: ../src/GameDrawingArea.cs:220
+#: ../src/GameDrawingArea.cs:200
 msgid "Score"
 msgstr "Puntuació"
 
-#: ../src/GameDrawingArea.cs:228
+#: ../src/GameDrawingArea.cs:208
 #, csharp-format
 msgid "Outstanding results"
 msgstr "Resultats extraordinaris"
 
-#: ../src/GameDrawingArea.cs:230
+#: ../src/GameDrawingArea.cs:210
 #, csharp-format
 msgid "Excellent results"
 msgstr "Excel·lents resultats"
 
-#: ../src/GameDrawingArea.cs:232
+#: ../src/GameDrawingArea.cs:212
 #, csharp-format
 msgid "Good results"
 msgstr "Bons resultats"
 
-#: ../src/GameDrawingArea.cs:234
+#: ../src/GameDrawingArea.cs:214
 #, csharp-format
 msgid "Poor results"
 msgstr "Resultats pobres"
 
-#: ../src/GameDrawingArea.cs:235
+#: ../src/GameDrawingArea.cs:215
 #, csharp-format
 msgid "Disappointing results"
 msgstr "Resultats decebedors"
 
-#: ../src/GameDrawingArea.cs:241
+#: ../src/GameDrawingArea.cs:221
 #, csharp-format
 msgid "Games won: {0} ({1} played)"
 msgstr "Jocs guanyats: {0} ({1} jugats)"
 
-#: ../src/GameDrawingArea.cs:243
+#: ../src/GameDrawingArea.cs:223
 #, csharp-format
 msgid "{0}. Games won: {1} ({2} played)"
 msgstr "{0}. Jocs guanyats: {1} ({2} jugats)"
 
-#: ../src/GameDrawingArea.cs:247
+#: ../src/GameDrawingArea.cs:227
 #, csharp-format
 msgid "Time played {0} (average per game {1})"
 msgstr "Temps de joc: {0} (mitjana per joc {1})"
 
-#: ../src/GameDrawingArea.cs:254
+#: ../src/GameDrawingArea.cs:234
 msgid "Tips for your next games"
 msgstr "Consells per les vostres properes partides"
 
-#: ../src/GameDrawingArea.cs:356
+#: ../src/GameDrawingArea.cs:336
 msgid "Get ready to memorize the next objects..."
 msgstr "Prepareu-vos per a memoritzar els objectes següents..."
 
 #
-#: ../src/GameDrawingArea.cs:396
+#: ../src/GameDrawingArea.cs:376
 msgid "Read the instructions carefully and identify the data and given clues."
 msgstr ""
 "Llegiu les instruccions amb deteniment i identifiqueu les dades i pistes "
 "donades."
 
 #
-#: ../src/GameDrawingArea.cs:398
+#: ../src/GameDrawingArea.cs:378
 msgid ""
 "To score the player gbrainy uses the time and tips needed to complete each "
 "game."
@@ -482,24 +482,24 @@ msgstr ""
 "Per puntuar al jugador gbrainy utilitza el temps i els consells utilitzats "
 "per a resoldre cada joc."
 
-#: ../src/GameDrawingArea.cs:400
+#: ../src/GameDrawingArea.cs:380
 msgid ""
 "In logic games, elements that may seem irrelevant can be very important."
 msgstr ""
 "En els jocs de lògica, els elements que semblen irrellevants poden ser força "
 "importants."
 
-#: ../src/GameDrawingArea.cs:402
+#: ../src/GameDrawingArea.cs:382
 msgid "Break the mental blocks and look into the boundaries of problems."
 msgstr ""
 "Trenqueu els bloquejos mentals i mireu més enllà dels límits dels problemes."
 
 #
-#: ../src/GameDrawingArea.cs:404
+#: ../src/GameDrawingArea.cs:384
 msgid "Enjoy making mistakes, they are part of the learning process."
 msgstr "Gaudiu fent errades, és part del procés d'aprenentatge."
 
-#: ../src/GameDrawingArea.cs:406
+#: ../src/GameDrawingArea.cs:386
 msgid ""
 "Do all the problems, even the difficult ones. Improvement comes from "
 "practising."
@@ -508,7 +508,7 @@ msgstr ""
 "pràctica."
 
 #
-#: ../src/GameDrawingArea.cs:408
+#: ../src/GameDrawingArea.cs:388
 msgid "Play on a daily basis, you will notice progress soon."
 msgstr "Jugueu diàriament, us adonareu del vostre progrés en poc temps."
 
@@ -516,7 +516,7 @@ msgstr "Jugueu diàriament, us adonareu del vostre progrés en poc temps."
 #
 #
 #. Translators: Custom Game Selection is a menu option
-#: ../src/GameDrawingArea.cs:410
+#: ../src/GameDrawingArea.cs:390
 msgid ""
 "Use the 'Custom Game Selection' to choose exactly which games you want to "
 "play."
@@ -524,11 +524,11 @@ msgstr ""
 "Utilitzeu la «selecció de la partida personalitzada» per a escollir "
 "exactament quins jocs voleu entrenar."
 
-#: ../src/GameDrawingArea.cs:414
+#: ../src/GameDrawingArea.cs:394
 msgid "Association of elements is a common technique for remembering things."
 msgstr "L'associació d'elements és una tècnica habitual per a recordar coses."
 
-#: ../src/GameDrawingArea.cs:416
+#: ../src/GameDrawingArea.cs:396
 msgid ""
 "Grouping elements into categories is a common technique for remembering "
 "things."
@@ -800,7 +800,7 @@ msgid "Memorize facts"
 msgstr "Memoritzeu fets"
 
 #. Translators: {0} is replaced by a number, {1} by a year (like 1940)
-#: ../src/MemoryGames/MemoryFacts.cs:99
+#: ../src/MemoryGames/MemoryFacts.cs:103
 #, csharp-format
 msgid ""
 "Shiny Cars had already announced a {0} days production halt next month, but "
@@ -809,16 +809,16 @@ msgstr ""
 "Cotxes Lluents ha anunciat una aturada de la producció de {0} dies pel mes "
 "següent, abans d'això no havia aturat producció des de {1}."
 
-#: ../src/MemoryGames/MemoryFacts.cs:101
+#: ../src/MemoryGames/MemoryFacts.cs:105
 msgid "For how many days did Shiny Cars halt its production?"
 msgstr "Durant quants dies Cotxes Lluents ha aturat la producció?"
 
-#: ../src/MemoryGames/MemoryFacts.cs:102
+#: ../src/MemoryGames/MemoryFacts.cs:106
 msgid "In what year did Shiny Cars last halt its production?"
 msgstr "A quin any va Cotxes Lluents aturar la producció per darrer cop?"
 
 #. Translators: {0} is replaced by a number, {1} by a year (like 1940)
-#: ../src/MemoryGames/MemoryFacts.cs:110
+#: ../src/MemoryGames/MemoryFacts.cs:114
 #, csharp-format
 msgid ""
 "Shiny Cars sales fell {0}% this past December, the worse decline since {1}."
@@ -826,11 +826,11 @@ msgstr ""
 "Les vendes de Cotxes Lluents van caure un {0}% el passat desembre, la pitjor "
 "caiguda des de {1}."
 
-#: ../src/MemoryGames/MemoryFacts.cs:112
+#: ../src/MemoryGames/MemoryFacts.cs:116
 msgid "By how much did company sales fall last December?"
 msgstr "Quan van caure les vendes de l'empresa el passat desembre?"
 
-#: ../src/MemoryGames/MemoryFacts.cs:113
+#: ../src/MemoryGames/MemoryFacts.cs:117
 msgid ""
 "In what year did Shiny Cars record a sales total lower than that of last "
 "December?"
@@ -838,20 +838,20 @@ msgstr ""
 "A quin any les vendes de Cotxes Lluents van ser inferiors a les del passat "
 "desembre?"
 
-#: ../src/MemoryGames/MemoryFacts.cs:118
+#: ../src/MemoryGames/MemoryFacts.cs:122
 #, csharp-format
 msgid "About {0}% of Shiny Cars produced worldwide are sold in Europe"
 msgstr ""
 "Aproximadament el {0}% dels Cotxes Lluents produïts al món són venuts a "
 "Europa."
 
-#: ../src/MemoryGames/MemoryFacts.cs:120
+#: ../src/MemoryGames/MemoryFacts.cs:124
 msgid ""
 "What percentage of all Shiny Cars produced worldwide are sold in Europe?"
 msgstr ""
 "Quin percentatge dels Cotxes Lluents produïts al món són venuts a Europa?"
 
-#: ../src/MemoryGames/MemoryFacts.cs:126
+#: ../src/MemoryGames/MemoryFacts.cs:130
 #, csharp-format
 msgid ""
 "About {0}% of Shiny Cars use diesel, {1}% use gasoline and the remainder use "
@@ -860,17 +860,17 @@ msgstr ""
 "Aproximadament el {0}% dels Cotxes Lluents usen dièsel, el {1}% usen benzina "
 "i els restants usen electricitat."
 
-#: ../src/MemoryGames/MemoryFacts.cs:128
+#: ../src/MemoryGames/MemoryFacts.cs:132
 msgid "What percentage of Shiny Cars use diesel?"
 msgstr "Quin percentatge dels Cotxes Lluents usen dièsel?"
 
-#: ../src/MemoryGames/MemoryFacts.cs:129
+#: ../src/MemoryGames/MemoryFacts.cs:133
 msgid "What percentage of Shiny Cars use gasoline?"
 msgstr "Quin percentatge dels Cotxes Lluents usen benzina?"
 
 #: ../src/MemoryGames/MemoryFigures.cs:50
 msgid "Memory figures"
-msgstr "Memoritza figures"
+msgstr "Memoritzeu figures"
 
 #: ../src/MemoryGames/MemoryFigures.cs:55
 msgid ""
@@ -1170,82 +1170,106 @@ msgid "Author:"
 msgstr "Autor:"
 
 #: ../src/mono-addins-strings.xml.h:10
+msgid "Browse..."
+msgstr "Navega..."
+
+#: ../src/mono-addins-strings.xml.h:11
 msgid "Copyright:"
 msgstr "Copyright:"
 
-#: ../src/mono-addins-strings.xml.h:11
+#: ../src/mono-addins-strings.xml.h:12
 msgid "Disable"
 msgstr "Inhabilita"
 
-#: ../src/mono-addins-strings.xml.h:12
+#: ../src/mono-addins-strings.xml.h:13
 msgid "Enable"
 msgstr "Habilita"
 
-#: ../src/mono-addins-strings.xml.h:13
+#: ../src/mono-addins-strings.xml.h:14
 msgid "Install from:"
 msgstr "Instal·la des de:"
 
-#: ../src/mono-addins-strings.xml.h:14
+#: ../src/mono-addins-strings.xml.h:15
 msgid "Name"
 msgstr "Nom"
 
-#: ../src/mono-addins-strings.xml.h:15
+#: ../src/mono-addins-strings.xml.h:16
 msgid "Other"
 msgstr "Altres"
 
-#: ../src/mono-addins-strings.xml.h:16
-msgid "Repository"
-msgstr "Dispòsit"
-
 #: ../src/mono-addins-strings.xml.h:17
+msgid "Path:"
+msgstr "Camí:"
+
+#: ../src/mono-addins-strings.xml.h:18
+msgid "Register a local repository"
+msgstr "Registra un dipòsit local"
+
+#: ../src/mono-addins-strings.xml.h:19
+msgid "Register an on-line repository"
+msgstr "Registra un dipòsit un dipòsit en línia"
+
+#: ../src/mono-addins-strings.xml.h:20
+msgid "Repository"
+msgstr "Dipòsit"
+
+#: ../src/mono-addins-strings.xml.h:21
 msgid "Select _All"
 msgstr "_Selecciona-ho tot"
 
-#: ../src/mono-addins-strings.xml.h:18
+#: ../src/mono-addins-strings.xml.h:22
+msgid "Select the location of the repository you want to register:"
+msgstr "Seleccioneu la ubicació del dipòsit que voleu registrar:"
+
+#: ../src/mono-addins-strings.xml.h:23
 msgid "Show all packages"
 msgstr "Mostra tots els paquets"
 
-#: ../src/mono-addins-strings.xml.h:19
+#: ../src/mono-addins-strings.xml.h:24
 msgid "Show new versions only"
 msgstr "Mostra només les versions noves"
 
-#: ../src/mono-addins-strings.xml.h:20
+#: ../src/mono-addins-strings.xml.h:25
 msgid "Show updates only"
 msgstr "Mostra només les actualitzacions"
 
-#: ../src/mono-addins-strings.xml.h:21
+#: ../src/mono-addins-strings.xml.h:26
 msgid "The following add-ins are currently installed:"
 msgstr "Les següents extensions es troben ja instal·lades:"
 
-#: ../src/mono-addins-strings.xml.h:22
+#: ../src/mono-addins-strings.xml.h:27
 msgid "The following add-ins will be installed:"
 msgstr "S'instal·laran les extensions següents:"
 
-#: ../src/mono-addins-strings.xml.h:23
+#: ../src/mono-addins-strings.xml.h:28
 msgid "Url"
 msgstr "Url"
 
-#: ../src/mono-addins-strings.xml.h:24
+#: ../src/mono-addins-strings.xml.h:29
+msgid "Url:"
+msgstr "Url:"
+
+#: ../src/mono-addins-strings.xml.h:30
 msgid "Version"
 msgstr "Versió"
 
-#: ../src/mono-addins-strings.xml.h:25
+#: ../src/mono-addins-strings.xml.h:31
 msgid "Version:"
 msgstr "Versió:"
 
-#: ../src/mono-addins-strings.xml.h:26
+#: ../src/mono-addins-strings.xml.h:32
 msgid "_Install Add-ins..."
 msgstr "_Instal·la les extensions..."
 
-#: ../src/mono-addins-strings.xml.h:27
+#: ../src/mono-addins-strings.xml.h:33
 msgid "_Repositories..."
-msgstr "_Dispòsits..."
+msgstr "_Dipòsits..."
 
-#: ../src/mono-addins-strings.xml.h:28
+#: ../src/mono-addins-strings.xml.h:34
 msgid "_Uninstall..."
 msgstr "_Desinstal·la..."
 
-#: ../src/mono-addins-strings.xml.h:29
+#: ../src/mono-addins-strings.xml.h:35
 msgid "_Unselect All"
 msgstr "_Desselecciona-ho tot"
 
@@ -1384,6 +1408,61 @@ msgid "It is an easy exercise if you systematically count the circles."
 msgstr ""
 "És un exercici senzill si utilitzeu una forma sistemàtica de comptar els "
 "cercles."
+
+#: ../src/PuzzleGames/PuzzleCounting.cs:38
+msgid "Counting"
+msgstr "Comptar"
+
+#. Translators: {0} and {1} always numbers greater than 1
+#: ../src/PuzzleGames/PuzzleCounting.cs:62
+#, csharp-format
+msgid ""
+"We have a {0} meters piece of fabric. Machine A takes {1} seconds to cut 1 "
+"meter of this fabric. How many seconds does Machine A take to cut the entire "
+"piece of fabric into 1 meter pieces?"
+msgstr ""
+"Tenim una peça de tela de {0} metres. La màquina A triga {1} segons en tallar 1 metre de tela. "
+"Quants segons triga la màquina A en tallar la peça completa de tela en trossos d'1 metre?"
+
+#. Translators: {0} is always a number greater than 1
+#: ../src/PuzzleGames/PuzzleCounting.cs:66
+#, csharp-format
+msgid "With the {0} cut, Machine A creates two 1 meter pieces."
+msgstr "Amb el tall {0}, la màquina A crea dues petes d'1 metre."
+
+#. Translators: {0} is always a number greater than 20
+#: ../src/PuzzleGames/PuzzleCounting.cs:76
+#, csharp-format
+msgid ""
+"A fence is built to enclose a square shaped region. {0} fence poles are used "
+"in each side of the square. How many fence poles are used in total?"
+msgstr ""
+"Es construeix una tanca per a una regió de forma quadrada. S'utilitzen {0} pals a cada costat del "
+"quadrat. Quants pals s'utilitzen total per tota la tanca?"
+
+#: ../src/PuzzleGames/PuzzleCounting.cs:80
+#, csharp-format
+msgid ""
+"There are {0} fence poles since the poles on the corners of the square are "
+"shared."
+msgstr ""
+"Hi ha {0} pals a la tanca ja que els pals de les cantonades es comparteixen."
+
+#. Translators: {0} is always a number greater than 5
+#: ../src/PuzzleGames/PuzzleCounting.cs:89
+#, csharp-format
+msgid ""
+"Wrapping an anniversary present costs one euro. The anniversary present "
+"costs {0} euros more than the cost to wrap it. How much does it cost to both "
+"purchase and wrap the present?"
+msgstr ""
+"L'embolcall per a un regal d'aniversari costa un euro. El regal d'aniversari costa {0} euros "
+"més que l'embolcall. Quant costen el regal i l'embolcall?"
+
+#: ../src/PuzzleGames/PuzzleCounting.cs:92
+#, csharp-format
+msgid "Individually, the present costs one euro more to purchase than to wrap."
+msgstr "Individualment, el regal cost un euro més que l'embolcall."
 
 #
 #: ../src/PuzzleGames/PuzzleCountSeries.cs:37
@@ -1647,8 +1726,9 @@ msgstr ""
 msgid "Handshakes"
 msgstr "Encaixades de mans"
 
-#: ../src/PuzzleGames/PuzzleHandshakes.cs:34
 # csharp-format
+#: ../src/PuzzleGames/PuzzleHandshakes.cs:34
+#, csharp-format
 msgid ""
 "All attendees to a party are introduced to one another. {0} handshakes are "
 "made in total. How many people are attending the party?"
@@ -1917,8 +1997,6 @@ msgstr ""
 "Moveu el cercle de la primera línia a la segona i moveu dos cercles de la "
 "quarta a la segona i cinquena línia."
 
-#
-#
 #: ../src/PuzzleGames/PuzzleMoveFigure.cs:46
 msgid ""
 "Move the first line to the seventh; move the two circles of the second line "
@@ -2294,3 +2372,17 @@ msgstr ""
 msgid "The result of multiplying the two numbers inside every triangle is {0}."
 msgstr ""
 "El resultat de multiplicar els dos números de dins de cada triangle és {0}."
+
+#~ msgid ""
+#~ "When the machine arrives to the meter {0}, the last piece of the ribbon "
+#~ "left is already cut."
+#~ msgstr ""
+#~ "Quan la màquina arriba als {0} metres, l'últim tros de la banda que resta "
+#~ "ja es troba tallat."
+
+#~ msgid ""
+#~ "The present costs one euro more than the wrapping and then you have to "
+#~ "add what the wrapping costs."
+#~ msgstr ""
+#~ "El regal costa un euro més que l'embolcall i llavors cal afegir-hi el "
+#~ "cost de l'embolcall."
