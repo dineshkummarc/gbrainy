@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: gbrainy\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gbrainy&component=general\n"
 "POT-Creation-Date: 2009-01-18 10:38+0000\n"
-"PO-Revision-Date: 2009-01-19 21:32+0100\n"
-"Last-Translator: Jaroslav Ryník <jrynik <at> <yahoo> <dot> <co> <uk> >\n"
+"PO-Revision-Date: 2009-01-26 20:41+0100\n"
+"Last-Translator: \n"
 "Language-Team: Slovak <http://telka.sk/linux/sk-l10n/>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
@@ -26,7 +26,7 @@ msgstr "gbrainy"
 #. Name of the people that translated the application
 #: ../src/Dialogs/AboutDialog.cs:46
 msgid "translator-credits"
-msgstr "Preložili"
+msgstr "Preložili:"
 
 #: ../src/Dialogs/AboutDialog.cs:51
 msgid ""
@@ -423,12 +423,12 @@ msgstr "Počet odohraných hier: {0} ({1} % bodov)"
 #: ../src/GameSession.cs:223
 #, csharp-format
 msgid " - Time: {0}"
-msgstr " - Čas:{0}"
+msgstr " — Čas:{0}"
 
 #: ../src/GameSession.cs:226
 #, csharp-format
 msgid "- Game: {0}"
-msgstr "- Hra: {0}"
+msgstr "— Hra: {0}"
 
 #: ../src/GameSession.cs:278
 msgid "Paused"
@@ -638,25 +638,26 @@ msgstr "Na koľkých guličkách na obrázku bola {0} farba? Napíšte číslom.
 msgid "Memorize facts"
 msgstr "Pamätanie si vecí"
 
+# 2nd plural - after /
 #. Translators: {0} is replaced by a number, {1} by a year (like 1940)
 #: ../src/MemoryGames/MemoryFacts.cs:99
 #, csharp-format
 msgid "Shiny Cars had already announced a {0} days production halt next month, but before that it had not cut production since {1}."
-msgstr "Spoločnosť Nablýskané fára už oznámila, že na budúci mesiac preruší výrobu na {0} dní, čo sa nestalo od {1}."
+msgstr "Spoločnosť Nablýskané fára už oznámila, že na budúci mesiac preruší výrobu na {0} dní/dni, čo sa nestalo od roku {1}."
 
 #: ../src/MemoryGames/MemoryFacts.cs:101
 msgid "For how many days did Shiny Cars halt its production?"
-msgstr "Na koľko dní pozastavila spoločnosť Nablýskané fára výrobu?"
+msgstr "Na koľko dní prerušila spoločnosť Nablýskané fára výrobu?"
 
 #: ../src/MemoryGames/MemoryFacts.cs:102
 msgid "In what year did Shiny Cars last halt its production?"
-msgstr "V ktorom roku firma Nablýskané fára naposledy prerušila výrobu?"
+msgstr "V ktorom roku prerušila firma Nablýskané fára výrobu naposledy?"
 
 #. Translators: {0} is replaced by a number, {1} by a year (like 1940)
 #: ../src/MemoryGames/MemoryFacts.cs:110
 #, csharp-format
 msgid "Shiny Cars sales fell {0}% this past December, the worse decline since {1}."
-msgstr "Tržby spoločnosti Nablýskané fára klesli v decembri minulého roka o {0}% , čo bol najhorší výsledok od {1}"
+msgstr "Tržby spoločnosti Nablýskané fára klesli v decembri minulého roka o {0}% , čo bol najhorší pokles od roku {1}."
 
 #: ../src/MemoryGames/MemoryFacts.cs:112
 msgid "By how much did company sales fall last December?"
@@ -664,12 +665,12 @@ msgstr "O koľko klesli tržby firmy v decembri minulého roka?"
 
 #: ../src/MemoryGames/MemoryFacts.cs:113
 msgid "In what year did Shiny Cars record a sales total lower than that of last December?"
-msgstr "V ktorom roku boli tržby spoločnosti Nablýskané fára nižšie ako tie v decembri minulého roka?"
+msgstr "V ktorom roku boli tržby spoločnosti Nablýskané fára viac ako v decembri minulého roka?"
 
 #: ../src/MemoryGames/MemoryFacts.cs:118
 #, csharp-format
 msgid "About {0}% of Shiny Cars produced worldwide are sold in Europe"
-msgstr "Asi {0}% áut, ktoré spoločnosť Nablýskané fára vyrába po celom svete,  sa predáva v Európe."
+msgstr "Asi {0} % áut, ktoré spoločnosť Nablýskané fára vyrába po celom svete, sa predáva Európe."
 
 #: ../src/MemoryGames/MemoryFacts.cs:120
 msgid "What percentage of all Shiny Cars produced worldwide are sold in Europe?"
@@ -678,7 +679,7 @@ msgstr "Koľko percent všetkých áut, ktoré sa firma Nablýskané fára vyrá
 #: ../src/MemoryGames/MemoryFacts.cs:126
 #, csharp-format
 msgid "About {0}% of Shiny Cars use diesel, {1}% use gasoline and the remainder use electric."
-msgstr "Asi {0} % áut od firmy Nablýskané fára ide na diesel, {1} % na bežný benzín a zvyšok na elektrinu."
+msgstr "Asi {0} % áut firmy Nablýskané fára ide na diesel, {1} % na bežný benzín a zvyšok na elektrinu."
 
 #: ../src/MemoryGames/MemoryFacts.cs:128
 msgid "What percentage of Shiny Cars use diesel?"
@@ -743,16 +744,16 @@ msgstr "Ktorá z týchto schém zodpovedá zadaným pokynom? Odpovedzte {0}, {1}
 #
 #: ../src/MemoryGames/MemoryNumbers.cs:54
 msgid "How many odd numbers were in the previous image? Answer using numbers."
-msgstr "Na koľkých guličkách na obrázku bola {0} farba? Napíšte číslom."
+msgstr "Koľko bolo na obrázku nepárnych čísel? Napíšte číslom."
 
 #
 #: ../src/MemoryGames/MemoryNumbers.cs:74
 msgid "How many even numbers were in the previous image? Answer using numbers."
-msgstr "Na koľkých guličkách na obrázku bola {0} farba? Napíšte číslom."
+msgstr "Koľko bolo na obrázku párnych čísel? Napíšte číslom."
 
 #: ../src/MemoryGames/MemoryNumbers.cs:94
 msgid "How many numbers with more than one digit were in the previous image? Answer using numbers."
-msgstr "Na koľkých guličkách na obrázku bola {0} farba? Napíšte číslom."
+msgstr "Koľko bolo na obrázku dvoj- a viacmiestnych čísel? Napíšte číslom."
 
 #: ../src/MemoryGames/MemoryNumbers.cs:111
 msgid "Memorize numbers"
@@ -936,7 +937,7 @@ msgstr "Inštalácia doplnkov"
 
 #: ../src/mono-addins-strings.xml.h:6
 msgid "Add-in Manager"
-msgstr "Nástroj na prácu s doplnkami"
+msgstr "Manažér pre doplnky"
 
 #: ../src/mono-addins-strings.xml.h:7
 msgid "Additional extensions are required to perform this operation."
@@ -1157,34 +1158,34 @@ msgstr "Táto hra je ľahká, ak kruhy počítate systematicky."
 msgid "Counting"
 msgstr "Počítanie"
 
-# may need to add one more plural. For the time being I've shown the 2nd plural forms after /
+# Translators: {0} and {1} are always numbers greater than 1. Slovak: 2nd plural after /
 #: ../src/PuzzleGames/PuzzleCounting.cs:61
 #, csharp-format
 msgid "We have a {0} meter piece of fabric. Machine A takes {1} seconds to cut 1 meter of this fabric. How many seconds does Machine A take to cut the entire piece of fabric into 1 meter pieces?"
 msgstr "Máme {0}-metrový kus vlákna. Stroj A zostrihá 1 meter tohto vlákna za {1} sekúnd/sekundy. Za koľko sekúnd postrihá stroj A na jednometrové kusy celé vlákno?"
 
-# If {0} is 1, 2, 3 and 4, it may need to add  plural. If it is also >= 5 it will need the second plural, too.
+# Translators: {0} and {1} are always numbers greater than 1
 #: ../src/PuzzleGames/PuzzleCounting.cs:64
 #, csharp-format
 msgid "With the {0} cut, Machine A creates two 1 meter pieces."
-msgstr "{0} pohybom vyrobí stroj A 2 jednometrové kusy."
+msgstr "{0}-itým strihom urobí stroj A 2 jednometrové kusy."
 
-# may need to add one more plural. For the time being I've shown the suffixes for the 2nd form after the /
+# Translators: {0} is always a number greater than 20
 #: ../src/PuzzleGames/PuzzleCounting.cs:73
 #, csharp-format
 msgid "A fence is built to enclose a square shaped region. {0} fence poles are used in each side of the square. How many fence poles are used in total?"
-msgstr "Na ohraničenie štvorcového pozemku bol postavený plot. Na každej strane tohto štvorca sa použilo/-i {0} dosák/-ky. Koľko dosák sa použilo spolu?"
+msgstr "Na ohraničenie štvorcového pozemku bol postavený plot. Na každej strane tohto štvorca sa použilo {0} dosák. Koľko dosák sa použilo spolu?"
 
 #: ../src/PuzzleGames/PuzzleCounting.cs:76
 #, csharp-format
 msgid "There are {0} fence poles since the poles on the corners of the square are shared."
 msgstr "Je ich {0}, lebo dosky v rohoch sú pre dve strany spoločné, teda počítajú sa len raz."
 
-# may need to add one more plural. For the time being I've shown the suffix for the 2nd form by after the /
+# Translators: {0} is always a number greater than 5
 #: ../src/PuzzleGames/PuzzleCounting.cs:84
 #, csharp-format
 msgid "Wrapping an anniversary present costs one euro. The anniversary present costs {0} euros more than the cost to wrap it. How much does it cost to both purchase and wrap the present?"
-msgstr "Zabalenie darčeka na výročie stojí 1 euro. Darček na výročie stojí o {0} eur/-á viac ako jeho zabalenie. Koľko stojí spolu kúpenie a zabalenie darčeka?"
+msgstr "Zabalenie darčeka na výročie stojí 1 euro. Darček na výročie stojí o {0} eur viac ako jeho zabalenie. Koľko stojí spolu kúpenie a zabalenie darčeka?"
 
 #: ../src/PuzzleGames/PuzzleCounting.cs:87
 #, csharp-format
@@ -1334,7 +1335,7 @@ msgstr "Kód na zápis odpovede je:"
 #: ../src/PuzzleGames/PuzzleFigures.cs:94
 #, csharp-format
 msgid "{0} ->"
-msgstr "{0} ->"
+msgstr "{0} —>"
 
 #: ../src/PuzzleGames/PuzzleFigures.cs:102
 #, csharp-format
@@ -1404,7 +1405,7 @@ msgstr "Skupiny čísel v mriežke"
 #
 #: ../src/PuzzleGames/PuzzleMatrixGroups.cs:36
 msgid "One of numbers in the matrix must be circled. Which one?"
-msgstr "V mriežke treba zakrúžkovať ešte jedno číslo. Ktoré?"
+msgstr "V mriežke treba zakrúžkovať jedno číslo. Ktoré?"
 
 #: ../src/PuzzleGames/PuzzleMatrixGroups.cs:40
 msgid "All circled numbers share an arithmetical property."
@@ -1629,11 +1630,11 @@ msgstr "Ľudia za stolom"
 #: ../src/PuzzleGames/PuzzlePeopleTable.cs:46
 #, csharp-format
 msgid "A group of people are sitting at round table, evenly spaced out. How many people are there if the {0} person is across from the {1}?"
-msgstr "Za stolom sedí skupina rovnomerne rozmiestnených ľudí. Koľko ich je spolu, ak {0} hosť v poradí sedí oproti {1}?"
+msgstr "Za stolom v rovnakej vzdialenosti od seba sedí skupina ľudí. Koľko ich je spolu, ak {0} hosť v poradí sedí oproti {1}?"
 
 #: ../src/PuzzleGames/PuzzlePeopleTable.cs:52
 msgid "Subtracting the two positions you find out how many people are seated half way around the table. Doubling this number leaves you with the total amount of people."
-msgstr "Odpočítaním daných čísel zistíte, koľko ľudí sedí za stolom v polovičnej vzdialenosti. Ak výsledok vynásobíte dvomi, dostanete celkový počet ľudí."
+msgstr "Odpočítaním dvoch miest zistíte, koľko ľudí sedí za stolom v polovičnej vzdialenosti. Ak výsledok vynásobíte dvomi, dostanete celkový počet ľudí."
 
 #: ../src/PuzzleGames/PuzzlePeopleTable.cs:61
 msgid "5th"
@@ -1716,7 +1717,7 @@ msgstr "Na obrázku je 9 samostatných štvorcov, 4 štvorce vytvorené pomocou 
 
 #: ../src/PuzzleGames/PuzzleSquareSheets.cs:28
 msgid "Squares sheets"
-msgstr "Pošet papierov"
+msgstr "Počet papierov"
 
 #: ../src/PuzzleGames/PuzzleSquareSheets.cs:32
 msgid "What is the minimum number of square sheets of paper of any size required to create the figure? Lines indicate frontiers between different sheets."
@@ -1770,12 +1771,12 @@ msgstr "Aké číslo treba doplniť namiesto otáznika?"
 
 #: ../src/PuzzleGames/PuzzleTrianglesWithNumbers.cs:64
 msgid "All the triangles share a property and are independent of the rest."
-msgstr "Všetky trojuholníky majú spoločnú vlastnosť a od ostatných sú nezávislé."
+msgstr "Všetky trojuholníky majú spoločnú vlastnosť ostatnými sa odlišujú."
 
 #: ../src/PuzzleGames/PuzzleTrianglesWithNumbers.cs:70
 #, csharp-format
 msgid "The result of multiplying the two numbers inside every triangle is {0}."
-msgstr "Vynásobením čísel vnútri trojuholníkov vždy dostaneme číslo {0}."
+msgstr "Vynásobením čísel vnútri každého trojuholníka dostaneme číslo {0}."
 
 #~ msgid ""
 #~ "Which one of these squares was previously shown ({0}, {1}, {2} or {3})?"
