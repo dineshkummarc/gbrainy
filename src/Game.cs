@@ -49,7 +49,7 @@ abstract public class Game
 	private Difficulty difficulty;
 	private bool trace_score = false; // Set to true to debug scoring
 
-	public Game ()
+	protected Game ()
 	{
 		random = new Random ();
 		application = null;
