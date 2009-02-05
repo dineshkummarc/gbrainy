@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gbrainy\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-01-21 20:08+0100\n"
-"PO-Revision-Date: 2009-01-21 20:30+0100\n"
+"POT-Creation-Date: 2009-02-05 13:26+0100\n"
+"PO-Revision-Date: 2009-02-04 21:38+0100\n"
 "Last-Translator: Jordi Mas <jmas@softcatala.org>\n"
 "Language-Team: Catalan\n"
 "MIME-Version: 1.0\n"
@@ -177,7 +177,7 @@ msgid ""
 "divisors, 1 and itself."
 msgstr ""
 "Al conjunt de números d'abaix, quin dels següents números és primer? Un "
-"nombre primer és un número enter que té exactament dos divisors positius "
+"número primer és un número enter que té exactament dos divisors positius "
 "diferents, l'1 i ell mateix."
 
 #: ../src/CalculationGames/CalculationPrimes.cs:160
@@ -370,7 +370,7 @@ msgid ""
 "gbrainy is a brain teaser game and trainer to have fun and to keep your "
 "brain trained. It includes:"
 msgstr ""
-"gbrainy és un joc per divertir-se i mantenir el vostre cervell entrenat. "
+"El gbrainy és un joc per divertir-se i mantenir el vostre cervell entrenat. "
 "Inclou:"
 
 #
@@ -807,15 +807,16 @@ msgid ""
 "before that it had not cut production since {1}."
 msgstr ""
 "Cotxes Lluents ha anunciat una aturada de la producció de {0} dies pel mes "
-"següent, abans d'això no havia aturat producció des de {1}."
+"següent. Abans d'això no havia aturat la producció des de {1}."
 
 #: ../src/MemoryGames/MemoryFacts.cs:105
+#
 msgid "For how many days did Shiny Cars halt its production?"
 msgstr "Durant quants dies Cotxes Lluents ha aturat la producció?"
 
 #: ../src/MemoryGames/MemoryFacts.cs:106
 msgid "In what year did Shiny Cars last halt its production?"
-msgstr "A quin any va Cotxes Lluents aturar la producció per darrer cop?"
+msgstr "A quin any va aturar Cotxes Lluents la producció per darrer cop?"
 
 #. Translators: {0} is replaced by a number, {1} by a year (like 1940)
 #: ../src/MemoryGames/MemoryFacts.cs:114
@@ -823,33 +824,32 @@ msgstr "A quin any va Cotxes Lluents aturar la producció per darrer cop?"
 msgid ""
 "Shiny Cars sales fell {0}% this past December, the worse decline since {1}."
 msgstr ""
-"Les vendes de Cotxes Lluents van caure un {0}% el passat desembre, la pitjor "
+"Les vendes de Cotxes Lluents van caure un {0}% el desembre passat, la pitjor "
 "caiguda des de {1}."
 
 #: ../src/MemoryGames/MemoryFacts.cs:116
 msgid "By how much did company sales fall last December?"
-msgstr "Quan van caure les vendes de l'empresa el passat desembre?"
+msgstr "Quan van caure les vendes de l'empresa el desembre passat?"
 
 #: ../src/MemoryGames/MemoryFacts.cs:117
 msgid ""
 "In what year did Shiny Cars record a sales total lower than that of last "
 "December?"
 msgstr ""
-"A quin any les vendes de Cotxes Lluents van ser inferiors a les del passat "
-"desembre?"
+"A quin any van ser les vendes de Cotxes Lluents inferiors a les del desembre "
+"passat?"
 
 #: ../src/MemoryGames/MemoryFacts.cs:122
 #, csharp-format
 msgid "About {0}% of Shiny Cars produced worldwide are sold in Europe"
 msgstr ""
-"Aproximadament el {0}% dels Cotxes Lluents produïts al món són venuts a "
-"Europa."
+"Aproximadament el {0}% dels Cotxes Lluents produïts al món es venen a Europa."
 
 #: ../src/MemoryGames/MemoryFacts.cs:124
 msgid ""
 "What percentage of all Shiny Cars produced worldwide are sold in Europe?"
 msgstr ""
-"Quin percentatge dels Cotxes Lluents produïts al món són venuts a Europa?"
+"Quin percentatge dels Cotxes Lluents produïts al món  es venen a Europa?"
 
 #: ../src/MemoryGames/MemoryFacts.cs:130
 #, csharp-format
@@ -1159,7 +1159,8 @@ msgstr "Gestor d'extensions"
 
 #: ../src/mono-addins-strings.xml.h:7
 msgid "Additional extensions are required to perform this operation."
-msgstr "Són necessàries extensions addicional per efectuar aquesta operació."
+msgstr ""
+"Són necessàries extensions addicionals per a efectuar aquesta operació."
 
 #: ../src/mono-addins-strings.xml.h:8
 msgid "All registered repositories"
@@ -1207,7 +1208,7 @@ msgstr "Registra un dipòsit local"
 
 #: ../src/mono-addins-strings.xml.h:19
 msgid "Register an on-line repository"
-msgstr "Registra un dipòsit un dipòsit en línia"
+msgstr "Registra un dipòsit en línia"
 
 #: ../src/mono-addins-strings.xml.h:20
 msgid "Repository"
@@ -1243,11 +1244,11 @@ msgstr "S'instal·laran les extensions següents:"
 
 #: ../src/mono-addins-strings.xml.h:28
 msgid "Url"
-msgstr "Url"
+msgstr "URL"
 
 #: ../src/mono-addins-strings.xml.h:29
 msgid "Url:"
-msgstr "Url:"
+msgstr "URL:"
 
 #: ../src/mono-addins-strings.xml.h:30
 msgid "Version"
@@ -1413,7 +1414,7 @@ msgstr ""
 msgid "Counting"
 msgstr "Comptar"
 
-#. Translators: {0} and {1} always numbers greater than 1
+#. Translators: {0} and {1} are always numbers greater than 1
 #: ../src/PuzzleGames/PuzzleCounting.cs:62
 #, csharp-format
 msgid ""
@@ -1421,14 +1422,15 @@ msgid ""
 "meter of this fabric. How many seconds does Machine A take to cut the entire "
 "piece of fabric into 1 meter pieces?"
 msgstr ""
-"Tenim una peça de tela de {0} metres. La màquina A triga {1} segons en tallar 1 metre de tela. "
-"Quants segons triga la màquina A en tallar la peça completa de tela en trossos d'1 metre?"
+"Tenim una peça de tela de {0} metres. La màquina A triga {1} segons en "
+"tallar 1 metre de tela. Quants segons triga la màquina A en tallar la peça "
+"completa de tela en trossos d'1 metre?"
 
 #. Translators: {0} is always a number greater than 1
 #: ../src/PuzzleGames/PuzzleCounting.cs:66
 #, csharp-format
 msgid "With the {0} cut, Machine A creates two 1 meter pieces."
-msgstr "Amb el tall {0}, la màquina A crea dues petes d'1 metre."
+msgstr "Amb el tall {0}, la màquina A crea dues peces d'1 metre."
 
 #. Translators: {0} is always a number greater than 20
 #: ../src/PuzzleGames/PuzzleCounting.cs:76
@@ -1437,8 +1439,9 @@ msgid ""
 "A fence is built to enclose a square shaped region. {0} fence poles are used "
 "in each side of the square. How many fence poles are used in total?"
 msgstr ""
-"Es construeix una tanca per a una regió de forma quadrada. S'utilitzen {0} pals a cada costat del "
-"quadrat. Quants pals s'utilitzen total per tota la tanca?"
+"Es construeix una tanca per a una regió de forma quadrada. S'utilitzen {0} "
+"pals a cada costat del quadrat. Quants pals s'utilitzen total per tota la "
+"tanca?"
 
 #: ../src/PuzzleGames/PuzzleCounting.cs:80
 #, csharp-format
@@ -1446,7 +1449,7 @@ msgid ""
 "There are {0} fence poles since the poles on the corners of the square are "
 "shared."
 msgstr ""
-"Hi ha {0} pals a la tanca ja que els pals de les cantonades es comparteixen."
+"Hi ha {0} pals a la tanca, ja que els pals de les cantonades es comparteixen."
 
 #. Translators: {0} is always a number greater than 5
 #: ../src/PuzzleGames/PuzzleCounting.cs:89
@@ -1456,18 +1459,18 @@ msgid ""
 "costs {0} euros more than the cost to wrap it. How much does it cost to both "
 "purchase and wrap the present?"
 msgstr ""
-"L'embolcall per a un regal d'aniversari costa un euro. El regal d'aniversari costa {0} euros "
-"més que l'embolcall. Quant costen el regal i l'embolcall?"
+"L'embolcall per a un regal d'aniversari costa un euro. El regal d'aniversari "
+"costa {0} euros més que l'embolcall. Quant costen el regal i l'embolcall?"
 
 #: ../src/PuzzleGames/PuzzleCounting.cs:92
 #, csharp-format
 msgid "Individually, the present costs one euro more to purchase than to wrap."
-msgstr "Individualment, el regal cost un euro més que l'embolcall."
+msgstr "Individualment, el regal costa un euro més que l'embolcall."
 
 #
 #: ../src/PuzzleGames/PuzzleCountSeries.cs:37
 msgid "Count series"
-msgstr "Comptar sèries"
+msgstr "Compte de sèries"
 
 #
 #
@@ -2373,16 +2376,3 @@ msgid "The result of multiplying the two numbers inside every triangle is {0}."
 msgstr ""
 "El resultat de multiplicar els dos números de dins de cada triangle és {0}."
 
-#~ msgid ""
-#~ "When the machine arrives to the meter {0}, the last piece of the ribbon "
-#~ "left is already cut."
-#~ msgstr ""
-#~ "Quan la màquina arriba als {0} metres, l'últim tros de la banda que resta "
-#~ "ja es troba tallat."
-
-#~ msgid ""
-#~ "The present costs one euro more than the wrapping and then you have to "
-#~ "add what the wrapping costs."
-#~ msgstr ""
-#~ "El regal costa un euro més que l'embolcall i llavors cal afegir-hi el "
-#~ "cost de l'embolcall."
