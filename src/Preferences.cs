@@ -26,21 +26,20 @@ using System.Text;
 
 public class Preferences
 {
-	private string file, config_path;
-	private SerializableDictionary <string, string > properties;
+	string file, config_path;
+	SerializableDictionary <string, string > properties;
 
-	static public string MemQuestionWarnKey = "MemQuestionWarn";
-	static public string MemQuestionTimeKey = "MemQuestionTime";
-	static public string DifficultyKey = "Difficulty";
-	static public string MinPlayedGamesKey = "MinPlayedGames";
-	static public string MaxStoredGamesKey = "MaxStoredGamesKey";
-	static public string Toolbar = "Toolbar";
+	public const string MemQuestionWarnKey = "MemQuestionWarn";
+	public const string MemQuestionTimeKey = "MemQuestionTime";
+	public const string DifficultyKey = "Difficulty";
+	public const string MinPlayedGamesKey = "MinPlayedGames";
+	public const string MaxStoredGamesKey = "MaxStoredGamesKey";
+	public const string Toolbar = "Toolbar";
 
-	static private string element_item = "item";
-	static private string element_key = "key";
-	static private string element_value = "value";
-	static private string element_collection = "collection";
-
+	const string element_item = "item";
+	const string element_key = "key";
+	const string element_value = "value";
+	const string element_collection = "collection";
 
     	public class SerializableDictionary <TKey, TValue> : Dictionary<TKey, TValue>, IXmlSerializable
 	{

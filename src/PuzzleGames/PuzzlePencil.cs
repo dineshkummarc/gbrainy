@@ -54,7 +54,7 @@ public class PuzzlePencil : Game
 		}	
 	}
 
-	private void DrawTriangle (CairoContextEx gr, double x, double y)
+	static private void DrawTriangle (CairoContextEx gr, double x, double y)
 	{
 		gr.MoveTo (x + (figure_size / 2), y);
 		gr.LineTo (x, y + figure_size);
@@ -64,7 +64,7 @@ public class PuzzlePencil : Game
 		gr.Stroke ();	
 	}
 
-	private void DrawDiamon (CairoContextEx gr, double x, double y)
+	static private void DrawDiamon (CairoContextEx gr, double x, double y)
 	{
 		gr.MoveTo (x, y);
 		gr.LineTo (x - (figure_size / 2), y + (figure_size / 2));
@@ -75,7 +75,7 @@ public class PuzzlePencil : Game
 		gr.Stroke ();
 	}
 
-	private void DrawRectangleWithTriangles (CairoContextEx gr, double x, double y)
+	static private void DrawRectangleWithTriangles (CairoContextEx gr, double x, double y)
 	{
 		gr.Rectangle (x, y, figure_size, figure_size);
 		gr.Stroke ();	
@@ -93,7 +93,7 @@ public class PuzzlePencil : Game
 		gr.Stroke ();
 	}
 
-	private void DrawThreeTriangles (CairoContextEx gr, double x, double y)
+	static private void DrawThreeTriangles (CairoContextEx gr, double x, double y)
 	{
 		gr.MoveTo (x, y);
 		gr.LineTo (x, y + figure_size);
@@ -106,7 +106,7 @@ public class PuzzlePencil : Game
 		
 	}
 
-	private void DrawHouse (CairoContextEx gr, double x, double y)
+/*	private void DrawHouse (CairoContextEx gr, double x, double y)
 	{
 		gr.MoveTo (x, y + figure_size);
 		gr.LineTo (x, y + figure_size / 2);
@@ -117,11 +117,10 @@ public class PuzzlePencil : Game
 		gr.LineTo (x + figure_size, y + figure_size / 2);
 		gr.LineTo (x, y + figure_size);
 		gr.LineTo (x + figure_size, y + figure_size);
-		gr.Stroke ();
-		
-	}
+		gr.Stroke ();		
+	}*/
 
-	private void DrawRectangleWithCross (CairoContextEx gr, double x, double y)
+	static private void DrawRectangleWithCross (CairoContextEx gr, double x, double y)
 	{
 		gr.Rectangle (x, y, figure_size, figure_size);
 

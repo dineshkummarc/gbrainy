@@ -220,7 +220,7 @@ public class gbrainy: Program
 	//
 	// See: https://bugzilla.novell.com/show_bug.cgi?id=420468
 	// 
-	private void FixLocaleInfo ()
+	static void FixLocaleInfo ()
 	{
 		IntPtr st = IntPtr.Zero;
 		lconv lv;

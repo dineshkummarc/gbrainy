@@ -94,7 +94,7 @@ public class PuzzleBuildTriangle : Game
 		right_answer = answers[0] + answers[1] + answers[2];
 	}
 
-	private void DrawFigure (CairoContextEx gr, double x, double y, Figures figure)
+	private static void DrawFigure (CairoContextEx gr, double x, double y, Figures figure)
 	{
 		switch (figure) {
 		case Figures.TriangleA:

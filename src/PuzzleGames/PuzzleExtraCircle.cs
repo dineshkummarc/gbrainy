@@ -85,7 +85,7 @@ public class PuzzleExtraCircle : Game
 		right_answer = GetPossibleAnswer (ans_pos);
 	}
 
-	private void DrawSlice (CairoContextEx gr, double x, double y, double dg, Color color)
+	static private void DrawSlice (CairoContextEx gr, double x, double y, double dg, Color color)
 	{
 		double x1, y1, smallest_x, smallest_y, degrees;
 

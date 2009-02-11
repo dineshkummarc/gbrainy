@@ -70,7 +70,7 @@ public class PuzzleCoverPercentage : Game
 		right_answer = total.ToString ();
 	}
 
-	private void Fill (CairoContextEx gr, double x, double y, double w, double h)
+	private static void Fill (CairoContextEx gr, double x, double y, double w, double h)
 	{
 		gr.Rectangle (x, y, w, h);
 		gr.FillGradient (x, y, w, h);

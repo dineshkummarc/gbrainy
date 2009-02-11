@@ -78,7 +78,7 @@ public class PuzzleFigurePattern : Game
 		gr.Stroke ();
 	}
 
-	private void DrawTwoLines (CairoContextEx gr, double x, double y, double size)
+	static void DrawTwoLines (CairoContextEx gr, double x, double y, double size)
 	{
 		gr.MoveTo (x, y);
 		gr.LineTo (x + size, y);
@@ -87,7 +87,7 @@ public class PuzzleFigurePattern : Game
 		gr.Stroke ();
 	}
 
-	private void DrawCross (CairoContextEx gr, double x, double y, double size)
+	static void DrawCross (CairoContextEx gr, double x, double y, double size)
 	{
 		gr.MoveTo (x + size / 2, y);
 		gr.LineTo (x + size / 2, y + size);

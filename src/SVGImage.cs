@@ -44,7 +44,7 @@ public class SVGImage : IDisposable
 	static extern IntPtr rsvg_handle_new_from_data (byte[] data, int len, out int error);
 
 	[StructLayout(LayoutKind.Sequential)]
-	protected struct RsvgDimensionData
+	struct RsvgDimensionData
 	{
 	    	public int width;
 	    	public int height;
@@ -52,8 +52,8 @@ public class SVGImage : IDisposable
 		public double ex;
 	}
 
-	private RsvgDimensionData dimension;
-	private IntPtr handle;
+	RsvgDimensionData dimension;
+	IntPtr handle;
 
 	public SVGImage (System.Reflection.Assembly _assembly, string resource)
 	{
@@ -106,13 +106,24 @@ public class SVGImage : IDisposable
 		get { return dimension.height; }
 	}
 
+	~SVGImage ()
+	{
+		Dispose (false);
+	}
+
 	public void Dispose ()
+	{
+		Dispose (true);
+		System.GC.SuppressFinalize (this);
+	}
+
+	protected virtual void Dispose (bool disposing)
 	{
 		if (handle == IntPtr.Zero)
 			return;
 
 		rsvg_handle_free (handle);
-		handle = IntPtr.Zero;	
+		handle = IntPtr.Zero;
 	}
 
 	public void RenderToCairo (IntPtr cairo_surface)
@@ -121,4 +132,3 @@ public class SVGImage : IDisposable
 			rsvg_handle_render_cairo (handle, cairo_surface);
 	}
 }
-

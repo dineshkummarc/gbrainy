@@ -63,10 +63,10 @@ public class MemoryColouredText : Memory
 	public override void DrawObjectToMemorize (CairoContextEx gr, int area_width, int area_height)
 	{
 		base.DrawObjectToMemorize (gr, area_width, area_height);
-		DrawObject (gr, area_width, area_height);
+		DrawObject (gr);
 	}
 
-	private void DrawObject (CairoContextEx gr, int area_width, int area_height)
+	private void DrawObject (CairoContextEx gr)
 	{
 		palette.Alpha=alpha;
 

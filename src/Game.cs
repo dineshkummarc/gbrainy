@@ -52,7 +52,6 @@ abstract public class Game
 	protected Game ()
 	{
 		random = new Random ();
-		application = null;
 		draw_answer = false;
 		default_color = new Cairo.Color (0, 0, 0);
 		won = false;
@@ -226,7 +225,7 @@ abstract public class Game
 	public abstract void Initialize ();
 	public virtual void Finish () {}
 
-	public string GetPossibleAnswer (int answer)
+	static public string GetPossibleAnswer (int answer)
 	{
 		switch (answer) {
 			// Translators Note

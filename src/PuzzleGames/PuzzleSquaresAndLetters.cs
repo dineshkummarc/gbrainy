@@ -66,7 +66,7 @@ public class PuzzleSquaresAndLetters : Game
 		characters[((figures - 1) * 4) + 3] = '?';
 	}
 
-	private string ToStr (char ch)
+	static string ToStr (char ch)
 	{
 		string s = string.Empty;
 		s+= ch;
@@ -106,7 +106,6 @@ public class PuzzleSquaresAndLetters : Game
 		DrawRectangleWithText (gr, x + figure_size + 0.05, y + 0.2 + figure_size, 8);
 			
 	}
-
 }
 
 

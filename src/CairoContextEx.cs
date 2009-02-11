@@ -350,34 +350,30 @@ public class CairoContextEx : Cairo.Context
 
 	public void DrawImageFromAssembly (string  resource, double x, double y, double width, double height)
 	{
-		SVGImage image;
-
 		try {
-			image = new SVGImage (System.Reflection.Assembly.GetCallingAssembly (), resource);
+			using (SVGImage image = new SVGImage (System.Reflection.Assembly.GetCallingAssembly (), resource))
+			{
+				DrawImage (image, x, y, width, height);
+			}
 		}
 		catch (Exception)
 		{
 			return;
 		}
-
-		DrawImage (image, x, y, width, height);
-		image.Dispose ();
 	}
 
 	public void DrawImageFromFile (string filename, double x, double y, double width, double height)
 	{
-		SVGImage image;
-
 		try {
-			image = new SVGImage (filename);
+			using (SVGImage image = new SVGImage (filename))
+			{
+				DrawImage (image, x, y, width, height);
+			}
 		}
 		catch (Exception)
 		{
 			return;
 		}
-
-		DrawImage (image, x, y, width, height);
-		image.Dispose ();
 	}
 
 	void DrawImage (SVGImage image, double x, double y, double width, double height)

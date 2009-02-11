@@ -77,7 +77,7 @@ public class PuzzleNextFigure : Game
 		}
 	}
 
-	private void DrawDiamon (CairoContextEx gr, double x, double y, CerclePosition cercles)
+	static private void DrawDiamon (CairoContextEx gr, double x, double y, CerclePosition cercles)
 	{	
 		double distance = 0.04;
 

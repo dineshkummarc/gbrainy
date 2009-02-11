@@ -243,7 +243,7 @@ public class MemoryIndications : Memory
 		return answer;
 	}
 
-	private void DrawPossibleAnswers (CairoContextEx gr, double x, double y, Indication[] indications)
+	private static void DrawPossibleAnswers (CairoContextEx gr, double x, double y, Indication[] indications)
 	{		
 		for (int i = 0; i < indications.Length - 1; i++)
 			indications[i].Draw (gr, ref x, ref y, indications[i + 1]);

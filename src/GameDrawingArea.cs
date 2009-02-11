@@ -70,7 +70,7 @@ public class GameDrawingArea : DrawingArea
 		}
 	}
 
-	private void DrawBand (CairoContextEx gr, double x, double y)
+	static void DrawBand (CairoContextEx gr, double x, double y)
 	{
 		gr.Save ();
 		gr.Rectangle (x, y, 1 - 0.06, 0.06);
@@ -135,7 +135,7 @@ public class GameDrawingArea : DrawingArea
 	}
 
 
-	public void DrawBar (CairoContextEx gr, double x, double y, double w, double h, double percentage)
+	static public void DrawBar (CairoContextEx gr, double x, double y, double w, double h, double percentage)
 	{
 		double per = percentage / 100;
 	

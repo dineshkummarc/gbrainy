@@ -72,7 +72,7 @@ public class AboutDialog : Gtk.AboutDialog
 		Response += delegate (object o, Gtk.ResponseArgs e) {Destroy ();};
 	}
 
-	Pixbuf LoadFromAssembly (string resource)
+	static Pixbuf LoadFromAssembly (string resource)
 	{
 		try {
 			return new Pixbuf (System.Reflection.Assembly.GetEntryAssembly (), resource);

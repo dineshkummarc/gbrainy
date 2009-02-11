@@ -72,7 +72,7 @@ public class PuzzleLines : Game
 		right_answer = (fig1 + fig2).ToString ();
 	}
 
-	private void DrawLine (CairoContextEx gr, double x, double y, double w, double h)
+	static private void DrawLine (CairoContextEx gr, double x, double y, double w, double h)
 	{
 		gr.MoveTo (x, y);
 		gr.LineTo (x + w, y + h);

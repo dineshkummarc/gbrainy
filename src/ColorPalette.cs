@@ -59,7 +59,7 @@ public class ColorPalette
 		White=Last
 	};
 
-	private static string[] ColorName= new string[] {
+	private static readonly string[] ColorName= new string[] {
 		Catalog.GetString ("red"),
 		Catalog.GetString ("green"),
 		Catalog.GetString ("blue"),

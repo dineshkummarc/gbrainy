@@ -89,7 +89,7 @@ public class PuzzleMissingSlice : Game
 		}
 	}
 
-	private void DrawSlice (CairoContextEx gr, double x, double y)
+	private static void DrawSlice (CairoContextEx gr, double x, double y)
 	{
 		double degrees, x1, y1;
 		

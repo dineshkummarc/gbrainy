@@ -61,7 +61,7 @@ public class PuzzleTetris : Game
 		}
 	}
 
-	private void DrawQuestionFigures (CairoContextEx gr, double x, double y, int figure)
+	private static void DrawQuestionFigures (CairoContextEx gr, double x, double y, int figure)
 	{
 		switch (figure) {
 		case 0:
@@ -101,7 +101,7 @@ public class PuzzleTetris : Game
 		}
 	}
 
-	private void DrawAnswerFigures (CairoContextEx gr, double x, double y, int figure)
+	private static void DrawAnswerFigures (CairoContextEx gr, double x, double y, int figure)
 	{
 		switch (figure) {
 		case 0:

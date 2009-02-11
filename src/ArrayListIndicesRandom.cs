@@ -25,7 +25,7 @@ using System.Collections.Generic;
 //
 public class ArrayListIndicesRandom : List <int>
 {
-	protected Random random;
+	Random random;
 
 	public ArrayListIndicesRandom (int capacity) : base (capacity)
 	{

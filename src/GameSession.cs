@@ -24,6 +24,7 @@ using System.Timers;
 
 public class GameSession
 {
+	[Flags]
 	public enum Types
 	{	
 		None			= 0,
@@ -325,7 +326,7 @@ public class GameSession
 		Application.Invoke (delegate {	app.UpdateStatusBar (); } );
 	}
 
-	private string TimeSpanToStr (TimeSpan time)
+	static private string TimeSpanToStr (TimeSpan time)
 	{
 		string fmt = time.ToString ();
 		int i = fmt.IndexOf ('.');
@@ -334,7 +335,5 @@ public class GameSession
 
 		return fmt;
 	}
-
-
 }
 

@@ -70,7 +70,7 @@ public class PuzzleQuadrilaterals : Game
 		}
 	}
 
-	private void DrawFigure (CairoContextEx gr, double x, double y, Figures figure)
+	static void DrawFigure (CairoContextEx gr, double x, double y, Figures figure)
 	{
 		switch (figure) {
 		case Figures.FigureA:
