@@ -70,7 +70,7 @@ public class PuzzleCounting : Game
 
 		case (int) GameType.Fence:
 			total = 20 + random.Next (20);
-			ans = total - 4;
+			ans = 4 * total - 4;
 			question = String.Format (
 				// Translators: {0} is always a number greater than 20
 				Catalog.GetString ("A fence is built to enclose a square shaped region. {0} fence poles are used in each side of the square. How many fence poles are used in total?"),
@@ -89,7 +89,7 @@ public class PuzzleCounting : Game
 				Catalog.GetString ("Wrapping an anniversary present costs one euro. The anniversary present costs {0} euros more than the cost to wrap it. How much does it cost to both purchase and wrap the present?"),
 				present);
 			answer = String.Format (
-				Catalog.GetString ("Individually, the present costs one euro more to purchase than to wrap."), ans);
+				Catalog.GetString ("Individually, the present costs one euro more to purchase than to wrap."));
 			break;
 		default:
 			throw new Exception ("Unexpected value");
