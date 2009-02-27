@@ -10,8 +10,8 @@ msgstr ""
 "Project-Id-Version: gbrainy.HEAD\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=gbrainy&component=general\n"
-"POT-Creation-Date: 2009-01-02 13:10+0000\n"
-"PO-Revision-Date: 2009-01-03 16:30+0100\n"
+"POT-Creation-Date: 2009-01-21 19:34+0000\n"
+"PO-Revision-Date: 2009-02-28 00:21+0100\n"
 "Last-Translator: Jorge González <jorgegonz@svn.gnome.org>\n"
 "Language-Team: Español <gnome-es-list@gnome.org>\n"
 "MIME-Version: 1.0\n"
@@ -33,7 +33,7 @@ msgid "gbrainy"
 msgstr "gbrainy"
 
 #. Name of the people that translated the application
-#: ../src/Dialogs/AboutDialog.cs:39
+#: ../src/Dialogs/AboutDialog.cs:46
 msgid "translator-credits"
 msgstr ""
 "Gabriel Felipe Cornejo Salas <gnomeusr@gmail.com>, 2008\n"
@@ -41,7 +41,7 @@ msgstr ""
 "Jorge González <jorgegonz@svn.gnome.org>, 2007-2009\n"
 "QA: Jorge González <jorgegonz@svn.gnome.org>, 2007-2009"
 
-#: ../src/Dialogs/AboutDialog.cs:44
+#: ../src/Dialogs/AboutDialog.cs:51
 msgid ""
 "This program is free software; you can redistribute it and/or modify it "
 "under the terms of the GNU General Public License as  published by the Free "
@@ -55,7 +55,7 @@ msgstr ""
 "elección) cualquier versión posterior. \n"
 "\n"
 
-#: ../src/Dialogs/AboutDialog.cs:45
+#: ../src/Dialogs/AboutDialog.cs:52
 msgid ""
 "This program is distributed in the hope that it will be useful, but WITHOUT "
 "ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or "
@@ -69,7 +69,7 @@ msgstr ""
 "para más detalles. \n"
 "\n"
 
-#: ../src/Dialogs/AboutDialog.cs:46
+#: ../src/Dialogs/AboutDialog.cs:53
 msgid ""
 "You should have received a copy of the GNU General Public License along with "
 "this program; if not, write to the Free Software Foundation, Inc., 59 Temple "
@@ -79,16 +79,16 @@ msgstr ""
 "coneste programa, si no, escriba a la Fundación del Sofware Libre, en 59 "
 "Temple 59 Place - Suite 330, Boston, MA 02111-1307, EE. UU."
 
-#: ../src/Dialogs/AboutDialog.cs:55
+#: ../src/Dialogs/AboutDialog.cs:62
 msgid "Based on ideas by Terry Stickels, MENSA books and Jordi Mas."
 msgstr "Basado en ideas de Terry Stickels, MENSA books y Jordi Mas."
 
-#: ../src/Dialogs/AboutDialog.cs:57
+#: ../src/Dialogs/AboutDialog.cs:64
 msgid ""
 "A brain teaser and trainer game to have fun and to keep your brain trained."
 msgstr "Un juego para divertirse y mantener el cerebro entrenado."
 
-#: ../src/Dialogs/AboutDialog.cs:59
+#: ../src/Dialogs/AboutDialog.cs:66
 msgid "gbrainy web site"
 msgstr "Página web de gbrainy"
 
@@ -159,23 +159,26 @@ msgid "Primes"
 msgstr "Primos"
 
 #: ../src/CalculationGames/CalculationPrimes.cs:156
+#| msgid ""
+#| "Which of the following numbers is a prime number? A primer number is any "
+#| "natural number greater than 1 that can only be divided by 1 and itself."
 msgid ""
-"Which of the following numbers is a prime number? A primer number is any "
-"natural number greater than 1 that can only be divided by 1 and itself."
+"In the set of numbers below, which of the following numbers is a prime? A "
+"prime number is a positive integer that has exactly two different positive "
+"divisors, 1 and itself."
 msgstr ""
-"¿Cuál de los siguientes números es un número primo? Un número primo es "
-"cualquier número natural mayor que 1 y que sólo se puede dividir por 1 y por "
-"si mismo."
+"En el conjunto de números de abajo, ¿cuál de los siguientes números es un "
+"número primo? Un número primo es cualquier número natural mayor que 1 y que "
+"sólo se puede dividir por 1 y por si mismo."
 
 #: ../src/CalculationGames/CalculationPrimes.cs:160
 msgid ""
-"You can check easily if a number can be divided by 3 by adding together each "
-"digit and then take the sum of them. If the final number is divisible by 3, "
-"then the original number is too."
+"If the sum of all digits in a given number is divisible by 3, then so is the "
+"number. For example 15 = 1 + 5 = 6, which is divisible by 3."
 msgstr ""
-"Puedes comprobar fácilmente si un número se puede dividir por 3 sumando los "
-"dígitos del número. Si el número final es divisible entre 3, entonces el "
-"número original también lo es."
+"Si la suma de todos los dígitos de un número dado es divisible por 3, "
+"entonces también lo es el número. Por ejemplo 15 = 1 + 5 = 6, que es "
+"divisible por 3."
 
 #: ../src/CalculationGames/CalculationTwoNumbers.cs:30
 msgid "Two numbers"
@@ -259,13 +262,13 @@ msgstr "Tipo"
 msgid "Enabled"
 msgstr "Activado"
 
-#: ../src/Dialogs/CustomGameDialog.cs:85 ../src/GameDrawingArea.cs:187
+#: ../src/Dialogs/CustomGameDialog.cs:85 ../src/GameDrawingArea.cs:178
 #: ../src/gbrainy.cs:110 ../src/gbrainy.glade.h:11
 #: ../src/Dialogs/PlayerHistoryDialog.cs:101
 msgid "Logic"
 msgstr "Lógica"
 
-#: ../src/Dialogs/CustomGameDialog.cs:88 ../src/GameDrawingArea.cs:195
+#: ../src/Dialogs/CustomGameDialog.cs:88 ../src/GameDrawingArea.cs:186
 #: ../src/gbrainy.cs:121 ../src/gbrainy.glade.h:16
 #: ../src/Dialogs/PlayerHistoryDialog.cs:111
 msgid "Memory"
@@ -331,25 +334,25 @@ msgstr "H"
 msgid "Figure {0}"
 msgstr "Figura {0}"
 
-#: ../src/GameDrawingArea.cs:117
+#: ../src/GameDrawingArea.cs:108
 #, csharp-format
 msgid "Welcome to gbrainy {0}"
 msgstr "Bienvenido a gbrainy {0}"
 
-#: ../src/GameDrawingArea.cs:120
+#: ../src/GameDrawingArea.cs:111
 msgid ""
 "gbrainy is a brain teaser game and trainer to have fun and to keep your "
 "brain trained. It includes:"
 msgstr "gbrainy es un juego para divertirse y entrenar el cerebro. Incluye:"
 
-#: ../src/GameDrawingArea.cs:126
+#: ../src/GameDrawingArea.cs:117
 msgid ""
 "Logic puzzles. Designed to challenge your reasoning and thinking skills."
 msgstr ""
 "Puzles lógicos. Diseñados para desafiar tus capacidades de razonamiento y "
 "pensamiento."
 
-#: ../src/GameDrawingArea.cs:133
+#: ../src/GameDrawingArea.cs:124
 msgid ""
 "Mental calculation. Based on arithmetical operations that test your mental "
 "calculation abilities."
@@ -357,83 +360,83 @@ msgstr ""
 "Cálculo mental. Basados en operaciones aritméticas que prueban tus "
 "habilidades de cálculo mental."
 
-#: ../src/GameDrawingArea.cs:139
+#: ../src/GameDrawingArea.cs:130
 msgid "Memory trainers. To prove and enhance your short term memory."
 msgstr ""
 "Entrenadores de memoria. Para probar y mejorar tu memoria a corto plazo."
 
-#: ../src/GameDrawingArea.cs:142 ../src/GameDrawingArea.cs:401
+#: ../src/GameDrawingArea.cs:133 ../src/GameDrawingArea.cs:392
 msgid "Use the Settings to adjust the difficulty level of the game."
 msgstr "Usar las Preferencias para ajustar el nivel de dificultad del juego."
 
-#: ../src/GameDrawingArea.cs:183 ../src/gbrainy.glade.h:27
+#: ../src/GameDrawingArea.cs:174 ../src/gbrainy.glade.h:27
 #: ../src/Dialogs/PlayerHistoryDialog.cs:92
 msgid "Total"
 msgstr "Total"
 
-#: ../src/GameDrawingArea.cs:191 ../src/gbrainy.cs:115
+#: ../src/GameDrawingArea.cs:182 ../src/gbrainy.cs:115
 #: ../src/gbrainy.glade.h:6 ../src/Dialogs/PlayerHistoryDialog.cs:120
 msgid "Calculation"
 msgstr "Cálculo"
 
-#: ../src/GameDrawingArea.cs:209
+#: ../src/GameDrawingArea.cs:200
 msgid "Score"
 msgstr "Puntuación"
 
-#: ../src/GameDrawingArea.cs:217
+#: ../src/GameDrawingArea.cs:208
 #, csharp-format
 msgid "Outstanding results"
 msgstr "Resultados asombrosos"
 
-#: ../src/GameDrawingArea.cs:219
+#: ../src/GameDrawingArea.cs:210
 #, csharp-format
 msgid "Excellent results"
 msgstr "Resultados excelentes"
 
-#: ../src/GameDrawingArea.cs:221
+#: ../src/GameDrawingArea.cs:212
 #, csharp-format
 msgid "Good results"
 msgstr "Buenos resultados"
 
-#: ../src/GameDrawingArea.cs:223
+#: ../src/GameDrawingArea.cs:214
 #, csharp-format
 msgid "Poor results"
 msgstr "Resultados pobres"
 
-#: ../src/GameDrawingArea.cs:224
+#: ../src/GameDrawingArea.cs:215
 #, csharp-format
 msgid "Disappointing results"
 msgstr "Resultados decepcionantes"
 
-#: ../src/GameDrawingArea.cs:230
+#: ../src/GameDrawingArea.cs:221
 #, csharp-format
 msgid "Games won: {0} ({1} played)"
 msgstr "Partidos ganados: {0} ({1} jugadas)"
 
-#: ../src/GameDrawingArea.cs:232
+#: ../src/GameDrawingArea.cs:223
 #, csharp-format
 msgid "{0}. Games won: {1} ({2} played)"
 msgstr "{0}. Partidas ganadas: {1} ({2} jugadas)"
 
-#: ../src/GameDrawingArea.cs:236
+#: ../src/GameDrawingArea.cs:227
 #, csharp-format
 msgid "Time played {0} (average per game {1})"
 msgstr "Tiempo jugado {0} (media por partida {1})"
 
-#: ../src/GameDrawingArea.cs:243
+#: ../src/GameDrawingArea.cs:234
 msgid "Tips for your next games"
 msgstr "Consejos para tus siguientes partidas"
 
-#: ../src/GameDrawingArea.cs:345
+#: ../src/GameDrawingArea.cs:336
 msgid "Get ready to memorize the next objects..."
 msgstr "Prepárate para memorizar los siguientes objetos…"
 
-#: ../src/GameDrawingArea.cs:385
+#: ../src/GameDrawingArea.cs:376
 msgid "Read the instructions carefully and identify the data and given clues."
 msgstr ""
 "Lee las instrucciones cuidadosamente e identifica dos datos y pistas dadas."
 
-#: ../src/GameDrawingArea.cs:387
+#: ../src/GameDrawingArea.cs:378
 msgid ""
 "To score the player gbrainy uses the time and tips needed to complete each "
 "game."
@@ -441,22 +444,22 @@ msgstr ""
 "gbrainy usa el tiempo y los consejos necesitados para completar cada juego "
 "para puntuar al jugador."
 
-#: ../src/GameDrawingArea.cs:389
+#: ../src/GameDrawingArea.cs:380
 msgid ""
 "In logic games, elements that may seem irrelevant can be very important."
 msgstr ""
 "En los juegos de lógica, los elementos que pueden parecer irrelevantes "
 "pueden ser muy importantes."
 
-#: ../src/GameDrawingArea.cs:391
+#: ../src/GameDrawingArea.cs:382
 msgid "Break the mental blocks and look into the boundaries of problems."
 msgstr "Rompe los bloqueos mentales y mira los límites de los problemas."
 
-#: ../src/GameDrawingArea.cs:393
+#: ../src/GameDrawingArea.cs:384
 msgid "Enjoy making mistakes, they are part of the learning process."
 msgstr "Diviértete cometiendo errores, son parte del proceso de aprendizaje."
 
-#: ../src/GameDrawingArea.cs:395
+#: ../src/GameDrawingArea.cs:386
 msgid ""
 "Do all the problems, even the difficult ones. Improvement comes from "
 "practising."
@@ -464,12 +467,12 @@ msgstr ""
 "Haz todos los problemas, incluso los difíciles. La mejora llega a través de "
 "la práctica."
 
-#: ../src/GameDrawingArea.cs:397
+#: ../src/GameDrawingArea.cs:388
 msgid "Play on a daily basis, you will notice progress soon."
 msgstr "Juega diariamente, notarás pronto el progreso."
 
 #. Translators: Custom Game Selection is a menu option
-#: ../src/GameDrawingArea.cs:399
+#: ../src/GameDrawingArea.cs:390
 msgid ""
 "Use the 'Custom Game Selection' to choose exactly which games you want to "
 "play."
@@ -477,11 +480,11 @@ msgstr ""
 "Usa «Selección de juego personalizado» para elegir exactamente a qué juegos "
 "quieres jugar."
 
-#: ../src/GameDrawingArea.cs:403
+#: ../src/GameDrawingArea.cs:394
 msgid "Association of elements is a common technique for remembering things."
 msgstr "La asociación de elementos es una técnica común para recordar cosas."
 
-#: ../src/GameDrawingArea.cs:405
+#: ../src/GameDrawingArea.cs:396
 msgid ""
 "Grouping elements into categories is a common technique for remembering "
 "things."
@@ -527,7 +530,7 @@ msgstr "Jugar a los juegos que desafíen mis capacidades de cálculo mental"
 msgid "Play games that challenge your short term memory"
 msgstr "Jugar a los juegos que desafíen mi memoria a corto plazo"
 
-#: ../src/gbrainy.cs:127 ../src/gbrainy.cs:525
+#: ../src/gbrainy.cs:127 ../src/gbrainy.cs:532
 msgid "Pause"
 msgstr "Pausar"
 
@@ -551,16 +554,16 @@ msgstr "Extensiones"
 msgid "Develop your own puzzles"
 msgstr "Desarrolle sus propios puzles"
 
-#: ../src/gbrainy.cs:363
+#: ../src/gbrainy.cs:367
 msgid "Congratulations."
 msgstr "Enhorabuena."
 
-#: ../src/gbrainy.cs:365
+#: ../src/gbrainy.cs:369
 msgid "Incorrect answer."
 msgstr "Respuesta incorrecta."
 
 #
-#: ../src/gbrainy.cs:423
+#: ../src/gbrainy.cs:427
 msgid ""
 "Once you have an answer type it in the \"Answer:\" entry box and press the "
 "\"OK\" button."
@@ -568,7 +571,7 @@ msgstr ""
 "Una vez que tengas la respuesta escríbela en «Respuesta:» y pulsa el botón "
 "«Aceptar»."
 
-#: ../src/gbrainy.cs:530
+#: ../src/gbrainy.cs:537
 msgid "Resume"
 msgstr "Reanudar"
 
@@ -714,6 +717,83 @@ msgstr "Contar puntos"
 msgid "How many {0} dots were in the previous image? Answer using numbers."
 msgstr ""
 "¿Cuántos puntos {0} había en la imagen anterior? Responde usando números."
+
+#: ../src/MemoryGames/MemoryFacts.cs:48
+#| msgid "Memorize words"
+msgid "Memorize facts"
+msgstr "Memoriza hechos"
+
+#. Translators: {0} is replaced by a number, {1} by a year (like 1940)
+#: ../src/MemoryGames/MemoryFacts.cs:103
+#, csharp-format
+msgid ""
+"Shiny Cars had already announced a {0} days production halt next month, but "
+"before that it had not cut production since {1}."
+msgstr ""
+"Coches Brillantes anunció un parón de la producción de {0} días el mes que "
+"viene, pero antes de ello no había parado la producción desde {1}."
+
+#: ../src/MemoryGames/MemoryFacts.cs:105
+msgid "For how many days did Shiny Cars halt its production?"
+msgstr "¿Cuántos días paró la producción Coches Brillantes?"
+
+#: ../src/MemoryGames/MemoryFacts.cs:106
+msgid "In what year did Shiny Cars last halt its production?"
+msgstr "En qué año paró la producción Coches Brillantes?"
+
+#. Translators: {0} is replaced by a number, {1} by a year (like 1940)
+#: ../src/MemoryGames/MemoryFacts.cs:114
+#, csharp-format
+msgid ""
+"Shiny Cars sales fell {0}% this past December, the worse decline since {1}."
+msgstr ""
+"Las ventas de Coches Brillantes cayeron un {0}% el pasado diciembre, la peor "
+"caída desde {1}."
+
+#: ../src/MemoryGames/MemoryFacts.cs:116
+msgid "By how much did company sales fall last December?"
+msgstr "¿Cuánto cayeron las ventas de la empresa el pasado diciembre?"
+
+#: ../src/MemoryGames/MemoryFacts.cs:117
+msgid ""
+"In what year did Shiny Cars record a sales total lower than that of last "
+"December?"
+msgstr ""
+"¿En qué año las ventas totales de Coches Brillantes fueron peores que el "
+"pasado diciembre?"
+
+#: ../src/MemoryGames/MemoryFacts.cs:122
+#, csharp-format
+msgid "About {0}% of Shiny Cars produced worldwide are sold in Europe"
+msgstr ""
+"Cerca del {0}% de los coches producidos en el mundo por Coches Brillantes se "
+"venden en Europa"
+
+#: ../src/MemoryGames/MemoryFacts.cs:124
+msgid ""
+"What percentage of all Shiny Cars produced worldwide are sold in Europe?"
+msgstr ""
+"¿Qué porcentaje de todos los coches producidos por Coches Brillantes se "
+"vende en Europa?"
+
+#: ../src/MemoryGames/MemoryFacts.cs:130
+#, csharp-format
+msgid ""
+"About {0}% of Shiny Cars use diesel, {1}% use gasoline and the remainder use "
+"electric."
+msgstr ""
+"Cerca del {0}% de los coches de Coches Brillantes usan diesel, {1}% usa "
+"gasolina y el resto son eléctricos."
+
+#: ../src/MemoryGames/MemoryFacts.cs:132
+#| msgid "What percentage of the figure is colored?"
+msgid "What percentage of Shiny Cars use diesel?"
+msgstr "¿Qué porcentaje de Coches Brillantes usa diesel?"
+
+#: ../src/MemoryGames/MemoryFacts.cs:133
+#| msgid "What percentage of the figure is colored?"
+msgid "What percentage of Shiny Cars use gasoline?"
+msgstr "¿Qué porcentaje de Coches Brillantes usa gasolina?"
 
 #: ../src/MemoryGames/MemoryFigures.cs:50
 msgid "Memory figures"
@@ -996,82 +1076,109 @@ msgid "Author:"
 msgstr "Autor:"
 
 #: ../src/mono-addins-strings.xml.h:10
+msgid "Browse..."
+msgstr "Examinar…"
+
+#: ../src/mono-addins-strings.xml.h:11
 msgid "Copyright:"
 msgstr "Copyright:"
 
-#: ../src/mono-addins-strings.xml.h:11
+#: ../src/mono-addins-strings.xml.h:12
 msgid "Disable"
 msgstr "Deshabilitar"
 
-#: ../src/mono-addins-strings.xml.h:12
+#: ../src/mono-addins-strings.xml.h:13
 msgid "Enable"
 msgstr "Activar"
 
-#: ../src/mono-addins-strings.xml.h:13
+#: ../src/mono-addins-strings.xml.h:14
 msgid "Install from:"
 msgstr "Instalar desde:"
 
-#: ../src/mono-addins-strings.xml.h:14
+#: ../src/mono-addins-strings.xml.h:15
 msgid "Name"
 msgstr "Nombre"
 
-#: ../src/mono-addins-strings.xml.h:15
+#: ../src/mono-addins-strings.xml.h:16
 msgid "Other"
 msgstr "Otro"
 
-#: ../src/mono-addins-strings.xml.h:16
+#: ../src/mono-addins-strings.xml.h:17
+msgid "Path:"
+msgstr "Ruta:"
+
+#: ../src/mono-addins-strings.xml.h:18
+#| msgid "All registered repositories"
+msgid "Register a local repository"
+msgstr "Registrar un repositorio local"
+
+#: ../src/mono-addins-strings.xml.h:19
+#| msgid "All registered repositories"
+msgid "Register an on-line repository"
+msgstr "Registrar un repositorio en línea"
+
+#: ../src/mono-addins-strings.xml.h:20
 msgid "Repository"
 msgstr "Repositorio"
 
-#: ../src/mono-addins-strings.xml.h:17
+#: ../src/mono-addins-strings.xml.h:21
 msgid "Select _All"
 msgstr "Seleccionar _todo"
 
-#: ../src/mono-addins-strings.xml.h:18
+#: ../src/mono-addins-strings.xml.h:22
+msgid "Select the location of the repository you want to register:"
+msgstr "Seleccionar la ubicación del repositorio que quiere registrar:"
+
+#: ../src/mono-addins-strings.xml.h:23
 msgid "Show all packages"
 msgstr "Mostrar todos los paquetes"
 
-#: ../src/mono-addins-strings.xml.h:19
+#: ../src/mono-addins-strings.xml.h:24
 msgid "Show new versions only"
 msgstr "Mostrar sólo las nuevas versiones"
 
-#: ../src/mono-addins-strings.xml.h:20
+#: ../src/mono-addins-strings.xml.h:25
 msgid "Show updates only"
 msgstr "Mostrar sólo las actualizaciones"
 
-#: ../src/mono-addins-strings.xml.h:21
+#: ../src/mono-addins-strings.xml.h:26
 msgid "The following add-ins are currently installed:"
 msgstr "Los siguientes complementos están instalados actualmente:"
 
-#: ../src/mono-addins-strings.xml.h:22
+#: ../src/mono-addins-strings.xml.h:27
 msgid "The following add-ins will be installed:"
 msgstr "Se instalarán los siguientes complementos:"
 
-#: ../src/mono-addins-strings.xml.h:23
+#: ../src/mono-addins-strings.xml.h:28
 msgid "Url"
 msgstr "URL"
 
-#: ../src/mono-addins-strings.xml.h:24
+#: ../src/mono-addins-strings.xml.h:29
+#| msgid "Url"
+msgid "Url:"
+msgstr "URL:"
+
+#: ../src/mono-addins-strings.xml.h:30
 msgid "Version"
 msgstr "Versión"
 
-#: ../src/mono-addins-strings.xml.h:25
+#: ../src/mono-addins-strings.xml.h:31
 msgid "Version:"
 msgstr "Versión:"
 
-#: ../src/mono-addins-strings.xml.h:26
+#: ../src/mono-addins-strings.xml.h:32
 msgid "_Install Add-ins..."
 msgstr "_Instalar complementos…"
 
-#: ../src/mono-addins-strings.xml.h:27
+#: ../src/mono-addins-strings.xml.h:33
 msgid "_Repositories..."
 msgstr "_Repositorios…"
 
-#: ../src/mono-addins-strings.xml.h:28
+#: ../src/mono-addins-strings.xml.h:34
 msgid "_Uninstall..."
 msgstr "_Desinstalar…"
 
-#: ../src/mono-addins-strings.xml.h:29
+#: ../src/mono-addins-strings.xml.h:35
 msgid "_Unselect All"
 msgstr "_Deseleccionar todo"
 
@@ -1198,6 +1305,64 @@ msgstr "¿Cuántos círculos puedes contar?"
 msgid "It is an easy exercise if you systematically count the circles."
 msgstr ""
 "Es un ejercicio fácil si usas una forma sistemática de contar los círculos."
+
+#: ../src/PuzzleGames/PuzzleCounting.cs:38
+#| msgid "Counting dots"
+msgid "Counting"
+msgstr "Contar"
+
+#. Translators: {0} and {1} are always numbers greater than 1
+#: ../src/PuzzleGames/PuzzleCounting.cs:62
+#, csharp-format
+msgid ""
+"We have a {0} meters piece of fabric. Machine A takes {1} seconds to cut 1 "
+"meter of this fabric. How many seconds does Machine A take to cut the entire "
+"piece of fabric into 1 meter pieces?"
+msgstr ""
+"Tenemos una tela de {0} metros. La máquina A tarda {1} segundos en cortar 1 "
+"metro de esta tela. ¿Cuantos segundos tardará la máquina A en cortar la tela "
+"entera en trozos de 1 metro?"
+
+#. Translators: {0} is always a number greater than 1
+#: ../src/PuzzleGames/PuzzleCounting.cs:66
+#, csharp-format
+msgid "With the {0} cut, Machine A creates two 1 meter pieces."
+msgstr "Con el corte {0} la máquina A crea dos trozos de 1 metro."
+
+#. Translators: {0} is always a number greater than 20
+#: ../src/PuzzleGames/PuzzleCounting.cs:76
+#, csharp-format
+msgid ""
+"A fence is built to enclose a square shaped region. {0} fence poles are used "
+"in each side of the square. How many fence poles are used in total?"
+msgstr ""
+"Se construye una verja para cerrar una región cuadrada. Se usan {0} postes "
+"en cada lado del cuadrado. ¿Cuántos postes se usan en total?"
+
+#: ../src/PuzzleGames/PuzzleCounting.cs:80
+#, csharp-format
+msgid ""
+"There are {0} fence poles since the poles on the corners of the square are "
+"shared."
+msgstr ""
+"Existen {0} postes ya que se comparten los postes en los lados del cuadrado."
+
+#. Translators: {0} is always a number greater than 5
+#: ../src/PuzzleGames/PuzzleCounting.cs:89
+#, csharp-format
+msgid ""
+"Wrapping an anniversary present costs one euro. The anniversary present "
+"costs {0} euros more than the cost to wrap it. How much does it cost to both "
+"purchase and wrap the present?"
+msgstr ""
+"Envolver el regalo de aniversario cuesta un euro. El regalo de aniversario "
+"cuesta {0} euros más que el precio de envolverlo. ¿Cuánto cuesta comprar y "
+"envolver el regalo?"
+
+#: ../src/PuzzleGames/PuzzleCounting.cs:92
+#, csharp-format
+msgid "Individually, the present costs one euro more to purchase than to wrap."
+msgstr "Individualmente, el regalo cuesta un euro más que envolverlo."
 
 #: ../src/PuzzleGames/PuzzleCountSeries.cs:37
 msgid "Count series"
@@ -1431,16 +1596,22 @@ msgstr "Apretones de manos"
 
 #: ../src/PuzzleGames/PuzzleHandshakes.cs:34
 #, csharp-format
+#| msgid ""
+#| "In a party all the people is introduced to the others. There are {0} "
+#| "handeshakes in total. How many people is in the party?"
 msgid ""
-"In a party all the people is introduced to the others. There are {0} "
-"handeshakes in total. How many people is in the party?"
+"All attendees to a party are introduced to one another. {0} handshakes are "
+"made in total. How many people are attending the party?"
 msgstr ""
 "En una fiesta todas las personas se presentan las unas a los otras. Existen "
 "{0} apretones de manos en total. ¿Cuántas personas hay en la fiesta?"
 
 #: ../src/PuzzleGames/PuzzleHandshakes.cs:39
+#| msgid ""
+#| "Try to imagine a situation where you were meeting a smaller number of "
+#| "people."
 msgid ""
-"Try to imagine a situation where you were meeting a smaller number of people."
+"Try to imagine a situation in which you are meeting a small number of people."
 msgstr ""
 "Intenta imaginar una situación en la que estuvieses conociendo un pequeño "
 "grupo de personas."
@@ -2028,3 +2199,12 @@ msgstr ""
 msgid "The result of multiplying the two numbers inside every triangle is {0}."
 msgstr ""
 "El resultado de multiplicar los dos números dentro de cada triángulo es {0}."
+
+#~ msgid ""
+#~ "You can check easily if a number can be divided by 3 by adding together "
+#~ "each digit and then take the sum of them. If the final number is "
+#~ "divisible by 3, then the original number is too."
+#~ msgstr ""
+#~ "Puedes comprobar fácilmente si un número se puede dividir por 3 sumando "
+#~ "los dígitos del número. Si el número final es divisible entre 3, entonces "
+#~ "el número original también lo es."
