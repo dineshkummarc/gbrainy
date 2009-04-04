@@ -55,11 +55,6 @@ grep "^AM_GLIB_GNU_GETTEXT" configure.in >/dev/null && {
   }
 }
 
-(which gnome-doc-prepare && gnome-doc-prepare )|| {
-	echo "**Error**: You must have gnome-common installed to compile $PROJECT."
-	DIE=1
-}
-
 if test "$DIE" -eq 1; then
 	exit 1
 fi
