@@ -40,16 +40,19 @@ public class GameDrawingArea : DrawingArea
 	const int tips_shown = 4;
 	CountDown countdown;
 	bool rtl;
-	public Game puzzle;
+	bool margins;
 	Modes mode;
+	gbrainy application;
+	public Game puzzle;
 
-	public GameDrawingArea ()
+	public GameDrawingArea (gbrainy application)
 	{
 		mode = Modes.Welcome;
 		puzzle = null;
 		session = null;
 		countdown = null;
 		rtl = Direction == Gtk.TextDirection.Rtl;
+		this.application = application;
 	}
 
 	public GameSession GameSession {
@@ -68,6 +71,10 @@ public class GameDrawingArea : DrawingArea
 
 			mode = value;
 		}
+	}
+
+	public bool Margins {
+		set { margins = value; }
 	}
 
 	static void DrawBand (CairoContextEx gr, double x, double y)
@@ -256,7 +263,6 @@ public class GameDrawingArea : DrawingArea
 		double x = 0, y = 0;
 		args.Window.GetSize (out w, out h);
 
-		// TODO: This created and destroyed in every expose event
 		Cairo.Context cc = Gdk.CairoHelper.Create (args.Window);
 		CairoContextEx cr = new CairoContextEx (cc.Handle, this);
 
@@ -264,13 +270,16 @@ public class GameDrawingArea : DrawingArea
 		// For example, squares are squares. This also makes sure that proportions are kept when resizing
 		nh = nw = Math.Min (w, h);
 
-		if (nw < w) {
+		if (nw < w)
 			x = (w - nw) / 2;
-		}
 
-		if (nh < h) {
+		if (nh < h)
 			y = (h - nh) / 2;
-		}
+
+		if (margins)
+			application.SetMargin ((int) x);
+		else
+			application.SetMargin (0);
 
 		cr.Translate (x, y);
 		switch (mode) {

@@ -60,7 +60,8 @@ public class gbrainy: Program
 	Gtk.TextBuffer question_buffer;
 	Gtk.TextBuffer solution_buffer;
 	TextTag tag_green;
-	bool low_res = false;
+	bool low_res;
+	bool full_screen;
 	
 	public static PlayerHistory history = null;
 	public static Preferences preferences = null;
@@ -144,7 +145,7 @@ public class gbrainy: Program
 			preferences = new Preferences ();
 
 		session.GameManager.Difficulty = (Game.Difficulty) preferences.GetIntValue (Preferences.DifficultyKey);
-		drawing_area = new GameDrawingArea ();
+		drawing_area = new GameDrawingArea (this);
 		GameSensitiveUI ();
 
 		// For low resolutions, hide the toolbar and made the drawing area smaller
@@ -298,6 +299,14 @@ public class gbrainy: Program
 	public void QueueDraw ()
 	{
 		drawing_area.QueueDraw ();
+	}
+
+	public void SetMargin (int margin)
+	{
+		question_textview.RightMargin = margin;
+		solution_textview.RightMargin = margin;
+		question_textview.LeftMargin = margin;
+		solution_textview.LeftMargin = margin;
 	}
 
 	void GameSensitiveUI () 
@@ -583,6 +592,20 @@ public class gbrainy: Program
 		stock.Add (stockid, iconset);		
 	}
 
+	void OnFullscreen (object sender, EventArgs args)
+	{
+		if (full_screen == false) {
+			drawing_area.Margins = true;
+			app_window.Fullscreen ();
+		}
+		else {
+			drawing_area.Margins = false;
+			app_window.Unfullscreen ();
+		}
+
+		full_screen = !full_screen;
+	}
+
 	[DllImport ("libc")] // Linux
 	private static extern int prctl (int option, byte [] arg2, IntPtr arg3, IntPtr arg4, IntPtr arg5);
 
@@ -617,4 +640,3 @@ public class gbrainy: Program
 		gui.Run ();	
 	}
 }
-
