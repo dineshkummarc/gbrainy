@@ -82,7 +82,7 @@ public class CalculationOperator : Game
 
 	public override void Draw (CairoContextEx gr, int area_width, int area_height)
 	{	
-		double aligned_pos = 0.58;
+		const double aligned_pos = 0.58;
 
 		base.Draw (gr, area_width, area_height);
 

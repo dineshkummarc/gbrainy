@@ -84,13 +84,13 @@ public class MemoryCountDots : Memory
 	private void DrawObject (CairoContextEx gr, int area_width, int area_height)
 	{
 		palette.Alpha = alpha;
-		double x = DrawAreaX + 0.15, y = DrawAreaY + 0.1 ;
+		double x = DrawAreaX + 0.15, y = DrawAreaY + 0.1;
 
 		gr.Color = palette.Cairo(ColorPalette.Id.Black);
 		double pos_x = x, pos_y = y;
-		double figure_size = 0.6 ;
-		double square_size = figure_size / NUMCOLUMNS ;
-		double center_square = square_size / 2;
+		const double figure_size = 0.6;
+		const double square_size = figure_size / NUMCOLUMNS ;
+		const double center_square = square_size / 2;
 		double radius_square = .8 * (square_size - (LineWidth *2)) / 2;
 
 		gr.Rectangle (pos_x, pos_y, figure_size, figure_size);

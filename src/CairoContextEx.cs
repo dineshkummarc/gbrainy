@@ -135,7 +135,7 @@ public class CairoContextEx : Cairo.Context
 		the device unit space and then translate to our user space.
 
 		* Cairo Show.Text paints on the bottom-left of the coordinates
-		and Pango paints on the top-left of the coordinate
+		and Pango paints on the top-left of the coordinates
 	*/
 
 

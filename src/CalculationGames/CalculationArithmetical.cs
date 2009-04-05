@@ -101,8 +101,9 @@ public class CalculationArithmetical : Game
 	
 	public override void Draw (CairoContextEx gr, int area_width, int area_height)
 	{	
-		double operand_y = DrawAreaY + 0.2, operand_space = 0.1;
-		double aligned_pos = 0.58;
+		double operand_y = DrawAreaY + 0.2;
+		const double operand_space = 0.1;
+		const double aligned_pos = 0.58;
 
 		base.Draw (gr, area_width, area_height);
 	

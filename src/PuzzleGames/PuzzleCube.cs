@@ -53,8 +53,8 @@ public class PuzzleCube : Game
 	{
 		double x = DrawAreaX + 0.1;
 		double y = DrawAreaY + 0.1;
-		double txtoff_x = 0.04;
-		double txtoff_y = 0.03;
+		const double txtoff_x = 0.04;
+		const double txtoff_y = 0.03;
 
 		base.Draw (gr, area_width, area_height);
 

@@ -100,7 +100,7 @@ public class PuzzleFigurePattern : Game
 	{
 		double org_x = DrawAreaX + 0.1;
 		double x = org_x, y = 0.08;
-		double figure_size = 0.13, space_x = 0.1, space_y = 0.2;
+		const double figure_size = 0.13, space_x = 0.1, space_y = 0.2;
 		double x45, y45, x135, y135, offset;
 
 		base.Draw (gr, area_width, area_height);

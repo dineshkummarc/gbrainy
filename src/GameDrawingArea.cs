@@ -48,9 +48,6 @@ public class GameDrawingArea : DrawingArea
 	public GameDrawingArea (gbrainy application)
 	{
 		mode = Modes.Welcome;
-		puzzle = null;
-		session = null;
-		countdown = null;
 		rtl = Direction == Gtk.TextDirection.Rtl;
 		this.application = application;
 	}
@@ -105,7 +102,7 @@ public class GameDrawingArea : DrawingArea
 	private void DrawWelcome (CairoContextEx gr, int area_width, int area_height)
 	{
 		double y = 0.05;
-		double space = 0.20;
+		const double space = 0.20;
 
 		gr.Scale (area_width, area_height);
 		gr.DrawBackground ();
@@ -142,7 +139,7 @@ public class GameDrawingArea : DrawingArea
 	}
 
 
-	static public void DrawBar (CairoContextEx gr, double x, double y, double w, double h, double percentage)
+	static void DrawBar (CairoContextEx gr, double x, double y, double w, double h, double percentage)
 	{
 		double per = percentage / 100;
 	
@@ -165,8 +162,8 @@ public class GameDrawingArea : DrawingArea
 
 	private void DrawGraphicBar (CairoContextEx gr, double x, double y)
 	{
-		double area_w = 0.8, area_h = 0.28;
-		double bar_w = 0.05, bar_h = area_h - 0.02;
+		const double area_w = 0.8, area_h = 0.28;
+		const double bar_w = 0.05, bar_h = area_h - 0.02;
 		
 		gr.LineWidth = 0.005;
 
@@ -196,7 +193,7 @@ public class GameDrawingArea : DrawingArea
 	private void DrawScores (CairoContextEx gr, int area_width, int area_height)
 	{
 		double y = 0.04, x = 0.05;
-		double space_small = 0.02;
+		const double space_small = 0.02;
 		string s;
 
 		gr.Scale (area_width, area_height);

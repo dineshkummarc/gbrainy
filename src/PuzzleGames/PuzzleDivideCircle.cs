@@ -65,7 +65,7 @@ public class PuzzleDivideCircle : Game
 
 	static private void DrawAndConnectPoints (CairoContextEx gr, double x, double y, Circle[] circles, bool connect)
 	{
-		double point_size = 0.01;
+		const double point_size = 0.01;
 		for (int i = 0; i < circles.Length; i++) {
 			gr.Arc (x + point_size + circles[i].x, y + point_size + circles[i].y, point_size, 0, 2 * Math.PI);
 			gr.Fill ();

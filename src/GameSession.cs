@@ -72,11 +72,6 @@ public class GameSession
 	{
 		game_manager = new GameManager ();
 		game_time = TimeSpan.Zero;
-		games_played = 0;
-		games_won = 0;
-		current_game = null;
-		timer = null;
-		paused = false;
 		app = brainy;
 
 		timer = new System.Timers.Timer ();
@@ -85,8 +80,6 @@ public class GameSession
 		
 		scores = new int [(int) ScoresType.Last];
 		games = new int [(int) ScoresType.Last];
-		total_score = 0;
-		scored_game = false;
 		status = SessionStatus.NotPlaying;
 	}
 

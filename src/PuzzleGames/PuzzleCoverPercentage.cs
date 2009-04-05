@@ -26,7 +26,7 @@ public class PuzzleCoverPercentage : Game
 	private bool cover_zone1, cover_zone2, cover_zone3, cover_zone4;
 	private int partial_zone, partial_zones;
 	private const double width = 0.5, height = 0.5;
-	private double line_width = 0.001;
+	private const double line_width = 0.001;
 
 	public override string Name {
 		get {return Catalog.GetString ("Cover percentage");}

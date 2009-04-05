@@ -51,8 +51,8 @@ public class MemoryIndications : Memory
 
 		public void Draw (CairoContextEx gr, ref double x, ref double y, Indication next_prev)
 		{
-			double line_length = 0.050;
-			double points = 0.050;
+			const double line_length = 0.050;
+			const double points = 0.050;
 
 			if (type == Type.Start) {
 				gr.Rectangle (x, y, points, points);

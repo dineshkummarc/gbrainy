@@ -167,7 +167,7 @@ public abstract class Memory : Game
 	public void DrawTimeBar (CairoContextEx gr, double x, double y, double percentage)
 	{
 		double width = 0.04, height = 0.6;
-		double w = 0.003, h = 0.003;
+		const double w = 0.003, h = 0.003;
 
 		gr.Save ();
 		gr.Color = new Color (0, 0, 0);	

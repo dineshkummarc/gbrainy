@@ -108,8 +108,8 @@ public class PuzzleCounting : Game
 			if (gametype == GameType.Fence)
 			{
 				double x105, y105;
-				double x = 0.35, y = 0.2;
-				double figure_size = 0.4;
+				const double x = 0.35, y = 0.2;
+				const double figure_size = 0.4;
 
 				x105 = figure_size * Math.Cos (105 * Math.PI / 180);
 				y105 = figure_size * Math.Sin (105 * Math.PI / 180);

@@ -131,9 +131,9 @@ public class CalculationFractions : Game
 
 	public override void Draw (CairoContextEx gr, int area_width, int area_height)
 	{	
-		double fraction_size = 0.17;
+		const double fraction_size = 0.17;
 		double x =  0.5  - (fractions_num * fraction_size / 2), y = DrawAreaY + 0.3;
-		double offset_x = 0.12;
+		const double offset_x = 0.12;
 
 		base.Draw (gr, area_width, area_height);
 

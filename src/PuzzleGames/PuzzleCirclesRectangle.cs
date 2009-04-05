@@ -58,9 +58,9 @@ public class PuzzleCirclesRectangle : Game
 	{
 		double first_x = DrawAreaX + 0.05;
 		double first_y = DrawAreaY + 0.1;
-		double space_fromrect = 0.02, space_fromcircle = 0.01;
+		const double space_fromrect = 0.02, space_fromcircle = 0.01;
 		int circles = 8;
-		double unit = 0.0625;
+		const double unit = 0.0625;
 
 		base.Draw (gr, area_width, area_height);
 

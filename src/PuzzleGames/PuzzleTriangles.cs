@@ -65,7 +65,7 @@ public class PuzzleTriangles : Game
 	public override void Draw (CairoContextEx gr, int area_width, int area_height)
 	{
 		double x = DrawAreaX + 0.1, y = DrawAreaY + 0.2;
-		double witdh = 0.6, height = 0.5;
+		const double witdh = 0.6, height = 0.5;
 
 		base.Draw (gr, area_width, area_height);
 		

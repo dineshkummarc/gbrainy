@@ -311,7 +311,7 @@ public class gbrainy: Program
 
 	void GameSensitiveUI () 
 	{
-		//Toolbar buttons and menu items sensitive when there is or not a game
+		//Toolbar buttons and menu items that are sensitive when the user is playing
 		bool playing;
 
 		if (session.Status != GameSession.SessionStatus.NotPlaying || drawing_area.Mode == GameDrawingArea.Modes.CountDown)

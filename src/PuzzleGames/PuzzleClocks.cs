@@ -106,7 +106,7 @@ public class PuzzleClocks : Game
 
 	static void DrawClock (CairoContextEx gr, double x, double y, int hand_short, int hand_large, bool draw_large)
 	{
-		double radius = figure_size / 2;
+		const double radius = figure_size / 2;
 		double x0, y0;
 		int num, degrees;
 

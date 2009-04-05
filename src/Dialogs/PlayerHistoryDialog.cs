@@ -81,7 +81,7 @@ public class PlayerHistoryDialog : GtkDialog
 
 		private void DrawLegend (CairoContextEx cr, double x, double y)
 		{
-			double line_size = 0.05, offset_x = 0.01, second_row = 0.05;
+			const double line_size = 0.05, offset_x = 0.01, second_row = 0.05;
 			
 			cr.Color = total_color;
 			cr.MoveTo (x, y);
@@ -125,10 +125,12 @@ public class PlayerHistoryDialog : GtkDialog
 		{
 			double px, py;
 			PlayerHistory history = gbrainy.history;
-			double ratio = (area_w / (history.Games.Count - 1)); 
+			double ratio;
 
 			if (history.Games.Count == 0)
 				return;
+
+			ratio = area_w / (history.Games.Count - 1);
 			
 			if (dlg.checkbutton_logic.Active) { // Logic
 				cr.Color = logic_color;

@@ -107,7 +107,7 @@ public class PuzzleFigures : Game
 	public override void Draw (CairoContextEx gr, int area_width, int area_height)
 	{		
 		int element;
-		double figure_width = 0.1, figure_height = 0.1, space_width = 0.05, space_height = 0.1;
+		const double figure_width = 0.1, figure_height = 0.1, space_width = 0.05, space_height = 0.1;
 		double x = DrawAreaX, y = DrawAreaY;
 
 		base.Draw (gr, area_width, area_height);

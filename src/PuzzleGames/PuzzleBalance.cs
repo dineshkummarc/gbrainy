@@ -75,7 +75,7 @@ public class PuzzleBalance : Game
 
 	public void DrawBalance (CairoContextEx gr, double x, double y, int index, bool full)
 	{
-		double width = 0.5;
+		const double width = 0.5;
 		double fig_x = x + 0.1, fig_y = y - 0.11;
 		int total = (full == true) ? (elements * 2) : elements; 
 

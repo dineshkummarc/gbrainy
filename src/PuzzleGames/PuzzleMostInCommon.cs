@@ -256,7 +256,7 @@ public class PuzzleMostInCommon : Game
 
 	private void DrawFigure (CairoContextEx gr, double x, double y, FigureElement[] figure)
 	{
-		double cercle_size = 0.15;
+		const double cercle_size = 0.15;
 		gr.Stroke ();
 		gr.Arc (x + cercle_size / 2, y + cercle_size / 2, cercle_size / 2, 0, 2 * Math.PI);
 		gr.Stroke ();

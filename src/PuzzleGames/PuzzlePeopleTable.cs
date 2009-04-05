@@ -97,7 +97,7 @@ public class PuzzlePeopleTable : Game
 		gr.Arc (pos_x + figure_size, pos_y + figure_size, figure_size, 0, 2 * Math.PI);
 		gr.Stroke ();		
 
-		double point_size = 0.01;
+		const double point_size = 0.01;
 		for (int i = 0; i < circles.Length; i++) {
 			gr.Arc (x + point_size + circles[i].x, y + point_size + circles[i].y, point_size, 0, 2 * Math.PI);
 			gr.Fill ();

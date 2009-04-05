@@ -201,8 +201,8 @@ public class PuzzleLargerShape : Game
 
 	private void DrawPossibleAnswer (CairoContextEx gr, double x, double y, char [] portions, int figure, int seq)
 	{
-		int columns = 3, rows = 3;
-		double rect_w = 0.05, rect_h = 0.05;
+		const int columns = 3, rows = 3;
+		const double rect_w = 0.05, rect_h = 0.05;
 		int index = figure * columns * rows;
 
 		for (int row = 0; row < rows; row++) {

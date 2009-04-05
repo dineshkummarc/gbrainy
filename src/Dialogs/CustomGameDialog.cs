@@ -33,18 +33,19 @@ public class CustomGameDialog : GtkDialog
 	int ngames, npos;
 	Type [] custom_games;
 
+	const int COL_ENABLED = 2;
+	const int COL_OBJECT = 3;
+
 	public CustomGameDialog (GameManager manager) : base ("customgame")
 	{
 		Game game;
 		Type[] games;
 		GameManager gm;
 
-		ngames = 0;
 		this.manager = manager;
 		gm = new GameManager ();
 		gm.GameType = GameSession.Types.AllGames;
 		games = gm.CustomGames;
-		dialog = null;
 
 		drawing_area = new CairoPreview ();
 		preview_vbox.Add (drawing_area);
@@ -65,7 +66,7 @@ public class CustomGameDialog : GtkDialog
 
 		CellRendererToggle toggle_cell = new CellRendererToggle();
 		TreeViewColumn toggle_column = new TreeViewColumn(Catalog.GetString("Enabled"), 
-                	toggle_cell, "active", 2);	
+                	toggle_cell, "active", COL_ENABLED);
 		toggle_cell.Activatable = true;
 		toggle_cell.Toggled += OnActiveToggled;
 		toggle_column.Expand = false;
@@ -119,7 +120,7 @@ public class CustomGameDialog : GtkDialog
 			return;
             	}
 
-                Game game = games_store.GetValue (iter, 3) as Game;
+                Game game = games_store.GetValue (iter, COL_OBJECT) as Game;
 		game.Initialize ();
 		preview_question.Markup = game.Question;
 		drawing_area.puzzle = game;
@@ -133,14 +134,14 @@ public class CustomGameDialog : GtkDialog
 		if (!games_store.GetIter (out iter, new TreePath (args.Path)))
 			return;
 
-                bool enabled = !(bool) games_store.GetValue (iter, 2);
-		games_store.SetValue (iter, 2, enabled);
+                bool enabled = !(bool) games_store.GetValue (iter, COL_ENABLED);
+		games_store.SetValue (iter, COL_ENABLED, enabled);
 	}
 
 	void OnSelectAll (object sender, EventArgs args)
 	{
 		games_store.Foreach (delegate (TreeModel model, TreePath path, TreeIter iter)  {
-			games_store.SetValue (iter, 2, true);
+			games_store.SetValue (iter, COL_ENABLED, true);
 			return false;
 		});
 	}
@@ -148,7 +149,7 @@ public class CustomGameDialog : GtkDialog
 	void OnUnSelectAll (object sender, EventArgs args)
 	{
 		games_store.Foreach (delegate (TreeModel model, TreePath path, TreeIter iter)  {
-			games_store.SetValue (iter, 2, false);
+			games_store.SetValue (iter, COL_ENABLED, false);
 			return false;
 		});
 	}
@@ -159,7 +160,7 @@ public class CustomGameDialog : GtkDialog
 		npos = 0;
 
 		games_store.Foreach (delegate (TreeModel model, TreePath path, TreeIter iter)  {
-			if ((bool) games_store.GetValue (iter, 2) == true)
+			if ((bool) games_store.GetValue (iter, COL_ENABLED) == true)
 				ngames++;
 
 			return false;
@@ -170,8 +171,8 @@ public class CustomGameDialog : GtkDialog
 
 		custom_games = new Type [ngames];
 		games_store.Foreach (delegate (TreeModel model, TreePath path, TreeIter iter)  {
-			Game game = games_store.GetValue (iter, 3) as Game;
-			bool enabled = (bool) games_store.GetValue (iter, 2);
+			Game game = games_store.GetValue (iter, COL_OBJECT) as Game;
+			bool enabled = (bool) games_store.GetValue (iter, COL_ENABLED);
 
 			if (enabled == true) {
 				custom_games[npos] = game.GetType ();
@@ -186,7 +187,7 @@ public class CustomGameDialog : GtkDialog
 
 	public class CairoPreview : DrawingArea 
 	{
-		public Game puzzle = null;
+		public Game puzzle;
 
 		protected override bool OnExposeEvent (Gdk.EventExpose args)
 		{
