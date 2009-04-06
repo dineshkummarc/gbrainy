@@ -26,7 +26,6 @@ public class MemoryFacts : Memory
 {
 	const int total_questions = 4;
 	string question;
-	ArrayListIndicesRandom indices;
 	Fact[] facts;
 
 	struct Fact

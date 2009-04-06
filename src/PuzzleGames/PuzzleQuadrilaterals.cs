@@ -112,8 +112,8 @@ public class PuzzleQuadrilaterals : Game
 		case Figures.FigureE:
 			gr.MoveTo (x + 0.03, y);
 			gr.LineTo (x + figure_size - 0.04, y);
-			gr.LineTo (x + figure_size - 0.04, y + figure_size);
-			gr.LineTo (x , y + figure_size);
+			gr.LineTo (x + figure_size - 0.04, y + figure_size * 1.2);
+			gr.LineTo (x , y + figure_size  * 1.2);
 			gr.LineTo (x + 0.03, y);;
 			break;
 
