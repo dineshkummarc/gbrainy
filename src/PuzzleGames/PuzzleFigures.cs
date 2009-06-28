@@ -100,7 +100,7 @@ public class PuzzleFigures : Game
 		y += 0.16;
 		gr.MoveTo (x, y);		
 		gr.ShowPangoText (String.Format (Catalog.GetString ("E.g: {0}{1}{2} (diamond, triangle, circle)"),
-			GetPossibleAnswer (0), GetPossibleAnswer (1), GetPossibleAnswer (2)));
+			GetPossibleAnswer (0), GetPossibleAnswer (2), GetPossibleAnswer (1)));
 
 	}
 
