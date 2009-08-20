@@ -68,8 +68,6 @@ public class gbrainy: Program
 	public gbrainy (string [] args, params object [] props)
 	: base ("gbrainy", Defines.VERSION, Modules.UI,  args, props)
 	{
-		Gdk.Color color;
-
 		Catalog.Init ("gbrainy", Defines.GNOME_LOCALE_DIR);
 		FixLocaleInfo ();
 
