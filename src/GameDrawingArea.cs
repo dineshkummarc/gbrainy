@@ -276,7 +276,7 @@ public class GameDrawingArea : DrawingArea
 		if (margins)
 			application.SetMargin ((int) x);
 		else
-			application.SetMargin (0);
+			application.SetMargin (2);
 
 		cr.Translate (x, y);
 		switch (mode) {
