@@ -77,6 +77,11 @@ public class SimpleLabel : DrawingArea
 
 			using (Pango.Layout layout = new Pango.Layout (this.PangoContext))
 			{
+				if (Direction == Gtk.TextDirection.Rtl)
+					layout.Alignment = Pango.Alignment.Right;					
+				else
+					layout.Alignment = Pango.Alignment.Left;
+				
 				layout.Width = (winWidth - width_margin * 2) * (int) Pango.Scale.PangoScale;
 				layout.SetMarkup (text);
 				args.Window.DrawLayout (light, width_margin, height_margin, layout);
