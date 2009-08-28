@@ -101,8 +101,9 @@ public class GameDrawingArea : DrawingArea
 
 	private void DrawWelcome (CairoContextEx gr, int area_width, int area_height)
 	{
-		double y = 0.05;
-		const double space = 0.20;
+		double y = 0.03;
+		const double space = 0.17;
+		const double image_size = 0.14;
 
 		gr.Scale (area_width, area_height);
 		gr.DrawBackground ();
@@ -114,27 +115,31 @@ public class GameDrawingArea : DrawingArea
 
 		gr.DrawStringWithWrapping (0.05, y + 0.07, Catalog.GetString ("gbrainy is a brain teaser game and trainer to have fun and to keep your brain trained. It includes:"));
 
-		y = 0.25;
-
-		gr.DrawImageFromFile (Defines.DATA_DIR + "logic-games.svg", rtl ? 0.75 : 0.05, y, 0.15, 0.15);
+		y = 0.22;
+		gr.DrawImageFromFile (Defines.DATA_DIR + "logic-games.svg", rtl ? 0.75 : 0.05, y, image_size, image_size);
 		gr.DrawStringWithWrapping (rtl ? 0.05 : 0.23, y + 0.01, 
-			Catalog.GetString ("Logic puzzles. Designed to challenge your reasoning and thinking skills."), 
+			Catalog.GetString ("Logic puzzles. Challenge your reasoning and thinking skills."), 
 			rtl ? 0.65 : -1);
 
 		y += space;
-
-		gr.DrawImageFromFile (Defines.DATA_DIR + "math-games.svg", rtl ? 0.75 : 0.05, y, 0.15, 0.15);
+		gr.DrawImageFromFile (Defines.DATA_DIR + "math-games.svg", rtl ? 0.75 : 0.05, y, image_size, image_size);
 		gr.DrawStringWithWrapping (rtl ? 0.05 : 0.23, y + 0.01, 
-			Catalog.GetString ("Mental calculation. Based on arithmetical operations that test your mental calculation abilities."),
+			Catalog.GetString ("Mental calculation. Arithmetical operations that test your mental calculation abilities."),
 			rtl ? 0.65 : -1);
 
 		y += space;
-		gr.DrawImageFromFile (Defines.DATA_DIR + "memory-games.svg", rtl ? 0.75 : 0.05, y, 0.15, 0.15);
+		gr.DrawImageFromFile (Defines.DATA_DIR + "memory-games.svg", rtl ? 0.75 : 0.05, y, image_size, image_size);
 		gr.DrawStringWithWrapping (rtl ? 0.05 : 0.23, y + 0.01, 
-			Catalog.GetString ("Memory trainers. To prove and enhance your short term memory."),
+			Catalog.GetString ("Memory trainers. To prove your short term memory."),
 			rtl ? 0.65 : -1);
 
-		gr.DrawStringWithWrapping (0.05, y + 0.2,  Catalog.GetString ("Use the Settings to adjust the difficulty level of the game."));
+		y += space;
+		gr.DrawImageFromFile (Defines.DATA_DIR + "verbal-games.svg", rtl ? 0.75 : 0.05, y, image_size, image_size);
+		gr.DrawStringWithWrapping (rtl ? 0.05 : 0.23, y + 0.01, 
+			Catalog.GetString ("Verbal analogies. Challenge your verbal aptitude."),
+			rtl ? 0.65 : -1);
+
+		gr.DrawStringWithWrapping (0.05, y + 0.17,  Catalog.GetString ("Use the Settings to adjust the difficulty level of the game."));
 		gr.Stroke ();
 	}
 
@@ -162,8 +167,9 @@ public class GameDrawingArea : DrawingArea
 
 	private void DrawGraphicBar (CairoContextEx gr, double x, double y)
 	{
-		const double area_w = 0.8, area_h = 0.28;
+		const double area_w = 0.9, area_h = 0.28;
 		const double bar_w = 0.05, bar_h = area_h - 0.02;
+		const double space_x = 0.09;
 		
 		gr.LineWidth = 0.005;
 
@@ -173,21 +179,25 @@ public class GameDrawingArea : DrawingArea
 		gr.LineTo (x + area_w, y + area_h);
 		gr.Stroke ();
 
-		x = x + 0.1;
+		x = x + space_x;
 		DrawBar (gr, x, y + area_h, bar_w, bar_h, session.TotalScore);
 		gr.DrawTextCentered (x + bar_w / 2, y + area_h + 0.03, Catalog.GetString ("Total"));
 
-		x = x + 0.2;
+		x = x + space_x * 2;
 		DrawBar (gr, x, y + area_h, bar_w, bar_h, session.LogicScore);
 		gr.DrawTextCentered (x + bar_w / 2, y + area_h + 0.03, 	Catalog.GetString ("Logic")); 
 
-		x = x + 0.2;
+		x = x + space_x * 2;
 		DrawBar (gr, x, y + area_h, bar_w, bar_h, session.MathScore);
 		gr.DrawTextCentered (x + bar_w / 2, y + area_h + 0.03, Catalog.GetString ("Calculation"));
 
-		x = x + 0.2;
+		x = x + space_x * 2;
 		DrawBar (gr, x, y + area_h, bar_w, bar_h, session.MemoryScore);
 		gr.DrawTextCentered (x + bar_w / 2, y + area_h + 0.03, Catalog.GetString ("Memory"));
+
+		x = x + space_x * 2;
+		DrawBar (gr, x, y + area_h, bar_w, bar_h, session.VerbalScore);
+		gr.DrawTextCentered (x + bar_w / 2, y + area_h + 0.03, Catalog.GetString ("Verbal"));
 	}
 
 	private void DrawScores (CairoContextEx gr, int area_width, int area_height)
@@ -231,7 +241,7 @@ public class GameDrawingArea : DrawingArea
 		gr.ShowPangoText (String.Format (Catalog.GetString ("Time played {0} (average per game {1})"), session.GameTime, session.TimePerGame));
 		
 		y += 0.1;
-		DrawGraphicBar (gr, x + 0.05, y);
+		DrawGraphicBar (gr, x, y);
 		y += 0.4;
 
 		gr.MoveTo (x, y);

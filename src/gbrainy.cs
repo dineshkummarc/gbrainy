@@ -55,7 +55,7 @@ public class gbrainy: Program
 	[Glade.Widget] Gtk.MenuItem newgame_menuitem;
 	GameDrawingArea drawing_area;
 	GameSession session;
-	ToolButton all_tbbutton, logic_tbbutton, calculation_tbbutton, memory_tbbutton, pause_tbbutton, finish_tbbutton;
+	ToolButton all_tbbutton, logic_tbbutton, calculation_tbbutton, memory_tbbutton, verbal_tbbutton, pause_tbbutton, finish_tbbutton;
 	TextTag tag_green;
 	bool low_res;
 	bool full_screen;
@@ -75,6 +75,7 @@ public class gbrainy: Program
                 AddIcon (icon_factory, "logic-games", "logic-games-32.png");
 		AddIcon (icon_factory, "math-games", "math-games-32.png");
 		AddIcon (icon_factory, "memory-games", "memory-games-32.png");
+		AddIcon (icon_factory, "verbal-games", "verbal-games-32.png");
 		AddIcon (icon_factory, "pause", "pause-32.png");
 		AddIcon (icon_factory, "resume", "resume-32.png");
 		AddIcon (icon_factory, "endgame", "endgame-32.png");
@@ -85,6 +86,7 @@ public class gbrainy: Program
 		gXML.Autoconnect (this);
 
 		toolbar.IconSize = Gtk.IconSize.Dnd;
+		toolbar.ShowArrow = false;
 	
 		Tooltips tooltips = new Tooltips ();
 		all_tbbutton = new ToolButton ("allgames");
@@ -110,6 +112,12 @@ public class gbrainy: Program
 		memory_tbbutton.SetTooltip (tooltips, Catalog.GetString ("Play games that challenge your short term memory"), null);
 		memory_tbbutton.Clicked += OnMemoryOnly;
 		toolbar.Insert (memory_tbbutton, -1);
+
+		verbal_tbbutton = new ToolButton ("verbal-games");
+		verbal_tbbutton.Label = Catalog.GetString ("Verbal");
+		verbal_tbbutton.SetTooltip (tooltips, Catalog.GetString ("Play games that challenge your verbal aptitude"), null);
+		verbal_tbbutton.Clicked += OnVerbalOnly;
+		toolbar.Insert (verbal_tbbutton, -1);
 
 		pause_tbbutton = new ToolButton ("pause");
 		pause_tbbutton.Label = Catalog.GetString ("Pause");
@@ -247,7 +255,7 @@ public class gbrainy: Program
 
 		answer = entry = next = tip = active;
 
-		if (active == true && session.CurrentGame != null && session.CurrentGame.ButtonsActive == true && session.CurrentGame.Tip != string.Empty)
+		if (active == true && session.CurrentGame != null && session.CurrentGame.ButtonsActive == true && String.IsNullOrEmpty (session.CurrentGame.Tip ) == false)
 			tip = true;
 		else
 			tip = false;
@@ -418,6 +426,13 @@ public class gbrainy: Program
 	void OnMathOnly (object sender, EventArgs args)
 	{
 		session.Type = GameSession.Types.CalculationTrainers;
+		OnNewGame ();
+	}
+
+
+	void OnVerbalOnly (object sender, EventArgs args)
+	{
+		session.Type = GameSession.Types.VerbalAnalogies;
 		OnNewGame ();
 	}
 

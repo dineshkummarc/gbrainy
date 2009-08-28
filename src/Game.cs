@@ -27,7 +27,8 @@ abstract public class Game
 		None			= 0,
 		LogicPuzzle		= 2,
 		MemoryTrainer		= 4,
-		MathTrainer		= 8
+		MathTrainer		= 8,
+		VerbalAnalogy		= 16,
 	}
 
 	public enum Difficulty

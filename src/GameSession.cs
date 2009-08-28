@@ -31,7 +31,8 @@ public class GameSession
 		LogicPuzzles		= 2,
 		MemoryTrainers		= 4,
 		CalculationTrainers	= 8,
-		Custom			= 16,
+		VerbalAnalogies		= 16,
+		Custom			= 32,
 		TrainersOnly		= MemoryTrainers | CalculationTrainers,
 		AllGames		= MemoryTrainers | CalculationTrainers | LogicPuzzles
 	}
@@ -42,6 +43,7 @@ public class GameSession
 		LogicPuzzles,
 		MemoryTrainers,
 		CalculationTrainers,
+		VerbalAnalogies,
 		Last			
 	}
 
@@ -180,16 +182,13 @@ public class GameSession
 		}
 	}
 
-	public int LogicGamesPlayed {
-		get { return games [(int) ScoresType.LogicPuzzles]; }
-	}
-
-	public int MemoryGamesPlayed {
-		get { return games [(int) ScoresType.MemoryTrainers]; }
-	}
-
-	public int MathGamesPlayed {
-		get { return games [(int) ScoresType.CalculationTrainers]; }
+	public int VerbalScore {
+		get {
+			if (games [(int) ScoresType.VerbalAnalogies] == 0)
+				return 0;
+			
+			return scores [(int) ScoresType.VerbalAnalogies] * 10 / games [(int) ScoresType.VerbalAnalogies];
+		}
 	}
 
 	public string TimePlayed {
@@ -295,6 +294,12 @@ public class GameSession
 		case Game.Types.MathTrainer:
 			scores [(int) ScoresType.CalculationTrainers] += current_game.Score;
 			games [(int) ScoresType.CalculationTrainers]++;
+			break;
+		case Game.Types.VerbalAnalogy:
+			scores [(int) ScoresType.VerbalAnalogies] += current_game.Score;
+			games [(int) ScoresType.VerbalAnalogies]++;
+			break;
+		default:
 			break;
 		}
 		

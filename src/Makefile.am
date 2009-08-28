@@ -74,6 +74,7 @@ GBRAINY_CSDISTFILES =				\
 	$(srcdir)/CalculationGames/CalculationPrimes.cs	\
 	$(srcdir)/MemoryGames/MemoryFacts.cs		\
 	$(srcdir)/PuzzleGames/PuzzleCounting.cs	\
+	$(srcdir)/VerbalAnalogies.cs	\
 	$(srcdir)/SimpleLabel.cs	\
 	$(srcdir)/gbrainy.cs			
 
@@ -93,6 +94,8 @@ RESOURCES =										\
 -resource:$(top_srcdir)/data/app-graphics/logic-games-32.png  \
 -resource:$(top_srcdir)/data/app-graphics/math-games-32.png  \
 -resource:$(top_srcdir)/data/app-graphics/memory-games-32.png  \
+-resource:$(top_srcdir)/data/app-graphics/verbal-games.svg  \
+-resource:$(top_srcdir)/data/app-graphics/verbal-games-32.png  \
 -resource:$(top_srcdir)/data/app-graphics/gbrainy.svg  \
 -resource:$(top_srcdir)/data/game-graphics/present.svg  \
 -resource:$(top_srcdir)/data/game-graphics/handshake.svg  \

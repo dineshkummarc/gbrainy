@@ -20,7 +20,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using Mono.Posix;
+using Mono.Unix;
 
 #if MONO_ADDINS
 using Mono.Addins;
@@ -97,6 +97,11 @@ public class GameManager
 		typeof (MemoryFacts),
 	};
 
+	static Type[] VerbalAnalogiesInternal = new Type[] 
+	{
+		typeof (VerbalAnalogies),
+	};
+
 	bool once;
 	GameSession.Types game_type;
 	ArrayListIndicesRandom list;
@@ -106,6 +111,7 @@ public class GameManager
 	List <Type> LogicPuzzles;
 	List <Type> CalculationTrainers;
 	List <Type> MemoryTrainers;
+	List <Type> VerbalAnalogies;
 	
 	public GameManager ()
 	{
@@ -115,13 +121,14 @@ public class GameManager
 		LogicPuzzles = new List <Type> (LogicPuzzlesInternal);
 		CalculationTrainers = new List <Type> (CalculationTrainersInternal);
 		MemoryTrainers = new List <Type> (MemoryTrainersInternal);
+		VerbalAnalogies = new List <Type> (VerbalAnalogiesInternal);
 		LoadPlugins ();
 
 		if (once == false) {
 			once = true;
-			Console.WriteLine ("Games registered: {0}: {1} logic puzzles, {2} math trainers, {3} memory trainers", 
-				LogicPuzzles.Count + CalculationTrainers.Count + MemoryTrainers.Count,
-				LogicPuzzles.Count, CalculationTrainers.Count, MemoryTrainers.Count);
+			Console.WriteLine (Catalog.GetString ("Games registered: {0}: {1} logic puzzles, {2} math trainers, {3} memory trainers, {4} verbal analogies"), 
+				LogicPuzzles.Count + CalculationTrainers.Count + MemoryTrainers.Count + VerbalAnalogies.Count,
+				LogicPuzzles.Count, CalculationTrainers.Count, MemoryTrainers.Count, VerbalAnalogies.Count);
 		}
 		//GeneratePDF ();
 	}
@@ -150,7 +157,7 @@ public class GameManager
 	// Used from CustomGameDialog only
 	public Type[] CustomGames {
 		get { 
-			Type[] list = new Type [LogicPuzzles.Count + CalculationTrainers.Count + MemoryTrainers.Count];
+			Type[] list = new Type [LogicPuzzles.Count + CalculationTrainers.Count + MemoryTrainers.Count + VerbalAnalogies.Count];
 			int idx = 0;
 
 			for (int i = 0; i < LogicPuzzles.Count; i++, idx++)
@@ -161,6 +168,9 @@ public class GameManager
 
 			for (int i = 0; i < MemoryTrainers.Count; i++, idx++)
 				list[idx] = MemoryTrainers [i];
+
+			for (int i = 0; i < VerbalAnalogies.Count; i++, idx++)
+				list[idx] = VerbalAnalogies [i];
 
 			return list;
 		}
@@ -208,6 +218,13 @@ public class GameManager
 				Console.WriteLine ("Loading external calculation game: {0}", game);
 				CalculationTrainers.Add (game.GetType ());
 			}
+
+			addins = AddinManager.GetExtensionNodes ("/gbrainy/games/verbal");
+			foreach (TypeExtensionNode node in addins) {
+				game = (Game) node.CreateInstance ();
+				Console.WriteLine ("Loading external verbal analogy game: {0}", game);
+				VerbalAnalogies.Add (game.GetType ());
+			}
 		}
 		catch (Exception e)
 		{
@@ -225,20 +242,22 @@ public class GameManager
 		games.Clear ();
 		Random random = new Random ();
 
-		// For all games, 1/3 of the total are logic, 1/3 Memory, 1/3 calculation
+		// For all games, 1/4 of the total are logic, 1/4 Memory, 1/4 calculation, 1/4 verbal analogies
 		if ((game_type & GameSession.Types.AllGames) == GameSession.Types.AllGames) {
 			
-			int idx_cal = 0, idx_mem = 0;
+			int idx_cal = 0, idx_mem = 0, idx_verb = 0;
 			ArrayListIndicesRandom idx_logic = new ArrayListIndicesRandom (LogicPuzzles.Count);
 			ArrayListIndicesRandom idx_memory = new ArrayListIndicesRandom (MemoryTrainers.Count);
 			ArrayListIndicesRandom idx_calculation = new ArrayListIndicesRandom (CalculationTrainers.Count);
+			ArrayListIndicesRandom idx_verbal = new ArrayListIndicesRandom (VerbalAnalogies.Count);
 
 			games.Clear ();
 			idx_memory.Initialize ();
 			idx_logic.Initialize ();
 			idx_calculation.Initialize ();
+			idx_verbal.Initialize ();
 
-			for (int i = 0; i < LogicPuzzles.Count; i++, idx_mem++, idx_cal++) {
+			for (int i = 0; i < LogicPuzzles.Count; i++, idx_mem++, idx_cal++, idx_verb++) {
 
 				if (idx_cal == CalculationTrainers.Count) {
 					idx_cal = 0;
@@ -250,19 +269,27 @@ public class GameManager
 					idx_memory.Initialize ();
 				}
 
+				if (idx_verb == VerbalAnalogies.Count) {
+					idx_verb = 0;
+					idx_verbal.Initialize ();
+				}
+
 				switch (random.Next (3)) {
 				case 0:
 					games.Add (CalculationTrainers [idx_calculation[idx_cal]]);
 					games.Add (LogicPuzzles [idx_logic[i]]);
 					games.Add (MemoryTrainers [idx_memory[idx_mem]]);
+					games.Add (VerbalAnalogies [idx_verbal[idx_verb]]);
 					break;
 				case 1:
 					games.Add (MemoryTrainers [idx_memory[idx_mem]]);
 					games.Add (CalculationTrainers [idx_calculation[idx_cal]]);
+					games.Add (VerbalAnalogies [idx_verbal[idx_verb]]);
 					games.Add (LogicPuzzles [idx_logic[i]]);
 					break;
 				case 2:
 					games.Add (CalculationTrainers [idx_calculation[idx_cal]]);
+					games.Add (VerbalAnalogies [idx_verbal[idx_verb]]);
 					games.Add (MemoryTrainers [idx_memory[idx_mem]]);
 					games.Add (LogicPuzzles [idx_logic[i]]);
 					break;
@@ -284,6 +311,12 @@ public class GameManager
 				for (int i = 0; i < MemoryTrainers.Count; i++)
 					games.Add (MemoryTrainers [i]);
 			}
+
+			if ((game_type & GameSession.Types.VerbalAnalogies) == GameSession.Types.VerbalAnalogies) {
+				for (int i = 0; i < VerbalAnalogies.Count; i++)
+					games.Add (VerbalAnalogies [i]);
+			}
+
 		}
 
 		list = new ArrayListIndicesRandom (games.Count);
