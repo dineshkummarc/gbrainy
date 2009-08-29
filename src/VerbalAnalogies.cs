@@ -139,19 +139,20 @@ public class VerbalAnalogies : Game
 
 			ArrayListIndicesRandom indices;
 			string [] answers;
+			int new_right = 0;
 
 			indices = new ArrayListIndicesRandom (analogy.answers.Length);
 			answers = new string [analogy.answers.Length];
 
 			indices.Initialize ();
-	
+
 			for (int i = 0; i < indices.Count; i++)
 			{
 				answers [i] = analogy.answers [indices[i]];
 				if (indices[i] == analogy.right)
-					analogy.right = i;
+					new_right = i;
 			}
-
+			analogy.right = new_right;
 			analogy.answers = answers;
 		}
 		
@@ -256,7 +257,7 @@ public class VerbalAnalogies : Game
 		gr.SetPangoLargeFontSize ();
 
 		gr.MoveTo (0.1, y);
-		gr.ShowPangoText (Catalog.GetString ("Possible answers"));
+		gr.ShowPangoText (Catalog.GetString ("Possible answers are:"));
 		y += 0.12;
 
 		x += 0.1;
