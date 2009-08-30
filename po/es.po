@@ -4,14 +4,14 @@
 #
 # (c) 2007 Santiago Martinez Varela, 2007.
 # Eduardo Retamales <eretamales@gnome.cl>, 2007, 2008.
-# Jorge González <jorgegonz@svn.gnome.org>, 2007, 200, 2009.
+# Jorge González <jorgegonz@svn.gnome.org>, 2007, 2008, 2009.
 msgid ""
 msgstr ""
 "Project-Id-Version: gbrainy.HEAD\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=gbrainy&component=general\n"
-"POT-Creation-Date: 2009-04-04 14:23+0000\n"
-"PO-Revision-Date: 2009-04-05 18:57+0200\n"
+"POT-Creation-Date: 2009-08-29 11:13+0000\n"
+"PO-Revision-Date: 2009-08-30 11:26+0200\n"
 "Last-Translator: Jorge González <jorgegonz@svn.gnome.org>\n"
 "Language-Team: Español <gnome-es-list@gnome.org>\n"
 "MIME-Version: 1.0\n"
@@ -247,35 +247,35 @@ msgid "white"
 msgstr "blanco"
 
 #. Define columns
-#: ../src/Dialogs/CustomGameDialog.cs:54
+#: ../src/Dialogs/CustomGameDialog.cs:55
 msgid "Game Name"
 msgstr "Nombre del juego"
 
-#: ../src/Dialogs/CustomGameDialog.cs:60
+#: ../src/Dialogs/CustomGameDialog.cs:61
 msgid "Type"
 msgstr "Tipo"
 
-#: ../src/Dialogs/CustomGameDialog.cs:67
+#: ../src/Dialogs/CustomGameDialog.cs:68
 msgid "Enabled"
 msgstr "Activado"
 
-#: ../src/Dialogs/CustomGameDialog.cs:85 ../src/GameDrawingArea.cs:185
-#: ../src/gbrainy.cs:111 ../src/gbrainy.glade.h:11
+#: ../src/Dialogs/CustomGameDialog.cs:86 ../src/GameDrawingArea.cs:188
+#: ../src/gbrainy.cs:100 ../src/gbrainy.glade.h:11
 #: ../src/Dialogs/PlayerHistoryDialog.cs:101
 msgid "Logic"
 msgstr "Lógica"
 
-#: ../src/Dialogs/CustomGameDialog.cs:88 ../src/GameDrawingArea.cs:193
-#: ../src/gbrainy.cs:122 ../src/gbrainy.glade.h:16
+#: ../src/Dialogs/CustomGameDialog.cs:89 ../src/GameDrawingArea.cs:196
+#: ../src/gbrainy.cs:111 ../src/gbrainy.glade.h:16
 #: ../src/Dialogs/PlayerHistoryDialog.cs:111
 msgid "Memory"
 msgstr "Memoria"
 
-#: ../src/Dialogs/CustomGameDialog.cs:91
+#: ../src/Dialogs/CustomGameDialog.cs:92
 msgid "Mental Calculation"
 msgstr "Cálculo mental"
 
-#: ../src/Game.cs:68
+#: ../src/Game.cs:69
 #, csharp-format
 msgid "The correct answer is {0}."
 msgstr "La respuesta correcta es {0}."
@@ -287,153 +287,166 @@ msgstr "La respuesta correcta es {0}."
 #. For languages represented with the Latin alphabet use
 #. the same than English
 #. First possible answer for a serie (e.g.: Figure A)
-#: ../src/Game.cs:238
+#: ../src/Game.cs:239
 msgid "A"
 msgstr "A"
 
 #. Second possible answer for a serie
-#: ../src/Game.cs:240
+#: ../src/Game.cs:241
 msgid "B"
 msgstr "B"
 
 #. Third possible answer for a serie
-#: ../src/Game.cs:242
+#: ../src/Game.cs:243
 msgid "C"
 msgstr "C"
 
 #. Fourth possible answer for a serie
-#: ../src/Game.cs:244
+#: ../src/Game.cs:245
 msgid "D"
 msgstr "D"
 
 #. Fifth possible answer for a serie
-#: ../src/Game.cs:246
+#: ../src/Game.cs:247
 msgid "E"
 msgstr "E"
 
 #. Sixth possible answer for a serie
-#: ../src/Game.cs:248
+#: ../src/Game.cs:249
 msgid "F"
 msgstr "F"
 
 #. Seventh possible answer for a serie
-#: ../src/Game.cs:250
+#: ../src/Game.cs:251
 msgid "G"
 msgstr "G"
 
 #. Eighth possible answer for a serie
-#: ../src/Game.cs:252
+#: ../src/Game.cs:253
 msgid "H"
 msgstr "H"
 
-#: ../src/Game.cs:260
+#: ../src/Game.cs:261
 #, csharp-format
 msgid "Figure {0}"
 msgstr "Figura {0}"
 
-#: ../src/GameDrawingArea.cs:115
+#: ../src/GameDrawingArea.cs:113
 #, csharp-format
 msgid "Welcome to gbrainy {0}"
 msgstr "Bienvenido a gbrainy {0}"
 
-#: ../src/GameDrawingArea.cs:118
+#: ../src/GameDrawingArea.cs:116
 msgid ""
 "gbrainy is a brain teaser game and trainer to have fun and to keep your "
 "brain trained. It includes:"
 msgstr "gbrainy es un juego para divertirse y entrenar el cerebro. Incluye:"
 
-#: ../src/GameDrawingArea.cs:124
-msgid ""
-"Logic puzzles. Designed to challenge your reasoning and thinking skills."
+#: ../src/GameDrawingArea.cs:121
+#| msgid ""
+#| "Logic puzzles. Designed to challenge your reasoning and thinking skills."
+msgid "Logic puzzles. Challenge your reasoning and thinking skills."
 msgstr ""
 "Puzles lógicos. Diseñados para desafiar tus capacidades de razonamiento y "
 "pensamiento."
 
-#: ../src/GameDrawingArea.cs:131
+#: ../src/GameDrawingArea.cs:127
+#| msgid ""
+#| "Mental calculation. Based on arithmetical operations that test your "
+#| "mental calculation abilities."
 msgid ""
-"Mental calculation. Based on arithmetical operations that test your mental "
+"Mental calculation. Arithmetical operations that test your mental "
 "calculation abilities."
 msgstr ""
-"Cálculo mental. Basados en operaciones aritméticas que prueban tus "
-"habilidades de cálculo mental."
+"Cálculo mental. Operaciones aritméticas que prueban tus habilidades de "
+"cálculo mental."
 
-#: ../src/GameDrawingArea.cs:137
-msgid "Memory trainers. To prove and enhance your short term memory."
+#: ../src/GameDrawingArea.cs:133
+#| msgid "Memory trainers. To prove and enhance your short term memory."
+msgid "Memory trainers. To prove your short term memory."
 msgstr ""
 "Entrenadores de memoria. Para probar y mejorar tu memoria a corto plazo."
 
-#: ../src/GameDrawingArea.cs:140 ../src/GameDrawingArea.cs:401
+#: ../src/GameDrawingArea.cs:139
+msgid "Verbal analogies. Challenge your verbal aptitude."
+msgstr "Analogías verbales. Desafía tu aptitud verbal."
+
+#: ../src/GameDrawingArea.cs:142 ../src/GameDrawingArea.cs:408
 msgid "Use the Settings to adjust the difficulty level of the game."
 msgstr "Usar las Preferencias para ajustar el nivel de dificultad del juego."
 
-#: ../src/GameDrawingArea.cs:181 ../src/gbrainy.glade.h:27
+#: ../src/GameDrawingArea.cs:184 ../src/gbrainy.glade.h:27
 #: ../src/Dialogs/PlayerHistoryDialog.cs:92
 msgid "Total"
 msgstr "Total"
 
-#: ../src/GameDrawingArea.cs:189 ../src/gbrainy.cs:116
+#: ../src/GameDrawingArea.cs:192 ../src/gbrainy.cs:105
 #: ../src/gbrainy.glade.h:6 ../src/Dialogs/PlayerHistoryDialog.cs:120
 msgid "Calculation"
 msgstr "Cálculo"
 
-#: ../src/GameDrawingArea.cs:207
+#: ../src/GameDrawingArea.cs:200 ../src/gbrainy.cs:117
+msgid "Verbal"
+msgstr "Verbal"
+
+#: ../src/GameDrawingArea.cs:214
 msgid "Score"
 msgstr "Puntuación"
 
-#: ../src/GameDrawingArea.cs:215
+#: ../src/GameDrawingArea.cs:222
 #, csharp-format
 msgid "Outstanding results"
 msgstr "Resultados asombrosos"
 
-#: ../src/GameDrawingArea.cs:217
+#: ../src/GameDrawingArea.cs:224
 #, csharp-format
 msgid "Excellent results"
 msgstr "Resultados excelentes"
 
-#: ../src/GameDrawingArea.cs:219
+#: ../src/GameDrawingArea.cs:226
 #, csharp-format
 msgid "Good results"
 msgstr "Buenos resultados"
 
-#: ../src/GameDrawingArea.cs:221
+#: ../src/GameDrawingArea.cs:228
 #, csharp-format
 msgid "Poor results"
 msgstr "Resultados pobres"
 
-#: ../src/GameDrawingArea.cs:222
+#: ../src/GameDrawingArea.cs:229
 #, csharp-format
 msgid "Disappointing results"
 msgstr "Resultados decepcionantes"
 
-#: ../src/GameDrawingArea.cs:228
+#: ../src/GameDrawingArea.cs:235
 #, csharp-format
 msgid "Games won: {0} ({1} played)"
 msgstr "Partidos ganados: {0} ({1} jugadas)"
 
-#: ../src/GameDrawingArea.cs:230
+#: ../src/GameDrawingArea.cs:237
 #, csharp-format
 msgid "{0}. Games won: {1} ({2} played)"
 msgstr "{0}. Partidas ganadas: {1} ({2} jugadas)"
 
-#: ../src/GameDrawingArea.cs:234
+#: ../src/GameDrawingArea.cs:241
 #, csharp-format
 msgid "Time played {0} (average per game {1})"
 msgstr "Tiempo jugado {0} (media por partida {1})"
 
-#: ../src/GameDrawingArea.cs:241
+#: ../src/GameDrawingArea.cs:248
 msgid "Tips for your next games"
 msgstr "Consejos para tus siguientes partidas"
 
-#: ../src/GameDrawingArea.cs:345
+#: ../src/GameDrawingArea.cs:352
 msgid "Get ready to memorize the next objects..."
 msgstr "Prepárate para memorizar los siguientes objetos…"
 
-#: ../src/GameDrawingArea.cs:385
+#: ../src/GameDrawingArea.cs:392
 msgid "Read the instructions carefully and identify the data and given clues."
 msgstr ""
 "Lee las instrucciones cuidadosamente e identifica dos datos y pistas dadas."
 
-#: ../src/GameDrawingArea.cs:387
+#: ../src/GameDrawingArea.cs:394
 msgid ""
 "To score the player gbrainy uses the time and tips needed to complete each "
 "game."
@@ -441,22 +454,22 @@ msgstr ""
 "gbrainy usa el tiempo y los consejos necesitados para completar cada juego "
 "para puntuar al jugador."
 
-#: ../src/GameDrawingArea.cs:389
+#: ../src/GameDrawingArea.cs:396
 msgid ""
 "In logic games, elements that may seem irrelevant can be very important."
 msgstr ""
 "En los juegos de lógica, los elementos que pueden parecer irrelevantes "
 "pueden ser muy importantes."
 
-#: ../src/GameDrawingArea.cs:391
+#: ../src/GameDrawingArea.cs:398
 msgid "Break the mental blocks and look into the boundaries of problems."
 msgstr "Rompe los bloqueos mentales y mira los límites de los problemas."
 
-#: ../src/GameDrawingArea.cs:393
+#: ../src/GameDrawingArea.cs:400
 msgid "Enjoy making mistakes, they are part of the learning process."
 msgstr "Diviértete cometiendo errores, son parte del proceso de aprendizaje."
 
-#: ../src/GameDrawingArea.cs:395
+#: ../src/GameDrawingArea.cs:402
 msgid ""
 "Do all the problems, even the difficult ones. Improvement comes from "
 "practising."
@@ -464,12 +477,12 @@ msgstr ""
 "Haz todos los problemas, incluso los difíciles. La mejora llega a través de "
 "la práctica."
 
-#: ../src/GameDrawingArea.cs:397
+#: ../src/GameDrawingArea.cs:404
 msgid "Play on a daily basis, you will notice progress soon."
 msgstr "Juega diariamente, notarás pronto el progreso."
 
 #. Translators: Custom Game Selection is a menu option
-#: ../src/GameDrawingArea.cs:399
+#: ../src/GameDrawingArea.cs:406
 msgid ""
 "Use the 'Custom Game Selection' to choose exactly which games you want to "
 "play."
@@ -477,90 +490,104 @@ msgstr ""
 "Usa «Selección de juego personalizado» para elegir exactamente a qué juegos "
 "quieres jugar."
 
-#: ../src/GameDrawingArea.cs:403
+#: ../src/GameDrawingArea.cs:410
 msgid "Association of elements is a common technique for remembering things."
 msgstr "La asociación de elementos es una técnica común para recordar cosas."
 
-#: ../src/GameDrawingArea.cs:405
+#: ../src/GameDrawingArea.cs:412
 msgid ""
 "Grouping elements into categories is a common technique for remembering "
 "things."
 msgstr ""
 "Agrupar elementos en categorías es una técnica común para recordar cosas."
 
-#: ../src/GameSession.cs:223
+#: ../src/GameManager.cs:129
+#, csharp-format
+msgid ""
+"Games registered: {0}: {1} logic puzzles, {2} math trainers, {3} memory "
+"trainers, {4} verbal analogies"
+msgstr ""
+"Juegos registrados: {0}: {1} puzles lógicos, {2} entrenadores matemáticos, "
+"{3} entrenadores de memoria, {4} analogías verbales"
+
+#: ../src/GameSession.cs:215
 #, csharp-format
 msgid "Games played: {0} ({1}% score)"
 msgstr "Partidas jugadas: {0} (puntuación {1}%)"
 
-#: ../src/GameSession.cs:224
+#: ../src/GameSession.cs:216
 #, csharp-format
 msgid " - Time: {0}"
 msgstr " - Tiempo: {0}"
 
-#: ../src/GameSession.cs:227
+#: ../src/GameSession.cs:219
 #, csharp-format
 msgid "- Game: {0}"
 msgstr " - Juego: {0}"
 
-#: ../src/GameSession.cs:279
+#: ../src/GameSession.cs:271
 msgid "Paused"
 msgstr "Pausado"
 
-#: ../src/gbrainy.cs:104
+#: ../src/gbrainy.cs:93
 msgid "Play all the games"
 msgstr "Jugar a todos los juegos"
 
-#: ../src/gbrainy.cs:105
+#: ../src/gbrainy.cs:94
 msgid "All"
 msgstr "Todo"
 
-#: ../src/gbrainy.cs:110
+#: ../src/gbrainy.cs:99
 msgid "Play games that challenge your reasoning and thinking"
 msgstr "Jugar a los juegos que desafíen mi razonamiento y pensamiento"
 
-#: ../src/gbrainy.cs:117
+#: ../src/gbrainy.cs:106
 msgid "Play games that challenge your mental calculation skills"
 msgstr "Jugar a los juegos que desafíen mis capacidades de cálculo mental"
 
-#: ../src/gbrainy.cs:123
+#: ../src/gbrainy.cs:112
 msgid "Play games that challenge your short term memory"
 msgstr "Jugar a los juegos que desafíen mi memoria a corto plazo"
 
-#: ../src/gbrainy.cs:128 ../src/gbrainy.cs:541
+#: ../src/gbrainy.cs:118
+#| msgid "Play games that challenge your reasoning and thinking"
+msgid "Play games that challenge your verbal aptitude"
+msgstr "Jugar a los juegos que desafíen mi aptitud verbal"
+
+#: ../src/gbrainy.cs:123 ../src/gbrainy.cs:534
 msgid "Pause"
 msgstr "Pausar"
 
-#: ../src/gbrainy.cs:129
+#: ../src/gbrainy.cs:124
 msgid "Pause or resume the game"
 msgstr "Pausar o resumir el juego"
 
-#: ../src/gbrainy.cs:134
+#: ../src/gbrainy.cs:129
 msgid "End the game and show score"
 msgstr "Terminar el juego y mostrar la puntuación"
 
-#: ../src/gbrainy.cs:135
+#: ../src/gbrainy.cs:130
 msgid "Finish"
 msgstr "Terminar"
 
-#: ../src/gbrainy.cs:160
+#: ../src/gbrainy.cs:163
 msgid "Extensions"
 msgstr "Extensiones"
 
-#: ../src/gbrainy.cs:164
+#: ../src/gbrainy.cs:167
 msgid "Develop your own puzzles"
 msgstr "Desarrolle sus propios puzles"
 
-#: ../src/gbrainy.cs:376
+#: ../src/gbrainy.cs:370
 msgid "Congratulations."
 msgstr "Enhorabuena."
 
-#: ../src/gbrainy.cs:378
+#: ../src/gbrainy.cs:372
 msgid "Incorrect answer."
 msgstr "Respuesta incorrecta."
 
 #
-#: ../src/gbrainy.cs:436
+#: ../src/gbrainy.cs:422
 msgid ""
 "Once you have an answer type it in the \"Answer:\" entry box and press the "
 "\"OK\" button."
@@ -568,7 +595,7 @@ msgstr ""
 "Una vez que tengas la respuesta escríbela en «Respuesta:» y pulsa el botón "
 "«Aceptar»."
 
-#: ../src/gbrainy.cs:546
+#: ../src/gbrainy.cs:539
 msgid "Resume"
 msgstr "Reanudar"
 
@@ -719,12 +746,12 @@ msgid "How many {0} dots were in the previous image? Answer using numbers."
 msgstr ""
 "¿Cuántos puntos {0} había en la imagen anterior? Responde usando números."
 
-#: ../src/MemoryGames/MemoryFacts.cs:48
+#: ../src/MemoryGames/MemoryFacts.cs:47
 msgid "Memorize facts"
 msgstr "Memoriza hechos"
 
 #. Translators: {0} is replaced by a number, {1} by a year (like 1940)
-#: ../src/MemoryGames/MemoryFacts.cs:103
+#: ../src/MemoryGames/MemoryFacts.cs:102
 #, csharp-format
 msgid ""
 "Shiny Cars had already announced a {0} days production halt next month, but "
@@ -733,16 +760,16 @@ msgstr ""
 "Coches Brillantes anunció un parón de la producción de {0} días el mes que "
 "viene, pero antes de ello no había parado la producción desde {1}."
 
-#: ../src/MemoryGames/MemoryFacts.cs:105
+#: ../src/MemoryGames/MemoryFacts.cs:104
 msgid "For how many days did Shiny Cars halt its production?"
 msgstr "¿Cuántos días paró la producción Coches Brillantes?"
 
-#: ../src/MemoryGames/MemoryFacts.cs:106
+#: ../src/MemoryGames/MemoryFacts.cs:105
 msgid "In what year did Shiny Cars last halt its production?"
 msgstr "En qué año paró la producción Coches Brillantes?"
 
 #. Translators: {0} is replaced by a number, {1} by a year (like 1940)
-#: ../src/MemoryGames/MemoryFacts.cs:114
+#: ../src/MemoryGames/MemoryFacts.cs:113
 #, csharp-format
 msgid ""
 "Shiny Cars sales fell {0}% this past December, the worse decline since {1}."
@@ -750,11 +777,11 @@ msgstr ""
 "Las ventas de Coches Brillantes cayeron un {0}% el pasado diciembre, la peor "
 "caída desde {1}."
 
-#: ../src/MemoryGames/MemoryFacts.cs:116
+#: ../src/MemoryGames/MemoryFacts.cs:115
 msgid "By how much did company sales fall last December?"
 msgstr "¿Cuánto cayeron las ventas de la empresa el pasado diciembre?"
 
-#: ../src/MemoryGames/MemoryFacts.cs:117
+#: ../src/MemoryGames/MemoryFacts.cs:116
 msgid ""
 "In what year did Shiny Cars record a sales total lower than that of last "
 "December?"
@@ -762,21 +789,21 @@ msgstr ""
 "¿En qué año las ventas totales de Coches Brillantes fueron peores que el "
 "pasado diciembre?"
 
-#: ../src/MemoryGames/MemoryFacts.cs:122
+#: ../src/MemoryGames/MemoryFacts.cs:121
 #, csharp-format
 msgid "About {0}% of Shiny Cars produced worldwide are sold in Europe"
 msgstr ""
 "Cerca del {0}% de los coches producidos en el mundo por Coches Brillantes se "
 "venden en Europa"
 
-#: ../src/MemoryGames/MemoryFacts.cs:124
+#: ../src/MemoryGames/MemoryFacts.cs:123
 msgid ""
 "What percentage of all Shiny Cars produced worldwide are sold in Europe?"
 msgstr ""
 "¿Qué porcentaje de todos los coches producidos por Coches Brillantes se "
 "vende en Europa?"
 
-#: ../src/MemoryGames/MemoryFacts.cs:130
+#: ../src/MemoryGames/MemoryFacts.cs:129
 #, csharp-format
 msgid ""
 "About {0}% of Shiny Cars use diesel, {1}% use gasoline and the remainder use "
@@ -785,11 +812,11 @@ msgstr ""
 "Cerca del {0}% de los coches de Coches Brillantes usan diesel, {1}% usa "
 "gasolina y el resto son eléctricos."
 
-#: ../src/MemoryGames/MemoryFacts.cs:132
+#: ../src/MemoryGames/MemoryFacts.cs:131
 msgid "What percentage of Shiny Cars use diesel?"
 msgstr "¿Qué porcentaje de Coches Brillantes usa diesel?"
 
-#: ../src/MemoryGames/MemoryFacts.cs:133
+#: ../src/MemoryGames/MemoryFacts.cs:132
 msgid "What percentage of Shiny Cars use gasoline?"
 msgstr "¿Qué porcentaje de Coches Brillantes usa gasolina?"
 
@@ -1525,7 +1552,7 @@ msgstr ""
 #: ../src/PuzzleGames/PuzzleMostInCommon.cs:284
 #: ../src/PuzzleGames/PuzzleNextFigure.cs:126
 #: ../src/PuzzleGames/PuzzleSquareDots.cs:180
-#: ../src/PuzzleGames/PuzzleTetris.cs:148
+#: ../src/PuzzleGames/PuzzleTetris.cs:148 ../src/VerbalAnalogies.cs:260
 msgid "Possible answers are:"
 msgstr "Respuestas posibles:"
 
@@ -2187,6 +2214,29 @@ msgstr ""
 msgid "The result of multiplying the two numbers inside every triangle is {0}."
 msgstr ""
 "El resultado de multiplicar los dos números dentro de cada triángulo es {0}."
+
+#: ../src/VerbalAnalogies.cs:56
+msgid "Verbal analogies"
+msgstr "Analogías verbales"
+
+#: ../src/VerbalAnalogies.cs:63
+#, csharp-format
+msgid "There was an error reading {0}. No verbal analogies available."
+msgstr "Hubo un error al leer {0}. No existen analogías verbales disponibles."
+
+#: ../src/VerbalAnalogies.cs:69
+#, csharp-format
+msgid ""
+"Given pair of words '{0}', which of the possible answers has the closest in "
+"relationship to the given pair?"
+msgstr ""
+"Dado el par de palabras «{0}», ¿cuál de las posibles respuestas tiene la "
+"relación más cercana con el par dado?"
+
+#: ../src/VerbalAnalogies.cs:107
+#, csharp-format
+msgid "Read {0} verbal analogies"
+msgstr "Lee {0} analogías verbales"
 
 #~ msgid ""
 #~ "You can check easily if a number can be divided by 3 by adding together "
