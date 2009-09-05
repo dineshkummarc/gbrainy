@@ -1,6 +1,18 @@
 <analogies>
+	<!---
+		This is a collection of verbal analogies. This work is licensed under GPL 2.0 or higher license. 
+		This the same license that gbrainy package.
+
+		Authors: 
+			Carlos Navarro <navarro37 at gmail dot com>
+			Jordi Mas <jmas at softcatala dot org>
+
+		See: http://live.gnome.org/gbrainy/Analogies for more details about how to use this file and its format.
+
+		You can look at VerbalAnalogies.cs source code file as reference.
+	-->
 	<analogy>
-		<_question>Which of the following sports is the odd one?</_question>
+		<_question type = "MultipleOptions">Which of the following sports is the odd one?</_question>
 		<_tip>Think of the items used in the game.</_tip>
 		<_answer>Water polo</_answer>
 		<_answer>Basketball</_answer>
@@ -9,22 +21,69 @@
 		<_rationale>It is the only one that does not use a ball in the game.</_rationale>
 	</analogy>
 	<analogy>
-		<_question>A terrier is to a dog like a?</_question>
+		<_question type = "MultipleOptions">A terrier is to a dog like a?</_question>
 		<_answer correct ="yes">chicken / bird</_answer>
 		<_answer>horse / pony</_answer>
 		<_answer>ant / insect</_answer>
-		<_answer>dog / cat </_answer>
+		<_answer>dog / cat</_answer>
 	</analogy>
 	<analogy>
 		<_question>A restaurant is to a dinner like a park is to?</_question>
 		<_answer correct ="yes">picnic</_answer>
 	</analogy>
 	<analogy>
-		<_question type = "PairOfWords">moratorium / payment</_question>
-		<_answer correct ="yes">reprieve / punishment </_answer>
+		<_question type = "PairOfWordsOptions">moratorium / payment</_question>
+		<_answer correct ="yes">reprieve / punishment</_answer>
 		<_answer>amnesty / prisoner</_answer>
 		<_answer>date / meeting</_answer>
-		<_answer>sentence / prison </_answer>
+		<_answer>sentence / prison</_answer>
+	</analogy>
+	<analogy>
+		<_question type = "PairOfWordsCompare">hungry / eat | tired</_question>
+		<_answer correct ="yes">sleep | rest</_answer>
+	</analogy>
+	<analogy>
+		<_question type = "PairOfWordsCompare">hunter / rifle | photographer</_question>
+		<_answer correct ="yes">camera</_answer>
+	</analogy>
+	<analogy>
+		<_question type = "PairOfWordsCompare">box / open | banana</_question>
+		<_answer correct ="yes">peel</_answer>
+	</analogy>
+	<analogy>
+		<_question type = "PairOfWordsCompare">shovel / dig | axe</_question>
+		<_answer correct ="yes">chop</_answer>
+	</analogy>
+	<analogy>
+		<_question type = "PairOfWordsCompare">glass / break | paper</_question>
+		<_answer correct ="yes">tear | rips</_answer>
+	</analogy>
+	<analogy>
+		<_question type = "PairOfWordsCompare">feet / two | toe</_question>
+		<_answer correct ="yes">ten</_answer>
+	</analogy>
+	<analogy>
+		<_question type = "PairOfWordsCompare">fish / aquarium | monkey</_question>
+		<_answer correct ="yes">zoo</_answer>
+	</analogy>
+	<analogy>
+		<_question type = "PairOfWordsCompare">ring / finger | bracelet</_question>
+		<_answer correct ="yes">wrist</_answer>
+	</analogy>
+	<analogy>
+		<_question type = "PairOfWordsCompare">seals / flippers | bird</_question>
+		<_answer correct ="yes">wings</_answer>
+	</analogy>
+	<analogy>
+		<_question type = "PairOfWordsCompare">stick / float | stone</_question>
+		<_answer correct ="yes">sink</_answer>
+	</analogy>
+	<analogy>
+		<_question type = "PairOfWordsCompare">leopard / spots | tiger</_question>
+		<_answer correct ="yes">stripes</_answer>
+	</analogy>
+	<analogy>
+		<_question type = "PairOfWordsCompare">toy / play | tool</_question>
+		<_answer correct ="yes">work</_answer>
 	</analogy>
 </analogies>
-

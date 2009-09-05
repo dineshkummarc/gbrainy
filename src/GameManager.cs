@@ -99,7 +99,10 @@ public class GameManager
 
 	static Type[] VerbalAnalogiesInternal = new Type[] 
 	{
-		typeof (VerbalAnalogies),
+		typeof (AnalogiesQuestionAnswer),
+		typeof (AnalogiesMultipleOptions),
+		typeof (AnalogiesPairOfWordsOptions),
+		typeof (AnalogiesPairOfWordsCompare),
 	};
 
 	bool once;
@@ -126,7 +129,7 @@ public class GameManager
 
 		if (once == false) {
 			once = true;
-			Console.WriteLine (Catalog.GetString ("Games registered: {0}: {1} logic puzzles, {2} math trainers, {3} memory trainers, {4} verbal analogies"), 
+			Console.WriteLine (Catalog.GetString ("Games registered: {0}: {1} logic puzzles, {2} calculation trainers, {3} memory trainers, {4} verbal analogies"), 
 				LogicPuzzles.Count + CalculationTrainers.Count + MemoryTrainers.Count + VerbalAnalogies.Count,
 				LogicPuzzles.Count, CalculationTrainers.Count, MemoryTrainers.Count, VerbalAnalogies.Count);
 		}

@@ -163,12 +163,11 @@ public class gbrainy: Program
 		Gtk.MenuItem item = new Gtk.MenuItem (Catalog.GetString ("Extensions"));
 		settings_menu.Append (item);
 		item.Activated += delegate (object sender, EventArgs ar) { Mono.Addins.Gui.AddinManagerWindow.Run (app_window);};
-
-		item = new Gtk.MenuItem (Catalog.GetString ("Develop your own puzzles"));
-		help_menu.Prepend (item);
-		item.Activated += delegate (object sender, EventArgs ar) { Process.Start ("http://live.gnome.org/gbrainy/Extensions");};
-
 	#endif
+
+		item = new Gtk.MenuItem (Catalog.GetString ("How to Extend gbrainy's Functionality"));
+		help_menu.Prepend (item);
+		item.Activated += delegate (object sender, EventArgs ar) { Process.Start ("http://live.gnome.org/gbrainy/Extending");};
 
 		drawing_vbox.Add (drawing_area);
 		app_window.IconName = "gbrainy";

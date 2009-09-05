@@ -74,9 +74,16 @@ GBRAINY_CSDISTFILES =				\
 	$(srcdir)/CalculationGames/CalculationPrimes.cs	\
 	$(srcdir)/MemoryGames/MemoryFacts.cs		\
 	$(srcdir)/PuzzleGames/PuzzleCounting.cs	\
-	$(srcdir)/VerbalAnalogies.cs	\
+	$(srcdir)/VerbalAnalogies/Analogy.cs \
+	$(srcdir)/VerbalAnalogies/AnalogiesFactory.cs \
+	$(srcdir)/VerbalAnalogies/Analogies.cs \
+	$(srcdir)/VerbalAnalogies/AnalogiesQuestionAnswer.cs \
+	$(srcdir)/VerbalAnalogies/AnalogiesMultipleOptions.cs \
+	$(srcdir)/VerbalAnalogies/AnalogiesPairOfWordsOptions.cs \
+	$(srcdir)/VerbalAnalogies/AnalogiesPairOfWordsCompare.cs \
 	$(srcdir)/SimpleLabel.cs	\
 	$(srcdir)/gbrainy.cs			
+
 
 ASSEMBLIES = \
 	 $(GBRAINY_LIBS)    		\
