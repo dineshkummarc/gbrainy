@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gbrainy\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-04-06 20:15+0200\n"
+"POT-Creation-Date: 2009-09-05 23:18+0200\n"
 "PO-Revision-Date: 2009-02-04 21:38+0100\n"
 "Last-Translator: Jordi Mas <jmas@softcatala.org>\n"
 "Language-Team: Catalan\n"
@@ -102,9 +102,6 @@ msgstr "Aritmètic"
 msgid "What is the result of the arithmetical operation?"
 msgstr "Quin és el resultat de l'operació aritmètica?"
 
-#
-#
-#
 #: ../src/CalculationGames/CalculationFractions.cs:57
 msgid "Fractions"
 msgstr "Fraccions"
@@ -119,14 +116,10 @@ msgstr ""
 "Quin és el resultat de l'operació donada? Podeu respondre utilitzant una "
 "fracció o bé un número."
 
-#
-#
 #: ../src/CalculationGames/CalculationGreatestDivisor.cs:32
 msgid "Greatest divisor"
 msgstr "Divisor més gran"
 
-#
-#
 #: ../src/CalculationGames/CalculationGreatestDivisor.cs:40
 msgid ""
 "Which of the possible divisors is the greatest that divides all numbers?"
@@ -188,9 +181,6 @@ msgstr ""
 "Si la suma de tots els dígits d'un número donat és divisible per 3, llavors "
 "també ho és el número. Per exemple 15 =  1 + 5 = 6, que és divisible per 3."
 
-#
-#
-#
 #: ../src/CalculationGames/CalculationTwoNumbers.cs:30
 msgid "Two numbers"
 msgstr "Dos números"
@@ -283,14 +273,14 @@ msgstr "Tipus"
 msgid "Enabled"
 msgstr "Habilitat"
 
-#: ../src/Dialogs/CustomGameDialog.cs:86 ../src/GameDrawingArea.cs:182
-#: ../src/gbrainy.cs:111 ../src/gbrainy.glade.h:11
+#: ../src/Dialogs/CustomGameDialog.cs:86 ../src/GameDrawingArea.cs:188
+#: ../src/gbrainy.cs:100 ../src/gbrainy.glade.h:11
 #: ../src/Dialogs/PlayerHistoryDialog.cs:101
 msgid "Logic"
 msgstr "Lògica"
 
-#: ../src/Dialogs/CustomGameDialog.cs:89 ../src/GameDrawingArea.cs:190
-#: ../src/gbrainy.cs:122 ../src/gbrainy.glade.h:16
+#: ../src/Dialogs/CustomGameDialog.cs:89 ../src/GameDrawingArea.cs:196
+#: ../src/gbrainy.cs:111 ../src/gbrainy.glade.h:16
 #: ../src/Dialogs/PlayerHistoryDialog.cs:111
 msgid "Memory"
 msgstr "Memòria"
@@ -300,7 +290,7 @@ msgid "Mental Calculation"
 msgstr "Càlcul mental"
 
 #
-#: ../src/Game.cs:68
+#: ../src/Game.cs:69
 #, csharp-format
 msgid "The correct answer is {0}."
 msgstr "La resposta correcta és {0}."
@@ -312,60 +302,56 @@ msgstr "La resposta correcta és {0}."
 #. For languages represented with the Latin alphabet use
 #. the same than English
 #. First possible answer for a serie (e.g.: Figure A)
-#: ../src/Game.cs:238
+#: ../src/Game.cs:239
 msgid "A"
 msgstr "A"
 
 #. Second possible answer for a serie
-#: ../src/Game.cs:240
+#: ../src/Game.cs:241
 msgid "B"
 msgstr "B"
 
 #. Third possible answer for a serie
-#: ../src/Game.cs:242
+#: ../src/Game.cs:243
 msgid "C"
 msgstr "C"
 
 #. Fourth possible answer for a serie
-#: ../src/Game.cs:244
+#: ../src/Game.cs:245
 msgid "D"
 msgstr "D"
 
 #. Fifth possible answer for a serie
-#: ../src/Game.cs:246
+#: ../src/Game.cs:247
 msgid "E"
 msgstr "E"
 
 #. Sixth possible answer for a serie
-#: ../src/Game.cs:248
+#: ../src/Game.cs:249
 msgid "F"
 msgstr "F"
 
 #. Seventh possible answer for a serie
-#: ../src/Game.cs:250
+#: ../src/Game.cs:251
 msgid "G"
 msgstr "G"
 
 #. Eighth possible answer for a serie
-#: ../src/Game.cs:252
+#: ../src/Game.cs:253
 msgid "H"
 msgstr "H"
 
-#: ../src/Game.cs:260
+#: ../src/Game.cs:261
 #, csharp-format
 msgid "Figure {0}"
 msgstr "Figura {0}"
 
-#: ../src/GameDrawingArea.cs:112
+#: ../src/GameDrawingArea.cs:113
 #, csharp-format
 msgid "Welcome to gbrainy {0}"
 msgstr "Benvinguts al gbrainy {0}"
 
-#
-#
-#
-#
-#: ../src/GameDrawingArea.cs:115
+#: ../src/GameDrawingArea.cs:116
 msgid ""
 "gbrainy is a brain teaser game and trainer to have fun and to keep your "
 "brain trained. It includes:"
@@ -373,108 +359,110 @@ msgstr ""
 "El gbrainy és un joc per divertir-se i mantenir el vostre cervell entrenat. "
 "Inclou:"
 
-#
 #: ../src/GameDrawingArea.cs:121
-msgid ""
-"Logic puzzles. Designed to challenge your reasoning and thinking skills."
+msgid "Logic puzzles. Challenge your reasoning and thinking skills."
 msgstr ""
-"Trencaclosques lògics. Dissenyats per a desafiar les vostres habilitats de "
-"raonament i pensament."
+"Trencaclosques lògics. Desafieu les vostres habilitats de raonament i "
+"pensament."
 
-#
-#: ../src/GameDrawingArea.cs:128
+#: ../src/GameDrawingArea.cs:127
 msgid ""
-"Mental calculation. Based on arithmetical operations that test your mental "
+"Mental calculation. Arithmetical operations that test your mental "
 "calculation abilities."
 msgstr ""
-"Càlcul mental. Basats en operacions aritmètiques que proven les vostres "
-"habilitats de càlcul mental."
+"Càlcul mental. Operacions aritmètiques que proven les vostres habilitats de "
+"càlcul mental."
+
+#: ../src/GameDrawingArea.cs:133
+msgid "Memory trainers. To prove your short term memory."
+msgstr "Entrenadors de memòria. Per a posar a prova la memòria a curt termini."
+
+#: ../src/GameDrawingArea.cs:139
+msgid "Verbal analogies. Challenge your verbal aptitude."
+msgstr "Analogies verbals. Desafieu les vostres aptituds verbals."
 
 #
-#: ../src/GameDrawingArea.cs:134
-msgid "Memory trainers. To prove and enhance your short term memory."
-msgstr ""
-"Entrenadors de memòria. Per a posar a prova i millorar la vostra capacitat "
-"de memòria a curt termini."
-
-#
-#: ../src/GameDrawingArea.cs:137 ../src/GameDrawingArea.cs:398
+#: ../src/GameDrawingArea.cs:142 ../src/GameDrawingArea.cs:408
 msgid "Use the Settings to adjust the difficulty level of the game."
 msgstr ""
 "Utilitzeu les Preferències per a ajustar el nivell de dificultat del joc."
 
-#: ../src/GameDrawingArea.cs:178 ../src/gbrainy.glade.h:27
+#: ../src/GameDrawingArea.cs:184 ../src/gbrainy.glade.h:27
 #: ../src/Dialogs/PlayerHistoryDialog.cs:92
 msgid "Total"
 msgstr "Total"
 
 #
-#: ../src/GameDrawingArea.cs:186 ../src/gbrainy.cs:116
+#: ../src/GameDrawingArea.cs:192 ../src/gbrainy.cs:105
 #: ../src/gbrainy.glade.h:6 ../src/Dialogs/PlayerHistoryDialog.cs:120
 msgid "Calculation"
 msgstr "Càlcul"
 
-#: ../src/GameDrawingArea.cs:204
+#: ../src/GameDrawingArea.cs:200 ../src/gbrainy.cs:117
+msgid "Verbal"
+msgstr "Verbal"
+
+#: ../src/GameDrawingArea.cs:214
 msgid "Score"
 msgstr "Puntuació"
 
-#: ../src/GameDrawingArea.cs:212
+#: ../src/GameDrawingArea.cs:222
 #, csharp-format
 msgid "Outstanding results"
 msgstr "Resultats extraordinaris"
 
-#: ../src/GameDrawingArea.cs:214
+#: ../src/GameDrawingArea.cs:224
 #, csharp-format
 msgid "Excellent results"
 msgstr "Excel·lents resultats"
 
-#: ../src/GameDrawingArea.cs:216
+#: ../src/GameDrawingArea.cs:226
 #, csharp-format
 msgid "Good results"
 msgstr "Bons resultats"
 
-#: ../src/GameDrawingArea.cs:218
+#: ../src/GameDrawingArea.cs:228
 #, csharp-format
 msgid "Poor results"
 msgstr "Resultats pobres"
 
-#: ../src/GameDrawingArea.cs:219
+#: ../src/GameDrawingArea.cs:229
 #, csharp-format
 msgid "Disappointing results"
 msgstr "Resultats decebedors"
 
-#: ../src/GameDrawingArea.cs:225
+#: ../src/GameDrawingArea.cs:235
 #, csharp-format
 msgid "Games won: {0} ({1} played)"
 msgstr "Jocs guanyats: {0} ({1} jugats)"
 
-#: ../src/GameDrawingArea.cs:227
+#: ../src/GameDrawingArea.cs:237
 #, csharp-format
 msgid "{0}. Games won: {1} ({2} played)"
 msgstr "{0}. Jocs guanyats: {1} ({2} jugats)"
 
-#: ../src/GameDrawingArea.cs:231
+#: ../src/GameDrawingArea.cs:241
 #, csharp-format
 msgid "Time played {0} (average per game {1})"
 msgstr "Temps de joc: {0} (mitjana per joc {1})"
 
-#: ../src/GameDrawingArea.cs:238
+#: ../src/GameDrawingArea.cs:248
 msgid "Tips for your next games"
 msgstr "Consells per les vostres properes partides"
 
-#: ../src/GameDrawingArea.cs:342
+#: ../src/GameDrawingArea.cs:352
 msgid "Get ready to memorize the next objects..."
 msgstr "Prepareu-vos per a memoritzar els objectes següents..."
 
 #
-#: ../src/GameDrawingArea.cs:382
+#: ../src/GameDrawingArea.cs:392
 msgid "Read the instructions carefully and identify the data and given clues."
 msgstr ""
 "Llegiu les instruccions amb deteniment i identifiqueu les dades i pistes "
 "donades."
 
 #
-#: ../src/GameDrawingArea.cs:384
+#: ../src/GameDrawingArea.cs:394
 msgid ""
 "To score the player gbrainy uses the time and tips needed to complete each "
 "game."
@@ -482,24 +470,24 @@ msgstr ""
 "Per puntuar al jugador gbrainy utilitza el temps i els consells utilitzats "
 "per a resoldre cada joc."
 
-#: ../src/GameDrawingArea.cs:386
+#: ../src/GameDrawingArea.cs:396
 msgid ""
 "In logic games, elements that may seem irrelevant can be very important."
 msgstr ""
 "En els jocs de lògica, els elements que semblen irrellevants poden ser força "
 "importants."
 
-#: ../src/GameDrawingArea.cs:388
+#: ../src/GameDrawingArea.cs:398
 msgid "Break the mental blocks and look into the boundaries of problems."
 msgstr ""
 "Trenqueu els bloquejos mentals i mireu més enllà dels límits dels problemes."
 
 #
-#: ../src/GameDrawingArea.cs:390
+#: ../src/GameDrawingArea.cs:400
 msgid "Enjoy making mistakes, they are part of the learning process."
 msgstr "Gaudiu fent errades, és part del procés d'aprenentatge."
 
-#: ../src/GameDrawingArea.cs:392
+#: ../src/GameDrawingArea.cs:402
 msgid ""
 "Do all the problems, even the difficult ones. Improvement comes from "
 "practising."
@@ -508,7 +496,7 @@ msgstr ""
 "pràctica."
 
 #
-#: ../src/GameDrawingArea.cs:394
+#: ../src/GameDrawingArea.cs:404
 msgid "Play on a daily basis, you will notice progress soon."
 msgstr "Jugueu diàriament, us adonareu del vostre progrés en poc temps."
 
@@ -516,7 +504,7 @@ msgstr "Jugueu diàriament, us adonareu del vostre progrés en poc temps."
 #
 #
 #. Translators: Custom Game Selection is a menu option
-#: ../src/GameDrawingArea.cs:396
+#: ../src/GameDrawingArea.cs:406
 msgid ""
 "Use the 'Custom Game Selection' to choose exactly which games you want to "
 "play."
@@ -524,91 +512,104 @@ msgstr ""
 "Utilitzeu la «selecció de la partida personalitzada» per a escollir "
 "exactament quins jocs voleu entrenar."
 
-#: ../src/GameDrawingArea.cs:400
+#: ../src/GameDrawingArea.cs:410
 msgid "Association of elements is a common technique for remembering things."
 msgstr "L'associació d'elements és una tècnica habitual per a recordar coses."
 
-#: ../src/GameDrawingArea.cs:402
+#: ../src/GameDrawingArea.cs:412
 msgid ""
 "Grouping elements into categories is a common technique for remembering "
 "things."
 msgstr "L'agrupació d'elements és una tècnica habitual per a recordar coses."
 
-#: ../src/GameSession.cs:216
+#: ../src/GameManager.cs:132
+#, csharp-format
+msgid ""
+"Games registered: {0}: {1} logic puzzles, {2} calculation trainers, {3} "
+"memory trainers, {4} verbal analogies"
+msgstr ""
+"Jocs registrats: {0}: {1} trencaclosques lògics, {2} entrenadors de càlcul "
+"mental, {3} entrenadors de memòria , {4} analogies verbals"
+
+#: ../src/GameSession.cs:215
 #, csharp-format
 msgid "Games played: {0} ({1}% score)"
 msgstr "Partides: {0} (puntuació {1}%)"
 
-#: ../src/GameSession.cs:217
+#: ../src/GameSession.cs:216
 #, csharp-format
 msgid " - Time: {0}"
 msgstr " - Temps: {0}"
 
-#: ../src/GameSession.cs:220
+#: ../src/GameSession.cs:219
 #, csharp-format
 msgid "- Game: {0}"
 msgstr " - Joc: {0}"
 
-#: ../src/GameSession.cs:272
+#: ../src/GameSession.cs:271
 msgid "Paused"
 msgstr "En pausa"
 
-#: ../src/gbrainy.cs:104
+#: ../src/gbrainy.cs:93
 msgid "Play all the games"
 msgstr "Jugueu a tots els tipus de jocs"
 
-#: ../src/gbrainy.cs:105
+#: ../src/gbrainy.cs:94
 msgid "All"
 msgstr "Tots"
 
-#: ../src/gbrainy.cs:110
+#: ../src/gbrainy.cs:99
 msgid "Play games that challenge your reasoning and thinking"
 msgstr ""
 "Jugueu a jocs que desafien les vostres habilitats de raonament i pensament"
 
-#: ../src/gbrainy.cs:117
+#: ../src/gbrainy.cs:106
 msgid "Play games that challenge your mental calculation skills"
 msgstr "Jugueu a jocs que desafien les vostres habilitats de càlcul mental"
 
-#: ../src/gbrainy.cs:123
+#: ../src/gbrainy.cs:112
 msgid "Play games that challenge your short term memory"
 msgstr "Jugueu a jocs que desafien la vostra memòria a curt termini"
 
+#: ../src/gbrainy.cs:118
+msgid "Play games that challenge your verbal aptitude"
+msgstr "Jugueu a jocs que desafien les vostres aptituds verbals."
+
 #
-#: ../src/gbrainy.cs:128 ../src/gbrainy.cs:541
+#: ../src/gbrainy.cs:123 ../src/gbrainy.cs:533
 msgid "Pause"
 msgstr "Pausa"
 
-#: ../src/gbrainy.cs:129
+#: ../src/gbrainy.cs:124
 msgid "Pause or resume the game"
 msgstr "Fes una pausa o continua el joc"
 
 #
-#: ../src/gbrainy.cs:134
+#: ../src/gbrainy.cs:129
 msgid "End the game and show score"
 msgstr "Finalitza el joc i mostra la puntuació"
 
-#: ../src/gbrainy.cs:135
+#: ../src/gbrainy.cs:130
 msgid "Finish"
 msgstr "Finalitza"
 
-#: ../src/gbrainy.cs:160
+#: ../src/gbrainy.cs:163
 msgid "Extensions"
 msgstr "Extensions"
 
-#: ../src/gbrainy.cs:164
-msgid "Develop your own puzzles"
-msgstr "Desenvolupeu els vostres trencaclosques"
+#: ../src/gbrainy.cs:168
+msgid "How to Extend gbrainy's Functionality"
+msgstr "Com estendre la funcionalitat del gbrainy"
 
-#: ../src/gbrainy.cs:376
+#: ../src/gbrainy.cs:369
 msgid "Congratulations."
 msgstr "Enhorabona."
 
-#: ../src/gbrainy.cs:378
+#: ../src/gbrainy.cs:371
 msgid "Incorrect answer."
 msgstr "Resposta incorrecta."
 
-#: ../src/gbrainy.cs:436
+#: ../src/gbrainy.cs:421
 msgid ""
 "Once you have an answer type it in the \"Answer:\" entry box and press the "
 "\"OK\" button."
@@ -616,7 +617,7 @@ msgstr ""
 "Un cop tingueu la resposta introduïu-la al quadre «Resposta:» i premeu el "
 "botó «D'acord»."
 
-#: ../src/gbrainy.cs:546
+#: ../src/gbrainy.cs:538
 msgid "Resume"
 msgstr "Reprèn"
 
@@ -701,9 +702,6 @@ msgstr "Preferències"
 msgid "Select All"
 msgstr "Selecciona-ho tot"
 
-#
-#
-#
 #: ../src/gbrainy.glade.h:23
 msgid "Show countdown message"
 msgstr "Mostra el missatge de compte enrere"
@@ -744,28 +742,14 @@ msgstr "_Següent"
 msgid "_Tip"
 msgstr "P_ista"
 
-#
-#
-#
 #: ../src/Memory.cs:49
 msgid "Memorize the objects below in the given time"
 msgstr "Memoritzeu els objectes d'abaix en el temps donat"
 
-#
-#
-#
-#
 #: ../src/MemoryGames/MemoryColouredFigures.cs:47
 msgid "Colored figures"
 msgstr "Figures de colors"
 
-#
-#
-#
-#
-#
-#
-#
 #: ../src/MemoryGames/MemoryColouredFigures.cs:52
 #, csharp-format
 msgid ""
@@ -984,7 +968,7 @@ msgid ""
 msgstr "Hi ha una paraula que manca de la llista anterior. Quina és?"
 
 #. Body parts
-#: ../src/MemoryGames/MemoryWords.cs:48
+#: ../src/MemoryGames/MemoryWords.cs:48 ../data/verbal_analogies.xml.h:42
 msgid "wrist"
 msgstr "canell"
 
@@ -1575,9 +1559,6 @@ msgstr ""
 msgid "Extra circle"
 msgstr "Cercle extra"
 
-#
-#
-#
 #: ../src/PuzzleGames/PuzzleExtraCircle.cs:42
 #, csharp-format
 msgid ""
@@ -1669,6 +1650,8 @@ msgstr ""
 #: ../src/PuzzleGames/PuzzleNextFigure.cs:126
 #: ../src/PuzzleGames/PuzzleSquareDots.cs:180
 #: ../src/PuzzleGames/PuzzleTetris.cs:148
+#: ../src/VerbalAnalogies/AnalogiesMultipleOptions.cs:103
+#: ../src/VerbalAnalogies/AnalogiesPairOfWordsOptions.cs:104
 msgid "Possible answers are:"
 msgstr "Les respostes possibles són:"
 
@@ -1918,7 +1901,8 @@ msgid ""
 "lines."
 msgstr ""
 "A cada fila el tercer quadrat es construeix donant la volta al primer "
-"quadrat i sobreimposant-lo al segon, llavors eliminant les línies coincidents."
+"quadrat i sobreimposant-lo al segon, llavors eliminant les línies "
+"coincidents."
 
 #: ../src/PuzzleGames/PuzzleMissingSlice.cs:57
 msgid "Missing slice"
@@ -1963,7 +1947,7 @@ msgid ""
 "figures? Answer {0}, {1}, {2} or {3}."
 msgstr ""
 "Quina de les possibles respostes té més en comú amb les quatre figures "
-"donades? Responeu {0}, {1}, {2} or {3}"
+"donades? Responeu {0}, {1}, {2} or {3}."
 
 #: ../src/PuzzleGames/PuzzleMostInCommon.cs:81
 msgid "Think of the common elements that the given figures have inside them."
@@ -2243,10 +2227,6 @@ msgstr ""
 msgid "Squares and letters"
 msgstr "Quadrats i lletres"
 
-#
-#
-#
-#
 #: ../src/PuzzleGames/PuzzleSquaresAndLetters.cs:36
 msgid ""
 "The letters around the squares follow a logic. Which letter should replace "
@@ -2379,3 +2359,231 @@ msgstr ""
 msgid "The result of multiplying the two numbers inside every triangle is {0}."
 msgstr ""
 "El resultat de multiplicar els dos números de dins de cada triangle és {0}."
+
+#: ../src/VerbalAnalogies/Analogies.cs:30
+msgid "Verbal analogies"
+msgstr "Analogies verbals"
+
+#. Translators: this the separator used when concatenating multiple possible answers for verbal analogies
+#. For example: "Possible correct answers are: sleep, rest."
+#. Translators: this the separator used when concatenating possible options for answering verbal analogies
+#. For example: "Possible correct answers are: a, b, c, d."
+#: ../src/VerbalAnalogies/Analogies.cs:66
+#: ../src/VerbalAnalogies/AnalogiesMultipleOptions.cs:53
+#: ../src/VerbalAnalogies/AnalogiesPairOfWordsOptions.cs:67
+msgid ", "
+msgstr ", "
+
+#: ../src/VerbalAnalogies/Analogies.cs:70
+#, csharp-format
+msgid "Possible correct answers are: {0}."
+msgstr "Les respostes possibles correctes són: {0}."
+
+#: ../src/VerbalAnalogies/AnalogiesFactory.cs:138
+#, fuzzy, csharp-format
+msgid "Read {0} verbal analogies of type {1}"
+msgstr "S'han llegit {0} analogies verbals!"
+
+#: ../src/VerbalAnalogies/AnalogiesFactory.cs:142
+#, csharp-format
+msgid "Read a total of {0} verbal analogies"
+msgstr "S'han llegit un total de {0} analogies verbals"
+
+#: ../src/VerbalAnalogies/AnalogiesMultipleOptions.cs:57
+#, csharp-format
+msgid "{0} Answer {1}."
+msgstr "{0} Responeu {1}"
+
+#: ../src/VerbalAnalogies/AnalogiesPairOfWordsCompare.cs:62
+#, csharp-format
+msgid ""
+"Given the pair of words below, which word has the closest relationship to "
+"'{0}'?"
+msgstr ""
+"Donat el parell de paraules d'abaix, quina paraula té la relació més propera "
+"a «{0}»?"
+
+#: ../src/VerbalAnalogies/AnalogiesPairOfWordsCompare.cs:104
+#, csharp-format
+msgid "Pair of words: {0}"
+msgstr "Parell de paraules: {0}"
+
+#: ../src/VerbalAnalogies/AnalogiesPairOfWordsOptions.cs:72
+#, csharp-format
+msgid ""
+"Given the pair of words '{0}', which of the possible answers has the closest "
+"in relationship to the given pair? Answer {1}."
+msgstr ""
+"Donat el parell de paraules «{0}», quina de les possibles respostes té la "
+"relació més propera al parell donat? Responeu {1}."
+
+#: ../data/verbal_analogies.xml.h:1
+msgid "A restaurant is to a dinner like a park is to?"
+msgstr "Un restaurant és a un sopar com un parc és a?"
+
+#: ../data/verbal_analogies.xml.h:2
+msgid "A terrier is to a dog like a?"
+msgstr "Un terrier és a un gos com?"
+
+#: ../data/verbal_analogies.xml.h:3
+msgid "Basketball"
+msgstr "Bàsquet"
+
+#: ../data/verbal_analogies.xml.h:4
+msgid "Cycling"
+msgstr "Ciclisme"
+
+#
+#: ../data/verbal_analogies.xml.h:5
+msgid "It is the only one that does not use a ball in the game."
+msgstr "És l'únic que no utilitza una pilota en el joc."
+
+#: ../data/verbal_analogies.xml.h:6
+msgid "Tennis"
+msgstr "Tennis"
+
+#: ../data/verbal_analogies.xml.h:7
+msgid "Think of the items used in the game."
+msgstr "Penseu en els ítems utilitzats durant el joc."
+
+#: ../data/verbal_analogies.xml.h:8
+msgid "Water polo"
+msgstr "Waterpolo"
+
+#: ../data/verbal_analogies.xml.h:9
+msgid "Which of the following sports is the odd one?"
+msgstr "Quin dels següents esports és l'estrany?"
+
+#: ../data/verbal_analogies.xml.h:10
+msgid "amnesty / prisoner"
+msgstr "amnistia / presoner"
+
+#: ../data/verbal_analogies.xml.h:11
+msgid "ant / insect"
+msgstr "formiga / insecte"
+
+#: ../data/verbal_analogies.xml.h:12
+msgid "box / open | banana"
+msgstr "caixa / obrir | plàtan"
+
+#: ../data/verbal_analogies.xml.h:13
+msgid "camera"
+msgstr "càmera"
+
+#: ../data/verbal_analogies.xml.h:14
+msgid "chicken / bird"
+msgstr "pollastre / au"
+
+#: ../data/verbal_analogies.xml.h:15
+msgid "chop"
+msgstr "talla"
+
+#: ../data/verbal_analogies.xml.h:16
+msgid "date / meeting"
+msgstr "data / reunió"
+
+#: ../data/verbal_analogies.xml.h:17
+msgid "dog / cat"
+msgstr "gos / gat"
+
+#: ../data/verbal_analogies.xml.h:18
+msgid "feet / two | toe"
+msgstr "peus / dos | dits"
+
+#: ../data/verbal_analogies.xml.h:19
+msgid "fish / aquarium | monkey"
+msgstr "peix / aquari | mico"
+
+#: ../data/verbal_analogies.xml.h:20
+msgid "glass / break | paper"
+msgstr "vidre / trencar | paper"
+
+#: ../data/verbal_analogies.xml.h:21
+msgid "horse / pony"
+msgstr "cavall / poni"
+
+#: ../data/verbal_analogies.xml.h:22
+msgid "hungry / eat | tired"
+msgstr "afamat / menjar | cansat"
+
+#: ../data/verbal_analogies.xml.h:23
+msgid "hunter / rifle | photographer"
+msgstr "caçador / rifle | fotògraf"
+
+#: ../data/verbal_analogies.xml.h:24
+msgid "leopard / spots | tiger"
+msgstr "lleopard / taques | tigre"
+
+#: ../data/verbal_analogies.xml.h:25
+msgid "moratorium / payment"
+msgstr "moratòria / pagament"
+
+#: ../data/verbal_analogies.xml.h:26
+msgid "peel"
+msgstr "pelar"
+
+#: ../data/verbal_analogies.xml.h:27
+msgid "picnic"
+msgstr "pícnic"
+
+#: ../data/verbal_analogies.xml.h:28
+msgid "reprieve / punishment"
+msgstr "indult / càstig"
+
+#: ../data/verbal_analogies.xml.h:29
+msgid "ring / finger | bracelet"
+msgstr "anell / dit | braçalet"
+
+#: ../data/verbal_analogies.xml.h:30
+msgid "seals / flippers | bird"
+msgstr "foques / aletes | ocells"
+
+#: ../data/verbal_analogies.xml.h:31
+msgid "sentence / prison"
+msgstr "sentencia / presó"
+
+#: ../data/verbal_analogies.xml.h:32
+msgid "shovel / dig | axe"
+msgstr "pala / cava | destral"
+
+#: ../data/verbal_analogies.xml.h:33
+msgid "sink"
+msgstr "enfonsa | s'enfonsa | enfonsar"
+
+#: ../data/verbal_analogies.xml.h:34
+msgid "sleep | rest"
+msgstr "dormir | descansar"
+
+#: ../data/verbal_analogies.xml.h:35
+msgid "stick / float | stone"
+msgstr "pal / flota | pedra"
+
+#
+#: ../data/verbal_analogies.xml.h:36
+msgid "stripes"
+msgstr "ratlles"
+
+#: ../data/verbal_analogies.xml.h:37
+msgid "tear | rips"
+msgstr "estripa"
+
+#: ../data/verbal_analogies.xml.h:38
+msgid "ten"
+msgstr "deu | 10"
+
+#: ../data/verbal_analogies.xml.h:39
+msgid "toy / play | tool"
+msgstr "joguina / jugar | eina"
+
+#: ../data/verbal_analogies.xml.h:40
+msgid "wings"
+msgstr "ales"
+
+#: ../data/verbal_analogies.xml.h:41
+msgid "work"
+msgstr "treballar | treball"
+
+#: ../data/verbal_analogies.xml.h:43
+msgid "zoo"
+msgstr "zoo | zoològic"
+
