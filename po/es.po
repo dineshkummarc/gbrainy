@@ -10,13 +10,13 @@ msgstr ""
 "Project-Id-Version: gbrainy.HEAD\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=gbrainy&component=general\n"
-"POT-Creation-Date: 2009-08-29 11:13+0000\n"
-"PO-Revision-Date: 2009-08-30 11:26+0200\n"
+"POT-Creation-Date: 2009-09-05 21:13+0000\n"
+"PO-Revision-Date: 2009-09-06 14:20+0200\n"
 "Last-Translator: Jorge González <jorgegonz@svn.gnome.org>\n"
 "Language-Team: Español <gnome-es-list@gnome.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
+"Content-Transfer-Encoding: UTF-8\n"
 "X-Generator: KBabel 1.11.4\n"
 "Plural-Forms:  nplurals=2; plural=(n != 1);\n"
 
@@ -36,9 +36,9 @@ msgstr "gbrainy"
 #: ../src/Dialogs/AboutDialog.cs:46
 msgid "translator-credits"
 msgstr ""
+"Jorge González <jorgegonz@svn.gnome.org>, 2007-2009\n"
 "Gabriel Felipe Cornejo Salas <gnomeusr@gmail.com>, 2008\n"
 "Eduardo Retamales <eretamales@gnome.cl>, 2007, 2008\n"
-"Jorge González <jorgegonz@svn.gnome.org>, 2007-2009\n"
 "QA: Jorge González <jorgegonz@svn.gnome.org>, 2007-2009"
 
 #: ../src/Dialogs/AboutDialog.cs:51
@@ -343,17 +343,12 @@ msgid ""
 msgstr "gbrainy es un juego para divertirse y entrenar el cerebro. Incluye:"
 
 #: ../src/GameDrawingArea.cs:121
-#| msgid ""
-#| "Logic puzzles. Designed to challenge your reasoning and thinking skills."
 msgid "Logic puzzles. Challenge your reasoning and thinking skills."
 msgstr ""
 "Puzles lógicos. Diseñados para desafiar tus capacidades de razonamiento y "
 "pensamiento."
 
 #: ../src/GameDrawingArea.cs:127
-#| msgid ""
-#| "Mental calculation. Based on arithmetical operations that test your "
-#| "mental calculation abilities."
 msgid ""
 "Mental calculation. Arithmetical operations that test your mental "
 "calculation abilities."
@@ -362,7 +357,6 @@ msgstr ""
 "cálculo mental."
 
 #: ../src/GameDrawingArea.cs:133
-#| msgid "Memory trainers. To prove and enhance your short term memory."
 msgid "Memory trainers. To prove your short term memory."
 msgstr ""
 "Entrenadores de memoria. Para probar y mejorar tu memoria a corto plazo."
@@ -501,13 +495,16 @@ msgid ""
 msgstr ""
 "Agrupar elementos en categorías es una técnica común para recordar cosas."
 
-#: ../src/GameManager.cs:129
+#: ../src/GameManager.cs:132
 #, csharp-format
+#| msgid ""
+#| "Games registered: {0}: {1} logic puzzles, {2} math trainers, {3} memory "
+#| "trainers, {4} verbal analogies"
 msgid ""
-"Games registered: {0}: {1} logic puzzles, {2} math trainers, {3} memory "
-"trainers, {4} verbal analogies"
+"Games registered: {0}: {1} logic puzzles, {2} calculation trainers, {3} "
+"memory trainers, {4} verbal analogies"
 msgstr ""
-"Juegos registrados: {0}: {1} puzles lógicos, {2} entrenadores matemáticos, "
+"Juegos registrados: {0}: {1} puzles lógicos, {2} entrenadores de cálculo, "
 "{3} entrenadores de memoria, {4} analogías verbales"
 
 #: ../src/GameSession.cs:215
@@ -550,11 +547,10 @@ msgid "Play games that challenge your short term memory"
 msgstr "Jugar a los juegos que desafíen mi memoria a corto plazo"
 
 #: ../src/gbrainy.cs:118
-#| msgid "Play games that challenge your reasoning and thinking"
 msgid "Play games that challenge your verbal aptitude"
 msgstr "Jugar a los juegos que desafíen mi aptitud verbal"
 
-#: ../src/gbrainy.cs:123 ../src/gbrainy.cs:534
+#: ../src/gbrainy.cs:123 ../src/gbrainy.cs:533
 msgid "Pause"
 msgstr "Pausar"
 
@@ -574,20 +570,20 @@ msgstr "Terminar"
 msgid "Extensions"
 msgstr "Extensiones"
 
-#: ../src/gbrainy.cs:167
-msgid "Develop your own puzzles"
-msgstr "Desarrolle sus propios puzles"
+#: ../src/gbrainy.cs:168
+msgid "How to Extend gbrainy's Functionality"
+msgstr "Cómo extender las funcionalidades de Gbrainy"
 
-#: ../src/gbrainy.cs:370
+#: ../src/gbrainy.cs:369
 msgid "Congratulations."
 msgstr "Enhorabuena."
 
-#: ../src/gbrainy.cs:372
+#: ../src/gbrainy.cs:371
 msgid "Incorrect answer."
 msgstr "Respuesta incorrecta."
 
 #
-#: ../src/gbrainy.cs:422
+#: ../src/gbrainy.cs:421
 msgid ""
 "Once you have an answer type it in the \"Answer:\" entry box and press the "
 "\"OK\" button."
@@ -595,7 +591,7 @@ msgstr ""
 "Una vez que tengas la respuesta escríbela en «Respuesta:» y pulsa el botón "
 "«Aceptar»."
 
-#: ../src/gbrainy.cs:539
+#: ../src/gbrainy.cs:538
 msgid "Resume"
 msgstr "Reanudar"
 
@@ -918,7 +914,7 @@ msgid ""
 msgstr "Hay una palabra que falta de la lista anterior. ¿Qué palabra falta?"
 
 #. Body parts
-#: ../src/MemoryGames/MemoryWords.cs:48
+#: ../src/MemoryGames/MemoryWords.cs:48 ../data/verbal_analogies.xml.h:42
 msgid "wrist"
 msgstr "muñeca"
 
@@ -1552,7 +1548,9 @@ msgstr ""
 #: ../src/PuzzleGames/PuzzleMostInCommon.cs:284
 #: ../src/PuzzleGames/PuzzleNextFigure.cs:126
 #: ../src/PuzzleGames/PuzzleSquareDots.cs:180
-#: ../src/PuzzleGames/PuzzleTetris.cs:148 ../src/VerbalAnalogies.cs:260
+#: ../src/PuzzleGames/PuzzleTetris.cs:148
+#: ../src/VerbalAnalogies/AnalogiesMultipleOptions.cs:103
+#: ../src/VerbalAnalogies/AnalogiesPairOfWordsOptions.cs:104
 msgid "Possible answers are:"
 msgstr "Respuestas posibles:"
 
@@ -2215,28 +2213,253 @@ msgid "The result of multiplying the two numbers inside every triangle is {0}."
 msgstr ""
 "El resultado de multiplicar los dos números dentro de cada triángulo es {0}."
 
-#: ../src/VerbalAnalogies.cs:56
+#: ../src/VerbalAnalogies/Analogies.cs:30
 msgid "Verbal analogies"
 msgstr "Analogías verbales"
 
-#: ../src/VerbalAnalogies.cs:63
-#, csharp-format
-msgid "There was an error reading {0}. No verbal analogies available."
-msgstr "Hubo un error al leer {0}. No existen analogías verbales disponibles."
+#. Translators: this the separator used when concatenating multiple possible answers for verbal analogies
+#. For example: "Possible correct answers are: sleep, rest."
+#. Translators: this the separator used when concatenating possible options for answering verbal analogies
+#. For example: "Possible correct answers are: a, b, c, d."
+#: ../src/VerbalAnalogies/Analogies.cs:66
+#: ../src/VerbalAnalogies/AnalogiesMultipleOptions.cs:53
+#: ../src/VerbalAnalogies/AnalogiesPairOfWordsOptions.cs:67
+msgid ", "
+msgstr ", "
 
-#: ../src/VerbalAnalogies.cs:69
+#: ../src/VerbalAnalogies/Analogies.cs:70
 #, csharp-format
+#| msgid "Possible answers are:"
+msgid "Possible correct answers are: {0}."
+msgstr "Las posibles respuestas correctas son: {0}."
+
+#: ../src/VerbalAnalogies/AnalogiesFactory.cs:138
+#, csharp-format
+#| msgid "Read {0} verbal analogies"
+msgid "Read {0} verbal analogies of type {1}"
+msgstr "Lee {0} analogías verbales del tipo {1}"
+
+#: ../src/VerbalAnalogies/AnalogiesFactory.cs:142
+#, csharp-format
+#| msgid "Read {0} verbal analogies"
+msgid "Read a total of {0} verbal analogies"
+msgstr "Lee un total de {0} analogías verbales"
+
+#: ../src/VerbalAnalogies/AnalogiesMultipleOptions.cs:57
+#, csharp-format
+#| msgid "{0} and {1}"
+msgid "{0} Answer {1}."
+msgstr "{0} responde {1}."
+
+#: ../src/VerbalAnalogies/AnalogiesPairOfWordsCompare.cs:62
+#, csharp-format
+#| msgid ""
+#| "Given pair of words '{0}', which of the possible answers has the closest "
+#| "in relationship to the given pair?"
 msgid ""
-"Given pair of words '{0}', which of the possible answers has the closest in "
-"relationship to the given pair?"
+"Given the pair of words below, which word has the closest relationship to "
+"'{0}'?"
+msgstr ""
+"Dado el par de palabras de abajo, ¿qué palabra tiene la relación más cercana "
+"con «{0}»?"
+
+#: ../src/VerbalAnalogies/AnalogiesPairOfWordsCompare.cs:104
+#, csharp-format
+msgid "Pair of words: {0}"
+msgstr "Par de palabras: {0}"
+
+#: ../src/VerbalAnalogies/AnalogiesPairOfWordsOptions.cs:72
+#, csharp-format
+#| msgid ""
+#| "Given pair of words '{0}', which of the possible answers has the closest "
+#| "in relationship to the given pair?"
+msgid ""
+"Given the pair of words '{0}', which of the possible answers has the closest "
+"in relationship to the given pair? Answer {1}."
 msgstr ""
 "Dado el par de palabras «{0}», ¿cuál de las posibles respuestas tiene la "
-"relación más cercana con el par dado?"
+"relación más cercana con el par dado? Responda {1}."
 
-#: ../src/VerbalAnalogies.cs:107
-#, csharp-format
-msgid "Read {0} verbal analogies"
-msgstr "Lee {0} analogías verbales"
+#: ../data/verbal_analogies.xml.h:1
+msgid "A restaurant is to a dinner like a park is to?"
+msgstr "¿Un restaurante es a una cena lo que un parque es a?"
+
+#: ../data/verbal_analogies.xml.h:2
+msgid "A terrier is to a dog like a?"
+msgstr "¿Un terrier es a un perro como?"
+
+#: ../data/verbal_analogies.xml.h:3
+msgid "Basketball"
+msgstr "Baloncesto"
+
+#: ../data/verbal_analogies.xml.h:4
+msgid "Cycling"
+msgstr "Ciclismo"
+
+#: ../data/verbal_analogies.xml.h:5
+#| msgid "It is the only figure with all lines of equal length."
+msgid "It is the only one that does not use a ball in the game."
+msgstr "Es la única que no usa pelota en el juego."
+
+#: ../data/verbal_analogies.xml.h:6
+#| msgid "Tetris"
+msgid "Tennis"
+msgstr "Tenis"
+
+#: ../data/verbal_analogies.xml.h:7
+msgid "Think of the items used in the game."
+msgstr "Piensa en los elementos usados en el juego."
+
+#: ../data/verbal_analogies.xml.h:8
+msgid "Water polo"
+msgstr "Water polo"
+
+#: ../data/verbal_analogies.xml.h:9
+msgid "Which of the following sports is the odd one?"
+msgstr "¿Cuál de los siguientes deportes es el más raro?"
+
+#: ../data/verbal_analogies.xml.h:10
+msgid "amnesty / prisoner"
+msgstr "amnistía / prisionero"
+
+#: ../data/verbal_analogies.xml.h:11
+msgid "ant / insect"
+msgstr "hormiga / insecto"
+
+#: ../data/verbal_analogies.xml.h:12
+msgid "box / open | banana"
+msgstr "caja / abierta | plátano"
+
+#: ../data/verbal_analogies.xml.h:13
+#| msgid "Game"
+msgid "camera"
+msgstr "cámara"
+
+#: ../data/verbal_analogies.xml.h:14
+msgid "chicken / bird"
+msgstr "pollo / pájaro"
+
+#: ../data/verbal_analogies.xml.h:15
+msgid "chop"
+msgstr "hachazo"
+
+#: ../data/verbal_analogies.xml.h:16
+msgid "date / meeting"
+msgstr ""
+
+#: ../data/verbal_analogies.xml.h:17
+msgid "dog / cat"
+msgstr "perro / gato"
+
+#: ../data/verbal_analogies.xml.h:18
+msgid "feet / two | toe"
+msgstr "pies / dos | pie"
+
+#: ../data/verbal_analogies.xml.h:19
+msgid "fish / aquarium | monkey"
+msgstr "pez / acuario | mono"
+
+#: ../data/verbal_analogies.xml.h:20
+msgid "glass / break | paper"
+msgstr "cristal / romper | papel"
+
+#: ../data/verbal_analogies.xml.h:21
+msgid "horse / pony"
+msgstr "caballo / poni"
+
+#: ../data/verbal_analogies.xml.h:22
+msgid "hungry / eat | tired"
+msgstr "hambriento / comer | cansado"
+
+#: ../data/verbal_analogies.xml.h:23
+msgid "hunter / rifle | photographer"
+msgstr "cazador / rifle | fotógrafo"
+
+#: ../data/verbal_analogies.xml.h:24
+msgid "leopard / spots | tiger"
+msgstr "leopardo / manchas | tigre"
+
+#: ../data/verbal_analogies.xml.h:25
+msgid "moratorium / payment"
+msgstr "moratoria / paga"
+
+#: ../data/verbal_analogies.xml.h:26
+#| msgid "pedal"
+msgid "peel"
+msgstr "pelar"
+
+#: ../data/verbal_analogies.xml.h:27
+msgid "picnic"
+msgstr "picnic"
+
+#: ../data/verbal_analogies.xml.h:28
+msgid "reprieve / punishment"
+msgstr "indulto / castigo"
+
+#: ../data/verbal_analogies.xml.h:29
+msgid "ring / finger | bracelet"
+msgstr "anillo / dedo | brazalete"
+
+#: ../data/verbal_analogies.xml.h:30
+msgid "seals / flippers | bird"
+msgstr "focas / aletas | pájaro"
+
+#: ../data/verbal_analogies.xml.h:31
+msgid "sentence / prison"
+msgstr "sentencia / prisión"
+
+#: ../data/verbal_analogies.xml.h:32
+msgid "shovel / dig | axe"
+msgstr "pala / cavar | hacha"
+
+#: ../data/verbal_analogies.xml.h:33
+msgid "sink"
+msgstr "hundir"
+
+#: ../data/verbal_analogies.xml.h:34
+msgid "sleep | rest"
+msgstr "dormir | descansar"
+
+#: ../data/verbal_analogies.xml.h:35
+msgid "stick / float | stone"
+msgstr ""
+
+#: ../data/verbal_analogies.xml.h:36
+#| msgid "Ostracism"
+msgid "stripes"
+msgstr "rayas"
+
+#: ../data/verbal_analogies.xml.h:37
+msgid "tear | rips"
+msgstr ""
+
+#: ../data/verbal_analogies.xml.h:38
+msgid "ten"
+msgstr "diez"
+
+#: ../data/verbal_analogies.xml.h:39
+msgid "toy / play | tool"
+msgstr "juguete / jugar | herramienta"
+
+#: ../data/verbal_analogies.xml.h:40
+#| msgid "wrist"
+msgid "wings"
+msgstr "alas"
+
+#: ../data/verbal_analogies.xml.h:41
+msgid "work"
+msgstr "trabajo"
+
+#: ../data/verbal_analogies.xml.h:43
+msgid "zoo"
+msgstr "zoo"
+
+#~ msgid "Develop your own puzzles"
+#~ msgstr "Desarrolle sus propios puzles"
+
+#~ msgid "There was an error reading {0}. No verbal analogies available."
+#~ msgstr ""
+#~ "Hubo un error al leer {0}. No existen analogías verbales disponibles."
 
 #~ msgid ""
 #~ "You can check easily if a number can be divided by 3 by adding together "
