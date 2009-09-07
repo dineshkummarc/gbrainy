@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-08-29 19:09+0200\n"
-"PO-Revision-Date: 2009-08-29 19:16+0200\n"
+"POT-Creation-Date: 2009-09-07 11:44+0200\n"
+"PO-Revision-Date: 2009-09-07 12:31+0200\n"
 "Last-Translator: Iñaki Larrañaga Murgoitio <dooteo@euskalgnu.org>\n"
 "Language-Team: Basque <itzulpena@euskalgnu.org>\n"
 "MIME-Version: 1.0\n"
@@ -489,14 +489,14 @@ msgstr ""
 "Elementuak kategorietan taldekatzea teknika oso arrunta da gauzak "
 "gogoratzeko."
 
-#: ../src/GameManager.cs:129
+#: ../src/GameManager.cs:132
 #, csharp-format
 msgid ""
-"Games registered: {0}: {1} logic puzzles, {2} math trainers, {3} memory "
-"trainers, {4} verbal analogies"
+"Games registered: {0}: {1} logic puzzles, {2} calculation trainers, {3} "
+"memory trainers, {4} verbal analogies"
 msgstr ""
-"Erregistratutako jokoak:  {0}: {1} logika puzle, {2} matematikako hezitzaile, "
-"{3} memoria hezitzaile, {4} hizketako analogi"
+"Erregistratutako jokoak:  {0}: {1} logika puzle, {2} matematikako "
+"hezitzaile, {3} memoria hezitzaile, {4} hizketako analogi"
 
 #: ../src/GameSession.cs:215
 #, csharp-format
@@ -541,7 +541,7 @@ msgstr "Jokatu epe laburreko memoria eskatzen dituzten jokoak."
 msgid "Play games that challenge your verbal aptitude"
 msgstr "Jokatu zure hizketaren gaitasuna aldatzen dituzten jokoak."
 
-#: ../src/gbrainy.cs:123 ../src/gbrainy.cs:534
+#: ../src/gbrainy.cs:123 ../src/gbrainy.cs:533
 msgid "Pause"
 msgstr "Pausarazi"
 
@@ -561,19 +561,19 @@ msgstr "Amaitu"
 msgid "Extensions"
 msgstr "Hedapenak"
 
-#: ../src/gbrainy.cs:167
-msgid "Develop your own puzzles"
-msgstr "Garatu zure puzle propioak"
+#: ../src/gbrainy.cs:168
+msgid "How to Extend gbrainy's Functionality"
+msgstr "Nola zabaldu Gbrainy-ren funtzionalitateak?"
 
-#: ../src/gbrainy.cs:370
+#: ../src/gbrainy.cs:369
 msgid "Congratulations."
 msgstr "Zorionak."
 
-#: ../src/gbrainy.cs:372
+#: ../src/gbrainy.cs:371
 msgid "Incorrect answer."
 msgstr "Erantzun okerra."
 
-#: ../src/gbrainy.cs:422
+#: ../src/gbrainy.cs:421
 msgid ""
 "Once you have an answer type it in the \"Answer:\" entry box and press the "
 "\"OK\" button."
@@ -581,7 +581,7 @@ msgstr ""
 "Erantzuna daukazunean, idatz ezazu \"Erantzuna:\" eremuan eta eta sakatu "
 "\"Ados\" botoia."
 
-#: ../src/gbrainy.cs:539
+#: ../src/gbrainy.cs:538
 msgid "Resume"
 msgstr "Jarraitu"
 
@@ -889,7 +889,7 @@ msgid ""
 msgstr "Hitz bat falta da aurreko zerrendan. Zein da falta den hitza?"
 
 #. Body parts
-#: ../src/MemoryGames/MemoryWords.cs:48
+#: ../src/MemoryGames/MemoryWords.cs:48 ../data/verbal_analogies.xml.h:42
 msgid "wrist"
 msgstr "eskumuturra"
 
@@ -1512,7 +1512,9 @@ msgstr ""
 #: ../src/PuzzleGames/PuzzleMostInCommon.cs:284
 #: ../src/PuzzleGames/PuzzleNextFigure.cs:126
 #: ../src/PuzzleGames/PuzzleSquareDots.cs:180
-#: ../src/PuzzleGames/PuzzleTetris.cs:148 ../src/VerbalAnalogies.cs:260
+#: ../src/PuzzleGames/PuzzleTetris.cs:148
+#: ../src/VerbalAnalogies/AnalogiesMultipleOptions.cs:103
+#: ../src/VerbalAnalogies/AnalogiesPairOfWordsOptions.cs:104
 msgid "Possible answers are:"
 msgstr "Erantzun posibleak:"
 
@@ -2160,24 +2162,229 @@ msgstr ""
 msgid "The result of multiplying the two numbers inside every triangle is {0}."
 msgstr "Triangelu bakoitzeko bi zenbaki bidertzearen emaitza {0} da."
 
-#: ../src/VerbalAnalogies.cs:56
+#: ../src/VerbalAnalogies/Analogies.cs:30
 msgid "Verbal analogies"
 msgstr "Hizketako analogiak"
 
-#: ../src/VerbalAnalogies.cs:63
-#, csharp-format
-msgid "There was an error reading {0}. No verbal analogies available."
-msgstr "Errore bat gertatu da {0} irakurtzean. Ez dago hizketako analogiarik erabilgarri."
+#. Translators: this the separator used when concatenating multiple possible answers for verbal analogies
+#. For example: "Possible correct answers are: sleep, rest."
+#. Translators: this the separator used when concatenating possible options for answering verbal analogies
+#. For example: "Possible correct answers are: a, b, c, d."
+#: ../src/VerbalAnalogies/Analogies.cs:66
+#: ../src/VerbalAnalogies/AnalogiesMultipleOptions.cs:53
+#: ../src/VerbalAnalogies/AnalogiesPairOfWordsOptions.cs:67
+msgid ", "
+msgstr ", "
 
-#: ../src/VerbalAnalogies.cs:69
+#: ../src/VerbalAnalogies/Analogies.cs:70
+#, csharp-format
+msgid "Possible correct answers are: {0}."
+msgstr "Erantzun posibleak: {0}."
+
+#: ../src/VerbalAnalogies/AnalogiesFactory.cs:138
+#, csharp-format
+msgid "Read {0} verbal analogies of type {1}"
+msgstr "Irakurri hizketako {0} analogi {1} motakoak"
+
+#: ../src/VerbalAnalogies/AnalogiesFactory.cs:142
+#, csharp-format
+msgid "Read a total of {0} verbal analogies"
+msgstr "Guztira irakurri hizketako {0} analogi"
+
+#: ../src/VerbalAnalogies/AnalogiesMultipleOptions.cs:57
+#, csharp-format
+msgid "{0} Answer {1}."
+msgstr "{0} erantzuna: {1}"
+
+#: ../src/VerbalAnalogies/AnalogiesPairOfWordsCompare.cs:62
 #, csharp-format
 msgid ""
-"Given pair of words '{0}', which of the possible answers has the closest in "
-"relationship to the given pair?"
-msgstr "'{0}' hitz bikotea emanda, erantzunetatik zein da emandako bikotetik gertuen dagoena?"
+"Given the pair of words below, which word has the closest relationship to "
+"'{0}'?"
+msgstr ""
+"'{0}' hitz bikotea emanda, erantzunetatik zein da emandako bikotetik gertuen "
+"dagoena?"
 
-#: ../src/VerbalAnalogies.cs:107
+#: ../src/VerbalAnalogies/AnalogiesPairOfWordsCompare.cs:104
 #, csharp-format
-msgid "Read {0} verbal analogies"
-msgstr "Irakurri hizketako {0} analogi"
+msgid "Pair of words: {0}"
+msgstr "Hitz bikoteak: {0}"
+
+#: ../src/VerbalAnalogies/AnalogiesPairOfWordsOptions.cs:72
+#, csharp-format
+msgid ""
+"Given the pair of words '{0}', which of the possible answers has the closest "
+"in relationship to the given pair? Answer {1}."
+msgstr ""
+"'{0}' hitz bikotea emanda, erantzunetatik zein da emandako bikotetik gertuen "
+"dagoena? Erantzuna: {1}"
+
+#: ../data/verbal_analogies.xml.h:1
+msgid "A restaurant is to a dinner like a park is to?"
+msgstr "Jatetxe bat afariari badagokio, parke batek zerri dagokio?"
+
+#: ../data/verbal_analogies.xml.h:2
+#, fuzzy
+msgid "A terrier is to a dog like a?"
+msgstr "Terrier bat zakurrari badagokio?"
+
+#: ../data/verbal_analogies.xml.h:3
+msgid "Basketball"
+msgstr "saskibaloia"
+
+#: ../data/verbal_analogies.xml.h:4
+msgid "Cycling"
+msgstr "txirrindularitza"
+
+#: ../data/verbal_analogies.xml.h:5
+msgid "It is the only one that does not use a ball in the game."
+msgstr "Jokoan baloi bat erabiltzen ez duen bakarra da."
+
+#: ../data/verbal_analogies.xml.h:6
+msgid "Tennis"
+msgstr "Tenis"
+
+#: ../data/verbal_analogies.xml.h:7
+msgid "Think of the items used in the game."
+msgstr "Jokoan erabilitako elementuei buruz pentsatu."
+
+#: ../data/verbal_analogies.xml.h:8
+msgid "Water polo"
+msgstr "Waterpolo"
+
+#: ../data/verbal_analogies.xml.h:9
+msgid "Which of the following sports is the odd one?"
+msgstr "Kirol hauetarikotik zein da bitxia?"
+
+#: ../data/verbal_analogies.xml.h:10
+msgid "amnesty / prisoner"
+msgstr "amnistia / presoa"
+
+#: ../data/verbal_analogies.xml.h:11
+msgid "ant / insect"
+msgstr "txingurria / insektua"
+
+#: ../data/verbal_analogies.xml.h:12
+msgid "box / open | banana"
+msgstr "kutxa / ireki | banana"
+
+#: ../data/verbal_analogies.xml.h:13
+msgid "camera"
+msgstr "kamera"
+
+#: ../data/verbal_analogies.xml.h:14
+msgid "chicken / bird"
+msgstr "oiloa / txoria"
+
+#: ../data/verbal_analogies.xml.h:15
+msgid "chop"
+msgstr "aizkorakada"
+
+#: ../data/verbal_analogies.xml.h:16
+msgid "date / meeting"
+msgstr "data / bilera"
+
+#: ../data/verbal_analogies.xml.h:17
+msgid "dog / cat"
+msgstr "zakurra / katua"
+
+#: ../data/verbal_analogies.xml.h:18
+msgid "feet / two | toe"
+msgstr "oinak / bi | behatza"
+
+#: ../data/verbal_analogies.xml.h:19
+msgid "fish / aquarium | monkey"
+msgstr "arraina / akuarioa | tximua"
+
+#: ../data/verbal_analogies.xml.h:20
+msgid "glass / break | paper"
+msgstr "edalontzia / hautsi | papera"
+
+#: ../data/verbal_analogies.xml.h:21
+msgid "horse / pony"
+msgstr "zaldia / pottoka"
+
+#: ../data/verbal_analogies.xml.h:22
+msgid "hungry / eat | tired"
+msgstr "gosea / jan | nekatuta"
+
+#: ../data/verbal_analogies.xml.h:23
+msgid "hunter / rifle | photographer"
+msgstr "ehiztaria | erriflea | argazkilaria"
+
+#: ../data/verbal_analogies.xml.h:24
+msgid "leopard / spots | tiger"
+msgstr "lehoinabarra / puntuak | tigrea"
+
+#: ../data/verbal_analogies.xml.h:25
+msgid "moratorium / payment"
+msgstr "luzamendua / ordainketa"
+
+#: ../data/verbal_analogies.xml.h:26
+msgid "peel"
+msgstr "azala"
+
+#: ../data/verbal_analogies.xml.h:27
+msgid "picnic"
+msgstr "otordua"
+
+#: ../data/verbal_analogies.xml.h:28
+msgid "reprieve / punishment"
+msgstr "indultua / zigorra"
+
+#: ../data/verbal_analogies.xml.h:29
+msgid "ring / finger | bracelet"
+msgstr "eraztuna / hatza | eskumuturrekoa"
+
+#: ../data/verbal_analogies.xml.h:30
+msgid "seals / flippers | bird"
+msgstr "itsas txakurra | hegalak | txoria"
+
+#: ../data/verbal_analogies.xml.h:31
+msgid "sentence / prison"
+msgstr "sententzia / espetxea"
+
+#: ../data/verbal_analogies.xml.h:32
+msgid "shovel / dig | axe"
+msgstr "pala / zuloa egin | ardatza"
+
+#: ../data/verbal_analogies.xml.h:33
+msgid "sink"
+msgstr "harraska"
+
+#: ../data/verbal_analogies.xml.h:34
+msgid "sleep | rest"
+msgstr "lo egin | atsedena"
+
+#: ../data/verbal_analogies.xml.h:35
+msgid "stick / float | stone"
+msgstr "finkoa / mugikorra | harria"
+
+#: ../data/verbal_analogies.xml.h:36
+msgid "stripes"
+msgstr "bandak"
+
+#: ../data/verbal_analogies.xml.h:37
+msgid "tear | rips"
+msgstr "malkoa | urratuak"
+
+#: ../data/verbal_analogies.xml.h:38
+msgid "ten"
+msgstr "hamar"
+
+#: ../data/verbal_analogies.xml.h:39
+msgid "toy / play | tool"
+msgstr "jostailua / jolastu | tresna"
+
+#: ../data/verbal_analogies.xml.h:40
+msgid "wings"
+msgstr "hegoak"
+
+#: ../data/verbal_analogies.xml.h:41
+msgid "work"
+msgstr "lana"
+
+#: ../data/verbal_analogies.xml.h:43
+msgid "zoo"
+msgstr "zoologikoa"
 
