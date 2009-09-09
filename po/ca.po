@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gbrainy\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-09-05 23:18+0200\n"
+"POT-Creation-Date: 2009-09-09 21:30+0200\n"
 "PO-Revision-Date: 2009-02-04 21:38+0100\n"
 "Last-Translator: Jordi Mas <jmas@softcatala.org>\n"
 "Language-Team: Catalan\n"
@@ -529,7 +529,7 @@ msgid ""
 "memory trainers, {4} verbal analogies"
 msgstr ""
 "Jocs registrats: {0}: {1} trencaclosques lògics, {2} entrenadors de càlcul "
-"mental, {3} entrenadors de memòria , {4} analogies verbals"
+"mental, {3} entrenadors de memòria, {4} analogies verbals (gestors)"
 
 #: ../src/GameSession.cs:215
 #, csharp-format
@@ -968,7 +968,7 @@ msgid ""
 msgstr "Hi ha una paraula que manca de la llista anterior. Quina és?"
 
 #. Body parts
-#: ../src/MemoryGames/MemoryWords.cs:48 ../data/verbal_analogies.xml.h:42
+#: ../src/MemoryGames/MemoryWords.cs:48 ../data/verbal_analogies.xml.h:82
 msgid "wrist"
 msgstr "canell"
 
@@ -1650,8 +1650,8 @@ msgstr ""
 #: ../src/PuzzleGames/PuzzleNextFigure.cs:126
 #: ../src/PuzzleGames/PuzzleSquareDots.cs:180
 #: ../src/PuzzleGames/PuzzleTetris.cs:148
-#: ../src/VerbalAnalogies/AnalogiesMultipleOptions.cs:103
-#: ../src/VerbalAnalogies/AnalogiesPairOfWordsOptions.cs:104
+#: ../src/VerbalAnalogies/AnalogiesMultipleOptions.cs:107
+#: ../src/VerbalAnalogies/AnalogiesPairOfWordsOptions.cs:108
 msgid "Possible answers are:"
 msgstr "Les respostes possibles són:"
 
@@ -2368,33 +2368,37 @@ msgstr "Analogies verbals"
 #. For example: "Possible correct answers are: sleep, rest."
 #. Translators: this the separator used when concatenating possible options for answering verbal analogies
 #. For example: "Possible correct answers are: a, b, c, d."
-#: ../src/VerbalAnalogies/Analogies.cs:66
-#: ../src/VerbalAnalogies/AnalogiesMultipleOptions.cs:53
-#: ../src/VerbalAnalogies/AnalogiesPairOfWordsOptions.cs:67
+#: ../src/VerbalAnalogies/Analogies.cs:69
+#: ../src/VerbalAnalogies/AnalogiesMultipleOptions.cs:57
+#: ../src/VerbalAnalogies/AnalogiesPairOfWordsOptions.cs:71
 msgid ", "
 msgstr ", "
 
-#: ../src/VerbalAnalogies/Analogies.cs:70
+#: ../src/VerbalAnalogies/Analogies.cs:73
 #, csharp-format
 msgid "Possible correct answers are: {0}."
 msgstr "Les respostes possibles correctes són: {0}."
 
-#: ../src/VerbalAnalogies/AnalogiesFactory.cs:138
+#: ../src/VerbalAnalogies/AnalogiesFactory.cs:140
 #, fuzzy, csharp-format
 msgid "Read {0} verbal analogies of type {1}"
 msgstr "S'han llegit {0} analogies verbals!"
 
-#: ../src/VerbalAnalogies/AnalogiesFactory.cs:142
+#: ../src/VerbalAnalogies/AnalogiesFactory.cs:144
 #, csharp-format
 msgid "Read a total of {0} verbal analogies"
 msgstr "S'han llegit un total de {0} analogies verbals"
 
-#: ../src/VerbalAnalogies/AnalogiesMultipleOptions.cs:57
+#: ../src/VerbalAnalogies/AnalogiesFactory.cs:161
+msgid "There are no verbal analogies available."
+msgstr "No hi ha cap analogia verbal disponible"
+
+#: ../src/VerbalAnalogies/AnalogiesMultipleOptions.cs:61
 #, csharp-format
 msgid "{0} Answer {1}."
 msgstr "{0} Responeu {1}"
 
-#: ../src/VerbalAnalogies/AnalogiesPairOfWordsCompare.cs:62
+#: ../src/VerbalAnalogies/AnalogiesPairOfWordsCompare.cs:65
 #, csharp-format
 msgid ""
 "Given the pair of words below, which word has the closest relationship to "
@@ -2403,12 +2407,12 @@ msgstr ""
 "Donat el parell de paraules d'abaix, quina paraula té la relació més propera "
 "a «{0}»?"
 
-#: ../src/VerbalAnalogies/AnalogiesPairOfWordsCompare.cs:104
+#: ../src/VerbalAnalogies/AnalogiesPairOfWordsCompare.cs:106
 #, csharp-format
 msgid "Pair of words: {0}"
 msgstr "Parell de paraules: {0}"
 
-#: ../src/VerbalAnalogies/AnalogiesPairOfWordsOptions.cs:72
+#: ../src/VerbalAnalogies/AnalogiesPairOfWordsOptions.cs:76
 #, csharp-format
 msgid ""
 "Given the pair of words '{0}', which of the possible answers has the closest "
@@ -2455,135 +2459,295 @@ msgid "Which of the following sports is the odd one?"
 msgstr "Quin dels següents esports és l'estrany?"
 
 #: ../data/verbal_analogies.xml.h:10
+msgid "airplane"
+msgstr "avió"
+
+#: ../data/verbal_analogies.xml.h:11
 msgid "amnesty / prisoner"
 msgstr "amnistia / presoner"
 
-#: ../data/verbal_analogies.xml.h:11
+#: ../data/verbal_analogies.xml.h:12
+msgid "ankle"
+msgstr "turmell"
+
+#: ../data/verbal_analogies.xml.h:13
 msgid "ant / insect"
 msgstr "formiga / insecte"
 
-#: ../data/verbal_analogies.xml.h:12
+#: ../data/verbal_analogies.xml.h:14
+msgid "bite"
+msgstr "mossegar"
+
+#: ../data/verbal_analogies.xml.h:15
+msgid "body"
+msgstr "cos"
+
+#: ../data/verbal_analogies.xml.h:16
 msgid "box / open | banana"
 msgstr "caixa / obrir | plàtan"
 
-#: ../data/verbal_analogies.xml.h:13
+#: ../data/verbal_analogies.xml.h:17
+msgid "bridge / over | tunnel"
+msgstr "pont / sobre | tunel"
+
+#: ../data/verbal_analogies.xml.h:18
+msgid "burst"
+msgstr "rebentar | punxar"
+
+#: ../data/verbal_analogies.xml.h:19
+msgid "button / push | key"
+msgstr "botó / prémer | clau"
+
+#: ../data/verbal_analogies.xml.h:20
 msgid "camera"
 msgstr "càmera"
 
-#: ../data/verbal_analogies.xml.h:14
+#: ../data/verbal_analogies.xml.h:21
 msgid "chicken / bird"
 msgstr "pollastre / au"
 
-#: ../data/verbal_analogies.xml.h:15
+#: ../data/verbal_analogies.xml.h:22
 msgid "chop"
-msgstr "talla"
+msgstr "tallar"
 
-#: ../data/verbal_analogies.xml.h:16
+#: ../data/verbal_analogies.xml.h:23
+msgid "dance"
+msgstr "ball"
+
+#: ../data/verbal_analogies.xml.h:24
 msgid "date / meeting"
 msgstr "data / reunió"
 
-#: ../data/verbal_analogies.xml.h:17
+#: ../data/verbal_analogies.xml.h:25
+msgid "dish / break | balloon"
+msgstr "plat / trencar | globus"
+
+#: ../data/verbal_analogies.xml.h:26
 msgid "dog / cat"
 msgstr "gos / gat"
 
-#: ../data/verbal_analogies.xml.h:18
+#: ../data/verbal_analogies.xml.h:27
+msgid "dog / tame | wolf"
+msgstr "gos / domèstic | llop"
+
+#: ../data/verbal_analogies.xml.h:28
+msgid "elbow / knee | wrist"
+msgstr "colze / genoll | canell"
+
+#: ../data/verbal_analogies.xml.h:29
+msgid "error / correct | damage"
+msgstr "error / correcte | dany"
+
+#: ../data/verbal_analogies.xml.h:30
+msgid "eyebrow / eye | mustache"
+msgstr "cella / ull | bigoti"
+
+#: ../data/verbal_analogies.xml.h:31
 msgid "feet / two | toe"
 msgstr "peus / dos | dits"
 
-#: ../data/verbal_analogies.xml.h:19
+#: ../data/verbal_analogies.xml.h:32
 msgid "fish / aquarium | monkey"
 msgstr "peix / aquari | mico"
 
-#: ../data/verbal_analogies.xml.h:20
+#: ../data/verbal_analogies.xml.h:33
+msgid "fish / submarine | bird"
+msgstr "peix / submarí | ocell"
+
+#: ../data/verbal_analogies.xml.h:34
+msgid "fox / den | bird"
+msgstr "guineu / cova | ocell"
+
+#: ../data/verbal_analogies.xml.h:35
 msgid "glass / break | paper"
 msgstr "vidre / trencar | paper"
 
-#: ../data/verbal_analogies.xml.h:21
+#: ../data/verbal_analogies.xml.h:36
+msgid "hands / grab | teeth"
+msgstr "mans / agafar | dents"
+
+#: ../data/verbal_analogies.xml.h:37
 msgid "horse / pony"
 msgstr "cavall / poni"
 
-#: ../data/verbal_analogies.xml.h:22
+#: ../data/verbal_analogies.xml.h:38
 msgid "hungry / eat | tired"
 msgstr "afamat / menjar | cansat"
 
-#: ../data/verbal_analogies.xml.h:23
+#: ../data/verbal_analogies.xml.h:39
 msgid "hunter / rifle | photographer"
 msgstr "caçador / rifle | fotògraf"
 
-#: ../data/verbal_analogies.xml.h:24
+#: ../data/verbal_analogies.xml.h:40
+msgid "ice / slippery | glue"
+msgstr "gel / lliscós | pegament"
+
+#: ../data/verbal_analogies.xml.h:41
+msgid "in"
+msgstr "dins"
+
+#: ../data/verbal_analogies.xml.h:42
+msgid "label"
+msgstr "etiqueta"
+
+#: ../data/verbal_analogies.xml.h:43
 msgid "leopard / spots | tiger"
 msgstr "lleopard / taques | tigre"
 
-#: ../data/verbal_analogies.xml.h:25
+#: ../data/verbal_analogies.xml.h:44
+msgid "lip"
+msgstr "llavi"
+
+#: ../data/verbal_analogies.xml.h:45
 msgid "moratorium / payment"
 msgstr "moratòria / pagament"
 
-#: ../data/verbal_analogies.xml.h:26
+#: ../data/verbal_analogies.xml.h:46
+msgid "nest"
+msgstr "niu"
+
+#: ../data/verbal_analogies.xml.h:47
+msgid "nose"
+msgstr "nas"
+
+#: ../data/verbal_analogies.xml.h:48
+msgid "orange / fruit | spinach"
+msgstr "taronja / fruita | espinac"
+
+#: ../data/verbal_analogies.xml.h:49
 msgid "peel"
 msgstr "pelar"
 
-#: ../data/verbal_analogies.xml.h:27
+#: ../data/verbal_analogies.xml.h:50
 msgid "picnic"
 msgstr "pícnic"
 
-#: ../data/verbal_analogies.xml.h:28
+#: ../data/verbal_analogies.xml.h:51
+msgid "puzzle / solve | game"
+msgstr "trencaclosques / soluciona | joc"
+
+#: ../data/verbal_analogies.xml.h:52
+msgid "repair | fix"
+msgstr "repara | arregla"
+
+#: ../data/verbal_analogies.xml.h:53
 msgid "reprieve / punishment"
 msgstr "indult / càstig"
 
-#: ../data/verbal_analogies.xml.h:29
+#: ../data/verbal_analogies.xml.h:54
 msgid "ring / finger | bracelet"
 msgstr "anell / dit | braçalet"
 
-#: ../data/verbal_analogies.xml.h:30
+#: ../data/verbal_analogies.xml.h:55
 msgid "seals / flippers | bird"
 msgstr "foques / aletes | ocells"
 
-#: ../data/verbal_analogies.xml.h:31
+#: ../data/verbal_analogies.xml.h:56
 msgid "sentence / prison"
 msgstr "sentencia / presó"
 
-#: ../data/verbal_analogies.xml.h:32
+#: ../data/verbal_analogies.xml.h:57
 msgid "shovel / dig | axe"
 msgstr "pala / cava | destral"
 
-#: ../data/verbal_analogies.xml.h:33
+#: ../data/verbal_analogies.xml.h:58
 msgid "sink"
 msgstr "enfonsa | s'enfonsa | enfonsar"
 
-#: ../data/verbal_analogies.xml.h:34
+#: ../data/verbal_analogies.xml.h:59
+msgid "siren"
+msgstr "sirena"
+
+#: ../data/verbal_analogies.xml.h:60
 msgid "sleep | rest"
 msgstr "dormir | descansar"
 
-#: ../data/verbal_analogies.xml.h:35
+#: ../data/verbal_analogies.xml.h:61
+msgid "slurp / tongue | snort"
+msgstr "xuclar / llengua | roncar"
+
+#: ../data/verbal_analogies.xml.h:62
+msgid "sour"
+msgstr "agre"
+
+#: ../data/verbal_analogies.xml.h:63
 msgid "stick / float | stone"
 msgstr "pal / flota | pedra"
 
+#: ../data/verbal_analogies.xml.h:64
+msgid "sticky"
+msgstr "enganxós"
+
+#: ../data/verbal_analogies.xml.h:65
+msgid "store / sign | bottle"
+msgstr "tenda / rètol | ampolla"
+
 #
-#: ../data/verbal_analogies.xml.h:36
+#: ../data/verbal_analogies.xml.h:66
 msgid "stripes"
 msgstr "ratlles"
 
-#: ../data/verbal_analogies.xml.h:37
+#: ../data/verbal_analogies.xml.h:67
+msgid "sugar / sweet | vinegar"
+msgstr "sucre / dolç | vinagre"
+
+#: ../data/verbal_analogies.xml.h:68
 msgid "tear | rips"
-msgstr "estripa"
+msgstr "estripar"
 
-#: ../data/verbal_analogies.xml.h:38
+#: ../data/verbal_analogies.xml.h:69
+msgid "tears / eyes | sweat"
+msgstr "llàgrimes / ulls | suor"
+
+# N.T: toe en anglès vol dir 10 dits però en català la pregunta tindrà sempre 20 com a contestació
+#: ../data/verbal_analogies.xml.h:70
 msgid "ten"
-msgstr "deu | 10"
+msgstr "vint | 20"
 
-#: ../data/verbal_analogies.xml.h:39
+#: ../data/verbal_analogies.xml.h:71
+msgid "tennis / sport | ballet"
+msgstr "tennis / esport | balet"
+
+#: ../data/verbal_analogies.xml.h:72
 msgid "toy / play | tool"
 msgstr "joguina / jugar | eina"
 
-#: ../data/verbal_analogies.xml.h:40
+#: ../data/verbal_analogies.xml.h:73
+msgid "train / whistle | ambulance"
+msgstr "tren / xiula | ambulància"
+
+#: ../data/verbal_analogies.xml.h:74
+msgid "turns"
+msgstr "girar | gira"
+
+#: ../data/verbal_analogies.xml.h:75
+msgid "vegetable"
+msgstr "vegetal"
+
+#: ../data/verbal_analogies.xml.h:76
+msgid "whirlpool / water | tornado"
+msgstr "remolí / aigua | tornado"
+
+#: ../data/verbal_analogies.xml.h:77
+msgid "wild"
+msgstr "salvatge"
+
+#: ../data/verbal_analogies.xml.h:78
+msgid "wind"
+msgstr "vent"
+
+#: ../data/verbal_analogies.xml.h:79
 msgid "wings"
 msgstr "ales"
 
-#: ../data/verbal_analogies.xml.h:41
+#: ../data/verbal_analogies.xml.h:80
+msgid "wins"
+msgstr "guanyar | guanya"
+
+#: ../data/verbal_analogies.xml.h:81
 msgid "work"
 msgstr "treballar | treball"
 
-#: ../data/verbal_analogies.xml.h:43
+#: ../data/verbal_analogies.xml.h:83
 msgid "zoo"
 msgstr "zoo | zoològic"
-
