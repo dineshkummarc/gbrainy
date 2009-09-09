@@ -58,6 +58,9 @@ public class AnalogiesPairOfWordsCompare : Analogies
 
 	public override string Question {
 		get {
+			if (current.answers == null)
+				return current.question;
+
 			return String.Format (Catalog.GetString (
 				"Given the pair of words below, which word has the closest relationship to '{0}'?"),
 				sample);
@@ -72,12 +75,12 @@ public class AnalogiesPairOfWordsCompare : Analogies
 
 		current = GetNext ();
 
-		if (current == null)
+		if (current == null || current.answers == null)
 			return;
 
 		string [] items;
 
-		items = current.question.Split ('|');
+		items = current.question.Split (AnalogiesFactory.Separator);
 
 		if (items.Length == 2)
 			sample = items [1].Trim ();
@@ -85,7 +88,6 @@ public class AnalogiesPairOfWordsCompare : Analogies
 			sample = string.Empty;
 
 		samples = items [0].Trim ();
-
 		right_answer = current.answers [current.right];
 		Console.WriteLine ("Name:" + Name + " " + current.ToString ());
 	}
@@ -100,7 +102,7 @@ public class AnalogiesPairOfWordsCompare : Analogies
 			return;
 
 		gr.SetPangoLargeFontSize ();
-		gr.MoveTo (0.2, y + 0.25);
-		gr.ShowPangoText (String.Format (Catalog.GetString ("Pair of words: {0}"), samples));
+		gr.DrawTextCentered (0.5, y + 0.25,
+			String.Format (Catalog.GetString ("Pair of words: {0}"), samples));
 	}
 }

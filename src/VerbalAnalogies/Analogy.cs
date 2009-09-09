@@ -46,7 +46,7 @@ public class Analogy
 
 	public bool MultipleAnswers {
 		get {
-			string [] items = answers[right].Split ('|');
+			string [] items = answers[right].Split (Analogies Factory.Separator);
 
 			return items.Length > 1;
 		}

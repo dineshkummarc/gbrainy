@@ -43,6 +43,10 @@ public class AnalogiesMultipleOptions : Analogies
 	public override string Question {
 		get {
 			string str = string.Empty;
+
+			if (current.answers == null)
+				return current.question;
+
 			for (int n = 0; n < current.answers.Length; n++)
 			{
 				str+= GetPossibleAnswer (n);
@@ -82,7 +86,7 @@ public class AnalogiesMultipleOptions : Analogies
 
 		current = GetNext ();
 
-		if (current == null)
+		if (current == null || current.answers == null)
 			return;
 
 		right_answer = GetPossibleAnswer (current.right);

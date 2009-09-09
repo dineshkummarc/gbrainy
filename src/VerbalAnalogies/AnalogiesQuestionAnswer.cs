@@ -55,7 +55,7 @@ public class AnalogiesQuestionAnswer : Analogies
 	public override void Initialize ()
 	{
 		if (analogies == null) {
-			analogies = AnalogiesFactory. Get (Analogy.Type.QuestionAnswer);
+			analogies = AnalogiesFactory.Get (Analogy.Type.QuestionAnswer);
 		}
 
 		current = GetNext ();
@@ -63,7 +63,9 @@ public class AnalogiesQuestionAnswer : Analogies
 		if (current == null)
 			return;
 
-		right_answer = current.answers [current.right];
+		if (current.answers != null) 
+			right_answer = current.answers [current.right];
+
 		Console.WriteLine ("Name:" + Name + " " + current.ToString ());
 	}
 }

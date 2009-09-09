@@ -32,6 +32,9 @@ public abstract class Analogies : Game
 
 	public override string Question {
 		get {
+			if (current == null)
+				return string.Empty;
+
 			return current.question;
 		}
 	}
@@ -55,7 +58,7 @@ public abstract class Analogies : Game
 				string [] items;
 				string str = string.Empty;
 	
-				items = right_answer.Split ('|');
+				items = right_answer.Split (AnalogiesFactory.Separator);
 
 				for (int i = 0 ; i < items.Length; i++)
 				{
@@ -96,18 +99,13 @@ public abstract class Analogies : Game
 		get;
 	}
 
-	public override void Initialize ()
-	{
-		current = GetNext ();
-
-		if (current == null)
-			return;
-	}
-
 	public Analogy GetNext ()
 	{
 		int idx;
 		Analogy analogy;
+
+		if (List.Count == 0)
+			return null;
 
 		if (Indices == null || CurrentIndex + 1 >= List.Count) {
 			Indices = new ArrayListIndicesRandom (List.Count);
@@ -162,8 +160,7 @@ public abstract class Analogies : Game
 
 	public override bool CheckAnswer (string answer)
 	{
-		string [] items = right_answer.Split ('|');
-		Console.WriteLine ("answer is null {0}", answer == null);
+		string [] items = right_answer.Split (AnalogiesFactory.Separator);
 
 		foreach (string ans in items)
 		{

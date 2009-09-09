@@ -30,6 +30,8 @@ static public class AnalogiesFactory
 {
 	static Dictionary <int, Analogy> [] analogies_arrays;
 	static bool read = false;
+	
+	public const char Separator = '|';
 
 	static AnalogiesFactory ()
 	{
@@ -142,9 +144,27 @@ static public class AnalogiesFactory
 			Console.WriteLine (Catalog.GetString ("Read a total of {0} verbal analogies"), cnt);
 		}
 
-		catch (Exception)
+		catch (Exception e)
 		{
-			Console.WriteLine ("Error loading {0}", Defines.DATA_DIR + Defines.VERBAL_ANALOGIES);
+			Console.WriteLine ("Error loading {0}. Exception {1}", Defines.DATA_DIR + Defines.VERBAL_ANALOGIES, e.Message);
+		}
+
+		finally
+		{
+			CheckEmpty ();
 		}
 	}
+
+	static void CheckEmpty ()
+	{
+		Analogy empty = new Analogy ();
+		empty.question = Catalog.GetString ("There are no verbal analogies available.");
+
+		for (int i = 0; i < (int) Analogy.Type.Last; i++)
+		{
+			if (analogies_arrays[i].Count == 0)
+				analogies_arrays[i].Add (0, empty);
+		}
+	}
+
 }
