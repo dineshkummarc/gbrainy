@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2008 Jordi Mas i Hernàndez <jmas@softcatala.org>
+ * Copyright (C) 2008-2009 Jordi Mas i Hernàndez <jmas@softcatala.org>
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License as
@@ -41,15 +41,21 @@ public class PlayerHistory
 
 	public PlayerHistory ()
 	{
-		games = new List <GameHistory> ();
 		config_path = Environment.GetFolderPath (Environment.SpecialFolder.ApplicationData);
 		config_path = Path.Combine (config_path, "gbrainy");
 		file = Path.Combine (config_path, "PlayerHistory.xml");
-		Load ();
 	}
 
 	public List <GameHistory> Games {
-		get { return games; }
+		get {
+			if (games == null)
+			{
+				Load ();
+				if (games == null) 
+					games = new List <GameHistory> ();
+			}
+			return games; 
+		}
 	}
 
 	public void Clean ()
@@ -72,10 +78,10 @@ public class PlayerHistory
 		history.memory_score = session.MemoryScore;
 		history.total_score = session.TotalScore;
 
-		if (games.Count >= gbrainy.preferences.GetIntValue (Preferences.MaxStoredGamesKey))
-			games.RemoveAt (0);
+		if (Games.Count >= gbrainy.preferences.GetIntValue (Preferences.MaxStoredGamesKey))
+			Games.RemoveAt (0);
 
-		games.Add (history);
+		Games.Add (history);
 		Save ();
 	}
 
@@ -89,7 +95,7 @@ public class PlayerHistory
 			using (FileStream str = File.Create (file))
 			{
 				XmlSerializer bf = new XmlSerializer (typeof (List <GameHistory>));
-				bf.Serialize (str, games);
+				bf.Serialize (str, Games);
 			}
 		}
 		
@@ -113,5 +119,4 @@ public class PlayerHistory
 	}
 	
 }
-
 
