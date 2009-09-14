@@ -33,7 +33,7 @@ GBRAINY_CSDISTFILES =				\
 	$(srcdir)/PuzzleGames/PuzzleDivideCircle.cs		\
 	$(srcdir)/CalculationGames/CalculationGreatestDivisor.cs	\
 	$(srcdir)/CalculationGames/CalculationTwoNumbers.cs	\
-	$(srcdir)/CalculationGames/CalculationWhichNumber.cs	\
+	$(srcdir)/CalculationGames/CalculationCloserFraction.cs	\
 	$(srcdir)/PuzzleGames/PuzzleMatrixGroups.cs		\
 	$(srcdir)/PuzzleGames/PuzzleBalance.cs		\
 	$(srcdir)/PuzzleGames/PuzzleTrianglesWithNumbers.cs	\
