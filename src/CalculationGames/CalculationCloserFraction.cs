@@ -21,7 +21,7 @@ using System;
 using Cairo;
 using Mono.Unix;
 
-public class CalculationWhichNumber : Game
+public class CalculationCloserFraction : Game
 {
 	private double question_num;
 	private const int options_cnt = 4;

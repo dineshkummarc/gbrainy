@@ -81,6 +81,7 @@ GBRAINY_CSDISTFILES =				\
 	$(srcdir)/VerbalAnalogies/AnalogiesMultipleOptions.cs \
 	$(srcdir)/VerbalAnalogies/AnalogiesPairOfWordsOptions.cs \
 	$(srcdir)/VerbalAnalogies/AnalogiesPairOfWordsCompare.cs \
+	$(srcdir)/CalculationGames/CalculationAverage.cs \
 	$(srcdir)/SimpleLabel.cs	\
 	$(srcdir)/gbrainy.cs			
 
