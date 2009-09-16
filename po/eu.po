@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-09-14 11:20+0200\n"
-"PO-Revision-Date: 2009-09-14 11:44+0200\n"
+"POT-Creation-Date: 2009-09-16 15:07+0200\n"
+"PO-Revision-Date: 2009-09-16 15:14+0200\n"
 "Last-Translator: Iñaki Larrañaga Murgoitio <dooteo@euskalgnu.org>\n"
 "Language-Team: Basque <itzulpena@euskalgnu.org>\n"
 "MIME-Version: 1.0\n"
@@ -94,6 +94,24 @@ msgstr "Aritmetika"
 #: ../src/CalculationGames/CalculationArithmetical.cs:48
 msgid "What is the result of the arithmetical operation?"
 msgstr "Zein da eragiketa aritmetiko honen emaitza?"
+
+#: ../src/CalculationGames/CalculationAverage.cs:34
+msgid "Average"
+msgstr "Batez bestekoa"
+
+#: ../src/CalculationGames/CalculationAverage.cs:51
+#, csharp-format
+msgid ""
+"Given the numbers: {0}. Which of the following numbers is the nearest to the "
+"average? Answer {1}, {2}, {3} or {4}."
+msgstr ""
+"Zenbakiak emanda: {0}. Hurrengo zenbakietatik, zein dago batez bestekotik hurbilen? Erantzuna {1}, "
+"{2}, {3} edo {4}."
+
+#: ../src/CalculationGames/CalculationAverage.cs:59
+#, csharp-format
+msgid "The result of the operation is {0:##0.###}"
+msgstr "Eragiketaren emaitza {0:##0.###} da"
 
 #: ../src/CalculationGames/CalculationFractions.cs:57
 msgid "Fractions"
@@ -190,11 +208,11 @@ msgstr "1.go zenbakia + 2. zenbakia = {0}"
 msgid "number1 * number2 = {0}"
 msgstr "1.go zenbakia * 2. zenbakia = {0}"
 
-#: ../src/CalculationGames/CalculationWhichNumber.cs:33
+#: ../src/CalculationGames/CalculationCloserFraction.cs:33
 msgid "Closer fraction"
 msgstr "Zatiki hurbilena"
 
-#: ../src/CalculationGames/CalculationWhichNumber.cs:42
+#: ../src/CalculationGames/CalculationCloserFraction.cs:42
 #, csharp-format
 msgid ""
 "Which of the following numbers is closer to {0:##0.###}? Answer {1}, {2}, "
@@ -203,7 +221,7 @@ msgstr ""
 "Hurrengo zenbakietatik, zein dago  {0:##0.###}-ren hurbilen? Erantzuna {1}, "
 "{2}, {3} edo {4}."
 
-#: ../src/CalculationGames/CalculationWhichNumber.cs:51
+#: ../src/CalculationGames/CalculationCloserFraction.cs:51
 #, csharp-format
 msgid "The result of the operation {0} / {1} is {2:##0.###}"
 msgstr "{0} / {1} eragiketaren emaitza {2:##0.###} da"
@@ -489,7 +507,7 @@ msgstr ""
 "Elementuak kategorietan taldekatzea teknika oso arrunta da gauzak "
 "gogoratzeko."
 
-#: ../src/GameManager.cs:132
+#: ../src/GameManager.cs:133
 #, csharp-format
 msgid ""
 "Games registered: {0}: {1} logic puzzles, {2} calculation trainers, {3} "
