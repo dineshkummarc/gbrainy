@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2008 Jordi Mas i Hernàndez <jmas@softcatala.org>
+ * Copyright (C) 2008-2009 Jordi Mas i Hernàndez <jmas@softcatala.org>
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License as
@@ -30,17 +30,32 @@ public class PlayerHistoryDialog : GtkDialog
 	[Glade.Widget] Gtk.CheckButton checkbutton_memory;
 	[Glade.Widget] Gtk.CheckButton checkbutton_logic;
 	[Glade.Widget] Gtk.CheckButton checkbutton_calculation;
+	[Glade.Widget] Gtk.CheckButton checkbutton_verbal;
 
 	CairoPreview drawing_area;
 
 	public PlayerHistoryDialog () : base ("playerhistory")
 	{
-		label_playerhistory.Text = String.Format (Catalog.GetString ("The graphic below shows the player's game score evolution. It is built using the results of {0} last recorded games."), gbrainy.history.Games.Count);
+		string label;
+
+		label = Catalog.GetString ("The graphic below shows the player's game score evolution. ");
+		label +=  Catalog.GetPluralString ("You need more than one game recorded to see the score evolution.",
+			"It is built using the results of {0} last recorded games.", 
+			gbrainy.history.Games.Count < 2 ? 1 : 2);
+
+		label_playerhistory.Text = String.Format (label, gbrainy.history.Games.Count);
 
 		drawing_area = new CairoPreview (this);
 		history_preview.Add (drawing_area);
 		drawing_area.Visible = true;
- 		checkbutton_total.Active = checkbutton_memory.Active = checkbutton_logic.Active = checkbutton_calculation.Active = true;
+
+ 		checkbutton_total.Label = Catalog.GetString ("Total");
+ 		checkbutton_logic.Label = Game.GetGameTypeDescription (Game.Types.LogicPuzzle);
+ 		checkbutton_calculation.Label = Game.GetGameTypeDescription (Game.Types.MathTrainer);
+ 		checkbutton_memory.Label = Game.GetGameTypeDescription (Game.Types.MemoryTrainer);
+ 		checkbutton_verbal.Label = Game.GetGameTypeDescription (Game.Types.VerbalAnalogy);
+
+ 		checkbutton_total.Active = checkbutton_memory.Active = checkbutton_logic.Active = checkbutton_calculation.Active = checkbutton_verbal.Active = true;
 	}
 	
 	void OnTotalToggled (object sender, EventArgs args)
@@ -69,6 +84,7 @@ public class PlayerHistoryDialog : GtkDialog
 		Cairo.Color math_color = new Cairo.Color (0.56, 0.71, 0.20);    // 8fb735
 		Cairo.Color logic_color = new Cairo.Color (0.81, 0.54, 0.23);   // d18c3b
 		Cairo.Color memory_color = new Cairo.Color (0.73, 0.22, 0.51);  // bb3a84
+		Cairo.Color verbal_color = new Cairo.Color (0.68, 0.16, 0.17);  // af2b2c
 		Cairo.Color total_color = new Cairo.Color (0, 0, 0.6);
 		Cairo.Color text_color = new Cairo.Color (0, 0, 0);
 		Cairo.Color axis_color = new Cairo.Color (0.15, 0.15, 0.15);
@@ -81,7 +97,11 @@ public class PlayerHistoryDialog : GtkDialog
 
 		private void DrawLegend (CairoContextEx cr, double x, double y)
 		{
-			const double line_size = 0.05, offset_x = 0.01, second_row = 0.05;
+			const double line_size = 0.05, offset_x = 0.01, second_row = 0.05, space_hor = 0.4;
+			double old_width;
+
+			old_width = cr.LineWidth;
+			cr.LineWidth = 0.01;
 			
 			cr.Color = total_color;
 			cr.MoveTo (x, y);
@@ -98,17 +118,17 @@ public class PlayerHistoryDialog : GtkDialog
 			cr.Stroke ();
 			cr.Color = text_color;
 			cr.MoveTo (x + line_size + offset_x, y - 0.01 + second_row);
-			cr.ShowPangoText (Catalog.GetString ("Logic"));
+			cr.ShowPangoText (Game.GetGameTypeDescription (Game.Types.LogicPuzzle));
 			cr.Stroke ();
 
-			x += 0.5;
+			x += space_hor;
 			cr.Color = memory_color;
 			cr.MoveTo (x, y);
 			cr.LineTo (x + line_size, y);
 			cr.Stroke ();
 			cr.Color = text_color;
 			cr.MoveTo (x + line_size + offset_x, y - 0.01);
-			cr.ShowPangoText (Catalog.GetString ("Memory"));
+			cr.ShowPangoText (Game.GetGameTypeDescription (Game.Types.MemoryTrainer));
 			cr.Stroke ();
 
 			cr.Color = math_color;
@@ -117,8 +137,20 @@ public class PlayerHistoryDialog : GtkDialog
 			cr.Stroke ();
 			cr.Color = text_color;
 			cr.MoveTo (x + line_size + offset_x, y - 0.01 + second_row);
-			cr.ShowPangoText (Catalog.GetString ("Calculation"));
+			cr.ShowPangoText (Game.GetGameTypeDescription (Game.Types.MathTrainer));
 			cr.Stroke ();
+
+			x += space_hor;
+			cr.Color = verbal_color;
+			cr.MoveTo (x, y);
+			cr.LineTo (x + line_size, y);
+			cr.Stroke ();
+			cr.Color = text_color;
+			cr.MoveTo (x + line_size + offset_x, y - 0.01);
+			cr.ShowPangoText (Game.GetGameTypeDescription (Game.Types.VerbalAnalogy));
+			cr.Stroke ();
+
+			cr.LineWidth = old_width;
 		}
 
 		private void DrawLines (CairoContextEx cr, double x, double y)
@@ -163,6 +195,18 @@ public class PlayerHistoryDialog : GtkDialog
 				{
 					px = x + (ratio * i);
 					py = y + area_h - (area_h * history.Games[i].memory_score / 100);
+					cr.LineTo (px, py);
+				}
+				cr.Stroke ();
+			}
+
+			if (dlg.checkbutton_verbal.Active) { // Verbal
+				cr.Color = verbal_color;
+				cr.MoveTo (x, area_h - (area_h * history.Games[0].verbal_score / 100));
+				for (int i = 1; i < history.Games.Count; i++)
+				{
+					px = x + (ratio * i);
+					py = y + area_h - (area_h * history.Games[i].verbal_score / 100);
 					cr.LineTo (px, py);
 				}
 				cr.Stroke ();

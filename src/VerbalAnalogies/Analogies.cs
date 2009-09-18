@@ -48,6 +48,10 @@ public abstract class Analogies : Game
 		}
 	}
 
+	public override bool IsPlayable {
+		get { return List.Count > 0;}
+	}
+
 	public override string Answer {
 		get {
 			if (current == null)

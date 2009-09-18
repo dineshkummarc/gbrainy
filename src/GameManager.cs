@@ -353,6 +353,9 @@ public class GameManager
 			//puzzle =  (Game) Activator.CreateInstance (LogicPuzzles [37], true);
 			if (first != null && first.GetType () == puzzle.GetType ())
 				break;
+
+			if (puzzle.IsPlayable == false)
+				continue;
 				
 			if (first == null)
 				first = puzzle;

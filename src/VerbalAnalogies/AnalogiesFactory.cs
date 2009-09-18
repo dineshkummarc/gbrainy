@@ -137,8 +137,11 @@ static public class AnalogiesFactory
 			for (int i = 0; i < (int) Analogy.Type.Last; i++) 
 			{
 				cnt += analogies_arrays[i].Count;
-				Console.WriteLine (Catalog.GetString ("Read {0} verbal analogies of type {1}"), analogies_arrays[i].Count, 
-					analogies_arrays[i].Count > 0 ? analogies_arrays[i][0].type : Analogy.Type.Last);
+
+				if (analogies_arrays[i].Count > 0) {
+					Console.WriteLine (Catalog.GetString ("Read {0} verbal analogies of type {1}"), analogies_arrays[i].Count, 
+						analogies_arrays[i][0].type.ToString ());
+				}
 			}
 			
 			Console.WriteLine (Catalog.GetString ("Read a total of {0} verbal analogies"), cnt);
@@ -159,12 +162,17 @@ static public class AnalogiesFactory
 	{
 		Analogy empty = new Analogy ();
 		empty.question = Catalog.GetString ("There are no verbal analogies available.");
+		bool all_empty = true;
 
 		for (int i = 0; i < (int) Analogy.Type.Last; i++)
 		{
-			if (analogies_arrays[i].Count == 0)
-				analogies_arrays[i].Add (0, empty);
+			if (analogies_arrays[i].Count > 0) {
+				all_empty = false;
+				break;	
+			}
 		}
-	}
 
+		if (all_empty == true)
+			analogies_arrays[0].Add (0, empty);
+	}
 }

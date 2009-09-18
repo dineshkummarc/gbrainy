@@ -81,21 +81,7 @@ public class CustomGameDialog : GtkDialog
 			for (int i = 0; i < games.Length; i++)
 			{	
 				game =  (Game) Activator.CreateInstance (games [i], true);
-				switch (game.Type) {
-				case Game.Types.LogicPuzzle:
-					type = Catalog.GetString ("Logic");
-					break;
-				case Game.Types.MemoryTrainer:
-					type = Catalog.GetString ("Memory");
-					break;
-				case Game.Types.MathTrainer:
-					type = Catalog.GetString ("Mental Calculation");
-					break;
-				default:
-					type = string.Empty;
-					break;
-				}
-				
+				type = Game.GetGameTypeDescription (game.Type);
 				games_store.AppendValues (game.Name, type, true, game);
 			}
 		}

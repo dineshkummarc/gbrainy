@@ -37,12 +37,13 @@ public class PlayerHistory
 		public int math_score;
 		public int logic_score;
 		public int memory_score;
+		public int verbal_score;
 	}
 
 	public PlayerHistory ()
 	{
 		config_path = Environment.GetFolderPath (Environment.SpecialFolder.ApplicationData);
-		config_path = Path.Combine (config_path, "gbrainy");
+		config_path = Path.Combine (config_path, Defines.CONFIG_DIR);
 		file = Path.Combine (config_path, "PlayerHistory.xml");
 	}
 
@@ -77,6 +78,7 @@ public class PlayerHistory
 		history.logic_score = session.LogicScore;
 		history.memory_score = session.MemoryScore;
 		history.total_score = session.TotalScore;
+		history.verbal_score = session.VerbalScore;
 
 		if (Games.Count >= gbrainy.preferences.GetIntValue (Preferences.MaxStoredGamesKey))
 			Games.RemoveAt (0);

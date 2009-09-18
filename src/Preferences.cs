@@ -109,7 +109,7 @@ public class Preferences
 	{
 		properties = new SerializableDictionary <string, string> ();
 		config_path = Environment.GetFolderPath (Environment.SpecialFolder.ApplicationData);
-		config_path = Path.Combine (config_path, "gbrainy");
+		config_path = Path.Combine (config_path, Defines.CONFIG_DIR);
 		file = Path.Combine (config_path, "Preferences.xml");
 		Load ();
 	}

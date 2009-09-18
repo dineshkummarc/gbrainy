@@ -35,11 +35,12 @@ public class AnalogiesPairOfWordsCompare : Analogies
 
 	public AnalogiesPairOfWordsCompare ()
 	{
-
+		if (analogies == null)
+			analogies = AnalogiesFactory. Get (Analogy.Type.PairOfWordsCompare);
 	}
 
 	public override string Name {
-		get { return "AnalogiesPairOfWordsCompare";}
+		get { return "Pair of words compare";}
 	}
 
 	public override ArrayListIndicesRandom Indices {
@@ -58,6 +59,9 @@ public class AnalogiesPairOfWordsCompare : Analogies
 
 	public override string Question {
 		get {
+			if (current == null)
+				return string.Empty;
+
 			if (current.answers == null)
 				return current.question;
 
@@ -69,10 +73,6 @@ public class AnalogiesPairOfWordsCompare : Analogies
 
 	public override void Initialize ()
 	{
-		if (analogies == null) {
-			analogies = AnalogiesFactory. Get (Analogy.Type.PairOfWordsCompare);
-		}
-
 		current = GetNext ();
 
 		if (current == null || current.answers == null)
@@ -89,7 +89,6 @@ public class AnalogiesPairOfWordsCompare : Analogies
 
 		samples = items [0].Trim ();
 		right_answer = current.answers [current.right];
-		Console.WriteLine ("Name:" + Name + " " + current.ToString ());
 	}
 	
 	public override void Draw (CairoContextEx gr, int area_width, int area_height)
@@ -103,6 +102,6 @@ public class AnalogiesPairOfWordsCompare : Analogies
 
 		gr.SetPangoLargeFontSize ();
 		gr.DrawTextCentered (0.5, y + 0.25,
-			String.Format (Catalog.GetString ("Pair of words: {0}"), samples));
+			String.Format (Catalog.GetString ("Words: {0}"), samples));
 	}
 }

@@ -31,11 +31,12 @@ public class AnalogiesQuestionAnswer : Analogies
 
 	public AnalogiesQuestionAnswer ()
 	{
-
+		if (analogies == null)
+			analogies = AnalogiesFactory.Get (Analogy.Type.QuestionAnswer);
 	}
 
 	public override string Name {
-		get { return "AnalogiesQuestionAnswer";}
+		get { return "Question and answer";}
 	}
 
 	public override ArrayListIndicesRandom Indices {
@@ -54,10 +55,6 @@ public class AnalogiesQuestionAnswer : Analogies
 
 	public override void Initialize ()
 	{
-		if (analogies == null) {
-			analogies = AnalogiesFactory.Get (Analogy.Type.QuestionAnswer);
-		}
-
 		current = GetNext ();
 
 		if (current == null)
@@ -65,7 +62,5 @@ public class AnalogiesQuestionAnswer : Analogies
 
 		if (current.answers != null) 
 			right_answer = current.answers [current.right];
-
-		Console.WriteLine ("Name:" + Name + " " + current.ToString ());
 	}
 }

@@ -22,6 +22,7 @@ using Mono.Unix;
 
 abstract public class Game
 {
+	// See: GetGameTypeDescription
 	public enum Types
 	{	
 		None			= 0,
@@ -122,6 +123,11 @@ abstract public class Game
 	public bool DrawAnswer {
 		get { return draw_answer; }
 		set { draw_answer = value; }
+	}
+
+	// An initialized game cannot be playable (for example, missing external files)
+	public virtual bool IsPlayable {
+		get { return true;}
 	}
 
 	public virtual double DrawAreaX {
@@ -293,6 +299,32 @@ abstract public class Game
 			rslt += answer[i];
 		}
 		return rslt;
+	}
+
+	// Type enum to string representation
+	static public string GetGameTypeDescription (Types type)
+	{
+		string str;
+
+		switch (type) 
+		{
+			case Game.Types.LogicPuzzle:
+				str = Catalog.GetString ("Logic");
+				break;
+			case Game.Types.MemoryTrainer:
+				str = Catalog.GetString ("Memory");
+				break;
+			case Game.Types.MathTrainer:
+				str = Catalog.GetString ("Mental Calculation");
+				break;
+			case Game.Types.VerbalAnalogy:
+				str = Catalog.GetString ("Verbal");
+				break;
+			default:
+				str = string.Empty;
+				break;
+		}
+		return str;
 	}
 }
 

@@ -33,11 +33,12 @@ public class AnalogiesPairOfWordsOptions : Analogies
 
 	public AnalogiesPairOfWordsOptions ()
 	{
-
+		if (analogies == null)
+			analogies = AnalogiesFactory. Get (Analogy.Type.PairOfWordsOptions);
 	}
 
 	public override string Name {
-		get { return "AnalogiesPairOfWordsOptions";}
+		get { return "Pair of words";}
 	}
 
 	public override ArrayListIndicesRandom Indices {
@@ -57,6 +58,9 @@ public class AnalogiesPairOfWordsOptions : Analogies
 	public override string Question {
 		get {
 			string str = string.Empty;
+	
+			if (current == null)
+				return string.Empty;
 
 			if (current.answers == null)
 				return current.question;
@@ -81,17 +85,12 @@ public class AnalogiesPairOfWordsOptions : Analogies
 
 	public override void Initialize ()
 	{
-		if (analogies == null) {
-			analogies = AnalogiesFactory. Get (Analogy.Type.PairOfWordsOptions);
-		}
-
 		current = GetNext ();
 
 		if (current == null || current.answers == null)
 			return;
 
 		right_answer = GetPossibleAnswer (current.right);
-		Console.WriteLine ("Name:" + Name + " " + current.ToString ());
 	}
 
 	public override void Draw (CairoContextEx gr, int area_width, int area_height)
@@ -107,7 +106,7 @@ public class AnalogiesPairOfWordsOptions : Analogies
 		gr.MoveTo (0.1, y);
 		gr.ShowPangoText (Catalog.GetString ("Possible answers are:"));
 		y += 0.12;
-		x += 0.1;
+		x += 0.05;
 		for (int n = 0; n < current.answers.Length; n++)
 		{
 			gr.MoveTo (x, y);

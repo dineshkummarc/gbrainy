@@ -33,16 +33,20 @@ public class AnalogiesMultipleOptions : Analogies
 
 	public AnalogiesMultipleOptions ()
 	{
-
+		if (analogies == null)
+			analogies = AnalogiesFactory. Get (Analogy.Type.MultipleOptions);
 	}
 
 	public override string Name {
-		get { return "AnalogiesMultipleOptions";}
+		get { return "Multiple options";}
 	}
 
 	public override string Question {
 		get {
 			string str = string.Empty;
+
+			if (current == null)
+				return string.Empty;
 
 			if (current.answers == null)
 				return current.question;
@@ -80,17 +84,12 @@ public class AnalogiesMultipleOptions : Analogies
 
 	public override void Initialize ()
 	{
-		if (analogies == null) {
-			analogies = AnalogiesFactory. Get (Analogy.Type.MultipleOptions);
-		}
-
 		current = GetNext ();
 
 		if (current == null || current.answers == null)
 			return;
 
 		right_answer = GetPossibleAnswer (current.right);
-		Console.WriteLine ("Name:" + Name + " " + current.ToString ());
 	}
 	
 	public override void Draw (CairoContextEx gr, int area_width, int area_height)
@@ -107,7 +106,7 @@ public class AnalogiesMultipleOptions : Analogies
 		gr.ShowPangoText (Catalog.GetString ("Possible answers are:"));
 
 		y += 0.12;
-		x += 0.1;
+		x += 0.05;
 		for (int n = 0; n < current.answers.Length; n++)
 		{
 			gr.MoveTo (x, y);
