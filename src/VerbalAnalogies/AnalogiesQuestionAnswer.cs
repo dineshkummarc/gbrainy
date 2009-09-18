@@ -21,6 +21,7 @@ using System;
 using System.IO;
 using System.Collections.Generic;
 
+using Mono.Unix;
 using Cairo;
 
 public class AnalogiesQuestionAnswer : Analogies
@@ -36,7 +37,7 @@ public class AnalogiesQuestionAnswer : Analogies
 	}
 
 	public override string Name {
-		get { return "Question and answer";}
+		get { return Catalog.GetString ("Question and answer");}
 	}
 
 	public override ArrayListIndicesRandom Indices {

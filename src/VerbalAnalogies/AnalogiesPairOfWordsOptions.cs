@@ -38,7 +38,7 @@ public class AnalogiesPairOfWordsOptions : Analogies
 	}
 
 	public override string Name {
-		get { return "Pair of words";}
+		get { return Catalog.GetString ("Pair of words");}
 	}
 
 	public override ArrayListIndicesRandom Indices {

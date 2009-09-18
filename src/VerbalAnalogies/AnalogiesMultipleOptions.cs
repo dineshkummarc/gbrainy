@@ -38,7 +38,7 @@ public class AnalogiesMultipleOptions : Analogies
 	}
 
 	public override string Name {
-		get { return "Multiple options";}
+		get { return Catalog.GetString ("Multiple options");}
 	}
 
 	public override string Question {

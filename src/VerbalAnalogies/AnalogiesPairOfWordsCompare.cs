@@ -40,7 +40,7 @@ public class AnalogiesPairOfWordsCompare : Analogies
 	}
 
 	public override string Name {
-		get { return "Pair of words compare";}
+		get { return Catalog.GetString ("Pair of words compare");}
 	}
 
 	public override ArrayListIndicesRandom Indices {
