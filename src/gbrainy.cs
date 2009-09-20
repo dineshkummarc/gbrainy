@@ -56,7 +56,6 @@ public class gbrainy: Program
 	GameDrawingArea drawing_area;
 	GameSession session;
 	ToolButton all_tbbutton, logic_tbbutton, calculation_tbbutton, memory_tbbutton, verbal_tbbutton, pause_tbbutton, finish_tbbutton;
-	TextTag tag_green;
 	bool low_res;
 	bool full_screen;
 	SimpleLabel question_label;
@@ -68,6 +67,8 @@ public class gbrainy: Program
 	public gbrainy (string [] args, params object [] props)
 	: base ("gbrainy", Defines.VERSION, Modules.UI,  args, props)
 	{
+		Gtk.MenuItem item;
+
 		Catalog.Init ("gbrainy", Defines.GNOME_LOCALE_DIR);
 		FixLocaleInfo ();
 
@@ -160,7 +161,7 @@ public class gbrainy: Program
 		solution_vbox.Add (solution_label);
 
 	#if MONO_ADDINS
-		Gtk.MenuItem item = new Gtk.MenuItem (Catalog.GetString ("Extensions"));
+		item = new Gtk.MenuItem (Catalog.GetString ("Extensions"));
 		settings_menu.Append (item);
 		item.Activated += delegate (object sender, EventArgs ar) { Mono.Addins.Gui.AddinManagerWindow.Run (app_window);};
 	#endif

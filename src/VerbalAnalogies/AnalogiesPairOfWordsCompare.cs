@@ -31,7 +31,7 @@ public class AnalogiesPairOfWordsCompare : Analogies
 	static protected ArrayListIndicesRandom analogies_indices;
 	static protected int analogies_index = 0;
 
-	string samples, sample, question;
+	string samples, sample;
 
 	public AnalogiesPairOfWordsCompare ()
 	{
