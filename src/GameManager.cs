@@ -82,7 +82,9 @@ public class GameManager
 		typeof (CalculationOperator),
 		typeof (CalculationFractions),
 		typeof (CalculationPrimes),
-		typeof (CalculationAverage)
+		typeof (CalculationAverage),
+		typeof (CalculationProportions),
+		typeof (CalculationRatio),
 	};
 
 	static Type[] MemoryTrainersInternal = new Type[] 
