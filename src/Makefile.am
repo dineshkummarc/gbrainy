@@ -84,6 +84,7 @@ GBRAINY_CSDISTFILES =				\
 	$(srcdir)/CalculationGames/CalculationAverage.cs \
 	$(srcdir)/CalculationGames/CalculationProportions.cs \
 	$(srcdir)/CalculationGames/CalculationRatio.cs \
+	$(srcdir)/PuzzleGames/PuzzlePercentage.cs	\
 	$(srcdir)/SimpleLabel.cs	\
 	$(srcdir)/gbrainy.cs			
 
