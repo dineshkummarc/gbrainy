@@ -36,7 +36,7 @@ public class CalculationRatio : Game
 	public override string Question {
 		get {
 			return String.Format (
-				Catalog.GetString ("Two numbers that sum {0} have a ratio {1} to {2}. Which are these numbers?"), 
+				Catalog.GetString ("Two numbers that sum {0} and have a ratio of {1} to {2}. Which are these numbers?"), 
 				number_a + number_b, ratio_a, ratio_b);
 		}
 	}
@@ -46,14 +46,14 @@ public class CalculationRatio : Game
 		get {
 			string answer = base.Answer + " ";
 
-			answer += String.Format (Catalog.GetString ("The second number is calculated by multiplying the first by {0} and dividing it by {1}"),
+			answer += String.Format (Catalog.GetString ("The second number is calculated by multiplying the first by {0} and dividing it by {1}."),
 				ratio_a, ratio_b);
 			return answer;
 		}
 	}
 
 	public override string Tip {
-		get { return Catalog.GetString ("A ratio specifies a proportion between two numbers. A ratio 'a' to 'b' means that for every 'a' parts you have 'b' parts.");}
+		get { return Catalog.GetString ("A ratio specifies a proportion between two numbers. A ratio a:b means that for every 'a' parts you have 'b' parts.");}
 	}
 
 	public override void Initialize ()
@@ -87,9 +87,18 @@ public class CalculationRatio : Game
 
 	public override void Draw (CairoContextEx gr, int area_width, int area_height)
 	{	
-		base.Draw (gr, area_width, area_height);
-	}
+		double x = DrawAreaX + 0.1;
 
+		base.Draw (gr, area_width, area_height);
+
+		gr.SetPangoLargeFontSize ();
+
+		gr.MoveTo (x, DrawAreaY + 0.22);
+		gr.ShowPangoText (String.Format (Catalog.GetString ("number1 + number2 = {0}"), number_a + number_b));
+		
+		gr.MoveTo (x, DrawAreaY + 0.44);
+		gr.ShowPangoText (String.Format (Catalog.GetString ("have a ratio of {0}:{1}"), ratio_a, ratio_b));
+	}
 
 	public override bool CheckAnswer (string answer)
 	{	
