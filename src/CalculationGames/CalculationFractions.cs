@@ -62,7 +62,7 @@ public class CalculationFractions : Game
 	}
 
 	public override string Question {
-		get {return String.Format (Catalog.GetString ("What is the result of the given operation? You can answer using either a fraction or a number."));} 
+		get {return String.Format (Catalog.GetString ("What is the result of the given operation? Answer using either a fraction or a number."));} 
 	}
 
 	private int Factor {
