@@ -61,7 +61,7 @@ public class PlayerHistory
 
 	public void Clean ()
 	{
-		games.Clear ();
+		Games.Clear ();
 		Save ();
 	}
 
