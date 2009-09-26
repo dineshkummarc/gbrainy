@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gbrainy\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-09-18 21:19+0200\n"
-"PO-Revision-Date: 2009-02-04 21:38+0100\n"
+"POT-Creation-Date: 2009-09-25 10:22+0200\n"
+"PO-Revision-Date: 2009-09-26 13:38+0100\n"
 "Last-Translator: Jordi Mas <jmas@softcatala.org>\n"
 "Language-Team: Catalan\n"
 "MIME-Version: 1.0\n"
@@ -115,6 +115,25 @@ msgstr ""
 msgid "The result of the operation is {0:##0.###}"
 msgstr "El resultat de l'operació és {0:##0.###}"
 
+#
+#: ../src/CalculationGames/CalculationCloserFraction.cs:33
+msgid "Closer fraction"
+msgstr "Fracció més propera"
+
+#: ../src/CalculationGames/CalculationCloserFraction.cs:42
+#, csharp-format
+msgid ""
+"Which of the following numbers is closer to {0:##0.###}? Answer {1}, {2}, "
+"{3} or {4}."
+msgstr ""
+"Quin dels següents números és el més proper a {0:##0.###}? Responeu {1}, "
+"{2}, {3} o {4}."
+
+#: ../src/CalculationGames/CalculationCloserFraction.cs:51
+#, csharp-format
+msgid "The result of the operation {0} / {1} is {2:##0.###}"
+msgstr "El resultat de l'operació {0} / {1} és {2:##0.###}"
+
 #: ../src/CalculationGames/CalculationFractions.cs:57
 msgid "Fractions"
 msgstr "Fraccions"
@@ -123,11 +142,11 @@ msgstr "Fraccions"
 #: ../src/CalculationGames/CalculationFractions.cs:65
 #, csharp-format
 msgid ""
-"What is the result of the given operation? You can answer using either a "
-"fraction or a number."
+"What is the result of the given operation? Answer using either a fraction or "
+"a number."
 msgstr ""
-"Quin és el resultat de l'operació donada? Podeu respondre utilitzant una "
-"fracció o bé un número."
+"Quin és el resultat de l'operació donada? Responeu utilitzant una fracció o "
+"bé un número."
 
 #: ../src/CalculationGames/CalculationGreatestDivisor.cs:32
 msgid "Greatest divisor"
@@ -166,10 +185,72 @@ msgstr ""
 "Quins operadors fan {0}, {1} i {2} igual a {3}? Responeu utilitzant «+-/*»."
 
 #: ../src/CalculationGames/CalculationOperator.cs:80
+#: ../src/CalculationGames/CalculationRatio.cs:85
 #: ../src/CalculationGames/CalculationTwoNumbers.cs:61
 #, csharp-format
 msgid "{0} and {1}"
 msgstr "{0} i {1}"
+
+#: ../src/CalculationGames/CalculationProportions.cs:33
+msgid "Proportions"
+msgstr "Proporcions"
+
+#: ../src/CalculationGames/CalculationProportions.cs:43
+#, csharp-format
+msgid ""
+"A {0}/{1} of 'number A' is {2}% of a 'number B'. 'number A' divided by a "
+"'number B' is? Answer {3}, {4}, {5} or {6}."
+msgstr ""
+"{0}/{1} del «número A» és el {2}% d'un «número B». Quant és el «número A» "
+"dividit pel «número B»? Responeu {3}, {4}, {5} or {6}."
+
+#: ../src/CalculationGames/CalculationProportions.cs:51
+#,  csharp-format
+msgid ""
+"The result of the operation is {0:##0.###}. You have to divide {1}/100 by "
+"{2}/{3}."
+msgstr "El resultat de l'operació és {0:##0.###}. Heu de dividir {1}/100 entre {2}/{3}."
+
+#: ../src/CalculationGames/CalculationRatio.cs:29
+msgid "Ratio"
+msgstr "Ràtio"
+
+#: ../src/CalculationGames/CalculationRatio.cs:39
+#, csharp-format
+msgid ""
+"Two numbers that sum {0} and have a ratio of {1} to {2}. Which are these "
+"numbers?"
+msgstr ""
+"Dos números que sumen {0} i tenen un ràtio de {1} a {2}. Quin són aquests "
+"números?"
+
+#: ../src/CalculationGames/CalculationRatio.cs:49
+#, csharp-format
+msgid ""
+"The second number is calculated by multiplying the first by {0} and dividing "
+"it by {1}."
+msgstr ""
+"El segon número es calcula multiplicant el primer per {0} i dividint-lo per "
+"{1}."
+
+#: ../src/CalculationGames/CalculationRatio.cs:56
+msgid ""
+"A ratio specifies a proportion between two numbers. A ratio a:b means that "
+"for every 'a' parts you have 'b' parts."
+msgstr ""
+"Un ràtio específica la proporció entre dos números. Un ràtio a:b significa "
+"que per cada «a» parts obteniu «b» parts."
+
+#: ../src/CalculationGames/CalculationRatio.cs:97
+#: ../src/CalculationGames/CalculationTwoNumbers.cs:73
+#, csharp-format
+msgid "number1 + number2 = {0}"
+msgstr "número1 + número2 = {0}"
+
+#: ../src/CalculationGames/CalculationRatio.cs:100
+#, csharp-format
+msgid "have a ratio of {0}:{1}"
+msgstr "tenen un ràtio de {0}:{1}"
 
 #: ../src/CalculationGames/CalculationPrimes.cs:148
 msgid "Primes"
@@ -203,34 +284,10 @@ msgid "Which two numbers when added are {0} and when multiplied are {1}?"
 msgstr ""
 "Quins dos números quan es sumen donen {0} i quan es multipliquen donen {1}?"
 
-#: ../src/CalculationGames/CalculationTwoNumbers.cs:73
-#, csharp-format
-msgid "number1 + number2 = {0}"
-msgstr "número1 + número2 = {0}"
-
 #: ../src/CalculationGames/CalculationTwoNumbers.cs:76
 #, csharp-format
 msgid "number1 * number2 = {0}"
 msgstr "número1 * número2 = {0}"
-
-#
-#: ../src/CalculationGames/CalculationCloserFraction.cs:33
-msgid "Closer fraction"
-msgstr "Fracció més propera"
-
-#: ../src/CalculationGames/CalculationCloserFraction.cs:42
-#, csharp-format
-msgid ""
-"Which of the following numbers is closer to {0:##0.###}? Answer {1}, {2}, "
-"{3} or {4}."
-msgstr ""
-"Quin dels següents números és el més proper a {0:##0.###}? Responeu {1}, "
-"{2}, {3} o {4}."
-
-#: ../src/CalculationGames/CalculationCloserFraction.cs:51
-#, csharp-format
-msgid "The result of the operation {0} / {1} is {2:##0.###}"
-msgstr "El resultat de l'operació {0} / {1} és {2:##0.###}"
 
 #
 #: ../src/ColorPalette.cs:63
@@ -342,11 +399,11 @@ msgstr "H"
 msgid "Figure {0}"
 msgstr "Figura {0}"
 
-#: ../src/Game.cs:312 ../src/GameDrawingArea.cs:188 ../src/gbrainy.cs:100
+#: ../src/Game.cs:312 ../src/GameDrawingArea.cs:188 ../src/gbrainy.cs:101
 msgid "Logic"
 msgstr "Lògica"
 
-#: ../src/Game.cs:315 ../src/GameDrawingArea.cs:196 ../src/gbrainy.cs:111
+#: ../src/Game.cs:315 ../src/GameDrawingArea.cs:196 ../src/gbrainy.cs:112
 msgid "Memory"
 msgstr "Memòria"
 
@@ -354,7 +411,7 @@ msgstr "Memòria"
 msgid "Mental Calculation"
 msgstr "Càlcul mental"
 
-#: ../src/Game.cs:321 ../src/GameDrawingArea.cs:200 ../src/gbrainy.cs:117
+#: ../src/Game.cs:321 ../src/GameDrawingArea.cs:200 ../src/gbrainy.cs:118
 msgid "Verbal"
 msgstr "Verbal"
 
@@ -405,7 +462,7 @@ msgid "Total"
 msgstr "Total"
 
 #
-#: ../src/GameDrawingArea.cs:192 ../src/gbrainy.cs:105
+#: ../src/GameDrawingArea.cs:192 ../src/gbrainy.cs:106
 msgid "Calculation"
 msgstr "Càlcul"
 
@@ -474,7 +531,7 @@ msgid ""
 "To score the player gbrainy uses the time and tips needed to complete each "
 "game."
 msgstr ""
-"Per puntuar al jugador gbrainy utilitza el temps i els consells utilitzats "
+"Per puntuar al jugador gbrainy utilitza el temps i les pistes utilitzades "
 "per a resoldre cada joc."
 
 #: ../src/GameDrawingArea.cs:396
@@ -529,7 +586,7 @@ msgid ""
 "things."
 msgstr "L'agrupació d'elements és una tècnica habitual per a recordar coses."
 
-#: ../src/GameManager.cs:133
+#: ../src/GameManager.cs:136
 #, csharp-format
 msgid ""
 "Games registered: {0}: {1} logic puzzles, {2} calculation trainers, {3} "
@@ -557,66 +614,66 @@ msgstr " - Joc: {0}"
 msgid "Paused"
 msgstr "En pausa"
 
-#: ../src/gbrainy.cs:93
+#: ../src/gbrainy.cs:94
 msgid "Play all the games"
 msgstr "Jugueu a tots els tipus de jocs"
 
-#: ../src/gbrainy.cs:94
+#: ../src/gbrainy.cs:95
 msgid "All"
 msgstr "Tots"
 
-#: ../src/gbrainy.cs:99
+#: ../src/gbrainy.cs:100
 msgid "Play games that challenge your reasoning and thinking"
 msgstr ""
 "Jugueu a jocs que desafien les vostres habilitats de raonament i pensament"
 
-#: ../src/gbrainy.cs:106
+#: ../src/gbrainy.cs:107
 msgid "Play games that challenge your mental calculation skills"
 msgstr "Jugueu a jocs que desafien les vostres habilitats de càlcul mental"
 
-#: ../src/gbrainy.cs:112
+#: ../src/gbrainy.cs:113
 msgid "Play games that challenge your short term memory"
 msgstr "Jugueu a jocs que desafien la vostra memòria a curt termini"
 
-#: ../src/gbrainy.cs:118
+#: ../src/gbrainy.cs:119
 msgid "Play games that challenge your verbal aptitude"
 msgstr "Jugueu a jocs que desafien les vostres aptituds verbals."
 
 #
-#: ../src/gbrainy.cs:123 ../src/gbrainy.cs:533
+#: ../src/gbrainy.cs:124 ../src/gbrainy.cs:534
 msgid "Pause"
 msgstr "Pausa"
 
-#: ../src/gbrainy.cs:124
+#: ../src/gbrainy.cs:125
 msgid "Pause or resume the game"
 msgstr "Fes una pausa o continua el joc"
 
 #
-#: ../src/gbrainy.cs:129
+#: ../src/gbrainy.cs:130
 msgid "End the game and show score"
 msgstr "Finalitza el joc i mostra la puntuació"
 
-#: ../src/gbrainy.cs:130
+#: ../src/gbrainy.cs:131
 msgid "Finish"
 msgstr "Finalitza"
 
-#: ../src/gbrainy.cs:163
+#: ../src/gbrainy.cs:164
 msgid "Extensions"
 msgstr "Extensions"
 
-#: ../src/gbrainy.cs:168
+#: ../src/gbrainy.cs:169
 msgid "How to Extend gbrainy's Functionality"
 msgstr "Com estendre la funcionalitat del gbrainy"
 
-#: ../src/gbrainy.cs:369
+#: ../src/gbrainy.cs:370
 msgid "Congratulations."
 msgstr "Enhorabona."
 
-#: ../src/gbrainy.cs:371
+#: ../src/gbrainy.cs:372
 msgid "Incorrect answer."
 msgstr "Resposta incorrecta."
 
-#: ../src/gbrainy.cs:421
+#: ../src/gbrainy.cs:422
 msgid ""
 "Once you have an answer type it in the \"Answer:\" entry box and press the "
 "\"OK\" button."
@@ -624,7 +681,7 @@ msgstr ""
 "Un cop tingueu la resposta introduïu-la al quadre «Resposta:» i premeu el "
 "botó «D'acord»."
 
-#: ../src/gbrainy.cs:538
+#: ../src/gbrainy.cs:539
 msgid "Resume"
 msgstr "Reprèn"
 
@@ -765,10 +822,6 @@ msgstr ""
 "Quina de les figures següents s'ha mostrat anteriorment? Responeu {0}, {1}, "
 "{2} o {3}."
 
-#
-#
-#
-#
 #: ../src/MemoryGames/MemoryColouredText.cs:31
 msgid "Colored text"
 msgstr "Text de colors"
@@ -1352,13 +1405,13 @@ msgstr ""
 "permet utilitzar una fila addicional."
 
 #
-#: ../src/PuzzleGames/PuzzleCirclesRectangle.cs:82
-#: ../src/PuzzleGames/PuzzleCirclesRectangle.cs:103
+#: ../src/PuzzleGames/PuzzleCirclesRectangle.cs:76
+#: ../src/PuzzleGames/PuzzleCirclesRectangle.cs:97
 msgid "8 units"
 msgstr "8 unitats"
 
-#: ../src/PuzzleGames/PuzzleCirclesRectangle.cs:122
-#: ../src/PuzzleGames/PuzzleCirclesRectangle.cs:141
+#: ../src/PuzzleGames/PuzzleCirclesRectangle.cs:116
+#: ../src/PuzzleGames/PuzzleCirclesRectangle.cs:135
 msgid "1 unit"
 msgstr "1 unitat"
 
@@ -1773,15 +1826,12 @@ msgstr ""
 "Hi ha {0} línies a la figura de l'esquerra i {1} línies a la figura de la "
 "dreta."
 
-#
-#
 #: ../src/PuzzleGames/PuzzleLines.cs:47
 msgid "It is an easy exercise if you systematically count the lines."
 msgstr ""
 "És un exercici senzill si utilitzeu una forma sistemàtica de comptar les "
 "línies."
 
-#
 #: ../src/PuzzleGames/PuzzleMatrixGroups.cs:32
 msgid "Matrix groups"
 msgstr "Matriu de grups"
@@ -1790,9 +1840,6 @@ msgstr "Matriu de grups"
 msgid "One of numbers in the matrix must be circled. Which one?"
 msgstr "Un dels números a la matriu hauria d'estar encerclat. Quin?"
 
-#
-#
-#
 #: ../src/PuzzleGames/PuzzleMatrixGroups.cs:40
 msgid "All circled numbers share an arithmetical property."
 msgstr "Tots els números encerclats comparteixen una propietat aritmètica."
@@ -2193,6 +2240,42 @@ msgstr "9a"
 msgid "22nd"
 msgstr "22a"
 
+#: ../src/PuzzleGames/PuzzlePercentage.cs:38
+msgid "Percentage"
+msgstr "Percentatge"
+
+#: ../src/PuzzleGames/PuzzlePercentage.cs:71
+#, csharp-format
+msgid ""
+"After getting {0}% discount you have paid {1} monetary units for a TV set. "
+"What was the original price of the TV set?"
+msgstr ""
+"Després d'obtindre un descompte del {0}% heu pagat {1} unitats monetàries "
+"per un televisor.Quin era el preu original del televisor?"
+
+#: ../src/PuzzleGames/PuzzlePercentage.cs:83
+#, csharp-format
+msgid ""
+"John's shop had sales of {0} monetary units. This was an increase of {1}% "
+"over last month. What were last month sales?"
+msgstr ""
+"La botiga de en Joan ha tingut unes vendes de {0} unitats monetàries. Això "
+"va representar un increment del {1}% respecte al mes passat. Quines van ser "
+"les vendes el mes passat?"
+
+#: ../src/PuzzleGames/PuzzlePercentage.cs:98
+#, csharp-format
+msgid ""
+"The amount of water in a bucket decreases by {0}%. By what percentage must "
+"the amount of water increase to reach its original value?"
+msgstr ""
+"La quantitat d'aigua a un cubell decreix un {0}%. Quin percentatge ha "
+"d'augmentar la quantitat d'aigua per arribar al valor original?"
+
+#: ../src/PuzzleGames/PuzzlePercentage.cs:101
+msgid "The objective is to obtain the same total amount"
+msgstr "L'objectiu és obtindre la mateixa quantitat total"
+
 #: ../src/PuzzleGames/PuzzleQuadrilaterals.cs:41
 msgid "Quadrilaterals"
 msgstr "Quadrilàters"
@@ -2206,7 +2289,6 @@ msgstr ""
 "Quina de les següents figures no pertany al grup? Responeu {0}, {1}, {2}, "
 "{3}, {4} o {5}."
 
-#
 #: ../src/PuzzleGames/PuzzleQuadrilaterals.cs:54
 msgid "It is the only figure with all lines of equal length."
 msgstr "És l'única figura amb totes línies de la mateixa longitud."
@@ -2384,9 +2466,9 @@ msgid "Possible correct answers are: {0}."
 msgstr "Les respostes possibles correctes són: {0}."
 
 #: ../src/VerbalAnalogies/AnalogiesFactory.cs:142
-#, fuzzy, csharp-format
+#, csharp-format
 msgid "Read {0} verbal analogies of type {1}"
-msgstr "S'han llegit {0} analogies verbals!"
+msgstr "S'han llegit {0} analogies verbals del tipus {1}"
 
 #: ../src/VerbalAnalogies/AnalogiesFactory.cs:147
 #, csharp-format
@@ -2397,10 +2479,18 @@ msgstr "S'han llegit un total de {0} analogies verbals"
 msgid "There are no verbal analogies available."
 msgstr "No hi ha cap analogia verbal disponible"
 
+#: ../src/VerbalAnalogies/AnalogiesMultipleOptions.cs:41
+msgid "Multiple options"
+msgstr "Múltiples opcions"
+
 #: ../src/VerbalAnalogies/AnalogiesMultipleOptions.cs:65
 #, csharp-format
 msgid "{0} Answer {1}."
 msgstr "{0} Responeu {1}"
+
+#: ../src/VerbalAnalogies/AnalogiesPairOfWordsCompare.cs:43
+msgid "Pair of words compare"
+msgstr "Compara un parell de paraules"
 
 #: ../src/VerbalAnalogies/AnalogiesPairOfWordsCompare.cs:69
 #, csharp-format
@@ -2416,6 +2506,10 @@ msgstr ""
 msgid "Words: {0}"
 msgstr "Paraules: {0}"
 
+#: ../src/VerbalAnalogies/AnalogiesPairOfWordsOptions.cs:41
+msgid "Pair of words"
+msgstr "Parell de paraules"
+
 #: ../src/VerbalAnalogies/AnalogiesPairOfWordsOptions.cs:80
 #, csharp-format
 msgid ""
@@ -2424,6 +2518,10 @@ msgid ""
 msgstr ""
 "Donat el parell de paraules «{0}», quina de les possibles respostes té la "
 "relació més propera al parell donat? Responeu {1}."
+
+#: ../src/VerbalAnalogies/AnalogiesQuestionAnswer.cs:40
+msgid "Question and answer"
+msgstr "Pregunta i resposta"
 
 #: ../data/verbal_analogies.xml.h:1
 msgid "A car engine that is poorly designed and lacking of sophistication is?"
@@ -2453,7 +2551,6 @@ msgstr "Conspirador"
 msgid "Cycling"
 msgstr "Ciclisme"
 
-#
 #: ../data/verbal_analogies.xml.h:8
 msgid "It is the only one that does not use a ball in the game."
 msgstr "És l'únic que no utilitza una pilota en el joc."
@@ -2767,7 +2864,7 @@ msgstr "pal / flotar | pedra"
 
 #: ../data/verbal_analogies.xml.h:88
 msgid "sticky"
-msgstr "enganxós | enganxifós"
+msgstr "enganxós | enganxifós | apegalós | pegallós"
 
 #: ../data/verbal_analogies.xml.h:89
 msgid "store / sign | bottle"
