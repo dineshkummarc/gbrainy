@@ -62,6 +62,8 @@ public class AnalogiesMultipleOptions : Analogies
 				}
 			}
 
+			// Translators: {0} is replaced by a question and {1} by the suggestions on how to answer
+			// E.g: What is the correct option? Answer A, B, C.
 			return String.Format (Catalog.GetString ("{0} Answer {1}."),
 				current.question,
 				str);
