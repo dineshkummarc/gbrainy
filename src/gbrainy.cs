@@ -70,7 +70,7 @@ public class gbrainy: Program
 		Gtk.MenuItem item;
 
 		Catalog.Init ("gbrainy", Defines.GNOME_LOCALE_DIR);
-		FixLocaleInfo ();
+		Unix.FixLocaleInfo ();
 
 		IconFactory icon_factory = new IconFactory ();
                 AddIcon (icon_factory, "logic-games", "logic-games-32.png");
@@ -178,70 +178,6 @@ public class gbrainy: Program
 			toolbar_menuitem.Active = false;
 
 		ActiveInputControls (false);
-	}
-
-	/* Taken from locale.h  */
-	[StructLayout (LayoutKind.Sequential)]
-	public struct lconv
-	{
-		public string decimal_point;
-		public string thousands_sep;		
-		public string grouping;
-		public string int_curr_symbol;
-		public string currency_symbol;
-		public string mon_decimal_point;
-		public string mon_thousands_sep;
-		public string mon_grouping;
-		public string positive_sign;
-		public string negative_sign;
-		char int_frac_digits;
-		char frac_digits;
-		char p_cs_precedes;
-		char p_sep_by_space;
-		char n_cs_precedes;
-		char n_sep_by_space;
-		char p_sign_posn;
-		char n_sign_posn;
-		char int_p_cs_precedes;
-		char int_p_sep_by_space;
-		char int_n_cs_precedes;
-		char int_n_sep_by_space;
-		char int_p_sign_posn;
-		char int_n_sign_posn;
-	}
-
-	[DllImport("libc")]
-	static extern IntPtr localeconv ();
-
-	// Mono supports less locales that Unix systems
-	// To overcome this limitation we setup the right locale parameters
-	// when the Mono locale is InvariantCulture, that is, when the user's locale
-	// has not been identified and the default Mono locale is used
-	//
-	// See: https://bugzilla.novell.com/show_bug.cgi?id=420468
-	// 
-	static void FixLocaleInfo ()
-	{
-		IntPtr st = IntPtr.Zero;
-		lconv lv;
-		int platform = (int) Environment.OSVersion.Platform;
-		
-		if (platform != 4 && platform != 128) // Only in Unix based systems
-			return;
-
-		if (CultureInfo.CurrentCulture != CultureInfo.InvariantCulture) // Culture well supported
-			return;
-
-		try {
-			st = localeconv ();
-			if (st == IntPtr.Zero) return;
-
-			lv = (lconv) Marshal.PtrToStructure (st, typeof (lconv));
-			CultureInfo culture =  (CultureInfo) CultureInfo.CurrentCulture.Clone ();
-			culture.NumberFormat.NumberDecimalSeparator = lv.decimal_point;
-			Thread.CurrentThread.CurrentCulture = culture;
-		}
-		catch (Exception) {}
 	}
 
 	public void UpdateStatusBar ()
@@ -599,34 +535,10 @@ public class gbrainy: Program
 		full_screen = !full_screen;
 	}
 
-	[DllImport ("libc")] // Linux
-	private static extern int prctl (int option, byte [] arg2, IntPtr arg3, IntPtr arg4, IntPtr arg5);
-
-	[DllImport ("libc")] // BSD
-	private static extern void setproctitle (byte [] fmt, byte [] str_arg);
- 
-	public static void SetProcessName (string name)
-	{
-		int platform = (int) Environment.OSVersion.Platform;		
-		if (platform != 4 && platform != 128)
-			return;
-
-		try {
-			if (prctl (15 /* PR_SET_NAME */, Encoding.ASCII.GetBytes (name + "\0"),
-				IntPtr.Zero, IntPtr.Zero, IntPtr.Zero) != 0) {
-				throw new ApplicationException ("Error setting process name: " + 
-					Mono.Unix.Native.Stdlib.GetLastError ());
-			}
-		} catch (EntryPointNotFoundException) {
-			setproctitle (Encoding.ASCII.GetBytes ("%s\0"), 
-				Encoding.ASCII.GetBytes (name + "\0"));
-		}
-	}
-	
 	public static void Main (string [] args) 
 	{
 		try {
-			SetProcessName ("gbrainy");
+			Unix.SetProcessName ("gbrainy");
 		} catch {}
 
 		gbrainy gui = new gbrainy (args);
