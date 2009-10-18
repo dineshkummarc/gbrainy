@@ -87,6 +87,8 @@ GBRAINY_CSDISTFILES =				\
 	$(srcdir)/PuzzleGames/PuzzlePercentage.cs	\
 	$(srcdir)/SimpleLabel.cs	\
 	$(srcdir)/Unix.cs	\
+	$(srcdir)/GameTips.cs	\
+	$(srcdir)/CountDown.cs	\
 	$(srcdir)/gbrainy.cs			
 
 

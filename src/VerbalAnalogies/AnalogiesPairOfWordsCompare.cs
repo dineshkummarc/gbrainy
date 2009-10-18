@@ -93,7 +93,7 @@ public class AnalogiesPairOfWordsCompare : Analogies
 	
 	public override void Draw (CairoContextEx gr, int area_width, int area_height)
 	{
-		double x = DrawAreaX, y = DrawAreaY + 0.1;
+		double y = DrawAreaY + 0.1;
 
 		base.Draw (gr, area_width, area_height);
 

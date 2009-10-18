@@ -72,66 +72,10 @@ public class gbrainy: Program
 		Catalog.Init ("gbrainy", Defines.GNOME_LOCALE_DIR);
 		Unix.FixLocaleInfo ();
 
-		IconFactory icon_factory = new IconFactory ();
-                AddIcon (icon_factory, "logic-games", "logic-games-32.png");
-		AddIcon (icon_factory, "math-games", "math-games-32.png");
-		AddIcon (icon_factory, "memory-games", "memory-games-32.png");
-		AddIcon (icon_factory, "verbal-games", "verbal-games-32.png");
-		AddIcon (icon_factory, "pause", "pause-32.png");
-		AddIcon (icon_factory, "resume", "resume-32.png");
-		AddIcon (icon_factory, "endgame", "endgame-32.png");
-		AddIcon (icon_factory, "allgames", "allgames-32.png");
-		icon_factory.AddDefault ();
-
 		Glade.XML gXML = new Glade.XML (null, "gbrainy.glade", "gbrainy", null);
 		gXML.Autoconnect (this);
 
-		toolbar.IconSize = Gtk.IconSize.Dnd;
-		toolbar.ShowArrow = false;
-	
-		Tooltips tooltips = new Tooltips ();
-		all_tbbutton = new ToolButton ("allgames");
-		all_tbbutton.SetTooltip (tooltips, Catalog.GetString ("Play all the games"), null);
-		all_tbbutton.Label = Catalog.GetString ("All");
-		all_tbbutton.Clicked += OnAllGames;
-		toolbar.Insert (all_tbbutton, -1);
-
-		logic_tbbutton = new ToolButton ("logic-games");
-		logic_tbbutton.SetTooltip (tooltips, Catalog.GetString ("Play games that challenge your reasoning and thinking"), null);
-		logic_tbbutton.Label = Catalog.GetString ("Logic");
-		logic_tbbutton.Clicked += OnLogicOnly;
-		toolbar.Insert (logic_tbbutton, -1);
-
-		calculation_tbbutton = new ToolButton ("math-games");
-		calculation_tbbutton.Label = Catalog.GetString ("Calculation");
-		calculation_tbbutton.SetTooltip (tooltips, Catalog.GetString ("Play games that challenge your mental calculation skills"), null);
-		calculation_tbbutton.Clicked += OnMathOnly;
-		toolbar.Insert (calculation_tbbutton, -1);
-
-		memory_tbbutton = new ToolButton ("memory-games");
-		memory_tbbutton.Label = Catalog.GetString ("Memory");
-		memory_tbbutton.SetTooltip (tooltips, Catalog.GetString ("Play games that challenge your short term memory"), null);
-		memory_tbbutton.Clicked += OnMemoryOnly;
-		toolbar.Insert (memory_tbbutton, -1);
-
-		verbal_tbbutton = new ToolButton ("verbal-games");
-		verbal_tbbutton.Label = Catalog.GetString ("Verbal");
-		verbal_tbbutton.SetTooltip (tooltips, Catalog.GetString ("Play games that challenge your verbal aptitude"), null);
-		verbal_tbbutton.Clicked += OnVerbalOnly;
-		toolbar.Insert (verbal_tbbutton, -1);
-
-		pause_tbbutton = new ToolButton ("pause");
-		pause_tbbutton.Label = Catalog.GetString ("Pause");
-		pause_tbbutton.SetTooltip (tooltips, Catalog.GetString ("Pause or resume the game"), null);
-		pause_tbbutton.Clicked += OnPauseGame;
-		toolbar.Insert (pause_tbbutton, -1);
-
-		finish_tbbutton = new ToolButton ("endgame");
-		finish_tbbutton.SetTooltip (tooltips, Catalog.GetString ("End the game and show score"), null);
-		finish_tbbutton.Label = Catalog.GetString ("Finish");
-		finish_tbbutton.Clicked += OnEndGame;
-		toolbar.Insert (finish_tbbutton, -1);
-
+		BuildToolBar ();
 		session = new GameSession (this);
 
 		if (history == null)
@@ -226,11 +170,6 @@ public class gbrainy: Program
 		question_label.Text = question;
 	}
 
-	private void UpdateSolution (string solution)
-	{		
-		solution_label.Text = solution;
-	}
-
 	public void QueueDraw ()
 	{
 		drawing_area.QueueDraw ();
@@ -240,6 +179,71 @@ public class gbrainy: Program
 	{
 		question_label.WidthMargin = margin;
 		solution_label.WidthMargin = margin;
+	}
+
+	void UpdateSolution (string solution)
+	{		
+		solution_label.Text = solution;
+	}
+
+	void BuildToolBar ()
+	{
+		IconFactory icon_factory = new IconFactory ();
+                AddIcon (icon_factory, "logic-games", "logic-games-32.png");
+		AddIcon (icon_factory, "math-games", "math-games-32.png");
+		AddIcon (icon_factory, "memory-games", "memory-games-32.png");
+		AddIcon (icon_factory, "verbal-games", "verbal-games-32.png");
+		AddIcon (icon_factory, "pause", "pause-32.png");
+		AddIcon (icon_factory, "resume", "resume-32.png");
+		AddIcon (icon_factory, "endgame", "endgame-32.png");
+		AddIcon (icon_factory, "allgames", "allgames-32.png");
+		icon_factory.AddDefault ();
+
+		toolbar.IconSize = Gtk.IconSize.Dnd;
+		toolbar.ShowArrow = false;
+	
+		Tooltips tooltips = new Tooltips ();
+		all_tbbutton = new ToolButton ("allgames");
+		all_tbbutton.SetTooltip (tooltips, Catalog.GetString ("Play all the games"), null);
+		all_tbbutton.Label = Catalog.GetString ("All");
+		all_tbbutton.Clicked += OnAllGames;
+		toolbar.Insert (all_tbbutton, -1);
+
+		logic_tbbutton = new ToolButton ("logic-games");
+		logic_tbbutton.SetTooltip (tooltips, Catalog.GetString ("Play games that challenge your reasoning and thinking"), null);
+		logic_tbbutton.Label = Catalog.GetString ("Logic");
+		logic_tbbutton.Clicked += OnLogicOnly;
+		toolbar.Insert (logic_tbbutton, -1);
+
+		calculation_tbbutton = new ToolButton ("math-games");
+		calculation_tbbutton.Label = Catalog.GetString ("Calculation");
+		calculation_tbbutton.SetTooltip (tooltips, Catalog.GetString ("Play games that challenge your mental calculation skills"), null);
+		calculation_tbbutton.Clicked += OnMathOnly;
+		toolbar.Insert (calculation_tbbutton, -1);
+
+		memory_tbbutton = new ToolButton ("memory-games");
+		memory_tbbutton.Label = Catalog.GetString ("Memory");
+		memory_tbbutton.SetTooltip (tooltips, Catalog.GetString ("Play games that challenge your short term memory"), null);
+		memory_tbbutton.Clicked += OnMemoryOnly;
+		toolbar.Insert (memory_tbbutton, -1);
+
+		verbal_tbbutton = new ToolButton ("verbal-games");
+		verbal_tbbutton.Label = Catalog.GetString ("Verbal");
+		verbal_tbbutton.SetTooltip (tooltips, Catalog.GetString ("Play games that challenge your verbal aptitude"), null);
+		verbal_tbbutton.Clicked += OnVerbalOnly;
+		toolbar.Insert (verbal_tbbutton, -1);
+
+		pause_tbbutton = new ToolButton ("pause");
+		pause_tbbutton.Label = Catalog.GetString ("Pause");
+		pause_tbbutton.SetTooltip (tooltips, Catalog.GetString ("Pause or resume the game"), null);
+		pause_tbbutton.Clicked += OnPauseGame;
+		toolbar.Insert (pause_tbbutton, -1);
+
+		finish_tbbutton = new ToolButton ("endgame");
+		finish_tbbutton.SetTooltip (tooltips, Catalog.GetString ("End the game and show score"), null);
+		finish_tbbutton.Label = Catalog.GetString ("Finish");
+		finish_tbbutton.Clicked += OnEndGame;
+		toolbar.Insert (finish_tbbutton, -1);
 	}
 
 	void GameSensitiveUI () 
