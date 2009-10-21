@@ -60,7 +60,7 @@ public class PuzzleEquation : Game
 				found = true;
 		}
 
-		formula = String.Format ("{0}  * {1} + {2} * {3} - {4} = ?", num_a, num_b, num_c, num_d, num_e);
+		formula = String.Format ("{0} * {1} + {2} * {3} - {4} = ?", num_a, num_b, num_c, num_d, num_e);
 		right_answer = (order).ToString ();
 	}
 

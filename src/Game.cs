@@ -49,7 +49,6 @@ abstract public class Game
 	private bool won;
 	private bool tip_used;
 	private Difficulty difficulty;
-	private bool trace_score = false; // Set to true to debug scoring
 
 	protected Game ()
 	{
@@ -218,11 +217,6 @@ abstract public class Game
 				if (tip_used) {
 					score = score * 0.8;
 				}
-			}
-
-			if (trace_score) {
-				Console.WriteLine ("Score for game {0} is {1}. Used tip {2}, time used {3}, time expected {4}", 
-					this, (int) score, tip_used, seconds, AverageTime);
 			}
 
 			return (int) score;
