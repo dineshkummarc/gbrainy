@@ -72,6 +72,8 @@ public class GameManager
 		typeof (PuzzleHandshakes),
 		typeof (PuzzleCounting),
 		typeof (PuzzlePercentage),
+		typeof (PuzzleTimeNow),
+		typeof (Puzzle3DCube),
 	};
 
 	static Type[] CalculationTrainersInternal = new Type[] 

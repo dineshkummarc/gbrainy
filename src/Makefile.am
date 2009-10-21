@@ -85,6 +85,8 @@ GBRAINY_CSDISTFILES =				\
 	$(srcdir)/CalculationGames/CalculationProportions.cs \
 	$(srcdir)/CalculationGames/CalculationRatio.cs \
 	$(srcdir)/PuzzleGames/PuzzlePercentage.cs	\
+	$(srcdir)/PuzzleGames/PuzzleTimeNow.cs	\
+	$(srcdir)/PuzzleGames/Puzzle3DCube.cs	\
 	$(srcdir)/SimpleLabel.cs	\
 	$(srcdir)/Unix.cs	\
 	$(srcdir)/GameTips.cs	\

@@ -320,6 +320,51 @@ public class CairoContextEx : Cairo.Context
 		((IDisposable)shadow).Dispose ();
 	}
 
+	public void DrawClock (double x, double y, double size, int hand_short, int hand_large)
+	{
+		const double radian = Math.PI / 180;
+		double radius = size / 2;
+		double x0, y0;
+		int num, degrees;
+
+		Arc (x, y, radius, 0, 2 * Math.PI);
+		Stroke ();
+		for (degrees = 0; degrees < 360; degrees+= 30) {
+			x0 = radius * Math.Cos (degrees * radian);
+			y0 = radius * Math.Sin (degrees * radian);
+			 // Small lines
+			MoveTo (x + 0.9 * x0, y + 0.9 * y0);
+			LineTo (x + x0, y + y0);
+			Stroke ();
+			// Numbers
+			num = (degrees / 30) + 3;
+			if (num > 12) num = num - 12;
+
+			DrawTextCentered (x + x0 * 0.75,  y + y0 * 0.75, num.ToString ());
+			Stroke ();
+		}
+
+		if (hand_large >=1 && hand_large <= 12 ) {
+			// Hand Large
+			degrees = (hand_large - 3) * 30;
+			x0 = radius * Math.Cos (degrees * radian);
+			y0 = radius * Math.Sin (degrees * radian);
+			MoveTo (x, y);
+			LineTo (x + x0 * 0.55, y + y0 * 0.55);
+			Stroke ();
+		}
+
+		if (hand_short >=1 && hand_short <= 12) {
+			// Hand Short
+			degrees = (hand_short - 3) * 30;
+			x0 = radius * Math.Cos (degrees * radian);
+			y0 = radius * Math.Sin (degrees * radian);
+			MoveTo (x, y);
+			LineTo (x + x0 * 0.4, y + y0 * 0.4);
+			Stroke ();
+		}
+	}
+
 	public void FillGradient (double x, double y, double w, double h, Cairo.Color color)
 	{
 		Save ();

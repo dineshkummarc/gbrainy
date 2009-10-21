@@ -81,10 +81,7 @@ public class PuzzleCube : Game
 		gr.Rectangle (x + 0.4, y + 0.2, 0.1, 0.1);
 		gr.MoveTo (x + 0.4 + txtoff_x, y + 0.2 + txtoff_y);
 		gr.ShowPangoText ("6");
-
-		gr.Stroke ();
 	}
-
 }
 
 

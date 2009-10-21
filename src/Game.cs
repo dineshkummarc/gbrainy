@@ -230,26 +230,26 @@ abstract public class Game
 	{
 		switch (answer) {
 			// Translators Note
-			// The following serie of answers may need to be adapted
+			// The following series of answers may need to be adapted
 			// in cultures with alphabets different to the Latin one.
 			// The idea is to enumerate a sequence of possible answers
 			// For languages represented with the Latin alphabet use 
 			// the same than English
-		case 0: // First possible answer for a serie (e.g.: Figure A)
+		case 0: // First possible answer for a series (e.g.: Figure A)
 			return Catalog.GetString ("A");
-		case 1: // Second possible answer for a serie
+		case 1: // Second possible answer for a series
 			return Catalog.GetString ("B");
-		case 2: // Third possible answer for a serie
+		case 2: // Third possible answer for a series
 			return Catalog.GetString ("C");
-		case 3: // Fourth possible answer for a serie
+		case 3: // Fourth possible answer for a series
 			return Catalog.GetString ("D");
-		case 4: // Fifth possible answer for a serie
+		case 4: // Fifth possible answer for a series
 			return Catalog.GetString ("E");
-		case 5: // Sixth possible answer for a serie
+		case 5: // Sixth possible answer for a series
 			return Catalog.GetString ("F");
-		case 6: // Seventh possible answer for a serie
+		case 6: // Seventh possible answer for a series
 			return Catalog.GetString ("G");
-		case 7: // Eighth possible answer for a serie
+		case 7: // Eighth possible answer for a series
 			return Catalog.GetString ("H");
 		default:
 			return string.Empty;
