@@ -42,7 +42,7 @@ public class AboutDialog : Gtk.AboutDialog
 			"Openclipart.org"
 		};
 
-		// Name of the people that translated the application
+		// Translators: Replace by the name of the people that translated the application
 		string translators = Catalog.GetString ("translator-credits");
 
 		if (translators == "translator-credits")
@@ -61,7 +61,7 @@ public class AboutDialog : Gtk.AboutDialog
 		Copyright = "(c) 2007-2009 Jordi Mas i Hernandez\n";
 		Copyright += Catalog.GetString ("Based on ideas by Terry Stickels, MENSA books and Jordi Mas.");
 
-		Comments = Catalog.GetString ("A brain teaser and trainer game to have fun and to keep your brain trained.");
+		Comments = Catalog.GetString ("A brain teaser game for fun and to keep your brain trained.");
 		Website = "http://live.gnome.org/gbrainy";
 		WebsiteLabel = Catalog.GetString ("gbrainy web site");
 		TranslatorCredits = translators;
