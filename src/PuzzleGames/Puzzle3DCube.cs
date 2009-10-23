@@ -30,7 +30,7 @@ public class Puzzle3DCube : Game
 	}
 
 	public override string Question {
-		get {return String.Format (Catalog.GetString ("How many cubes can you count in the figure below? (not counting the figure) Answer using a number."));} 
+		get {return String.Format (Catalog.GetString ("How many cubes do you count in the figure below? (not counting the figure) Answer using a number."));} 
 	}
 
 	public override string Tip {
