@@ -36,7 +36,7 @@ public class CalculationRatio : Game
 	public override string Question {
 		get {
 			return String.Format (
-				Catalog.GetString ("Two numbers that sum {0} and have a ratio of {1} to {2}. Which are these numbers?"), 
+				Catalog.GetString ("Two numbers that sum {0} have a ratio of {1} to {2}. Which are these numbers?"), 
 				number_a + number_b, ratio_a, ratio_b);
 		}
 	}
