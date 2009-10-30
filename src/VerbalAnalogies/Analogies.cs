@@ -99,6 +99,11 @@ public abstract class Analogies : Game
 		set;
 	}
 
+	// Returns true when this game manager has no more games to server
+	public bool IsExhausted {
+		get { return CurrentIndex + 1 >= List.Count;}
+	}
+
 	public abstract Dictionary <int, Analogy> List {
 		get;
 	}

@@ -30,6 +30,43 @@ using Mono.Addins.Setup;
 
 public class GameManager
 {
+	// Serves analogies as their container class is still not exhausted
+	// This is used to make sure that the analogies are not repeated within a game session
+	public class AnalogiesManager
+	{
+		List <Analogies> analogies;
+
+		public AnalogiesManager (Type [] types)
+		{
+			analogies = new List <Analogies> ();
+			
+			foreach (Type type in types)
+			{
+				Analogies analogy;
+
+				analogy = (Analogies) Activator.CreateInstance (type, true);
+				analogies.Add (analogy);
+			}
+		}
+
+		public void Initialize ()
+		{
+			foreach (Analogies analogy in analogies)
+				analogy.CurrentIndex = 0;
+		}
+
+		public bool IsExhausted {
+			get {
+				foreach (Analogies analogy in analogies)
+				{
+					if (analogy.IsExhausted == false)
+						return false;
+				}
+				return true;
+			}
+		}
+	}
+
 	static Type[] LogicPuzzlesInternal = new Type[] 
 	{
 		typeof (PuzzleMatrixNumbers),
@@ -121,6 +158,7 @@ public class GameManager
 	List <Type> CalculationTrainers;
 	List <Type> MemoryTrainers;
 	List <Type> VerbalAnalogies;
+	AnalogiesManager analogies_manager;
 	
 	public GameManager ()
 	{
@@ -139,6 +177,8 @@ public class GameManager
 				LogicPuzzles.Count + CalculationTrainers.Count + MemoryTrainers.Count + VerbalAnalogies.Count,
 				LogicPuzzles.Count, CalculationTrainers.Count, MemoryTrainers.Count, VerbalAnalogies.Count);
 		}
+
+		analogies_manager = new AnalogiesManager (VerbalAnalogiesInternal);
 		//GeneratePDF ();
 	}
 
@@ -242,9 +282,10 @@ public class GameManager
 #endif
 	}
 
-
 	void BuildGameList ()
 	{
+		analogies_manager.Initialize ();
+
 		if (GameType == GameSession.Types.Custom)
 			return;
 		
@@ -352,6 +393,9 @@ public class GameManager
 			if (enumerator.MoveNext () == false) { // All the games have been played, restart again 
 				Initialize ();
 				enumerator.MoveNext ();
+
+				if (analogies_manager.IsExhausted == true)
+					analogies_manager.Initialize ();
 			}
 
 			puzzle =  (Game) Activator.CreateInstance ((Type) games [(int) enumerator.Current], true);
@@ -360,6 +404,10 @@ public class GameManager
 				break;
 
 			if (puzzle.IsPlayable == false)
+				continue;
+
+			Analogies analogy = puzzle as Analogies;
+			if (analogy != null && analogy.IsExhausted == true)
 				continue;
 				
 			if (first == null)
