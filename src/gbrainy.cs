@@ -257,7 +257,7 @@ public class gbrainy: Program
 			playing = false;
 	
 		finish_tbbutton.Sensitive = pause_tbbutton.Sensitive = playing;
-		all_tbbutton.Sensitive = calculation_tbbutton.Sensitive = memory_tbbutton.Sensitive = logic_tbbutton.Sensitive = !playing;
+		all_tbbutton.Sensitive = calculation_tbbutton.Sensitive = memory_tbbutton.Sensitive = logic_tbbutton.Sensitive = verbal_tbbutton.Sensitive = !playing;
 		pause_menuitem.Sensitive = finish_menuitem.Sensitive = playing;
 		newgame_menuitem.Sensitive = !playing;
 	}
