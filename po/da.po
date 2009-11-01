@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gbrainy master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-10-29 21:32+0100\n"
-"PO-Revision-Date: 2009-10-23 23:07+0200\n"
+"POT-Creation-Date: 2009-11-01 09:07+0100\n"
+"PO-Revision-Date: 2009-10-31 23:07+0200\n"
 "Last-Translator: Joe Hansen <joedalton2@yahoo.dk>\n"
 "Language-Team: Dansk-gruppen <dansk@dansk-gruppen.dk>\n"
 "MIME-Version: 1.0\n"
@@ -112,7 +112,7 @@ msgstr "Arbejder med læder"
 
 #: ../data/verbal_analogies.xml.h:26
 msgid "airplane | aeroplane"
-msgstr ""
+msgstr "fly"
 
 #: ../data/verbal_analogies.xml.h:27
 msgid "ankle"
@@ -126,9 +126,11 @@ msgstr "myre / insekt"
 msgid "bite"
 msgstr "bid | spis"
 
+# givet ordparret tårer/øjne, hvilket ord har så den
+# tætteste forbindelse med 'sved'?
 #: ../data/verbal_analogies.xml.h:30
 msgid "body"
-msgstr "krop | legeme"
+msgstr "armhule | krop | legeme"
 
 #: ../data/verbal_analogies.xml.h:31
 msgid "box / open | banana"
@@ -213,7 +215,7 @@ msgstr "fejlagtig"
 
 #: ../data/verbal_analogies.xml.h:49
 msgid "error / correct | damage"
-msgstr "fejl / ret | skade"
+msgstr "fejl / rette | skade"
 
 #: ../data/verbal_analogies.xml.h:50
 msgid "eyebrow / eye | mustache"
@@ -343,9 +345,11 @@ msgstr "pioner"
 msgid "puzzle / solve | game"
 msgstr "puslespil / løs | spil"
 
+# givet ordparret fejl/rette, hvilket ord har så den
+# tætteste forbindelse med 'skade'?
 #: ../data/verbal_analogies.xml.h:78
 msgid "repair | fix"
-msgstr "reparer | ret"
+msgstr "reparer | reparere | ret | rette"
 
 #: ../data/verbal_analogies.xml.h:79
 msgid "ring / finger | bracelet"
@@ -365,9 +369,11 @@ msgstr "skovl / grav | økse"
 msgid "simplistic"
 msgstr "simpel"
 
+# givet ordparret pind/flyd, hvilket ord har så den
+# tætteste forbindelse med 'sten'?
 #: ../data/verbal_analogies.xml.h:83
 msgid "sink"
-msgstr "vask"
+msgstr "synk"
 
 # givet ordparret sulten/spis, hvilket ord 
 # har så den tætteste forbindelse med træt
@@ -396,7 +402,7 @@ msgstr "pind / flyd | sten"
 
 #: ../data/verbal_analogies.xml.h:90
 msgid "sticky"
-msgstr "klistret"
+msgstr "klistret | klæbende"
 
 #. Translators: store refers to a shop
 #: ../data/verbal_analogies.xml.h:92
@@ -414,17 +420,21 @@ msgstr "striber"
 msgid "sugar / sweet | vinegar"
 msgstr "sukker / sød | eddike"
 
+# giver ordparrret glas/knus, hvilket ord har så 
+# den tætteste forbindelse med 'papir'.
 #: ../data/verbal_analogies.xml.h:95
 msgid "tear | rips"
-msgstr "flå | rift | flænge"
+msgstr "flå | riv | rive"
 
 #: ../data/verbal_analogies.xml.h:96
 msgid "tears / eyes | sweat"
 msgstr "tårer / øjne | sved"
 
+# givet ordparret fod/to, hvilket ord har så den tætteste
+# forbindelse med 'tå'?
 #: ../data/verbal_analogies.xml.h:97
 msgid "ten"
-msgstr "ti"
+msgstr "ti | 10"
 
 #: ../data/verbal_analogies.xml.h:98
 msgid "tennis / sport | ballet"
@@ -445,9 +455,11 @@ msgstr "drej | åben"
 msgid "unorthodox"
 msgstr "uortodoks"
 
+# givet ordparret appelsin/frugt, hvilket ord har så 
+# den tætteste forbindelse med 'spinat'?
 #: ../data/verbal_analogies.xml.h:102
 msgid "vegetable"
-msgstr "grøntsag"
+msgstr "grøntsag | grønsag"
 
 #: ../data/verbal_analogies.xml.h:103
 msgid "whirlpool / water | tornado"
@@ -470,14 +482,14 @@ msgstr "vinger"
 
 #: ../data/verbal_analogies.xml.h:107
 msgid "wins"
-msgstr "vinde | sejre | triumfere"
+msgstr "vind | vinde | sejre | triumfere"
 
 # Er svaret på
 # Givet ordparret legetøj/leg, hvilket ord har så den tætteste
 # forbindelse med 'værktøj'?
 #: ../data/verbal_analogies.xml.h:108
 msgid "work"
-msgstr "arbejde"
+msgstr "arbejde | job"
 
 # Er svaret på Givet ordparret ring/finger, hvilket ord har så den tætteste
 # forbindelse med armbånd?
@@ -494,7 +506,6 @@ msgid "zoo"
 msgstr "zoo"
 
 #: ../gbrainy.desktop.in.h:1
-#, fuzzy
 msgid "A brain teaser game for fun and to keep your brain trained"
 msgstr "Et sjovt grublespil, der kan holde din hjerne i tip-top stand"
 
@@ -654,7 +665,7 @@ msgid "Ratio"
 msgstr "Forhold"
 
 #: ../src/CalculationGames/CalculationRatio.cs:39
-#, fuzzy, csharp-format
+#, csharp-format
 msgid ""
 "Two numbers that sum {0} have a ratio of {1} to {2}. Which are these numbers?"
 msgstr ""
@@ -794,7 +805,6 @@ msgid "Based on ideas by Terry Stickels, MENSA books and Jordi Mas."
 msgstr "Baseret på ideer af Terry Stickels, MENSA-bøger og Jordi Mas."
 
 #: ../src/Dialogs/AboutDialog.cs:64
-#, fuzzy
 msgid "A brain teaser game for fun and to keep your brain trained."
 msgstr "Et sjovt grublespil, der kan holde din hjerne i tip-top stand"
 
@@ -986,13 +996,13 @@ msgstr "{0}. Spil vundet: {1} ({2} spillet)"
 #: ../src/GameDrawingArea.cs:241
 #, csharp-format
 msgid "Time played {0} (average per game {1})"
-msgstr "Spilletid  {0} (average per game {1})"
+msgstr "Spilletid  {0} (gennemsnit per spil {1})"
 
 #: ../src/GameDrawingArea.cs:248
 msgid "Tips for your next games"
 msgstr "Fif til dine næste spil"
 
-#: ../src/GameManager.cs:138
+#: ../src/GameManager.cs:176
 #, csharp-format
 msgid ""
 "Games registered: {0}: {1} logic puzzles, {2} calculation trainers, {3} "
@@ -1258,7 +1268,7 @@ msgstr "_Næste"
 msgid "_Tip"
 msgstr "_Tip"
 
-#: ../src/Memory.cs:49
+#: ../src/MemoryGames/Memory.cs:49
 msgid "Memorize the objects below in the given time"
 msgstr "Husk alle objekterne nedenfor, indenfor den tildelte tidsperiode"
 
@@ -1749,7 +1759,7 @@ msgid "Cube"
 msgstr "Terning"
 
 #: ../src/PuzzleGames/Puzzle3DCube.cs:33
-#, fuzzy, csharp-format
+#, csharp-format
 msgid ""
 "How many cubes do you count in the figure below? (not counting the figure) "
 "Answer using a number."
