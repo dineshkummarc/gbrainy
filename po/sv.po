@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gbrainy\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-11-01 18:28+0100\n"
-"PO-Revision-Date: 2009-11-01 22:09+0100\n"
+"POT-Creation-Date: 2009-11-02 15:55+0100\n"
+"PO-Revision-Date: 2009-11-02 22:10+0100\n"
 "Last-Translator: Daniel Nylander <po@danielnylander.se>\n"
 "Language-Team: Swedish <tp-sv@listor.tp-sv.se>\n"
 "MIME-Version: 1.0\n"
@@ -486,19 +486,18 @@ msgid "Closer fraction"
 msgstr ""
 
 #: ../src/CalculationGames/CalculationCloserFraction.cs:42
-#, fuzzy, csharp-format
+#, csharp-format
 msgid "Which of the following numbers is closer to {0:##0.###}? Answer {1}, {2}, {3} or {4}."
-msgstr "Vilket av följande tal är närmare {0:###.###} (alternativ A, B, C eller D)? "
+msgstr "Vilket av följande tal är närmare {0:##0.###}? Svara {1}, {2}, {3} eller {4}."
 
 #: ../src/CalculationGames/CalculationCloserFraction.cs:51
-#, fuzzy, csharp-format
+#, csharp-format
 msgid "The result of the operation {0} / {1} is {2:##0.###}"
-msgstr "Resultatet av operationen {0} / {1} är {2:###.###}"
+msgstr "Resultatet av operationen {0} / {1} är {2:##0.###}"
 
 #: ../src/CalculationGames/CalculationFractions.cs:57
-#, fuzzy
 msgid "Fractions"
-msgstr "regn"
+msgstr "Fraktioner"
 
 #: ../src/CalculationGames/CalculationFractions.cs:65
 #, csharp-format
@@ -873,9 +872,9 @@ msgid "{0}. Games won: {1} ({2} played)"
 msgstr "{0}. Spel vunna: {1} ({2} spelade)"
 
 #: ../src/GameDrawingArea.cs:241
-#, fuzzy, csharp-format
+#, csharp-format
 msgid "Time played {0} (average per game {1})"
-msgstr "Total tid spelad för {0} (genomsnitt per spel är {1})"
+msgstr "Total tid spelad {0} (genomsnitt per spel {1})"
 
 #: ../src/GameDrawingArea.cs:248
 msgid "Tips for your next games"
@@ -930,9 +929,8 @@ msgid "Do all the problems, even the difficult ones. Improvement comes from prac
 msgstr "Gå igenom alla problemen, även de svåra. Förbättring kommer genom träning."
 
 #: ../src/GameTips.cs:46
-#, fuzzy
 msgid "Play on a daily basis, you will notice progress soon."
-msgstr "Spela på daglig basis och du kommer snart att märka skillnad."
+msgstr "Spela varje dag och du kommer snart att märka skillnad."
 
 #. Translators: Custom Game Selection is a menu option
 #: ../src/GameTips.cs:48
@@ -1626,9 +1624,8 @@ msgstr "Cirklar i en rektangel"
 
 #
 #: ../src/PuzzleGames/PuzzleCirclesRectangle.cs:31
-#, fuzzy
 msgid "What is the maximum number of circles (as shown) that fit in the square below?"
-msgstr "Vad är det maximala antalet cirklar (som den som visas) som kan passas in i nedanstående fyrkant?"
+msgstr "Vad är det maximala antalet cirklar (som visat) som kan passas in i nedanstående fyrkant?"
 
 #: ../src/PuzzleGames/PuzzleCirclesRectangle.cs:35
 msgid "You can fit more than 64 circles."
@@ -1798,9 +1795,8 @@ msgid "Figures and text"
 msgstr "Figurer och text"
 
 #: ../src/PuzzleGames/PuzzleFigureLetter.cs:41
-#, fuzzy
 msgid "The figures and the text are related. What text should go under the last figure?"
-msgstr "Figurerna och texten är relaterade. Vilken text ska gå under den sista figuren?"
+msgstr "Figurerna och texten är relaterade. Vilken text ska stå under den sista figuren?"
 
 #: ../src/PuzzleGames/PuzzleFigureLetter.cs:45
 msgid "Every character of the text represents a property of the figure."
@@ -1874,14 +1870,12 @@ msgstr "Fyrsidig"
 
 #
 #: ../src/PuzzleGames/PuzzleFourSided.cs:33
-#, fuzzy
 msgid "How many four sided figures do you count in the figure below?"
-msgstr "Hur många linjer kan du räkna dig till i nedanstående figur?"
+msgstr "Hur många fyrsidiga figurer kan du räkna dig till i nedanstående figur?"
 
 #: ../src/PuzzleGames/PuzzleFourSided.cs:37
-#, fuzzy
 msgid "A four sided figure can be embedded inside another figure."
-msgstr "En triangel kan vara inbäddad inne i en annan triangel."
+msgstr "En fyrsidig figur kan inbäddas inne i en annan figur."
 
 #: ../src/PuzzleGames/PuzzleFourSided.cs:44
 #, csharp-format
@@ -1933,17 +1927,16 @@ msgstr "Matrisgrupper"
 
 #: ../src/PuzzleGames/PuzzleMatrixGroups.cs:36
 msgid "One of numbers in the matrix must be circled. Which one?"
-msgstr ""
+msgstr "Ett av talet i matrisen måste innehålla en cirkel. Vilken?"
 
 #: ../src/PuzzleGames/PuzzleMatrixGroups.cs:40
-#, fuzzy
 msgid "All circled numbers share an arithmetical property."
-msgstr "Alla blåa tal delar en aritmetisk egenskap."
+msgstr "Alla tal med cirklar delar en aritmetisk egenskap."
 
 #: ../src/PuzzleGames/PuzzleMatrixGroups.cs:46
 #, csharp-format
 msgid "Every circled number can be divided by {0}."
-msgstr ""
+msgstr "Varje tal med en cirkel kan divideras med {0}."
 
 #: ../src/PuzzleGames/PuzzleMatrixNumbers.cs:41
 msgid "Matrix numbers"
@@ -2165,7 +2158,7 @@ msgstr "Personer vid ett bord"
 #: ../src/PuzzleGames/PuzzlePeopleTable.cs:46
 #, csharp-format
 msgid "A group of people are sitting at round table, evenly spaced out. How many people are there if the {0} person is across from the {1}?"
-msgstr ""
+msgstr "En grupp personer sitter runt ett runt bord, jämnt utspridda. Hur många personer sitter där om den {0} personen sitter mitt emot den {1}?"
 
 #: ../src/PuzzleGames/PuzzlePeopleTable.cs:52
 msgid "Subtracting the two positions you find out how many people are seated half way around the table. Doubling this number leaves you with the total amount of people."
@@ -2207,7 +2200,7 @@ msgstr ""
 #: ../src/PuzzleGames/PuzzlePercentage.cs:83
 #, csharp-format
 msgid "John's shop had sales of {0} monetary units. This was an increase of {1}% over last month. What were last month sales?"
-msgstr ""
+msgstr "Johans affär sålde för {0} monetära enheter. Detta var en ökning med {1}% från senaste månaden. Hur mycket såldes det för förra månaden?"
 
 #: ../src/PuzzleGames/PuzzlePercentage.cs:98
 #, csharp-format
@@ -2229,7 +2222,7 @@ msgstr "Vilken av följande figurer tillhör inte gruppen? Svara {0}, {1}, {2}, 
 
 #: ../src/PuzzleGames/PuzzleQuadrilaterals.cs:54
 msgid "It is the only figure with all lines of equal length."
-msgstr ""
+msgstr "Det är den enda figuren där alla linjer har samma längd."
 
 #: ../src/PuzzleGames/PuzzleSquareDots.cs:87
 msgid "Square with dots"
@@ -2298,11 +2291,11 @@ msgstr "Tetris"
 #: ../src/PuzzleGames/PuzzleTetris.cs:36
 #, csharp-format
 msgid "What figure completes the sequence below? Answer {0}, {1} or {2}."
-msgstr ""
+msgstr "Vilken figur färdigställer sekvensen nedan? Svara {0}, {1} eller {2}."
 
 #: ../src/PuzzleGames/PuzzleTetris.cs:43
 msgid "It is the figure that completes all possible combinations with four blocks without taking into account rotations."
-msgstr ""
+msgstr "Det är figuren som färdigställer alla möjliga kombinationer med fyra block utan att räkna med rotationer."
 
 #: ../src/PuzzleGames/PuzzleTimeNow.cs:30
 msgid "Time now"
@@ -2333,7 +2326,7 @@ msgstr "En triangel kan vara inbäddad inne i en annan triangel."
 #: ../src/PuzzleGames/PuzzleTriangles.cs:44
 #, csharp-format
 msgid "The triangles are made by connecting the following points: {0}"
-msgstr ""
+msgstr "Trianglarna skapas genom att koppla samman följande punkter: {0}"
 
 #: ../src/PuzzleGames/PuzzleTrianglesWithNumbers.cs:55
 msgid "Triangles with numbers"
@@ -2345,7 +2338,7 @@ msgstr "Vilket tal ska ersätta frågetecknet?"
 
 #: ../src/PuzzleGames/PuzzleTrianglesWithNumbers.cs:64
 msgid "All the triangles share a property and are independent of the rest."
-msgstr ""
+msgstr "Alla trianglar delar en egenskap och är oberoende av resten."
 
 #: ../src/PuzzleGames/PuzzleTrianglesWithNumbers.cs:70
 #, csharp-format
