@@ -32,7 +32,7 @@ public class PuzzleTimeNow : Game
 
 	public override string Question {
 		get {return (String.Format (
-
+			// Translators: {1} and {2} are replaced by hours
 			Catalog.GetString ("{0} hours ago it was as long after {1} as it was before {2} on the same day. What is the time now?"),
 			after, position_a, position_b));}
 	}
