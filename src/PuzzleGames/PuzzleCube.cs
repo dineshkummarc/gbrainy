@@ -59,26 +59,32 @@ public class PuzzleCube : Game
 		base.Draw (gr, area_width, area_height);
 
 		gr.Rectangle (x + 0.1, y, 0.1, 0.1);
+		gr.Stroke ();
 		gr.MoveTo (x + 0.1 + txtoff_x, y + txtoff_y);
 		gr.ShowPangoText ("1");
 
 		gr.Rectangle (x + 0.2, y, 0.1, 0.1);
+		gr.Stroke ();
 		gr.MoveTo (x + 0.2 + txtoff_x, y + txtoff_y);
 		gr.ShowPangoText ("2");
 
 		gr.Rectangle (x + 0.2, y + 0.1, 0.1, 0.1);
+		gr.Stroke ();
 		gr.MoveTo (x + 0.2 + txtoff_x, y + 0.1 + txtoff_y);
 		gr.ShowPangoText ("3");
 
 		gr.Rectangle (x + 0.3, y + 0.1, 0.1, 0.1);
+		gr.Stroke ();
 		gr.MoveTo (x + 0.3 + txtoff_x, y + 0.1 + txtoff_y);
 		gr.ShowPangoText ("4");
 
 		gr.Rectangle (x + 0.4, y + 0.1, 0.1, 0.1);
+		gr.Stroke ();
 		gr.MoveTo (x + 0.4 + txtoff_x, y + 0.1 + txtoff_y);
 		gr.ShowPangoText ("5");
 
 		gr.Rectangle (x + 0.4, y + 0.2, 0.1, 0.1);
+		gr.Stroke ();
 		gr.MoveTo (x + 0.4 + txtoff_x, y + 0.2 + txtoff_y);
 		gr.ShowPangoText ("6");
 	}
