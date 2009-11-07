@@ -4,7 +4,7 @@ pixmap_DATA = app-graphics/gbrainy.png \
 		app-graphics/gbrainy.svg \
 		app-graphics/gbrainy16.png
 
-analogiesdir = $(pkgdatadir)
+analogiesdir = $(datadir)/games/gbrainy
 
 hicolordir = $(datadir)/icons/hicolor
 images = $(datadir)/games/gbrainy
