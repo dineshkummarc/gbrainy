@@ -2,7 +2,7 @@
 
 ; HM NIS Edit Wizard helper defines
 !define PRODUCT_NAME "gbrainy"
-!define PRODUCT_VERSION "1.00"
+!define PRODUCT_VERSION "1.20"
 !define PRODUCT_WEB_SITE "http://live.gnome.org/gbrainy"
 !define PRODUCT_DIR_REGKEY "Software\Microsoft\Windows\CurrentVersion\App Paths\gbrainy.exe"
 !define PRODUCT_UNINST_KEY "Software\Microsoft\Windows\CurrentVersion\Uninstall\${PRODUCT_NAME}"
@@ -38,22 +38,18 @@ SetCompressor /solid lzma
 ; Instfiles page
 !insertmacro MUI_PAGE_INSTFILES
 ; Finish page
-!define MUI_FINISHPAGE_RUN "$INSTDIR\gbrainy.bat"
+;!define MUI_FINISHPAGE_RUN "$INSTDIR\gbrainy.bat"
 !insertmacro MUI_PAGE_FINISH
 
 ; Uninstaller pages
 !insertmacro MUI_UNPAGE_INSTFILES
 
 ; Language files
-!insertmacro MUI_LANGUAGE "Catalan"
 !insertmacro MUI_LANGUAGE "English"
-!insertmacro MUI_LANGUAGE "French"
-!insertmacro MUI_LANGUAGE "Galician"
-!insertmacro MUI_LANGUAGE "German"
-!insertmacro MUI_LANGUAGE "Italian"
+!insertmacro MUI_LANGUAGE "Catalan"
+!insertmacro MUI_LANGUAGE "PortugueseBR"
+!insertmacro MUI_LANGUAGE "Danish"
 !insertmacro MUI_LANGUAGE "Spanish"
-!insertmacro MUI_LANGUAGE "Slovak"
-!insertmacro MUI_LANGUAGE "Dutch"
 
 ; MUI end ------
 
@@ -76,51 +72,20 @@ Section "MainSection" SEC01
   
   SetOverwrite ifnewer
   
-  SetOutPath "$INSTDIR"  
-  
-  SetOutPath "$INSTDIR\locale\ca\LC_MESSAGES\"
-  File "/oname=gbrainy.mo" "..\topack\locale\ca.gmo" 
-  
-  SetOutPath "$INSTDIR\locale\es\LC_MESSAGES\"
-  File "/oname=gbrainy.mo" "..\topack\locale\es.gmo"
-  
-  SetOutPath "$INSTDIR\locale\de\LC_MESSAGES\"
-  File "/oname=gbrainy.mo" "..\topack\locale\de.gmo"
-  
-;  SetOutPath "$INSTDIR\locale\fr\LC_MESSAGES\"
-;  File "/oname=gbrainy.mo" "..\topack\locale\fr.gmo"
-  
-;  SetOutPath "$INSTDIR\locale\nl\LC_MESSAGES\"
-;  File "/oname=gbrainy.mo" "..\topack\locale\nl.gmo"
-
-  SetOutPath "$INSTDIR\locale\it\LC_MESSAGES\"      
-  File "/oname=gbrainy.mo" "..\topack\locale\it.gmo"  
-  
-  SetOutPath "$INSTDIR\locale\gl\LC_MESSAGES\"
-  File "/oname=gbrainy.mo" "..\topack\locale\gl.gmo"
-  
-  SetOutPath "$INSTDIR\locale\sk\LC_MESSAGES\"
-  File "/oname=gbrainy.mo" "..\topack\locale\sk.gmo"
-  
-  SetOutPath "$INSTDIR\locale\nl\LC_MESSAGES\"
-  File "/oname=gbrainy.mo" "..\topack\locale\nl.gmo"
-  
-  SetOutPath "$INSTDIR\locale\fr\LC_MESSAGES\"
-  File "/oname=gbrainy.mo" "..\topack\locale\fr.gmo"
-  
+  SetOutPath "$INSTDIR"
   SetOutPath "$INSTDIR"
   File "..\topack\gbrainy.exe"
-  File "..\topack\logic-games.svg"
-  File "..\topack\memory-games.svg"
-  File "..\topack\math-games.svg"
-  File "..\topack\background.svg"
+  File "/r" "..\topack\app-graphics\*"
+  File "/r" "..\topack\game-graphics\*"
   File "..\topack\gbrainy.bat"
   File "/r" "..\topack\mono\*"
+  File "/r" "..\topack\locale\*"
+  File "/r" "..\src\data\verbal_analogies.xml"
   
   
   CreateDirectory "$SMPROGRAMS\gbrainy"
-  CreateShortCut "$SMPROGRAMS\gbrainy\gbrainy.lnk" "$INSTDIR\gbrainy.bat"
-  CreateShortCut "$DESKTOP\gbrainy.lnk" "$INSTDIR\gbrainy.bat"
+  CreateShortCut "$SMPROGRAMS\gbrainy\gbrainy.lnk" "$INSTDIR\gbrainy.bat" "" "$INSTDIR\gbrainy.exe" 0 SW_SHOWMINIMIZED
+  CreateShortCut "$DESKTOP\gbrainy.lnk" "$INSTDIR\gbrainy.bat" "" "$INSTDIR\gbrainy.exe" 0 SW_SHOWMINIMIZED
 
 SectionEnd
 
@@ -153,7 +118,8 @@ Function un.onInit
   Abort
 FunctionEnd
 
-Section Uninstall  
+Section Uninstall
+  RMDir /r "$INSTDIR\*"  
   
   Delete "$SMPROGRAMS\gbrainy\gbrainy.lnk"
   Delete "$DESKTOP\gbrainy.lnk"
@@ -162,17 +128,7 @@ Section Uninstall
   Delete "$SMPROGRAMS\gbrainy\Website.lnk"
   Delete "$DESKTOP\gbrainy.lnk"
   Delete "$SMPROGRAMS\gbrainy\gbrainy.lnk"
-  RMDir /r "$INSTDIR\locale\*"
-  RMDir /r "$INSTDIR\mono\*"
-  Delete "$INSTDIR\gbrainy.bat"
-  Delete "$INSTDIR\gbrainy.exe"
-  Delete "$INSTDIR\logic-games.svg"
-  Delete "$INSTDIR\memory-games.svg"
-  Delete "$INSTDIR\math-games.svg"
-  Delete "$INSTDIR\background.svg"  
-  Delete "$INSTDIR\${PRODUCT_NAME}.url"
-  Delete "$INSTDIR\uninst.exe"
-  
+  RMDir "$INSTDIR"
 
   DeleteRegKey ${PRODUCT_UNINST_ROOT_KEY} "${PRODUCT_UNINST_KEY}"
   DeleteRegKey HKLM "${PRODUCT_DIR_REGKEY}"
