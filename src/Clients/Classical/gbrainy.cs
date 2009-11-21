@@ -185,8 +185,6 @@ namespace gbrainy.Clients.Classical
 			else
 				tip = false;
 	
-			Console.WriteLine ("ActiveInputControls {0}", session.Status);
-
 			switch (session.Status) {
 			case GameSession.SessionStatus.NotPlaying:
 			case GameSession.SessionStatus.Finished:

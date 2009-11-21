@@ -90,7 +90,6 @@ namespace gbrainy.Core.Main
 		public ISynchronizeInvoke SynchronizingObject { 
 			set { 
 				synchronize = value;
-				Console.WriteLine ("Game.SynchronizingObject (GtkSynchronize) {0} {1}", this, value);
 			}
 			get { return synchronize; }
 		}

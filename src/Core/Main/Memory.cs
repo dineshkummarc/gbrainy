@@ -100,7 +100,6 @@ namespace gbrainy.Core.Main
 			timer.Interval = (1 * 100); // 0.1 seconds
 			buttons_active = false;
 			timer.Enabled = false;
-			Console.WriteLine ("Memory.InitializeGame (GtkSynchronize) is null {0}", SynchronizingObject == null);
 			alpha = 1;
 			draw_timer = false;
 
