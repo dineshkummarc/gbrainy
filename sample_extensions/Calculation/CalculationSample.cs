@@ -62,11 +62,11 @@ public class CalculationSample : Game
 		right_answer = String.Format ("{0} and {1}", number_a, number_b);
 	}
 
-	public override void Draw (CairoContextEx gr, int area_width, int area_height)
+	public override void Draw (CairoContextEx gr, int area_width, int area_height, bool rtl)
 	{	
 		double x = DrawAreaX + 0.1;
 
-		base.Draw (gr, area_width, area_height);
+		base.Draw (gr, area_width, area_height, rtl);
 
 		gr.SetPangoLargeFontSize ();
 

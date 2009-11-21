@@ -17,30 +17,40 @@
  * Boston, MA 02111-1307, USA.
  */
 
-using Cairo;
-using Mono.Unix;
 using System;
+using Glade;
+using Gtk;
+using Mono.Unix;
 
-public class PuzzleSample : Game
+namespace gbrainy.Clients.Classical
 {
-	public override string Name {
-		get {return "Puzzle sample";}
-	}
-
-	public override string Question {
-		get {return "In a party all the people is introduced to the rest. There are 28 handeshakes. How many people is in the party?";} 
-	}
-
-	public override void Initialize ()
+	public class GtkDialog
 	{
-		right_answer = "8";
-	}
+		public Glade.XML xml;
+		public Gtk.Dialog dialog;
+		public string dialog_name;
 
-	public override void Draw (CairoContextEx gr, int area_width, int area_height, bool rtl)
-	{
-		base.Draw (gr, area_width, area_height, rtl);
+		public GtkDialog (string dialog_name)
+		{
+			this.dialog_name = dialog_name;
+			xml = new Glade.XML (null, "gbrainy.glade", dialog_name, "gbrainy");
+			xml.Autoconnect (this);
+			Dialog.IconName = "gbrainy";
+			dialog = null;
+		}
 
-		gr.Color = new Color (0.4, 0.4, 0.4);
-		gr.DrawTextCentered (0.5, DrawAreaY, "This is an extension sample");
+		public ResponseType Run ()
+		{
+			return (ResponseType) Dialog.Run ();
+		}
+
+		public Gtk.Dialog Dialog {
+			get {
+				if (dialog == null)
+					dialog = (Gtk.Dialog) xml.GetWidget (dialog_name);
+			
+				return dialog;
+			}
+		}
 	}
 }

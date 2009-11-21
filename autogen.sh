@@ -8,7 +8,7 @@ ORIGDIR=`pwd`
 cd $srcdir
 PROJECT=gbrainy
 TEST_TYPE=-f
-FILE=src/gbrainy.glade
+FILE=src/Makefile.am
 
 DIE=0
 

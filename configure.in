@@ -1,5 +1,5 @@
 AC_INIT(gbrainy, 1.24)
-AC_CONFIG_SRCDIR(src/gbrainy.cs)
+AC_CONFIG_SRCDIR(src/Core/)
 
 AM_CONFIG_HEADER(config.h)
 
@@ -126,13 +126,18 @@ AC_SUBST(GNOME_ICON_THEME_PREFIX)
 
 
 AC_OUTPUT([
-src/Defines.cs
-src/AssemblyInfo.cs
+src/Core/Main/Defines.cs
+src/Clients/Classical/Defines.cs
+src/Clients/Classical/AssemblyInfo.cs
 Makefile
 po/Makefile.in
 src/Makefile
+src/Core/Makefile
+src/Games/Makefile
+src/Clients/Classical/Makefile
 data/Makefile
 ])
 
 echo "Support for older GTK:  ${enable_gtk_28}"
 echo "Mono-addins:            ${enable_addins_sharp}"
+
