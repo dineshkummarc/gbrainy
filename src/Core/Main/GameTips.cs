@@ -23,7 +23,7 @@ using Mono.Unix;
 
 namespace gbrainy.Core.Main
 {
-	static class GameTips
+	static public class GameTips
 	{
 		static ArrayListIndicesRandom random_indices;
 		static int idx = 0;
