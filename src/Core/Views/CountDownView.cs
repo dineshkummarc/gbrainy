@@ -41,21 +41,18 @@ namespace gbrainy.Core.Views
 		{
 			timer = new System.Timers.Timer ();
 			timer.Elapsed += TimerUpdater;
-			timer.SynchronizingObject = SynchronizingObject;
 			timer.Interval = (1 * 1000); // 1 second
 			finish = OnFinish;
-			Start ();
 		}
 
 		public ISynchronizeInvoke SynchronizingObject { 
-			set { 
-				synchronize = value;
-			}
+			set { synchronize = value; }
 			get { return synchronize; }
 		}
 
 		public void Start ()
 		{
+			timer.SynchronizingObject = SynchronizingObject;
 			countdown_time = 3;
 			timer.Enabled = true;
 		}

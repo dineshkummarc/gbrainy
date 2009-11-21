@@ -41,8 +41,6 @@ namespace gbrainy.Core.Main
 		private bool draw_timer;
 		CountDownView downview;
 
-		//public event EventHandler RequestRedraw;
-
 		public override bool ButtonsActive {
 			get { return buttons_active;}
 		}
@@ -77,7 +75,9 @@ namespace gbrainy.Core.Main
 			}
 
 			downview = new CountDownView (OnCountDownFinish);
+			downview.SynchronizingObject = SynchronizingObject;
 			downview.DrawRequest += OnCountDownRedraw;
+			downview.Start ();
 		}
 
 		public void OnCountDownRedraw (object o, EventArgs args)
@@ -141,12 +141,7 @@ namespace gbrainy.Core.Main
 					request_answer = true;
 					buttons_active = true;
 				}
-				/*if (App != null) {
-					Application.Invoke (delegate {
-						//App.UpdateQuestion (MemoryQuestion);
-						//App.ActiveInputControls (buttons_active);
-					});
-				}*/
+				UpdateQuestion (MemoryQuestion);
 			} else {
 				lock (this) {
 					time_left--;
@@ -165,7 +160,7 @@ namespace gbrainy.Core.Main
 		}		
 
 		public override void Draw (CairoContextEx gr, int area_width, int area_height, bool rtl)
-		{
+		{			
 			if (downview != null) {
 				downview.Draw (gr, area_width, area_height, rtl);
 				return;

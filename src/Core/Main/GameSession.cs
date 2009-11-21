@@ -78,6 +78,7 @@ namespace gbrainy.Core.Main
 		private ISynchronizeInvoke synchronize;
 
 		public event EventHandler DrawRequest;
+		public event EventHandler <UpdateGameQuestionEventArgs> UpdateGameQuestion;
 	
 		public GameSession ()
 		{
@@ -264,6 +265,8 @@ namespace gbrainy.Core.Main
 			CurrentGame = game_manager.GetPuzzle ();
 			CurrentGame.SynchronizingObject = SynchronizingObject;
 			CurrentGame.DrawRequest += GameDrawRequest;
+			CurrentGame.UpdateGameQuestion += GameUpdateGameQuestion;
+
 			CurrentGame.Initialize ();
 
 			CurrentGame.GameTime = TimeSpan.Zero;
@@ -339,6 +342,12 @@ namespace gbrainy.Core.Main
 				fmt = fmt.Substring (0, i);
 
 			return fmt;
+		}
+
+		public void GameUpdateGameQuestion (object o, UpdateGameQuestionEventArgs args)
+		{
+			if (UpdateGameQuestion != null)
+				UpdateGameQuestion (this, args);
 		}
 
 		// A game has requested a redraw, scale the request to the object

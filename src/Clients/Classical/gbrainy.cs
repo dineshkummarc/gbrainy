@@ -67,7 +67,7 @@ namespace gbrainy.Clients.Classical
 		SimpleLabel question_label;
 		SimpleLabel solution_label;
 		bool margins = false;
-	
+
 		public static PlayerHistory history = null;
 
 		public GtkClient (string [] args, params object [] props)
@@ -84,6 +84,7 @@ namespace gbrainy.Clients.Classical
 			BuildToolBar ();
 			session = new GameSession ();
 			session.DrawRequest += SessionDrawRequest;
+			session.UpdateGameQuestion += SessionUpdateGameQuestion;
 			session.SynchronizingObject = new GtkSynchronize ();
 
 			if (history == null)
@@ -128,6 +129,13 @@ namespace gbrainy.Clients.Classical
 				toolbar_menuitem.Active = false;
 
 			ActiveInputControls (false);
+		}
+
+		// Gamesession has requested a question refresh
+		public void SessionUpdateGameQuestion (object o, UpdateGameQuestionEventArgs args)
+		{
+			UpdateQuestion (args.Question);
+			ActiveInputControls (true);
 		}
 
 		// Gamesession has requested a redraw of the drawingarea

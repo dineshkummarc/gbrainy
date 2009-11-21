@@ -57,6 +57,7 @@ namespace gbrainy.Core.Main
 		private ISynchronizeInvoke synchronize;
 
 		public event EventHandler DrawRequest;
+		public event EventHandler <UpdateGameQuestionEventArgs> UpdateGameQuestion;
 
 		protected Game ()
 		{
@@ -75,6 +76,15 @@ namespace gbrainy.Core.Main
 				return;
 
 			DrawRequest (this, EventArgs.Empty);
+		}
+
+		// Used by games to request a question repaint
+		protected void UpdateQuestion (string question)
+		{
+			if (UpdateGameQuestion == null)
+				return;
+
+			UpdateGameQuestion (this, new UpdateGameQuestionEventArgs (question));
 		}
 
 		public abstract string Question {
