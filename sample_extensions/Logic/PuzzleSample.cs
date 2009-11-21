@@ -21,6 +21,9 @@ using Cairo;
 using Mono.Unix;
 using System;
 
+using gbrainy.Core.Main;
+using gbrainy.Core.Libraries;
+
 public class PuzzleSample : Game
 {
 	public override string Name {

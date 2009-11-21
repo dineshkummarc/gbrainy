@@ -22,6 +22,9 @@ using Cairo;
 using System.Text;
 using Mono.Unix;
 
+using gbrainy.Core.Main;
+using gbrainy.Core.Libraries;
+
 public class CalculationSample : Game
 {
 	private int number_a, number_b;

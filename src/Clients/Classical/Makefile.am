@@ -32,8 +32,7 @@ RESOURCES =										\
 -resource:$(top_srcdir)/data/app-graphics/memory-games-32.png  \
 -resource:$(top_srcdir)/data/app-graphics/verbal-games.svg  \
 -resource:$(top_srcdir)/data/app-graphics/verbal-games-32.png  \
--resource:$(top_srcdir)/data/app-graphics/gbrainy.svg  \
--resource:$(srcdir)/gbrainy.addin.xml
+-resource:$(top_srcdir)/data/app-graphics/gbrainy.svg
 
 gbrainydir = $(libdir)/gbrainy
 gbrainy_SCRIPTS = ../../gbrainy.exe
@@ -50,7 +49,6 @@ all: ../../gbrainy.exe
 
 EXTRA_DIST =					\
 	gbrainy.glade \
-	$(srcdir)/gbrainy.addin.xml \
 	$(srcdir)/mono-addins-strings.xml \
 	$(GBRAINY_CSDISTFILES)			
 

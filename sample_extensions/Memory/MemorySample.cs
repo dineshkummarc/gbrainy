@@ -23,6 +23,9 @@ using Mono.Unix;
 using System.Timers;
 using System.Collections.Generic;
 
+using gbrainy.Core.Main;
+using gbrainy.Core.Libraries;
+
 public class MemorySample : Memory
 {
 	ArrayListIndicesRandom animals_order;

@@ -1,4 +1,4 @@
-CSFLAGS = -target:library 
+CSFLAGS = -target:library $(CSC_DEFINES)
 
 TARGET = ../gbrainy.Core.dll
 
@@ -36,7 +36,8 @@ $(top_srcdir)/data/app-graphics/background.svg  	\
 $(top_srcdir)/data/app-graphics/logic-games.svg		\
 $(top_srcdir)/data/app-graphics/math-games.svg		\
 $(top_srcdir)/data/app-graphics/memory-games.svg	\
-$(top_srcdir)/data/app-graphics/verbal-games.svg	
+$(top_srcdir)/data/app-graphics/verbal-games.svg	\
+$(srcdir)/gbrainy.addin.xml
 
 
 REFS =  \

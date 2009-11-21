@@ -1,19 +1,19 @@
 <Addin namespace="gbrainy" id="gbrainy" version="1.00" isroot="true" compatVersion="1.00">
 
 	<Runtime>
-		<Import assembly="gbrainy.exe" />
+		<Import assembly="gbrainy.Core.dll" />
 	</Runtime>
 
 	<ExtensionPoint path="/gbrainy/games/logic">
-		<ExtensionNode name="Logic" objectType="Game" />
+		<ExtensionNode name="Logic" objectType="gbrainy.Core.Main.Game" />
 	</ExtensionPoint>
 
 	<ExtensionPoint path="/gbrainy/games/memory">
-		<ExtensionNode name="Memory" objectType="Memory" />
+		<ExtensionNode name="Memory" objectType="gbrainy.Core.Main.Memory" />
 	</ExtensionPoint>
 
 	<ExtensionPoint path="/gbrainy/games/calculation">
-		<ExtensionNode name="Calculation" objectType="Game" />
+		<ExtensionNode name="Calculation" objectType="gbrainy.Core.Main.Game" />
 	</ExtensionPoint>
 
 </Addin>
