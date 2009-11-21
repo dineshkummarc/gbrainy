@@ -54,25 +54,25 @@ namespace gbrainy.Core.Views
 			gr.DrawStringWithWrapping (0.05, y + 0.07, Catalog.GetString ("gbrainy is a brain teaser game and trainer to have fun and to keep your brain trained. It includes:"));
 
 			y = 0.22;
-			gr.DrawImageFromFile (Defines.DATA_DIR + "logic-games.svg", rtl ? 0.75 : 0.05, y, image_size, image_size);
+			gr.DrawImageFromAssembly ("logic-games.svg", rtl ? 0.75 : 0.05, y, image_size, image_size);
 			gr.DrawStringWithWrapping (rtl ? 0.05 : 0.23, y + 0.01, 
 				Catalog.GetString ("Logic puzzles. Challenge your reasoning and thinking skills."), 
 				rtl ? 0.65 : -1);
 
 			y += space;
-			gr.DrawImageFromFile (Defines.DATA_DIR + "math-games.svg", rtl ? 0.75 : 0.05, y, image_size, image_size);
+			gr.DrawImageFromAssembly ("math-games.svg", rtl ? 0.75 : 0.05, y, image_size, image_size);
 			gr.DrawStringWithWrapping (rtl ? 0.05 : 0.23, y + 0.01, 
 				Catalog.GetString ("Mental calculation. Arithmetical operations that test your mental calculation abilities."),
 				rtl ? 0.65 : -1);
 
 			y += space;
-			gr.DrawImageFromFile (Defines.DATA_DIR + "memory-games.svg", rtl ? 0.75 : 0.05, y, image_size, image_size);
+			gr.DrawImageFromAssembly ("memory-games.svg", rtl ? 0.75 : 0.05, y, image_size, image_size);
 			gr.DrawStringWithWrapping (rtl ? 0.05 : 0.23, y + 0.01, 
 				Catalog.GetString ("Memory trainers. To prove your short term memory."),
 				rtl ? 0.65 : -1);
 
 			y += space;
-			gr.DrawImageFromFile (Defines.DATA_DIR + "verbal-games.svg", rtl ? 0.75 : 0.05, y, image_size, image_size);
+			gr.DrawImageFromAssembly ("verbal-games.svg", rtl ? 0.75 : 0.05, y, image_size, image_size);
 			gr.DrawStringWithWrapping (rtl ? 0.05 : 0.23, y + 0.01, 
 				Catalog.GetString ("Verbal analogies. Challenge your verbal aptitude."),
 				rtl ? 0.65 : -1);

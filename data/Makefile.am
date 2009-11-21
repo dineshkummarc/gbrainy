@@ -46,11 +46,6 @@ install-data-local:
 	@-$(mkinstalldirs) $(DESTDIR)$(hicolordir)/48x48/apps
 	$(INSTALL_DATA) $(srcdir)/app-graphics/gbrainy.png $(DESTDIR)$(hicolordir)/48x48/apps/gbrainy.png
 	@-$(mkinstalldirs) $(DESTDIR)$(images)
-	$(INSTALL_DATA) $(srcdir)/app-graphics/math-games.svg $(DESTDIR)$(images)/math-games.svg
-	$(INSTALL_DATA) $(srcdir)/app-graphics/logic-games.svg $(DESTDIR)$(images)/logic-games.svg
-	$(INSTALL_DATA) $(srcdir)/app-graphics/memory-games.svg $(DESTDIR)$(images)/memory-games.svg
-	$(INSTALL_DATA) $(srcdir)/app-graphics/verbal-games.svg $(DESTDIR)$(images)/verbal-games.svg
-	$(INSTALL_DATA) $(srcdir)/app-graphics/background.svg $(DESTDIR)$(images)/background.svg
 	$(INSTALL_DATA) $(srcdir)/verbal_analogies.xml $(DESTDIR)$(images)/verbal_analogies.xml
 
 gtk_update_icon_cache = gtk-update-icon-cache -f -t $(datadir)/icons/hicolor
@@ -65,11 +60,6 @@ install-data-hook:
 	fi
 
 uninstall-hook:
-	rm -f $(DESTDIR)$(images)/math-games.svg
-	rm -f $(DESTDIR)$(images)/logic-games.svg
-	rm -f $(DESTDIR)$(images)/memory-games.svg
-	rm -f $(DESTDIR)$(images)/verbal-games.svg
-	rm -f $(DESTDIR)$(images)/background.svg
 	rm -f $(DESTDIR)$(images)/verbal_analogies.xml
 	rm -f $(DESTDIR)$(hicolordir)/48x48/apps/gbrainy.png
 	rm -f $(DESTDIR)$(hicolordir)/32x32/apps/gbrainy.png

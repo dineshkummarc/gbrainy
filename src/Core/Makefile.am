@@ -30,7 +30,14 @@ CSFILES =  \
 		Libraries/CairoContextEx.cs	\
 		Libraries/SVGImage.cs
 
-RES = 
+RES = \
+$(top_srcdir)/data/app-graphics/background.svg  	\
+$(top_srcdir)/data/app-graphics/logic-games.svg		\
+$(top_srcdir)/data/app-graphics/math-games.svg		\
+$(top_srcdir)/data/app-graphics/memory-games.svg	\	
+$(top_srcdir)/data/app-graphics/verbal-games.svg	
+
+
 REFS =  \
 	-r:System \
 	-r:Mono.Cairo.dll		\

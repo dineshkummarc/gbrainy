@@ -385,7 +385,7 @@ namespace gbrainy.Core.Libraries
 		{
 			try {
 				if (image == null)
-					image = new SVGImage (Defines.DATA_DIR + "background.svg");
+					image = new SVGImage (System.Reflection.Assembly.GetCallingAssembly (), "background.svg");
 
 				Save ();
 				Rectangle (0, 0, 1, 1);

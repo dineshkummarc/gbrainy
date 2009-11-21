@@ -66,7 +66,10 @@ CSFILES =  \
 		Calculation/CalculationRatio.cs			\
 		Calculation/CalculationTwoNumbers.cs
 
-RES = 
+RES = \
+$(top_srcdir)/data/game-graphics/present.svg  \
+$(top_srcdir)/data/game-graphics/handshake.svg
+
 REFS =  \
 	-r:System \
 	-r:Mono.Cairo.dll		\
