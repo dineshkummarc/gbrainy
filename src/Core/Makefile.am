@@ -3,6 +3,7 @@ CSFLAGS = -target:library
 TARGET = ../gbrainy.Core.dll
 
 CSFILES =  \
+		AssemblyInfo.cs			\
 		Main/ArrayListIndicesRandom.cs	\
 		Main/ColorPalette.cs		\
 		Main/Defines.cs			\
@@ -34,7 +35,7 @@ RES = \
 $(top_srcdir)/data/app-graphics/background.svg  	\
 $(top_srcdir)/data/app-graphics/logic-games.svg		\
 $(top_srcdir)/data/app-graphics/math-games.svg		\
-$(top_srcdir)/data/app-graphics/memory-games.svg	\	
+$(top_srcdir)/data/app-graphics/memory-games.svg	\
 $(top_srcdir)/data/app-graphics/verbal-games.svg	
 
 

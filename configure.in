@@ -124,11 +124,15 @@ AC_CONFIG_FILES([src/Clients/Classical/gbrainy],[chmod +x src/Clients/Classical/
 GNOME_ICON_THEME_PREFIX=`$PKG_CONFIG --variable=prefix gnome-icon-theme`
 AC_SUBST(GNOME_ICON_THEME_PREFIX)
 
+COPYRIGHT="(c)2007-2009 Jordi Mas i Hernandez"
+AC_SUBST(COPYRIGHT)
 
 AC_OUTPUT([
 src/Core/Main/Defines.cs
 src/Clients/Classical/Defines.cs
 src/Clients/Classical/AssemblyInfo.cs
+src/Core/AssemblyInfo.cs
+src/Games/AssemblyInfo.cs
 Makefile
 po/Makefile.in
 src/Makefile

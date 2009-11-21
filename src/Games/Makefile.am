@@ -3,6 +3,7 @@ CSFLAGS = -target:library
 TARGET = ../gbrainy.Games.dll
 
 CSFILES =  \
+		AssemblyInfo.cs					\
 		GameList.cs					\
 		Logic/Puzzle3DCube.cs				\
 		Logic/PuzzleBalance.cs				\
