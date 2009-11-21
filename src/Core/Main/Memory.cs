@@ -77,7 +77,7 @@ namespace gbrainy.Core.Main
 			}
 
 			downview = new CountDownView (OnCountDownFinish);
-			downview.RequestRedraw += OnCountDownRedraw;
+			downview.DrawRequest += OnCountDownRedraw;
 		}
 
 		public void OnCountDownRedraw (object o, EventArgs args)
@@ -85,11 +85,20 @@ namespace gbrainy.Core.Main
 			OnDrawRequest ();
 		}
 
+		void FinishCountDown ()
+		{
+			downview.EndDrawCountDown ();
+			downview.DrawRequest -= OnCountDownRedraw;
+			downview = null;
+		}
+
 		void OnCountDownFinish (object source, EventArgs e)
 		{
 			downview.EndDrawCountDown ();
-			InitializeGame ();
+			downview.DrawRequest -= OnCountDownRedraw;
 			downview = null;
+
+			InitializeGame ();
 		}
 
 		void InitializeGame ()
@@ -110,7 +119,6 @@ namespace gbrainy.Core.Main
 
 		public void StartTimer ()
 		{
-			Console.WriteLine ("Memory.StartTimer {0}", SynchronizingObject);
 			timer.Enabled = true;
 			draw_timer = true;
 		}
@@ -150,7 +158,10 @@ namespace gbrainy.Core.Main
 
 		public override void Finish ()
 		{
-			timer.Enabled = false;
+			if (downview != null)
+				FinishCountDown ();
+			else 
+				timer.Enabled = false;
 		}		
 
 		public override void Draw (CairoContextEx gr, int area_width, int area_height, bool rtl)

@@ -22,25 +22,36 @@ using System;
 using Cairo;
 using Mono.Unix;
 using System.Timers;
+using System.ComponentModel;
 
 using gbrainy.Core.Libraries;
 
 namespace gbrainy.Core.Views
 {
-	public class CountDownView : IDrawable
+	public class CountDownView : IDrawable, IDrawRequest
 	{
 		static int countdown_time;
 		System.Timers.Timer timer;
 		EventHandler finish;
-		public event EventHandler RequestRedraw; // Not used in this view
+		ISynchronizeInvoke synchronize;
+
+		public event EventHandler DrawRequest; // Not used in this view
 
 		public CountDownView (EventHandler OnFinish)
 		{
 			timer = new System.Timers.Timer ();
 			timer.Elapsed += TimerUpdater;
+			timer.SynchronizingObject = SynchronizingObject;
 			timer.Interval = (1 * 1000); // 1 second
 			finish = OnFinish;
 			Start ();
+		}
+
+		public ISynchronizeInvoke SynchronizingObject { 
+			set { 
+				synchronize = value;
+			}
+			get { return synchronize; }
 		}
 
 		public void Start ()
@@ -95,8 +106,8 @@ namespace gbrainy.Core.Views
 				
 				}
 				countdown_time--;
-				if (RequestRedraw != null)
-					RequestRedraw (this, EventArgs.Empty);
+				if (DrawRequest != null)
+					DrawRequest (this, EventArgs.Empty);
 			}
 		}
 	}
