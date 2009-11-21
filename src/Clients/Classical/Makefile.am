@@ -37,7 +37,7 @@ RESOURCES =										\
 
 gbrainydir = $(libdir)/gbrainy
 gbrainy_SCRIPTS = ../../gbrainy.exe
-
+bin_SCRIPTS = gbrainy
 
 GBRAINY_CSFILES = $(GBRAINY_CSDISTFILES)	\
 	AssemblyInfo.cs

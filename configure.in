@@ -119,7 +119,7 @@ expanded_libdir=`( case $prefix in NONE) prefix=$ac_default_prefix ;; *) ;; esac
 		   eval echo $libdir )`
 AC_SUBST(expanded_libdir)
 
-AC_CONFIG_FILES([src/gbrainy],[chmod +x src/gbrainy])
+AC_CONFIG_FILES([src/Clients/Classical/gbrainy],[chmod +x src/Clients/Classical/gbrainy])
 
 GNOME_ICON_THEME_PREFIX=`$PKG_CONFIG --variable=prefix gnome-icon-theme`
 AC_SUBST(GNOME_ICON_THEME_PREFIX)
