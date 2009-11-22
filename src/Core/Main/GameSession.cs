@@ -76,6 +76,7 @@ namespace gbrainy.Core.Main
 		private SessionStatus status;
 		private ViewsControler controler;
 		private ISynchronizeInvoke synchronize;
+		private PlayerHistory history;
 
 		public event EventHandler DrawRequest;
 		public event EventHandler <UpdateGameQuestionEventArgs> UpdateGameQuestion;
@@ -93,6 +94,12 @@ namespace gbrainy.Core.Main
 			games = new int [(int) ScoresType.Last];
 			controler = new ViewsControler (this);
 			Status = SessionStatus.NotPlaying;
+			history = new PlayerHistory ();
+		}
+
+		public PlayerHistory PlayerHistory { 
+			set { history = value; }
+			get { return history; }
 		}
 
 		public ISynchronizeInvoke SynchronizingObject { 
@@ -239,6 +246,8 @@ namespace gbrainy.Core.Main
 
 		public void EndSession ()
 		{
+			history.SaveGameSession (this);
+
 			if (CurrentGame != null)
 				CurrentGame.Finish ();
 

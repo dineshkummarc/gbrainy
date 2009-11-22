@@ -68,8 +68,6 @@ namespace gbrainy.Clients.Classical
 		SimpleLabel solution_label;
 		bool margins = false;
 
-		public static PlayerHistory history = null;
-
 		public GtkClient (string [] args, params object [] props)
 		: base ("gbrainy", Defines.VERSION, Modules.UI,  args, props)
 		{
@@ -86,9 +84,6 @@ namespace gbrainy.Clients.Classical
 			session.DrawRequest += SessionDrawRequest;
 			session.UpdateGameQuestion += SessionUpdateGameQuestion;
 			session.SynchronizingObject = new GtkSynchronize ();
-
-			if (history == null)
-				history = new PlayerHistory ();
 
 			session.GameManager.Difficulty = (Game.Difficulty) Preferences.GetIntValue (Preferences.DifficultyKey);
 			drawing_area = new DrawingArea ();
@@ -433,7 +428,7 @@ namespace gbrainy.Clients.Classical
 		{
 			PreferencesDialog dialog;
 
-			dialog = new PreferencesDialog ();
+			dialog = new PreferencesDialog (session.PlayerHistory);
 			if (dialog.Run () == ResponseType.Ok) {
 				session.GameManager.Difficulty = (Game.Difficulty) Preferences.GetIntValue (Preferences.DifficultyKey);
 			}
@@ -482,8 +477,7 @@ namespace gbrainy.Clients.Classical
 		}
 
 		void OnEndGame (object sender, EventArgs args)
-		{	
-			history.SaveGameSession (session);
+		{
 			session.EndSession ();
 	
 			UpdateSolution (String.Empty);
@@ -533,7 +527,7 @@ namespace gbrainy.Clients.Classical
 		{
 			PlayerHistoryDialog dialog;
 
-			dialog = new PlayerHistoryDialog ();
+			dialog = new PlayerHistoryDialog (session.PlayerHistory);
 			dialog.Run ();
 			dialog.Dialog.Destroy ();	
 		}	

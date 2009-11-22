@@ -38,17 +38,19 @@ namespace gbrainy.Clients.Classical
 		[Glade.Widget] Gtk.CheckButton checkbutton_verbal;
 
 		CairoPreview drawing_area;
+		PlayerHistory history;
 
-		public PlayerHistoryDialog () : base ("playerhistory")
+		public PlayerHistoryDialog (PlayerHistory history) : base ("playerhistory")
 		{
 			string label;
 
+			this.history = history;
 			label = Catalog.GetString ("The graphic below shows the player's game score evolution. ");
 			label +=  Catalog.GetPluralString ("You need more than one game recorded to see the score evolution.",
 				"It is built using the results of {0} last recorded games.", 
-				GtkClient.history.Games.Count < 2 ? 1 : 2);
+				PlayerHistory.Games.Count < 2 ? 1 : 2);
 
-			label_playerhistory.Text = String.Format (label, GtkClient.history.Games.Count);
+			label_playerhistory.Text = String.Format (label, PlayerHistory.Games.Count);
 
 			drawing_area = new CairoPreview (this);
 			history_preview.Add (drawing_area);
@@ -61,6 +63,10 @@ namespace gbrainy.Clients.Classical
 	 		checkbutton_verbal.Label = Game.GetGameTypeDescription (Game.Types.VerbalAnalogy);
 
 	 		checkbutton_total.Active = checkbutton_memory.Active = checkbutton_logic.Active = checkbutton_calculation.Active = checkbutton_verbal.Active = true;
+		}
+
+		public PlayerHistory PlayerHistory {
+			get {return history; }
 		}
 
 		void OnTotalToggled (object sender, EventArgs args)
@@ -161,7 +167,7 @@ namespace gbrainy.Clients.Classical
 			private void DrawLines (CairoContextEx cr, double x, double y)
 			{
 				double px, py;
-				PlayerHistory history = GtkClient.history;
+				PlayerHistory history = dlg.PlayerHistory;
 				double ratio;
 
 				if (history.Games.Count == 0)

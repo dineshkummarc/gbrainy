@@ -36,8 +36,11 @@ namespace gbrainy.Clients.Classical
 		[Glade.Widget] Gtk.RadioButton rb_medium;
 		[Glade.Widget] Gtk.RadioButton rb_master;
 
-		public PreferencesDialog () : base ("preferences")
+		PlayerHistory history;
+
+		public PreferencesDialog (PlayerHistory history) : base ("preferences")
 		{
+			this.history = history;
 			prefspinbutton.Value = Preferences.GetIntValue (Preferences.MemQuestionTimeKey);
 			prefcheckbutton.Active = Preferences.GetBoolValue (Preferences.MemQuestionWarnKey);
 			maxstoredspinbutton.Value = Preferences.GetIntValue (Preferences.MaxStoredGamesKey);
@@ -72,7 +75,7 @@ namespace gbrainy.Clients.Classical
 
 		private void OnCleanHistory (object sender, EventArgs args)
 		{
-			GtkClient.history.Clean ();
+			history.Clean ();
 		}
 
 		private void OnOK (object sender, EventArgs args)
