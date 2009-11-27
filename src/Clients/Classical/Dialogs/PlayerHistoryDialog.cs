@@ -89,6 +89,11 @@ namespace gbrainy.Clients.Classical
 			drawing_area.QueueDraw ();
 		}
 
+		void OnVerbalToggled (object sender, EventArgs args)
+		{
+			drawing_area.QueueDraw ();
+		}
+
 		public class CairoPreview : DrawingArea 
 		{
 			const double area_h = 0.8, area_w = 0.9, point_size = 0.005 * 1.25;
