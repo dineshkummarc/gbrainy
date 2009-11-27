@@ -43,8 +43,12 @@ namespace gbrainy.Games.Memory
 		}
 
 		public override string MemoryQuestion {
-			get { return String.Format(Catalog.GetString ("How many {0} dots were in the previous image? Answer using numbers."),
-							palette.Name(0)); }
+			get { 
+				return String.Format (
+					// Translators: {0} is the name of the color. The color name is always singular
+					Catalog.GetString ("How many dots of {0} color were in the previous image? Answer using numbers."),
+					palette.Name (0));
+			}
 		}
 
 		public override void Initialize ()
