@@ -94,10 +94,7 @@ namespace gbrainy.Core.Main
 
 		void OnCountDownFinish (object source, EventArgs e)
 		{
-			downview.EndDrawCountDown ();
-			downview.DrawRequest -= OnCountDownRedraw;
-			downview = null;
-
+			FinishCountDown ();
 			InitializeGame ();
 		}
 

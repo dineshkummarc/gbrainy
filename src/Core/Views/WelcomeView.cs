@@ -29,8 +29,6 @@ namespace gbrainy.Core.Views
 {
 	public class WelcomeView : IDrawable
 	{
-		public event EventHandler RequestRedraw; // Not used in this view
-
 		public WelcomeView ()
 		{
 

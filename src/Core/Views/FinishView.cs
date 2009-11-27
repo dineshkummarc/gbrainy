@@ -31,8 +31,6 @@ namespace gbrainy.Core.Views
 		GameSession session;
 		const int tips_shown = 4;
 
-		public event EventHandler RequestRedraw; // Not used in this view
-
 		public FinishView (GameSession session)
 		{
 			this.session = session;

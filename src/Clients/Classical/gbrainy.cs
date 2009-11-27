@@ -18,16 +18,10 @@
  */
 
 using System;
-using System.Reflection;
-using System.Runtime.InteropServices;
 using Cairo;
 using Gtk;
-using Gdk;
 using Gnome;
 using Mono.Unix;
-using System.Text;
-using System.Globalization;
-using System.Threading;
 using System.Diagnostics;
 
 using gbrainy.Core.Main;
@@ -309,11 +303,8 @@ namespace gbrainy.Clients.Classical
 			//Toolbar buttons and menu items that are sensitive when the user is playing
 			bool playing;
 
-			if (session.Status == GameSession.SessionStatus.Playing)
-				playing = true;
-			else
-				playing = false;
-	
+			playing = (session.Status == GameSession.SessionStatus.Playing);
+
 			finish_tbbutton.Sensitive = pause_tbbutton.Sensitive = playing;
 			all_tbbutton.Sensitive = calculation_tbbutton.Sensitive = memory_tbbutton.Sensitive = logic_tbbutton.Sensitive = verbal_tbbutton.Sensitive = !playing;
 			pause_menuitem.Sensitive = finish_menuitem.Sensitive = playing;
@@ -395,8 +386,9 @@ namespace gbrainy.Clients.Classical
 			UpdateSolution (session.CurrentGame.TipString);
 		}
 
-		void OnNewGame ()
+		void OnNewGame (GameSession.Types type)
 		{
+			session.Type = type;
 			session.NewSession ();
 			GetNextGame ();
 			GameSensitiveUI ();
@@ -406,28 +398,18 @@ namespace gbrainy.Clients.Classical
 
 		void OnMathOnly (object sender, EventArgs args)
 		{
-			session.Type = GameSession.Types.CalculationTrainers;
-			OnNewGame ();
+			OnNewGame (GameSession.Types.CalculationTrainers);
 		}
-
 
 		void OnVerbalOnly (object sender, EventArgs args)
 		{
-			session.Type = GameSession.Types.VerbalAnalogies;
-			OnNewGame ();
-		}
-
-		void OnMemoryOnlyAfterCountDown (object source, EventArgs e)
-		{
-			OnNewGame ();
+			OnNewGame (GameSession.Types.VerbalAnalogies);
 		}
 
 		void OnMemoryOnly (object sender, EventArgs args)
 		{
 			session.Type = GameSession.Types.MemoryTrainers;
-			UpdateSolution (String.Empty);
-	 		UpdateQuestion (String.Empty);
-			OnNewGame ();
+			OnNewGame (GameSession.Types.MemoryTrainers);
 		}
 
 		void OnPreferences (object sender, EventArgs args)
@@ -450,28 +432,23 @@ namespace gbrainy.Clients.Classical
 			rslt = dialog.Run ();
 			dialog.Dialog.Destroy ();
 
-			if (rslt == ResponseType.Ok && dialog.NumOfGames > 0) {
-				session.Type = GameSession.Types.Custom;
-				OnNewGame ();
-			}
+			if (rslt == ResponseType.Ok && dialog.NumOfGames > 0)
+				OnNewGame (session.Type = GameSession.Types.Custom);
 		}
 
 		void OnLogicOnly (object sender, EventArgs args)
 		{
-			session.Type = GameSession.Types.LogicPuzzles;
-			OnNewGame ();
+			OnNewGame (GameSession.Types.LogicPuzzles);
 		}
 
 		void OnAllGames (object sender, EventArgs args)
 		{
-			session.Type = GameSession.Types.AllGames;
-			OnNewGame ();		
+			OnNewGame (GameSession.Types.AllGames);
 		}
 
 		void OnTrainersOnly (object sender, EventArgs args)
 		{
-			session.Type = GameSession.Types.TrainersOnly;
-			OnNewGame ();		
+			OnNewGame (GameSession.Types.TrainersOnly);
 		}
 
 		void OnAnswerActivate (object sender, EventArgs args)
