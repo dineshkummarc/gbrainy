@@ -79,7 +79,7 @@ namespace gbrainy.Core.Main
 		private PlayerHistory history;
 
 		public event EventHandler DrawRequest;
-		public event EventHandler <UpdateGameQuestionEventArgs> UpdateGameQuestion;
+		public event EventHandler <UpdateUIStateEventArgs> UpdateUIElement;
 	
 		public GameSession ()
 		{
@@ -238,10 +238,15 @@ namespace gbrainy.Core.Main
 			if (Status != SessionStatus.NotPlaying)
 				EndSession ();
 
+			current_time = TimeSpanToStr (game_time);
+			scores = new int [(int) ScoresType.Last];
+			games = new int [(int) ScoresType.Last];
+			total_score = 0;
 			games_played = 0;
 			games_won = 0;
 			game_time = TimeSpan.Zero;
-			timer.Enabled = true;
+			timer.SynchronizingObject = SynchronizingObject;
+			EnableTimer = true;
 		}
 
 		public void EndSession ()
@@ -251,17 +256,11 @@ namespace gbrainy.Core.Main
 			if (CurrentGame != null)
 				CurrentGame.Finish ();
 
-			timer.Enabled = false;
+			EnableTimer = false;
+			timer.SynchronizingObject = null;
+
 			paused = false;
 			CurrentGame = null;
-			games_played = 0;
-			games_won = 0;
-			game_time = TimeSpan.Zero;
-			current_time = TimeSpanToStr (game_time);
-			scores = new int [(int) ScoresType.Last];
-			games = new int [(int) ScoresType.Last];
-			total_score = 0;
-			scored_game = false;
 			Status = SessionStatus.Finished;
 		}
 
@@ -274,7 +273,7 @@ namespace gbrainy.Core.Main
 			CurrentGame = game_manager.GetPuzzle ();
 			CurrentGame.SynchronizingObject = SynchronizingObject;
 			CurrentGame.DrawRequest += GameDrawRequest;
-			CurrentGame.UpdateGameQuestion += GameUpdateGameQuestion;
+			CurrentGame.UpdateUIElement += GameUpdateUIElement;
 
 			CurrentGame.Initialize ();
 
@@ -285,37 +284,43 @@ namespace gbrainy.Core.Main
 
 		public void Pause ()
 		{
-			timer.Enabled = false;
+			EnableTimer = false;
 			paused = true;
 			current_time = Catalog.GetString ("Paused");
 		}
 
 		public void Resume ()
 		{
-			timer.Enabled = true;
+			EnableTimer = true;
 			paused = false;
 		}
 
-		public void ScoreGame ()
+		public bool ScoreGame (string answer)
 		{
+			int score;
+
 			if (CurrentGame == null || scored_game == true)
-				return;
+				return false;
+
+			score = CurrentGame.Score (answer);
+			if (score > 0)
+				GamesWon++;
 
 			switch (CurrentGame.Type) {
 			case Game.Types.LogicPuzzle:
-				scores [(int) ScoresType.LogicPuzzles] += CurrentGame.Score;
+				scores [(int) ScoresType.LogicPuzzles] += score;
 				games [(int) ScoresType.LogicPuzzles]++;
 				break;
 			case Game.Types.MemoryTrainer:
-				scores [(int) ScoresType.MemoryTrainers] += CurrentGame.Score;
+				scores [(int) ScoresType.MemoryTrainers] += score;
 				games [(int) ScoresType.MemoryTrainers]++;
 				break;
 			case Game.Types.MathTrainer:
-				scores [(int) ScoresType.CalculationTrainers] += CurrentGame.Score;
+				scores [(int) ScoresType.CalculationTrainers] += score;
 				games [(int) ScoresType.CalculationTrainers]++;
 				break;
 			case Game.Types.VerbalAnalogy:
-				scores [(int) ScoresType.VerbalAnalogies] += CurrentGame.Score;
+				scores [(int) ScoresType.VerbalAnalogies] += score;
 				games [(int) ScoresType.VerbalAnalogies]++;
 				break;
 			default:
@@ -329,8 +334,8 @@ namespace gbrainy.Core.Main
 
 			total_score = total_score * 10 / games_played;
 			scored_game = true;
+			return (score > 0) ? true: false;
 		}	
-
 
 		private void TimerUpdater (object source, ElapsedEventArgs e)
 		{
@@ -340,7 +345,10 @@ namespace gbrainy.Core.Main
 				current_time = TimeSpanToStr (game_time);
 			}
 
-			//Application.Invoke (delegate {	app.UpdateStatusBar (); } );
+			if (UpdateUIElement == null)
+				return;
+
+			UpdateUIElement (this, new UpdateUIStateEventArgs (UpdateUIStateEventArgs.EventUIType.Time, null));
 		}
 
 		static private string TimeSpanToStr (TimeSpan time)
@@ -353,24 +361,22 @@ namespace gbrainy.Core.Main
 			return fmt;
 		}
 
-		public void GameUpdateGameQuestion (object o, UpdateGameQuestionEventArgs args)
+		public void GameUpdateUIElement (object obj, UpdateUIStateEventArgs args)
 		{
-			if (UpdateGameQuestion != null)
-				UpdateGameQuestion (this, args);
+			if (UpdateUIElement != null)
+				UpdateUIElement (this, args);
 		}
 
 		// A game has requested a redraw, scale the request to the object
 		// subscribed to GameSession.GameDrawRequest
 		public void GameDrawRequest (object o, EventArgs args)
 		{
-			//Console.WriteLine ("GameSession.GameRequestRedraw {0}", o); 
 			if (DrawRequest != null)
 				DrawRequest (this, EventArgs.Empty);
 		}
 
 		public virtual void Draw (CairoContextEx gr, int width, int height, bool rtl)
 		{
-			//Console.WriteLine ("GameSession.Draw");
 			controler.CurrentView.Draw (gr, width, height, rtl);
 		}
 

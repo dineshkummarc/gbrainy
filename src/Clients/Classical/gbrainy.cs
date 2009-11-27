@@ -82,7 +82,7 @@ namespace gbrainy.Clients.Classical
 			BuildToolBar ();
 			session = new GameSession ();
 			session.DrawRequest += SessionDrawRequest;
-			session.UpdateGameQuestion += SessionUpdateGameQuestion;
+			session.UpdateUIElement += SessionUpdateUIElement;
 			session.SynchronizingObject = new GtkSynchronize ();
 
 			session.GameManager.Difficulty = (Game.Difficulty) Preferences.GetIntValue (Preferences.DifficultyKey);
@@ -127,10 +127,19 @@ namespace gbrainy.Clients.Classical
 		}
 
 		// Gamesession has requested a question refresh
-		public void SessionUpdateGameQuestion (object o, UpdateGameQuestionEventArgs args)
+		public void SessionUpdateUIElement (object o, UpdateUIStateEventArgs args)
 		{
-			UpdateQuestion (args.Question);
-			ActiveInputControls (true);
+			switch (args.EventType) {
+			case UpdateUIStateEventArgs.EventUIType.QuestionText:
+				UpdateQuestion ((string) args.Data);
+				ActiveInputControls (true);
+				break;
+			case UpdateUIStateEventArgs.EventUIType.Time:
+				UpdateStatusBar ();
+				break;
+			default:
+				throw new InvalidOperationException ("Unknow value");
+			}
 		}
 
 		// Gamesession has requested a redraw of the drawingarea
@@ -339,14 +348,11 @@ namespace gbrainy.Clients.Classical
 			if (session.CurrentGame == null)
 				return;
 	
-			if (answer_button.Sensitive == true && session.CurrentGame.CheckAnswer (answer_entry.Text) == true) {
-				session.GamesWon++;
-				session.CurrentGame.Won = true;
+			if (session.ScoreGame (answer_entry.Text) == true)
 				answer = "<span color='#00A000'>" + Catalog.GetString ("Congratulations.") + "</span>";
-			} else
+			else
 				answer = Catalog.GetString ("Incorrect answer.");
 
-			session.ScoreGame ();
 			session.EnableTimer = false;
 			answer_entry.Text = String.Empty;
 			UpdateStatusBar ();
@@ -376,7 +382,7 @@ namespace gbrainy.Clients.Classical
 				return;
 			}
 
-			session.ScoreGame ();
+			session.ScoreGame (String.Empty);
 			GetNextGame ();
 			session.EnableTimer = true;
 		}
@@ -486,23 +492,32 @@ namespace gbrainy.Clients.Classical
 			GameSensitiveUI ();
 			drawing_area.QueueDraw ();
 			ActiveInputControls (false);
-			SetPauseResumeButton (true);
+			SetPauseResumeButtonUI (true);
 		}
 
-		void SetPauseResumeButton (bool pause)
+		void SetPauseResumeButtonUI (bool pause)
 		{
 			if (pause) {
 				pause_tbbutton.StockId = "pause";
 				pause_tbbutton.Label = Catalog.GetString ("Pause");
-	 			session.Resume ();
 				ActiveInputControls (true);
 			} else {
 				pause_tbbutton.StockId = "resume";
 				pause_tbbutton.Label = Catalog.GetString ("Resume");
-				session.Pause ();
 				ActiveInputControls (false);
 			}
 			UpdateStatusBar ();
+		}
+
+
+		void SetPauseResumeButton (bool pause)
+		{
+			if (pause)
+	 			session.Resume ();
+			else
+				session.Pause ();
+
+			SetPauseResumeButtonUI (pause);
 		}
 
 		void OnPauseGame (object sender, EventArgs args)

@@ -14,7 +14,7 @@ CSFILES =  \
 		Main/Memory.cs			\
 		Main/PlayerHistory.cs		\
 		Main/Preferences.cs		\
-		Main/UpdateGameQuestionEventArgs.cs \
+		Main/UpdateUIStateEventArgs.cs \
 		Main/Verbal/Analogies.cs 	\
 		Main/Verbal/AnalogiesFactory.cs	\
 		Main/Verbal/AnalogiesMultipleOptions.cs	\

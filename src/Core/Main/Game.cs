@@ -51,20 +51,18 @@ namespace gbrainy.Core.Main
 		protected string right_answer;
 		protected Random random;
 		private TimeSpan game_time;
-		private bool won;
 		private bool tip_used;
 		private Difficulty difficulty;
 		private ISynchronizeInvoke synchronize;
 
 		public event EventHandler DrawRequest;
-		public event EventHandler <UpdateGameQuestionEventArgs> UpdateGameQuestion;
+		public event EventHandler <UpdateUIStateEventArgs> UpdateUIElement;
 
 		protected Game ()
 		{
 			random = new Random ();
 			draw_answer = false;
 			default_color = new Cairo.Color (0, 0, 0);
-			won = false;
 			tip_used = false;
 			difficulty = Difficulty.Medium;
 		}
@@ -81,10 +79,11 @@ namespace gbrainy.Core.Main
 		// Used by games to request a question repaint
 		protected void UpdateQuestion (string question)
 		{
-			if (UpdateGameQuestion == null)
+			if (UpdateUIElement == null)
 				return;
 
-			UpdateGameQuestion (this, new UpdateGameQuestionEventArgs (question));
+			UpdateUIElement (this, new UpdateUIStateEventArgs (UpdateUIStateEventArgs.EventUIType.QuestionText, 
+				question));
 		}
 
 		public abstract string Question {
@@ -188,11 +187,6 @@ namespace gbrainy.Core.Main
 			set {game_time = value; }
 		}
 
-		public bool Won {
-			get { return won; }
-			set { won = value; }
-		}
-
 		// Average time in seconds that a player is expected to complete this game
 		public int AverageTime {
 			get {
@@ -224,33 +218,30 @@ namespace gbrainy.Core.Main
 		//
 		// Score algorithm return a value between 0 and 10
 		//
-		public virtual int Score {
-			get {
-				double score;
-				double seconds = GameTime.TotalSeconds;
+		public virtual int Score (string answer)
+		{
+			double score;
+			double seconds = GameTime.TotalSeconds;
 
-				if (won == false) {
-					score = 0;
-				} else {		
-					score = 10;
-			
-					// Time
-					if (seconds > AverageTime * 3) {
-						score = score * 0.6;
-					}
-					else if (seconds > AverageTime * 2) {
-						score = score * 0.7;
-					} else if (seconds > AverageTime) {
-						score = score * 0.8;
-					}
-		
-					if (tip_used) {
-						score = score * 0.8;
-					}
-				}
+			if (CheckAnswer (answer) == false)
+				return 0;
 
-				return (int) score;
+			score = 10;
+	
+			// Time
+			if (seconds > AverageTime * 3) {
+				score = score * 0.6;
 			}
+			else if (seconds > AverageTime * 2) {
+				score = score * 0.7;
+			} else if (seconds > AverageTime) {
+				score = score * 0.8;
+			}
+
+			if (tip_used)
+				score = score * 0.8;
+
+			return (int) score;
 		}
 	
 		public abstract void Initialize ();
