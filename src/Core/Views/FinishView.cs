@@ -131,13 +131,13 @@ namespace gbrainy.Core.Views
 			gr.MoveTo (x, y);
 
 			if (session.GamesPlayed >= 10) {
-				if (session.TotalScore >= 90)
+				if (session.TotalScore >= 70)
 					s = String.Format (Catalog.GetString ("Outstanding results"));
-				else if (session.TotalScore >= 80) 
+				else if (session.TotalScore >= 50)
 					s = String.Format (Catalog.GetString ("Excellent results"));
-				else if (session.TotalScore >= 50) 
+				else if (session.TotalScore >= 30)
 					s = String.Format (Catalog.GetString ("Good results"));
-				else if (session.TotalScore >= 30) 
+				else if (session.TotalScore >= 20)
 					s = String.Format (Catalog.GetString ("Poor results"));
 				else s = String.Format (Catalog.GetString ("Disappointing results"));
 			} else 
