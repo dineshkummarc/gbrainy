@@ -24,6 +24,7 @@ using System.Collections;
 
 using gbrainy.Core.Main;
 using gbrainy.Core.Libraries;
+using gbrainy.Core.Views;
 
 namespace gbrainy.Clients.Classical
 {
@@ -71,223 +72,48 @@ namespace gbrainy.Clients.Classical
 
 		void OnTotalToggled (object sender, EventArgs args)
 		{
+			drawing_area.View.ShowTotal = checkbutton_total.Active;
 			drawing_area.QueueDraw ();
 		}
 
 		void OnLogicToggled (object sender, EventArgs args)
 		{
+			drawing_area.View.ShowLogic = checkbutton_logic.Active;
 			drawing_area.QueueDraw ();
 		}
 
 		void OnMemoryToggled (object sender, EventArgs args)
 		{
+			drawing_area.View.ShowMemory = checkbutton_memory.Active;
 			drawing_area.QueueDraw ();
 		}
 
 		void OnCalculationToggled (object sender, EventArgs args)
 		{
+			drawing_area.View.ShowCalculation = checkbutton_calculation.Active;
 			drawing_area.QueueDraw ();
 		}
 
 		void OnVerbalToggled (object sender, EventArgs args)
 		{
+			drawing_area.View.ShowVerbal = checkbutton_verbal.Active;
 			drawing_area.QueueDraw ();
 		}
 
 		public class CairoPreview : DrawingArea 
 		{
-			const double area_h = 0.8, area_w = 0.9, point_size = 0.005 * 1.25;
-			Cairo.Color math_color = new Cairo.Color (0.56, 0.71, 0.20);    // 8fb735
-			Cairo.Color logic_color = new Cairo.Color (0.81, 0.54, 0.23);   // d18c3b
-			Cairo.Color memory_color = new Cairo.Color (0.73, 0.22, 0.51);  // bb3a84
-			Cairo.Color verbal_color = new Cairo.Color (0.68, 0.16, 0.17);  // af2b2c
-			Cairo.Color total_color = new Cairo.Color (0, 0, 0.6);
-			Cairo.Color text_color = new Cairo.Color (0, 0, 0);
-			Cairo.Color axis_color = new Cairo.Color (0.15, 0.15, 0.15);
 			PlayerHistoryDialog dlg;
+			PlayerHistoryView view;
 
 			public CairoPreview (PlayerHistoryDialog dlg)
 			{
 				this.dlg = dlg;
+				view = new PlayerHistoryView (dlg.PlayerHistory);
 			}
 
-			private void DrawLegend (CairoContextEx cr, double x, double y)
-			{
-				const double line_size = 0.05, offset_x = 0.01, second_row = 0.05, space_hor = 0.4;
-				double old_width;
-
-				old_width = cr.LineWidth;
-				cr.LineWidth = 0.01;
-		
-				cr.Color = total_color;
-				cr.MoveTo (x, y);
-				cr.LineTo (x + line_size, y);
-				cr.Stroke ();
-				cr.Color = text_color;
-				cr.MoveTo (x + line_size + offset_x, y - 0.01);
-				cr.ShowPangoText (Catalog.GetString ("Total"));
-				cr.Stroke ();
-
-				cr.Color = logic_color;
-				cr.MoveTo (x, y + second_row);
-				cr.LineTo (x + line_size, y + second_row);
-				cr.Stroke ();
-				cr.Color = text_color;
-				cr.MoveTo (x + line_size + offset_x, y - 0.01 + second_row);
-				cr.ShowPangoText (Game.GetGameTypeDescription (Game.Types.LogicPuzzle));
-				cr.Stroke ();
-
-				x += space_hor;
-				cr.Color = memory_color;
-				cr.MoveTo (x, y);
-				cr.LineTo (x + line_size, y);
-				cr.Stroke ();
-				cr.Color = text_color;
-				cr.MoveTo (x + line_size + offset_x, y - 0.01);
-				cr.ShowPangoText (Game.GetGameTypeDescription (Game.Types.MemoryTrainer));
-				cr.Stroke ();
-
-				cr.Color = math_color;
-				cr.MoveTo (x, y + second_row);
-				cr.LineTo (x + line_size, y + second_row);
-				cr.Stroke ();
-				cr.Color = text_color;
-				cr.MoveTo (x + line_size + offset_x, y - 0.01 + second_row);
-				cr.ShowPangoText (Game.GetGameTypeDescription (Game.Types.MathTrainer));
-				cr.Stroke ();
-
-				x += space_hor;
-				cr.Color = verbal_color;
-				cr.MoveTo (x, y);
-				cr.LineTo (x + line_size, y);
-				cr.Stroke ();
-				cr.Color = text_color;
-				cr.MoveTo (x + line_size + offset_x, y - 0.01);
-				cr.ShowPangoText (Game.GetGameTypeDescription (Game.Types.VerbalAnalogy));
-				cr.Stroke ();
-
-				cr.LineWidth = old_width;
+			public PlayerHistoryView View {
+				get { return view; }
 			}
-
-			private void DrawLines (CairoContextEx cr, double x, double y)
-			{
-				double px, py;
-				PlayerHistory history = dlg.PlayerHistory;
-				double ratio;
-				int pos;
-
-				if (history.Games.Count == 0)
-					return;
-
-				ratio = area_w / (history.Games.Count - 1);
-		
-				if (dlg.checkbutton_logic.Active) { // Logic
-					cr.Color = logic_color;
-					cr.MoveTo (x, area_h - (area_h * history.Games[0].logic_score / 100));
-
-					pos = 1;
-					for (int i = 1; i < history.Games.Count; i++)
-					{
-						if (history.Games[i].logic_score < 0)
-							continue;
-
-						px = x + (ratio * pos);
-						py = y + area_h - (area_h * history.Games[i].logic_score / 100);
-						cr.LineTo (px, py);
-						pos++;
-					}
-					cr.Stroke ();
-				}
-
-				if (dlg.checkbutton_calculation.Active) { // Math
-					cr.Color = math_color;
-					cr.MoveTo (x, area_h - (area_h * history.Games[0].math_score / 100));
-
-					pos = 1;
-					for (int i = 1; i < history.Games.Count; i++)
-					{
-						if (history.Games[i].math_score < 0)
-							continue;
-
-						px = x + (ratio * pos);
-						py = y + area_h - (area_h * history.Games[i].math_score / 100);
-						cr.LineTo (px, py);
-						pos++;
-					}
-					cr.Stroke ();
-				}
-
-				if (dlg.checkbutton_memory.Active) { // Memory
-					cr.Color = memory_color;
-					cr.MoveTo (x, area_h - (area_h * history.Games[0].memory_score / 100));
-
-					pos = 1;
-					for (int i = 1; i < history.Games.Count; i++)
-					{
-						if (history.Games[i].memory_score < 0)
-							continue;
-
-						px = x + (ratio * pos);
-						py = y + area_h - (area_h * history.Games[i].memory_score / 100);
-						cr.LineTo (px, py);
-						pos++;
-					}
-					cr.Stroke ();
-				}
-
-				if (dlg.checkbutton_verbal.Active) { // Verbal
-					cr.Color = verbal_color;
-					cr.MoveTo (x, area_h - (area_h * history.Games[0].verbal_score / 100));
-
-					pos = 1;
-					for (int i = 1; i < history.Games.Count; i++)
-					{
-						if (history.Games[i].verbal_score < 0)
-							continue;
-
-						px = x + (ratio * pos);
-						py = y + area_h - (area_h * history.Games[i].verbal_score / 100);
-						cr.LineTo (px, py);
-						pos++;
-					}
-					cr.Stroke ();
-				}
-
-				if (dlg.checkbutton_total.Active) { // Total			
-					cr.Color = total_color;
-					cr.MoveTo (x, area_h - (area_h * history.Games[0].total_score / 100));
-
-					pos = 1;
-					for (int i = 1; i < history.Games.Count; i++)
-					{
-						if (history.Games[pos].total_score < 0)
-							continue;
-
-						px = x + (ratio * pos);
-						py = y + area_h - (area_h * history.Games[i].total_score / 100);
-						cr.LineTo (px, py);
-						pos++;
-					}
-					cr.Stroke ();
-				}
-			}
-
-			private void DrawGrid (CairoContextEx cr, double x, double y)
-			{
-				// Draw Axis
-				cr.MoveTo (x, y);
-				cr.LineTo (x, y + area_h);
-				cr.LineTo (x + area_w, y + area_h);
-				cr.Stroke ();
-
-				cr.Color = new Cairo.Color (0.8, 0.8, 0.8);
-				cr.LineWidth = 0.001;
-				for (double line_y = y; line_y < area_h + y; line_y += area_h / 10) {
-					cr.MoveTo (x, line_y);
-					cr.LineTo (x + area_w, line_y);
-					cr.Stroke ();
-				}
-			}		
 	
 			protected override bool OnExposeEvent (Gdk.EventExpose args)
 			{
@@ -314,22 +140,7 @@ namespace gbrainy.Clients.Classical
 				cr.Translate (x, y);
 				cr.Scale (nw, nh);
 
-				// Background
-				cr.Color = new Cairo.Color (1, 1, 1);
-				cr.Paint ();
-				cr.Stroke ();
-
-				x = 0.05; 
-				y = 0.05;
-				cr.LineWidth = point_size;
-				cr.Color = axis_color;
-
-				cr.Rectangle (x, y, area_w, area_h);
-				cr.Clip ();
-				DrawLines (cr, x, y);
-				cr.ResetClip ();
-				DrawLegend (cr, x, y + area_h + 0.05);
-				DrawGrid (cr, x, y);
+				view.Draw (cr, nw, nh, Direction == Gtk.TextDirection.Rtl);
 
 				((IDisposable)cc).Dispose();
 				((IDisposable)cr).Dispose();

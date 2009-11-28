@@ -26,6 +26,7 @@ CSFILES =  \
 		Views/FinishView.cs		\
 		Views/IDrawable.cs		\
 		Views/IDrawRequest.cs		\
+		Views/PlayerHistoryView.cs	\
 		Views/ViewsControler.cs		\
 		Views/WelcomeView.cs		\
 		Platform/Unix.cs		\
