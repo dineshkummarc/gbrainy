@@ -60,6 +60,14 @@ namespace gbrainy.Core.Main
 			Finished,
 		}
 
+		// Data kept for every game type in raw data (processed with a formula after)
+		public class Statistics
+		{
+			public int Played { get; set; }
+			public int Won { get; set; }
+			public int Scored { get; set; }
+		}
+
 		private TimeSpan game_time;
 		private int games_played;
 		private int games_won;
@@ -69,14 +77,13 @@ namespace gbrainy.Core.Main
 		private bool paused;
 		private string current_time;
 		private TimeSpan one_sec = TimeSpan.FromSeconds (1);
-		private int [] scores;
-		private int [] games;
 		private int total_score;
 		private bool scored_game;
 		private SessionStatus status;
 		private ViewsControler controler;
 		private ISynchronizeInvoke synchronize;
 		private PlayerHistory history;
+		private Statistics [] statistics;
 
 		public event EventHandler DrawRequest;
 		public event EventHandler <UpdateUIStateEventArgs> UpdateUIElement;
@@ -89,9 +96,12 @@ namespace gbrainy.Core.Main
 			timer = new System.Timers.Timer ();
 			timer.Elapsed += TimerUpdater;
 			timer.Interval = (1 * 1000); // 1 second
-		
-			scores = new int [(int) ScoresType.Last];
-			games = new int [(int) ScoresType.Last];
+
+			statistics = new Statistics [(int) ScoresType.Last];
+
+			for (int i = 0; i < (int) ScoresType.Last; i++)
+				statistics [i] = new Statistics ();
+
 			controler = new ViewsControler (this);
 			Status = SessionStatus.NotPlaying;
 			history = new PlayerHistory ();
@@ -168,37 +178,37 @@ namespace gbrainy.Core.Main
 
 		public int LogicScore {
 			get {
-				if (games [(int) ScoresType.LogicPuzzles] == 0)
-					return 0;
-			
-				return scores [(int) ScoresType.LogicPuzzles] * 10 / games [(int) ScoresType.LogicPuzzles];
+				if (statistics [(int) ScoresType.LogicPuzzles].Played == 0)
+					return -1;
+
+				return ScoreFormula (statistics [(int) ScoresType.LogicPuzzles]);
 			}
 		}
 
 		public int MemoryScore {
 			get {
-				if (games [(int) ScoresType.MemoryTrainers] == 0)
-					return 0;
-			
-				return scores [(int) ScoresType.MemoryTrainers] * 10 / games [(int) ScoresType.MemoryTrainers];
+				if (statistics [(int) ScoresType.MemoryTrainers].Played == 0)
+					return -1;
+	
+				return ScoreFormula (statistics [(int) ScoresType.MemoryTrainers]);
 			}
 		}
 
 		public int MathScore {
 			get {
-				if (games [(int) ScoresType.CalculationTrainers] == 0)
-					return 0;
-			
-				return scores [(int) ScoresType.CalculationTrainers] * 10 / games [(int) ScoresType.CalculationTrainers];
+				if (statistics [(int) ScoresType.CalculationTrainers].Played == 0)
+					return -1;
+
+				return ScoreFormula (statistics [(int) ScoresType.CalculationTrainers]);
 			}
 		}
 
 		public int VerbalScore {
-			get {
-				if (games [(int) ScoresType.VerbalAnalogies] == 0)
-					return 0;
-			
-				return scores [(int) ScoresType.VerbalAnalogies] * 10 / games [(int) ScoresType.VerbalAnalogies];
+			get {	
+				if (statistics [(int) ScoresType.VerbalAnalogies].Played == 0)
+					return -1;
+	
+				return ScoreFormula (statistics [(int) ScoresType.VerbalAnalogies]);
 			}
 		}
 
@@ -239,8 +249,10 @@ namespace gbrainy.Core.Main
 				EndSession ();
 
 			current_time = TimeSpanToStr (game_time);
-			scores = new int [(int) ScoresType.Last];
-			games = new int [(int) ScoresType.Last];
+
+			for (int i = 0; i < (int) ScoresType.Last; i++)
+				statistics [i] = new Statistics ();
+
 			total_score = 0;
 			games_played = 0;
 			games_won = 0;
@@ -295,47 +307,123 @@ namespace gbrainy.Core.Main
 			paused = false;
 		}
 
+		/*
+			How the game session is scored
+
+			* Every game has a scoring algorithm that scores the player performance within the game.
+		   	  This takes into account time used and tips (result is from 0 to 10)
+			* The results are added to the games and scores arrays where we store the results for
+			  the different game types (verbal, logic, etc)
+			* We apply a ScoreFormula function that balances the total result with the number of
+	  		  games played (is not the same 100% games won playing 2 than 10 games) and the difficulty
+			
+			The final result is a number from 0 to 100
+		*/
+
 		public bool ScoreGame (string answer)
 		{
 			int score;
+			bool won;
+			int components = 0;
 
 			if (CurrentGame == null || scored_game == true)
 				return false;
 
 			score = CurrentGame.Score (answer);
-			if (score > 0)
+			if (score > 0) {
 				GamesWon++;
+				won = true;
+			} else
+				won = false;
 
 			switch (CurrentGame.Type) {
 			case Game.Types.LogicPuzzle:
-				scores [(int) ScoresType.LogicPuzzles] += score;
-				games [(int) ScoresType.LogicPuzzles]++;
+				statistics [(int) ScoresType.LogicPuzzles].Scored += score;
+				statistics [(int) ScoresType.LogicPuzzles].Played++;
+				if (won) statistics [(int) ScoresType.LogicPuzzles].Won++;
 				break;
 			case Game.Types.MemoryTrainer:
-				scores [(int) ScoresType.MemoryTrainers] += score;
-				games [(int) ScoresType.MemoryTrainers]++;
+				statistics [(int) ScoresType.MemoryTrainers].Scored += score;
+				statistics [(int) ScoresType.MemoryTrainers].Played++;
+				if (won) statistics [(int) ScoresType.MemoryTrainers].Won++;
 				break;
 			case Game.Types.MathTrainer:
-				scores [(int) ScoresType.CalculationTrainers] += score;
-				games [(int) ScoresType.CalculationTrainers]++;
+				statistics [(int) ScoresType.CalculationTrainers].Scored += score;
+				statistics [(int) ScoresType.CalculationTrainers].Played++;
+				if (won) statistics [(int) ScoresType.CalculationTrainers].Won++;
 				break;
 			case Game.Types.VerbalAnalogy:
-				scores [(int) ScoresType.VerbalAnalogies] += score;
-				games [(int) ScoresType.VerbalAnalogies]++;
+				statistics [(int) ScoresType.VerbalAnalogies].Scored += score;
+				statistics [(int) ScoresType.VerbalAnalogies].Played++;
+				if (won) statistics [(int) ScoresType.VerbalAnalogies].Won++;
 				break;
 			default:
 				break;
 			}
-		
+
 			total_score = 0;
-			for (int i = 0; i < (int) ScoresType.Last; i++) {
-				total_score += scores [i];
+
+			// Updates total score taking only into account played game types
+			if (LogicScore >= 0) {
+				total_score += LogicScore;
+				components++;
 			}
 
-			total_score = total_score * 10 / games_played;
+			if (MemoryScore >= 0) {
+				total_score += MemoryScore;
+				components++;
+			}
+
+			if (MathScore >= 0) {
+				total_score += MathScore;
+				components++;
+			}
+
+			if (VerbalScore >= 0) {
+				total_score += VerbalScore;
+				components++;
+			}
+
+			total_score = total_score / components;
+
 			scored_game = true;
-			return (score > 0) ? true: false;
-		}	
+			return won;
+		}
+
+		//
+		// Applies scoring formula to the session
+		//
+		int ScoreFormula (Statistics stats)
+		{
+			int logbase;
+			double score, factor;
+
+			switch (Difficulty) {
+			case Game.Difficulty.Easy:
+				logbase = 10;
+				break;
+			case Game.Difficulty.Medium:
+				logbase = 20;
+				break;
+			case Game.Difficulty.Master:
+				logbase = 30;
+				break;
+			default:
+				throw new InvalidOperationException ("Invalid switch value");
+			}
+
+			// Simple percentage of games won vs played
+			score = stats.Scored > 0 ? stats.Scored / stats.Played * 10 : 0;
+
+			// Puts score of the game in prespective for the whole game
+			factor = Math.Log (stats.Won + 2, logbase); // +2 to avoid log 0
+
+			score = score * factor;
+
+			if (score > 100) score = 100;
+
+			return (int) score;
+		}
 
 		private void TimerUpdater (object source, ElapsedEventArgs e)
 		{

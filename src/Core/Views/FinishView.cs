@@ -85,19 +85,31 @@ namespace gbrainy.Core.Views
 			gr.DrawTextCentered (x + bar_w / 2, y + area_h + 0.03, Catalog.GetString ("Total"));
 
 			x = x + space_x * 2;
-			DrawBar (gr, x, y + area_h, bar_w, bar_h, session.LogicScore);
+
+			if (session.LogicScore >= 0)
+				DrawBar (gr, x, y + area_h, bar_w, bar_h, session.LogicScore);
+
 			gr.DrawTextCentered (x + bar_w / 2, y + area_h + 0.03, 	Catalog.GetString ("Logic")); 
 
 			x = x + space_x * 2;
-			DrawBar (gr, x, y + area_h, bar_w, bar_h, session.MathScore);
+
+			if (session.MathScore >= 0)
+				DrawBar (gr, x, y + area_h, bar_w, bar_h, session.MathScore);
+
 			gr.DrawTextCentered (x + bar_w / 2, y + area_h + 0.03, Catalog.GetString ("Calculation"));
 
 			x = x + space_x * 2;
-			DrawBar (gr, x, y + area_h, bar_w, bar_h, session.MemoryScore);
+
+			if (session.MemoryScore >= 0)
+				DrawBar (gr, x, y + area_h, bar_w, bar_h, session.MemoryScore);
+
 			gr.DrawTextCentered (x + bar_w / 2, y + area_h + 0.03, Catalog.GetString ("Memory"));
 
 			x = x + space_x * 2;
-			DrawBar (gr, x, y + area_h, bar_w, bar_h, session.VerbalScore);
+
+			if (session.VerbalScore >= 0)
+				DrawBar (gr, x, y + area_h, bar_w, bar_h, session.VerbalScore);
+
 			gr.DrawTextCentered (x + bar_w / 2, y + area_h + 0.03, Catalog.GetString ("Verbal"));
 		}
 

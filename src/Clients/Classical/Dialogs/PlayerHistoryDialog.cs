@@ -174,6 +174,7 @@ namespace gbrainy.Clients.Classical
 				double px, py;
 				PlayerHistory history = dlg.PlayerHistory;
 				double ratio;
+				int pos;
 
 				if (history.Games.Count == 0)
 					return;
@@ -183,11 +184,17 @@ namespace gbrainy.Clients.Classical
 				if (dlg.checkbutton_logic.Active) { // Logic
 					cr.Color = logic_color;
 					cr.MoveTo (x, area_h - (area_h * history.Games[0].logic_score / 100));
+
+					pos = 1;
 					for (int i = 1; i < history.Games.Count; i++)
 					{
-						px = x + (ratio * i);
+						if (history.Games[i].logic_score < 0)
+							continue;
+
+						px = x + (ratio * pos);
 						py = y + area_h - (area_h * history.Games[i].logic_score / 100);
 						cr.LineTo (px, py);
+						pos++;
 					}
 					cr.Stroke ();
 				}
@@ -195,11 +202,17 @@ namespace gbrainy.Clients.Classical
 				if (dlg.checkbutton_calculation.Active) { // Math
 					cr.Color = math_color;
 					cr.MoveTo (x, area_h - (area_h * history.Games[0].math_score / 100));
+
+					pos = 1;
 					for (int i = 1; i < history.Games.Count; i++)
 					{
-						px = x + (ratio * i);
+						if (history.Games[i].math_score < 0)
+							continue;
+
+						px = x + (ratio * pos);
 						py = y + area_h - (area_h * history.Games[i].math_score / 100);
 						cr.LineTo (px, py);
+						pos++;
 					}
 					cr.Stroke ();
 				}
@@ -207,11 +220,17 @@ namespace gbrainy.Clients.Classical
 				if (dlg.checkbutton_memory.Active) { // Memory
 					cr.Color = memory_color;
 					cr.MoveTo (x, area_h - (area_h * history.Games[0].memory_score / 100));
+
+					pos = 1;
 					for (int i = 1; i < history.Games.Count; i++)
 					{
-						px = x + (ratio * i);
+						if (history.Games[i].memory_score < 0)
+							continue;
+
+						px = x + (ratio * pos);
 						py = y + area_h - (area_h * history.Games[i].memory_score / 100);
 						cr.LineTo (px, py);
+						pos++;
 					}
 					cr.Stroke ();
 				}
@@ -219,11 +238,17 @@ namespace gbrainy.Clients.Classical
 				if (dlg.checkbutton_verbal.Active) { // Verbal
 					cr.Color = verbal_color;
 					cr.MoveTo (x, area_h - (area_h * history.Games[0].verbal_score / 100));
+
+					pos = 1;
 					for (int i = 1; i < history.Games.Count; i++)
 					{
-						px = x + (ratio * i);
+						if (history.Games[i].verbal_score < 0)
+							continue;
+
+						px = x + (ratio * pos);
 						py = y + area_h - (area_h * history.Games[i].verbal_score / 100);
 						cr.LineTo (px, py);
+						pos++;
 					}
 					cr.Stroke ();
 				}
@@ -231,11 +256,17 @@ namespace gbrainy.Clients.Classical
 				if (dlg.checkbutton_total.Active) { // Total			
 					cr.Color = total_color;
 					cr.MoveTo (x, area_h - (area_h * history.Games[0].total_score / 100));
+
+					pos = 1;
 					for (int i = 1; i < history.Games.Count; i++)
 					{
-						px = x + (ratio * i);
+						if (history.Games[pos].total_score < 0)
+							continue;
+
+						px = x + (ratio * pos);
 						py = y + area_h - (area_h * history.Games[i].total_score / 100);
 						cr.LineTo (px, py);
+						pos++;
 					}
 					cr.Stroke ();
 				}
