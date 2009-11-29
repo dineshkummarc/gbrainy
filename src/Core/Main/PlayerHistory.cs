@@ -27,8 +27,9 @@ namespace gbrainy.Core.Main
 {
 	public class PlayerHistory
 	{
-		private string file, config_path;
-		private List <GameHistory> games;
+		string file, config_path;
+		List <GameHistory> games;
+		int last_game;
 
 		[Serializable]
 		public class GameHistory
@@ -42,11 +43,26 @@ namespace gbrainy.Core.Main
 			public int verbal_score;
 		}
 
+		public class PersonalRecord
+		{
+			public Game.Types GameType { get; set; }
+			public int PreviousScore { get; set; }
+			public int NewScore { get; set; }
+
+			public PersonalRecord (Game.Types type, int previous_score, int new_score)
+			{
+				GameType = type;
+				PreviousScore = previous_score;
+				NewScore = new_score;
+			}
+		}
+
 		public PlayerHistory ()
 		{
 			config_path = Environment.GetFolderPath (Environment.SpecialFolder.ApplicationData);
 			config_path = Path.Combine (config_path, Defines.CONFIG_DIR);
 			file = Path.Combine (config_path, "PlayerHistory.xml");
+			last_game = -1;
 		}
 
 		public List <GameHistory> Games {
@@ -69,8 +85,10 @@ namespace gbrainy.Core.Main
 
 		public void SaveGameSession (GameSession session)
 		{
-			if (session.GamesPlayed < Preferences.GetIntValue (Preferences.MinPlayedGamesKey))
+			if (session.GamesPlayed < Preferences.GetIntValue (Preferences.MinPlayedGamesKey)) {
+				last_game = -1;
 				return;
+			}
 
 			GameHistory history = new GameHistory ();
 	
@@ -86,13 +104,57 @@ namespace gbrainy.Core.Main
 				Games.RemoveAt (0);
 
 			Games.Add (history);
+			last_game = Games.Count - 1;
 			Save ();
+		}
+
+		// Check if the last recorded game has been a personal record
+		public List <PersonalRecord> GetLastGameRecords ()
+		{
+			List <PersonalRecord> records = new List <PersonalRecord> ();
+			GameHistory higher;
+
+			// We can start to talk about personal records after 5 plays
+			if (last_game == -1 || Games.Count < 5)
+				return records;
+
+			higher = new GameHistory ();
+
+			// Find the higher record for every type of game
+			for (int i = 0; i < last_game; i++)
+			{
+				if (Games[i].logic_score > higher.logic_score) 
+					higher.logic_score = Games[i].logic_score;
+
+				if (Games[i].math_score > higher.math_score) 
+					higher.math_score = Games[i].math_score;
+
+				if (Games[i].memory_score > higher.memory_score) 
+					higher.memory_score = Games[i].memory_score;
+
+				if (Games[i].verbal_score > higher.verbal_score) 
+					higher.verbal_score = Games[i].verbal_score;				
+			}
+			
+			// It is a record?
+			if (Games[last_game].logic_score > higher.logic_score)
+				records.Add (new PersonalRecord (Game.Types.LogicPuzzle, higher.logic_score, Games[last_game].logic_score));
+
+			if (Games[last_game].math_score > higher.math_score)
+				records.Add (new PersonalRecord (Game.Types.MathTrainer, higher.math_score, Games[last_game].math_score));
+
+			if (Games[last_game].memory_score > higher.memory_score)
+				records.Add (new PersonalRecord (Game.Types.MemoryTrainer, higher.memory_score, Games[last_game].memory_score));
+
+			if (Games[last_game].verbal_score > higher.verbal_score)
+				records.Add (new PersonalRecord (Game.Types.VerbalAnalogy, higher.verbal_score, Games[last_game].verbal_score));
+
+			return records;
 		}
 
 		private void Save ()
 		{
 			try {
-
 				if (!Directory.Exists (config_path))
 					Directory.CreateDirectory (config_path);
 

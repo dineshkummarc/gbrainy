@@ -20,6 +20,7 @@
 using System;
 using Cairo;
 using Mono.Unix;
+using System.Collections.Generic;
 
 using gbrainy.Core.Main;
 using gbrainy.Core.Libraries;
@@ -117,6 +118,7 @@ namespace gbrainy.Core.Views
 		{
 			double y = 0.04, x = 0.05;
 			const double space_small = 0.02;
+			List <PlayerHistory.PersonalRecord> records;
 			string s;
 
 			gr.Scale (area_width, area_height);
@@ -158,19 +160,70 @@ namespace gbrainy.Core.Views
 			DrawGraphicBar (gr, x, y);
 			y += 0.4;
 
-			gr.MoveTo (x, y);
-			gr.ShowPangoText (Catalog.GetString ("Tips for your next games"), false, -1, 0);
-			DrawBand (gr, 0.03, y - 0.01);
+			records	= session.PlayerHistory.GetLastGameRecords ();
+			gr.MoveTo (x, y);		
 
-			y += 0.08;
+			Console.WriteLine ("Records {0}", records.Count);
+			if (records.Count == 0) {
+				gr.ShowPangoText (Catalog.GetString ("Tips for your next games"), false, -1, 0);
+				DrawBand (gr, 0.03, y - 0.01);
 
-			for (int i = 0; i < tips_shown; i++)
-			{
-				y = gr.DrawStringWithWrapping (x, y,  "- " + GameTips.Tip);
-				if (y > 0.88)
-					break;
+				y += 0.08;
 
-				y += space_small;
+				for (int i = 0; i < tips_shown; i++)
+				{
+					y = gr.DrawStringWithWrapping (x, y,  "- " + GameTips.Tip);
+					if (y > 0.88)
+						break;
+
+					y += space_small;
+				}
+			} 
+			else  {
+				gr.ShowPangoText (Catalog.GetString ("Congratulations! New personal record"), false, -1, 0);
+				DrawBand (gr, 0.03, y - 0.01);
+
+				y += 0.08;
+
+				for (int i = 0; i < records.Count; i++)
+				{
+
+					switch (records[i].GameType) {
+					case Game.Types.LogicPuzzle:
+						s = String.Format (Catalog.
+							GetString ("By scoring {0}% in logic puzzle games you have established a new personal record. Your previous record was {1}%."),
+							records[i].NewScore,
+							records[i].PreviousScore);
+						break;
+					case Game.Types.MathTrainer:
+						s = String.Format (Catalog.
+							GetString ("By scoring {0}% in calculation games you have established a new personal record. Your previous record was {1}%."),
+							records[i].NewScore,
+							records[i].PreviousScore);
+						break;
+					case Game.Types.MemoryTrainer:
+						s = String.Format (Catalog.
+							GetString ("By scoring {0}% in memory games you have established a new personal record. Your previous record was {1}%."),
+							records[i].NewScore,
+							records[i].PreviousScore);
+						break;
+					case Game.Types.VerbalAnalogy:
+						s = String.Format (Catalog.
+							GetString ("By scoring {0}% in verbal analogies you have established a new personal record. Your previous record was {1}%."),
+							records[i].NewScore,
+							records[i].PreviousScore);
+						break;
+					default:
+						break;
+					}
+
+					Console.WriteLine (s);
+					y = gr.DrawStringWithWrapping (x, y,  "- " + s);
+					if (y > 0.88)
+						break;
+
+					y += space_small;
+				}
 			}
 
 			gr.Stroke ();
