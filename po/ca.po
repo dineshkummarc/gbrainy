@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gbrainy\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-11-28 00:11+0100\n"
-"PO-Revision-Date: 2009-10-23 20:51+0200\n"
+"POT-Creation-Date: 2009-11-30 20:26+0100\n"
+"PO-Revision-Date: 2009-11-30 20:34+0200\n"
 "Last-Translator: Jordi Mas <jmas@softcatala.org>\n"
 "Language-Team: Catalan\n"
 "MIME-Version: 1.0\n"
@@ -450,79 +450,119 @@ msgstr "gbrainy"
 msgid "Get ready to memorize the next objects..."
 msgstr "Prepareu-vos per a memoritzar els objectes següents..."
 
-#: ../src/Core/Views/FinishView.cs:85
-#: ../src/Clients/Classical/Dialogs/PlayerHistoryDialog.cs:59
-#: ../src/Clients/Classical/Dialogs/PlayerHistoryDialog.cs:128
+#: ../src/Core/Views/FinishView.cs:86
+#: ../src/Core/Views/PlayerHistoryView.cs:68
+#: ../src/Clients/Classical/Dialogs/PlayerHistoryDialog.cs:60
 msgid "Total"
 msgstr "Total"
 
-#: ../src/Core/Views/FinishView.cs:92 ../src/Core/Main/Game.cs:327
+#: ../src/Core/Views/FinishView.cs:93 ../src/Core/Main/Game.cs:327
 #: ../src/Clients/Classical/gbrainy.cs:266
 msgid "Logic"
 msgstr "Lògica"
 
 #
-#: ../src/Core/Views/FinishView.cs:99 ../src/Clients/Classical/gbrainy.cs:271
+#: ../src/Core/Views/FinishView.cs:100 ../src/Clients/Classical/gbrainy.cs:271
 msgid "Calculation"
 msgstr "Càlcul"
 
-#: ../src/Core/Views/FinishView.cs:106 ../src/Core/Main/Game.cs:330
+#: ../src/Core/Views/FinishView.cs:107 ../src/Core/Main/Game.cs:330
 #: ../src/Clients/Classical/gbrainy.cs:277
 msgid "Memory"
 msgstr "Memòria"
 
-#: ../src/Core/Views/FinishView.cs:113 ../src/Core/Main/Game.cs:336
+#: ../src/Core/Views/FinishView.cs:114 ../src/Core/Main/Game.cs:336
 #: ../src/Clients/Classical/gbrainy.cs:283
 msgid "Verbal"
 msgstr "Verbal"
 
-#: ../src/Core/Views/FinishView.cs:127
+#: ../src/Core/Views/FinishView.cs:129
 msgid "Score"
 msgstr "Puntuació"
 
-#: ../src/Core/Views/FinishView.cs:135
+#: ../src/Core/Views/FinishView.cs:137
 #, csharp-format
 msgid "Outstanding results"
 msgstr "Resultats extraordinaris"
 
-#: ../src/Core/Views/FinishView.cs:137
+#: ../src/Core/Views/FinishView.cs:139
 #, csharp-format
 msgid "Excellent results"
 msgstr "Excel·lents resultats"
 
-#: ../src/Core/Views/FinishView.cs:139
+#: ../src/Core/Views/FinishView.cs:141
 #, csharp-format
 msgid "Good results"
 msgstr "Bons resultats"
 
-#: ../src/Core/Views/FinishView.cs:141
+#: ../src/Core/Views/FinishView.cs:143
 #, csharp-format
 msgid "Poor results"
 msgstr "Resultats pobres"
 
-#: ../src/Core/Views/FinishView.cs:142
+#: ../src/Core/Views/FinishView.cs:144
 #, csharp-format
 msgid "Disappointing results"
 msgstr "Resultats decebedors"
 
-#: ../src/Core/Views/FinishView.cs:149
+#: ../src/Core/Views/FinishView.cs:151
 #, csharp-format
 msgid "Games won: {0} ({1} played)"
 msgstr "Jocs guanyats: {0} ({1} jugats)"
 
-#: ../src/Core/Views/FinishView.cs:151
+#: ../src/Core/Views/FinishView.cs:153
 #, csharp-format
 msgid "{0}. Games won: {1} ({2} played)"
 msgstr "{0}. Jocs guanyats: {1} ({2} jugats)"
 
-#: ../src/Core/Views/FinishView.cs:155
+#: ../src/Core/Views/FinishView.cs:157
 #, csharp-format
 msgid "Time played {0} (average per game {1})"
 msgstr "Temps de joc: {0} (mitjana per joc {1})"
 
-#: ../src/Core/Views/FinishView.cs:162
+#: ../src/Core/Views/FinishView.cs:168
 msgid "Tips for your next games"
 msgstr "Consells per les vostres properes partides"
+
+#: ../src/Core/Views/FinishView.cs:183
+msgid "Congratulations! New personal record"
+msgstr "Enhorabona! Nou record personal"
+
+#: ../src/Core/Views/FinishView.cs:194
+#, csharp-format
+msgid ""
+"By scoring {0}% in logic puzzle games you have established a new personal "
+"record. Your previous record was {1}%."
+msgstr ""
+"En puntuar {0}% als trencaclosques lògics heu assolit un nou record "
+"personal. El vostre record anterior era {1}%."
+
+#: ../src/Core/Views/FinishView.cs:200
+#, csharp-format
+msgid ""
+"By scoring {0}% in calculation games you have established a new personal "
+"record. Your previous record was {1}%."
+msgstr ""
+"En puntuar {0}% als jocs de càlcul mental heu assolit un nou record "
+"personal. El vostre record anterior era {1}%."
+
+#: ../src/Core/Views/FinishView.cs:206
+#, csharp-format
+msgid ""
+"By scoring {0}% in memory games you have established a new personal record. "
+"Your previous record was {1}%."
+msgstr ""
+"En puntuar {0}% als jocs de memòria heu assolit un nou record personal. El "
+"vostre record anterior era {1}%."
+
+#: ../src/Core/Views/FinishView.cs:212
+#, csharp-format
+msgid ""
+"By scoring {0}% in verbal analogies you have established a new personal "
+"record. Your previous record was {1}%."
+msgstr ""
+"En puntuar {0}% amb analogies verbals heu assolit un nou record personal. El "
+"vostre record anterior era {1}%."
 
 #: ../src/Core/Views/WelcomeView.cs:49
 #, csharp-format
@@ -689,7 +729,7 @@ msgstr " - Temps: {0}"
 msgid "- Game: {0}"
 msgstr " - Joc: {0}"
 
-#: ../src/Core/Main/GameSession.cs:316
+#: ../src/Core/Main/GameSession.cs:301
 msgid "Paused"
 msgstr "En pausa"
 
@@ -997,11 +1037,11 @@ msgstr "Tipus"
 msgid "Enabled"
 msgstr "Habilitat"
 
-#: ../src/Clients/Classical/Dialogs/PlayerHistoryDialog.cs:48
+#: ../src/Clients/Classical/Dialogs/PlayerHistoryDialog.cs:49
 msgid "The graphic below shows the player's game score evolution. "
 msgstr "El gràfic de baix mostra l'evolució de la puntuació del jugador. "
 
-#: ../src/Clients/Classical/Dialogs/PlayerHistoryDialog.cs:49
+#: ../src/Clients/Classical/Dialogs/PlayerHistoryDialog.cs:50
 #, csharp-format
 msgid "You need more than one game recorded to see the score evolution."
 msgid_plural "It is built using the results of {0} last recorded games."
@@ -1298,7 +1338,7 @@ msgid ""
 "Answer {0}, {1}, {2} or {3}."
 msgstr ""
 "Quin és el cercle que no pertany al grup? No és una seqüència d'elements. "
-"Responeu {0}, {1}, {2} or {3}."
+"Responeu {0}, {1}, {2} o {3}."
 
 #: ../src/Games/Logic/PuzzleExtraCircle.cs:52
 msgid "All circles share a common property except for one."
@@ -1462,8 +1502,8 @@ msgid ""
 "How many line segments in total are in the figures below? A line segment is "
 "a line between two points with no crossing lines."
 msgstr ""
-"Quants segments de línia hi ha en total a les figures de baix? Un segment de línia és una "
-"línia entre dos punts sense línies que el creuen."
+"Quants segments de línia hi ha en total a les figures de baix? Un segment de "
+"línia és una línia entre dos punts sense línies que el creuen."
 
 #: ../src/Games/Logic/PuzzleLines.cs:46
 #, csharp-format
@@ -1633,7 +1673,7 @@ msgid ""
 "figures? Answer {0}, {1}, {2} or {3}."
 msgstr ""
 "Quina de les possibles respostes té més en comú amb les quatre figures "
-"donades? Responeu {0}, {1}, {2} or {3}."
+"donades? Responeu {0}, {1}, {2} o {3}."
 
 #: ../src/Games/Logic/PuzzleMostInCommon.cs:86
 msgid "Think of the common elements that the given figures have inside them."
