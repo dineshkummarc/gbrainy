@@ -219,12 +219,22 @@ namespace gbrainy.Core.Views
 			cr.LineTo (x + area_w, y + area_h);
 			cr.Stroke ();
 
+			cr.Save ();
 			cr.Color = new Cairo.Color (0.8, 0.8, 0.8);
 			cr.LineWidth = 0.001;
+
 			for (double line_y = y; line_y < area_h + y; line_y += area_h / 10) {
 				cr.MoveTo (x, line_y);
 				cr.LineTo (x + area_w, line_y);
 				cr.Stroke ();
+			}
+
+			cr.Restore ();
+
+			int pos = 100;
+			for (double line_y = y; line_y < area_h + y; line_y += area_h / 10) {
+				cr.DrawTextAlignedRight (x - 0.02, line_y - 0.02, String.Format ("{0}", pos));
+				pos -= 10;
 			}
 		}		
 
