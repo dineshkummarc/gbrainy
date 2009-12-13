@@ -163,7 +163,6 @@ namespace gbrainy.Core.Views
 			records	= session.PlayerHistory.GetLastGameRecords ();
 			gr.MoveTo (x, y);		
 
-			Console.WriteLine ("Records {0}", records.Count);
 			if (records.Count == 0) {
 				gr.ShowPangoText (Catalog.GetString ("Tips for your next games"), false, -1, 0);
 				DrawBand (gr, 0.03, y - 0.01);
@@ -217,7 +216,6 @@ namespace gbrainy.Core.Views
 						break;
 					}
 
-					Console.WriteLine (s);
 					y = gr.DrawStringWithWrapping (x, y,  "- " + s);
 					if (y > 0.88)
 						break;
