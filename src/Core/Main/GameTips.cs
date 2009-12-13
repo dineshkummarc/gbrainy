@@ -29,7 +29,7 @@ namespace gbrainy.Core.Main
 		static int idx = 0;
 	
 		static public int Count {
-			get { return 11; }
+			get { return 12; }
 		}
 
 		// Gets a random tip from the list
@@ -71,6 +71,8 @@ namespace gbrainy.Core.Main
 				return Catalog.GetString ("Association of elements is a common technique for remembering things.");
 			case 10:
 				return Catalog.GetString ("Grouping elements into categories is a common technique for remembering things.");
+			case 11:
+				return Catalog.GetString ("Build acronyms using the first letter of each fact to be remembered.");
 			}
 
 			return string.Empty;
