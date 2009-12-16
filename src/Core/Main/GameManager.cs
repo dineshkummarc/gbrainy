@@ -396,6 +396,9 @@ namespace gbrainy.Core.Main
 
 				if (puzzle.IsPlayable == false)
 					continue;
+		
+				if ((Preferences.GetBoolValue (Preferences.ColorBlindKey) == true) && puzzle.UsesColors == true)
+					continue;
 
 				Analogies analogy = puzzle as Analogies;
 				if (analogy != null && analogy.IsExhausted == true)

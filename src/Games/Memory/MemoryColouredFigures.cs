@@ -51,6 +51,10 @@ namespace gbrainy.Games.Memory
 			get {return Catalog.GetString ("Colored figures");}
 		}
 
+		public override bool UsesColors {
+			get { return true;}
+		}
+
 		public override string MemoryQuestion {
 			get { return String.Format (
 				Catalog.GetString ("Which of these figures was previously shown? Answer {0}, {1}, {2} or {3}."),

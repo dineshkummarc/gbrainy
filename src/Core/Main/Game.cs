@@ -103,7 +103,6 @@ namespace gbrainy.Core.Main
 			get { return synchronize; }
 		}
 
-
 		// Stores how difficult the game is
 		public virtual Difficulty GameDifficulty {
 			get {
@@ -156,6 +155,10 @@ namespace gbrainy.Core.Main
 		// An initialized game cannot be playable (for example, missing external files)
 		public virtual bool IsPlayable {
 			get { return true;}
+		}
+
+		public virtual bool UsesColors {
+			get { return false;}
 		}
 
 		public virtual double DrawAreaX {

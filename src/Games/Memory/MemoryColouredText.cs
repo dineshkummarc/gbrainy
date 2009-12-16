@@ -36,6 +36,10 @@ namespace gbrainy.Games.Memory
 			get {return Catalog.GetString ("Colored text");}
 		}
 
+		public override bool UsesColors {
+			get { return true;}
+		}
+
 		public override string MemoryQuestion {
 			get { 
 				return String.Format (Catalog.GetString ("What was the color of the text that said '{0}'?"), question_colorname);}

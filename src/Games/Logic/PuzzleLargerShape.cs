@@ -113,6 +113,10 @@ namespace gbrainy.Games.Logic
 			get {return Catalog.GetString ("Larger shape");}
 		}
 
+		public override bool UsesColors {
+			get { return true;}
+		}
+
 		public override string Question {
 			get {return String.Format (
 				Catalog.GetString ("Which larger shape can you make combining the first two figures? Answer {0}, {1}, {2} or {3}."),

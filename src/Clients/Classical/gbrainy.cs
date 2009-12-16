@@ -114,7 +114,7 @@ namespace gbrainy.Clients.Classical
 			app_window.IconName = "gbrainy";
 			app_window.ShowAll ();
 
-			if (Preferences.GetBoolValue (Preferences.Toolbar) == false || low_res == true)
+			if (Preferences.GetBoolValue (Preferences.ToolbarKey) == false || low_res == true)
 				toolbar_menuitem.Active = false;
 
 			ActiveInputControls (false);
@@ -510,7 +510,7 @@ namespace gbrainy.Clients.Classical
 			requisition =  toolbar.SizeRequest ();
 			app_window.GetSize (out width, out height);
 			toolbar.Visible = !toolbar.Visible;
-			Preferences.SetBoolValue (Preferences.Toolbar, toolbar.Visible);
+			Preferences.SetBoolValue (Preferences.ToolbarKey, toolbar.Visible);
 			Preferences.Save ();
 			app_window.Resize (width, height - requisition.Height);
 		}

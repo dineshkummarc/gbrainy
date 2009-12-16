@@ -42,6 +42,10 @@ namespace gbrainy.Games.Logic
 			get {return Catalog.GetString ("Extra circle");}
 		}
 
+		public override bool UsesColors {
+			get { return true;}
+		}
+
 		public override string Question {
 			get {return String.Format (
 				Catalog.GetString ("Which circle does not belong to the group? It is not a sequence of elements. Answer {0}, {1}, {2} or {3}."),

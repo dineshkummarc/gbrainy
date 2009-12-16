@@ -32,6 +32,7 @@ namespace gbrainy.Clients.Classical
 		[Glade.Widget] Gtk.SpinButton maxstoredspinbutton;
 		[Glade.Widget] Gtk.SpinButton minplayedspinbutton;
 		[Glade.Widget] Gtk.CheckButton prefcheckbutton;
+		[Glade.Widget] Gtk.CheckButton colorblindcheckbutton;
 		[Glade.Widget] Gtk.RadioButton rb_easy;
 		[Glade.Widget] Gtk.RadioButton rb_medium;
 		[Glade.Widget] Gtk.RadioButton rb_master;
@@ -45,6 +46,7 @@ namespace gbrainy.Clients.Classical
 			prefcheckbutton.Active = Preferences.GetBoolValue (Preferences.MemQuestionWarnKey);
 			maxstoredspinbutton.Value = Preferences.GetIntValue (Preferences.MaxStoredGamesKey);
 			minplayedspinbutton.Value = Preferences.GetIntValue (Preferences.MinPlayedGamesKey);
+			colorblindcheckbutton.Active = Preferences.GetBoolValue (Preferences.ColorBlindKey);
 		
 			switch ((Game.Difficulty) Preferences.GetIntValue (Preferences.DifficultyKey)) {
 			case Game.Difficulty.Easy:
@@ -57,7 +59,6 @@ namespace gbrainy.Clients.Classical
 				rb_master.Active = rb_master.HasFocus = true;
 				break;
 			}
-
 		}
 
 		private Game.Difficulty Difficulty {
@@ -72,7 +73,6 @@ namespace gbrainy.Clients.Classical
 			}
 		}
 
-
 		private void OnCleanHistory (object sender, EventArgs args)
 		{
 			history.Clean ();
@@ -85,6 +85,7 @@ namespace gbrainy.Clients.Classical
 			Preferences.SetIntValue (Preferences.DifficultyKey, (int) Difficulty);
 			Preferences.SetIntValue (Preferences.MaxStoredGamesKey, (int) maxstoredspinbutton.Value);
 			Preferences.SetIntValue (Preferences.MinPlayedGamesKey, (int) minplayedspinbutton.Value);
+			Preferences.SetBoolValue (Preferences.ColorBlindKey, colorblindcheckbutton.Active);
 			Preferences.Save ();
 		}
 	}

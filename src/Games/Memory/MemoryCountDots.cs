@@ -42,6 +42,10 @@ namespace gbrainy.Games.Memory
 			get {return Catalog.GetString ("Counting dots");}
 		}
 
+		public override bool UsesColors {
+			get { return true;}
+		}
+
 		public override string MemoryQuestion {
 			get { 
 				return String.Format (
