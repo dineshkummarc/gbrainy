@@ -58,7 +58,7 @@ namespace gbrainy.Games.Logic
 			switch ((GameType) random.Next ((int) GameType.Length))
 			{
 				case GameType.HowManyNines:
-					question = Catalog.GetString ("How many numbers \"9\" are required to represent the numbers between 10 to 100?");
+					question = Catalog.GetString ("How many numbers '9' are required to represent the numbers between 10 to 100?");
 					right_answer = "19";
 					break;
 

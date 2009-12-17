@@ -123,7 +123,7 @@ namespace gbrainy.Games.Memory
 			case 2:
 				fact.Initialize (1);
 				fact.answers [0] = 10 + random.Next (30);
-				fact.fact = String.Format (Catalog.GetString ("About {0}% of Shiny Cars produced worldwide are sold in Europe"),
+				fact.fact = String.Format (Catalog.GetString ("About {0}% of Shiny Cars produced worldwide are sold in Europe."),
 					fact.answers [0]);
 				fact.questions [0] = Catalog.GetString ("What percentage of all Shiny Cars produced worldwide are sold in Europe?");
 				break;
