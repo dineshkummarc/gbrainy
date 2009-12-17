@@ -1,6 +1,38 @@
 #!/bin/sh
 # Run this to generate all the initial makefiles, etc.
 
+error () {
+	echo "Error: $1" 1>&2
+	exit 1
+}
+
+check_autotool_version () {
+	which $1 &>/dev/null || {
+		error "$1 is not installed, and is required to configure $PACKAGE"
+	}
+
+	version=$($1 --version | head -n 1 | cut -f4 -d' ')
+	major=$(echo $version | cut -f1 -d.)
+	minor=$(echo $version | cut -f2 -d.)
+	rev=$(echo $version | cut -f3 -d.)
+	major_check=$(echo $2 | cut -f1 -d.)
+	minor_check=$(echo $2 | cut -f2 -d.)
+	rev_check=$(echo $2 | cut -f3 -d.)
+
+	if [ $major -lt $major_check ]; then
+		do_bail=yes
+	elif [ $minor -lt $minor_check ] && [ $major = $major_check ]; then
+		do_bail=yes
+	elif [ x"$rev_check" != x"" ] && [ $rev -lt $rev_check ] && [ $minor = $minor_check ] && [ $major = $major_check ]; then
+		do_bail=yes
+	fi
+
+	if [ x"$do_bail" = x"yes" ]; then
+		error "$1 version $2 or better is required to configure $PROJECT"
+	fi
+}
+
+
 srcdir=`dirname $0`
 test -z "$srcdir" && srcdir=.
 
@@ -20,23 +52,13 @@ DIE=0
 	DIE=1
 }
 
-AUTOMAKE=automake-1.9
-ACLOCAL=aclocal-1.9
+AUTOMAKE=automake
+ACLOCAL=aclocal
 
-($AUTOMAKE --version) < /dev/null > /dev/null 2>&1 || {
-        AUTOMAKE=automake
-        ACLOCAL=aclocal
-}
+check_autotool_version $ACLOCAL 1.10
+check_autotool_version $AUTOMAKE 1.10
 
-($AUTOMAKE --version) < /dev/null > /dev/null 2>&1 || {
-	echo
-	echo "You must have automake installed to compile $PROJECT."
-	echo "Get ftp://sourceware.cygnus.com/pub/automake/automake-1.4.tar.gz"
-	echo "(or a newer version if it is available)"
-	DIE=1
-}
-
-(grep "^AM_PROG_LIBTOOL" configure.in >/dev/null) && {
+(grep "^AM_PROG_LIBTOOL" configure.ac >/dev/null) && {
   (libtool --version) < /dev/null > /dev/null 2>&1 || {
     echo
     echo "**Error**: You must have \`libtool' installed to compile $PROJECT."
@@ -46,18 +68,15 @@ ACLOCAL=aclocal-1.9
   }
 }
 
-grep "^AM_GLIB_GNU_GETTEXT" configure.in >/dev/null && {
-  grep "sed.*POTFILES" $srcdir/configure.in >/dev/null || \
+grep "^AM_GLIB_GNU_GETTEXT" configure.ac >/dev/null && {
+  grep "sed.*POTFILES" $srcdir/configure.ac >/dev/null || \
   (glib-gettextize --version) < /dev/null > /dev/null 2>&1 || {
     echo
-    echo "**Error**: You must have \`glib' installed to compile $PROJECT."
+    echo "**Error**: You must have \`glib-devel' (or glib2-devel) installed to compile $PROJECT."
     DIE=1
   }
 }
 
-if test "$DIE" -eq 1; then
-	exit 1
-fi
 
 test $TEST_TYPE $FILE || {
 	echo "You must run this script in the top-level $PROJECT directory"
@@ -73,7 +92,7 @@ case $CC in
 *xlc | *xlc\ * | *lcc | *lcc\ *) am_opt=--include-deps;;
 esac
 
-for coin in `find $srcdir -name configure.in -print`
+for coin in `find $srcdir -name configure.ac -print`
 do 
   dr=`dirname $coin`
   if test -f $dr/NO-AUTO-GEN; then
@@ -90,9 +109,9 @@ do
 	##  echo "**Warning**: No such directory \`$k'.  Ignored."
         fi
       done
-      if grep "^AM_GNU_GETTEXT" configure.in >/dev/null; then
-	if grep "sed.*POTFILES" configure.in >/dev/null; then
-	  : do nothing -- we still have an old unmodified configure.in
+      if grep "^AM_GNU_GETTEXT" configure.ac >/dev/null; then
+	if grep "sed.*POTFILES" configure.ac >/dev/null; then
+	  : do nothing -- we still have an old unmodified configure.ac
 	else
 	  echo "Creating $dr/aclocal.m4 ..."
 	  test -r $dr/aclocal.m4 || touch $dr/aclocal.m4
@@ -102,7 +121,7 @@ do
 	  test -r $dr/aclocal.m4 && chmod u+w $dr/aclocal.m4
         fi
       fi
-      if grep "^AM_GNOME_GETTEXT" configure.in >/dev/null; then
+      if grep "^AM_GNOME_GETTEXT" configure.ac >/dev/null; then
 	echo "Creating $dr/aclocal.m4 ..."
 	test -r $dr/aclocal.m4 || touch $dr/aclocal.m4
 	echo "Running gettextize...  Ignore non-fatal messages."
@@ -110,7 +129,7 @@ do
 	echo "Making $dr/aclocal.m4 writable ..."
 	test -r $dr/aclocal.m4 && chmod u+w $dr/aclocal.m4
       fi
-      if grep "^AM_GLIB_GNU_GETTEXT" configure.in >/dev/null; then
+      if grep "^AM_GLIB_GNU_GETTEXT" configure.ac >/dev/null; then
 	echo "Creating $dr/aclocal.m4 ..."
 	test -r $dr/aclocal.m4 || touch $dr/aclocal.m4
 	echo "Running gettextize...  Ignore non-fatal messages."
@@ -118,17 +137,18 @@ do
 	echo "Making $dr/aclocal.m4 writable ..."
 	test -r $dr/aclocal.m4 && chmod u+w $dr/aclocal.m4
       fi
-      if grep "^AC_PROG_INTLTOOL" configure.in >/dev/null; then
+      if grep "^AC_PROG_INTLTOOL" configure.ac >/dev/null ||
+         grep "^IT_PROG_INTLTOOL" configure.ac >/dev/null; then
         echo "Running intltoolize..."
         intltoolize --copy --force --automake
       fi
-      if grep "^AM_PROG_LIBTOOL" configure.in >/dev/null; then
+      if grep "^AM_PROG_LIBTOOL" configure.ac >/dev/null; then
 	echo "Running libtoolize..."
 	libtoolize --force --copy
       fi
       echo "Running $ACLOCAL $aclocalinclude ..."
       $ACLOCAL $aclocalinclude
-      if grep "^AM_CONFIG_HEADER" configure.in >/dev/null; then
+      if grep "^AM_CONFIG_HEADER" configure.ac >/dev/null; then
 	echo "Running autoheader..."
 	autoheader
       fi
