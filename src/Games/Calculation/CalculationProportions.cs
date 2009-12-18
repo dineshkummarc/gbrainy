@@ -45,18 +45,8 @@ namespace gbrainy.Games.Calculation
 		public override string Question {
 			get {
 				return String.Format (
-					Catalog.GetString ("A {0}/{1} of 'number A' is {2}% of a 'number B'. 'number A' divided by a 'number B' is? Answer {3}, {4}, {5} or {6}."), 
-					num, den, percentage, GetPossibleAnswer (0), GetPossibleAnswer (1), GetPossibleAnswer (2), GetPossibleAnswer (3));}
-		}
-
-		public override string Answer {
-			get { 
-				string answer = base.Answer + " ";
-
-				answer += String.Format (Catalog.GetString ("The result of the operation is {0:##0.###}. You have to divide {1}/100 by {2}/{3}."), 
-					correct, percentage, num, den);
-				return answer;
-			}
+					Catalog.GetString ("What is the {0}% of {1}/{2}? Answer {3}, {4}, {5} or {6}."), 
+					percentage, num, den, GetPossibleAnswer (0), GetPossibleAnswer (1), GetPossibleAnswer (2), GetPossibleAnswer (3));}
 		}
 
 		public override void Initialize ()
@@ -65,31 +55,32 @@ namespace gbrainy.Games.Calculation
 		
 			switch (CurrentDifficulty) {
 			case Difficulty.Easy:
-				random_max = 10;
+				random_max = 30;
 				break;
 			default:
 			case Difficulty.Medium:
-				random_max = 15;
+				random_max = 50;
 				break;
 			case Difficulty.Master:
-				random_max = 25;
+				random_max = 80;
 				break;
 			}
 
 			do {
 				// Fraction
-				num = 15 + random.Next (random_max) * 2;
-				den = 1 + random.Next (random_max);
-				percentage = 50 + random.Next (random_max);
-			} while (num / den == 1); 	
+				num = 10 + random.Next (random_max);
+				den = 2 + random.Next (random_max / 5);
+				percentage = 10 + random.Next (random_max) ;
+				correct = percentage / 100d * num / den;
+			} while (correct < 1);
 
 			options = new double [options_cnt];
 
 			options_next = 0;
-			options [options_next++] = correct = percentage / 100 / (num / den);
-			options [options_next++] = percentage / 50 * (num / den);
-			options [options_next++] = percentage / 100 / (den / num);
-			options [options_next++] = percentage / 150 * (den / num);
+			options [options_next++] = correct;
+			options [options_next++] = percentage / 70d * num / den;
+			options [options_next++] = percentage / 120d * num / den;
+			options [options_next++] = percentage / 150d * num / den;;
 
 			random_indices = new ArrayListIndicesRandom (options_cnt);
 			random_indices.Initialize ();
@@ -118,7 +109,7 @@ namespace gbrainy.Games.Calculation
 			{
 				gr.MoveTo (x, y);
 				indx = random_indices[i];
-				gr.ShowPangoText (String.Format ("{0}) {1:##0.###}", GetPossibleAnswer (i) , options [indx]));
+				gr.ShowPangoText (String.Format ("{0}) {1:##0.##}", GetPossibleAnswer (i) , options [indx]));
 
 				y = y + 0.15;
 			}
