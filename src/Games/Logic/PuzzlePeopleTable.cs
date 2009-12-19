@@ -112,6 +112,9 @@ namespace gbrainy.Games.Logic
 			gr.MoveTo (x + circles[2].x + 0.01, y + circles[2].y + 0.01);
 			gr.LineTo (x + circles[1].x + 0.01, y + circles[1].y + 0.01);
 			gr.Stroke ();
+
+			gr.DrawTextCentered (pos_x + figure_size, pos_y + 0.08 + figure_size * 2, 
+				Catalog.GetString ("Two people in the table sitting across each other"));
 		}
 	}
 }
