@@ -29,21 +29,19 @@ namespace gbrainy.Core.Main
 		static int idx = 0;
 	
 		static public int Count {
-			get { return 12; }
+			get { return 13; }
 		}
 
 		// Gets a random tip from the list
 		static public string Tip {
 			get {
-				if (idx + 1 >= Count || random_indices == null) {
+				if (idx + 1 > Count || random_indices == null) {
 					random_indices = new ArrayListIndicesRandom (Count);
 					random_indices.Initialize ();
 					idx = 0;
 				}
-
 				return GetTip (idx++); 
 			}
-
 		}
 
 		static public string GetTip (int tip)
@@ -73,9 +71,11 @@ namespace gbrainy.Core.Main
 				return Catalog.GetString ("Grouping elements into categories is a common technique for remembering things.");
 			case 11:
 				return Catalog.GetString ("Build acronyms using the first letter of each fact to be remembered.");
+			case 12:
+				return Catalog.GetString ("The enjoyment obtained from a puzzle is proportional to the time spent on it.");
+			default:
+				throw new InvalidOperationException ();
 			}
-
-			return string.Empty;
 		}
 	}
 }
