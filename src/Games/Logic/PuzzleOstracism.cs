@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2007 Jordi Mas i Hernàndez <jmas@softcatala.org>
+ * Copyright (C) 2007-2009 Jordi Mas i Hernàndez <jmas@softcatala.org>
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License as
@@ -28,16 +28,27 @@ namespace gbrainy.Games.Logic
 {
 	public class PuzzleOstracism : Game
 	{
-		private ArrayListIndicesRandom random_indices;
-		private const int wrong_answer = 2;
-		private string [] equations = new string []
+		enum GameType
+		{
+			Equations	= 0,
+			Numbers,
+			Last = Numbers,
+		};
+		
+		ArrayListIndicesRandom random_indices;
+		GameType gametype;
+		const int max_equations = 5;
+		const int wrong_answer = 4;
+		string [] equations_a = new string []
 		{
 			"21 x 60 = 1260",
-			"15 x 93 = 1395",
-			"70 x 16 = 1120",
 			"43 x 51 = 1453",
 			"80 x 16 = 1806",
+			"15 x 93 = 1395",
+			"70 x 16 = 1120",
 		};
+
+		string [] equations;
 
 		public override string Name {
 			get {return Catalog.GetString ("Ostracism");}
@@ -45,25 +56,72 @@ namespace gbrainy.Games.Logic
 
 		public override string Question {
 			get {return String.Format (
-				Catalog.GetString ("Which equation does not belong to the group? Answer {0}, {1}, {2}, {3} or {4}."),
+				Catalog.GetString ("Which element does not belong to the group? Answer {0}, {1}, {2}, {3} or {4}."),
 				GetPossibleAnswer (0), GetPossibleAnswer (1), GetPossibleAnswer (2), GetPossibleAnswer (3), GetPossibleAnswer (4));}
 		}
 
-
 		public override string Tip {
-			get { return Catalog.GetString ("The criteria for deciding if an equation belongs to the group is not arithmetical.");}
+			get {
+				switch (gametype) {
+				case GameType.Equations:
+					return Catalog.GetString ("The criteria for deciding if an equation belongs to the group is not arithmetical.");
+				case GameType.Numbers:
+					return Catalog.GetString ("Consider that every number that belongs to the group has two parts that are related.");
+				default:
+					throw new InvalidOperationException ();
+				}
+			}	
 		}
 
 		public override string Answer {
 			get { 
 				string answer = base.Answer + " ";
-				answer += Catalog.GetString ("In all equations the digits from the left side should also appear in the right side.");
+
+				switch (gametype) {
+				case GameType.Equations:
+					answer += Catalog.GetString ("In all the other equations the digits from the left side appear also in the right side.");
+					break;
+				case GameType.Numbers:
+					answer += Catalog.GetString ("In all the other numbers the last three digits are the square of the first two digits.");
+					break;
+				default:
+					throw new InvalidOperationException ();
+				}
+
 				return answer;
 			}
 		}
 
 		public override void Initialize ()
 		{
+			gametype = (GameType) random.Next ((int) GameType.Last + 1);
+
+			switch (gametype) {
+			case GameType.Equations:
+				equations = equations_a;
+				break;
+			case GameType.Numbers:
+			{
+				int num;
+				int [] seeds = {25, 26, 28, 30, 21, 18, 21, 22};
+				ArrayListIndicesRandom random_seeds = new ArrayListIndicesRandom (seeds.Length);
+				random_seeds.Initialize ();
+
+				equations = new string [max_equations];
+				for (int i = 0; i < max_equations - 1; i++)
+				{
+					num = seeds [random_seeds [i]];
+					equations [i] = num.ToString () + (num * num).ToString ();
+				}
+
+				num = seeds [random_seeds [max_equations - 1]];
+				equations [max_equations - 1] = num.ToString () + ((num * num) -  20).ToString ();
+				break;
+			}
+			default:
+				throw new InvalidOperationException ();
+			}
+
 			random_indices = new ArrayListIndicesRandom (equations.Length);
 			random_indices.Initialize ();
 			right_answer = string.Empty;
@@ -79,7 +137,7 @@ namespace gbrainy.Games.Logic
 
 		public override void Draw (CairoContextEx gr, int area_width, int area_height, bool rtl)
 		{
-			double x = DrawAreaX + 0.15, y = DrawAreaY + 0.2;
+			double x = DrawAreaX + 0.20, y = DrawAreaY + 0.2;
 
 			base.Draw (gr, area_width, area_height, rtl);
 
