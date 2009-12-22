@@ -42,7 +42,7 @@ GBRAINY_CSFILES = $(GBRAINY_CSDISTFILES)	\
 	AssemblyInfo.cs
 
 
-../../gbrainy.exe: $(GBRAINY_CSFILES) 
+../../gbrainy.exe: $(GBRAINY_CSFILES) gbrainy.glade
 	$(CSC) -target:winexe -out:$@ $(EXTRAFLAGS) $(GBRAINY_CSFILES) $(ASSEMBLIES) $(RESOURCES)
 
 all: ../../gbrainy.exe
