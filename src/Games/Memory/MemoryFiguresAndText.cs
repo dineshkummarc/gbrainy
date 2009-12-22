@@ -42,8 +42,8 @@ namespace gbrainy.Games.Memory
 			internal const int Triangle = 0;
 			internal const int Rectangle = 1;
 			internal const int Diamond = 2;
-			internal const int Cercle = 3;
-			internal const int Total = Cercle + 1;
+			internal const int Circle = 3;
+			internal const int Total = Circle + 1;
 
 			static internal string ToString (int type)
 			{
@@ -53,9 +53,9 @@ namespace gbrainy.Games.Memory
 				case Rectangle:
 					return Catalog.GetString ("Rectangle");
 				case Diamond:
-					return Catalog.GetString ("Diamon");
-				case Cercle:
-					return Catalog.GetString ("Cercle");
+					return Catalog.GetString ("Diamond");
+				case Circle:
+					return Catalog.GetString ("Circle");
 				default:
 					throw new InvalidOperationException ();
 				}
@@ -193,7 +193,7 @@ namespace gbrainy.Games.Memory
 			case FigureType.Diamond:
 				gr.DrawDiamond (x + space_x, y + space_y, figure_size);
 				break;
-			case FigureType.Cercle:
+			case FigureType.Circle:
 				gr.Arc (x + space_x + figure_size / 2, y + space_y + figure_size / 2, figure_size / 2, 0, 2 * Math.PI);
 				gr.Stroke ();
 				break;
