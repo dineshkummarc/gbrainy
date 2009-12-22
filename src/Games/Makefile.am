@@ -52,6 +52,7 @@ CSFILES =  \
 		Memory/MemoryCountDots.cs			\
 		Memory/MemoryFacts.cs				\
 		Memory/MemoryFigures.cs				\
+		Memory/MemoryFiguresAndText.cs			\
 		Memory/MemoryFiguresNumbers.cs			\
 		Memory/MemoryIndications.cs			\
 		Memory/MemoryNumbers.cs				\

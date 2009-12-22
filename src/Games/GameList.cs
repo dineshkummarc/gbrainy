@@ -101,6 +101,7 @@ namespace gbrainy.Games
 			typeof (MemoryIndications),
 			typeof (MemoryNumbers),
 			typeof (MemoryFacts),
+			typeof (MemoryFiguresAndText),
 		};
 
 		public static Type [] LogicPuzzles
