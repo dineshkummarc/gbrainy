@@ -84,12 +84,14 @@ namespace gbrainy.Core.Main
 		private ISynchronizeInvoke synchronize;
 		private PlayerHistory history;
 		private Statistics [] statistics;
+		private int id;
 
 		public event EventHandler DrawRequest;
 		public event EventHandler <UpdateUIStateEventArgs> UpdateUIElement;
 	
 		public GameSession ()
 		{
+			id = 0;
 			game_manager = new GameManager ();
 			game_time = TimeSpan.Zero;
 
@@ -105,6 +107,10 @@ namespace gbrainy.Core.Main
 			controler = new ViewsControler (this);
 			Status = SessionStatus.NotPlaying;
 			history = new PlayerHistory ();
+		}
+
+		public int ID {
+			get {return id;}
 		}
 
 		public PlayerHistory PlayerHistory { 
@@ -245,6 +251,7 @@ namespace gbrainy.Core.Main
 	
 		public void NewSession ()
 		{
+			id++;
 			if (Status != SessionStatus.NotPlaying)
 				EndSession ();
 

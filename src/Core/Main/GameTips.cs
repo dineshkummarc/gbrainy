@@ -35,12 +35,12 @@ namespace gbrainy.Core.Main
 		// Gets a random tip from the list
 		static public string Tip {
 			get {
-				if (idx + 1 > Count || random_indices == null) {
+				if (idx + 1 >= Count || random_indices == null) {
 					random_indices = new ArrayListIndicesRandom (Count);
 					random_indices.Initialize ();
 					idx = 0;
 				}
-				return GetTip (idx++); 
+				return GetTip (random_indices [idx++]);
 			}
 		}
 

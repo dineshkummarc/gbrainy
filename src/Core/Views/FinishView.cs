@@ -32,9 +32,15 @@ namespace gbrainy.Core.Views
 		GameSession session;
 		const int tips_shown = 4;
 
+		// Caching mechanism to use always the same tips during different redraws of the same view
+		int cached_sessionid;
+		List <string> tips;
+
 		public FinishView (GameSession session)
 		{
 			this.session = session;
+			tips = new List <string> ();
+			cached_sessionid = -1;
 		}
 
 		static void DrawBand (CairoContextEx gr, double x, double y)
@@ -164,19 +170,30 @@ namespace gbrainy.Core.Views
 			gr.MoveTo (x, y);		
 
 			if (records.Count == 0) {
+				bool caching = cached_sessionid != session.ID;
+	
 				gr.ShowPangoText (Catalog.GetString ("Tips for your next games"), false, -1, 0);
 				DrawBand (gr, 0.03, y - 0.01);
 
 				y += 0.08;
 
+				if (caching)
+					tips.Clear ();
+
 				for (int i = 0; i < tips_shown; i++)
 				{
-					y = gr.DrawStringWithWrapping (x, y,  "- " + GameTips.Tip);
+					if (caching)
+						tips.Add (GameTips.Tip);
+						
+					y = gr.DrawStringWithWrapping (x, y,  "- " + tips [i]);
 					if (y > 0.88)
 						break;
 
 					y += space_small;
 				}
+
+				if (caching)
+					cached_sessionid = session.ID;
 			} 
 			else  {
 				gr.ShowPangoText (Catalog.GetString ("Congratulations! New personal record"), false, -1, 0);
