@@ -46,6 +46,7 @@ namespace gbrainy.Core.Views
 			gr.Color = new Cairo.Color (0, 0, 0, 1);
 
 			gr.MoveTo (0.05, y);
+			// Translators: {0} is the version number of the program
 			gr.ShowPangoText (String.Format (Catalog.GetString ("Welcome to gbrainy {0}"), Defines.VERSION), true, -1, 0);
 			gr.Stroke ();
 

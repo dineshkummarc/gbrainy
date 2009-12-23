@@ -29,7 +29,7 @@ namespace gbrainy.Games.Logic
 	public class PuzzleSquareSheets : Game
 	{
 		public override string Name {
-			get {return Catalog.GetString ("Squares sheets");}
+			get {return Catalog.GetString ("Square sheets");}
 		}
 
 		public override string Question {
