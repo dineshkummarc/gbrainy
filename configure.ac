@@ -140,6 +140,7 @@ src/Core/Makefile
 src/Games/Makefile
 src/Clients/Classical/Makefile
 data/Makefile
+gbrainy.desktop
 ])
 
 echo "Support for older GTK:  ${enable_gtk_28}"
