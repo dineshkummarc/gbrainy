@@ -29,7 +29,7 @@
                             <child>
                               <widget class="GtkMenuItem" id="menuitem3">
                                 <property name="visible">True</property>
-                                <property name="label" translatable="yes">All Games and Trainers (Logic, Mental Calculation and Memory)</property>
+                                <property name="label" translatable="yes">All Games (Logic, Mental Calculation, Memory and Verbal Analogies)</property>
                                 <property name="use_underline">True</property>
                                 <signal name="activate" handler="OnAllGames"/>
                               </widget>
@@ -64,6 +64,14 @@
                                 <property name="label" translatable="yes">Memory Trainers Only</property>
                                 <property name="use_underline">True</property>
                                 <signal name="activate" handler="OnMemoryOnly"/>
+                              </widget>
+                            </child>
+                            <child>
+                              <widget class="GtkMenuItem" id="menuitem8">
+                                <property name="visible">True</property>
+                                <property name="label" translatable="yes">Verbal Analogies Only</property>
+                                <property name="use_underline">True</property>
+                                <signal name="activate" handler="OnVerbalOnly"/>
                               </widget>
                             </child>
                             <child>
