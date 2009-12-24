@@ -28,6 +28,9 @@ if test ! -x "$MCS"; then
 	AC_MSG_ERROR([No $CS compiler found])
 fi
 
+dnl -- Initialize docs
+
+GNOME_DOC_INIT
 
 dnl -- Check for mono pc file
 
@@ -141,6 +144,7 @@ src/Games/Makefile
 src/Clients/Classical/Makefile
 data/Makefile
 gbrainy.desktop
+help/Makefile
 ])
 
 echo "Support for older GTK:  ${enable_gtk_28}"

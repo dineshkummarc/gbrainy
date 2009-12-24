@@ -1,6 +1,7 @@
-CSFLAGS = -target:library $(CSC_DEFINES)
+CSFLAGS = -unsafe -target:library $(CSC_DEFINES)
 
 TARGET = ../gbrainy.Core.dll
+TARGET_CFG = ../gbrainy.Core.dll.config
 
 CSFILES =  \
 		AssemblyInfo.cs			\
@@ -56,19 +57,25 @@ $(TARGET): $(SRCDIR_CSFILES) $(RES)
 	echo $(RES_FILES)
 	$(CSC) -out:$@ $(CSFLAGS) $(REFS) $(RES_CSFLAGS) $(SRCDIR_CSFILES)
 
-all: $(TARGET)
+$(TARGET_CFG): $(srcdir)/gbrainy.Core.dll.config.in
+	sed -e "s|\@pkglibdir\@|$(pkglibdir)|" \
+	    < $< > $@
 
-install-data-local: $(TARGET)
+all: $(TARGET) $(TARGET_CFG)
+
+install-data-local: $(TARGET) $(TARGET_CFG)
 	$(mkinstalldirs) $(DESTDIR)$(pkglibdir)
 	$(INSTALL_DATA) $(TARGET) $(DESTDIR)$(pkglibdir)
+	$(INSTALL_DATA) $(TARGET_CFG) $(DESTDIR)$(pkglibdir)
 
 uninstall-local:
 	cd $(DESTDIR)$(pkglibdir) && rm -f gbrainy.Core.dll
+	cd $(DESTDIR)$(pkglibdir) && rm -f gbrainy.Core.dll.config
 
 EXTRA_DIST = 			\
-	$(CSFILES) $(RES)
+	$(CSFILES) $(RES) gbrainy.Core.dll.config.in
 
-CLEANFILES =			\
-	$(TARGET)		\
-	$(TARGET).mdb
-
+CLEANFILES =				\
+	$(TARGET)			\
+	$(TARGET).mdb			\
+	$(TARGET_CFG)

@@ -192,6 +192,31 @@
                 <child>
                   <widget class="GtkMenu" id="help_menu">
                     <child>
+                      <widget class="GtkImageMenuItem" id="contentsmenuitem">
+                        <property name="label" translatable="yes">_Contents</property>
+                        <property name="visible">True</property>
+                        <property name="use_underline">True</property>
+                        <property name="use_stock">False</property>
+                        <signal name="activate" handler="OnMenuHelp"/>
+                        <accelerator key="F1" signal="activate"/>
+                        <child internal-child="image">
+                          <widget class="GtkImage" id="image1">
+                            <property name="visible">True</property>
+                            <property name="stock">gtk-help</property>
+                          </widget>
+                        </child>
+                      </widget>
+                    </child>
+                    <child>
+                      <widget class="GtkImageMenuItem" id="extendmenuitem">
+                        <property name="label" translatable="yes">How to Extend gbrainy's Functionality</property>
+                        <property name="visible">True</property>
+                        <property name="use_underline">True</property>
+                        <property name="use_stock">False</property>
+                        <signal name="activate" handler="OnExtending"/>
+                      </widget>
+                    </child>
+                    <child>
                       <widget class="GtkImageMenuItem" id="imagemenuitem3">
                         <property name="label">gtk-about</property>
                         <property name="visible">True</property>

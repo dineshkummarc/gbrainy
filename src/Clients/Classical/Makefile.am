@@ -1,4 +1,4 @@
-EXTRAFLAGS =  -nowarn:0169 $(CSC_DEFINES)
+EXTRAFLAGS =  -unsafe -nowarn:0169 $(CSC_DEFINES) 
 
 WRAPPER = gbrainy
 
@@ -54,7 +54,6 @@ EXTRA_DIST =					\
 
 
 CLEANFILES =					\
-	gbrainy.exe.config			\
 	gbrainy.exe.mdb				\
 	../../gbrainy.exe			\
 	gbrainy

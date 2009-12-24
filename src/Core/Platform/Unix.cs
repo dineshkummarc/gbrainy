@@ -38,8 +38,10 @@ namespace gbrainy.Core.Platform
 
 		[DllImport ("libc")] // BSD
 		static extern void setproctitle (byte [] fmt, byte [] str_arg);
-	 
-	
+
+		[DllImport("libgtk-win32-2.0-0.dll")]
+		static extern unsafe bool gtk_show_uri(IntPtr screen, IntPtr uri, uint timestamp, out IntPtr error);
+
 		/* Taken from locale.h  */
 		[StructLayout (LayoutKind.Sequential)]
 		struct lconv
@@ -117,6 +119,17 @@ namespace gbrainy.Core.Platform
 				setproctitle (Encoding.ASCII.GetBytes ("%s\0"), 
 					Encoding.ASCII.GetBytes (name + "\0"));
 			}
+		}
+
+		public static unsafe bool ShowUri (Gdk.Screen screen, string uri, uint timestamp) 
+		{
+			IntPtr native_uri = GLib.Marshaller.StringToPtrGStrdup (uri);
+			IntPtr error = IntPtr.Zero;
+			bool raw_ret = gtk_show_uri(screen == null ? IntPtr.Zero : screen.Handle, native_uri, timestamp, out error);
+			bool ret = raw_ret;
+			GLib.Marshaller.Free (native_uri);
+			if (error != IntPtr.Zero) throw new GLib.GException (error);
+			return ret;
 		}
 	}
 }

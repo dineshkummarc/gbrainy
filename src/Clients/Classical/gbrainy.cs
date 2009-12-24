@@ -106,10 +106,6 @@ namespace gbrainy.Clients.Classical
 			item.Activated += delegate (object sender, EventArgs ar) { Mono.Addins.Gui.AddinManagerWindow.Run (app_window);};
 		#endif
 
-			item = new Gtk.MenuItem (Catalog.GetString ("How to Extend gbrainy's Functionality"));
-			help_menu.Prepend (item);
-			item.Activated += delegate (object sender, EventArgs ar) { Process.Start ("http://live.gnome.org/gbrainy/Extending");};
-
 			drawing_vbox.Add (drawing_area);
 			app_window.IconName = "gbrainy";
 			app_window.ShowAll ();
@@ -330,6 +326,12 @@ namespace gbrainy.Clients.Classical
 		{
 			AboutDialog about = new AboutDialog ();
 			about.Run ();
+		}
+
+		void OnMenuHelp (object sender, EventArgs args)
+		{
+			Unix.ShowUri (null, "ghelp:gbrainy", 
+				Gdk.EventHelper.GetTime (new Gdk.Event(IntPtr.Zero)));
 		}	
 
 		void OnAnswerButtonClicked (object sender, EventArgs args)
@@ -551,6 +553,11 @@ namespace gbrainy.Clients.Classical
 			}
 
 			full_screen = !full_screen;
+		}
+
+		void OnExtending (object sender, EventArgs args)
+		{
+			Process.Start ("http://live.gnome.org/gbrainy/Extending");
 		}
 
 		public static void Main (string [] args) 

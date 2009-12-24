@@ -1,5 +1,3 @@
-#!/bin/sh
-# Run this to generate all the initial makefiles, etc.
 
 error () {
 	echo "Error: $1" 1>&2
@@ -77,6 +75,14 @@ grep "^AM_GLIB_GNU_GETTEXT" configure.ac >/dev/null && {
   }
 }
 
+(which gnome-doc-prepare && gnome-doc-prepare )|| {
+	echo "**Error**: You must have gnome-common (sometimes packaged as gnome-doc-utils) installed to compile $PROJECT."
+	DIE=1
+}
+
+if test "$DIE" -eq 1; then
+	exit 1
+fi
 
 test $TEST_TYPE $FILE || {
 	echo "You must run this script in the top-level $PROJECT directory"
@@ -171,5 +177,3 @@ if test x$NOCONFIGURE = x; then
 else
   echo Skipping configure process.
 fi
-
-
