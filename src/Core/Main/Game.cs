@@ -190,8 +190,8 @@ namespace gbrainy.Core.Main
 			set {game_time = value; }
 		}
 
-		// Average time in seconds that a player is expected to complete this game
-		public int AverageTime {
+		// Expected time in seconds that a player is expected to complete this game
+		public int ExpectedTime {
 			get {
 				double factor;
 
@@ -213,13 +213,15 @@ namespace gbrainy.Core.Main
 					return (int) (30 * factor);
 				case Types.MathTrainer:
 					return (int) (60 * factor);
+				case Types.VerbalAnalogy:
+					return (int) (30 * factor);
 				}
 				return (int) (120 * factor); // Default for all games (logic)
 			}
 		}
 
 		//
-		// Score algorithm return a value between 0 and 10
+		// Score algorithm returns a value between 0 and 10
 		//
 		public virtual int Score (string answer)
 		{
@@ -232,12 +234,12 @@ namespace gbrainy.Core.Main
 			score = 10;
 	
 			// Time
-			if (seconds > AverageTime * 3) {
+			if (seconds > ExpectedTime * 3) {
 				score = score * 0.6;
 			}
-			else if (seconds > AverageTime * 2) {
+			else if (seconds > ExpectedTime * 2) {
 				score = score * 0.7;
-			} else if (seconds > AverageTime) {
+			} else if (seconds > ExpectedTime) {
 				score = score * 0.8;
 			}
 
