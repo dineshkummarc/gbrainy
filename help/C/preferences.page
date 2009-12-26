@@ -2,8 +2,46 @@
       type="topic"
       id="preferences">
 <info>
-  <link type="guide" xref="preferences"/>
+  <link type="guide" xref="index#preferences"/>
 </info>
 <title>Preferences</title>
-<b>TDB: How to use the preferences</b>
+
+<p>You can access the <gui>Preferences</gui> from the main application menu.</p>
+<media type="image" mime="image/png" src="figures/preferences.png"></media>
+
+<section id="general" style="1column">
+	<title>General Settings</title>
+	<p>The <gui>Skip games that use colors</gui> option removes from the list of available games the games that use colors to challenge the player making it friendly to color blind users.</p>
+</section>
+
+<section id="difficulty" style="1column">
+	<title>Difficulty Level</title>
+	<p>The difficulty level establishes the complexity of the games shown during a gaming session. Influences the number of elements to remember in memory games, the size of numbers in calculation games, makes more obvious or obfuscated logic puzzles, etc. The available difficulty levels are:</p>
+	<list>
+		<item><p><gui>Easy</gui>. The complexity of the games shows is the average for kids.</p></item>
+		<item><p><gui>Medium</gui>. This is the default level of the difficulty of <app>gbrainy</app>. The complexity of the games shown is considered good for a regular player.</p></item>
+		<item><p><gui>Master</gui>. Ideal for advanced players with a special talent for playing <app>gbrainy</app> alike games.</p></item>
+	</list>
+	<p>The difficulty level additionally fine tunes the scoring algorithm by been more generous when playing at the easy level or more demanding when playing at master level.</p>
+
+</section>
+
+<section id="memory" style="1column">
+	<title>Memory Games</title>
+	<p>These options affect the behaviour of memory games:</p>
+	<list>
+		<item><p><gui>Time in seconds to memorize the challenge</gui>. Establishes the time that a collection of objects is shown to allow the player to memorize it.</p></item>
+		<item><p><gui>Show countdown message</gui>. When checked shows the player a countdown message before every memory game. This is helpfully when playing different game types in a single game session because indicates to the user that should get ready to memorize the next game. Advanced players usually disable this option.</p></item>
+	</list>
+</section>
+
+<section id="history" style="1column">
+    <title>Player History</title>
+	<list>
+		<item><p><gui>Minimum number of played games to store the game</gui>. Determines the number of games that a player should play in a game session to store it and make it available in the player's history.</p></item>
+		<item><p><gui>Maximum number of stored games in the player's history</gui>. Once this limit has been reach the result of the older games is removed to store the results of the new game sessions. </p></item>
+		<item><p><gui>Clear player's history</gui>. Clears the player's history by removing all the previous recorded scores.</p></item>
+	</list>
+</section>
+
 </page>

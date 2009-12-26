@@ -5,7 +5,9 @@ DOC_INCLUDES = legal.xml
 
 DOC_FIGURES = \
 	figures/toolbar.png	\
-	figures/bottom.png	
+	figures/bottom.png	\
+	figures/results.png	\
+	figures/preferences.png
 
 DOC_PAGES = \
 	index.page \
@@ -13,7 +15,9 @@ DOC_PAGES = \
 	gametypes.page \
 	playing.page \
 	scoring.page \
-	preferences.page
+	preferences.page \
+	results.page \
+	history.page
 
 DOC_LINGUAS=
 
