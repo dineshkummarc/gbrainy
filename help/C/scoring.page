@@ -28,7 +28,7 @@
 	<p>With the expected time for the current difficulty level and the time used by the player to complete the game the following logic is applied:</p>
 	<list>
 		<item><p>If the player required less than the time expected scores 100%.</p></item>
-		<item><p>If the player required less than the double of time expected scores 80%.</p></item>
+		<item><p>If the player required more than the time expected scores 80%.</p></item>
 		<item><p>if the player required more than the double of time expected scores 70%.</p></item>
 		<item><p>If the player required more than three times the time expected scores 60%.</p></item>
 	</list>
@@ -37,8 +37,8 @@
 
 <section id="totals" style="1column">
 	<title>Computing the totals</title>
-	<p><app>gbrainy</app> keeps track of the different games types played. To compute the final score of every set of game types it sums all the results of the same game types played and then applies a factor of a logarithm of 10 for the easy difficult level, 20 for the medium difficult level and 30 for master difficult level.</p>
-	<p>This means that to score 100% playing at medium difficult level you need to score 100% on at least 20 games of every game type played, 80 games in you have played all the games times.</p>. 
+	<p><app>gbrainy</app> keeps track of the different games types played. To compute the final score of every set of game types it sums all the results of the same game types played and then applies a factor based on the logarithm of 10 for the easy difficult level, 20 for the medium difficult level and 30 for master difficult level.</p>
+	<p>This means that to score 100% playing at medium difficult level you need to score 100% on at least 20 games of every game type played, 80 games in you have played all the games types.</p>. 	
 	<p>This may sound challenging but allows players to compare game scores from different sessions (in the player history) and allows to better show the progression of the player during all the games that has played.</p>
 </section>
 

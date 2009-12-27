@@ -7,7 +7,8 @@ DOC_FIGURES = \
 	figures/toolbar.png	\
 	figures/bottom.png	\
 	figures/results.png	\
-	figures/preferences.png
+	figures/preferences.png	\
+	figures/history.png
 
 DOC_PAGES = \
 	index.page \
