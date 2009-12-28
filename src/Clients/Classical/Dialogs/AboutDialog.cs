@@ -37,8 +37,8 @@ namespace gbrainy.Clients.Classical
 			};
 
 			string [] artists = new string [] {
-				"Anna Barberà Maré",
-				"Carme Cabal Sardà",
+				"Anna Barber\u00e0 Mar\u00e9",
+				"Carme Cabal Sard\u00e0",
 				"Jordi Mas i Hernandez",
 				"Openclipart.org"
 			};
@@ -59,7 +59,7 @@ namespace gbrainy.Clients.Classical
 			Documenters = null;
 			Logo = LoadFromAssembly ("gbrainy.svg");
 
-			Copyright = "(c) 2007-2009 Jordi Mas i Hernandez\n";
+			Copyright = Defines.COPYRIGHT + "\n";
 			Copyright += Catalog.GetString ("Based on ideas by Terry Stickels, MENSA books and Jordi Mas.");
 
 			Comments = Catalog.GetString ("A brain teaser game for fun and to keep your brain trained.");
