@@ -20,6 +20,6 @@ DOC_PAGES = \
 	results.page \
 	history.page
 
-DOC_LINGUAS=ca
+DOC_LINGUAS=
 
 dist-hook: doc-dist-hook
