@@ -15,7 +15,7 @@
 
 <section id="games" style="1column">
 	<title>Scoring individual games</title>
-	<p>If the player answers a game incorrectly it does not get any score for it. If the player answers the game correctly <app>gbrainy</app> scores the player considering the time used and if the played used the tip.</p>
+	<p>If the player answers a game incorrectly the player does not get any score for the answer. If the player answers the game correctly <app>gbrainy</app> scores the player considering the time used and if the played used a tip during the game.</p>
 
 	<p>When playing at medium difficulty level the player is expected to solve in the time indicated the following game types:</p>
 	<list>
@@ -38,7 +38,7 @@
 <section id="totals" style="1column">
 	<title>Computing the totals</title>
 	<p><app>gbrainy</app> keeps track of the different games types played. To compute the final score of every set of game types it sums all the results of the same game types played and then applies a factor based on the logarithm of 10 for the easy difficult level, 20 for the medium difficult level and 30 for master difficult level.</p>
-	<p>This means that to score 100% playing at medium difficult level you need to score 100% on at least 20 games of every game type played, 80 games in you have played all the games types.</p>. 	
+	<p>This means that when playing at medium difficult level to get a score of 100% you need to score 100% on at least 20 games of every game type played.</p>
 	<p>This may sound challenging but allows players to compare game scores from different sessions (in the player history) and allows to track better the progression of the player during all the games that has played.</p>
 </section>
 
