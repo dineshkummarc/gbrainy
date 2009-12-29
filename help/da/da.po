@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gbrainy master\n"
-"POT-Creation-Date: 2009-12-28 21:35+0000\n"
+"POT-Creation-Date: 2009-12-29 16:06+0000\n"
 "PO-Revision-Date: 2009-12-29 23:07+0200\n"
 "Last-Translator: Joe Hansen <joedalton2@yahoo.dk>\n"
 "Language-Team: Dansk-gruppen <dansk@dansk-gruppen.dk>\n"
@@ -31,8 +31,8 @@ msgid ""
 "modify, and distribute the example code contained in this document under the "
 "terms of your choosing, without restriction."
 msgstr ""
-"Som en speciel undtagelse, giver ophavsretindehaveren dig tilladelse til "
-"at kopiere, ændre og distribuere indholdet i dette dokumnet under de "
+"Som en speciel undtagelse, giver ophavsretindehaveren dig tilladelse til at "
+"kopiere, ændre og distribuere indholdet i dette dokumnet under de "
 "betingelser du måtte vælge, uden begrænsning."
 
 #. When image changes, this message will be marked fuzzy or untranslated for you.
@@ -45,7 +45,7 @@ msgstr "@@image: 'figures/history.png'; md5=c432b503d498019521a5374a8bc5ae76"
 msgid "3"
 msgstr "3"
 
-#: C/history.page:9(title) C/preferences.page:39(title) C/index.page:19(title)
+#: C/history.page:9(title) C/preferences.page:39(title) C/index.page:23(title)
 msgid "Player's Game History"
 msgstr "Spillers historik"
 
@@ -53,8 +53,7 @@ msgstr "Spillers historik"
 msgid ""
 "You can access the <gui>Player's Game History</gui> from the main "
 "application menu."
-msgstr ""
-"Du kan tilgå <gui>Spillers historik</gui> fra programmenuen."
+msgstr "Du kan tilgå <gui>Spillers historik</gui> fra programmenuen."
 
 #: C/history.page:12(p)
 msgid ""
@@ -73,22 +72,20 @@ msgid ""
 msgstr ""
 "Ved at klikke på boksene <gui>Total</gui>, <gui>Logik</gui>, "
 "<gui>Hukommelse</gui>, <gui>Hovedregning</gui> og <gui>Sproglig</gui> kan "
-"spilleren vælge hvilke spiltypers resultater som tegnes på spillerens "
-"graf for spilhistorik."
+"spilleren vælge hvilke spiltypers resultater som tegnes på spillerens graf "
+"for spilhistorik."
 
 #: C/history.page:14(p)
 msgid ""
 "<app>gbrainy</app> saves the player game scores to be able to track player's "
-"score evolution. Using the <link type=\"topic\" xref=\"preferences"
-"\">Preferences</link> the user can select how many games sessions are "
-"recorded and how many games you have to play in order that the game gets "
-"stored."
+"score evolution. Using the <link xref=\"preferences\">Preferences</link> the "
+"user can select how many games sessions are recorded and how many games you "
+"have to play in order that the game gets stored."
 msgstr ""
-"<app>gbrainy</app> gemmer pointene for at kunne følge spillerens pointudvikling. "
-"Ved at bruge <link type=\"topic\" xref=\"preferences"
-"\">Indstillinger</link> kan brugeren vælge hvor mange spilsessioner der "
-"skal gemmes, og hvor mange spil der skal gennemføres, før spillet bliver "
-"gemt."
+"<app>gbrainy</app> gemmer pointene for at kunne følge spillerens "
+"pointudvikling. Ved at bruge <link type=\"topic\" xref=\"preferences"
+"\">Indstillinger</link> kan brugeren vælge hvor mange spilsessioner der skal "
+"gemmes, og hvor mange spil der skal gennemføres, før spillet bliver gemt."
 
 #. When image changes, this message will be marked fuzzy or untranslated for you.
 #. It doesn't matter what you translate it to: it's not used at all.
@@ -102,31 +99,45 @@ msgstr "Resultater"
 
 #: C/results.page:10(p)
 msgid ""
-"When you finish a game session <app>gbrainy</app> shows a summary of the "
+"When the game session is finished <app>gbrainy</app> shows a summary of the "
 "results of the session."
 msgstr ""
-"Når du afslutter en spilsession viser <app>gbrainy</app> et referat af "
-"dine resultater."
+"Når du afslutter en spilsession viser <app>gbrainy</app> et referat af dine "
+"resultater."
 
 #: C/results.page:12(p)
 msgid ""
-"The results shown here are computed using the <link type=\"topic\" xref="
-"\"scoring\">scoring</link> algorithm that takes into account time used, tips "
-"and the number of total games."
+"The results for every game type are computed using the <link xref=\"scoring"
+"\">scoring</link> algorithm that takes into account time used, tips and the "
+"number of total games."
 msgstr ""
-"Resultaterne som er vist her beregnes ved hjælp af algoritmen "
-"<link type=\"topic\" xref=\"scoring\">scoring</link> som tager højde for "
-"den forbrugte tid, tip og det samlede antal spil."
+"Resultaterne som er vist her beregnes ved hjælp af algoritmen <link "
+"xref=\"scoring\">scoring</link> som tager højde for den forbrugte "
+"tid, tip og det samlede antal spil."
 
 #: C/results.page:13(p)
 msgid ""
-"If the number of games played in the session are the minimum number defined "
-"in the preferences to store the session then the results of the game session "
-"are stored in the players' history."
+"<app>gbrainy</app> keeps track of the player's personal records using the "
+"player's game history. If you have obtained a better score that in previous "
+"games for any of the game types, <app>gbrainy</app> informs that a new "
+"personal record has been set. Otherwise, general tips on how to improve when "
+"playing next games are given."
+msgstr ""
+"<app>gbrainy</app> holder historik med spillernes personlige rekorder via "
+"spillernes spilhistorik. Hvis du har opnået højere point end i tidligere "
+"spil, vil <app>gbrainy</app> informere dig om, at en ny personlig rekord "
+"er opnået. Ellers vises generelle tip om hvordan du kan forbedre dig i "
+"det næste spil."
+
+#: C/results.page:14(p)
+msgid ""
+"If the number of games played during the session are minimum defined in the "
+"<link xref=\"preferences\">Preferences</link> to store the session, then the "
+"results of the game session are recorded in the player's game history."
 msgstr ""
 "Hvis antallet af spil gennemført i sessionen overholder det minimum antal, "
-"som er angivet under indstillinger, så bliver resultatet af spilsessionen "
-"gemt i spillerens historik."
+"som er angivet under <link xref=\"preferences\">indstillinger</link>, så "
+"bliver resultatet af spilsessionen gemt i spillerens historik."
 
 #. When image changes, this message will be marked fuzzy or untranslated for you.
 #. It doesn't matter what you translate it to: it's not used at all.
@@ -136,29 +147,27 @@ msgid ""
 msgstr ""
 "@@image: 'figures/preferences.png'; md5=77aea548de8fde67e9728440ebdb009d"
 
-#: C/preferences.page:7(title) C/index.page:23(title)
+#: C/preferences.page:7(title) C/index.page:27(title)
 msgid "Preferences"
 msgstr "Indstillinger"
 
 #: C/preferences.page:9(p)
 msgid ""
 "You can access the <gui>Preferences</gui> from the main application menu."
-msgstr ""
-"Du kan tilgå <gui>Indstillinger</gui> fra hovedmenuen."
+msgstr "Du kan tilgå <gui>Indstillinger</gui> fra hovedmenuen."
 
 #: C/preferences.page:13(title)
 msgid "General Settings"
 msgstr "Generel opsætning"
 
-# engelsk fejl her?
 #: C/preferences.page:14(p)
 msgid ""
-"The <gui>Skip games that use colors</gui> option removes from the list of "
-"available games the games that use colors to challenge the player making it "
+"The <gui>Skip games that use colors</gui> option removes, from the list of "
+"available games, the games that use colors to challenge the player making it "
 "friendly to color blind users."
 msgstr ""
 "Tilvalget <gui>Udelad spil som bruger farver</gui> fjerner de spil fra "
-"listen som bruger farver for at gøre spillet mere venlig for farveblinde "
+"listen som bruger farver for at gøre spillet mere venligt for farveblinde "
 "brugere."
 
 #: C/preferences.page:18(title)
@@ -181,8 +190,7 @@ msgstr ""
 #: C/preferences.page:21(p)
 msgid ""
 "<gui>Easy</gui>. The complexity of the games shows is the average for kids."
-msgstr ""
-"<gui>Let</gui>. Kompleksiteten af spillene er gennemsnittet for børn."
+msgstr "<gui>Let</gui>. Kompleksiteten af spillene er gennemsnittet for børn."
 
 #: C/preferences.page:22(p)
 msgid ""
@@ -225,9 +233,9 @@ msgid ""
 "<gui>Time in seconds to memorize the challenge</gui>. Establishes the time "
 "that a collection of objects is shown to allow the player to memorize it."
 msgstr ""
-"<gui>Tid i sekunder til at huske udfordringen</gui>. Fastsætter den tid "
-"som en samling af objekter bliver vist i, og spilleren dermed har til at "
-"huske dem i."
+"<gui>Tid i sekunder til at huske udfordringen</gui>. Fastsætter den tid som "
+"en samling af objekter bliver vist i, og spilleren dermed har til at huske "
+"dem i."
 
 # engelsk fejl her.
 #: C/preferences.page:34(p)
@@ -235,8 +243,8 @@ msgid ""
 "<gui>Show countdown message</gui>. When checked shows the player a countdown "
 "message before every memory game. This is helpfully when playing different "
 "game types in a single game session because indicates to the user that "
-"should get ready to memorize the next game. Advanced players usually disable "
-"this option."
+"should get ready for a memory game. Advanced players usually disable this "
+"option."
 msgstr ""
 "<gui>Vis nedtællingsbesked</gui>. Hvis afkrydset vises en nedtælling for "
 "spilleren før hvert hukommelsesspil. Dette kan bruges, når der spilles "
@@ -244,17 +252,21 @@ msgstr ""
 "gøre sig klar til at kunne huske opgaven i det næste spil. Øvede spillere "
 "slår normalt denne funktion fra."
 
-#: C/preferences.page:41(p)
+#: C/preferences.page:40(p)
+msgid "These options affect the behaviour of the player's game history:"
+msgstr "Disse indstillinger påvirker den måde hukommelsesspil fungerer på:"
+
+#: C/preferences.page:42(p)
 msgid ""
 "<gui>Minimum number of played games to store the game</gui>. Determines the "
 "number of games that a player should play in a game session to store it and "
 "make it available in the player's history."
 msgstr ""
-"<gui>Det mindste antal spil hvor spillet skal gemmes</gui>. Bestemmer antallet "
-"af spil en spiller bør spille under en spilsession for, at det skal gemmes og "
-"gøres tilgængelig i spillerens historik."
+"<gui>Det mindste antal spil hvor spillet skal gemmes</gui>. Bestemmer "
+"antallet af spil en spiller bør spille under en spilsession for, at det skal "
+"gemmes og gøres tilgængelig i spillerens historik."
 
-#: C/preferences.page:42(p)
+#: C/preferences.page:43(p)
 msgid ""
 "<gui>Maximum number of stored games in the player's history</gui>. Once this "
 "limit has been reach the result of the older games is removed to store the "
@@ -264,13 +276,13 @@ msgstr ""
 "begrænsning er nået fjernes resultatet af de ældste spil for at gøre plads "
 "til de nye spilsessioner."
 
-#: C/preferences.page:43(p)
+#: C/preferences.page:44(p)
 msgid ""
-"<gui>Clear Player's Game History</gui>. Clears the player's history by "
-"removing all the previous recorded scores."
+"<gui>Clear Player's Game History</gui>. Clears the player's game history by "
+"removing all the previous recorded sessions."
 msgstr ""
-"<gui>Ryd spillers historik</gui>. Rydder historikken for en spiller ved "
-"at fjerne alle tidligere registrerede point."
+"<gui>Ryd spillers historik</gui>. Rydder historikken for en spiller ved at "
+"fjerne alle tidligere registrerede sessioner."
 
 #: C/scoring.page:5(title) C/gametypes.page:5(title)
 msgid "2"
@@ -281,7 +293,7 @@ msgid "Scoring"
 msgstr "Point"
 
 #: C/scoring.page:12(title) C/introduction.page:8(title)
-#: C/index.page:11(title)
+#: C/index.page:15(title)
 msgid "Introduction"
 msgstr "Introduktion"
 
@@ -291,33 +303,32 @@ msgid ""
 "app> scores every individual game and then computes the totals for every set "
 "of game types played during the session."
 msgstr ""
-"Under en spilsession løser en spiller normalt flere spil. <app>gbrainy</"
-"app> registrerer hvert spil og beregner så det totale antal point for hvert "
+"Under en spilsession løser en spiller normalt flere spil. <app>gbrainy</app> "
+"registrerer hvert spil og beregner så det totale antal point for hvert "
 "spiltype under sessionen."
 
 #: C/scoring.page:17(title)
 msgid "Scoring individual games"
 msgstr "Point individuelle spil"
 
-# it (engelsk fejl)
 #: C/scoring.page:18(p)
 msgid ""
-"If the player answers a game incorrectly it does not get any score for it. "
-"If the player answers the game correctly <app>gbrainy</app> scores the "
-"player considering the time used and if the played used the tip."
+"If the player answers a game incorrectly the player does not get any score "
+"for the answer. If the player answers the game correctly <app>gbrainy</app> "
+"scores the player considering the time used and if the played used a tip "
+"during the game."
 msgstr ""
 "Hvis en spiller besvarer et spil forkert får spilleren ikke nogen point for "
 "svaret. Hvis spilleren besvarer spillet korrekt tildeler <app>gbrainy</app> "
-"spilleren point efter den forbrugte tid og hvorvidt der har været brugt "
-"tip."
+"spilleren point efter den forbrugte tid og hvorvidt der har været brugt tip."
 
 #: C/scoring.page:20(p)
 msgid ""
 "When playing at medium difficulty level the player is expected to solve in "
 "the time indicated the following game types:"
 msgstr ""
-"Når der spilles på mellemniveau, forventes spilleren at have løst spillet "
-"på den angivne tid for de følgende typer:"
+"Når der spilles på mellemniveau, forventes spilleren at have løst spillet på "
+"den angivne tid for de følgende typer:"
 
 #: C/scoring.page:22(p)
 msgid "Logic puzzles in 120 seconds."
@@ -340,8 +351,8 @@ msgid ""
 "At easy difficulty level the player is given 30% more time and at master "
 "level is given only 70% of the previous times."
 msgstr ""
-"Ved sværhedsgraden nem får spilleren 30 % mere tid til at løse opgaven. "
-"Ved øvet får spilleren kun 70 % af den forrige tid."
+"Ved sværhedsgraden nem får spilleren 30 % mere tid til at løse opgaven. Ved "
+"øvet får spilleren kun 70 % af den forrige tid."
 
 #: C/scoring.page:28(p)
 msgid ""
@@ -382,8 +393,8 @@ msgid ""
 "Additionally, if the player used the tip then scores only 80% of the "
 "previous score for the game."
 msgstr ""
-"Hvis brugeren har brugt tip under spillet er pointtildelingen alene "
-"80 % af den allerede beregnede pointtildeling efter tidsforbrug."
+"Hvis brugeren har brugt tip under spillet er pointtildelingen alene 80 % af "
+"den allerede beregnede pointtildeling efter tidsforbrug."
 
 #: C/scoring.page:39(title)
 msgid "Computing the totals"
@@ -399,16 +410,13 @@ msgid ""
 msgstr ""
 "<app>gbrainy</app> holder historik på de forskellige spiltyper, der er "
 "spillet. For at beregne den samlede sum for alle spiltyper summer spillet "
-"resultaterne for de enkelte spiltyper og lægger så en faktor til baseret "
-"på en logaritme på 10 for sværhedsgraden let, 20 for mellem og 30 for "
-"øvet."
+"resultaterne for de enkelte spiltyper og lægger så en faktor til baseret på "
+"en logaritme på 10 for sværhedsgraden let, 20 for mellem og 30 for øvet."
 
-# engelsk fejl, den sidste del ikke forstået.
 #: C/scoring.page:41(p)
 msgid ""
-"This means that to score 100% playing at medium difficult level you need to "
-"score 100% on at least 20 games of every game type played, 80 games in you "
-"have played all the games types."
+"This means that when playing at medium difficult level to get a score of "
+"100% you need to score 100% on at least 20 games of every game type played."
 msgstr ""
 "Dette betyder, at for at få 100 % pointtildeing ved sværhedsgraden mellem "
 "skal du have 100 % i pointtildeling for mindst 20 spil indenfor hver "
@@ -421,12 +429,8 @@ msgid ""
 "progression of the player during all the games that has played."
 msgstr ""
 "Dette kan lyde indviklet men gør at spillere kan sammenligne point fra "
-"forskellige sessioner (i spillerhistorikken) og gør, at det er nemmere "
-"at følge udviklingen for en spiller over alle de spil, som denne har spillet."
-
-#: C/scoring.page:38(section)
-msgid "<placeholder-1/><placeholder-2/><placeholder-3/>. <placeholder-4/>"
-msgstr "<placeholder-1/><placeholder-2/><placeholder-3/>. <placeholder-4/>"
+"forskellige sessioner (i spillerhistorikken) og gør, at det er nemmere at "
+"følge udviklingen for en spiller over alle de spil, som denne har spillet."
 
 #. When image changes, this message will be marked fuzzy or untranslated for you.
 #. It doesn't matter what you translate it to: it's not used at all.
@@ -444,7 +448,7 @@ msgstr "@@image: 'figures/bottom.png'; md5=b30a680e13d6b48da12029414b4d2900"
 msgid "1"
 msgstr "1"
 
-#: C/playing.page:8(title) C/index.page:15(title)
+#: C/playing.page:8(title) C/index.page:19(title)
 msgid "Game Session"
 msgstr "Spilsession"
 
@@ -461,14 +465,13 @@ msgstr ""
 "programmets værktøjsbjælke."
 
 #: C/playing.page:13(p)
-msgid "The following buttons are available:"
-msgstr "De følgende knapper er tilgængelige:"
+msgid "The following actions are associated to the buttons:"
+msgstr "De følgende handlinger er tildelt knapperne:"
 
 #: C/playing.page:15(p)
-msgid "<gui>All</gui>. Starts a new game playing all the available games."
+msgid "<gui>All</gui>. Starts a new game playing all the available game types."
 msgstr ""
-"<gui>Alle</gui>. Starter et nyt spil med alle de tilgængelige "
-"spiltyper."
+"<gui>Alle</gui>. Starter et nyt spil med alle de tilgængelige spiltyper."
 
 #: C/playing.page:16(p)
 msgid "<gui>Logic</gui>. Starts a new game playing only logic games."
@@ -477,8 +480,7 @@ msgstr "<gui>Logik</gui>. Starter et nyt spil med kun logiske spil."
 #: C/playing.page:17(p)
 msgid ""
 "<gui>Calculation</gui>. Starts a new game playing only calculation games."
-msgstr ""
-"<gui>Beregning</gui>. Starter et nyt spil med kun beregningsspil."
+msgstr "<gui>Beregning</gui>. Starter et nyt spil med kun beregningsspil."
 
 #: C/playing.page:18(p)
 msgid "<gui>Memory</gui>. Starts a new game playing only memory games."
@@ -487,8 +489,7 @@ msgstr "<gui>Hukommelse</gui>. Starter et nyt spil med kun hukommelsesspil."
 #: C/playing.page:19(p)
 msgid ""
 "<gui>Verbal</gui>. Starts a new game playing only verbal analogies games."
-msgstr ""
-"<gui>Sproglig</gui>. Starter et nyt spil med kun sproglige analogier."
+msgstr "<gui>Sproglig</gui>. Starter et nyt spil med kun sproglige analogier."
 
 #: C/playing.page:21(p)
 msgid ""
@@ -499,13 +500,13 @@ msgstr ""
 "gui><gui>Nyt spil</gui></guiseq>."
 
 #: C/playing.page:25(title)
-msgid "During the game"
+msgid "During the game session"
 msgstr "Under spillet"
 
 #: C/playing.page:27(p)
 msgid ""
-"The game starts by showing a puzzle to the user and making a question. Read "
-"always the instructions carefully."
+"The game session starts by showing a game and asking the user to solve it. "
+"Read always the instructions carefully."
 msgstr ""
 "Dette spil starter med at vise et puslespil til brugeren og stille et "
 "spørgsmål. Læs altid instruktionen omhyggeligt."
@@ -528,26 +529,24 @@ msgstr ""
 
 #: C/playing.page:35(p)
 msgid ""
-"Some puzzles include a tip that gives some guidance when trying to solve "
-"them. You can use the <gui>Tip</gui> button when it is enabled to get the "
-"tip."
+"Some games include a tip that gives some guidance when trying to solve them. "
+"You can use the <gui>Tip</gui> button when it is enabled to get the tip."
 msgstr ""
 "Nogle puslespil inkluderer et tip som giver lidt hjælp, når du forsøger at "
 "løse dem. Du kan bruge knappen <gui>Tip</gui>, når den er slået til."
 
 #: C/playing.page:37(p)
 msgid ""
-"Once you have answered the puzzle you will be informed if you did provide "
-"the right answer. You can use the <gui>Next</gui> button to go to the next "
-"puzzle."
+"Once you have answered the game you will be informed if you did provide the "
+"right answer. You can use the <gui>Next</gui> button to go to the next game."
 msgstr ""
 "Når du har besvaret puslespillet, vil du få besked, om svaret var korrekt. "
 "Du kan bruge knappen <gui>Næste</gui> for at gå til det næste puslespil."
 
 #: C/playing.page:39(p)
 msgid ""
-"You can pause the game using the <gui>Pause</gui> button and resume it later "
-"at any point."
+"You can pause the game session using the <gui>Pause</gui> button and resume "
+"it later at any point."
 msgstr ""
 "Du kan sætte spillet på pause ved at bruge knappen <gui>Pause</gui> og "
 "genoptage det senere."
@@ -566,14 +565,14 @@ msgid ""
 "skills. These games are based on sequences of elements, visual and spatial "
 "reasoning or relationships between elements."
 msgstr ""
-"Logiske puslespil. Spil der er designet til at udfordre dine logiske "
-"sans og tænkemåde. Disse spil er baseret på sekvenser af elementer, visuel "
-"og rumlig tankegang eller forhold mellem elementer."
+"Logiske puslespil. Spil der er designet til at udfordre dine logiske sans og "
+"tænkemåde. Disse spil er baseret på sekvenser af elementer, visuel og rumlig "
+"tankegang eller forhold mellem elementer."
 
 #: C/gametypes.page:13(p)
 msgid ""
 "Mental calculation. Games based on arithmetical operations designed to prove "
-"your mental calculation skills. Games that ask the player to use of "
+"your mental calculation skills. Games that require the player to use "
 "multiplication, division, addition and subtraction combined in different "
 "ways."
 msgstr ""
@@ -588,9 +587,10 @@ msgid ""
 "sometimes establishing relationships between figures, words, numbers or "
 "colors."
 msgstr ""
-"Hukommelsesøvelser. Spil der er designet til at udfordre din korttidshukommelse. "
-"Disse spil viser samlinger af objekter og beder spilleren om at huske dem. "
-"Undertiden indgår sammenhænge mellem figurerne, ordene, tallene eller farverne."
+"Hukommelsesøvelser. Spil der er designet til at udfordre din "
+"korttidshukommelse. Disse spil viser samlinger af objekter og beder "
+"spilleren om at huske dem. Undertiden indgår sammenhænge mellem figurerne, "
+"ordene, tallene eller farverne."
 
 #: C/gametypes.page:15(p)
 msgid ""
@@ -612,14 +612,13 @@ msgstr ""
 
 #: C/introduction.page:10(p)
 msgid ""
-"It features different <link type=\"topic\" xref=\"gametypes\">game types</"
-"link> like logic puzzles, mental calculation games, memory trainers and "
-"verbal analogies designed to test different cognitive skills."
+"It features different <link xref=\"gametypes\">game types</link> like logic "
+"puzzles, mental calculation games, memory trainers and verbal analogies "
+"designed to test different cognitive skills."
 msgstr ""
-"Det har forskellige <link type=\"topic\" xref=\"gametypes\">spiltyper</"
-"link> som logiske puslespil, hovedregning, hukommelsestræning og "
-"sproglige analogier designet til at teste forskellige kognitative "
-"evner."
+"Det har forskellige <link xref=\"gametypes\">spiltyper</link> "
+"som logiske puslespil, hovedregning, hukommelsestræning og sproglige "
+"analogier designet til at teste forskellige kognitative evner."
 
 #: C/introduction.page:11(p)
 msgid ""
@@ -630,10 +629,9 @@ msgid ""
 "wiki/Dr._Brain\">Dr. Brain</link> classical game."
 msgstr ""
 "<app>gbrainy</app> bruger talenterne fra tidligere puslemestre, fra den "
-"historiske tid til ideer fra nyere tid som <link href="
-"\"http://en.wikipedia.org/wiki/Terry_Stickels\">Terry Stickels</link> "
-"puslespil eller <link href=\"http://en.wikipedia.org/"
-"wiki/Dr._Brain\">Dr. Brains</link> klassiske spil."
+"historiske tid til ideer fra nyere tid som <link href=\"http://en.wikipedia."
+"org/wiki/Terry_Stickels\">Terry Stickels</link> puslespil eller <link href="
+"\"http://en.wikipedia.org/wiki/Dr._Brain\">Dr. Brains</link> klassiske spil."
 
 #: C/introduction.page:13(p)
 msgid ""
@@ -644,12 +642,11 @@ msgid ""
 "org/gbrainy/Extending\">extended</link> easily with new games developed by "
 "third parties."
 msgstr ""
-"Spilleren kan vælge forskellige sværhedsgrader hvilket gør at "
-"<app>gbrainy</app> kan nydes af børn, voksne og ældre. Det har også en "
-"spillerhistorik, spillerens personlige rekord, tip til spilleren og "
-"understøttelse af fuldskærm. <app>gbrainy</app> kan også nemt "
-"<link href=\"http://live.gnome.org/gbrainy/Extending\">udvides</link> "
-"med spil udviklet af andre."
+"Spilleren kan vælge forskellige sværhedsgrader hvilket gør at <app>gbrainy</"
+"app> kan nydes af børn, voksne og ældre. Det har også en spillerhistorik, "
+"spillerens personlige rekord, tip til spilleren og understøttelse af "
+"fuldskærm. <app>gbrainy</app> kan også nemt <link href=\"http://live.gnome."
+"org/gbrainy/Extending\">udvides</link> med spil udviklet af andre."
 
 #: C/introduction.page:14(p)
 msgid ""
@@ -658,12 +655,20 @@ msgid ""
 "studies show that there is no or little improvement. However, you can have a "
 "good time playing games like <app>gbrainy</app>."
 msgstr ""
-"Der har været diskussioner i det videnskabelige samfund om hvorvidt "
-"det at spille denne slags spil kan forbedre ens kognitive præstationsevne. "
-"De fleste studier viser ingen eller en meget lille forbedring. Du kan dog "
+"Der har været diskussioner i det videnskabelige samfund om hvorvidt det at "
+"spille denne slags spil kan forbedre ens kognitive præstationsevne. De "
+"fleste studier viser ingen eller en meget lille forbedring. Du kan dog "
 "stadig have det sjovt ved at spille <app>gbrainy.</app>."
 
-#: C/index.page:4(title)
+#: C/index.page:6(name)
+msgid "Jordi Mas i Hernandez"
+msgstr "Jordi Mas i Hernandez"
+
+#: C/index.page:7(email)
+msgid "jmas@softcatala.org"
+msgstr "jmas@softcatala.org"
+
+#: C/index.page:12(title)
 msgid "gbrainy Help"
 msgstr "Hjælp til gbrainy"
 
@@ -675,4 +680,5 @@ msgstr ""
 "\n"
 "Dansk-gruppen <dansk@dansk-gruppen.dk>\n"
 "Mere info: http://www.dansk-gruppen.dk"
+
 
