@@ -1,4 +1,4 @@
-AC_INIT(gbrainy, 1.24)
+AC_INIT(gbrainy, 1.30)
 AC_CONFIG_SRCDIR(src/Core/)
 
 AM_CONFIG_HEADER(config.h)
@@ -127,7 +127,7 @@ AC_CONFIG_FILES([src/Clients/Classical/gbrainy],[chmod +x src/Clients/Classical/
 GNOME_ICON_THEME_PREFIX=`$PKG_CONFIG --variable=prefix gnome-icon-theme`
 AC_SUBST(GNOME_ICON_THEME_PREFIX)
 
-COPYRIGHT="(c)2007-2009 Jordi Mas i Hernandez"
+COPYRIGHT="(c) 2007-2010 Jordi Mas i Hernandez"
 AC_SUBST(COPYRIGHT)
 
 AC_OUTPUT([
