@@ -435,6 +435,9 @@ namespace gbrainy.Core.Main
 		private void TimerUpdater (object source, ElapsedEventArgs e)
 		{
 			lock (this) {
+				if (CurrentGame == null)
+					return;
+
 				game_time = game_time.Add (one_sec);
 				CurrentGame.GameTime = CurrentGame.GameTime + one_sec;
 				current_time = TimeSpanToStr (game_time);
