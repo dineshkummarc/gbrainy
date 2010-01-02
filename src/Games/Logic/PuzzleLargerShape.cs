@@ -148,7 +148,7 @@ namespace gbrainy.Games.Logic
 
 			for (int i = 0; i < answers; i++)
 			{
-				if ((int) random_indices[i] == ranswer) {
+				if (random_indices[i] == ranswer) {
 					right_answer = GetPossibleAnswer (i);
 					break;
 				}

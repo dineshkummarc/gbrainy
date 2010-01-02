@@ -67,7 +67,7 @@ namespace gbrainy.Games.Logic
 
 			for (int i = 0; i < (int) Figures.Last; i++)
 			{
-				if ((int) random_indices[i] == (int) Figures.Cross) {
+				if (random_indices[i] == (int) Figures.Cross) {
 					right_answer = GetPossibleAnswer (i);
 					break;
 				}
