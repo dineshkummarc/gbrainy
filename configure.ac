@@ -7,7 +7,7 @@ AM_INIT_AUTOMAKE([tar-ustar])
 
 AM_MAINTAINER_MODE
 
-AC_PROG_INTLTOOL([0.35])
+IT_PROG_INTLTOOL([0.35.0])
 
 AC_PROG_CC
 AC_ISC_POSIX
@@ -143,7 +143,6 @@ src/Core/Makefile
 src/Games/Makefile
 src/Clients/Classical/Makefile
 data/Makefile
-gbrainy.desktop
 help/Makefile
 ])
 
