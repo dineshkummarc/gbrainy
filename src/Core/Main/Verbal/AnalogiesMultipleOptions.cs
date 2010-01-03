@@ -110,7 +110,9 @@ namespace gbrainy.Core.Main.Verbal
 			gr.MoveTo (0.1, y);
 			gr.ShowPangoText (Catalog.GetString ("Possible answers are:"));
 
-			y += 0.12;
+			gr.SetPangoNormalFontSize ();
+
+			y += 0.15;
 			x += 0.05;
 			for (int n = 0; n < current.answers.Length; n++)
 			{
