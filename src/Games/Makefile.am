@@ -47,6 +47,7 @@ CSFILES =  \
 		Logic/PuzzleTimeNow.cs				\
 		Logic/PuzzleTriangles.cs			\
 		Logic/PuzzleTrianglesWithNumbers.cs		\
+		Logic/PuzzlePredicateLogic.cs			\
 		Memory/MemoryColouredFigures.cs			\
 		Memory/MemoryColouredText.cs			\
 		Memory/MemoryCountDots.cs			\
