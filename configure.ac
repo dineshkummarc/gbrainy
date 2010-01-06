@@ -55,17 +55,9 @@ done
 
 dnl --- Required libraries
 
-GTKSHARP_REQUIRED=2.8
+GTKSHARP_REQUIRED=2.10
 MONO_REQUIRED=1.1.7
 MONO_ADDINS=0.3
-
-if ! pkg-config --atleast-version=2.10 gtk-sharp-2.0; then
-   CSC_DEFINES="$CSC_DEFINES -d:GTK_2_8"
-   enable_gtk_28="true"
-else
-   enable_gtk_28="false"
-fi
-
 
 PKG_CHECK_MODULES(GBRAINY_CORE, mono >= $MONO_REQUIRED)
 
@@ -146,6 +138,5 @@ data/Makefile
 help/Makefile
 ])
 
-echo "Support for older GTK:  ${enable_gtk_28}"
 echo "Mono-addins:            ${enable_addins_sharp}"
 

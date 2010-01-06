@@ -27,58 +27,6 @@ using gbrainy.Core.Main;
 
 namespace gbrainy.Core.Libraries
 {
-	#if GTK_2_8 // For GTK < 2.10
-
-	public static class PangoCairoHelper
-	{
-		[DllImport ("libpangocairo-1.0.so.0")]
-		private static extern void pango_cairo_show_layout (IntPtr cr, IntPtr layout);
-
-		public static void ShowLayout (Cairo.Context cr, Pango.Layout layout)
-		{
-			pango_cairo_show_layout (cr == null ? IntPtr.Zero : cr.Handle,
-			layout == null ? IntPtr.Zero : layout.Handle);
-		}
-
-		[DllImport ("libpangocairo-1.0.so.0")]
-		private static extern IntPtr pango_cairo_create_layout (IntPtr cr);
-
-		public static Pango.Layout CreateLayout (Cairo.Context cr)
-		{
-			IntPtr raw_ret = pango_cairo_create_layout (cr == null ? IntPtr.Zero : cr.Handle);
-			return GLib.Object.GetObject (raw_ret) as Pango.Layout;
-		}
-
-		[DllImport ("libpangocairo-1.0.so.0")]
-		private static extern void pango_cairo_layout_path (IntPtr cr, IntPtr layout);
-
-		public static void LayoutPath (Cairo.Context cr, Pango.Layout layout,
-		bool iUnderstandThePerformanceImplications)
-		{
-			pango_cairo_layout_path (cr == null ? IntPtr.Zero : cr.Handle,
-			layout == null ? IntPtr.Zero : layout.Handle);
-		}
-
-		[DllImport ("libpangocairo-1.0.so.0")]
-		private static extern void pango_cairo_context_set_resolution (IntPtr pango_context, double dpi);
-
-		public static void ContextSetResolution (Pango.Context context, double dpi)
-		{
-			pango_cairo_context_set_resolution (context == null ? IntPtr.Zero : context.Handle, dpi);
-		}
-
-		[DllImport ("libpangocairo-1.0.so.0")]
-		private static extern IntPtr pango_layout_get_context (IntPtr layout);
-
-		public static Pango.Context LayoutGetContext (Pango.Layout layout)
-		{
-			IntPtr handle = pango_layout_get_context (layout.Handle);
-			return handle.Equals (IntPtr.Zero) ? null : GLib.Object.GetObject (handle) as Pango.Context;
-		}
-	}
-
-	#endif
-
 	public class CairoContextEx : Cairo.Context
 	{
 		Pango.Layout layout;
@@ -92,16 +40,12 @@ namespace gbrainy.Core.Libraries
 		{
 			CommonConstructor ();
 
-		#if GTK_2_8
-		#else
 			double resolution = widget.Screen.Resolution;
 			if (resolution != -1)  {
 				Pango.Context c = layout.Context;
 				Pango.CairoHelper.ContextSetResolution (c, resolution);
 				c.Dispose ();
 			}
-		#endif
-
 		}
 
 		// Used by GeneratePDF
@@ -112,11 +56,7 @@ namespace gbrainy.Core.Libraries
 
 		private void CommonConstructor ()
 		{
-	#if GTK_2_8
-			layout = PangoCairoHelper.CreateLayout (this);
-	#else
 			layout = Pango.CairoHelper.CreateLayout (this);
-	#endif
 			layout.FontDescription = FontDescription.FromString ("Sans");
 			SetPangoNormalFontSize ();
 		}
@@ -152,11 +92,7 @@ namespace gbrainy.Core.Libraries
 			Matrix = new Cairo.Matrix ();		
 			layout.SetText (str);
 			layout.SingleParagraphMode = true;
-	#if GTK_2_8
-			PangoCairoHelper.ShowLayout (this, layout);
-	#else
 			Pango.CairoHelper.ShowLayout (this, layout);
-	#endif
 			Matrix = old;
 		}
 
@@ -183,11 +119,8 @@ namespace gbrainy.Core.Libraries
 				Rotate (rotation);
 				layout.SetText (str);
 				layout.SingleParagraphMode = true;
-	#if GTK_2_8
-			PangoCairoHelper.ShowLayout  (this, layout);
-	#else
-			Pango.CairoHelper.ShowLayout (this, layout);
-	#endif
+
+				Pango.CairoHelper.ShowLayout (this, layout);
 				Matrix = old;
 			}
 			else
@@ -231,11 +164,7 @@ namespace gbrainy.Core.Libraries
 			layout.Width = -1;
 			layout.GetPixelSize (out w, out h);
 			MoveTo ((old.X0 + x * old.Xx) - w, y * old.Xx);
-	#if GTK_2_8
-			PangoCairoHelper.ShowLayout (this, layout);
-	#else
 			Pango.CairoHelper.ShowLayout (this, layout);
-	#endif
 			Matrix = old;
 		}
 
@@ -253,11 +182,7 @@ namespace gbrainy.Core.Libraries
 			layout.Width = -1;
 			layout.GetPixelSize (out w, out h);
 			MoveTo ((old.X0 + x * old.Xx) - w / 2, (y - font_size / 2) * old.Xx);
-	#if GTK_2_8
-			PangoCairoHelper.ShowLayout  (this, layout);
-	#else
 			Pango.CairoHelper.ShowLayout (this, layout);
-	#endif
 			Matrix = old;
 		}
 
@@ -283,11 +208,7 @@ namespace gbrainy.Core.Libraries
 			layout.Spacing = (int) (line_space * (old.Xx * Pango.Scale.PangoScale));
 			layout.SingleParagraphMode = false;
 			layout.SetText (str);
-	#if GTK_2_8
-			PangoCairoHelper.ShowLayout (this, layout);
-	#else
 			Pango.CairoHelper.ShowLayout (this, layout);
-	#endif
 			layout.GetPixelSize (out w, out h);
 			Matrix = old;
 			return y + h / old.Xx;
