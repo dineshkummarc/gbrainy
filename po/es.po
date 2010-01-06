@@ -10,8 +10,8 @@ msgstr ""
 "Project-Id-Version: gbrainy.HEAD\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=gbrainy&component=general\n"
-"POT-Creation-Date: 2010-01-06 10:32+0000\n"
-"PO-Revision-Date: 2010-01-06 12:55+0100\n"
+"POT-Creation-Date: 2010-01-06 13:40+0000\n"
+"PO-Revision-Date: 2010-01-06 15:06+0100\n"
 "Last-Translator: Jorge González <jorgegonz@svn.gnome.org>\n"
 "Language-Team: Español <gnome-es-list@gnome.org>\n"
 "MIME-Version: 1.0\n"
@@ -174,10 +174,8 @@ msgid "What is a 'halberd'?"
 msgstr "¿Qué es una alabarda?"
 
 #: ../data/verbal_analogies.xml.h:39
-#| msgid "Which of the following sentences defines better 'ostracism'?"
 msgid "Which of the following sentences defines better an 'ostracized' person?"
-msgstr ""
-"¿Cuál de las siguientes sentencias define mejor una persona «ostracista»?"
+msgstr "¿Cuál de las siguientes frases define mejor una persona «ostracista»?"
 
 #.
 #. Translators, please check these recommendations when translating gbrainy: http://live.gnome.org/gbrainy/Localizing
@@ -326,7 +324,6 @@ msgstr "ceja / ojo | bigote"
 
 #. Translators: the concept 'toe' (http://en.wikipedia.org/wiki/Toe) does not exist in all languages. Feel free to change it to 'fingers' and adapt the answer accordingly
 #: ../data/verbal_analogies.xml.h:80
-#| msgid "feet / two | toe"
 msgid "feet / two | toes"
 msgstr "pies / dos | dedos"
 
@@ -570,7 +567,6 @@ msgid "Game"
 msgstr "Juego"
 
 #: ../gbrainy.desktop.in.h:2
-#| msgid "Play games that challenge your mental calculation skills"
 msgid ""
 "Play games that challenge your logic, verbal, calculation and memory "
 "abilities"
@@ -972,6 +968,7 @@ msgstr "{0} Responde {1}."
 #: ../src/Games/Logic/PuzzleMissingSlice.cs:182
 #: ../src/Games/Logic/PuzzleMostInCommon.cs:289
 #: ../src/Games/Logic/PuzzleNextFigure.cs:131
+#: ../src/Games/Logic/PuzzlePredicateLogic.cs:141
 #: ../src/Games/Logic/PuzzleSquareDots.cs:185
 #: ../src/Games/Logic/PuzzleTetris.cs:153
 msgid "Possible answers are:"
@@ -1973,6 +1970,107 @@ msgstr ""
 "En el resto de números los últimos tres dígitos son el cuadrado de los dos "
 "primeros dígitos."
 
+#: ../src/Games/Logic/PuzzlePredicateLogic.cs:57
+#, csharp-format
+msgid ""
+"If all painters are artists and some citizens of Barcelona are artists. "
+"Which of the following sentences is correct? Answer {0}, {1}, {2} or {3}."
+msgstr ""
+"Si todos los pintores son artistas y algunos ciudadanos de Barcelona son "
+"artistas, ¿cuál de las siguientes frases es correcta? Responde {0}, {1}, {2} "
+"o {3}."
+
+#: ../src/Games/Logic/PuzzlePredicateLogic.cs:59
+msgid "Some citizens of Barcelona are painters"
+msgstr "Algunos ciudadanos de Barcelona son pintores"
+
+#: ../src/Games/Logic/PuzzlePredicateLogic.cs:60
+msgid "All citizens of Barcelona are painters"
+msgstr "Todos los ciudadanos de Barcelona son pintores"
+
+#: ../src/Games/Logic/PuzzlePredicateLogic.cs:61
+msgid "No citizen of Barcelona is a painter"
+msgstr "Ningún ciudadano de Barcelona es un pintor"
+
+#: ../src/Games/Logic/PuzzlePredicateLogic.cs:62
+#: ../src/Games/Logic/PuzzlePredicateLogic.cs:70
+#: ../src/Games/Logic/PuzzlePredicateLogic.cs:78
+#: ../src/Games/Logic/PuzzlePredicateLogic.cs:86
+msgid "None of the other options"
+msgstr "Ninguna de las otras opciones"
+
+#: ../src/Games/Logic/PuzzlePredicateLogic.cs:65
+#, csharp-format
+msgid ""
+"If no ill artist is happy and some artists are happy. Which of the following "
+"sentences is correct? Answer {0}, {1}, {2} or {3}."
+msgstr ""
+"Si ningún artista enfermo está contento y algunos artistas están contentos, "
+"¿cuál de las siguientes frases es correcta? Responde {0}, {1}, {2} o {3}."
+
+#: ../src/Games/Logic/PuzzlePredicateLogic.cs:67
+msgid "Some artist are not ill"
+msgstr "Algunos artistas no están enfermos"
+
+#: ../src/Games/Logic/PuzzlePredicateLogic.cs:68
+msgid "Some painters are not artists"
+msgstr "Algunos pintores no son artistas"
+
+#: ../src/Games/Logic/PuzzlePredicateLogic.cs:69
+msgid "All artists are happy"
+msgstr "Todos los artistas están contentos"
+
+#: ../src/Games/Logic/PuzzlePredicateLogic.cs:73
+#, csharp-format
+msgid ""
+"If people that travels always buy a map and you are not going to travel. "
+"Which of the following sentences is correct? Answer {0}, {1}, {2} or {3}."
+msgstr ""
+"Si la gente que viaja siempre compra un mapa y tú no vas a viajar, ¿cuál de "
+"las siguientes frases es correcta? Responde {0}, {1}, {2} o {3}."
+
+#: ../src/Games/Logic/PuzzlePredicateLogic.cs:75
+msgid "You do not have any map"
+msgstr "No tienes ningún mapa"
+
+#: ../src/Games/Logic/PuzzlePredicateLogic.cs:76
+msgid "You do not buy a map"
+msgstr "No compras un mapa"
+
+#: ../src/Games/Logic/PuzzlePredicateLogic.cs:77
+msgid "All people has a map"
+msgstr "Todo el mundo tiene un mapa"
+
+#: ../src/Games/Logic/PuzzlePredicateLogic.cs:81
+#, csharp-format
+msgid ""
+"If you whistle if you are happy and you only smile when you whistle. Which "
+"of the following sentences is correct? Answer {0}, {1}, {2} or {3}."
+msgstr ""
+"Si silbas si estás contento y sólo sonríes cuando silbas, ¿cuál de las "
+"siguientes frases es correcta? Responde {0}, {1}, {2} o {3}."
+
+#: ../src/Games/Logic/PuzzlePredicateLogic.cs:83
+msgid "You smile if you are happy"
+msgstr "Sonríes si estás contento"
+
+#: ../src/Games/Logic/PuzzlePredicateLogic.cs:84
+msgid "You are only happy if you whistle"
+msgstr "Sólo estás contento si silvas"
+
+#: ../src/Games/Logic/PuzzlePredicateLogic.cs:85
+msgid "You whistle if you are not happy"
+msgstr "Silbas si no estás contento"
+
+#: ../src/Games/Logic/PuzzlePredicateLogic.cs:91
+msgid "Predicate Logic"
+msgstr "Lógica de predicados"
+
+#: ../src/Games/Logic/PuzzlePredicateLogic.cs:99
+#: ../src/Games/Logic/PuzzleTriangles.cs:42
+msgid "A triangle can be embedded inside another triangle."
+msgstr "Un triángulo puede ser incluido dentro de otro triángulo."
+
 #: ../src/Games/Logic/PuzzlePencil.cs:38
 msgid "Pencil"
 msgstr "Bolígrafo"
@@ -2229,10 +2327,6 @@ msgstr ""
 "¿Cuantos triángulos de cualquier tamaño se pueden contar en la figura "
 "inferior?"
 
-#: ../src/Games/Logic/PuzzleTriangles.cs:42
-msgid "A triangle can be embedded inside another triangle."
-msgstr "Un triángulo puede ser incluido dentro de otro triángulo."
-
 #: ../src/Games/Logic/PuzzleTriangles.cs:49
 #, csharp-format
 msgid "The triangles are made by connecting the following points: {0}"
@@ -2398,11 +2492,14 @@ msgid "Memorize figures and text"
 msgstr "Memorizar figuras y texto"
 
 #: ../src/Games/Memory/MemoryFiguresAndText.cs:70
+#| msgid ""
+#| "The list below enumerates the figures shown in previous images except for "
+#| "one. Which is the missing figure? Answer the name of the figure."
 msgid ""
-"The list below enumerates the figures shown in previous images except for "
+"The list below enumerates the figures shown in the previous image except for "
 "one. Which is the missing figure? Answer the name of the figure."
 msgstr ""
-"La lista de abajo enumera las figuras mostradas en imágenes anteriores "
+"La lista de abajo enumera las figuras mostradas en la imagen anterior "
 "excepto una. ¿Cuál es la figura que falta? Responde con el nombre de la "
 "figura."
 
@@ -2727,7 +2824,7 @@ msgstr ""
 
 #: ../src/Games/Calculation/CalculationOperator.cs:85
 #: ../src/Games/Calculation/CalculationRatio.cs:89
-#: ../src/Games/Calculation/CalculationTwoNumbers.cs:66
+#: ../src/Games/Calculation/CalculationTwoNumbers.cs:102
 #, csharp-format
 msgid "{0} and {1}"
 msgstr "{0} y {1}"
@@ -2794,7 +2891,7 @@ msgstr ""
 "significa que para cada parte de «a» tienes «b» partes."
 
 #: ../src/Games/Calculation/CalculationRatio.cs:101
-#: ../src/Games/Calculation/CalculationTwoNumbers.cs:78
+#: ../src/Games/Calculation/CalculationTwoNumbers.cs:117
 #, csharp-format
 msgid "number1 + number2 = {0}"
 msgstr "número1 + número2 = {0}"
@@ -2804,16 +2901,28 @@ msgstr "número1 + número2 = {0}"
 msgid "have a ratio of {0}:{1}"
 msgstr "tienen una proporción de {0}:{1}"
 
-#: ../src/Games/Calculation/CalculationTwoNumbers.cs:35
+#: ../src/Games/Calculation/CalculationTwoNumbers.cs:43
 msgid "Two numbers"
 msgstr "Dos números"
 
-#: ../src/Games/Calculation/CalculationTwoNumbers.cs:43
+#: ../src/Games/Calculation/CalculationTwoNumbers.cs:54
 #, csharp-format
 msgid "Which two numbers when added are {0} and when multiplied are {1}?"
 msgstr "¿Qué dos números al sumarse dan {0} y al multiplicarse dan {1}?"
 
-#: ../src/Games/Calculation/CalculationTwoNumbers.cs:81
+#: ../src/Games/Calculation/CalculationTwoNumbers.cs:57
+#, csharp-format
+#| msgid "Which two numbers when added are {0} and when multiplied are {1}?"
+msgid "Which two numbers when subtracted are {0} and when multiplied are {1}?"
+msgstr "¿Qué dos números al restarse dan {0} y al multiplicarse dan {1}?"
+
+#: ../src/Games/Calculation/CalculationTwoNumbers.cs:120
+#, csharp-format
+#| msgid "number1 + number2 = {0}"
+msgid "number1 - number2 = {0}"
+msgstr "número1 - número2 = {0}"
+
+#: ../src/Games/Calculation/CalculationTwoNumbers.cs:127
 #, csharp-format
 msgid "number1 * number2 = {0}"
 msgstr "número1 * número2 = {0}"
