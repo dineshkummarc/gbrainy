@@ -67,7 +67,7 @@ namespace gbrainy.Games.Memory
 		}
 
 		public override string MemoryQuestion {
-			get {return Catalog.GetString ("The list below enumerates the figures shown in previous images except for one. Which is the missing figure? Answer the name of the figure." );}
+			get {return Catalog.GetString ("The list below enumerates the figures shown in the previous image except for one. Which is the missing figure? Answer the name of the figure." );}
 		}
 
 		public override void Initialize ()
