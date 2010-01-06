@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2007-2008 Jordi Mas i Hernàndez <jmas@softcatala.org>
+ * Copyright (C) 2007-2010 Jordi Mas i Hernàndez <jmas@softcatala.org>
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License as
@@ -28,8 +28,16 @@ namespace gbrainy.Games.Calculation
 {
 	public class CalculationTwoNumbers : Game
 	{
-		private int number_a, number_b;
-		private int op1, op2, max_operand;
+		int number_a, number_b;
+		int op1, op2, max_operand;
+		GameTypes type;
+
+		enum GameTypes
+		{
+			Addition,
+			Subtraction,
+			Length
+		};
 
 		public override string Name {
 			get {return Catalog.GetString ("Two numbers");}
@@ -40,11 +48,23 @@ namespace gbrainy.Games.Calculation
 		}
 
 		public override string Question {
-			get {return String.Format (Catalog.GetString ("Which two numbers when added are {0} and when multiplied are {1}?"), op1, op2);} 
+			get {
+				switch (type) {
+				case GameTypes.Addition:
+					return String.Format (Catalog.GetString ("Which two numbers when added are {0} and when multiplied are {1}?"), op1, op2);
+
+				case GameTypes.Subtraction:
+					return String.Format (Catalog.GetString ("Which two numbers when subtracted are {0} and when multiplied are {1}?"), op1, op2);
+				default:
+					throw new InvalidOperationException ();
+				}
+			}
 		}
 
 		public override void Initialize ()
-		{	
+		{
+			type = (GameTypes) random.Next ((int) GameTypes.Length);
+
 			switch (CurrentDifficulty) {
 			case Difficulty.Easy:
 				max_operand = 8;
@@ -60,7 +80,23 @@ namespace gbrainy.Games.Calculation
 			number_a = 5 + random.Next (max_operand);
 			number_b = 3 + random.Next (max_operand);
 
-			op1 = number_a + number_b;
+			switch (type) {
+			case GameTypes.Addition:
+				op1 = number_a + number_b;
+				break;
+			case GameTypes.Subtraction:
+				if (number_a < number_b) {
+					int tmp = number_a;
+
+					number_a = number_b;
+					number_b = tmp;
+				}
+				op1 = number_a - number_b;
+				break;
+			default:
+				throw new InvalidOperationException ();
+			}
+
 			op2 = number_a * number_b;
 
 			right_answer = String.Format (Catalog.GetString ("{0} and {1}"), number_a, number_b);
@@ -75,7 +111,17 @@ namespace gbrainy.Games.Calculation
 			gr.SetPangoLargeFontSize ();
 
 			gr.MoveTo (x, DrawAreaY + 0.22);
-			gr.ShowPangoText (String.Format (Catalog.GetString ("number1 + number2 = {0}"), op1));
+
+			switch (type) {
+			case GameTypes.Addition:
+				gr.ShowPangoText (String.Format (Catalog.GetString ("number1 + number2 = {0}"), op1));
+				break;
+			case GameTypes.Subtraction:
+				gr.ShowPangoText (String.Format (Catalog.GetString ("number1 - number2 = {0}"), op1));
+				break;
+			default:
+				throw new InvalidOperationException ();
+			}
 		
 			gr.MoveTo (x, DrawAreaY + 0.44);
 			gr.ShowPangoText (String.Format (Catalog.GetString ("number1 * number2 = {0}"), op2));
