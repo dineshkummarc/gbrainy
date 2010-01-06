@@ -11,7 +11,7 @@
 # norootforbuild
 
 Name:           gbrainy
-Version:        0.53
+Version:        1.30
 Release:        1.0
 License:        GPL
 Source:         %{name}-%{version}.tar.gz
@@ -24,11 +24,11 @@ Group:          Games
 Summary:        gbrainy is a brain teaser game and trainer to have fun and to keep your brain trained.
 
 %if 0%{?suse_version}
-BuildRequires: glade-sharp2 gnome-sharp2 
+BuildRequires: glade-sharp2 gnome-sharp2 librsvg-devel update-desktop-files mono-addins gnome-doc-utils-devel
 %endif
 
 %if 0%{?fedora_version}
-BuildRequires: gtk-sharp2-devel gnome-sharp-devel
+BuildRequires: gtk-sharp2-devel gnome-sharp-devel librsvg2-devel mono-addins-devel PolicyKit-gnome gnome-doc-utils
 %endif
 
 %description
@@ -39,6 +39,7 @@ It provides the following types of games:
 * Logic puzzles. Games designed to challenge your reasoning and thinking skills.
 * Mental calculation. Games based on arithmetical operations designed to prove your mental calculation skills.
 * Memory trainers. Games designed to challenge your short term memory.
+* Verbal analogies. Challenge your verbal aptitude.
 
 
 %prep
@@ -47,12 +48,17 @@ It provides the following types of games:
 %build
 export MONO_SHARED_DIR=/var/tmp
 export CFLAGS="$RPM_OPT_FLAGS"
+intltoolize --force
 autoreconf
 %configure
 make
 
 %install
 make install DESTDIR=$RPM_BUILD_ROOT
+
+%if 0%{?suse_version}
+%suse_update_desktop_file %{name} -N "gbrainy"
+%endif
 
 %clean
 rm -rf "$RPM_BUILD_ROOT"
@@ -62,12 +68,20 @@ rm -rf "$RPM_BUILD_ROOT"
 %doc AUTHORS NEWS README COPYING
 %{_bindir}/gbrainy
 %{_libdir}/gbrainy/gbrainy.exe
+%{_libdir}/gbrainy/gbrainy.Core.dll
+%{_libdir}/gbrainy/gbrainy.Core.dll.config
+%{_libdir}/gbrainy/gbrainy.Games.dll
 %{_datadir}/applications/gbrainy.desktop
-%{_datadir}/games/gbrainy/*
+%{_datadir}/games/gbrainy/verbal_analogies.xml
 %{_datadir}/icons/hicolor/*/apps/*
 %{_datadir}/locale/*/LC_MESSAGES/gbrainy.mo
 %{_datadir}/man/man6/gbrainy.6.gz
 %{_datadir}/pixmaps/*
+%{_datadir}/gnome/help/gbrainy/*
+%{_datadir}/gnome/help/gbrainy/
+%{_libdir}/gbrainy
+%{_datadir}/games/gbrainy/*
+%{_datadir}/games/gbrainy/
 
 %changelog
 
