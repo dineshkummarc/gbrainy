@@ -64,8 +64,7 @@ PKG_CHECK_MODULES(GBRAINY_CORE, mono >= $MONO_REQUIRED)
 
 PKG_CHECK_MODULES(GBRAINY, 
 	gtk-sharp-2.0 >= $GTKSHARP_REQUIRED
-	gnome-sharp-2.0 >= $GTKSHARP_REQUIRED
-	glade-sharp-2.0 >= $GTKSHARP_REQUIRED)
+	gnome-sharp-2.0 >= $GTKSHARP_REQUIRED)
 AC_SUBST(GBRAINY_LIBS)
 
 AC_ARG_ENABLE(addins, AC_HELP_STRING([--disable-addins], [Disable mono-addins support]), , enable_addins="yes")

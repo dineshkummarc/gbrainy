@@ -26,20 +26,20 @@ using gbrainy.Core.Main;
 
 namespace gbrainy.Clients.Classical
 {
-	public class PreferencesDialog : GtkDialog
+	public class PreferencesDialog : BuilderDialog
 	{
-		[Glade.Widget] Gtk.SpinButton prefspinbutton;
-		[Glade.Widget] Gtk.SpinButton maxstoredspinbutton;
-		[Glade.Widget] Gtk.SpinButton minplayedspinbutton;
-		[Glade.Widget] Gtk.CheckButton prefcheckbutton;
-		[Glade.Widget] Gtk.CheckButton colorblindcheckbutton;
-		[Glade.Widget] Gtk.RadioButton rb_easy;
-		[Glade.Widget] Gtk.RadioButton rb_medium;
-		[Glade.Widget] Gtk.RadioButton rb_master;
+		[GtkBeans.Builder.Object] Gtk.SpinButton prefspinbutton;
+		[GtkBeans.Builder.Object] Gtk.SpinButton maxstoredspinbutton;
+		[GtkBeans.Builder.Object] Gtk.SpinButton minplayedspinbutton;
+		[GtkBeans.Builder.Object] Gtk.CheckButton prefcheckbutton;
+		[GtkBeans.Builder.Object] Gtk.CheckButton colorblindcheckbutton;
+		[GtkBeans.Builder.Object] Gtk.RadioButton rb_easy;
+		[GtkBeans.Builder.Object] Gtk.RadioButton rb_medium;
+		[GtkBeans.Builder.Object] Gtk.RadioButton rb_master;
 
 		PlayerHistory history;
 
-		public PreferencesDialog (PlayerHistory history) : base ("preferences")
+		public PreferencesDialog (PlayerHistory history) : base ("PreferencesDialog.ui", "preferences")
 		{
 			this.history = history;
 			prefspinbutton.Value = Preferences.GetIntValue (Preferences.MemQuestionTimeKey);

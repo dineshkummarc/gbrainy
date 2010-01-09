@@ -1,15 +1,20 @@
 EXTRAFLAGS =  -unsafe -nowarn:0169 $(CSC_DEFINES) 
 
 WRAPPER = gbrainy
+TARGET_CFG = ../../gbrainy.exe.config
 
 GBRAINY_CSDISTFILES =					\
 	$(srcdir)/Defines.cs 				\
 	$(srcdir)/gbrainy.cs 				\
 	$(srcdir)/GtkSynchronize.cs 			\
 	$(srcdir)/SimpleLabel.cs			\
+	$(srcdir)/Builder/Builder.cs			\
+	$(srcdir)/Builder/BuilderConnectFunc.cs 	\
+	$(srcdir)/Builder/GtkBeansSharp.BuilderConnectFuncNative.cs \
+	$(srcdir)/Builder/ObjectManager.cs 		\
 	$(srcdir)/Dialogs/AboutDialog.cs		\
 	$(srcdir)/Dialogs/CustomGameDialog.cs		\
-	$(srcdir)/Dialogs/GtkDialog.cs			\
+	$(srcdir)/Dialogs/BuilderDialog.cs		\
 	$(srcdir)/Dialogs/PlayerHistoryDialog.cs	\
 	$(srcdir)/Dialogs/PreferencesDialog.cs
 
@@ -21,7 +26,10 @@ ASSEMBLIES = \
 	-r:Mono.Posix
 
 RESOURCES =										\
--resource:$(srcdir)/gbrainy.glade  \
+-resource:$(srcdir)/gbrainy.ui \
+-resource:$(srcdir)/Dialogs/ui/PreferencesDialog.ui \
+-resource:$(srcdir)/Dialogs/ui/PlayerHistoryDialog.ui \
+-resource:$(srcdir)/Dialogs/ui/CustomGameDialog.ui \
 -resource:$(top_srcdir)/data/app-graphics/resume-32.png  \
 -resource:$(top_srcdir)/data/app-graphics/endgame-32.png  \
 -resource:$(top_srcdir)/data/app-graphics/pause-32.png  \
@@ -35,27 +43,38 @@ RESOURCES =										\
 -resource:$(top_srcdir)/data/app-graphics/gbrainy.svg
 
 gbrainydir = $(libdir)/gbrainy
-gbrainy_SCRIPTS = ../../gbrainy.exe
+gbrainy_SCRIPTS = ../../gbrainy.exe ../../gbrainy.exe.config
 bin_SCRIPTS = gbrainy
 
 GBRAINY_CSFILES = $(GBRAINY_CSDISTFILES)	\
 	AssemblyInfo.cs
 
 
-../../gbrainy.exe: $(GBRAINY_CSFILES) gbrainy.glade
+../../gbrainy.exe: $(GBRAINY_CSFILES) gbrainy.ui $(srcdir)/Dialogs/ui/PreferencesDialog.ui  \
+	$(srcdir)/Dialogs/ui/PlayerHistoryDialog.ui $(srcdir)/Dialogs/ui/CustomGameDialog.ui
 	$(CSC) -target:winexe -out:$@ $(EXTRAFLAGS) $(GBRAINY_CSFILES) $(ASSEMBLIES) $(RESOURCES)
 
-all: ../../gbrainy.exe
+$(TARGET_CFG): gbrainy.exe.config.in
+	sed -e "s|\@pkglibdir\@|$(pkglibdir)|" \
+	    < $< > $@
+
+all: ../../gbrainy.exe $(TARGET_CFG)
 
 EXTRA_DIST =					\
-	gbrainy.glade \
-	$(srcdir)/mono-addins-strings.xml \
-	$(GBRAINY_CSDISTFILES)			
+	gbrainy.ui 				\
+	$(srcdir)/gbrainy.exe.config.in 	\
+	$(srcdir)/mono-addins-strings.xml 	\
+	$(srcdir)/gbrainy.ui 			\
+	$(srcdir)/Dialogs/ui/PreferencesDialog.ui \
+	$(srcdir)/Dialogs/ui/PlayerHistoryDialog.ui \
+	$(srcdir)/Dialogs/ui/CustomGameDialog.ui \
+	$(GBRAINY_CSDISTFILES)
 
 
 CLEANFILES =					\
 	gbrainy.exe.mdb				\
 	../../gbrainy.exe			\
+	../../gbrainy.exe.config		\
 	gbrainy
 
 

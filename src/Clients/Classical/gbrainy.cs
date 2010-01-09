@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2007-2009 Jordi Mas i Hernàndez <jmas@softcatala.org>
+ * Copyright (C) 2007-2010 Jordi Mas i Hernàndez <jmas@softcatala.org>
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License as
@@ -37,22 +37,23 @@ namespace gbrainy.Clients.Classical
 {
 	public class GtkClient: Program
 	{
-		[Glade.Widget("gbrainy")] Gtk.Window app_window;
-		[Glade.Widget ("toolbar_item")] Gtk.CheckMenuItem toolbar_menuitem;
-		[Glade.Widget] Box drawing_vbox;
-		[Glade.Widget] Gtk.VBox question_vbox;
-		[Glade.Widget] Gtk.VBox solution_vbox;
-		[Glade.Widget] Gtk.Entry answer_entry;
-		[Glade.Widget] Gtk.Button answer_button;
-		[Glade.Widget] Gtk.Button tip_button;
-		[Glade.Widget] Gtk.Button next_button;
-		[Glade.Widget] Gtk.Statusbar statusbar;
-		[Glade.Widget] Gtk.Toolbar toolbar;
-		[Glade.Widget] Gtk.Menu settings_menu;
-		[Glade.Widget] Gtk.Menu help_menu;
-		[Glade.Widget] Gtk.MenuItem pause_menuitem;
-		[Glade.Widget] Gtk.MenuItem finish_menuitem;
-		[Glade.Widget] Gtk.MenuItem newgame_menuitem;
+		[GtkBeans.Builder.Object("gbrainy")] Gtk.Window app_window;
+		[GtkBeans.Builder.Object] Gtk.ToggleAction toolbar_menuitem;
+		[GtkBeans.Builder.Object] Box drawing_vbox;
+		[GtkBeans.Builder.Object] Gtk.VBox question_vbox;
+		[GtkBeans.Builder.Object] Gtk.VBox solution_vbox;
+		[GtkBeans.Builder.Object] Gtk.Entry answer_entry;
+		[GtkBeans.Builder.Object] Gtk.Button answer_button;
+		[GtkBeans.Builder.Object] Gtk.Button tip_button;
+		[GtkBeans.Builder.Object] Gtk.Button next_button;
+		[GtkBeans.Builder.Object] Gtk.Statusbar statusbar;
+		[GtkBeans.Builder.Object] Gtk.Toolbar toolbar;
+		[GtkBeans.Builder.Object] Gtk.MenuBar menubar;
+		[GtkBeans.Builder.Object] Gtk.Action help_menu;
+		[GtkBeans.Builder.Object] Gtk.Action pause_menuitem;
+		[GtkBeans.Builder.Object] Gtk.Action finish_menuitem;
+		[GtkBeans.Builder.Object] Gtk.Action newgame_menuitem;
+		[GtkBeans.Builder.Object] Gtk.UIManager uimanager;
 		DrawingArea drawing_area;
 		GameSession session;
 		ToolButton all_tbbutton, logic_tbbutton, calculation_tbbutton, memory_tbbutton, verbal_tbbutton, pause_tbbutton, finish_tbbutton;
@@ -70,8 +71,8 @@ namespace gbrainy.Clients.Classical
 			Catalog.Init ("gbrainy", Defines.GNOME_LOCALE_DIR);
 			Unix.FixLocaleInfo ();
 
-			Glade.XML gXML = new Glade.XML (null, "gbrainy.glade", "gbrainy", null);
-			gXML.Autoconnect (this);
+			GtkBeans.Builder builder = new GtkBeans.Builder ("gbrainy.ui");
+			builder.Autoconnect (this);
 
 			BuildToolBar ();
 			session = new GameSession ();
@@ -82,7 +83,7 @@ namespace gbrainy.Clients.Classical
 			session.Difficulty = (Game.Difficulty) Preferences.GetIntValue (Preferences.DifficultyKey);
 			drawing_area = new DrawingArea ();
 			drawing_area.ExposeEvent += OnDrawingAreaExposeEvent;
-			GameSensitiveUI ();
+			//GameSensitiveUI ();
 
 			// For low resolutions, hide the toolbar and made the drawing area smaller
 			if (drawing_area.Screen.Width> 0 && drawing_area.Screen.Height > 0) {
@@ -99,19 +100,20 @@ namespace gbrainy.Clients.Classical
 			solution_label = new SimpleLabel ();
 			solution_label.HeightMargin = 2;
 			solution_vbox.Add (solution_label);
-
-		#if MONO_ADDINS
-			item = new Gtk.MenuItem (Catalog.GetString ("Extensions"));
-			settings_menu.Append (item);
-			item.Activated += delegate (object sender, EventArgs ar) { Mono.Addins.Gui.AddinManagerWindow.Run (app_window);};
-		#endif
-
+	
 			drawing_vbox.Add (drawing_area);
 			app_window.IconName = "gbrainy";
 			app_window.ShowAll ();
 
 			if (Preferences.GetBoolValue (Preferences.ToolbarKey) == false || low_res == true)
 				toolbar_menuitem.Active = false;
+
+			MenuItem extensions_menu = uimanager.GetWidget ("/ui/menubar/settings_topmenu/extensionsmenu/") as MenuItem;
+		#if MONO_ADDINS
+			extensions_menu.Activated += delegate (object sender, EventArgs ar) { Mono.Addins.Gui.AddinManagerWindow.Run (app_window);};
+		#else
+			extensions_menu.Visible = false;
+		#endif
 
 			ActiveInputControls (false);
 		}
@@ -304,6 +306,7 @@ namespace gbrainy.Clients.Classical
 			all_tbbutton.Sensitive = calculation_tbbutton.Sensitive = memory_tbbutton.Sensitive = logic_tbbutton.Sensitive = verbal_tbbutton.Sensitive = !playing;
 			pause_menuitem.Sensitive = finish_menuitem.Sensitive = playing;
 			newgame_menuitem.Sensitive = !playing;
+			newgame_menuitem.ActionGroup.Visible = false;
 		}
 
 		private void GetNextGame ()
@@ -418,10 +421,10 @@ namespace gbrainy.Clients.Classical
 			PreferencesDialog dialog;
 
 			dialog = new PreferencesDialog (session.PlayerHistory);
-			if (dialog.Run () == ResponseType.Ok) {
+			if ((Gtk.ResponseType) dialog.Run () == ResponseType.Ok) {
 				session.Difficulty = (Game.Difficulty) Preferences.GetIntValue (Preferences.DifficultyKey);
 			}
-			dialog.Dialog.Destroy ();
+			dialog.Destroy ();
 		}
 
 		void OnCustomGame (object sender, EventArgs args)
@@ -430,8 +433,8 @@ namespace gbrainy.Clients.Classical
 			CustomGameDialog dialog;
 
 			dialog = new CustomGameDialog (session.GameManager);
-			rslt = dialog.Run ();
-			dialog.Dialog.Destroy ();
+			rslt = (Gtk.ResponseType) dialog.Run ();
+			dialog.Destroy ();
 
 			if (rslt == ResponseType.Ok && dialog.NumOfGames > 0)
 				OnNewGame (session.Type = GameSession.Types.Custom);
@@ -522,7 +525,7 @@ namespace gbrainy.Clients.Classical
 
 			dialog = new PlayerHistoryDialog (session.PlayerHistory);
 			dialog.Run ();
-			dialog.Dialog.Destroy ();	
+			dialog.Destroy ();
 		}	
 
 		private void AddIcon (IconFactory stock, string stockid, string resource)

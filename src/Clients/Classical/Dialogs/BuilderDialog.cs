@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2008 Jordi Mas i Hernàndez <jmas@softcatala.org>
+ * Copyright (C) 2010 Jordi Mas i Hernàndez <jmas@softcatala.org>
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License as
@@ -18,39 +18,26 @@
  */
 
 using System;
-using Glade;
 using Gtk;
-using Mono.Unix;
+using GtkBeans;
 
 namespace gbrainy.Clients.Classical
 {
-	public class GtkDialog
+	public class BuilderDialog : Gtk.Dialog
 	{
-		public Glade.XML xml;
-		public Gtk.Dialog dialog;
-		public string dialog_name;
-
-		public GtkDialog (string dialog_name)
+		public BuilderDialog (string resourceName, string dialogName) : this (null, resourceName, dialogName)
 		{
-			this.dialog_name = dialog_name;
-			xml = new Glade.XML (null, "gbrainy.glade", dialog_name, "gbrainy");
-			xml.Autoconnect (this);
-			Dialog.IconName = "gbrainy";
-			dialog = null;
 		}
 
-		public ResponseType Run ()
+		public BuilderDialog (System.Reflection.Assembly assembly, string resourceName, string dialogName) : 
+			this (new GtkBeans.Builder (assembly, resourceName, null),dialogName)
 		{
-			return (ResponseType) Dialog.Run ();
 		}
 
-		public Gtk.Dialog Dialog {
-			get {
-				if (dialog == null)
-					dialog = (Gtk.Dialog) xml.GetWidget (dialog_name);
-			
-				return dialog;
-			}
+		public BuilderDialog (GtkBeans.Builder builder, string dialogName) : base (builder.GetRawObject (dialogName))
+		{
+			builder.Autoconnect (this);
+			IconName = "gbrainy";
 		}
 	}
 }

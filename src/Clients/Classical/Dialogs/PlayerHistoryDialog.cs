@@ -28,19 +28,19 @@ using gbrainy.Core.Views;
 
 namespace gbrainy.Clients.Classical
 {
-	public class PlayerHistoryDialog : GtkDialog
+	public class PlayerHistoryDialog : BuilderDialog
 	{
-		[Glade.Widget] Box history_preview;
-		[Glade.Widget] Label label_playerhistory;
-		[Glade.Widget] Gtk.CheckButton checkbutton_total;
-		[Glade.Widget] Gtk.CheckButton checkbutton_memory;
-		[Glade.Widget] Gtk.CheckButton checkbutton_logic;
-		[Glade.Widget] Gtk.CheckButton checkbutton_calculation;
-		[Glade.Widget] Gtk.CheckButton checkbutton_verbal;
+		[GtkBeans.Builder.Object] Box history_preview;
+		[GtkBeans.Builder.Object] Label label_playerhistory;
+		[GtkBeans.Builder.Object] Gtk.CheckButton checkbutton_total;
+		[GtkBeans.Builder.Object] Gtk.CheckButton checkbutton_memory;
+		[GtkBeans.Builder.Object] Gtk.CheckButton checkbutton_logic;
+		[GtkBeans.Builder.Object] Gtk.CheckButton checkbutton_calculation;
+		[GtkBeans.Builder.Object] Gtk.CheckButton checkbutton_verbal;
 
 		CairoPreview drawing_area;
 
-		public PlayerHistoryDialog (PlayerHistory history) : base ("playerhistory")
+		public PlayerHistoryDialog (PlayerHistory history) : base ("PlayerHistoryDialog.ui", "playerhistory")
 		{
 			string label;
 

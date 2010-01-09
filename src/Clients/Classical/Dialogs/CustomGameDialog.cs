@@ -27,12 +27,12 @@ using gbrainy.Core.Libraries;
 
 namespace gbrainy.Clients.Classical
 {
-	public class CustomGameDialog : GtkDialog
+	public class CustomGameDialog : BuilderDialog
 	{
 		static ListStore games_store;
-		[Glade.Widget] Gtk.TreeView treeview;
-		[Glade.Widget] Box preview_vbox;
-		[Glade.Widget] Label preview_question;
+		[GtkBeans.Builder.Object] Gtk.TreeView treeview;
+		[GtkBeans.Builder.Object] Box preview_vbox;
+		[GtkBeans.Builder.Object] Label preview_question;
 		CairoPreview drawing_area;
 		GameManager manager;
 		int ngames, npos;
@@ -41,7 +41,7 @@ namespace gbrainy.Clients.Classical
 		const int COL_ENABLED = 2;
 		const int COL_OBJECT = 3;
 
-		public CustomGameDialog (GameManager manager) : base ("customgame")
+		public CustomGameDialog (GameManager manager) : base ("CustomGameDialog.ui", "customgame")
 		{
 			Game game;
 			Type[] games;
