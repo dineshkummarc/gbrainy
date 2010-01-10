@@ -83,7 +83,7 @@ namespace gbrainy.Clients.Classical
 			session.Difficulty = (Game.Difficulty) Preferences.GetIntValue (Preferences.DifficultyKey);
 			drawing_area = new DrawingArea ();
 			drawing_area.ExposeEvent += OnDrawingAreaExposeEvent;
-			//GameSensitiveUI ();
+			GameSensitiveUI ();
 
 			// For low resolutions, hide the toolbar and made the drawing area smaller
 			if (drawing_area.Screen.Width> 0 && drawing_area.Screen.Height > 0) {
@@ -306,7 +306,6 @@ namespace gbrainy.Clients.Classical
 			all_tbbutton.Sensitive = calculation_tbbutton.Sensitive = memory_tbbutton.Sensitive = logic_tbbutton.Sensitive = verbal_tbbutton.Sensitive = !playing;
 			pause_menuitem.Sensitive = finish_menuitem.Sensitive = playing;
 			newgame_menuitem.Sensitive = !playing;
-			newgame_menuitem.ActionGroup.Visible = false;
 		}
 
 		private void GetNextGame ()
