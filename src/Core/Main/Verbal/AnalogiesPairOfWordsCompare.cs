@@ -69,7 +69,7 @@ namespace gbrainy.Core.Main.Verbal
 					return current.question;
 
 				return String.Format (Catalog.GetString (
-					"Given the pair of words below, which word has the closest relationship to '{0}'?"),
+					"Given the relationship between the two words below, which word has the same relationship to '{0}'?"),
 					sample);
 			}
 		}

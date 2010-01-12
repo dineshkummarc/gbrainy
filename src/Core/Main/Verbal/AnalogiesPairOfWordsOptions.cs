@@ -80,7 +80,7 @@ namespace gbrainy.Core.Main.Verbal
 				}
 
 				return String.Format (Catalog.GetString (
-					"Given the pair of words '{0}', which of the possible answers has the closest in relationship to the given pair? Answer {1}."),
+					"Given the relationship between the words '{0}', which of the possible answers has the closest in relationship to the given pair? Answer {1}."),
 					current.question,
 					str);
 			}
