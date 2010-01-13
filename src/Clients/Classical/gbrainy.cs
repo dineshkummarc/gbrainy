@@ -66,7 +66,7 @@ namespace gbrainy.Clients.Classical
 		public GtkClient (string [] args, params object [] props)
 		: base ("gbrainy", Defines.VERSION, Modules.UI,  args, props)
 		{
-			Gtk.MenuItem item;
+			Gtk.MenuItem extensions_menu;
 
 			Catalog.Init ("gbrainy", Defines.GNOME_LOCALE_DIR);
 			Unix.FixLocaleInfo ();
@@ -108,7 +108,7 @@ namespace gbrainy.Clients.Classical
 			if (Preferences.GetBoolValue (Preferences.ToolbarKey) == false || low_res == true)
 				toolbar_menuitem.Active = false;
 
-			MenuItem extensions_menu = uimanager.GetWidget ("/ui/menubar/settings_topmenu/extensionsmenu/") as MenuItem;
+			extensions_menu = uimanager.GetWidget ("/ui/menubar/settings_topmenu/extensionsmenu/") as MenuItem;
 		#if MONO_ADDINS
 			extensions_menu.Activated += delegate (object sender, EventArgs ar) { Mono.Addins.Gui.AddinManagerWindow.Run (app_window);};
 		#else
