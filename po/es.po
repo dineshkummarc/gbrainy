@@ -10,8 +10,8 @@ msgstr ""
 "Project-Id-Version: gbrainy.HEAD\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=gbrainy&component=general\n"
-"POT-Creation-Date: 2010-01-06 13:40+0000\n"
-"PO-Revision-Date: 2010-01-06 15:06+0100\n"
+"POT-Creation-Date: 2010-01-12 23:15+0000\n"
+"PO-Revision-Date: 2010-01-15 08:43+0100\n"
 "Last-Translator: Jorge González <jorgegonz@svn.gnome.org>\n"
 "Language-Team: Español <gnome-es-list@gnome.org>\n"
 "MIME-Version: 1.0\n"
@@ -574,7 +574,7 @@ msgstr ""
 "Jugar a los juegos que desafíen mi capacidades lógicas, verbales, cálculo y "
 "memoria"
 
-#: ../gbrainy.desktop.in.h:3 ../src/Clients/Classical/gbrainy.glade.h:42
+#: ../gbrainy.desktop.in.h:3 ../src/Clients/Classical/gbrainy.ui.h:24
 msgid "gbrainy"
 msgstr "gbrainy"
 
@@ -589,21 +589,21 @@ msgid "Total"
 msgstr "Total"
 
 #: ../src/Core/Views/FinishView.cs:99 ../src/Core/Main/Game.cs:332
-#: ../src/Clients/Classical/gbrainy.cs:262
+#: ../src/Clients/Classical/gbrainy.cs:263
 msgid "Logic"
 msgstr "Lógica"
 
-#: ../src/Core/Views/FinishView.cs:106 ../src/Clients/Classical/gbrainy.cs:267
+#: ../src/Core/Views/FinishView.cs:106 ../src/Clients/Classical/gbrainy.cs:268
 msgid "Calculation"
 msgstr "Cálculo"
 
 #: ../src/Core/Views/FinishView.cs:113 ../src/Core/Main/Game.cs:335
-#: ../src/Clients/Classical/gbrainy.cs:273
+#: ../src/Clients/Classical/gbrainy.cs:274
 msgid "Memory"
 msgstr "Memoria"
 
 #: ../src/Core/Views/FinishView.cs:120 ../src/Core/Main/Game.cs:341
-#: ../src/Clients/Classical/gbrainy.cs:279
+#: ../src/Clients/Classical/gbrainy.cs:280
 msgid "Verbal"
 msgstr "Verbal"
 
@@ -980,12 +980,15 @@ msgstr "Comparación de pares de palabras"
 
 #: ../src/Core/Main/Verbal/AnalogiesPairOfWordsCompare.cs:72
 #, csharp-format
+#| msgid ""
+#| "Given the pair of words below, which word has the closest relationship to "
+#| "'{0}'?"
 msgid ""
-"Given the pair of words below, which word has the closest relationship to "
-"'{0}'?"
+"Given the relationship between the two words below, which word has the same "
+"relationship to '{0}'?"
 msgstr ""
-"Dado el par de palabras de abajo, ¿qué palabra tiene la relación más cercana "
-"con «{0}»?"
+"Dada la relación entre las dos palabras de abajo, ¿qué palabra tiene la "
+"misma relación con «{0}»?"
 
 #: ../src/Core/Main/Verbal/AnalogiesPairOfWordsCompare.cs:108
 #, csharp-format
@@ -998,12 +1001,15 @@ msgstr "Par de palabras"
 
 #: ../src/Core/Main/Verbal/AnalogiesPairOfWordsOptions.cs:83
 #, csharp-format
+#| msgid ""
+#| "Given the pair of words '{0}', which of the possible answers has the "
+#| "closest in relationship to the given pair? Answer {1}."
 msgid ""
-"Given the pair of words '{0}', which of the possible answers has the closest "
-"in relationship to the given pair? Answer {1}."
+"Given the relationship between the words '{0}', which of the possible "
+"answers has the closest in relationship to the given pair? Answer {1}."
 msgstr ""
-"Dado el par de palabras «{0}», ¿cuál de las posibles respuestas tiene la "
-"relación más cercana con el par dado? Responda {1}."
+"Dada la relación entre las palabras «{0}», ¿cuál de las posibles respuestas "
+"tiene la relación más cercana con el par dado? Responde {1}."
 
 #: ../src/Core/Main/Verbal/AnalogiesQuestionAnswer.cs:42
 msgid "Question and answer"
@@ -1023,61 +1029,57 @@ msgstr "Lee un total de {0} analogías verbales"
 msgid "There are no verbal analogies available."
 msgstr "No existen analogías verbales disponibles."
 
-#: ../src/Clients/Classical/gbrainy.cs:104
-msgid "Extensions"
-msgstr "Extensiones"
-
-#: ../src/Clients/Classical/gbrainy.cs:255
+#: ../src/Clients/Classical/gbrainy.cs:256
 msgid "Play all the games"
 msgstr "Jugar a todos los juegos"
 
-#: ../src/Clients/Classical/gbrainy.cs:256
+#: ../src/Clients/Classical/gbrainy.cs:257
 msgid "All"
 msgstr "Todo"
 
-#: ../src/Clients/Classical/gbrainy.cs:261
+#: ../src/Clients/Classical/gbrainy.cs:262
 msgid "Play games that challenge your reasoning and thinking"
 msgstr "Jugar a los juegos que desafíen mi razonamiento y pensamiento"
 
-#: ../src/Clients/Classical/gbrainy.cs:268
+#: ../src/Clients/Classical/gbrainy.cs:269
 msgid "Play games that challenge your mental calculation skills"
 msgstr "Jugar a los juegos que desafíen mis capacidades de cálculo mental"
 
-#: ../src/Clients/Classical/gbrainy.cs:274
+#: ../src/Clients/Classical/gbrainy.cs:275
 msgid "Play games that challenge your short term memory"
 msgstr "Jugar a los juegos que desafíen mi memoria a corto plazo"
 
-#: ../src/Clients/Classical/gbrainy.cs:280
+#: ../src/Clients/Classical/gbrainy.cs:281
 msgid "Play games that challenge your verbal aptitude"
 msgstr "Jugar a los juegos que desafíen mi aptitud verbal"
 
-#: ../src/Clients/Classical/gbrainy.cs:285
-#: ../src/Clients/Classical/gbrainy.cs:481
+#: ../src/Clients/Classical/gbrainy.cs:286
+#: ../src/Clients/Classical/gbrainy.cs:482
 msgid "Pause"
 msgstr "Pausar"
 
-#: ../src/Clients/Classical/gbrainy.cs:286
+#: ../src/Clients/Classical/gbrainy.cs:287
 msgid "Pause or resume the game"
 msgstr "Pausar o resumir el juego"
 
-#: ../src/Clients/Classical/gbrainy.cs:291
+#: ../src/Clients/Classical/gbrainy.cs:292
 msgid "End the game and show score"
 msgstr "Terminar el juego y mostrar la puntuación"
 
-#: ../src/Clients/Classical/gbrainy.cs:292
+#: ../src/Clients/Classical/gbrainy.cs:293
 msgid "Finish"
 msgstr "Terminar"
 
-#: ../src/Clients/Classical/gbrainy.cs:345
+#: ../src/Clients/Classical/gbrainy.cs:346
 msgid "Congratulations."
 msgstr "Enhorabuena."
 
-#: ../src/Clients/Classical/gbrainy.cs:347
+#: ../src/Clients/Classical/gbrainy.cs:348
 msgid "Incorrect answer."
 msgstr "Respuesta incorrecta."
 
 #
-#: ../src/Clients/Classical/gbrainy.cs:397
+#: ../src/Clients/Classical/gbrainy.cs:398
 msgid ""
 "Once you have an answer type it in the \"Answer:\" entry box and press the "
 "\"OK\" button."
@@ -1085,7 +1087,7 @@ msgstr ""
 "Una vez que tengas la respuesta escríbela en «Respuesta:» y pulsa el botón "
 "«Aceptar»."
 
-#: ../src/Clients/Classical/gbrainy.cs:485
+#: ../src/Clients/Classical/gbrainy.cs:486
 msgid "Resume"
 msgstr "Reanudar"
 
@@ -1176,6 +1178,87 @@ msgid_plural "It is built using the results of {0} last recorded games."
 msgstr[0] ""
 "Necesita más de una partida grabada para ver la evolución de la puntuación."
 msgstr[1] "Está construido usando los resultados de {0} partidas grabadas."
+
+#: ../src/Clients/Classical/Dialogs/ui/CustomGameDialog.ui.h:1
+msgid "Custom Game"
+msgstr "Juego personalizado"
+
+#: ../src/Clients/Classical/Dialogs/ui/CustomGameDialog.ui.h:2
+msgid "Select All"
+msgstr "Seleccionar todo"
+
+#: ../src/Clients/Classical/Dialogs/ui/CustomGameDialog.ui.h:3
+msgid "Unselect all"
+msgstr "Deseleccionar todo"
+
+#: ../src/Clients/Classical/Dialogs/ui/CustomGameDialog.ui.h:4
+msgid "_Start"
+msgstr "_Iniciar"
+
+#: ../src/Clients/Classical/Dialogs/ui/PlayerHistoryDialog.ui.h:1
+#: ../src/Clients/Classical/gbrainy.ui.h:9
+msgid "Player's Game History"
+msgstr "Histórico de partidas del jugador"
+
+#: ../src/Clients/Classical/Dialogs/ui/PlayerHistoryDialog.ui.h:2
+msgid "Show:"
+msgstr "Mostrar:"
+
+#: ../src/Clients/Classical/Dialogs/ui/PreferencesDialog.ui.h:1
+msgid "<b>Difficulty Level</b>"
+msgstr "<b>Nivel de dificultad</b>"
+
+#: ../src/Clients/Classical/Dialogs/ui/PreferencesDialog.ui.h:2
+msgid "<b>General Settings</b>"
+msgstr "<b>Ajustes generales</b>"
+
+#: ../src/Clients/Classical/Dialogs/ui/PreferencesDialog.ui.h:3
+msgid "<b>Memory Games</b>"
+msgstr "<b>Juegos de memoria</b>"
+
+#: ../src/Clients/Classical/Dialogs/ui/PreferencesDialog.ui.h:4
+msgid "<b>Player's Game History</b>"
+msgstr "<b>Histórico del jugador</b>"
+
+#: ../src/Clients/Classical/Dialogs/ui/PreferencesDialog.ui.h:5
+msgid "Clear Player's Game History"
+msgstr "Limpiar el histórico de partidas del jugador"
+
+#: ../src/Clients/Classical/Dialogs/ui/PreferencesDialog.ui.h:6
+msgid "Easy"
+msgstr "Fácil"
+
+#: ../src/Clients/Classical/Dialogs/ui/PreferencesDialog.ui.h:7
+msgid "Master"
+msgstr "Avanzado"
+
+#: ../src/Clients/Classical/Dialogs/ui/PreferencesDialog.ui.h:8
+msgid "Maximum number of stored games in the player's game history:"
+msgstr "Máximo número de partidas almacenadas en el histórico del jugador:"
+
+#: ../src/Clients/Classical/Dialogs/ui/PreferencesDialog.ui.h:9
+msgid "Medium"
+msgstr "Medio"
+
+#: ../src/Clients/Classical/Dialogs/ui/PreferencesDialog.ui.h:10
+msgid "Minimum number of played games to store the game:"
+msgstr "Mínimo número de partidas jugadas para almacenar la partida:"
+
+#: ../src/Clients/Classical/Dialogs/ui/PreferencesDialog.ui.h:11
+msgid "Preferences"
+msgstr "Preferencias"
+
+#: ../src/Clients/Classical/Dialogs/ui/PreferencesDialog.ui.h:12
+msgid "Show countdown message"
+msgstr "Mostrar el mensaje del tiempo restante"
+
+#: ../src/Clients/Classical/Dialogs/ui/PreferencesDialog.ui.h:13
+msgid "Skip games that use colors (friendly to colorblind users)"
+msgstr "Omitir los juegos que usan colores (amigable para usuarios daltónicos)"
+
+#: ../src/Clients/Classical/Dialogs/ui/PreferencesDialog.ui.h:14
+msgid "Time in seconds to memorize the challenge:"
+msgstr "Tiempo en segundos para memorizar el desafío:"
 
 #: ../src/Games/Logic/Puzzle3DCube.cs:34 ../src/Games/Logic/PuzzleCube.cs:43
 msgid "Cube"
@@ -2492,9 +2575,6 @@ msgid "Memorize figures and text"
 msgstr "Memorizar figuras y texto"
 
 #: ../src/Games/Memory/MemoryFiguresAndText.cs:70
-#| msgid ""
-#| "The list below enumerates the figures shown in previous images except for "
-#| "one. Which is the missing figure? Answer the name of the figure."
 msgid ""
 "The list below enumerates the figures shown in the previous image except for "
 "one. Which is the missing figure? Answer the name of the figure."
@@ -2912,13 +2992,11 @@ msgstr "¿Qué dos números al sumarse dan {0} y al multiplicarse dan {1}?"
 
 #: ../src/Games/Calculation/CalculationTwoNumbers.cs:57
 #, csharp-format
-#| msgid "Which two numbers when added are {0} and when multiplied are {1}?"
 msgid "Which two numbers when subtracted are {0} and when multiplied are {1}?"
 msgstr "¿Qué dos números al restarse dan {0} y al multiplicarse dan {1}?"
 
 #: ../src/Games/Calculation/CalculationTwoNumbers.cs:120
 #, csharp-format
-#| msgid "number1 + number2 = {0}"
 msgid "number1 - number2 = {0}"
 msgstr "número1 - número2 = {0}"
 
@@ -2927,168 +3005,92 @@ msgstr "número1 - número2 = {0}"
 msgid "number1 * number2 = {0}"
 msgstr "número1 * número2 = {0}"
 
-#: ../src/Clients/Classical/gbrainy.glade.h:1
-msgid "<b>Difficulty Level</b>"
-msgstr "<b>Nivel de dificultad</b>"
-
-#: ../src/Clients/Classical/gbrainy.glade.h:2
-msgid "<b>General Settings</b>"
-msgstr "<b>Ajustes generales</b>"
-
-#: ../src/Clients/Classical/gbrainy.glade.h:3
-msgid "<b>Memory Games</b>"
-msgstr "<b>Juegos de memoria</b>"
-
-#: ../src/Clients/Classical/gbrainy.glade.h:4
-msgid "<b>Player's Game History</b>"
-msgstr "<b>Histórico del jugador</b>"
-
-#: ../src/Clients/Classical/gbrainy.glade.h:5
+#: ../src/Clients/Classical/gbrainy.ui.h:1
 msgid "All Games (Logic, Mental Calculation, Memory and Verbal Analogies)"
 msgstr ""
 "Todos los juegos (lógica, cálculo mental, memoria y analogías verbales)"
 
-#: ../src/Clients/Classical/gbrainy.glade.h:6
+#: ../src/Clients/Classical/gbrainy.ui.h:2
 msgid "Answer:"
 msgstr "Respuesta:"
 
-#: ../src/Clients/Classical/gbrainy.glade.h:7
-msgid "Clear Player's Game History"
-msgstr "Limpiar el histórico de partidas del jugador"
-
-#: ../src/Clients/Classical/gbrainy.glade.h:8
-msgid "Custom Game"
-msgstr "Juego personalizado"
-
-#: ../src/Clients/Classical/gbrainy.glade.h:9
+#: ../src/Clients/Classical/gbrainy.ui.h:3
 msgid "Custom Game Selection..."
 msgstr "Selección de juego personalizado…"
 
-#: ../src/Clients/Classical/gbrainy.glade.h:10
-msgid "Easy"
-msgstr "Fácil"
+#: ../src/Clients/Classical/gbrainy.ui.h:4
+msgid "Extensions"
+msgstr "Extensiones"
 
-#: ../src/Clients/Classical/gbrainy.glade.h:11
+#: ../src/Clients/Classical/gbrainy.ui.h:5
 msgid "How to Extend gbrainy's Functionality"
 msgstr "Cómo extender las funcionalidades de Gbrainy"
 
-#: ../src/Clients/Classical/gbrainy.glade.h:12
+#: ../src/Clients/Classical/gbrainy.ui.h:6
 msgid "Logic Puzzles Only"
 msgstr "Solo rompecabezas lógicos"
 
-#: ../src/Clients/Classical/gbrainy.glade.h:13
-msgid "Master"
-msgstr "Avanzado"
-
-#: ../src/Clients/Classical/gbrainy.glade.h:14
-msgid "Maximum number of stored games in the player's game history:"
-msgstr "Máximo número de partidas almacenadas en el histórico del jugador:"
-
-#: ../src/Clients/Classical/gbrainy.glade.h:15
-msgid "Medium"
-msgstr "Medio"
-
-#: ../src/Clients/Classical/gbrainy.glade.h:16
+#: ../src/Clients/Classical/gbrainy.ui.h:7
 msgid "Memory Trainers Only"
 msgstr "Solo entrenadores de memoria"
 
-#: ../src/Clients/Classical/gbrainy.glade.h:17
+#: ../src/Clients/Classical/gbrainy.ui.h:8
 msgid "Mental Calculation Trainers Only"
 msgstr "Solo entrenadores de cálculo mental"
 
-#: ../src/Clients/Classical/gbrainy.glade.h:18
-msgid "Minimum number of played games to store the game:"
-msgstr "Mínimo número de partidas jugadas para almacenar la partida:"
-
-#: ../src/Clients/Classical/gbrainy.glade.h:19
-msgid "Player's Game History"
-msgstr "Histórico de partidas del jugador"
-
-#: ../src/Clients/Classical/gbrainy.glade.h:20
-msgid "Preferences"
-msgstr "Preferencias"
-
-#: ../src/Clients/Classical/gbrainy.glade.h:21
-msgid "Select All"
-msgstr "Seleccionar todo"
-
-#: ../src/Clients/Classical/gbrainy.glade.h:22
-msgid "Show countdown message"
-msgstr "Mostrar el mensaje del tiempo restante"
-
-#: ../src/Clients/Classical/gbrainy.glade.h:23
-msgid "Show:"
-msgstr "Mostrar:"
-
-#: ../src/Clients/Classical/gbrainy.glade.h:24
-msgid "Skip games that use colors (friendly to colorblind users)"
-msgstr "Omitir los juegos que usan colores (amigable para usuarios daltónicos)"
-
-#: ../src/Clients/Classical/gbrainy.glade.h:25
-msgid "Time in seconds to memorize the challenge:"
-msgstr "Tiempo en segundos para memorizar el desafío:"
-
-#: ../src/Clients/Classical/gbrainy.glade.h:26
+#: ../src/Clients/Classical/gbrainy.ui.h:10
 msgid "Toolbar"
 msgstr "Barra de herramientas"
 
-#: ../src/Clients/Classical/gbrainy.glade.h:27
+#: ../src/Clients/Classical/gbrainy.ui.h:11
 msgid "Trainers Only (Mental Calculation and Memory)"
 msgstr "Solo entrenadores (cálculo mental y de memoria)"
 
-#: ../src/Clients/Classical/gbrainy.glade.h:28
-msgid "Unselect all"
-msgstr "Deseleccionar todo"
-
-#: ../src/Clients/Classical/gbrainy.glade.h:29
+#: ../src/Clients/Classical/gbrainy.ui.h:12
 msgid "Verbal Analogies Only"
 msgstr "Sólo analogías verbales"
 
-#: ../src/Clients/Classical/gbrainy.glade.h:30
+#: ../src/Clients/Classical/gbrainy.ui.h:13
 msgid "_Contents"
 msgstr "Índ_ice"
 
-#: ../src/Clients/Classical/gbrainy.glade.h:31
+#: ../src/Clients/Classical/gbrainy.ui.h:14
 msgid "_End Game"
 msgstr "Finalizar el ju_ego"
 
-#: ../src/Clients/Classical/gbrainy.glade.h:32
+#: ../src/Clients/Classical/gbrainy.ui.h:15
 msgid "_FullScreen"
 msgstr "_Pantalla completa"
 
-#: ../src/Clients/Classical/gbrainy.glade.h:33
+#: ../src/Clients/Classical/gbrainy.ui.h:16
 msgid "_Game"
 msgstr "_Juego"
 
-#: ../src/Clients/Classical/gbrainy.glade.h:34
+#: ../src/Clients/Classical/gbrainy.ui.h:17
 msgid "_Help"
 msgstr "Ay_uda"
 
-#: ../src/Clients/Classical/gbrainy.glade.h:35
+#: ../src/Clients/Classical/gbrainy.ui.h:18
 msgid "_New Game"
 msgstr "Juego _nuevo"
 
-#: ../src/Clients/Classical/gbrainy.glade.h:36
+#: ../src/Clients/Classical/gbrainy.ui.h:19
 msgid "_Next"
 msgstr "_Siguiente"
 
-#: ../src/Clients/Classical/gbrainy.glade.h:37
+#: ../src/Clients/Classical/gbrainy.ui.h:20
 msgid "_Pause Game"
 msgstr "_Pausar el juego"
 
-#: ../src/Clients/Classical/gbrainy.glade.h:38
+#: ../src/Clients/Classical/gbrainy.ui.h:21
 msgid "_Settings"
 msgstr "_Configuración"
 
-#: ../src/Clients/Classical/gbrainy.glade.h:39
-msgid "_Start"
-msgstr "_Iniciar"
-
-#: ../src/Clients/Classical/gbrainy.glade.h:40
+#: ../src/Clients/Classical/gbrainy.ui.h:22
 msgid "_Tip"
 msgstr "_Pista"
 
-#: ../src/Clients/Classical/gbrainy.glade.h:41
+#: ../src/Clients/Classical/gbrainy.ui.h:23
 msgid "_View"
 msgstr "_Ver"
 
