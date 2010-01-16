@@ -33,31 +33,22 @@ namespace gbrainy.Core.Libraries
 		double font_size;
 		static SVGImage image = null;
 
-		const double line_space = 0.018;
 		const double width_margin = 0.04;
 
 		public CairoContextEx (IntPtr state, Gtk.Widget widget) : base (state)
 		{
-			CommonConstructor ();
+			layout = Pango.CairoHelper.CreateLayout (this);
 
-			double resolution = widget.Screen.Resolution;
-			if (resolution != -1)  {
-				Pango.Context c = layout.Context;
-				Pango.CairoHelper.ContextSetResolution (c, resolution);
-				c.Dispose ();
-			}
+			// We do not honor DPI settings or font sizes (just font name)
+			// User should resize the window
+			layout.FontDescription = widget.PangoContext.FontDescription.Copy ();
+			SetPangoNormalFontSize ();
 		}
 
 		// Used by GeneratePDF
 		public CairoContextEx (Cairo.Surface s) : base (s)
 		{
-			CommonConstructor ();
-		}
-
-		private void CommonConstructor ()
-		{
 			layout = Pango.CairoHelper.CreateLayout (this);
-			layout.FontDescription = FontDescription.FromString ("Sans");
 			SetPangoNormalFontSize ();
 		}
 
@@ -69,7 +60,7 @@ namespace gbrainy.Core.Libraries
 
 		private void UpdateFontSize ()
 		{
-			layout.FontDescription.Size = (int) (font_size * Pango.Scale.PangoScale * Matrix.Xx);	
+			layout.FontDescription.Size = (int) (font_size * Pango.Scale.PangoScale * Matrix.Xx);
 		}
 
 		/*
@@ -133,7 +124,7 @@ namespace gbrainy.Core.Libraries
 
 		public void SetPangoNormalFontSize ()
 		{
-			font_size = 0.022;
+			font_size = 0.025;
 		}
 
 		public void SetPangoLargeFontSize ()
@@ -205,7 +196,6 @@ namespace gbrainy.Core.Libraries
 			else	
 				layout.Width = (int) (width * old.Xx * Pango.Scale.PangoScale);
 
-			layout.Spacing = (int) (line_space * (old.Xx * Pango.Scale.PangoScale));
 			layout.SingleParagraphMode = false;
 			layout.SetText (str);
 			Pango.CairoHelper.ShowLayout (this, layout);
