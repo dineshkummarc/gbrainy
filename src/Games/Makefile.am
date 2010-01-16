@@ -15,6 +15,7 @@ CSFILES =  \
 		Logic/PuzzleCountSeries.cs			\
 		Logic/PuzzleCoverPercentage.cs			\
 		Logic/PuzzleCube.cs				\
+		Logic/PuzzleDice.cs				\
 		Logic/PuzzleDivideCircle.cs			\
 		Logic/PuzzleEquation.cs				\
 		Logic/PuzzleExtraCircle.cs			\
@@ -70,8 +71,9 @@ CSFILES =  \
 		Calculation/CalculationTwoNumbers.cs
 
 RES = \
-$(top_srcdir)/data/game-graphics/present.svg  \
-$(top_srcdir)/data/game-graphics/handshake.svg
+$(top_srcdir)/data/game-graphics/present.svg  	\
+$(top_srcdir)/data/game-graphics/handshake.svg	\
+$(top_srcdir)/data/game-graphics/dice.svg
 
 REFS =  \
 	-r:System \
