@@ -25,6 +25,7 @@ using System.Timers;
 using System.ComponentModel;
 
 using gbrainy.Core.Libraries;
+using gbrainy.Core.Main;
 
 namespace gbrainy.Core.Views
 {

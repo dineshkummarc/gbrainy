@@ -26,7 +26,7 @@ using gbrainy.Core.Libraries;
 
 namespace gbrainy.Core.Main
 {
-	abstract public class Game : Views.IDrawable, IDrawRequest
+	abstract public class Game : IDrawable, IDrawRequest
 	{
 		// See: GetGameTypeDescription
 		public enum Types

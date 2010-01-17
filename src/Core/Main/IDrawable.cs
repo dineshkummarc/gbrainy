@@ -22,7 +22,7 @@ using System.ComponentModel;
 
 using gbrainy.Core.Libraries;
 
-namespace gbrainy.Core.Views
+namespace gbrainy.Core.Main
 {
 	// Used by any class that can draw in drawing context
 	public interface IDrawable

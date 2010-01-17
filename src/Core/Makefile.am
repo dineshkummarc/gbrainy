@@ -25,8 +25,8 @@ CSFILES =  \
 		Main/Verbal/Analogy.cs		\
 		Views/CountDownView.cs		\
 		Views/FinishView.cs		\
-		Views/IDrawable.cs		\
-		Views/IDrawRequest.cs		\
+		Main/IDrawable.cs		\
+		Main/IDrawRequest.cs		\
 		Views/PlayerHistoryView.cs	\
 		Views/ViewsControler.cs		\
 		Views/WelcomeView.cs		\
