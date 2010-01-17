@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gbrainy\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-01-11 23:11+0100\n"
-"PO-Revision-Date: 2010-01-09 11:28+0100\n"
+"POT-Creation-Date: 2010-01-17 21:57+0100\n"
+"PO-Revision-Date: 2010-01-13 08:31+0100\n"
 "Last-Translator: Marek Černocký <marek@manet.cz>\n"
 "Language-Team: Czech <gnome-cs-list@gnome.org>\n"
 "MIME-Version: 1.0\n"
@@ -577,7 +577,7 @@ msgstr ""
 msgid "gbrainy"
 msgstr "gbrainy"
 
-#: ../src/Core/Views/CountDownView.cs:81
+#: ../src/Core/Views/CountDownView.cs:82
 msgid "Get ready to memorize the next objects..."
 msgstr "Připravte se na zapamatování si několika věcí…"
 
@@ -980,9 +980,9 @@ msgstr "Srovnání páru slov"
 #: ../src/Core/Main/Verbal/AnalogiesPairOfWordsCompare.cs:72
 #, csharp-format
 msgid ""
-"Given the pair of words below, which word has the closest relationship to "
-"'{0}'?"
-msgstr "Níže je uveden pár slov. Jaké slovo má nejpodobnější vztah k „{0}“?"
+"Given the relationship between the two words below, which word has the same "
+"relationship to '{0}'?"
+msgstr "Níže je dán vztah mezi párem slov. Jaké slovo má stejný vztah k „{0}“?"
 
 #: ../src/Core/Main/Verbal/AnalogiesPairOfWordsCompare.cs:108
 #, csharp-format
@@ -996,11 +996,11 @@ msgstr "Páry slov"
 #: ../src/Core/Main/Verbal/AnalogiesPairOfWordsOptions.cs:83
 #, csharp-format
 msgid ""
-"Given the pair of words '{0}', which of the possible answers has the closest "
-"in relationship to the given pair? Answer {1}."
+"Given the relationship between the words '{0}', which of the possible "
+"answers has the closest in relationship to the given pair? Answer {1}."
 msgstr ""
-"Je dán pár slov „{0}“. Která z možných odpovědí má nejpodobnější vzájemný "
-"vztah jako tento pár? Odpovězte {1}."
+"Je dán vztah mezi slovy „{0}“. Která z možných odpovědí nejlépe vyjadřuje "
+"vzájemný vztah daného páru? Odpovězte {1}."
 
 #: ../src/Core/Main/Verbal/AnalogiesQuestionAnswer.cs:42
 msgid "Question and answer"
@@ -1480,6 +1480,53 @@ msgid ""
 msgstr ""
 "Který čtverec bude naproti čtverci s číslem {0}, když tento obrazec "
 "poskládáme do kostky? Napište číslo tohoto čtverce."
+
+#: ../src/Games/Logic/PuzzleDice.cs:52
+msgid ""
+"What is the probability of getting a '2' or a '6' in a single throw of a "
+"fair 6 sided die? Answer using a fraction (e.g.: 1/2)."
+msgstr ""
+
+#: ../src/Games/Logic/PuzzleDice.cs:54
+msgid "There are 2 of 6 possibilities."
+msgstr ""
+
+#: ../src/Games/Logic/PuzzleDice.cs:56
+msgid ""
+"What is the probability of not getting a '5' in a single throw of a fair 6 "
+"sided die? Answer using a fraction (e.g.: 1/2)."
+msgstr ""
+
+#: ../src/Games/Logic/PuzzleDice.cs:58
+msgid "There are 5 of 6 possibilities."
+msgstr ""
+
+#: ../src/Games/Logic/PuzzleDice.cs:60
+msgid ""
+"Two fair 6 sided dices are thrown simultaneously. What is the probability of "
+"getting two even numbers?  Answer using a fraction (e.g.: 1/2)."
+msgstr ""
+
+#: ../src/Games/Logic/PuzzleDice.cs:62
+msgid "There are 9 of 36 possibilities of getting an even number."
+msgstr ""
+
+#: ../src/Games/Logic/PuzzleDice.cs:64
+msgid ""
+"Two fair 6 sided dices are thrown simultaneously. What is the probability of "
+"getting two '6'?  Answer using a fraction (e.g.: 1/2)."
+msgstr ""
+
+#: ../src/Games/Logic/PuzzleDice.cs:66
+msgid ""
+"There are 1 of 6 possibilities of getting first die and the same for the "
+"second die."
+msgstr ""
+
+#: ../src/Games/Logic/PuzzleDice.cs:70
+#, fuzzy
+msgid "Dice"
+msgstr "Kruh"
 
 #: ../src/Games/Logic/PuzzleDivideCircle.cs:47
 msgid "Divide circles"
@@ -2364,7 +2411,8 @@ msgstr ""
 "Před {0} hodinami to bylo tak dlouho po {1} jako bylo před {2} ten stejný "
 "den. Kolik je teď hodin?"
 
-#: ../src/Games/Logic/PuzzleTimeNow.cs:66
+#. No hands
+#: ../src/Games/Logic/PuzzleTimeNow.cs:65
 msgid "Sample clock"
 msgstr "Ukázkové hodiny"
 
