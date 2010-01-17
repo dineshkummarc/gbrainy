@@ -62,10 +62,7 @@ namespace gbrainy.Games.Logic
 			gr.DrawClock (DrawAreaX + 0.4, DrawAreaY + 0.4, figure_size, 
 				0, 0 /* No hands */);
 
-			gr.MoveTo (DrawAreaX + 0.3, DrawAreaY + 0.3 + figure_size);
-			gr.ShowPangoText (Catalog.GetString ("Sample clock"));
-			gr.Stroke ();
-
+			gr.DrawTextCentered (0.5, DrawAreaY + 0.3 + figure_size, Catalog.GetString ("Sample clock"));
 		}
 	}
 }
