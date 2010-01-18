@@ -10,8 +10,8 @@ msgstr ""
 "Project-Id-Version: gbrainy.HEAD\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=gbrainy&component=general\n"
-"POT-Creation-Date: 2010-01-12 23:15+0000\n"
-"PO-Revision-Date: 2010-01-15 08:43+0100\n"
+"POT-Creation-Date: 2010-01-17 15:16+0000\n"
+"PO-Revision-Date: 2010-01-18 23:06+0100\n"
 "Last-Translator: Jorge González <jorgegonz@svn.gnome.org>\n"
 "Language-Team: Español <gnome-es-list@gnome.org>\n"
 "MIME-Version: 1.0\n"
@@ -980,9 +980,6 @@ msgstr "Comparación de pares de palabras"
 
 #: ../src/Core/Main/Verbal/AnalogiesPairOfWordsCompare.cs:72
 #, csharp-format
-#| msgid ""
-#| "Given the pair of words below, which word has the closest relationship to "
-#| "'{0}'?"
 msgid ""
 "Given the relationship between the two words below, which word has the same "
 "relationship to '{0}'?"
@@ -1001,9 +998,6 @@ msgstr "Par de palabras"
 
 #: ../src/Core/Main/Verbal/AnalogiesPairOfWordsOptions.cs:83
 #, csharp-format
-#| msgid ""
-#| "Given the pair of words '{0}', which of the possible answers has the "
-#| "closest in relationship to the given pair? Answer {1}."
 msgid ""
 "Given the relationship between the words '{0}', which of the possible "
 "answers has the closest in relationship to the given pair? Answer {1}."
@@ -1493,6 +1487,64 @@ msgid ""
 msgstr ""
 "Cuando se pliega en un cubo, ¿qué cara es la opuesta a la cara con un {0} "
 "dibujado en ella? Responde con el número escrito en la cara."
+
+#: ../src/Games/Logic/PuzzleDice.cs:52
+msgid ""
+"What is the probability of getting a '2' or a '6' in a single throw of a "
+"fair 6 sided die? Answer using a fraction (e.g.: 1/2)."
+msgstr ""
+"¿Cuál es la probabilidad de obtener un «2» o un «6» en un solo lanzamiento de "
+"un dado no cargado de 6 caras? Responde usando una fracción (ej.: 1/2)."
+
+#: ../src/Games/Logic/PuzzleDice.cs:54
+msgid "There are 2 of 6 possibilities."
+msgstr "Existen 2 de 6 probabilidades."
+
+#: ../src/Games/Logic/PuzzleDice.cs:56
+msgid ""
+"What is the probability of not getting a '5' in a single throw of a fair 6 "
+"sided die? Answer using a fraction (e.g.: 1/2)."
+msgstr ""
+"¿Cuál es la probabilidad de no obtener un «5» en un solo lanzamiento de un "
+"dado no cargado de 6 caras? Responde usando una fracción (ej.: 1/2)."
+
+#: ../src/Games/Logic/PuzzleDice.cs:58
+msgid "There are 5 of 6 possibilities."
+msgstr "Existen 5 de 6 probabilidades."
+
+#: ../src/Games/Logic/PuzzleDice.cs:60
+msgid ""
+"Two fair 6 sided dices are thrown simultaneously. What is the probability of "
+"getting two even numbers?  Answer using a fraction (e.g.: 1/2)."
+msgstr ""
+"Dos dados no cargados de 6 caras se lanzan a la vez. ¿Cuál es la "
+"probabilidad de obtener dos números pares? Responde usando una fracción "
+"(ej.: 1/2)."
+
+#: ../src/Games/Logic/PuzzleDice.cs:62
+msgid "There are 9 of 36 possibilities of getting an even number."
+msgstr "Existen 9 de 39 probabilidades de obtener un número par."
+
+#: ../src/Games/Logic/PuzzleDice.cs:64
+msgid ""
+"Two fair 6 sided dices are thrown simultaneously. What is the probability of "
+"getting two '6'?  Answer using a fraction (e.g.: 1/2)."
+msgstr ""
+"Dos dados no cargados de 6 caras se lanzan a la vez. ¿Cuál es la "
+"probabilidad de obtener dos «6»? Responde usando una fracción (ej.: 1/2)."
+
+#: ../src/Games/Logic/PuzzleDice.cs:66
+msgid ""
+"There are 1 of 6 possibilities of getting first die and the same for the "
+"second die."
+msgstr ""
+"Existe 1 de 6 probabilidades de obtener el primer dado y las mismas para el "
+"segundo dado."
+
+#: ../src/Games/Logic/PuzzleDice.cs:70
+#| msgid "Circle"
+msgid "Dice"
+msgstr "Dado"
 
 #: ../src/Games/Logic/PuzzleDivideCircle.cs:47
 msgid "Divide circles"
@@ -2396,7 +2448,8 @@ msgstr ""
 "Hace {0} horas faltaba tanto para las {1} que para las {2} del mismo día. "
 "¿Qué hora es ahora?"
 
-#: ../src/Games/Logic/PuzzleTimeNow.cs:66
+#. No hands
+#: ../src/Games/Logic/PuzzleTimeNow.cs:65
 msgid "Sample clock"
 msgstr "Reloj de ejemplo"
 
