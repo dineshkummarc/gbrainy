@@ -1,15 +1,15 @@
-# Slovenian translation of gbrainy.
+# Slovenian translation of gbrainy
 # Copyright (C) 2009 gbrainy's COPYRIGHT HOLDER
 # This file is distributed under the same license as the gbrainy package.
 #
-# Andrej Žnidaršič <andrej.znidarsic@gmail.com>, 2009 - 2010.
+# Andrej Žnidaršič <andrej.znidarsic@gmail.com>, 2009.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gbrainy master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gbrainy&component=general\n"
-"POT-Creation-Date: 2010-01-15 07:44+0000\n"
-"PO-Revision-Date: 2010-01-15 19:22+0100\n"
+"POT-Creation-Date: 2010-01-17 20:57+0000\n"
+"PO-Revision-Date: 2010-01-20 19:35+0100\n"
 "Last-Translator: Matej Urbančič <mateju@svn.gnome.org>\n"
 "Language-Team: Slovenian GNOME Translation Team <gnome-si@googlegroups.com>\n"
 "MIME-Version: 1.0\n"
@@ -70,7 +70,7 @@ msgstr "Fagot"
 
 #: ../data/verbal_analogies.xml.h:13
 msgid "Column"
-msgstr "Stolpec"
+msgstr "Steber"
 
 #: ../data/verbal_analogies.xml.h:14
 msgid "Connoisseur"
@@ -130,7 +130,7 @@ msgstr "Oseba izločena iz družbe"
 
 #: ../data/verbal_analogies.xml.h:28
 msgid "Portico"
-msgstr "Vetrolov"
+msgstr "Atrij"
 
 #: ../data/verbal_analogies.xml.h:29
 msgid "Specializes in skin diseases"
@@ -578,7 +578,7 @@ msgstr "Igrajte igre ki izzivajo vaše besedne sposobnosti, sposobnosti  logike,
 msgid "gbrainy"
 msgstr "gbrainy"
 
-#: ../src/Core/Views/CountDownView.cs:81
+#: ../src/Core/Views/CountDownView.cs:82
 msgid "Get ready to memorize the next objects..."
 msgstr "Zapomnite si naslednje predmete ..."
 
@@ -1341,6 +1341,42 @@ msgstr "Kolikšen del slike je pobarvan? "
 msgid "When folded as a cube, which face on the figure is opposite the face with a {0} drawn on it? Answer the number written on face."
 msgstr "Katera ploskev na sliki je nasproti ploskve {0}, ko je slika zložena kot kocka? Kot odgovor napišite število napisano na ploskvi."
 
+#: ../src/Games/Logic/PuzzleDice.cs:52
+msgid "What is the probability of getting a '2' or a '6' in a single throw of a fair 6 sided die? Answer using a fraction (e.g.: 1/2)."
+msgstr "Kolikšna je verjetnost vrednosti '2' ali '6' v enem metu pravične 6 strane kocke? Odgovorite z ulomkom (na primer: 1/2)"
+
+#: ../src/Games/Logic/PuzzleDice.cs:54
+msgid "There are 2 of 6 possibilities."
+msgstr "Obstaja 5 od 6 možnosti."
+
+#: ../src/Games/Logic/PuzzleDice.cs:56
+msgid "What is the probability of not getting a '5' in a single throw of a fair 6 sided die? Answer using a fraction (e.g.: 1/2)."
+msgstr "Kolikšna je verjetnost, da dobimo vrednost ki ni enaka '5' v enem metu pravične 6 strane kocke? Odgovorite z ulomkom (na primer: 1/2)."
+
+#: ../src/Games/Logic/PuzzleDice.cs:58
+msgid "There are 5 of 6 possibilities."
+msgstr "Obstaja 5 od 6 možnosti."
+
+#: ../src/Games/Logic/PuzzleDice.cs:60
+msgid "Two fair 6 sided dices are thrown simultaneously. What is the probability of getting two even numbers?  Answer using a fraction (e.g.: 1/2)."
+msgstr "Dve pravični 6 strani kocki hkrati vržemo. Kolikšna je verjetnost, da dobimo 2 sodi števili? Odgovorite z ulomkom (na primer: 1/2)."
+
+#: ../src/Games/Logic/PuzzleDice.cs:62
+msgid "There are 9 of 36 possibilities of getting an even number."
+msgstr "Možnost sode številke je 9/36."
+
+#: ../src/Games/Logic/PuzzleDice.cs:64
+msgid "Two fair 6 sided dices are thrown simultaneously. What is the probability of getting two '6'?  Answer using a fraction (e.g.: 1/2)."
+msgstr "Dve pravični 6 strani kocki hkrati vržemo. Kolikšna je verjetnost dveh '6'? Odgovorite z ulomkom (na primer: 1/2)."
+
+#: ../src/Games/Logic/PuzzleDice.cs:66
+msgid "There are 1 of 6 possibilities of getting first die and the same for the second die."
+msgstr "Za prvo kocko je možnost 1/6; enako velja za drugo kocko."
+
+#: ../src/Games/Logic/PuzzleDice.cs:70
+msgid "Dice"
+msgstr "Kocka"
+
 #: ../src/Games/Logic/PuzzleDivideCircle.cs:47
 msgid "Divide circles"
 msgstr "Razdeli kroge"
@@ -1977,7 +2013,8 @@ msgstr "Trenutni čas"
 msgid "{0} hours ago it was as long after {1} as it was before {2} on the same day. What is the time now?"
 msgstr "{0} ur nazaj je bilo enako dolgo za {1}, kot je bilo pred {2} ob istem dnevu. Koliko je ura sedaj?"
 
-#: ../src/Games/Logic/PuzzleTimeNow.cs:66
+#. No hands
+#: ../src/Games/Logic/PuzzleTimeNow.cs:65
 msgid "Sample clock"
 msgstr "Vzorčna ura"
 
