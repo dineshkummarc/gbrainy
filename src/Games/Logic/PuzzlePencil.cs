@@ -23,6 +23,7 @@ using Mono.Unix;
 
 using gbrainy.Core.Main;
 using gbrainy.Core.Libraries;
+using gbrainy.Core.Toolkit;
 
 namespace gbrainy.Games.Logic
 {
@@ -56,7 +57,83 @@ namespace gbrainy.Games.Logic
 			
 				right_answer = GetPossibleAnswer (i);
 				break;
-			}	
+			}
+
+			double x = DrawAreaX, y = DrawAreaY + 0.1, box_size = (1 - (DrawAreaX * 2)) / 3;
+			Container container1, container2, container = null;
+			DrawableArea drawable_area;
+
+			for (int figure = 0; figure < figures; figure++)
+			{
+				switch (figure) {
+				case 0:
+					x = DrawAreaX;
+					container1 = new Container (x, y, 0.8, figure_size);
+					container = container1;
+					AddWidget (container);
+					break;
+				case 3:
+					x = DrawAreaX;
+					y += 0.4;
+					container2 = new Container (x, y, 0.8, figure_size);
+					container = container2;
+					AddWidget (container);
+					break;
+				default:
+					break;
+				}
+
+				drawable_area = new DrawableArea (box_size, figure_size);
+				drawable_area.Data = figure;
+				drawable_area.DataEx = GetPossibleAnswer (figure);
+
+				switch (random_indices[figure]) {
+				case 0:
+					drawable_area.DrawEventHandler += delegate (object sender, Widget.DrawEventArgs e)
+					{
+						DrawTriangle (e.Context, (e.Width - figure_size) / 2, 0);
+						e.Context.DrawTextCentered (e.Width / 2, figure_size + 0.02, 
+							GetPossibleFigureAnswer ((int) e.Data));
+					};
+					break;
+				case 1:
+					drawable_area.DrawEventHandler += delegate (object sender, Widget.DrawEventArgs e)
+					{
+						DrawDiamon (e.Context, (e.Width - figure_size) / 2, 0);
+						e.Context.DrawTextCentered (e.Width / 2, figure_size + 0.02,
+							GetPossibleFigureAnswer ((int) e.Data));
+					};
+					break;
+				case 2:
+					drawable_area.DrawEventHandler += delegate (object sender, Widget.DrawEventArgs e)
+					{
+						DrawRectangleWithTriangles (e.Context, (e.Width - figure_size) / 2, 0);
+						e.Context.DrawTextCentered (e.Width / 2, figure_size + + 0.02,
+							GetPossibleFigureAnswer ((int) e.Data));
+					};
+					break;
+				case 3:
+					drawable_area.DrawEventHandler += delegate (object sender, Widget.DrawEventArgs e)
+					{
+						DrawThreeTriangles (e.Context, (e.Width - figure_size) / 2, 0);
+						e.Context.DrawTextCentered (e.Width / 2, figure_size + + 0.02,
+							GetPossibleFigureAnswer ((int) e.Data));
+					};
+					break;
+				case answer_index:
+					drawable_area.DrawEventHandler += delegate (object sender, Widget.DrawEventArgs e)
+					{
+						DrawRectangleWithCross (e.Context, (e.Width - figure_size) / 2, 0);
+						e.Context.DrawTextCentered (e.Width / 2, figure_size + 0.02,
+							GetPossibleFigureAnswer ((int) e.Data));
+					};
+					break;
+				}			
+
+				container.AddChild (drawable_area);
+				x += box_size;
+			}
+			
 		}
 
 		static private void DrawTriangle (CairoContextEx gr, double x, double y)
@@ -71,6 +148,7 @@ namespace gbrainy.Games.Logic
 
 		static private void DrawDiamon (CairoContextEx gr, double x, double y)
 		{
+			x += 0.1;
 			gr.MoveTo (x, y);
 			gr.LineTo (x - (figure_size / 2), y + (figure_size / 2));
 			gr.LineTo (x, y + figure_size);
@@ -111,20 +189,6 @@ namespace gbrainy.Games.Logic
 		
 		}
 
-	/*	private void DrawHouse (CairoContextEx gr, double x, double y)
-		{
-			gr.MoveTo (x, y + figure_size);
-			gr.LineTo (x, y + figure_size / 2);
-			gr.LineTo (x + figure_size / 2, y);
-			gr.LineTo (x + figure_size, y + figure_size / 2);
-			gr.LineTo (x, y + figure_size / 2);
-			gr.LineTo (x + figure_size, y + figure_size);
-			gr.LineTo (x + figure_size, y + figure_size / 2);
-			gr.LineTo (x, y + figure_size);
-			gr.LineTo (x + figure_size, y + figure_size);
-			gr.Stroke ();		
-		}*/
-
 		static private void DrawRectangleWithCross (CairoContextEx gr, double x, double y)
 		{
 			gr.Rectangle (x, y, figure_size, figure_size);
@@ -140,47 +204,7 @@ namespace gbrainy.Games.Logic
 
 		public override void Draw (CairoContextEx gr, int area_width, int area_height, bool rtl)
 		{
-			double x = DrawAreaX, y = DrawAreaY;
-
 			base.Draw (gr, area_width, area_height, rtl);
-
-			for (int figure = 0; figure < figures; figure++)
-			{
-				switch (random_indices[figure]) {
-				case 0:
-					DrawTriangle (gr, x, y);
-					break;
-				case 1:
-					DrawDiamon (gr, x + 0.1, y);
-					break;
-				//case 2:
-				//	DrawHouse (gr, x, y);				
-				//	break;
-				case 2:
-					DrawRectangleWithTriangles (gr, x, y);
-					break;
-				case 3:
-					DrawThreeTriangles (gr, x, y);
-					break;
-				case answer_index:
-					DrawRectangleWithCross (gr, x, y);
-					break;
-			
-				}			
-						
-				gr.MoveTo (x, y + figure_size + 0.05);
-				gr.ShowPangoText (GetPossibleFigureAnswer (figure));
-
-				if (figure == 2) {
-					x = DrawAreaX;
-					y += figure_size + space_height;
-
-				} else {						
-					x += figure_size + space_width;		
-				}
-			}
-
 		}
-
 	}
 }

@@ -23,6 +23,7 @@ using Gtk;
 using Gnome;
 using Mono.Unix;
 using System.Diagnostics;
+using Gdk;
 
 using gbrainy.Core.Main;
 using gbrainy.Core.Libraries;
@@ -62,6 +63,8 @@ namespace gbrainy.Clients.Classical
 		SimpleLabel question_label;
 		SimpleLabel solution_label;
 		bool margins = false;
+		double offset_x, offset_y;
+		int drawing_square;
 
 		public GtkClient (string [] args, params object [] props)
 		: base ("gbrainy", Defines.VERSION, Modules.UI,  args, props)
@@ -100,8 +103,17 @@ namespace gbrainy.Clients.Classical
 			solution_label = new SimpleLabel ();
 			solution_label.HeightMargin = 2;
 			solution_vbox.Add (solution_label);
+
+			EventBox eb = new EventBox (); // Provides a window for drawing area windowless widget
+			
+			eb.Events = Gdk.EventMask.PointerMotionMask;
+			drawing_vbox.Add (eb);
 	
-			drawing_vbox.Add (drawing_area);
+			eb.Add (drawing_area);
+
+			eb.MotionNotifyEvent += OnMouseMotionEvent;
+			eb.ButtonPressEvent += OnHandleButtonPress;
+
 			app_window.IconName = "gbrainy";
 			app_window.ShowAll ();
 
@@ -114,7 +126,6 @@ namespace gbrainy.Clients.Classical
 		#else
 			extensions_menu.Visible = false;
 		#endif
-
 			ActiveInputControls (false);
 		}
 
@@ -130,7 +141,7 @@ namespace gbrainy.Clients.Classical
 				UpdateStatusBar ();
 				break;
 			default:
-				throw new InvalidOperationException ("Unknow value");
+				throw new InvalidOperationException ("Unknown value");
 			}
 		}
 
@@ -144,8 +155,7 @@ namespace gbrainy.Clients.Classical
 		{
 			Gdk.EventExpose args = ar.Event;
 
-			int w, h, nw, nh;
-			double x = 0, y = 0;
+			int w, h;
 			args.Window.GetSize (out w, out h);
 
 			Cairo.Context cc = Gdk.CairoHelper.Create (args.Window);
@@ -153,24 +163,53 @@ namespace gbrainy.Clients.Classical
 
 			// We want a square drawing area for the puzzles then the figures are shown as designed. 
 			// For example, squares are squares. This also makes sure that proportions are kept when resizing
-			nh = nw = Math.Min (w, h);	
+			drawing_square = Math.Min (w, h);	
 
-			if (nw < w)
-				x = (w - nw) / 2;
+			if (drawing_square < w)
+				offset_x = (w - drawing_square) / 2;
 
-			if (nh < h)
-				y = (h - nh) / 2;
+			if (drawing_square < h)
+				offset_y = (h - drawing_square) / 2;
 
 			if (margins)
-				SetMargin ((int) x);
+				SetMargin ((int) offset_x);
 			else
 				SetMargin (2);
 
-			cr.Translate (x, y);
-			session.Draw (cr, nw, nh, drawing_area.Direction == Gtk.TextDirection.Rtl);
+			cr.Translate (offset_x, offset_y);
+			session.Draw (cr, drawing_square, drawing_square, drawing_area.Direction == Gtk.TextDirection.Rtl);
 
 			((IDisposable)cc).Dispose();
 			((IDisposable)cr).Dispose();
+		}
+		
+		void OnMouseMotionEvent (object o, MotionNotifyEventArgs ev_args)
+		{
+			SendMouseEvent (ev_args.Event.X, ev_args.Event.Y, MouseEventType.Move);
+		}
+
+		void OnHandleButtonPress (object o, ButtonPressEventArgs ev_args)
+		{
+			if (ev_args.Event.Type != EventType.TwoButtonPress)
+				return;
+
+			SendMouseEvent (ev_args.Event.X, ev_args.Event.Y, MouseEventType.DoubleClick);
+		}
+
+		void SendMouseEvent (double ev_x, double ev_y, MouseEventType type)
+		{
+			double x, y;
+
+			x = ev_x - offset_x;
+			y = ev_y - offset_y;
+
+			if (x < 0 || y < 0 || x > drawing_square || y > drawing_square) 
+				return;
+
+			x =  x / drawing_square;
+			y =  y / drawing_square;
+
+			session.MouseEvent (this, new MouseEventArgs (x, y, type));
 		}
 
 		public void UpdateStatusBar ()
@@ -313,6 +352,7 @@ namespace gbrainy.Clients.Classical
 			UpdateSolution (String.Empty);
 			UpdateQuestion (String.Empty);
 			session.NextGame ();
+			session.CurrentGame.AnswerEvent += OnAnswerFromGame;
 
 			ActiveInputControls (session.CurrentGame.ButtonsActive);
 			next_button.Sensitive = true;
@@ -321,6 +361,14 @@ namespace gbrainy.Clients.Classical
 			UpdateStatusBar ();
 			session.CurrentGame.DrawAnswer = false;
 			drawing_area.QueueDraw ();
+		}
+
+		// The user has clicked with the mouse in an answer and generated this event
+		void OnAnswerFromGame (object obj, Game.AnswerEventArgs args)
+		{
+			answer_entry.Text = args.Answer;
+			OnAnswerButtonClicked (this, EventArgs.Empty);
+			session.CurrentGame.AnswerEvent -= OnAnswerFromGame; // User can only answer once
 		}
 	
 		void OnMenuAbout (object sender, EventArgs args)

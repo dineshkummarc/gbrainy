@@ -27,7 +27,7 @@ using gbrainy.Core.Libraries;
 
 namespace gbrainy.Core.Main
 {
-	public class GameSession : IDrawable, IDrawRequest
+	public class GameSession : IDrawable, IDrawRequest, IMouseEvent
 	{
 		[Flags]
 		public enum Types
@@ -478,5 +478,10 @@ namespace gbrainy.Core.Main
 			controler.CurrentView.Draw (gr, width, height, rtl);
 		}
 
+		public void MouseEvent (object obj, MouseEventArgs args)
+		{
+			if (controler.CurrentView as IMouseEvent != null)
+				(controler.CurrentView as IMouseEvent).MouseEvent (this, args);
+		}
 	}
 }

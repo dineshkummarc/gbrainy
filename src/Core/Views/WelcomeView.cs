@@ -21,28 +21,120 @@
 using System;
 using Cairo;
 using Mono.Unix;
+using System.Collections.Generic;
 
 using gbrainy.Core.Main;
 using gbrainy.Core.Libraries;
+using gbrainy.Core.Toolkit;
 
 namespace gbrainy.Core.Views
 {
 	public class WelcomeView : IDrawable
 	{
+		List <Toolkit.Container> containers;
+		const double space = 0.17;
+		const double image_size = 0.14;
+
 		public WelcomeView ()
 		{
+			Container container;
+			DrawableArea drawable_area;
+			double y = 0.22;
 
+			containers = new List <Toolkit.Container> ();
+	
+			/* Logic */
+			container = new Container (0.05, y, 0.95, space);
+			containers.Add (container);
+
+			drawable_area = new DrawableArea (0.17, image_size);
+			container.AddChild (drawable_area);
+			drawable_area.DrawEventHandler += delegate (object sender, Widget.DrawEventArgs e)
+			{
+				e.Context.DrawImageFromAssembly ("logic-games.svg", 0, 0, image_size, image_size);
+			};
+
+			drawable_area = new DrawableArea (0.75, 0.25);
+			container.AddChild (drawable_area);
+			drawable_area.DrawEventHandler += delegate (object sender, Widget.DrawEventArgs e)
+			{
+				e.Context.DrawStringWithWrapping (0, 0,
+					Catalog.GetString ("Logic puzzles. Challenge your reasoning and thinking skills."), 
+					e.Width);
+			};
+
+			/* Math */
+			y += space;
+			container = new Container (0.05, y, 0.95, space);
+			containers.Add (container);
+
+			drawable_area = new DrawableArea (0.17, image_size);
+			container.AddChild (drawable_area);
+			drawable_area.DrawEventHandler += delegate (object sender, Widget.DrawEventArgs e)
+			{
+				e.Context.DrawImageFromAssembly ("math-games.svg", 0, 0, image_size, image_size);
+			};
+
+			drawable_area = new DrawableArea (0.75, 0.25);
+			container.AddChild (drawable_area);
+			drawable_area.DrawEventHandler += delegate (object sender, Widget.DrawEventArgs e)
+			{
+				e.Context.DrawStringWithWrapping (0, 0,
+					Catalog.GetString ("Mental calculation. Arithmetical operations that test your mental calculation abilities."),
+					e.Width);
+			};
+
+			/* Memory */
+			y += space;
+			container = new Container (0.05, y, 0.95, space);
+			containers.Add (container);
+
+			drawable_area = new DrawableArea (0.17, image_size);
+			container.AddChild (drawable_area);
+			drawable_area.DrawEventHandler += delegate (object sender, Widget.DrawEventArgs e)
+			{
+				e.Context.DrawImageFromAssembly ("memory-games.svg", 0, 0, image_size, image_size);
+			};
+
+			drawable_area = new DrawableArea (0.75, 0.25);
+			container.AddChild (drawable_area);
+			drawable_area.DrawEventHandler += delegate (object sender, Widget.DrawEventArgs e)
+			{
+				e.Context.DrawStringWithWrapping (0, 0,
+					Catalog.GetString ("Memory trainers. To prove your short term memory."),
+					e.Width);
+			};
+
+			/* Verbal */
+			y += space;
+			container = new Container (0.05, y, 0.95, space);
+			containers.Add (container);
+
+			drawable_area = new DrawableArea (0.17, image_size);
+			container.AddChild (drawable_area);
+			drawable_area.DrawEventHandler += delegate (object sender, Widget.DrawEventArgs e)
+			{
+				e.Context.DrawImageFromAssembly ("verbal-games.svg", 0, 0, image_size, image_size);
+			};
+
+			drawable_area = new DrawableArea (0.75, 0.25);
+			container.AddChild (drawable_area);
+			drawable_area.DrawEventHandler += delegate (object sender, Widget.DrawEventArgs e)
+			{
+				e.Context.DrawStringWithWrapping (0, 0,
+					Catalog.GetString ("Verbal analogies. Challenge your verbal aptitude."),
+					e.Width);
+			};
 		}
 
 		public void Draw (CairoContextEx gr, int area_width, int area_height, bool rtl)
 		{
 			double y = 0.03;
-			const double space = 0.17;
-			const double image_size = 0.14;
 
 			gr.Scale (area_width, area_height);
 			gr.DrawBackground ();
-			//gr.SetPangoNormalFontSize ();
+			gr.LineWidth = 0.005;
+
 			gr.Color = new Cairo.Color (0, 0, 0, 1);
 
 			gr.MoveTo (0.05, y);
@@ -50,34 +142,15 @@ namespace gbrainy.Core.Views
 			gr.ShowPangoText (String.Format (Catalog.GetString ("Welcome to gbrainy {0}"), Defines.VERSION), true, -1, 0);
 			gr.Stroke ();
 
-			gr.DrawStringWithWrapping (0.05, y + 0.07, Catalog.GetString ("gbrainy is a brain teaser game and trainer to have fun and to keep your brain trained. It includes:"));
+			gr.DrawStringWithWrapping (0.05, y + 0.07, 
+				Catalog.GetString ("gbrainy is a brain teaser game and trainer to have fun and to keep your brain trained. It includes:"));
 
-			y = 0.22;
-			gr.DrawImageFromAssembly ("logic-games.svg", rtl ? 0.75 : 0.05, y, image_size, image_size);
-			gr.DrawStringWithWrapping (rtl ? 0.05 : 0.23, y + 0.01, 
-				Catalog.GetString ("Logic puzzles. Challenge your reasoning and thinking skills."), 
-				rtl ? 0.65 : -1);
-
-			y += space;
-			gr.DrawImageFromAssembly ("math-games.svg", rtl ? 0.75 : 0.05, y, image_size, image_size);
-			gr.DrawStringWithWrapping (rtl ? 0.05 : 0.23, y + 0.01, 
-				Catalog.GetString ("Mental calculation. Arithmetical operations that test your mental calculation abilities."),
-				rtl ? 0.65 : -1);
-
-			y += space;
-			gr.DrawImageFromAssembly ("memory-games.svg", rtl ? 0.75 : 0.05, y, image_size, image_size);
-			gr.DrawStringWithWrapping (rtl ? 0.05 : 0.23, y + 0.01, 
-				Catalog.GetString ("Memory trainers. To prove your short term memory."),
-				rtl ? 0.65 : -1);
-
-			y += space;
-			gr.DrawImageFromAssembly ("verbal-games.svg", rtl ? 0.75 : 0.05, y, image_size, image_size);
-			gr.DrawStringWithWrapping (rtl ? 0.05 : 0.23, y + 0.01, 
-				Catalog.GetString ("Verbal analogies. Challenge your verbal aptitude."),
-				rtl ? 0.65 : -1);
-
+			y = 0.22 + space * 3;
 			gr.DrawStringWithWrapping (0.05, y + 0.17,  Catalog.GetString ("Use the Settings to adjust the difficulty level of the game."));
 			gr.Stroke ();
+
+			foreach (Toolkit.Container container in containers)
+				container.Draw (gr, area_width, area_height, rtl);
 		}
 	}
 }

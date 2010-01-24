@@ -172,7 +172,7 @@ namespace gbrainy.Core.Libraries
 			layout.SingleParagraphMode = true;
 			layout.Width = -1;
 			layout.GetPixelSize (out w, out h);
-			MoveTo ((old.X0 + x * old.Xx) - w / 2, (y - font_size / 2) * old.Xx);
+			MoveTo ((old.X0 + x * old.Xx) - w / 2, (old.Y0 + y * old.Yy) - font_size / 2);
 			Pango.CairoHelper.ShowLayout (this, layout);
 			Matrix = old;
 		}

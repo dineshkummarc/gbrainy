@@ -19,14 +19,16 @@
 
 using System;
 using System.ComponentModel;
+using System.Collections.Generic;
 using Mono.Unix;
 
 using gbrainy.Core.Views;
 using gbrainy.Core.Libraries;
+using gbrainy.Core.Toolkit;
 
 namespace gbrainy.Core.Main
 {
-	abstract public class Game : IDrawable, IDrawRequest
+	abstract public class Game : IDrawable, IDrawRequest, IMouseEvent
 	{
 		// See: GetGameTypeDescription
 		public enum Types
@@ -46,6 +48,16 @@ namespace gbrainy.Core.Main
 			Master			= 8,
 		}
 
+		public class AnswerEventArgs : EventArgs
+		{
+			public AnswerEventArgs (string answer)
+			{
+				Answer = answer;
+			}
+
+			public string Answer { get; set; }
+		}
+
 		private bool draw_answer;
 		private Cairo.Color default_color;
 		protected string right_answer;
@@ -54,9 +66,11 @@ namespace gbrainy.Core.Main
 		private bool tip_used;
 		private Difficulty difficulty;
 		private ISynchronizeInvoke synchronize;
+		private List <Toolkit.Container> containers;
 
 		public event EventHandler DrawRequest;
 		public event EventHandler <UpdateUIStateEventArgs> UpdateUIElement;
+		public event EventHandler <AnswerEventArgs> AnswerEvent;
 
 		protected Game ()
 		{
@@ -65,6 +79,7 @@ namespace gbrainy.Core.Main
 			default_color = new Cairo.Color (0, 0, 0);
 			tip_used = false;
 			difficulty = Difficulty.Medium;
+			containers = new List <Toolkit.Container> ();
 		}
 
 		// Used by games to request a redraw of the view
@@ -248,6 +263,26 @@ namespace gbrainy.Core.Main
 
 			return (int) score;
 		}
+
+		public void AddWidget (Toolkit.Container container)
+		{
+			if (containers.Contains (container))
+				throw new InvalidOperationException ("Child already exists in container");
+
+			container.DrawRequest += delegate (object sender, EventArgs e)
+			{
+				OnDrawRequest ();
+			};
+
+			// If the user has selected an item we should propage an answer
+			container.SelectedEvent += delegate (object sender, Widget.SeletectedEventArgs e)
+			{
+				if (AnswerEvent != null)
+					AnswerEvent (this, new AnswerEventArgs ((string) e.DataEx));
+			};
+
+			containers.Add (container);
+		}
 	
 		public abstract void Initialize ();
 		public virtual void Finish () {}
@@ -293,6 +328,9 @@ namespace gbrainy.Core.Main
 			gr.DrawBackground ();
 			gr.Color = new Cairo.Color (0, 0, 0);
 			gr.LineWidth = LineWidth;
+	
+			foreach (Toolkit.Container container in containers)
+				container.Draw (gr, width, height, rtl);
 		}
 
 		public virtual void DrawPreview (CairoContextEx gr, int width, int height, bool rtl)
@@ -345,6 +383,12 @@ namespace gbrainy.Core.Main
 					break;
 			}
 			return str;
+		}
+
+		public void MouseEvent (object obj, MouseEventArgs args)
+		{
+			foreach (Toolkit.Container container in containers)
+				container.MouseEvent (obj, args);
 		}
 	}
 }

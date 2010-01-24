@@ -8,6 +8,7 @@ CSFILES =  \
 		Main/ArrayListIndicesRandom.cs	\
 		Main/ColorPalette.cs		\
 		Main/Defines.cs			\
+		Main/IMouseEvent.cs		\
 		Main/Game.cs			\
 		Main/GameManager.cs		\
 		Main/GameSession.cs		\
@@ -27,6 +28,9 @@ CSFILES =  \
 		Views/FinishView.cs		\
 		Main/IDrawable.cs		\
 		Main/IDrawRequest.cs		\
+		Toolkit/Container.cs		\
+		Toolkit/DrawableArea.cs		\
+		Toolkit/Widget.cs		\
 		Views/PlayerHistoryView.cs	\
 		Views/ViewsControler.cs		\
 		Views/WelcomeView.cs		\
