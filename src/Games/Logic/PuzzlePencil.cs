@@ -60,7 +60,7 @@ namespace gbrainy.Games.Logic
 			}
 
 			double x = DrawAreaX, y = DrawAreaY + 0.1, box_size = (1 - (DrawAreaX * 2)) / 3;
-			Container container1, container2, container = null;
+			HorizontalContainer container1, container2, container = null;
 			DrawableArea drawable_area;
 
 			for (int figure = 0; figure < figures; figure++)
@@ -68,14 +68,14 @@ namespace gbrainy.Games.Logic
 				switch (figure) {
 				case 0:
 					x = DrawAreaX;
-					container1 = new Container (x, y, 0.8, figure_size);
+					container1 = new HorizontalContainer (x, y, 0.8, figure_size);
 					container = container1;
 					AddWidget (container);
 					break;
 				case 3:
 					x = DrawAreaX;
 					y += 0.4;
-					container2 = new Container (x, y, 0.8, figure_size);
+					container2 = new HorizontalContainer (x, y, 0.8, figure_size);
 					container = container2;
 					AddWidget (container);
 					break;
@@ -84,12 +84,13 @@ namespace gbrainy.Games.Logic
 				}
 
 				drawable_area = new DrawableArea (box_size, figure_size);
+				drawable_area.SelectedArea = new Rectangle ((box_size - figure_size) / 2, 0, figure_size, figure_size);
 				drawable_area.Data = figure;
 				drawable_area.DataEx = GetPossibleAnswer (figure);
 
 				switch (random_indices[figure]) {
 				case 0:
-					drawable_area.DrawEventHandler += delegate (object sender, Widget.DrawEventArgs e)
+					drawable_area.DrawEventHandler += delegate (object sender, DrawEventArgs e)
 					{
 						DrawTriangle (e.Context, (e.Width - figure_size) / 2, 0);
 						e.Context.DrawTextCentered (e.Width / 2, figure_size + 0.02, 
@@ -97,7 +98,7 @@ namespace gbrainy.Games.Logic
 					};
 					break;
 				case 1:
-					drawable_area.DrawEventHandler += delegate (object sender, Widget.DrawEventArgs e)
+					drawable_area.DrawEventHandler += delegate (object sender, DrawEventArgs e)
 					{
 						DrawDiamon (e.Context, (e.Width - figure_size) / 2, 0);
 						e.Context.DrawTextCentered (e.Width / 2, figure_size + 0.02,
@@ -105,7 +106,7 @@ namespace gbrainy.Games.Logic
 					};
 					break;
 				case 2:
-					drawable_area.DrawEventHandler += delegate (object sender, Widget.DrawEventArgs e)
+					drawable_area.DrawEventHandler += delegate (object sender, DrawEventArgs e)
 					{
 						DrawRectangleWithTriangles (e.Context, (e.Width - figure_size) / 2, 0);
 						e.Context.DrawTextCentered (e.Width / 2, figure_size + + 0.02,
@@ -113,7 +114,7 @@ namespace gbrainy.Games.Logic
 					};
 					break;
 				case 3:
-					drawable_area.DrawEventHandler += delegate (object sender, Widget.DrawEventArgs e)
+					drawable_area.DrawEventHandler += delegate (object sender, DrawEventArgs e)
 					{
 						DrawThreeTriangles (e.Context, (e.Width - figure_size) / 2, 0);
 						e.Context.DrawTextCentered (e.Width / 2, figure_size + + 0.02,
@@ -121,7 +122,7 @@ namespace gbrainy.Games.Logic
 					};
 					break;
 				case answer_index:
-					drawable_area.DrawEventHandler += delegate (object sender, Widget.DrawEventArgs e)
+					drawable_area.DrawEventHandler += delegate (object sender, DrawEventArgs e)
 					{
 						DrawRectangleWithCross (e.Context, (e.Width - figure_size) / 2, 0);
 						e.Context.DrawTextCentered (e.Width / 2, figure_size + 0.02,
@@ -132,8 +133,7 @@ namespace gbrainy.Games.Logic
 
 				container.AddChild (drawable_area);
 				x += box_size;
-			}
-			
+			}			
 		}
 
 		static private void DrawTriangle (CairoContextEx gr, double x, double y)

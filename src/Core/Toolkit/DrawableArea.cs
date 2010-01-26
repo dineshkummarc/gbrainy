@@ -18,6 +18,7 @@
  */
 
 using System;
+using Cairo;
 
 using gbrainy.Core.Libraries;
 using gbrainy.Core.Main;
@@ -30,25 +31,43 @@ namespace gbrainy.Core.Toolkit
 		public virtual event WidgetSelectedEventHandler SelectedRequestEvent;
 		bool hoover;
 
+		public DrawableArea (double x, double y, double width, double height) : base (width, height)
+		{
+			X = x;
+			Y = y;
+		}
+
 	    	public DrawableArea (double width, double height) : base (width, height)
 		{
 
 		}
 
+		public Rectangle SelectedArea { get; set; }
+
 		public override void Draw (CairoContextEx gr, int area_width, int area_height, bool rtl) 
 		{
+			/*gr.Save ();
+			gr.Color = new Cairo.Color (1, 0, 0);
+			gr.Rectangle (0, 0, Width, Height);
+			gr.Stroke ();
+			gr.Restore ();*/
+
 			if (hoover == true)
   			{
 				double lw = gr.LineWidth;
 				double [] dashes = {0.01,  /* ink */
-						   0.01,  /* skip */
-				};
+						   0.01,  /* skip */ };
 
 				gr.Save ();
 
 				gr.Color = new Cairo.Color (0.5, 0.5, 0.5, 1);
 				gr.SetDash (dashes, 0);
-				gr.Rectangle (-lw, -lw, Width + lw * 2, Height + lw * 2);
+
+				if (SelectedArea.Width == 0 && SelectedArea.Height == 0)
+					gr.Rectangle (-lw, -lw, Width + lw * 2, Height + lw * 2);
+				else
+					gr.Rectangle (SelectedArea.X -lw, SelectedArea.Y -lw, SelectedArea.Width + lw * 2, SelectedArea.Height + lw * 2);
+
 				gr.Stroke ();
 				gr.Restore ();
 			}

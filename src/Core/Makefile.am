@@ -30,6 +30,9 @@ CSFILES =  \
 		Main/IDrawRequest.cs		\
 		Toolkit/Container.cs		\
 		Toolkit/DrawableArea.cs		\
+		Toolkit/DrawEventArgs.cs	\
+		Toolkit/HorizontalContainer.cs	\
+		Toolkit/SeletectedEventArgs.cs	\
 		Toolkit/Widget.cs		\
 		Views/PlayerHistoryView.cs	\
 		Views/ViewsControler.cs		\

@@ -23,6 +23,7 @@ using Mono.Unix;
 
 using gbrainy.Core.Main;
 using gbrainy.Core.Libraries;
+using gbrainy.Core.Toolkit;
 
 namespace gbrainy.Games.Logic
 {
@@ -103,6 +104,27 @@ namespace gbrainy.Games.Logic
 			possible_answers = new ArrayListIndicesRandom (3);
 			possible_answers.Initialize ();
 
+			DrawableArea drawable_area;
+			HorizontalContainer container = new HorizontalContainer (0.05, 0.5, 0.9, figure_size + 0.1);
+			AddWidget (container);
+
+			for (int i = 0; i < possible_answers.Count; i++) {
+
+				drawable_area = new DrawableArea (figure_size + space_figures, figure_size + 0.1);
+				drawable_area.Data = i;
+				drawable_area.DataEx = GetPossibleAnswer (i);
+				drawable_area.SelectedArea = new Rectangle (space_figures / 2, space_figures / 2, figure_size, figure_size);
+				
+				container.AddChild (drawable_area);
+
+				drawable_area.DrawEventHandler += delegate (object sender, DrawEventArgs e)
+				{
+					DrawPossibleAnswer (e.Context, space_figures / 2, space_figures / 2, possible_answers [(int)e.Data]);
+					e.Context.DrawTextCentered (space_figures / 2 + figure_size / 2, space_figures + figure_size, 
+						GetPossibleFigureAnswer ((int)e.Data));
+				};
+			}
+
 			for (int i = 0; i < possible_answers.Count; i++) {
 				if (possible_answers[i] == 0) {
 					right_answer = GetPossibleAnswer (i);
@@ -172,7 +194,7 @@ namespace gbrainy.Games.Logic
 	
 		public override void Draw (CairoContextEx gr, int area_width, int area_height, bool rtl)
 		{
-			double x = DrawAreaX, y = DrawAreaY;
+			double x = 0.05 + space_figures / 2, y = DrawAreaY;
 
 			base.Draw (gr, area_width, area_height, rtl);
 
@@ -183,16 +205,6 @@ namespace gbrainy.Games.Logic
 			y += figure_size + 0.10;
 			gr.MoveTo (x, y - 0.02);
 			gr.ShowPangoText (Catalog.GetString ("Possible answers are:"));
-			gr.Stroke ();
-			y += 0.05;
-
-			for (int i = 0; i < possible_answers.Count; i++) {
-				DrawPossibleAnswer (gr, x, y, possible_answers[i]);
-				gr.MoveTo (x, y + figure_size + 0.05);
-				gr.ShowPangoText (GetPossibleFigureAnswer (i));
-				gr.Stroke ();
-				x+= figure_size + space_figures;
-			}
 		}
 	}
 }

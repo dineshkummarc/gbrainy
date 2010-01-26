@@ -274,8 +274,8 @@ namespace gbrainy.Core.Main
 				OnDrawRequest ();
 			};
 
-			// If the user has selected an item we should propage an answer
-			container.SelectedEvent += delegate (object sender, Widget.SeletectedEventArgs e)
+			// If the user has selected an item we should propagate an answer
+			container.SelectedEvent += delegate (object sender, SeletectedEventArgs e)
 			{
 				if (AnswerEvent != null)
 					AnswerEvent (this, new AnswerEventArgs ((string) e.DataEx));

@@ -25,78 +25,77 @@ using gbrainy.Core.Main;
 
 namespace gbrainy.Core.Toolkit
 {
-	//
-	// Base Container class
-	// Does not support rtl and all the coordinates are relative to the child (not the container)
-	// 
-	public class Container : Widget
+	// Horizontal container (supports RTL)
+	// Child controls are stacked horizontally one each other (does not uses X, Y child coordinates)
+	public class HorizontalContainer : Container
 	{
-		protected List <Widget> children = new List <Widget> ();
+		bool rtl;
 
-		public Container () : base (0, 0)
+		public HorizontalContainer (double x, double y, double width, double height) : base (x, y, width, height)
 		{
 
-		}
-		
-		public Container (double x, double y, double width, double height) : base (width, height)
-		{
-			X = x;
-			Y = y;
-		}
-
-		public Widget [] Children {
-			get { return children.ToArray (); }
-		}
-
-		public void AddChild (Widget widget)
-		{
-			if (children.Contains (widget))
-				throw new InvalidOperationException ("Child already exists in container");
-
-			//
-			// Propagate events from child controls to this container (parent)
-			//
-			widget.DrawRequest += delegate (object sender, EventArgs e)
-			{
-				OnDrawRequest ();
-			};
-
-			widget.SelectedEvent += delegate (object sender, SeletectedEventArgs e)
-			{
-				OnSelected (e);
-			};
-
-			children.Add (widget);
-		}
+		}		
 
 		public override void Draw (CairoContextEx gr, int area_width, int area_height, bool rtl)
 		{
+			double x = X, y = Y;
+	
+			this.rtl = rtl;
+
 			/*gr.Save ();
 			gr.Color = new Cairo.Color (0, 0, 1);
 			gr.Rectangle (X, Y, Width, Height);
 			gr.Stroke ();
 			gr.Restore ();*/
 
-			foreach (Widget child in children)
-			{
-				gr.Save ();						
-				gr.Translate (child.X, child.Y);
-				child.Draw (gr, area_width, area_height, rtl);
-				gr.Restore ();
+			//
+			// Coordinates are stored right to left
+			//
+			if (rtl == false) {
+				for (int i = 0; i < children.Count; i++)
+				{
+					gr.Save ();						
+					gr.Translate (x, y);
+
+					children[i].Draw (gr, area_width, area_height, rtl);
+					gr.Restore ();
+					x += children[i].Width;
+				}
+			} else {
+				x += Width;
+				for (int i = 0; i < children.Count; i++)
+				{
+					x -= children[i].Width;
+					gr.Save ();
+					gr.Translate (x, y);
+					children[i].Draw (gr, area_width, area_height, rtl);
+					gr.Restore ();
+				}
 			}
 		}
 
 		public override void MouseEvent (object obj, MouseEventArgs args)
 		{
+			double x = X, y = Y;
+
+			if (rtl == true)
+				x += Width;
+
 			foreach (Widget child in Children)
 			{
-				if ((args.X >= child.X) && (args.X < child.X + child.Width) &&
-					(args.Y >= child.Y) && (args.Y < child.Y + child.Height))
+				if (rtl == true)
+					x -= child.Width;
+
+				if ((args.X >= x) && (args.X < x + child.Width) && 
+					(args.Y >= y) && (args.Y < y + child.Height))
 				{
 					child.MouseEvent (this, args);
 				} else {
 					child.MouseEvent (this, new MouseEventArgs (-1, -1, args.EventType));
 				}
+
+				if (rtl == false)
+					x += child.Width;
 			}
 		}
 	}

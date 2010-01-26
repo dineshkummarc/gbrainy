@@ -44,19 +44,19 @@ namespace gbrainy.Core.Views
 			containers = new List <Toolkit.Container> ();
 	
 			/* Logic */
-			container = new Container (0.05, y, 0.95, space);
+			container = new HorizontalContainer (0.05, y, 0.95, space);
 			containers.Add (container);
 
 			drawable_area = new DrawableArea (0.17, image_size);
 			container.AddChild (drawable_area);
-			drawable_area.DrawEventHandler += delegate (object sender, Widget.DrawEventArgs e)
+			drawable_area.DrawEventHandler += delegate (object sender, DrawEventArgs e)
 			{
 				e.Context.DrawImageFromAssembly ("logic-games.svg", 0, 0, image_size, image_size);
 			};
 
 			drawable_area = new DrawableArea (0.75, 0.25);
 			container.AddChild (drawable_area);
-			drawable_area.DrawEventHandler += delegate (object sender, Widget.DrawEventArgs e)
+			drawable_area.DrawEventHandler += delegate (object sender, DrawEventArgs e)
 			{
 				e.Context.DrawStringWithWrapping (0, 0,
 					Catalog.GetString ("Logic puzzles. Challenge your reasoning and thinking skills."), 
@@ -65,19 +65,19 @@ namespace gbrainy.Core.Views
 
 			/* Math */
 			y += space;
-			container = new Container (0.05, y, 0.95, space);
+			container = new HorizontalContainer (0.05, y, 0.95, space);
 			containers.Add (container);
 
 			drawable_area = new DrawableArea (0.17, image_size);
 			container.AddChild (drawable_area);
-			drawable_area.DrawEventHandler += delegate (object sender, Widget.DrawEventArgs e)
+			drawable_area.DrawEventHandler += delegate (object sender, DrawEventArgs e)
 			{
 				e.Context.DrawImageFromAssembly ("math-games.svg", 0, 0, image_size, image_size);
 			};
 
 			drawable_area = new DrawableArea (0.75, 0.25);
 			container.AddChild (drawable_area);
-			drawable_area.DrawEventHandler += delegate (object sender, Widget.DrawEventArgs e)
+			drawable_area.DrawEventHandler += delegate (object sender, DrawEventArgs e)
 			{
 				e.Context.DrawStringWithWrapping (0, 0,
 					Catalog.GetString ("Mental calculation. Arithmetical operations that test your mental calculation abilities."),
@@ -86,19 +86,19 @@ namespace gbrainy.Core.Views
 
 			/* Memory */
 			y += space;
-			container = new Container (0.05, y, 0.95, space);
+			container = new HorizontalContainer (0.05, y, 0.95, space);
 			containers.Add (container);
 
 			drawable_area = new DrawableArea (0.17, image_size);
 			container.AddChild (drawable_area);
-			drawable_area.DrawEventHandler += delegate (object sender, Widget.DrawEventArgs e)
+			drawable_area.DrawEventHandler += delegate (object sender, DrawEventArgs e)
 			{
 				e.Context.DrawImageFromAssembly ("memory-games.svg", 0, 0, image_size, image_size);
 			};
 
 			drawable_area = new DrawableArea (0.75, 0.25);
 			container.AddChild (drawable_area);
-			drawable_area.DrawEventHandler += delegate (object sender, Widget.DrawEventArgs e)
+			drawable_area.DrawEventHandler += delegate (object sender, DrawEventArgs e)
 			{
 				e.Context.DrawStringWithWrapping (0, 0,
 					Catalog.GetString ("Memory trainers. To prove your short term memory."),
@@ -107,19 +107,19 @@ namespace gbrainy.Core.Views
 
 			/* Verbal */
 			y += space;
-			container = new Container (0.05, y, 0.95, space);
+			container = new HorizontalContainer (0.05, y, 0.95, space);
 			containers.Add (container);
 
 			drawable_area = new DrawableArea (0.17, image_size);
 			container.AddChild (drawable_area);
-			drawable_area.DrawEventHandler += delegate (object sender, Widget.DrawEventArgs e)
+			drawable_area.DrawEventHandler += delegate (object sender, DrawEventArgs e)
 			{
 				e.Context.DrawImageFromAssembly ("verbal-games.svg", 0, 0, image_size, image_size);
 			};
 
 			drawable_area = new DrawableArea (0.75, 0.25);
 			container.AddChild (drawable_area);
-			drawable_area.DrawEventHandler += delegate (object sender, Widget.DrawEventArgs e)
+			drawable_area.DrawEventHandler += delegate (object sender, DrawEventArgs e)
 			{
 				e.Context.DrawStringWithWrapping (0, 0,
 					Catalog.GetString ("Verbal analogies. Challenge your verbal aptitude."),

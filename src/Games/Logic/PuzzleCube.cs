@@ -23,6 +23,7 @@ using System;
 
 using gbrainy.Core.Main;
 using gbrainy.Core.Libraries;
+using gbrainy.Core.Toolkit;
 
 namespace gbrainy.Games.Logic
 {
@@ -30,6 +31,9 @@ namespace gbrainy.Games.Logic
 	{
 		private char question;
 		const int pairs = 4;
+		const double figure_size = 0.1;
+		const double txtoff_x = 0.04;
+		const double txtoff_y = 0.03;
 
 		private int[] question_answer = 
 		{
@@ -52,46 +56,80 @@ namespace gbrainy.Games.Logic
 			int pair = random.Next (pairs);
 			question = (char) (48 + question_answer[pair * 2]);
 			right_answer += (char) (48 + question_answer[(pair * 2) + 1]);
-		}
-
-		public override void Draw (CairoContextEx gr, int area_width, int area_height, bool rtl)
-		{
+			
+			Container container;
+			DrawableArea drawable_area;
 			double x = DrawAreaX + 0.1;
-			double y = DrawAreaY + 0.1;
-			const double txtoff_x = 0.04;
-			const double txtoff_y = 0.03;
+			double y = DrawAreaY + 0.2;
 
-			base.Draw (gr, area_width, area_height, rtl);
+			container = new Container ();
+			AddWidget (container);
 
-			gr.Rectangle (x + 0.1, y, 0.1, 0.1);
-			gr.Stroke ();
-			gr.MoveTo (x + 0.1 + txtoff_x, y + txtoff_y);
-			gr.ShowPangoText ("1");
+			drawable_area = new DrawableArea (x + 0.1, y, figure_size, figure_size);
+			drawable_area.DataEx = "1";
+			container.AddChild (drawable_area);
+			drawable_area.DrawEventHandler += delegate (object sender, DrawEventArgs e)
+			{
+				e.Context.Rectangle (0, 0, figure_size, figure_size);
+				e.Context.Stroke ();
+				e.Context.MoveTo (txtoff_x, txtoff_y);
+				e.Context.ShowPangoText ("1");
+			};
 
-			gr.Rectangle (x + 0.2, y, 0.1, 0.1);
-			gr.Stroke ();
-			gr.MoveTo (x + 0.2 + txtoff_x, y + txtoff_y);
-			gr.ShowPangoText ("2");
+			drawable_area = new DrawableArea (x + 0.2, y, figure_size, figure_size);
+			drawable_area.DataEx = "2";
+			container.AddChild (drawable_area);
+			drawable_area.DrawEventHandler += delegate (object sender, DrawEventArgs e)
+			{
+				e.Context.Rectangle (0, 0, figure_size, figure_size);
+				e.Context.Stroke ();
+				e.Context.MoveTo (txtoff_x, txtoff_y);
+				e.Context.ShowPangoText ("2");
+			};
 
-			gr.Rectangle (x + 0.2, y + 0.1, 0.1, 0.1);
-			gr.Stroke ();
-			gr.MoveTo (x + 0.2 + txtoff_x, y + 0.1 + txtoff_y);
-			gr.ShowPangoText ("3");
+			drawable_area = new DrawableArea (x + 0.2, y + 0.1, figure_size, figure_size);
+			drawable_area.DataEx = "3";
+			container.AddChild (drawable_area);
+			drawable_area.DrawEventHandler += delegate (object sender, DrawEventArgs e)
+			{
+				e.Context.Rectangle (0, 0, figure_size, figure_size);
+				e.Context.Stroke ();
+				e.Context.MoveTo (txtoff_x, txtoff_y);
+				e.Context.ShowPangoText ("3");
+			};
 
-			gr.Rectangle (x + 0.3, y + 0.1, 0.1, 0.1);
-			gr.Stroke ();
-			gr.MoveTo (x + 0.3 + txtoff_x, y + 0.1 + txtoff_y);
-			gr.ShowPangoText ("4");
+			drawable_area = new DrawableArea (x + 0.3, y + 0.1, figure_size, figure_size);
+			drawable_area.DataEx = "4";
+			container.AddChild (drawable_area);
+			drawable_area.DrawEventHandler += delegate (object sender, DrawEventArgs e)
+			{
+				e.Context.Rectangle (0, 0, figure_size, figure_size);
+				e.Context.Stroke ();
+				e.Context.MoveTo (txtoff_x, txtoff_y);
+				e.Context.ShowPangoText ("4");
+			};
 
-			gr.Rectangle (x + 0.4, y + 0.1, 0.1, 0.1);
-			gr.Stroke ();
-			gr.MoveTo (x + 0.4 + txtoff_x, y + 0.1 + txtoff_y);
-			gr.ShowPangoText ("5");
+			drawable_area = new DrawableArea (x + 0.4, y + 0.1, figure_size, figure_size);
+			drawable_area.DataEx = "5";
+			container.AddChild (drawable_area);
+			drawable_area.DrawEventHandler += delegate (object sender, DrawEventArgs e)
+			{
+				e.Context.Rectangle (0, 0, figure_size, figure_size);
+				e.Context.Stroke ();
+				e.Context.MoveTo (txtoff_x, txtoff_y);
+				e.Context.ShowPangoText ("5");
+			};
 
-			gr.Rectangle (x + 0.4, y + 0.2, 0.1, 0.1);
-			gr.Stroke ();
-			gr.MoveTo (x + 0.4 + txtoff_x, y + 0.2 + txtoff_y);
-			gr.ShowPangoText ("6");
+			drawable_area = new DrawableArea (x + 0.4, y + 0.2, figure_size, figure_size);
+			drawable_area.DataEx = "6";
+			container.AddChild (drawable_area);
+			drawable_area.DrawEventHandler += delegate (object sender, DrawEventArgs e)
+			{
+				e.Context.Rectangle (0, 0, figure_size, figure_size);
+				e.Context.Stroke ();
+				e.Context.MoveTo (txtoff_x, txtoff_y);
+				e.Context.ShowPangoText ("6");
+			};
 		}
 	}
 }

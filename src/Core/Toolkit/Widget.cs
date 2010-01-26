@@ -34,47 +34,18 @@ namespace gbrainy.Core.Toolkit
 		public event WidgetSelectedEventHandler SelectedEvent;
 		ISynchronizeInvoke synchronize;
 
-		public class DrawEventArgs: EventArgs
-		{
-			public DrawEventArgs (CairoContextEx gr, double width, double height, bool rtl, object data)
-			{
-				Context = gr;
-				Width = width;
-				Height = height;
-				Rtl = rtl;
-				Data = data;
-			}
-
-			public CairoContextEx Context { get; set; }
-			public double Width { get; set; }
-			public double Height { get; set; }
-			public bool Rtl { get; set; }
-			public object Data { get; set; }
-		}
-
-		public class SeletectedEventArgs: EventArgs
-		{
-			public SeletectedEventArgs (object data, object data_ex)
-			{
-				Data = data;
-				DataEx = data_ex;
-			}
-
-			public object Data { get; set; }
-			public object DataEx { get; set; }
-		}
-
 	    	public Widget (double width, double height)
 		{
 			Width = width;
 			Height = height;
 		}
 
-		public bool Visible { get; set; }
 		public bool Sensitive { get; set; }
 		public object Data { get; set; }
 		public object DataEx { get; set; }
 
+		public double X { get; set; }
+		public double Y { get; set; }
 		public double Width { get; set; }
 		public double Height { get; set; }
 
