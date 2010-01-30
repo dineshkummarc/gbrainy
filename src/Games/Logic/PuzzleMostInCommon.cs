@@ -25,6 +25,7 @@ using System.Collections;
 
 using gbrainy.Core.Main;
 using gbrainy.Core.Libraries;
+using gbrainy.Core.Toolkit;
 
 namespace gbrainy.Games.Logic
 {
@@ -174,6 +175,33 @@ namespace gbrainy.Games.Logic
 			array.AddRange (new Element [] {Element.MediumCircle, Element.MediumCircleWithChild, Element.MediumCircleWithChild, 
 				Element.MediumCircle,Element.MediumCircle, Element.MediumCircleWithChild, Element.MediumCircleWithChild});
 			answers.Add (BuildFigure (array, answers));
+
+			double figure_size = 0.22;
+			double x = DrawAreaX - 0.05, y = DrawAreaY + 0.45;
+
+			HorizontalContainer container = new HorizontalContainer (x, y, random_indices_answers.Count * figure_size, 0.3);
+			DrawableArea drawable_area;
+		
+			AddWidget (container);
+
+			for (int i = 0; i < random_indices_answers.Count; i++)
+			{
+				drawable_area = new DrawableArea (figure_size, figure_size + 0.05);
+				drawable_area.SelectedArea = new Rectangle (0.05, 0.05, 0.15, 0.15);
+				drawable_area.Data = i;
+				drawable_area.DataEx = GetPossibleAnswer (i);
+
+				drawable_area.DrawEventHandler += delegate (object sender, DrawEventArgs e)
+				{
+					int n = (int) e.Data;
+
+					DrawFigure (e.Context, 0.05, 0.05, (FigureElement []) answers[random_indices_answers[n]]);
+					e.Context.MoveTo (0.05, 0.22);
+					e.Context.ShowPangoText (GetPossibleFigureAnswer (n));
+				};
+			
+				container.AddChild (drawable_area);
+			}
 		}
 
 		private ArrayListIndicesRandom RandomizeFromArray (ArrayList ar)
@@ -288,14 +316,6 @@ namespace gbrainy.Games.Logic
 			gr.MoveTo (x - 0.06, y);
 			gr.ShowPangoText (Catalog.GetString ("Possible answers are:"));
 			gr.Stroke ();
-	
-			y += 0.08;
-			for (int i = 0; i < random_indices_answers.Count; i++) {
-				DrawFigure (gr, x, y, (FigureElement []) answers[(int)random_indices_answers[i]]);
-				gr.MoveTo (x, y + 0.2);
-				x+= 0.22;
-				gr.ShowPangoText (GetPossibleFigureAnswer (i));
-			}
 		}
 	}
 }

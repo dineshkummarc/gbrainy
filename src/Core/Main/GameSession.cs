@@ -78,7 +78,6 @@ namespace gbrainy.Core.Main
 		private string current_time;
 		private TimeSpan one_sec = TimeSpan.FromSeconds (1);
 		private int total_score;
-		private bool scored_game;
 		private SessionStatus status;
 		private ViewsControler controler;
 		private ISynchronizeInvoke synchronize;
@@ -171,6 +170,9 @@ namespace gbrainy.Core.Main
 			set {
 				status = value;
 				controler.Status = value;
+
+				if (status == SessionStatus.Answered && CurrentGame != null)
+					CurrentGame.DisableMouseEvents ();
 			}
 		}
 
@@ -297,7 +299,6 @@ namespace gbrainy.Core.Main
 			CurrentGame.Initialize ();
 
 			CurrentGame.GameTime = TimeSpan.Zero;
-			scored_game = false;
 			Status = SessionStatus.Playing;
 		}
 
@@ -333,7 +334,7 @@ namespace gbrainy.Core.Main
 			bool won;
 			int components = 0;
 
-			if (CurrentGame == null || scored_game == true)
+			if (CurrentGame == null ||Status == SessionStatus.Answered)
 				return false;
 
 			score = CurrentGame.Score (answer);
@@ -393,7 +394,7 @@ namespace gbrainy.Core.Main
 
 			total_score = total_score / components;
 
-			scored_game = true;
+			Status = SessionStatus.Answered;
 			return won;
 		}
 

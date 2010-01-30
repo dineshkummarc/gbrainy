@@ -1,4 +1,7 @@
-CSFLAGS = -unsafe -target:library $(CSC_DEFINES)
+CSFLAGS = -unsafe -target:library $(CSC_DEFINES) 
+
+#Active when designing games
+#CSFLAGS += -D:DESIGN_MODE
 
 TARGET = ../gbrainy.Core.dll
 TARGET_CFG = ../gbrainy.Core.dll.config

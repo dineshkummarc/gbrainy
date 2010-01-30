@@ -42,12 +42,26 @@ namespace gbrainy.Core.Toolkit
 	
 			this.rtl = rtl;
 
-			/*gr.Save ();
+#if DESIGN_MODE
+			gr.Save ();
 			gr.Color = new Cairo.Color (0, 0, 1);
 			gr.Rectangle (X, Y, Width, Height);
 			gr.Stroke ();
-			gr.Restore ();*/
+			gr.Restore ();
 
+			double width = 0;
+
+			foreach (Widget child in children)
+			{
+				width += child.Width;
+				
+				if (Height < child.Height)
+					throw new InvalidOperationException (String.Format ("Container height too small {0} < {1}", Height, child.Height));
+			}
+
+			if (Width < width)
+				throw new InvalidOperationException (String.Format ("Container witdh too small {0} < {1}", Width, width));
+#endif
 			//
 			// Coordinates are stored right to left
 			//

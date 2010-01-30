@@ -24,6 +24,7 @@ using Mono.Unix;
 
 using gbrainy.Core.Main;
 using gbrainy.Core.Libraries;
+using gbrainy.Core.Toolkit;
 
 namespace gbrainy.Games.Logic
 {
@@ -127,32 +128,40 @@ namespace gbrainy.Games.Logic
 				}
 			}
 
+			Container container = new Container (DrawAreaX, DrawAreaX + 0.2, 0.8, 0.6);
+			AddWidget (container);
+	
+			for (int i = 0; i <  predicates[question].options.Length; i++)
+			{
+				int opt = random_indices [i];
+
+				DrawableArea drawable_area = new DrawableArea (0.8, 0.1);
+				drawable_area.X = DrawAreaX;
+				drawable_area.Y = DrawAreaY + 0.2 + i * 0.15;
+				container.AddChild (drawable_area);
+				drawable_area.Data = opt;
+				drawable_area.DataEx = GetPossibleAnswer (opt);
+
+				drawable_area.DrawEventHandler += delegate (object sender, DrawEventArgs e)
+				{
+					int option = (int) e.Data;
+					
+					e.Context.SetPangoNormalFontSize ();
+					e.Context.MoveTo (0.05, 0.02);
+					e.Context.ShowPangoText (String.Format (Catalog.GetString ("{0}) {1}"), GetPossibleAnswer (option),
+						predicates[question].options[option].ToString ()));
+					e.Context.Stroke ();
+				};
+			}
 		}
 
 		public override void Draw (CairoContextEx gr, int area_width, int area_height, bool rtl)
 		{
-			double x = DrawAreaX, y = DrawAreaY + 0.1;
-			int option;
-
 			base.Draw (gr, area_width, area_height, rtl);
 
 			gr.SetPangoLargeFontSize ();
-			gr.MoveTo (0.1, y);
+			gr.MoveTo (0.1, DrawAreaY + 0.1);
 			gr.ShowPangoText (Catalog.GetString ("Possible answers are:"));
-
-			gr.SetPangoNormalFontSize ();
-
-			y += 0.15;
-			x += 0.05;
-			for (int n = 0; n < predicates[question].options.Length; n++)
-			{
-				option = random_indices [n];
-				gr.MoveTo (x, y);
-				gr.ShowPangoText (String.Format ("{0}) {1}", GetPossibleAnswer (n),
-					predicates[question].options[option].ToString ()));
-				gr.Stroke ();
-				y += 0.15;
-			}
 		}
 	}
 }

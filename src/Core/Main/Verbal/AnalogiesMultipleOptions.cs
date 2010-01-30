@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2009 Jordi Mas i Hernàndez <jmas@softcatala.org>
+ * Copyright (C) 2009-2010 Jordi Mas i Hernàndez <jmas@softcatala.org>
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License as
@@ -25,6 +25,7 @@ using Cairo;
 using Mono.Unix;
 
 using gbrainy.Core.Libraries;
+using gbrainy.Core.Toolkit;
 
 namespace gbrainy.Core.Main.Verbal
 {
@@ -95,32 +96,39 @@ namespace gbrainy.Core.Main.Verbal
 				return;
 
 			right_answer = GetPossibleAnswer (current.right);
+
+			Container container = new Container (DrawAreaX + 0.1, 0.50, 0.5, current.answers.Length * 0.15);
+			AddWidget (container);
+	
+			for (int i = 0; i <  current.answers.Length; i++)
+			{
+				DrawableArea drawable_area = new DrawableArea (0.8, 0.1);
+				drawable_area.X = DrawAreaX;
+				drawable_area.Y = DrawAreaY + 0.2 + i * 0.15;
+				container.AddChild (drawable_area);
+				drawable_area.Data = i;
+				drawable_area.DataEx = GetPossibleAnswer (i);
+
+				drawable_area.DrawEventHandler += delegate (object sender, DrawEventArgs e)
+				{
+					int n = (int) e.Data;
+
+					e.Context.MoveTo (0.05, 0.02);
+					e.Context.ShowPangoText (String.Format (Catalog.GetString ("{0}) {1}"), GetPossibleAnswer (n), current.answers[n].ToString ()));
+				};
+			}
 		}
 	
 		public override void Draw (CairoContextEx gr, int area_width, int area_height, bool rtl)
 		{
-			double x = DrawAreaX, y = DrawAreaY + 0.1;
-
 			base.Draw (gr, area_width, area_height, rtl);
 
 			if (current == null || current.answers == null)
 				return;
 
 			gr.SetPangoLargeFontSize ();
-			gr.MoveTo (0.1, y);
+			gr.MoveTo (0.1, DrawAreaY + 0.05);
 			gr.ShowPangoText (Catalog.GetString ("Possible answers are:"));
-
-			gr.SetPangoNormalFontSize ();
-
-			y += 0.15;
-			x += 0.05;
-			for (int n = 0; n < current.answers.Length; n++)
-			{
-				gr.MoveTo (x, y);
-				gr.ShowPangoText (String.Format ("{0}) {1}", GetPossibleAnswer (n), current.answers[n].ToString ()));
-				gr.Stroke ();
-				y += 0.15;
-			}
 		}
 	}
 }

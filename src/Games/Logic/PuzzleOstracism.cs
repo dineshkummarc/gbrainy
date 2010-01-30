@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2007-2009 Jordi Mas i Hernàndez <jmas@softcatala.org>
+ * Copyright (C) 2007-2010 Jordi Mas i Hernàndez <jmas@softcatala.org>
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License as
@@ -23,6 +23,7 @@ using Mono.Unix;
 
 using gbrainy.Core.Main;
 using gbrainy.Core.Libraries;
+using gbrainy.Core.Toolkit;
 
 namespace gbrainy.Games.Logic
 {
@@ -133,20 +134,28 @@ namespace gbrainy.Games.Logic
 					break;
 				}
 			}
-		}
 
-		public override void Draw (CairoContextEx gr, int area_width, int area_height, bool rtl)
-		{
-			double x = DrawAreaX + 0.20, y = DrawAreaY + 0.2;
+			Container container = new Container (DrawAreaX + 0.1, DrawAreaY + 0.2, 0.5, random_indices.Count * 0.1);
+			AddWidget (container);
 
-			base.Draw (gr, area_width, area_height, rtl);
-
-			gr.SetPangoLargeFontSize ();		
 			for (int i = 0; i < random_indices.Count; i++)
 			{
-				gr.MoveTo (x, y);
-				gr.ShowPangoText (String.Format ("{0}) {1}", GetPossibleAnswer (i), equations [random_indices[i]]));
-				y += 0.1;
+				DrawableArea drawable_area = new DrawableArea (0.5, 0.1);
+				drawable_area.X = DrawAreaX + 0.1;
+				drawable_area.Y = DrawAreaY + 0.2 + i * 0.1;
+				container.AddChild (drawable_area);
+				drawable_area.Data = i;
+				drawable_area.DataEx = GetPossibleAnswer (i);
+
+				drawable_area.DrawEventHandler += delegate (object sender, DrawEventArgs e)
+				{
+					int n = (int) e.Data;
+
+					e.Context.SetPangoLargeFontSize ();
+					e.Context.MoveTo (0.05, 0.02);
+					// Translators: this "option) answer" for example "a) "21 x 60 = 1260". This should not be changed for most of the languages
+					e.Context.ShowPangoText (String.Format (Catalog.GetString ("{0}) {1}"), GetPossibleAnswer (n), equations [random_indices[n]]));
+				};
 			}
 		}
 	}

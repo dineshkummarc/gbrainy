@@ -27,7 +27,7 @@ namespace gbrainy.Core.Toolkit
 {
 	//
 	// Base Container class
-	// Does not support rtl and all the coordinates are relative to the child (not the container)
+	// Does not support rtl and all the coordinates are drawable context (not to the container)
 	// 
 	public class Container : Widget
 	{
@@ -40,6 +40,12 @@ namespace gbrainy.Core.Toolkit
 		
 		public Container (double x, double y, double width, double height) : base (width, height)
 		{
+			if (x < 0 || x > 1)
+				throw new ArgumentOutOfRangeException ("x");
+
+			if (y < 0 || y > 1)
+				throw new ArgumentOutOfRangeException ("y");
+
 			X = x;
 			Y = y;
 		}
@@ -71,12 +77,13 @@ namespace gbrainy.Core.Toolkit
 
 		public override void Draw (CairoContextEx gr, int area_width, int area_height, bool rtl)
 		{
-			/*gr.Save ();
+#if DESIGN_MODE
+			gr.Save ();
 			gr.Color = new Cairo.Color (0, 0, 1);
 			gr.Rectangle (X, Y, Width, Height);
 			gr.Stroke ();
-			gr.Restore ();*/
-
+			gr.Restore ();
+#endif
 			foreach (Widget child in children)
 			{
 				gr.Save ();						
@@ -84,6 +91,7 @@ namespace gbrainy.Core.Toolkit
 				child.Draw (gr, area_width, area_height, rtl);
 				gr.Restore ();
 			}
+
 		}
 
 		public override void MouseEvent (object obj, MouseEventArgs args)

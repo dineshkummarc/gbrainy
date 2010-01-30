@@ -401,7 +401,6 @@ namespace gbrainy.Clients.Classical
 			UpdateSolution (answer + " " + session.CurrentGame.Answer);
 
 			session.CurrentGame.DrawAnswer = true;
-			session.Status = GameSession.SessionStatus.Answered;
 			ActiveInputControls (true);
 			next_button.GrabFocus ();
 			drawing_area.QueueDraw ();

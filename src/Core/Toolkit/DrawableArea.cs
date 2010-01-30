@@ -28,7 +28,6 @@ namespace gbrainy.Core.Toolkit
 	public class DrawableArea : Widget
 	{
 		public virtual event WidgetDrawEventHandler DrawEventHandler;
-		public virtual event WidgetSelectedEventHandler SelectedRequestEvent;
 		bool hoover;
 
 		public DrawableArea (double x, double y, double width, double height) : base (width, height)
@@ -39,18 +38,28 @@ namespace gbrainy.Core.Toolkit
 
 	    	public DrawableArea (double width, double height) : base (width, height)
 		{
-
+			Sensitive = true;
 		}
 
 		public Rectangle SelectedArea { get; set; }
 
+		public override bool Sensitive { 
+			set { 
+				hoover = false;
+				base.Sensitive = value;
+			}
+			get {return base.Sensitive; }
+		}
+
 		public override void Draw (CairoContextEx gr, int area_width, int area_height, bool rtl) 
 		{
-			/*gr.Save ();
+#if DESIGN_MODE
+			gr.Save ();
 			gr.Color = new Cairo.Color (1, 0, 0);
 			gr.Rectangle (0, 0, Width, Height);
 			gr.Stroke ();
-			gr.Restore ();*/
+			gr.Restore ();
+#endif
 
 			if (hoover == true)
   			{
@@ -80,6 +89,9 @@ namespace gbrainy.Core.Toolkit
 
 		public override void MouseEvent (object obj, MouseEventArgs args)
 		{
+			if (Sensitive == false)
+				return;
+
 			if (args.X == -1 || args.Y == -1) {
 				if (hoover == true) {
 					hoover = false;

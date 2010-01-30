@@ -54,7 +54,7 @@ namespace gbrainy.Core.Views
 				e.Context.DrawImageFromAssembly ("logic-games.svg", 0, 0, image_size, image_size);
 			};
 
-			drawable_area = new DrawableArea (0.75, 0.25);
+			drawable_area = new DrawableArea (0.75, space);
 			container.AddChild (drawable_area);
 			drawable_area.DrawEventHandler += delegate (object sender, DrawEventArgs e)
 			{
@@ -75,7 +75,7 @@ namespace gbrainy.Core.Views
 				e.Context.DrawImageFromAssembly ("math-games.svg", 0, 0, image_size, image_size);
 			};
 
-			drawable_area = new DrawableArea (0.75, 0.25);
+			drawable_area = new DrawableArea (0.75, space);
 			container.AddChild (drawable_area);
 			drawable_area.DrawEventHandler += delegate (object sender, DrawEventArgs e)
 			{
@@ -96,7 +96,7 @@ namespace gbrainy.Core.Views
 				e.Context.DrawImageFromAssembly ("memory-games.svg", 0, 0, image_size, image_size);
 			};
 
-			drawable_area = new DrawableArea (0.75, 0.25);
+			drawable_area = new DrawableArea (0.75, space);
 			container.AddChild (drawable_area);
 			drawable_area.DrawEventHandler += delegate (object sender, DrawEventArgs e)
 			{
@@ -117,7 +117,7 @@ namespace gbrainy.Core.Views
 				e.Context.DrawImageFromAssembly ("verbal-games.svg", 0, 0, image_size, image_size);
 			};
 
-			drawable_area = new DrawableArea (0.75, 0.25);
+			drawable_area = new DrawableArea (0.75, space);
 			container.AddChild (drawable_area);
 			drawable_area.DrawEventHandler += delegate (object sender, DrawEventArgs e)
 			{

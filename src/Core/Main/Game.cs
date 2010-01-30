@@ -385,6 +385,13 @@ namespace gbrainy.Core.Main
 			return str;
 		}
 
+		public void DisableMouseEvents ()
+		{
+			foreach (Toolkit.Container container in containers) 
+				foreach (Widget widget in container.Children)
+					widget.Sensitive = false;
+		}
+
 		public void MouseEvent (object obj, MouseEventArgs args)
 		{
 			foreach (Toolkit.Container container in containers)

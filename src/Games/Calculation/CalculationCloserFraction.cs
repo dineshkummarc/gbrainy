@@ -155,7 +155,7 @@ namespace gbrainy.Games.Calculation
 			{
 				gr.MoveTo (x, y);
 				indx = random_indices[i];
-				gr.ShowPangoText (String.Format ("{0}) {1}", GetPossibleAnswer (i) , options [indx * 2] +  " / " + options [(indx  * 2) +1]));
+				gr.ShowPangoText (String.Format (Catalog.GetString ("{0}) {1}"), GetPossibleAnswer (i) , options [indx * 2] +  " / " + options [(indx  * 2) +1]));
 			
 				y = y + 0.15;
 			}

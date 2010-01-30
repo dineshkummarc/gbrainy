@@ -25,22 +25,40 @@ using gbrainy.Core.Libraries;
 
 namespace gbrainy.Core.Toolkit
 {
+	/*
+		This is a set of classes that help to model a minimal widget library over
+		Cairo that handles RTL and mouse events
+	*/
+
 	public abstract class Widget : IDrawable, IDrawRequest, IMouseEvent
 	{
 		public delegate void WidgetDrawEventHandler (object sender, DrawEventArgs e);
-		public delegate void WidgetSelectedEventHandler (object sender, SeletectedEventArgs e);
 
 		public event EventHandler DrawRequest;
-		public event WidgetSelectedEventHandler SelectedEvent;
+		public event EventHandler <SeletectedEventArgs> SelectedEvent;
 		ISynchronizeInvoke synchronize;
+		bool sensitive;
 
 	    	public Widget (double width, double height)
 		{
+			if (width < 0 || width > 1)
+				throw new ArgumentOutOfRangeException ("width");
+
+			if (height < 0 || height > 1)
+				throw new ArgumentOutOfRangeException ("height");
+
 			Width = width;
 			Height = height;
 		}
 
-		public bool Sensitive { get; set; }
+		public virtual bool Sensitive { 
+			set {
+				sensitive = value;
+				OnDrawRequest ();
+			}
+			get {return sensitive; }
+		}
+
 		public object Data { get; set; }
 		public object DataEx { get; set; }
 

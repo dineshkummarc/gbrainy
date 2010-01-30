@@ -113,7 +113,7 @@ namespace gbrainy.Core.Main.Verbal
 			for (int n = 0; n < current.answers.Length; n++)
 			{
 				gr.MoveTo (x, y);
-				gr.ShowPangoText (String.Format ("{0}) {1}", GetPossibleAnswer (n), current.answers[n].ToString ()));
+				gr.ShowPangoText (String.Format (Catalog.GetString ("{0}) {1}"), GetPossibleAnswer (n), current.answers[n].ToString ()));
 				gr.Stroke ();
 				y += 0.15;
 			}
