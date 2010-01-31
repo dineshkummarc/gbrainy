@@ -8,9 +8,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gbrainy master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gbrainy&component=general\n"
-"POT-Creation-Date: 2010-01-17 20:57+0000\n"
-"PO-Revision-Date: 2010-01-20 19:35+0100\n"
-"Last-Translator: Matej Urbančič <mateju@svn.gnome.org>\n"
+"POT-Creation-Date: 2010-01-30 12:58+0000\n"
+"PO-Revision-Date: 2010-01-31 11:06+0100\n"
+"Last-Translator: Andrej Žnidaršič <andrej.znidarsic@gmail.com>\n"
 "Language-Team: Slovenian GNOME Translation Team <gnome-si@googlegroups.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -589,25 +589,25 @@ msgid "Total"
 msgstr "Skupaj"
 
 #: ../src/Core/Views/FinishView.cs:99
-#: ../src/Core/Main/Game.cs:332
-#: ../src/Clients/Classical/gbrainy.cs:263
+#: ../src/Core/Main/Game.cs:370
+#: ../src/Clients/Classical/gbrainy.cs:302
 msgid "Logic"
 msgstr "Logika"
 
 #: ../src/Core/Views/FinishView.cs:106
-#: ../src/Clients/Classical/gbrainy.cs:268
+#: ../src/Clients/Classical/gbrainy.cs:307
 msgid "Calculation"
 msgstr "Računanje"
 
 #: ../src/Core/Views/FinishView.cs:113
-#: ../src/Core/Main/Game.cs:335
-#: ../src/Clients/Classical/gbrainy.cs:274
+#: ../src/Core/Main/Game.cs:373
+#: ../src/Clients/Classical/gbrainy.cs:313
 msgid "Memory"
 msgstr "Spomin"
 
 #: ../src/Core/Views/FinishView.cs:120
-#: ../src/Core/Main/Game.cs:341
-#: ../src/Clients/Classical/gbrainy.cs:280
+#: ../src/Core/Main/Game.cs:379
+#: ../src/Clients/Classical/gbrainy.cs:319
 msgid "Verbal"
 msgstr "Besede"
 
@@ -683,33 +683,33 @@ msgstr "Z rezultatom {0}% v spominskih igrah ste dosegli nov osebni rekord. Vaš
 msgid "By scoring {0}% in verbal analogies you have established a new personal record. Your previous record was {1}%."
 msgstr "Z rezultatom {0}% v besednih analogijah ste dosegli nov osebni rekord. Vaš prejšnji rekord je bil {1}%."
 
+#: ../src/Core/Views/WelcomeView.cs:62
+msgid "Logic puzzles. Challenge your reasoning and thinking skills."
+msgstr "Logične uganke. Izzovite svoje sposobnosti sklepanja in razmišljanja."
+
+#: ../src/Core/Views/WelcomeView.cs:83
+msgid "Mental calculation. Arithmetical operations that test your mental calculation abilities."
+msgstr "Računanje. Aritmetične operacije, ki preizkusijo vaše sposobnosti računanja na pamet."
+
+#: ../src/Core/Views/WelcomeView.cs:104
+msgid "Memory trainers. To prove your short term memory."
+msgstr "Urjenje spomina. Razvijanje kratkoročnega spomina."
+
+#: ../src/Core/Views/WelcomeView.cs:125
+msgid "Verbal analogies. Challenge your verbal aptitude."
+msgstr "Besedne analogije. Izzovite svojo besedno bistrost."
+
 #. Translators: {0} is the version number of the program
-#: ../src/Core/Views/WelcomeView.cs:50
+#: ../src/Core/Views/WelcomeView.cs:142
 #, csharp-format
 msgid "Welcome to gbrainy {0}"
 msgstr "Dobrodošli v gbrainy {0}"
 
-#: ../src/Core/Views/WelcomeView.cs:53
+#: ../src/Core/Views/WelcomeView.cs:146
 msgid "gbrainy is a brain teaser game and trainer to have fun and to keep your brain trained. It includes:"
 msgstr "Gbrainy je igra za razvijanje razmišljanja in bistrenje misli. Igra vključuje:"
 
-#: ../src/Core/Views/WelcomeView.cs:58
-msgid "Logic puzzles. Challenge your reasoning and thinking skills."
-msgstr "Logične uganke. Izzovite svoje sposobnosti sklepanja in razmišljanja."
-
-#: ../src/Core/Views/WelcomeView.cs:64
-msgid "Mental calculation. Arithmetical operations that test your mental calculation abilities."
-msgstr "Računanje. Aritmetične operacije, ki preizkusijo vaše sposobnosti računanja na pamet."
-
-#: ../src/Core/Views/WelcomeView.cs:70
-msgid "Memory trainers. To prove your short term memory."
-msgstr "Urjenje spomina. Razvijanje kratkoročnega spomina."
-
-#: ../src/Core/Views/WelcomeView.cs:76
-msgid "Verbal analogies. Challenge your verbal aptitude."
-msgstr "Besedne analogije. Izzovite svojo besedno bistrost."
-
-#: ../src/Core/Views/WelcomeView.cs:79
+#: ../src/Core/Views/WelcomeView.cs:149
 #: ../src/Core/Main/GameTips.cs:67
 msgid "Use the Settings to adjust the difficulty level of the game."
 msgstr "Uporabite nastavitve za prilagoditev težavnostne ravni igre."
@@ -746,7 +746,7 @@ msgstr "črna"
 msgid "white"
 msgstr "bela"
 
-#: ../src/Core/Main/Game.cs:95
+#: ../src/Core/Main/Game.cs:110
 #, csharp-format
 msgid "The correct answer is {0}."
 msgstr "Pravilni odgovor je {0}."
@@ -758,51 +758,51 @@ msgstr "Pravilni odgovor je {0}."
 #. For languages represented with the Latin alphabet use
 #. the same than English
 #. First possible answer for a series (e.g.: Figure A)
-#: ../src/Core/Main/Game.cs:265
+#: ../src/Core/Main/Game.cs:300
 msgid "A"
 msgstr "A"
 
 #. Second possible answer for a series
-#: ../src/Core/Main/Game.cs:267
+#: ../src/Core/Main/Game.cs:302
 msgid "B"
 msgstr "B"
 
 #. Third possible answer for a series
-#: ../src/Core/Main/Game.cs:269
+#: ../src/Core/Main/Game.cs:304
 msgid "C"
 msgstr "C"
 
 #. Fourth possible answer for a series
-#: ../src/Core/Main/Game.cs:271
+#: ../src/Core/Main/Game.cs:306
 msgid "D"
 msgstr "D"
 
 #. Fifth possible answer for a series
-#: ../src/Core/Main/Game.cs:273
+#: ../src/Core/Main/Game.cs:308
 msgid "E"
 msgstr "E"
 
 #. Sixth possible answer for a series
-#: ../src/Core/Main/Game.cs:275
+#: ../src/Core/Main/Game.cs:310
 msgid "F"
 msgstr "F"
 
 #. Seventh possible answer for a series
-#: ../src/Core/Main/Game.cs:277
+#: ../src/Core/Main/Game.cs:312
 msgid "G"
 msgstr "G"
 
 #. Eighth possible answer for a series
-#: ../src/Core/Main/Game.cs:279
+#: ../src/Core/Main/Game.cs:314
 msgid "H"
 msgstr "H"
 
-#: ../src/Core/Main/Game.cs:287
+#: ../src/Core/Main/Game.cs:322
 #, csharp-format
 msgid "Figure {0}"
 msgstr "Slika {0}"
 
-#: ../src/Core/Main/Game.cs:338
+#: ../src/Core/Main/Game.cs:376
 msgid "Mental Calculation"
 msgstr "Računanje"
 
@@ -811,22 +811,22 @@ msgstr "Računanje"
 msgid "Games registered: {0}: {1} logic puzzles, {2} calculation trainers, {3} memory trainers, {4} verbal analogies"
 msgstr "Vpisane igre: {0}: {1} logičnih iger, {2} računskih nalog, {3} urjenj spomina, {4} besednih analogij"
 
-#: ../src/Core/Main/GameSession.cs:242
+#: ../src/Core/Main/GameSession.cs:244
 #, csharp-format
 msgid "Games played: {0} ({1}% score)"
 msgstr "Odigrane igre: {0} ({1}% rezultat)"
 
-#: ../src/Core/Main/GameSession.cs:243
+#: ../src/Core/Main/GameSession.cs:245
 #, csharp-format
 msgid " - Time: {0}"
 msgstr " - Čas: {0}"
 
-#: ../src/Core/Main/GameSession.cs:246
+#: ../src/Core/Main/GameSession.cs:248
 #, csharp-format
 msgid "- Game: {0}"
 msgstr "- Igra: {0}"
 
-#: ../src/Core/Main/GameSession.cs:308
+#: ../src/Core/Main/GameSession.cs:309
 msgid "Paused"
 msgstr "Premor"
 
@@ -892,7 +892,7 @@ msgstr "Besedne analogije"
 #. Translators: this the separator used when concatenating possible options for answering verbal analogies
 #. For example: "Possible correct answers are: a, b, c, d."
 #: ../src/Core/Main/Verbal/Analogies.cs:75
-#: ../src/Core/Main/Verbal/AnalogiesMultipleOptions.cs:64
+#: ../src/Core/Main/Verbal/AnalogiesMultipleOptions.cs:65
 #: ../src/Core/Main/Verbal/AnalogiesPairOfWordsOptions.cs:78
 msgid ", "
 msgstr ", "
@@ -902,27 +902,37 @@ msgstr ", "
 msgid "Possible correct answers are: {0}."
 msgstr "Mogoči pravilni odgovori so: {0}."
 
-#: ../src/Core/Main/Verbal/AnalogiesMultipleOptions.cs:44
+#: ../src/Core/Main/Verbal/AnalogiesMultipleOptions.cs:45
 msgid "Multiple options"
 msgstr "Izbirno vprašanje z več odgovori"
 
 #. Translators: {0} is replaced by a question and {1} by the suggestions on how to answer
 #. E.g: What is the correct option? Answer A, B, C.
-#: ../src/Core/Main/Verbal/AnalogiesMultipleOptions.cs:70
+#: ../src/Core/Main/Verbal/AnalogiesMultipleOptions.cs:71
 #, csharp-format
 msgid "{0} Answer {1}."
 msgstr "{0} Odgovorite {1}."
 
-#: ../src/Core/Main/Verbal/AnalogiesMultipleOptions.cs:111
+#. Translators: this "option) answer" for example "a) "21 x 60 = 1260". This should not be changed for most of the languages
+#: ../src/Core/Main/Verbal/AnalogiesMultipleOptions.cs:117
+#: ../src/Core/Main/Verbal/AnalogiesPairOfWordsOptions.cs:116
+#: ../src/Games/Logic/PuzzleOstracism.cs:157
+#: ../src/Games/Logic/PuzzlePredicateLogic.cs:151
+#: ../src/Games/Calculation/CalculationCloserFraction.cs:158
+#, csharp-format
+msgid "{0}) {1}"
+msgstr "{0}) {1}"
+
+#: ../src/Core/Main/Verbal/AnalogiesMultipleOptions.cs:131
 #: ../src/Core/Main/Verbal/AnalogiesPairOfWordsOptions.cs:110
 #: ../src/Games/Logic/PuzzleFigurePattern.cs:194
 #: ../src/Games/Logic/PuzzleLargerShape.cs:243
 #: ../src/Games/Logic/PuzzleMissingPiece.cs:152
 #: ../src/Games/Logic/PuzzleMissingSlice.cs:182
-#: ../src/Games/Logic/PuzzleMostInCommon.cs:289
+#: ../src/Games/Logic/PuzzleMostInCommon.cs:317
 #: ../src/Games/Logic/PuzzleNextFigure.cs:131
-#: ../src/Games/Logic/PuzzlePredicateLogic.cs:141
-#: ../src/Games/Logic/PuzzleSquareDots.cs:185
+#: ../src/Games/Logic/PuzzlePredicateLogic.cs:164
+#: ../src/Games/Logic/PuzzleSquareDots.cs:207
 #: ../src/Games/Logic/PuzzleTetris.cs:153
 msgid "Possible answers are:"
 msgstr "Mogoči odgovori so:"
@@ -968,60 +978,60 @@ msgstr "Branje skupaj {0} besednih analogij"
 msgid "There are no verbal analogies available."
 msgstr "Na voljo ni nobene besedne analogije."
 
-#: ../src/Clients/Classical/gbrainy.cs:256
+#: ../src/Clients/Classical/gbrainy.cs:295
 msgid "Play all the games"
 msgstr "Igranje vseh iger"
 
-#: ../src/Clients/Classical/gbrainy.cs:257
+#: ../src/Clients/Classical/gbrainy.cs:296
 msgid "All"
 msgstr "Vse"
 
-#: ../src/Clients/Classical/gbrainy.cs:262
+#: ../src/Clients/Classical/gbrainy.cs:301
 msgid "Play games that challenge your reasoning and thinking"
 msgstr "Igrajte igre ki so izziv vašemu sklepanju in razmišljanju."
 
-#: ../src/Clients/Classical/gbrainy.cs:269
+#: ../src/Clients/Classical/gbrainy.cs:308
 msgid "Play games that challenge your mental calculation skills"
 msgstr "Igrajte igre, ki so izziv vašim sposobnostim računanja."
 
-#: ../src/Clients/Classical/gbrainy.cs:275
+#: ../src/Clients/Classical/gbrainy.cs:314
 msgid "Play games that challenge your short term memory"
 msgstr "Igrajte igre, ki so izziv vašemu kratkoročnemu spominu."
 
-#: ../src/Clients/Classical/gbrainy.cs:281
+#: ../src/Clients/Classical/gbrainy.cs:320
 msgid "Play games that challenge your verbal aptitude"
 msgstr "Igrajte igre, ki so izziv vašim besednim sposobnostim"
 
-#: ../src/Clients/Classical/gbrainy.cs:286
-#: ../src/Clients/Classical/gbrainy.cs:482
+#: ../src/Clients/Classical/gbrainy.cs:325
+#: ../src/Clients/Classical/gbrainy.cs:529
 msgid "Pause"
 msgstr "Premor"
 
-#: ../src/Clients/Classical/gbrainy.cs:287
+#: ../src/Clients/Classical/gbrainy.cs:326
 msgid "Pause or resume the game"
 msgstr "Premor ali nadaljevanje igre"
 
-#: ../src/Clients/Classical/gbrainy.cs:292
+#: ../src/Clients/Classical/gbrainy.cs:331
 msgid "End the game and show score"
 msgstr "Končaj igro in prikaži rezultat"
 
-#: ../src/Clients/Classical/gbrainy.cs:293
+#: ../src/Clients/Classical/gbrainy.cs:332
 msgid "Finish"
 msgstr "Končaj"
 
-#: ../src/Clients/Classical/gbrainy.cs:346
+#: ../src/Clients/Classical/gbrainy.cs:394
 msgid "Congratulations."
 msgstr "Čestitke."
 
-#: ../src/Clients/Classical/gbrainy.cs:348
+#: ../src/Clients/Classical/gbrainy.cs:396
 msgid "Incorrect answer."
 msgstr "Napačen odgovor."
 
-#: ../src/Clients/Classical/gbrainy.cs:398
+#: ../src/Clients/Classical/gbrainy.cs:445
 msgid "Once you have an answer type it in the \"Answer:\" entry box and press the \"OK\" button."
 msgstr "Ko veste odgovor, ga vnesite v vnosno polje \"Odgovor:\" in pritisnite gumb \"V redu\"."
 
-#: ../src/Clients/Classical/gbrainy.cs:486
+#: ../src/Clients/Classical/gbrainy.cs:533
 msgid "Resume"
 msgstr "Nadaljuj"
 
@@ -1171,7 +1181,7 @@ msgid "Time in seconds to memorize the challenge:"
 msgstr "Čas za pomnjenje izziva v sekundah:"
 
 #: ../src/Games/Logic/Puzzle3DCube.cs:34
-#: ../src/Games/Logic/PuzzleCube.cs:43
+#: ../src/Games/Logic/PuzzleCube.cs:47
 msgid "Cube"
 msgstr "Kocka"
 
@@ -1336,7 +1346,7 @@ msgstr "Odstotek pokritosti"
 msgid "What percentage of the figure is colored?"
 msgstr "Kolikšen del slike je pobarvan? "
 
-#: ../src/Games/Logic/PuzzleCube.cs:47
+#: ../src/Games/Logic/PuzzleCube.cs:51
 #, csharp-format
 msgid "When folded as a cube, which face on the figure is opposite the face with a {0} drawn on it? Answer the number written on face."
 msgstr "Katera ploskev na sliki je nasproti ploskve {0}, ko je slika zložena kot kocka? Kot odgovor napišite število napisano na ploskvi."
@@ -1455,11 +1465,11 @@ msgstr "Tretja slika vsake vrstice vsebuje spajanje prvih dveh slik na nek nači
 msgid "Superpose the first and second figures and remove the lines that they have in common, then rotate the resulting figure 45 degrees."
 msgstr "Poveznite prvo sliko na drugo, odstranite skupne črte in nastalo sliko zavrtite za 45 stopinj."
 
-#: ../src/Games/Logic/PuzzleFigures.cs:43
+#: ../src/Games/Logic/PuzzleFigures.cs:44
 msgid "Figures"
 msgstr "Slike"
 
-#: ../src/Games/Logic/PuzzleFigures.cs:47
+#: ../src/Games/Logic/PuzzleFigures.cs:48
 msgid "What is the next logical sequence of objects in the last column? See below the convention when giving the answer."
 msgstr "Kaj je naslednje logično zaporedje predmetov v zadnjem stolpcu? Oglejte si dogovor za podajanje odgovora spodaj."
 
@@ -1467,18 +1477,18 @@ msgstr "Kaj je naslednje logično zaporedje predmetov v zadnjem stolpcu? Oglejte
 msgid "It is the only combination that you can build with the given elements without repeating them."
 msgstr "Edina kombinacija ki jo lahko izgradite z danimi elementi brez njihovega ponavljanja."
 
-#: ../src/Games/Logic/PuzzleFigures.cs:81
-msgid "Convention when giving the answer is:"
-msgstr "Dogovor pri podajanju odgovorov je:"
-
 #: ../src/Games/Logic/PuzzleFigures.cs:84
-#: ../src/Games/Logic/PuzzleFigures.cs:91
-#: ../src/Games/Logic/PuzzleFigures.cs:99
+#: ../src/Games/Logic/PuzzleFigures.cs:96
+#: ../src/Games/Logic/PuzzleFigures.cs:109
 #, csharp-format
 msgid "{0} ->"
 msgstr "{0} ->"
 
-#: ../src/Games/Logic/PuzzleFigures.cs:107
+#: ../src/Games/Logic/PuzzleFigures.cs:165
+msgid "Convention when giving the answer is:"
+msgstr "Dogovor pri podajanju odgovorov je:"
+
+#: ../src/Games/Logic/PuzzleFigures.cs:169
 #, csharp-format
 msgid "E.g: {0}{1}{2} (diamond, triangle, circle)"
 msgstr "Na primer: {0}{1}{2} (romb, trikotnik, krog)"
@@ -1637,24 +1647,24 @@ msgstr "Vsaka rezina je povezana z nasprotno."
 msgid "All numbers of each slice, when added to the ones of the opposite slice, add always {0}."
 msgstr "Vsota vseh števil na rezini s števili na nasprotni rezini je vedno {0}."
 
-#: ../src/Games/Logic/PuzzleMostInCommon.cs:76
+#: ../src/Games/Logic/PuzzleMostInCommon.cs:77
 msgid "Most in common"
 msgstr "Največ skupnega"
 
-#: ../src/Games/Logic/PuzzleMostInCommon.cs:81
+#: ../src/Games/Logic/PuzzleMostInCommon.cs:82
 #, csharp-format
 msgid "Which of the possible answers have the most in common with the four given figures? Answer {0}, {1}, {2} or {3}."
 msgstr "Kateri od mogočih odgovorov ima največ skupnega s štirimi danimi slikami? Odgovorite {0}, {1}, {2} ali {3}."
 
-#: ../src/Games/Logic/PuzzleMostInCommon.cs:86
+#: ../src/Games/Logic/PuzzleMostInCommon.cs:87
 msgid "Think of the common elements that the given figures have inside them."
 msgstr "Pomislite na skupne elemente, ki jih imajo dane slike."
 
-#: ../src/Games/Logic/PuzzleMostInCommon.cs:94
+#: ../src/Games/Logic/PuzzleMostInCommon.cs:95
 msgid "It has the same number of elements inside the figure as the given figures."
 msgstr "Slika ima enako število elementov kot dane slike."
 
-#: ../src/Games/Logic/PuzzleMostInCommon.cs:96
+#: ../src/Games/Logic/PuzzleMostInCommon.cs:97
 msgid "It is the figure with the most elements in common compared to the given figures."
 msgstr "Je slika z največ skupnimi elementi z danimi slikami."
 
@@ -1737,120 +1747,120 @@ msgstr "Vsako število v zaporedju je rezultat prištevanja 1 prejšnjemu števi
 msgid "Every number in the sequence is the result of subtracting 2 from the previous number and multiplying it by -2."
 msgstr "Vsako število v zaporedju je rezultat odštevanja 1 prejšnjemu številu in množenju z -2."
 
-#: ../src/Games/Logic/PuzzleOstracism.cs:54
+#: ../src/Games/Logic/PuzzleOstracism.cs:55
 msgid "Ostracism"
 msgstr "Ostracizem"
 
-#: ../src/Games/Logic/PuzzleOstracism.cs:59
+#: ../src/Games/Logic/PuzzleOstracism.cs:60
 #, csharp-format
 msgid "Which element does not belong to the group? Answer {0}, {1}, {2}, {3} or {4}."
 msgstr "Kateri predmet ne spada v skupino? Odgovorite {0}, {1}, {2}, {3} ali {4}."
 
-#: ../src/Games/Logic/PuzzleOstracism.cs:67
+#: ../src/Games/Logic/PuzzleOstracism.cs:68
 msgid "The criteria for deciding if an equation belongs to the group is not arithmetical."
 msgstr "Pogoj za odločitev ali enačba spada v skupino ni aritmetičen."
 
-#: ../src/Games/Logic/PuzzleOstracism.cs:69
+#: ../src/Games/Logic/PuzzleOstracism.cs:70
 msgid "Consider that every number that belongs to the group has two parts that are related."
 msgstr "Vsako število, ki spada v skupino ima dva povezana dela."
 
-#: ../src/Games/Logic/PuzzleOstracism.cs:82
+#: ../src/Games/Logic/PuzzleOstracism.cs:83
 msgid "In all the other equations the digits from the left side appear also in the right side."
 msgstr "V vseh enačbah se številke na levi strani pojavijo tudi na desni strani."
 
-#: ../src/Games/Logic/PuzzleOstracism.cs:85
+#: ../src/Games/Logic/PuzzleOstracism.cs:86
 msgid "In all the other numbers the last three digits are the square of the first two digits."
 msgstr "V vseh ostalih številih so zadnje tri številke kvadrat prvih dveh številk."
 
-#: ../src/Games/Logic/PuzzlePredicateLogic.cs:57
+#: ../src/Games/Logic/PuzzlePredicateLogic.cs:58
 #, csharp-format
 msgid "If all painters are artists and some citizens of Barcelona are artists. Which of the following sentences is correct? Answer {0}, {1}, {2} or {3}."
 msgstr "Nekateri slikarji so umetniki in nekateri meščani Barcelone so umetniki. Kateri od naslednjih stavkov je pravilen? Odgovorite {0}, {1}, {2} ali {3}."
 
-#: ../src/Games/Logic/PuzzlePredicateLogic.cs:59
+#: ../src/Games/Logic/PuzzlePredicateLogic.cs:60
 msgid "Some citizens of Barcelona are painters"
 msgstr "Nekateri meščani Barcelone so slikarji"
 
-#: ../src/Games/Logic/PuzzlePredicateLogic.cs:60
+#: ../src/Games/Logic/PuzzlePredicateLogic.cs:61
 msgid "All citizens of Barcelona are painters"
 msgstr "Vsi meščani Barcelone so slikarji"
 
-#: ../src/Games/Logic/PuzzlePredicateLogic.cs:61
+#: ../src/Games/Logic/PuzzlePredicateLogic.cs:62
 msgid "No citizen of Barcelona is a painter"
 msgstr "Noben meščan Barcelone ni slika"
 
-#: ../src/Games/Logic/PuzzlePredicateLogic.cs:62
-#: ../src/Games/Logic/PuzzlePredicateLogic.cs:70
-#: ../src/Games/Logic/PuzzlePredicateLogic.cs:78
-#: ../src/Games/Logic/PuzzlePredicateLogic.cs:86
+#: ../src/Games/Logic/PuzzlePredicateLogic.cs:63
+#: ../src/Games/Logic/PuzzlePredicateLogic.cs:71
+#: ../src/Games/Logic/PuzzlePredicateLogic.cs:79
+#: ../src/Games/Logic/PuzzlePredicateLogic.cs:87
 msgid "None of the other options"
 msgstr "Nobena od drugih možnosti"
 
-#: ../src/Games/Logic/PuzzlePredicateLogic.cs:65
+#: ../src/Games/Logic/PuzzlePredicateLogic.cs:66
 #, csharp-format
 msgid "If no ill artist is happy and some artists are happy. Which of the following sentences is correct? Answer {0}, {1}, {2} or {3}."
 msgstr "Noben bolan umetnik ni vesel in nekateri umetniki so veseli. Kateri od naslednjih stavkov je pravilen? Odgovorite {0}, {1}, {2} ali {3}."
 
-#: ../src/Games/Logic/PuzzlePredicateLogic.cs:67
+#: ../src/Games/Logic/PuzzlePredicateLogic.cs:68
 msgid "Some artist are not ill"
 msgstr "Nekateri umetniki niso bolni"
 
-#: ../src/Games/Logic/PuzzlePredicateLogic.cs:68
+#: ../src/Games/Logic/PuzzlePredicateLogic.cs:69
 msgid "Some painters are not artists"
 msgstr "Nekateri slikarji niso umetniki"
 
-#: ../src/Games/Logic/PuzzlePredicateLogic.cs:69
+#: ../src/Games/Logic/PuzzlePredicateLogic.cs:70
 msgid "All artists are happy"
 msgstr "Vsi umetniki so veseli"
 
-#: ../src/Games/Logic/PuzzlePredicateLogic.cs:73
+#: ../src/Games/Logic/PuzzlePredicateLogic.cs:74
 #, csharp-format
 msgid "If people that travels always buy a map and you are not going to travel. Which of the following sentences is correct? Answer {0}, {1}, {2} or {3}."
 msgstr "Ljudje, ki potujejo, vedno kupijo zemljevid in vi ne boste potovali. Kateri od naslednjih stavkov je pravilen? Odgovorite {0}, {1}, {2} ali {3}."
 
-#: ../src/Games/Logic/PuzzlePredicateLogic.cs:75
+#: ../src/Games/Logic/PuzzlePredicateLogic.cs:76
 msgid "You do not have any map"
 msgstr "Vi nimate zemljevida"
 
-#: ../src/Games/Logic/PuzzlePredicateLogic.cs:76
+#: ../src/Games/Logic/PuzzlePredicateLogic.cs:77
 msgid "You do not buy a map"
 msgstr "Vi ne kupite zemljevida"
 
-#: ../src/Games/Logic/PuzzlePredicateLogic.cs:77
+#: ../src/Games/Logic/PuzzlePredicateLogic.cs:78
 msgid "All people has a map"
 msgstr "Vse ljudje imajo zemljevid"
 
-#: ../src/Games/Logic/PuzzlePredicateLogic.cs:81
+#: ../src/Games/Logic/PuzzlePredicateLogic.cs:82
 #, csharp-format
 msgid "If you whistle if you are happy and you only smile when you whistle. Which of the following sentences is correct? Answer {0}, {1}, {2} or {3}."
 msgstr "Če žvižgate, če ste veseli in se smejite le, ko žvižgate. Kateri od naslednjih stavkov je pravilen? Odgovorite {0}, {1}, {2} ali {3}."
 
-#: ../src/Games/Logic/PuzzlePredicateLogic.cs:83
+#: ../src/Games/Logic/PuzzlePredicateLogic.cs:84
 msgid "You smile if you are happy"
 msgstr "Smejite se, če ste veseli"
 
-#: ../src/Games/Logic/PuzzlePredicateLogic.cs:84
+#: ../src/Games/Logic/PuzzlePredicateLogic.cs:85
 msgid "You are only happy if you whistle"
 msgstr "Veseli ste le, če žvižgate"
 
-#: ../src/Games/Logic/PuzzlePredicateLogic.cs:85
+#: ../src/Games/Logic/PuzzlePredicateLogic.cs:86
 msgid "You whistle if you are not happy"
 msgstr "Žvižgate, če niste veseli"
 
-#: ../src/Games/Logic/PuzzlePredicateLogic.cs:91
+#: ../src/Games/Logic/PuzzlePredicateLogic.cs:92
 msgid "Predicate Logic"
 msgstr "Napovedovalna logika"
 
-#: ../src/Games/Logic/PuzzlePredicateLogic.cs:99
+#: ../src/Games/Logic/PuzzlePredicateLogic.cs:100
 #: ../src/Games/Logic/PuzzleTriangles.cs:42
 msgid "A triangle can be embedded inside another triangle."
 msgstr "Trikotnik je lahko vstavljen v drug trikotnik."
 
-#: ../src/Games/Logic/PuzzlePencil.cs:38
+#: ../src/Games/Logic/PuzzlePencil.cs:39
 msgid "Pencil"
 msgstr "Svinčnik"
 
-#: ../src/Games/Logic/PuzzlePencil.cs:43
+#: ../src/Games/Logic/PuzzlePencil.cs:44
 #, csharp-format
 msgid "Which of the following figures cannot be drawn without crossing any previous lines nor lifting the pencil? Answer {0}, {1}, {2}, {3} or {4}."
 msgstr "Katere od naslednjih slik ni mogoče narisati brez prečkanja prejšnjih črt ali dviga svinčnika? Odgovorite {0}, {1}, {2}, {3}, {4}."
@@ -1932,11 +1942,11 @@ msgstr "Katera od naslednjih slik ne spada v skupino? Odgovorite {0}, {1}, {2}, 
 msgid "It is the only figure with all lines of equal length."
 msgstr "Je edina slika z vsemi črtami enakih dolžin."
 
-#: ../src/Games/Logic/PuzzleSquareDots.cs:92
+#: ../src/Games/Logic/PuzzleSquareDots.cs:93
 msgid "Square with dots"
 msgstr "Kvadrat s pikami"
 
-#: ../src/Games/Logic/PuzzleSquareDots.cs:97
+#: ../src/Games/Logic/PuzzleSquareDots.cs:98
 #, csharp-format
 msgid "What is the letter of the figure that represents the next logical figure in the sequence? Answer {0}, {1} or {2}."
 msgstr "Katera slika predstavlja naslednjo logično sliko v zaporedju? Odgovorite {0}, {1} ali {2}."
