@@ -4,21 +4,21 @@
 #
 # (c) 2007 Santiago Martinez Varela, 2007.
 # Eduardo Retamales <eretamales@gnome.cl>, 2007, 2008.
-# Jorge González <jorgegonz@svn.gnome.org>, 2007, 2008, 200, 2010.
+# Jorge González <jorgegonz@svn.gnome.org>, 2007, 2008, 2010, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: gbrainy.HEAD\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=gbrainy&component=general\n"
-"POT-Creation-Date: 2010-01-17 15:16+0000\n"
-"PO-Revision-Date: 2010-01-18 23:06+0100\n"
+"POT-Creation-Date: 2010-01-30 12:58+0000\n"
+"PO-Revision-Date: 2010-01-31 17:42+0100\n"
 "Last-Translator: Jorge González <jorgegonz@svn.gnome.org>\n"
 "Language-Team: Español <gnome-es-list@gnome.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.4\n"
-"Plural-Forms:  nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: ../data/verbal_analogies.xml.h:1
 msgid "A car engine that is poorly designed and lacking of sophistication is?"
@@ -578,7 +578,7 @@ msgstr ""
 msgid "gbrainy"
 msgstr "gbrainy"
 
-#: ../src/Core/Views/CountDownView.cs:81
+#: ../src/Core/Views/CountDownView.cs:82
 msgid "Get ready to memorize the next objects..."
 msgstr "Prepárate para memorizar los siguientes objetos…"
 
@@ -588,22 +588,22 @@ msgstr "Prepárate para memorizar los siguientes objetos…"
 msgid "Total"
 msgstr "Total"
 
-#: ../src/Core/Views/FinishView.cs:99 ../src/Core/Main/Game.cs:332
-#: ../src/Clients/Classical/gbrainy.cs:263
+#: ../src/Core/Views/FinishView.cs:99 ../src/Core/Main/Game.cs:370
+#: ../src/Clients/Classical/gbrainy.cs:302
 msgid "Logic"
 msgstr "Lógica"
 
-#: ../src/Core/Views/FinishView.cs:106 ../src/Clients/Classical/gbrainy.cs:268
+#: ../src/Core/Views/FinishView.cs:106 ../src/Clients/Classical/gbrainy.cs:307
 msgid "Calculation"
 msgstr "Cálculo"
 
-#: ../src/Core/Views/FinishView.cs:113 ../src/Core/Main/Game.cs:335
-#: ../src/Clients/Classical/gbrainy.cs:274
+#: ../src/Core/Views/FinishView.cs:113 ../src/Core/Main/Game.cs:373
+#: ../src/Clients/Classical/gbrainy.cs:313
 msgid "Memory"
 msgstr "Memoria"
 
-#: ../src/Core/Views/FinishView.cs:120 ../src/Core/Main/Game.cs:341
-#: ../src/Clients/Classical/gbrainy.cs:280
+#: ../src/Core/Views/FinishView.cs:120 ../src/Core/Main/Game.cs:379
+#: ../src/Clients/Classical/gbrainy.cs:319
 msgid "Verbal"
 msgstr "Verbal"
 
@@ -695,27 +695,13 @@ msgstr ""
 "Al puntuar {0}% en las analogías verbales has establecido un récord personal "
 "nuevo. Tu récord anterior era {1}%."
 
-#. Translators: {0} is the version number of the program
-#: ../src/Core/Views/WelcomeView.cs:50
-#, csharp-format
-msgid "Welcome to gbrainy {0}"
-msgstr "Bienvenido a gbrainy {0}"
-
-#: ../src/Core/Views/WelcomeView.cs:53
-msgid ""
-"gbrainy is a brain teaser game and trainer to have fun and to keep your "
-"brain trained. It includes:"
-msgstr ""
-"gbrainy es un juego de preguntas capciosas, para divertirse y entrenar el "
-"cerebro. Incluye:"
-
-#: ../src/Core/Views/WelcomeView.cs:58
+#: ../src/Core/Views/WelcomeView.cs:62
 msgid "Logic puzzles. Challenge your reasoning and thinking skills."
 msgstr ""
 "Puzles lógicos. Diseñados para desafiar tus capacidades de razonamiento y "
 "pensamiento."
 
-#: ../src/Core/Views/WelcomeView.cs:64
+#: ../src/Core/Views/WelcomeView.cs:83
 msgid ""
 "Mental calculation. Arithmetical operations that test your mental "
 "calculation abilities."
@@ -723,16 +709,30 @@ msgstr ""
 "Cálculo mental. Operaciones aritméticas que prueban tus habilidades de "
 "cálculo mental."
 
-#: ../src/Core/Views/WelcomeView.cs:70
+#: ../src/Core/Views/WelcomeView.cs:104
 msgid "Memory trainers. To prove your short term memory."
 msgstr ""
 "Entrenadores de memoria. Para probar y mejorar tu memoria a corto plazo."
 
-#: ../src/Core/Views/WelcomeView.cs:76
+#: ../src/Core/Views/WelcomeView.cs:125
 msgid "Verbal analogies. Challenge your verbal aptitude."
 msgstr "Analogías verbales. Desafía tu aptitud verbal."
 
-#: ../src/Core/Views/WelcomeView.cs:79 ../src/Core/Main/GameTips.cs:67
+#. Translators: {0} is the version number of the program
+#: ../src/Core/Views/WelcomeView.cs:142
+#, csharp-format
+msgid "Welcome to gbrainy {0}"
+msgstr "Bienvenido a gbrainy {0}"
+
+#: ../src/Core/Views/WelcomeView.cs:146
+msgid ""
+"gbrainy is a brain teaser game and trainer to have fun and to keep your "
+"brain trained. It includes:"
+msgstr ""
+"gbrainy es un juego de preguntas capciosas, para divertirse y entrenar el "
+"cerebro. Incluye:"
+
+#: ../src/Core/Views/WelcomeView.cs:149 ../src/Core/Main/GameTips.cs:67
 msgid "Use the Settings to adjust the difficulty level of the game."
 msgstr "Usa las Preferencias para ajustar el nivel de dificultad del juego."
 
@@ -768,7 +768,7 @@ msgstr "negro"
 msgid "white"
 msgstr "blanco"
 
-#: ../src/Core/Main/Game.cs:95
+#: ../src/Core/Main/Game.cs:110
 #, csharp-format
 msgid "The correct answer is {0}."
 msgstr "La respuesta correcta es {0}."
@@ -780,51 +780,51 @@ msgstr "La respuesta correcta es {0}."
 #. For languages represented with the Latin alphabet use
 #. the same than English
 #. First possible answer for a series (e.g.: Figure A)
-#: ../src/Core/Main/Game.cs:265
+#: ../src/Core/Main/Game.cs:300
 msgid "A"
 msgstr "A"
 
 #. Second possible answer for a series
-#: ../src/Core/Main/Game.cs:267
+#: ../src/Core/Main/Game.cs:302
 msgid "B"
 msgstr "B"
 
 #. Third possible answer for a series
-#: ../src/Core/Main/Game.cs:269
+#: ../src/Core/Main/Game.cs:304
 msgid "C"
 msgstr "C"
 
 #. Fourth possible answer for a series
-#: ../src/Core/Main/Game.cs:271
+#: ../src/Core/Main/Game.cs:306
 msgid "D"
 msgstr "D"
 
 #. Fifth possible answer for a series
-#: ../src/Core/Main/Game.cs:273
+#: ../src/Core/Main/Game.cs:308
 msgid "E"
 msgstr "E"
 
 #. Sixth possible answer for a series
-#: ../src/Core/Main/Game.cs:275
+#: ../src/Core/Main/Game.cs:310
 msgid "F"
 msgstr "F"
 
 #. Seventh possible answer for a series
-#: ../src/Core/Main/Game.cs:277
+#: ../src/Core/Main/Game.cs:312
 msgid "G"
 msgstr "G"
 
 #. Eighth possible answer for a series
-#: ../src/Core/Main/Game.cs:279
+#: ../src/Core/Main/Game.cs:314
 msgid "H"
 msgstr "H"
 
-#: ../src/Core/Main/Game.cs:287
+#: ../src/Core/Main/Game.cs:322
 #, csharp-format
 msgid "Figure {0}"
 msgstr "Figura {0}"
 
-#: ../src/Core/Main/Game.cs:338
+#: ../src/Core/Main/Game.cs:376
 msgid "Mental Calculation"
 msgstr "Cálculo mental"
 
@@ -837,22 +837,22 @@ msgstr ""
 "Juegos registrados: {0}: {1} puzles lógicos, {2} entrenadores de cálculo, "
 "{3} entrenadores de memoria, {4} analogías verbales"
 
-#: ../src/Core/Main/GameSession.cs:242
+#: ../src/Core/Main/GameSession.cs:244
 #, csharp-format
 msgid "Games played: {0} ({1}% score)"
 msgstr "Partidas jugadas: {0} (puntuación {1}%)"
 
-#: ../src/Core/Main/GameSession.cs:243
+#: ../src/Core/Main/GameSession.cs:245
 #, csharp-format
 msgid " - Time: {0}"
 msgstr " - Tiempo: {0}"
 
-#: ../src/Core/Main/GameSession.cs:246
+#: ../src/Core/Main/GameSession.cs:248
 #, csharp-format
 msgid "- Game: {0}"
 msgstr " - Juego: {0}"
 
-#: ../src/Core/Main/GameSession.cs:308
+#: ../src/Core/Main/GameSession.cs:309
 msgid "Paused"
 msgstr "Pausado"
 
@@ -939,7 +939,7 @@ msgstr "Analogías verbales"
 #. Translators: this the separator used when concatenating possible options for answering verbal analogies
 #. For example: "Possible correct answers are: a, b, c, d."
 #: ../src/Core/Main/Verbal/Analogies.cs:75
-#: ../src/Core/Main/Verbal/AnalogiesMultipleOptions.cs:64
+#: ../src/Core/Main/Verbal/AnalogiesMultipleOptions.cs:65
 #: ../src/Core/Main/Verbal/AnalogiesPairOfWordsOptions.cs:78
 msgid ", "
 msgstr ", "
@@ -949,27 +949,38 @@ msgstr ", "
 msgid "Possible correct answers are: {0}."
 msgstr "Las posibles respuestas correctas son: {0}."
 
-#: ../src/Core/Main/Verbal/AnalogiesMultipleOptions.cs:44
+#: ../src/Core/Main/Verbal/AnalogiesMultipleOptions.cs:45
 msgid "Multiple options"
 msgstr "Múltiples opciones"
 
 #. Translators: {0} is replaced by a question and {1} by the suggestions on how to answer
 #. E.g: What is the correct option? Answer A, B, C.
-#: ../src/Core/Main/Verbal/AnalogiesMultipleOptions.cs:70
+#: ../src/Core/Main/Verbal/AnalogiesMultipleOptions.cs:71
 #, csharp-format
 msgid "{0} Answer {1}."
 msgstr "{0} Responde {1}."
 
-#: ../src/Core/Main/Verbal/AnalogiesMultipleOptions.cs:111
+#. Translators: this "option) answer" for example "a) "21 x 60 = 1260". This should not be changed for most of the languages
+#: ../src/Core/Main/Verbal/AnalogiesMultipleOptions.cs:117
+#: ../src/Core/Main/Verbal/AnalogiesPairOfWordsOptions.cs:116
+#: ../src/Games/Logic/PuzzleOstracism.cs:157
+#: ../src/Games/Logic/PuzzlePredicateLogic.cs:151
+#: ../src/Games/Calculation/CalculationCloserFraction.cs:158
+#, csharp-format
+#| msgid "{0} and {1}"
+msgid "{0}) {1}"
+msgstr "{0}) {1}"
+
+#: ../src/Core/Main/Verbal/AnalogiesMultipleOptions.cs:131
 #: ../src/Core/Main/Verbal/AnalogiesPairOfWordsOptions.cs:110
 #: ../src/Games/Logic/PuzzleFigurePattern.cs:194
 #: ../src/Games/Logic/PuzzleLargerShape.cs:243
 #: ../src/Games/Logic/PuzzleMissingPiece.cs:152
 #: ../src/Games/Logic/PuzzleMissingSlice.cs:182
-#: ../src/Games/Logic/PuzzleMostInCommon.cs:289
+#: ../src/Games/Logic/PuzzleMostInCommon.cs:317
 #: ../src/Games/Logic/PuzzleNextFigure.cs:131
-#: ../src/Games/Logic/PuzzlePredicateLogic.cs:141
-#: ../src/Games/Logic/PuzzleSquareDots.cs:185
+#: ../src/Games/Logic/PuzzlePredicateLogic.cs:164
+#: ../src/Games/Logic/PuzzleSquareDots.cs:207
 #: ../src/Games/Logic/PuzzleTetris.cs:153
 msgid "Possible answers are:"
 msgstr "Respuestas posibles:"
@@ -1023,57 +1034,57 @@ msgstr "Lee un total de {0} analogías verbales"
 msgid "There are no verbal analogies available."
 msgstr "No existen analogías verbales disponibles."
 
-#: ../src/Clients/Classical/gbrainy.cs:256
+#: ../src/Clients/Classical/gbrainy.cs:295
 msgid "Play all the games"
 msgstr "Jugar a todos los juegos"
 
-#: ../src/Clients/Classical/gbrainy.cs:257
+#: ../src/Clients/Classical/gbrainy.cs:296
 msgid "All"
 msgstr "Todo"
 
-#: ../src/Clients/Classical/gbrainy.cs:262
+#: ../src/Clients/Classical/gbrainy.cs:301
 msgid "Play games that challenge your reasoning and thinking"
 msgstr "Jugar a los juegos que desafíen mi razonamiento y pensamiento"
 
-#: ../src/Clients/Classical/gbrainy.cs:269
+#: ../src/Clients/Classical/gbrainy.cs:308
 msgid "Play games that challenge your mental calculation skills"
 msgstr "Jugar a los juegos que desafíen mis capacidades de cálculo mental"
 
-#: ../src/Clients/Classical/gbrainy.cs:275
+#: ../src/Clients/Classical/gbrainy.cs:314
 msgid "Play games that challenge your short term memory"
 msgstr "Jugar a los juegos que desafíen mi memoria a corto plazo"
 
-#: ../src/Clients/Classical/gbrainy.cs:281
+#: ../src/Clients/Classical/gbrainy.cs:320
 msgid "Play games that challenge your verbal aptitude"
 msgstr "Jugar a los juegos que desafíen mi aptitud verbal"
 
-#: ../src/Clients/Classical/gbrainy.cs:286
-#: ../src/Clients/Classical/gbrainy.cs:482
+#: ../src/Clients/Classical/gbrainy.cs:325
+#: ../src/Clients/Classical/gbrainy.cs:529
 msgid "Pause"
 msgstr "Pausar"
 
-#: ../src/Clients/Classical/gbrainy.cs:287
+#: ../src/Clients/Classical/gbrainy.cs:326
 msgid "Pause or resume the game"
 msgstr "Pausar o resumir el juego"
 
-#: ../src/Clients/Classical/gbrainy.cs:292
+#: ../src/Clients/Classical/gbrainy.cs:331
 msgid "End the game and show score"
 msgstr "Terminar el juego y mostrar la puntuación"
 
-#: ../src/Clients/Classical/gbrainy.cs:293
+#: ../src/Clients/Classical/gbrainy.cs:332
 msgid "Finish"
 msgstr "Terminar"
 
-#: ../src/Clients/Classical/gbrainy.cs:346
+#: ../src/Clients/Classical/gbrainy.cs:394
 msgid "Congratulations."
 msgstr "Enhorabuena."
 
-#: ../src/Clients/Classical/gbrainy.cs:348
+#: ../src/Clients/Classical/gbrainy.cs:396
 msgid "Incorrect answer."
 msgstr "Respuesta incorrecta."
 
 #
-#: ../src/Clients/Classical/gbrainy.cs:398
+#: ../src/Clients/Classical/gbrainy.cs:445
 msgid ""
 "Once you have an answer type it in the \"Answer:\" entry box and press the "
 "\"OK\" button."
@@ -1081,7 +1092,7 @@ msgstr ""
 "Una vez que tengas la respuesta escríbela en «Respuesta:» y pulsa el botón "
 "«Aceptar»."
 
-#: ../src/Clients/Classical/gbrainy.cs:486
+#: ../src/Clients/Classical/gbrainy.cs:533
 msgid "Resume"
 msgstr "Reanudar"
 
@@ -1254,7 +1265,7 @@ msgstr "Omitir los juegos que usan colores (amigable para usuarios daltónicos)"
 msgid "Time in seconds to memorize the challenge:"
 msgstr "Tiempo en segundos para memorizar el desafío:"
 
-#: ../src/Games/Logic/Puzzle3DCube.cs:34 ../src/Games/Logic/PuzzleCube.cs:43
+#: ../src/Games/Logic/Puzzle3DCube.cs:34 ../src/Games/Logic/PuzzleCube.cs:47
 msgid "Cube"
 msgstr "Cubo"
 
@@ -1479,7 +1490,7 @@ msgstr "Porcentaje cubierto"
 msgid "What percentage of the figure is colored?"
 msgstr "¿Qué porcentaje de la figura está coloreado?"
 
-#: ../src/Games/Logic/PuzzleCube.cs:47
+#: ../src/Games/Logic/PuzzleCube.cs:51
 #, csharp-format
 msgid ""
 "When folded as a cube, which face on the figure is opposite the face with a "
@@ -1542,7 +1553,6 @@ msgstr ""
 "segundo dado."
 
 #: ../src/Games/Logic/PuzzleDice.cs:70
-#| msgid "Circle"
 msgid "Dice"
 msgstr "Dado"
 
@@ -1657,11 +1667,11 @@ msgstr ""
 "Coloca la primera y la segunda figuras y quita las líneas que tienen en "
 "común, después rota la figura resultante 45 grados."
 
-#: ../src/Games/Logic/PuzzleFigures.cs:43
+#: ../src/Games/Logic/PuzzleFigures.cs:44
 msgid "Figures"
 msgstr "Figuras"
 
-#: ../src/Games/Logic/PuzzleFigures.cs:47
+#: ../src/Games/Logic/PuzzleFigures.cs:48
 msgid ""
 "What is the next logical sequence of objects in the last column? See below "
 "the convention when giving the answer."
@@ -1677,18 +1687,18 @@ msgstr ""
 "Es la única combinación que puedes construir con los elementos dados sin "
 "repetirlos."
 
-#: ../src/Games/Logic/PuzzleFigures.cs:81
-msgid "Convention when giving the answer is:"
-msgstr "Convención para dar la respuesta es:"
-
 #: ../src/Games/Logic/PuzzleFigures.cs:84
-#: ../src/Games/Logic/PuzzleFigures.cs:91
-#: ../src/Games/Logic/PuzzleFigures.cs:99
+#: ../src/Games/Logic/PuzzleFigures.cs:96
+#: ../src/Games/Logic/PuzzleFigures.cs:109
 #, csharp-format
 msgid "{0} ->"
 msgstr "{0} ->"
 
-#: ../src/Games/Logic/PuzzleFigures.cs:107
+#: ../src/Games/Logic/PuzzleFigures.cs:165
+msgid "Convention when giving the answer is:"
+msgstr "Convención para dar la respuesta es:"
+
+#: ../src/Games/Logic/PuzzleFigures.cs:169
 #, csharp-format
 msgid "E.g: {0}{1}{2} (diamond, triangle, circle)"
 msgstr "Por ejemplo: {0}{1}{2} (diamante, triángulo, círculo)"
@@ -1909,11 +1919,11 @@ msgstr ""
 "Todos los números de cada pieza, cuando se suman a los de enfrente de la "
 "pieza suman siempre {0}."
 
-#: ../src/Games/Logic/PuzzleMostInCommon.cs:76
+#: ../src/Games/Logic/PuzzleMostInCommon.cs:77
 msgid "Most in common"
 msgstr "Más en común"
 
-#: ../src/Games/Logic/PuzzleMostInCommon.cs:81
+#: ../src/Games/Logic/PuzzleMostInCommon.cs:82
 #, csharp-format
 msgid ""
 "Which of the possible answers have the most in common with the four given "
@@ -1922,19 +1932,19 @@ msgstr ""
 "¿Cuál de las posibles respuestas tiene más en común con las cuatro figuras "
 "dadas? Responde {0}, {1}, {2} o {3}."
 
-#: ../src/Games/Logic/PuzzleMostInCommon.cs:86
+#: ../src/Games/Logic/PuzzleMostInCommon.cs:87
 msgid "Think of the common elements that the given figures have inside them."
 msgstr ""
 "Piensa en los elementos comunes que las figuras dadas tienen dentro de ellas."
 
-#: ../src/Games/Logic/PuzzleMostInCommon.cs:94
+#: ../src/Games/Logic/PuzzleMostInCommon.cs:95
 msgid ""
 "It has the same number of elements inside the figure as the given figures."
 msgstr ""
 "Tiene el mismo número de elementos dentro de la figura como las figuras "
 "dadas."
 
-#: ../src/Games/Logic/PuzzleMostInCommon.cs:96
+#: ../src/Games/Logic/PuzzleMostInCommon.cs:97
 msgid ""
 "It is the figure with the most elements in common compared to the given "
 "figures."
@@ -2063,25 +2073,25 @@ msgstr ""
 "Cada número de la secuencia es el resultado de restar 2 al número anterior y "
 "multiplicarlo por -2."
 
-#: ../src/Games/Logic/PuzzleOstracism.cs:54
+#: ../src/Games/Logic/PuzzleOstracism.cs:55
 msgid "Ostracism"
 msgstr "Ostracismo"
 
-#: ../src/Games/Logic/PuzzleOstracism.cs:59
+#: ../src/Games/Logic/PuzzleOstracism.cs:60
 #, csharp-format
 msgid ""
 "Which element does not belong to the group? Answer {0}, {1}, {2}, {3} or {4}."
 msgstr ""
 "¿Qué elemento no pertenece al grupo? Responde {0}, {1}, {2}, {3} o {4}."
 
-#: ../src/Games/Logic/PuzzleOstracism.cs:67
+#: ../src/Games/Logic/PuzzleOstracism.cs:68
 msgid ""
 "The criteria for deciding if an equation belongs to the group is not "
 "arithmetical."
 msgstr ""
 "El criterio para decidir si una ecuación pertenece al grupo no es aritmético."
 
-#: ../src/Games/Logic/PuzzleOstracism.cs:69
+#: ../src/Games/Logic/PuzzleOstracism.cs:70
 msgid ""
 "Consider that every number that belongs to the group has two parts that are "
 "related."
@@ -2089,7 +2099,7 @@ msgstr ""
 "Considera que cada número que pertenece al grupo tiene dos partes que están "
 "relacionadas."
 
-#: ../src/Games/Logic/PuzzleOstracism.cs:82
+#: ../src/Games/Logic/PuzzleOstracism.cs:83
 msgid ""
 "In all the other equations the digits from the left side appear also in the "
 "right side."
@@ -2097,7 +2107,7 @@ msgstr ""
 "En el resto de ecuaciones los dígitos de la parte izquierda deben aparecer "
 "también en la parte derecha."
 
-#: ../src/Games/Logic/PuzzleOstracism.cs:85
+#: ../src/Games/Logic/PuzzleOstracism.cs:86
 msgid ""
 "In all the other numbers the last three digits are the square of the first "
 "two digits."
@@ -2105,7 +2115,7 @@ msgstr ""
 "En el resto de números los últimos tres dígitos son el cuadrado de los dos "
 "primeros dígitos."
 
-#: ../src/Games/Logic/PuzzlePredicateLogic.cs:57
+#: ../src/Games/Logic/PuzzlePredicateLogic.cs:58
 #, csharp-format
 msgid ""
 "If all painters are artists and some citizens of Barcelona are artists. "
@@ -2115,26 +2125,26 @@ msgstr ""
 "artistas, ¿cuál de las siguientes frases es correcta? Responde {0}, {1}, {2} "
 "o {3}."
 
-#: ../src/Games/Logic/PuzzlePredicateLogic.cs:59
+#: ../src/Games/Logic/PuzzlePredicateLogic.cs:60
 msgid "Some citizens of Barcelona are painters"
 msgstr "Algunos ciudadanos de Barcelona son pintores"
 
-#: ../src/Games/Logic/PuzzlePredicateLogic.cs:60
+#: ../src/Games/Logic/PuzzlePredicateLogic.cs:61
 msgid "All citizens of Barcelona are painters"
 msgstr "Todos los ciudadanos de Barcelona son pintores"
 
-#: ../src/Games/Logic/PuzzlePredicateLogic.cs:61
+#: ../src/Games/Logic/PuzzlePredicateLogic.cs:62
 msgid "No citizen of Barcelona is a painter"
 msgstr "Ningún ciudadano de Barcelona es un pintor"
 
-#: ../src/Games/Logic/PuzzlePredicateLogic.cs:62
-#: ../src/Games/Logic/PuzzlePredicateLogic.cs:70
-#: ../src/Games/Logic/PuzzlePredicateLogic.cs:78
-#: ../src/Games/Logic/PuzzlePredicateLogic.cs:86
+#: ../src/Games/Logic/PuzzlePredicateLogic.cs:63
+#: ../src/Games/Logic/PuzzlePredicateLogic.cs:71
+#: ../src/Games/Logic/PuzzlePredicateLogic.cs:79
+#: ../src/Games/Logic/PuzzlePredicateLogic.cs:87
 msgid "None of the other options"
 msgstr "Ninguna de las otras opciones"
 
-#: ../src/Games/Logic/PuzzlePredicateLogic.cs:65
+#: ../src/Games/Logic/PuzzlePredicateLogic.cs:66
 #, csharp-format
 msgid ""
 "If no ill artist is happy and some artists are happy. Which of the following "
@@ -2143,19 +2153,19 @@ msgstr ""
 "Si ningún artista enfermo está contento y algunos artistas están contentos, "
 "¿cuál de las siguientes frases es correcta? Responde {0}, {1}, {2} o {3}."
 
-#: ../src/Games/Logic/PuzzlePredicateLogic.cs:67
+#: ../src/Games/Logic/PuzzlePredicateLogic.cs:68
 msgid "Some artist are not ill"
 msgstr "Algunos artistas no están enfermos"
 
-#: ../src/Games/Logic/PuzzlePredicateLogic.cs:68
+#: ../src/Games/Logic/PuzzlePredicateLogic.cs:69
 msgid "Some painters are not artists"
 msgstr "Algunos pintores no son artistas"
 
-#: ../src/Games/Logic/PuzzlePredicateLogic.cs:69
+#: ../src/Games/Logic/PuzzlePredicateLogic.cs:70
 msgid "All artists are happy"
 msgstr "Todos los artistas están contentos"
 
-#: ../src/Games/Logic/PuzzlePredicateLogic.cs:73
+#: ../src/Games/Logic/PuzzlePredicateLogic.cs:74
 #, csharp-format
 msgid ""
 "If people that travels always buy a map and you are not going to travel. "
@@ -2164,19 +2174,19 @@ msgstr ""
 "Si la gente que viaja siempre compra un mapa y tú no vas a viajar, ¿cuál de "
 "las siguientes frases es correcta? Responde {0}, {1}, {2} o {3}."
 
-#: ../src/Games/Logic/PuzzlePredicateLogic.cs:75
+#: ../src/Games/Logic/PuzzlePredicateLogic.cs:76
 msgid "You do not have any map"
 msgstr "No tienes ningún mapa"
 
-#: ../src/Games/Logic/PuzzlePredicateLogic.cs:76
+#: ../src/Games/Logic/PuzzlePredicateLogic.cs:77
 msgid "You do not buy a map"
 msgstr "No compras un mapa"
 
-#: ../src/Games/Logic/PuzzlePredicateLogic.cs:77
+#: ../src/Games/Logic/PuzzlePredicateLogic.cs:78
 msgid "All people has a map"
 msgstr "Todo el mundo tiene un mapa"
 
-#: ../src/Games/Logic/PuzzlePredicateLogic.cs:81
+#: ../src/Games/Logic/PuzzlePredicateLogic.cs:82
 #, csharp-format
 msgid ""
 "If you whistle if you are happy and you only smile when you whistle. Which "
@@ -2185,32 +2195,32 @@ msgstr ""
 "Si silbas si estás contento y sólo sonríes cuando silbas, ¿cuál de las "
 "siguientes frases es correcta? Responde {0}, {1}, {2} o {3}."
 
-#: ../src/Games/Logic/PuzzlePredicateLogic.cs:83
+#: ../src/Games/Logic/PuzzlePredicateLogic.cs:84
 msgid "You smile if you are happy"
 msgstr "Sonríes si estás contento"
 
-#: ../src/Games/Logic/PuzzlePredicateLogic.cs:84
+#: ../src/Games/Logic/PuzzlePredicateLogic.cs:85
 msgid "You are only happy if you whistle"
 msgstr "Sólo estás contento si silvas"
 
-#: ../src/Games/Logic/PuzzlePredicateLogic.cs:85
+#: ../src/Games/Logic/PuzzlePredicateLogic.cs:86
 msgid "You whistle if you are not happy"
 msgstr "Silbas si no estás contento"
 
-#: ../src/Games/Logic/PuzzlePredicateLogic.cs:91
+#: ../src/Games/Logic/PuzzlePredicateLogic.cs:92
 msgid "Predicate Logic"
 msgstr "Lógica de predicados"
 
-#: ../src/Games/Logic/PuzzlePredicateLogic.cs:99
+#: ../src/Games/Logic/PuzzlePredicateLogic.cs:100
 #: ../src/Games/Logic/PuzzleTriangles.cs:42
 msgid "A triangle can be embedded inside another triangle."
 msgstr "Un triángulo puede ser incluido dentro de otro triángulo."
 
-#: ../src/Games/Logic/PuzzlePencil.cs:38
+#: ../src/Games/Logic/PuzzlePencil.cs:39
 msgid "Pencil"
 msgstr "Bolígrafo"
 
-#: ../src/Games/Logic/PuzzlePencil.cs:43
+#: ../src/Games/Logic/PuzzlePencil.cs:44
 #, csharp-format
 msgid ""
 "Which of the following figures cannot be drawn without crossing any previous "
@@ -2323,11 +2333,11 @@ msgstr ""
 msgid "It is the only figure with all lines of equal length."
 msgstr "Es la única figura con todas las líneas de igual longitud."
 
-#: ../src/Games/Logic/PuzzleSquareDots.cs:92
+#: ../src/Games/Logic/PuzzleSquareDots.cs:93
 msgid "Square with dots"
 msgstr "Cuadrado con puntos"
 
-#: ../src/Games/Logic/PuzzleSquareDots.cs:97
+#: ../src/Games/Logic/PuzzleSquareDots.cs:98
 #, csharp-format
 msgid ""
 "What is the letter of the figure that represents the next logical figure in "
