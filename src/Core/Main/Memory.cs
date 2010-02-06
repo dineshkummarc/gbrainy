@@ -202,7 +202,7 @@ namespace gbrainy.Core.Main
 		{
 			double percentage;
 
-			if (draw_timer == false)
+			if (draw_timer == false || IsPreviewMode == true)
 				return;
 
 			percentage = 100 - ((time_left * 100) / total_time);

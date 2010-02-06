@@ -112,6 +112,7 @@ namespace gbrainy.Clients.Classical
 		    	}
 
 			Game game = games_store.GetValue (iter, COL_OBJECT) as Game;
+			game.IsPreviewMode = true;
 			game.Initialize ();
 			preview_question.Markup = game.Question;
 			drawing_area.puzzle = game;

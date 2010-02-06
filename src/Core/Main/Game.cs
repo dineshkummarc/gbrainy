@@ -64,6 +64,7 @@ namespace gbrainy.Core.Main
 		protected Random random;
 		private TimeSpan game_time;
 		private bool tip_used;
+		private bool preview;
 		private Difficulty difficulty;
 		private ISynchronizeInvoke synchronize;
 		private List <Toolkit.Container> containers;
@@ -116,6 +117,11 @@ namespace gbrainy.Core.Main
 				synchronize = value;
 			}
 			get { return synchronize; }
+		}
+
+		public bool IsPreviewMode {
+			get {return preview; }
+			set {preview = value; }
 		}
 
 		// Stores how difficult the game is
