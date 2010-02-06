@@ -88,9 +88,9 @@ namespace gbrainy.Games.Memory
 			base.Initialize ();
 		}
 
-		public override void DrawObjectToMemorize (CairoContextEx gr, int area_width, int area_height)
+		public override void DrawObjectToMemorize (CairoContextEx gr, int area_width, int area_height, bool rtl)
 		{
-			base.DrawObjectToMemorize (gr, area_width, area_height);
+			base.DrawObjectToMemorize (gr, area_width, area_height, rtl);
 			DrawObject (gr, area_width, area_height);
 		}
 

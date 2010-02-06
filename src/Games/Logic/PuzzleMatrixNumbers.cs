@@ -143,16 +143,17 @@ namespace gbrainy.Games.Logic
 					gr.Rectangle (DrawAreaX + row * rect_w, DrawAreaY + column * rect_h, rect_w, rect_h);
 
 					if (row != 3  || column != 3) {
-						gr.MoveTo (0.04 + DrawAreaX + column * rect_w, (rect_h / 2) + DrawAreaY + row * rect_h);
-						gr.ShowPangoText ( (numbers[column + (row * 4)]).ToString() );
+						gr.DrawTextCentered (DrawAreaX + column * rect_w + rect_w / 2, 
+							DrawAreaY + row * rect_h + rect_h / 2,
+							(numbers[column + (row * 4)]).ToString());
 					}
 				}
 			}
 
-			gr.MoveTo (0.04 + DrawAreaX + 3 * rect_w, (rect_h / 2) + DrawAreaY + 3 * rect_h);
-			gr.ShowPangoText ("?");
+			gr.DrawTextCentered (DrawAreaX + 3 * rect_w + rect_w / 2,
+				DrawAreaY + 3 * rect_h + rect_h / 2,
+				"?");
 			gr.Stroke ();
 		}
-
 	}
 }

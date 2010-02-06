@@ -23,6 +23,7 @@ using Mono.Unix;
 
 using gbrainy.Core.Main;
 using gbrainy.Core.Libraries;
+using gbrainy.Core.Toolkit;
 
 namespace gbrainy.Games.Memory
 {
@@ -101,6 +102,39 @@ namespace gbrainy.Games.Memory
 			}
 
 			base.Initialize ();
+
+			HorizontalContainer container = new HorizontalContainer (DrawAreaX, DrawAreaY, 0.8, 0.4);
+			AddWidget (container);
+
+			double x = DrawAreaX, y = DrawAreaY;
+
+			for (int i = 0; i < answers_order.Count; i++) 
+			{
+				if (i == 2) {
+					y += 0.5;
+					x = DrawAreaX;
+
+					container = new HorizontalContainer (DrawAreaX, DrawAreaY + 0.45, 0.8, 0.4);
+					AddWidget (container);
+				}
+
+				DrawableArea drawable_area = new DrawableArea (0.4, 0.4);
+				container.AddChild (drawable_area);
+				drawable_area.SelectedArea = new Rectangle (0.05, 0, 0.3, 0.3);
+				drawable_area.Data = i;
+				drawable_area.DataEx = GetPossibleAnswer (i);
+
+				drawable_area.DrawEventHandler += delegate (object sender, DrawEventArgs e)
+				{
+					int n = (int) e.Data;
+
+					palette.Alpha = alpha;
+					DrawSquare (e.Context, 0.05, 0, squares_colours, squares * answers_order[n]);
+					e.Context.MoveTo (0.05, 0 + block_space - 0.02);
+					e.Context.ShowPangoText (GetPossibleFigureAnswer (n));
+					e.Context.Stroke ();
+				};
+			}
 		}
 
 		private void Randomize (SquareColor []colours, int source, int target)
@@ -140,28 +174,9 @@ namespace gbrainy.Games.Memory
 			}
 		}
 
-		public override void DrawPossibleAnswers (CairoContextEx gr, int area_width, int area_height)
+		public override void DrawObjectToMemorize (CairoContextEx gr, int area_width, int area_height, bool rtl)
 		{
-			double x = DrawAreaX, y = DrawAreaY;
-	
-			palette.Alpha = alpha;
-		
-			for (int i = 0; i < answers_order.Count; i++) {
-				if (i == 2) {
-					y += 0.45;
-					x = DrawAreaX;
-				}
-				DrawSquare (gr, x, y, squares_colours, squares * answers_order[i]);
-				gr.MoveTo (x, y + block_space - 0.02);
-				gr.ShowPangoText (GetPossibleFigureAnswer (i));
-				gr.Stroke ();
-				x += block_space + 0.08;
-			}
-		}
-
-		public override void DrawObjectToMemorize (CairoContextEx gr, int area_width, int area_height)
-		{
-			base.DrawObjectToMemorize (gr, area_width, area_height);
+			base.DrawObjectToMemorize (gr, area_width, area_height, rtl);
 			palette.Alpha = alpha; 
 			DrawSquare (gr, DrawAreaX + 0.3, DrawAreaY + 0.1, squares_colours, 0);
 		}

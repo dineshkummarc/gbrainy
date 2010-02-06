@@ -159,12 +159,12 @@ namespace gbrainy.Games.Memory
 			right_answer = current_game.Answer;
 		}
 
-		public override void DrawObjectToMemorize (CairoContextEx gr, int area_width, int area_height)
+		public override void DrawObjectToMemorize (CairoContextEx gr, int area_width, int area_height, bool rtl)
 		{
 
 			StringBuilder sequence = new StringBuilder (64);
 
-			base.DrawObjectToMemorize (gr, area_width, area_height);
+			base.DrawObjectToMemorize (gr, area_width, area_height, rtl);
 			gr.SetPangoLargeFontSize ();
 
 			for (int num = 0; num < Challenge.Numbers.Length - 1; num++)

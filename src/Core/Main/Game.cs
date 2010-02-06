@@ -235,6 +235,10 @@ namespace gbrainy.Core.Main
 			}
 		}
 
+		protected Widget [] Widgets {
+			get { return containers.ToArray (); }
+		}
+
 		//
 		// Score algorithm returns a value between 0 and 10
 		//
@@ -322,13 +326,18 @@ namespace gbrainy.Core.Main
 			return String.Format (Catalog.GetString ("Figure {0}"), GetPossibleAnswer (answer));
 		}
 
-		public virtual void Draw (CairoContextEx gr, int width, int height, bool rtl)
+		protected void InitDraw (CairoContextEx gr, int width, int height, bool rtl)
 		{
 			gr.Scale (width, height);
 			gr.DrawBackground ();
-			gr.Color = new Cairo.Color (0, 0, 0);
-			gr.LineWidth = LineWidth;
-	
+			gr.Color = default_color;
+			gr.LineWidth = LineWidth;		
+		}
+
+		public virtual void Draw (CairoContextEx gr, int width, int height, bool rtl)
+		{
+			InitDraw (gr, width, height, rtl);
+
 			foreach (Toolkit.Container container in containers)
 				container.Draw (gr, width, height, rtl);
 		}

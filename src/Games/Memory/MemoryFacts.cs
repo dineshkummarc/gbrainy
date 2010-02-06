@@ -143,16 +143,16 @@ namespace gbrainy.Games.Memory
 			return fact;
 		}
 
-		public override void DrawPossibleAnswers (CairoContextEx gr, int area_width, int area_height)
+		public override void DrawPossibleAnswers (CairoContextEx gr, int area_width, int area_height, bool rtl)
 		{
 
 		}
 	
-		public override void DrawObjectToMemorize (CairoContextEx gr, int area_width, int area_height)
+		public override void DrawObjectToMemorize (CairoContextEx gr, int area_width, int area_height, bool rtl)
 		{
 			string text = string.Empty;
 
-			base.DrawObjectToMemorize (gr, area_width, area_height);
+			base.DrawObjectToMemorize (gr, area_width, area_height, rtl);
 	
 			for (int i = 0; i < facts.Length; i++)
 			{

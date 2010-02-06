@@ -23,6 +23,7 @@ using Mono.Unix;
 
 using gbrainy.Core.Main;
 using gbrainy.Core.Libraries;
+using gbrainy.Core.Toolkit;
 
 namespace gbrainy.Games.Memory
 {
@@ -83,6 +84,38 @@ namespace gbrainy.Games.Memory
 			}
 
 			base.Initialize ();
+
+			HorizontalContainer container = new HorizontalContainer (DrawAreaX, DrawAreaY, 0.8, 0.4);
+			AddWidget (container);
+
+			double x = DrawAreaX, y = DrawAreaY;
+
+			for (int i = 0; i < answers_order.Count; i++) 
+			{
+				if (i == 2) {
+					y += 0.5;
+					x = DrawAreaX;
+
+					container = new HorizontalContainer (DrawAreaX, DrawAreaY + 0.45, 0.8, 0.4);
+					AddWidget (container);
+				}
+
+				DrawableArea drawable_area = new DrawableArea (0.4, 0.4);
+				container.AddChild (drawable_area);
+				drawable_area.SelectedArea = new Rectangle (0.05, 0, 0.3, 0.3);
+				drawable_area.Data = i;
+				drawable_area.DataEx = GetPossibleAnswer (i);
+
+				drawable_area.DrawEventHandler += delegate (object sender, DrawEventArgs e)
+				{
+					int n = (int) e.Data;
+
+					DrawSquare (e.Context, 0.05, 0, numbers, squares * answers_order[n]);
+					e.Context.MoveTo (0.05, block_space - 0.02);
+					e.Context.ShowPangoText (GetPossibleFigureAnswer (n));
+					e.Context.Stroke ();
+				};
+			}
 		}
 
 		private void Randomize (int []nums, int source, int target)
@@ -121,28 +154,10 @@ namespace gbrainy.Games.Memory
 					done = true;
 			}
 		}
-	
 
-		public override void DrawPossibleAnswers (CairoContextEx gr, int area_width, int area_height)
+		public override void DrawObjectToMemorize (CairoContextEx gr, int area_width, int area_height, bool rtl)
 		{
-			double x = DrawAreaX , y = DrawAreaY;
-			gr.Color = DefaultDrawingColor;
-			for (int i = 0; i < answers_order.Count; i++) {
-				if (i == 2) {
-					y += 0.45;
-					x = DrawAreaX;
-				}
-				DrawSquare (gr, x, y, numbers, squares * (int) answers_order[i]);
-				gr.MoveTo (x, y + block_space);
-				gr.ShowPangoText (GetPossibleFigureAnswer (i));
-				gr.Stroke ();
-				x += block_space + 0.08;
-			}
-		}
-
-		public override void DrawObjectToMemorize (CairoContextEx gr, int area_width, int area_height)
-		{
-			base.DrawObjectToMemorize (gr, area_width, area_height);
+			base.DrawObjectToMemorize (gr, area_width, area_height, rtl);
 			DrawSquare (gr, 0.3 + DrawAreaX, DrawAreaY + 0.1, numbers, 0);
 		}
 
@@ -151,11 +166,12 @@ namespace gbrainy.Games.Memory
 			for (int column = 0; column < columns; column++) {
 				for (int row = 0; row < rows; row++) {
 					gr.Rectangle (x + row * rect_w, y + column * rect_h, rect_w, rect_h);
-					gr.DrawTextCentered (x + (rect_w / 2) + column * rect_w, y + (rect_h / 2) + row * rect_h, 
+					gr.Stroke ();
+					gr.DrawTextCentered (x + (rect_w / 2) + column * rect_w, y + (rect_h / 2) + row * rect_h,
 						(nums[index + column + (row * columns)]).ToString ());
+					gr.Stroke ();
 				}
 			}
-			gr.Stroke ();
 		}
 	}
 }

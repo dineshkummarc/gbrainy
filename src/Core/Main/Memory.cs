@@ -162,24 +162,24 @@ namespace gbrainy.Core.Main
 				downview.Draw (gr, area_width, area_height, rtl);
 				return;
 			}
-
-			base.Draw (gr, area_width, area_height, rtl);
+			
+			InitDraw (gr, area_width, area_height, rtl);
 
 			if (shade) {
 				if (alpha > 0)
 					alpha -= (1 / (double) shading_time);
 
 				gr.Color = new Color (DefaultDrawingColor.R, DefaultDrawingColor.G, DefaultDrawingColor.B, alpha);
-				DrawObjectToMemorize (gr, area_width, area_height);
+				DrawObjectToMemorize (gr, area_width, area_height, rtl);
 				return;
 			}
 		
 			alpha = 1;
 			gr.Color = new Color (DefaultDrawingColor.R, DefaultDrawingColor.G, DefaultDrawingColor.B, alpha);
 			if (request_answer && DrawAnswer == false) {
-				DrawPossibleAnswers (gr, area_width, area_height);
+				DrawPossibleAnswers (gr, area_width, area_height, rtl);
 			} else {
-				DrawObjectToMemorize (gr, area_width, area_height);			
+				DrawObjectToMemorize (gr, area_width, area_height, rtl);
 			}		
 		}
 
@@ -189,12 +189,16 @@ namespace gbrainy.Core.Main
 			gr.DrawBackground ();
 			gr.Color = new Cairo.Color (0, 0, 0);
 			gr.LineWidth = LineWidth;
-			DrawObjectToMemorize (gr, width, height);
+			DrawObjectToMemorize (gr, width, height, rtl);
 		}
 
-		public virtual void DrawPossibleAnswers (CairoContextEx gr, int area_width, int area_height) {}
+		public virtual void DrawPossibleAnswers (CairoContextEx gr, int area_width, int area_height, bool rtl)
+		{
+			foreach (Toolkit.Container container in Widgets)
+				container.Draw (gr, area_width, area_height, rtl);
+		}
 
-		public virtual void DrawObjectToMemorize (CairoContextEx gr, int area_width, int area_height)
+		public virtual void DrawObjectToMemorize (CairoContextEx gr, int area_width, int area_height, bool rtl)
 		{
 			double percentage;
 

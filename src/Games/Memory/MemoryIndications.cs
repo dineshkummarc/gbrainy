@@ -23,6 +23,7 @@ using Mono.Unix;
 
 using gbrainy.Core.Main;
 using gbrainy.Core.Libraries;
+using gbrainy.Core.Toolkit;
 
 namespace gbrainy.Games.Memory
 {
@@ -56,12 +57,14 @@ namespace gbrainy.Games.Memory
 
 			public void Draw (CairoContextEx gr, ref double x, ref double y, Indication next_prev)
 			{
-				const double line_length = 0.050;
-				const double points = 0.050;
+				const double line_length = 0.045;
+				const double points = 0.045;
 
 				if (type == Type.Start) {
 					gr.Rectangle (x, y, points, points);
 					gr.DrawTextCentered (x + points /2 , y + points /2, ((int)obj).ToString ());
+					gr.Stroke ();
+
 					switch ((TurnDirection) next_prev.obj) {
 					case TurnDirection.Right:
 						x += points;
@@ -78,8 +81,6 @@ namespace gbrainy.Games.Memory
 						x += points / 2;
 						break;
 					}
-
-					gr.Stroke ();
 			
 				} else if (type == Type.Turn) {
 					gr.MoveTo (x, y);
@@ -235,8 +236,47 @@ namespace gbrainy.Games.Memory
 				}
 			}
 
-			//for (int i = 0; i < indications.Length; i++)
-			//	Console.WriteLine ("{0}",  indications[i].ToString ());
+			// Draw row 1
+			HorizontalContainer container = new HorizontalContainer (0.05, 0.1, 0.9, 0.4);
+			AddWidget (container);
+
+			for (int i = 0; i  < 2; i++)
+			{
+				DrawableArea drawable_area = new DrawableArea (0.45, 0.4);
+				container.AddChild (drawable_area);
+				drawable_area.SelectedArea = new Rectangle (0, 0, 0.45, 0.3);
+				drawable_area.Data = i;
+				drawable_area.DataEx = GetPossibleAnswer (i);
+				drawable_area.DrawEventHandler += delegate (object sender, DrawEventArgs e)
+				{
+					int n = (int) e.Data;
+
+					DrawPossibleAnswers (e.Context, 0.2, 0.1, WhichAnswer (answers[n]));
+					e.Context.MoveTo (0.2, 0.12 + 0.2);
+					e.Context.ShowPangoText (GetPossibleFigureAnswer (n));
+				};
+			}
+
+			// Draw row 2
+			container = new HorizontalContainer (0.05, 0.5, 0.9, 0.4);
+			AddWidget (container);
+
+			for (int i = 2; i  < 4; i++)
+			{
+				DrawableArea drawable_area = new DrawableArea (0.45, 0.4);
+				container.AddChild (drawable_area);
+				drawable_area.SelectedArea = new Rectangle (0, 0, 0.45, 0.3);
+				drawable_area.Data = i;
+				drawable_area.DataEx = GetPossibleAnswer (i);
+				drawable_area.DrawEventHandler += delegate (object sender, DrawEventArgs e)
+				{
+					int n = (int) e.Data;
+
+					DrawPossibleAnswers (e.Context, 0.2, 0.1, WhichAnswer (answers[n]));
+					e.Context.MoveTo (0.2, 0.12 + 0.2);
+					e.Context.ShowPangoText (GetPossibleFigureAnswer (n));
+				};
+			}
 		}
 
 		private Indication[] CopyAnswer ()
@@ -268,38 +308,12 @@ namespace gbrainy.Games.Memory
 			case 3:
 				return indications_wrongC;
 			}
-
 			return null;
 		}
-
-		public override void DrawPossibleAnswers (CairoContextEx gr, int area_width, int area_height)
-		{
-			double x, y;
-
-			x = 0.22; y = 0.3;
-			DrawPossibleAnswers (gr, x, y, WhichAnswer (answers[0]));
-			gr.MoveTo (x, y + 0.2);
-			gr.ShowPangoText (GetPossibleFigureAnswer (0));
-
-			x = 0.7; y = 0.3;
-			DrawPossibleAnswers (gr, x, y, WhichAnswer (answers[1]));
-			gr.MoveTo (x, y + 0.2);
-			gr.ShowPangoText (GetPossibleFigureAnswer (1));
-
-			x = 0.22; y = 0.7;
-			DrawPossibleAnswers (gr, x, y, WhichAnswer (answers[2]));
-			gr.MoveTo (x, y + 0.2);
-			gr.ShowPangoText (GetPossibleFigureAnswer (2));
-
-			x = 0.7; y = 0.7;
-			DrawPossibleAnswers (gr, x, y, WhichAnswer (answers[3]));
-			gr.MoveTo (x, y + 0.2);
-			gr.ShowPangoText (GetPossibleFigureAnswer (3));
-		}
 	
-		public override void DrawObjectToMemorize (CairoContextEx gr, int area_width, int area_height)
+		public override void DrawObjectToMemorize (CairoContextEx gr, int area_width, int area_height, bool rtl)
 		{
-			base.DrawObjectToMemorize (gr, area_width, area_height);
+			base.DrawObjectToMemorize (gr, area_width, area_height, rtl);
 
 			if (DrawAnswer == false) {
 				for (int i = 0; i < indications.Length; i++)

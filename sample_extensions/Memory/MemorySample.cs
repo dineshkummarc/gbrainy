@@ -77,7 +77,7 @@ public class MemorySample : Memory
 		base.Initialize ();
 	}
 	
-	public override void DrawPossibleAnswers (CairoContextEx gr, int area_width, int area_height)
+	public override void DrawPossibleAnswers (CairoContextEx gr, int area_width, int area_height, bool rtl)
 	{
 		double x= DrawAreaX + 0.125, y = DrawAreaY + 0.1;
 		int cnt = 0;

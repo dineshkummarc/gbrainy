@@ -114,7 +114,7 @@ namespace gbrainy.Games.Memory
 			base.Initialize ();
 		}
 
-		public override void DrawPossibleAnswers (CairoContextEx gr, int area_width, int area_height)
+		public override void DrawPossibleAnswers (CairoContextEx gr, int area_width, int area_height, bool rtl)
 		{
 			double x= DrawAreaX, y = DrawAreaY + 0.1;
 			int pos = 0;
@@ -144,9 +144,9 @@ namespace gbrainy.Games.Memory
 			}
 		}
 
-		public override void DrawObjectToMemorize (CairoContextEx gr, int area_width, int area_height)
+		public override void DrawObjectToMemorize (CairoContextEx gr, int area_width, int area_height, bool rtl)
 		{
-			base.DrawObjectToMemorize (gr, area_width, area_height);
+			base.DrawObjectToMemorize (gr, area_width, area_height, rtl);
 			DrawAllFigures (gr, start_x_ques, start_y, area_width, area_height);
 		}
 

@@ -23,6 +23,7 @@ using Mono.Unix;
 
 using gbrainy.Core.Main;
 using gbrainy.Core.Libraries;
+using gbrainy.Core.Toolkit;
 
 namespace gbrainy.Games.Calculation
 {
@@ -94,24 +95,30 @@ namespace gbrainy.Games.Calculation
 			}
 
 			right_answer += GetPossibleAnswer (which);
-		}
 
-		public override void Draw (CairoContextEx gr, int area_width, int area_height, bool rtl)
-		{	
+			// Options
 			double x = DrawAreaX + 0.25, y = DrawAreaY + 0.16;
-			int indx;
-
-			base.Draw (gr, area_width, area_height, rtl);
-
-			gr.SetPangoLargeFontSize ();
-
+			Container container = new Container (x, y,  1 - (x * 2), 0.6);
+			AddWidget (container);
+	
 			for (int i = 0; i < options_cnt; i++)
 			{
-				gr.MoveTo (x, y);
-				indx = random_indices[i];
-				gr.ShowPangoText (String.Format ("{0}) {1:##0.##}", GetPossibleAnswer (i) , options [indx]));
+				DrawableArea drawable_area = new DrawableArea (0.3, 0.1);
+				drawable_area.X = x;
+				drawable_area.Y = y + i * 0.15;
+				container.AddChild (drawable_area);
+				drawable_area.Data = i;
+				drawable_area.DataEx = GetPossibleAnswer (i);
 
-				y = y + 0.15;
+				drawable_area.DrawEventHandler += delegate (object sender, DrawEventArgs e)
+				{
+					int n = (int) e.Data;
+					int indx = random_indices[n];
+
+					e.Context.SetPangoLargeFontSize ();
+					e.Context.MoveTo (0.02, 0.02);
+					e.Context.ShowPangoText (String.Format ("{0}) {1:##0.##}", GetPossibleAnswer (n), options [indx]));
+				};
 			}
 		}
 	}
