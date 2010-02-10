@@ -84,7 +84,7 @@ namespace gbrainy.Games.Memory
 			palette = new ColorPalette(ColorPalette.Id.PrimarySecundaryColors);
 			palette.Initialize();
 
-			for (int i = 0; i < squares; i++)	
+			for (int i = 0; i < squares; i++)
 				squares_colours[i] = (SquareColor) random.Next ((int) SquareColor.Length);
 		
 			Randomize (squares_colours, 0, squares);
@@ -106,14 +106,9 @@ namespace gbrainy.Games.Memory
 			HorizontalContainer container = new HorizontalContainer (DrawAreaX, DrawAreaY, 0.8, 0.4);
 			AddWidget (container);
 
-			double x = DrawAreaX, y = DrawAreaY;
-
 			for (int i = 0; i < answers_order.Count; i++) 
 			{
 				if (i == 2) {
-					y += 0.5;
-					x = DrawAreaX;
-
 					container = new HorizontalContainer (DrawAreaX, DrawAreaY + 0.45, 0.8, 0.4);
 					AddWidget (container);
 				}
