@@ -4,7 +4,6 @@ WRAPPER = gbrainy
 TARGET_CFG = ../../gbrainy.exe.config
 
 GBRAINY_CSDISTFILES =					\
-	$(srcdir)/Defines.cs 				\
 	$(srcdir)/gbrainy.cs 				\
 	$(srcdir)/GtkSynchronize.cs 			\
 	$(srcdir)/SimpleLabel.cs			\
@@ -47,8 +46,8 @@ gbrainy_SCRIPTS = ../../gbrainy.exe ../../gbrainy.exe.config
 bin_SCRIPTS = gbrainy
 
 GBRAINY_CSFILES = $(GBRAINY_CSDISTFILES)	\
-	AssemblyInfo.cs
-
+	AssemblyInfo.cs	\
+	Defines.cs
 
 ../../gbrainy.exe: $(GBRAINY_CSFILES) gbrainy.ui $(srcdir)/Dialogs/ui/PreferencesDialog.ui  \
 	$(srcdir)/Dialogs/ui/PlayerHistoryDialog.ui $(srcdir)/Dialogs/ui/CustomGameDialog.ui

@@ -24,8 +24,7 @@ EXTRA_DIST =			\
 	intltool-merge.in	\
 	intltool-update.in	\
 	gnome-doc-utils.make	\
-        $(desktop_in_files)     \
-        $(desktop_files)
+        $(desktop_in_files)
 
 DISTCLEANFILES = \
         intltool-extract        \

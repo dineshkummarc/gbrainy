@@ -6,43 +6,45 @@ CSFLAGS = -unsafe -target:library $(CSC_DEFINES)
 TARGET = ../gbrainy.Core.dll
 TARGET_CFG = ../gbrainy.Core.dll.config
 
-CSFILES =  \
-		AssemblyInfo.cs			\
-		Main/ArrayListIndicesRandom.cs	\
-		Main/ColorPalette.cs		\
-		Main/Defines.cs			\
-		Main/IMouseEvent.cs		\
-		Main/Game.cs			\
-		Main/GameManager.cs		\
-		Main/GameSession.cs		\
-		Main/GameTips.cs		\
-		Main/Memory.cs			\
-		Main/PlayerHistory.cs		\
-		Main/Preferences.cs		\
-		Main/UpdateUIStateEventArgs.cs \
-		Main/Verbal/Analogies.cs 	\
-		Main/Verbal/AnalogiesFactory.cs	\
-		Main/Verbal/AnalogiesMultipleOptions.cs	\
-		Main/Verbal/AnalogiesPairOfWordsCompare.cs	\
-		Main/Verbal/AnalogiesPairOfWordsOptions.cs	\
-		Main/Verbal/AnalogiesQuestionAnswer.cs		\
-		Main/Verbal/Analogy.cs		\
-		Views/CountDownView.cs		\
-		Views/FinishView.cs		\
-		Main/IDrawable.cs		\
-		Main/IDrawRequest.cs		\
-		Toolkit/Container.cs		\
-		Toolkit/DrawableArea.cs		\
-		Toolkit/DrawEventArgs.cs	\
-		Toolkit/HorizontalContainer.cs	\
-		Toolkit/SeletectedEventArgs.cs	\
-		Toolkit/Widget.cs		\
-		Views/PlayerHistoryView.cs	\
-		Views/ViewsControler.cs		\
-		Views/WelcomeView.cs		\
-		Platform/Unix.cs		\
-		Libraries/CairoContextEx.cs	\
-		Libraries/SVGImage.cs
+CSDISTFILES =  \
+		$(srcdir)/Main/ArrayListIndicesRandom.cs	\
+		$(srcdir)/Main/ColorPalette.cs		\
+		$(srcdir)/Main/IMouseEvent.cs		\
+		$(srcdir)/Main/Game.cs			\
+		$(srcdir)/Main/GameManager.cs		\
+		$(srcdir)/Main/GameSession.cs		\
+		$(srcdir)/Main/GameTips.cs		\
+		$(srcdir)/Main/Memory.cs			\
+		$(srcdir)/Main/PlayerHistory.cs		\
+		$(srcdir)/Main/Preferences.cs		\
+		$(srcdir)/Main/UpdateUIStateEventArgs.cs \
+		$(srcdir)/Main/Verbal/Analogies.cs 	\
+		$(srcdir)/Main/Verbal/AnalogiesFactory.cs	\
+		$(srcdir)/Main/Verbal/AnalogiesMultipleOptions.cs	\
+		$(srcdir)/Main/Verbal/AnalogiesPairOfWordsCompare.cs	\
+		$(srcdir)/Main/Verbal/AnalogiesPairOfWordsOptions.cs	\
+		$(srcdir)/Main/Verbal/AnalogiesQuestionAnswer.cs		\
+		$(srcdir)/Main/Verbal/Analogy.cs		\
+		$(srcdir)/Views/CountDownView.cs		\
+		$(srcdir)/Views/FinishView.cs		\
+		$(srcdir)/Main/IDrawable.cs		\
+		$(srcdir)/Main/IDrawRequest.cs		\
+		$(srcdir)/Toolkit/Container.cs		\
+		$(srcdir)/Toolkit/DrawableArea.cs		\
+		$(srcdir)/Toolkit/DrawEventArgs.cs	\
+		$(srcdir)/Toolkit/HorizontalContainer.cs	\
+		$(srcdir)/Toolkit/SeletectedEventArgs.cs	\
+		$(srcdir)/Toolkit/Widget.cs		\
+		$(srcdir)/Views/PlayerHistoryView.cs	\
+		$(srcdir)/Views/ViewsControler.cs		\
+		$(srcdir)/Views/WelcomeView.cs		\
+		$(srcdir)/Platform/Unix.cs		\
+		$(srcdir)/Libraries/CairoContextEx.cs	\
+		$(srcdir)/Libraries/SVGImage.cs
+
+CSFILES = $(CSDISTFILES)	\
+	Main/Defines.cs	\
+	AssemblyInfo.cs	
 
 RES = \
 $(top_srcdir)/data/app-graphics/background.svg  	\
@@ -60,12 +62,11 @@ REFS =  \
 	 $(GBRAINY_LIBS)    		\
 	 $(MONO_ADDINS_LIBS)
 
-SRCDIR_CSFILES = $(CSFILES:%=$(srcdir)/%)
 RES_CSFLAGS = $(foreach res, $(RES), -resource:$(res))
 
-$(TARGET): $(SRCDIR_CSFILES) $(RES)
+$(TARGET): $(CSFILES) $(RES)
 	echo $(RES_FILES)
-	$(CSC) -out:$@ $(CSFLAGS) $(REFS) $(RES_CSFLAGS) $(SRCDIR_CSFILES)
+	$(CSC) -out:$@ $(CSFLAGS) $(REFS) $(RES_CSFLAGS) $(CSFILES)
 
 $(TARGET_CFG): $(srcdir)/gbrainy.Core.dll.config.in
 	sed -e "s|\@pkglibdir\@|$(pkglibdir)|" \
@@ -83,7 +84,7 @@ uninstall-local:
 	cd $(DESTDIR)$(pkglibdir) && rm -f gbrainy.Core.dll.config
 
 EXTRA_DIST = 			\
-	$(CSFILES) $(RES) gbrainy.Core.dll.config.in
+	$(CSDISTFILES) $(RES) gbrainy.Core.dll.config.in
 
 CLEANFILES =				\
 	$(TARGET)			\
