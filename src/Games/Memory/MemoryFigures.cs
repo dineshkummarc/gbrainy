@@ -23,6 +23,7 @@ using Mono.Unix;
 
 using gbrainy.Core.Main;
 using gbrainy.Core.Libraries;
+using gbrainy.Core.Toolkit;
 
 namespace gbrainy.Games.Memory
 {
@@ -104,12 +105,55 @@ namespace gbrainy.Games.Memory
 			}
 			right_answer = question_answer.ToString ();
 			base.Initialize ();
+
+			// Answers controls
+			int col = 0;
+			double y = start_y;
+
+			HorizontalContainer container = new HorizontalContainer (start_x_ans, y, columns * rect_w, rect_h);
+			AddWidget (container);
+
+			for (int figure = 0; figure < figures.Count; figure++, col++)
+			{
+				if (col >= columns) {
+					col = 0;
+					y += rect_h;
+
+					container = new HorizontalContainer (start_x_ans, y, columns * rect_w, rect_h);
+					AddWidget (container);
+				}
+			
+				DrawableArea drawable_area = new DrawableArea (rect_w, rect_h);
+				container.AddChild (drawable_area);
+				drawable_area.DataEx = (figure + 1).ToString ();
+
+				if (figure == question_pos) {
+					int fig = (int)figures[figure];
+					if (fig >= figures_active) fig -= figures_active;
+
+					drawable_area.Data = fig;
+					drawable_area.DrawEventHandler += delegate (object sender, DrawEventArgs e)
+					{
+						DrawFigure (e.Context, 0, 0, (FigureType) e.Data);
+					};
+
+				} else
+				{
+					drawable_area.Data = figure + 1;
+					drawable_area.DrawEventHandler += delegate (object sender, DrawEventArgs e)
+					{
+						int n = (int) e.Data;
+
+						e.Context.SetPangoLargeFontSize ();
+						e.Context.DrawTextCentered (rect_w / 2, rect_h / 2, (n).ToString ());
+						e.Context.Stroke ();
+					};
+				}
+			}
 		}
 
 		public override void DrawPossibleAnswers (CairoContextEx gr, int area_width, int area_height, bool rtl)
 		{
-			int col = 1, fig;
-			double x = start_x_ans, y = start_y;
 			gr.Color = new Color (DefaultDrawingColor.R, DefaultDrawingColor.G, DefaultDrawingColor.B, 1);
 
 			if (DrawAnswer ==  true) {
@@ -117,28 +161,8 @@ namespace gbrainy.Games.Memory
 				return;
 			}
 
-			gr.SetPangoLargeFontSize ();
-			DrawGrid (gr, x, y, area_width, area_height);
-			for (int figure = 0; figure < figures.Count; figure++, col++)
-			{
-				fig = (int)figures[figure];
-				if (fig >= figures_active) fig -= figures_active;
-
-				if (figure == question_pos)
-					DrawFigure (gr, x, y, (FigureType) fig);
-				else {
-					gr.DrawTextCentered (x + rect_w / 2, y + rect_h / 2, (figure + 1).ToString ());
-					gr.Stroke ();
-				}
-
-				if (col >= columns) {
-					col = 0;
-					y += rect_h;
-					x = start_x_ans;
-				} else {
-					x += rect_w;
-				}
-			}
+			DrawGrid (gr, start_x_ans, start_y, area_width, area_height);
+			base.DrawPossibleAnswers (gr, area_width, area_height, rtl);
 		}
 
 		public override void DrawObjectToMemorize (CairoContextEx gr, int area_width, int area_height, bool rtl)
