@@ -23,6 +23,7 @@ using Mono.Unix;
 
 using gbrainy.Core.Main;
 using gbrainy.Core.Libraries;
+using gbrainy.Core.Toolkit;
 
 namespace gbrainy.Games.Logic
 {
@@ -91,6 +92,42 @@ namespace gbrainy.Games.Logic
 			bad_answers = new int [possible_answers * items_per_slice];
 			for (int i = 0; i < bad_answers.Length; i++) {
 				bad_answers[i] = 1 + random.Next (9);
+			}
+
+			HorizontalContainer container = new HorizontalContainer (DrawAreaX, 0.68, 0.8, 0.3);
+			DrawableArea drawable_area;
+			AddWidget (container);
+
+			for (int i = 0; i < possible_answers; i++)
+			{
+				drawable_area = new DrawableArea (0.8 / 3, 0.3);
+				drawable_area.SelectedArea = new Rectangle (0, 0, radius, 0.2);
+				drawable_area.Data = i;
+				drawable_area.DataEx = GetPossibleAnswer (i);
+				container.AddChild (drawable_area);
+
+				drawable_area.DrawEventHandler += delegate (object sender, DrawEventArgs e)
+				{
+					int n = (int) e.Data;
+
+					DrawSlice (e.Context, 0, 0);
+					if (n == ans_pos) {
+						int pos = random_indices [0];
+						DrawSliceText (e.Context, 0, 0, 0, (sum_offset +
+						slices [pos * items_per_slice]).ToString (),
+						(sum_offset + slices [1 + (pos * items_per_slice)]).ToString (), 
+						(sum_offset + slices [2 + (pos * items_per_slice)]).ToString ());
+					} else {
+						DrawSliceText (e.Context, 0, 0, 0, 
+							bad_answers [n * items_per_slice].ToString (),
+							bad_answers [1 + (n * items_per_slice)].ToString (), 
+							bad_answers [2 + (n * items_per_slice)].ToString ());
+					}
+			
+					e.Context.MoveTo (0.0, 0.25);
+					e.Context.ShowPangoText (GetPossibleFigureAnswer (n));
+					e.Context.Stroke ();
+				};
 			}
 		}
 
@@ -180,23 +217,7 @@ namespace gbrainy.Games.Logic
 
 			gr.MoveTo (0.1, 0.61);
 			gr.ShowPangoText (Catalog.GetString ("Possible answers are:"));
-
-			y = 0.68;
-	 		for (int i = 0; i < possible_answers; i++) 
-			{
-				DrawSlice (gr, 0.10 + i * 0.28, y);
-				if (i == ans_pos) {
-					pos = random_indices [0];
-					DrawSliceText (gr, 0.10 + i * 0.28, y, 0, (sum_offset + slices [pos * items_per_slice]).ToString (),
-						 (sum_offset + slices [1 + (pos * items_per_slice)]).ToString (), (sum_offset + slices [2 + (pos * items_per_slice)]).ToString ());
-				} else {
-					DrawSliceText (gr, 0.10 + i * 0.28, y, 0, bad_answers [i * items_per_slice].ToString (),
-						 bad_answers [1 + (i * items_per_slice)].ToString (), bad_answers [2 + (i * items_per_slice)].ToString ());
-				}
-			
-				gr.MoveTo (0.10  + i * 0.28, y + 0.25);
-				gr.ShowPangoText (GetPossibleFigureAnswer (i));
-			}
+			gr.Stroke ();
 		}
 	}
 }

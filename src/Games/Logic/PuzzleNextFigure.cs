@@ -23,13 +23,15 @@ using System;
 
 using gbrainy.Core.Main;
 using gbrainy.Core.Libraries;
+using gbrainy.Core.Toolkit;
 
 namespace gbrainy.Games.Logic
 {
 	public class PuzzleNextFigure : Game
 	{
-		private const double figure_size = 0.2;
-		private ArrayListIndicesRandom random_indices;
+		const double figure_size = 0.2;
+		const double space_figures = figure_size + 0.066;
+		ArrayListIndicesRandom random_indices;
 
 		public enum CerclePosition 
 		{
@@ -80,6 +82,43 @@ namespace gbrainy.Games.Logic
 					break;
 				}
 			}
+
+			HorizontalContainer container = new HorizontalContainer (DrawAreaX, DrawAreaY + figure_size + 0.16, 					0.8, 0.3);
+
+			DrawableArea drawable_area;
+			AddWidget (container);
+
+			for (int i = 0; i < (int) Figures.Last; i++)
+			{
+				drawable_area = new DrawableArea (space_figures, 0.2);						
+				drawable_area.SelectedArea = new Rectangle (0, 0, figure_size, figure_size);
+				drawable_area.Data = i;
+				drawable_area.DataEx = GetPossibleAnswer (i);
+				container.AddChild (drawable_area);
+
+				drawable_area.DrawEventHandler += delegate (object sender, DrawEventArgs e)
+				{
+					int n = (int) e.Data;
+
+				 	switch ((Figures) random_indices[n]) {
+					case Figures.First:
+						DrawDiamon (e.Context, 0, 0, CerclePosition.Right | CerclePosition.Left);
+						break;
+					case Figures.Second:
+						DrawDiamon (e.Context, 0, 0, CerclePosition.Top | CerclePosition.Right);
+						break;
+					case Figures.Third:
+						DrawDiamon (e.Context, 0, 0, CerclePosition.Bottom | CerclePosition.Top);
+						break;
+					default:
+						throw new InvalidOperationException ();
+					}
+
+					e.Context.MoveTo (0.02, 0.25);
+					e.Context.ShowPangoText (GetPossibleFigureAnswer (n));
+					e.Context.Stroke ();
+				};
+			}
 		}
 
 		static private void DrawDiamon (CairoContextEx gr, double x, double y, CerclePosition cercles)
@@ -118,7 +157,6 @@ namespace gbrainy.Games.Logic
 		{
 			double x = DrawAreaX;
 			double y = DrawAreaY;
-			double space_figures = figure_size + 0.1;
 		
 			base.Draw (gr, area_width, area_height, rtl);
 
@@ -129,28 +167,6 @@ namespace gbrainy.Games.Logic
 			y += figure_size + 0.06;
 			gr.MoveTo (x, y);
 			gr.ShowPangoText (Catalog.GetString ("Possible answers are:"));
-			gr.Stroke ();
-			y += 0.10;
-
-			for (int i = 0; i < (int) Figures.Last; i++)
-			{
-			 	switch ((Figures) random_indices[i]) {
-				case Figures.First:
-					DrawDiamon (gr, x, y, CerclePosition.Right | CerclePosition.Left);
-					break;
-				case Figures.Second:
-					DrawDiamon (gr, x, y, CerclePosition.Top | CerclePosition.Right);
-					break;
-				case Figures.Third:
-					DrawDiamon (gr, x, y, CerclePosition.Bottom | CerclePosition.Top);
-					break;
-				}
-			
-				gr.MoveTo (x + 0.02, y + 0.25);
-				gr.ShowPangoText (GetPossibleFigureAnswer (i));
-				x += space_figures;			
-			}
-
 			gr.Stroke ();
 		}
 	}

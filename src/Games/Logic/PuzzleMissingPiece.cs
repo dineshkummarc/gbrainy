@@ -23,6 +23,7 @@ using Mono.Unix;
 
 using gbrainy.Core.Main;
 using gbrainy.Core.Libraries;
+using gbrainy.Core.Toolkit;
 
 namespace gbrainy.Games.Logic
 {
@@ -63,6 +64,29 @@ namespace gbrainy.Games.Logic
 					right_answer = GetPossibleAnswer (i);
 					break;
 				}
+			}
+
+			HorizontalContainer container = new HorizontalContainer (DrawAreaX, 0.7, 0.8, 0.3);
+			DrawableArea drawable_area;
+			AddWidget (container);
+
+			for (int i = 0; i < random_indices.Count; i++)
+			{
+				drawable_area = new DrawableArea (0.8 / 3, 0.3);
+						
+				drawable_area.SelectedArea = new Rectangle (0, 0, sub_figure, sub_figure);
+				drawable_area.Data = i;
+				drawable_area.DataEx = GetPossibleAnswer (i);
+				container.AddChild (drawable_area);
+
+				drawable_area.DrawEventHandler += delegate (object sender, DrawEventArgs e)
+				{
+					int n = (int) e.Data;
+
+					DrawAnswerFigures (e.Context, 0, 0, random_indices [n]);
+					e.Context.MoveTo (0, 0.2);
+					e.Context.ShowPangoText (GetPossibleFigureAnswer (n));
+				};
 			}
 		}
 
@@ -138,26 +162,17 @@ namespace gbrainy.Games.Logic
 
 		public override void Draw (CairoContextEx gr, int area_width, int area_height, bool rtl)
 		{
-			double x = DrawAreaX + 0.15, y = DrawAreaY;
-			int figure;
+			double x = DrawAreaX + 0.15;
 
 			base.Draw (gr, area_width, area_height, rtl);
 		
 			for (int i = 0; i < 2; i++)
-				DrawFigureSequence (gr, x, y + sub_figure * i , i, true);
+				DrawFigureSequence (gr, x, DrawAreaY + sub_figure * i , i, true);
 
-			DrawFigureSequence (gr, x, y + sub_figure * 2 , 2, false);
+			DrawFigureSequence (gr, x, DrawAreaY + sub_figure * 2 , 2, false);
 
 			gr.MoveTo (0.1, 0.62);
 			gr.ShowPangoText (Catalog.GetString ("Possible answers are:"));
-
-			x = DrawAreaX + 0.1;
-			for (int i = 0; i < random_indices.Count; i++) {
-				figure = random_indices [i];
-				DrawAnswerFigures (gr, x + (0.08 + sub_figure) * i, 0.70, figure);
-				gr.MoveTo (x + (0.08 + sub_figure) * i, 0.9);
-				gr.ShowPangoText (GetPossibleFigureAnswer (i));
-			}
 		}
 	}
 }
