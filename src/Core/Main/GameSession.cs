@@ -112,6 +112,10 @@ namespace gbrainy.Core.Main
 			get {return id;}
 		}
 
+		public Game.Types AvailableGames {
+			get { return game_manager.AvailableGames; }
+		}
+
 		public PlayerHistory PlayerHistory { 
 			set { history = value; }
 			get { return history; }

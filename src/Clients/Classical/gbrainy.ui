@@ -40,43 +40,36 @@
           </object>
         </child>
         <child>
-          <object class="GtkAction" id="menuitem3">
-            <property name="name">menuitem3</property>
+          <object class="GtkAction" id="allgames_menuitem">
+            <property name="name">allgames_menuitem</property>
             <property name="label" translatable="yes">All Games (Logic, Mental Calculation, Memory and Verbal Analogies)</property>
             <signal handler="OnAllGames" name="activate"/>
           </object>
         </child>
         <child>
-          <object class="GtkAction" id="menuitem4">
-            <property name="name">menuitem4</property>
-            <property name="label" translatable="yes">Trainers Only (Mental Calculation and Memory)</property>
-            <signal handler="OnTrainersOnly" name="activate"/>
-          </object>
-        </child>
-        <child>
-          <object class="GtkAction" id="menuitem5">
-            <property name="name">menuitem5</property>
+          <object class="GtkAction" id="logic_menuitem">
+            <property name="name">logic_menuitem</property>
             <property name="label" translatable="yes">Logic Puzzles Only</property>
             <signal handler="OnLogicOnly" name="activate"/>
           </object>
         </child>
         <child>
-          <object class="GtkAction" id="menuitem6">
-            <property name="name">menuitem6</property>
+          <object class="GtkAction" id="calculation_menuitem">
+            <property name="name">calculation_menuitem</property>
             <property name="label" translatable="yes">Mental Calculation Trainers Only</property>
             <signal handler="OnMathOnly" name="activate"/>
           </object>
         </child>
         <child>
-          <object class="GtkAction" id="menuitem7">
-            <property name="name">menuitem7</property>
+          <object class="GtkAction" id="memory_menuitem">
+            <property name="name">memory_menuitem</property>
             <property name="label" translatable="yes">Memory Trainers Only</property>
             <signal handler="OnMemoryOnly" name="activate"/>
           </object>
         </child>
         <child>
-          <object class="GtkAction" id="menuitem8">
-            <property name="name">menuitem8</property>
+          <object class="GtkAction" id="verbal_menuitem">
+            <property name="name">verbal_menuitem</property>
             <property name="label" translatable="yes">Verbal Analogies Only</property>
             <signal handler="OnVerbalOnly" name="activate"/>
           </object>
@@ -193,12 +186,11 @@
       <menubar name="menubar">
         <menu action="game_topmenu">
           <menu action="newgame_menuitem">
-            <menuitem action="menuitem3"/>
-            <menuitem action="menuitem4"/>
-            <menuitem action="menuitem5"/>
-            <menuitem action="menuitem6"/>
-            <menuitem action="menuitem7"/>
-            <menuitem action="menuitem8"/>
+            <menuitem action="allgames_menuitem"/>
+            <menuitem action="logic_menuitem"/>
+            <menuitem action="calculation_menuitem"/>
+            <menuitem action="memory_menuitem"/>
+            <menuitem action="verbal_menuitem"/>
             <menuitem action="custom_game"/>
           </menu>
           <menuitem action="pause_menuitem"/>

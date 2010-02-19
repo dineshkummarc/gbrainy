@@ -60,6 +60,20 @@ namespace gbrainy.Core.Main
 					analogy.CurrentIndex = 0;
 			}
 
+			public Type [] AvailableTypes {
+				get {
+					List <Type> types = new List <Type> ();
+
+					foreach (Analogies analogy in analogies)
+					{
+						if (analogy.List.Count > 0)
+							types.Add (analogy.GetType ());
+					}
+
+					return types.ToArray ();
+				}
+			}
+
 			public bool IsExhausted {
 				get {
 					foreach (Analogies analogy in analogies)
@@ -97,7 +111,11 @@ namespace gbrainy.Core.Main
 			game_type = GameSession.Types.None;
 			difficulty = Game.Difficulty.Medium;
 			games = new List <Type> ();
-			VerbalAnalogies = new List <Type> (VerbalAnalogiesInternal);
+			VerbalAnalogies = new List <Type> ();
+			analogies_manager = new AnalogiesManager (VerbalAnalogiesInternal);
+
+			foreach (Type type in analogies_manager.AvailableTypes)
+				VerbalAnalogies.Add (type);			
 
 			LoadAssemblyGame ();
 
@@ -119,8 +137,27 @@ namespace gbrainy.Core.Main
 					LogicPuzzles.Count, CalculationTrainers.Count, MemoryTrainers.Count, VerbalAnalogies.Count);
 			}
 
-			analogies_manager = new AnalogiesManager (VerbalAnalogiesInternal);
 			//GeneratePDF ();
+		}
+	
+		public Game.Types AvailableGames {
+			get {
+				Game.Types types = Game.Types.None;
+
+				if (LogicPuzzles.Count > 0)
+					types |= Game.Types.LogicPuzzle;
+
+				if (CalculationTrainers.Count > 0)
+					types |= Game.Types.MathTrainer;
+
+				if (MemoryTrainers.Count > 0)
+					types |= Game.Types.MemoryTrainer;
+
+				if (analogies_manager.AvailableTypes.Length > 0)
+					types |= Game.Types.VerbalAnalogy;
+			
+				return types;
+			}
 		}
 
 		public GameSession.Types GameType {
@@ -208,13 +245,16 @@ namespace gbrainy.Core.Main
 				obj = Activator.CreateInstance (type);
 
 				prop = type.GetProperty (LOGIC_METHOD);
-				LogicPuzzles = new List <Type> ((Type []) prop.GetValue (obj, null));
+				if (prop != null)
+					LogicPuzzles = new List <Type> ((Type []) prop.GetValue (obj, null));
 
 				prop = type.GetProperty (MEMORY_METHOD);
-				MemoryTrainers = new List <Type> ((Type []) prop.GetValue (obj, null));
+				if (prop != null)
+					MemoryTrainers = new List <Type> ((Type []) prop.GetValue (obj, null));
 
 				prop = type.GetProperty (CALCULATION_METHOD);
-				CalculationTrainers = new List <Type> ((Type []) prop.GetValue (obj, null));
+				if (prop != null)
+					CalculationTrainers = new List <Type> ((Type []) prop.GetValue (obj, null));
 			}
 
 			catch (Exception e)
@@ -278,12 +318,14 @@ namespace gbrainy.Core.Main
 
 			if (GameType == GameSession.Types.Custom)
 				return;
-		
+
 			games.Clear ();
 			Random random = new Random ();
 
 			// For all games, 1/4 of the total are logic, 1/4 Memory, 1/4 calculation, 1/4 verbal analogies
-			if ((game_type & GameSession.Types.AllGames) == GameSession.Types.AllGames) {
+			if (((game_type & GameSession.Types.AllGames) == GameSession.Types.AllGames) &&
+				LogicPuzzles.Count > 0 && MemoryTrainers.Count > 0 &&
+				CalculationTrainers.Count > 0 && VerbalAnalogies.Count > 0) {
 			
 				int idx_cal = 0, idx_mem = 0, idx_verb = 0;
 				ArrayListIndicesRandom idx_logic = new ArrayListIndicesRandom (LogicPuzzles.Count);

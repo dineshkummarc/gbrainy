@@ -54,6 +54,11 @@ namespace gbrainy.Clients.Classical
 		[GtkBeans.Builder.Object] Gtk.Action pause_menuitem;
 		[GtkBeans.Builder.Object] Gtk.Action finish_menuitem;
 		[GtkBeans.Builder.Object] Gtk.Action newgame_menuitem;
+		[GtkBeans.Builder.Object] Gtk.Action allgames_menuitem;
+		[GtkBeans.Builder.Object] Gtk.Action logic_menuitem;
+		[GtkBeans.Builder.Object] Gtk.Action verbal_menuitem;
+		[GtkBeans.Builder.Object] Gtk.Action memory_menuitem;
+		[GtkBeans.Builder.Object] Gtk.Action calculation_menuitem;
 		[GtkBeans.Builder.Object] Gtk.UIManager uimanager;
 		DrawingArea drawing_area;
 		GameSession session;
@@ -338,11 +343,38 @@ namespace gbrainy.Clients.Classical
 		{
 			//Toolbar buttons and menu items that are sensitive when the user is playing
 			bool playing;
+			Game.Types available;
 
 			playing = (session.Status == GameSession.SessionStatus.Playing);
-
 			finish_tbbutton.Sensitive = pause_tbbutton.Sensitive = playing;
-			all_tbbutton.Sensitive = calculation_tbbutton.Sensitive = memory_tbbutton.Sensitive = logic_tbbutton.Sensitive = verbal_tbbutton.Sensitive = !playing;
+
+			available = session.AvailableGames;
+
+			if (playing == false && ((available & Game.Types.LogicPuzzle) == Game.Types.LogicPuzzle))
+				logic_menuitem.Sensitive = logic_tbbutton.Sensitive = true;
+			else
+				logic_menuitem.Sensitive = logic_tbbutton.Sensitive = false;
+
+			if (playing == false && ((available & Game.Types.MemoryTrainer) == Game.Types.MemoryTrainer))
+				memory_menuitem.Sensitive = memory_tbbutton.Sensitive = true;
+			else
+				memory_menuitem.Sensitive = memory_tbbutton.Sensitive = false;
+
+			if (playing == false && ((available & Game.Types.MathTrainer) == Game.Types.MathTrainer))
+				calculation_menuitem.Sensitive = calculation_tbbutton.Sensitive = true;
+			else
+				calculation_menuitem.Sensitive = calculation_tbbutton.Sensitive = false;
+
+			if (playing == false && ((available & Game.Types.VerbalAnalogy) == Game.Types.VerbalAnalogy))
+				verbal_menuitem.Sensitive = verbal_tbbutton.Sensitive = true;
+			else
+				verbal_menuitem.Sensitive = verbal_tbbutton.Sensitive = false;
+
+			if (playing == false && (available != Game.Types.None))
+				allgames_menuitem.Sensitive = all_tbbutton.Sensitive = true;
+			else
+				allgames_menuitem.Sensitive = all_tbbutton.Sensitive = false;
+
 			pause_menuitem.Sensitive = finish_menuitem.Sensitive = playing;
 			newgame_menuitem.Sensitive = !playing;
 		}

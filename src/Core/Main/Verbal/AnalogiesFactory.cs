@@ -152,29 +152,6 @@ namespace gbrainy.Core.Main.Verbal
 			{
 				Console.WriteLine ("Error loading {0}. Exception {1}", Defines.DATA_DIR + Defines.VERBAL_ANALOGIES, e.Message);
 			}
-
-			finally
-			{
-				CheckEmpty ();
-			}
-		}
-
-		static void CheckEmpty ()
-		{
-			Analogy empty = new Analogy ();
-			empty.question = Catalog.GetString ("There are no verbal analogies available.");
-			bool all_empty = true;
-
-			for (int i = 0; i < (int) Analogy.Type.Last; i++)
-			{
-				if (analogies_arrays[i].Count > 0) {
-					all_empty = false;
-					break;	
-				}
-			}
-
-			if (all_empty == true)
-				analogies_arrays[0].Add (0, empty);
 		}
 	}
 }
