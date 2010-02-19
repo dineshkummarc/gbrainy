@@ -23,6 +23,7 @@ using System;
 
 using gbrainy.Core.Main;
 using gbrainy.Core.Libraries;
+using gbrainy.Core.Toolkit;
 
 namespace gbrainy.Games.Logic
 {
@@ -153,6 +154,75 @@ namespace gbrainy.Games.Logic
 					break;
 				}
 			}
+
+			double x = DrawAreaX, y = DrawAreaY;
+
+			// Question
+			DrawableArea drawable_area;
+			HorizontalContainer container = new HorizontalContainer (x, y, 0.8, 0.3);
+			AddWidget (container);
+	
+			drawable_area = new DrawableArea (container.Width / 2, 0.25);
+			drawable_area.Sensitive = false;
+			container.AddChild (drawable_area);
+
+			drawable_area.DrawEventHandler += delegate (object sender, DrawEventArgs e)
+			{
+				DrawSquare (e.Context, 0.15, 0);
+			};
+
+			drawable_area = new DrawableArea (container.Width / 2, 0.25);
+			drawable_area.Sensitive = false;
+			container.AddChild (drawable_area);
+
+			drawable_area.DrawEventHandler += delegate (object sender, DrawEventArgs e)
+			{
+				DrawLShape (e.Context, 0.15, 0);
+			};
+
+			// Answers
+			y += 0.3;
+			container = new HorizontalContainer (x, y, 0.8, 0.3);
+			AddWidget (container);
+	
+			for (int i = 0; i < 2; i++)
+			{
+				drawable_area = new DrawableArea (container.Width / 2, 0.25);
+				drawable_area.Data = i;
+				drawable_area.DataEx = GetPossibleAnswer (i);
+				container.AddChild (drawable_area);
+
+				drawable_area.DrawEventHandler += delegate (object sender, DrawEventArgs e)
+				{
+					int n = (int) e.Data;
+					DrawPossibleAnswer (e.Context, 0.12, 0.03, answer, random_indices [n], n);
+
+					e.Context.DrawTextCentered (drawable_area.Width / 2, 0.22, GetPossibleFigureAnswer (n));
+					e.Context.Stroke ();
+				};
+			}
+	
+			container = new HorizontalContainer (x, y + 0.3, 0.8, 0.3);
+			AddWidget (container);
+	
+			for (int i = 2; i < 4; i++)
+			{
+				drawable_area = new DrawableArea (container.Width / 2, 0.25);
+				drawable_area.Data = i;
+				drawable_area.DataEx = GetPossibleAnswer (i);
+				container.AddChild (drawable_area);
+
+				drawable_area.DrawEventHandler += delegate (object sender, DrawEventArgs e)
+				{
+					int n = (int) e.Data;
+					DrawPossibleAnswer (e.Context, 0.12, 0.03, answer, random_indices [n], n);
+
+					e.Context.DrawTextCentered (drawable_area.Width / 2, 0.22, GetPossibleFigureAnswer (n));
+					e.Context.Stroke ();
+				};
+			}
+
+
 		}
 
 		private Color ColorForPortion (char portion)
@@ -224,29 +294,15 @@ namespace gbrainy.Games.Logic
 					gr.Stroke ();
 				}
 			}
-
-			gr.MoveTo (x, y + 0.18);
-			gr.ShowPangoText (GetPossibleFigureAnswer (seq));
-			gr.Stroke ();
 		}
 
 		public override void Draw (CairoContextEx gr, int area_width, int area_height, bool rtl)
 		{
-			double x = DrawAreaX + 0.1, y = DrawAreaY;
-
 			base.Draw (gr, area_width, area_height, rtl);
-	
-			DrawSquare (gr, x, y);
-			DrawLShape (gr, x + 0.4, y);
 
 			gr.MoveTo (0.1, 0.3);
 			gr.ShowPangoText (Catalog.GetString ("Possible answers are:"));
 			gr.Stroke ();
-		
-			DrawPossibleAnswer (gr, x, y + 0.32, answer, random_indices [0], 0);
-			DrawPossibleAnswer (gr, x + 0.4, y + 0.32, answer, random_indices [1], 1);
-			DrawPossibleAnswer (gr, x, y + 0.6, answer, random_indices [2], 2);
-			DrawPossibleAnswer (gr, x + 0.4, y + 0.6, answer, random_indices [3], 3);
 		}
 	}
 }

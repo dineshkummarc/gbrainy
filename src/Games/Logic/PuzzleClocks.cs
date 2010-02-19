@@ -23,6 +23,7 @@ using System;
 
 using gbrainy.Core.Main;
 using gbrainy.Core.Libraries;
+using gbrainy.Core.Toolkit;
 
 namespace gbrainy.Games.Logic
 {
@@ -89,6 +90,61 @@ namespace gbrainy.Games.Logic
 		
 			right_answer = handles[7].ToString ();
 
+			// First row
+			HorizontalContainer container = new HorizontalContainer (DrawAreaX, 0.05, 0.8, 0.45);
+			DrawableArea drawable_area;
+			AddWidget (container);
+			
+			drawable_area = new DrawableArea (0.8 / 2, 0.4);
+			drawable_area.Sensitive = false;
+			container.AddChild (drawable_area);
+
+			drawable_area.DrawEventHandler += delegate (object sender, DrawEventArgs e)
+			{
+				DrawClock (e.Context, 0.2, 0.16, handles[0], handles[1], true);
+				e.Context.DrawTextCentered (drawable_area.Width / 2, 0.36, GetPossibleFigureAnswer (0));
+				e.Context.Stroke ();
+			};
+
+			drawable_area = new DrawableArea (0.8 / 2, 0.4);
+			drawable_area.Sensitive = false;
+			container.AddChild (drawable_area);
+
+			drawable_area.DrawEventHandler += delegate (object sender, DrawEventArgs e)
+			{
+				DrawClock (e.Context, 0.2, 0.16, handles[2], handles[3], true);
+				e.Context.MoveTo (0.03, 0.29);
+				e.Context.DrawTextCentered (drawable_area.Width / 2, 0.36, GetPossibleFigureAnswer (1));
+				e.Context.Stroke ();
+			};
+
+			// Second row
+			container = new HorizontalContainer (DrawAreaX, 0.05 + 0.45, 0.8, 0.45);
+			AddWidget (container);
+			
+			drawable_area = new DrawableArea (0.8 / 2, 0.4);
+			drawable_area.Sensitive = false;
+			container.AddChild (drawable_area);
+
+			drawable_area.DrawEventHandler += delegate (object sender, DrawEventArgs e)
+			{
+				DrawClock (e.Context, 0.2, 0.16, handles[4], handles[5], true);
+				e.Context.DrawTextCentered (drawable_area.Width / 2, 0.36, GetPossibleFigureAnswer (2));
+				e.Context.Stroke ();
+			};
+
+			drawable_area = new DrawableArea (0.8 / 2, 0.4);
+			drawable_area.Sensitive = false;
+			container.AddChild (drawable_area);
+
+			drawable_area.DrawEventHandler += delegate (object sender, DrawEventArgs e)
+			{
+				DrawClock (e.Context, 0.2, 0.16, handles[6], handles[7], DrawAnswer == true);
+				e.Context.MoveTo (0.03, 0.29);
+				e.Context.DrawTextCentered (drawable_area.Width / 2, 0.36, GetPossibleFigureAnswer (3));
+				e.Context.Stroke ();
+			};
+	
 			/*DateTime dt1 = new DateTime (2008, 2, 20, handles[0], handles[1] * 5, 0);
 			DateTime dt2 = new DateTime (2008, 2, 20, handles[2], handles[3] * 5, 0);
 			Console.WriteLine ("t1 {0}", dt1);
@@ -152,30 +208,7 @@ namespace gbrainy.Games.Logic
 
 		public override void Draw (CairoContextEx gr, int area_width, int area_height, bool rtl)
 		{
-			double x = DrawAreaX + 0.1, y = DrawAreaY + 0.05;
-
 			base.Draw (gr, area_width, area_height, rtl);
-
-			DrawClock (gr, x + 0.1, y + 0.1, handles[0], handles[1], true);
-			gr.MoveTo (x + 0.03, y + 0.29);
-			gr.ShowPangoText (GetPossibleFigureAnswer (0));
-			gr.Stroke ();
-	
-			DrawClock (gr, x + 0.5, y + 0.1, handles[2], handles[3], true);
-			gr.MoveTo (x + 0.43, y + 0.29);
-			gr.ShowPangoText (GetPossibleFigureAnswer (1));
-			gr.Stroke ();
-
-			DrawClock (gr, x + 0.1, y + 0.52, handles[4], handles[5], true);
-			gr.MoveTo (x + 0.03, y + 0.71);
-			gr.ShowPangoText (GetPossibleFigureAnswer (2));
-			gr.Stroke ();
-
-			DrawClock (gr, x + 0.5, y + 0.52, handles[6], handles[7], DrawAnswer == true);
-			gr.MoveTo (x + 0.43, y + 0.71);
-			gr.ShowPangoText (GetPossibleFigureAnswer (3));
-			gr.Stroke ();
-
 		}
 	}
 }

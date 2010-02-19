@@ -23,6 +23,7 @@ using System;
 
 using gbrainy.Core.Main;
 using gbrainy.Core.Libraries;
+using gbrainy.Core.Toolkit;
 
 namespace gbrainy.Games.Logic
 {
@@ -63,6 +64,27 @@ namespace gbrainy.Games.Logic
 					right_answer = GetPossibleAnswer (i);
 					break;
 				}
+			}
+
+			HorizontalContainer container = new HorizontalContainer (0.1, 0.5, 0.8, 0.4);
+			DrawableArea drawable_area;
+			AddWidget (container);
+
+			for (int i = 0; i < 3; i++)
+			{
+				drawable_area = new DrawableArea (0.8 / 3, 0.4);
+				drawable_area.Data = i;
+				drawable_area.DataEx = GetPossibleAnswer (i);
+				container.AddChild (drawable_area);
+
+				drawable_area.DrawEventHandler += delegate (object sender, DrawEventArgs e)
+				{
+					int n = (int) e.Data;
+
+					DrawAnswerFigures (e.Context, 0.05, 0.2, random_indices_answers [n]);
+					e.Context.MoveTo (0.05, 0.33);
+					e.Context.ShowPangoText (GetPossibleFigureAnswer (n));
+				};
 			}
 		}
 
@@ -123,7 +145,7 @@ namespace gbrainy.Games.Logic
 				// X
 				// X
 				for (int i = 0; i < 4; i++) {
-					gr.Rectangle (x, y -  rect_height * i, rect_witdh, rect_height);
+					gr.Rectangle (x + 0.05, y -  rect_height * i, rect_witdh, rect_height);
 				}
 				break;
 			case 2:
@@ -151,15 +173,6 @@ namespace gbrainy.Games.Logic
 
 			gr.MoveTo (0.1, 0.4 - 0.02);
 			gr.ShowPangoText (Catalog.GetString ("Possible answers are:"));
-
-			x = 0.2;
-			y = 0.6;
-			for (int i = 0; i < 3; i++) {
-				DrawAnswerFigures (gr, x, y, random_indices_answers [i]);
-				gr.MoveTo (x, y + 0.13);
-				gr.ShowPangoText (GetPossibleFigureAnswer (i));
-				x += space_figures;
-			}
 		}
 	}
 }
