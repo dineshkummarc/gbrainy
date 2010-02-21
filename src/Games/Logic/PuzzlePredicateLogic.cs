@@ -139,16 +139,17 @@ namespace gbrainy.Games.Logic
 				drawable_area.X = DrawAreaX;
 				drawable_area.Y = DrawAreaY + 0.2 + i * 0.15;
 				container.AddChild (drawable_area);
-				drawable_area.Data = opt;
-				drawable_area.DataEx = GetPossibleAnswer (opt);
+				drawable_area.Data = i;
+				drawable_area.DataEx = GetPossibleAnswer (i);
 
 				drawable_area.DrawEventHandler += delegate (object sender, DrawEventArgs e)
 				{
-					int option = (int) e.Data;
+					int data = (int) e.Data;
+					int option = random_indices [data];
 					
 					e.Context.SetPangoNormalFontSize ();
 					e.Context.MoveTo (0.05, 0.02);
-					e.Context.ShowPangoText (String.Format (Catalog.GetString ("{0}) {1}"), GetPossibleAnswer (option),
+					e.Context.ShowPangoText (String.Format (Catalog.GetString ("{0}) {1}"), GetPossibleAnswer (data),
 						predicates[question].options[option].ToString ()));
 					e.Context.Stroke ();
 				};
@@ -160,7 +161,7 @@ namespace gbrainy.Games.Logic
 			base.Draw (gr, area_width, area_height, rtl);
 
 			gr.SetPangoLargeFontSize ();
-			gr.MoveTo (0.1, DrawAreaY + 0.1);
+			gr.MoveTo (0.1, DrawAreaY + 0.05);
 			gr.ShowPangoText (Catalog.GetString ("Possible answers are:"));
 		}
 	}
