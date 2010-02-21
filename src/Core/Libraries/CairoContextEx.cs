@@ -124,7 +124,7 @@ namespace gbrainy.Core.Libraries
 
 		public void SetPangoNormalFontSize ()
 		{
-			font_size = 0.025;
+			font_size = 0.022;
 		}
 
 		public void SetPangoLargeFontSize ()
@@ -195,6 +195,8 @@ namespace gbrainy.Core.Libraries
 				layout.Width = (int) ((1.0 - x -  width_margin) * old.Xx * Pango.Scale.PangoScale);
 			else	
 				layout.Width = (int) (width * old.Xx * Pango.Scale.PangoScale);
+
+			layout.Spacing = (int) (0.018 * (old.Xx * Pango.Scale.PangoScale));
 
 			layout.SingleParagraphMode = false;
 			layout.SetText (str);
