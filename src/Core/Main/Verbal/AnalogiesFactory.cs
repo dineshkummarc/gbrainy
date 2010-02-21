@@ -132,6 +132,7 @@ namespace gbrainy.Core.Main.Verbal
 					}
 				}
 
+				reader.Close ();
 				read = true;
 
 				int cnt = 0;	

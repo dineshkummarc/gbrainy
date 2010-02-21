@@ -93,8 +93,7 @@ namespace gbrainy.Games.Logic
 					// Translators: {0} is always a number greater than 5
 					Catalog.GetString ("Wrapping an anniversary present costs one euro. The anniversary present costs {0} euros more than the cost to wrap it. How much does it cost to both purchase and wrap the present?"),
 					present);
-				answer = String.Format (
-					Catalog.GetString ("Individually, the present costs one euro more to purchase than to wrap."));
+				answer = Catalog.GetString ("Individually, the present costs one euro more to purchase than to wrap.");
 				break;
 			default:
 				throw new Exception ("Unexpected value");
