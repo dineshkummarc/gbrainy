@@ -132,13 +132,13 @@ namespace gbrainy.Games.Memory
 				case Type.Turn: {
 					switch ((TurnDirection) obj) {
 					case TurnDirection.Right:
-						return Catalog.GetString ("Turn right");
+						return Catalog.GetString ("Move right");
 					case TurnDirection.Left:
-						return Catalog.GetString ("Turn left");
+						return Catalog.GetString ("Move left");
 					case TurnDirection.Up:
-						return Catalog.GetString ("Go up");
+						return Catalog.GetString ("Move up");
 					case TurnDirection.Down:
-						return Catalog.GetString ("Go down");
+						return Catalog.GetString ("Move down");
 					}
 					break;
 				}
