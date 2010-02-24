@@ -38,8 +38,7 @@ namespace gbrainy.Core.Main
 			CalculationTrainers	= 8,
 			VerbalAnalogies		= 16,
 			Custom			= 32,
-			TrainersOnly		= MemoryTrainers | CalculationTrainers,
-			AllGames		= MemoryTrainers | CalculationTrainers | LogicPuzzles
+			AllGames		= MemoryTrainers | CalculationTrainers | LogicPuzzles | VerbalAnalogies
 		}
 
 		private enum ScoresType

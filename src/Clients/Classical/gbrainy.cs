@@ -528,11 +528,6 @@ namespace gbrainy.Clients.Classical
 			OnNewGame (GameSession.Types.AllGames);
 		}
 
-		void OnTrainersOnly (object sender, EventArgs args)
-		{
-			OnNewGame (GameSession.Types.TrainersOnly);
-		}
-
 		void OnAnswerActivate (object sender, EventArgs args)
 		{
 			if (answer_entry.Text.Length > 0) {
