@@ -133,8 +133,6 @@ namespace gbrainy.Games.Logic
 	
 			for (int i = 0; i <  predicates[question].options.Length; i++)
 			{
-				int opt = random_indices [i];
-
 				DrawableArea drawable_area = new DrawableArea (0.8, 0.1);
 				drawable_area.X = DrawAreaX;
 				drawable_area.Y = DrawAreaY + 0.2 + i * 0.15;

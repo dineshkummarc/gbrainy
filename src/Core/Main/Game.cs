@@ -76,9 +76,7 @@ namespace gbrainy.Core.Main
 		protected Game ()
 		{
 			random = new Random ();
-			draw_answer = false;
 			default_color = new Cairo.Color (0, 0, 0);
-			tip_used = false;
 			difficulty = Difficulty.Medium;
 			containers = new List <Toolkit.Container> ();
 		}
