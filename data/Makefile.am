@@ -11,6 +11,18 @@ images = $(datadir)/games/gbrainy
 
 man_MANS = gbrainy.6
 
+desktop_in_files=	\
+	gbrainy.desktop.in	
+
+desktop_files=$(desktop_in_files:.desktop.in=.desktop)
+@INTLTOOL_DESKTOP_RULE@
+
+Applicationsdir = $(datadir)/applications
+Applications_DATA = $(desktop_files)
+
+pkgconfigdir = $(libdir)/pkgconfig
+pkgconfig_DATA = gbrainy.pc
+
 tango_icons = 				\
 	app-graphics/gbrainy.png	\
 	app-graphics/gbrainy.svg	\
@@ -68,4 +80,6 @@ uninstall-hook:
 
 noinst_DATA = 	
 
-EXTRA_DIST = $(pixmap_DATA) $(tango_icons) $(game_graphics) $(man_MANS) $(analogies_DATA)
+DISTCLEANFILES = $(desktop_files)
+
+EXTRA_DIST = $(pixmap_DATA) $(tango_icons) $(game_graphics) $(man_MANS) $(analogies_DATA) $(desktop_in_files) gbrainy.pc.in

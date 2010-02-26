@@ -4,14 +4,7 @@ SUBDIRS = 		\
 	po		\
 	help
 
-desktop_in_files=	\
-	gbrainy.desktop.in	
 
-desktop_files=$(desktop_in_files:.desktop.in=.desktop)
-@INTLTOOL_DESKTOP_RULE@
-
-Applicationsdir = $(datadir)/applications
-Applications_DATA = $(desktop_files)
 
 CLEANFILES =			\
 	intltool-extract	\
@@ -23,14 +16,12 @@ EXTRA_DIST =			\
 	intltool-extract.in	\
 	intltool-merge.in	\
 	intltool-update.in	\
-	gnome-doc-utils.make	\
-        $(desktop_in_files)
+	gnome-doc-utils.make
 
 DISTCLEANFILES = \
         intltool-extract        \
         intltool-merge          \
         intltool-update         \
-	gnome-doc-utils.make	\
-        $(desktop_files)
+	gnome-doc-utils.make
 
 DISTCHECK_CONFIGURE_FLAGS = --disable-scrollkeeper

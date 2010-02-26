@@ -134,6 +134,7 @@ src/Core/Makefile
 src/Games/Makefile
 src/Clients/Classical/Makefile
 data/Makefile
+data/gbrainy.pc
 help/Makefile
 ])
 
