@@ -7,13 +7,14 @@
 #
 # Please submit bugfixes or comments via http://bugs.opensuse.org/
 #
-
+# 
+# 
 # norootforbuild
 
 Name:           gbrainy
-Version:        1.30
+Version:        1.40
 Release:        1.0
-License:        GPL
+License:        GPL v2 or later
 Source:         %{name}-%{version}.tar.gz
 Autoreqprov:    on
 PreReq:         filesystem
@@ -80,6 +81,7 @@ rm -rf "$RPM_BUILD_ROOT"
 %{_datadir}/gnome/help/gbrainy/*
 %{_datadir}/gnome/help/gbrainy/
 %{_libdir}/gbrainy
+%{_libdir}/pkgconfig/gbrainy.pc
 %{_datadir}/games/gbrainy/*
 %{_datadir}/games/gbrainy/
 
