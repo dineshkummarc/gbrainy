@@ -386,7 +386,7 @@ namespace gbrainy.Core.Main
 					str = Catalog.GetString ("Memory");
 					break;
 				case Game.Types.MathTrainer:
-					str = Catalog.GetString ("Mental Calculation");
+					str = Catalog.GetString ("Calculation");
 					break;
 				case Game.Types.VerbalAnalogy:
 					str = Catalog.GetString ("Verbal");
