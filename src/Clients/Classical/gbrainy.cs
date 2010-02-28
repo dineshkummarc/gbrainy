@@ -490,7 +490,6 @@ namespace gbrainy.Clients.Classical
 
 		void OnMemoryOnly (object sender, EventArgs args)
 		{
-			session.Type = GameSession.Types.MemoryTrainers;
 			OnNewGame (GameSession.Types.MemoryTrainers);
 		}
 
