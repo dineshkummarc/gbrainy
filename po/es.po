@@ -10,8 +10,8 @@ msgstr ""
 "Project-Id-Version: gbrainy.HEAD\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=gbrainy&component=general\n"
-"POT-Creation-Date: 2010-02-22 06:54+0000\n"
-"PO-Revision-Date: 2010-02-25 08:43+0100\n"
+"POT-Creation-Date: 2010-03-01 19:43+0000\n"
+"PO-Revision-Date: 2010-03-01 22:22+0100\n"
 "Last-Translator: Jorge González <jorgegonz@svn.gnome.org>\n"
 "Language-Team: Español <gnome-es-list@gnome.org>\n"
 "MIME-Version: 1.0\n"
@@ -126,7 +126,6 @@ msgid "Oboe"
 msgstr "Oboe"
 
 #: ../data/verbal_analogies.xml.h:27
-#| msgid "Person spelled from society"
 msgid "Person expelled from society"
 msgstr "Persona rechazada por la sociedad"
 
@@ -243,7 +242,6 @@ msgid "broken"
 msgstr "roto"
 
 #: ../data/verbal_analogies.xml.h:58
-#| msgid "burst"
 msgid "burst | pop"
 msgstr "reventar | estallar"
 
@@ -273,7 +271,6 @@ msgid "coins"
 msgstr "monedas"
 
 #: ../data/verbal_analogies.xml.h:66
-#| msgid "composer"
 msgid "composer | writer"
 msgstr "compositor | escritor"
 
@@ -443,7 +440,6 @@ msgid "ring / finger | bracelet"
 msgstr "anillo / dedo | brazalete"
 
 #: ../data/verbal_analogies.xml.h:109
-#| msgid "seals / flippers | bird"
 msgid "seal / flippers | bird"
 msgstr "foca / aletas | pájaro"
 
@@ -510,7 +506,6 @@ msgid "tennis / sport | ballet"
 msgstr "tenis / deporte | ballet"
 
 #: ../data/verbal_analogies.xml.h:127
-#| msgid "Other"
 msgid "theatre"
 msgstr "teatro"
 
@@ -567,11 +562,11 @@ msgstr "muñeca"
 msgid "zoo"
 msgstr "zoo"
 
-#: ../gbrainy.desktop.in.h:1
+#: ../data/gbrainy.desktop.in.h:1
 msgid "Game"
 msgstr "Juego"
 
-#: ../gbrainy.desktop.in.h:2
+#: ../data/gbrainy.desktop.in.h:2
 msgid ""
 "Play games that challenge your logic, verbal, calculation and memory "
 "abilities"
@@ -579,7 +574,7 @@ msgstr ""
 "Jugar a los juegos que desafíen mi capacidades lógicas, verbales, cálculo y "
 "memoria"
 
-#: ../gbrainy.desktop.in.h:3 ../src/Clients/Classical/gbrainy.ui.h:23
+#: ../data/gbrainy.desktop.in.h:3 ../src/Clients/Classical/gbrainy.ui.h:23
 msgid "gbrainy"
 msgstr "gbrainy"
 
@@ -593,21 +588,22 @@ msgstr "Prepárate para memorizar los siguientes objetos…"
 msgid "Total"
 msgstr "Total"
 
-#: ../src/Core/Views/FinishView.cs:99 ../src/Core/Main/Game.cs:385
+#: ../src/Core/Views/FinishView.cs:99 ../src/Core/Main/Game.cs:383
 #: ../src/Clients/Classical/gbrainy.cs:307
 msgid "Logic"
 msgstr "Lógica"
 
-#: ../src/Core/Views/FinishView.cs:106 ../src/Clients/Classical/gbrainy.cs:312
+#: ../src/Core/Views/FinishView.cs:106 ../src/Core/Main/Game.cs:389
+#: ../src/Clients/Classical/gbrainy.cs:312
 msgid "Calculation"
 msgstr "Cálculo"
 
-#: ../src/Core/Views/FinishView.cs:113 ../src/Core/Main/Game.cs:388
+#: ../src/Core/Views/FinishView.cs:113 ../src/Core/Main/Game.cs:386
 #: ../src/Clients/Classical/gbrainy.cs:318
 msgid "Memory"
 msgstr "Memoria"
 
-#: ../src/Core/Views/FinishView.cs:120 ../src/Core/Main/Game.cs:394
+#: ../src/Core/Views/FinishView.cs:120 ../src/Core/Main/Game.cs:392
 #: ../src/Clients/Classical/gbrainy.cs:324
 msgid "Verbal"
 msgstr "Verbal"
@@ -773,7 +769,7 @@ msgstr "negro"
 msgid "white"
 msgstr "blanco"
 
-#: ../src/Core/Main/Game.cs:111
+#: ../src/Core/Main/Game.cs:109
 #, csharp-format
 msgid "The correct answer is {0}."
 msgstr "La respuesta correcta es {0}."
@@ -785,53 +781,49 @@ msgstr "La respuesta correcta es {0}."
 #. For languages represented with the Latin alphabet use
 #. the same than English
 #. First possible answer for a series (e.g.: Figure A)
-#: ../src/Core/Main/Game.cs:310
+#: ../src/Core/Main/Game.cs:308
 msgid "A"
 msgstr "A"
 
 #. Second possible answer for a series
-#: ../src/Core/Main/Game.cs:312
+#: ../src/Core/Main/Game.cs:310
 msgid "B"
 msgstr "B"
 
 #. Third possible answer for a series
-#: ../src/Core/Main/Game.cs:314
+#: ../src/Core/Main/Game.cs:312
 msgid "C"
 msgstr "C"
 
 #. Fourth possible answer for a series
-#: ../src/Core/Main/Game.cs:316
+#: ../src/Core/Main/Game.cs:314
 msgid "D"
 msgstr "D"
 
 #. Fifth possible answer for a series
-#: ../src/Core/Main/Game.cs:318
+#: ../src/Core/Main/Game.cs:316
 msgid "E"
 msgstr "E"
 
 #. Sixth possible answer for a series
-#: ../src/Core/Main/Game.cs:320
+#: ../src/Core/Main/Game.cs:318
 msgid "F"
 msgstr "F"
 
 #. Seventh possible answer for a series
-#: ../src/Core/Main/Game.cs:322
+#: ../src/Core/Main/Game.cs:320
 msgid "G"
 msgstr "G"
 
 #. Eighth possible answer for a series
-#: ../src/Core/Main/Game.cs:324
+#: ../src/Core/Main/Game.cs:322
 msgid "H"
 msgstr "H"
 
-#: ../src/Core/Main/Game.cs:332
+#: ../src/Core/Main/Game.cs:330
 #, csharp-format
 msgid "Figure {0}"
 msgstr "Figura {0}"
-
-#: ../src/Core/Main/Game.cs:391
-msgid "Mental Calculation"
-msgstr "Cálculo mental"
 
 #: ../src/Core/Main/GameManager.cs:135
 #, csharp-format
@@ -842,22 +834,22 @@ msgstr ""
 "Juegos registrados: {0}: {1} puzles lógicos, {2} entrenadores de cálculo, "
 "{3} entrenadores de memoria, {4} analogías verbales"
 
-#: ../src/Core/Main/GameSession.cs:248
+#: ../src/Core/Main/GameSession.cs:247
 #, csharp-format
 msgid "Games played: {0} ({1}% score)"
 msgstr "Partidas jugadas: {0} (puntuación {1}%)"
 
-#: ../src/Core/Main/GameSession.cs:249
+#: ../src/Core/Main/GameSession.cs:248
 #, csharp-format
 msgid " - Time: {0}"
 msgstr " - Tiempo: {0}"
 
-#: ../src/Core/Main/GameSession.cs:252
+#: ../src/Core/Main/GameSession.cs:251
 #, csharp-format
 msgid "- Game: {0}"
 msgstr " - Juego: {0}"
 
-#: ../src/Core/Main/GameSession.cs:313
+#: ../src/Core/Main/GameSession.cs:312
 msgid "Paused"
 msgstr "Pausado"
 
@@ -969,7 +961,7 @@ msgstr "{0} Responde {1}."
 #: ../src/Core/Main/Verbal/AnalogiesMultipleOptions.cs:117
 #: ../src/Core/Main/Verbal/AnalogiesPairOfWordsOptions.cs:116
 #: ../src/Games/Logic/PuzzleOstracism.cs:157
-#: ../src/Games/Logic/PuzzlePredicateLogic.cs:152
+#: ../src/Games/Logic/PuzzlePredicateLogic.cs:150
 #: ../src/Games/Calculation/CalculationCloserFraction.cs:165
 #, csharp-format
 msgid "{0}) {1}"
@@ -983,7 +975,7 @@ msgstr "{0}) {1}"
 #: ../src/Games/Logic/PuzzleMissingSlice.cs:219
 #: ../src/Games/Logic/PuzzleMostInCommon.cs:317
 #: ../src/Games/Logic/PuzzleNextFigure.cs:169
-#: ../src/Games/Logic/PuzzlePredicateLogic.cs:165
+#: ../src/Games/Logic/PuzzlePredicateLogic.cs:163
 #: ../src/Games/Logic/PuzzleSquareDots.cs:207
 #: ../src/Games/Logic/PuzzleTetris.cs:175
 msgid "Possible answers are:"
@@ -1059,7 +1051,7 @@ msgid "Play games that challenge your verbal aptitude"
 msgstr "Jugar a los juegos que desafíen mi aptitud verbal"
 
 #: ../src/Clients/Classical/gbrainy.cs:330
-#: ../src/Clients/Classical/gbrainy.cs:561
+#: ../src/Clients/Classical/gbrainy.cs:555
 msgid "Pause"
 msgstr "Pausar"
 
@@ -1092,7 +1084,7 @@ msgstr ""
 "Una vez que tengas la respuesta escríbela en «Respuesta:» y pulsa el botón "
 "«Aceptar»."
 
-#: ../src/Clients/Classical/gbrainy.cs:565
+#: ../src/Clients/Classical/gbrainy.cs:559
 msgid "Resume"
 msgstr "Reanudar"
 
@@ -1801,20 +1793,25 @@ msgid "Matrix numbers"
 msgstr "Números máximos"
 
 #: ../src/Games/Logic/PuzzleMatrixNumbers.cs:50
+#| msgid ""
+#| "The numbers in the matrix follow a logic. Which is the number that should "
+#| "replace the question mark?"
 msgid ""
-"The numbers in the matrix follow a logic. Which is the number that should "
-"replace the question mark?"
+"The numbers in the matrix follow a pattern. Which number should replace the "
+"question mark?"
 msgstr ""
-"Los números de la matriz inferior siguen una lógica. ¿Cuál es el número que "
-"ha de sustituir el interrogante?"
+"Los números de la matriz siguen un patrón. ¿Cuál es el número que ha de "
+"sustituir el interrogante?"
 
 #: ../src/Games/Logic/PuzzleMatrixNumbers.cs:56
-msgid "The logic is arithmetical and works vertically."
-msgstr "La lógica es aritmética y funciona verticalmente."
+#| msgid "The logic is arithmetical and works vertically."
+msgid "The pattern is arithmetical and works vertically."
+msgstr "El patrón es aritmética y funciona verticalmente."
 
 #: ../src/Games/Logic/PuzzleMatrixNumbers.cs:58
-msgid "The logic is arithmetical and works horizontally."
-msgstr "La lógica es aritmética y funciona horizontalmente."
+#| msgid "The logic is arithmetical and works horizontally."
+msgid "The pattern is arithmetical and works horizontally."
+msgstr "El patrón es aritmética y funciona horizontalmente."
 
 #: ../src/Games/Logic/PuzzleMatrixNumbers.cs:69
 #, csharp-format
@@ -2350,12 +2347,15 @@ msgid "Squares and letters"
 msgstr "Cuadrados y letras"
 
 #: ../src/Games/Logic/PuzzleSquaresAndLetters.cs:41
+#| msgid ""
+#| "The letters around the squares follow a logic. Which letter should "
+#| "replace the question mark in the last square?"
 msgid ""
-"The letters around the squares follow a logic. Which letter should replace "
+"The letters around the squares follow a pattern. Which letter should replace "
 "the question mark in the last square?"
 msgstr ""
-"Las letras alrededor de los cuadrados siguen un orden lógico. ¿Qué letra "
-"debe reemplazar el interrogante en el ultimo cuadrado?"
+"Las letras alrededor de los cuadrados siguen un patrón. ¿Qué letra debe "
+"reemplazar el interrogante en el ultimo cuadrado?"
 
 #: ../src/Games/Logic/PuzzleSquaresAndLetters.cs:47
 #, csharp-format
@@ -2663,22 +2663,18 @@ msgid "Start at point number {0}"
 msgstr "Empezar en el punto {0}"
 
 #: ../src/Games/Memory/MemoryIndications.cs:135
-#| msgid "Move figure"
 msgid "Move right"
 msgstr "Mover a la derecha"
 
 #: ../src/Games/Memory/MemoryIndications.cs:137
-#| msgid "Move figure"
 msgid "Move left"
 msgstr "Mover a la izquierda"
 
 #: ../src/Games/Memory/MemoryIndications.cs:139
-#| msgid "Move figure"
 msgid "Move up"
 msgstr "Mover arriba"
 
 #: ../src/Games/Memory/MemoryIndications.cs:141
-#| msgid "Go down"
 msgid "Move down"
 msgstr "Mover abajo"
 
@@ -3295,6 +3291,9 @@ msgstr "_Desinstalar…"
 #: ../src/Clients/Classical/mono-addins-strings.xml.h:35
 msgid "_Unselect All"
 msgstr "_Deseleccionar todo"
+
+#~ msgid "Mental Calculation"
+#~ msgstr "Cálculo mental"
 
 #~ msgid "ant / insect"
 #~ msgstr "hormiga / insecto"
