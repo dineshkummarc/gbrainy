@@ -47,15 +47,15 @@ namespace gbrainy.Games.Logic
 		}
 
 		public override string Question {
-			get {return Catalog.GetString ("The numbers in the matrix follow a logic. Which is the number that should replace the question mark?");}
+			get {return Catalog.GetString ("The numbers in the matrix follow a pattern. Which number should replace the question mark?");}
 		}
 
 		public override string Tip {
 			get { 
 				if (orientation) 
-					return Catalog.GetString ("The logic is arithmetical and works vertically.");
+					return Catalog.GetString ("The pattern is arithmetical and works vertically.");
 				else 
-					return Catalog.GetString ("The logic is arithmetical and works horizontally.");
+					return Catalog.GetString ("The pattern is arithmetical and works horizontally.");
 			}
 		}
 

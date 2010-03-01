@@ -38,7 +38,7 @@ namespace gbrainy.Games.Logic
 		}
 
 		public override string Question {
-			get {return Catalog.GetString ("The letters around the squares follow a logic. Which letter should replace the question mark in the last square?");} 
+			get {return Catalog.GetString ("The letters around the squares follow a pattern. Which letter should replace the question mark in the last square?");} 
 		}
 
 		public override string Answer {
