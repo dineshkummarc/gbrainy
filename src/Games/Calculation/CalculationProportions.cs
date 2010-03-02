@@ -46,7 +46,7 @@ namespace gbrainy.Games.Calculation
 		public override string Question {
 			get {
 				return String.Format (
-					Catalog.GetString ("What is the {0}% of {1}/{2}? Answer {3}, {4}, {5} or {6}."), 
+					Catalog.GetString ("What is {0}% of {1}/{2}? Answer {3}, {4}, {5} or {6}."), 
 					percentage, num, den, GetPossibleAnswer (0), GetPossibleAnswer (1), GetPossibleAnswer (2), GetPossibleAnswer (3));}
 		}
 
