@@ -9,8 +9,8 @@ msgstr ""
 "Project-Id-Version: gbrainy\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=gbrainy&component=general\n"
-"POT-Creation-Date: 2010-02-22 06:54+0000\n"
-"PO-Revision-Date: 2010-02-22 14:34+0100\n"
+"POT-Creation-Date: 2010-03-01 19:43+0000\n"
+"PO-Revision-Date: 2010-03-01 21:27+0100\n"
 "Last-Translator: Marek Černocký <marek@manet.cz>\n"
 "Language-Team: Czech <gnome-cs-list@gnome.org>\n"
 "MIME-Version: 1.0\n"
@@ -562,11 +562,11 @@ msgstr "zápěstí"
 msgid "zoo"
 msgstr "zoo"
 
-#: ../gbrainy.desktop.in.h:1
+#: ../data/gbrainy.desktop.in.h:1
 msgid "Game"
 msgstr "Hra"
 
-#: ../gbrainy.desktop.in.h:2
+#: ../data/gbrainy.desktop.in.h:2
 msgid ""
 "Play games that challenge your logic, verbal, calculation and memory "
 "abilities"
@@ -574,7 +574,7 @@ msgstr ""
 "Zahrát si hry, které vyzkoušejí vaše logické, slovní, početní a paměťové "
 "schopnosti"
 
-#: ../gbrainy.desktop.in.h:3 ../src/Clients/Classical/gbrainy.ui.h:23
+#: ../data/gbrainy.desktop.in.h:3 ../src/Clients/Classical/gbrainy.ui.h:23
 msgid "gbrainy"
 msgstr "gbrainy"
 
@@ -588,21 +588,22 @@ msgstr "Připravte se na zapamatování si několika věcí…"
 msgid "Total"
 msgstr "Celkem"
 
-#: ../src/Core/Views/FinishView.cs:99 ../src/Core/Main/Game.cs:385
+#: ../src/Core/Views/FinishView.cs:99 ../src/Core/Main/Game.cs:383
 #: ../src/Clients/Classical/gbrainy.cs:307
 msgid "Logic"
 msgstr "Logické"
 
-#: ../src/Core/Views/FinishView.cs:106 ../src/Clients/Classical/gbrainy.cs:312
+#: ../src/Core/Views/FinishView.cs:106 ../src/Core/Main/Game.cs:389
+#: ../src/Clients/Classical/gbrainy.cs:312
 msgid "Calculation"
 msgstr "Matematické"
 
-#: ../src/Core/Views/FinishView.cs:113 ../src/Core/Main/Game.cs:388
+#: ../src/Core/Views/FinishView.cs:113 ../src/Core/Main/Game.cs:386
 #: ../src/Clients/Classical/gbrainy.cs:318
 msgid "Memory"
 msgstr "Paměťové"
 
-#: ../src/Core/Views/FinishView.cs:120 ../src/Core/Main/Game.cs:394
+#: ../src/Core/Views/FinishView.cs:120 ../src/Core/Main/Game.cs:392
 #: ../src/Clients/Classical/gbrainy.cs:324
 msgid "Verbal"
 msgstr "Slovní"
@@ -767,7 +768,7 @@ msgstr "černá"
 msgid "white"
 msgstr "bílá"
 
-#: ../src/Core/Main/Game.cs:111
+#: ../src/Core/Main/Game.cs:109
 #, csharp-format
 msgid "The correct answer is {0}."
 msgstr "Správná odpověď je {0}."
@@ -779,53 +780,49 @@ msgstr "Správná odpověď je {0}."
 #. For languages represented with the Latin alphabet use
 #. the same than English
 #. First possible answer for a series (e.g.: Figure A)
-#: ../src/Core/Main/Game.cs:310
+#: ../src/Core/Main/Game.cs:308
 msgid "A"
 msgstr "A"
 
 #. Second possible answer for a series
-#: ../src/Core/Main/Game.cs:312
+#: ../src/Core/Main/Game.cs:310
 msgid "B"
 msgstr "B"
 
 #. Third possible answer for a series
-#: ../src/Core/Main/Game.cs:314
+#: ../src/Core/Main/Game.cs:312
 msgid "C"
 msgstr "C"
 
 #. Fourth possible answer for a series
-#: ../src/Core/Main/Game.cs:316
+#: ../src/Core/Main/Game.cs:314
 msgid "D"
 msgstr "D"
 
 #. Fifth possible answer for a series
-#: ../src/Core/Main/Game.cs:318
+#: ../src/Core/Main/Game.cs:316
 msgid "E"
 msgstr "E"
 
 #. Sixth possible answer for a series
-#: ../src/Core/Main/Game.cs:320
+#: ../src/Core/Main/Game.cs:318
 msgid "F"
 msgstr "F"
 
 #. Seventh possible answer for a series
-#: ../src/Core/Main/Game.cs:322
+#: ../src/Core/Main/Game.cs:320
 msgid "G"
 msgstr "G"
 
 #. Eighth possible answer for a series
-#: ../src/Core/Main/Game.cs:324
+#: ../src/Core/Main/Game.cs:322
 msgid "H"
 msgstr "H"
 
-#: ../src/Core/Main/Game.cs:332
+#: ../src/Core/Main/Game.cs:330
 #, csharp-format
 msgid "Figure {0}"
 msgstr "Obrázek {0}"
-
-#: ../src/Core/Main/Game.cs:391
-msgid "Mental Calculation"
-msgstr "Počítání z hlavy"
 
 #: ../src/Core/Main/GameManager.cs:135
 #, csharp-format
@@ -836,22 +833,22 @@ msgstr ""
 "Registrované hry: {0}: {1} logické hlavolamy, {2} početní úlohy, {3} trénink "
 "paměti, {4} slovní analogie"
 
-#: ../src/Core/Main/GameSession.cs:248
+#: ../src/Core/Main/GameSession.cs:247
 #, csharp-format
 msgid "Games played: {0} ({1}% score)"
 msgstr "Počet odehraných her: {0} ({1} % bodů)"
 
-#: ../src/Core/Main/GameSession.cs:249
+#: ../src/Core/Main/GameSession.cs:248
 #, csharp-format
 msgid " - Time: {0}"
 msgstr " — Čas: {0}"
 
-#: ../src/Core/Main/GameSession.cs:252
+#: ../src/Core/Main/GameSession.cs:251
 #, csharp-format
 msgid "- Game: {0}"
 msgstr "— Hra: {0}"
 
-#: ../src/Core/Main/GameSession.cs:313
+#: ../src/Core/Main/GameSession.cs:312
 msgid "Paused"
 msgstr "Přestávka"
 
@@ -964,7 +961,7 @@ msgstr "{0} Odpovězte {1}."
 #: ../src/Core/Main/Verbal/AnalogiesMultipleOptions.cs:117
 #: ../src/Core/Main/Verbal/AnalogiesPairOfWordsOptions.cs:116
 #: ../src/Games/Logic/PuzzleOstracism.cs:157
-#: ../src/Games/Logic/PuzzlePredicateLogic.cs:152
+#: ../src/Games/Logic/PuzzlePredicateLogic.cs:150
 #: ../src/Games/Calculation/CalculationCloserFraction.cs:165
 #, csharp-format
 msgid "{0}) {1}"
@@ -978,7 +975,7 @@ msgstr "{0}) {1}"
 #: ../src/Games/Logic/PuzzleMissingSlice.cs:219
 #: ../src/Games/Logic/PuzzleMostInCommon.cs:317
 #: ../src/Games/Logic/PuzzleNextFigure.cs:169
-#: ../src/Games/Logic/PuzzlePredicateLogic.cs:165
+#: ../src/Games/Logic/PuzzlePredicateLogic.cs:163
 #: ../src/Games/Logic/PuzzleSquareDots.cs:207
 #: ../src/Games/Logic/PuzzleTetris.cs:175
 msgid "Possible answers are:"
@@ -1052,7 +1049,7 @@ msgid "Play games that challenge your verbal aptitude"
 msgstr "Zahrát si hry, které vyzkoušejí vaši slovní zásobu"
 
 #: ../src/Clients/Classical/gbrainy.cs:330
-#: ../src/Clients/Classical/gbrainy.cs:561
+#: ../src/Clients/Classical/gbrainy.cs:555
 msgid "Pause"
 msgstr "Přestávka"
 
@@ -1084,7 +1081,7 @@ msgstr ""
 "Pokud znáte odpověď, napište ji do políčka „Odpověď:“ a stiskněte tlačítko "
 "„Budiž“."
 
-#: ../src/Clients/Classical/gbrainy.cs:565
+#: ../src/Clients/Classical/gbrainy.cs:559
 msgid "Resume"
 msgstr "Pokračovat"
 
@@ -1783,19 +1780,19 @@ msgstr "Čísla v matici"
 
 #: ../src/Games/Logic/PuzzleMatrixNumbers.cs:50
 msgid ""
-"The numbers in the matrix follow a logic. Which is the number that should "
-"replace the question mark?"
+"The numbers in the matrix follow a pattern. Which number should replace the "
+"question mark?"
 msgstr ""
-"Čísla jsou v matici uspořádána podle určité logiky. Jaké číslo musíte "
+"Čísla jsou v mřížce uspořádána podle určité logiky. Jaké číslo by se mělo "
 "doplnit místo otazníku?"
 
 #: ../src/Games/Logic/PuzzleMatrixNumbers.cs:56
-msgid "The logic is arithmetical and works vertically."
-msgstr "Logika je založená na aritmetice a funguje vertikálně (svisle)."
+msgid "The pattern is arithmetical and works vertically."
+msgstr "Logika je založená na aritmetice a funguje svisle."
 
 #: ../src/Games/Logic/PuzzleMatrixNumbers.cs:58
-msgid "The logic is arithmetical and works horizontally."
-msgstr "Logika je založená na aritmetice a funguje horizontálně (vodorovně)."
+msgid "The pattern is arithmetical and works horizontally."
+msgstr "Logika je založená na aritmetice a funguje vodorovně."
 
 #: ../src/Games/Logic/PuzzleMatrixNumbers.cs:69
 #, csharp-format
@@ -2323,11 +2320,11 @@ msgstr "Čtverce a písmena"
 
 #: ../src/Games/Logic/PuzzleSquaresAndLetters.cs:41
 msgid ""
-"The letters around the squares follow a logic. Which letter should replace "
+"The letters around the squares follow a pattern. Which letter should replace "
 "the question mark in the last square?"
 msgstr ""
-"Písmena okolo čtverců jsou uspořádána podle určité logiky. Jaké písmeno "
-"musíte doplnit místo otazníku?"
+"Písmena okolo čtverců jsou uspořádána podle určité logiky. Jaké písmeno by "
+"se mělo doplnit místo otazníku?"
 
 #: ../src/Games/Logic/PuzzleSquaresAndLetters.cs:47
 #, csharp-format
