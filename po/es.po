@@ -10,8 +10,8 @@ msgstr ""
 "Project-Id-Version: gbrainy.HEAD\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=gbrainy&component=general\n"
-"POT-Creation-Date: 2010-03-01 19:43+0000\n"
-"PO-Revision-Date: 2010-03-01 22:22+0100\n"
+"POT-Creation-Date: 2010-03-02 19:52+0000\n"
+"PO-Revision-Date: 2010-03-03 18:30+0100\n"
 "Last-Translator: Jorge González <jorgegonz@svn.gnome.org>\n"
 "Language-Team: Español <gnome-es-list@gnome.org>\n"
 "MIME-Version: 1.0\n"
@@ -1163,7 +1163,8 @@ msgid "Enabled"
 msgstr "Activado"
 
 #: ../src/Clients/Classical/Dialogs/PlayerHistoryDialog.cs:47
-msgid "The graphic below shows the player's game score evolution. "
+#| msgid "The graphic below shows the player's game score evolution. "
+msgid "The graph below shows the player's game score evolution. "
 msgstr ""
 "El gráfico de abajo muestra la evolución de la puntuación de las partidas "
 "del jugador. "
@@ -1238,7 +1239,8 @@ msgid "Medium"
 msgstr "Medio"
 
 #: ../src/Clients/Classical/Dialogs/ui/PreferencesDialog.ui.h:10
-msgid "Minimum number of played games to store the game:"
+#| msgid "Minimum number of played games to store the game:"
+msgid "Minimum number of played puzzles to store the game:"
 msgstr "Mínimo número de partidas jugadas para almacenar la partida:"
 
 #: ../src/Clients/Classical/Dialogs/ui/PreferencesDialog.ui.h:11
@@ -1793,9 +1795,6 @@ msgid "Matrix numbers"
 msgstr "Números máximos"
 
 #: ../src/Games/Logic/PuzzleMatrixNumbers.cs:50
-#| msgid ""
-#| "The numbers in the matrix follow a logic. Which is the number that should "
-#| "replace the question mark?"
 msgid ""
 "The numbers in the matrix follow a pattern. Which number should replace the "
 "question mark?"
@@ -1804,12 +1803,10 @@ msgstr ""
 "sustituir el interrogante?"
 
 #: ../src/Games/Logic/PuzzleMatrixNumbers.cs:56
-#| msgid "The logic is arithmetical and works vertically."
 msgid "The pattern is arithmetical and works vertically."
 msgstr "El patrón es aritmética y funciona verticalmente."
 
 #: ../src/Games/Logic/PuzzleMatrixNumbers.cs:58
-#| msgid "The logic is arithmetical and works horizontally."
 msgid "The pattern is arithmetical and works horizontally."
 msgstr "El patrón es aritmética y funciona horizontalmente."
 
@@ -2347,9 +2344,6 @@ msgid "Squares and letters"
 msgstr "Cuadrados y letras"
 
 #: ../src/Games/Logic/PuzzleSquaresAndLetters.cs:41
-#| msgid ""
-#| "The letters around the squares follow a logic. Which letter should "
-#| "replace the question mark in the last square?"
 msgid ""
 "The letters around the squares follow a pattern. Which letter should replace "
 "the question mark in the last square?"
@@ -3000,7 +2994,8 @@ msgstr "Proporciones"
 
 #: ../src/Games/Calculation/CalculationProportions.cs:49
 #, csharp-format
-msgid "What is the {0}% of {1}/{2}? Answer {3}, {4}, {5} or {6}."
+#| msgid "What is the {0}% of {1}/{2}? Answer {3}, {4}, {5} or {6}."
+msgid "What is {0}% of {1}/{2}? Answer {3}, {4}, {5} or {6}."
 msgstr "¿Cuál es el {0}% de {1}/{2}? Responde {3}, {4}, {5} o {6}."
 
 #: ../src/Games/Calculation/CalculationRatio.cs:34
