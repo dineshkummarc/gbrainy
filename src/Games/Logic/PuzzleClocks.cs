@@ -42,6 +42,7 @@ namespace gbrainy.Games.Logic
 
 		public override string Question {
 			get {return (String.Format (
+				// Translators: {0} is replaced by 'Figure X'
 				Catalog.GetString ("To what number should the large handle of the '{0}' clock point? Answer using numbers."),
 				GetPossibleFigureAnswer (3)));}
 		}
