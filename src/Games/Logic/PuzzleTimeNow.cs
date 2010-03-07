@@ -29,7 +29,8 @@ namespace gbrainy.Games.Logic
 	public class PuzzleTimeNow : Game
 	{
 		const double figure_size = 0.3;
-		int after, position_a, position_b, ans;
+		int after;
+		DateTime position_a, position_b, ans;
 
 		public override string Name {
 			get {return Catalog.GetString ("Time now");}
@@ -37,23 +38,41 @@ namespace gbrainy.Games.Logic
 
 		public override string Question {
 			get {return (String.Format (
-				// Translators: {1} and {2} are replaced by hours
-				Catalog.GetString ("{0} hours ago it was as long after {1} as it was before {2} on the same day. What is the time now?"),
-				after, position_a, position_b));}
+				// TimeNow Puzzle. Translators: {1}, {2} {3} are replaced by hours. Use the right time format specification for your culture
+ 				// Explanation of the date and time format specifications can be found here:
+				// http://msdn.microsoft.com/en-us/library/system.globalization.datetimeformatinfo.aspx
+				//
+				Catalog.GetString ("{0} hours ago it was as long after {1:h tt} as it was before {2:h tt} on the same day. What is the time now? Answer using the hour (e.g.: {3:h tt})"),
+				after, position_a, position_b, position_b));}
+		}
+
+
+		public override string Answer {
+			get { 
+				string answer = base.Answer + " ";
+				answer += String.Format (Catalog.GetString ("You have to calculate the hour from which the distance is the same for the given times, and then add the {0} hours to convert it to present time."), after);
+				return answer;
+			}
 		}
 
 		public override void Initialize ()
 		{
+			int hour;
+			DateTime now;
+
 			after = 4 + random.Next (3);
-			position_a = 2 + random.Next (3);
-			position_b = position_a + 6;
+			hour = 2 + random.Next (3);
+			now = DateTime.Now;
 
-			ans = after + position_b;
+			position_a = new DateTime (now.Year, now.Month, now.Day, hour, 0, 0);
+			position_b = new DateTime (now.Year, now.Month, now.Day, hour + 12, 0, 0);
+			ans = new DateTime (now.Year, now.Month, now.Day, ((hour + hour + 12) / 2) + after, 0, 0);
 
-			if (ans > 12)
-				ans = ans - 12;  
-
-			right_answer = ans.ToString ();
+			// TimeNow Puzzle. Translators: {0} is used to check the hour answered by the user. 
+			// Use the right time format specification for your culture
+ 			// Explanation of the date and time format specifications can be found here:
+			// http://msdn.microsoft.com/en-us/library/system.globalization.datetimeformatinfo.aspx
+			right_answer = String.Format (Catalog.GetString ("{0:h tt}"), ans);
 		}	
 
 		public override void Draw (CairoContextEx gr, int area_width, int area_height, bool rtl)
