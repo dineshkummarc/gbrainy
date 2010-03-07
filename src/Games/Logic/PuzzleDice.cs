@@ -62,8 +62,8 @@ namespace gbrainy.Games.Logic
 				Catalog.GetString ("There are 9 of 36 possibilities of getting an even number."), false),
 
 			new Problem (Catalog.GetString ("Two fair 6 sided dices are thrown simultaneously. What is the probability of getting two '6'? Answer using a fraction (e.g.: 1/2)."),
-				"6/36",
-				Catalog.GetString ("There are 1 of 6 possibilities of getting a '6' on the first die and the same for the second die."), false),
+				"1/36",
+				Catalog.GetString ("There is 1 of 6 possibilities of getting a '6' on the first die and the same for the second die."), false),
 		};
 
 		public override string Name {
