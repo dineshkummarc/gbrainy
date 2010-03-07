@@ -143,10 +143,12 @@ namespace gbrainy.Core.Views
 			gr.Stroke ();
 
 			gr.DrawStringWithWrapping (0.05, y + 0.07, 
-				Catalog.GetString ("gbrainy is a brain teaser game and trainer to have fun and to keep your brain trained. It includes:"));
+				Catalog.GetString ("gbrainy is a brain teaser game and trainer to have fun and to keep your brain trained. It includes:"),
+				1 - 0.05);
 
 			y = 0.22 + space * 3;
-			gr.DrawStringWithWrapping (0.05, y + 0.17,  Catalog.GetString ("Use the Settings to adjust the difficulty level of the game."));
+			gr.DrawStringWithWrapping (0.05, y + 0.17,  Catalog.GetString ("Use the Settings to adjust the difficulty level of the game."),
+				1 - 0.05);
 			gr.Stroke ();
 
 			foreach (Toolkit.Container container in containers)

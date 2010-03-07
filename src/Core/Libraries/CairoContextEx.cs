@@ -34,6 +34,7 @@ namespace gbrainy.Core.Libraries
 		static SVGImage image = null;
 
 		const double width_margin = 0.04;
+		const double line_spacing = 0.018;
 
 		public CairoContextEx (IntPtr state, Gtk.Widget widget) : base (state)
 		{
@@ -154,7 +155,7 @@ namespace gbrainy.Core.Libraries
 			layout.SingleParagraphMode = true;
 			layout.Width = -1;
 			layout.GetPixelSize (out w, out h);
-			MoveTo ((old.X0 + x * old.Xx) - w, y * old.Xx);
+			MoveTo ((old.X0 + x * old.Xx) - w, y * old.Yy);
 			Pango.CairoHelper.ShowLayout (this, layout);
 			Matrix = old;
 		}
@@ -177,33 +178,48 @@ namespace gbrainy.Core.Libraries
 			Matrix = old;
 		}
 
-		public double DrawStringWithWrapping (double x, double y, string str)
-		{
-			return DrawStringWithWrapping (x, y, str, -1);
-		}
-
-		public double DrawStringWithWrapping (double x, double y, string str, double width)
+		public void DrawStringWithWrapping (double x, double y, string str, double max_width)
 		{
 			int w, h;
 			Cairo.Matrix old = Matrix;
+
+			if (max_width < 0 || max_width > 1)
+				throw new InvalidOperationException ("Invalid maximum width value");
 
 			MoveTo (x, y);
 			UpdateFontSize ();
 			Matrix = new Cairo.Matrix ();
 
-			if (width == -1)
-				layout.Width = (int) ((1.0 - x -  width_margin) * old.Xx * Pango.Scale.PangoScale);
-			else	
-				layout.Width = (int) (width * old.Xx * Pango.Scale.PangoScale);
-
-			layout.Spacing = (int) (0.018 * (old.Xx * Pango.Scale.PangoScale));
+			layout.Width = (int) (max_width * old.Xx * Pango.Scale.PangoScale);
+			layout.Spacing = (int) (line_spacing * (old.Yy * Pango.Scale.PangoScale));
 
 			layout.SingleParagraphMode = false;
 			layout.SetText (str);
 			Pango.CairoHelper.ShowLayout (this, layout);
 			layout.GetPixelSize (out w, out h);
 			Matrix = old;
-			return y + h / old.Xx;
+		}
+
+		public void MeasureString (string str, double max_width, bool wrapping, out double width, out double height)
+		{
+			int w, h;
+			Cairo.Matrix old = Matrix;
+
+			if (max_width < 0 || max_width > 1)
+				throw new InvalidOperationException ("Invalid maximum width value");
+
+			UpdateFontSize ();
+			Matrix = new Cairo.Matrix ();
+
+			layout.Width = (int) (max_width * old.Xx * Pango.Scale.PangoScale);
+			layout.Spacing = (int) (line_spacing * (old.Xx * Pango.Scale.PangoScale));
+
+			layout.SingleParagraphMode = !wrapping;
+			layout.SetText (str);
+			layout.GetPixelSize (out w, out h);
+			Matrix = old;
+			height = h / old.Yy;
+			width = w / old.Xx;
 		}
 
 		public void DrawEquilateralTriangle (double x, double y, double size)

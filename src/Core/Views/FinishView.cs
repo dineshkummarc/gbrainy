@@ -125,7 +125,8 @@ namespace gbrainy.Core.Views
 			double y = 0.04, x = 0.05;
 			const double space_small = 0.02;
 			List <PlayerHistory.PersonalRecord> records;
-			string s;
+			string s, tip;
+			double width, height;
 
 			gr.Scale (area_width, area_height);
 			gr.DrawBackground ();
@@ -167,7 +168,7 @@ namespace gbrainy.Core.Views
 			y += 0.4;
 
 			records	= session.PlayerHistory.GetLastGameRecords ();
-			gr.MoveTo (x, y);		
+			gr.MoveTo (x, y);
 
 			if (records.Count == 0) {
 				bool caching = cached_sessionid != session.ID;
@@ -184,12 +185,16 @@ namespace gbrainy.Core.Views
 				{
 					if (caching)
 						tips.Add (GameTips.Tip);
-						
-					y = gr.DrawStringWithWrapping (x, y,  "- " + tips [i]);
-					if (y > 0.88)
+	
+					tip = "- " + tips [i];
+
+					gr.MeasureString (tip, 1.0 - x, true, out width, out height);
+
+					if (y + height > 0.98)
 						break;
 
-					y += space_small;
+					gr.DrawStringWithWrapping (x, y, tip , 1.0 - x);
+					y += height + space_small;
 				}
 
 				if (caching)
@@ -203,7 +208,6 @@ namespace gbrainy.Core.Views
 
 				for (int i = 0; i < records.Count; i++)
 				{
-
 					switch (records[i].GameType) {
 					case Game.Types.LogicPuzzle:
 						s = String.Format (Catalog.
@@ -233,11 +237,15 @@ namespace gbrainy.Core.Views
 						break;
 					}
 
-					y = gr.DrawStringWithWrapping (x, y,  "- " + s);
-					if (y > 0.88)
+					tip = "- " + s;
+
+					gr.MeasureString (tip, 1.0 - x, true, out width, out height);
+
+					if (y + height > 0.98)
 						break;
 
-					y += space_small;
+					gr.DrawStringWithWrapping (x, y, tip , 1.0 - x);
+					y += height + space_small;
 				}
 			}
 

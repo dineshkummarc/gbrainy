@@ -159,7 +159,7 @@ namespace gbrainy.Games.Memory
 				text += facts[i].fact;
 				text += "\n\n";
 			}
-			gr.DrawStringWithWrapping (0.3, DrawAreaY + 0.2, text);
+			gr.DrawStringWithWrapping (0.3, DrawAreaY + 0.2, text, 0.95 - 0.3);
 		}
 
 		public override bool CheckAnswer (string answer)
