@@ -24,6 +24,12 @@ using System.Collections.Generic;
 using System.Reflection;
 using Mono.Unix;
 
+// When defined, exports all the games in a single PDF
+#if PDF_DUMP
+using Cairo;
+using gbrainy.Core.Libraries;
+#endif
+
 #if MONO_ADDINS
 using Mono.Addins;
 using Mono.Addins.Setup;
@@ -136,8 +142,9 @@ namespace gbrainy.Core.Main
 					LogicPuzzles.Count + CalculationTrainers.Count + MemoryTrainers.Count + VerbalAnalogies.Count,
 					LogicPuzzles.Count, CalculationTrainers.Count, MemoryTrainers.Count, VerbalAnalogies.Count);
 			}
-
-			//GeneratePDF ();
+#if PDF_DUMP
+			GeneratePDF ();
+#endif
 		}
 	
 		public Game.Types AvailableGames {
@@ -231,7 +238,7 @@ namespace gbrainy.Core.Main
 				Assembly asm = Assembly.GetExecutingAssembly ();
 				string asm_dir = System.IO.Path.GetDirectoryName (asm.Location);
 
-				asem = Assembly.LoadFrom (Path.Combine (asm_dir, ASSEMBLY));
+				asem = Assembly.LoadFrom (System.IO.Path.Combine (asm_dir, ASSEMBLY));
 
 				foreach (Type t in asem.GetTypes()) 
 				{
@@ -457,7 +464,7 @@ namespace gbrainy.Core.Main
 			return puzzle;
 		}
 
-	#if _PDF_
+#if PDF_DUMP
 		// Generates a single PDF document with all the puzzles contained in gbrainy (4 games per page)
 		public void GeneratePDF ()
 		{
@@ -471,7 +478,7 @@ namespace gbrainy.Core.Main
 
 			PdfSurface pdf = new PdfSurface ("games.pdf", (width + margin) * 2, (height + margin) * games_page / 2);
 			x = y = cnt = 0;
-			CairoContextEx cr = new CairoContextEx (pdf);
+			CairoContextEx cr = new CairoContextEx (pdf, "sans 12", 72);
 			for (int game = 0; game < games.Count; game++)
 			{
 				puzzle =  (Game) Activator.CreateInstance ((Type) games [game], true);
@@ -482,7 +489,7 @@ namespace gbrainy.Core.Main
 				cr.Rectangle (0, 0, width, height);;	
 				cr.Clip ();
 				cr.Save ();
-				puzzle.DrawPreview (cr, width, height);
+				puzzle.DrawPreview (cr, width, height, false);
 				x += width + margin;
 				if (x > width + margin) {
 					x = 0;
@@ -503,6 +510,6 @@ namespace gbrainy.Core.Main
 			((IDisposable)cr).Dispose();
 			return;
 		}
-	#endif
+#endif
 	}
 }

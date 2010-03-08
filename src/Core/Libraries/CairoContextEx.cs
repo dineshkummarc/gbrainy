@@ -47,9 +47,17 @@ namespace gbrainy.Core.Libraries
 		}
 
 		// Used by GeneratePDF
-		public CairoContextEx (Cairo.Surface s) : base (s)
+		public CairoContextEx (Cairo.Surface s, string font, int dpis) : base (s)
 		{
 			layout = Pango.CairoHelper.CreateLayout (this);
+			layout.FontDescription = FontDescription.FromString (font);
+
+			if (dpis > 0)  {
+				Pango.Context c = layout.Context;
+				Pango.CairoHelper.ContextSetResolution (c, dpis);
+				c.Dispose ();
+			}
+
 			SetPangoNormalFontSize ();
 		}
 
