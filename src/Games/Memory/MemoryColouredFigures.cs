@@ -81,8 +81,7 @@ namespace gbrainy.Games.Memory
 			rect_h = 0.3 / columns;
 			squares_colours = new SquareColor [squares * answers];
 			color_sheme = random.Next (2);
-			palette = new ColorPalette(ColorPalette.Id.PrimarySecundaryColors);
-			palette.Initialize();
+			palette = new ColorPalette ();
 
 			for (int i = 0; i < squares; i++)
 				squares_colours[i] = (SquareColor) random.Next ((int) SquareColor.Length);

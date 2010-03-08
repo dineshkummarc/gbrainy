@@ -69,8 +69,7 @@ namespace gbrainy.Games.Logic
 			ArrayListIndicesRandom random_indices = new ArrayListIndicesRandom (total_slices);
 			Color clr;
 
-			cp = new ColorPalette (ColorPalette.Id.Last);
-			cp.Initialize ();
+			cp = new ColorPalette ();
 
 			cercle_colors = new Color [total_slices];
 			badcercle_colors =  new Color [total_slices];

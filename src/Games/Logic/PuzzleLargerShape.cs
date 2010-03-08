@@ -126,8 +126,7 @@ namespace gbrainy.Games.Logic
 
 		public override void Initialize ()
 		{
-			palette = new ColorPalette (ColorPalette.Id.PrimaryColors);
-			palette.Initialize ();
+			palette = new ColorPalette ();
 
 			switch (random.Next (2)) {
 			case 0:

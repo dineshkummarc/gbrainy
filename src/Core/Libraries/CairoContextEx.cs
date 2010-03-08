@@ -184,7 +184,7 @@ namespace gbrainy.Core.Libraries
 			Cairo.Matrix old = Matrix;
 
 			if (max_width < 0 || max_width > 1)
-				throw new InvalidOperationException ("Invalid maximum width value");
+				throw new ArgumentOutOfRangeException ("Invalid maximum width value");
 
 			MoveTo (x, y);
 			UpdateFontSize ();
@@ -206,7 +206,7 @@ namespace gbrainy.Core.Libraries
 			Cairo.Matrix old = Matrix;
 
 			if (max_width < 0 || max_width > 1)
-				throw new InvalidOperationException ("Invalid maximum width value");
+				throw new ArgumentOutOfRangeException ("Invalid maximum width value");
 
 			UpdateFontSize ();
 			Matrix = new Cairo.Matrix ();

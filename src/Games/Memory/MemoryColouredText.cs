@@ -31,6 +31,7 @@ namespace gbrainy.Games.Memory
 		private int question;
 		private string question_colorname;
 		private int colors_shown;
+		private ArrayListIndicesRandom color_order;
 
 		public override string Name {
 			get {return Catalog.GetString ("Colored text");}
@@ -47,6 +48,8 @@ namespace gbrainy.Games.Memory
 
 		public override void Initialize ()
 		{
+			bool done = false;
+
 			switch (CurrentDifficulty) {
 			case Difficulty.Easy:
 				colors_shown = 3;
@@ -59,12 +62,25 @@ namespace gbrainy.Games.Memory
 				break;
 			}
 
-			palette = new ColorPalette (colors_shown);
-			palette.Initialize ();
+			palette = new ColorPalette ();
+
+			// It is not acceptable that all the random colors names match the right colors
+			while (done == false) {
+				color_order = new ArrayListIndicesRandom (colors_shown);
+				color_order.Initialize ();
+
+				for (int i = 0; i < colors_shown; i++)
+				{
+					if (palette.Name (color_order [i]) != palette.Name (i)) {
+						done = true;
+						break;
+					}
+				}
+			}			
 		
-			question = random.Next (palette.Count);
-			right_answer = palette.Name (question);
-			question_colorname = palette.Name ((ColorPalette.Id) question);
+			question = random.Next (colors_shown);
+			right_answer = palette.Name (color_order [question]);
+			question_colorname = palette.Name (question);
 		
 			base.Initialize ();
 		}
@@ -77,15 +93,17 @@ namespace gbrainy.Games.Memory
 
 		private void DrawObject (CairoContextEx gr)
 		{
-			palette.Alpha=alpha;
+			double x = DrawAreaX + 0.125, y = DrawAreaY + 0.2;
+			int idx;
 
-			double x= DrawAreaX + 0.125, y = DrawAreaY + 0.2;
+			palette.Alpha = alpha;
 
-			for (int i = 0; i < palette.Count ; i++)
+			for (int i = 0; i < colors_shown; i++)
 			{
-				gr.Color = palette.Cairo(i);
+				idx = color_order [i];
+				gr.Color = palette.Cairo (idx);
 				gr.MoveTo (x, y);
-				gr.ShowPangoText ( palette.Name((ColorPalette.Id)i) );
+				gr.ShowPangoText (palette.Name (i));
 				gr.Stroke ();
 			
 				if (i == 2) {

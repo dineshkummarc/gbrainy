@@ -1,5 +1,6 @@
 /*
  * Copyright (C) 2007 Javier M Mora <javiermm@gmail.com>
+ * Copyright (C) 2010 Jordi Mas i Hernàndez <jmas@softcatala.org>
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License as
@@ -22,27 +23,10 @@ using Mono.Unix;
 
 namespace gbrainy.Core.Main
 {
-	//Utility class for color operations
+	// Utility class that contains the color palette used for all games
 	public class ColorPalette
 	{
-		private ArrayListIndicesRandom color_order;
-
-		private double alpha;
-		public double Alpha {
-			set { alpha = value; }
-			get { return alpha; }
-		}
-
-		public int Count {
-			get { return color_order.Count; }
-		}
-
-		// Are defined "First", "PrimaryColors", "PrimarySecundaryColors", and "Last" to
-		// create iterators. So: 
-		//   for (Colors.Id it= Colors.Id.First; it<Colors.Id.PrimaryColors; it++);
-		//   for (Colors.Id it= Colors.Id.First; it<Colors.Id.PrimarySecundaryColors; it++);
-		//   for (Colors.Id it= Colors.Id.First; it<Colors.Id.Last; it++);
-		//
+		double alpha;
 
 		public enum Id
 		{
@@ -82,26 +66,18 @@ namespace gbrainy.Core.Main
 			new Cairo.Color (.9, .9, .9)
 		};
 
-		public ColorPalette (Id id)
+		public ColorPalette ()
 		{
-			color_order = new ArrayListIndicesRandom((int)id);
-			alpha=1;
+			alpha = 1;
 		}
 
-		public ColorPalette (int size)
-		{
-			color_order = new ArrayListIndicesRandom(size);
-			alpha=1;
+		public double Alpha {
+			set { alpha = value; }
+			get { return alpha; }
 		}
 
-		public void Initialize()
-		{
-			color_order.Initialize();
-		}
-
-		public Cairo.Color Cairo (int index) 
-		{
-			return Cairo (CairoColor[(int)color_order[index]]);
+		public int Count {
+			get { return ColorName.Length; }
 		}
 
 		public Cairo.Color Cairo (Id id) 
@@ -109,24 +85,19 @@ namespace gbrainy.Core.Main
 			return Cairo (CairoColor[(int)id]);
 		}
 
-		public Cairo.Color Cairo(Cairo.Color color)
+		public Cairo.Color Cairo (int id)
+		{
+			return Cairo (CairoColor[id]);
+		}
+
+		public string Name (int index)
+		{
+			return ColorName [index];
+		}
+
+		Cairo.Color Cairo (Cairo.Color color)
 		{
 			return new Cairo.Color(color.R, color.G, color.B, alpha);
-		}
-
-		public string Name(int index)
-		{
-			return ColorName[(int)color_order[index]];
-		}
-
-		public string Name(Id id)
-		{
-			return ColorName[(int)id];
-		}
-
-		public int Size()
-		{
-			return color_order.Count;
 		}
 	}
 }
