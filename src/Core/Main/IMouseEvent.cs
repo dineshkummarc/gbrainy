@@ -27,6 +27,7 @@ namespace gbrainy.Core.Main
 	public enum MouseEventType
 	{
 		Move,
+		ButtonPress,
 		DoubleClick,
 	};
 

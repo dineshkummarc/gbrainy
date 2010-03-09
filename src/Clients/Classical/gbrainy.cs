@@ -195,10 +195,10 @@ namespace gbrainy.Clients.Classical
 
 		void OnHandleButtonPress (object o, ButtonPressEventArgs ev_args)
 		{
-			if (ev_args.Event.Type != EventType.TwoButtonPress)
+			if (ev_args.Event.Type != EventType.ButtonPress)
 				return;
 
-			SendMouseEvent (ev_args.Event.X, ev_args.Event.Y, MouseEventType.DoubleClick);
+			SendMouseEvent (ev_args.Event.X, ev_args.Event.Y, MouseEventType.ButtonPress);
 		}
 
 		void SendMouseEvent (double ev_x, double ev_y, MouseEventType type)

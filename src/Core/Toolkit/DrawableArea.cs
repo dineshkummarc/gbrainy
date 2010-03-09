@@ -99,7 +99,7 @@ namespace gbrainy.Core.Toolkit
 				}
 			} else {
 
-				if (args.EventType == MouseEventType.DoubleClick) {
+				if (args.EventType == MouseEventType.ButtonPress) {
 					OnSelected (new SeletectedEventArgs (Data, DataEx));
 				} else {
 					if (hoover == false) {
