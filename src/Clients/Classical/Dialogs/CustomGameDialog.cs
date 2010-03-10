@@ -32,8 +32,9 @@ namespace gbrainy.Clients.Classical
 		static ListStore games_store;
 		[GtkBeans.Builder.Object] Gtk.TreeView treeview;
 		[GtkBeans.Builder.Object] Box preview_vbox;
-		[GtkBeans.Builder.Object] Label preview_question;
+		[GtkBeans.Builder.Object] Gtk.Box question_vbox;
 		CairoPreview drawing_area;
+		SimpleLabel question_label;
 		GameManager manager;
 		int ngames, npos;
 		Type [] custom_games;
@@ -55,6 +56,11 @@ namespace gbrainy.Clients.Classical
 			drawing_area = new CairoPreview ();
 			preview_vbox.Add (drawing_area);
 			drawing_area.Visible = true;
+
+			question_label = new SimpleLabel ();
+			question_label.HeightMargin = 2;
+			question_label.Visible = true;
+			question_vbox.Add (question_label);
 
 			// Define columns
 			TreeViewColumn name_column = new TreeViewColumn (Catalog.GetString("Game Name"), 
@@ -95,7 +101,7 @@ namespace gbrainy.Clients.Classical
 			game =  (Game) Activator.CreateInstance (games [0], true);
 			game.Initialize ();
 			drawing_area.puzzle = game;
-			preview_question.Markup = game.Question;
+			question_label.Text = game.Question;
 			treeview.ColumnsAutosize ();
 		}
 
@@ -114,7 +120,7 @@ namespace gbrainy.Clients.Classical
 			Game game = games_store.GetValue (iter, COL_OBJECT) as Game;
 			game.IsPreviewMode = true;
 			game.Initialize ();
-			preview_question.Markup = game.Question;
+			question_label.Text = game.Question;
 			drawing_area.puzzle = game;
 			drawing_area.QueueDraw ();
 		}
