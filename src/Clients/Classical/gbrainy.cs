@@ -39,7 +39,7 @@ namespace gbrainy.Clients.Classical
 	public class GtkClient: Program
 	{
 		[GtkBeans.Builder.Object("gbrainy")] Gtk.Window app_window;
-		[GtkBeans.Builder.Object] Gtk.ToggleAction toolbar_menuitem;
+		[GtkBeans.Builder.Object] Gtk.CheckMenuItem toolbar_menuitem;
 		[GtkBeans.Builder.Object] Box drawing_vbox;
 		[GtkBeans.Builder.Object] Gtk.VBox question_vbox;
 		[GtkBeans.Builder.Object] Gtk.VBox solution_vbox;
@@ -50,16 +50,16 @@ namespace gbrainy.Clients.Classical
 		[GtkBeans.Builder.Object] Gtk.Statusbar statusbar;
 		[GtkBeans.Builder.Object] Gtk.Toolbar toolbar;
 		[GtkBeans.Builder.Object] Gtk.MenuBar menubar;
-		[GtkBeans.Builder.Object] Gtk.Action help_menu;
-		[GtkBeans.Builder.Object] Gtk.Action pause_menuitem;
-		[GtkBeans.Builder.Object] Gtk.Action finish_menuitem;
-		[GtkBeans.Builder.Object] Gtk.Action newgame_menuitem;
-		[GtkBeans.Builder.Object] Gtk.Action allgames_menuitem;
-		[GtkBeans.Builder.Object] Gtk.Action logic_menuitem;
-		[GtkBeans.Builder.Object] Gtk.Action verbal_menuitem;
-		[GtkBeans.Builder.Object] Gtk.Action memory_menuitem;
-		[GtkBeans.Builder.Object] Gtk.Action calculation_menuitem;
-		[GtkBeans.Builder.Object] Gtk.UIManager uimanager;
+		[GtkBeans.Builder.Object] Gtk.MenuItem pause_menuitem;
+		[GtkBeans.Builder.Object] Gtk.MenuItem finish_menuitem;
+		[GtkBeans.Builder.Object] Gtk.MenuItem newgame_menuitem;
+		[GtkBeans.Builder.Object] Gtk.MenuItem allgames_menuitem;
+		[GtkBeans.Builder.Object] Gtk.MenuItem logic_menuitem;
+		[GtkBeans.Builder.Object] Gtk.MenuItem calculation_menuitem;
+		[GtkBeans.Builder.Object] Gtk.MenuItem memory_menuitem;
+		[GtkBeans.Builder.Object] Gtk.MenuItem verbal_menuitem;
+		[GtkBeans.Builder.Object] Gtk.MenuItem extensions_menuitem;
+
 		DrawingArea drawing_area;
 		GameSession session;
 		ToolButton all_tbbutton, logic_tbbutton, calculation_tbbutton, memory_tbbutton, verbal_tbbutton, pause_tbbutton, finish_tbbutton;
@@ -74,8 +74,6 @@ namespace gbrainy.Clients.Classical
 		public GtkClient (string [] args, params object [] props)
 		: base ("gbrainy", Defines.VERSION, Modules.UI,  args, props)
 		{
-			Gtk.MenuItem extensions_menu;
-
 			Catalog.Init ("gbrainy", Defines.GNOME_LOCALE_DIR);
 			Unix.FixLocaleInfo ();
 
@@ -125,11 +123,10 @@ namespace gbrainy.Clients.Classical
 			if (Preferences.GetBoolValue (Preferences.ToolbarKey) == false || low_res == true)
 				toolbar_menuitem.Active = false;
 
-			extensions_menu = uimanager.GetWidget ("/ui/menubar/settings_topmenu/extensionsmenu/") as MenuItem;
 		#if MONO_ADDINS
-			extensions_menu.Activated += delegate (object sender, EventArgs ar) { Mono.Addins.Gui.AddinManagerWindow.Run (app_window);};
+			extensions_menuitem.Activated += delegate (object sender, EventArgs ar) { Mono.Addins.Gui.AddinManagerWindow.Run (app_window);};
 		#else
-			extensions_menu.Visible = false;
+			extensions_menuitem.Visible = false;
 		#endif
 			ActiveInputControls (false);
 		}
@@ -180,6 +177,7 @@ namespace gbrainy.Clients.Classical
 				SetMargin ((int) offset_x);
 			else
 				SetMargin (2);
+
 
 			cr.Translate (offset_x, offset_y);
 			session.Draw (cr, drawing_square, drawing_square, drawing_area.Direction == Gtk.TextDirection.Rtl);
