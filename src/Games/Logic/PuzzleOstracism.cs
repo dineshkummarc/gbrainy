@@ -103,20 +103,30 @@ namespace gbrainy.Games.Logic
 				break;
 			case GameType.Numbers:
 			{
-				int num;
-				int [] seeds = {25, 26, 28, 30, 21, 18, 21, 22};
+				int num, evens;
+				int [] seeds = {25, 26, 28, 30, 18, 21, 22};
 				ArrayListIndicesRandom random_seeds = new ArrayListIndicesRandom (seeds.Length);
-				random_seeds.Initialize ();
 
-				equations = new string [max_equations];
-				for (int i = 0; i < max_equations - 1; i++)
+				// Make sure that one of the numbers only is not even or odd to avoid
+				// this rationale as valid answer too
+				do
 				{
-					num = seeds [random_seeds [i]];
-					equations [i] = num.ToString () + (num * num).ToString ();
-				}
+					evens = 0;
+					random_seeds.Initialize ();
 
-				num = seeds [random_seeds [max_equations - 1]];
-				equations [max_equations - 1] = num.ToString () + ((num * num) -  20).ToString ();
+					equations = new string [max_equations];
+					for (int i = 0; i < max_equations - 1; i++)
+					{
+						num = seeds [random_seeds [i]];
+						equations [i] = num.ToString () + (num * num).ToString ();
+						if (num % 2 == 0) evens++;
+					}
+					num = seeds [random_seeds [max_equations - 1]];
+					equations [max_equations - 1] = num.ToString () + ((num * num) -  20).ToString ();
+
+					if (num % 2 == 0) evens++;
+
+				} while (evens <= 1 || max_equations - evens <= 1 /* odds */);
 				break;
 			}
 			default:
