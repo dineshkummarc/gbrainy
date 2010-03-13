@@ -41,6 +41,7 @@ namespace gbrainy.Games.Logic
 				// TimeNow Puzzle. Translators: {1}, {2} {3} are replaced by hours. Use the right time format specification for your culture
  				// Explanation of the date and time format specifications can be found here:
 				// http://msdn.microsoft.com/en-us/library/system.globalization.datetimeformatinfo.aspx
+				// For 12-hour clock format use {0:%h} and for 24-hour clock format use {0:%H}. The date formats {0:h} and {0:H} are invalid.
 				//
 				Catalog.GetString ("{0} hours ago it was as long after {1:h tt} as it was before {2:h tt} on the same day. What is the time now? Answer using the hour (e.g.: {3:h tt})"),
 				after, position_a, position_b, position_b));}
@@ -72,6 +73,7 @@ namespace gbrainy.Games.Logic
 			// Use the right time format specification for your culture
  			// Explanation of the date and time format specifications can be found here:
 			// http://msdn.microsoft.com/en-us/library/system.globalization.datetimeformatinfo.aspx
+			// For 12-hour clock format use {0:%h} and for 24-hour clock format use {0:%H}. The date formats {0:h} and {0:H} are invalid.
 			right_answer = String.Format (Catalog.GetString ("{0:h tt}"), ans);
 		}	
 
