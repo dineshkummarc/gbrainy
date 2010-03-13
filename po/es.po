@@ -2450,7 +2450,7 @@ msgstr ""
 
 #: ../src/Games/Logic/PuzzleTimeNow.cs:36
 msgid "Time now"
-msgstr "Iniciar contador"
+msgstr "Hora actual"
 
 #. TimeNow Puzzle. Translators: {1}, {2} {3} are replaced by hours. Use the right time format specification for your culture
 #. Explanation of the date and time format specifications can be found here:
@@ -2465,8 +2465,8 @@ msgid ""
 "{0} hours ago it was as long after {1:h tt} as it was before {2:h tt} on the "
 "same day. What is the time now? Answer using the hour (e.g.: {3:h tt})"
 msgstr ""
-"Hace {0} horas faltaba tanto para las {1:H} que para las {2:H} del mismo "
-"día. ¿Qué hora es ahora? Responde usando la hora (ej.: {3:H})"
+"Hace {0} horas faltaba tanto para las {1:%H} que para las {2:%H} del mismo "
+"día. ¿Qué hora es ahora? Responde usando la hora (ej.: {3:%H})"
 
 #: ../src/Games/Logic/PuzzleTimeNow.cs:53
 #, csharp-format
@@ -2484,7 +2484,7 @@ msgstr ""
 #: ../src/Games/Logic/PuzzleTimeNow.cs:75
 #, csharp-format
 msgid "{0:h tt}"
-msgstr "{0:H}"
+msgstr "{0:%H}"
 
 #. No hands
 #: ../src/Games/Logic/PuzzleTimeNow.cs:84
