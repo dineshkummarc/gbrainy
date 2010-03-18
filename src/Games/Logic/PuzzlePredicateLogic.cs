@@ -71,7 +71,7 @@ namespace gbrainy.Games.Logic
 				Catalog.GetString ("None of the other options"),
 				0),
 
-			new Predicate (String.Format (Catalog.GetString ("If people that travels always buy a map and you are not going to travel. Which of the following sentences is correct? Answer {0}, {1}, {2} or {3}."),
+			new Predicate (String.Format (Catalog.GetString ("People that travel always buy a map. You are not going to travel. Which of the following sentences is correct? Answer {0}, {1}, {2} or {3}."),
 				GetPossibleAnswer (0), GetPossibleAnswer (1), GetPossibleAnswer (2), GetPossibleAnswer (3)),
 				Catalog.GetString ("You do not have any map"),
 				Catalog.GetString ("You do not buy a map"),
@@ -94,10 +94,6 @@ namespace gbrainy.Games.Logic
 
 		public override string Question {
 			get {return predicates[question].question;} 
-		}
-
-		public override string Tip {
-			get { return Catalog.GetString ("A triangle can be embedded inside another triangle.");}
 		}
 
 		public override string Answer {
