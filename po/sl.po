@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gbrainy master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gbrainy&component=general\n"
-"POT-Creation-Date: 2010-03-10 16:44+0000\n"
-"PO-Revision-Date: 2010-03-12 15:40+0100\n"
+"POT-Creation-Date: 2010-03-18 18:26+0000\n"
+"PO-Revision-Date: 2010-03-20 16:59+0100\n"
 "Last-Translator: Andrej Žnidaršič <andrej.znidarsic@gmail.com>\n"
 "Language-Team: Slovenian GNOME Translation Team <gnome-si@googlegroups.com>\n"
 "MIME-Version: 1.0\n"
@@ -581,7 +581,7 @@ msgid "Play games that challenge your logic, verbal, calculation and memory abil
 msgstr "Igrajte igre ki izzivajo vaše besedne sposobnosti, sposobnosti  logike, miselnega računanja in spomina"
 
 #: ../data/gbrainy.desktop.in.h:3
-#: ../src/Clients/Classical/gbrainy.ui.h:22
+#: ../src/Clients/Classical/gbrainy.ui.h:23
 msgid "gbrainy"
 msgstr "gbrainy"
 
@@ -920,8 +920,8 @@ msgstr "{0} Odgovorite {1}."
 #. Translators: this "option) answer" for example "a) "21 x 60 = 1260". This should not be changed for most of the languages
 #: ../src/Core/Main/Verbal/AnalogiesMultipleOptions.cs:117
 #: ../src/Core/Main/Verbal/AnalogiesPairOfWordsOptions.cs:116
-#: ../src/Games/Logic/PuzzleOstracism.cs:157
-#: ../src/Games/Logic/PuzzlePredicateLogic.cs:150
+#: ../src/Games/Logic/PuzzleOstracism.cs:167
+#: ../src/Games/Logic/PuzzlePredicateLogic.cs:146
 #: ../src/Games/Calculation/CalculationCloserFraction.cs:165
 #, csharp-format
 msgid "{0}) {1}"
@@ -935,7 +935,7 @@ msgstr "{0}) {1}"
 #: ../src/Games/Logic/PuzzleMissingSlice.cs:219
 #: ../src/Games/Logic/PuzzleMostInCommon.cs:317
 #: ../src/Games/Logic/PuzzleNextFigure.cs:169
-#: ../src/Games/Logic/PuzzlePredicateLogic.cs:163
+#: ../src/Games/Logic/PuzzlePredicateLogic.cs:159
 #: ../src/Games/Logic/PuzzleSquareDots.cs:207
 #: ../src/Games/Logic/PuzzleTetris.cs:175
 msgid "Possible answers are:"
@@ -1116,6 +1116,7 @@ msgid "_Start"
 msgstr "_Začni"
 
 #: ../src/Clients/Classical/Dialogs/ui/PlayerHistoryDialog.ui.h:1
+#: ../src/Clients/Classical/gbrainy.ui.h:9
 msgid "Player's Game History"
 msgstr "Igralčeva zgodovina iger"
 
@@ -1164,7 +1165,7 @@ msgid "Minimum number of played puzzles to store the game:"
 msgstr "Najmanjše število igranih iger za shranjevanje igre:"
 
 #: ../src/Clients/Classical/Dialogs/ui/PreferencesDialog.ui.h:11
-#: ../src/Clients/Classical/gbrainy.ui.h:9
+#: ../src/Clients/Classical/gbrainy.ui.h:10
 msgid "Preferences"
 msgstr "Možnosti"
 
@@ -1815,8 +1816,8 @@ msgstr "Vsi umetniki so veseli"
 
 #: ../src/Games/Logic/PuzzlePredicateLogic.cs:74
 #, csharp-format
-msgid "If people that travels always buy a map and you are not going to travel. Which of the following sentences is correct? Answer {0}, {1}, {2} or {3}."
-msgstr "Ljudje, ki potujejo, vedno kupijo zemljevid in vi ne boste potovali. Kateri od naslednjih stavkov je pravilen? Odgovorite {0}, {1}, {2} ali {3}."
+msgid "People that travel always buy a map. You are not going to travel. Which of the following sentences is correct? Answer {0}, {1}, {2} or {3}."
+msgstr "Ljudje, ki potujejo, vedno kupijo zemljevid. Vi ne boste potovali. Kateri od naslednjih stavkov je pravilen? Odgovorite {0}, {1}, {2} ali {3}."
 
 #: ../src/Games/Logic/PuzzlePredicateLogic.cs:76
 msgid "You do not have any map"
@@ -1850,11 +1851,6 @@ msgstr "Žvižgate, če niste veseli"
 #: ../src/Games/Logic/PuzzlePredicateLogic.cs:92
 msgid "Predicate Logic"
 msgstr "Napovedovalna logika"
-
-#: ../src/Games/Logic/PuzzlePredicateLogic.cs:100
-#: ../src/Games/Logic/PuzzleTriangles.cs:42
-msgid "A triangle can be embedded inside another triangle."
-msgstr "Trikotnik je lahko vstavljen v drug trikotnik."
 
 #: ../src/Games/Logic/PuzzlePencil.cs:39
 msgid "Pencil"
@@ -2020,13 +2016,14 @@ msgstr "Trenutni čas"
 #. TimeNow Puzzle. Translators: {1}, {2} {3} are replaced by hours. Use the right time format specification for your culture
 #. Explanation of the date and time format specifications can be found here:
 #. http://msdn.microsoft.com/en-us/library/system.globalization.datetimeformatinfo.aspx
+#. For 12-hour clock format use {0:%h} and for 24-hour clock format use {0:%H}. The date formats {0:h} and {0:H} are invalid.
 #.
-#: ../src/Games/Logic/PuzzleTimeNow.cs:45
+#: ../src/Games/Logic/PuzzleTimeNow.cs:46
 #, csharp-format
 msgid "{0} hours ago it was as long after {1:h tt} as it was before {2:h tt} on the same day. What is the time now? Answer using the hour (e.g.: {3:h tt})"
 msgstr "{0} ur nazaj je bilo enako dolgo za {1:h tt}, kot je bilo pred {2:h tt} ob istem dnevu. Koliko je ura sedaj? Odgovorite z uporabo ure (na primer: {3:h tt})"
 
-#: ../src/Games/Logic/PuzzleTimeNow.cs:53
+#: ../src/Games/Logic/PuzzleTimeNow.cs:54
 #, csharp-format
 msgid "You have to calculate the hour from which the distance is the same for the given times, and then add the {0} hours to convert it to present time."
 msgstr "Izračunate morate uro od katere je trajanje za dane čase enako in nato dodati {0} ur za pretvorbo v sedanji čas."
@@ -2035,13 +2032,14 @@ msgstr "Izračunate morate uro od katere je trajanje za dane čase enako in nato
 #. Use the right time format specification for your culture
 #. Explanation of the date and time format specifications can be found here:
 #. http://msdn.microsoft.com/en-us/library/system.globalization.datetimeformatinfo.aspx
-#: ../src/Games/Logic/PuzzleTimeNow.cs:75
+#. For 12-hour clock format use {0:%h} and for 24-hour clock format use {0:%H}. The date formats {0:h} and {0:H} are invalid.
+#: ../src/Games/Logic/PuzzleTimeNow.cs:77
 #, csharp-format
 msgid "{0:h tt}"
 msgstr "{0:h tt}"
 
 #. No hands
-#: ../src/Games/Logic/PuzzleTimeNow.cs:84
+#: ../src/Games/Logic/PuzzleTimeNow.cs:86
 msgid "Sample clock"
 msgstr "Vzorčna ura"
 
@@ -2052,6 +2050,10 @@ msgstr "Trikotniki"
 #: ../src/Games/Logic/PuzzleTriangles.cs:38
 msgid "How many triangles of any size do you count in the figure below?"
 msgstr "Koliko trikotnikov katerekoli velikosti lahko naštejete na sliki spodaj?"
+
+#: ../src/Games/Logic/PuzzleTriangles.cs:42
+msgid "A triangle can be embedded inside another triangle."
+msgstr "Trikotnik je lahko vstavljen v drug trikotnik."
 
 #: ../src/Games/Logic/PuzzleTriangles.cs:49
 #, csharp-format
@@ -2589,51 +2591,51 @@ msgstr "Le trening pomnjenja"
 msgid "Mental Calculation Trainers Only"
 msgstr "Le trening miselnega računanja"
 
-#: ../src/Clients/Classical/gbrainy.ui.h:10
+#: ../src/Clients/Classical/gbrainy.ui.h:11
 msgid "Toolbar"
 msgstr "Orodna vrstica"
 
-#: ../src/Clients/Classical/gbrainy.ui.h:11
+#: ../src/Clients/Classical/gbrainy.ui.h:12
 msgid "Verbal Analogies Only"
 msgstr "Le besedne analogije"
 
-#: ../src/Clients/Classical/gbrainy.ui.h:12
+#: ../src/Clients/Classical/gbrainy.ui.h:13
 msgid "_Contents"
 msgstr "_Vsebina"
 
-#: ../src/Clients/Classical/gbrainy.ui.h:13
+#: ../src/Clients/Classical/gbrainy.ui.h:14
 msgid "_End Game"
 msgstr "_Končaj igro"
 
-#: ../src/Clients/Classical/gbrainy.ui.h:14
+#: ../src/Clients/Classical/gbrainy.ui.h:15
 msgid "_Game"
 msgstr "_Igra"
 
-#: ../src/Clients/Classical/gbrainy.ui.h:15
+#: ../src/Clients/Classical/gbrainy.ui.h:16
 msgid "_Help"
 msgstr "Pomo_č"
 
-#: ../src/Clients/Classical/gbrainy.ui.h:16
+#: ../src/Clients/Classical/gbrainy.ui.h:17
 msgid "_New Game"
 msgstr "_Nova Igra"
 
-#: ../src/Clients/Classical/gbrainy.ui.h:17
+#: ../src/Clients/Classical/gbrainy.ui.h:18
 msgid "_Next"
 msgstr "_Naprej"
 
-#: ../src/Clients/Classical/gbrainy.ui.h:18
+#: ../src/Clients/Classical/gbrainy.ui.h:19
 msgid "_Pause Game"
 msgstr "_Premor igre"
 
-#: ../src/Clients/Classical/gbrainy.ui.h:19
+#: ../src/Clients/Classical/gbrainy.ui.h:20
 msgid "_Settings"
 msgstr "_Nastavitve"
 
-#: ../src/Clients/Classical/gbrainy.ui.h:20
+#: ../src/Clients/Classical/gbrainy.ui.h:21
 msgid "_Tip"
 msgstr "N_amig"
 
-#: ../src/Clients/Classical/gbrainy.ui.h:21
+#: ../src/Clients/Classical/gbrainy.ui.h:22
 msgid "_View"
 msgstr "_Pogled"
 
