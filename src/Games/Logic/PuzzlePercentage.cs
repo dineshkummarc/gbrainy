@@ -63,33 +63,42 @@ namespace gbrainy.Games.Logic
 
 			gametype = (GameType) random.Next ((int) GameType.Total);
 
-			switch ((int) gametype)
+			switch (gametype)
 			{
-			case (int) GameType.Discount:
-				int price, discount, paid;
+			case GameType.Discount:
+				double price, discount, paid;
 
-				discount = 10 + random.Next (30);
-				price = 100 + random.Next (100);
-				paid = price - (price * discount / 100);
-			
+				do
+				{
+					discount = 10 + random.Next (30);
+					price = 100 + random.Next (100);
+					paid = price - (price * discount / 100);
+
+				}  while (paid != Math.Truncate (paid));
+
 				question = String.Format (
 					Catalog.GetString ("After getting {0}% discount you have paid {1} monetary units for a TV set. What was the original price of the TV set?"),
 					discount, paid);
-				ans = price;
+				ans = (int)price;
 				break;
-			case (int) GameType.Sales:
-				int sales, increase, previous;
+			case GameType.Sales:
+				double sales, increase, previous;
 
-				previous = 10 + random.Next (90);
-				increase = 10 + random.Next (20);
-				sales = previous + (previous * increase / 100);
+				do
+				{
+					previous = 10 + random.Next (90);
+					increase = 10 + random.Next (20);
+					sales = previous + (previous * increase / 100);
+
+				}  while (sales != Math.Truncate (sales));
+
 			
 				question = String.Format (
 					Catalog.GetString ("John's shop had sales of {0} monetary units. This was an increase of {1}% over last month. What were last month sales?"),
 					sales, increase);
-				ans = previous;
+				ans = (int) previous;
 				break;
-			case (int) GameType.Water:
+			case GameType.Water:
 				double decrease, percentage;
 
 				do
