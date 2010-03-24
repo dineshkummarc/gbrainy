@@ -10,8 +10,8 @@ msgstr ""
 "Project-Id-Version: gbrainy.HEAD\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=gbrainy&component=general\n"
-"POT-Creation-Date: 2010-03-21 22:57+0000\n"
-"PO-Revision-Date: 2010-03-22 18:47+0100\n"
+"POT-Creation-Date: 2010-03-24 19:59+0000\n"
+"PO-Revision-Date: 2010-03-24 21:08+0100\n"
 "Last-Translator: Jorge González <jorgegonz@svn.gnome.org>\n"
 "Language-Team: Español <gnome-es-list@gnome.org>\n"
 "MIME-Version: 1.0\n"
@@ -210,8 +210,9 @@ msgid "Works with leather"
 msgstr "Trabaja con cuero"
 
 #: ../data/verbal_analogies.xml.h:50
-msgid "airplane | aeroplane"
-msgstr "avión | aeroplano"
+#| msgid "airplane | aeroplane"
+msgid "airplane | aeroplane | plane"
+msgstr "avión | aeroplano | aeronave"
 
 #: ../data/verbal_analogies.xml.h:51
 msgid "ankle"
@@ -517,8 +518,8 @@ msgid "tennis / sport | ballet"
 msgstr "tenis / deporte | ballet"
 
 #: ../data/verbal_analogies.xml.h:131
-msgid "theatre"
-msgstr "teatro"
+msgid "theatre | theater"
+msgstr ""
 
 #: ../data/verbal_analogies.xml.h:132
 msgid "toy / play | tool"
@@ -529,7 +530,6 @@ msgid "track | railway"
 msgstr "vía | vía férrea"
 
 #: ../data/verbal_analogies.xml.h:134
-#| msgid "turns"
 msgid "turn"
 msgstr "girar"
 
@@ -550,7 +550,6 @@ msgid "wild"
 msgstr "salvaje"
 
 #: ../data/verbal_analogies.xml.h:139
-#| msgid "wins"
 msgid "win"
 msgstr "ganar"
 
@@ -2282,7 +2281,7 @@ msgstr "Dos personas en la mesa sentadas a cada lado"
 msgid "Percentage"
 msgstr "Porcentaje"
 
-#: ../src/Games/Logic/PuzzlePercentage.cs:76
+#: ../src/Games/Logic/PuzzlePercentage.cs:80
 #, csharp-format
 msgid ""
 "After getting {0}% discount you have paid {1} monetary units for a TV set. "
@@ -2291,7 +2290,7 @@ msgstr ""
 "Después de obtener un descuento del {0}% ha pagado {1} unidades monetarias "
 "por un conjunto de TV. ¿Cuál era el precio original del conjunto de TV?"
 
-#: ../src/Games/Logic/PuzzlePercentage.cs:88
+#: ../src/Games/Logic/PuzzlePercentage.cs:97
 #, csharp-format
 msgid ""
 "John's shop had sales of {0} monetary units. This was an increase of {1}% "
@@ -2301,7 +2300,7 @@ msgstr ""
 "fue un incremento del {1}% sobre las del mes pasado. ¿Cuáles fueron las "
 "ventas del mes pasado?"
 
-#: ../src/Games/Logic/PuzzlePercentage.cs:103
+#: ../src/Games/Logic/PuzzlePercentage.cs:112
 #, csharp-format
 msgid ""
 "The amount of water in a bucket decreases by {0}%. By what percentage must "
@@ -2310,7 +2309,7 @@ msgstr ""
 "La cantidad de agua en un cubo decrece un {0}%. ¿Qué porcentaje de cantidad "
 "de agua debe aumentar para llegar a su valor original?"
 
-#: ../src/Games/Logic/PuzzlePercentage.cs:106
+#: ../src/Games/Logic/PuzzlePercentage.cs:115
 msgid "The objective is to obtain the same total amount"
 msgstr "El objetivo es obtener la misma cantidad"
 
@@ -2663,13 +2662,17 @@ msgid "Memorize figures and text"
 msgstr "Memorizar figuras y texto"
 
 #: ../src/Games/Memory/MemoryFiguresAndText.cs:70
+#| msgid ""
+#| "The list below enumerates the figures shown in the previous image except "
+#| "for one. Which is the missing figure? Answer the name of the figure."
 msgid ""
 "The list below enumerates the figures shown in the previous image except for "
-"one. Which is the missing figure? Answer the name of the figure."
+"one. Which is the missing figure? Possible answers are triangle, rectangle, "
+"diamond and circle."
 msgstr ""
 "La lista de abajo enumera las figuras mostradas en la imagen anterior "
-"excepto una. ¿Cuál es la figura que falta? Responde con el nombre de la "
-"figura."
+"excepto una. ¿Cuál es la figura que falta? Las posibles respuestas son "
+"«triángulo», «rectángulo», «diamante» y «círculo»."
 
 #: ../src/Games/Memory/MemoryFiguresNumbers.cs:40
 msgid "Figures with numbers"
@@ -3313,6 +3316,9 @@ msgstr "_Desinstalar…"
 #: ../src/Clients/Classical/mono-addins-strings.xml.h:35
 msgid "_Unselect All"
 msgstr "_Deseleccionar todo"
+
+#~ msgid "theatre"
+#~ msgstr "teatro"
 
 #~ msgid "_FullScreen"
 #~ msgstr "_Pantalla completa"
