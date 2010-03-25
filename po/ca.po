@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gbrainy\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-03-18 08:06+0100\n"
-"PO-Revision-Date: 2010-01-31 23:41+0100\n"
+"POT-Creation-Date: 2010-03-25 21:40+0100\n"
+"PO-Revision-Date: 2010-03-25 21:40+0100\n"
 "Last-Translator: Jordi Mas <jmas@softcatala.org>\n"
 "Language-Team: Catalan\n"
 "MIME-Version: 1.0\n"
@@ -209,7 +209,7 @@ msgid "Works with leather"
 msgstr "Treballa amb pell"
 
 #: ../data/verbal_analogies.xml.h:50
-msgid "airplane | aeroplane"
+msgid "airplane | aeroplane | plane"
 msgstr "avió | aeroplà | aeronau"
 
 #: ../data/verbal_analogies.xml.h:51
@@ -462,7 +462,7 @@ msgstr "simplista"
 
 #: ../data/verbal_analogies.xml.h:116
 msgid "sink"
-msgstr "enfonsar"
+msgstr "enfonsar | submergir"
 
 #: ../data/verbal_analogies.xml.h:117
 msgid "sleep | rest"
@@ -516,7 +516,7 @@ msgid "tennis / sport | ballet"
 msgstr "tennis / esport | ballet"
 
 #: ../data/verbal_analogies.xml.h:131
-msgid "theatre"
+msgid "theatre | theater"
 msgstr "teatre"
 
 #: ../data/verbal_analogies.xml.h:132
@@ -528,7 +528,7 @@ msgid "track | railway"
 msgstr "via | ferrovia"
 
 #: ../data/verbal_analogies.xml.h:134
-msgid "turns"
+msgid "turn"
 msgstr "girar"
 
 #: ../data/verbal_analogies.xml.h:135
@@ -548,16 +548,16 @@ msgid "wild"
 msgstr "salvatge | feréstec"
 
 #: ../data/verbal_analogies.xml.h:139
+msgid "win"
+msgstr "guanyar"
+
+#: ../data/verbal_analogies.xml.h:140
 msgid "wind | air"
 msgstr "vent | aire"
 
-#: ../data/verbal_analogies.xml.h:140
+#: ../data/verbal_analogies.xml.h:141
 msgid "wings"
 msgstr "ales"
-
-#: ../data/verbal_analogies.xml.h:141
-msgid "wins"
-msgstr "guanyar"
 
 #. Translators: 'work' is used as a verb (to work)
 #: ../data/verbal_analogies.xml.h:143
@@ -2195,8 +2195,8 @@ msgid ""
 "People that travel always buy a map. You are not going to travel. Which of "
 "the following sentences is correct? Answer {0}, {1}, {2} or {3}."
 msgstr ""
-"Les persones que viatgen sempre compren un mapa. No heu de viatjar. "
-"Quina de les següents frases és correcta? Responeu {0}, {1}, {2} o {3}."
+"Les persones que viatgen sempre compren un mapa. No heu de viatjar. Quina de "
+"les següents frases és correcta? Responeu {0}, {1}, {2} o {3}."
 
 #: ../src/Games/Logic/PuzzlePredicateLogic.cs:76
 msgid "You do not have any map"
@@ -2303,7 +2303,7 @@ msgstr "Dues persones a la taula assegudes una davant de l'altra"
 msgid "Percentage"
 msgstr "Percentatge"
 
-#: ../src/Games/Logic/PuzzlePercentage.cs:76
+#: ../src/Games/Logic/PuzzlePercentage.cs:80
 #, csharp-format
 msgid ""
 "After getting {0}% discount you have paid {1} monetary units for a TV set. "
@@ -2312,7 +2312,7 @@ msgstr ""
 "Després d'obtindre un descompte del {0}% heu pagat {1} unitats monetàries "
 "per un televisor. Quin era el preu original del televisor?"
 
-#: ../src/Games/Logic/PuzzlePercentage.cs:88
+#: ../src/Games/Logic/PuzzlePercentage.cs:97
 #, csharp-format
 msgid ""
 "John's shop had sales of {0} monetary units. This was an increase of {1}% "
@@ -2322,7 +2322,7 @@ msgstr ""
 "representar un increment del {1}% respecte al mes passat. Quines van ser les "
 "vendes el mes passat?"
 
-#: ../src/Games/Logic/PuzzlePercentage.cs:103
+#: ../src/Games/Logic/PuzzlePercentage.cs:112
 #, csharp-format
 msgid ""
 "The amount of water in a bucket decreases by {0}%. By what percentage must "
@@ -2331,7 +2331,7 @@ msgstr ""
 "La quantitat d'aigua a un cubell decreix un {0}%. Quin percentatge ha "
 "d'augmentar la quantitat d'aigua per arribar al valor original?"
 
-#: ../src/Games/Logic/PuzzlePercentage.cs:106
+#: ../src/Games/Logic/PuzzlePercentage.cs:115
 msgid "The objective is to obtain the same total amount"
 msgstr "L'objectiu és obtindre la mateixa quantitat total"
 
@@ -2684,11 +2684,12 @@ msgstr "Memorizeu figures i text"
 #: ../src/Games/Memory/MemoryFiguresAndText.cs:70
 msgid ""
 "The list below enumerates the figures shown in the previous image except for "
-"one. Which is the missing figure? Answer the name of the figure."
+"one. Which is the missing figure? Possible answers are triangle, rectangle, "
+"diamond and circle."
 msgstr ""
 "La llista d'abaix enumera les figures mostrades en la imatge prèvia a "
-"excepció d'una. Quina és la figura que manca? Responeu amb el nom de la "
-"figura."
+"excepció d'una. Quina és la figura que manca? Les respostes possibles són "
+"triangle, rectangle, rombe o cercle."
 
 #: ../src/Games/Memory/MemoryFiguresNumbers.cs:40
 msgid "Figures with numbers"
@@ -3148,7 +3149,6 @@ msgstr "Només trencaclosques lògics"
 msgid "Memory Trainers Only"
 msgstr "Només entrenadors de memòria"
 
-#
 #: ../src/Clients/Classical/gbrainy.ui.h:8
 msgid "Mental Calculation Trainers Only"
 msgstr "Només entrenadors de càlcul mental"
@@ -3341,6 +3341,9 @@ msgstr "_Desinstal·la..."
 #: ../src/Clients/Classical/mono-addins-strings.xml.h:35
 msgid "_Unselect All"
 msgstr "_Desselecciona-ho tot"
+
+#~ msgid "theatre"
+#~ msgstr "teatre"
 
 #~ msgid "_FullScreen"
 #~ msgstr "_Pantalla completa"
