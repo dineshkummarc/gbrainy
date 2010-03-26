@@ -31,10 +31,10 @@ namespace gbrainy.Games.Calculation
 	{
 		const int options_cnt = 4;
 		const int correct_pos = 0;
-		int []numbers;
+		double []numbers;
 		double []options;
 		ArrayListIndicesRandom random_indices;
-		int correct;
+		double correct;
 
 		public override string Name {
 			get {return Catalog.GetString ("Average");}
@@ -92,22 +92,27 @@ namespace gbrainy.Games.Calculation
 				break;
 			}
 
-			numbers = new int [nums];
+			numbers = new double [nums];
 			options = new double [options_cnt];
 
-			// Random set of numbers
-			correct = 0;
-			for (int i = 0; i < nums; i++)
+			do
 			{
-				numbers [i] = 10 + random.Next (num_size) + dist;
-				correct += numbers [i];
-			}
+				// Random set of numbers
+				correct = 0;
+				for (int i = 0; i < nums; i++)
+				{
+					numbers [i] = 10 + random.Next (num_size) + dist;
+					correct += numbers [i];
+				}
 
-			correct = correct / nums;
+				correct = correct / nums;
+
+			} while (correct != Math.Truncate (correct));
 
 			options [correct_pos] = correct;
 			options_next = correct_pos + 1;
 
+			// Generate possible answers
 			while (options_next < options_cnt) {
 				double ans;
 
