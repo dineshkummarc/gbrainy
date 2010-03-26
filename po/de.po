@@ -10,8 +10,8 @@ msgstr ""
 "Project-Id-Version: gbrainy master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=gbrainy&component=general\n"
-"POT-Creation-Date: 2010-03-13 20:58+0000\n"
-"PO-Revision-Date: 2010-03-14 07:29+0100\n"
+"POT-Creation-Date: 2010-03-26 16:26+0000\n"
+"PO-Revision-Date: 2010-03-26 18:50+0100\n"
 "Last-Translator: Wolfgang Stoeggl <c72578@yahoo.de>\n"
 "Language-Team: German <gnome-de@gnome.org>\n"
 "MIME-Version: 1.0\n"
@@ -212,7 +212,7 @@ msgid "Works with leather"
 msgstr "mit Leder arbeitet"
 
 #: ../data/verbal_analogies.xml.h:50
-msgid "airplane | aeroplane"
+msgid "airplane | aeroplane | plane"
 msgstr "Flugzeug | Flieger"
 
 #: ../data/verbal_analogies.xml.h:51
@@ -517,10 +517,10 @@ msgstr "zehn | 10"
 
 #: ../data/verbal_analogies.xml.h:130
 msgid "tennis / sport | ballet"
-msgstr "Tennis / Sport | Ballet"
+msgstr "Tennis / Sport | Ballett"
 
 #: ../data/verbal_analogies.xml.h:131
-msgid "theatre"
+msgid "theatre | theater"
 msgstr "Theater"
 
 #: ../data/verbal_analogies.xml.h:132
@@ -531,9 +531,8 @@ msgstr "Spielzeug / spielen | Werkzeug"
 msgid "track | railway"
 msgstr "Gleis | Geleise | Bahn"
 
-# Original evtl. turn statt turns, besser passend zu button / push
 #: ../data/verbal_analogies.xml.h:134
-msgid "turns"
+msgid "turn"
 msgstr "drehen"
 
 #: ../data/verbal_analogies.xml.h:135
@@ -552,18 +551,18 @@ msgstr "Whirlpool / Wasser | Tornado"
 msgid "wild"
 msgstr "wild"
 
+# Eventuell win im Originalstring statt wins, passend zu solve.
 #: ../data/verbal_analogies.xml.h:139
+msgid "win"
+msgstr "gewinnen"
+
+#: ../data/verbal_analogies.xml.h:140
 msgid "wind | air"
 msgstr "Wind | Luft"
 
-#: ../data/verbal_analogies.xml.h:140
+#: ../data/verbal_analogies.xml.h:141
 msgid "wings"
 msgstr "Flügel"
-
-# Eventuell win im Originalstring statt wins, passend zu solve.
-#: ../data/verbal_analogies.xml.h:141
-msgid "wins"
-msgstr "gewinnen"
 
 #. Translators: 'work' is used as a verb (to work)
 #: ../data/verbal_analogies.xml.h:143
@@ -587,7 +586,7 @@ msgstr ""
 "Spiele, die Ihre logischen, verbalen und Kopfrechenfähigkeiten sowie Ihr "
 "Gedächtnis herausfordern"
 
-#: ../data/gbrainy.desktop.in.h:3 ../src/Clients/Classical/gbrainy.ui.h:22
+#: ../data/gbrainy.desktop.in.h:3 ../src/Clients/Classical/gbrainy.ui.h:23
 msgid "gbrainy"
 msgstr "gbrainy"
 
@@ -983,7 +982,7 @@ msgstr "{0} Antwort {1}."
 #: ../src/Core/Main/Verbal/AnalogiesMultipleOptions.cs:117
 #: ../src/Core/Main/Verbal/AnalogiesPairOfWordsOptions.cs:116
 #: ../src/Games/Logic/PuzzleOstracism.cs:167
-#: ../src/Games/Logic/PuzzlePredicateLogic.cs:150
+#: ../src/Games/Logic/PuzzlePredicateLogic.cs:146
 #: ../src/Games/Calculation/CalculationCloserFraction.cs:165
 #, csharp-format
 msgid "{0}) {1}"
@@ -997,7 +996,7 @@ msgstr "{0}) {1}"
 #: ../src/Games/Logic/PuzzleMissingSlice.cs:219
 #: ../src/Games/Logic/PuzzleMostInCommon.cs:317
 #: ../src/Games/Logic/PuzzleNextFigure.cs:169
-#: ../src/Games/Logic/PuzzlePredicateLogic.cs:163
+#: ../src/Games/Logic/PuzzlePredicateLogic.cs:159
 #: ../src/Games/Logic/PuzzleSquareDots.cs:207
 #: ../src/Games/Logic/PuzzleTetris.cs:175
 msgid "Possible answers are:"
@@ -1216,6 +1215,7 @@ msgid "_Start"
 msgstr "_Start"
 
 #: ../src/Clients/Classical/Dialogs/ui/PlayerHistoryDialog.ui.h:1
+#: ../src/Clients/Classical/gbrainy.ui.h:9
 msgid "Player's Game History"
 msgstr "Spielchronik des Spielers"
 
@@ -1264,7 +1264,7 @@ msgid "Minimum number of played puzzles to store the game:"
 msgstr "Minimale Anzahl an absolvierten Aufgaben, um das Spiel zu speichern:"
 
 #: ../src/Clients/Classical/Dialogs/ui/PreferencesDialog.ui.h:11
-#: ../src/Clients/Classical/gbrainy.ui.h:9
+#: ../src/Clients/Classical/gbrainy.ui.h:10
 msgid "Preferences"
 msgstr "Einstellungen"
 
@@ -2207,12 +2207,12 @@ msgstr "Alle Künstler sind glücklich"
 #: ../src/Games/Logic/PuzzlePredicateLogic.cs:74
 #, csharp-format
 msgid ""
-"If people that travels always buy a map and you are not going to travel. "
-"Which of the following sentences is correct? Answer {0}, {1}, {2} or {3}."
+"People that travel always buy a map. You are not going to travel. Which of "
+"the following sentences is correct? Answer {0}, {1}, {2} or {3}."
 msgstr ""
-"Falls Reisende immer eine Karte kaufen und Sie nicht auf Reisen gehen, "
-"welche der folgenden Aussagen ist dann zutreffend? Antworten Sie mit {0}, "
-"{1}, {2} oder {3}."
+"Reisende kaufen immer eine Karte. Sie selbst werden nicht verreisen. Welche "
+"der folgenden Aussagen ist zutreffend? Antworten Sie mit {0}, {1}, {2} oder "
+"{3}."
 
 #: ../src/Games/Logic/PuzzlePredicateLogic.cs:76
 msgid "You do not have any map"
@@ -2251,11 +2251,6 @@ msgstr "Sie pfeifen, wenn Sie nicht glücklich sind"
 #: ../src/Games/Logic/PuzzlePredicateLogic.cs:92
 msgid "Predicate Logic"
 msgstr "Prädikatenlogik"
-
-#: ../src/Games/Logic/PuzzlePredicateLogic.cs:100
-#: ../src/Games/Logic/PuzzleTriangles.cs:42
-msgid "A triangle can be embedded inside another triangle."
-msgstr "Ein Dreieck kann sich innerhalb eines anderen Dreiecks befinden."
 
 #: ../src/Games/Logic/PuzzlePencil.cs:39
 msgid "Pencil"
@@ -2326,7 +2321,7 @@ msgstr "Zwei Personen sitzen einander am Tisch gegenüber"
 msgid "Percentage"
 msgstr "Anteil"
 
-#: ../src/Games/Logic/PuzzlePercentage.cs:76
+#: ../src/Games/Logic/PuzzlePercentage.cs:80
 #, csharp-format
 msgid ""
 "After getting {0}% discount you have paid {1} monetary units for a TV set. "
@@ -2335,7 +2330,7 @@ msgstr ""
 "Nachdem Sie einen Rabatt von {0}% erhielten, zahlten Sie {1} Geldeinheiten "
 "für ein Fernsehgerät. Was war der ursprüngliche Preis des Fernsehgerätes?"
 
-#: ../src/Games/Logic/PuzzlePercentage.cs:88
+#: ../src/Games/Logic/PuzzlePercentage.cs:97
 #, csharp-format
 msgid ""
 "John's shop had sales of {0} monetary units. This was an increase of {1}% "
@@ -2345,7 +2340,7 @@ msgstr ""
 "Steigerung von {1}% gegenüber dem vorherigen Monat. Wie hoch war der Umsatz "
 "im vorherigen Monat?"
 
-#: ../src/Games/Logic/PuzzlePercentage.cs:103
+#: ../src/Games/Logic/PuzzlePercentage.cs:112
 #, csharp-format
 msgid ""
 "The amount of water in a bucket decreases by {0}%. By what percentage must "
@@ -2355,7 +2350,7 @@ msgstr ""
 "muss die Wassermenge zunehmen, damit der ursprüngliche Stand wieder erreicht "
 "wird?"
 
-#: ../src/Games/Logic/PuzzlePercentage.cs:106
+#: ../src/Games/Logic/PuzzlePercentage.cs:115
 msgid "The objective is to obtain the same total amount"
 msgstr "Ziel ist es, die gleiche Gesamtmenge zu erreichen"
 
@@ -2539,6 +2534,10 @@ msgstr "Dreiecke"
 msgid "How many triangles of any size do you count in the figure below?"
 msgstr "Wie viele Dreiecke beliebiger Größe zählen Sie im unteren Bild?"
 
+#: ../src/Games/Logic/PuzzleTriangles.cs:42
+msgid "A triangle can be embedded inside another triangle."
+msgstr "Ein Dreieck kann sich innerhalb eines anderen Dreiecks befinden."
+
 #: ../src/Games/Logic/PuzzleTriangles.cs:49
 #, csharp-format
 msgid "The triangles are made by connecting the following points: {0}"
@@ -2709,11 +2708,12 @@ msgstr "Merken von Bildern und Text"
 #: ../src/Games/Memory/MemoryFiguresAndText.cs:70
 msgid ""
 "The list below enumerates the figures shown in the previous image except for "
-"one. Which is the missing figure? Answer the name of the figure."
+"one. Which is the missing figure? Possible answers are triangle, rectangle, "
+"diamond and circle."
 msgstr ""
 "Die unten angezeigte Liste nummeriert die in den vorherigen Bildern "
-"gezeigten Elemente bis auf eines. Welches Element fehlt? Antworten Sie mit "
-"dem Namen des Elementes."
+"gezeigten Elemente bis auf eines. Welches Element fehlt? Mögliche Antworten "
+"sind Dreieck, Rechteck, Raute und Kreis."
 
 #: ../src/Games/Memory/MemoryFiguresNumbers.cs:40
 msgid "Figures with numbers"
@@ -3175,52 +3175,52 @@ msgstr "Nur Gedächtnisübungen"
 msgid "Mental Calculation Trainers Only"
 msgstr "Nur Übungen zum Kopfrechnen"
 
-#: ../src/Clients/Classical/gbrainy.ui.h:10
+#: ../src/Clients/Classical/gbrainy.ui.h:11
 msgid "Toolbar"
 msgstr "Werkzeugleiste"
 
-#: ../src/Clients/Classical/gbrainy.ui.h:11
+#: ../src/Clients/Classical/gbrainy.ui.h:12
 msgid "Verbal Analogies Only"
 msgstr "Nur verbale Analogien"
 
-#: ../src/Clients/Classical/gbrainy.ui.h:12
+#: ../src/Clients/Classical/gbrainy.ui.h:13
 msgid "_Contents"
 msgstr "I_nhalt"
 
-#: ../src/Clients/Classical/gbrainy.ui.h:13
+#: ../src/Clients/Classical/gbrainy.ui.h:14
 msgid "_End Game"
 msgstr "Spiel be_enden"
 
-#: ../src/Clients/Classical/gbrainy.ui.h:14
+#: ../src/Clients/Classical/gbrainy.ui.h:15
 msgid "_Game"
 msgstr "_Spiel"
 
-#: ../src/Clients/Classical/gbrainy.ui.h:15
+#: ../src/Clients/Classical/gbrainy.ui.h:16
 msgid "_Help"
 msgstr "_Hilfe"
 
-#: ../src/Clients/Classical/gbrainy.ui.h:16
+#: ../src/Clients/Classical/gbrainy.ui.h:17
 msgid "_New Game"
 msgstr "_Neues Spiel"
 
-#: ../src/Clients/Classical/gbrainy.ui.h:17
+#: ../src/Clients/Classical/gbrainy.ui.h:18
 msgid "_Next"
 msgstr "_Weiter"
 
 # Wenn das Spiel angehalten ist, so wird es mit diesem Eintrag auch fortgesetzt.
-#: ../src/Clients/Classical/gbrainy.ui.h:18
+#: ../src/Clients/Classical/gbrainy.ui.h:19
 msgid "_Pause Game"
 msgstr "Spiel _pausieren / fortsetzen"
 
-#: ../src/Clients/Classical/gbrainy.ui.h:19
+#: ../src/Clients/Classical/gbrainy.ui.h:20
 msgid "_Settings"
 msgstr "_Einstellungen"
 
-#: ../src/Clients/Classical/gbrainy.ui.h:20
+#: ../src/Clients/Classical/gbrainy.ui.h:21
 msgid "_Tip"
 msgstr "_Hinweis"
 
-#: ../src/Clients/Classical/gbrainy.ui.h:21
+#: ../src/Clients/Classical/gbrainy.ui.h:22
 msgid "_View"
 msgstr "_Ansicht"
 
@@ -3367,6 +3367,9 @@ msgstr "_Deinstallieren …"
 #: ../src/Clients/Classical/mono-addins-strings.xml.h:35
 msgid "_Unselect All"
 msgstr "_Nichts auswählen"
+
+#~ msgid "theatre"
+#~ msgstr "Theater"
 
 # Die Brücke führt über den Fluss und der Tunnel in den Berg.
 # Alternative Überlegung: Über die Brücke, durch den Tunnel fahren.
