@@ -74,6 +74,8 @@ namespace gbrainy.Clients.Classical
 		public GtkClient (string [] args, params object [] props)
 		: base ("gbrainy", Defines.VERSION, Modules.UI,  args, props)
 		{
+			bool show_toolbar;
+
 			Catalog.Init ("gbrainy", Defines.GNOME_LOCALE_DIR);
 			Unix.FixLocaleInfo ();
 
@@ -94,7 +96,7 @@ namespace gbrainy.Clients.Classical
 			// For low resolutions, hide the toolbar and made the drawing area smaller
 			if (drawing_area.Screen.Width> 0 && drawing_area.Screen.Height > 0) {
 				if (drawing_area.Screen.Height < 700) {
-					drawing_vbox.HeightRequest = 300;
+					drawing_vbox.HeightRequest = 350;
 					low_res = true;
 				}
 			}
@@ -117,10 +119,17 @@ namespace gbrainy.Clients.Classical
 			eb.MotionNotifyEvent += OnMouseMotionEvent;
 			eb.ButtonPressEvent += OnHandleButtonPress;
 
+			show_toolbar = Preferences.GetBoolValue (Preferences.ToolbarKey) == true && low_res == false;
+
+			// We only disable the Arrow if we are going to show the toolbar.
+			// It has an impact on the total window width size even if you we do not show it
+			if (show_toolbar)
+				toolbar.ShowArrow = false;
+
 			app_window.IconName = "gbrainy";
 			app_window.ShowAll ();
 
-			if (Preferences.GetBoolValue (Preferences.ToolbarKey) == false || low_res == true)
+			if (show_toolbar == false)
 				toolbar_menuitem.Active = false;
 
 		#if MONO_ADDINS
@@ -177,7 +186,6 @@ namespace gbrainy.Clients.Classical
 				SetMargin ((int) offset_x);
 			else
 				SetMargin (2);
-
 
 			cr.Translate (offset_x, offset_y);
 			session.Draw (cr, drawing_square, drawing_square, drawing_area.Direction == Gtk.TextDirection.Rtl);
@@ -292,7 +300,6 @@ namespace gbrainy.Clients.Classical
 			icon_factory.AddDefault ();
 
 			toolbar.IconSize = Gtk.IconSize.Dnd;
-			toolbar.ShowArrow = false;
 
 			all_tbbutton = new ToolButton ("allgames");
 			all_tbbutton.TooltipText = Catalog.GetString ("Play all the games");
@@ -584,6 +591,10 @@ namespace gbrainy.Clients.Classical
 			requisition =  toolbar.SizeRequest ();
 			app_window.GetSize (out width, out height);
 			toolbar.Visible = !toolbar.Visible;
+
+			if (toolbar.Visible)
+				toolbar.ShowArrow = false;
+
 			Preferences.SetBoolValue (Preferences.ToolbarKey, toolbar.Visible);
 			Preferences.Save ();
 			app_window.Resize (width, height - requisition.Height);
