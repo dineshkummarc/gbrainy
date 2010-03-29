@@ -33,6 +33,7 @@ namespace gbrainy.Core.Main.Verbal
 		static bool read = false;
 	
 		public const char Separator = '|';
+		static readonly string IgnoreAnalogy = "<ignore>";
 
 		static AnalogiesFactory ()
 		{
@@ -73,7 +74,9 @@ namespace gbrainy.Core.Main.Verbal
 							answers.Clear ();
 						}
 						else {
-							if (reader.NodeType == XmlNodeType.EndElement) {
+							if (reader.NodeType == XmlNodeType.EndElement &&
+								// Ignores verbal analogies disabled for a specific locale
+								Catalog.GetString (analogy.question) != IgnoreAnalogy) {
 								analogy.answers = answers.ToArray ();
 								analogies_arrays [(int) analogy.type].Add (analogies_arrays [(int) analogy.type].Count, analogy);
 							}
@@ -103,6 +106,7 @@ namespace gbrainy.Core.Main.Verbal
 								break;
 							}
 						}
+
 						analogy.question = reader.ReadElementString ();
 						break;
 					case "_tip":
