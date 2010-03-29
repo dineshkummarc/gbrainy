@@ -139,25 +139,13 @@ namespace gbrainy.Core.Views
 			y += 0.08;
 			gr.MoveTo (x, y);
 
-			if (session.GamesPlayed >= 10) {
-				if (session.TotalScore >= 70)
-					s = String.Format (Catalog.GetString ("Outstanding results"));
-				else if (session.TotalScore >= 50)
-					s = String.Format (Catalog.GetString ("Excellent results"));
-				else if (session.TotalScore >= 30)
-					s = String.Format (Catalog.GetString ("Good results"));
-				else if (session.TotalScore >= 20)
-					s = String.Format (Catalog.GetString ("Poor results"));
-				else s = String.Format (Catalog.GetString ("Disappointing results"));
-			} else 
-				s = String.Empty;
-
 			gr.MoveTo (x, y);
-
-			if (s == String.Empty)
-				gr.ShowPangoText (String.Format (Catalog.GetString ("Games won: {0} ({1} played)"), session.GamesWon, session.GamesPlayed));	
-			else 
-				gr.ShowPangoText (String.Format (Catalog.GetString ("{0}. Games won: {1} ({2} played)"), s, session.GamesWon, session.GamesPlayed));	
+	
+			s = session.Result;
+			if (s == string.Empty)
+				gr.ShowPangoText (String.Format (Catalog.GetString ("Games won: {0} ({1} played)"), session.GamesWon, session.GamesPlayed));
+			else
+				gr.ShowPangoText (String.Format (Catalog.GetString ("{0}. Games won: {1} ({2} played)"), s, session.GamesWon, session.GamesPlayed));
 
 			y += 0.06;
 			gr.MoveTo (x, y);

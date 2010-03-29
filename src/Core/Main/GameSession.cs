@@ -253,6 +253,28 @@ namespace gbrainy.Core.Main
 				return text;
 			}
 		}
+
+		// Summarizes how the game did go
+		public string Result {
+			get {
+				string s;
+
+				if (GamesPlayed >= 10) {
+					if (TotalScore >= 70)
+						s = String.Format (Catalog.GetString ("Outstanding results"));
+					else if (TotalScore >= 50)
+						s = String.Format (Catalog.GetString ("Excellent results"));
+					else if (TotalScore >= 30)
+						s = String.Format (Catalog.GetString ("Good results"));
+					else if (TotalScore >= 20)
+						s = String.Format (Catalog.GetString ("Poor results"));
+					else s = String.Format (Catalog.GetString ("Disappointing results"));
+				} else
+					s = string.Empty;
+	
+				return s;
+			}
+		}
 	
 		public void NewSession ()
 		{
