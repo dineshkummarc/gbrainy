@@ -59,6 +59,7 @@ namespace gbrainy.Games.Logic
 				break;
 			}
 
+			const double text_offset = 0.04;
 			double x = DrawAreaX, y = DrawAreaY + 0.1, box_size = (1 - (DrawAreaX * 2)) / 3;
 			HorizontalContainer container1, container2, container = null;
 			DrawableArea drawable_area;
@@ -93,7 +94,7 @@ namespace gbrainy.Games.Logic
 					drawable_area.DrawEventHandler += delegate (object sender, DrawEventArgs e)
 					{
 						DrawTriangle (e.Context, (e.Width - figure_size) / 2, 0);
-						e.Context.DrawTextCentered (e.Width / 2, figure_size + 0.02, 
+						e.Context.DrawTextCentered (e.Width / 2, figure_size + text_offset, 
 							GetPossibleFigureAnswer ((int) e.Data));
 					};
 					break;
@@ -101,7 +102,7 @@ namespace gbrainy.Games.Logic
 					drawable_area.DrawEventHandler += delegate (object sender, DrawEventArgs e)
 					{
 						DrawDiamon (e.Context, (e.Width - figure_size) / 2, 0);
-						e.Context.DrawTextCentered (e.Width / 2, figure_size + 0.02,
+						e.Context.DrawTextCentered (e.Width / 2, figure_size + text_offset,
 							GetPossibleFigureAnswer ((int) e.Data));
 					};
 					break;
@@ -109,7 +110,7 @@ namespace gbrainy.Games.Logic
 					drawable_area.DrawEventHandler += delegate (object sender, DrawEventArgs e)
 					{
 						DrawRectangleWithTriangles (e.Context, (e.Width - figure_size) / 2, 0);
-						e.Context.DrawTextCentered (e.Width / 2, figure_size + + 0.02,
+						e.Context.DrawTextCentered (e.Width / 2, figure_size + text_offset,
 							GetPossibleFigureAnswer ((int) e.Data));
 					};
 					break;
@@ -117,7 +118,7 @@ namespace gbrainy.Games.Logic
 					drawable_area.DrawEventHandler += delegate (object sender, DrawEventArgs e)
 					{
 						DrawThreeTriangles (e.Context, (e.Width - figure_size) / 2, 0);
-						e.Context.DrawTextCentered (e.Width / 2, figure_size + + 0.02,
+						e.Context.DrawTextCentered (e.Width / 2, figure_size + text_offset,
 							GetPossibleFigureAnswer ((int) e.Data));
 					};
 					break;
@@ -125,7 +126,7 @@ namespace gbrainy.Games.Logic
 					drawable_area.DrawEventHandler += delegate (object sender, DrawEventArgs e)
 					{
 						DrawRectangleWithCross (e.Context, (e.Width - figure_size) / 2, 0);
-						e.Context.DrawTextCentered (e.Width / 2, figure_size + 0.02,
+						e.Context.DrawTextCentered (e.Width / 2, figure_size + text_offset,
 							GetPossibleFigureAnswer ((int) e.Data));
 					};
 					break;
