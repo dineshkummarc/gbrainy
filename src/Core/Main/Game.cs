@@ -277,6 +277,15 @@ namespace gbrainy.Core.Main
 			if (containers.Contains (container))
 				throw new InvalidOperationException ("Child already exists in container");
 
+			foreach (Toolkit.Container previous in containers)
+			{
+				if (previous.X == container.X && previous.Y == container.Y &&
+					 previous.Width == container.Width && previous.Height == container.Height)
+				{
+					throw new InvalidOperationException ("Child on the same area exists in container. Overlapping drawings.");
+				}
+			}
+
 			container.DrawRequest += delegate (object sender, EventArgs e)
 			{
 				OnDrawRequest ();

@@ -118,8 +118,14 @@ namespace gbrainy.Clients.Classical
 		    	}
 
 			Game game = games_store.GetValue (iter, COL_OBJECT) as Game;
-			game.IsPreviewMode = true;
-			game.Initialize ();
+
+			// We should not be using IsPreviewMode to know if Initialize has been called
+			if (game.IsPreviewMode == false) 
+			{
+				game.IsPreviewMode = true;
+				game.Initialize ();
+			}
+
 			question_label.Text = game.Question;
 			drawing_area.puzzle = game;
 			drawing_area.QueueDraw ();
