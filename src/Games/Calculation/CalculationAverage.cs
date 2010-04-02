@@ -62,7 +62,7 @@ namespace gbrainy.Games.Calculation
 			get { 
 				string answer = base.Answer + " ";
 
-				answer += String.Format (Catalog.GetString ("The result of the operation is {0:##0.###}"), 
+				answer += String.Format (Catalog.GetString ("The result of the operation is {0:##0.###}."), 
 					correct);
 				return answer;
 			}

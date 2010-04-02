@@ -75,7 +75,7 @@ namespace gbrainy.Games.Logic
 				GetPossibleAnswer (0), GetPossibleAnswer (1), GetPossibleAnswer (2), GetPossibleAnswer (3)),
 				Catalog.GetString ("You do not have any map"),
 				Catalog.GetString ("You do not buy a map"),
-				Catalog.GetString ("All people has a map"),
+				Catalog.GetString ("All people have a map"),
 				Catalog.GetString ("None of the other options"),
 				3),
 
