@@ -112,7 +112,7 @@ namespace gbrainy.Games.Logic
 					Catalog.GetString ("The amount of water in a bucket decreases by {0}%. By what percentage must the amount of water increase to reach its original value?"),
 					decrease);
 
-				answer = Catalog.GetString ("The objective is to obtain the same total amount");
+				answer = Catalog.GetString ("The objective is to obtain the same total amount.");
 				ans = (int) percentage;
 				break;
 			default:
