@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2007-2008 Jordi Mas i Hernàndez <jmas@softcatala.org>
+ * Copyright (C) 2007-2010 Jordi Mas i Hernàndez <jmas@softcatala.org>
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License as
@@ -29,7 +29,7 @@ namespace gbrainy.Core.Main
 		static int idx = 0;
 	
 		static public int Count {
-			get { return 13; }
+			get { return 15; }
 		}
 
 		// Gets a random tip from the list
@@ -73,6 +73,10 @@ namespace gbrainy.Core.Main
 				return Catalog.GetString ("Build acronyms using the first letter of each fact to be remembered.");
 			case 12:
 				return Catalog.GetString ("The enjoyment obtained from a puzzle is proportional to the time spent on it.");
+			case 13:
+				return Catalog.GetString ("Think of breaking down every problem into simpler components.");
+			case 14:
+				return Catalog.GetString ("When answering verbal analogies pay attention to the verb tense.");
 			default:
 				throw new InvalidOperationException ();
 			}
