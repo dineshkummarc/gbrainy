@@ -4,21 +4,28 @@ DOC_ID = gbrainy
 DOC_INCLUDES = legal.xml
 
 DOC_FIGURES = \
-	figures/toolbar.png	\
-	figures/bottom.png	\
-	figures/results.png	\
-	figures/preferences.png	\
-	figures/history.png
+	figures/all-games.png		\
+	figures/logic-games.png		\
+	figures/memory-games.png	\
+	figures/gbrainy.png		\
+	figures/math-games.png		\
+	figures/verbal-games.png	
+
 
 DOC_PAGES = \
-	index.page \
-	introduction.page \
-	gametypes.page \
-	playing.page \
-	scoring.page \
-	preferences.page \
-	results.page \
-	history.page
+	customgame.page	\ 
+	gametypes.page	\
+	license.page	\
+	pause.page	\
+	tips.page	\
+	difficulty.page	\
+	history.page	\
+	multiplayer.page \
+	score.page	\
+	gameplay.page	\	
+	index.page	\
+	newgame.page	\
+	times.page
 
 DOC_LINGUAS = ca cs da de es
 

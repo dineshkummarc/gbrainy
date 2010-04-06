@@ -43,6 +43,11 @@ namespace gbrainy.Clients.Classical
 				"Openclipart.org"
 			};
 
+			string [] documenters = new string [] {
+				"Milo Casagrande <milo@ubuntu.com>",
+				"Jordi Mas i Hernandez <jmas@softcatala.org>"
+			};
+
 			// Translators: Replace by the name of the people that translated the application
 			string translators = Catalog.GetString ("translator-credits");
 
@@ -56,7 +61,7 @@ namespace gbrainy.Clients.Classical
 			ProgramName = "gbrainy";
 			Version = Defines.VERSION;
 			Authors = authors;
-			Documenters = null;
+			Documenters = documenters;
 			Logo = LoadFromAssembly ("gbrainy.svg");
 
 			Copyright = Defines.COPYRIGHT + "\n";
