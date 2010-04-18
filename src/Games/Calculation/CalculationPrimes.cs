@@ -23,6 +23,7 @@ using Mono.Unix;
 
 using gbrainy.Core.Main;
 using gbrainy.Core.Libraries;
+using gbrainy.Core.Toolkit;
 
 namespace gbrainy.Games.Calculation
 {
@@ -30,6 +31,7 @@ namespace gbrainy.Games.Calculation
 	{
 		const int total_primes = 1129;
 		const int total_nums = 5;
+		double width_box, height_box;
 		int max;
 		bool div3;	
 		int []numbers;
@@ -197,6 +199,30 @@ namespace gbrainy.Games.Calculation
 			answer = primes [random.Next (max_primeidx + 1)];
 			numbers [random.Next (numbers.Length)] = answer;
 			right_answer = answer.ToString ();
+
+			// Drawing objects
+			HorizontalContainer container = new HorizontalContainer (DrawAreaX, DrawAreaY + 0.22, 0.8, 0.1);
+			DrawableArea drawable_area;
+			AddWidget (container);
+
+			width_box = 0.8 / numbers.Length;
+			height_box = 0.1;
+
+			for (int i = 0; i < numbers.Length; i++)
+			{
+				drawable_area = new DrawableArea (width_box, height_box);
+				drawable_area.Data = i;
+				drawable_area.DataEx = numbers[i].ToString ();
+				container.AddChild (drawable_area);
+
+				drawable_area.DrawEventHandler += delegate (object sender, DrawEventArgs e)
+				{
+					int n = (int) e.Data;
+
+					e.Context.SetPangoLargeFontSize ();
+					e.Context.DrawTextCentered (width_box / 2, height_box / 2, numbers[n].ToString ());
+				};
+			}
 		}
 
 		public override void Draw (CairoContextEx gr, int area_width, int area_height, bool rtl)
@@ -209,15 +235,6 @@ namespace gbrainy.Games.Calculation
 
 			gr.MoveTo (0.05, y);
 			gr.ShowPangoText (Catalog.GetString ("Numbers"));
-			y += 0.12;
-
-			for (int n = 0; n < numbers.Length; n++)
-			{
-				gr.MoveTo (x, y);
-				gr.ShowPangoText (numbers[n].ToString ());
-				gr.Stroke ();
-				x += 0.17;
-			}
 		}
 	
 		int GenerateNonPrime ()
