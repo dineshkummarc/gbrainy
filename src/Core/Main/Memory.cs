@@ -69,7 +69,8 @@ namespace gbrainy.Core.Main
 
 		public override void Initialize ()
 		{
-			if (Preferences.GetBoolValue (Preferences.MemQuestionWarnKey) == false) {
+			if (Preferences.GetBoolValue (Preferences.MemQuestionWarnKey) == false || 
+				IsPreviewMode == true) {
 				InitializeGame ();
 				return;
 			}
