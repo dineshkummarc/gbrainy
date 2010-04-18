@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2009 Jordi Mas i Hernàndez <jmas@softcatala.org>
+ * Copyright (C) 2009-2010 Jordi Mas i Hernàndez <jmas@softcatala.org>
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License as
@@ -32,10 +32,10 @@ namespace gbrainy.Games.Calculation
 		const int total_primes = 1129;
 		const int total_nums = 5;
 		double width_box, height_box;
-		int max;
+		short max;
 		bool div3;	
 		int []numbers;
-		int []primes = new int []	
+		short []primes = new short []	
 		{
 			2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 
 			37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 
@@ -237,11 +237,12 @@ namespace gbrainy.Games.Calculation
 			gr.ShowPangoText (Catalog.GetString ("Numbers"));
 		}
 	
-		int GenerateNonPrime ()
+		short GenerateNonPrime ()
 		{
-			int num;
+			short num;
 			while (true) {
-				num = 100 + random.Next (max - 100);
+				// Max value is a short
+				num = (short) (100 + (random.Next (max - 100)));
 
 				if (num % 2 == 0)
 					continue;
