@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gbrainy.help.master\n"
 "POT-Creation-Date: 2010-04-06 17:12+0000\n"
-"PO-Revision-Date: 2010-04-17 19:06+0200\n"
+"PO-Revision-Date: 2010-04-18 12:04+0200\n"
 "Last-Translator: Jorge González <jorgegonz@svn.gnome.org>\n"
 "Language-Team: Español <gnome-es-list@gnome.org>\n"
 "MIME-Version: 1.0\n"
@@ -190,6 +190,10 @@ msgid ""
 "(e.g. link to descriptions of each game type, or give examples of the sorts "
 "of games in each category?)"
 msgstr ""
+"Las descripciones en la lista de abajo simplemente muestran el nombre de "
+"cada botón (X: Iniciar una partida nueva jugando X juegos). ¿Se puede hacer "
+"algo más útil con ellos (ej. enlazar las descripciones de cada tipo de juego "
+"o proporcionar ejemplos de los tipos de juegos en cada categoría?"
 
 #: C/newgame.page:58(title)
 msgid "All"
@@ -268,6 +272,8 @@ msgid ""
 "These descriptions also apply to the game types that you can select from the "
 "<gui style=\"menu\">Game</gui> menu."
 msgstr ""
+"Estas descripciones también se aplican a los tipos de juegos que puede "
+"seleccionar en el menú <gui style=\"menu\">Juego</gui>."
 
 #: C/newgame.page:158(title)
 #| msgid "Game Session"
@@ -284,6 +290,9 @@ msgid ""
 "answer. At the bottom of the window is the main set of controls that you can "
 "use to interact with the game."
 msgstr ""
+"La sesión de partidas comienza mostrándote el problema y preguntándote la "
+"solución. En la parte inferior de la ventana está el conjunto principal de "
+"controles que puede usar para interactuar con el juego."
 
 #: C/newgame.page:168(p)
 #| msgid ""
@@ -372,7 +381,6 @@ msgstr ""
 "mantener entrenado tu cerebro."
 
 #: C/gameplay.page:26(p)
-#, fuzzy
 #| msgid ""
 #| "It features different <link xref=\"gametypes\">game types</link> like "
 #| "logic puzzles, mental calculation games, memory trainers and verbal "
@@ -382,12 +390,11 @@ msgid ""
 "games, memory trainers and verbal analogies, designed to test different "
 "cognitive skills."
 msgstr ""
-"Incluye diferentes <link xref=\"gametypes\">tipos de juegos</link> como "
-"puzles lógicos, juegos de cálculo mental, entrenadores de memoria y "
-"analogías verbales, diseñados para "
+"Incluye diferentes tipos de juegos como puzles lógicos, juegos de cálculo "
+"mental, entrenadores de memoria y analogías verbales, diseñados para probar "
+"diferentes capacidades cognitivas."
 
 #: C/gameplay.page:30(p)
-#, fuzzy
 #| msgid ""
 #| "The player can choose different difficulty levels making <app>gbrainy</"
 #| "app> enjoyable for kids, adults or senior citizens. It also features "
@@ -402,7 +409,7 @@ msgid ""
 "app> can also be <link href=\"http://live.gnome.org/gbrainy/Extending"
 "\">extended</link> easily with new games developed by third parties."
 msgstr ""
-"El jugador puede elegir entre diferentes niveles de dificultad haciendo que "
+"Puedes elegir entre diferentes niveles de dificultad haciendo que "
 "<app>gbrainy</app> sea divertido para niños, adultos o personas mayores. "
 "También tiene un histórico de las partidas del jugador, los récord "
 "personales del jugador, sugerencias durante la partida y soporte para jugar "
@@ -411,7 +418,6 @@ msgstr ""
 "desarrollados por terceras partes."
 
 #: C/gameplay.page:37(p)
-#, fuzzy
 #| msgid ""
 #| "<app>gbrainy</app> relies heavily on the talent of previous puzzle "
 #| "masters ranging from classic puzzles from the ancient times to the ideas "
@@ -432,7 +438,6 @@ msgstr ""
 "\"http://en.wikipedia.org/wiki/Dr._Brain\">Dr. Brain</link>."
 
 #: C/gameplay.page:45(p)
-#, fuzzy
 #| msgid ""
 #| "There have been recent discussions in the scientific community regarding "
 #| "if playing brain training software improves cognitive performance. Most "
@@ -446,9 +451,8 @@ msgid ""
 msgstr ""
 "Ha habido recientes discusiones en la comunidad científica acerca de si "
 "jugar a juegos de preguntas capciosas mejora el rendimiento cognitivo. La "
-"mayoría de los estudios muestra que no hay, o a penas hay, una mejora "
-"cognitiva. No obstante puede pasar un buen rato jugando a juegos como "
-"<app>gbrainy</app>."
+"mayoría de los estudios muestra que no hay, o a penas hay, una mejora, pero "
+"puedes pasar un buen rato jugando a juegos como <app>gbrainy</app>."
 
 #: C/score.page:8(desc)
 msgid "How the player scores are calculated."
@@ -461,6 +465,7 @@ msgstr "Puntuaciones de las partidas y tiempos"
 #: C/score.page:20(p)
 msgid "If you answer a puzzle incorrectly, you will not get any score for it."
 msgstr ""
+"Si respondes incorrectamente a un puzle no obtendrás ninguna puntación."
 
 #: C/score.page:23(p)
 msgid ""
@@ -468,6 +473,9 @@ msgid ""
 "time taken to resolve the problem and whether you used the tip during the "
 "game."
 msgstr ""
+"Si respondes correctamente a un puzle obtendrás una puntuación que depende "
+"del tiempo que te haya llevado resolver el problema y si usaste alguna "
+"sugerencia durante el juego."
 
 #: C/score.page:27(p)
 msgid ""
@@ -547,7 +555,6 @@ msgid "Verbal analogies"
 msgstr "Analogías verbales"
 
 #: C/score.page:63(p)
-#, fuzzy
 #| msgid ""
 #| "With the expected time for the current difficulty level and the time used "
 #| "by the player to complete the game, the following logic is applied:"
@@ -556,7 +563,7 @@ msgid ""
 "to complete the game, the following logic is applied:"
 msgstr ""
 "Se aplica la siguiente lógica con el tiempo esperado para el nivel de "
-"dificultad actual y el tiempo usado por el jugador para completar la partida:"
+"dificultad actual y el tiempo usado para completar la partida:"
 
 #: C/score.page:69(p)
 #| msgid "If the player required less than the time expected scores 100%."
