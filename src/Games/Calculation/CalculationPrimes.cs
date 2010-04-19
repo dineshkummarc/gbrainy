@@ -227,13 +227,11 @@ namespace gbrainy.Games.Calculation
 
 		public override void Draw (CairoContextEx gr, int area_width, int area_height, bool rtl)
 		{	
-			double x = DrawAreaX, y = DrawAreaY + 0.1;
-
 			base.Draw (gr, area_width, area_height, rtl);
 
 			gr.SetPangoLargeFontSize ();
 
-			gr.MoveTo (0.05, y);
+			gr.MoveTo (0.05, DrawAreaY + 0.1);
 			gr.ShowPangoText (Catalog.GetString ("Numbers"));
 		}
 	
