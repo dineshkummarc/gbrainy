@@ -76,6 +76,7 @@ namespace gbrainy.Games
 			typeof (Puzzle3DCube),
 			typeof (PuzzlePredicateLogic),
 			typeof (PuzzleDice),
+			typeof (PuzzleTrains),
 		};
 
 		static Type[] CalculationTrainersInternal = new Type[] 

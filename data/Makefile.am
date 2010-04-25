@@ -44,10 +44,6 @@ tango_icons = 				\
 analogies_DATA = \
 	verbal_analogies.xml
 
-game_graphics = \
-	game-graphics/present.svg	\
-	game-graphics/handshake.svg
-
 install-data-local:
 	@-$(mkinstalldirs) $(DESTDIR)$(hicolordir)/scalable/apps
 	$(INSTALL_DATA) $(srcdir)/app-graphics/gbrainy.svg $(DESTDIR)$(hicolordir)/scalable/apps/gbrainy.svg
@@ -82,4 +78,4 @@ noinst_DATA =
 
 DISTCLEANFILES = $(desktop_files)
 
-EXTRA_DIST = $(pixmap_DATA) $(tango_icons) $(game_graphics) $(man_MANS) $(analogies_DATA) $(desktop_in_files) gbrainy.pc.in
+EXTRA_DIST = $(pixmap_DATA) $(tango_icons) $(man_MANS) $(analogies_DATA) $(desktop_in_files) gbrainy.pc.in
