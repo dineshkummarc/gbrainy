@@ -125,7 +125,7 @@ namespace gbrainy.Games.Logic
 				y = DrawAreaY;
 				for (int n = 0; n < 3; n++) 
 				{
-					switch ((int) figures[(n * 6) + element])
+					switch (figures[(n * 6) + element])
 					{
 						case 0:
 							gr.DrawDiamond (x, y, 0.1);
