@@ -40,6 +40,7 @@ CSDISTFILES =  \
 		$(srcdir)/Views/WelcomeView.cs		\
 		$(srcdir)/Platform/Unix.cs		\
 		$(srcdir)/Libraries/CairoContextEx.cs	\
+		$(srcdir)/Libraries/GetText.cs		\
 		$(srcdir)/Libraries/SVGImage.cs
 
 CSFILES = $(CSDISTFILES)	\
