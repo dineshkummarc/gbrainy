@@ -58,7 +58,7 @@ namespace gbrainy.Core.Main
 			case 4:
 				return Catalog.GetString ("Enjoy making mistakes, they are part of the learning process.");
 			case 5:
-				return Catalog.GetString ("Do all the problems, even the difficult ones. Improvement comes from practising.");
+				return Catalog.GetString ("Do all the problems, even the difficult ones. Improvement comes from practicing.");
 			case 6:
 				return Catalog.GetString ("Play on a daily basis, you will notice progress soon.");
 			case 7: // Translators: Custom Game Selection is a menu option
