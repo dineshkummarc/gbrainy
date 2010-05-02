@@ -5,13 +5,14 @@
 # (c) 2007 Santiago Martinez Varela, 2007.
 # Eduardo Retamales <eretamales@gnome.cl>, 2007, 2008.
 # Jorge González <jorgegonz@svn.gnome.org>, 2007, 2008, 2010.
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: gbrainy.HEAD\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=gbrainy&component=general\n"
-"POT-Creation-Date: 2010-04-02 15:57+0000\n"
-"PO-Revision-Date: 2010-04-06 19:32+0200\n"
+"POT-Creation-Date: 2010-05-01 10:19+0000\n"
+"PO-Revision-Date: 2010-05-02 10:57+0200\n"
 "Last-Translator: Jorge González <jorgegonz@svn.gnome.org>\n"
 "Language-Team: Español <gnome-es-list@gnome.org>\n"
 "MIME-Version: 1.0\n"
@@ -890,9 +891,12 @@ msgid "Enjoy making mistakes, they are part of the learning process."
 msgstr "Diviértete cometiendo errores, son parte del proceso de aprendizaje."
 
 #: ../src/Core/Main/GameTips.cs:61
+#| msgid ""
+#| "Do all the problems, even the difficult ones. Improvement comes from "
+#| "practising."
 msgid ""
 "Do all the problems, even the difficult ones. Improvement comes from "
-"practising."
+"practicing."
 msgstr ""
 "Haz todos los problemas, incluso los difíciles. La mejora llega a través de "
 "la práctica."
@@ -935,7 +939,7 @@ msgstr ""
 msgid "Memorize the objects below in the given time"
 msgstr "Memoriza los siguientes objetos en el tiempo dado"
 
-#: ../src/Core/Main/Verbal/Analogies.cs:32
+#: ../src/Core/Main/Verbal/Analogies.cs:33
 msgid "Verbal analogies"
 msgstr "Analogías verbales"
 
@@ -943,13 +947,13 @@ msgstr "Analogías verbales"
 #. For example: "Possible correct answers are: sleep, rest."
 #. Translators: this the separator used when concatenating possible options for answering verbal analogies
 #. For example: "Possible correct answers are: a, b, c, d."
-#: ../src/Core/Main/Verbal/Analogies.cs:75
+#: ../src/Core/Main/Verbal/Analogies.cs:76
 #: ../src/Core/Main/Verbal/AnalogiesMultipleOptions.cs:65
 #: ../src/Core/Main/Verbal/AnalogiesPairOfWordsOptions.cs:78
 msgid ", "
 msgstr ", "
 
-#: ../src/Core/Main/Verbal/Analogies.cs:78
+#: ../src/Core/Main/Verbal/Analogies.cs:79
 #, csharp-format
 msgid "Possible correct answers are: {0}."
 msgstr "Las posibles respuestas correctas son: {0}."
@@ -971,6 +975,7 @@ msgstr "{0} Responde {1}."
 #: ../src/Games/Logic/PuzzleOstracism.cs:167
 #: ../src/Games/Logic/PuzzlePredicateLogic.cs:146
 #: ../src/Games/Calculation/CalculationCloserFraction.cs:165
+#: ../src/Games/Calculation/CalculationGreatestDivisor.cs:145
 #, csharp-format
 msgid "{0}) {1}"
 msgstr "{0}) {1}"
@@ -1097,7 +1102,7 @@ msgid "Resume"
 msgstr "Reanudar"
 
 #. Translators: Replace by the name of the people that translated the application
-#: ../src/Clients/Classical/Dialogs/AboutDialog.cs:47
+#: ../src/Clients/Classical/Dialogs/AboutDialog.cs:52
 msgid "translator-credits"
 msgstr ""
 "Jorge González <jorgegonz@svn.gnome.org>, 2007-2010\n"
@@ -1105,7 +1110,7 @@ msgstr ""
 "Eduardo Retamales <eretamales@gnome.cl>, 2007, 2008\n"
 "QA: Jorge González <jorgegonz@svn.gnome.org>, 2007-2009"
 
-#: ../src/Clients/Classical/Dialogs/AboutDialog.cs:52
+#: ../src/Clients/Classical/Dialogs/AboutDialog.cs:57
 msgid ""
 "This program is free software; you can redistribute it and/or modify it "
 "under the terms of the GNU General Public License as  published by the Free "
@@ -1119,7 +1124,7 @@ msgstr ""
 "elección) cualquier versión posterior. \n"
 "\n"
 
-#: ../src/Clients/Classical/Dialogs/AboutDialog.cs:53
+#: ../src/Clients/Classical/Dialogs/AboutDialog.cs:58
 msgid ""
 "This program is distributed in the hope that it will be useful, but WITHOUT "
 "ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or "
@@ -1133,7 +1138,7 @@ msgstr ""
 "para más detalles. \n"
 "\n"
 
-#: ../src/Clients/Classical/Dialogs/AboutDialog.cs:54
+#: ../src/Clients/Classical/Dialogs/AboutDialog.cs:59
 msgid ""
 "You should have received a copy of the GNU General Public License along with "
 "this program; if not, write to the Free Software Foundation, Inc., 59 Temple "
@@ -1143,17 +1148,17 @@ msgstr ""
 "coneste programa, si no, escriba a la Fundación del Sofware Libre, en 59 "
 "Temple 59 Place - Suite 330, Boston, MA 02111-1307, EE. UU."
 
-#: ../src/Clients/Classical/Dialogs/AboutDialog.cs:63
+#: ../src/Clients/Classical/Dialogs/AboutDialog.cs:68
 msgid "Based on ideas by Terry Stickels, MENSA books and Jordi Mas."
 msgstr "Basado en ideas de Terry Stickels, MENSA books y Jordi Mas."
 
-#: ../src/Clients/Classical/Dialogs/AboutDialog.cs:65
+#: ../src/Clients/Classical/Dialogs/AboutDialog.cs:70
 msgid "A brain teaser game for fun and to keep your brain trained."
 msgstr ""
 "Un juego de preguntas capciosas para divertirse y mantener el cerebro "
 "entrenado."
 
-#: ../src/Clients/Classical/Dialogs/AboutDialog.cs:67
+#: ../src/Clients/Classical/Dialogs/AboutDialog.cs:72
 msgid "gbrainy web site"
 msgstr "Página web de gbrainy"
 
@@ -2184,7 +2189,6 @@ msgid "You do not buy a map"
 msgstr "No compras un mapa"
 
 #: ../src/Games/Logic/PuzzlePredicateLogic.cs:78
-#| msgid "All people has a map"
 msgid "All people have a map"
 msgstr "Todo el mundo tiene un mapa"
 
@@ -2310,7 +2314,6 @@ msgstr ""
 "de agua debe aumentar para llegar a su valor original?"
 
 #: ../src/Games/Logic/PuzzlePercentage.cs:115
-#| msgid "The objective is to obtain the same total amount"
 msgid "The objective is to obtain the same total amount."
 msgstr "El objetivo es obtener la misma cantidad."
 
@@ -2922,7 +2925,6 @@ msgstr ""
 
 #: ../src/Games/Calculation/CalculationAverage.cs:65
 #, csharp-format
-#| msgid "The result of the operation is {0:##0.###}"
 msgid "The result of the operation is {0:##0.###}."
 msgstr "El resultado de la operación es {0:##0.###}."
 
@@ -2957,22 +2959,22 @@ msgstr ""
 "¿Cuál es el resultado de la operación dada? Puedes responder usando tanto "
 "una fracción como un número."
 
-#: ../src/Games/Calculation/CalculationGreatestDivisor.cs:37
+#: ../src/Games/Calculation/CalculationGreatestDivisor.cs:39
 msgid "Greatest divisor"
 msgstr "Máximo común divisor"
 
-#: ../src/Games/Calculation/CalculationGreatestDivisor.cs:45
+#: ../src/Games/Calculation/CalculationGreatestDivisor.cs:47
 msgid ""
 "Which of the possible divisors is the greatest that divides all numbers?"
 msgstr ""
 "¿Cuál de los divisores posibles es el mayor que divide a todos los números?"
 
-#: ../src/Games/Calculation/CalculationGreatestDivisor.cs:209
-#: ../src/Games/Calculation/CalculationPrimes.cs:211
+#: ../src/Games/Calculation/CalculationGreatestDivisor.cs:238
+#: ../src/Games/Calculation/CalculationPrimes.cs:235
 msgid "Numbers"
 msgstr "Números"
 
-#: ../src/Games/Calculation/CalculationGreatestDivisor.cs:224
+#: ../src/Games/Calculation/CalculationGreatestDivisor.cs:252
 msgid "Possible divisors"
 msgstr "Posibles divisores"
 
@@ -2999,11 +3001,11 @@ msgstr ""
 msgid "{0} and {1}"
 msgstr "{0} y {1}"
 
-#: ../src/Games/Calculation/CalculationPrimes.cs:153
+#: ../src/Games/Calculation/CalculationPrimes.cs:155
 msgid "Primes"
 msgstr "Primos"
 
-#: ../src/Games/Calculation/CalculationPrimes.cs:161
+#: ../src/Games/Calculation/CalculationPrimes.cs:163
 msgid ""
 "In the set of numbers below, which of the following numbers is a prime? A "
 "prime number is a positive integer that has exactly two different positive "
@@ -3013,7 +3015,7 @@ msgstr ""
 "número primo? Un número primo es cualquier número natural mayor que 1 y que "
 "sólo se puede dividir por 1 y por si mismo."
 
-#: ../src/Games/Calculation/CalculationPrimes.cs:165
+#: ../src/Games/Calculation/CalculationPrimes.cs:167
 msgid ""
 "If the sum of all digits in a given number is divisible by 3, then so is the "
 "number. For example 15 = 1 + 5 = 6, which is divisible by 3."
