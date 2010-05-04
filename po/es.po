@@ -11,8 +11,8 @@ msgstr ""
 "Project-Id-Version: gbrainy.HEAD\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=gbrainy&component=general\n"
-"POT-Creation-Date: 2010-05-01 10:19+0000\n"
-"PO-Revision-Date: 2010-05-02 10:57+0200\n"
+"POT-Creation-Date: 2010-05-03 21:24+0000\n"
+"PO-Revision-Date: 2010-05-04 23:16+0200\n"
 "Last-Translator: Jorge González <jorgegonz@svn.gnome.org>\n"
 "Language-Team: Español <gnome-es-list@gnome.org>\n"
 "MIME-Version: 1.0\n"
@@ -891,9 +891,6 @@ msgid "Enjoy making mistakes, they are part of the learning process."
 msgstr "Diviértete cometiendo errores, son parte del proceso de aprendizaje."
 
 #: ../src/Core/Main/GameTips.cs:61
-#| msgid ""
-#| "Do all the problems, even the difficult ones. Improvement comes from "
-#| "practising."
 msgid ""
 "Do all the problems, even the difficult ones. Improvement comes from "
 "practicing."
@@ -1271,17 +1268,21 @@ msgstr "Omitir los juegos que usan colores (amigable para usuarios daltónicos)"
 msgid "Time in seconds to memorize the challenge:"
 msgstr "Tiempo en segundos para memorizar el desafío:"
 
-#: ../src/Games/Logic/Puzzle3DCube.cs:34 ../src/Games/Logic/PuzzleCube.cs:47
-msgid "Cube"
-msgstr "Cubo"
+#: ../src/Games/Logic/Puzzle3DCube.cs:34
+#| msgid "Cube"
+msgid "3D Cube"
+msgstr "Cubo 3D"
 
 #: ../src/Games/Logic/Puzzle3DCube.cs:38
 #, csharp-format
+#| msgid ""
+#| "How many cubes do you count in the figure below? (not counting the "
+#| "figure) Answer using a number."
 msgid ""
-"How many cubes do you count in the figure below? (not counting the figure) "
-"Answer using a number."
+"How many single small cubes do you count in the figure below? Answer using a "
+"number."
 msgstr ""
-"¿Cuántos cubos puede contar en la figura inferior? (sin contar la figura) "
+"¿Cuántos pequeños cubos sencillos puedes contar en la figura inferior? "
 "Responde usando un número."
 
 #: ../src/Games/Logic/Puzzle3DCube.cs:42
@@ -1495,6 +1496,10 @@ msgstr "Porcentaje cubierto"
 #: ../src/Games/Logic/PuzzleCoverPercentage.cs:41
 msgid "What percentage of the figure is colored?"
 msgstr "¿Qué porcentaje de la figura está coloreado?"
+
+#: ../src/Games/Logic/PuzzleCube.cs:47
+msgid "Cube"
+msgstr "Cubo"
 
 #: ../src/Games/Logic/PuzzleCube.cs:51
 #, csharp-format
