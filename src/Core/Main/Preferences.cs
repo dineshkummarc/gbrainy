@@ -154,8 +154,9 @@ namespace gbrainy.Core.Main
 			properties [key] = value.ToString ();
 		}
 
-		static void LoadDefaultValues ()
+		public static void LoadDefaultValues ()
 		{
+			properties.Clear ();
 			properties.Add (MemQuestionWarnKey, true.ToString ());
 			properties.Add (MemQuestionTimeKey, "4");
 			properties.Add (DifficultyKey, ((int)(Game.Difficulty.Medium)).ToString ());

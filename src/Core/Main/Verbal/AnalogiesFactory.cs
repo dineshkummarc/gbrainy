@@ -51,17 +51,25 @@ namespace gbrainy.Core.Main.Verbal
 			return analogies_arrays [(int) type];
 		}
 
-		static public void Read ()
+		static void Read ()
+		{
+			Read (Defines.DATA_DIR + Defines.VERBAL_ANALOGIES);
+		}			
+
+		static public void Read (string file)
 		{
 			Analogy analogy;
 			string name;
 			List <string> answers;
 
-			try 
+			try
 			{
-				StreamReader myStream = new StreamReader (Defines.DATA_DIR + Defines.VERBAL_ANALOGIES);
+				StreamReader myStream = new StreamReader (file);
 				XmlTextReader reader = new XmlTextReader (myStream);
 				answers = new List <string> ();
+
+				for (int i = 0; i < (int) Analogy.Type.Last; i++)
+					analogies_arrays[i].Clear ();
 
 				analogy = new Analogy ();
 				while (reader.Read ())
@@ -155,7 +163,7 @@ namespace gbrainy.Core.Main.Verbal
 
 			catch (Exception e)
 			{
-				Console.WriteLine ("Error loading {0}. Exception {1}", Defines.DATA_DIR + Defines.VERBAL_ANALOGIES, e.Message);
+				Console.WriteLine ("Error loading {0}. Exception {1}", file, e.Message);
 			}
 		}
 	}

@@ -1,5 +1,6 @@
 SUBDIRS = 		\
 	src		\
+	tests		\
 	data		\
 	po		\
 	help
