@@ -8,7 +8,8 @@ CSFLAGS =				\
 CSFILES =					\
 	$(srcdir)/Core/AnalogiesFactoryTest.cs	\
 	$(srcdir)/Core/PlayerHistoryTest.cs	\
-	$(srcdir)/Core/PlayerPersonalRecordTest.cs
+	$(srcdir)/Core/PlayerPersonalRecordTest.cs \
+	$(srcdir)/Core/GameSessionTest.cs
 
 ASSEMBLIES = \
 	$(NUNIT_LIBS)			\

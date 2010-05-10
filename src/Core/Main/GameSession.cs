@@ -205,11 +205,14 @@ namespace gbrainy.Core.Main
 			}
 		}
 	
-		public void NewSession ()
+		public void New ()
 		{
+			if (Type == Types.None)
+				throw new InvalidOperationException ("You have to setup the GameSession type");
+
 			id++;
 			if (Status != SessionStatus.NotPlaying)
-				EndSession ();
+				End ();
 
 			current_time = TimeSpanToStr (game_time);
 
@@ -219,7 +222,7 @@ namespace gbrainy.Core.Main
 			EnableTimer = true;
 		}
 
-		public void EndSession ()
+		public void End ()
 		{
 			// Making a deep copy of GameSessionHistory type (base class) for serialization
 			player_history.SaveGameSession (history.Copy ());

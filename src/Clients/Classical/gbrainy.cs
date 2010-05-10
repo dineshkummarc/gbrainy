@@ -476,7 +476,7 @@ namespace gbrainy.Clients.Classical
 		void OnNewGame (GameSession.Types type)
 		{
 			session.Type = type;
-			session.NewSession ();
+			session.New ();
 			GetNextGame ();
 			GameSensitiveUI ();
 			UpdateSolution (Catalog.GetString ("Once you have an answer type it in the \"Answer:\" entry box and press the \"OK\" button."));
@@ -542,7 +542,7 @@ namespace gbrainy.Clients.Classical
 
 		void OnEndGame (object sender, EventArgs args)
 		{
-			session.EndSession ();
+			session.End ();
 	
 			UpdateSolution (String.Empty);
 			UpdateQuestion (String.Empty);
