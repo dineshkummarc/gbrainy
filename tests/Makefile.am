@@ -9,7 +9,8 @@ CSFILES =					\
 	$(srcdir)/Core/AnalogiesFactoryTest.cs	\
 	$(srcdir)/Core/PlayerHistoryTest.cs	\
 	$(srcdir)/Core/PlayerPersonalRecordTest.cs \
-	$(srcdir)/Core/GameSessionTest.cs
+	$(srcdir)/Core/GameSessionTest.cs \
+	$(srcdir)/Core/GameManagerTest.cs
 
 ASSEMBLIES = \
 	$(NUNIT_LIBS)			\
