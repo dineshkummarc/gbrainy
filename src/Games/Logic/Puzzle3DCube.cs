@@ -35,7 +35,7 @@ namespace gbrainy.Games.Logic
 		}
 
 		public override string Question {
-			get {return String.Format (Catalog.GetString ("How many single small cubes do you count in the figure below? Answer using a number."));} 
+			get {return String.Format (Catalog.GetString ("How many small cubes does it take to build the large cube below? Answer using a number."));}
 		}
 
 		public override string Tip {
