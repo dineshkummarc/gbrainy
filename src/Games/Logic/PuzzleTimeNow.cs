@@ -49,7 +49,7 @@ namespace gbrainy.Games.Logic
 
 
 		public override string Answer {
-			get { 
+			get {
 				string answer = base.Answer + " ";
 				answer += String.Format (Catalog.GetString ("You have to calculate the hour from which the distance is the same for the given times, and then add the {0} hours to convert it to present time."), after);
 				return answer;
@@ -69,21 +69,44 @@ namespace gbrainy.Games.Logic
 			position_b = new DateTime (now.Year, now.Month, now.Day, hour + 12, 0, 0);
 			ans = new DateTime (now.Year, now.Month, now.Day, ((hour + hour + 12) / 2) + after, 0, 0);
 
-			// TimeNow Puzzle. Translators: {0} is used to check the hour answered by the user. 
+			// TimeNow Puzzle. Translators: {0} is used to check the hour answered by the user.
 			// Use the right time format specification for your culture
  			// Explanation of the date and time format specifications can be found here:
 			// http://msdn.microsoft.com/en-us/library/system.globalization.datetimeformatinfo.aspx
 			// For 12-hour clock format use {0:%h} and for 24-hour clock format use {0:%H}. The date formats {0:h} and {0:H} are invalid.
 			right_answer = String.Format (Catalog.GetString ("{0:h tt}"), ans);
-		}	
+		}
 
 		public override void Draw (CairoContextEx gr, int area_width, int area_height, bool rtl)
 		{
 			base.Draw (gr, area_width, area_height, rtl);
-			gr.DrawClock (DrawAreaX + 0.4, DrawAreaY + 0.4, figure_size, 
+			gr.DrawClock (DrawAreaX + 0.4, DrawAreaY + 0.4, figure_size,
 				0, 0 /* No hands */);
 
 			gr.DrawTextCentered (0.5, DrawAreaY + 0.3 + figure_size, Catalog.GetString ("Sample clock"));
+		}
+
+		public override bool CheckAnswer (string answer)
+		{
+			string ans = string.Empty;
+			string user = string.Empty;
+
+			if (base.CheckAnswer (answer))
+				return true;
+
+			// Compare ignoring spaces then '1PM' is as valid as '1 PM'
+			for (int c = 0; c < answer.Length; c++)
+			{
+				if (Char.IsWhiteSpace (answer[c]) == false)
+					ans += answer[c];
+			}
+
+			for (int c = 0; c < right_answer.Length; c++)
+			{
+				if (Char.IsWhiteSpace (right_answer[c]) == false)
+					user += right_answer[c];
+			}
+			return (String.Compare (user, ans, true) == 0);
 		}
 	}
 }
