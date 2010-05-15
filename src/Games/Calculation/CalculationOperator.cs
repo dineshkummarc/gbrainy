@@ -32,11 +32,11 @@ namespace gbrainy.Games.Calculation
 		private double number_a, number_b, number_c, total;
 		private char[] opers = {'*', '+', '-', '/'};
 		private char oper1, oper2;
-	
+
 		public override string Name {
 			get {return Catalog.GetString ("Operator");}
 		}
-	
+
 		public override string Tip {
 			get {return String.Format( Catalog.GetString ("The first operator is {0}."), oper1);}
 		}
@@ -46,7 +46,7 @@ namespace gbrainy.Games.Calculation
 		}
 
 		public override string Question {
-			get {return String.Format (Catalog.GetString ("Which operators make {0}, {1}, and {2} equal {3}? Answer using '+-/*'."), number_a, number_b, number_c, total);} 
+			get {return String.Format (Catalog.GetString ("Which operators make {0}, {1}, and {2} equal {3}? Answer using '+-/*'."), number_a, number_b, number_c, total);}
 		}
 
 		private double ProcessOperation (double total, double number, char op)
@@ -66,27 +66,51 @@ namespace gbrainy.Games.Calculation
 
 		public override void Initialize ()
 		{
-			bool done = false;
-			while (done == false) {
+			while (true)
+			{
 				number_a = 5 + random.Next (1000);
 				number_b = 3 + random.Next (1000);
 				number_c = 7 + random.Next (1000);
 
-				oper1 = opers[random.Next(4)];
-				oper2 = opers[random.Next(4)];
+				oper1 = opers[random.Next (opers.Length)];
+				oper2 = opers[random.Next (opers.Length)];
 
 				total = ProcessOperation (number_a, number_b, oper1);
 				total = ProcessOperation (total, number_c, oper2);
 
-				if (total < 20000 && total > -20000 && total != 0 && total == (int) total)
-					done = true;
+				if ((total < 20000 && total > -20000 && total != 0 && total == (int) total) == false)
+					continue;
+
+				// Make sure that the operation cannot be accomplished with other operators too
+				// For example, if number b = number c (+ and -) and (* and /) are valid
+				double rslt;
+				bool other_ops = false;
+				for (int op1 = 0; op1 < opers.Length; op1++)
+				{
+					for (int op2 = 0; op2 < opers.Length; op2++)
+					{
+						if (opers[op1] == oper1 && opers[op2] == oper2)
+							continue;
+
+						rslt = ProcessOperation (number_a, number_b, opers[op1]);
+						rslt = ProcessOperation (rslt, number_c, opers[op2]);
+
+						if (rslt == total) {
+							other_ops = true;
+							break;
+						}
+					}
+				}
+
+				if (other_ops == false)
+					break;
 			}
 
 			right_answer = String.Format (Catalog.GetString ("{0} and {1}"), oper1, oper2);
 		}
 
 		public override void Draw (CairoContextEx gr, int area_width, int area_height, bool rtl)
-		{	
+		{
 			const double aligned_pos = 0.58;
 
 			base.Draw (gr, area_width, area_height, rtl);
@@ -119,16 +143,16 @@ namespace gbrainy.Games.Calculation
 		}
 
 		public override bool CheckAnswer (string answer)
-		{	
+		{
 			char op1 = '\0', op2 = '\0';
 			int c = 0;
-		
+
 			for (c = 0; c < answer.Length; c++)
 			{
 				if (IndexOf (answer[c], opers)) {
 					op1 = answer[c];
 					break;
-				}			
+				}
 			}
 
 			for (c++; c < answer.Length; c++)
@@ -136,13 +160,13 @@ namespace gbrainy.Games.Calculation
 				if (IndexOf (answer[c], opers)) {
 					op2 = answer[c];
 					break;
-				}			
+				}
 			}
 
 			if (oper1 == op1 && oper2 == op2)
 				return true;
-	
-			return false;		
-		}	
+
+			return false;
+		}
 	}
 }
