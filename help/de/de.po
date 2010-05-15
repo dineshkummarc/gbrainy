@@ -8,10 +8,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gbrainy master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?\n"
-"POT-Creation-Date: 2010-02-19 21:14+0000\n"
-"PO-Revision-Date: 2010-02-20 10:19+0100\n"
-"Last-Translator: Wolfgang Stoeggl <c72578@yahoo.de>\n"
-"Language-Team: German <gnome-de@gnome.org>\n"
+"POT-Creation-Date: 2010-04-21 16:37+0000\n"
+"PO-Revision-Date: 2010-04-21 21:49+0200\n"
+"Last-Translator: Christian Kirbach <Christian.Kirbach@googlemail.com>\n"
+"Language-Team: Deutsch <gnome-de@gnome.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -37,637 +37,352 @@ msgstr ""
 "Genehmigung, den in diesem Dokument enthaltenen Beispielcode ohne "
 "Einschränkung unter den Bedingungen Ihrer Wahl zu verbreiten."
 
-#. When image changes, this message will be marked fuzzy or untranslated for you.
-#. It doesn't matter what you translate it to: it's not used at all.
-#: C/history.page:11(None)
-msgid "@@image: 'figures/history.png'; md5=c432b503d498019521a5374a8bc5ae76"
-msgstr "@@image: 'figures/history.png'; md5=48a0053651e4c33593cc9b6101abb8c2"
-
-#: C/history.page:5(title) C/results.page:5(title)
-msgid "3"
-msgstr "3"
-
-#: C/history.page:9(title) C/preferences.page:39(title) C/index.page:23(title)
-msgid "Player's Game History"
-msgstr "Spielchronik des Spielers"
-
-#: C/history.page:10(p)
-msgid ""
-"You can access the <gui>Player's Game History</gui> from the main "
-"application menu."
+#: C/times.page:7(desc)
+msgid "Change the challenge presentation time in memory games."
 msgstr ""
-"Sie können die <gui>Spielchronik des Spielers</gui> aus dem Hauptmenü der "
-"Anwendung erreichen."
 
-#: C/history.page:12(p)
+#: C/times.page:11(name) C/newgame.page:13(name) C/index.page:14(name)
+#: C/gameplay.page:12(name) C/score.page:11(name) C/multiplayer.page:11(name)
+#: C/history.page:9(name) C/difficulty.page:12(name) C/tips.page:12(name)
+#: C/pause.page:12(name) C/customgame.page:12(name)
+msgid "Milo Casagrande"
+msgstr "Milo Casagrande"
+
+#: C/times.page:12(email) C/newgame.page:14(email) C/index.page:15(email)
+#: C/gameplay.page:13(email) C/score.page:12(email)
+#: C/multiplayer.page:12(email) C/history.page:10(email)
+#: C/difficulty.page:13(email) C/tips.page:13(email) C/pause.page:13(email)
+#: C/customgame.page:13(email)
+msgid "milo@ubuntu.com"
+msgstr "milo@ubuntu.com"
+
+#: C/times.page:15(p) C/newgame.page:17(p) C/index.page:18(p)
+#: C/gameplay.page:16(p) C/score.page:15(p) C/multiplayer.page:15(p)
+#: C/history.page:13(p) C/difficulty.page:16(p) C/tips.page:16(p)
+#: C/pause.page:16(p) C/gametypes.page:12(p) C/customgame.page:16(p)
+msgid "Creative Commons Share Alike 3.0"
+msgstr "Creative Commons Share Alike 3.0"
+
+#: C/times.page:19(title)
+msgid "Change the challenge duration"
+msgstr "Ändern der für Aufgaben zur Verfügung stehenden Zeit"
+
+#: C/times.page:20(p)
 msgid ""
-"In this dialog the player can see how his performance has been evolving from "
-"every game type during the last recorded game sessions."
+"To change the number of seconds you are given to memorize the challenge when "
+"playing memory games, proceed as follows:"
 msgstr ""
-"Der Spieler kann in diesem Dialog sehen, wie sich seine Leistung von Spiel "
-"zu Spiel während der zuletzt gespeicherten Spielsitzungen entwickelt hat."
 
-#: C/history.page:13(p)
+#: C/times.page:26(p) C/difficulty.page:26(p)
 msgid ""
-"By clicking on the <gui>Total</gui>, <gui>Logic</gui>, <gui>Memory</gui>, "
-"<gui>Mental Calculation</gui> and <gui>Verbal</gui> checkboxes the user can "
-"select which game types results are shown on the player's game history "
-"graphic."
+"Choose <guiseq><gui style=\"menu\">Settings</gui><gui style=\"menuitem"
+"\">Preferences</gui></guiseq>."
 msgstr ""
-"Durch Klicken auf die Ankreuzfelder <gui>Gesamt</gui>, <gui>Logik</gui>, "
-"<gui>Gedächtnis</gui>, <gui>Kopfrechnen</gui> und <gui>Verbal</gui> kann der "
-"Benutzer wählen, aus welchen Spielarten die Ergebnisse auf der Graphik der "
-"Spielchronik angezeigt werden."
+"Wählen Sie <guiseq><gui style=\"menu\">Einstellungen</gui><gui style="
+"\"menuitem\">Einstellungen</gui></guiseq>."
 
-#: C/history.page:14(p)
+#: C/times.page:31(p)
 msgid ""
-"<app>gbrainy</app> saves the player game scores to be able to track player's "
-"score evolution. Using the <link xref=\"preferences\">Preferences</link> the "
-"user can select how many games sessions are recorded and how many games you "
-"have to play to have the game results stored."
+"In the <gui>Memory Games</gui> section, use the spin box to increase or "
+"decrease the number of seconds that the challenge will be visible for."
 msgstr ""
-"<app>gbrainy</app> speichert die Ergebnisse des Spielers, um den Verlauf der "
-"Ergebnisse verfolgen zu können. Der Spieler kann in den <link xref="
-"\"preferences\">Einstellungen</link> auswählen, wie viele Spielsitzungen "
-"gespeichert und wie viele Übungen absolviert werden müssen, so dass die "
-"Spielergebnisse gespeichert werden."
 
-#. When image changes, this message will be marked fuzzy or untranslated for you.
-#. It doesn't matter what you translate it to: it's not used at all.
-#: C/results.page:11(None)
-msgid "@@image: 'figures/results.png'; md5=ad0cea57566d0d2192a6262830e4b166"
-msgstr "@@image: 'figures/results.png'; md5=c00b7944325a42decc9bad7ed0505448"
-
-#: C/results.page:9(title)
-msgid "Results"
-msgstr "Ergebnisse"
-
-#: C/results.page:10(p)
-msgid ""
-"When the game session is finished <app>gbrainy</app> shows a summary of the "
-"results of the session."
-msgstr ""
-"Sobald die Spielsitzung beendet ist, zeigt <app>gbrainy</app> eine "
-"Zusammenfassung der Ergebnisse der Sitzung an."
-
-#: C/results.page:12(p)
-msgid ""
-"The results for every game type are computed using the <link xref=\"scoring"
-"\">scoring</link> algorithm that takes into account time used, tips and the "
-"number of total games."
-msgstr ""
-"Die Ergebnisse für jedes Spiel werden anhand des <link xref=\"scoring"
-"\">Ergebnis</link>-Algorithmus berechnet, der die benötigte Zeit, Hinweise "
-"und die Gesamtzahl der Spiele berücksichtigt."
-
-#: C/results.page:13(p)
-msgid ""
-"<app>gbrainy</app> keeps track of the player's personal records using the "
-"player's game history. If you have obtained a better score that in previous "
-"games for any of the game types, <app>gbrainy</app> informs that a new "
-"personal record has been set. Otherwise, general tips on how to improve when "
-"playing next games are given."
-msgstr ""
-"<app>gbrainy</app> berechnet die persönlichen Rekorde des Spielers unter "
-"Verwendung der Spielchronik. Wenn Sie ein besseres Ergebnis als in "
-"vorherigen Spielen für eine beliebige Spielart erreicht haben, dann zeigt "
-"<app>gbrainy</app> an, dass ein neuer persönlicher Rekord erreicht worden "
-"ist. Ansonsten werden Hinweise angezeigt, wie man sich bei zukünftigen "
-"Spielen steigern kann."
-
-#: C/results.page:14(p)
-msgid ""
-"If the number of games played during the session are minimum defined in the "
-"<link xref=\"preferences\">Preferences</link> to store the session, then the "
-"results of the game session are recorded in the player's game history."
-msgstr ""
-"Wenn die Anzahl gespielter Spiele mindestens so groß ist wie die unter <link "
-"xref=\"preferences\">Einstellungen</link> gespeicherte minimale Anzahl, um "
-"die Sitzung zu speichern, dann werden die Ergebnisse der Spielsitzung in der "
-"Spielchronik gespeichert."
+#: C/times.page:35(p)
+msgid "The default value is 4 seconds."
+msgstr "Der Standardwert ist 4 Sekunden."
 
 #. When image changes, this message will be marked fuzzy or untranslated for you.
 #. It doesn't matter what you translate it to: it's not used at all.
-#: C/preferences.page:10(None)
-msgid ""
-"@@image: 'figures/preferences.png'; md5=77aea548de8fde67e9728440ebdb009d"
-msgstr ""
-"@@image: 'figures/preferences.png'; md5=98e7debd7be37b170024d7c2781392dd"
-
-#: C/preferences.page:7(title) C/index.page:27(title)
-msgid "Preferences"
-msgstr "Einstellungen"
-
-#: C/preferences.page:9(p)
-msgid ""
-"You can access the <gui>Preferences</gui> from the main application menu."
-msgstr ""
-"Sie können die <gui>Einstellungen</gui> aus dem Hauptmenü der Anwendung "
-"erreichen."
-
-#: C/preferences.page:13(title)
-msgid "General Settings"
-msgstr "Allgemeine Einstellungen"
-
-#: C/preferences.page:14(p)
-msgid ""
-"The <gui>Skip games that use colors</gui> option removes, from the list of "
-"available games, the games that use colors to challenge the player, making "
-"it friendly to color blind users."
-msgstr ""
-"Die Einstellung <gui>Spiele überspringen, bei denen Farben verwendet werden</"
-"gui>, ist für farbenblinde Spieler vorgesehen und entfernt Spiele aus der "
-"Liste verfügbarer Spiele, die Farben zur Herausforderung des Spielers "
-"verwenden."
-
-#: C/preferences.page:18(title)
-msgid "Difficulty Level"
-msgstr "Schwierigkeitsgrad"
-
-#: C/preferences.page:19(p)
-msgid ""
-"The difficulty level establishes the complexity of the games during a gaming "
-"session. It influences the number of elements to remember in memory games, "
-"the size of numbers in calculation games, makes more obvious or obfuscated "
-"logic puzzles, etc. The available difficulty levels are:"
-msgstr ""
-"Der Schwierigkeitsgrad legt die Komplexität der Spiele während einer "
-"Spielsitzung fest. Er beeinflusst die Anzahl der Elemente, die man sich bei "
-"Gedächtnisübungen merken soll, die Anzahl der Zahlen bei Rechenaufgaben, "
-"macht Logikrätsel offensichtlicher oder verschleiert sie, usw. Die "
-"verfügbaren Schwierigkeitsgrade sind:"
-
-#: C/preferences.page:21(p)
-msgid "<gui>Easy</gui>. The complexity of the games is the average for kids."
-msgstr ""
-"<gui>Leicht</gui>. Die durchschnittliche Komplexität der Spiele ist auch für "
-"Kinder geeignet."
-
-#: C/preferences.page:22(p)
-msgid ""
-"<gui>Medium</gui>. This is the default level of the difficulty of "
-"<app>gbrainy</app>. The complexity of the games is considered good for a "
-"regular player."
-msgstr ""
-"<gui>Mittel</gui>. Dies ist der voreingestellte Schwierigkeitsgrad von "
-"<app>gbrainy</app>. Die Komplexität der gezeigten Spiele wird für einen "
-"normalen Spieler als gut eingeschätzt."
-
-#: C/preferences.page:23(p)
-msgid ""
-"<gui>Master</gui>. Ideal for advanced players with a special talent for "
-"playing <app>gbrainy</app> alike games."
-msgstr ""
-"<gui>Schwer</gui>. Ideal für fortgeschrittene Spieler mit einem Talent für "
-"Spiele wie <app>gbrainy</app>."
-
-#: C/preferences.page:25(p)
-msgid ""
-"The difficulty level additionally fine tunes the scoring algorithm by being "
-"more generous when playing at the easy level or more demanding when playing "
-"at master level."
-msgstr ""
-"Der Schwierigkeitsgrad legt zusätzlich noch fest, dass die "
-"Ergebnisberechnung auf leichter Stufe großzügiger und auf schwieriger Stufe "
-"strenger ist."
-
-#: C/preferences.page:30(title)
-msgid "Memory Games"
-msgstr "Gedächtnisspiele"
-
-#: C/preferences.page:31(p)
-msgid "These options affect the behaviour of memory games:"
-msgstr "Diese Optionen wirken sich auf den Verlauf der Gedächtnisübungen aus:"
-
-#: C/preferences.page:33(p)
-msgid ""
-"<gui>Time in seconds to memorize the challenge</gui>. Establishes the time "
-"that a collection of objects is shown to allow the player to memorize it."
-msgstr ""
-"<gui>Zeit in Sekunden, um sich die Aufgabe zu merken</gui>. Legt fest, wie "
-"lange eine Sammlung an Objekten gezeigt wird, damit sie sich der Spieler "
-"einprägen kann."
-
-#: C/preferences.page:34(p)
-msgid ""
-"<gui>Show countdown message</gui>. When checked shows the player a countdown "
-"message before every memory game. This is helpful when playing different "
-"game types in a single game session because indicates to the user that "
-"should get ready for a memory game. Advanced players usually disable this "
-"option."
-msgstr ""
-"<gui>Countdown-Nachricht anzeigen</gui>. Wenn diese Einstellung gewählt ist, "
-"wird dem Spieler vor jeder Aufgabe eine Countdown-Nachricht angezeigt. Dies "
-"ist hilfreich, wenn man unterschiedliche Arten von Spielen in einer Sitzung "
-"spielt, weil dem Benutzer angezeigt wird, dass er sich auf eine "
-"Gedächtnisübung vorbereiten soll. Fortgeschrittene Spieler schalten diese "
-"Einstellung üblicherweise aus."
-
-#: C/preferences.page:40(p)
-msgid "These options affect the behaviour of the player's game history:"
-msgstr ""
-"Folgende Optionen wirken sich auf das Verhalten der Spielchronik des "
-"Spielers aus:"
-
-#: C/preferences.page:42(p)
-msgid ""
-"<gui>Minimum number of played games to store the game</gui>. Determines the "
-"number of games that a player should play in a game session to store it and "
-"make it available in the player's history."
-msgstr ""
-"<gui>Minimale Anzahl an absolvierten Aufgaben, um das Spiel zu speichern</"
-"gui>. Legt die Anzahl an Übungen fest, die ein Spieler in einer Sitzung zu "
-"absolvieren hat, so dass sie gespeichert wird und in der Spielchronik "
-"erscheint."
-
-#: C/preferences.page:43(p)
-msgid ""
-"<gui>Maximum number of stored games in the player's history</gui>. Once this "
-"limit has been reach the result of the older games is removed to store the "
-"results of the new game sessions."
-msgstr ""
-"<gui>Maximale Anzahl an gespeicherten Spielen in der Chronik des Spielers</"
-"gui>. Sobald dieses Limit erreicht ist, werden die Ergebnisse älterer Spiele "
-"entfernt, um die Ergebnisse der neuen Spielsitzungen zu speichern."
-
-#: C/preferences.page:44(p)
-msgid ""
-"<gui>Clear Player's Game History</gui>. Clears the player's game history by "
-"removing all the previous recorded game sessions results."
-msgstr ""
-"<gui>Spielchronik des Spielers löschen</gui>. Löscht die Spielchronik des "
-"Spielers durch Entfernen aller zuvor gespeicherten Ergebnisse der "
-"Spielsitzungen."
-
-#: C/scoring.page:5(title) C/gametypes.page:5(title)
-msgid "2"
-msgstr "2"
-
-#: C/scoring.page:9(title)
-msgid "Scoring"
-msgstr "Bewertung"
-
-#: C/scoring.page:12(title) C/introduction.page:8(title)
-#: C/index.page:15(title)
-msgid "Introduction"
-msgstr "Einführung"
-
-#: C/scoring.page:13(p)
-msgid ""
-"During a game session a player usually solves several games. <app>gbrainy</"
-"app> scores every individual game and then computes the totals for every set "
-"of game types played during the session."
-msgstr ""
-"Während einer Spielsitzung absolviert ein Spieler üblicherweise mehrere "
-"Übungen. <app>gbrainy</app> bewertet jedes einzelne Spiel und berechnet das "
-"Gesamtergebnis für jeden Satz an Spielarten, die in einer Sitzung gespielt "
-"worden sind."
-
-#: C/scoring.page:17(title)
-msgid "Scoring individual games"
-msgstr "Bewertung einzelner Spiele"
-
-#: C/scoring.page:18(p)
-msgid ""
-"If the player answers a game incorrectly, the player does not get any score "
-"for the answer. If the player answers the game correctly, <app>gbrainy</app> "
-"scores the player considering the time used and if the played used a tip "
-"during the game."
-msgstr ""
-"Wenn der Spieler eine Übung falsch beantwortet, so erhält er keine Punkte "
-"für die Antwort. Wenn der Spieler eine richtige Antwort liefert, so "
-"berücksichtigt <app>gbrainy</app> die benötigte Zeit und die Verwendung "
-"eines Hinweises während des Spiels für die Berechnung des Ergebnisses."
-
-#: C/scoring.page:20(p)
-msgid ""
-"When playing at medium difficulty level the player is expected to solve in "
-"the time indicated the following game types:"
-msgstr ""
-"Wenn man bei mittlerem Schwierigkeitsgrad spielt, sollte der Spieler die "
-"folgenden Spielarten in der angezeigten Zeit lösen:"
-
-#: C/scoring.page:22(p)
-msgid "Logic puzzles in 120 seconds."
-msgstr "Logikrätsel in 120 Sekunden."
-
-#: C/scoring.page:23(p)
-msgid "Mental calculation games in 60 seconds."
-msgstr "Übungen zum Kopfrechnen in 60 Sekunden."
-
-#: C/scoring.page:24(p)
-msgid "Memory trainers games in 30 seconds."
-msgstr "Gedächtnisübungen in 30 Sekunden."
-
-#: C/scoring.page:25(p)
-msgid "Verbal analogies in 30 seconds."
-msgstr "Verbale Analogien in 30 Sekunden."
-
-# 'previous times' als vorgegebene Zeit übersetzt.
-#: C/scoring.page:27(p)
-msgid ""
-"At easy difficulty level the player is given 30% more time and at master "
-"level is given only 70% of the previous times."
-msgstr ""
-"Im leichten Schwierigkeitsgrad steht dem Spieler 30 % mehr Zeit zur "
-"Verfügung und auf der schweren Stufe nur 70 % der vorgegebenen Zeit."
-
-#: C/scoring.page:28(p)
-msgid ""
-"With the expected time for the current difficulty level and the time used by "
-"the player to complete the game, the following logic is applied:"
-msgstr ""
-"Basierend auf der erwarteten Zeit für den gewählten Schwierigkeitsgrad und "
-"der für die Übung benötigten Zeit des Spielers, wird folgende Logik "
-"verwendet:"
-
-#: C/scoring.page:30(p)
-msgid "If the player required less than the time expected scores 100%."
-msgstr "Wenn der Spieler schneller als die erwartete Zeit war, ergibt 100 %."
-
-#: C/scoring.page:31(p)
-msgid "If the player required more than the time expected scores 80%."
-msgstr "Wenn der Spieler langsamer als die erwartete Zeit war, ergibt 80 %."
-
-#: C/scoring.page:32(p)
-msgid ""
-"If the player required more than the double of time expected scores 70%."
-msgstr ""
-"Wenn der Spieler mehr als die doppelte erwartete Zeit benötigte, ergibt 70 %."
-
-#: C/scoring.page:33(p)
-msgid ""
-"If the player required more than three times the time expected scores 60%."
-msgstr ""
-"Wenn der Spieler mehr als die dreifache erwartete Zeit benötigte, ergibt 60 "
-"%."
-
-#: C/scoring.page:35(p)
-msgid ""
-"Additionally, if the player used the tip then scores only 80% of the "
-"previous score for the game."
-msgstr ""
-"Wenn ein Spieler darüber hinaus den Hinweis zu Rate zieht, so erhält er nur "
-"80 % des vorherigen Ergebnisses für das Spiel."
-
-#: C/scoring.page:39(title)
-msgid "Computing the totals"
-msgstr "Berechnung der Gesamtergebnisse"
-
-#: C/scoring.page:40(p)
-msgid ""
-"<app>gbrainy</app> keeps track of the different games types played. To "
-"compute the final score of every set of game types it sums all the results "
-"of the same game types played and then applies a factor based on the "
-"logarithm of 10 for the easy difficult level, 20 for the medium difficult "
-"level and 30 for master difficult level."
-msgstr ""
-"<app>gbrainy</app> protokolliert die verschiedenen gespielten Spielarten "
-"mit. Zur Berechnung des Endergebnisses eines jeden Satzes an Spielarten "
-"werden alle Ergebnisse derselben Spielart addiert und im Anschluss mit einem "
-"Faktor multipliziert, der auf dem Logarithmus von 10 für den leichten "
-"Schwierigkeitsgrad, 20 für den mittleren und 30 für den schweren beruht."
-
-#: C/scoring.page:41(p)
-msgid ""
-"This means that when playing at medium difficult level to get a score of "
-"100% you need to score 100% on at least 20 games of every game type played."
-msgstr ""
-"Das bedeutet, dass man bei mittlerem Schwierigkeitsgrad in mindestens 20 "
-"Spielen jeder Spielart 100 % erreichen muss, so dass man ein Endergebnis von "
-"100 % erhält."
-
-#: C/scoring.page:42(p)
-msgid ""
-"This may sound challenging but allows players to compare game scores from "
-"different sessions (in the player's game history) and allows to track better "
-"the progression of the player during all the games that has played."
-msgstr ""
-"Dies mag sich anspruchsvoll anhören, erlaubt Spielern allerdings, Ergebnisse "
-"aus verschiedenen Sitzungen in der Spielchronik zu vergleichen und den "
-"Fortschritt des Spielers in allen absolvierten Aufgaben mitzuverfolgen."
+#: C/newgame.page:66(None)
+#, fuzzy
+#| msgid "@@image: 'figures/bottom.png'; md5=b30a680e13d6b48da12029414b4d2900"
+msgid "@@image: 'figures/all-games.png'; md5=b9b2464dfdb280d8de79b921e03a4705"
+msgstr "@@image: 'figures/bottom.png'; md5=9d0f35ebf038f0b0eca3a04c60fe3e9c"
 
 #. When image changes, this message will be marked fuzzy or untranslated for you.
 #. It doesn't matter what you translate it to: it's not used at all.
-#: C/playing.page:12(None)
-msgid "@@image: 'figures/toolbar.png'; md5=01d6db1a4c09e048637eaa69d72f8c63"
+#: C/newgame.page:85(None) C/gametypes.page:36(None)
+#, fuzzy
+#| msgid "@@image: 'figures/toolbar.png'; md5=01d6db1a4c09e048637eaa69d72f8c63"
+msgid ""
+"@@image: 'figures/logic-games.png'; md5=2679be12956397b6337da869bdbee82d"
 msgstr "@@image: 'figures/toolbar.png'; md5=3d8631d8a72b5cc985ba7e1afca9393d"
 
 #. When image changes, this message will be marked fuzzy or untranslated for you.
 #. It doesn't matter what you translate it to: it's not used at all.
-#: C/playing.page:31(None)
-msgid "@@image: 'figures/bottom.png'; md5=b30a680e13d6b48da12029414b4d2900"
-msgstr "@@image: 'figures/bottom.png'; md5=9d0f35ebf038f0b0eca3a04c60fe3e9c"
+#: C/newgame.page:104(None) C/gametypes.page:57(None)
+#, fuzzy
+#| msgid "@@image: 'figures/toolbar.png'; md5=01d6db1a4c09e048637eaa69d72f8c63"
+msgid "@@image: 'figures/math-games.png'; md5=208d189bcd6246b40e3dff184a5d5698"
+msgstr "@@image: 'figures/toolbar.png'; md5=3d8631d8a72b5cc985ba7e1afca9393d"
 
-#: C/playing.page:5(title) C/introduction.page:5(title)
+#. When image changes, this message will be marked fuzzy or untranslated for you.
+#. It doesn't matter what you translate it to: it's not used at all.
+#: C/newgame.page:123(None) C/gametypes.page:78(None)
+#, fuzzy
+#| msgid "@@image: 'figures/history.png'; md5=c432b503d498019521a5374a8bc5ae76"
+msgid ""
+"@@image: 'figures/memory-games.png'; md5=2747c731e0a757a98a91c8e141748c75"
+msgstr "@@image: 'figures/history.png'; md5=48a0053651e4c33593cc9b6101abb8c2"
+
+#. When image changes, this message will be marked fuzzy or untranslated for you.
+#. It doesn't matter what you translate it to: it's not used at all.
+#: C/newgame.page:142(None) C/gametypes.page:98(None)
+msgid ""
+"@@image: 'figures/verbal-games.png'; md5=6559e8d03907794b9983c5501df1aed2"
+msgstr ""
+
+#: C/newgame.page:6(title)
 msgid "1"
 msgstr "1"
 
-#: C/playing.page:8(title) C/index.page:19(title)
-msgid "Game Session"
+#: C/newgame.page:9(desc)
+msgid "Start and play a game."
+msgstr "Ein Spiel starten und spielen."
+
+#: C/newgame.page:21(title)
+msgid "Game session"
 msgstr "Spielsitzung"
 
-#: C/playing.page:10(title)
-msgid "Starting a game"
-msgstr "Ein Spiel starten"
+#: C/newgame.page:24(title)
+msgid "Start a new session"
+msgstr "Eine neue Spielsitzung starten"
 
-#: C/playing.page:11(p)
+#: C/newgame.page:25(p)
+msgid "To start a new game, do one of the following:"
+msgstr "Um ein neues Spiel zu starten, führen Sie folgende Schritte durch:"
+
+#: C/newgame.page:30(p)
 msgid ""
-"You can start a new game by clicking on the different buttons of the "
-"application toolbar."
+"Choose <guiseq><gui style=\"menu\">Game</gui><gui style=\"menuitem\">New "
+"Game</gui></guiseq>, and select the type of game to play."
 msgstr ""
-"Sie können eine neues Spiel durch Klicken auf die unterschiedlichen Knöpfe "
-"der Anwendungs-Werkzeugleiste starten."
 
-#: C/playing.page:13(p)
-msgid "The following actions are associated to the buttons:"
-msgstr "Folgende Aktionen sind den Knöpfen zugewiesen:"
-
-#: C/playing.page:15(p)
-msgid "<gui>All</gui>. Starts a new game playing all the available game types."
+#: C/newgame.page:36(p)
+msgid "Click on one of the buttons in the toolbar."
 msgstr ""
-"<gui>Alle</gui>. Startet ein neues Spiel mit allen verfügbaren Spielarten."
 
-#: C/playing.page:16(p)
-msgid "<gui>Logic</gui>. Starts a new game playing only logic games."
+#: C/newgame.page:41(p)
+msgid "The toolbar buttons have the following meanings:"
 msgstr ""
-"<gui>Logik</gui>. Startet ein neues Spiel, das nur Logikrätsel beinhaltet."
 
-#: C/playing.page:17(p)
+#: C/newgame.page:45(cite) C/newgame.page:176(cite) C/score.page:100(cite)
+msgid "Phil Bull"
+msgstr "Phil Bull"
+
+#: C/newgame.page:46(p)
 msgid ""
-"<gui>Calculation</gui>. Starts a new game playing only calculation games."
+"The descriptions in the list below just echo the name of each button (X: "
+"Start a new game playing X games). Can we do anything more useful with them "
+"(e.g. link to descriptions of each game type, or give examples of the sorts "
+"of games in each category?)"
 msgstr ""
-"<gui>Rechnen</gui>. Startet ein neues Spiel, in dem nur Übungen zum Rechnen "
-"enthalten sind."
 
-#: C/playing.page:18(p)
-msgid "<gui>Memory</gui>. Starts a new game playing only memory games."
+#: C/newgame.page:58(title)
+msgid "All"
+msgstr "Alle"
+
+#: C/newgame.page:59(p)
+msgid "Starts a new game playing all the available game types."
+msgstr "Startet ein neues Spiel mit allen verfügbaren Spielarten."
+
+#: C/newgame.page:67(p)
+msgid "All games button"
+msgstr "Knopf für alle Spiele"
+
+#: C/newgame.page:77(title)
+msgid "Logic"
+msgstr "Logik"
+
+#: C/newgame.page:78(p)
+msgid "Start a new game playing only logic games."
+msgstr "Ein neues Spiel starten, das nur Logikrätsel beinhaltet."
+
+#: C/newgame.page:86(p)
+msgid "Logic games button"
+msgstr "Knopf für Logikspiele"
+
+#: C/newgame.page:96(title)
+msgid "Calculation"
+msgstr "Rechnen"
+
+#: C/newgame.page:97(p)
+msgid "Starts a new game playing only calculation games."
+msgstr ""
+"Startet ein neues Spiel, in dem nur Übungen zum Rechnen enthalten sind."
+
+#: C/newgame.page:105(p)
+#, fuzzy
+#| msgid "Mental calculation games in 60 seconds."
+msgid "Calculation games button"
+msgstr "Übungen zum Kopfrechnen in 60 Sekunden."
+
+#: C/newgame.page:115(title)
+msgid "Memory"
+msgstr "Gedächtnis"
+
+#: C/newgame.page:116(p)
+#, fuzzy
+#| msgid "<gui>Memory</gui>. Starts a new game playing only memory games."
+msgid "Starts a new game playing only memory games."
 msgstr ""
 "<gui>Gedächtnis</gui>. Startet ein neues Spiel, das nur aus "
 "Gedächtnisübungen besteht."
 
-#: C/playing.page:19(p)
-msgid ""
-"<gui>Verbal</gui>. Starts a new game playing only verbal analogies games."
+#: C/newgame.page:124(p)
+msgid "Memory games button"
+msgstr "Knopf für Gedächtnisspiele"
+
+#: C/newgame.page:134(title)
+msgid "Verbal"
+msgstr "Verbal"
+
+#: C/newgame.page:135(p)
+#, fuzzy
+#| msgid ""
+#| "<gui>Verbal</gui>. Starts a new game playing only verbal analogies games."
+msgid "Starts a new game playing only verbal analogy games."
 msgstr ""
 "<gui>Verbal</gui>. Startet ein neues Spiel, das nur verbale Analogien "
 "enthält."
 
-#: C/playing.page:21(p)
+#: C/newgame.page:143(p)
+msgid "Verbal games button"
+msgstr "Knopf für verbale Spiele"
+
+#: C/newgame.page:151(p)
 msgid ""
-"You have also the same functionality available under the <guiseq><gui>Game</"
-"gui><gui>New Game</gui></guiseq> menu."
+"These descriptions also apply to the game types that you can select from the "
+"<gui style=\"menu\">Game</gui> menu."
 msgstr ""
-"Dieselbe Funktionalität finden Sie auch unter dem Menüeintrag "
-"<guiseq><gui>Spiel</gui><gui>Neues Spiel</gui></guiseq>."
 
-#: C/playing.page:25(title)
-msgid "During the game session"
-msgstr "Während der Spielsitzung"
+#: C/newgame.page:158(title)
+#, fuzzy
+#| msgid "Game Session"
+msgid "Play a session"
+msgstr "Spielsitzung"
 
-#: C/playing.page:27(p)
-msgid ""
-"The game session starts by showing a game and asking the user to solve it. "
-"Read always the instructions carefully."
+#: C/newgame.page:160(p)
+msgid "When you play a game, always read the instructions carefully!"
 msgstr ""
-"Die Spielsitzung beginnt durch Anzeigen eines Spiels und Frage an den "
-"Benutzer, es zu lösen. Lesen Sie die Anweisungen immer aufmerksam durch."
 
-#: C/playing.page:29(p)
+#: C/newgame.page:164(p)
 msgid ""
-"At the bottom of the application (see the capture below) you have the main "
-"set of controls to interact with the game."
+"The game session begins by showing you the problem and then asking for the "
+"answer. At the bottom of the window is the main set of controls that you can "
+"use to interact with the game."
 msgstr ""
-"Am unteren Rand der Anwendung (siehe Bildschirmfoto unten) finden Sie die "
-"Hauptkontrollelemente, um das Spiel zu steuern."
 
-#: C/playing.page:33(p)
+#: C/newgame.page:168(p)
 msgid ""
-"Once you know the answer you have to type it in the entry field next to the "
-"<gui>Answer:</gui> label."
+"Once you know the answer to the problem, type it in the <gui style=\"input"
+"\">Answer</gui> text entry and press <gui style=\"button\">OK</gui>."
 msgstr ""
-"Sobald Sie die Antwort wissen, schreiben Sie diese in das Eingabefeld neben "
-"<gui>Antwort:</gui>."
+"Sobald Sie die Antwort der Aufgabe wissen, schreiben Sie diese in das <gui "
+"style=\"input\">Antwort</gui>-Eingabefeld und drücken Sie <gui style=\"button"
+"\">OK</gui>."
 
-#: C/playing.page:35(p)
-msgid ""
-"Some games include a tip that gives some guidance when trying to solve them. "
-"You can use the <gui>Tip</gui> button when it is enabled to get the tip."
+#: C/newgame.page:172(p)
+msgid "To proceed to the next game, click <gui style=\"button\">Next</gui>."
 msgstr ""
-"Einige Spiele enthalten einen Hinweis, der beim Lösen der Aufgabe hilfreich "
-"sein kann. Sie können den <gui>Hinweis</gui>-Knopf verwenden, wenn er aktiv "
-"ist, um den Hinweis zu erhalten."
 
-#: C/playing.page:37(p)
+#: C/newgame.page:177(p)
 msgid ""
-"Once you have answered the game you will be informed if you did provide the "
-"right answer. You can use the <gui>Next</gui> button to go to the next game."
+"I don't understand what this note means. Does it mean that the game will "
+"count negatively?"
 msgstr ""
-"Sobald Sie die Übung beantwortet haben, werden Sie informiert, ob die "
-"Antwort korrekt war. Sie können den <gui>Weiter</gui>-Knopf verwenden, um "
-"zur nächsten Aufgabe zu gelangen."
 
-#: C/playing.page:39(p)
+#: C/newgame.page:182(p)
 msgid ""
-"You can pause the game session using the <gui>Pause</gui> button and resume "
-"it at any moment."
+"If you click <gui style=\"button\">Next</gui> before completing the game, or "
+"without providing an answer, that game will be counted in your results."
 msgstr ""
-"Sie können das Spiel jederzeit unter Verwendung des <gui>Pause</gui>-Knopfs "
-"anhalten und später wieder fortsetzen."
 
-#: C/gametypes.page:8(title)
-msgid "Game Types"
-msgstr "Spielarten"
+#. When image changes, this message will be marked fuzzy or untranslated for you.
+#. It doesn't matter what you translate it to: it's not used at all.
+#: C/index.page:23(None)
+#, fuzzy
+#| msgid "@@image: 'figures/toolbar.png'; md5=01d6db1a4c09e048637eaa69d72f8c63"
+msgid "@@image: 'figures/gbrainy.png'; md5=d3b523ab1c8d00d00560d3f036d681bb"
+msgstr "@@image: 'figures/toolbar.png'; md5=3d8631d8a72b5cc985ba7e1afca9393d"
 
-#: C/gametypes.page:10(p)
-msgid "<app>gbrainy</app> provides the following types of games:"
-msgstr "<app>gbrainy</app> bietet die folgenden Spielarten:"
+#: C/index.page:7(title) C/index.page:8(title) C/index.page:11(title)
+msgid "gbrainy"
+msgstr "gbrainy"
 
-#: C/gametypes.page:12(p)
-msgid ""
-"Logic puzzles. Games designed to challenge your reasoning and thinking "
-"skills. These games are based on sequences of elements, visual and spatial "
-"reasoning or relationships between elements."
+#: C/index.page:12(desc)
+msgid "The <app>gbrainy</app> help."
 msgstr ""
-"Logikrätsel. Aufgaben, die Ihr Schlussfolgerungs- und Denkvermögen "
-"herausfordern. Diese Rätsel basieren auf Sequenzen von Elementen, visuellen "
-"und räumlichen Schlussfolgerungen oder Zusammenhängen zwischen Elementen."
 
-#: C/gametypes.page:13(p)
+#: C/index.page:22(title)
 msgid ""
-"Mental calculation. Games based on arithmetical operations designed to prove "
-"your mental calculation skills. Games that require the player to use "
-"multiplication, division, addition and subtraction combined in different "
-"ways."
+"<media type=\"image\" mime=\"image/png\" src=\"figures/gbrainy.png\">gbrainy "
+"logo</media> gbrainy"
 msgstr ""
-"Kopfrechnen. Aufgaben, die auf arithmetischen Operationen beruhen, um Ihre "
-"Kopfrechenfähigkeiten zu prüfen. Der Spieler hat bei diesen Übungen "
-"Multiplikation, Division, Addition und Subtraktion zu kombinieren und auf "
-"unterschiedliche Weise zu verwenden."
 
-#: C/gametypes.page:14(p)
-msgid ""
-"Memory trainers. Games designed to challenge your short term memory. These "
-"games show collections of objects and ask the player to recall them, "
-"sometimes establishing relationships between figures, words, numbers or "
-"colors."
-msgstr ""
-"Gedächtnisübungen. Aufgaben, die Ihr Kurzzeitgedächtnis auf die Probe "
-"stellen. Bei diesen Übungen handelt es sich um Sammlungen von Objekten, die "
-"sich der Spieler merken soll. Manchmal sind es Zusammenhänge zwischen "
-"Elementen, Wörter, Zahlen oder Farben."
+#: C/index.page:28(title)
+msgid "Basic Gameplay &amp; Usage"
+msgstr "Grundlagen des Spiels"
 
-#: C/gametypes.page:15(p)
-msgid ""
-"Verbal analogies. Games that challenge your verbal aptitude. Games that ask "
-"the player to identify cause and effect, use synonyms or antonyms, and use "
-"his vocabulary."
-msgstr ""
-"Verbale Analogien. Spiele, die Ihr verbales Geschick fordern. Aufgaben, die "
-"den Spieler auffordern, Ursachen und Auswirkungen herauszufinden, Synonyme "
-"oder Gegenteile zu verwenden und das Vokabular prüfen."
+#: C/index.page:32(title)
+msgid "Multiplayer Game"
+msgstr "Mehrspielermodus"
 
-#: C/introduction.page:9(p)
+#: C/index.page:36(title)
+msgid "Tips &amp; Tricks"
+msgstr "Tipps und Tricks"
+
+#: C/gameplay.page:7(desc)
+msgid "Introduction to <app>gbrainy</app>."
+msgstr "Einführung in <app>gbrainy</app>"
+
+#: C/gameplay.page:20(title)
+msgid "Gameplay"
+msgstr "Spielverlauf"
+
+#: C/gameplay.page:22(p)
+#, fuzzy
+#| msgid ""
+#| "<app>gbrainy</app> is a brain teaser game and trainer to have fun and to "
+#| "keep your brain trained."
 msgid ""
-"<app>gbrainy</app> is a brain teaser game and trainer to have fun and to "
-"keep your brain trained."
+"<app>gbrainy</app> is a brain teaser game; the aim of the game is to have "
+"fun and keep your brain trained."
 msgstr ""
 "<app>gbrainy</app> ist ein unterhaltsames Spiel, um das Gehirn zu trainieren "
 "und fit zu halten."
 
-#: C/introduction.page:10(p)
+#: C/gameplay.page:26(p)
+#, fuzzy
+#| msgid ""
+#| "It features different <link xref=\"gametypes\">game types</link> like "
+#| "logic puzzles, mental calculation games, memory trainers and verbal "
+#| "analogies designed to test different cognitive skills."
 msgid ""
-"It features different <link xref=\"gametypes\">game types</link> like logic "
-"puzzles, mental calculation games, memory trainers and verbal analogies "
-"designed to test different cognitive skills."
+"It features different game types like logic puzzles, mental calculation "
+"games, memory trainers and verbal analogies, designed to test different "
+"cognitive skills."
 msgstr ""
 "Es beinhaltet unterschiedliche <link xref=\"gametypes\">Spielarten</link> "
 "wie Logikrätsel, Kopfrechenaufgaben, Gedächtnisübungen und verbale "
 "Analogien, die dafür gedacht sind, verschiedene kognitive Fähigkeiten zu "
 "prüfen."
 
-#: C/introduction.page:11(p)
+#: C/gameplay.page:30(p)
+#, fuzzy
+#| msgid ""
+#| "The player can choose different difficulty levels making <app>gbrainy</"
+#| "app> enjoyable for kids, adults or senior citizens. It also features "
+#| "player's game history, player's personal records, tips for the player and "
+#| "fullscreen mode support. <app>gbrainy</app> can also be <link href="
+#| "\"http://live.gnome.org/gbrainy/Extending\">extended</link> easily with "
+#| "new games developed by third parties."
 msgid ""
-"<app>gbrainy</app> relies heavily on the talent of previous puzzle masters "
-"ranging from classic puzzles from the ancient times to the ideas of more "
-"recent works like <link href=\"http://en.wikipedia.org/wiki/Terry_Stickels"
-"\">Terry Stickels</link> puzzles or the <link href=\"http://en.wikipedia.org/"
-"wiki/Dr._Brain\">Dr. Brain</link> classical game."
-msgstr ""
-"<app>gbrainy</app> beruht auf den Arbeiten ehemaliger Rätselmeister mit "
-"Aufgaben aus früheren Zeiten bis hin zu jüngeren Ideen von <link href="
-"\"http://en.wikipedia.org/wiki/Terry_Stickels\">Terry Stickels</link> oder "
-"dem klassischen Spiel <link href=\"http://en.wikipedia.org/wiki/Dr._Brain"
-"\">Dr. Brain</link>."
-
-#: C/introduction.page:13(p)
-msgid ""
-"The player can choose different difficulty levels making <app>gbrainy</app> "
-"enjoyable for kids, adults or senior citizens. It also features player's "
-"game history, player's personal records, tips for the player and fullscreen "
-"mode support. <app>gbrainy</app> can also be <link href=\"http://live.gnome."
-"org/gbrainy/Extending\">extended</link> easily with new games developed by "
-"third parties."
+"You can choose different difficulty levels making <app>gbrainy</app> "
+"enjoyable for kids, adults or senior citizens. It also features a game "
+"history, personal records, tips and fullscreen mode support. <app>gbrainy</"
+"app> can also be <link href=\"http://live.gnome.org/gbrainy/Extending"
+"\">extended</link> easily with new games developed by third parties."
 msgstr ""
 "Der Spieler kann verschiedene Schwierigkeitsgrade wählen, um <app>gbrainy</"
 "app> für Kinder, Erwachsene oder Senioren anzupassen. Es beinhaltet auch "
@@ -676,12 +391,39 @@ msgstr ""
 "einfach mit neuen Spielen von Drittanbietern <link href=\"http://live.gnome."
 "org/gbrainy/Extending\">erweitert</link> werden."
 
-#: C/introduction.page:14(p)
+#: C/gameplay.page:37(p)
+#, fuzzy
+#| msgid ""
+#| "<app>gbrainy</app> relies heavily on the talent of previous puzzle "
+#| "masters ranging from classic puzzles from the ancient times to the ideas "
+#| "of more recent works like <link href=\"http://en.wikipedia.org/wiki/"
+#| "Terry_Stickels\">Terry Stickels</link> puzzles or the <link href=\"http://"
+#| "en.wikipedia.org/wiki/Dr._Brain\">Dr. Brain</link> classical game."
 msgid ""
-"There have been recent discussions in the scientific community regarding if "
-"playing brain training software improves cognitive performance. Most of the "
-"studies show that there is no or little improvement. However, you can have a "
-"good time playing games like <app>gbrainy</app>."
+"<app>gbrainy</app> relies heavily on the work of previous puzzle masters, "
+"ranging from classic puzzles from ancient times to more recent works like "
+"<link href=\"http://en.wikipedia.org/wiki/Terry_Stickels\">Terry Stickels'</"
+"link> puzzles or the classic <link href=\"http://en.wikipedia.org/wiki/Dr."
+"_Brain\">Dr. Brain</link> game."
+msgstr ""
+"<app>gbrainy</app> beruht auf den Arbeiten ehemaliger Rätselmeister mit "
+"Aufgaben aus früheren Zeiten bis hin zu jüngeren Ideen von <link href="
+"\"http://en.wikipedia.org/wiki/Terry_Stickels\">Terry Stickels</link> oder "
+"dem klassischen Spiel <link href=\"http://en.wikipedia.org/wiki/Dr._Brain"
+"\">Dr. Brain</link>."
+
+#: C/gameplay.page:45(p)
+#, fuzzy
+#| msgid ""
+#| "There have been recent discussions in the scientific community regarding "
+#| "if playing brain training software improves cognitive performance. Most "
+#| "of the studies show that there is no or little improvement. However, you "
+#| "can have a good time playing games like <app>gbrainy</app>."
+msgid ""
+"There have been recent discussions in the scientific community regarding "
+"whether brain training software improves cognitive performance. Most of the "
+"studies show that there is little or no improvement, but that doesn't mean "
+"you can't have a good time playing games like <app>gbrainy</app>!"
 msgstr ""
 "Erst kürzlich fanden wissenschaftliche Diskussionen statt, ob das Spielen "
 "von Gehirn-Übungssoftware zu einer Verbesserung der kognitiven Leistung "
@@ -689,19 +431,963 @@ msgstr ""
 "einer geringen Verbesserung kommt. Wie auch immer, Sie können Spaß mit "
 "Spielen wie <app>gbrainy</app> haben."
 
-#: C/index.page:6(name)
-msgid "Jordi Mas i Hernandez"
-msgstr "Jordi Mas i Hernandez"
+#: C/score.page:8(desc)
+msgid "How the player scores are calculated."
+msgstr ""
 
-#: C/index.page:7(email)
-msgid "jmas@softcatala.org"
-msgstr "jmas@softcatala.org"
+#: C/score.page:19(title)
+msgid "Game score and timings"
+msgstr ""
 
-#: C/index.page:12(title)
-msgid "gbrainy Help"
-msgstr "gbrainy-Hilfe"
+#: C/score.page:20(p)
+msgid "If you answer a puzzle incorrectly, you will not get any score for it."
+msgstr ""
+
+#: C/score.page:23(p)
+msgid ""
+"If you answer a puzzle correctly, you will get a score which depends on the "
+"time taken to resolve the problem and whether you used the tip during the "
+"game."
+msgstr ""
+
+#: C/score.page:27(p)
+msgid ""
+"The following table summarizes the different game durations (in seconds) "
+"based on the difficulty level."
+msgstr ""
+
+#: C/score.page:34(p)
+msgid "Easy"
+msgstr "Leicht"
+
+#: C/score.page:35(p)
+msgid "Medium"
+msgstr "Mittel"
+
+#: C/score.page:36(p)
+msgid "Master"
+msgstr "Schwer"
+
+#: C/score.page:39(p) C/gametypes.page:26(title)
+msgid "Logic puzzles"
+msgstr "Logikrätsel"
+
+#: C/score.page:40(p)
+msgid "156"
+msgstr "156"
+
+#: C/score.page:41(p)
+msgid "120"
+msgstr "120"
+
+#: C/score.page:42(p)
+msgid "110"
+msgstr "110"
+
+#: C/score.page:45(p)
+msgid "Mental calculation"
+msgstr "Übungen zum Kopfrechnen"
+
+#: C/score.page:46(p)
+msgid "78"
+msgstr "78"
+
+#: C/score.page:47(p)
+msgid "60"
+msgstr "60"
+
+#: C/score.page:48(p)
+msgid "55"
+msgstr "55"
+
+#: C/score.page:51(p) C/gametypes.page:68(title)
+msgid "Memory trainers"
+msgstr "Gedächtnisspiele"
+
+#: C/score.page:52(p) C/score.page:58(p)
+msgid "39"
+msgstr "39"
+
+#: C/score.page:53(p) C/score.page:59(p)
+msgid "30"
+msgstr "30"
+
+#: C/score.page:54(p) C/score.page:60(p)
+msgid "27"
+msgstr "27"
+
+#: C/score.page:57(p) C/gametypes.page:89(title)
+msgid "Verbal analogies"
+msgstr "Verbale Analogien"
+
+#: C/score.page:63(p)
+#, fuzzy
+#| msgid ""
+#| "With the expected time for the current difficulty level and the time used "
+#| "by the player to complete the game, the following logic is applied:"
+msgid ""
+"With the expected time for the chosen difficulty level and the time you take "
+"to complete the game, the following logic is applied:"
+msgstr ""
+"Basierend auf der erwarteten Zeit für den gewählten Schwierigkeitsgrad und "
+"der für die Übung benötigten Zeit des Spielers, wird folgende Logik "
+"verwendet:"
+
+#: C/score.page:69(p)
+#, fuzzy
+#| msgid "If the player required less than the time expected scores 100%."
+msgid ""
+"If you take less than the time expected to complete the game, you score 100%."
+msgstr "Wenn der Spieler schneller als die erwartete Zeit war, ergibt 100 %."
+
+#: C/score.page:74(p)
+#, fuzzy
+#| msgid "If the player required more than the time expected scores 80%."
+msgid ""
+"If you take more than the time expected to complete the game, you score 80%."
+msgstr "Wenn der Spieler langsamer als die erwartete Zeit war, ergibt 80 %."
+
+#: C/score.page:79(p)
+#, fuzzy
+#| msgid "If the player required more than the time expected scores 80%."
+msgid ""
+"If you take more than 2x the time expected to complete the game, you score "
+"70%."
+msgstr "Wenn der Spieler langsamer als die erwartete Zeit war, ergibt 80 %."
+
+#: C/score.page:85(p)
+#, fuzzy
+#| msgid "If the player required more than the time expected scores 80%."
+msgid ""
+"If you take more than 3x the time expected to complete the game, you score "
+"60%."
+msgstr "Wenn der Spieler langsamer als die erwartete Zeit war, ergibt 80 %."
+
+#: C/score.page:91(p)
+msgid "If you use a tip, you score only the 80% of the original score."
+msgstr ""
+
+#: C/score.page:98(title)
+msgid "Computing the totals"
+msgstr "Berechnung der Gesamtergebnisse"
+
+#: C/score.page:101(p)
+msgid ""
+"In this section, does \"logarithm of 20\" mean score = log_20(sum(results))?"
+msgstr ""
+
+#: C/score.page:105(p)
+#, fuzzy
+#| msgid ""
+#| "<app>gbrainy</app> keeps track of the different games types played. To "
+#| "compute the final score of every set of game types it sums all the "
+#| "results of the same game types played and then applies a factor based on "
+#| "the logarithm of 10 for the easy difficult level, 20 for the medium "
+#| "difficult level and 30 for master difficult level."
+msgid ""
+"<app>gbrainy</app> keeps track of the different games types played. To "
+"compute the final score of every set of game types it sums all the results "
+"of the same game types played and then applies a factor based on: the "
+"logarithm of 10 for the easy level; on the logarithm of 20 for the medium "
+"level; and on the logarithm of 30 for the master level."
+msgstr ""
+"<app>gbrainy</app> protokolliert die verschiedenen gespielten Spielarten "
+"mit. Zur Berechnung des Endergebnisses eines jeden Satzes an Spielarten "
+"werden alle Ergebnisse derselben Spielart addiert und im Anschluss mit einem "
+"Faktor multipliziert, der auf dem Logarithmus von 10 für den leichten "
+"Schwierigkeitsgrad, 20 für den mittleren und 30 für den schweren beruht."
+
+#: C/score.page:112(p)
+#, fuzzy
+#| msgid ""
+#| "This means that when playing at medium difficult level to get a score of "
+#| "100% you need to score 100% on at least 20 games of every game type "
+#| "played."
+msgid ""
+"This means that when playing at medium difficult level, to get a score of "
+"100% you need to score 100% on at least 20 games of every game type played."
+msgstr ""
+"Das bedeutet, dass man bei mittlerem Schwierigkeitsgrad in mindestens 20 "
+"Spielen jeder Spielart 100 % erreichen muss, so dass man ein Endergebnis von "
+"100 % erhält."
+
+#: C/score.page:116(p)
+#, fuzzy
+#| msgid ""
+#| "This may sound challenging but allows players to compare game scores from "
+#| "different sessions (in the player's game history) and allows to track "
+#| "better the progression of the player during all the games that has played."
+msgid ""
+"This may sound challenging, but it allows players to compare game scores "
+"from different sessions (in the player's game history) and allows better "
+"tracking of the progression of the player through all of the games played."
+msgstr ""
+"Dies mag sich anspruchsvoll anhören, erlaubt Spielern allerdings, Ergebnisse "
+"aus verschiedenen Sitzungen in der Spielchronik zu vergleichen und den "
+"Fortschritt des Spielers in allen absolvierten Aufgaben mitzuverfolgen."
+
+#: C/multiplayer.page:7(desc)
+msgid "How to play with other people."
+msgstr "Spielen mit mehreren Teilnehmern."
+
+#: C/multiplayer.page:19(title)
+msgid "Play with other people"
+msgstr "Spielen mit mehreren Teilnehmern"
+
+#: C/multiplayer.page:21(p)
+msgid ""
+"It is not possible to play against other people over the Internet or a local "
+"network with <app>gbrainy</app>."
+msgstr ""
+
+#: C/history.page:6(desc)
+msgid "Access your personal game history."
+msgstr ""
+
+#: C/history.page:17(title)
+msgid "Personal game history"
+msgstr "Persönliche Spielchronik"
+
+#: C/history.page:19(p)
+#, fuzzy
+#| msgid ""
+#| "In this dialog the player can see how his performance has been evolving "
+#| "from every game type during the last recorded game sessions."
+msgid ""
+"The <gui>Player's Game History</gui> dialog shows your performance in every "
+"game type during the last few game sessions."
+msgstr ""
+"Der Spieler kann in diesem Dialog sehen, wie sich seine Leistung von Spiel "
+"zu Spiel während der zuletzt gespeicherten Spielsitzungen entwickelt hat."
+
+#: C/history.page:25(title)
+msgid "View the games history"
+msgstr ""
+
+#: C/history.page:26(p)
+msgid ""
+"To access your personal game history, choose <guiseq><gui style=\"menu"
+"\">View</gui><gui style=\"menuitem\">Player's Game History</gui></guiseq>."
+msgstr ""
+
+#: C/history.page:33(title)
+msgid "Select which results to show"
+msgstr ""
+
+#: C/history.page:34(p)
+msgid ""
+"To select the results that will be shown in the graphic, use the different "
+"check boxes located under the graph."
+msgstr ""
+
+#: C/history.page:41(title)
+msgid "Change the number of saved games"
+msgstr ""
+
+#: C/history.page:42(p)
+msgid ""
+"<app>gbrainy</app> saves the player's scores so it can track how they evolve."
+msgstr ""
+
+#: C/history.page:45(p)
+msgid ""
+"In order to change the number of sessions recorded or how many games will be "
+"stored in the history, proceed as follows:"
+msgstr ""
+
+#: C/history.page:51(p)
+msgid ""
+"Choose <guiseq><gui style=\"menu\">Settings</gui><gui style=\"menuitem\"> "
+"Preferences</gui></guiseq>."
+msgstr ""
+"Wählen Sie <guiseq><gui style=\"menu\">Einstellungen</gui><gui style="
+"\"menuitem\">Einstellungen</gui></guiseq>."
+
+#: C/history.page:57(p)
+#, fuzzy
+#| msgid ""
+#| "You can access the <gui>Player's Game History</gui> from the main "
+#| "application menu."
+msgid "In the <gui>Player's Game History</gui> section:"
+msgstr ""
+"Sie können die <gui>Spielchronik des Spielers</gui> aus dem Hauptmenü der "
+"Anwendung erreichen."
+
+#: C/history.page:62(p)
+msgid ""
+"Use the first spin box to change how many game sessions need to be recorded "
+"before you can start to see the results in the history graphic."
+msgstr ""
+
+#: C/history.page:68(p)
+msgid ""
+"Use the second spin box to change how many game sessions will be shown in "
+"the history graphic."
+msgstr ""
+
+#: C/difficulty.page:6(title)
+msgid "2"
+msgstr "2"
+
+#: C/difficulty.page:8(desc)
+msgid "Change the difficulty level of the games."
+msgstr ""
+
+#: C/difficulty.page:20(title)
+msgid "Difficulty levels"
+msgstr "Schwierigkeitsgrade"
+
+#: C/difficulty.page:21(p)
+msgid "To change the difficulty level of the game, proceed as follows:"
+msgstr ""
+
+#: C/difficulty.page:31(p)
+msgid "In the <gui>Difficulty Level</gui> section, select the desired level."
+msgstr ""
+
+#: C/difficulty.page:34(p)
+msgid ""
+"You can choose from three different levels: <gui style=\"radiobutton\">Easy</"
+"gui>, <gui style=\"radiobutton\">Medium</gui>, and <gui style=\"radiobutton"
+"\">Master</gui>. The default level is <gui style=\"radiobutton\">Medium</"
+"gui>."
+msgstr ""
+
+#: C/tips.page:8(desc)
+msgid "Use the tips to solve a puzzle."
+msgstr ""
+
+#: C/tips.page:20(title)
+msgid "Tips"
+msgstr "Tipps"
+
+#: C/tips.page:21(p)
+msgid ""
+"With some of the games you can play, it is possible to get simple tips that "
+"can help you to solve the problem."
+msgstr ""
+
+#: C/tips.page:25(p)
+msgid ""
+"When playing a game, click on the <gui style=\"button\">Tip</gui> button at "
+"the bottom of the window (next to the <gui style=\"input\">Answer</gui> text "
+"entry)."
+msgstr ""
+
+#: C/tips.page:29(p)
+msgid "This feature is not available for some of the games."
+msgstr ""
+
+#: C/pause.page:6(title)
+msgid "4"
+msgstr "4"
+
+#: C/pause.page:9(desc)
+msgid "How to pause or stop a game."
+msgstr ""
+
+#: C/pause.page:20(title)
+msgid "Pause/Stop a game"
+msgstr ""
+
+#: C/pause.page:23(title)
+msgid "Pause and resume a game"
+msgstr ""
+
+#: C/pause.page:24(p)
+msgid ""
+"To pause a game so that you can resume it at the same point at a later time, "
+"perform one of the following:"
+msgstr ""
+
+#: C/pause.page:30(p) C/pause.page:45(p)
+msgid ""
+"Choose <guiseq><gui style=\"menu\">Game</gui><gui style=\"menuitem\">Pause "
+"Game</gui></guiseq>."
+msgstr ""
+
+#: C/pause.page:35(p)
+msgid "Click on the <gui style=\"button\">Pause</gui> button in the toolbar."
+msgstr ""
+
+#: C/pause.page:40(p)
+msgid ""
+"In order to resume the game after you paused it, perform one of the "
+"following:"
+msgstr ""
+
+#: C/pause.page:50(p)
+msgid "Click on the <gui style=\"button\">Resume</gui> button in the toolbar."
+msgstr ""
+
+#: C/pause.page:58(title)
+msgid "Stop a game"
+msgstr "Ein Spiel beenden"
+
+#: C/pause.page:59(p)
+msgid "To stop a game, in order to end it, perform one of the following:"
+msgstr ""
+
+#: C/pause.page:64(p)
+msgid ""
+"Choose <guiseq><gui style=\"menu\">Game</gui><gui style=\"menuitem\">End "
+"Game</gui></guiseq>."
+msgstr ""
+
+#: C/pause.page:69(p)
+msgid "Click on the <gui style=\"button\">Finish</gui> button in the toolbar."
+msgstr ""
+
+#: C/license.page:8(desc)
+msgid "Legal information."
+msgstr "Rechtliche Hinweise."
+
+#: C/license.page:11(title)
+msgid "License"
+msgstr "Lizenz"
+
+#: C/license.page:12(p)
+msgid ""
+"This work is distributed under a CreativeCommons Attribution-Share Alike 3.0 "
+"Unported license."
+msgstr ""
+"Diese Arbeit ist lizenziert unter einer Creative Commons Attribution-Share "
+"Alike 3.0 Unported License."
+
+#: C/license.page:18(p)
+msgid "You are free:"
+msgstr "Es ist Ihnen gestattet:"
+
+#: C/license.page:23(em)
+msgid "To share"
+msgstr "Freizugeben"
+
+#: C/license.page:24(p)
+msgid "To copy, distribute and transmit the work."
+msgstr ""
+"Das Werk bzw. den Inhalt zu vervielfältigen, zu verbreiten und öffentlich "
+"zugänglich zu machen."
+
+#: C/license.page:27(em)
+msgid "To remix"
+msgstr "Änderungen vorzunehmen"
+
+#: C/license.page:28(p)
+msgid "To adapt the work."
+msgstr "Abwandlungen und Bearbeitungen des Werkes bzw. Inhaltes anzufertigen."
+
+#: C/license.page:31(p)
+msgid "Under the following conditions:"
+msgstr "Unter den folgenden Bedingungen:"
+
+#: C/license.page:36(em)
+#, fuzzy
+#| msgid "Introduction"
+msgid "Attribution"
+msgstr "Einführung"
+
+#: C/license.page:37(p)
+msgid ""
+"You must attribute the work in the manner specified by the author or "
+"licensor (but not in any way that suggests that they endorse you or your use "
+"of the work)."
+msgstr ""
+"Sie dürfen das Werk nur unter gleichen Bedingungen weitergeben, wie Sie vom "
+"Autor oder Lizenzgeber festgelegt wurden (aber nicht so, dass es wie Ihr "
+"Werk aussieht)."
+
+#: C/license.page:44(em)
+msgid "Share Alike"
+msgstr "Share Alike"
+
+#: C/license.page:45(p)
+msgid ""
+"If you alter, transform, or build upon this work, you may distribute the "
+"resulting work only under the same, similar or a compatible license."
+msgstr ""
+"Wenn Sie das lizenzierte Werk bzw. den lizenzierten Inhalt bearbeiten, "
+"abwandeln oder in anderer Weise erkennbar als Grundlage für eigenes Schaffen "
+"verwenden, dürfen Sie die daraufhin neu entstandenen Werke bzw. Inhalte nur "
+"unter Verwendung von Lizenzbedingungen weitergeben, die mit denen dieses "
+"Lizenzvertrages identisch, vergleichbar oder kompatibel sind."
+
+#: C/license.page:51(p)
+#, fuzzy
+#| msgid ""
+#| "This work is licensed under a <link href=\"http://creativecommons.org/"
+#| "licenses/by-sa/3.0/\">Creative Commons Attribution-Share Alike 3.0 "
+#| "Unported License</link>."
+msgid ""
+"For the full text of the license, see the <link href=\"http://"
+"creativecommons.org/licenses/by-sa/3.0/legalcode\">CreativeCommons website</"
+"link>, or read the full <link href=\"http://creativecommons.org/licenses/by-"
+"sa/3.0/\">Commons Deed</link>."
+msgstr ""
+"Diese Arbeit ist lizenziert unter einer <link href=\"http://creativecommons."
+"org/licenses/by-sa/3.0/\">Creative Commons Attribution-Share Alike 3.0 "
+"Unported License</link>."
+
+#: C/gametypes.page:5(title)
+msgid "3"
+msgstr "3"
+
+#: C/gametypes.page:6(desc)
+msgid "What types of game you can play."
+msgstr ""
+
+#: C/gametypes.page:15(title)
+msgid "Game types"
+msgstr "Spielarten"
+
+#: C/gametypes.page:17(p)
+msgid "<app>gbrainy</app> provides the following types of games:"
+msgstr "<app>gbrainy</app> bietet die folgenden Spielarten:"
+
+#: C/gametypes.page:27(p)
+msgid ""
+"Games designed to challenge your reasoning and thinking skills. These games "
+"are based on sequences of elements, visual and spatial reasoning or "
+"relationships between elements."
+msgstr ""
+"Aufgaben, die Ihr Schlussfolgerungs- und Denkvermögen herausfordern. Diese "
+"Rätsel basieren auf Sequenzen von Elementen, visuellen und räumlichen "
+"Schlussfolgerungen oder Zusammenhängen zwischen Elementen."
+
+#: C/gametypes.page:37(p)
+msgid "Logic games logo"
+msgstr ""
+
+#: C/gametypes.page:47(title)
+msgid "Mental calculations"
+msgstr "Übungen zum Kopfrechnen"
+
+#: C/gametypes.page:48(p)
+#, fuzzy
+#| msgid ""
+#| "Mental calculation. Games based on arithmetical operations designed to "
+#| "prove your mental calculation skills. Games that require the player to "
+#| "use multiplication, division, addition and subtraction combined in "
+#| "different ways."
+msgid ""
+"Games based on arithmetical operations designed to improve your mental "
+"calculation skills. Games that require the player to use multiplication, "
+"division, addition and subtraction combined in different ways."
+msgstr ""
+"Kopfrechnen. Aufgaben, die auf arithmetischen Operationen beruhen, um Ihre "
+"Kopfrechenfähigkeiten zu prüfen. Der Spieler hat bei diesen Übungen "
+"Multiplikation, Division, Addition und Subtraktion zu kombinieren und auf "
+"unterschiedliche Weise zu verwenden."
+
+#: C/gametypes.page:58(p)
+msgid "Calculation games logo"
+msgstr ""
+
+#: C/gametypes.page:69(p)
+#, fuzzy
+#| msgid ""
+#| "Memory trainers. Games designed to challenge your short term memory. "
+#| "These games show collections of objects and ask the player to recall "
+#| "them, sometimes establishing relationships between figures, words, "
+#| "numbers or colors."
+msgid ""
+"Games designed to challenge your short-term memory. These games show "
+"collections of objects and ask the player to recall them, sometimes "
+"establishing relationships between figures, words, numbers or colors."
+msgstr ""
+"Gedächtnisübungen. Aufgaben, die Ihr Kurzzeitgedächtnis auf die Probe "
+"stellen. Bei diesen Übungen handelt es sich um Sammlungen von Objekten, die "
+"sich der Spieler merken soll. Manchmal sind es Zusammenhänge zwischen "
+"Elementen, Wörter, Zahlen oder Farben."
+
+#: C/gametypes.page:79(p)
+msgid "Memory games logo"
+msgstr "Logo der Gedächtnisspiele"
+
+#: C/gametypes.page:90(p)
+#, fuzzy
+#| msgid ""
+#| "Verbal analogies. Games that challenge your verbal aptitude. Games that "
+#| "ask the player to identify cause and effect, use synonyms or antonyms, "
+#| "and use his vocabulary."
+msgid ""
+"Games that challenge your verbal aptitude. These games ask the player to "
+"identify cause and effect, use synonyms or antonyms, and use their "
+"vocabulary."
+msgstr ""
+"Verbale Analogien. Spiele, die Ihr verbales Geschick fordern. Aufgaben, die "
+"den Spieler auffordern, Ursachen und Auswirkungen herauszufinden, Synonyme "
+"oder Gegenteile zu verwenden und das Vokabular prüfen."
+
+#: C/gametypes.page:99(p)
+msgid "Verbal analogies games logo"
+msgstr "Logo der Verbalen Analogien"
+
+#: C/customgame.page:9(desc)
+msgid "Start a custom games selection."
+msgstr "Eine eigene Auswahl an Spielen starten."
+
+#: C/customgame.page:20(title)
+msgid "Custom games selection"
+msgstr ""
+
+#: C/customgame.page:21(p)
+msgid ""
+"It is possible to play a custom selection of all the games in <app>gbrainy</"
+"app>."
+msgstr ""
+
+#: C/customgame.page:24(p)
+msgid "To do so, proceed as follows:"
+msgstr ""
+
+#: C/customgame.page:29(p)
+msgid ""
+"Choose <guiseq><gui style=\"menu\">Game</gui><gui style=\"menuitem\">New "
+"Game</gui><gui style=\"menuitem\">Custom Game Selection</gui></guiseq>."
+msgstr ""
+
+#: C/customgame.page:35(p)
+msgid ""
+"In the <gui>Custom Game</gui> dialog, select the games that you would like "
+"to play by clicking on the check box next to the name of the game."
+msgstr ""
+
+#: C/customgame.page:41(p)
+msgid ""
+"Once you are done, click on <gui style=\"button\">Start</gui> to start "
+"playing your custom games selection."
+msgstr ""
 
 #. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
 #: C/index.page:0(None)
 msgid "translator-credits"
 msgstr "Wolfgang Stöggl <c72578@yahoo.de>, 2010"
+
+#~ msgid ""
+#~ "By clicking on the <gui>Total</gui>, <gui>Logic</gui>, <gui>Memory</gui>, "
+#~ "<gui>Mental Calculation</gui> and <gui>Verbal</gui> checkboxes the user "
+#~ "can select which game types results are shown on the player's game "
+#~ "history graphic."
+#~ msgstr ""
+#~ "Durch Klicken auf die Ankreuzfelder <gui>Gesamt</gui>, <gui>Logik</gui>, "
+#~ "<gui>Gedächtnis</gui>, <gui>Kopfrechnen</gui> und <gui>Verbal</gui> kann "
+#~ "der Benutzer wählen, aus welchen Spielarten die Ergebnisse auf der "
+#~ "Graphik der Spielchronik angezeigt werden."
+
+#~ msgid ""
+#~ "<app>gbrainy</app> saves the player game scores to be able to track "
+#~ "player's score evolution. Using the <link xref=\"preferences"
+#~ "\">Preferences</link> the user can select how many games sessions are "
+#~ "recorded and how many games you have to play to have the game results "
+#~ "stored."
+#~ msgstr ""
+#~ "<app>gbrainy</app> speichert die Ergebnisse des Spielers, um den Verlauf "
+#~ "der Ergebnisse verfolgen zu können. Der Spieler kann in den <link xref="
+#~ "\"preferences\">Einstellungen</link> auswählen, wie viele Spielsitzungen "
+#~ "gespeichert und wie viele Übungen absolviert werden müssen, so dass die "
+#~ "Spielergebnisse gespeichert werden."
+
+#~ msgid "@@image: 'figures/results.png'; md5=ad0cea57566d0d2192a6262830e4b166"
+#~ msgstr ""
+#~ "@@image: 'figures/results.png'; md5=c00b7944325a42decc9bad7ed0505448"
+
+#~ msgid "Results"
+#~ msgstr "Ergebnisse"
+
+#~ msgid ""
+#~ "When the game session is finished <app>gbrainy</app> shows a summary of "
+#~ "the results of the session."
+#~ msgstr ""
+#~ "Sobald die Spielsitzung beendet ist, zeigt <app>gbrainy</app> eine "
+#~ "Zusammenfassung der Ergebnisse der Sitzung an."
+
+#~ msgid ""
+#~ "The results for every game type are computed using the <link xref="
+#~ "\"scoring\">scoring</link> algorithm that takes into account time used, "
+#~ "tips and the number of total games."
+#~ msgstr ""
+#~ "Die Ergebnisse für jedes Spiel werden anhand des <link xref=\"scoring"
+#~ "\">Ergebnis</link>-Algorithmus berechnet, der die benötigte Zeit, "
+#~ "Hinweise und die Gesamtzahl der Spiele berücksichtigt."
+
+#~ msgid ""
+#~ "<app>gbrainy</app> keeps track of the player's personal records using the "
+#~ "player's game history. If you have obtained a better score that in "
+#~ "previous games for any of the game types, <app>gbrainy</app> informs that "
+#~ "a new personal record has been set. Otherwise, general tips on how to "
+#~ "improve when playing next games are given."
+#~ msgstr ""
+#~ "<app>gbrainy</app> berechnet die persönlichen Rekorde des Spielers unter "
+#~ "Verwendung der Spielchronik. Wenn Sie ein besseres Ergebnis als in "
+#~ "vorherigen Spielen für eine beliebige Spielart erreicht haben, dann zeigt "
+#~ "<app>gbrainy</app> an, dass ein neuer persönlicher Rekord erreicht worden "
+#~ "ist. Ansonsten werden Hinweise angezeigt, wie man sich bei zukünftigen "
+#~ "Spielen steigern kann."
+
+#~ msgid ""
+#~ "If the number of games played during the session are minimum defined in "
+#~ "the <link xref=\"preferences\">Preferences</link> to store the session, "
+#~ "then the results of the game session are recorded in the player's game "
+#~ "history."
+#~ msgstr ""
+#~ "Wenn die Anzahl gespielter Spiele mindestens so groß ist wie die unter "
+#~ "<link xref=\"preferences\">Einstellungen</link> gespeicherte minimale "
+#~ "Anzahl, um die Sitzung zu speichern, dann werden die Ergebnisse der "
+#~ "Spielsitzung in der Spielchronik gespeichert."
+
+#~ msgid ""
+#~ "@@image: 'figures/preferences.png'; md5=77aea548de8fde67e9728440ebdb009d"
+#~ msgstr ""
+#~ "@@image: 'figures/preferences.png'; md5=98e7debd7be37b170024d7c2781392dd"
+
+#~ msgid "Preferences"
+#~ msgstr "Einstellungen"
+
+#~ msgid ""
+#~ "You can access the <gui>Preferences</gui> from the main application menu."
+#~ msgstr ""
+#~ "Sie können die <gui>Einstellungen</gui> aus dem Hauptmenü der Anwendung "
+#~ "erreichen."
+
+#~ msgid "General Settings"
+#~ msgstr "Allgemeine Einstellungen"
+
+#~ msgid ""
+#~ "The <gui>Skip games that use colors</gui> option removes, from the list "
+#~ "of available games, the games that use colors to challenge the player, "
+#~ "making it friendly to color blind users."
+#~ msgstr ""
+#~ "Die Einstellung <gui>Spiele überspringen, bei denen Farben verwendet "
+#~ "werden</gui>, ist für farbenblinde Spieler vorgesehen und entfernt Spiele "
+#~ "aus der Liste verfügbarer Spiele, die Farben zur Herausforderung des "
+#~ "Spielers verwenden."
+
+#~ msgid ""
+#~ "The difficulty level establishes the complexity of the games during a "
+#~ "gaming session. It influences the number of elements to remember in "
+#~ "memory games, the size of numbers in calculation games, makes more "
+#~ "obvious or obfuscated logic puzzles, etc. The available difficulty levels "
+#~ "are:"
+#~ msgstr ""
+#~ "Der Schwierigkeitsgrad legt die Komplexität der Spiele während einer "
+#~ "Spielsitzung fest. Er beeinflusst die Anzahl der Elemente, die man sich "
+#~ "bei Gedächtnisübungen merken soll, die Anzahl der Zahlen bei "
+#~ "Rechenaufgaben, macht Logikrätsel offensichtlicher oder verschleiert sie, "
+#~ "usw. Die verfügbaren Schwierigkeitsgrade sind:"
+
+#~ msgid ""
+#~ "<gui>Easy</gui>. The complexity of the games is the average for kids."
+#~ msgstr ""
+#~ "<gui>Leicht</gui>. Die durchschnittliche Komplexität der Spiele ist auch "
+#~ "für Kinder geeignet."
+
+#~ msgid ""
+#~ "<gui>Medium</gui>. This is the default level of the difficulty of "
+#~ "<app>gbrainy</app>. The complexity of the games is considered good for a "
+#~ "regular player."
+#~ msgstr ""
+#~ "<gui>Mittel</gui>. Dies ist der voreingestellte Schwierigkeitsgrad von "
+#~ "<app>gbrainy</app>. Die Komplexität der gezeigten Spiele wird für einen "
+#~ "normalen Spieler als gut eingeschätzt."
+
+#~ msgid ""
+#~ "<gui>Master</gui>. Ideal for advanced players with a special talent for "
+#~ "playing <app>gbrainy</app> alike games."
+#~ msgstr ""
+#~ "<gui>Schwer</gui>. Ideal für fortgeschrittene Spieler mit einem Talent "
+#~ "für Spiele wie <app>gbrainy</app>."
+
+#~ msgid ""
+#~ "The difficulty level additionally fine tunes the scoring algorithm by "
+#~ "being more generous when playing at the easy level or more demanding when "
+#~ "playing at master level."
+#~ msgstr ""
+#~ "Der Schwierigkeitsgrad legt zusätzlich noch fest, dass die "
+#~ "Ergebnisberechnung auf leichter Stufe großzügiger und auf schwieriger "
+#~ "Stufe strenger ist."
+
+#~ msgid "These options affect the behaviour of memory games:"
+#~ msgstr ""
+#~ "Diese Optionen wirken sich auf den Verlauf der Gedächtnisübungen aus:"
+
+#~ msgid ""
+#~ "<gui>Time in seconds to memorize the challenge</gui>. Establishes the "
+#~ "time that a collection of objects is shown to allow the player to "
+#~ "memorize it."
+#~ msgstr ""
+#~ "<gui>Zeit in Sekunden, um sich die Aufgabe zu merken</gui>. Legt fest, "
+#~ "wie lange eine Sammlung an Objekten gezeigt wird, damit sie sich der "
+#~ "Spieler einprägen kann."
+
+#~ msgid ""
+#~ "<gui>Show countdown message</gui>. When checked shows the player a "
+#~ "countdown message before every memory game. This is helpful when playing "
+#~ "different game types in a single game session because indicates to the "
+#~ "user that should get ready for a memory game. Advanced players usually "
+#~ "disable this option."
+#~ msgstr ""
+#~ "<gui>Countdown-Nachricht anzeigen</gui>. Wenn diese Einstellung gewählt "
+#~ "ist, wird dem Spieler vor jeder Aufgabe eine Countdown-Nachricht "
+#~ "angezeigt. Dies ist hilfreich, wenn man unterschiedliche Arten von "
+#~ "Spielen in einer Sitzung spielt, weil dem Benutzer angezeigt wird, dass "
+#~ "er sich auf eine Gedächtnisübung vorbereiten soll. Fortgeschrittene "
+#~ "Spieler schalten diese Einstellung üblicherweise aus."
+
+#~ msgid "These options affect the behaviour of the player's game history:"
+#~ msgstr ""
+#~ "Folgende Optionen wirken sich auf das Verhalten der Spielchronik des "
+#~ "Spielers aus:"
+
+#~ msgid ""
+#~ "<gui>Minimum number of played games to store the game</gui>. Determines "
+#~ "the number of games that a player should play in a game session to store "
+#~ "it and make it available in the player's history."
+#~ msgstr ""
+#~ "<gui>Minimale Anzahl an absolvierten Aufgaben, um das Spiel zu speichern</"
+#~ "gui>. Legt die Anzahl an Übungen fest, die ein Spieler in einer Sitzung "
+#~ "zu absolvieren hat, so dass sie gespeichert wird und in der Spielchronik "
+#~ "erscheint."
+
+#~ msgid ""
+#~ "<gui>Maximum number of stored games in the player's history</gui>. Once "
+#~ "this limit has been reach the result of the older games is removed to "
+#~ "store the results of the new game sessions."
+#~ msgstr ""
+#~ "<gui>Maximale Anzahl an gespeicherten Spielen in der Chronik des "
+#~ "Spielers</gui>. Sobald dieses Limit erreicht ist, werden die Ergebnisse "
+#~ "älterer Spiele entfernt, um die Ergebnisse der neuen Spielsitzungen zu "
+#~ "speichern."
+
+#~ msgid ""
+#~ "<gui>Clear Player's Game History</gui>. Clears the player's game history "
+#~ "by removing all the previous recorded game sessions results."
+#~ msgstr ""
+#~ "<gui>Spielchronik des Spielers löschen</gui>. Löscht die Spielchronik des "
+#~ "Spielers durch Entfernen aller zuvor gespeicherten Ergebnisse der "
+#~ "Spielsitzungen."
+
+#~ msgid "Scoring"
+#~ msgstr "Bewertung"
+
+#~ msgid ""
+#~ "During a game session a player usually solves several games. "
+#~ "<app>gbrainy</app> scores every individual game and then computes the "
+#~ "totals for every set of game types played during the session."
+#~ msgstr ""
+#~ "Während einer Spielsitzung absolviert ein Spieler üblicherweise mehrere "
+#~ "Übungen. <app>gbrainy</app> bewertet jedes einzelne Spiel und berechnet "
+#~ "das Gesamtergebnis für jeden Satz an Spielarten, die in einer Sitzung "
+#~ "gespielt worden sind."
+
+#~ msgid "Scoring individual games"
+#~ msgstr "Bewertung einzelner Spiele"
+
+#~ msgid ""
+#~ "If the player answers a game incorrectly, the player does not get any "
+#~ "score for the answer. If the player answers the game correctly, "
+#~ "<app>gbrainy</app> scores the player considering the time used and if the "
+#~ "played used a tip during the game."
+#~ msgstr ""
+#~ "Wenn der Spieler eine Übung falsch beantwortet, so erhält er keine Punkte "
+#~ "für die Antwort. Wenn der Spieler eine richtige Antwort liefert, so "
+#~ "berücksichtigt <app>gbrainy</app> die benötigte Zeit und die Verwendung "
+#~ "eines Hinweises während des Spiels für die Berechnung des Ergebnisses."
+
+#~ msgid ""
+#~ "When playing at medium difficulty level the player is expected to solve "
+#~ "in the time indicated the following game types:"
+#~ msgstr ""
+#~ "Wenn man bei mittlerem Schwierigkeitsgrad spielt, sollte der Spieler die "
+#~ "folgenden Spielarten in der angezeigten Zeit lösen:"
+
+#~ msgid "Memory trainers games in 30 seconds."
+#~ msgstr "Gedächtnisübungen in 30 Sekunden."
+
+# 'previous times' als vorgegebene Zeit übersetzt.
+#~ msgid ""
+#~ "At easy difficulty level the player is given 30% more time and at master "
+#~ "level is given only 70% of the previous times."
+#~ msgstr ""
+#~ "Im leichten Schwierigkeitsgrad steht dem Spieler 30 % mehr Zeit zur "
+#~ "Verfügung und auf der schweren Stufe nur 70 % der vorgegebenen Zeit."
+
+#~ msgid ""
+#~ "If the player required more than the double of time expected scores 70%."
+#~ msgstr ""
+#~ "Wenn der Spieler mehr als die doppelte erwartete Zeit benötigte, ergibt "
+#~ "70 %."
+
+#~ msgid ""
+#~ "If the player required more than three times the time expected scores 60%."
+#~ msgstr ""
+#~ "Wenn der Spieler mehr als die dreifache erwartete Zeit benötigte, ergibt "
+#~ "60 %."
+
+#~ msgid ""
+#~ "Additionally, if the player used the tip then scores only 80% of the "
+#~ "previous score for the game."
+#~ msgstr ""
+#~ "Wenn ein Spieler darüber hinaus den Hinweis zu Rate zieht, so erhält er "
+#~ "nur 80 % des vorherigen Ergebnisses für das Spiel."
+
+#~ msgid ""
+#~ "You can start a new game by clicking on the different buttons of the "
+#~ "application toolbar."
+#~ msgstr ""
+#~ "Sie können eine neues Spiel durch Klicken auf die unterschiedlichen "
+#~ "Knöpfe der Anwendungs-Werkzeugleiste starten."
+
+#~ msgid "The following actions are associated to the buttons:"
+#~ msgstr "Folgende Aktionen sind den Knöpfen zugewiesen:"
+
+#~ msgid ""
+#~ "You have also the same functionality available under the "
+#~ "<guiseq><gui>Game</gui><gui>New Game</gui></guiseq> menu."
+#~ msgstr ""
+#~ "Dieselbe Funktionalität finden Sie auch unter dem Menüeintrag "
+#~ "<guiseq><gui>Spiel</gui><gui>Neues Spiel</gui></guiseq>."
+
+#~ msgid ""
+#~ "The game session starts by showing a game and asking the user to solve "
+#~ "it. Read always the instructions carefully."
+#~ msgstr ""
+#~ "Die Spielsitzung beginnt durch Anzeigen eines Spiels und Frage an den "
+#~ "Benutzer, es zu lösen. Lesen Sie die Anweisungen immer aufmerksam durch."
+
+#~ msgid ""
+#~ "At the bottom of the application (see the capture below) you have the "
+#~ "main set of controls to interact with the game."
+#~ msgstr ""
+#~ "Am unteren Rand der Anwendung (siehe Bildschirmfoto unten) finden Sie die "
+#~ "Hauptkontrollelemente, um das Spiel zu steuern."
+
+#~ msgid ""
+#~ "Some games include a tip that gives some guidance when trying to solve "
+#~ "them. You can use the <gui>Tip</gui> button when it is enabled to get the "
+#~ "tip."
+#~ msgstr ""
+#~ "Einige Spiele enthalten einen Hinweis, der beim Lösen der Aufgabe "
+#~ "hilfreich sein kann. Sie können den <gui>Hinweis</gui>-Knopf verwenden, "
+#~ "wenn er aktiv ist, um den Hinweis zu erhalten."
+
+#~ msgid ""
+#~ "Once you have answered the game you will be informed if you did provide "
+#~ "the right answer. You can use the <gui>Next</gui> button to go to the "
+#~ "next game."
+#~ msgstr ""
+#~ "Sobald Sie die Übung beantwortet haben, werden Sie informiert, ob die "
+#~ "Antwort korrekt war. Sie können den <gui>Weiter</gui>-Knopf verwenden, um "
+#~ "zur nächsten Aufgabe zu gelangen."
+
+#~ msgid ""
+#~ "You can pause the game session using the <gui>Pause</gui> button and "
+#~ "resume it at any moment."
+#~ msgstr ""
+#~ "Sie können das Spiel jederzeit unter Verwendung des <gui>Pause</gui>-"
+#~ "Knopfs anhalten und später wieder fortsetzen."
+
+#~ msgid "Jordi Mas i Hernandez"
+#~ msgstr "Jordi Mas i Hernandez"
+
+#~ msgid "jmas@softcatala.org"
+#~ msgstr "jmas@softcatala.org"

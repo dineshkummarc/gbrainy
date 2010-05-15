@@ -57,9 +57,9 @@ namespace gbrainy.Games.Logic
 
 			gametype = (GameType) random.Next ((int) GameType.Total);
 
-			switch ((int) gametype)
+			switch (gametype)
 			{
-			case (int) GameType.Machine:
+			case GameType.Machine:
 				var = 2 + random.Next (5);
 				total = 50 + random.Next (100);
 				question = String.Format (
@@ -73,7 +73,7 @@ namespace gbrainy.Games.Logic
 				ans = (total - 1) * var;
 				break;
 
-			case (int) GameType.Fence:
+			case GameType.Fence:
 				total = 20 + random.Next (20);
 				ans = 4 * total - 4;
 				question = String.Format (
@@ -85,7 +85,7 @@ namespace gbrainy.Games.Logic
 					Catalog.GetString ("There are {0} fence poles since the poles on the corners of the square are shared."), ans);
 				break;
 
-			case (int) GameType.Present:
+			case GameType.Present:
 				int present = 5 + random.Next (20);
 				total = present + 2;
 				ans = total;

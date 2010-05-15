@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2007-2008 Jordi Mas i Hernàndez <jmas@softcatala.org>
+ * Copyright (C) 2007-2010 Jordi Mas i Hernàndez <jmas@softcatala.org>
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License as
@@ -23,6 +23,7 @@ using Mono.Unix;
 
 using gbrainy.Core.Main;
 using gbrainy.Core.Libraries;
+using gbrainy.Core.Toolkit;
 
 namespace gbrainy.Games.Calculation
 {
@@ -32,6 +33,7 @@ namespace gbrainy.Games.Calculation
 		private int []answers;
 		private int max_num;
 		private int num_answ_ques;
+		private int answer_idx;
 
 		public override string Name {
 			get {return Catalog.GetString ("Greatest divisor");}
@@ -62,7 +64,7 @@ namespace gbrainy.Games.Calculation
 				break;
 			case Difficulty.Master:
 				max_num = 9999;
-				num_answ_ques = 5;
+				num_answ_ques = 4;
 				break;
 			}
 
@@ -114,10 +116,36 @@ namespace gbrainy.Games.Calculation
 				}
 			
 				if (n == answers.Length && answers[a] > answer)
+				{
 					answer = answers[a];
+					answer_idx = a;
+				}
 			}
 
 			right_answer = answer.ToString ();
+
+			// Drawing objects
+			Container container = new Container (DrawAreaX + 0.2, DrawAreaY + 0.25, 0.6, answers.Length * 0.15);
+			AddWidget (container);
+	
+			for (int i = 0; i < answers.Length; i++)
+			{
+				DrawableArea drawable_area = new DrawableArea (0.5, 0.1);
+				drawable_area.X = DrawAreaX + 0.23;
+				drawable_area.Y = DrawAreaY + 0.27 + i * 0.15;
+				container.AddChild (drawable_area);
+				drawable_area.Data = i;
+				drawable_area.DataEx = GetPossibleAnswer (i);
+
+				drawable_area.DrawEventHandler += delegate (object sender, DrawEventArgs e)
+				{
+					int d = (int) e.Data;
+					e.Context.SetPangoLargeFontSize ();	
+					e.Context.MoveTo (0.05, 0.02);
+					e.Context.ShowPangoText (String.Format (Catalog.GetString ("{0}) {1}"), GetPossibleAnswer (d),
+						answers[d].ToString ()));
+				};
+			}
 		}
 
 		private int GetUniqueAnswer (int []mult, int []answers)
@@ -199,15 +227,16 @@ namespace gbrainy.Games.Calculation
 
 		public override void Draw (CairoContextEx gr, int area_width, int area_height, bool rtl)
 		{	
-			double x = DrawAreaX, y = DrawAreaY + 0.1;
+			double x = DrawAreaX, y = 0.05;
 
 			base.Draw (gr, area_width, area_height, rtl);
 
-			gr.SetPangoLargeFontSize ();
+			
 
 			gr.MoveTo (0.05, y);
+			gr.SetPangoLargeFontSize ();
 			gr.ShowPangoText (Catalog.GetString ("Numbers"));
-			y += 0.12;
+			y += 0.08;
 
 			for (int n = 0; n < numbers.Length; n++)
 			{
@@ -217,20 +246,21 @@ namespace gbrainy.Games.Calculation
 				x += 0.17;
 			}
 		
-			x = DrawAreaX;
-			y += 0.3;
+			y += 0.16;
 
 			gr.MoveTo (0.05, y);
 			gr.ShowPangoText (Catalog.GetString ("Possible divisors"));
-			y += 0.12;
+		}
 
-			for (int n = 0; n < answers.Length; n++)
-			{
-				gr.MoveTo (x, y);
-				gr.ShowPangoText (answers[n].ToString ());
-				gr.Stroke ();
-				x += 0.17;
-			}
+		public override bool CheckAnswer (string answer)
+		{	
+			if (base.CheckAnswer (answer) == true)
+				return true;
+
+			if (String.Compare (answer, GetPossibleAnswer (answer_idx), true) == 0) 
+				return true;
+
+			return false;
 		}
 	}
 }

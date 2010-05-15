@@ -35,7 +35,7 @@ namespace gbrainy.Core.Main
 		private bool request_answer = false;
 		private bool buttons_active;
 		protected bool shade = false;
-		protected const int shading_time = 15;
+		const int shading_time = 15;
 		private LinearGradient gradient = null;
 		protected double alpha;
 		private bool draw_timer;
@@ -69,7 +69,8 @@ namespace gbrainy.Core.Main
 
 		public override void Initialize ()
 		{
-			if (Preferences.GetBoolValue (Preferences.MemQuestionWarnKey) == false) {
+			if (Preferences.GetBoolValue (Preferences.MemQuestionWarnKey) == false || 
+				IsPreviewMode == true) {
 				InitializeGame ();
 				return;
 			}

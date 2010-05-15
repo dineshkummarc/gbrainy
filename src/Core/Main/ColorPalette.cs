@@ -59,7 +59,7 @@ namespace gbrainy.Core.Main
 			new Cairo.Color (0.81, 0.1, 0.13),
 			new Cairo.Color (0.54, 0.71, 0.24),
 			new Cairo.Color (0.17, 0.23 ,0.56),
-			new Cairo.Color (0.94, 0.93, 0.25),
+			new Cairo.Color (0.86, 0.85, 0.25),
 			new Cairo.Color (0.82, 0.25, 0.59),
 			new Cairo.Color (1, 0.54, 0),
 			new Cairo.Color (0, 0, 0),

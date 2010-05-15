@@ -28,14 +28,14 @@ namespace gbrainy.Games.Logic
 {
 	public class Puzzle3DCube : Game
 	{
-		int rows, columns, deepth;
+		int rows, columns, depth;
 
 		public override string Name {
-			get {return Catalog.GetString ("Cube");}
+			get {return Catalog.GetString ("3D Cube");}
 		}
 
 		public override string Question {
-			get {return String.Format (Catalog.GetString ("How many cubes do you count in the figure below? (not counting the figure) Answer using a number."));} 
+			get {return String.Format (Catalog.GetString ("How many single small cubes do you count in the figure below? Answer using a number."));} 
 		}
 
 		public override string Tip {
@@ -59,8 +59,8 @@ namespace gbrainy.Games.Logic
 				break;		
 			}
 
-			rows = columns = deepth = 4 + random.Next (max_random);
-			ans = rows * columns * deepth;
+			rows = columns = depth = 4 + random.Next (max_random);
+			ans = rows * columns * depth;
 			right_answer += ans.ToString ();	
 		}
 

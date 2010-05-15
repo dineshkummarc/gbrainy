@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2009 Jordi Mas i Hernàndez <jmas@softcatala.org>
+ * Copyright (C) 2009-2010 Jordi Mas i Hernàndez <jmas@softcatala.org>
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License as
@@ -23,6 +23,7 @@ using Mono.Unix;
 
 using gbrainy.Core.Main;
 using gbrainy.Core.Libraries;
+using gbrainy.Core.Toolkit;
 
 namespace gbrainy.Games.Calculation
 {
@@ -30,10 +31,11 @@ namespace gbrainy.Games.Calculation
 	{
 		const int total_primes = 1129;
 		const int total_nums = 5;
-		int max;
+		double width_box, height_box;
+		short max;
 		bool div3;	
 		int []numbers;
-		int []primes = new int []	
+		short []primes = new short []	
 		{
 			2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 
 			37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 
@@ -197,34 +199,48 @@ namespace gbrainy.Games.Calculation
 			answer = primes [random.Next (max_primeidx + 1)];
 			numbers [random.Next (numbers.Length)] = answer;
 			right_answer = answer.ToString ();
+
+			// Drawing objects
+			HorizontalContainer container = new HorizontalContainer (DrawAreaX, DrawAreaY + 0.22, 0.8, 0.1);
+			DrawableArea drawable_area;
+			AddWidget (container);
+
+			width_box = 0.8 / numbers.Length;
+			height_box = 0.1;
+
+			for (int i = 0; i < numbers.Length; i++)
+			{
+				drawable_area = new DrawableArea (width_box, height_box);
+				drawable_area.Data = i;
+				drawable_area.DataEx = numbers[i].ToString ();
+				container.AddChild (drawable_area);
+
+				drawable_area.DrawEventHandler += delegate (object sender, DrawEventArgs e)
+				{
+					int n = (int) e.Data;
+
+					e.Context.SetPangoLargeFontSize ();
+					e.Context.DrawTextCentered (width_box / 2, height_box / 2, numbers[n].ToString ());
+				};
+			}
 		}
 
 		public override void Draw (CairoContextEx gr, int area_width, int area_height, bool rtl)
 		{	
-			double x = DrawAreaX, y = DrawAreaY + 0.1;
-
 			base.Draw (gr, area_width, area_height, rtl);
 
 			gr.SetPangoLargeFontSize ();
 
-			gr.MoveTo (0.05, y);
+			gr.MoveTo (0.05, DrawAreaY + 0.1);
 			gr.ShowPangoText (Catalog.GetString ("Numbers"));
-			y += 0.12;
-
-			for (int n = 0; n < numbers.Length; n++)
-			{
-				gr.MoveTo (x, y);
-				gr.ShowPangoText (numbers[n].ToString ());
-				gr.Stroke ();
-				x += 0.17;
-			}
 		}
 	
-		int GenerateNonPrime ()
+		short GenerateNonPrime ()
 		{
-			int num;
+			short num;
 			while (true) {
-				num = 100 + random.Next (max - 100);
+				// Max value is a short
+				num = (short) (100 + (random.Next (max - 100)));
 
 				if (num % 2 == 0)
 					continue;

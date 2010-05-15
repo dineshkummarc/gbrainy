@@ -31,7 +31,7 @@ namespace gbrainy.Core.Views
 {
 	public class CountDownView : IDrawable, IDrawRequest
 	{
-		static int countdown_time;
+		int countdown_time;
 		System.Timers.Timer timer;
 		EventHandler finish;
 		ISynchronizeInvoke synchronize;
@@ -98,12 +98,11 @@ namespace gbrainy.Core.Views
 		{
 			lock (this) {
 
-				if (countdown_time == 1) {
-					EndDrawCountDown ();
+				if (countdown_time <= 1) {
 					finish (this, EventArgs.Empty);
-				
-				}
-				countdown_time--;
+				} else
+					countdown_time--;
+
 				if (DrawRequest != null)
 					DrawRequest (this, EventArgs.Empty);
 			}

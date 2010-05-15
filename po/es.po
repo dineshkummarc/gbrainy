@@ -5,13 +5,14 @@
 # (c) 2007 Santiago Martinez Varela, 2007.
 # Eduardo Retamales <eretamales@gnome.cl>, 2007, 2008.
 # Jorge González <jorgegonz@svn.gnome.org>, 2007, 2008, 2010.
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: gbrainy.HEAD\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=gbrainy&component=general\n"
-"POT-Creation-Date: 2010-03-24 19:59+0000\n"
-"PO-Revision-Date: 2010-03-24 21:08+0100\n"
+"POT-Creation-Date: 2010-05-03 21:24+0000\n"
+"PO-Revision-Date: 2010-05-04 23:16+0200\n"
 "Last-Translator: Jorge González <jorgegonz@svn.gnome.org>\n"
 "Language-Team: Español <gnome-es-list@gnome.org>\n"
 "MIME-Version: 1.0\n"
@@ -210,7 +211,6 @@ msgid "Works with leather"
 msgstr "Trabaja con cuero"
 
 #: ../data/verbal_analogies.xml.h:50
-#| msgid "airplane | aeroplane"
 msgid "airplane | aeroplane | plane"
 msgstr "avión | aeroplano | aeronave"
 
@@ -597,23 +597,23 @@ msgstr "Prepárate para memorizar los siguientes objetos…"
 msgid "Total"
 msgstr "Total"
 
-#: ../src/Core/Views/FinishView.cs:99 ../src/Core/Main/Game.cs:383
-#: ../src/Clients/Classical/gbrainy.cs:305
+#: ../src/Core/Views/FinishView.cs:99 ../src/Core/Main/Game.cs:392
+#: ../src/Clients/Classical/gbrainy.cs:312
 msgid "Logic"
 msgstr "Lógica"
 
-#: ../src/Core/Views/FinishView.cs:106 ../src/Core/Main/Game.cs:389
-#: ../src/Clients/Classical/gbrainy.cs:310
+#: ../src/Core/Views/FinishView.cs:106 ../src/Core/Main/Game.cs:398
+#: ../src/Clients/Classical/gbrainy.cs:317
 msgid "Calculation"
 msgstr "Cálculo"
 
-#: ../src/Core/Views/FinishView.cs:113 ../src/Core/Main/Game.cs:386
-#: ../src/Clients/Classical/gbrainy.cs:316
+#: ../src/Core/Views/FinishView.cs:113 ../src/Core/Main/Game.cs:395
+#: ../src/Clients/Classical/gbrainy.cs:323
 msgid "Memory"
 msgstr "Memoria"
 
-#: ../src/Core/Views/FinishView.cs:120 ../src/Core/Main/Game.cs:392
-#: ../src/Clients/Classical/gbrainy.cs:322
+#: ../src/Core/Views/FinishView.cs:120 ../src/Core/Main/Game.cs:401
+#: ../src/Clients/Classical/gbrainy.cs:329
 msgid "Verbal"
 msgstr "Verbal"
 
@@ -621,55 +621,30 @@ msgstr "Verbal"
 msgid "Score"
 msgstr "Puntuación"
 
-#: ../src/Core/Views/FinishView.cs:144
-#, csharp-format
-msgid "Outstanding results"
-msgstr "Resultados asombrosos"
-
 #: ../src/Core/Views/FinishView.cs:146
-#, csharp-format
-msgid "Excellent results"
-msgstr "Resultados excelentes"
-
-#: ../src/Core/Views/FinishView.cs:148
-#, csharp-format
-msgid "Good results"
-msgstr "Buenos resultados"
-
-#: ../src/Core/Views/FinishView.cs:150
-#, csharp-format
-msgid "Poor results"
-msgstr "Resultados pobres"
-
-#: ../src/Core/Views/FinishView.cs:151
-#, csharp-format
-msgid "Disappointing results"
-msgstr "Resultados decepcionantes"
-
-#: ../src/Core/Views/FinishView.cs:158
 #, csharp-format
 msgid "Games won: {0} ({1} played)"
 msgstr "Partidos ganados: {0} ({1} jugadas)"
 
-#: ../src/Core/Views/FinishView.cs:160
+#: ../src/Core/Views/FinishView.cs:148
 #, csharp-format
 msgid "{0}. Games won: {1} ({2} played)"
 msgstr "{0}. Partidas ganadas: {1} ({2} jugadas)"
 
-#: ../src/Core/Views/FinishView.cs:164
+#: ../src/Core/Views/FinishView.cs:152
 #, csharp-format
 msgid "Time played {0} (average per game {1})"
 msgstr "Tiempo jugado {0} (media por partida {1})"
 
-#: ../src/Core/Views/FinishView.cs:176
+#: ../src/Core/Views/FinishView.cs:164
 msgid "Tips for your next games"
 msgstr "Consejos para tus siguientes partidas"
 
-#: ../src/Core/Views/FinishView.cs:204
+#: ../src/Core/Views/FinishView.cs:192
 msgid "Congratulations! New personal record"
 msgstr "¡Enhorabuena! Récord personal nuevo."
 
-#: ../src/Core/Views/FinishView.cs:214
+#: ../src/Core/Views/FinishView.cs:202
 #, csharp-format
 msgid ""
 "By scoring {0}% in logic puzzle games you have established a new personal "
@@ -678,7 +653,7 @@ msgstr ""
 "Al puntuar {0}% en los puzles de lógica has establecido un récord personal "
 "nuevo. Tu récord anterior era {1}%."
 
-#: ../src/Core/Views/FinishView.cs:220
+#: ../src/Core/Views/FinishView.cs:208
 #, csharp-format
 msgid ""
 "By scoring {0}% in calculation games you have established a new personal "
@@ -687,7 +662,7 @@ msgstr ""
 "Al puntuar {0}% en juegos de cálculo has establecido un récord personal "
 "nuevo. Tu récord anterior era {1}%."
 
-#: ../src/Core/Views/FinishView.cs:226
+#: ../src/Core/Views/FinishView.cs:214
 #, csharp-format
 msgid ""
 "By scoring {0}% in memory games you have established a new personal record. "
@@ -696,7 +671,7 @@ msgstr ""
 "Al puntuar {0}% en los juegos de memoria has establecido un récord personal "
 "nuevo. Tu récord anterior era {1}%."
 
-#: ../src/Core/Views/FinishView.cs:232
+#: ../src/Core/Views/FinishView.cs:220
 #, csharp-format
 msgid ""
 "By scoring {0}% in verbal analogies you have established a new personal "
@@ -790,46 +765,46 @@ msgstr "La respuesta correcta es {0}."
 #. For languages represented with the Latin alphabet use
 #. the same than English
 #. First possible answer for a series (e.g.: Figure A)
-#: ../src/Core/Main/Game.cs:308
+#: ../src/Core/Main/Game.cs:317
 msgid "A"
 msgstr "A"
 
 #. Second possible answer for a series
-#: ../src/Core/Main/Game.cs:310
+#: ../src/Core/Main/Game.cs:319
 msgid "B"
 msgstr "B"
 
 #. Third possible answer for a series
-#: ../src/Core/Main/Game.cs:312
+#: ../src/Core/Main/Game.cs:321
 msgid "C"
 msgstr "C"
 
 #. Fourth possible answer for a series
-#: ../src/Core/Main/Game.cs:314
+#: ../src/Core/Main/Game.cs:323
 msgid "D"
 msgstr "D"
 
 #. Fifth possible answer for a series
-#: ../src/Core/Main/Game.cs:316
+#: ../src/Core/Main/Game.cs:325
 msgid "E"
 msgstr "E"
 
 #. Sixth possible answer for a series
-#: ../src/Core/Main/Game.cs:318
+#: ../src/Core/Main/Game.cs:327
 msgid "F"
 msgstr "F"
 
 #. Seventh possible answer for a series
-#: ../src/Core/Main/Game.cs:320
+#: ../src/Core/Main/Game.cs:329
 msgid "G"
 msgstr "G"
 
 #. Eighth possible answer for a series
-#: ../src/Core/Main/Game.cs:322
+#: ../src/Core/Main/Game.cs:331
 msgid "H"
 msgstr "H"
 
-#: ../src/Core/Main/Game.cs:330
+#: ../src/Core/Main/Game.cs:339
 #, csharp-format
 msgid "Figure {0}"
 msgstr "Figura {0}"
@@ -858,7 +833,32 @@ msgstr " - Tiempo: {0}"
 msgid "- Game: {0}"
 msgstr " - Juego: {0}"
 
-#: ../src/Core/Main/GameSession.cs:312
+#: ../src/Core/Main/GameSession.cs:264
+#, csharp-format
+msgid "Outstanding results"
+msgstr "Resultados asombrosos"
+
+#: ../src/Core/Main/GameSession.cs:266
+#, csharp-format
+msgid "Excellent results"
+msgstr "Resultados excelentes"
+
+#: ../src/Core/Main/GameSession.cs:268
+#, csharp-format
+msgid "Good results"
+msgstr "Buenos resultados"
+
+#: ../src/Core/Main/GameSession.cs:270
+#, csharp-format
+msgid "Poor results"
+msgstr "Resultados pobres"
+
+#: ../src/Core/Main/GameSession.cs:271
+#, csharp-format
+msgid "Disappointing results"
+msgstr "Resultados decepcionantes"
+
+#: ../src/Core/Main/GameSession.cs:334
 msgid "Paused"
 msgstr "Pausado"
 
@@ -893,7 +893,7 @@ msgstr "Diviértete cometiendo errores, son parte del proceso de aprendizaje."
 #: ../src/Core/Main/GameTips.cs:61
 msgid ""
 "Do all the problems, even the difficult ones. Improvement comes from "
-"practising."
+"practicing."
 msgstr ""
 "Haz todos los problemas, incluso los difíciles. La mejora llega a través de "
 "la práctica."
@@ -936,7 +936,7 @@ msgstr ""
 msgid "Memorize the objects below in the given time"
 msgstr "Memoriza los siguientes objetos en el tiempo dado"
 
-#: ../src/Core/Main/Verbal/Analogies.cs:32
+#: ../src/Core/Main/Verbal/Analogies.cs:33
 msgid "Verbal analogies"
 msgstr "Analogías verbales"
 
@@ -944,13 +944,13 @@ msgstr "Analogías verbales"
 #. For example: "Possible correct answers are: sleep, rest."
 #. Translators: this the separator used when concatenating possible options for answering verbal analogies
 #. For example: "Possible correct answers are: a, b, c, d."
-#: ../src/Core/Main/Verbal/Analogies.cs:75
+#: ../src/Core/Main/Verbal/Analogies.cs:76
 #: ../src/Core/Main/Verbal/AnalogiesMultipleOptions.cs:65
 #: ../src/Core/Main/Verbal/AnalogiesPairOfWordsOptions.cs:78
 msgid ", "
 msgstr ", "
 
-#: ../src/Core/Main/Verbal/Analogies.cs:78
+#: ../src/Core/Main/Verbal/Analogies.cs:79
 #, csharp-format
 msgid "Possible correct answers are: {0}."
 msgstr "Las posibles respuestas correctas son: {0}."
@@ -972,6 +972,7 @@ msgstr "{0} Responde {1}."
 #: ../src/Games/Logic/PuzzleOstracism.cs:167
 #: ../src/Games/Logic/PuzzlePredicateLogic.cs:146
 #: ../src/Games/Calculation/CalculationCloserFraction.cs:165
+#: ../src/Games/Calculation/CalculationGreatestDivisor.cs:145
 #, csharp-format
 msgid "{0}) {1}"
 msgstr "{0}) {1}"
@@ -1025,67 +1026,67 @@ msgstr ""
 msgid "Question and answer"
 msgstr "Pregunta y respuesta"
 
-#: ../src/Core/Main/Verbal/AnalogiesFactory.cs:144
+#: ../src/Core/Main/Verbal/AnalogiesFactory.cs:148
 #, csharp-format
 msgid "Read {0} verbal analogies of type {1}"
 msgstr "Lee {0} analogías verbales del tipo {1}"
 
-#: ../src/Core/Main/Verbal/AnalogiesFactory.cs:149
+#: ../src/Core/Main/Verbal/AnalogiesFactory.cs:153
 #, csharp-format
 msgid "Read a total of {0} verbal analogies"
 msgstr "Lee un total de {0} analogías verbales"
 
-#: ../src/Clients/Classical/gbrainy.cs:298
+#: ../src/Clients/Classical/gbrainy.cs:305
 msgid "Play all the games"
 msgstr "Jugar a todos los juegos"
 
-#: ../src/Clients/Classical/gbrainy.cs:299
+#: ../src/Clients/Classical/gbrainy.cs:306
 msgid "All"
 msgstr "Todo"
 
-#: ../src/Clients/Classical/gbrainy.cs:304
+#: ../src/Clients/Classical/gbrainy.cs:311
 msgid "Play games that challenge your reasoning and thinking"
 msgstr "Jugar a los juegos que desafíen mi razonamiento y pensamiento"
 
-#: ../src/Clients/Classical/gbrainy.cs:311
+#: ../src/Clients/Classical/gbrainy.cs:318
 msgid "Play games that challenge your mental calculation skills"
 msgstr "Jugar a los juegos que desafíen mis capacidades de cálculo mental"
 
-#: ../src/Clients/Classical/gbrainy.cs:317
+#: ../src/Clients/Classical/gbrainy.cs:324
 msgid "Play games that challenge your short term memory"
 msgstr "Jugar a los juegos que desafíen mi memoria a corto plazo"
 
-#: ../src/Clients/Classical/gbrainy.cs:323
+#: ../src/Clients/Classical/gbrainy.cs:330
 msgid "Play games that challenge your verbal aptitude"
 msgstr "Jugar a los juegos que desafíen mi aptitud verbal"
 
-#: ../src/Clients/Classical/gbrainy.cs:328
-#: ../src/Clients/Classical/gbrainy.cs:553
+#: ../src/Clients/Classical/gbrainy.cs:335
+#: ../src/Clients/Classical/gbrainy.cs:560
 msgid "Pause"
 msgstr "Pausar"
 
-#: ../src/Clients/Classical/gbrainy.cs:329
+#: ../src/Clients/Classical/gbrainy.cs:336
 msgid "Pause or resume the game"
 msgstr "Pausar o resumir el juego"
 
-#: ../src/Clients/Classical/gbrainy.cs:334
+#: ../src/Clients/Classical/gbrainy.cs:341
 msgid "End the game and show score"
 msgstr "Terminar el juego y mostrar la puntuación"
 
-#: ../src/Clients/Classical/gbrainy.cs:335
+#: ../src/Clients/Classical/gbrainy.cs:342
 msgid "Finish"
 msgstr "Terminar"
 
-#: ../src/Clients/Classical/gbrainy.cs:424
+#: ../src/Clients/Classical/gbrainy.cs:431
 msgid "Congratulations."
 msgstr "Enhorabuena."
 
-#: ../src/Clients/Classical/gbrainy.cs:426
+#: ../src/Clients/Classical/gbrainy.cs:433
 msgid "Incorrect answer."
 msgstr "Respuesta incorrecta."
 
 #
-#: ../src/Clients/Classical/gbrainy.cs:475
+#: ../src/Clients/Classical/gbrainy.cs:482
 msgid ""
 "Once you have an answer type it in the \"Answer:\" entry box and press the "
 "\"OK\" button."
@@ -1093,12 +1094,12 @@ msgstr ""
 "Una vez que tengas la respuesta escríbela en «Respuesta:» y pulsa el botón "
 "«Aceptar»."
 
-#: ../src/Clients/Classical/gbrainy.cs:557
+#: ../src/Clients/Classical/gbrainy.cs:564
 msgid "Resume"
 msgstr "Reanudar"
 
 #. Translators: Replace by the name of the people that translated the application
-#: ../src/Clients/Classical/Dialogs/AboutDialog.cs:47
+#: ../src/Clients/Classical/Dialogs/AboutDialog.cs:52
 msgid "translator-credits"
 msgstr ""
 "Jorge González <jorgegonz@svn.gnome.org>, 2007-2010\n"
@@ -1106,7 +1107,7 @@ msgstr ""
 "Eduardo Retamales <eretamales@gnome.cl>, 2007, 2008\n"
 "QA: Jorge González <jorgegonz@svn.gnome.org>, 2007-2009"
 
-#: ../src/Clients/Classical/Dialogs/AboutDialog.cs:52
+#: ../src/Clients/Classical/Dialogs/AboutDialog.cs:57
 msgid ""
 "This program is free software; you can redistribute it and/or modify it "
 "under the terms of the GNU General Public License as  published by the Free "
@@ -1120,7 +1121,7 @@ msgstr ""
 "elección) cualquier versión posterior. \n"
 "\n"
 
-#: ../src/Clients/Classical/Dialogs/AboutDialog.cs:53
+#: ../src/Clients/Classical/Dialogs/AboutDialog.cs:58
 msgid ""
 "This program is distributed in the hope that it will be useful, but WITHOUT "
 "ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or "
@@ -1134,7 +1135,7 @@ msgstr ""
 "para más detalles. \n"
 "\n"
 
-#: ../src/Clients/Classical/Dialogs/AboutDialog.cs:54
+#: ../src/Clients/Classical/Dialogs/AboutDialog.cs:59
 msgid ""
 "You should have received a copy of the GNU General Public License along with "
 "this program; if not, write to the Free Software Foundation, Inc., 59 Temple "
@@ -1144,17 +1145,17 @@ msgstr ""
 "coneste programa, si no, escriba a la Fundación del Sofware Libre, en 59 "
 "Temple 59 Place - Suite 330, Boston, MA 02111-1307, EE. UU."
 
-#: ../src/Clients/Classical/Dialogs/AboutDialog.cs:63
+#: ../src/Clients/Classical/Dialogs/AboutDialog.cs:68
 msgid "Based on ideas by Terry Stickels, MENSA books and Jordi Mas."
 msgstr "Basado en ideas de Terry Stickels, MENSA books y Jordi Mas."
 
-#: ../src/Clients/Classical/Dialogs/AboutDialog.cs:65
+#: ../src/Clients/Classical/Dialogs/AboutDialog.cs:70
 msgid "A brain teaser game for fun and to keep your brain trained."
 msgstr ""
 "Un juego de preguntas capciosas para divertirse y mantener el cerebro "
 "entrenado."
 
-#: ../src/Clients/Classical/Dialogs/AboutDialog.cs:67
+#: ../src/Clients/Classical/Dialogs/AboutDialog.cs:72
 msgid "gbrainy web site"
 msgstr "Página web de gbrainy"
 
@@ -1267,17 +1268,21 @@ msgstr "Omitir los juegos que usan colores (amigable para usuarios daltónicos)"
 msgid "Time in seconds to memorize the challenge:"
 msgstr "Tiempo en segundos para memorizar el desafío:"
 
-#: ../src/Games/Logic/Puzzle3DCube.cs:34 ../src/Games/Logic/PuzzleCube.cs:47
-msgid "Cube"
-msgstr "Cubo"
+#: ../src/Games/Logic/Puzzle3DCube.cs:34
+#| msgid "Cube"
+msgid "3D Cube"
+msgstr "Cubo 3D"
 
 #: ../src/Games/Logic/Puzzle3DCube.cs:38
 #, csharp-format
+#| msgid ""
+#| "How many cubes do you count in the figure below? (not counting the "
+#| "figure) Answer using a number."
 msgid ""
-"How many cubes do you count in the figure below? (not counting the figure) "
-"Answer using a number."
+"How many single small cubes do you count in the figure below? Answer using a "
+"number."
 msgstr ""
-"¿Cuántos cubos puede contar en la figura inferior? (sin contar la figura) "
+"¿Cuántos pequeños cubos sencillos puedes contar en la figura inferior? "
 "Responde usando un número."
 
 #: ../src/Games/Logic/Puzzle3DCube.cs:42
@@ -1491,6 +1496,10 @@ msgstr "Porcentaje cubierto"
 #: ../src/Games/Logic/PuzzleCoverPercentage.cs:41
 msgid "What percentage of the figure is colored?"
 msgstr "¿Qué porcentaje de la figura está coloreado?"
+
+#: ../src/Games/Logic/PuzzleCube.cs:47
+msgid "Cube"
+msgstr "Cubo"
 
 #: ../src/Games/Logic/PuzzleCube.cs:51
 #, csharp-format
@@ -2185,7 +2194,7 @@ msgid "You do not buy a map"
 msgstr "No compras un mapa"
 
 #: ../src/Games/Logic/PuzzlePredicateLogic.cs:78
-msgid "All people has a map"
+msgid "All people have a map"
 msgstr "Todo el mundo tiene un mapa"
 
 #: ../src/Games/Logic/PuzzlePredicateLogic.cs:82
@@ -2310,8 +2319,8 @@ msgstr ""
 "de agua debe aumentar para llegar a su valor original?"
 
 #: ../src/Games/Logic/PuzzlePercentage.cs:115
-msgid "The objective is to obtain the same total amount"
-msgstr "El objetivo es obtener la misma cantidad"
+msgid "The objective is to obtain the same total amount."
+msgstr "El objetivo es obtener la misma cantidad."
 
 #: ../src/Games/Logic/PuzzleQuadrilaterals.cs:46
 msgid "Quadrilaterals"
@@ -2662,9 +2671,6 @@ msgid "Memorize figures and text"
 msgstr "Memorizar figuras y texto"
 
 #: ../src/Games/Memory/MemoryFiguresAndText.cs:70
-#| msgid ""
-#| "The list below enumerates the figures shown in the previous image except "
-#| "for one. Which is the missing figure? Answer the name of the figure."
 msgid ""
 "The list below enumerates the figures shown in the previous image except for "
 "one. Which is the missing figure? Possible answers are triangle, rectangle, "
@@ -2924,8 +2930,8 @@ msgstr ""
 
 #: ../src/Games/Calculation/CalculationAverage.cs:65
 #, csharp-format
-msgid "The result of the operation is {0:##0.###}"
-msgstr "El resultado de la operación es {0:##0.###}"
+msgid "The result of the operation is {0:##0.###}."
+msgstr "El resultado de la operación es {0:##0.###}."
 
 #: ../src/Games/Calculation/CalculationCloserFraction.cs:39
 msgid "Closer fraction"
@@ -2958,22 +2964,22 @@ msgstr ""
 "¿Cuál es el resultado de la operación dada? Puedes responder usando tanto "
 "una fracción como un número."
 
-#: ../src/Games/Calculation/CalculationGreatestDivisor.cs:37
+#: ../src/Games/Calculation/CalculationGreatestDivisor.cs:39
 msgid "Greatest divisor"
 msgstr "Máximo común divisor"
 
-#: ../src/Games/Calculation/CalculationGreatestDivisor.cs:45
+#: ../src/Games/Calculation/CalculationGreatestDivisor.cs:47
 msgid ""
 "Which of the possible divisors is the greatest that divides all numbers?"
 msgstr ""
 "¿Cuál de los divisores posibles es el mayor que divide a todos los números?"
 
-#: ../src/Games/Calculation/CalculationGreatestDivisor.cs:209
-#: ../src/Games/Calculation/CalculationPrimes.cs:211
+#: ../src/Games/Calculation/CalculationGreatestDivisor.cs:238
+#: ../src/Games/Calculation/CalculationPrimes.cs:235
 msgid "Numbers"
 msgstr "Números"
 
-#: ../src/Games/Calculation/CalculationGreatestDivisor.cs:224
+#: ../src/Games/Calculation/CalculationGreatestDivisor.cs:252
 msgid "Possible divisors"
 msgstr "Posibles divisores"
 
@@ -3000,11 +3006,11 @@ msgstr ""
 msgid "{0} and {1}"
 msgstr "{0} y {1}"
 
-#: ../src/Games/Calculation/CalculationPrimes.cs:153
+#: ../src/Games/Calculation/CalculationPrimes.cs:155
 msgid "Primes"
 msgstr "Primos"
 
-#: ../src/Games/Calculation/CalculationPrimes.cs:161
+#: ../src/Games/Calculation/CalculationPrimes.cs:163
 msgid ""
 "In the set of numbers below, which of the following numbers is a prime? A "
 "prime number is a positive integer that has exactly two different positive "
@@ -3014,7 +3020,7 @@ msgstr ""
 "número primo? Un número primo es cualquier número natural mayor que 1 y que "
 "sólo se puede dividir por 1 y por si mismo."
 
-#: ../src/Games/Calculation/CalculationPrimes.cs:165
+#: ../src/Games/Calculation/CalculationPrimes.cs:167
 msgid ""
 "If the sum of all digits in a given number is divisible by 3, then so is the "
 "number. For example 15 = 1 + 5 = 6, which is divisible by 3."

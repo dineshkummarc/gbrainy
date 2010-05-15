@@ -519,7 +519,7 @@ namespace gbrainy.Clients.Classical
 			dialog.Destroy ();
 
 			if (rslt == ResponseType.Ok && dialog.NumOfGames > 0)
-				OnNewGame (session.Type = GameSession.Types.Custom);
+				OnNewGame (GameSession.Types.Custom);
 		}
 
 		void OnLogicOnly (object sender, EventArgs args)

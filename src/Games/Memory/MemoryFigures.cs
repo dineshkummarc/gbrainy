@@ -128,7 +128,7 @@ namespace gbrainy.Games.Memory
 				drawable_area.DataEx = (figure + 1).ToString ();
 
 				if (figure == question_pos) {
-					int fig = (int)figures[figure];
+					int fig = figures[figure];
 					if (fig >= figures_active) fig -= figures_active;
 
 					drawable_area.Data = fig;
@@ -180,7 +180,7 @@ namespace gbrainy.Games.Memory
 			gr.Color = new Color (DefaultDrawingColor.R, DefaultDrawingColor.G, DefaultDrawingColor.B, alpha);
 			for (int figure = 0; figure < figures.Count; figure++, col++)
 			{
-				fig = (int)figures[figure];
+				fig = figures[figure];
 				if (fig >= figures_active) 
 					fig -= figures_active;
 

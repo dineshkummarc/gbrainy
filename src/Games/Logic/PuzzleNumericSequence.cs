@@ -66,9 +66,30 @@ namespace gbrainy.Games.Logic
 
 		public override void Initialize ()
 		{
+			int[] seeds;
+
 			formula = random.Next (CurrentDifficulty == Difficulty.Easy ? 2 : 3);
 			numbers =  new int [max_num];
-			numbers[0] = 3 + random.Next (3);
+
+			switch (formula) {
+			case 0:
+				seeds = new int [] {3, 4, 5};
+				break;
+			case 1:
+				// Skipping seed value 5 -> 5,18,57,174,525
+				// The difference between given adjacent pairs ( right -left) is a sequence 13,39,117,351. 
+				// They can be related as 13 x 3 raised to sequential powers 0,1,2,3 ie 13*3^1 and so on.
+				seeds = new int [] {3, 4, 6};
+				break;
+			case 2:
+				seeds = new int [] {3, 4, 5};
+				break;
+			default:
+				throw new InvalidOperationException ();
+			}
+
+			numbers[0] = seeds [random.Next (seeds.Length)];
+
 			for (int i = 1; i < max_num; i++) {
 				switch (formula) {
 				case 0:
@@ -80,7 +101,9 @@ namespace gbrainy.Games.Logic
 				case 2:
 					numbers[i] = (numbers[i -1] - 2) * (-2);
 					break;
-				}				
+				default:
+					throw new InvalidOperationException ();
+				}
 			}
 
 			right_answer = numbers[max_num-1].ToString ();

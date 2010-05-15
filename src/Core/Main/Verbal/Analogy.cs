@@ -68,5 +68,26 @@ namespace gbrainy.Core.Main.Verbal
 		{
 
 		}
+
+		// Uses deep copy
+		public Analogy Copy ()
+		{
+			Analogy analogy;
+
+			analogy = new Analogy ();
+			analogy.question = question;
+			analogy.type = type;
+			analogy.tip = tip;
+			analogy.rationale = rationale;
+			analogy.right = right;
+
+			if (answers != null) {
+				analogy.answers = new string [answers.Length];
+				for (int i = 0; i < answers.Length; i++)
+					analogy.answers [i] = answers[i];
+			}
+
+			return analogy;
+		}
 	}
 }

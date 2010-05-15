@@ -19,6 +19,7 @@
 
 using System;
 using System.Collections.Generic;
+using gbrainy.Core.Libraries;
 
 using Mono.Unix;
 
@@ -112,7 +113,11 @@ namespace gbrainy.Core.Main.Verbal
 		public Analogy GetNext ()
 		{
 			int idx;
-			Analogy analogy;
+			Analogy analogy; // Holds a deep copy
+			Analogy analogy_ref; // Holds reference to the object
+			ArrayListIndicesRandom indices = null;
+			int new_right = 0;
+			bool localized = true;
 
 			if (List.Count == 0)
 				return null;
@@ -128,20 +133,19 @@ namespace gbrainy.Core.Main.Verbal
 		
 			try
 			{
-				List.TryGetValue (idx, out analogy);
+				List.TryGetValue (idx, out analogy_ref);
 			}
 
 			catch (KeyNotFoundException)
 			{
-				analogy = null;
+				return null;
 			}
 
-			if (analogy != null && analogy.answers != null) { // Randomize answers order
+			analogy = analogy_ref.Copy ();
 
-				ArrayListIndicesRandom indices;
+			if (analogy.answers != null) { // Randomize answers order
 				string [] answers;
-				int new_right = 0;
-
+			
 				indices = new ArrayListIndicesRandom (analogy.answers.Length);
 				answers = new string [analogy.answers.Length];
 
@@ -149,6 +153,9 @@ namespace gbrainy.Core.Main.Verbal
 
 				for (int i = 0; i < indices.Count; i++)
 				{
+					if (GetText.StringExists (analogy.answers [indices[i]]) == false)
+						localized = false;
+
 					answers [i] = Catalog.GetString (analogy.answers [indices[i]]);
 					if (indices[i] == analogy.right)
 						new_right = i;
@@ -157,13 +164,37 @@ namespace gbrainy.Core.Main.Verbal
 				analogy.answers = answers;
 			}
 
-			analogy.question = Catalog.GetString (analogy.question);
+			if ((GetText.StringExists (analogy.question) == false) ||
+				(String.IsNullOrEmpty (analogy.tip) == false && GetText.StringExists (analogy.tip) == false) ||
+				(String.IsNullOrEmpty (analogy.rationale) == false && GetText.StringExists (analogy.rationale) == false)) 
+				localized = false;
 
-			if (String.IsNullOrEmpty (analogy.tip) == false)
-				analogy.tip = Catalog.GetString (analogy.tip);
+			if (localized == true) {
+				analogy.question = Catalog.GetString (analogy.question);
 
-			if (String.IsNullOrEmpty (analogy.rationale) == false)
-				analogy.rationale = Catalog.GetString (analogy.rationale);
+				if (String.IsNullOrEmpty (analogy.tip) == false)
+					analogy.tip = Catalog.GetString (analogy.tip);
+
+				if (String.IsNullOrEmpty (analogy.rationale) == false)
+					analogy.rationale = Catalog.GetString (analogy.rationale);
+			} else {
+
+				// Get analogy again
+				List.TryGetValue (idx, out analogy_ref);
+				analogy = analogy_ref.Copy ();
+
+				if (analogy.answers != null) { // Randomize answers order
+					string [] answers;
+
+					answers = new string [analogy.answers.Length];
+
+					for (int i = 0; i < indices.Count; i++)
+						answers [i] = analogy.answers [indices[i]];
+
+					analogy.right = new_right;
+					analogy.answers = answers;
+				}
+			}
 
 			return analogy;
 		}
@@ -182,6 +213,5 @@ namespace gbrainy.Core.Main.Verbal
 
 			return base.CheckAnswer (answer);
 		}
-
 	}
 }
