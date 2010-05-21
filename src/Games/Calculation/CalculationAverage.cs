@@ -58,6 +58,10 @@ namespace gbrainy.Games.Calculation
 					GetPossibleAnswer (0), GetPossibleAnswer (1), GetPossibleAnswer (2), GetPossibleAnswer (3));}
 		}
 
+		public override string Tip {
+			get { return Catalog.GetString ("The average of a list of numbers is the sum of all of the numbers divided by the number of items in the list.");}
+		}
+
 		public override string Answer {
 			get { 
 				string answer = base.Answer + " ";
