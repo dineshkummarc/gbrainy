@@ -61,6 +61,14 @@ namespace gbrainy.Games.Calculation
 			}
 		}
 
+		public override AnswerCheckAttributes CheckAttributes {
+			get { return AnswerCheckAttributes.Trim | AnswerCheckAttributes.MatchAll; }
+		}
+
+		public override string AnswerCheckExpression {
+			get { return "[0-9]+"; }
+		}
+
 		public override void Initialize ()
 		{
 			type = (GameTypes) random.Next ((int) GameTypes.Length);
@@ -99,7 +107,8 @@ namespace gbrainy.Games.Calculation
 
 			op2 = number_a * number_b;
 
-			right_answer = String.Format (Catalog.GetString ("{0} and {1}"), number_a, number_b);
+			//TODO: right_answer = String.Format (Catalog.GetString ("{0} and {1}"), number_a, number_b);
+			right_answer = String.Format ("{0} | {1}", number_a, number_b);
 		}
 
 		public override void Draw (CairoContextEx gr, int area_width, int area_height, bool rtl)
@@ -127,36 +136,5 @@ namespace gbrainy.Games.Calculation
 			gr.ShowPangoText (String.Format (Catalog.GetString ("number1 * number2 = {0}"), op2));
 		}
 
-		public override bool CheckAnswer (string answer)
-		{	
-			string num_a = string.Empty;
-			string num_b = string.Empty;
-			bool first = true;
-		
-			for (int c = 0; c < answer.Length; c++)
-			{
-				if (answer[c] < '0' || answer[c] > '9') {
-					first = false;
-					continue;
-				}
-			
-				if (first == true)
-					num_a += answer[c];
-				else
-					num_b += answer[c];
-			}
-
-			try {
-				if (Int32.Parse (num_a) == number_a && Int32.Parse (num_b) == number_b ||
-					Int32.Parse (num_b) == number_a && Int32.Parse (num_a) == number_b)
-					return true;
-			}
-
-			catch (FormatException) {
-				return false;
-			}
-	
-			return false;
-		}
 	}
 }

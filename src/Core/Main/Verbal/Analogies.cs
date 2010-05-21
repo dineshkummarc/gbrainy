@@ -198,20 +198,5 @@ namespace gbrainy.Core.Main.Verbal
 
 			return analogy;
 		}
-
-		public override bool CheckAnswer (string answer)
-		{
-			string [] items = right_answer.Split (AnalogiesFactory.Separator);
-
-			foreach (string ans in items)
-			{
-				string str = ans.Trim ();
-
-				if (String.Compare (str, answer, true) == 0)
-					return true;
-			}
-
-			return base.CheckAnswer (answer);
-		}
 	}
 }

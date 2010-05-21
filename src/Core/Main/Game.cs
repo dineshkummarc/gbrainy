@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2007 Jordi Mas i Hernàndez <jmas@softcatala.org>
+ * Copyright (C) 2007-2010 Jordi Mas i Hernàndez <jmas@softcatala.org>
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License as
@@ -20,6 +20,7 @@
 using System;
 using System.ComponentModel;
 using System.Collections.Generic;
+using System.Text.RegularExpressions;
 using Mono.Unix;
 
 using gbrainy.Core.Views;
@@ -47,6 +48,18 @@ namespace gbrainy.Core.Main
 			Medium			= 4,
 			Master			= 8,
 		}
+
+		[Flags]
+		public enum AnswerCheckAttributes
+		{
+			None			= 0,
+			Trim			= 2,
+			IgnoreCase		= 4,
+			IgnoreSpaces		= 8,
+			MatchAll		= 16,
+		}
+
+		public const char AnswerSeparator = '|';
 
 		public class AnswerEventArgs : EventArgs
 		{
@@ -137,6 +150,15 @@ namespace gbrainy.Core.Main
 			get {
 				return difficulty;
 			}
+		}
+
+		// How to check the answer
+		public virtual AnswerCheckAttributes CheckAttributes {
+			get { return AnswerCheckAttributes.Trim | AnswerCheckAttributes.IgnoreCase; }
+		}
+
+		public virtual string AnswerCheckExpression {
+			get { return ".+"; }
 		}
 
 		public abstract string Name {
@@ -362,7 +384,81 @@ namespace gbrainy.Core.Main
 
 		public virtual bool CheckAnswer (string answer)
 		{
-			return (String.Compare (answer, right_answer, true) == 0);
+			Regex regex;
+			Match match;
+			AnswerCheckAttributes type;
+			bool ignore_case, ignore_spaces;
+
+			if (String.IsNullOrEmpty (answer))
+				return false;
+
+			ignore_case = (CheckAttributes & AnswerCheckAttributes.IgnoreCase) == AnswerCheckAttributes.IgnoreCase;
+			ignore_spaces = (CheckAttributes & AnswerCheckAttributes.IgnoreSpaces) == AnswerCheckAttributes.IgnoreSpaces;
+			regex = new Regex (AnswerCheckExpression);
+
+			string [] right_answers = right_answer.Split (AnswerSeparator);
+
+			for (int i = 0; i < right_answers.Length; i++)
+			{
+				right_answers [i] = right_answers[i].Trim ();
+
+				if (ignore_spaces)
+					right_answers [i] = RemoveWhiteSpace (right_answers [i]);
+			}
+
+			if ((CheckAttributes & AnswerCheckAttributes.Trim) == AnswerCheckAttributes.Trim)
+				answer = answer.Trim ();
+
+			if (ignore_spaces)
+				answer = RemoveWhiteSpace (answer);
+
+			// All strings from the list of expected answers (two numbers: 22 | 44) must present in the answer
+			if ((CheckAttributes & AnswerCheckAttributes.MatchAll) == AnswerCheckAttributes.MatchAll)
+			{
+				match = regex.Match (answer);
+				while (String.IsNullOrEmpty (match.Value) == false)
+				{
+					for (int i = 0; i < right_answers.Length; i++)
+					{
+						if (String.Compare (match.Value, right_answers[i], ignore_case) == 0)
+						{
+							right_answers[i] = null;
+							break;
+						}
+					}
+					match = match.NextMatch ();
+				}
+
+				// Have all the expected answers been matched?
+				for (int i = 0; i < right_answers.Length; i++)
+				{
+					if (right_answers[i] != null)
+						return false;
+				}
+
+				return true;
+			}
+			else // Any string from the list of possible answers (answer1 | answer2) present in the answer will do it 
+			{
+				foreach (string s in right_answers)
+				{
+					match = regex.Match (answer);
+					if (String.Compare (match.Value, s, ignore_case) == 0)
+						return true;
+				}
+			}
+			return false;
+		}
+
+		static string RemoveWhiteSpace (string source)
+		{
+			string str = string.Empty;
+			for (int n = 0; n < source.Length; n++)
+			{
+				if (char.IsWhiteSpace (source [n]) == false)
+					str += source [n];
+			}
+			return str;
 		}
 
 		// When asking for a list of figures people trends to use spaces or commas

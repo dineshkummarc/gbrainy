@@ -31,7 +31,7 @@ namespace gbrainyTest
 		[TestFixtureSetUp]
 		public void Construct ()
 		{
-			Console.WriteLine ("GameManagerTest constructor");
+
 		}
 
 		//Lists the games without tip

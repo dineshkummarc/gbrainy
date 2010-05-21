@@ -28,8 +28,6 @@ namespace gbrainyTest
 	[TestFixture]
 	public class PlayerPersonalRecordTest
 	{
-		PlayerHistory history;
-
 		[TestFixtureSetUp]
 		public void Construct ()
 		{
