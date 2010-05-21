@@ -55,7 +55,7 @@ namespace gbrainy.Core.Main
 			VerbalPlayed = VerbalWon = VerbalRawScore = 0;
 		}
 
-		public void UpdateScore (Game.Types type, Game.Difficulty difficulty, int game_score)
+		public void UpdateScore (GameTypes type, Game.Difficulty difficulty, int game_score)
 		{
 			GameSessionHistoryExtended history = this;
 			Score.UpdateSessionHistorycore (ref history, type, difficulty, game_score);

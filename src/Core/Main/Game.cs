@@ -32,16 +32,6 @@ namespace gbrainy.Core.Main
 {
 	abstract public class Game : IDrawable, IDrawRequest, IMouseEvent
 	{
-		// See: GetGameTypeDescription
-		public enum Types
-		{	
-			None			= 0,
-			LogicPuzzle		= 2,
-			MemoryTrainer		= 4,
-			MathTrainer		= 8,
-			VerbalAnalogy		= 16,
-		}
-
 		public enum Difficulty
 		{
 			None			= 0,
@@ -207,8 +197,8 @@ namespace gbrainy.Core.Main
 			get { return true;}
 		}
 
-		public virtual Types Type {
-			get { return Types.LogicPuzzle;}
+		public virtual GameTypes Type {
+			get { return GameTypes.LogicPuzzle;}
 		}
 
 		public bool DrawAnswer {
@@ -273,11 +263,11 @@ namespace gbrainy.Core.Main
 				}
 				
 				switch (Type) {
-				case Types.MemoryTrainer:
+				case GameTypes.MemoryTrainer:
 					return (int) (30 * factor);
-				case Types.MathTrainer:
+				case GameTypes.MathTrainer:
 					return (int) (60 * factor);
-				case Types.VerbalAnalogy:
+				case GameTypes.VerbalAnalogy:
 					return (int) (30 * factor);
 				}
 				return (int) (120 * factor); // Default for all games (logic)
@@ -508,32 +498,6 @@ namespace gbrainy.Core.Main
 			{
 				if (char.IsWhiteSpace (source [n]) == false)
 					str += source [n];
-			}
-			return str;
-		}
-
-		// Type enum to string representation
-		static public string GetGameTypeDescription (Types type)
-		{
-			string str;
-
-			switch (type) 
-			{
-				case Game.Types.LogicPuzzle:
-					str = Catalog.GetString ("Logic");
-					break;
-				case Game.Types.MemoryTrainer:
-					str = Catalog.GetString ("Memory");
-					break;
-				case Game.Types.MathTrainer:
-					str = Catalog.GetString ("Calculation");
-					break;
-				case Game.Types.VerbalAnalogy:
-					str = Catalog.GetString ("Verbal");
-					break;
-				default:
-					str = string.Empty;
-					break;
 			}
 			return str;
 		}

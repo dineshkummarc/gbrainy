@@ -74,7 +74,7 @@ namespace gbrainy.Core.Views
 			cr.Stroke ();
 			cr.Color = text_color;
 			cr.MoveTo (x + line_size + offset_x, y - 0.01 + second_row);
-			cr.ShowPangoText (Game.GetGameTypeDescription (Game.Types.LogicPuzzle));
+			cr.ShowPangoText (GameTypesDescription.Get (GameTypes.LogicPuzzle));
 			cr.Stroke ();
 
 			x += space_hor;
@@ -84,7 +84,7 @@ namespace gbrainy.Core.Views
 			cr.Stroke ();
 			cr.Color = text_color;
 			cr.MoveTo (x + line_size + offset_x, y - 0.01);
-			cr.ShowPangoText (Game.GetGameTypeDescription (Game.Types.MemoryTrainer));
+			cr.ShowPangoText (GameTypesDescription.Get (GameTypes.MemoryTrainer));
 			cr.Stroke ();
 
 			cr.Color = math_color;
@@ -93,7 +93,7 @@ namespace gbrainy.Core.Views
 			cr.Stroke ();
 			cr.Color = text_color;
 			cr.MoveTo (x + line_size + offset_x, y - 0.01 + second_row);
-			cr.ShowPangoText (Game.GetGameTypeDescription (Game.Types.MathTrainer));
+			cr.ShowPangoText (GameTypesDescription.Get (GameTypes.MathTrainer));
 			cr.Stroke ();
 
 			x += space_hor;
@@ -103,7 +103,7 @@ namespace gbrainy.Core.Views
 			cr.Stroke ();
 			cr.Color = text_color;
 			cr.MoveTo (x + line_size + offset_x, y - 0.01);
-			cr.ShowPangoText (Game.GetGameTypeDescription (Game.Types.VerbalAnalogy));
+			cr.ShowPangoText (GameTypesDescription.Get (GameTypes.VerbalAnalogy));
 			cr.Stroke ();
 
 			cr.LineWidth = old_width;

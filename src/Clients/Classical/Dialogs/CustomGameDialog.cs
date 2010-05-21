@@ -92,7 +92,7 @@ namespace gbrainy.Clients.Classical
 				for (int i = 0; i < games.Length; i++)
 				{	
 					game =  (Game) Activator.CreateInstance (games [i], true);
-					type = Game.GetGameTypeDescription (game.Type);
+					type = GameTypesDescription.Get (game.Type);
 					games_store.AppendValues (game.Name, type, true, game);
 				}
 			}

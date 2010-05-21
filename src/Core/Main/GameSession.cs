@@ -90,7 +90,7 @@ namespace gbrainy.Core.Main
 			get {return history;}
 		}
 
-		public Game.Types AvailableGames {
+		public GameTypes AvailableGames {
 			get { return game_manager.AvailableGames; }
 		}
 

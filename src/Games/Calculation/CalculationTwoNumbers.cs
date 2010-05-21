@@ -30,9 +30,9 @@ namespace gbrainy.Games.Calculation
 	{
 		int number_a, number_b;
 		int op1, op2, max_operand;
-		GameTypes type;
+		SubGameTypes type;
 
-		enum GameTypes
+		enum SubGameTypes
 		{
 			Addition,
 			Subtraction,
@@ -43,17 +43,17 @@ namespace gbrainy.Games.Calculation
 			get {return Catalog.GetString ("Two numbers");}
 		}
 
-		public override Types Type {
-			get { return Game.Types.MathTrainer;}
+		public override GameTypes Type {
+			get { return GameTypes.MathTrainer;}
 		}
 
 		public override string Question {
 			get {
 				switch (type) {
-				case GameTypes.Addition:
+				case SubGameTypes.Addition:
 					return String.Format (Catalog.GetString ("Which two numbers when added are {0} and when multiplied are {1}?"), op1, op2);
 
-				case GameTypes.Subtraction:
+				case SubGameTypes.Subtraction:
 					return String.Format (Catalog.GetString ("Which two numbers when subtracted are {0} and when multiplied are {1}?"), op1, op2);
 				default:
 					throw new InvalidOperationException ();
@@ -75,7 +75,7 @@ namespace gbrainy.Games.Calculation
 
 		public override void Initialize ()
 		{
-			type = (GameTypes) random.Next ((int) GameTypes.Length);
+			type = (SubGameTypes) random.Next ((int) SubGameTypes.Length);
 
 			switch (CurrentDifficulty) {
 			case Difficulty.Easy:
@@ -93,10 +93,10 @@ namespace gbrainy.Games.Calculation
 			number_b = 3 + random.Next (max_operand);
 
 			switch (type) {
-			case GameTypes.Addition:
+			case SubGameTypes.Addition:
 				op1 = number_a + number_b;
 				break;
-			case GameTypes.Subtraction:
+			case SubGameTypes.Subtraction:
 				if (number_a < number_b) {
 					int tmp = number_a;
 
@@ -124,10 +124,10 @@ namespace gbrainy.Games.Calculation
 			gr.MoveTo (x, DrawAreaY + 0.22);
 
 			switch (type) {
-			case GameTypes.Addition:
+			case SubGameTypes.Addition:
 				gr.ShowPangoText (String.Format (Catalog.GetString ("number1 + number2 = {0}"), op1));
 				break;
-			case GameTypes.Subtraction:
+			case SubGameTypes.Subtraction:
 				gr.ShowPangoText (String.Format (Catalog.GetString ("number1 - number2 = {0}"), op1));
 				break;
 			default:

@@ -15,6 +15,7 @@ CSDISTFILES =  \
 		$(srcdir)/Main/GameSession.cs		\
 		$(srcdir)/Main/GameSessionHistory.cs	\
 		$(srcdir)/Main/GameSessionHistoryExtended.cs \
+		$(srcdir)/Main/GameTypes.cs		\
 		$(srcdir)/Main/GameTips.cs		\
 		$(srcdir)/Main/Memory.cs		\
 		$(srcdir)/Main/PlayerHistory.cs		\

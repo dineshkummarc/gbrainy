@@ -45,8 +45,8 @@ namespace gbrainy.Games.Calculation
 			get {return Catalog.GetString ("Arithmetical");}
 		}
 
-		public override Types Type {
-			get { return Game.Types.MathTrainer;}
+		public override GameTypes Type {
+			get { return GameTypes.MathTrainer;}
 		}
 
 		public override string Question {

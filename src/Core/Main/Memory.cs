@@ -55,8 +55,8 @@ namespace gbrainy.Core.Main
 			}
 		}
 
-		public override Types Type {
-			get { return Game.Types.MemoryTrainer;}
+		public override GameTypes Type {
+			get { return GameTypes.MemoryTrainer;}
 		}
 
 		public int TotalTime {

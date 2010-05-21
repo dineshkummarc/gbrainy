@@ -29,11 +29,11 @@ namespace gbrainy.Core.Main
 	{
 		public const int MIN_GAMES_RECORD = 5;
 
-		public Game.Types GameType { get; set; }
+		public GameTypes GameType { get; set; }
 		public int PreviousScore { get; set; }
 		public int NewScore { get; set; }
 
-		public PlayerPersonalRecord (Game.Types type, int previous_score, int new_score)
+		public PlayerPersonalRecord (GameTypes type, int previous_score, int new_score)
 		{
 			GameType = type;
 			PreviousScore = previous_score;
@@ -70,16 +70,16 @@ namespace gbrainy.Core.Main
 			
 			// It is a record?
 			if (games[last_game].LogicScore > higher.LogicScore)
-				records.Add (new PlayerPersonalRecord (Game.Types.LogicPuzzle, higher.LogicScore, games[last_game].LogicScore));
+				records.Add (new PlayerPersonalRecord (GameTypes.LogicPuzzle, higher.LogicScore, games[last_game].LogicScore));
 
 			if (games[last_game].MathScore > higher.MathScore)
-				records.Add (new PlayerPersonalRecord (Game.Types.MathTrainer, higher.MathScore, games[last_game].MathScore));
+				records.Add (new PlayerPersonalRecord (GameTypes.MathTrainer, higher.MathScore, games[last_game].MathScore));
 
 			if (games[last_game].MemoryScore > higher.MemoryScore)
-				records.Add (new PlayerPersonalRecord (Game.Types.MemoryTrainer, higher.MemoryScore, games[last_game].MemoryScore));
+				records.Add (new PlayerPersonalRecord (GameTypes.MemoryTrainer, higher.MemoryScore, games[last_game].MemoryScore));
 
 			if (games[last_game].VerbalScore > higher.VerbalScore)
-				records.Add (new PlayerPersonalRecord (Game.Types.VerbalAnalogy, higher.VerbalScore, games[last_game].VerbalScore));
+				records.Add (new PlayerPersonalRecord (GameTypes.VerbalAnalogy, higher.VerbalScore, games[last_game].VerbalScore));
 
 			return records;
 		}

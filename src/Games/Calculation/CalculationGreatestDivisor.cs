@@ -39,8 +39,8 @@ namespace gbrainy.Games.Calculation
 			get {return Catalog.GetString ("Greatest divisor");}
 		}
 
-		public override Types Type {
-			get { return Game.Types.MathTrainer;}
+		public override GameTypes Type {
+			get { return GameTypes.MathTrainer;}
 		}
 
 		public override string Question {

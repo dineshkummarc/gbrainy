@@ -41,8 +41,8 @@ namespace gbrainy.Games.Calculation
 			get {return String.Format( Catalog.GetString ("The first operator is {0}."), oper1);}
 		}
 
-		public override Types Type {
-			get { return Game.Types.MathTrainer;}
+		public override GameTypes Type {
+			get { return GameTypes.MathTrainer;}
 		}
 
 		public override string Question {

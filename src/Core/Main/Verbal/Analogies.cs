@@ -102,8 +102,8 @@ namespace gbrainy.Core.Main.Verbal
 			}
 		}
 
-		public override Types Type {
-			get { return Game.Types.VerbalAnalogy;}
+		public override GameTypes Type {
+			get { return GameTypes.VerbalAnalogy;}
 		}
 
 		public abstract ArrayListIndicesRandom Indices {

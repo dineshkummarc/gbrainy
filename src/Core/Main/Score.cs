@@ -42,7 +42,7 @@ namespace gbrainy.Core.Main
 			
 			The final result is a number from 0 to 100
 		*/
-		static public void UpdateSessionHistorycore (ref GameSessionHistoryExtended history, Game.Types type, Game.Difficulty difficulty, int game_score)
+		static public void UpdateSessionHistorycore (ref GameSessionHistoryExtended history, GameTypes type, Game.Difficulty difficulty, int game_score)
 		{
 			bool won;
 			int components = 0;
@@ -54,25 +54,25 @@ namespace gbrainy.Core.Main
 			}
 
 			switch (type) {
-			case Game.Types.LogicPuzzle:
+			case GameTypes.LogicPuzzle:
 				history.LogicRawScore += game_score;
 				history.LogicPlayed++;
 				if (won) history.LogicWon++;
 				history.LogicScore = ScoreFormula (ref history, type, difficulty);
 				break;
-			case Game.Types.MemoryTrainer:
+			case GameTypes.MemoryTrainer:
 				history.MemoryRawScore += game_score;
 				history.MemoryPlayed++;
 				if (won) history.MemoryWon++;
 				history.MemoryScore = ScoreFormula (ref history, type, difficulty);
 				break;
-			case Game.Types.MathTrainer:
+			case GameTypes.MathTrainer:
 				history.MathRawScore += game_score;
 				history.MathPlayed++;
 				if (won) history.MathWon++;
 				history.MathScore = ScoreFormula (ref history, type, difficulty);
 				break;
-			case Game.Types.VerbalAnalogy:
+			case GameTypes.VerbalAnalogy:
 				history.VerbalRawScore += game_score;
 				history.VerbalPlayed++;
 				if (won) history.VerbalWon++;
@@ -111,7 +111,7 @@ namespace gbrainy.Core.Main
 		//
 		// Applies scoring formula to the session
 		//
-		static int ScoreFormula (ref GameSessionHistoryExtended history, Game.Types type, Game.Difficulty difficulty)
+		static int ScoreFormula (ref GameSessionHistoryExtended history, GameTypes type, Game.Difficulty difficulty)
 		{
 			int logbase, scored, played, won;
 			double score, factor;
@@ -131,22 +131,22 @@ namespace gbrainy.Core.Main
 			}
 
 			switch (type) {
-			case Game.Types.LogicPuzzle:
+			case GameTypes.LogicPuzzle:
 				scored = history.LogicRawScore; 
 				played = history.LogicPlayed;
 				won = history.LogicWon;
 				break;
-			case Game.Types.MemoryTrainer:
+			case GameTypes.MemoryTrainer:
 				scored = history.MemoryRawScore; 
 				played = history.MemoryPlayed;
 				won = history.MemoryWon;
 				break;
-			case Game.Types.MathTrainer:
+			case GameTypes.MathTrainer:
 				scored = history.MathRawScore; 
 				played = history.MathPlayed;
 				won = history.MathWon;
 				break;
-			case Game.Types.VerbalAnalogy:
+			case GameTypes.VerbalAnalogy:
 				scored = history.VerbalRawScore; 
 				played = history.VerbalPlayed;
 				won = history.VerbalWon;

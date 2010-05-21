@@ -197,25 +197,25 @@ namespace gbrainy.Core.Views
 				for (int i = 0; i < records.Count; i++)
 				{
 					switch (records[i].GameType) {
-					case Game.Types.LogicPuzzle:
+					case GameTypes.LogicPuzzle:
 						s = String.Format (Catalog.
 							GetString ("By scoring {0}% in logic puzzle games you have established a new personal record. Your previous record was {1}%."),
 							records[i].NewScore,
 							records[i].PreviousScore);
 						break;
-					case Game.Types.MathTrainer:
+					case GameTypes.MathTrainer:
 						s = String.Format (Catalog.
 							GetString ("By scoring {0}% in calculation games you have established a new personal record. Your previous record was {1}%."),
 							records[i].NewScore,
 							records[i].PreviousScore);
 						break;
-					case Game.Types.MemoryTrainer:
+					case GameTypes.MemoryTrainer:
 						s = String.Format (Catalog.
 							GetString ("By scoring {0}% in memory games you have established a new personal record. Your previous record was {1}%."),
 							records[i].NewScore,
 							records[i].PreviousScore);
 						break;
-					case Game.Types.VerbalAnalogy:
+					case GameTypes.VerbalAnalogy:
 						s = String.Format (Catalog.
 							GetString ("By scoring {0}% in verbal analogies you have established a new personal record. Your previous record was {1}%."),
 							records[i].NewScore,
