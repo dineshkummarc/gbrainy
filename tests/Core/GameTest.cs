@@ -42,6 +42,10 @@ namespace gbrainyTest
 			get { return "TestGame"; }
 		}
 
+		public string PossibleAnswersExpression {
+			get { return GetPossibleAnswersExpression (); }
+		}
+
 		public string RightAnswer {
 			set { right_answer = value; }
 		}
@@ -60,6 +64,7 @@ namespace gbrainyTest
 		}
 
 		public override void Initialize () {}
+		
 	}
 
 	[TestFixture]
@@ -71,7 +76,7 @@ namespace gbrainyTest
 
 		}
 
-		// Test individual attributes
+		// Test individual attributes (MatchAll follows a different logic path)
 		[Test]
 		public void Trim ()
 		{
@@ -141,6 +146,31 @@ namespace gbrainyTest
 			Assert.AreEqual (true, game.CheckAnswer ("10pm"));
 		}
 
+		[Test]
+		public void MatchAllInOder ()
+		{
+			TestGame game = new TestGame ();
+
+			game.Attributes = Game.AnswerCheckAttributes.MatchAllInOrder;
+			game.Expression = "[0-9]+";
+			game.RightAnswer = "10 | 20 | 30";
+
+			Assert.AreEqual (true, game.CheckAnswer ("10 20 30"));
+			Assert.AreEqual (false, game.CheckAnswer ("30 20 10"));
+		}
+
+		[Test]
+		public void MatchAll ()
+		{
+			TestGame game = new TestGame ();
+
+			game.Attributes = Game.AnswerCheckAttributes.MatchAll;
+			game.Expression = "[0-9]+";
+			game.RightAnswer = "10 | 20 | 30";
+			Assert.AreEqual (true, game.CheckAnswer ("10 20 30"));
+			Assert.AreEqual (true, game.CheckAnswer ("30 20 10"));
+		}
+
 		// Test attributes as used in real games
 
 		[Test]
@@ -183,6 +213,61 @@ namespace gbrainyTest
 
 			Assert.AreEqual (false, game.CheckAnswer ("10 P"));
 			Assert.AreEqual (false, game.CheckAnswer ("10"));
+		}
+
+		[Test]
+		public void CheckCalculationOperator ()
+		{
+			TestGame game = new TestGame ();
+			game.RightAnswer = "+ | -";
+			game.Expression = "[+*-/]+";
+			game.Attributes = Game.AnswerCheckAttributes.Trim | Game.AnswerCheckAttributes.MatchAllInOrder;
+
+			Assert.AreEqual (true, game.CheckAnswer ("+ i -"));
+			Assert.AreEqual (true, game.CheckAnswer ("+ and -"));
+			Assert.AreEqual (true, game.CheckAnswer ("+ -"));
+
+			Assert.AreEqual (false, game.CheckAnswer ("- +"));
+		}
+
+		[Test]
+		public void CheckPuzzleBuildTriangle ()
+		{
+			TestGame game = new TestGame ();
+	
+			game.RightAnswer = "A | B | C";
+			game.Expression = "[ABCDF]";
+			game.Attributes = Game.AnswerCheckAttributes.Trim | Game.AnswerCheckAttributes.IgnoreCase | Game.AnswerCheckAttributes.MatchAll;
+
+			Assert.AreEqual (true, game.CheckAnswer ("A B C"));
+			Assert.AreEqual (true, game.CheckAnswer ("C B A"));
+			Assert.AreEqual (true, game.CheckAnswer ("B C A"));
+			Assert.AreEqual (true, game.CheckAnswer ("A B C"));
+			Assert.AreEqual (true, game.CheckAnswer ("C A B"));
+			Assert.AreEqual (true, game.CheckAnswer ("a b c"));
+
+			Assert.AreEqual (false, game.CheckAnswer ("B C C"));
+			Assert.AreEqual (false, game.CheckAnswer ("B C"));
+			Assert.AreEqual (false, game.CheckAnswer ("BC"));
+		}
+
+
+		[Test]
+		public void CheckPuzzlePercentage ()
+		{
+			TestGame game = new TestGame ();
+	
+			game.RightAnswer = "10";
+			game.Expression = "[0-9]+";
+
+			Assert.AreEqual (true, game.CheckAnswer ("10%"));
+			Assert.AreEqual (true, game.CheckAnswer ("10 %"));
+			Assert.AreEqual (true, game.CheckAnswer ("10"));
+
+			game.RightAnswer = "9";
+			Assert.AreEqual (true, game.CheckAnswer ("9%"));
+			Assert.AreEqual (true, game.CheckAnswer ("9 %"));
+			Assert.AreEqual (true, game.CheckAnswer ("9"));
 		}
 
 		[Test]

@@ -59,33 +59,37 @@ namespace gbrainy.Games.Logic
 			}
 		}
 
-		public override string Answer {
+		public override string Rationale {
 			get { 
-				string answer = base.Answer + " ";
+				string answer;
 
 				switch (operation) {
 				case Operation.MultiplyAndAdd:
 					if (orientation) {
-						answer += String.Format(Catalog.GetString("The fourth row is calculated by multiplying the first two rows and adding the third."));
+						answer = String.Format(Catalog.GetString("The fourth row is calculated by multiplying the first two rows and adding the third."));
 					} else {
-						answer += String.Format(Catalog.GetString("The fourth column is calculated by multiplying the first two columns and adding the third."));
+						answer = String.Format(Catalog.GetString("The fourth column is calculated by multiplying the first two columns and adding the third."));
 					}
 					break;
 				case Operation.MutilplyAndSubs:
 					if (orientation) {
-						answer += String.Format(Catalog.GetString("The fourth row is calculated by multiplying the first two rows and subtracting the third."));
+						answer = String.Format(Catalog.GetString("The fourth row is calculated by multiplying the first two rows and subtracting the third."));
 					} else {
-						answer += String.Format(Catalog.GetString("The fourth column is calculated by multiplying the first two columns and subtracting the third."));
+						answer = String.Format(Catalog.GetString("The fourth column is calculated by multiplying the first two columns and subtracting the third."));
 					}
 					break;
 				case Operation.AddAndSubs:
 					if (orientation) {
-						answer += String.Format(Catalog.GetString("The fourth row is calculated by adding the first two rows and subtracting the third."));
+						answer = String.Format(Catalog.GetString("The fourth row is calculated by adding the first two rows and subtracting the third."));
 					} else {
-						answer += String.Format(Catalog.GetString("The fourth column is calculated by adding the first two columns and subtracting the third."));
+						answer = String.Format(Catalog.GetString("The fourth column is calculated by adding the first two columns and subtracting the third."));
 					}
 					break;
+				default:
+					answer = string.Empty;
+					break;
 				}
+
 				return answer;
 			}
 		}

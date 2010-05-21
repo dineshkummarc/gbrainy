@@ -73,11 +73,9 @@ namespace gbrainy.Games.Logic
 			get { return Catalog.GetString ("Each slice is related to the opposite one.");}
 		}
 
-		public override string Answer {
-			get { 
-				string answer = base.Answer + " ";
-				answer += String.Format (Catalog.GetString ("All numbers of each slice, when added to the ones of the opposite slice, add always {0}."), sum_offset + 8);
-				return answer;
+		public override string Rationale {
+			get {
+				return String.Format (Catalog.GetString ("All numbers of each slice, when added to the ones of the opposite slice, add always {0}."), sum_offset + 8);
 			}
 		}
 

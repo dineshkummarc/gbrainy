@@ -45,11 +45,9 @@ namespace gbrainy.Games.Logic
 			get { return Catalog.GetString ("All circled numbers share an arithmetical property.");}
 		}
 
-		public override string Answer {
-			get { 
-				string answer = base.Answer + " ";
-				answer += String.Format (Catalog.GetString ("Every circled number can be divided by {0}."), divisor);
-				return answer;
+		public override string Rationale {
+			get {
+				return String.Format (Catalog.GetString ("Every circled number can be divided by {0}."), divisor);
 			}
 		}
 

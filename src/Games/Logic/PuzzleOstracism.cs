@@ -74,22 +74,16 @@ namespace gbrainy.Games.Logic
 			}	
 		}
 
-		public override string Answer {
-			get { 
-				string answer = base.Answer + " ";
-
+		public override string Rationale {
+			get {
 				switch (gametype) {
 				case GameType.Equations:
-					answer += Catalog.GetString ("In all the other equations the digits from the left side appear also in the right side.");
-					break;
+					return Catalog.GetString ("In all the other equations the digits from the left side appear also in the right side.");
 				case GameType.Numbers:
-					answer += Catalog.GetString ("In all the other numbers the last three digits are the square of the first two digits.");
-					break;
+					return Catalog.GetString ("In all the other numbers the last three digits are the square of the first two digits.");
 				default:
 					throw new InvalidOperationException ();
 				}
-
-				return answer;
 			}
 		}
 

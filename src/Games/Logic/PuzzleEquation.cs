@@ -39,11 +39,9 @@ namespace gbrainy.Games.Logic
 			get {return Catalog.GetString ("What is the result of the equation below?");} 
 		}
 
-		public override string Answer {
-			get { 
-				string answer = base.Answer + " ";
-				answer += Catalog.GetString ("The order of arithmetical operations is always as follows: exponents and roots, multiplication and division, addition and subtraction.");
-				return answer;
+		public override string Rationale {
+			get {
+				return Catalog.GetString ("The order of arithmetical operations is always as follows: exponents and roots, multiplication and division, addition and subtraction.");
 			}
 		}
 

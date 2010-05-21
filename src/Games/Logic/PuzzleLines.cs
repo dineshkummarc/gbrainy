@@ -40,11 +40,9 @@ namespace gbrainy.Games.Logic
 			get {return Catalog.GetString ("How many line segments in total are in the figures below? A line segment is a line between two points with no crossing lines.");}
 		}
 
-		public override string Answer {
-			get { 
-				string answer = base.Answer + " ";
-				answer += String.Format (Catalog.GetString ("There are {0} lines in the figure to the left and {1} in the figure to the right."), fig1, fig2);
-				return answer;
+		public override string Rationale {
+			get {
+				return String.Format (Catalog.GetString ("There are {0} lines in the figure to the left and {1} in the figure to the right."), fig1, fig2);
 			}
 		}
 

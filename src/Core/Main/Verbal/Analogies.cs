@@ -57,33 +57,48 @@ namespace gbrainy.Core.Main.Verbal
 
 		public override string Answer {
 			get {
+				string str;
+				if (current == null || current.MultipleAnswers == false)
+					return base.Answer;
+
+				str = String.Format (Catalog.GetString ("Possible correct answers are: {0}."), AnswerValue);
+
+				if (String.IsNullOrEmpty (Rationale))
+					return str;
+
+				return str += " " + Rationale;
+			}
+		}
+
+		public override string Rationale {
+			get {
 				if (current == null)
 					return string.Empty;
+				
+				return current.rationale;
+			}
+		}
 
-				if (current.MultipleAnswers == true) 
+		public override string AnswerValue {
+			get { 
+				if (current == null || current.MultipleAnswers == false)
+					return right_answer;
+
+				string [] items;
+				string str = string.Empty;
+
+				items = right_answer.Split (AnalogiesFactory.Separator);
+
+				for (int i = 0 ; i < items.Length; i++)
 				{
-					string [] items;
-					string str = string.Empty;
-	
-					items = right_answer.Split (AnalogiesFactory.Separator);
-
-					for (int i = 0 ; i < items.Length; i++)
-					{
-						str += items [i].Trim ();
-						if (i + 1 < items.Length) {
-							// Translators: this the separator used when concatenating multiple possible answers for verbal analogies
-							// For example: "Possible correct answers are: sleep, rest."
-							str += Catalog.GetString (", ");
-						}
+					str += items [i].Trim ();
+					if (i + 1 < items.Length) {
+						// Translators: this the separator used when concatenating multiple possible answers for verbal analogies
+						// For example: "Possible correct answers are: sleep, rest."
+						str += Catalog.GetString (", ");
 					}
-					str = String.Format (Catalog.GetString ("Possible correct answers are: {0}."), str);
-					return str;
 				}
-
-				if (String.IsNullOrEmpty (current.rationale) == false)
-					return base.Answer + " " + current.rationale;
-
-				return base.Answer;
+				return str;
 			}
 		}
 

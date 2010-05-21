@@ -21,6 +21,7 @@ using System;
 using System.ComponentModel;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
+using System.Text;
 using Mono.Unix;
 
 using gbrainy.Core.Views;
@@ -57,9 +58,11 @@ namespace gbrainy.Core.Main
 			IgnoreCase		= 4,
 			IgnoreSpaces		= 8,
 			MatchAll		= 16,
+			MatchAllInOrder		= 32,
 		}
 
 		public const char AnswerSeparator = '|';
+		const int MAX_POSSIBLE_ANSWER = 7;
 
 		public class AnswerEventArgs : EventArgs
 		{
@@ -113,14 +116,34 @@ namespace gbrainy.Core.Main
 				question));
 		}
 
+		// The question text shown to the user
 		public abstract string Question {
 			get;
 		}
 
+		// Builds a text answer for the puzzle
 		public virtual string Answer {
 			get {
-				return String.Format (Catalog.GetString ("The correct answer is {0}."), right_answer);
+				string str;
+		
+				str = String.Format (Catalog.GetString ("The correct answer is {0}."), AnswerValue);
+
+				if (String.IsNullOrEmpty (Rationale))
+					return str;
+
+				return str += " " + Rationale;				
 			}
+		}
+
+		// Text that explains why the right answer is valid
+		public virtual string Rationale {
+			get { return string.Empty; }
+		}
+
+		// Right answer as shown to the user. Usually equals to right_answer, can be different
+		// when the answer contains multiple options (e.g. 1 | 2 shown as 1 and 2).
+		public virtual string AnswerValue {
+			get { return right_answer; }
 		}
 
 		public ISynchronizeInvoke SynchronizingObject { 
@@ -326,6 +349,17 @@ namespace gbrainy.Core.Main
 		public abstract void Initialize ();
 		public virtual void Finish () {}
 
+		protected string GetPossibleAnswersExpression ()
+		{
+			StringBuilder str = new StringBuilder ();
+			str.Append ("[");
+			for (int i = 0; i < MAX_POSSIBLE_ANSWER; i++)
+				str.Append (GetPossibleAnswer (i));
+
+			str.Append ("]");
+			return str.ToString ();
+		}
+
 		static public string GetPossibleAnswer (int answer)
 		{
 			switch (answer) {
@@ -352,7 +386,7 @@ namespace gbrainy.Core.Main
 			case 7: // Eighth possible answer for a series
 				return Catalog.GetString ("H");
 			default:
-				return string.Empty;
+				throw new ArgumentOutOfRangeException ("Do not have an option for this answer");
 			}
 		}
 
@@ -386,7 +420,6 @@ namespace gbrainy.Core.Main
 		{
 			Regex regex;
 			Match match;
-			AnswerCheckAttributes type;
 			bool ignore_case, ignore_spaces;
 
 			if (String.IsNullOrEmpty (answer))
@@ -394,7 +427,11 @@ namespace gbrainy.Core.Main
 
 			ignore_case = (CheckAttributes & AnswerCheckAttributes.IgnoreCase) == AnswerCheckAttributes.IgnoreCase;
 			ignore_spaces = (CheckAttributes & AnswerCheckAttributes.IgnoreSpaces) == AnswerCheckAttributes.IgnoreSpaces;
-			regex = new Regex (AnswerCheckExpression);
+
+			if (ignore_case == true) // This necessary to make pattern selection (e.g. [a-z]) case insensitive
+				regex = new Regex (AnswerCheckExpression, RegexOptions.IgnoreCase);
+			else
+				regex = new Regex (AnswerCheckExpression);
 
 			string [] right_answers = right_answer.Split (AnswerSeparator);
 
@@ -413,21 +450,35 @@ namespace gbrainy.Core.Main
 				answer = RemoveWhiteSpace (answer);
 
 			// All strings from the list of expected answers (two numbers: 22 | 44) must present in the answer
-			if ((CheckAttributes & AnswerCheckAttributes.MatchAll) == AnswerCheckAttributes.MatchAll)
+			if ((CheckAttributes & AnswerCheckAttributes.MatchAll) == AnswerCheckAttributes.MatchAll ||
+				(CheckAttributes & AnswerCheckAttributes.MatchAllInOrder) == AnswerCheckAttributes.MatchAllInOrder)
 			{
+				int pos = 0;
 				match = regex.Match (answer);
 				while (String.IsNullOrEmpty (match.Value) == false)
 				{
-					for (int i = 0; i < right_answers.Length; i++)
+					if ((CheckAttributes & AnswerCheckAttributes.MatchAll) == AnswerCheckAttributes.MatchAll)
 					{
-						if (String.Compare (match.Value, right_answers[i], ignore_case) == 0)
+						for (int i = 0; i < right_answers.Length; i++)
 						{
-							right_answers[i] = null;
-							break;
+							if (String.Compare (match.Value, right_answers[i], ignore_case) == 0)
+							{
+								right_answers[i] = null;
+								break;
+							}
 						}
+					} 
+					else //MatchAllInOrder
+					{
+						if (String.Compare (match.Value, right_answers[pos++], ignore_case) != 0)
+							return false;
+
 					}
 					match = match.NextMatch ();
 				}
+
+				if ((CheckAttributes & AnswerCheckAttributes.MatchAllInOrder) == AnswerCheckAttributes.MatchAllInOrder)
+					return true;
 
 				// Have all the expected answers been matched?
 				for (int i = 0; i < right_answers.Length; i++)
@@ -459,22 +510,6 @@ namespace gbrainy.Core.Main
 					str += source [n];
 			}
 			return str;
-		}
-
-		// When asking for a list of figures people trends to use spaces or commas
-		// to separate the elements
-		static public string TrimAnswer (string answer)
-		{
-			string rslt = string.Empty;
-
-			for (int i = 0; i < answer.Length; i++)
-			{
-				if (answer[i]==' ' || answer[i] == ',')
-					continue;
-
-				rslt += answer[i];
-			}
-			return rslt;
 		}
 
 		// Type enum to string representation

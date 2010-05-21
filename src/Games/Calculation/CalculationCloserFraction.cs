@@ -49,14 +49,12 @@ namespace gbrainy.Games.Calculation
 				GetPossibleAnswer (0), GetPossibleAnswer (1), GetPossibleAnswer (2), GetPossibleAnswer (3));}
 		}
 
-		public override string Answer {
-			get { 
-				string answer = base.Answer + " ";
+		public override string Rationale {
+			get {
 				int ans_idx = random_indices[which];
 
-				answer += String.Format (Catalog.GetString ("The result of the operation {0} / {1} is {2:##0.###}"), 
+				return String.Format (Catalog.GetString ("The result of the operation {0} / {1} is {2:##0.###}"), 
 					options[ans_idx * 2], options[(ans_idx * 2) + 1], question_num);
-				return answer;
 			}
 		}
 

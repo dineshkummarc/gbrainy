@@ -50,11 +50,32 @@ namespace gbrainy.Games.Logic
 			get { return Catalog.GetString ("Every character of the text represents a property of the figure.");}
 		}
 
-		public override string Answer {
-			get { 
-				string answer = base.Answer + " ";
-				answer += Catalog.GetString ("'A' indicates that the figures overlap, 'B' that are rectangles, 'C' that are circles, 'D' that the figures are separated, 'E' that there are three figures and 'F' that there are two figures.");
-				return answer;
+		public override string Rationale {
+			get {
+				return Catalog.GetString ("'A' indicates that the figures overlap, 'B' that are rectangles, 'C' that are circles, 'D' that the figures are separated, 'E' that there are three figures and 'F' that there are two figures.");
+			}
+		}
+
+		public override AnswerCheckAttributes CheckAttributes {
+			get { return AnswerCheckAttributes.Trim | AnswerCheckAttributes.IgnoreCase | AnswerCheckAttributes.MatchAll; }
+		}
+
+		public override string AnswerCheckExpression {
+			get { return GetPossibleAnswersExpression ();}
+		}
+
+		public override string AnswerValue {
+			get {
+				switch (question) {
+				case QuestionType.TwoRectangles:
+					return "ABF";
+				case QuestionType.TwoCercles:
+					return "CDF";
+				case QuestionType.ThreeCercles:
+					return "ACE";
+				default:
+					throw new InvalidOperationException ();
+				}
 			}
 		}
 
@@ -64,54 +85,17 @@ namespace gbrainy.Games.Logic
 
 			switch (question) {
 			case QuestionType.TwoRectangles:
-				right_answer = "ABF";
+				right_answer = "A | B | F";
 				break;
 			case QuestionType.TwoCercles:
-				right_answer = "CDF";
+				right_answer = "C | D | F";
 				break;
 			case QuestionType.ThreeCercles:
-				right_answer = "ACE";
+				right_answer = "A | C | E";
 				break;
+			default:
+				throw new InvalidOperationException ();
 			}
-		}
-
-		public override bool CheckAnswer (string answer)
-		{	
-			answer = TrimAnswer (answer);
-			switch (question) {
-			case QuestionType.TwoRectangles:		
-				if ((String.Compare (answer, "ABF", true) == 0) 
-					|| (String.Compare (answer, "AFB", true) == 0)
-					|| (String.Compare (answer, "BAF", true) == 0)
-					|| (String.Compare (answer, "BFA", true) == 0)
-					|| (String.Compare (answer, "FBA", true) == 0)
-					|| (String.Compare (answer, "FAB", true) == 0)) {
-					return true;
-				}
-				break;
-			case QuestionType.TwoCercles:		
-				if ((String.Compare (answer, "CDF", true) == 0)
-					|| (String.Compare (answer, "CFD", true) == 0)
-					|| (String.Compare (answer, "DCF", true) == 0)
-					|| (String.Compare (answer, "DFC", true) == 0)
-					|| (String.Compare (answer, "FCD", true) == 0)
-					|| (String.Compare (answer, "FDC", true) == 0)) {
-					return true;
-				}
-				break;
-			case QuestionType.ThreeCercles:		
-				if ((String.Compare (answer, "ACE", true) == 0)
-					|| (String.Compare (answer, "AEC", true) == 0)
-					|| (String.Compare (answer, "CAE", true) == 0)
-					|| (String.Compare (answer, "CEA", true) == 0)
-					|| (String.Compare (answer, "EAC", true) == 0)
-					|| (String.Compare (answer, "ECA", true) == 0)) {
-					return true;
-				}
-				break;
-			}
-				
-			return false;
 		}
 
 		public override void Draw (CairoContextEx gr, int area_width, int area_height, bool rtl)
@@ -190,6 +174,5 @@ namespace gbrainy.Games.Logic
 			gr.ShowPangoText ("?");
 			gr.Stroke ();		
 		}
-
 	}
 }

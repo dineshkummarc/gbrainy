@@ -47,14 +47,14 @@ namespace gbrainy.Games.Logic
 			get {return question; }
 		}
 
-		public override string Answer {
+		public override string Rationale {
 			get {
-
-				if (String.IsNullOrEmpty (answer) == true)
-					return base.Answer;
-
-				return base.Answer + " " + answer;
+				return answer;
 			}
+		}
+
+		public override string AnswerCheckExpression {
+			get { return "[0-9]+";}
 		}
 
 		public override void Initialize ()
@@ -125,19 +125,6 @@ namespace gbrainy.Games.Logic
 		public override void Draw (CairoContextEx gr, int area_width, int area_height, bool rtl)
 		{
 			base.Draw (gr, area_width, area_height, rtl);
-		}
-
-		public override bool CheckAnswer (string answer)
-		{	
-			if (gametype == GameType.Water) {
-				if (String.Compare (answer, right_answer + "%", true) == 0) 
-					return true;
-			}
-
-			if (String.Compare (answer, right_answer, true) == 0) 
-				return true;
-
-			return false;
 		}
 	}
 }

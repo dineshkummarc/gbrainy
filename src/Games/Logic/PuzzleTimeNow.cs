@@ -47,11 +47,9 @@ namespace gbrainy.Games.Logic
 				after, position_a, position_b, position_b));}
 		}
 
-		public override string Answer {
+		public override string Rationale {
 			get {
-				string answer = base.Answer + " ";
-				answer += String.Format (Catalog.GetString ("You have to calculate the hour from which the distance is the same for the given times, and then add the {0} hours to convert it to present time."), after);
-				return answer;
+				return String.Format (Catalog.GetString ("You have to calculate the hour from which the distance is the same for the given times, and then add the {0} hours to convert it to present time."), after);
 			}
 		}
 

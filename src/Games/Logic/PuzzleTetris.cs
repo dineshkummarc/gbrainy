@@ -43,11 +43,9 @@ namespace gbrainy.Games.Logic
 				GetPossibleAnswer (0), GetPossibleAnswer (1), GetPossibleAnswer (2));}
 		}
 
-		public override string Answer {
-			get { 
-				string answer = base.Answer + " ";
-				answer += Catalog.GetString ("It is the figure that completes all possible combinations with four blocks without taking into account rotations.");
-				return answer;
+		public override string Rationale {
+			get {
+				return Catalog.GetString ("It is the figure that completes all possible combinations with four blocks without taking into account rotations.");
 			}
 		}
 

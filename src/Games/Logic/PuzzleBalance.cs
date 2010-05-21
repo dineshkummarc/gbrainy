@@ -55,11 +55,9 @@ namespace gbrainy.Games.Logic
 			get {return Catalog.GetString ("How many triangles are needed in the right part of the last figure to keep it balanced?");} 
 		}
 
-		public override string Answer {
-			get { 
-				string answer = base.Answer + " ";
-				answer += Catalog.GetString ("Every triangle counts as 1, each diamond as 2 and each square as 3.");
-				return answer;
+		public override string Rationale {
+			get {
+				return Catalog.GetString ("Every triangle counts as 1, each diamond as 2 and each square as 3.");
 			}
 		}
 

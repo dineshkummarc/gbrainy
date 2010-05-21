@@ -96,13 +96,6 @@ namespace gbrainy.Games.Logic
 			get {return predicates[question].question;} 
 		}
 
-		public override string Answer {
-			get { 
-				string answer = base.Answer + " ";
-				return answer;
-			}
-		}
-
 		public override void Initialize ()
 		{
 			int answers;

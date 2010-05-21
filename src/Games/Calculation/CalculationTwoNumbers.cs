@@ -69,6 +69,10 @@ namespace gbrainy.Games.Calculation
 			get { return "[0-9]+"; }
 		}
 
+		public override string AnswerValue {
+			get { return String.Format (Catalog.GetString ("{0} and {1}"), number_a, number_b); }
+		}
+
 		public override void Initialize ()
 		{
 			type = (GameTypes) random.Next ((int) GameTypes.Length);
@@ -106,8 +110,6 @@ namespace gbrainy.Games.Calculation
 			}
 
 			op2 = number_a * number_b;
-
-			//TODO: right_answer = String.Format (Catalog.GetString ("{0} and {1}"), number_a, number_b);
 			right_answer = String.Format ("{0} | {1}", number_a, number_b);
 		}
 

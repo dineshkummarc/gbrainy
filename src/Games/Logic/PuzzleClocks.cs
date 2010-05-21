@@ -47,11 +47,9 @@ namespace gbrainy.Games.Logic
 				GetPossibleFigureAnswer (3)));}
 		}
 
-		public override string Answer {
-			get { 
-				string answer = base.Answer + " ";
-				answer += String.Format (Catalog.GetString ("Starting from the first clock sum {0} to the value indicated by the hands."), addition);
-				return answer;
+		public override string Rationale {
+			get {
+				return String.Format (Catalog.GetString ("Starting from the first clock sum {0} to the value indicated by the hands."), addition);
 			}
 		}
 

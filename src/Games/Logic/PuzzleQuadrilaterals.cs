@@ -53,11 +53,9 @@ namespace gbrainy.Games.Logic
 					GetPossibleAnswer (5));}
 		}
 
-		public override string Answer {
-			get { 
-				string answer = base.Answer + " ";
-				answer += Catalog.GetString ("It is the only figure with all lines of equal length.");
-				return answer;
+		public override string Rationale {
+			get {
+				return Catalog.GetString ("It is the only figure with all lines of equal length.");
 			}
 		}
 

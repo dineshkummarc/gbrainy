@@ -47,8 +47,8 @@ namespace gbrainy.Games.Logic
 			get {return question; }
 		}
 
-		public override string Answer {
-			get { return base.Answer + " " + answer;}
+		public override string Rationale {
+			get { return answer;}
 		}
 
 		public override string Tip {

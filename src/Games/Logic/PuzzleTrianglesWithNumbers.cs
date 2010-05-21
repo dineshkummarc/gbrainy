@@ -69,11 +69,9 @@ namespace gbrainy.Games.Logic
 			get { return Catalog.GetString ("All the triangles share a property and are independent of the rest.");}
 		}
 
-		public override string Answer {
-			get { 
-				string answer = base.Answer + " ";
-				answer += String.Format (Catalog.GetString ("The result of multiplying the two numbers inside every triangle is {0}."), answer_number);
-				return answer;
+		public override string Rationale {
+			get {
+				return String.Format (Catalog.GetString ("The result of multiplying the two numbers inside every triangle is {0}."), answer_number);
 			}
 		}
 

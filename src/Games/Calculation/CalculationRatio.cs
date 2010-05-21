@@ -46,13 +46,10 @@ namespace gbrainy.Games.Calculation
 			}
 		}
 
-		public override string Answer {
+		public override string Rationale {
 			get {
-				string answer = base.Answer + " ";
-
-				answer += String.Format (Catalog.GetString ("The second number is calculated by multiplying the first by {0} and dividing it by {1}."),
+				return String.Format (Catalog.GetString ("The second number is calculated by multiplying the first by {0} and dividing it by {1}."),
 					ratio_a, ratio_b);
-				return answer;
 			}
 		}
 
@@ -66,6 +63,10 @@ namespace gbrainy.Games.Calculation
 
 		public override string AnswerCheckExpression {
 			get { return "[0-9]+"; }
+		}
+
+		public override string AnswerValue {
+			get { return String.Format (Catalog.GetString ("{0} and {1}"), number_a, number_b); }
 		}
 
 		public override void Initialize ()
@@ -94,7 +95,6 @@ namespace gbrainy.Games.Calculation
 			ratio_b = 3 + random.Next (random_max);
 			number_b = number_a / ratio_a * ratio_b;
 
-			//TODO: right_answer = String.Format (Catalog.GetString ("{0} and {1}"), number_a, number_b);
 			right_answer = String.Format ("{0} | {1}", number_a, number_b);
 		}
 

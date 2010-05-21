@@ -56,11 +56,9 @@ namespace gbrainy.Games.Logic
 			get { return Catalog.GetString ("All circles share a common property except for one.");}
 		}
 
-		public override string Answer {
-			get { 
-				string answer = base.Answer + " ";
-				answer += String.Format (Catalog.GetString ("In all circles the color slices follow the same order except for this one."));
-				return answer;
+		public override string Rationale {
+			get {
+				return String.Format (Catalog.GetString ("In all circles the color slices follow the same order except for this one."));
 			}
 		}
 

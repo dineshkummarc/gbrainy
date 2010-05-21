@@ -46,13 +46,6 @@ namespace gbrainy.Games.Logic
 			get {return question;} 
 		}
 
-		public override string Answer {
-			get { 
-				string answer = base.Answer + " ";
-				return answer;
-			}
-		}
-
 		public override void Initialize ()
 		{
 			switch ((GameType) random.Next ((int) GameType.Length))

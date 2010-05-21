@@ -30,11 +30,11 @@ namespace gbrainy.Games.Calculation
 	public class CalculationOperator : Game
 	{
 		private double number_a, number_b, number_c, total;
-		private char[] opers = {'*', '+', '-', '/'};
+		private readonly char[] opers = {'*', '+', '-', '/'};
 		private char oper1, oper2;
 
 		public override string Name {
-			get {return Catalog.GetString ("Operator");}
+			get {return Catalog.GetString ("Operators");}
 		}
 
 		public override string Tip {
@@ -47,6 +47,18 @@ namespace gbrainy.Games.Calculation
 
 		public override string Question {
 			get {return String.Format (Catalog.GetString ("Which operators make {0}, {1}, and {2} equal {3}? Answer using '+-/*'."), number_a, number_b, number_c, total);}
+		}
+
+		public override string AnswerCheckExpression {
+			get { return "[+*-/]+"; }
+		}
+
+		public override AnswerCheckAttributes CheckAttributes {
+			get { return AnswerCheckAttributes.Trim | AnswerCheckAttributes.MatchAll; }
+		}
+
+		public override string AnswerValue {
+			get { return String.Format (Catalog.GetString ("{0} and {1}"), oper1, oper2); }
 		}
 
 		private double ProcessOperation (double total, double number, char op)
@@ -106,7 +118,7 @@ namespace gbrainy.Games.Calculation
 					break;
 			}
 
-			right_answer = String.Format (Catalog.GetString ("{0} and {1}"), oper1, oper2);
+			right_answer = String.Format ("{0} | {1}", oper1, oper2);
 		}
 
 		public override void Draw (CairoContextEx gr, int area_width, int area_height, bool rtl)
@@ -138,33 +150,6 @@ namespace gbrainy.Games.Calculation
 		{
 			for (int i = 0; i < chars.Length; i++)
 				if (c == chars [i]) return true;
-
-			return false;
-		}
-
-		public override bool CheckAnswer (string answer)
-		{
-			char op1 = '\0', op2 = '\0';
-			int c = 0;
-
-			for (c = 0; c < answer.Length; c++)
-			{
-				if (IndexOf (answer[c], opers)) {
-					op1 = answer[c];
-					break;
-				}
-			}
-
-			for (c++; c < answer.Length; c++)
-			{
-				if (IndexOf (answer[c], opers)) {
-					op2 = answer[c];
-					break;
-				}
-			}
-
-			if (oper1 == op1 && oper2 == op2)
-				return true;
 
 			return false;
 		}

@@ -41,6 +41,10 @@ namespace gbrainy.Games.Logic
 			get {return Catalog.GetString ("What percentage of the figure is colored?");} 
 		}
 
+		public override string AnswerCheckExpression {
+			get { return "[0-9]+";}
+		}
+
 		public override void Initialize ()
 		{
 			int total = 0;
@@ -158,17 +162,6 @@ namespace gbrainy.Games.Logic
 			}
 
 			DrawSection (gr, x, y);
-		}
-
-		public override bool CheckAnswer (string answer)
-		{	
-			if (String.Compare (answer, right_answer, true) == 0) 
-				return true;
-
-			if (String.Compare (answer, right_answer + "%", true) == 0) 
-				return true;
-
-			return false;
 		}
 	}
 }
