@@ -50,7 +50,7 @@ namespace gbrainy.Games.Calculation
 		}
 
 		public override string AnswerCheckExpression {
-			get { return "[+*-/]+"; }
+			get { return "[+*-/]"; }
 		}
 
 		public override AnswerCheckAttributes CheckAttributes {

@@ -220,12 +220,13 @@ namespace gbrainyTest
 		{
 			TestGame game = new TestGame ();
 			game.RightAnswer = "+ | -";
-			game.Expression = "[+*-/]+";
+			game.Expression = "[+*-/]";
 			game.Attributes = Game.AnswerCheckAttributes.Trim | Game.AnswerCheckAttributes.MatchAllInOrder;
 
 			Assert.AreEqual (true, game.CheckAnswer ("+ i -"));
 			Assert.AreEqual (true, game.CheckAnswer ("+ and -"));
 			Assert.AreEqual (true, game.CheckAnswer ("+ -"));
+			Assert.AreEqual (true, game.CheckAnswer ("+-"));
 
 			Assert.AreEqual (false, game.CheckAnswer ("- +"));
 		}
