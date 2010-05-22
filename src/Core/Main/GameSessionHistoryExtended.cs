@@ -58,7 +58,7 @@ namespace gbrainy.Core.Main
 		public void UpdateScore (GameTypes type, Game.Difficulty difficulty, int game_score)
 		{
 			GameSessionHistoryExtended history = this;
-			Score.UpdateSessionHistorycore (ref history, type, difficulty, game_score);
+			Score.SessionUpdateHistoryScore (ref history, type, difficulty, game_score);
 		}
 	}
 }

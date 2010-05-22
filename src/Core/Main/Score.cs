@@ -28,8 +28,77 @@ using gbrainy.Core.Libraries;
 
 namespace gbrainy.Core.Main
 {
+	// Class that encapsulates all the score logic for games and the session
 	static public class Score
 	{
+
+		/*
+			Game
+		*/
+
+		// Expected time in seconds that a player is expected to complete this game
+		static public int GameExpectedTime (GameTypes type, Game.Difficulty difficulty)
+		{
+			double factor;
+
+			switch (difficulty) {
+			case Game.Difficulty.Easy:
+				factor = 1.3;
+				break;
+			case Game.Difficulty.Master:
+				factor = 0.7;
+				break;
+			case Game.Difficulty.Medium:
+			default:
+				factor = 1.0;
+				break;
+			}
+
+			switch (type) {
+			case GameTypes.MemoryTrainer:
+				return (int) (30 * factor);
+			case GameTypes.MathTrainer:
+				return (int) (60 * factor);
+			case GameTypes.VerbalAnalogy:
+				return (int) (30 * factor);
+			}
+			return (int) (120 * factor); // Default for all games (logic)
+		}
+
+		//
+		// Score algorithm returns a value between 0 and 10
+		//
+		static public int GameScore (bool correct_answer, double seconds, int expected_time, bool tip_used)
+		{
+			double score;
+
+			if (correct_answer == false)
+				return 0;
+
+			score = 10;
+	
+			// Time
+			if (seconds > expected_time * 3) {
+				score = score * 0.6;
+			}
+			else if (seconds > expected_time * 2) {
+				score = score * 0.7;
+			} else if (seconds > expected_time) {
+				score = score * 0.8;
+			}
+
+			if (tip_used)
+				score = score * 0.8;
+
+			return (int) score;
+		}
+
+
+		/*
+			Session
+		*/
+
+
 		/*
 			How the game session is scored
 
@@ -37,12 +106,12 @@ namespace gbrainy.Core.Main
 		   	  This takes into account time used and tips (result is from 0 to 10)
 			* The results are added to the games and scores arrays where we store the results for
 			  the different game types (verbal, logic, etc)
-			* We apply a ScoreFormula function that balances the total result with the number of
+			* We apply a SessionScoreFormula function that balances the total result with the number of
 	  		  games played (is not the same 100% games won playing 2 than 10 games) and the difficulty
-			
+
 			The final result is a number from 0 to 100
 		*/
-		static public void UpdateSessionHistorycore (ref GameSessionHistoryExtended history, GameTypes type, Game.Difficulty difficulty, int game_score)
+		static public void SessionUpdateHistoryScore (ref GameSessionHistoryExtended history, GameTypes type, Game.Difficulty difficulty, int game_score)
 		{
 			bool won;
 			int components = 0;
@@ -58,25 +127,25 @@ namespace gbrainy.Core.Main
 				history.LogicRawScore += game_score;
 				history.LogicPlayed++;
 				if (won) history.LogicWon++;
-				history.LogicScore = ScoreFormula (ref history, type, difficulty);
+				history.LogicScore = SessionScoreFormula (ref history, type, difficulty);
 				break;
 			case GameTypes.MemoryTrainer:
 				history.MemoryRawScore += game_score;
 				history.MemoryPlayed++;
 				if (won) history.MemoryWon++;
-				history.MemoryScore = ScoreFormula (ref history, type, difficulty);
+				history.MemoryScore = SessionScoreFormula (ref history, type, difficulty);
 				break;
 			case GameTypes.MathTrainer:
 				history.MathRawScore += game_score;
 				history.MathPlayed++;
 				if (won) history.MathWon++;
-				history.MathScore = ScoreFormula (ref history, type, difficulty);
+				history.MathScore = SessionScoreFormula (ref history, type, difficulty);
 				break;
 			case GameTypes.VerbalAnalogy:
 				history.VerbalRawScore += game_score;
 				history.VerbalPlayed++;
 				if (won) history.VerbalWon++;
-				history.VerbalScore = ScoreFormula (ref history, type, difficulty);
+				history.VerbalScore = SessionScoreFormula (ref history, type, difficulty);
 				break;
 			default:
 				throw new InvalidOperationException ("Invalid switch value");
@@ -111,7 +180,7 @@ namespace gbrainy.Core.Main
 		//
 		// Applies scoring formula to the session
 		//
-		static int ScoreFormula (ref GameSessionHistoryExtended history, GameTypes type, Game.Difficulty difficulty)
+		static int SessionScoreFormula (ref GameSessionHistoryExtended history, GameTypes type, Game.Difficulty difficulty)
 		{
 			int logbase, scored, played, won;
 			double score, factor;
@@ -124,7 +193,7 @@ namespace gbrainy.Core.Main
 				logbase = 20;
 				break;
 			case Game.Difficulty.Master:
-				logbase = 30;	
+				logbase = 30;
 				break;
 			default:
 				throw new InvalidOperationException ("Invalid switch value");
@@ -132,22 +201,22 @@ namespace gbrainy.Core.Main
 
 			switch (type) {
 			case GameTypes.LogicPuzzle:
-				scored = history.LogicRawScore; 
+				scored = history.LogicRawScore;
 				played = history.LogicPlayed;
 				won = history.LogicWon;
 				break;
 			case GameTypes.MemoryTrainer:
-				scored = history.MemoryRawScore; 
+				scored = history.MemoryRawScore;
 				played = history.MemoryPlayed;
 				won = history.MemoryWon;
 				break;
 			case GameTypes.MathTrainer:
-				scored = history.MathRawScore; 
+				scored = history.MathRawScore;
 				played = history.MathPlayed;
 				won = history.MathWon;
 				break;
 			case GameTypes.VerbalAnalogy:
-				scored = history.VerbalRawScore; 
+				scored = history.VerbalRawScore;
 				played = history.VerbalPlayed;
 				won = history.VerbalWon;
 				break;

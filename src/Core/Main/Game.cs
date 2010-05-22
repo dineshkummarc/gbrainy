@@ -246,31 +246,8 @@ namespace gbrainy.Core.Main
 
 		// Expected time in seconds that a player is expected to complete this game
 		public int ExpectedTime {
-			get {
-				double factor;
-
-				switch (CurrentDifficulty) {
-				case Difficulty.Easy:
-					factor = 1.3;
-					break;
-				case Difficulty.Master:
-					factor = 0.7;
-					break;		
-				case Difficulty.Medium:
-				default:
-					factor = 1.0;
-					break;		
-				}
-				
-				switch (Type) {
-				case GameTypes.MemoryTrainer:
-					return (int) (30 * factor);
-				case GameTypes.MathTrainer:
-					return (int) (60 * factor);
-				case GameTypes.VerbalAnalogy:
-					return (int) (30 * factor);
-				}
-				return (int) (120 * factor); // Default for all games (logic)
+			get { 
+				return Main.Score.GameExpectedTime (Type, CurrentDifficulty); 
 			}
 		}
 
@@ -283,28 +260,7 @@ namespace gbrainy.Core.Main
 		//
 		public virtual int Score (string answer)
 		{
-			double score;
-			double seconds = GameTime.TotalSeconds;
-
-			if (CheckAnswer (answer) == false)
-				return 0;
-
-			score = 10;
-	
-			// Time
-			if (seconds > ExpectedTime * 3) {
-				score = score * 0.6;
-			}
-			else if (seconds > ExpectedTime * 2) {
-				score = score * 0.7;
-			} else if (seconds > ExpectedTime) {
-				score = score * 0.8;
-			}
-
-			if (tip_used)
-				score = score * 0.8;
-
-			return (int) score;
+			return Main.Score.GameScore (CheckAnswer (answer), GameTime.TotalSeconds, ExpectedTime, tip_used);
 		}
 
 		public void AddWidget (Toolkit.Container container)
