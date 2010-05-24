@@ -99,6 +99,36 @@ AC_SUBST(GETTEXT_PACKAGE)
 AC_DEFINE_UNQUOTED(GETTEXT_PACKAGE,"$GETTEXT_PACKAGE", [Gettext package])
 AM_GLIB_GNU_GETTEXT
 
+
+dnl -- NUnit required for (optional) unit tests
+NUNIT_REQUIRED=2.4.7
+
+AC_ARG_ENABLE(tests, AC_HELP_STRING([--enable-tests], [Enable NUnit tests]),
+	enable_tests=$enableval, enable_tests="no")
+
+if test "x$enable_tests" = "xno"; then
+	do_tests=no
+	AM_CONDITIONAL(ENABLE_TESTS, false)
+else
+	PKG_CHECK_MODULES(NUNIT, nunit >= $NUNIT_REQUIRED,
+		do_tests="yes", do_tests="no")
+
+	AC_SUBST(NUNIT_LIBS)
+	AC_PATH_PROG(NUNIT, nunit-console)
+	AM_CONDITIONAL(ENABLE_TESTS, test "x$do_tests" = "xyes")
+
+	if test "x$do_tests" = "xno"; then
+		PKG_CHECK_MODULES(NUNIT, mono-nunit >= 2.4,
+			do_tests="yes", do_tests="no")
+
+		AC_SUBST(NUNIT_LIBS)
+		AM_CONDITIONAL(ENABLE_TESTS, test "x$do_tests" = "xyes")
+
+		if test "x$do_tests" = "xno"; then
+			AC_MSG_WARN([Could not find nunit: tests will not be available])			fi
+	fi
+fi
+
 dnl --- Prologue
 
 AC_SUBST(CFLAGS)
@@ -133,10 +163,12 @@ src/Makefile
 src/Core/Makefile
 src/Games/Makefile
 src/Clients/Classical/Makefile
+tests/Makefile
 data/Makefile
 data/gbrainy.pc
 help/Makefile
 ])
 
-echo "Mono-addins:            ${enable_addins_sharp}"
+echo "Mono-addins:		${enable_addins_sharp}"
+echo "NUnit:			${enable_tests}"
 

@@ -348,34 +348,34 @@ namespace gbrainy.Clients.Classical
 		{
 			//Toolbar buttons and menu items that are sensitive when the user is playing
 			bool playing;
-			Game.Types available;
+			GameTypes available;
 
 			playing = (session.Status == GameSession.SessionStatus.Playing);
 			finish_tbbutton.Sensitive = pause_tbbutton.Sensitive = playing;
 
 			available = session.AvailableGames;
 
-			if (playing == false && ((available & Game.Types.LogicPuzzle) == Game.Types.LogicPuzzle))
+			if (playing == false && ((available & GameTypes.LogicPuzzle) == GameTypes.LogicPuzzle))
 				logic_menuitem.Sensitive = logic_tbbutton.Sensitive = true;
 			else
 				logic_menuitem.Sensitive = logic_tbbutton.Sensitive = false;
 
-			if (playing == false && ((available & Game.Types.MemoryTrainer) == Game.Types.MemoryTrainer))
+			if (playing == false && ((available & GameTypes.MemoryTrainer) == GameTypes.MemoryTrainer))
 				memory_menuitem.Sensitive = memory_tbbutton.Sensitive = true;
 			else
 				memory_menuitem.Sensitive = memory_tbbutton.Sensitive = false;
 
-			if (playing == false && ((available & Game.Types.MathTrainer) == Game.Types.MathTrainer))
+			if (playing == false && ((available & GameTypes.MathTrainer) == GameTypes.MathTrainer))
 				calculation_menuitem.Sensitive = calculation_tbbutton.Sensitive = true;
 			else
 				calculation_menuitem.Sensitive = calculation_tbbutton.Sensitive = false;
 
-			if (playing == false && ((available & Game.Types.VerbalAnalogy) == Game.Types.VerbalAnalogy))
+			if (playing == false && ((available & GameTypes.VerbalAnalogy) == GameTypes.VerbalAnalogy))
 				verbal_menuitem.Sensitive = verbal_tbbutton.Sensitive = true;
 			else
 				verbal_menuitem.Sensitive = verbal_tbbutton.Sensitive = false;
 
-			if (playing == false && (available != Game.Types.None))
+			if (playing == false && (available != GameTypes.None))
 				allgames_menuitem.Sensitive = all_tbbutton.Sensitive = true;
 			else
 				allgames_menuitem.Sensitive = all_tbbutton.Sensitive = false;
@@ -476,7 +476,7 @@ namespace gbrainy.Clients.Classical
 		void OnNewGame (GameSession.Types type)
 		{
 			session.Type = type;
-			session.NewSession ();
+			session.New ();
 			GetNextGame ();
 			GameSensitiveUI ();
 			UpdateSolution (Catalog.GetString ("Once you have an answer type it in the \"Answer:\" entry box and press the \"OK\" button."));
@@ -542,7 +542,7 @@ namespace gbrainy.Clients.Classical
 
 		void OnEndGame (object sender, EventArgs args)
 		{
-			session.EndSession ();
+			session.End ();
 	
 			UpdateSolution (String.Empty);
 			UpdateQuestion (String.Empty);

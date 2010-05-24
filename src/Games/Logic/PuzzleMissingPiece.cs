@@ -46,11 +46,9 @@ namespace gbrainy.Games.Logic
 			get { return Catalog.GetString ("The logic works at row level.");}
 		}
 
-		public override string Answer {
-			get { 
-				string answer = base.Answer + " ";
-				answer += Catalog.GetString ("In every row the third square is made by flipping the first square and superimposing it on the second square, followed by removing the matching lines.");
-				return answer;
+		public override string Rationale {
+			get {
+				return Catalog.GetString ("In every row the third square is made by flipping the first square and superimposing it on the second square, followed by removing the matching lines.");
 			}
 		}
 

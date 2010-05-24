@@ -42,15 +42,11 @@ namespace gbrainy.Games.Logic
 			get { return Catalog.GetString ("A four sided figure can be embedded inside another figure.");}
 		}
 
-		public override string Answer {
+		public override string Rationale {
 			get { 
-				string answer = base.Answer + " ";
-
-				answer += String.Format (Catalog.GetString ("The four sided figures are made by connecting the following points: {0}"),
+				return String.Format (Catalog.GetString ("The four sided figures are made by connecting the following points: {0}"),
 					(type == 0) ? "abde, degh, bcef, efhi, acdf, dfgi, abhg, bcih, acig, aghe, aefc, deig, bcie." : 
 					"abde, degh, bcef, efhi, acdf, dfgi, abhg, bcih, acig, aghe, aefc, deig, bcie, acde, cehi, abeg, egif.");
-
-				return answer;
 			}
 		}
 

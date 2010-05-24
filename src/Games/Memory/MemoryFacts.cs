@@ -56,6 +56,10 @@ namespace gbrainy.Games.Memory
 			get { return question;}
 		}
 
+		public override string AnswerCheckExpression {
+			get { return "[0-9]+";}
+		}
+
 		public override void Initialize ()
 		{
 			int fact_idx, quest_idx, questions;
@@ -160,17 +164,6 @@ namespace gbrainy.Games.Memory
 				text += "\n\n";
 			}
 			gr.DrawStringWithWrapping (0.3, DrawAreaY + 0.2, text, 0.95 - 0.3);
-		}
-
-		public override bool CheckAnswer (string answer)
-		{	
-			if (String.Compare (answer, right_answer, true) == 0) 
-				return true;
-
-			if (String.Compare (answer, right_answer + "%", true) == 0) 
-				return true;
-
-			return false;
 		}
 	}
 }

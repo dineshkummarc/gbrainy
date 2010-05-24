@@ -74,7 +74,7 @@ namespace gbrainy.Core.Views
 			cr.Stroke ();
 			cr.Color = text_color;
 			cr.MoveTo (x + line_size + offset_x, y - 0.01 + second_row);
-			cr.ShowPangoText (Game.GetGameTypeDescription (Game.Types.LogicPuzzle));
+			cr.ShowPangoText (GameTypesDescription.Get (GameTypes.LogicPuzzle));
 			cr.Stroke ();
 
 			x += space_hor;
@@ -84,7 +84,7 @@ namespace gbrainy.Core.Views
 			cr.Stroke ();
 			cr.Color = text_color;
 			cr.MoveTo (x + line_size + offset_x, y - 0.01);
-			cr.ShowPangoText (Game.GetGameTypeDescription (Game.Types.MemoryTrainer));
+			cr.ShowPangoText (GameTypesDescription.Get (GameTypes.MemoryTrainer));
 			cr.Stroke ();
 
 			cr.Color = math_color;
@@ -93,7 +93,7 @@ namespace gbrainy.Core.Views
 			cr.Stroke ();
 			cr.Color = text_color;
 			cr.MoveTo (x + line_size + offset_x, y - 0.01 + second_row);
-			cr.ShowPangoText (Game.GetGameTypeDescription (Game.Types.MathTrainer));
+			cr.ShowPangoText (GameTypesDescription.Get (GameTypes.MathTrainer));
 			cr.Stroke ();
 
 			x += space_hor;
@@ -103,7 +103,7 @@ namespace gbrainy.Core.Views
 			cr.Stroke ();
 			cr.Color = text_color;
 			cr.MoveTo (x + line_size + offset_x, y - 0.01);
-			cr.ShowPangoText (Game.GetGameTypeDescription (Game.Types.VerbalAnalogy));
+			cr.ShowPangoText (GameTypesDescription.Get (GameTypes.VerbalAnalogy));
 			cr.Stroke ();
 
 			cr.LineWidth = old_width;
@@ -122,16 +122,16 @@ namespace gbrainy.Core.Views
 	
 			if (ShowLogic) {
 				cr.Color = logic_color;
-				cr.MoveTo (x, area_h - (area_h * history.Games[0].logic_score / 100));
+				cr.MoveTo (x, area_h - (area_h * history.Games[0].LogicScore / 100));
 
 				pos = 1;
 				for (int i = 1; i < history.Games.Count; i++)
 				{
-					if (history.Games[i].logic_score < 0)
+					if (history.Games[i].LogicScore < 0)
 						continue;
 
 					px = x + (ratio * pos);
-					py = y + area_h - (area_h * history.Games[i].logic_score / 100);
+					py = y + area_h - (area_h * history.Games[i].LogicScore / 100);
 					cr.LineTo (px, py);
 					pos++;
 				}
@@ -140,16 +140,16 @@ namespace gbrainy.Core.Views
 
 			if (ShowCalculation) {
 				cr.Color = math_color;
-				cr.MoveTo (x, area_h - (area_h * history.Games[0].math_score / 100));
+				cr.MoveTo (x, area_h - (area_h * history.Games[0].MathScore / 100));
 
 				pos = 1;
 				for (int i = 1; i < history.Games.Count; i++)
 				{
-					if (history.Games[i].math_score < 0)
+					if (history.Games[i].MathScore < 0)
 						continue;
 
 					px = x + (ratio * pos);
-					py = y + area_h - (area_h * history.Games[i].math_score / 100);
+					py = y + area_h - (area_h * history.Games[i].MathScore / 100);
 					cr.LineTo (px, py);
 					pos++;
 				}
@@ -158,16 +158,16 @@ namespace gbrainy.Core.Views
 
 			if (ShowMemory) {
 				cr.Color = memory_color;
-				cr.MoveTo (x, area_h - (area_h * history.Games[0].memory_score / 100));
+				cr.MoveTo (x, area_h - (area_h * history.Games[0].MemoryScore / 100));
 
 				pos = 1;
 				for (int i = 1; i < history.Games.Count; i++)
 				{
-					if (history.Games[i].memory_score < 0)
+					if (history.Games[i].MemoryScore < 0)
 						continue;
 
 					px = x + (ratio * pos);
-					py = y + area_h - (area_h * history.Games[i].memory_score / 100);
+					py = y + area_h - (area_h * history.Games[i].MemoryScore / 100);
 					cr.LineTo (px, py);
 					pos++;
 				}
@@ -176,16 +176,16 @@ namespace gbrainy.Core.Views
 
 			if (ShowVerbal) {
 				cr.Color = verbal_color;
-				cr.MoveTo (x, area_h - (area_h * history.Games[0].verbal_score / 100));
+				cr.MoveTo (x, area_h - (area_h * history.Games[0].VerbalScore / 100));
 
 				pos = 1;
 				for (int i = 1; i < history.Games.Count; i++)
 				{
-					if (history.Games[i].verbal_score < 0)
+					if (history.Games[i].VerbalScore < 0)
 						continue;
 
 					px = x + (ratio * i);
-					py = y + area_h - (area_h * history.Games[i].verbal_score / 100);
+					py = y + area_h - (area_h * history.Games[i].VerbalScore / 100);
 					cr.LineTo (px, py);
 					pos++;
 				}
@@ -194,16 +194,16 @@ namespace gbrainy.Core.Views
 
 			if (ShowTotal) {
 				cr.Color = total_color;
-				cr.MoveTo (x, area_h - (area_h * history.Games[0].total_score / 100));
+				cr.MoveTo (x, area_h - (area_h * history.Games[0].TotalScore / 100));
 
 				pos = 1;
 				for (int i = 1; i < history.Games.Count; i++)
 				{
-					if (history.Games[pos].total_score < 0)
+					if (history.Games[pos].TotalScore < 0)
 						continue;
 
 					px = x + (ratio * pos);
-					py = y + area_h - (area_h * history.Games[i].total_score / 100);
+					py = y + area_h - (area_h * history.Games[i].TotalScore / 100);
 					cr.LineTo (px, py);
 					pos++;
 				}

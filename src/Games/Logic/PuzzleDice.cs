@@ -74,8 +74,8 @@ namespace gbrainy.Games.Logic
 			get { return problems[problem].question;}
 		}
 
-		public override string Answer {
-			get { return base.Answer + " " + problems[problem].rationale; }
+		public override string Rationale {
+			get { return problems[problem].rationale; }
 		}
 
 		public override void Initialize ()

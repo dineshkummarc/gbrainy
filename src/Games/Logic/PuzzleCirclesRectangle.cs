@@ -40,11 +40,9 @@ namespace gbrainy.Games.Logic
 			get { return Catalog.GetString ("You can fit more than 64 circles.");}
 		}
 
-		public override string Answer {
-			get { 
-				string answer = base.Answer + " ";
-				answer += String.Format (Catalog.GetString ("In the layout shown {0} units of height are gained in each row. This allows using an additional row."), 0.1340);
-				return answer;
+		public override string Rationale {
+			get {
+				return String.Format (Catalog.GetString ("In the layout shown {0} units of height are gained in each row. This allows using an additional row."), 0.1340);
 			}
 		}
 

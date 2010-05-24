@@ -13,10 +13,15 @@ CSDISTFILES =  \
 		$(srcdir)/Main/Game.cs			\
 		$(srcdir)/Main/GameManager.cs		\
 		$(srcdir)/Main/GameSession.cs		\
+		$(srcdir)/Main/GameSessionHistory.cs	\
+		$(srcdir)/Main/GameSessionHistoryExtended.cs \
+		$(srcdir)/Main/GameTypes.cs		\
 		$(srcdir)/Main/GameTips.cs		\
-		$(srcdir)/Main/Memory.cs			\
+		$(srcdir)/Main/Memory.cs		\
 		$(srcdir)/Main/PlayerHistory.cs		\
+		$(srcdir)/Main/PlayerPersonalRecord.cs	\
 		$(srcdir)/Main/Preferences.cs		\
+		$(srcdir)/Main/Score.cs			\
 		$(srcdir)/Main/UpdateUIStateEventArgs.cs \
 		$(srcdir)/Main/Verbal/Analogies.cs 	\
 		$(srcdir)/Main/Verbal/AnalogiesFactory.cs	\

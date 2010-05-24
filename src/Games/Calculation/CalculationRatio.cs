@@ -34,8 +34,8 @@ namespace gbrainy.Games.Calculation
 			get {return Catalog.GetString ("Ratio");}
 		}
 
-		public override Types Type {
-			get { return Game.Types.MathTrainer;}
+		public override GameTypes Type {
+			get { return GameTypes.MathTrainer;}
 		}
 
 		public override string Question {
@@ -46,18 +46,27 @@ namespace gbrainy.Games.Calculation
 			}
 		}
 
-		public override string Answer {
+		public override string Rationale {
 			get {
-				string answer = base.Answer + " ";
-
-				answer += String.Format (Catalog.GetString ("The second number is calculated by multiplying the first by {0} and dividing it by {1}."),
+				return String.Format (Catalog.GetString ("The second number is calculated by multiplying the first by {0} and dividing it by {1}."),
 					ratio_a, ratio_b);
-				return answer;
 			}
 		}
 
 		public override string Tip {
 			get { return Catalog.GetString ("A ratio specifies a proportion between two numbers. A ratio a:b means that for every 'a' parts you have 'b' parts.");}
+		}
+
+		public override AnswerCheckAttributes CheckAttributes {
+			get { return AnswerCheckAttributes.Trim | AnswerCheckAttributes.MatchAll; }
+		}
+
+		public override string AnswerCheckExpression {
+			get { return "[0-9]+"; }
+		}
+
+		public override string AnswerValue {
+			get { return String.Format (Catalog.GetString ("{0} and {1}"), number_a, number_b); }
 		}
 
 		public override void Initialize ()
@@ -86,7 +95,7 @@ namespace gbrainy.Games.Calculation
 			ratio_b = 3 + random.Next (random_max);
 			number_b = number_a / ratio_a * ratio_b;
 
-			right_answer = String.Format (Catalog.GetString ("{0} and {1}"), number_a, number_b);
+			right_answer = String.Format ("{0} | {1}", number_a, number_b);
 		}
 
 		public override void Draw (CairoContextEx gr, int area_width, int area_height, bool rtl)
@@ -102,38 +111,6 @@ namespace gbrainy.Games.Calculation
 		
 			gr.MoveTo (x, DrawAreaY + 0.44);
 			gr.ShowPangoText (String.Format (Catalog.GetString ("have a ratio of {0}:{1}"), ratio_a, ratio_b));
-		}
-
-		public override bool CheckAnswer (string answer)
-		{	
-			string num_a = string.Empty;
-			string num_b = string.Empty;
-			bool first = true;
-		
-			for (int c = 0; c < answer.Length; c++)
-			{
-				if (answer[c] < '0' || answer[c] > '9') {
-					first = false;
-					continue;
-				}
-			
-				if (first == true)
-					num_a += answer[c];
-				else
-					num_b += answer[c];
-			}
-
-			try {
-				if (Int32.Parse (num_a) == number_a && Int32.Parse (num_b) == number_b ||
-					Int32.Parse (num_b) == number_a && Int32.Parse (num_a) == number_b)
-					return true;
-			}
-
-			catch (FormatException) {
-				return false;
-			}
-	
-			return false;
 		}
 	}
 }

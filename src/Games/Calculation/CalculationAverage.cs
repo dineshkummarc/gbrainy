@@ -40,8 +40,8 @@ namespace gbrainy.Games.Calculation
 			get {return Catalog.GetString ("Average");}
 		}
 
-		public override Types Type {
-			get { return Game.Types.MathTrainer;}
+		public override GameTypes Type {
+			get { return GameTypes.MathTrainer;}
 		}
 
 		public override string Question {
@@ -62,13 +62,10 @@ namespace gbrainy.Games.Calculation
 			get { return Catalog.GetString ("The average of a list of numbers is the sum of all of the numbers divided by the number of items in the list.");}
 		}
 
-		public override string Answer {
+		public override string Rationale {
 			get { 
-				string answer = base.Answer + " ";
-
-				answer += String.Format (Catalog.GetString ("The result of the operation is {0:##0.###}."), 
-					correct);
-				return answer;
+				return String.Format (Catalog.GetString ("The result of the operation is {0:##0.###}."), 
+					correct);				
 			}
 		}
 

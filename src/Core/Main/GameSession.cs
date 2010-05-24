@@ -41,16 +41,6 @@ namespace gbrainy.Core.Main
 			AllGames		= MemoryTrainers | CalculationTrainers | LogicPuzzles | VerbalAnalogies
 		}
 
-		private enum ScoresType
-		{
-			None = 0,
-			LogicPuzzles,
-			MemoryTrainers,
-			CalculationTrainers,
-			VerbalAnalogies,
-			Last			
-		}
-
 		public enum SessionStatus
 		{
 			NotPlaying,
@@ -59,30 +49,19 @@ namespace gbrainy.Core.Main
 			Finished,
 		}
 
-		// Data kept for every game type in raw data (processed with a formula after)
-		public class Statistics
-		{
-			public int Played { get; set; }
-			public int Won { get; set; }
-			public int Scored { get; set; }
-		}
-
 		private TimeSpan game_time;
-		private int games_played;
-		private int games_won;
 		private Game current_game;
 		private GameManager game_manager;
 		private System.Timers.Timer timer;
 		private bool paused;
 		private string current_time;
 		private TimeSpan one_sec = TimeSpan.FromSeconds (1);
-		private int total_score;
 		private SessionStatus status;
 		private ViewsControler controler;
 		private ISynchronizeInvoke synchronize;
-		private PlayerHistory history;
-		private Statistics [] statistics;
+		private PlayerHistory player_history;
 		private int id;
+		private GameSessionHistoryExtended history;
 
 		public event EventHandler DrawRequest;
 		public event EventHandler <UpdateUIStateEventArgs> UpdateUIElement;
@@ -97,27 +76,27 @@ namespace gbrainy.Core.Main
 			timer.Elapsed += TimerUpdater;
 			timer.Interval = (1 * 1000); // 1 second
 
-			statistics = new Statistics [(int) ScoresType.Last];
-
-			for (int i = 0; i < (int) ScoresType.Last; i++)
-				statistics [i] = new Statistics ();
-
 			controler = new ViewsControler (this);
 			Status = SessionStatus.NotPlaying;
-			history = new PlayerHistory ();
+			player_history = new PlayerHistory ();
+			history = new GameSessionHistoryExtended ();
 		}
 
 		public int ID {
 			get {return id;}
 		}
 
-		public Game.Types AvailableGames {
+		public GameSessionHistoryExtended History {
+			get {return history;}
+		}
+
+		public GameTypes AvailableGames {
 			get { return game_manager.AvailableGames; }
 		}
 
 		public PlayerHistory PlayerHistory { 
-			set { history = value; }
-			get { return history; }
+			set { player_history = value; }
+			get { return player_history; }
 		}
 
 		public ISynchronizeInvoke SynchronizingObject { 
@@ -138,16 +117,6 @@ namespace gbrainy.Core.Main
 		public TimeSpan GameTime {
 			get {return game_time; }
 			set {game_time = value; }
-		}
-
-		public int GamesPlayed {
-			get {return games_played; }
-			set { games_played = value;}
-		}
-		
-		public int GamesWon {
-			get {return games_won; }
-			set {games_won = value; }
 		}
 
 		public bool Paused {
@@ -183,46 +152,6 @@ namespace gbrainy.Core.Main
 			get {return  game_manager;}
 		}
 
-		public int TotalScore {
-			get {return total_score;}
-		}
-
-		public int LogicScore {
-			get {
-				if (statistics [(int) ScoresType.LogicPuzzles].Played == 0)
-					return -1;
-
-				return ScoreFormula (statistics [(int) ScoresType.LogicPuzzles]);
-			}
-		}
-
-		public int MemoryScore {
-			get {
-				if (statistics [(int) ScoresType.MemoryTrainers].Played == 0)
-					return -1;
-	
-				return ScoreFormula (statistics [(int) ScoresType.MemoryTrainers]);
-			}
-		}
-
-		public int MathScore {
-			get {
-				if (statistics [(int) ScoresType.CalculationTrainers].Played == 0)
-					return -1;
-
-				return ScoreFormula (statistics [(int) ScoresType.CalculationTrainers]);
-			}
-		}
-
-		public int VerbalScore {
-			get {	
-				if (statistics [(int) ScoresType.VerbalAnalogies].Played == 0)
-					return -1;
-	
-				return ScoreFormula (statistics [(int) ScoresType.VerbalAnalogies]);
-			}
-		}
-
 		public string TimePlayed {
 			get {
 				return (current_time == null) ? TimeSpanToStr (TimeSpan.FromSeconds (0)) : current_time;
@@ -233,7 +162,7 @@ namespace gbrainy.Core.Main
 			get {
 				TimeSpan average;
 
-				average = (games_played > 0) ? TimeSpan.FromSeconds (game_time.TotalSeconds / games_played) : game_time;
+				average = (history.GamesPlayed > 0) ? TimeSpan.FromSeconds (game_time.TotalSeconds / history.GamesPlayed) : game_time;
 				return TimeSpanToStr (average);
 			}
 		}
@@ -244,7 +173,7 @@ namespace gbrainy.Core.Main
 					return string.Empty;
 
 				String text;
-				text = String.Format (Catalog.GetString ("Games played: {0} ({1}% score)"),games_played, total_score);
+				text = String.Format (Catalog.GetString ("Games played: {0} ({1}% score)"), history.GamesPlayed, history.TotalScore);
 				text += String.Format (Catalog.GetString (" - Time: {0}"), current_time);
 
 				if (CurrentGame != null)
@@ -259,14 +188,14 @@ namespace gbrainy.Core.Main
 			get {
 				string s;
 
-				if (GamesPlayed >= 10) {
-					if (TotalScore >= 70)
+				if (history.GamesPlayed >= 10) {
+					if (history.TotalScore >= 70)
 						s = String.Format (Catalog.GetString ("Outstanding results"));
-					else if (TotalScore >= 50)
+					else if (history.TotalScore >= 50)
 						s = String.Format (Catalog.GetString ("Excellent results"));
-					else if (TotalScore >= 30)
+					else if (history.TotalScore >= 30)
 						s = String.Format (Catalog.GetString ("Good results"));
-					else if (TotalScore >= 20)
+					else if (history.TotalScore >= 20)
 						s = String.Format (Catalog.GetString ("Poor results"));
 					else s = String.Format (Catalog.GetString ("Disappointing results"));
 				} else
@@ -276,28 +205,27 @@ namespace gbrainy.Core.Main
 			}
 		}
 	
-		public void NewSession ()
+		public void New ()
 		{
+			if (Type == Types.None)
+				throw new InvalidOperationException ("You have to setup the GameSession type");
+
 			id++;
 			if (Status != SessionStatus.NotPlaying)
-				EndSession ();
+				End ();
 
 			current_time = TimeSpanToStr (game_time);
 
-			for (int i = 0; i < (int) ScoresType.Last; i++)
-				statistics [i] = new Statistics ();
-
-			total_score = 0;
-			games_played = 0;
-			games_won = 0;
+			history.Clear ();
 			game_time = TimeSpan.Zero;
 			timer.SynchronizingObject = SynchronizingObject;
 			EnableTimer = true;
 		}
 
-		public void EndSession ()
+		public void End ()
 		{
-			history.SaveGameSession (this);
+			// Making a deep copy of GameSessionHistory type (base class) for serialization
+			player_history.SaveGameSession (history.Copy ());
 
 			if (CurrentGame != null)
 				CurrentGame.Finish ();
@@ -315,7 +243,7 @@ namespace gbrainy.Core.Main
 			if (CurrentGame != null)
 				CurrentGame.Finish ();
 
-			games_played++;
+			history.GamesPlayed++;
 			CurrentGame = game_manager.GetPuzzle ();
 			CurrentGame.SynchronizingObject = SynchronizingObject;
 			CurrentGame.DrawRequest += GameDrawRequest;
@@ -340,122 +268,18 @@ namespace gbrainy.Core.Main
 			paused = false;
 		}
 
-		/*
-			How the game session is scored
-
-			* Every game has a scoring algorithm that scores the player performance within the game.
-		   	  This takes into account time used and tips (result is from 0 to 10)
-			* The results are added to the games and scores arrays where we store the results for
-			  the different game types (verbal, logic, etc)
-			* We apply a ScoreFormula function that balances the total result with the number of
-	  		  games played (is not the same 100% games won playing 2 than 10 games) and the difficulty
-			
-			The final result is a number from 0 to 100
-		*/
-
 		public bool ScoreGame (string answer)
 		{
-			int score;
-			bool won;
-			int components = 0;
+			int game_score;
 
-			if (CurrentGame == null ||Status == SessionStatus.Answered)
+			if (CurrentGame == null || Status == SessionStatus.Answered)
 				return false;
 
-			score = CurrentGame.Score (answer);
-			if (score > 0) {
-				GamesWon++;
-				won = true;
-			} else
-				won = false;
-
-			switch (CurrentGame.Type) {
-			case Game.Types.LogicPuzzle:
-				statistics [(int) ScoresType.LogicPuzzles].Scored += score;
-				statistics [(int) ScoresType.LogicPuzzles].Played++;
-				if (won) statistics [(int) ScoresType.LogicPuzzles].Won++;
-				break;
-			case Game.Types.MemoryTrainer:
-				statistics [(int) ScoresType.MemoryTrainers].Scored += score;
-				statistics [(int) ScoresType.MemoryTrainers].Played++;
-				if (won) statistics [(int) ScoresType.MemoryTrainers].Won++;
-				break;
-			case Game.Types.MathTrainer:
-				statistics [(int) ScoresType.CalculationTrainers].Scored += score;
-				statistics [(int) ScoresType.CalculationTrainers].Played++;
-				if (won) statistics [(int) ScoresType.CalculationTrainers].Won++;
-				break;
-			case Game.Types.VerbalAnalogy:
-				statistics [(int) ScoresType.VerbalAnalogies].Scored += score;
-				statistics [(int) ScoresType.VerbalAnalogies].Played++;
-				if (won) statistics [(int) ScoresType.VerbalAnalogies].Won++;
-				break;
-			default:
-				break;
-			}
-
-			total_score = 0;
-
-			// Updates total score taking only into account played game types
-			if (LogicScore >= 0) {
-				total_score += LogicScore;
-				components++;
-			}
-
-			if (MemoryScore >= 0) {
-				total_score += MemoryScore;
-				components++;
-			}
-
-			if (MathScore >= 0) {
-				total_score += MathScore;
-				components++;
-			}
-
-			if (VerbalScore >= 0) {
-				total_score += VerbalScore;
-				components++;
-			}
-
-			total_score = total_score / components;
+			game_score = CurrentGame.Score (answer);
+			history.UpdateScore (CurrentGame.Type, Difficulty, game_score);
 
 			Status = SessionStatus.Answered;
-			return won;
-		}
-
-		//
-		// Applies scoring formula to the session
-		//
-		int ScoreFormula (Statistics stats)
-		{
-			int logbase;
-			double score, factor;
-
-			switch (Difficulty) {
-			case Game.Difficulty.Easy:
-				logbase = 10;
-				break;
-			case Game.Difficulty.Medium:
-				logbase = 20;
-				break;
-			case Game.Difficulty.Master:
-				logbase = 30;
-				break;
-			default:
-				throw new InvalidOperationException ("Invalid switch value");
-			}
-
-			// Simple percentage of games won vs played
-			score = stats.Scored > 0 ? stats.Scored / stats.Played * 10 : 0;
-
-			// Puts score of the game in prespective for the whole game
-			factor = Math.Log (stats.Won + 2, logbase); // +2 to avoid log 0
-
-			score = score * factor;
-
-			if (score > 100) score = 100;
-
-			return (int) score;
+			return (game_score > 0 ? true : false);
 		}
 
 		private void TimerUpdater (object source, ElapsedEventArgs e)

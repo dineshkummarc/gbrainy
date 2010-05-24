@@ -48,23 +48,18 @@ namespace gbrainy.Games.Logic
 			get { return Catalog.GetString ("The numbers are related arithmetically.");}
 		}
 
-		public override string Answer {
-			get { 
-				string answer = base.Answer + " ";
-
+		public override string Rationale {
+			get {
 				switch (formula) {
 				case 0:
-					answer += String.Format (Catalog.GetString ("Every group of {0} numbers sums exactly {1}."), group_size, sum_value);
-					break;
+					return String.Format (Catalog.GetString ("Every group of {0} numbers sums exactly {1}."), group_size, sum_value);
 				case 1:
-					answer += Catalog.GetString ("Divide the sequence in groups of three numbers. Every third number is calculated by multiplying by the two previous ones.");
-					break;
-
+					return Catalog.GetString ("Divide the sequence in groups of three numbers. Every third number is calculated by multiplying by the two previous ones.");
 				case 2:
-					answer += Catalog.GetString ("Divide the sequence in groups of three numbers. Every third number is calculated by subtracting the second number from the first.");
-					break;
+					return Catalog.GetString ("Divide the sequence in groups of three numbers. Every third number is calculated by subtracting the second number from the first.");
+				default:
+					return String.Empty;
 				}
-				return answer;
 			}
 		}
 

@@ -57,38 +57,53 @@ namespace gbrainy.Core.Main.Verbal
 
 		public override string Answer {
 			get {
-				if (current == null)
-					return string.Empty;
+				string str;
+				if (current == null || current.MultipleAnswers == false)
+					return base.Answer;
 
-				if (current.MultipleAnswers == true) 
-				{
-					string [] items;
-					string str = string.Empty;
-	
-					items = right_answer.Split (AnalogiesFactory.Separator);
+				str = String.Format (Catalog.GetString ("Possible correct answers are: {0}."), AnswerValue);
 
-					for (int i = 0 ; i < items.Length; i++)
-					{
-						str += items [i].Trim ();
-						if (i + 1 < items.Length) {
-							// Translators: this the separator used when concatenating multiple possible answers for verbal analogies
-							// For example: "Possible correct answers are: sleep, rest."
-							str += Catalog.GetString (", ");
-						}
-					}
-					str = String.Format (Catalog.GetString ("Possible correct answers are: {0}."), str);
+				if (String.IsNullOrEmpty (Rationale))
 					return str;
-				}
 
-				if (String.IsNullOrEmpty (current.rationale) == false)
-					return base.Answer + " " + current.rationale;
-
-				return base.Answer;
+				return str += " " + Rationale;
 			}
 		}
 
-		public override Types Type {
-			get { return Game.Types.VerbalAnalogy;}
+		public override string Rationale {
+			get {
+				if (current == null)
+					return string.Empty;
+				
+				return current.rationale;
+			}
+		}
+
+		public override string AnswerValue {
+			get { 
+				if (current == null || current.MultipleAnswers == false)
+					return right_answer;
+
+				string [] items;
+				string str = string.Empty;
+
+				items = right_answer.Split (AnalogiesFactory.Separator);
+
+				for (int i = 0 ; i < items.Length; i++)
+				{
+					str += items [i].Trim ();
+					if (i + 1 < items.Length) {
+						// Translators: this the separator used when concatenating multiple possible answers for verbal analogies
+						// For example: "Possible correct answers are: sleep, rest."
+						str += Catalog.GetString (", ");
+					}
+				}
+				return str;
+			}
+		}
+
+		public override GameTypes Type {
+			get { return GameTypes.VerbalAnalogy;}
 		}
 
 		public abstract ArrayListIndicesRandom Indices {
@@ -197,21 +212,6 @@ namespace gbrainy.Core.Main.Verbal
 			}
 
 			return analogy;
-		}
-
-		public override bool CheckAnswer (string answer)
-		{
-			string [] items = right_answer.Split (AnalogiesFactory.Separator);
-
-			foreach (string ans in items)
-			{
-				string str = ans.Trim ();
-
-				if (String.Compare (str, answer, true) == 0)
-					return true;
-			}
-
-			return base.CheckAnswer (answer);
 		}
 	}
 }

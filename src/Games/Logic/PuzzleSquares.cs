@@ -42,19 +42,16 @@ namespace gbrainy.Games.Logic
 			get { return Catalog.GetString ("A square is a rectangle with sides of equal length. A square can also be built from other squares.");}
 		}
 
-		public override string Answer {
-			get { 
-				string answer = base.Answer + " ";
-
+		public override string Rationale {
+			get {
 				switch (type) {
 				case 0:
-					answer += Catalog.GetString ("There are 16 single squares, 9 squares made by 4 single squares, 4 squares made by 9 single squares and 1 square made by 16 single squares.");
-					break;
+					return Catalog.GetString ("There are 16 single squares, 9 squares made by 4 single squares, 4 squares made by 9 single squares and 1 square made by 16 single squares.");
 				case 1:
-					answer += Catalog.GetString ("There are 9 single squares, 4 squares made by 4 single squares and 1 square made by 9 single squares.");
-					break;
+					return Catalog.GetString ("There are 9 single squares, 4 squares made by 4 single squares and 1 square made by 9 single squares.");
+				default:
+					return string.Empty;
 				}
-				return answer;
 			}
 		}
 

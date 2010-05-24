@@ -147,21 +147,21 @@ namespace gbrainy.Core.Main
 #endif
 		}
 	
-		public Game.Types AvailableGames {
+		public GameTypes AvailableGames {
 			get {
-				Game.Types types = Game.Types.None;
+				GameTypes types = GameTypes.None;
 
 				if (LogicPuzzles.Count > 0)
-					types |= Game.Types.LogicPuzzle;
+					types |= GameTypes.LogicPuzzle;
 
 				if (CalculationTrainers.Count > 0)
-					types |= Game.Types.MathTrainer;
+					types |= GameTypes.MathTrainer;
 
 				if (MemoryTrainers.Count > 0)
-					types |= Game.Types.MemoryTrainer;
+					types |= GameTypes.MemoryTrainer;
 
 				if (analogies_manager.AvailableTypes.Length > 0)
-					types |= Game.Types.VerbalAnalogy;
+					types |= GameTypes.VerbalAnalogy;
 			
 				return types;
 			}

@@ -56,10 +56,10 @@ namespace gbrainy.Clients.Classical
 			drawing_area.Visible = true;
 
 	 		checkbutton_total.Label = Catalog.GetString ("Total");
-	 		checkbutton_logic.Label = Game.GetGameTypeDescription (Game.Types.LogicPuzzle);
-	 		checkbutton_calculation.Label = Game.GetGameTypeDescription (Game.Types.MathTrainer);
-	 		checkbutton_memory.Label = Game.GetGameTypeDescription (Game.Types.MemoryTrainer);
-	 		checkbutton_verbal.Label = Game.GetGameTypeDescription (Game.Types.VerbalAnalogy);
+	 		checkbutton_logic.Label = GameTypesDescription.Get (GameTypes.LogicPuzzle);
+	 		checkbutton_calculation.Label = GameTypesDescription.Get (GameTypes.MathTrainer);
+	 		checkbutton_memory.Label = GameTypesDescription.Get (GameTypes.MemoryTrainer);
+	 		checkbutton_verbal.Label = GameTypesDescription.Get (GameTypes.VerbalAnalogy);
 
 	 		checkbutton_total.Active = checkbutton_memory.Active = checkbutton_logic.Active = checkbutton_calculation.Active = checkbutton_verbal.Active = true;
 		}

@@ -45,22 +45,18 @@ namespace gbrainy.Games.Logic
 			get { return Catalog.GetString ("Every number in the sequence is related to the previous one.");}
 		}
 
-		public override string Answer {
+		public override string Rationale {
 			get { 
-				string answer = base.Answer + " ";
-
 				switch (formula) {
 				case 0:
-					answer += Catalog.GetString ("Every number in the sequence is the result of subtracting 1 from the previous number and multiplying it by 2.");
-					break;
+					return Catalog.GetString ("Every number in the sequence is the result of subtracting 1 from the previous number and multiplying it by 2.");
 				case 1:
-					answer += Catalog.GetString ("Every number in the sequence is the result of adding 1 to the previous number and multiplying it by 3.");
-					break;
+					return Catalog.GetString ("Every number in the sequence is the result of adding 1 to the previous number and multiplying it by 3.");
 				case 2:
-					answer += Catalog.GetString ("Every number in the sequence is the result of subtracting 2 from the previous number and multiplying it by -2.");
-					break;
+					return Catalog.GetString ("Every number in the sequence is the result of subtracting 2 from the previous number and multiplying it by -2.");
+				default:
+					return string.Empty;
 				}
-				return answer;
 			}
 		}
 

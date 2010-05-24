@@ -63,6 +63,18 @@ namespace gbrainy.Games.Logic
 			get { return Catalog.GetString ("The resulting triangle is isosceles.");}
 		}
 
+		public override AnswerCheckAttributes CheckAttributes {
+			get { return AnswerCheckAttributes.Trim | AnswerCheckAttributes.IgnoreCase | AnswerCheckAttributes.MatchAll; }
+		}
+
+		public override string AnswerCheckExpression {
+			get { return GetPossibleAnswersExpression ();}
+		}
+
+		public override string AnswerValue {
+			get { return answers[0] + answers[1] + answers[2]; }
+		}
+
 		public override void Initialize ()
 		{
 			switch (CurrentDifficulty) {
@@ -96,7 +108,7 @@ namespace gbrainy.Games.Logic
 				}
 			}
 
-			right_answer = answers[0] + answers[1] + answers[2];
+			right_answer = answers[0] + " | " + answers[1] + " | " + answers[2];
 		}
 
 		private static void DrawFigure (CairoContextEx gr, double x, double y, Figures figure)
@@ -208,26 +220,7 @@ namespace gbrainy.Games.Logic
 			degrees = radian * (-135);
 			gr.MoveTo (x, y);
 			gr.LineTo (x + figure_size * Math.Cos (degrees), y + figure_size * Math.Sin (degrees));
-			gr.Stroke ();	
-		}
-
-		public override bool CheckAnswer (string a)
-		{	
-			int matches = 0;
-
-			a = TrimAnswer (a.ToUpper ());
-
-			for (int i = 0; i < answer_num; i++) {
-				answers [i] = answers [i].ToUpper ();
-	
-				if (a.Contains (answers[i]))
-					matches++;
-			}
-
-			if (matches == answer_num)
-				return true;
-
-			return false;
+			gr.Stroke ();
 		}
 	}
 }

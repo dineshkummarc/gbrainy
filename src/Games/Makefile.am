@@ -45,6 +45,7 @@ CSDISTFILES =  \
 		$(srcdir)/Logic/PuzzleSquareSheets.cs			\
 		$(srcdir)/Logic/PuzzleTetris.cs				\
 		$(srcdir)/Logic/PuzzleTimeNow.cs				\
+		$(srcdir)/Logic/PuzzleTrains.cs				\
 		$(srcdir)/Logic/PuzzleTriangles.cs			\
 		$(srcdir)/Logic/PuzzleTrianglesWithNumbers.cs		\
 		$(srcdir)/Logic/PuzzlePredicateLogic.cs			\
@@ -75,7 +76,10 @@ CSFILES = $(CSDISTFILES)	\
 RES = \
 $(top_srcdir)/data/game-graphics/present.svg  	\
 $(top_srcdir)/data/game-graphics/handshake.svg	\
-$(top_srcdir)/data/game-graphics/dice.svg
+$(top_srcdir)/data/game-graphics/dice.svg	\
+$(top_srcdir)/data/game-graphics/train_right.svg \
+$(top_srcdir)/data/game-graphics/train_left.svg
+
 
 REFS =  \
 	-r:System \

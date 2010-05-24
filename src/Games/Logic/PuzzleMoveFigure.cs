@@ -39,19 +39,16 @@ namespace gbrainy.Games.Logic
 			get {return Catalog.GetString ("What is the minimum number of circles to be moved in order to convert the left figure into the right figure?");} 
 		}
 	
-		public override string Answer {
-			get { 
-				string answer = base.Answer + " ";
-
+		public override string Rationale {
+			get {
 				switch (type) {
 				case 0:
-					answer += Catalog.GetString ("Move the circle from the first line to the second and move two circles from the fourth line to the second and the fifth lines.");
-					break;
+					return Catalog.GetString ("Move the circle from the first line to the second and move two circles from the fourth line to the second and the fifth lines.");
 				case 1:
-					answer += Catalog.GetString ("Move the first line to the seventh; move the two circles of the second line to third; and move first and last circles of the fifth line to the sixth.");
-					break;
+					return Catalog.GetString ("Move the first line to the seventh; move the two circles of the second line to third; and move first and last circles of the fifth line to the sixth.");
+				default:	
+					return string.Empty;
 				}
-				return answer;
 			}
 		}
 

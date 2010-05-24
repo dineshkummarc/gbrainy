@@ -47,13 +47,14 @@ namespace gbrainy.Games.Logic
 				after, position_a, position_b, position_b));}
 		}
 
-
-		public override string Answer {
+		public override string Rationale {
 			get {
-				string answer = base.Answer + " ";
-				answer += String.Format (Catalog.GetString ("You have to calculate the hour from which the distance is the same for the given times, and then add the {0} hours to convert it to present time."), after);
-				return answer;
+				return String.Format (Catalog.GetString ("You have to calculate the hour from which the distance is the same for the given times, and then add the {0} hours to convert it to present time."), after);
 			}
+		}
+
+		public override AnswerCheckAttributes CheckAttributes {
+			get { return AnswerCheckAttributes.Trim | AnswerCheckAttributes.IgnoreCase | AnswerCheckAttributes.IgnoreSpaces; }
 		}
 
 		public override void Initialize ()
@@ -84,29 +85,6 @@ namespace gbrainy.Games.Logic
 				0, 0 /* No hands */);
 
 			gr.DrawTextCentered (0.5, DrawAreaY + 0.3 + figure_size, Catalog.GetString ("Sample clock"));
-		}
-
-		public override bool CheckAnswer (string answer)
-		{
-			string ans = string.Empty;
-			string user = string.Empty;
-
-			if (base.CheckAnswer (answer))
-				return true;
-
-			// Compare ignoring spaces then '1PM' is as valid as '1 PM'
-			for (int c = 0; c < answer.Length; c++)
-			{
-				if (Char.IsWhiteSpace (answer[c]) == false)
-					ans += answer[c];
-			}
-
-			for (int c = 0; c < right_answer.Length; c++)
-			{
-				if (Char.IsWhiteSpace (right_answer[c]) == false)
-					user += right_answer[c];
-			}
-			return (String.Compare (user, ans, true) == 0);
 		}
 	}
 }

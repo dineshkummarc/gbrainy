@@ -42,15 +42,11 @@ namespace gbrainy.Games.Logic
 			get { return Catalog.GetString ("A triangle can be embedded inside another triangle.");}
 		}
 
-		public override string Answer {
-			get { 
-				string answer = base.Answer + " ";
-
-				answer += String.Format (Catalog.GetString ("The triangles are made by connecting the following points: {0}"),
+		public override string Rationale {
+			get {
+				return String.Format (Catalog.GetString ("The triangles are made by connecting the following points: {0}"),
 					(type == 0) ? "bdc, dcf, dfg, abd, ade, edg, acg, abg, bcg, afg, ecg, acd, acf, ace, adg, cdg." : 
 					"dcf, ade, acg, afg, ecg, acd, acf, ace.");
-
-				return answer;
 			}
 		}
 

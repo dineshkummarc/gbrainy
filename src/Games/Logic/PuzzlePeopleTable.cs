@@ -51,11 +51,9 @@ namespace gbrainy.Games.Logic
 			get {return String.Format (Catalog.GetString ("A group of people are sitting at round table, evenly spaced out. How many people are there if the {0} person is across from the {1}?"), ques1, ques2);} 
 		}
 
-		public override string Answer {
-			get { 
-				string answer = base.Answer + " ";
-				answer += Catalog.GetString ("Subtracting the two positions you find out how many people are seated half way around the table. Doubling this number leaves you with the total amount of people.");
-				return answer;
+		public override string Rationale {
+			get {
+				return Catalog.GetString ("Subtracting the two positions you find out how many people are seated half way around the table. Doubling this number leaves you with the total amount of people.");
 			}
 		}
 

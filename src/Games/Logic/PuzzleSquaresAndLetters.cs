@@ -41,12 +41,9 @@ namespace gbrainy.Games.Logic
 			get {return Catalog.GetString ("The letters around the squares follow a pattern. Which letter should replace the question mark in the last square?");} 
 		}
 
-		public override string Answer {
-			get { 
-				string answer = base.Answer + " ";
-				answer += String.Format (Catalog.GetString ("Every letter is calculated by taking the alphabetical position of the previous character and adding {0} to it in order to get the position of the new letter."), step);
-
-				return answer;
+		public override string Rationale {
+			get {
+				return String.Format (Catalog.GetString ("Every letter is calculated by taking the alphabetical position of the previous character and adding {0} to it in order to get the position of the new letter."), step);
 			}
 		}
 

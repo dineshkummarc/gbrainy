@@ -40,11 +40,9 @@ namespace gbrainy.Games.Logic
 			get { return Catalog.GetString ("The sheets should overlap.");}
 		}
 
-		public override string Answer {
-			get { 
-				string answer = base.Answer + " ";
-				answer += Catalog.GetString ("The numbers in the figure reflect the different areas covered by each one of the sheets.");
-				return answer;
+		public override string Rationale {
+			get {
+				return Catalog.GetString ("The numbers in the figure reflect the different areas covered by each one of the sheets.");
 			}
 		}
 

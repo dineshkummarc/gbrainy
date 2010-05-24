@@ -88,34 +88,34 @@ namespace gbrainy.Core.Views
 			gr.Stroke ();
 
 			x = x + space_x;
-			DrawBar (gr, x, y + area_h, bar_w, bar_h, session.TotalScore);
+			DrawBar (gr, x, y + area_h, bar_w, bar_h, session.History.TotalScore);
 			gr.DrawTextCentered (x + bar_w / 2, y + area_h + 0.03, Catalog.GetString ("Total"));
 
 			x = x + space_x * 2;
 
-			if (session.LogicScore >= 0)
-				DrawBar (gr, x, y + area_h, bar_w, bar_h, session.LogicScore);
+			if (session.History.LogicPlayed > 0)
+				DrawBar (gr, x, y + area_h, bar_w, bar_h, session.History.LogicScore);
 
 			gr.DrawTextCentered (x + bar_w / 2, y + area_h + 0.03, 	Catalog.GetString ("Logic")); 
 
 			x = x + space_x * 2;
 
-			if (session.MathScore >= 0)
-				DrawBar (gr, x, y + area_h, bar_w, bar_h, session.MathScore);
+			if (session.History.MathPlayed > 0)
+				DrawBar (gr, x, y + area_h, bar_w, bar_h, session.History.MathScore);
 
 			gr.DrawTextCentered (x + bar_w / 2, y + area_h + 0.03, Catalog.GetString ("Calculation"));
 
 			x = x + space_x * 2;
 
-			if (session.MemoryScore >= 0)
-				DrawBar (gr, x, y + area_h, bar_w, bar_h, session.MemoryScore);
+			if (session.History.MemoryPlayed > 0)
+				DrawBar (gr, x, y + area_h, bar_w, bar_h, session.History.MemoryScore);
 
 			gr.DrawTextCentered (x + bar_w / 2, y + area_h + 0.03, Catalog.GetString ("Memory"));
 
 			x = x + space_x * 2;
 
-			if (session.VerbalScore >= 0)
-				DrawBar (gr, x, y + area_h, bar_w, bar_h, session.VerbalScore);
+			if (session.History.VerbalPlayed > 0)
+				DrawBar (gr, x, y + area_h, bar_w, bar_h, session.History.VerbalScore);
 
 			gr.DrawTextCentered (x + bar_w / 2, y + area_h + 0.03, Catalog.GetString ("Verbal"));
 		}
@@ -124,7 +124,7 @@ namespace gbrainy.Core.Views
 		{
 			double y = 0.04, x = 0.05;
 			const double space_small = 0.02;
-			List <PlayerHistory.PersonalRecord> records;
+			List <PlayerPersonalRecord> records;
 			string s, tip;
 			double width, height;
 
@@ -143,9 +143,9 @@ namespace gbrainy.Core.Views
 	
 			s = session.Result;
 			if (s == string.Empty)
-				gr.ShowPangoText (String.Format (Catalog.GetString ("Games won: {0} ({1} played)"), session.GamesWon, session.GamesPlayed));
+				gr.ShowPangoText (String.Format (Catalog.GetString ("Games won: {0} ({1} played)"), session.History.GamesWon, session.History.GamesPlayed));
 			else
-				gr.ShowPangoText (String.Format (Catalog.GetString ("{0}. Games won: {1} ({2} played)"), s, session.GamesWon, session.GamesPlayed));
+				gr.ShowPangoText (String.Format (Catalog.GetString ("{0}. Games won: {1} ({2} played)"), s, session.History.GamesWon, session.History.GamesPlayed));
 
 			y += 0.06;
 			gr.MoveTo (x, y);
@@ -197,25 +197,25 @@ namespace gbrainy.Core.Views
 				for (int i = 0; i < records.Count; i++)
 				{
 					switch (records[i].GameType) {
-					case Game.Types.LogicPuzzle:
+					case GameTypes.LogicPuzzle:
 						s = String.Format (Catalog.
 							GetString ("By scoring {0}% in logic puzzle games you have established a new personal record. Your previous record was {1}%."),
 							records[i].NewScore,
 							records[i].PreviousScore);
 						break;
-					case Game.Types.MathTrainer:
+					case GameTypes.MathTrainer:
 						s = String.Format (Catalog.
 							GetString ("By scoring {0}% in calculation games you have established a new personal record. Your previous record was {1}%."),
 							records[i].NewScore,
 							records[i].PreviousScore);
 						break;
-					case Game.Types.MemoryTrainer:
+					case GameTypes.MemoryTrainer:
 						s = String.Format (Catalog.
 							GetString ("By scoring {0}% in memory games you have established a new personal record. Your previous record was {1}%."),
 							records[i].NewScore,
 							records[i].PreviousScore);
 						break;
-					case Game.Types.VerbalAnalogy:
+					case GameTypes.VerbalAnalogy:
 						s = String.Format (Catalog.
 							GetString ("By scoring {0}% in verbal analogies you have established a new personal record. Your previous record was {1}%."),
 							records[i].NewScore,

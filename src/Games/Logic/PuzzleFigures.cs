@@ -48,13 +48,9 @@ namespace gbrainy.Games.Logic
 			get {return Catalog.GetString ("What is the next logical sequence of objects in the last column? See below the convention when giving the answer.");} 
 		}
 
-		public override string Answer {
-			get { 
-				string answer = base.Answer + " ";
-
-				answer += Catalog.GetString ("It is the only combination that you can build with the given elements without repeating them.");
-
-				return answer;
+		public override string Rationale {
+			get {
+				return Catalog.GetString ("It is the only combination that you can build with the given elements without repeating them.");
 			}
 		}
 
@@ -168,12 +164,6 @@ namespace gbrainy.Games.Logic
 			gr.MoveTo (x, y);		
 			gr.ShowPangoText (String.Format (Catalog.GetString ("E.g: {0}{1}{2} (diamond, triangle, circle)"),
 				GetPossibleAnswer (0), GetPossibleAnswer (2), GetPossibleAnswer (1)));
-		}
-
-		public override bool CheckAnswer (string answer)
-		{
-			answer = TrimAnswer (answer);
-			return base.CheckAnswer (answer);
 		}
 	}
 }

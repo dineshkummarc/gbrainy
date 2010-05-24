@@ -28,50 +28,31 @@ namespace gbrainy.Core.Main
 	public class PlayerHistory
 	{
 		string file, config_path;
-		List <GameHistory> games;
+		List <GameSessionHistory> games;
 		int last_game;
-
-		[Serializable]
-		public class GameHistory
-		{
-			public int games_played;
-			public int games_won;
-			public int total_score;
-			public int math_score;
-			public int logic_score;
-			public int memory_score;
-			public int verbal_score;
-		}
-
-		public class PersonalRecord
-		{
-			public Game.Types GameType { get; set; }
-			public int PreviousScore { get; set; }
-			public int NewScore { get; set; }
-
-			public PersonalRecord (Game.Types type, int previous_score, int new_score)
-			{
-				GameType = type;
-				PreviousScore = previous_score;
-				NewScore = new_score;
-			}
-		}
+	
 
 		public PlayerHistory ()
 		{
-			config_path = Environment.GetFolderPath (Environment.SpecialFolder.ApplicationData);
-			config_path = Path.Combine (config_path, Defines.CONFIG_DIR);
-			file = Path.Combine (config_path, "PlayerHistory.xml");
+			ConfigPath = Path.Combine (Environment.GetFolderPath (Environment.SpecialFolder.ApplicationData),
+				 Defines.CONFIG_DIR);
 			last_game = -1;
 		}
 
-		public List <GameHistory> Games {
+		public string ConfigPath {
+			set { 
+				config_path = value;
+				file = Path.Combine (config_path, "PlayerHistory.xml");
+			}
+		}
+
+		public List <GameSessionHistory> Games {
 			get {
 				if (games == null)
 				{
 					Load ();
 					if (games == null) 
-						games = new List <GameHistory> ();
+						games = new List <GameSessionHistory> ();
 				}
 				return games; 
 			}
@@ -83,76 +64,29 @@ namespace gbrainy.Core.Main
 			Save ();
 		}
 
-		public void SaveGameSession (GameSession session)
+		public void SaveGameSession (GameSessionHistory score)
 		{
-			if (session.GamesPlayed < Preferences.GetIntValue (Preferences.MinPlayedGamesKey)) {
+			if (score.GamesPlayed < Preferences.GetIntValue (Preferences.MinPlayedGamesKey)) {
 				last_game = -1;
 				return;
 			}
 
-			GameHistory history = new GameHistory ();
-	
-			history.games_played = session.GamesPlayed;
-			history.games_won = session.GamesWon;
-			history.math_score = session.MathScore;
-			history.logic_score = session.LogicScore;
-			history.memory_score = session.MemoryScore;
-			history.total_score = session.TotalScore;
-			history.verbal_score = session.VerbalScore;
-
 			if (Games.Count >= Preferences.GetIntValue (Preferences.MaxStoredGamesKey))
 				Games.RemoveAt (0);
 
-			Games.Add (history);
+			// Storing a copy to allow the input object to be modified
+			Games.Add (score.Copy ());
 			last_game = Games.Count - 1;
 			Save ();
 		}
 
 		// Check if the last recorded game has been a personal record
-		public List <PersonalRecord> GetLastGameRecords ()
+		public List <PlayerPersonalRecord> GetLastGameRecords ()
 		{
-			List <PersonalRecord> records = new List <PersonalRecord> ();
-			GameHistory higher;
-
-			// We can start to talk about personal records after 5 plays
-			if (last_game == -1 || Games.Count < 5)
-				return records;
-
-			higher = new GameHistory ();
-
-			// Find the higher record for every type of game
-			for (int i = 0; i < last_game; i++)
-			{
-				if (Games[i].logic_score > higher.logic_score) 
-					higher.logic_score = Games[i].logic_score;
-
-				if (Games[i].math_score > higher.math_score) 
-					higher.math_score = Games[i].math_score;
-
-				if (Games[i].memory_score > higher.memory_score) 
-					higher.memory_score = Games[i].memory_score;
-
-				if (Games[i].verbal_score > higher.verbal_score) 
-					higher.verbal_score = Games[i].verbal_score;				
-			}
-			
-			// It is a record?
-			if (Games[last_game].logic_score > higher.logic_score)
-				records.Add (new PersonalRecord (Game.Types.LogicPuzzle, higher.logic_score, Games[last_game].logic_score));
-
-			if (Games[last_game].math_score > higher.math_score)
-				records.Add (new PersonalRecord (Game.Types.MathTrainer, higher.math_score, Games[last_game].math_score));
-
-			if (Games[last_game].memory_score > higher.memory_score)
-				records.Add (new PersonalRecord (Game.Types.MemoryTrainer, higher.memory_score, Games[last_game].memory_score));
-
-			if (Games[last_game].verbal_score > higher.verbal_score)
-				records.Add (new PersonalRecord (Game.Types.VerbalAnalogy, higher.verbal_score, Games[last_game].verbal_score));
-
-			return records;
+			return PlayerPersonalRecord.GetLastGameRecords (games, last_game);
 		}
 
-		private void Save ()
+		public void Save ()
 		{
 			try {
 				if (!Directory.Exists (config_path))
@@ -160,29 +94,29 @@ namespace gbrainy.Core.Main
 
 				using (FileStream str = File.Create (file))
 				{
-					XmlSerializer bf = new XmlSerializer (typeof (List <GameHistory>));
+					XmlSerializer bf = new XmlSerializer (typeof (List <GameSessionHistory>));
 					bf.Serialize (str, Games);
 				}
 			}
 		
-			catch (Exception)
+			catch (Exception e)
 			{
+				Console.WriteLine ("PlayerHistory. Cannot save {0}", e);
 			}
 		}
 
-		private void Load ()
+		public void Load ()
 		{
 			try {
 				using (FileStream str = File.OpenRead (file))
 				{
-					XmlSerializer bf = new XmlSerializer (typeof (List <GameHistory>));
-				    	games = (List <GameHistory>) bf.Deserialize(str);
+					XmlSerializer bf = new XmlSerializer (typeof (List <GameSessionHistory>));
+				    	games = (List <GameSessionHistory>) bf.Deserialize(str);
 				}
 			}
 			catch (Exception)
 			{
 			}
-		}
-	
+		}	
 	}
 }

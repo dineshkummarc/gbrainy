@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2007 Jordi Mas i Hernàndez <jmas@softcatala.org>
+ * Copyright (C) 2007-2010 Jordi Mas i Hernàndez <jmas@softcatala.org>
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License as
@@ -20,6 +20,8 @@
 using System;
 using System.ComponentModel;
 using System.Collections.Generic;
+using System.Text.RegularExpressions;
+using System.Text;
 using Mono.Unix;
 
 using gbrainy.Core.Views;
@@ -30,16 +32,6 @@ namespace gbrainy.Core.Main
 {
 	abstract public class Game : IDrawable, IDrawRequest, IMouseEvent
 	{
-		// See: GetGameTypeDescription
-		public enum Types
-		{	
-			None			= 0,
-			LogicPuzzle		= 2,
-			MemoryTrainer		= 4,
-			MathTrainer		= 8,
-			VerbalAnalogy		= 16,
-		}
-
 		public enum Difficulty
 		{
 			None			= 0,
@@ -47,6 +39,20 @@ namespace gbrainy.Core.Main
 			Medium			= 4,
 			Master			= 8,
 		}
+
+		[Flags]
+		public enum AnswerCheckAttributes
+		{
+			None			= 0,
+			Trim			= 2,
+			IgnoreCase		= 4,
+			IgnoreSpaces		= 8,
+			MatchAll		= 16,
+			MatchAllInOrder		= 32,
+		}
+
+		public const char AnswerSeparator = '|';
+		const int MAX_POSSIBLE_ANSWER = 7;
 
 		public class AnswerEventArgs : EventArgs
 		{
@@ -100,14 +106,34 @@ namespace gbrainy.Core.Main
 				question));
 		}
 
+		// The question text shown to the user
 		public abstract string Question {
 			get;
 		}
 
+		// Builds a text answer for the puzzle
 		public virtual string Answer {
 			get {
-				return String.Format (Catalog.GetString ("The correct answer is {0}."), right_answer);
+				string str;
+		
+				str = String.Format (Catalog.GetString ("The correct answer is {0}."), AnswerValue);
+
+				if (String.IsNullOrEmpty (Rationale))
+					return str;
+
+				return str += " " + Rationale;				
 			}
+		}
+
+		// Text that explains why the right answer is valid
+		public virtual string Rationale {
+			get { return string.Empty; }
+		}
+
+		// Right answer as shown to the user. Usually equals to right_answer, can be different
+		// when the answer contains multiple options (e.g. 1 | 2 shown as 1 and 2).
+		public virtual string AnswerValue {
+			get { return right_answer; }
 		}
 
 		public ISynchronizeInvoke SynchronizingObject { 
@@ -139,6 +165,15 @@ namespace gbrainy.Core.Main
 			}
 		}
 
+		// How to check the answer
+		public virtual AnswerCheckAttributes CheckAttributes {
+			get { return AnswerCheckAttributes.Trim | AnswerCheckAttributes.IgnoreCase; }
+		}
+
+		public virtual string AnswerCheckExpression {
+			get { return ".+"; }
+		}
+
 		public abstract string Name {
 			get;
 		}
@@ -162,8 +197,8 @@ namespace gbrainy.Core.Main
 			get { return true;}
 		}
 
-		public virtual Types Type {
-			get { return Types.LogicPuzzle;}
+		public virtual GameTypes Type {
+			get { return GameTypes.LogicPuzzle;}
 		}
 
 		public bool DrawAnswer {
@@ -211,31 +246,8 @@ namespace gbrainy.Core.Main
 
 		// Expected time in seconds that a player is expected to complete this game
 		public int ExpectedTime {
-			get {
-				double factor;
-
-				switch (CurrentDifficulty) {
-				case Difficulty.Easy:
-					factor = 1.3;
-					break;
-				case Difficulty.Master:
-					factor = 0.7;
-					break;		
-				case Difficulty.Medium:
-				default:
-					factor = 1.0;
-					break;		
-				}
-				
-				switch (Type) {
-				case Types.MemoryTrainer:
-					return (int) (30 * factor);
-				case Types.MathTrainer:
-					return (int) (60 * factor);
-				case Types.VerbalAnalogy:
-					return (int) (30 * factor);
-				}
-				return (int) (120 * factor); // Default for all games (logic)
+			get { 
+				return Main.Score.GameExpectedTime (Type, CurrentDifficulty); 
 			}
 		}
 
@@ -248,28 +260,7 @@ namespace gbrainy.Core.Main
 		//
 		public virtual int Score (string answer)
 		{
-			double score;
-			double seconds = GameTime.TotalSeconds;
-
-			if (CheckAnswer (answer) == false)
-				return 0;
-
-			score = 10;
-	
-			// Time
-			if (seconds > ExpectedTime * 3) {
-				score = score * 0.6;
-			}
-			else if (seconds > ExpectedTime * 2) {
-				score = score * 0.7;
-			} else if (seconds > ExpectedTime) {
-				score = score * 0.8;
-			}
-
-			if (tip_used)
-				score = score * 0.8;
-
-			return (int) score;
+			return Main.Score.GameScore (CheckAnswer (answer), GameTime.TotalSeconds, ExpectedTime, tip_used);
 		}
 
 		public void AddWidget (Toolkit.Container container)
@@ -304,6 +295,17 @@ namespace gbrainy.Core.Main
 		public abstract void Initialize ();
 		public virtual void Finish () {}
 
+		protected string GetPossibleAnswersExpression ()
+		{
+			StringBuilder str = new StringBuilder ();
+			str.Append ("[");
+			for (int i = 0; i < MAX_POSSIBLE_ANSWER; i++)
+				str.Append (GetPossibleAnswer (i));
+
+			str.Append ("]");
+			return str.ToString ();
+		}
+
 		static public string GetPossibleAnswer (int answer)
 		{
 			switch (answer) {
@@ -330,7 +332,7 @@ namespace gbrainy.Core.Main
 			case 7: // Eighth possible answer for a series
 				return Catalog.GetString ("H");
 			default:
-				return string.Empty;
+				throw new ArgumentOutOfRangeException ("Do not have an option for this answer");
 			}
 		}
 
@@ -362,47 +364,96 @@ namespace gbrainy.Core.Main
 
 		public virtual bool CheckAnswer (string answer)
 		{
-			return (String.Compare (answer, right_answer, true) == 0);
-		}
+			Regex regex;
+			Match match;
+			bool ignore_case, ignore_spaces;
 
-		// When asking for a list of figures people trends to use spaces or commas
-		// to separate the elements
-		static public string TrimAnswer (string answer)
-		{
-			string rslt = string.Empty;
+			if (String.IsNullOrEmpty (answer))
+				return false;
 
-			for (int i = 0; i < answer.Length; i++)
+			ignore_case = (CheckAttributes & AnswerCheckAttributes.IgnoreCase) == AnswerCheckAttributes.IgnoreCase;
+			ignore_spaces = (CheckAttributes & AnswerCheckAttributes.IgnoreSpaces) == AnswerCheckAttributes.IgnoreSpaces;
+
+			if (ignore_case == true) // This necessary to make pattern selection (e.g. [a-z]) case insensitive
+				regex = new Regex (AnswerCheckExpression, RegexOptions.IgnoreCase);
+			else
+				regex = new Regex (AnswerCheckExpression);
+
+			string [] right_answers = right_answer.Split (AnswerSeparator);
+
+			for (int i = 0; i < right_answers.Length; i++)
 			{
-				if (answer[i]==' ' || answer[i] == ',')
-					continue;
+				right_answers [i] = right_answers[i].Trim ();
 
-				rslt += answer[i];
+				if (ignore_spaces)
+					right_answers [i] = RemoveWhiteSpace (right_answers [i]);
 			}
-			return rslt;
+
+			if ((CheckAttributes & AnswerCheckAttributes.Trim) == AnswerCheckAttributes.Trim)
+				answer = answer.Trim ();
+
+			if (ignore_spaces)
+				answer = RemoveWhiteSpace (answer);
+
+			// All strings from the list of expected answers (two numbers: 22 | 44) must present in the answer
+			if ((CheckAttributes & AnswerCheckAttributes.MatchAll) == AnswerCheckAttributes.MatchAll ||
+				(CheckAttributes & AnswerCheckAttributes.MatchAllInOrder) == AnswerCheckAttributes.MatchAllInOrder)
+			{
+				int pos = 0;
+				match = regex.Match (answer);
+				while (String.IsNullOrEmpty (match.Value) == false)
+				{
+					if ((CheckAttributes & AnswerCheckAttributes.MatchAll) == AnswerCheckAttributes.MatchAll)
+					{
+						for (int i = 0; i < right_answers.Length; i++)
+						{
+							if (String.Compare (match.Value, right_answers[i], ignore_case) == 0)
+							{
+								right_answers[i] = null;
+								break;
+							}
+						}
+					} 
+					else //MatchAllInOrder
+					{
+						if (String.Compare (match.Value, right_answers[pos++], ignore_case) != 0)
+							return false;
+
+					}
+					match = match.NextMatch ();
+				}
+
+				if ((CheckAttributes & AnswerCheckAttributes.MatchAllInOrder) == AnswerCheckAttributes.MatchAllInOrder)
+					return true;
+
+				// Have all the expected answers been matched?
+				for (int i = 0; i < right_answers.Length; i++)
+				{
+					if (right_answers[i] != null)
+						return false;
+				}
+
+				return true;
+			}
+			else // Any string from the list of possible answers (answer1 | answer2) present in the answer will do it 
+			{
+				foreach (string s in right_answers)
+				{
+					match = regex.Match (answer);
+					if (String.Compare (match.Value, s, ignore_case) == 0)
+						return true;
+				}
+			}
+			return false;
 		}
 
-		// Type enum to string representation
-		static public string GetGameTypeDescription (Types type)
+		static string RemoveWhiteSpace (string source)
 		{
-			string str;
-
-			switch (type) 
+			string str = string.Empty;
+			for (int n = 0; n < source.Length; n++)
 			{
-				case Game.Types.LogicPuzzle:
-					str = Catalog.GetString ("Logic");
-					break;
-				case Game.Types.MemoryTrainer:
-					str = Catalog.GetString ("Memory");
-					break;
-				case Game.Types.MathTrainer:
-					str = Catalog.GetString ("Calculation");
-					break;
-				case Game.Types.VerbalAnalogy:
-					str = Catalog.GetString ("Verbal");
-					break;
-				default:
-					str = string.Empty;
-					break;
+				if (char.IsWhiteSpace (source [n]) == false)
+					str += source [n];
 			}
 			return str;
 		}
