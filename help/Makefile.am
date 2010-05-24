@@ -27,6 +27,6 @@ DOC_PAGES = \
 	newgame.page	\
 	times.page
 
-DOC_LINGUAS = ca cs da de es
+DOC_LINGUAS = ca cs da de es hi
 
 dist-hook: doc-dist-hook
