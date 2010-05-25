@@ -228,31 +228,40 @@ namespace gbrainy.Clients.Classical
 			statusbar.Push (0, session.StatusText);
 		}
 
+		// These are UI elements dependent of the game status
 		public void ActiveInputControls (bool active)
 		{
-			bool answer, entry, next, tip;
+			bool answer, entry, next, tip, can_pause;
 
-			answer = entry = next = tip = active;
+			can_pause = answer = entry = next = tip = active;
 
 			if (active == true && session.CurrentGame != null && session.CurrentGame.ButtonsActive == true && String.IsNullOrEmpty (session.CurrentGame.Tip ) == false)
 				tip = true;
 			else
 				tip = false;
-	
+
 			switch (session.Status) {
 			case GameSession.SessionStatus.NotPlaying:
 			case GameSession.SessionStatus.Finished:
 				answer = false;
-				entry =  false;
+				entry = false;
 				next = false;
 				tip = false;
+				can_pause = false;
 				break;
 			case GameSession.SessionStatus.Playing:
+				if (session.CurrentGame != null) {
+					can_pause = session.CurrentGame.ButtonsActive;
+				}
+				else {
+					can_pause = true;
+				}
 				break;
 			case GameSession.SessionStatus.Answered:
 				answer = false;
-				entry =  false;
+				entry = false;
 				tip = false;
+				can_pause = false;
 				break;
 			}
 
@@ -260,6 +269,7 @@ namespace gbrainy.Clients.Classical
 			answer_entry.Sensitive = entry;
 			next_button.Sensitive = next;
 			tip_button.Sensitive = tip;
+			pause_menuitem.Sensitive = pause_tbbutton.Sensitive = can_pause;
 
 			if (entry == true)
 				answer_entry.GrabFocus ();
@@ -344,14 +354,15 @@ namespace gbrainy.Clients.Classical
 			toolbar.Insert (finish_tbbutton, -1);
 		}
 
-		void GameSensitiveUI () 
+		// These are UI elements independent of the game status, set only when the game starts / ends
+		void GameSensitiveUI ()
 		{
 			//Toolbar buttons and menu items that are sensitive when the user is playing
 			bool playing;
 			GameTypes available;
 
 			playing = (session.Status == GameSession.SessionStatus.Playing);
-			finish_tbbutton.Sensitive = pause_tbbutton.Sensitive = playing;
+			finish_tbbutton.Sensitive = playing;
 
 			available = session.AvailableGames;
 
@@ -380,7 +391,7 @@ namespace gbrainy.Clients.Classical
 			else
 				allgames_menuitem.Sensitive = all_tbbutton.Sensitive = false;
 
-			pause_menuitem.Sensitive = finish_menuitem.Sensitive = playing;
+			finish_menuitem.Sensitive = playing;
 			newgame_menuitem.Sensitive = !playing;
 		}
 

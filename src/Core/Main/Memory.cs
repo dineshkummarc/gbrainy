@@ -215,6 +215,9 @@ namespace gbrainy.Core.Main
 			double width = 0.04, height = 0.6;
 			const double w = 0.003, h = 0.003;
 
+			gr.DrawTextCentered (x + (width / 2), y + height + 0.05, Catalog.GetString ("Time left"));
+			gr.Stroke ();
+
 			gr.Save ();
 			gr.Color = new Color (0, 0, 0);	
 			gr.MoveTo (x, y);
