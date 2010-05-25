@@ -32,6 +32,7 @@ namespace gbrainy.Core.Main
 {
 	abstract public class Game : IDrawable, IDrawRequest, IMouseEvent
 	{
+		[Flags]
 		public enum Difficulty
 		{
 			None			= 0,
@@ -87,23 +88,10 @@ namespace gbrainy.Core.Main
 			containers = new List <Toolkit.Container> ();
 		}
 
-		// Used by games to request a redraw of the view
-		protected void OnDrawRequest ()
-		{
-			if (DrawRequest == null)
-				return;
+#region Methods to override in your own games
 
-			DrawRequest (this, EventArgs.Empty);
-		}
-
-		// Used by games to request a question repaint
-		protected void UpdateQuestion (string question)
-		{
-			if (UpdateUIElement == null)
-				return;
-
-			UpdateUIElement (this, new UpdateUIStateEventArgs (UpdateUIStateEventArgs.EventUIType.QuestionText, 
-				question));
+		public abstract string Name {
+			get;
 		}
 
 		// The question text shown to the user
@@ -111,58 +99,23 @@ namespace gbrainy.Core.Main
 			get;
 		}
 
-		// Builds a text answer for the puzzle
-		public virtual string Answer {
-			get {
-				string str;
-		
-				str = String.Format (Catalog.GetString ("The correct answer is {0}."), AnswerValue);
-
-				if (String.IsNullOrEmpty (Rationale))
-					return str;
-
-				return str += " " + Rationale;				
-			}
-		}
-
 		// Text that explains why the right answer is valid
 		public virtual string Rationale {
 			get { return string.Empty; }
 		}
 
-		// Right answer as shown to the user. Usually equals to right_answer, can be different
-		// when the answer contains multiple options (e.g. 1 | 2 shown as 1 and 2).
-		public virtual string AnswerValue {
-			get { return right_answer; }
+		public virtual string Tip {
+			get { return string.Empty;}
 		}
 
-		public ISynchronizeInvoke SynchronizingObject { 
-			set { 
-				synchronize = value;
-			}
-			get { return synchronize; }
-		}
+		public abstract void Initialize ();
+#endregion
 
-		public bool IsPreviewMode {
-			get {return preview; }
-			set {preview = value; }
-		}
+#region Methods that you can optionally override
 
-		// Stores how difficult the game is
-		public virtual Difficulty GameDifficulty {
-			get {
-				return Difficulty.Master | Difficulty.Medium | Difficulty.Easy;
-			}
-		}
-
-		// The level of difficulty selected for the current game
-		public virtual Difficulty CurrentDifficulty {
-			set {
-				difficulty = value;
-			}
-			get {
-				return difficulty;
-			}
+		// Default GameType
+		public virtual GameTypes Type {
+			get { return GameTypes.LogicPuzzle;}
 		}
 
 		// How to check the answer
@@ -174,14 +127,56 @@ namespace gbrainy.Core.Main
 			get { return ".+"; }
 		}
 
-		public abstract string Name {
-			get;
+		// Right answer as shown to the user. Usually equals to right_answer, can be different
+		// when the answer contains multiple options (e.g. 1 | 2 shown as 1 and 2).
+		public virtual string AnswerValue {
+			get { return right_answer; }
+		}
+
+		// Indicates in which difficulty levels the game should be shown
+		public virtual Difficulty GameDifficulty {
+			get { return Difficulty.Master | Difficulty.Medium | Difficulty.Easy; }
+		}
+
+		// Indicates if the game should be excluded for color blind users
+		public virtual bool UsesColors {
+			get { return false;}
+		}
+#endregion
+		// Builds a text answer for the puzzle
+		public virtual string Answer {
+			get {
+				string str;
+
+				str = String.Format (Catalog.GetString ("The correct answer is {0}."), AnswerValue);
+
+				if (String.IsNullOrEmpty (Rationale))
+					return str;
+
+				return str += " " + Rationale;
+			}
+		}
+
+		public ISynchronizeInvoke SynchronizingObject {
+			set { synchronize = value; }
+			get { return synchronize; }
+		}
+
+		public bool IsPreviewMode {
+			get {return preview; }
+			set {preview = value; }
+		}
+
+		// The level of difficulty selected for the current game
+		public Difficulty CurrentDifficulty {
+			set { difficulty = value; }
+			get { return difficulty; }
 		}
 
 		public string TipString {
-			get { 
+			get {
 				string tip = Tip;
-	
+
 				if (tip != string.Empty)
 					tip_used = true;
 
@@ -189,16 +184,8 @@ namespace gbrainy.Core.Main
 			}
 		}
 
-		public virtual string Tip {
-			get { return string.Empty;}
-		}
-	
 		public virtual bool ButtonsActive {
 			get { return true;}
-		}
-
-		public virtual GameTypes Type {
-			get { return GameTypes.LogicPuzzle;}
 		}
 
 		public bool DrawAnswer {
@@ -209,10 +196,6 @@ namespace gbrainy.Core.Main
 		// An initialized game cannot be playable (for example, missing external files)
 		public virtual bool IsPlayable {
 			get { return true;}
-		}
-
-		public virtual bool UsesColors {
-			get { return false;}
 		}
 
 		public virtual double DrawAreaX {
@@ -246,18 +229,33 @@ namespace gbrainy.Core.Main
 
 		// Expected time in seconds that a player is expected to complete this game
 		public int ExpectedTime {
-			get { 
-				return Main.Score.GameExpectedTime (Type, CurrentDifficulty); 
-			}
+			get { return Main.Score.GameExpectedTime (Type, CurrentDifficulty); }
 		}
 
 		protected Widget [] Widgets {
 			get { return containers.ToArray (); }
 		}
 
-		//
+		// Used by games to request a redraw of the view
+		protected void OnDrawRequest ()
+		{
+			if (DrawRequest == null)
+				return;
+
+			DrawRequest (this, EventArgs.Empty);
+		}
+
+		// Used by games to request a question repaint
+		protected void UpdateQuestion (string question)
+		{
+			if (UpdateUIElement == null)
+				return;
+
+			UpdateUIElement (this, new UpdateUIStateEventArgs (UpdateUIStateEventArgs.EventUIType.QuestionText,
+				question));
+		}
+
 		// Score algorithm returns a value between 0 and 10
-		//
 		public virtual int Score (string answer)
 		{
 			return Main.Score.GameScore (CheckAnswer (answer), GameTime.TotalSeconds, ExpectedTime, tip_used);
@@ -291,8 +289,7 @@ namespace gbrainy.Core.Main
 
 			containers.Add (container);
 		}
-	
-		public abstract void Initialize ();
+
 		public virtual void Finish () {}
 
 		protected string GetPossibleAnswersExpression ()
@@ -313,7 +310,7 @@ namespace gbrainy.Core.Main
 				// The following series of answers may need to be adapted
 				// in cultures with alphabets different to the Latin one.
 				// The idea is to enumerate a sequence of possible answers
-				// For languages represented with the Latin alphabet use 
+				// For languages represented with the Latin alphabet use
 				// the same than English
 			case 0: // First possible answer for a series (e.g.: Figure A)
 				return Catalog.GetString ("A");
@@ -346,7 +343,7 @@ namespace gbrainy.Core.Main
 			gr.Scale (width, height);
 			gr.DrawBackground ();
 			gr.Color = default_color;
-			gr.LineWidth = LineWidth;		
+			gr.LineWidth = LineWidth;
 		}
 
 		public virtual void Draw (CairoContextEx gr, int width, int height, bool rtl)
@@ -413,7 +410,7 @@ namespace gbrainy.Core.Main
 								break;
 							}
 						}
-					} 
+					}
 					else //MatchAllInOrder
 					{
 						if (String.Compare (match.Value, right_answers[pos++], ignore_case) != 0)
@@ -435,7 +432,7 @@ namespace gbrainy.Core.Main
 
 				return true;
 			}
-			else // Any string from the list of possible answers (answer1 | answer2) present in the answer will do it 
+			else // Any string from the list of possible answers (answer1 | answer2) present in the answer will do it
 			{
 				foreach (string s in right_answers)
 				{
@@ -460,7 +457,7 @@ namespace gbrainy.Core.Main
 
 		public void DisableMouseEvents ()
 		{
-			foreach (Toolkit.Container container in containers) 
+			foreach (Toolkit.Container container in containers)
 				foreach (Widget widget in container.Children)
 					widget.Sensitive = false;
 		}
