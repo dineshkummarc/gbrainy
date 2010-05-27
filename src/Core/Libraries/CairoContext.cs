@@ -27,7 +27,12 @@ using gbrainy.Core.Main;
 
 namespace gbrainy.Core.Libraries
 {
-	public class CairoContextEx : Cairo.Context
+	// Basic encapsulation of:
+	//	- Cairo Context
+	//	- Pango Drawing
+	//	- RSvg image drawing
+	//
+	public class CairoContext : Cairo.Context
 	{
 		Pango.Layout layout;
 		double font_size;
@@ -36,18 +41,17 @@ namespace gbrainy.Core.Libraries
 		const double width_margin = 0.04;
 		const double line_spacing = 0.018;
 
-		public CairoContextEx (IntPtr state, Gtk.Widget widget) : base (state)
+		public CairoContext (IntPtr state, Gtk.Widget widget) : base (state)
 		{
 			layout = Pango.CairoHelper.CreateLayout (this);
 
 			// We do not honor DPI settings or font sizes (just font name)
 			// User should resize the window
 			layout.FontDescription = widget.PangoContext.FontDescription.Copy ();
-			SetPangoNormalFontSize ();
 		}
 
 		// Used by GeneratePDF
-		public CairoContextEx (Cairo.Surface s, string font, int dpis) : base (s)
+		public CairoContext (Cairo.Surface s, string font, int dpis) : base (s)
 		{
 			layout = Pango.CairoHelper.CreateLayout (this);
 			layout.FontDescription = FontDescription.FromString (font);
@@ -57,8 +61,6 @@ namespace gbrainy.Core.Libraries
 				Pango.CairoHelper.ContextSetResolution (c, dpis);
 				c.Dispose ();
 			}
-
-			SetPangoNormalFontSize ();
 		}
 
 		// No dispose of resources on this class
@@ -75,7 +77,7 @@ namespace gbrainy.Core.Libraries
 		/*
 			Font drawing using Pango
 
-			* Pango does not work well with float numbers. We should work on 
+			* Pango does not work well with float numbers. We should work on
 			the device unit space and then translate to our user space.
 
 			* Cairo Show.Text paints on the bottom-left of the coordinates
@@ -89,7 +91,7 @@ namespace gbrainy.Core.Libraries
 			Cairo.Matrix old = Matrix;
 
 			UpdateFontSize ();
-			Matrix = new Cairo.Matrix ();		
+			Matrix = new Cairo.Matrix ();
 			layout.SetText (str);
 			layout.SingleParagraphMode = true;
 			Pango.CairoHelper.ShowLayout (this, layout);
@@ -107,7 +109,7 @@ namespace gbrainy.Core.Libraries
 
 			if (width == -1) { // Calculates maximum width in the user space
 				layout.Width = (int) (((1 - width_margin) * Matrix.Xx - (CurrentPoint.X * Matrix.Xx)) * Pango.Scale.PangoScale);
-			} else 
+			} else
 				layout.Width = (int) (width * Matrix.Xx * Pango.Scale.PangoScale);
 
 			if (rotation != 0) {
@@ -125,20 +127,10 @@ namespace gbrainy.Core.Libraries
 			}
 			else
 				ShowPangoText (str);
-				
+
 			layout.FontDescription.Weight = Pango.Weight.Normal;
 			layout.Width = -1;
 			layout.Alignment = align;
-		}
-
-		public void SetPangoNormalFontSize ()
-		{
-			font_size = 0.022;
-		}
-
-		public void SetPangoLargeFontSize ()
-		{
-			font_size = 0.0325;
 		}
 
 		public void SetPangoFontSize (double size)
@@ -148,8 +140,8 @@ namespace gbrainy.Core.Libraries
 
 		/*
 			Draw text functions
-		*/		
-		
+		*/
+
 		// Used for fractions that right align is needed
 		public void DrawTextAlignedRight (double x, double y, string str)
 		{
@@ -230,82 +222,6 @@ namespace gbrainy.Core.Libraries
 			width = w / old.Xx;
 		}
 
-		public void DrawEquilateralTriangle (double x, double y, double size)
-		{
-			MoveTo (x + (size / 2), y);
-			LineTo (x, y + size);
-			LineTo (x + size, y + size);
-			LineTo (x + (size / 2), y);
-			Stroke ();	
-		}
-
-		public void DrawDiamond (double x, double y, double size)
-		{
-			MoveTo (x + size / 2, y);
-			LineTo (x, y + size / 2);
-			LineTo (x + size / 2, y + size);
-			LineTo (x + size, y + size / 2);
-			LineTo (x + size / 2, y);
-			Stroke ();
-		}
-
-		public void FillGradient (double x, double y, double w, double h)
-		{
-			Save ();
-			LinearGradient shadow = new LinearGradient (x, y, x + w, y + h);
-			shadow.AddColorStop (0, new Cairo.Color (0, 0, 0, 0.3));
-			shadow.AddColorStop (0.5, new Cairo.Color (0, 0, 0, 0.1));
-			Source = shadow;
-			Fill ();
-			Restore ();
-			((IDisposable)shadow).Dispose ();
-		}
-
-		public void DrawClock (double x, double y, double size, int hand_short, int hand_large)
-		{
-			const double radian = Math.PI / 180;
-			double radius = size / 2;
-			double x0, y0;
-			int num, degrees;
-
-			Arc (x, y, radius, 0, 2 * Math.PI);
-			Stroke ();
-			for (degrees = 0; degrees < 360; degrees+= 30) {
-				x0 = radius * Math.Cos (degrees * radian);
-				y0 = radius * Math.Sin (degrees * radian);
-				 // Small lines
-				MoveTo (x + 0.9 * x0, y + 0.9 * y0);
-				LineTo (x + x0, y + y0);
-				Stroke ();
-				// Numbers
-				num = (degrees / 30) + 3;
-				if (num > 12) num = num - 12;
-
-				DrawTextCentered (x + x0 * 0.75,  y + y0 * 0.75, num.ToString ());
-				Stroke ();
-			}
-
-			if (hand_large >=1 && hand_large <= 12 ) {
-				// Hand Large
-				degrees = (hand_large - 3) * 30;
-				x0 = radius * Math.Cos (degrees * radian);
-				y0 = radius * Math.Sin (degrees * radian);
-				MoveTo (x, y);
-				LineTo (x + x0 * 0.55, y + y0 * 0.55);
-				Stroke ();
-			}
-
-			if (hand_short >=1 && hand_short <= 12) {
-				// Hand Short
-				degrees = (hand_short - 3) * 30;
-				x0 = radius * Math.Cos (degrees * radian);
-				y0 = radius * Math.Sin (degrees * radian);
-				MoveTo (x, y);
-				LineTo (x + x0 * 0.4, y + y0 * 0.4);
-				Stroke ();
-			}
-		}
-
 		public void FillGradient (double x, double y, double w, double h, Cairo.Color color)
 		{
 			Save ();
@@ -316,22 +232,6 @@ namespace gbrainy.Core.Libraries
 			Fill ();
 			Restore ();
 			((IDisposable)shadow).Dispose ();
-		}
-
-		virtual public void DrawBackground ()
-		{
-			try {
-				if (image == null)
-					image = new SVGImage (System.Reflection.Assembly.GetCallingAssembly (), "background.svg");
-
-				Save ();
-				Rectangle (0, 0, 1, 1);
-				Scale (0.999 / image.Width, 0.999 / image.Height);
-				image.RenderToCairo (Handle);
-				Restore ();
-
-			} catch {
-			}
 		}
 
 		public void DrawImageFromAssembly (string  resource, double x, double y, double width, double height)
@@ -363,7 +263,7 @@ namespace gbrainy.Core.Libraries
 		}
 
 		void DrawImage (SVGImage image, double x, double y, double width, double height)
-		{		
+		{
 			Save ();
 			Translate (x, y);
 			Scale (width / image.Width, height / image.Height);

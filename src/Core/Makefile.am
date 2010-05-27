@@ -8,6 +8,7 @@ TARGET_CFG = ../gbrainy.Core.dll.config
 
 CSDISTFILES =  \
 		$(srcdir)/Main/ArrayListIndicesRandom.cs	\
+		$(srcdir)/Main/CairoContextEx.cs	\
 		$(srcdir)/Main/ColorPalette.cs		\
 		$(srcdir)/Main/IMouseEvent.cs		\
 		$(srcdir)/Main/Game.cs			\
@@ -44,7 +45,7 @@ CSDISTFILES =  \
 		$(srcdir)/Views/ViewsControler.cs		\
 		$(srcdir)/Views/WelcomeView.cs		\
 		$(srcdir)/Platform/Unix.cs		\
-		$(srcdir)/Libraries/CairoContextEx.cs	\
+		$(srcdir)/Libraries/CairoContext.cs	\
 		$(srcdir)/Libraries/GetText.cs		\
 		$(srcdir)/Libraries/SVGImage.cs
 
