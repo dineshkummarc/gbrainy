@@ -11,8 +11,8 @@ msgstr ""
 "Project-Id-Version: gbrainy.HEAD\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=gbrainy&component=general\n"
-"POT-Creation-Date: 2010-05-25 18:38+0000\n"
-"PO-Revision-Date: 2010-05-25 23:20+0200\n"
+"POT-Creation-Date: 2010-05-27 19:06+0000\n"
+"PO-Revision-Date: 2010-05-28 19:25+0200\n"
 "Last-Translator: Jorge González <jorgegonz@svn.gnome.org>\n"
 "Language-Team: Español <gnome-es-list@gnome.org>\n"
 "MIME-Version: 1.0\n"
@@ -847,7 +847,7 @@ msgstr "negro"
 msgid "white"
 msgstr "blanco"
 
-#: ../src/Core/Main/Game.cs:119
+#: ../src/Core/Main/Game.cs:151
 #, csharp-format
 msgid "The correct answer is {0}."
 msgstr "La respuesta correcta es {0}."
@@ -859,46 +859,46 @@ msgstr "La respuesta correcta es {0}."
 #. For languages represented with the Latin alphabet use
 #. the same than English
 #. First possible answer for a series (e.g.: Figure A)
-#: ../src/Core/Main/Game.cs:319
+#: ../src/Core/Main/Game.cs:316
 msgid "A"
 msgstr "A"
 
 #. Second possible answer for a series
-#: ../src/Core/Main/Game.cs:321
+#: ../src/Core/Main/Game.cs:318
 msgid "B"
 msgstr "B"
 
 #. Third possible answer for a series
-#: ../src/Core/Main/Game.cs:323
+#: ../src/Core/Main/Game.cs:320
 msgid "C"
 msgstr "C"
 
 #. Fourth possible answer for a series
-#: ../src/Core/Main/Game.cs:325
+#: ../src/Core/Main/Game.cs:322
 msgid "D"
 msgstr "D"
 
 #. Fifth possible answer for a series
-#: ../src/Core/Main/Game.cs:327
+#: ../src/Core/Main/Game.cs:324
 msgid "E"
 msgstr "E"
 
 #. Sixth possible answer for a series
-#: ../src/Core/Main/Game.cs:329
+#: ../src/Core/Main/Game.cs:326
 msgid "F"
 msgstr "F"
 
 #. Seventh possible answer for a series
-#: ../src/Core/Main/Game.cs:331
+#: ../src/Core/Main/Game.cs:328
 msgid "G"
 msgstr "G"
 
 #. Eighth possible answer for a series
-#: ../src/Core/Main/Game.cs:333
+#: ../src/Core/Main/Game.cs:330
 msgid "H"
 msgstr "H"
 
-#: ../src/Core/Main/Game.cs:341
+#: ../src/Core/Main/Game.cs:338
 #, csharp-format
 msgid "Figure {0}"
 msgstr "Figura {0}"
@@ -1286,11 +1286,17 @@ msgstr ""
 
 #: ../src/Clients/Classical/Dialogs/PlayerHistoryDialog.cs:48
 #, csharp-format
-msgid "You need more than one game recorded to see the score evolution."
-msgid_plural "It is built using the results of {0} last recorded games."
+#| msgid "You need more than one game recorded to see the score evolution."
+#| msgid_plural "It is built using the results of {0} last recorded games."
+msgid ""
+"You need more than one game session recorded to see the score evolution."
+msgid_plural ""
+"It is built using the results of {0} last recorded game sessions."
 msgstr[0] ""
-"Necesita más de una partida grabada para ver la evolución de la puntuación."
-msgstr[1] "Está construido usando los resultados de {0} partidas grabadas."
+"Necesita más de una sesión de partidas grabadas para ver la evolución de la "
+"puntuación."
+msgstr[1] ""
+"Está construido usando los resultados de {0} sesión de partidas grabadas."
 
 #: ../src/Clients/Classical/Dialogs/ui/CustomGameDialog.ui.h:1
 msgid "Custom Game"
