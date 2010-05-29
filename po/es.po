@@ -11,8 +11,8 @@ msgstr ""
 "Project-Id-Version: gbrainy.HEAD\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=gbrainy&component=general\n"
-"POT-Creation-Date: 2010-05-27 19:06+0000\n"
-"PO-Revision-Date: 2010-05-28 19:25+0200\n"
+"POT-Creation-Date: 2010-05-29 03:41+0000\n"
+"PO-Revision-Date: 2010-05-29 10:52+0200\n"
 "Last-Translator: Jorge González <jorgegonz@svn.gnome.org>\n"
 "Language-Team: Español <gnome-es-list@gnome.org>\n"
 "MIME-Version: 1.0\n"
@@ -1286,8 +1286,6 @@ msgstr ""
 
 #: ../src/Clients/Classical/Dialogs/PlayerHistoryDialog.cs:48
 #, csharp-format
-#| msgid "You need more than one game recorded to see the score evolution."
-#| msgid_plural "It is built using the results of {0} last recorded games."
 msgid ""
 "You need more than one game session recorded to see the score evolution."
 msgid_plural ""
@@ -1412,13 +1410,15 @@ msgstr ""
 "para mantener el equilibrio?"
 
 #: ../src/Games/Logic/PuzzleBalance.cs:60
-msgid "Every triangle counts as 1, each diamond as 2 and each square as 3."
+#| msgid "Every triangle counts as 1, each diamond as 2 and each square as 3."
+msgid "Every triangle counts as 1, each circle as 2 and each square as 3."
 msgstr ""
-"Cada triángulo cuenta como 1, cada diamante como 2 y cada cuadrado como 3."
+"Cada triángulo cuenta como 1, cada círculo como 2 y cada cuadrado como 3."
 
 #: ../src/Games/Logic/PuzzleBalance.cs:65
-msgid "Every diamond counts as two triangles."
-msgstr "Cada diamante cuenta como dos triángulos."
+#| msgid "Every diamond counts as two triangles."
+msgid "Every circle counts as two triangles."
+msgstr "Cada cículo cuenta como dos triángulos."
 
 #: ../src/Games/Logic/PuzzleBuildTriangle.cs:53
 msgid "Build a triangle"
@@ -1819,8 +1819,9 @@ msgstr "Convención para dar la respuesta es:"
 
 #: ../src/Games/Logic/PuzzleFigures.cs:165
 #, csharp-format
-msgid "E.g: {0}{1}{2} (diamond, triangle, circle)"
-msgstr "Por ejemplo: {0}{1}{2} (diamante, triángulo, círculo)"
+#| msgid "E.g: {0}{1}{2} (diamond, triangle, circle)"
+msgid "E.g: {0}{1}{2} (pentagon, triangle, circle)"
+msgstr "Ej.: {0}{1}{2} (pentágono, triángulo, círculo)"
 
 #: ../src/Games/Logic/PuzzleFourSided.cs:34
 msgid "Four sided"
@@ -2835,8 +2836,9 @@ msgid "Rectangle"
 msgstr "Rectángulo"
 
 #: ../src/Games/Memory/MemoryFiguresAndText.cs:56
-msgid "Diamond"
-msgstr "Diamante"
+#| msgid "Percentage"
+msgid "Pentagon"
+msgstr "Pentágono"
 
 #: ../src/Games/Memory/MemoryFiguresAndText.cs:58
 msgid "Circle"
@@ -2847,14 +2849,18 @@ msgid "Memorize figures and text"
 msgstr "Memorizar figuras y texto"
 
 #: ../src/Games/Memory/MemoryFiguresAndText.cs:70
+#| msgid ""
+#| "The list below enumerates the figures shown in the previous image except "
+#| "for one. Which is the missing figure? Possible answers are triangle, "
+#| "rectangle, diamond and circle."
 msgid ""
 "The list below enumerates the figures shown in the previous image except for "
 "one. Which is the missing figure? Possible answers are triangle, rectangle, "
-"diamond and circle."
+"pentagon and circle."
 msgstr ""
 "La lista de abajo enumera las figuras mostradas en la imagen anterior "
 "excepto una. ¿Cuál es la figura que falta? Las posibles respuestas son "
-"«triángulo», «rectángulo», «diamante» y «círculo»."
+"«triángulo», «rectángulo», «pentágono» y «círculo»."
 
 #: ../src/Games/Memory/MemoryFiguresNumbers.cs:40
 msgid "Figures with numbers"
@@ -3506,6 +3512,9 @@ msgstr "_Desinstalar…"
 #: ../src/Clients/Classical/mono-addins-strings.xml.h:35
 msgid "_Unselect All"
 msgstr "_Deseleccionar todo"
+
+#~ msgid "Diamond"
+#~ msgstr "Diamante"
 
 #~ msgid "cage | zoo"
 #~ msgstr "jaula | zoo"
