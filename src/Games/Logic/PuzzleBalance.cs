@@ -57,12 +57,12 @@ namespace gbrainy.Games.Logic
 
 		public override string Rationale {
 			get {
-				return Catalog.GetString ("Every triangle counts as 1, each diamond as 2 and each square as 3.");
+				return Catalog.GetString ("Every triangle counts as 1, each circle as 2 and each square as 3.");
 			}
 		}
 
 		public override string Tip {
-			get { return Catalog.GetString ("Every diamond counts as two triangles.");}
+			get { return Catalog.GetString ("Every circle counts as two triangles.");}
 		}
 
 		public override void Initialize ()
@@ -94,10 +94,12 @@ namespace gbrainy.Games.Logic
 					gr.DrawEquilateralTriangle (fig_x, fig_y, 0.05);
 					break;
 				case 2:
-					gr.DrawDiamond (fig_x, fig_y, 0.05);
+					gr.Arc (fig_x + (0.05 / 2), fig_y + (0.05 / 2) + 0.003, (0.05 / 2), 0, 2 * Math.PI);
+					gr.Stroke ();
 					break;
 				case 3:
 					gr.Rectangle (fig_x, fig_y + 0.005, 0.045, 0.045);
+					gr.Stroke ();
 					break;
 				}
 			

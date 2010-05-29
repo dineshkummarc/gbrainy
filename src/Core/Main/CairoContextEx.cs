@@ -90,6 +90,18 @@ namespace gbrainy.Core.Main
 			Stroke ();
 		}
 
+		// Draws a regular pentagon
+		public void DrawPentagon (double x, double y, double size)
+		{
+			MoveTo (x + (0.4998 * size), y + ( 0.0051 * size));
+			LineTo (x + (0.9949 * size), y + (0.3648 * size));
+			LineTo (x + (0.8058 * size), y + (0.9468 * size));
+			LineTo (x + (0.1938 * size), y + (0.9468 * size));
+			LineTo (x + (0.0046 * size), y + (0.3648 * size));
+			LineTo (x + (0.4998 * size), y + (0.0051 * size));
+			Stroke ();
+		}
+
 		public void FillGradient (double x, double y, double w, double h)
 		{
 			Save ();

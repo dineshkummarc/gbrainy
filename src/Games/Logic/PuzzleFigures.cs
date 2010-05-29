@@ -78,7 +78,7 @@ namespace gbrainy.Games.Logic
 			{
 				e.Context.MoveTo (0, 0.05);
 				e.Context.ShowPangoText (String.Format (Catalog.GetString ("{0} ->"), GetPossibleAnswer (0)));
-				e.Context.DrawDiamond (0.1, 0, 0.1);
+				e.Context.DrawPentagon (0.1, 0, 0.1);
 				e.Context.Stroke ();
 			};
 
@@ -124,7 +124,7 @@ namespace gbrainy.Games.Logic
 					switch (figures[(n * 6) + element])
 					{
 						case 0:
-							gr.DrawDiamond (x, y, 0.1);
+							gr.DrawPentagon (x, y, 0.1);
 							break;
 						case 1:
 							gr.Arc (x + 0.05, y + 0.05, 0.05, 0, 2 * Math.PI);	
@@ -162,7 +162,7 @@ namespace gbrainy.Games.Logic
 
 			y += 0.16;
 			gr.MoveTo (x, y);		
-			gr.ShowPangoText (String.Format (Catalog.GetString ("E.g: {0}{1}{2} (diamond, triangle, circle)"),
+			gr.ShowPangoText (String.Format (Catalog.GetString ("E.g: {0}{1}{2} (pentagon, triangle, circle)"),
 				GetPossibleAnswer (0), GetPossibleAnswer (2), GetPossibleAnswer (1)));
 		}
 	}

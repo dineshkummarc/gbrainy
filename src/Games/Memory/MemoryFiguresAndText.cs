@@ -41,7 +41,7 @@ namespace gbrainy.Games.Memory
 		{
 			internal const int Triangle = 0;
 			internal const int Rectangle = 1;
-			internal const int Diamond = 2;
+			internal const int Pentagon = 2;
 			internal const int Circle = 3;
 			internal const int Total = Circle + 1;
 
@@ -52,8 +52,8 @@ namespace gbrainy.Games.Memory
 					return Catalog.GetString ("Triangle");
 				case Rectangle:
 					return Catalog.GetString ("Rectangle");
-				case Diamond:
-					return Catalog.GetString ("Diamond");
+				case Pentagon:
+					return Catalog.GetString ("Pentagon");
 				case Circle:
 					return Catalog.GetString ("Circle");
 				default:
@@ -67,7 +67,7 @@ namespace gbrainy.Games.Memory
 		}
 
 		public override string MemoryQuestion {
-			get {return Catalog.GetString ("The list below enumerates the figures shown in the previous image except for one. Which is the missing figure? Possible answers are triangle, rectangle, diamond and circle." );}
+			get {return Catalog.GetString ("The list below enumerates the figures shown in the previous image except for one. Which is the missing figure? Possible answers are triangle, rectangle, pentagon and circle." );}
 		}
 
 		public override void Initialize ()
@@ -190,8 +190,8 @@ namespace gbrainy.Games.Memory
 				gr.Rectangle (x + space_x, y + space_y, figure_size, figure_size);
 				gr.Stroke ();
 				break;
-			case FigureType.Diamond:
-				gr.DrawDiamond (x + space_x, y + space_y, figure_size);
+			case FigureType.Pentagon:
+				gr.DrawPentagon (x + space_x, y + space_y, figure_size);
 				break;
 			case FigureType.Circle:
 				gr.Arc (x + space_x + figure_size / 2, y + space_y + figure_size / 2, figure_size / 2, 0, 2 * Math.PI);
