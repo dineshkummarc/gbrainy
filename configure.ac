@@ -90,8 +90,6 @@ AM_CONDITIONAL(ENABLE_ADDINS, test "x$enable_addins_sharp" = "xyes")
 
 PKG_CHECK_MODULES(GBRAINY_CHECK, librsvg-2.0)
 
-AC_SUBST(CSC_DEFINES)
-
 dnl -- Intl
 
 GETTEXT_PACKAGE=gbrainy
@@ -129,6 +127,18 @@ else
 	fi
 fi
 
+dnl --- Debugging support
+
+AC_ARG_ENABLE(debug,
+	AC_HELP_STRING([--enable-debug],
+		[Use 'Debug' Configuration [default=yes]]),
+		enable_debug=$enableval, enable_debug=no)
+AM_CONDITIONAL(ENABLE_DEBUG, test "x$enable_debug" != "xno")
+
+if test "x$enable_debug" != "xno" ; then
+	CSC_DEFINES="$CSC_DEFINES -debug -d:DEBUG"
+fi
+
 dnl --- Prologue
 
 AC_SUBST(CFLAGS)
@@ -137,6 +147,7 @@ AC_SUBST(LDFLAGS)
 
 AC_PATH_PROG(CSC, gmcs)
 AC_SUBST(CSC)
+AC_SUBST(CSC_DEFINES)
 
 expanded_libdir=`( case $prefix in NONE) prefix=$ac_default_prefix ;; *) ;; esac
 		   case $exec_prefix in NONE) exec_prefix=$prefix ;; *) ;; esac
@@ -171,4 +182,4 @@ help/Makefile
 
 echo "Mono-addins:		${enable_addins_sharp}"
 echo "NUnit:			${enable_tests}"
-
+echo "Debug enabled:		${enable_debug}"
