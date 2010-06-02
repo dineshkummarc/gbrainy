@@ -81,8 +81,9 @@ namespace gbrainy.Games.Logic
 					// Translators:
 					//  - {0}, {1} and {2} are always greater than 2
 					//  - mph (miles per hour). You must localize this using the right unit of speed for your locale
-					Catalog.GetString ("A train leaves the station traveling at {0} mph. {1} hours later a second train leaves the station traveling in the same direction at {2} mph. How many hours does it take the second train to overtake the first train?")
-						,speed_a, hours, speed_b);
+					Catalog.GetPluralString ("A train leaves the station traveling at {0} mph. {1} hour later a second train leaves the station traveling in the same direction at {2} mph. How many hours does it take the second train to overtake the first train?",
+						"A train leaves the station traveling at {0} mph. {1} hours later a second train leaves the station traveling in the same direction at {2} mph. How many hours does it take the second train to overtake the first train?", (int) hours),
+						speed_a, hours, speed_b);
 
 				answer = String.Format (Catalog.GetString ("You can calculate the answer multiplying the second train speed by the time and dividing it by the difference of speeds."));
 
