@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{9F2F1F0C-DF7E-4054-B6BA-94F3DD9FF3D9}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Core</RootNamespace>
+    <AssemblyName>gbrainy.Core.dll</AssemblyName>
+    <BaseDirectory>.</BaseDirectory>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\bin\Debug</OutputPath>
+    <DefineConstants>DEBUG</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>none</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="Mono.Cairo, Version=2.0.0.0, Culture=neutral, PublicKeyToken=0738eb9f132ed756" />
+    <Reference Include="Mono.Posix" />
+    <Reference Include="System.Xml" />
+    <Reference Include="pango-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f">
+      <Package>gtk-sharp-2.0</Package>
+    </Reference>
+    <Reference Include="gtk-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f">
+      <Package>gtk-sharp-2.0</Package>
+    </Reference>
+    <Reference Include="gdk-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f">
+      <Package>gtk-sharp-2.0</Package>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\Core\AssemblyInfo.cs" />
+    <Compile Include="..\Core\Main\ArrayListIndicesRandom.cs" />
+    <Compile Include="..\Core\Main\CairoContextEx.cs" />
+    <Compile Include="..\Core\Main\ColorPalette.cs" />
+    <Compile Include="..\Core\Main\Defines.cs" />
+    <Compile Include="..\Core\Main\Game.cs" />
+    <Compile Include="..\Core\Main\GameManager.cs" />
+    <Compile Include="..\Core\Main\GameSession.cs" />
+    <Compile Include="..\Core\Main\GameSessionHistory.cs" />
+    <Compile Include="..\Core\Main\GameSessionHistoryExtended.cs" />
+    <Compile Include="..\Core\Main\GameTips.cs" />
+    <Compile Include="..\Core\Main\GameTypes.cs" />
+    <Compile Include="..\Core\Main\IDrawable.cs" />
+    <Compile Include="..\Core\Main\IDrawRequest.cs" />
+    <Compile Include="..\Core\Main\IMouseEvent.cs" />
+    <Compile Include="..\Core\Main\Memory.cs" />
+    <Compile Include="..\Core\Main\PlayerHistory.cs" />
+    <Compile Include="..\Core\Main\PlayerPersonalRecord.cs" />
+    <Compile Include="..\Core\Main\Preferences.cs" />
+    <Compile Include="..\Core\Main\Score.cs" />
+    <Compile Include="..\Core\Main\UpdateUIStateEventArgs.cs" />
+    <Compile Include="..\Core\Main\Verbal\Analogies.cs" />
+    <Compile Include="..\Core\Main\Verbal\AnalogiesFactory.cs" />
+    <Compile Include="..\Core\Main\Verbal\AnalogiesMultipleOptions.cs" />
+    <Compile Include="..\Core\Main\Verbal\AnalogiesPairOfWordsCompare.cs" />
+    <Compile Include="..\Core\Main\Verbal\AnalogiesPairOfWordsOptions.cs" />
+    <Compile Include="..\Core\Main\Verbal\AnalogiesQuestionAnswer.cs" />
+    <Compile Include="..\Core\Main\Verbal\Analogy.cs" />
+    <Compile Include="..\Core\Main\Xml\GameXml.cs" />
+    <Compile Include="..\Core\Main\Xml\GameXmlDefinition.cs" />
+    <Compile Include="..\Core\Main\Xml\GameXmlFactory.cs" />
+    <Compile Include="..\Core\Toolkit\Container.cs" />
+    <Compile Include="..\Core\Toolkit\DrawableArea.cs" />
+    <Compile Include="..\Core\Toolkit\DrawEventArgs.cs" />
+    <Compile Include="..\Core\Toolkit\HorizontalContainer.cs" />
+    <Compile Include="..\Core\Toolkit\SeletectedEventArgs.cs" />
+    <Compile Include="..\Core\Toolkit\Widget.cs" />
+    <Compile Include="..\Core\Views\CountDownView.cs" />
+    <Compile Include="..\Core\Views\FinishView.cs" />
+    <Compile Include="..\Core\Views\PlayerHistoryView.cs" />
+    <Compile Include="..\Core\Views\ViewsControler.cs" />
+    <Compile Include="..\Core\Views\WelcomeView.cs" />
+    <Compile Include="..\Core\Libraries\CairoContext.cs" />
+    <Compile Include="..\Core\Libraries\SVGImage.cs" />
+    <Compile Include="..\Core\Libraries\GetText.cs" />
+    <Compile Include="..\Core\Platform\Unix.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ProjectExtensions>
+    <MonoDevelop>
+      <Properties InternalTargetFrameworkVersion="3.5" />
+    </MonoDevelop>
+  </ProjectExtensions>
+  <ItemGroup>
+    <Folder Include="..\Core\" />
+  </ItemGroup>
+</Project>

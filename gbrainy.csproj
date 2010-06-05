@@ -8,6 +8,7 @@
     <ProjectGuid>{A5DF4079-EF3D-43F8-A36E-EB47058631A7}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AssemblyName>gbrainy</AssemblyName>
+    <RootNamespace>gbrainy</RootNamespace>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -17,6 +18,7 @@
     <DefineConstants>DEBUG</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>none</DebugType>
@@ -24,132 +26,77 @@
     <OutputPath>bin\Release</OutputPath>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="System" />
     <Reference Include="gtk-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f">
       <SpecificVersion>False</SpecificVersion>
+      <Package>gtk-sharp-2.0</Package>
     </Reference>
     <Reference Include="gdk-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f">
       <SpecificVersion>False</SpecificVersion>
+      <Package>gtk-sharp-2.0</Package>
     </Reference>
     <Reference Include="glib-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f">
       <SpecificVersion>False</SpecificVersion>
-    </Reference>
-    <Reference Include="glade-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f">
-      <SpecificVersion>False</SpecificVersion>
+      <Package>glib-sharp-2.0</Package>
     </Reference>
     <Reference Include="pango-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f">
       <SpecificVersion>False</SpecificVersion>
+      <Package>gtk-sharp-2.0</Package>
     </Reference>
     <Reference Include="Mono.Posix" />
     <Reference Include="Mono.Cairo" />
-    <Reference Include="System.Xml" />
-    <Reference Include="gnome-sharp, Version=2.24.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f" />
+    <Reference Include="gnome-sharp, Version=2.24.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f">
+      <Package>gnome-sharp-2.0</Package>
+    </Reference>
+    <Reference Include="atk-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f">
+      <Package>gtk-sharp-2.0</Package>
+    </Reference>
+    <Reference Include="art-sharp, Version=2.24.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f">
+      <Package>art-sharp-2.0</Package>
+    </Reference>
+    <Reference Include="gnome-vfs-sharp, Version=2.24.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f">
+      <Package>gnome-vfs-sharp-2.0</Package>
+    </Reference>
+    <Reference Include="Mono.Addins, Version=0.4.0.0, Culture=neutral, PublicKeyToken=0738eb9f132ed756">
+      <Package>mono-addins</Package>
+    </Reference>
+    <Reference Include="Mono.Addins.Setup, Version=0.4.0.0, Culture=neutral, PublicKeyToken=0738eb9f132ed756">
+      <Package>mono-addins-setup</Package>
+    </Reference>
+    <Reference Include="Mono.Addins.Gui, Version=0.4.0.0, Culture=neutral, PublicKeyToken=0738eb9f132ed756">
+      <Package>mono-addins-gui</Package>
+    </Reference>
+    <Reference Include="System" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="src\CalculationGames\CalculationArithmetical.cs" />
-    <Compile Include="src\CalculationGames\CalculationAverage.cs" />
-    <Compile Include="src\CalculationGames\CalculationCloserFraction.cs" />
-    <Compile Include="src\CalculationGames\CalculationFractions.cs" />
-    <Compile Include="src\CalculationGames\CalculationGreatestDivisor.cs" />
-    <Compile Include="src\CalculationGames\CalculationOperator.cs" />
-    <Compile Include="src\CalculationGames\CalculationPrimes.cs" />
-    <Compile Include="src\CalculationGames\CalculationProportions.cs" />
-    <Compile Include="src\CalculationGames\CalculationRatio.cs" />
-    <Compile Include="src\CalculationGames\CalculationTwoNumbers.cs" />
-    <Compile Include="src\Dialogs\AboutDialog.cs" />
-    <Compile Include="src\Dialogs\CustomGameDialog.cs" />
-    <Compile Include="src\Dialogs\GtkDialog.cs" />
-    <Compile Include="src\Dialogs\PlayerHistoryDialog.cs" />
-    <Compile Include="src\Dialogs\PreferencesDialog.cs" />
-    <Compile Include="src\MemoryGames\MemoryColouredFigures.cs" />
-    <Compile Include="src\MemoryGames\MemoryColouredText.cs" />
-    <Compile Include="src\MemoryGames\MemoryCountDots.cs" />
-    <Compile Include="src\MemoryGames\MemoryFacts.cs" />
-    <Compile Include="src\MemoryGames\MemoryFigures.cs" />
-    <Compile Include="src\MemoryGames\MemoryFiguresNumbers.cs" />
-    <Compile Include="src\MemoryGames\MemoryIndications.cs" />
-    <Compile Include="src\MemoryGames\MemoryNumbers.cs" />
-    <Compile Include="src\MemoryGames\MemoryWords.cs" />
-    <Compile Include="src\PuzzleGames\Puzzle3DCube.cs" />
-    <Compile Include="src\PuzzleGames\PuzzleBalance.cs" />
-    <Compile Include="src\PuzzleGames\PuzzleBuildTriangle.cs" />
-    <Compile Include="src\PuzzleGames\PuzzleCirclesRectangle.cs" />
-    <Compile Include="src\PuzzleGames\PuzzleClocks.cs" />
-    <Compile Include="src\PuzzleGames\PuzzleCountCircles.cs" />
-    <Compile Include="src\PuzzleGames\PuzzleCounting.cs" />
-    <Compile Include="src\PuzzleGames\PuzzleCountSeries.cs" />
-    <Compile Include="src\PuzzleGames\PuzzleCoverPercentage.cs" />
-    <Compile Include="src\PuzzleGames\PuzzleCube.cs" />
-    <Compile Include="src\PuzzleGames\PuzzleDivideCircle.cs" />
-    <Compile Include="src\PuzzleGames\PuzzleEquation.cs" />
-    <Compile Include="src\PuzzleGames\PuzzleExtraCircle.cs" />
-    <Compile Include="src\PuzzleGames\PuzzleFigureLetter.cs" />
-    <Compile Include="src\PuzzleGames\PuzzleFigurePattern.cs" />
-    <Compile Include="src\PuzzleGames\PuzzleFigures.cs" />
-    <Compile Include="src\PuzzleGames\PuzzleFourSided.cs" />
-    <Compile Include="src\PuzzleGames\PuzzleHandshakes.cs" />
-    <Compile Include="src\PuzzleGames\PuzzleLargerShape.cs" />
-    <Compile Include="src\PuzzleGames\PuzzleLines.cs" />
-    <Compile Include="src\PuzzleGames\PuzzleMatrixGroups.cs" />
-    <Compile Include="src\PuzzleGames\PuzzleMatrixNumbers.cs" />
-    <Compile Include="src\PuzzleGames\PuzzleMissingPiece.cs" />
-    <Compile Include="src\PuzzleGames\PuzzleMissingSlice.cs" />
-    <Compile Include="src\PuzzleGames\PuzzleMostInCommon.cs" />
-    <Compile Include="src\PuzzleGames\PuzzleMoveFigure.cs" />
-    <Compile Include="src\PuzzleGames\PuzzleNextFigure.cs" />
-    <Compile Include="src\PuzzleGames\PuzzleNumericRelation.cs" />
-    <Compile Include="src\PuzzleGames\PuzzleNumericSequence.cs" />
-    <Compile Include="src\PuzzleGames\PuzzleOstracism.cs" />
-    <Compile Include="src\PuzzleGames\PuzzlePencil.cs" />
-    <Compile Include="src\PuzzleGames\PuzzlePeopleTable.cs" />
-    <Compile Include="src\PuzzleGames\PuzzlePercentage.cs" />
-    <Compile Include="src\PuzzleGames\PuzzleQuadrilaterals.cs" />
-    <Compile Include="src\PuzzleGames\PuzzleSquareDots.cs" />
-    <Compile Include="src\PuzzleGames\PuzzleSquares.cs" />
-    <Compile Include="src\PuzzleGames\PuzzleSquaresAndLetters.cs" />
-    <Compile Include="src\PuzzleGames\PuzzleSquareSheets.cs" />
-    <Compile Include="src\PuzzleGames\PuzzleTetris.cs" />
-    <Compile Include="src\PuzzleGames\PuzzleTimeNow.cs" />
-    <Compile Include="src\PuzzleGames\PuzzleTriangles.cs" />
-    <Compile Include="src\PuzzleGames\PuzzleTrianglesWithNumbers.cs" />
-    <Compile Include="src\VerbalAnalogies\Analogies.cs" />
-    <Compile Include="src\VerbalAnalogies\AnalogiesFactory.cs" />
-    <Compile Include="src\VerbalAnalogies\AnalogiesMultipleOptions.cs" />
-    <Compile Include="src\VerbalAnalogies\AnalogiesPairOfWordsCompare.cs" />
-    <Compile Include="src\VerbalAnalogies\AnalogiesPairOfWordsOptions.cs" />
-    <Compile Include="src\VerbalAnalogies\AnalogiesQuestionAnswer.cs" />
-    <Compile Include="src\VerbalAnalogies\Analogy.cs" />
-    <Compile Include="src\CairoContextEx.cs" />
-    <Compile Include="src\ColorPalette.cs" />
-    <Compile Include="src\CountDown.cs" />
-    <Compile Include="src\Defines.cs" />
-    <Compile Include="src\GameTips.cs" />
-    <Compile Include="src\SimpleLabel.cs" />
-    <Compile Include="src\SVGImage.cs" />
-    <Compile Include="src\Unix.cs" />
-    <Compile Include="src\PlayerHistory.cs" />
-    <Compile Include="src\Preferences.cs" />
-    <Compile Include="src\GameSession.cs" />
-    <Compile Include="src\gbrainy.cs" />
-    <Compile Include="src\Game.cs" />
-    <Compile Include="src\GameDrawingArea.cs" />
-    <Compile Include="src\GameManager.cs" />
-    <Compile Include="src\ArrayListIndicesRandom.cs" />
-    <Compile Include="src\AssemblyInfo.cs" />
-    <Compile Include="src\MemoryGames\Memory.cs" />
+    <Compile Include="src\Clients\Classical\gbrainy.cs" />
+    <Compile Include="src\Clients\Classical\GtkSynchronize.cs" />
+    <Compile Include="src\Clients\Classical\SimpleLabel.cs" />
+    <Compile Include="src\Clients\Classical\Dialogs\CustomGameDialog.cs" />
+    <Compile Include="src\Clients\Classical\Dialogs\PlayerHistoryDialog.cs" />
+    <Compile Include="src\Clients\Classical\Dialogs\AboutDialog.cs" />
+    <Compile Include="src\Clients\Classical\Dialogs\PreferencesDialog.cs" />
+    <Compile Include="src\Clients\Classical\Dialogs\BuilderDialog.cs" />
+    <Compile Include="src\Clients\Classical\Builder\Builder.cs" />
+    <Compile Include="src\Clients\Classical\Builder\ObjectManager.cs" />
+    <Compile Include="src\Clients\Classical\Builder\GtkBeansSharp.BuilderConnectFuncNative.cs" />
+    <Compile Include="src\Clients\Classical\Builder\BuilderConnectFunc.cs" />
+    <Compile Include="src\Clients\Classical\Defines.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
-    <None Include="src\PuzzleGames\PuzzleFigures.cs~" />
     <None Include="data\game-graphics\handshake.svg" />
     <None Include="data\game-graphics\present.svg" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="src\gbrainy.glade">
-      <LogicalName>gbrainy.glade</LogicalName>
+    <EmbeddedResource Include="src\Clients\Classical\gbrainy.ui">
+      <LogicalName>gbrainy.ui</LogicalName>
     </EmbeddedResource>
+    <EmbeddedResource Include="src\Clients\Classical\Dialogs\ui\PreferencesDialog.ui" />
+    <EmbeddedResource Include="src\Clients\Classical\Dialogs\ui\PlayerHistoryDialog.ui" />
+    <EmbeddedResource Include="src\Clients\Classical\Dialogs\ui\CustomGameDialog.ui" />
     <EmbeddedResource Include="data\app-graphics\allgames-32.png">
       <LogicalName>allgames-32.png</LogicalName>
     </EmbeddedResource>
@@ -158,9 +105,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="data\app-graphics\gbrainy.png">
       <LogicalName>gbrainy.png</LogicalName>
-    </EmbeddedResource>
-    <EmbeddedResource Include="data\app-graphics\gbrainy.svg">
-      <LogicalName>gbrainy.svg</LogicalName>
     </EmbeddedResource>
     <EmbeddedResource Include="data\app-graphics\logic-games-32.png">
       <LogicalName>logic-games-32.png</LogicalName>
@@ -180,5 +124,26 @@
     <EmbeddedResource Include="data\app-graphics\verbal-games-32.png">
       <LogicalName>verbal-games-32.png</LogicalName>
     </EmbeddedResource>
+  </ItemGroup>
+  <ProjectExtensions>
+    <MonoDevelop>
+      <Properties InternalTargetFrameworkVersion="3.5">
+        <MonoDevelop.Autotools.MakefileInfo RelativeMakefileName="src/Clients/Classical/Makefile.am" SyncReferences="true" IsAutotoolsProject="true" RelativeConfigureInPath="../../..">
+          <BuildFilesVar Sync="true" Name="GBRAINY_CSDISTFILES" />
+          <DeployFilesVar />
+          <ResourcesVar Sync="true" Name="RESOURCES" Prefix="-resource:" />
+          <OthersVar />
+          <GacRefVar Sync="true" Name="ASSEMBLIES" Prefix="-r:" />
+          <AsmRefVar Sync="true" Name="ASSEMBLIES" Prefix="-r:" />
+          <ProjectRefVar Sync="true" Name="ASSEMBLIES" Prefix="-r:" />
+        </MonoDevelop.Autotools.MakefileInfo>
+      </Properties>
+    </MonoDevelop>
+  </ProjectExtensions>
+  <ItemGroup>
+    <ProjectReference Include="Core\Core.csproj">
+      <Project>{9F2F1F0C-DF7E-4054-B6BA-94F3DD9FF3D9}</Project>
+      <Name>Core</Name>
+    </ProjectReference>
   </ItemGroup>
 </Project>
