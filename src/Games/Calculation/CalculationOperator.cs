@@ -76,7 +76,7 @@ namespace gbrainy.Games.Calculation
 			}
 		}
 
-		public override void Initialize ()
+		protected override void Initialize ()
 		{
 			while (true)
 			{

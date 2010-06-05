@@ -58,7 +58,7 @@ namespace gbrainy.Games.Logic
 			get { return Catalog.GetString ("It is an easy exercise if you systematically count the circles.");}
 		}
 
-		public override void Initialize ()
+		protected override void Initialize ()
 		{
 			double x, y, rad;
 

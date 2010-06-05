@@ -99,7 +99,7 @@ namespace gbrainy.Games.Logic
 				GetPossibleAnswer (0), GetPossibleAnswer (1), GetPossibleAnswer (2)));} 
 		}
 
-		public override void Initialize ()
+		protected override void Initialize ()
 		{
 			possible_answers = new ArrayListIndicesRandom (3);
 			possible_answers.Initialize ();

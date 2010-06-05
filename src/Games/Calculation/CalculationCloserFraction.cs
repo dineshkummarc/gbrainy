@@ -58,7 +58,7 @@ namespace gbrainy.Games.Calculation
 			}
 		}
 
-		public override void Initialize ()
+		protected override void Initialize ()
 		{	
 			options = new double [options_cnt * 2];
 			bool duplicated;

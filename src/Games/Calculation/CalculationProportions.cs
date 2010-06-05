@@ -50,7 +50,7 @@ namespace gbrainy.Games.Calculation
 					percentage, num, den, GetPossibleAnswer (0), GetPossibleAnswer (1), GetPossibleAnswer (2), GetPossibleAnswer (3));}
 		}
 
-		public override void Initialize ()
+		protected override void Initialize ()
 		{
 			int options_next, random_max, which = 0;
 		

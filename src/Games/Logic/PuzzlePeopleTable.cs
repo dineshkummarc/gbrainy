@@ -57,7 +57,7 @@ namespace gbrainy.Games.Logic
 			}
 		}
 
-		public override void Initialize ()
+		protected override void Initialize ()
 		{
 			switch (random.Next (3)) {
 			case 0:

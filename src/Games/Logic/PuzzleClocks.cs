@@ -57,7 +57,7 @@ namespace gbrainy.Games.Logic
 			get { return Catalog.GetString ("The clocks do not follow the time logic.");}
 		}
 
-		public override void Initialize ()
+		protected override void Initialize ()
 		{
 			int position;
 

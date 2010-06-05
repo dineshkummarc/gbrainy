@@ -51,7 +51,7 @@ namespace gbrainy.Games.Logic
 			get {return String.Format (Catalog.GetString ("When folded as a cube, which face on the figure is opposite the face with a {0} drawn on it? Answer the number written on face."), question);} 
 		}
 
-		public override void Initialize ()
+		protected override void Initialize ()
 		{
 			int pair = random.Next (pairs);
 			question = (char) (48 + question_answer[pair * 2]);

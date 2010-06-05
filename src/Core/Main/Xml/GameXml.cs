@@ -91,7 +91,7 @@ namespace gbrainy.Core.Main
 			}
 		}
 
-		public override void Initialize ()
+		protected override void Initialize ()
 		{
 			if (game.Variants.Count > 0 && game.Variants[current.Variant].Answer != null)
 				right_answer = game.Variants[current.Variant].Answer;

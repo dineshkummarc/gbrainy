@@ -52,7 +52,7 @@ namespace gbrainy.Games.Logic
 			}
 		}
 
-		public override void Initialize ()
+		protected override void Initialize ()
 		{	
 			type = random.Next (2);
 			lines = 4 + type;

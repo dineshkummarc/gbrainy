@@ -65,7 +65,7 @@ namespace gbrainy.Games.Logic
 			get { return Catalog.GetString ("Every circle counts as two triangles.");}
 		}
 
-		public override void Initialize ()
+		protected override void Initialize ()
 		{
 			int ans = 0;
 			group = random.Next (3);

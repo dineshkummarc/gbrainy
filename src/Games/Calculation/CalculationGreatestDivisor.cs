@@ -47,7 +47,7 @@ namespace gbrainy.Games.Calculation
 			get {return Catalog.GetString ("Which of the possible divisors is the greatest that divides all numbers?");} 
 		}
 
-		public override void Initialize ()
+		protected override void Initialize ()
 		{	
 			bool found;
 			int n, m;

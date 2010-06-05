@@ -46,7 +46,7 @@ namespace gbrainy.Games.Memory
 				return String.Format (Catalog.GetString ("What was the color of the text that said '{0}'?"), question_colorname);}
 		}
 
-		public override void Initialize ()
+		protected override void Initialize ()
 		{
 			bool done = false;
 

@@ -167,7 +167,7 @@ namespace gbrainy.Games.Calculation
 			get { return Catalog.GetString ("If the sum of all digits in a given number is divisible by 3, then so is the number. For example 15 = 1 + 5 = 6, which is divisible by 3.");}
 		}
 
-		public override void Initialize ()
+		protected override void Initialize ()
 		{	
 			int answer;
 			int max_primeidx;

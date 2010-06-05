@@ -79,7 +79,7 @@ namespace gbrainy.Games.Logic
 			}
 		}
 
-		public override void Initialize ()
+		protected override void Initialize ()
 		{
 			question = (QuestionType) random.Next ((int) QuestionType.Length);
 

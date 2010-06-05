@@ -51,7 +51,7 @@ namespace gbrainy.Games.Logic
 			get {return Catalog.GetString ("In the last figure, in how many regions is the circle divided into when all dots are connected?");} 
 		}
 
-		public override void Initialize ()
+		protected override void Initialize ()
 		{
 			if (CurrentDifficulty==Difficulty.Easy)
 				dots = 5;

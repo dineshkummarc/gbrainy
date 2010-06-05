@@ -57,7 +57,7 @@ namespace gbrainy.Games.Logic
 			get { return "[0-9]+";}
 		}
 
-		public override void Initialize ()
+		protected override void Initialize ()
 		{
 			int ans;
 

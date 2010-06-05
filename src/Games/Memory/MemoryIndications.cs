@@ -167,7 +167,7 @@ namespace gbrainy.Games.Memory
 					GetPossibleAnswer (0), GetPossibleAnswer (1), GetPossibleAnswer (2), GetPossibleAnswer (3));}
 		}
 
-		public override void Initialize ()
+		protected override void Initialize ()
 		{
 			indications = new Indication [CurrentDifficulty == Difficulty.Easy ? 5 : 7];
 			Indication.TurnDirection second_turn = (Indication.TurnDirection) 2 +  random.Next (2);

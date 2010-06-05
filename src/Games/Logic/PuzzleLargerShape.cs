@@ -124,7 +124,7 @@ namespace gbrainy.Games.Logic
 				GetPossibleAnswer (0), GetPossibleAnswer (1), GetPossibleAnswer (2), GetPossibleAnswer (3));}
 		}
 
-		public override void Initialize ()
+		protected override void Initialize ()
 		{
 			palette = new ColorPalette ();
 

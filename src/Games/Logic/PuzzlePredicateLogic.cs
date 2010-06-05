@@ -96,7 +96,7 @@ namespace gbrainy.Games.Logic
 			get {return predicates[question].question;} 
 		}
 
-		public override void Initialize ()
+		protected override void Initialize ()
 		{
 			int answers;
 			int correct_answer;

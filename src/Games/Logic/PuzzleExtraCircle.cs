@@ -62,7 +62,7 @@ namespace gbrainy.Games.Logic
 			}
 		}
 
-		public override void Initialize ()
+		protected override void Initialize ()
 		{
 			ArrayListIndicesRandom random_indices = new ArrayListIndicesRandom (total_slices);
 			Color clr;

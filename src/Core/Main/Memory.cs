@@ -67,7 +67,7 @@ namespace gbrainy.Core.Main
 			}
 		}
 
-		public override void Initialize ()
+		protected override void Initialize ()
 		{
 			if (Preferences.GetBoolValue (Preferences.MemQuestionWarnKey) == false || 
 				IsPreviewMode == true) {

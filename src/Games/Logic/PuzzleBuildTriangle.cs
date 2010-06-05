@@ -75,7 +75,7 @@ namespace gbrainy.Games.Logic
 			get { return answers[0] + answers[1] + answers[2]; }
 		}
 
-		public override void Initialize ()
+		protected override void Initialize ()
 		{
 			switch (CurrentDifficulty) {
 			case Difficulty.Easy:

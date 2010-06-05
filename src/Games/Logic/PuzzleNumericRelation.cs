@@ -63,7 +63,7 @@ namespace gbrainy.Games.Logic
 			}
 		}
 
-		public override void Initialize ()
+		protected override void Initialize ()
 		{
 			int group = 0, inc = 0;
 

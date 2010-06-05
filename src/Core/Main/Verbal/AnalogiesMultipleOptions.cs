@@ -76,7 +76,7 @@ namespace gbrainy.Core.Main.Verbal
 			get { return analogies; }
 		}
 
-		public override void Initialize ()
+		protected override void Initialize ()
 		{
 			current = GetNext ();
 

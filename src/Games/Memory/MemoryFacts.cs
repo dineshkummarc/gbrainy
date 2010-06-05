@@ -60,7 +60,7 @@ namespace gbrainy.Games.Memory
 			get { return "[0-9]+";}
 		}
 
-		public override void Initialize ()
+		protected override void Initialize ()
 		{
 			int fact_idx, quest_idx, questions;
 			ArrayListIndicesRandom indices;

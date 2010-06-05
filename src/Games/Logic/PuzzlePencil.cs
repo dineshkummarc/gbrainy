@@ -45,7 +45,7 @@ namespace gbrainy.Games.Logic
 				GetPossibleAnswer (0), GetPossibleAnswer (1), GetPossibleAnswer (2), GetPossibleAnswer (3), GetPossibleAnswer (4));} 
 		}
 
-		public override void Initialize ()
+		protected override void Initialize ()
 		{
 			random_indices = new ArrayListIndicesRandom (figures);
 			random_indices.Initialize ();

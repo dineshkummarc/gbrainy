@@ -87,7 +87,7 @@ namespace gbrainy.Games.Logic
 			}
 		}
 
-		public override void Initialize ()
+		protected override void Initialize ()
 		{
 			gametype = (GameType) random.Next ((int) GameType.Last + 1);
 

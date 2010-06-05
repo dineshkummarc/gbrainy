@@ -57,7 +57,7 @@ namespace gbrainy.Games.Logic
 			get { return AnswerCheckAttributes.Trim | AnswerCheckAttributes.IgnoreCase | AnswerCheckAttributes.IgnoreSpaces; }
 		}
 
-		public override void Initialize ()
+		protected override void Initialize ()
 		{
 			int hour;
 			DateTime now;

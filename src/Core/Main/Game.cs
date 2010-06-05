@@ -107,8 +107,7 @@ namespace gbrainy.Core.Main
 			get { return string.Empty;}
 		}
 
-		// TODO: This should be protected since we should use Begin
-		public abstract void Initialize ();
+		protected abstract void Initialize ();
 
 		public virtual int Variants {
 			get { return 1;}

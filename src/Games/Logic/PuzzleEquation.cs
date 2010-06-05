@@ -45,7 +45,7 @@ namespace gbrainy.Games.Logic
 			}
 		}
 
-		public override void Initialize ()
+		protected override void Initialize ()
 		{
 			bool found  = false;
 			int order = 0, sequential;

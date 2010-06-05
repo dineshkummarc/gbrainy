@@ -50,7 +50,7 @@ namespace gbrainy.Games.Logic
 			}
 		}
 
-		public override void Initialize ()
+		protected override void Initialize ()
 		{
 			if (CurrentDifficulty==Difficulty.Easy)
 				type = 0;

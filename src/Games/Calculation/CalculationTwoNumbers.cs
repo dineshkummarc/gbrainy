@@ -73,7 +73,7 @@ namespace gbrainy.Games.Calculation
 			get { return String.Format (Catalog.GetString ("{0} and {1}"), number_a, number_b); }
 		}
 
-		public override void Initialize ()
+		protected override void Initialize ()
 		{
 			type = (SubGameTypes) random.Next ((int) SubGameTypes.Length);
 

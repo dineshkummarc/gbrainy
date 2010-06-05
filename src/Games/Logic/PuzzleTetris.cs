@@ -49,7 +49,7 @@ namespace gbrainy.Games.Logic
 			}
 		}
 
-		public override void Initialize ()
+		protected override void Initialize ()
 		{
 			random_indices_questions = new ArrayListIndicesRandom (4);
 			random_indices_questions.Initialize ();

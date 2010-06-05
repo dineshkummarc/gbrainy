@@ -44,7 +44,7 @@ namespace gbrainy.Games.Logic
 			get { return Catalog.GetString ("Try to imagine a situation in which you are meeting a small number of people.");}
 		}
 
-		public override void Initialize ()
+		protected override void Initialize ()
 		{
 			handshakes = 0;
 

@@ -42,7 +42,7 @@ namespace gbrainy.Games.Logic
 			get { return Catalog.GetString ("A cube is a regular solid object having six congruent square faces.");}
 		}
 
-		public override void Initialize ()
+		protected override void Initialize ()
 		{
 			int ans, max_random;
 

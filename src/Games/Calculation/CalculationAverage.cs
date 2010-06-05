@@ -69,7 +69,7 @@ namespace gbrainy.Games.Calculation
 			}
 		}
 
-		public override void Initialize ()
+		protected override void Initialize ()
 		{
 			bool duplicated;
 			int nums, options_next, dist, num_size, which = 0;

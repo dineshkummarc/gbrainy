@@ -44,7 +44,7 @@ namespace gbrainy.Games.Memory
 				return String.Format (Catalog.GetString ("There is a missing word from the previous list. Which one is the missing word?"));}
 		}
 
-		public override void Initialize ()
+		protected override void Initialize ()
 		{
 			int tmp;
 			words = new List <string> (total_words);

@@ -79,7 +79,7 @@ namespace gbrainy.Games.Logic
 			}
 		}
 
-		public override void Initialize ()
+		protected override void Initialize ()
 		{
 			sum_offset = random.Next (3);
 			random_indices = new ArrayListIndicesRandom (slices.Length / items_per_slice);

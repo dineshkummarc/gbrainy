@@ -55,7 +55,7 @@ namespace gbrainy.Games.Logic
 			get { return Catalog.GetString ("The distance formula is 'distance = rate x time'.");}
 		}
 
-		public override void Initialize ()
+		protected override void Initialize ()
 		{
 			int ans;
 			double speed_a, speed_b, rslt;

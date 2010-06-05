@@ -75,7 +75,7 @@ namespace gbrainy.Games.Logic
 			}
 		}
 
-		public override void Initialize ()
+		protected override void Initialize ()
 		{
 			group = random.Next (3);
 			switch (group) {

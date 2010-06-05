@@ -61,7 +61,7 @@ namespace gbrainy.Games.Memory
 				return Catalog.GetString ("In which cell is the other figure like the one shown below? Answer the cell number." );}
 		}
 
-		public override void Initialize ()
+		protected override void Initialize ()
 		{
 			int fig1, fig2;
 

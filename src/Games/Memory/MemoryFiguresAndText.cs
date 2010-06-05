@@ -70,7 +70,7 @@ namespace gbrainy.Games.Memory
 			get {return Catalog.GetString ("The list below enumerates the figures shown in the previous image except for one. Which is the missing figure? Possible answers are triangle, rectangle, pentagon and circle." );}
 		}
 
-		public override void Initialize ()
+		protected override void Initialize ()
 		{
 			ArrayListIndicesRandom figures_random;
 			int pos = 0;

@@ -62,7 +62,7 @@ namespace gbrainy.Games.Memory
 				GetPossibleAnswer (0), GetPossibleAnswer (1), GetPossibleAnswer (2), GetPossibleAnswer (3));}
 		}
 
-		public override void Initialize ()
+		protected override void Initialize ()
 		{
 			switch (CurrentDifficulty) {
 			case Difficulty.Easy:

@@ -46,7 +46,7 @@ namespace gbrainy.Games.Logic
 			get {return question;} 
 		}
 
-		public override void Initialize ()
+		protected override void Initialize ()
 		{
 			switch ((GameType) random.Next ((int) GameType.Length))
 			{

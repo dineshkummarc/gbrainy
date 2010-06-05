@@ -120,7 +120,7 @@ namespace gbrainy.Games.Memory
 			get { return current_game.Question; }
 		}
 
-		public override void Initialize ()
+		protected override void Initialize ()
 		{
 			base.Initialize ();
 			int total;

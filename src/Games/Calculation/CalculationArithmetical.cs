@@ -53,7 +53,7 @@ namespace gbrainy.Games.Calculation
 			get {return Catalog.GetString ("What is the result of the arithmetical operation?");} 
 		}
 
-		public override void Initialize ()
+		protected override void Initialize ()
 		{
 			int result = 0, operations = 0;
 			operation = (Operation) random.Next ((int) Operation.LastOperation);

@@ -94,7 +94,7 @@ namespace gbrainy.Games.Logic
 			}
 		}
 
-		public override void Initialize ()
+		protected override void Initialize ()
 		{
 			operation = (Operation) random.Next ((int) Operation.LastOperation);
 			orientation = (random.Next ((int) 2) == 0) ? true : false;

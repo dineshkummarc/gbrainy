@@ -86,7 +86,7 @@ namespace gbrainy.Games.Calculation
 			}
 		}
 
-		public override void Initialize ()
+		protected override void Initialize ()
 		{
 			double rslt = 0;
 			int factor = Factor;

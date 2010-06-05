@@ -50,7 +50,7 @@ namespace gbrainy.Games.Logic
 			get { return Catalog.GetString ("It is an easy exercise if you systematically count the lines.");}
 		}
 
-		public override void Initialize ()
+		protected override void Initialize ()
 		{
 			if (CurrentDifficulty==Difficulty.Easy)
 				type = 0;

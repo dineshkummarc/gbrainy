@@ -51,7 +51,7 @@ namespace gbrainy.Games.Logic
 			get { return answer;}
 		}
 
-		public override void Initialize ()
+		protected override void Initialize ()
 		{
 			int ans, var, total;
 

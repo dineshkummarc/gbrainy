@@ -78,7 +78,7 @@ namespace gbrainy.Games.Logic
 			get { return problems[problem].rationale; }
 		}
 
-		public override void Initialize ()
+		protected override void Initialize ()
 		{
 			problem = random.Next (problems.Length);
 			right_answer = problems[problem].answer;

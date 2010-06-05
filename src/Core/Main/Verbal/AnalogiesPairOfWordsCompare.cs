@@ -63,7 +63,7 @@ namespace gbrainy.Core.Main.Verbal
 			}
 		}
 
-		public override void Initialize ()
+		protected override void Initialize ()
 		{
 			current = GetNext ();
 
