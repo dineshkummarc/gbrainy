@@ -91,7 +91,7 @@ namespace gbrainy.Core.Main
 		}
 
 		public GameTypes AvailableGames {
-			get { return game_manager.AvailableGames; }
+			get { return game_manager.AvailableGameTypes; }
 		}
 
 		public PlayerHistory PlayerHistory { 
@@ -249,7 +249,7 @@ namespace gbrainy.Core.Main
 			CurrentGame.DrawRequest += GameDrawRequest;
 			CurrentGame.UpdateUIElement += GameUpdateUIElement;
 
-			CurrentGame.Initialize ();
+			CurrentGame.Begin ();
 
 			CurrentGame.GameTime = TimeSpan.Zero;
 			Status = SessionStatus.Playing;

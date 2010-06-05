@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2007 Jordi Mas i Hernàndez <jmas@softcatala.org>
+ * Copyright (C) 2007-2010 Jordi Mas i Hernàndez <jmas@softcatala.org>
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License as
@@ -20,7 +20,7 @@
 using System;
 using Gtk;
 using Mono.Unix;
-using System.Collections;
+using System.Collections.Generic;
 
 using gbrainy.Core.Main;
 using gbrainy.Core.Libraries;
@@ -36,22 +36,23 @@ namespace gbrainy.Clients.Classical
 		CairoPreview drawing_area;
 		SimpleLabel question_label;
 		GameManager manager;
-		int ngames, npos;
-		Type [] custom_games;
+		GameManager.GameLocator [] games;
+		bool selection_done;
 
 		const int COL_ENABLED = 2;
 		const int COL_OBJECT = 3;
+		const int COL_INDEX = 4;
 
 		public CustomGameDialog (GameManager manager) : base ("CustomGameDialog.ui", "customgame")
 		{
 			Game game;
-			Type[] games;
 			GameManager gm;
 
+			selection_done = false;
 			this.manager = manager;
 			gm = new GameManager ();
 			gm.GameType = GameSession.Types.AllGames;
-			games = gm.CustomGames;
+			games = gm.AvailableGames;
 
 			drawing_area = new CairoPreview ();
 			preview_vbox.Add (drawing_area);
@@ -85,28 +86,33 @@ namespace gbrainy.Clients.Classical
 			treeview.AppendColumn (toggle_column);
 
 			if (games_store == null) {
-				games_store = new ListStore (typeof(string), typeof (string), typeof(bool), typeof (Game));
+				games_store = new ListStore (typeof(string), typeof (string), typeof(bool), typeof (Game), typeof (int));
 					 
 				// Data
 				string type;
 				for (int i = 0; i < games.Length; i++)
-				{	
-					game =  (Game) Activator.CreateInstance (games [i], true);
+				{
+					if (games [i].IsGame == false)
+						continue;
+
+					game = (Game) Activator.CreateInstance (games [i].TypeOf, true);
+					game.Variant = games [i].Variant;
 					type = GameTypesDescription.Get (game.Type);
-					games_store.AppendValues (game.Name, type, true, game);
+					games_store.AppendValues (game.Name, type, true, game, i);
 				}
 			}
 
 			treeview.Model = games_store;
-			game =  (Game) Activator.CreateInstance (games [0], true);
-			game.Initialize ();
+			game = (Game) Activator.CreateInstance (games [0].TypeOf, true);
+			game.Variant = 0;
+			game.Begin ();
 			drawing_area.puzzle = game;
 			question_label.Text = game.Question;
 			treeview.ColumnsAutosize ();
 		}
 
-		public int NumOfGames {
-			get { return ngames;}
+		public bool SelectionDone {
+			get { return selection_done;}
 		}
 
 		private void OnCursorChanged (object o, EventArgs args) 
@@ -123,7 +129,7 @@ namespace gbrainy.Clients.Classical
 			if (game.IsPreviewMode == false) 
 			{
 				game.IsPreviewMode = true;
-				game.Initialize ();
+				game.Begin ();
 			}
 
 			question_label.Text = game.Question;
@@ -160,33 +166,24 @@ namespace gbrainy.Clients.Classical
 
 		void OnOK (object sender, EventArgs args)
 		{
-			ngames = 0;
-			npos = 0;
+			List <int> play_list;
 
-			games_store.Foreach (delegate (TreeModel model, TreePath path, TreeIter iter)  {
-				if ((bool) games_store.GetValue (iter, COL_ENABLED) == true)
-					ngames++;
+			play_list = new List <int> ();
 
-				return false;
-			});
-
-			if (ngames == 0)
-				return;
-
-			custom_games = new Type [ngames];
 			games_store.Foreach (delegate (TreeModel model, TreePath path, TreeIter iter)  {
 				Game game = games_store.GetValue (iter, COL_OBJECT) as Game;
 				bool enabled = (bool) games_store.GetValue (iter, COL_ENABLED);
 
 				if (enabled == true) {
-					custom_games[npos] = game.GetType ();
-					npos++;
+					selection_done = true;
+					int idx = (int) games_store.GetValue (iter, COL_INDEX);
+					play_list.Add (idx);
 				}
 				return false;
 			});
 
-	
-			manager.CustomGames = custom_games;
+			if (selection_done == true)
+				manager.PlayList = play_list.ToArray ();
 		}
 
 		public class CairoPreview : DrawingArea 

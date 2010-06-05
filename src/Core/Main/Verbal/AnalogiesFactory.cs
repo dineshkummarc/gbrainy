@@ -22,7 +22,6 @@ using System.Xml;
 using System.IO;
 using System.Collections.Generic;
 
-using Cairo;
 using Mono.Unix;
 
 namespace gbrainy.Core.Main.Verbal
@@ -53,7 +52,7 @@ namespace gbrainy.Core.Main.Verbal
 
 		static void Read ()
 		{
-			Read (Defines.DATA_DIR + Defines.VERBAL_ANALOGIES);
+			Read (Path.Combine (Defines.DATA_DIR, Defines.VERBAL_ANALOGIES));
 		}			
 
 		static public void Read (string file)
@@ -163,7 +162,7 @@ namespace gbrainy.Core.Main.Verbal
 
 			catch (Exception e)
 			{
-				Console.WriteLine ("Error loading {0}. Exception {1}", file, e.Message);
+				Console.WriteLine ("AnalogiesFactory. Error loading file: {0}", e.Message);
 			}
 		}
 	}

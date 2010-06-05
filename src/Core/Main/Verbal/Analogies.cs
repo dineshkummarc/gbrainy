@@ -51,10 +51,6 @@ namespace gbrainy.Core.Main.Verbal
 			}
 		}
 
-		public override bool IsPlayable {
-			get { return List.Count > 0;}
-		}
-
 		public override string Answer {
 			get {
 				string str;
@@ -106,56 +102,23 @@ namespace gbrainy.Core.Main.Verbal
 			get { return GameTypes.VerbalAnalogy;}
 		}
 
-		public abstract ArrayListIndicesRandom Indices {
-			get;
-			set;
-		}
-
-		public abstract int CurrentIndex {
-			get;
-			set;
-		}
-
-		// Returns true when this game manager has no more games to server
-		public bool IsExhausted {
-			get { return CurrentIndex + 1 >= List.Count;}
-		}
-
 		public abstract Dictionary <int, Analogy> List {
 			get;
 		}
 
+		public override int Variants {
+			get { return List.Count;}
+		}
+
 		public Analogy GetNext ()
 		{
-			int idx;
 			Analogy analogy; // Holds a deep copy
 			Analogy analogy_ref; // Holds reference to the object
 			ArrayListIndicesRandom indices = null;
 			int new_right = 0;
 			bool localized = true;
 
-			if (List.Count == 0)
-				return null;
-
-			if (Indices == null || CurrentIndex + 1 >= List.Count) {
-				Indices = new ArrayListIndicesRandom (List.Count);
-				Indices.Initialize ();
-			}
-			else
-				CurrentIndex++;
-
-			idx = Indices [CurrentIndex];
-		
-			try
-			{
-				List.TryGetValue (idx, out analogy_ref);
-			}
-
-			catch (KeyNotFoundException)
-			{
-				return null;
-			}
-
+			List.TryGetValue (Variant, out analogy_ref);
 			analogy = analogy_ref.Copy ();
 
 			if (analogy.answers != null) { // Randomize answers order
@@ -195,7 +158,7 @@ namespace gbrainy.Core.Main.Verbal
 			} else {
 
 				// Get analogy again
-				List.TryGetValue (idx, out analogy_ref);
+				List.TryGetValue (Variant, out analogy_ref);
 				analogy = analogy_ref.Copy ();
 
 				if (analogy.answers != null) { // Randomize answers order

@@ -522,14 +522,13 @@ namespace gbrainy.Clients.Classical
 
 		void OnCustomGame (object sender, EventArgs args)
 		{
-			ResponseType rslt;
 			CustomGameDialog dialog;
 
 			dialog = new CustomGameDialog (session.GameManager);
-			rslt = (Gtk.ResponseType) dialog.Run ();
+			dialog.Run ();
 			dialog.Destroy ();
 
-			if (rslt == ResponseType.Ok && dialog.NumOfGames > 0)
+			if (dialog.SelectionDone == true)
 				OnNewGame (GameSession.Types.Custom);
 		}
 

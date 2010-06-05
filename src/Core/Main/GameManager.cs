@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2007-2009 Jordi Mas i Hernàndez <jmas@softcatala.org>
+ * Copyright (C) 2007-2010 Jordi Mas i Hernàndez <jmas@softcatala.org>
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License as
@@ -41,58 +41,7 @@ namespace gbrainy.Core.Main
 {
 	public class GameManager
 	{
-		// Serves analogies as their container class is still not exhausted
-		// This is used to make sure that the analogies are not repeated within a game session
-		public class AnalogiesManager
-		{
-			List <Analogies> analogies;
-
-			public AnalogiesManager (Type [] types)
-			{
-				analogies = new List <Analogies> ();
-			
-				foreach (Type type in types)
-				{
-					Analogies analogy;
-
-					analogy = (Analogies) Activator.CreateInstance (type, true);
-					analogies.Add (analogy);
-				}
-			}
-
-			public void Initialize ()
-			{
-				foreach (Analogies analogy in analogies)
-					analogy.CurrentIndex = 0;
-			}
-
-			public Type [] AvailableTypes {
-				get {
-					List <Type> types = new List <Type> ();
-
-					foreach (Analogies analogy in analogies)
-					{
-						if (analogy.List.Count > 0)
-							types.Add (analogy.GetType ());
-					}
-
-					return types.ToArray ();
-				}
-			}
-
-			public bool IsExhausted {
-				get {
-					foreach (Analogies analogy in analogies)
-					{
-						if (analogy.IsExhausted == false)
-							return false;
-					}
-					return true;
-				}
-			}
-		}
-
-		static Type[] VerbalAnalogiesInternal = new Type[] 
+		static Type[] VerbalAnalogiesInternal = new Type[]
 		{
 			typeof (AnalogiesQuestionAnswer),
 			typeof (AnalogiesMultipleOptions),
@@ -100,69 +49,79 @@ namespace gbrainy.Core.Main
 			typeof (AnalogiesPairOfWordsCompare),
 		};
 
+		public class GameLocator
+		{
+			public Type TypeOf { get; set; }
+			public int Variant { get; set; }
+			public GameTypes GameType { get; set; }
+			public bool IsGame { get; set; }
+
+			public GameLocator (Type type, int variant, GameTypes game_type, bool isGame)
+			{
+				TypeOf = type;
+				Variant = variant;
+				GameType = game_type;
+				IsGame = isGame;
+			}
+		}
+
 		bool once;
 		GameSession.Types game_type;
 		ArrayListIndicesRandom list;
-		IEnumerator enumerator;
-		List <Type> games;
+		IEnumerator <int> enumerator;
 		Game.Difficulty difficulty;
-		List <Type> LogicPuzzles;
-		List <Type> CalculationTrainers;
-		List <Type> MemoryTrainers;
-		List <Type> VerbalAnalogies;
-		AnalogiesManager analogies_manager;
-	
+
+		List <GameLocator> available_games; 	// List of all available games in the system
+		List <int> play_list;  		// Play list for the Selected difficulty, game types
+		int cnt_logic, cnt_memory, cnt_calculation, cnt_verbal;
+
 		public GameManager ()
 		{
 			game_type = GameSession.Types.None;
 			difficulty = Game.Difficulty.Medium;
-			games = new List <Type> ();
-			VerbalAnalogies = new List <Type> ();
-			analogies_manager = new AnalogiesManager (VerbalAnalogiesInternal);
+			available_games = new List <GameLocator> ();
+			play_list = new List <int> ();
+			cnt_logic = cnt_memory = cnt_calculation = cnt_verbal = 0;
 
-			foreach (Type type in analogies_manager.AvailableTypes)
-				VerbalAnalogies.Add (type);			
+			GamesXmlFactory.Read ();
 
-			LoadAssemblyGame ();
+			LoadAssemblyGames ();
 
-			if (LogicPuzzles == null)
-				LogicPuzzles = new List <Type> ();
+			// Load Analogies
+			cnt_verbal += AddGamesAndVariations (VerbalAnalogiesInternal);
 
-			if (MemoryTrainers == null)
-				MemoryTrainers = new List <Type> ();
-
-			if (CalculationTrainers == null)
-				CalculationTrainers = new List <Type> ();
+			// Load defined XML games
+			cnt_logic += LoadXmlGames ();
 
 			LoadPlugins ();
 
 			if (once == false) {
 				once = true;
-				Console.WriteLine (Catalog.GetString ("Games registered: {0}: {1} logic puzzles, {2} calculation trainers, {3} memory trainers, {4} verbal analogies"), 
-					LogicPuzzles.Count + CalculationTrainers.Count + MemoryTrainers.Count + VerbalAnalogies.Count,
-					LogicPuzzles.Count, CalculationTrainers.Count, MemoryTrainers.Count, VerbalAnalogies.Count);
+				Console.WriteLine (Catalog.GetString ("Games registered: {0}: {1} logic puzzles, {2} calculation trainers, {3} memory trainers, {4} verbal analogies"),
+					cnt_logic + cnt_memory + cnt_calculation + cnt_verbal,
+					cnt_logic, cnt_calculation, cnt_memory, cnt_verbal);
 			}
 #if PDF_DUMP
 			GeneratePDF ();
 #endif
 		}
-	
-		public GameTypes AvailableGames {
+
+		public GameTypes AvailableGameTypes {
 			get {
 				GameTypes types = GameTypes.None;
 
-				if (LogicPuzzles.Count > 0)
+				if (cnt_logic > 0)
 					types |= GameTypes.LogicPuzzle;
 
-				if (CalculationTrainers.Count > 0)
+				if (cnt_calculation > 0)
 					types |= GameTypes.MathTrainer;
 
-				if (MemoryTrainers.Count > 0)
+				if (cnt_memory > 0)
 					types |= GameTypes.MemoryTrainer;
 
-				if (analogies_manager.AvailableTypes.Length > 0)
+				if (cnt_verbal > 0)
 					types |= GameTypes.VerbalAnalogy;
-			
+
 				return types;
 			}
 		}
@@ -172,54 +131,41 @@ namespace gbrainy.Core.Main
 			set {
 				if (game_type == value)
 					return;
-			
+
 				game_type = value;
-				BuildGameList ();
+
+				if ((game_type & GameSession.Types.Custom) != GameSession.Types.Custom)
+					BuildPlayList (available_games);
 			}
 		}
 
 		public Game.Difficulty Difficulty {
 			set {
+				if (difficulty == value)
+					return;
+
 				difficulty = value;
-				BuildGameList ();
+				BuildPlayList (available_games);
 			}
-			get {
-				return difficulty;
+			get { return difficulty; }
+		}
+
+		// Establish the PlayList (the indices of the array to available games)
+		public int [] PlayList {
+			get { return play_list.ToArray ();}
+			set {
+				play_list = new List <int> (value);
+				enumerator = play_list.GetEnumerator ();
 			}
 		}
 
-		// Used from CustomGameDialog only
-		public Type[] CustomGames {
-			get { 
-				Type[] list = new Type [LogicPuzzles.Count + CalculationTrainers.Count + MemoryTrainers.Count + VerbalAnalogies.Count];
-				int idx = 0;
-
-				for (int i = 0; i < LogicPuzzles.Count; i++, idx++)
-					list[idx] = LogicPuzzles [i];
-
-				for (int i = 0; i < CalculationTrainers.Count; i++, idx++)
-					list[idx] = CalculationTrainers [i];
-
-				for (int i = 0; i < MemoryTrainers.Count; i++, idx++)
-					list[idx] = MemoryTrainers [i];
-
-				for (int i = 0; i < VerbalAnalogies.Count; i++, idx++)
-					list[idx] = VerbalAnalogies [i];
-
-				return list;
-			}
-			set {
-				games = new List <Type> (value.Length);
-				for (int i = 0; i < value.Length; i++)
-					games.Add (value[i]);
-
-				list = new ArrayListIndicesRandom (games.Count);
-				Initialize ();
-			}
+		// Returns all the games available for playing
+		public GameLocator [] AvailableGames {
+			get { return available_games.ToArray (); }
 		}
 
 		// Dynamic load of the gbrainy.Games.Dll assembly
-		void LoadAssemblyGame ()
+		void LoadAssemblyGames ()
 		{
 			const string ASSEMBLY = "gbrainy.Games.dll";
 			const string CLASS = "gbrainy.Games.GameList";
@@ -240,7 +186,7 @@ namespace gbrainy.Core.Main
 
 				asem = Assembly.LoadFrom (System.IO.Path.Combine (asm_dir, ASSEMBLY));
 
-				foreach (Type t in asem.GetTypes()) 
+				foreach (Type t in asem.GetTypes())
 				{
 					if (t.FullName == CLASS)
 					{
@@ -253,15 +199,15 @@ namespace gbrainy.Core.Main
 
 				prop = type.GetProperty (LOGIC_METHOD);
 				if (prop != null)
-					LogicPuzzles = new List <Type> ((Type []) prop.GetValue (obj, null));
+					cnt_logic += AddGamesAndVariations ((Type []) prop.GetValue (obj, null));
 
 				prop = type.GetProperty (MEMORY_METHOD);
 				if (prop != null)
-					MemoryTrainers = new List <Type> ((Type []) prop.GetValue (obj, null));
+					cnt_memory += AddGamesAndVariations ((Type []) prop.GetValue (obj, null));
 
 				prop = type.GetProperty (CALCULATION_METHOD);
 				if (prop != null)
-					CalculationTrainers = new List <Type> ((Type []) prop.GetValue (obj, null));
+					cnt_calculation += AddGamesAndVariations ((Type []) prop.GetValue (obj, null));
 			}
 
 			catch (Exception e)
@@ -270,15 +216,52 @@ namespace gbrainy.Core.Main
 			}
 		}
 
+		// Adds all the games and its variants into the available games list
+		int AddGamesAndVariations (Type [] types)
+		{
+			Game game;
+			int cnt = 0;
+
+			foreach (Type type in types)
+			{
+				game = (Game) Activator.CreateInstance (type, true);
+				for (int i = 0; i < game.Variants; i++)
+				{
+					available_games.Add (new GameLocator (type, i, game.Type, game.Variants == 1));
+				}
+				cnt += game.Variants;
+			}
+			return cnt;
+		}
+
+		// XML are stored using the Variant as a pointer to the game + the internal variant
+		int LoadXmlGames ()
+		{
+			Type type = typeof (GameXml);
+			int cnt = 0;
+
+			foreach (GameXmlDefinition game in GamesXmlFactory.Definitions)
+			{
+				available_games.Add (new GameLocator (type, cnt++, game.Type, true));
+				for (int i = 0; i < game.Variants.Count; i++)
+				{
+					available_games.Add (new GameLocator (type, cnt++, game.Type, false));
+				}
+			}
+			return cnt;
+		}
+
 		void LoadPlugins ()
 		{
 
 	#if MONO_ADDINS
+
 			try {
 				ExtensionNodeList addins;
 				Game game;
+				Type [] type = new Type [1];
 				string dir = System.IO.Path.Combine (Environment.GetFolderPath (Environment.SpecialFolder.ApplicationData), "gbrainy");
-		
+
 				AddinManager.Initialize (dir);
 				Console.WriteLine ("Pluggin database:" + dir);
 				AddinManager.Registry.Update (null);
@@ -288,28 +271,32 @@ namespace gbrainy.Core.Main
 				foreach (TypeExtensionNode node in addins) {
 					game = (Game) node.CreateInstance ();
 					Console.WriteLine ("Loading external logic game: {0}", game);
-					LogicPuzzles.Add (game.GetType ());
+					type [0] = game.GetType ();
+					AddGamesAndVariations (type);
 				}
-		
+
 				addins = AddinManager.GetExtensionNodes ("/gbrainy/games/memory");
 				foreach (TypeExtensionNode node in addins) {
 					game = (Game) node.CreateInstance ();
 					Console.WriteLine ("Loading external memory game: {0}", game);
-					MemoryTrainers.Add (game.GetType ());
+					type [0] = game.GetType ();
+					AddGamesAndVariations (type);
 				}
 
 				addins = AddinManager.GetExtensionNodes ("/gbrainy/games/calculation");
 				foreach (TypeExtensionNode node in addins) {
 					game = (Game) node.CreateInstance ();
 					Console.WriteLine ("Loading external calculation game: {0}", game);
-					CalculationTrainers.Add (game.GetType ());
+					type [0] = game.GetType ();
+					AddGamesAndVariations (type);
 				}
 
 				addins = AddinManager.GetExtensionNodes ("/gbrainy/games/verbal");
 				foreach (TypeExtensionNode node in addins) {
 					game = (Game) node.CreateInstance ();
 					Console.WriteLine ("Loading external verbal analogy game: {0}", game);
-					VerbalAnalogies.Add (game.GetType ());
+					type [0] = game.GetType ();
+					AddGamesAndVariations (type);
 				}
 			}
 			catch (Exception e)
@@ -319,140 +306,119 @@ namespace gbrainy.Core.Main
 	#endif
 		}
 
-		void BuildGameList ()
+		// Taking a GameLocator list builds the play_list
+		void BuildPlayList (List <GameLocator> all_games)
 		{
-			analogies_manager.Initialize ();
+			if ((game_type & GameSession.Types.Custom) == GameSession.Types.Custom)
+				throw new InvalidOperationException ();
 
-			if (GameType == GameSession.Types.Custom)
-				return;
+			play_list.Clear ();
 
-			games.Clear ();
-			Random random = new Random ();
+			ArrayListIndicesRandom indices = new ArrayListIndicesRandom (all_games.Count);
+			indices.Initialize ();
 
-			// For all games, 1/4 of the total are logic, 1/4 Memory, 1/4 calculation, 1/4 verbal analogies
-			if (((game_type & GameSession.Types.AllGames) == GameSession.Types.AllGames) &&
-				LogicPuzzles.Count > 0 && MemoryTrainers.Count > 0 &&
-				CalculationTrainers.Count > 0 && VerbalAnalogies.Count > 0) {
-			
-				int idx_cal = 0, idx_mem = 0, idx_verb = 0;
-				ArrayListIndicesRandom idx_logic = new ArrayListIndicesRandom (LogicPuzzles.Count);
-				ArrayListIndicesRandom idx_memory = new ArrayListIndicesRandom (MemoryTrainers.Count);
-				ArrayListIndicesRandom idx_calculation = new ArrayListIndicesRandom (CalculationTrainers.Count);
-				ArrayListIndicesRandom idx_verbal = new ArrayListIndicesRandom (VerbalAnalogies.Count);
+			List <int> logic_indices = new List <int> (cnt_logic);
+			List <int> calculation_indices = new List <int> (cnt_calculation);
+			List <int> memory_indices = new List <int> (cnt_memory);
+			List <int> verbal_indices = new List <int> (cnt_verbal);
+			bool logic, memory, calculation, verbal;
 
-				games.Clear ();
-				idx_memory.Initialize ();
-				idx_logic.Initialize ();
-				idx_calculation.Initialize ();
-				idx_verbal.Initialize ();
-
-				for (int i = 0; i < LogicPuzzles.Count; i++, idx_mem++, idx_cal++, idx_verb++) {
-
-					if (idx_cal == CalculationTrainers.Count) {
-						idx_cal = 0;
-						idx_calculation.Initialize ();
-					}
-
-					if (idx_mem == MemoryTrainers.Count) {
-						idx_mem = 0;
-						idx_memory.Initialize ();
-					}
-
-					if (idx_verb == VerbalAnalogies.Count) {
-						idx_verb = 0;
-						idx_verbal.Initialize ();
-					}
-
-					switch (random.Next (3)) {
-					case 0:
-						games.Add (CalculationTrainers [idx_calculation[idx_cal]]);
-						games.Add (LogicPuzzles [idx_logic[i]]);
-						games.Add (MemoryTrainers [idx_memory[idx_mem]]);
-						games.Add (VerbalAnalogies [idx_verbal[idx_verb]]);
-						break;
-					case 1:
-						games.Add (MemoryTrainers [idx_memory[idx_mem]]);
-						games.Add (CalculationTrainers [idx_calculation[idx_cal]]);
-						games.Add (VerbalAnalogies [idx_verbal[idx_verb]]);
-						games.Add (LogicPuzzles [idx_logic[i]]);
-						break;
-					case 2:
-						games.Add (CalculationTrainers [idx_calculation[idx_cal]]);
-						games.Add (VerbalAnalogies [idx_verbal[idx_verb]]);
-						games.Add (MemoryTrainers [idx_memory[idx_mem]]);
-						games.Add (LogicPuzzles [idx_logic[i]]);
-						break;
-					}
-				}
-			} else {
-
-				if ((game_type & GameSession.Types.LogicPuzzles) == GameSession.Types.LogicPuzzles) {
-					for (int i = 0; i < LogicPuzzles.Count; i++)
-						games.Add (LogicPuzzles [i]);
-				}
-
-				if ((game_type & GameSession.Types.CalculationTrainers) == GameSession.Types.CalculationTrainers) {
-					for (int i = 0; i < CalculationTrainers.Count; i++)
-						games.Add (CalculationTrainers [i]);
-				}
-
-				if ((game_type & GameSession.Types.MemoryTrainers) == GameSession.Types.MemoryTrainers) {
-					for (int i = 0; i < MemoryTrainers.Count; i++)
-						games.Add (MemoryTrainers [i]);
-				}
-
-				if ((game_type & GameSession.Types.VerbalAnalogies) == GameSession.Types.VerbalAnalogies) {
-					for (int i = 0; i < VerbalAnalogies.Count; i++)
-						games.Add (VerbalAnalogies [i]);
-				}
-
+			// Decide which game_types are part of the game
+			if ((game_type & GameSession.Types.AllGames) == GameSession.Types.AllGames)
+			{
+				logic = memory = calculation = verbal = true;
+			}
+			else
+			{
+				logic = (game_type & GameSession.Types.LogicPuzzles) == GameSession.Types.LogicPuzzles;
+				calculation = (game_type & GameSession.Types.CalculationTrainers) == GameSession.Types.CalculationTrainers;
+				memory = (game_type & GameSession.Types.MemoryTrainers) == GameSession.Types.MemoryTrainers;
+				verbal = (game_type & GameSession.Types.VerbalAnalogies) == GameSession.Types.VerbalAnalogies;
 			}
 
-			list = new ArrayListIndicesRandom (games.Count);
-			Initialize ();
+			// Create arrays by game type
+			for (int n = 0; n < all_games.Count; n++)
+			{
+				switch (all_games [indices [n]].GameType) {
+				case GameTypes.LogicPuzzle:
+					if (logic)
+						logic_indices.Add (indices [n]);
+					break;
+				case GameTypes.MemoryTrainer:
+					if (memory)
+						memory_indices.Add (indices [n]);
+					break;
+				case GameTypes.MathTrainer:
+					if (calculation)
+						calculation_indices.Add (indices [n]);
+					break;
+				case GameTypes.VerbalAnalogy:
+					if (verbal)
+						verbal_indices.Add (indices [n]);
+					break;
+				default:
+					throw new InvalidOperationException ("Unknown value");
+				}
+			}
+
+			int total = logic_indices.Count + memory_indices.Count + calculation_indices.Count + verbal_indices.Count;
+			int pos_logic, pos_memory, pos_calculation, pos_verbal;
+			Random random = new Random ();
+
+			pos_logic = pos_memory = pos_calculation = pos_verbal = 0;
+
+			while (play_list.Count < total)
+			{
+				switch (random.Next (3)) {
+				case 0:
+					if (pos_calculation < calculation_indices.Count) play_list.Add (calculation_indices[pos_calculation++]);
+					if (pos_logic < logic_indices.Count) play_list.Add (logic_indices[pos_logic++]);
+					if (pos_memory < memory_indices.Count) play_list.Add (memory_indices[pos_memory++]);
+					if (pos_verbal < verbal_indices.Count) play_list.Add (verbal_indices[pos_verbal++]);
+					break;
+				case 1:
+					if (pos_memory < memory_indices.Count) play_list.Add (memory_indices[pos_memory++]);
+					if (pos_calculation < calculation_indices.Count) play_list.Add (calculation_indices[pos_calculation++]);
+					if (pos_verbal < verbal_indices.Count) play_list.Add (verbal_indices[pos_verbal++]);
+					if (pos_logic < logic_indices.Count) play_list.Add (logic_indices[pos_logic++]);
+					break;
+				case 2:
+					if (pos_calculation < calculation_indices.Count) play_list.Add (calculation_indices[pos_calculation++]);
+					if (pos_verbal < verbal_indices.Count) play_list.Add (verbal_indices[pos_verbal++]);
+					if (pos_memory < memory_indices.Count) play_list.Add (memory_indices[pos_memory++]);
+					if (pos_logic < logic_indices.Count) play_list.Add (logic_indices[pos_logic++]);
+					break;
+				}
+			}
+
+			enumerator = play_list.GetEnumerator ();
 		}
 
-		void Initialize ()
-		{
-			if ((game_type & GameSession.Types.AllGames) == GameSession.Types.AllGames) { // The game list has been already randomized
-				list.Clear ();
-				for (int i = 0; i < games.Count; i++)
-					list.Add (i);
-			} else
-				list.Initialize ();
-
-			enumerator = list.GetEnumerator ();
-		}
-	
 		public Game GetPuzzle ()
 		{
 			Game puzzle, first = null;
 
 			while (true) {
 
-				if (enumerator.MoveNext () == false) { // All the games have been played, restart again 
-					Initialize ();
+				if (enumerator.MoveNext () == false) { // All the games have been played, restart again
+					enumerator = play_list.GetEnumerator ();
 					enumerator.MoveNext ();
-
-					if (analogies_manager.IsExhausted == true)
-						analogies_manager.Initialize ();
 				}
-				puzzle =  (Game) Activator.CreateInstance ((Type) games [(int) enumerator.Current], true);
+
+				puzzle =  (Game) Activator.CreateInstance ((Type) available_games [enumerator.Current].TypeOf, true);
 				//puzzle =  (Game) Activator.CreateInstance (LogicPuzzles [37], true);
+
+				puzzle.Variant = available_games [enumerator.Current].Variant;
 
 				if (first != null && first.GetType () == puzzle.GetType ())
 					break;
 
 				if (puzzle.IsPlayable == false)
 					continue;
-		
+
 				if ((Preferences.GetBoolValue (Preferences.ColorBlindKey) == true) && puzzle.UsesColors == true)
 					continue;
 
-				Analogies analogy = puzzle as Analogies;
-				if (analogy != null && analogy.IsExhausted == true)
-					continue;
-				
 				if (first == null)
 					first = puzzle;
 
@@ -463,7 +429,6 @@ namespace gbrainy.Core.Main
 			puzzle.CurrentDifficulty = Difficulty;
 			return puzzle;
 		}
-
 #if PDF_DUMP
 		// Generates a single PDF document with all the puzzles contained in gbrainy (4 games per page)
 		public void GeneratePDF ()
@@ -472,7 +437,7 @@ namespace gbrainy.Core.Main
 			Game puzzle;
 			game_type = GameSession.Types.AllGames;
 			Type [] allgames = CustomGames;
-		
+
 			for (int i = 0; i < allgames.Length; i++)
 				games.Add (allgames [i]);
 
@@ -486,7 +451,7 @@ namespace gbrainy.Core.Main
 				cnt++;
 				cr.Save ();
 				cr.Translate (x, y);
-				cr.Rectangle (0, 0, width, height);;	
+				cr.Rectangle (0, 0, width, height);;
 				cr.Clip ();
 				cr.Save ();
 				puzzle.DrawPreview (cr, width, height, false);

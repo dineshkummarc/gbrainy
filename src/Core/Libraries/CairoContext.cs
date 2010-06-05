@@ -256,9 +256,9 @@ namespace gbrainy.Core.Libraries
 					DrawImage (image, x, y, width, height);
 				}
 			}
-			catch (Exception)
+			catch (Exception e)
 			{
-				return;
+				Console.WriteLine ("CairoContext. Error '{0}' when drawing image from filename {1}", e.Message, filename);
 			}
 		}
 

@@ -29,8 +29,6 @@ namespace gbrainy.Core.Main.Verbal
 	public class AnalogiesQuestionAnswer : Analogies
 	{
 		static protected Dictionary <int, Analogy> analogies;
-		static protected ArrayListIndicesRandom analogies_indices;
-		static protected int analogies_index = 0;
 
 		public AnalogiesQuestionAnswer ()
 		{
@@ -40,16 +38,6 @@ namespace gbrainy.Core.Main.Verbal
 
 		public override string Name {
 			get { return Catalog.GetString ("Question and answer");}
-		}
-
-		public override ArrayListIndicesRandom Indices {
-			get { return analogies_indices; }
-			set { analogies_indices = value; }
-		}
-
-		public override int CurrentIndex {
-			get { return analogies_index; }
-			set { analogies_index = value; }
 		}
 
 		public override Dictionary <int, Analogy> List {

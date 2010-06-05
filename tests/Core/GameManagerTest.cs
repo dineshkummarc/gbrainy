@@ -40,11 +40,12 @@ namespace gbrainyTest
 			int notip = 0;
 			GameManager manager = new GameManager ();
 
-			Type[] games = manager.CustomGames;
+			GameManager.GameLocator [] games = manager.AvailableGames;
 
-			foreach (Type type in games)
+			foreach (GameManager.GameLocator locator in games)
 			{
-				Game game = (Game) Activator.CreateInstance (type, true);
+				Game game = (Game) Activator.CreateInstance (locator.TypeOf, true);
+				game.Variant = locator.Variant;
 				if (game.TipString == String.Empty)
 				{
 					notip++;
@@ -59,19 +60,23 @@ namespace gbrainyTest
 		{
 			Dictionary <string, bool> dictionary;
 			GameManager manager = new GameManager ();
-			Type[] games = manager.CustomGames;
-
+			GameManager.GameLocator [] games = manager.AvailableGames;
 			dictionary = new Dictionary <string, bool> (games.Length);
 
-			foreach (Type type in games)
+			foreach (GameManager.GameLocator locator in games)
 			{
-				Game game = (Game) Activator.CreateInstance (type, true);
+				if (locator.IsGame == false)
+					continue;
 
+				Game game = (Game) Activator.CreateInstance (locator.TypeOf, true);
+				game.Variant = locator.Variant;
+			
 				Assert.AreEqual (false, dictionary.ContainsKey (game.Name),
 					String.Format ("Game name {0} is duplicated", game.Name));
 
 				dictionary.Add (game.Name, true);
 			}
+
 		}
 	}
 }

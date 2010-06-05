@@ -39,6 +39,7 @@ namespace gbrainy.Core.Main
 			Easy			= 2,
 			Medium			= 4,
 			Master			= 8,
+			All			= Easy | Medium | Master,
 		}
 
 		[Flags]
@@ -75,6 +76,7 @@ namespace gbrainy.Core.Main
 		private Difficulty difficulty;
 		private ISynchronizeInvoke synchronize;
 		private List <Toolkit.Container> containers;
+		private int variant;
 
 		public event EventHandler DrawRequest;
 		public event EventHandler <UpdateUIStateEventArgs> UpdateUIElement;
@@ -82,10 +84,7 @@ namespace gbrainy.Core.Main
 
 		protected Game ()
 		{
-			random = new Random ();
-			default_color = new Cairo.Color (0, 0, 0);
 			difficulty = Difficulty.Medium;
-			containers = new List <Toolkit.Container> ();
 		}
 
 #region Methods to override in your own games
@@ -108,7 +107,12 @@ namespace gbrainy.Core.Main
 			get { return string.Empty;}
 		}
 
+		// TODO: This should be protected since we should use Begin
 		public abstract void Initialize ();
+
+		public virtual int Variants {
+			get { return 1;}
+		}
 #endregion
 
 #region Methods that you can optionally override
@@ -143,6 +147,25 @@ namespace gbrainy.Core.Main
 			get { return false;}
 		}
 #endregion
+
+		public void Begin ()
+		{
+			random = new Random ();
+			default_color = new Cairo.Color (0, 0, 0);
+			containers = new List <Toolkit.Container> ();
+			Initialize ();
+		}
+
+		public virtual int Variant {
+			protected get { return variant; }
+			set {
+				if (value < 0 || value > Variants)
+					throw new ArgumentOutOfRangeException (String.Format ("Variant out of range {0}", value));
+
+				variant = value; 
+			}
+		}
+
 		// Builds a text answer for the puzzle
 		public virtual string Answer {
 			get {
