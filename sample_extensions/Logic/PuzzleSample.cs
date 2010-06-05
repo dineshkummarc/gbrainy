@@ -31,10 +31,10 @@ public class PuzzleSample : Game
 	}
 
 	public override string Question {
-		get {return "In a party all the people is introduced to the rest. There are 28 handeshakes. How many people is in the party?";} 
+		get {return "In a party all the people is introduced to the rest. There are 28 handshakes. How many people is in the party?";}
 	}
 
-	public override void Initialize ()
+	protected override void Initialize ()
 	{
 		right_answer = "8";
 	}

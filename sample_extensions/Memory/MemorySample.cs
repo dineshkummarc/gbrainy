@@ -38,11 +38,11 @@ public class MemorySample : Memory
 	}
 
 	public override string MemoryQuestion {
-		get { 
+		get {
 			return "There is a missing animal name from the previous list. Which one is missing?";}
 	}
 
-	public override void Initialize ()
+	protected override void Initialize ()
 	{
 		int tmp;
 		animals = new List <string> ();
@@ -76,7 +76,7 @@ public class MemorySample : Memory
 		right_answer = animals [tmp];
 		base.Initialize ();
 	}
-	
+
 	public override void DrawPossibleAnswers (CairoContextEx gr, int area_width, int area_height, bool rtl)
 	{
 		double x= DrawAreaX + 0.125, y = DrawAreaY + 0.1;
@@ -103,13 +103,13 @@ public class MemorySample : Memory
 		gr.Color = new Color (0.9, 0.9, 0.9);
 		gr.DrawTextCentered (0.5, DrawAreaY, "This is an extension sample");
 	}
-	
-	public override void DrawObjectToMemorize (CairoContextEx gr, int area_width, int area_height)
+
+	public override void DrawObjectToMemorize (CairoContextEx gr, int area_width, int area_height, bool rtl)
 	{
-		base.DrawObjectToMemorize (gr, area_width, area_height);
+		base.DrawObjectToMemorize (gr, area_width, area_height, rtl);
 		DrawObject (gr, area_width, area_height);
 	}
-	
+
 	void DrawObject (CairoContextEx gr, int area_width, int area_height)
 	{
 		double x= DrawAreaX + 0.125, y = DrawAreaY + 0.1;
@@ -118,7 +118,7 @@ public class MemorySample : Memory
 			gr.MoveTo (x, y);
 			gr.ShowPangoText (animals[animals_order[i]]);
 			gr.Stroke ();
-			
+
 			if ((i + 1) % 3 == 0) {
 				y += 0.2;
 				x = DrawAreaX + 0.125;

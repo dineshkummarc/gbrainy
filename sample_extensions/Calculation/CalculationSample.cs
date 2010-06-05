@@ -34,16 +34,16 @@ public class CalculationSample : Game
 		get {return "Calculation sample";}
 	}
 
-	public override Types Type {
-		get { return Game.Types.MathTrainer;}
+	public override GameTypes Type {
+		get { return GameTypes.MathTrainer;}
 	}
 
 	public override string Question {
-		get {return String.Format ("Which two numbers when added are {0} and when multiplied are {1}?", op1, op2);} 
+		get {return String.Format ("Which two numbers when added are {0} and when multiplied are {1}?", op1, op2);}
 	}
 
-	public override void Initialize ()
-	{	
+	protected override void Initialize ()
+	{
 		switch (CurrentDifficulty) {
 		case Difficulty.Easy:
 			max_operand = 8;
@@ -66,7 +66,7 @@ public class CalculationSample : Game
 	}
 
 	public override void Draw (CairoContextEx gr, int area_width, int area_height, bool rtl)
-	{	
+	{
 		double x = DrawAreaX + 0.1;
 
 		base.Draw (gr, area_width, area_height, rtl);
@@ -75,7 +75,7 @@ public class CalculationSample : Game
 
 		gr.MoveTo (x, DrawAreaY + 0.22);
 		gr.ShowPangoText (String.Format ("number1 + number2 = {0}", op1));
-		
+
 		gr.MoveTo (x, DrawAreaY + 0.44);
 		gr.ShowPangoText (String.Format ("number1 * number2 = {0}", op2));
 
@@ -84,18 +84,18 @@ public class CalculationSample : Game
 	}
 
 	public override bool CheckAnswer (string answer)
-	{	
+	{
 		string num_a = string.Empty;
 		string num_b = string.Empty;
 		bool first = true;
-		
+
 		for (int c = 0; c < answer.Length; c++)
 		{
 			if (answer[c] < '0' || answer[c] > '9') {
 				first = false;
 				continue;
 			}
-			
+
 			if (first == true)
 				num_a += answer[c];
 			else
@@ -111,7 +111,7 @@ public class CalculationSample : Game
 		catch (FormatException) {
 			return false;
 		}
-	
+
 		return false;
 	}
 }
