@@ -47,11 +47,11 @@ namespace gbrainy.Clients.Classical
 			maxstoredspinbutton.Value = Preferences.GetIntValue (Preferences.MaxStoredGamesKey);
 			minplayedspinbutton.Value = Preferences.GetIntValue (Preferences.MinPlayedGamesKey);
 			colorblindcheckbutton.Active = Preferences.GetBoolValue (Preferences.ColorBlindKey);
-		
+
 			switch ((Game.Difficulty) Preferences.GetIntValue (Preferences.DifficultyKey)) {
 			case Game.Difficulty.Easy:
 				rb_easy.Active = rb_easy.HasFocus = true;
-				break;		
+				break;
 			case Game.Difficulty.Medium:
 				rb_medium.Active = rb_medium.HasFocus = true;
 				break;
@@ -69,13 +69,22 @@ namespace gbrainy.Clients.Classical
 				if (rb_master.Active)
 					return Game.Difficulty.Master;
 
-				return Game.Difficulty.Medium;			
+				return Game.Difficulty.Medium;
 			}
 		}
 
 		private void OnCleanHistory (object sender, EventArgs args)
 		{
-			history.Clean ();
+			if (ResponseType.Ok == HigMessageDialog.RunHigConfirmation (
+				this,
+				Gtk.DialogFlags.DestroyWithParent,
+				Gtk.MessageType.Warning,
+				Catalog.GetString ("You are about to delete the player's game session history."),
+				Catalog.GetString ("If you proceed, you will lose the history of the previous game sessions. Do you want to continue?"),
+				Catalog.GetString ("_Delete")))
+			{
+				history.Clean ();
+			}
 		}
 
 		private void OnOK (object sender, EventArgs args)

@@ -214,7 +214,7 @@
                 <property name="xalign">0</property>
                 <property name="yalign">0</property>
                 <property name="ypad">5</property>
-                <property name="label" translatable="yes">&lt;b&gt;Player's Game History&lt;/b&gt;</property>
+                <property name="label" translatable="yes">&lt;b&gt;Player's Game Session History&lt;/b&gt;</property>
                 <property name="use_markup">True</property>
               </object>
               <packing>
@@ -236,7 +236,7 @@
                         <property name="visible">True</property>
                         <property name="xalign">0</property>
                         <property name="xpad">5</property>
-                        <property name="label" translatable="yes">Minimum number of played puzzles to store the game:</property>
+                        <property name="label" translatable="yes">Minimum number of played games to store the game session:</property>
                       </object>
                       <packing>
                         <property name="x_options">GTK_FILL</property>
@@ -248,7 +248,7 @@
                         <property name="visible">True</property>
                         <property name="xalign">0</property>
                         <property name="xpad">5</property>
-                        <property name="label" translatable="yes">Maximum number of stored games in the player's game history:</property>
+                        <property name="label" translatable="yes">Maximum number of records in the player's game session history:</property>
                       </object>
                       <packing>
                         <property name="top_attach">1</property>
@@ -306,7 +306,7 @@
                     <property name="layout_style">start</property>
                     <child>
                       <object class="GtkButton" id="clear_button">
-                        <property name="label" translatable="yes">Clear Player's Game History</property>
+                        <property name="label" translatable="yes">Delete Player's Game Session History</property>
                         <property name="visible">True</property>
                         <property name="can_focus">True</property>
                         <property name="can_default">True</property>

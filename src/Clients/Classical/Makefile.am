@@ -14,6 +14,7 @@ GBRAINY_CSDISTFILES =					\
 	$(srcdir)/Dialogs/AboutDialog.cs		\
 	$(srcdir)/Dialogs/CustomGameDialog.cs		\
 	$(srcdir)/Dialogs/BuilderDialog.cs		\
+	$(srcdir)/Dialogs/HigMessageDialog.cs		\
 	$(srcdir)/Dialogs/PlayerHistoryDialog.cs	\
 	$(srcdir)/Dialogs/PreferencesDialog.cs
 
