@@ -1,0 +1,49 @@
+<!---
+
+		This is a collection of games definitions for gbrainy. This work is licensed under GPL 2.0 or higher license.
+		This the same license that gbrainy package.
+
+		Authors:
+			Jordi Mas <jmas at softcatala dot org>
+
+		TODO:
+			* Mouse sensitive areas
+			* Answer regular expression + patterns
+-->
+<games>
+
+	<game>
+		<_name>Clock Rotation</_name>
+		<type>Logic</type>
+		<difficulty>All</difficulty>
+		<_tip>Think of the items used in the game.</_tip>
+		<_rationale>Every hour rotates 360 degrees.</_rationale>
+		<svg file = "clock.svg" x = "0.25" y = "0.25" width = "0.5" height = "0.5"/>
+		<_question>How many degrees rotates the minute hand of a clock in 2 hours 40 minutes?</_question>
+		<answer>960</answer>
+		<_question>How many degrees rotates the minute hand of a clock in 2 hours 30 minutes?</_question>
+		<answer>900</answer>
+		<_question>How many degrees rotates the minute hand of a clock in 1 hours 20 minutes?</_question>
+		<answer>480</answer>
+		<_question>How many degrees rotates the minute hand of a clock in 1 hours 40 minutes?</_question>
+		<answer>600</answer>
+	</game>
+
+	<game>
+		<_name>Family relations</_name>
+		<type>Logic</type>
+		<difficulty>All</difficulty>
+		<svg file = "family.svg" x = "0.25" y = "0.25" width = "0.5" height = "0.5"/>
+		<variant>
+			<_question>A boy has as many brothers as he has sisters. Each brother has twice as many sisters as brothers. How many brothers and sisters the family has in total?</_question>
+			<_answer>7</_answer>
+			<_rationale>He has tree brothers and four sisters.</_rationale>
+		</variant>
+		<variant>
+			<_question>John's age is nowadays 5 times his son's age. 4 years ago John was 9 times older than his son. What's is John's age nowadays?</_question>
+			<_answer>40</_answer>
+		</variant>
+
+	</game>
+
+</games>
