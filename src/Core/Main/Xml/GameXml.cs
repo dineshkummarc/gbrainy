@@ -27,7 +27,7 @@ namespace gbrainy.Core.Main
 {
 	public class GameXml : Game
 	{
-		// Every GameXml instance is capable of locating any XML defined game 
+		// Every GameXml instance is capable of locating any XML defined game
 		// This struct translates from a Variant that is global to all games
 		// to a specific game + variant
 		public struct DefinitionLocator
@@ -67,27 +67,33 @@ namespace gbrainy.Core.Main
 		public override string Question {
 			get {
 				if (game.Variants.Count > 0 && game.Variants[current.Variant].Question != null)
-					return game.Variants[current.Variant].Question;
+					return Catalog.GetString (game.Variants[current.Variant].Question);
 				else
-					return game.Question;
+					return Catalog.GetString (game.Question);
 			}
 		}
 
 		public override string Rationale {
 			get {
 				if (game.Variants.Count > 0 && game.Variants[current.Variant].Rationale != null)
-					return game.Variants[current.Variant].Rationale;
+					return Catalog.GetString (game.Variants[current.Variant].Rationale);
 				else
-					return game.Rationale;
+					if (String.IsNullOrEmpty (game.Rationale) == false)
+						return Catalog.GetString (game.Rationale);
+					else
+						return null;
 			}
 		}
 
 		public override string Tip {
 			get {
 				if (game.Variants.Count > 0 && game.Variants[current.Variant].Tip != null)
-					return game.Variants[current.Variant].Tip;
+					return Catalog.GetString (game.Variants[current.Variant].Tip);
 				else
-					return game.Tip;
+					if (String.IsNullOrEmpty (game.Tip) == false)
+						return Catalog.GetString (game.Tip);
+					else
+						return null;
 			}
 		}
 

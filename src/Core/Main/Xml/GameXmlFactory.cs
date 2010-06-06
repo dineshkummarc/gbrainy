@@ -21,6 +21,7 @@ using System;
 using System.Xml;
 using System.IO;
 using System.Collections.Generic;
+using System.Globalization;
 
 using Mono.Unix;
 
@@ -114,27 +115,27 @@ namespace gbrainy.Core.Main
 
 						game.Image.Filename = reader.GetAttribute ("file");
 
-						str = reader.GetAttribute ("X");
+						str = reader.GetAttribute ("x");
 						if (String.IsNullOrEmpty (str) == false)
-							game.Image.X = Double.Parse (str);
+							game.Image.X = Double.Parse (str, CultureInfo.InvariantCulture);
 						else
 							game.Image.X = 0.1;
 
-						str = reader.GetAttribute ("Y");
+						str = reader.GetAttribute ("y");
 						if (String.IsNullOrEmpty (str) == false)
-							game.Image.Y = Double.Parse (str);
+							game.Image.Y = Double.Parse (str, CultureInfo.InvariantCulture);
 						else
 							game.Image.Y = 0.1;
 
 						str = reader.GetAttribute ("width");
 						if (String.IsNullOrEmpty (str) == false)
-							game.Image.Width = Double.Parse (str);
+							game.Image.Width = Double.Parse (str, CultureInfo.InvariantCulture);
 						else
 							game.Image.Width = 0.8;
 
 						str = reader.GetAttribute ("height");
 						if (String.IsNullOrEmpty (str) == false)
-							game.Image.Height = Double.Parse (str);
+							game.Image.Height = Double.Parse (str, CultureInfo.InvariantCulture);
 						else
 							game.Image.Height = 0.8;
 
@@ -159,6 +160,7 @@ namespace gbrainy.Core.Main
 							game.Rationale = reader.ReadElementString ();
 
 						break;
+					case "answer":
 					case "_answer":
 						if (reader.NodeType != XmlNodeType.Element)
 							break;

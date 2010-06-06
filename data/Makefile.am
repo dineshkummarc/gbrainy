@@ -42,7 +42,10 @@ tango_icons = 				\
 
 
 analogies_DATA = \
-	verbal_analogies.xml
+	verbal_analogies.xml \
+	games.xml \
+	game-graphics/clock.svg \
+	game-graphics/family.svg
 
 install-data-local:
 	@-$(mkinstalldirs) $(DESTDIR)$(hicolordir)/scalable/apps
@@ -55,6 +58,9 @@ install-data-local:
 	$(INSTALL_DATA) $(srcdir)/app-graphics/gbrainy.png $(DESTDIR)$(hicolordir)/48x48/apps/gbrainy.png
 	@-$(mkinstalldirs) $(DESTDIR)$(images)
 	$(INSTALL_DATA) $(srcdir)/verbal_analogies.xml $(DESTDIR)$(images)/verbal_analogies.xml
+	$(INSTALL_DATA) $(srcdir)/games.xml $(DESTDIR)$(images)/games.xml
+	$(INSTALL_DATA) $(srcdir)/game-graphics/clock.svg $(DESTDIR)$(images)/clock.svg
+	$(INSTALL_DATA) $(srcdir)/game-graphics/family.svg $(DESTDIR)$(images)/family.svg
 
 gtk_update_icon_cache = gtk-update-icon-cache -f -t $(datadir)/icons/hicolor
 
