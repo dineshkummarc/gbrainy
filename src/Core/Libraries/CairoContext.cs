@@ -36,7 +36,6 @@ namespace gbrainy.Core.Libraries
 	{
 		Pango.Layout layout;
 		double font_size;
-		static SVGImage image = null;
 
 		const double width_margin = 0.04;
 		const double line_spacing = 0.018;

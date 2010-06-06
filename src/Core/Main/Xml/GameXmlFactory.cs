@@ -53,7 +53,6 @@ namespace gbrainy.Core.Main
 		{
 			GameXmlDefinition game;
 			string name, str;
-			List <string> answers;
 			bool processing_variant = false;
 			int variant = 0;
 

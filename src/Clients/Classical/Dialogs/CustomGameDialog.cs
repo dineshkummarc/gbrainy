@@ -171,7 +171,6 @@ namespace gbrainy.Clients.Classical
 			play_list = new List <int> ();
 
 			games_store.Foreach (delegate (TreeModel model, TreePath path, TreeIter iter)  {
-				Game game = games_store.GetValue (iter, COL_OBJECT) as Game;
 				bool enabled = (bool) games_store.GetValue (iter, COL_ENABLED);
 
 				if (enabled == true) {

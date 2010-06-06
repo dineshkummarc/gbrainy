@@ -67,7 +67,6 @@ namespace gbrainy.Core.Main
 
 		bool once;
 		GameSession.Types game_type;
-		ArrayListIndicesRandom list;
 		IEnumerator <int> enumerator;
 		Game.Difficulty difficulty;
 

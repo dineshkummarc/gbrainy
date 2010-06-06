@@ -27,8 +27,6 @@ namespace gbrainy.Core.Main
 	// Implements functionality specific to gbrainy
 	public class CairoContextEx : CairoContext
 	{
-		Pango.Layout layout;
-		double font_size;
 		static SVGImage image = null;
 
 		const double width_margin = 0.04;

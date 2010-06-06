@@ -145,13 +145,5 @@ namespace gbrainy.Games.Calculation
 			gr.ShowPangoText ((DrawAnswer == true) ?  oper2.ToString () : "?");
 
 		}
-
-		private bool IndexOf (char c, char [] chars)
-		{
-			for (int i = 0; i < chars.Length; i++)
-				if (c == chars [i]) return true;
-
-			return false;
-		}
 	}
 }
