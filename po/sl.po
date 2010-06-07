@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gbrainy master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gbrainy&component=general\n"
-"POT-Creation-Date: 2010-05-27 19:06+0000\n"
-"PO-Revision-Date: 2010-05-28 14:12+0100\n"
+"POT-Creation-Date: 2010-06-02 18:52+0000\n"
+"PO-Revision-Date: 2010-06-05 08:38+0100\n"
 "Last-Translator: Andrej Žnidaršič <andrej.znidarsic@gmail.com>\n"
 "Language-Team: Slovenian GNOME Translation Team <gnome-si@googlegroups.com>\n"
 "MIME-Version: 1.0\n"
@@ -1310,12 +1310,12 @@ msgid "How many triangles are needed in the right part of the last figure to kee
 msgstr "Koliko trikotnikov je treba postaviti v desni del zadnje slike za uravnoteženje?"
 
 #: ../src/Games/Logic/PuzzleBalance.cs:60
-msgid "Every triangle counts as 1, each diamond as 2 and each square as 3."
-msgstr "Vsak trikotnik šteje kot 1, romb kot 2 in vsak kvadrat kot 3."
+msgid "Every triangle counts as 1, each circle as 2 and each square as 3."
+msgstr "Vsak trikotnik šteje kot 1, krog kot 2 in vsak kvadrat kot 3."
 
 #: ../src/Games/Logic/PuzzleBalance.cs:65
-msgid "Every diamond counts as two triangles."
-msgstr "Vsak romb šteje kot dva trikotnika."
+msgid "Every circle counts as two triangles."
+msgstr "Vsak krog šteje kot dva trikotnika."
 
 #: ../src/Games/Logic/PuzzleBuildTriangle.cs:53
 msgid "Build a triangle"
@@ -1601,8 +1601,8 @@ msgstr "Dogovor pri podajanju odgovorov je:"
 
 #: ../src/Games/Logic/PuzzleFigures.cs:165
 #, csharp-format
-msgid "E.g: {0}{1}{2} (diamond, triangle, circle)"
-msgstr "Na primer: {0}{1}{2} (romb, trikotnik, krog)"
+msgid "E.g: {0}{1}{2} (pentagon, triangle, circle)"
+msgstr "Na primer: {0}{1}{2} (petkotnik, trikotnik, krog)"
 
 #: ../src/Games/Logic/PuzzleFourSided.cs:34
 msgid "Four sided"
@@ -2166,10 +2166,14 @@ msgstr "Formula za razdaljo je 'razdalja = hitrost x čas'."
 #. - mph (miles per hour). You must localize this using the right unit of speed for your locale
 #: ../src/Games/Logic/PuzzleTrains.cs:84
 #, csharp-format
-msgid "A train leaves the station traveling at {0} mph. {1} hours later a second train leaves the station traveling in the same direction at {2} mph. How many hours does it take the second train to overtake the first train?"
-msgstr "Vlak zapusti postajo s hitrostjo {0} kilometrov na uro. {1} ur kasneje železniško postajo drugi vlak, ki potuje v isti smeri s hitrostjo {2} kilometrov na uro. Koliko ur potrebuje drugi vlak, da dohiti prvi vlak?"
+msgid "A train leaves the station traveling at {0} mph. {1} hour later a second train leaves the station traveling in the same direction at {2} mph. How many hours does it take the second train to overtake the first train?"
+msgid_plural "A train leaves the station traveling at {0} mph. {1} hours later a second train leaves the station traveling in the same direction at {2} mph. How many hours does it take the second train to overtake the first train?"
+msgstr[0] "Vlak zapusti postajo s hitrostjo {0} kilometrov na uro. {1} ur kasneje železniško postajo zapusti drugi vlak, ki potuje v isti smeri s hitrostjo {2} kilometrov na uro. Koliko ur potrebuje drugi vlak, da dohiti prvi vlak?"
+msgstr[1] "Vlak zapusti postajo s hitrostjo {0} kilometrov na uro. {1} uro kasneje železniško postajo zapusti drugi vlak, ki potuje v isti smeri s hitrostjo {2} kilometrov na uro. Koliko ur potrebuje drugi vlak, da dohiti prvi vlak?"
+msgstr[2] "Vlak zapusti postajo s hitrostjo {0} kilometrov na uro. {1} uri kasneje železniško postajo zapusti drugi vlak, ki potuje v isti smeri s hitrostjo {2} kilometrov na uro. Koliko ur potrebuje drugi vlak, da dohiti prvi vlak?"
+msgstr[3] "Vlak zapusti postajo s hitrostjo {0} kilometrov na uro. {1} ure kasneje železniško postajo zapusti drugi vlak, ki potuje v isti smeri s hitrostjo {2} kilometrov na uro. Koliko ur potrebuje drugi vlak, da dohiti prvi vlak?"
 
-#: ../src/Games/Logic/PuzzleTrains.cs:87
+#: ../src/Games/Logic/PuzzleTrains.cs:88
 #, csharp-format
 msgid "You can calculate the answer multiplying the second train speed by the time and dividing it by the difference of speeds."
 msgstr "Odgovor lahko izračunate z množenjem hitrosti drugega vlaka s časom in deljenjem z razliko v hitrostih."
@@ -2177,13 +2181,13 @@ msgstr "Odgovor lahko izračunate z množenjem hitrosti drugega vlaka s časom i
 #. Translators:
 #. - {0}, {1} and {3} are always greater than 2
 #. - mph (miles per hour) and miles must be localized this using the right unit of speed for your locale
-#: ../src/Games/Logic/PuzzleTrains.cs:105
+#: ../src/Games/Logic/PuzzleTrains.cs:106
 #, csharp-format
 msgid "Two trains separated by {0} miles are heading towards each other on straight parallel tracks. One travels at {1} mph and the other at {2} mph. In how many hours do they meet?"
 msgstr "Dva vlaka sta oddaljena {0} kilometrov in potujeta drug proti drugemu na ravnih vzporednih železniških progah. Prvi potuje s hitrostjo {1} kilometrov, drugi pa s hitrostjo {2} kilometrov na uro. Čez koliko ur se srečata?"
 
-#: ../src/Games/Logic/PuzzleTrains.cs:108
-#: ../src/Games/Logic/PuzzleTrains.cs:129
+#: ../src/Games/Logic/PuzzleTrains.cs:109
+#: ../src/Games/Logic/PuzzleTrains.cs:130
 #, csharp-format
 msgid "You can calculate the answer dividing the distance by the sum of both speeds."
 msgstr "Rezultat lahko izračunate z deljenjem razdalje z vsoto obeh hitrosti."
@@ -2191,7 +2195,7 @@ msgstr "Rezultat lahko izračunate z deljenjem razdalje z vsoto obeh hitrosti."
 #. Translators:
 #. - {0}, {1} and {2} are always greater than 2
 #. - mph (miles per hour). You must localize this using the right unit of speed for your locale
-#: ../src/Games/Logic/PuzzleTrains.cs:126
+#: ../src/Games/Logic/PuzzleTrains.cs:127
 #, csharp-format
 msgid "Two trains on straight parallel tracks leave from the same point and time traveling in opposite directions at {0} and {1} mph respectively. In how many hours they will be {2} miles apart?"
 msgstr "Dva vlaka na ravnih vzporednih železniških progah ob enakemu času odideta v nasprotnih smereh s hitrostjo {0} in {1} kilometrov na uro. Čez koliko ur bosta {2} kilometrov narazen?"
@@ -2329,8 +2333,8 @@ msgid "Rectangle"
 msgstr "Pravokotnik"
 
 #: ../src/Games/Memory/MemoryFiguresAndText.cs:56
-msgid "Diamond"
-msgstr "Romb"
+msgid "Pentagon"
+msgstr "Petkotnik"
 
 #: ../src/Games/Memory/MemoryFiguresAndText.cs:58
 msgid "Circle"
@@ -2341,8 +2345,8 @@ msgid "Memorize figures and text"
 msgstr "Zapomnite si slike in besedilo"
 
 #: ../src/Games/Memory/MemoryFiguresAndText.cs:70
-msgid "The list below enumerates the figures shown in the previous image except for one. Which is the missing figure? Possible answers are triangle, rectangle, diamond and circle."
-msgstr "Na spodnjem seznamu so vse prej prikazane slike razen ene. Katera slika manjka? Mogoči odgovori so trikotnik, pravokotnik, romb in krog."
+msgid "The list below enumerates the figures shown in the previous image except for one. Which is the missing figure? Possible answers are triangle, rectangle, pentagon and circle."
+msgstr "Na spodnjem seznamu so vse prej prikazane slike razen ene. Katera slika manjka? Mogoči odgovori so trikotnik, pravokotnik, petkotnik in krog."
 
 #: ../src/Games/Memory/MemoryFiguresNumbers.cs:40
 msgid "Figures with numbers"
@@ -2936,6 +2940,8 @@ msgstr "_Odstrani ..."
 msgid "_Unselect All"
 msgstr "_Prekliči izbor vsega"
 
+#~ msgid "Diamond"
+#~ msgstr "Romb"
 #~ msgid "cage | zoo"
 #~ msgstr "kletka | živalski vrt"
 #~ msgid "emblem"
