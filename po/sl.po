@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gbrainy master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gbrainy&component=general\n"
-"POT-Creation-Date: 2010-06-02 18:52+0000\n"
-"PO-Revision-Date: 2010-06-05 08:38+0100\n"
+"POT-Creation-Date: 2010-06-10 18:34+0000\n"
+"PO-Revision-Date: 2010-06-11 11:26+0100\n"
 "Last-Translator: Andrej Žnidaršič <andrej.znidarsic@gmail.com>\n"
 "Language-Team: Slovenian GNOME Translation Team <gnome-si@googlegroups.com>\n"
 "MIME-Version: 1.0\n"
@@ -19,6 +19,61 @@ msgstr ""
 "X-Poedit-Language: Slovenian\n"
 "X-Poedit-Country: SLOVENIA\n"
 "X-Poedit-SourceCharset: utf-8\n"
+
+#: ../data/games.xml.h:1
+msgid "40"
+msgstr "40"
+
+#: ../data/games.xml.h:2
+msgid "7"
+msgstr "7"
+
+# Tukaj govorim deklica, ker drugače odgovor nima smisla (je napačen). - trenutno je odgovor niz št. 58
+#: ../data/games.xml.h:3
+msgid "A boy has as many brothers as he has sisters. Each brother has twice as many sisters as brothers. How many brothers and sisters the family has in total?"
+msgstr "Deklica ima enako število bratov in sester. Vsak brat ima dvakrat toliko sester kot bratov. Koliko bratov in sester je v družini?"
+
+# Tukaj se ne vrti ura, ampak kazalci ;)
+#: ../data/games.xml.h:4
+msgid "Clock Rotation"
+msgstr "Vrtenje urinih kazalcev"
+
+#: ../data/games.xml.h:5
+msgid "Every hour rotates 360 degrees."
+msgstr "Vsaka ura pomeni vrtenje za 360 stopinj."
+
+#: ../data/games.xml.h:6
+msgid "Family relations"
+msgstr "Družinska razmerja"
+
+#: ../data/games.xml.h:7
+msgid "He has tree brothers and four sisters."
+msgstr "V družini so trije bratje in štiri sestre."
+
+#: ../data/games.xml.h:8
+msgid "How many degrees rotates the minute hand of a clock in 1 hours 20 minutes?"
+msgstr "Za koliko stopinj se zavrti minutni kazalec v 1 uri in 30 minutah? "
+
+#: ../data/games.xml.h:9
+msgid "How many degrees rotates the minute hand of a clock in 1 hours 40 minutes?"
+msgstr "Za koliko stopinj se zavrti minutni kazalec v 1 uri in 40 minutah? "
+
+#: ../data/games.xml.h:10
+msgid "How many degrees rotates the minute hand of a clock in 2 hours 30 minutes?"
+msgstr "Za koliko stopinj se zavrti minutni kazalec v 2 urah in 30 minutah? "
+
+#: ../data/games.xml.h:11
+msgid "How many degrees rotates the minute hand of a clock in 2 hours 40 minutes?"
+msgstr "Za koliko stopinj se zavrti minutni kazalec v 2 urah in 40 minutah? "
+
+#: ../data/games.xml.h:12
+msgid "John's age is nowadays 5 times his son's age. 4 years ago John was 9 times older than his son. What's is John's age nowadays?"
+msgstr "Janez je star 5 krat toliko kot njegov sin. Pred 4 leti je bil Janez 9 krat starejši kot njegov sin. Koliko je Janez star danes?"
+
+#: ../data/games.xml.h:13
+#: ../data/verbal_analogies.xml.h:54
+msgid "Think of the items used in the game."
+msgstr "Razmislite o predmetih uporabljenih v igri."
 
 #: ../data/verbal_analogies.xml.h:1
 msgid "A car engine that is poorly designed and lacking of sophistication is?"
@@ -233,10 +288,6 @@ msgstr "Prva beseda je naprava, druga beseda je količina, ki jo z napravo izmer
 #: ../data/verbal_analogies.xml.h:53
 msgid "The word 'taxidermist' is used to define a person that?"
 msgstr "Preparator je oseba, ki:"
-
-#: ../data/verbal_analogies.xml.h:54
-msgid "Think of the items used in the game."
-msgstr "Razmislite o predmetih uporabljenih v igri."
 
 #: ../data/verbal_analogies.xml.h:55
 msgid "Tiger"
@@ -823,7 +874,7 @@ msgstr "črna"
 msgid "white"
 msgstr "bela"
 
-#: ../src/Core/Main/Game.cs:151
+#: ../src/Core/Main/Game.cs:173
 #, csharp-format
 msgid "The correct answer is {0}."
 msgstr "Pravilni odgovor je {0}."
@@ -835,51 +886,51 @@ msgstr "Pravilni odgovor je {0}."
 #. For languages represented with the Latin alphabet use
 #. the same than English
 #. First possible answer for a series (e.g.: Figure A)
-#: ../src/Core/Main/Game.cs:316
+#: ../src/Core/Main/Game.cs:338
 msgid "A"
 msgstr "A"
 
 #. Second possible answer for a series
-#: ../src/Core/Main/Game.cs:318
+#: ../src/Core/Main/Game.cs:340
 msgid "B"
 msgstr "B"
 
 #. Third possible answer for a series
-#: ../src/Core/Main/Game.cs:320
+#: ../src/Core/Main/Game.cs:342
 msgid "C"
 msgstr "C"
 
 #. Fourth possible answer for a series
-#: ../src/Core/Main/Game.cs:322
+#: ../src/Core/Main/Game.cs:344
 msgid "D"
 msgstr "D"
 
 #. Fifth possible answer for a series
-#: ../src/Core/Main/Game.cs:324
+#: ../src/Core/Main/Game.cs:346
 msgid "E"
 msgstr "E"
 
 #. Sixth possible answer for a series
-#: ../src/Core/Main/Game.cs:326
+#: ../src/Core/Main/Game.cs:348
 msgid "F"
 msgstr "F"
 
 #. Seventh possible answer for a series
-#: ../src/Core/Main/Game.cs:328
+#: ../src/Core/Main/Game.cs:350
 msgid "G"
 msgstr "G"
 
 #. Eighth possible answer for a series
-#: ../src/Core/Main/Game.cs:330
+#: ../src/Core/Main/Game.cs:352
 msgid "H"
 msgstr "H"
 
-#: ../src/Core/Main/Game.cs:338
+#: ../src/Core/Main/Game.cs:360
 #, csharp-format
 msgid "Figure {0}"
 msgstr "Slika {0}"
 
-#: ../src/Core/Main/GameManager.cs:141
+#: ../src/Core/Main/GameManager.cs:99
 #, csharp-format
 msgid "Games registered: {0}: {1} logic puzzles, {2} calculation trainers, {3} memory trainers, {4} verbal analogies"
 msgstr "Vpisane igre: {0}: {1} logičnih iger, {2} računskih nalog, {3} urjenj spomina, {4} besednih analogij"
@@ -997,7 +1048,7 @@ msgstr "Preostali čas"
 msgid "Verbal analogies"
 msgstr "Besedne analogije"
 
-#: ../src/Core/Main/Verbal/Analogies.cs:64
+#: ../src/Core/Main/Verbal/Analogies.cs:60
 #, csharp-format
 msgid "Possible correct answers are: {0}."
 msgstr "Mogoči pravilni odgovori so: {0}."
@@ -1006,26 +1057,26 @@ msgstr "Mogoči pravilni odgovori so: {0}."
 #. For example: "Possible correct answers are: sleep, rest."
 #. Translators: this the separator used when concatenating possible options for answering verbal analogies
 #. For example: "Possible correct answers are: a, b, c, d."
-#: ../src/Core/Main/Verbal/Analogies.cs:98
-#: ../src/Core/Main/Verbal/AnalogiesMultipleOptions.cs:65
-#: ../src/Core/Main/Verbal/AnalogiesPairOfWordsOptions.cs:78
+#: ../src/Core/Main/Verbal/Analogies.cs:94
+#: ../src/Core/Main/Verbal/AnalogiesMultipleOptions.cs:63
+#: ../src/Core/Main/Verbal/AnalogiesPairOfWordsOptions.cs:66
 msgid ", "
 msgstr ", "
 
-#: ../src/Core/Main/Verbal/AnalogiesMultipleOptions.cs:45
+#: ../src/Core/Main/Verbal/AnalogiesMultipleOptions.cs:43
 msgid "Multiple options"
 msgstr "Izbirno vprašanje z več odgovori"
 
 #. Translators: {0} is replaced by a question and {1} by the suggestions on how to answer
 #. E.g: What is the correct option? Answer A, B, C.
-#: ../src/Core/Main/Verbal/AnalogiesMultipleOptions.cs:71
+#: ../src/Core/Main/Verbal/AnalogiesMultipleOptions.cs:69
 #, csharp-format
 msgid "{0} Answer {1}."
 msgstr "{0} Odgovorite z izbiro črke {1}."
 
 #. Translators: this "option) answer" for example "a) "21 x 60 = 1260". This should not be changed for most of the languages
-#: ../src/Core/Main/Verbal/AnalogiesMultipleOptions.cs:117
-#: ../src/Core/Main/Verbal/AnalogiesPairOfWordsOptions.cs:116
+#: ../src/Core/Main/Verbal/AnalogiesMultipleOptions.cs:105
+#: ../src/Core/Main/Verbal/AnalogiesPairOfWordsOptions.cs:104
 #: ../src/Games/Logic/PuzzleOstracism.cs:161
 #: ../src/Games/Logic/PuzzlePredicateLogic.cs:139
 #: ../src/Games/Calculation/CalculationCloserFraction.cs:163
@@ -1034,8 +1085,8 @@ msgstr "{0} Odgovorite z izbiro črke {1}."
 msgid "{0}) {1}"
 msgstr "{0}) {1}"
 
-#: ../src/Core/Main/Verbal/AnalogiesMultipleOptions.cs:131
-#: ../src/Core/Main/Verbal/AnalogiesPairOfWordsOptions.cs:110
+#: ../src/Core/Main/Verbal/AnalogiesMultipleOptions.cs:119
+#: ../src/Core/Main/Verbal/AnalogiesPairOfWordsOptions.cs:98
 #: ../src/Games/Logic/PuzzleFigurePattern.cs:192
 #: ../src/Games/Logic/PuzzleLargerShape.cs:303
 #: ../src/Games/Logic/PuzzleMissingPiece.cs:173
@@ -1048,39 +1099,39 @@ msgstr "{0}) {1}"
 msgid "Possible answers are:"
 msgstr "Mogoči odgovori so:"
 
-#: ../src/Core/Main/Verbal/AnalogiesPairOfWordsCompare.cs:46
+#: ../src/Core/Main/Verbal/AnalogiesPairOfWordsCompare.cs:45
 msgid "Pair of words compare"
 msgstr "Primerjava para besed"
 
-#: ../src/Core/Main/Verbal/AnalogiesPairOfWordsCompare.cs:72
+#: ../src/Core/Main/Verbal/AnalogiesPairOfWordsCompare.cs:61
 #, csharp-format
 msgid "Given the relationship between the two words below, which word has the same relationship to '{0}'?"
 msgstr "Katera beseda je z besedo '{0}' v enakem razmerju kot spodnji besedi?"
 
-#: ../src/Core/Main/Verbal/AnalogiesPairOfWordsCompare.cs:108
+#: ../src/Core/Main/Verbal/AnalogiesPairOfWordsCompare.cs:97
 #, csharp-format
 msgid "Words: {0}"
 msgstr "Besedi: {0}"
 
-#: ../src/Core/Main/Verbal/AnalogiesPairOfWordsOptions.cs:44
+#: ../src/Core/Main/Verbal/AnalogiesPairOfWordsOptions.cs:42
 msgid "Pair of words"
 msgstr "Besedni par"
 
-#: ../src/Core/Main/Verbal/AnalogiesPairOfWordsOptions.cs:83
+#: ../src/Core/Main/Verbal/AnalogiesPairOfWordsOptions.cs:71
 #, csharp-format
 msgid "Given the relationship between the words '{0}', which of the possible answers has the closest in relationship to the given pair? Answer {1}."
 msgstr "Kateri odgovor je najbolj povezan s parom besed '{0}'? Odgovorite {1}."
 
-#: ../src/Core/Main/Verbal/AnalogiesQuestionAnswer.cs:42
+#: ../src/Core/Main/Verbal/AnalogiesQuestionAnswer.cs:40
 msgid "Question and answer"
 msgstr "Vprašanje in odgovor"
 
-#: ../src/Core/Main/Verbal/AnalogiesFactory.cs:156
+#: ../src/Core/Main/Verbal/AnalogiesFactory.cs:155
 #, csharp-format
 msgid "Read {0} verbal analogies of type {1}"
 msgstr "Preberite {0} besednih analogij vrste {1}"
 
-#: ../src/Core/Main/Verbal/AnalogiesFactory.cs:161
+#: ../src/Core/Main/Verbal/AnalogiesFactory.cs:160
 #, csharp-format
 msgid "Read a total of {0} verbal analogies"
 msgstr "Preberite {0} besednih analogij"
@@ -1110,7 +1161,7 @@ msgid "Play games that challenge your verbal aptitude"
 msgstr "Igrajte igre, ki so izziv vašim besednim sposobnostim."
 
 #: ../src/Clients/Classical/gbrainy.cs:345
-#: ../src/Clients/Classical/gbrainy.cs:571
+#: ../src/Clients/Classical/gbrainy.cs:570
 msgid "Pause"
 msgstr "Premor"
 
@@ -1138,7 +1189,7 @@ msgstr "Napačen odgovor."
 msgid "Once you have an answer type it in the \"Answer:\" entry box and press the \"OK\" button."
 msgstr "Ko ste prepričani v odgovor, ga vnesite v vnosno polje \"Odgovor:\" in pritisnite gumb \"V redu\"."
 
-#: ../src/Clients/Classical/gbrainy.cs:575
+#: ../src/Clients/Classical/gbrainy.cs:574
 msgid "Resume"
 msgstr "Nadaljuj"
 
@@ -1180,15 +1231,15 @@ msgid "gbrainy web site"
 msgstr "Spletišče gbrainy"
 
 #. Define columns
-#: ../src/Clients/Classical/Dialogs/CustomGameDialog.cs:66
+#: ../src/Clients/Classical/Dialogs/CustomGameDialog.cs:67
 msgid "Game Name"
 msgstr "Ime igre"
 
-#: ../src/Clients/Classical/Dialogs/CustomGameDialog.cs:72
+#: ../src/Clients/Classical/Dialogs/CustomGameDialog.cs:73
 msgid "Type"
 msgstr "Vrsta"
 
-#: ../src/Clients/Classical/Dialogs/CustomGameDialog.cs:79
+#: ../src/Clients/Classical/Dialogs/CustomGameDialog.cs:80
 msgid "Enabled"
 msgstr "Omogočeno"
 
@@ -1205,6 +1256,18 @@ msgstr[0] "Upošteva rezultate zadnjih {0} zabeleženih iger."
 msgstr[1] "Za oceno rezultatov morate imeti več kot {0} zabeleženo igro."
 msgstr[2] "Upošteva rezultate zadnjih {0} zabeleženih iger."
 msgstr[3] "Upošteva rezultate zadnjih {0} zabeleženih iger."
+
+#: ../src/Clients/Classical/Dialogs/PreferencesDialog.cs:82
+msgid "You are about to delete the player's game session history."
+msgstr "Ste pred izbrisom igralčeve zgodovine iger."
+
+#: ../src/Clients/Classical/Dialogs/PreferencesDialog.cs:83
+msgid "If you proceed, you will lose the history of the previous game sessions. Do you want to continue?"
+msgstr "V kolikor nadaljujete, boste izgubili zgodovino prejšnjih sej iger. Ali želite nadaljevati?"
+
+#: ../src/Clients/Classical/Dialogs/PreferencesDialog.cs:84
+msgid "_Delete"
+msgstr "_Izbriši"
 
 #: ../src/Clients/Classical/Dialogs/ui/CustomGameDialog.ui.h:1
 msgid "Custom Game"
@@ -1224,7 +1287,7 @@ msgstr "_Začni"
 
 #: ../src/Clients/Classical/Dialogs/ui/PlayerHistoryDialog.ui.h:1
 #: ../src/Clients/Classical/gbrainy.ui.h:9
-msgid "Player's Game History"
+msgid "Player's Game Session History"
 msgstr "Igralčeva zgodovina iger"
 
 #: ../src/Clients/Classical/Dialogs/ui/PlayerHistoryDialog.ui.h:2
@@ -1244,12 +1307,12 @@ msgid "<b>Memory Games</b>"
 msgstr "<b>Igre spomina</b>"
 
 #: ../src/Clients/Classical/Dialogs/ui/PreferencesDialog.ui.h:4
-msgid "<b>Player's Game History</b>"
-msgstr "<b>Zgodovina igralčevih iger</b>"
+msgid "<b>Player's Game Session History</b>"
+msgstr "<b>Igralčeva zgodovina iger</b>"
 
 #: ../src/Clients/Classical/Dialogs/ui/PreferencesDialog.ui.h:5
-msgid "Clear Player's Game History"
-msgstr "Počisti zgodovino iger igralca"
+msgid "Delete Player's Game Session History"
+msgstr "Počisti igralčevo zgodovino iger"
 
 #: ../src/Clients/Classical/Dialogs/ui/PreferencesDialog.ui.h:6
 msgid "Easy"
@@ -1260,16 +1323,16 @@ msgid "Master"
 msgstr "Mojster"
 
 #: ../src/Clients/Classical/Dialogs/ui/PreferencesDialog.ui.h:8
-msgid "Maximum number of stored games in the player's game history:"
-msgstr "Največje število shranjenih iger v zgodovini igralca:"
+msgid "Maximum number of records in the player's game session history:"
+msgstr "Največje število shranjenih iger v igralčevi zgodovini iger:"
 
 #: ../src/Clients/Classical/Dialogs/ui/PreferencesDialog.ui.h:9
 msgid "Medium"
 msgstr "Srednje"
 
 #: ../src/Clients/Classical/Dialogs/ui/PreferencesDialog.ui.h:10
-msgid "Minimum number of played puzzles to store the game:"
-msgstr "Najmanjše število igranih iger za shranjevanje igre:"
+msgid "Minimum number of played games to store the game session:"
+msgstr "Najmanjše število igranih iger za shranjevanje seje igre:"
 
 #: ../src/Clients/Classical/Dialogs/ui/PreferencesDialog.ui.h:11
 #: ../src/Clients/Classical/gbrainy.ui.h:10
