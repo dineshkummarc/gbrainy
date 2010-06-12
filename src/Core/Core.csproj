@@ -45,54 +45,55 @@
     <Reference Include="gdk-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f">
       <Package>gtk-sharp-2.0</Package>
     </Reference>
+    <Reference Include="Mono.CSharp" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\Core\AssemblyInfo.cs" />
-    <Compile Include="..\Core\Main\ArrayListIndicesRandom.cs" />
-    <Compile Include="..\Core\Main\CairoContextEx.cs" />
-    <Compile Include="..\Core\Main\ColorPalette.cs" />
-    <Compile Include="..\Core\Main\Defines.cs" />
-    <Compile Include="..\Core\Main\Game.cs" />
-    <Compile Include="..\Core\Main\GameManager.cs" />
-    <Compile Include="..\Core\Main\GameSession.cs" />
-    <Compile Include="..\Core\Main\GameSessionHistory.cs" />
-    <Compile Include="..\Core\Main\GameSessionHistoryExtended.cs" />
-    <Compile Include="..\Core\Main\GameTips.cs" />
-    <Compile Include="..\Core\Main\GameTypes.cs" />
-    <Compile Include="..\Core\Main\IDrawable.cs" />
-    <Compile Include="..\Core\Main\IDrawRequest.cs" />
-    <Compile Include="..\Core\Main\IMouseEvent.cs" />
-    <Compile Include="..\Core\Main\Memory.cs" />
-    <Compile Include="..\Core\Main\PlayerHistory.cs" />
-    <Compile Include="..\Core\Main\PlayerPersonalRecord.cs" />
-    <Compile Include="..\Core\Main\Preferences.cs" />
-    <Compile Include="..\Core\Main\Score.cs" />
-    <Compile Include="..\Core\Main\UpdateUIStateEventArgs.cs" />
-    <Compile Include="..\Core\Main\Verbal\Analogies.cs" />
-    <Compile Include="..\Core\Main\Verbal\AnalogiesFactory.cs" />
-    <Compile Include="..\Core\Main\Verbal\AnalogiesMultipleOptions.cs" />
-    <Compile Include="..\Core\Main\Verbal\AnalogiesPairOfWordsCompare.cs" />
-    <Compile Include="..\Core\Main\Verbal\AnalogiesPairOfWordsOptions.cs" />
-    <Compile Include="..\Core\Main\Verbal\AnalogiesQuestionAnswer.cs" />
-    <Compile Include="..\Core\Main\Verbal\Analogy.cs" />
-    <Compile Include="..\Core\Main\Xml\GameXml.cs" />
-    <Compile Include="..\Core\Main\Xml\GameXmlDefinition.cs" />
-    <Compile Include="..\Core\Main\Xml\GameXmlFactory.cs" />
-    <Compile Include="..\Core\Toolkit\Container.cs" />
-    <Compile Include="..\Core\Toolkit\DrawableArea.cs" />
-    <Compile Include="..\Core\Toolkit\DrawEventArgs.cs" />
-    <Compile Include="..\Core\Toolkit\HorizontalContainer.cs" />
-    <Compile Include="..\Core\Toolkit\SeletectedEventArgs.cs" />
-    <Compile Include="..\Core\Toolkit\Widget.cs" />
-    <Compile Include="..\Core\Views\CountDownView.cs" />
-    <Compile Include="..\Core\Views\FinishView.cs" />
-    <Compile Include="..\Core\Views\PlayerHistoryView.cs" />
-    <Compile Include="..\Core\Views\ViewsControler.cs" />
-    <Compile Include="..\Core\Views\WelcomeView.cs" />
-    <Compile Include="..\Core\Libraries\CairoContext.cs" />
-    <Compile Include="..\Core\Libraries\SVGImage.cs" />
-    <Compile Include="..\Core\Libraries\GetText.cs" />
-    <Compile Include="..\Core\Platform\Unix.cs" />
+    <Compile Include="AssemblyInfo.cs" />
+    <Compile Include="Main\ArrayListIndicesRandom.cs" />
+    <Compile Include="Main\CairoContextEx.cs" />
+    <Compile Include="Main\ColorPalette.cs" />
+    <Compile Include="Main\Defines.cs" />
+    <Compile Include="Main\Game.cs" />
+    <Compile Include="Main\GameManager.cs" />
+    <Compile Include="Main\GameSession.cs" />
+    <Compile Include="Main\GameSessionHistory.cs" />
+    <Compile Include="Main\GameSessionHistoryExtended.cs" />
+    <Compile Include="Main\GameTips.cs" />
+    <Compile Include="Main\GameTypes.cs" />
+    <Compile Include="Main\IDrawable.cs" />
+    <Compile Include="Main\IDrawRequest.cs" />
+    <Compile Include="Main\IMouseEvent.cs" />
+    <Compile Include="Main\Memory.cs" />
+    <Compile Include="Main\PlayerHistory.cs" />
+    <Compile Include="Main\PlayerPersonalRecord.cs" />
+    <Compile Include="Main\Preferences.cs" />
+    <Compile Include="Main\Score.cs" />
+    <Compile Include="Main\UpdateUIStateEventArgs.cs" />
+    <Compile Include="Main\Verbal\Analogies.cs" />
+    <Compile Include="Main\Verbal\AnalogiesFactory.cs" />
+    <Compile Include="Main\Verbal\AnalogiesMultipleOptions.cs" />
+    <Compile Include="Main\Verbal\AnalogiesPairOfWordsCompare.cs" />
+    <Compile Include="Main\Verbal\AnalogiesPairOfWordsOptions.cs" />
+    <Compile Include="Main\Verbal\AnalogiesQuestionAnswer.cs" />
+    <Compile Include="Main\Verbal\Analogy.cs" />
+    <Compile Include="Main\Xml\GameXml.cs" />
+    <Compile Include="Main\Xml\GameXmlDefinition.cs" />
+    <Compile Include="Main\Xml\GameXmlFactory.cs" />
+    <Compile Include="Toolkit\Container.cs" />
+    <Compile Include="Toolkit\DrawableArea.cs" />
+    <Compile Include="Toolkit\DrawEventArgs.cs" />
+    <Compile Include="Toolkit\HorizontalContainer.cs" />
+    <Compile Include="Toolkit\SeletectedEventArgs.cs" />
+    <Compile Include="Toolkit\Widget.cs" />
+    <Compile Include="Views\CountDownView.cs" />
+    <Compile Include="Views\FinishView.cs" />
+    <Compile Include="Views\PlayerHistoryView.cs" />
+    <Compile Include="Views\ViewsControler.cs" />
+    <Compile Include="Views\WelcomeView.cs" />
+    <Compile Include="Libraries\CairoContext.cs" />
+    <Compile Include="Libraries\SVGImage.cs" />
+    <Compile Include="Libraries\GetText.cs" />
+    <Compile Include="Platform\Unix.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ProjectExtensions>
@@ -100,7 +101,4 @@
       <Properties InternalTargetFrameworkVersion="3.5" />
     </MonoDevelop>
   </ProjectExtensions>
-  <ItemGroup>
-    <Folder Include="..\Core\" />
-  </ItemGroup>
 </Project>
