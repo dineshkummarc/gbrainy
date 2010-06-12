@@ -84,6 +84,7 @@
     <Compile Include="src\Clients\Classical\Builder\GtkBeansSharp.BuilderConnectFuncNative.cs" />
     <Compile Include="src\Clients\Classical\Builder\BuilderConnectFunc.cs" />
     <Compile Include="src\Clients\Classical\Defines.cs" />
+    <Compile Include="src\Clients\Classical\Dialogs\HigMessageDialog.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
@@ -141,7 +142,7 @@
     </MonoDevelop>
   </ProjectExtensions>
   <ItemGroup>
-    <ProjectReference Include="Core\Core.csproj">
+    <ProjectReference Include="src\Core\Core.csproj">
       <Project>{9F2F1F0C-DF7E-4054-B6BA-94F3DD9FF3D9}</Project>
       <Name>Core</Name>
     </ProjectReference>
