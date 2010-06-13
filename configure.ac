@@ -41,10 +41,10 @@ else
   AC_MSG_RESULT([found])
 fi
 
-dnl -- check for various mono DLLs that we need.
+dnl -- check for various mono assemblies that we need.
 
-needed_dlls="Mono.Posix Mono.Cairo"
-for i in $needed_dlls; do
+needed_assemblies="Mono.Posix Mono.Cairo Mono.CSharp"
+for i in $needed_assemblies; do
   AC_MSG_CHECKING([for $i.dll])
   if test ! \( -e `$PKG_CONFIG --variable=prefix mono`/lib/mono/2.0/$i.dll -o -e `$PKG_CONFIG --variable=prefix mono`/lib64/mono/2.0//$i.dll \); then
     AC_MSG_ERROR([missing required mono 2.0 DLL: $i.dll])

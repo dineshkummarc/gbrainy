@@ -16,19 +16,15 @@
 		<_name>Clock Rotation</_name>
 		<type>Logic</type>
 		<difficulty>All</difficulty>
-		<_tip>Think of the items used in the game.</_tip>
+		<variables>
+			int num = random.Next (5) * 10;
+			int rslt = (2 * 360) + (num * 6);
+		</variables>
 		<_rationale>Every hour rotates 360 degrees.</_rationale>
 		<svg file = "clock.svg" x = "0.25" y = "0.25" width = "0.5" height = "0.5"/>
-		<_question>How many degrees rotates the minute hand of a clock in 2 hours 40 minutes?</_question>
-		<answer>960</answer>
-		<_question>How many degrees rotates the minute hand of a clock in 2 hours 30 minutes?</_question>
-		<answer>900</answer>
-		<_question>How many degrees rotates the minute hand of a clock in 1 hours 20 minutes?</_question>
-		<answer>480</answer>
-		<_question>How many degrees rotates the minute hand of a clock in 1 hours 40 minutes?</_question>
-		<answer>600</answer>
+		<_question>How many degrees rotates the minute hand of a clock in 2 hours [num] minutes?</_question>
+		<answer>[rslt]</answer>
 	</game>
-
 	<game>
 		<_name>Family relations</_name>
 		<type>Logic</type>
@@ -36,14 +32,13 @@
 		<svg file = "family.svg" x = "0.25" y = "0.25" width = "0.5" height = "0.5"/>
 		<variant>
 			<_question>A boy has as many brothers as he has sisters. Each brother has twice as many sisters as brothers. How many brothers and sisters the family has in total?</_question>
-			<_answer>7</_answer>
-			<_rationale>He has tree brothers and four sisters.</_rationale>
+			<answer>7</answer>
+			<_rationale>He has three brothers and four sisters.</_rationale>
 		</variant>
 		<variant>
 			<_question>John's age is nowadays 5 times his son's age. 4 years ago John was 9 times older than his son. What's is John's age nowadays?</_question>
-			<_answer>40</_answer>
+			<answer>40</answer>
 		</variant>
 
 	</game>
-
 </games>
