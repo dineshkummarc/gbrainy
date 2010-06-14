@@ -211,6 +211,7 @@ namespace gbrainy.Core.Main
 						string eval;
 
 						// Using's for the variables section
+						// We need to evaluate either declarations (like using) or expression/statements separately
 						eval = "using System;\n";
 						Mono.CSharp.Evaluator.Run (eval);
 

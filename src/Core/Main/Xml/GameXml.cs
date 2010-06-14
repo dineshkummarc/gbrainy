@@ -35,7 +35,7 @@ namespace gbrainy.Core.Main
 			public int Game { get; set; }
 			public int Variant { get; set; }
 
-			public DefinitionLocator (int game, int variant)
+			public DefinitionLocator (int game, int variant) : this ()
 			{
 				Game = game;
 				Variant = variant;

@@ -37,7 +37,7 @@ namespace gbrainy.Core.Main
 		public double Y { get; set; }
 		public MouseEventType EventType { get; set; }
 
-		public MouseEventArgs (double x, double y, MouseEventType event_type)
+		public MouseEventArgs (double x, double y, MouseEventType event_type) : this ()
 		{
 			X = x;
 			Y = y;
