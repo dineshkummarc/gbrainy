@@ -7,7 +7,7 @@ CSDISTFILES =  \
 		$(srcdir)/Logic/Puzzle3DCube.cs				\
 		$(srcdir)/Logic/PuzzleBalance.cs				\
 		$(srcdir)/Logic/PuzzleBuildTriangle.cs			\
-		$(srcdir)/Logic/PuzzleCirclesRectangle.cs			\
+		$(srcdir)/Logic/PuzzleCirclesSquare.cs			\
 		$(srcdir)/Logic/PuzzleClocks.cs				\
 		$(srcdir)/Logic/PuzzleCountCircles.cs			\
 		$(srcdir)/Logic/PuzzleCounting.cs				\

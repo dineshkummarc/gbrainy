@@ -26,10 +26,10 @@ using gbrainy.Core.Libraries;
 
 namespace gbrainy.Games.Logic
 {
-	public class PuzzleCirclesRectangle : Game
+	public class PuzzleCirclesSquare : Game
 	{
 		public override string Name {
-			get {return Catalog.GetString ("Circles in a rectangle");}
+			get {return Catalog.GetString ("Circles in a square");}
 		}
 
 		public override string Question {

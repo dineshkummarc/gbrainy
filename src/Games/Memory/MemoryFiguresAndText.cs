@@ -40,7 +40,7 @@ namespace gbrainy.Games.Memory
 		static internal class FigureType
 		{
 			internal const int Triangle = 0;
-			internal const int Rectangle = 1;
+			internal const int Square = 1;
 			internal const int Pentagon = 2;
 			internal const int Circle = 3;
 			internal const int Total = Circle + 1;
@@ -50,8 +50,8 @@ namespace gbrainy.Games.Memory
 				switch (type) {
 				case Triangle:
 					return Catalog.GetString ("Triangle");
-				case Rectangle:
-					return Catalog.GetString ("Rectangle");
+				case Square:
+					return Catalog.GetString ("Square");
 				case Pentagon:
 					return Catalog.GetString ("Pentagon");
 				case Circle:
@@ -67,7 +67,7 @@ namespace gbrainy.Games.Memory
 		}
 
 		public override string MemoryQuestion {
-			get {return Catalog.GetString ("The list below enumerates the figures shown in the previous image except for one. Which is the missing figure? Possible answers are triangle, rectangle, pentagon and circle." );}
+			get {return Catalog.GetString ("The list below enumerates the figures shown in the previous image except for one. Which is the missing figure? Possible answers are triangle, square, pentagon and circle." );}
 		}
 
 		protected override void Initialize ()
@@ -186,7 +186,7 @@ namespace gbrainy.Games.Memory
 			case FigureType.Triangle:
 				gr.DrawEquilateralTriangle (x + space_x, y + space_y, figure_size);
 				break;
-			case FigureType.Rectangle:
+			case FigureType.Square:
 				gr.Rectangle (x + space_x, y + space_y, figure_size, figure_size);
 				gr.Stroke ();
 				break;

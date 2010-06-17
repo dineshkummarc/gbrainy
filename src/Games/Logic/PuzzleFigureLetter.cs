@@ -32,7 +32,7 @@ namespace gbrainy.Games.Logic
 	
 		enum QuestionType
 		{
-			TwoRectangles	= 0,
+			TwoSquares	= 0,
 			TwoCercles,
 			ThreeCercles,
 			Length		
@@ -52,7 +52,7 @@ namespace gbrainy.Games.Logic
 
 		public override string Rationale {
 			get {
-				return Catalog.GetString ("'A' indicates that the figures overlap, 'B' that are rectangles, 'C' that are circles, 'D' that the figures are separated, 'E' that there are three figures and 'F' that there are two figures.");
+				return Catalog.GetString ("'A' indicates that the figures overlap, 'B' that are squares, 'C' that are circles, 'D' that the figures are separated, 'E' that there are three figures and 'F' that there are two figures.");
 			}
 		}
 
@@ -67,7 +67,7 @@ namespace gbrainy.Games.Logic
 		public override string AnswerValue {
 			get {
 				switch (question) {
-				case QuestionType.TwoRectangles:
+				case QuestionType.TwoSquares:
 					return "ABF";
 				case QuestionType.TwoCercles:
 					return "CDF";
@@ -84,7 +84,7 @@ namespace gbrainy.Games.Logic
 			question = (QuestionType) random.Next ((int) QuestionType.Length);
 
 			switch (question) {
-			case QuestionType.TwoRectangles:
+			case QuestionType.TwoSquares:
 				right_answer = "A | B | F";
 				break;
 			case QuestionType.TwoCercles:
@@ -125,16 +125,15 @@ namespace gbrainy.Games.Logic
 			gr.ShowPangoText ("ACF");
 			gr.Stroke ();
 
-			// Two rectangles
+			// Two squares
 			gr.Rectangle (x + 0.5, y, 0.1, 0.1);
 			gr.Rectangle (x + 0.62, y, 0.1, 0.1);
 			gr.Stroke ();
 			gr.MoveTo (x + 0.58, y + 0.18);
 			gr.ShowPangoText ("BDF");
 			gr.Stroke ();
-
 	
-			// Tree rectangles
+			// Tree squares
 			gr.Rectangle (x - 0.05, y + 0.35, 0.1, 0.1);
 			gr.Rectangle (x + 0.06 - 0.05, y + 0.37, 0.1, 0.1);
 			gr.Rectangle (x + 0.12 - 0.05, y + 0.39, 0.1, 0.1);
@@ -147,7 +146,7 @@ namespace gbrainy.Games.Logic
 			y += 0.35;
 
 			switch (question) {
-			case QuestionType.TwoRectangles:
+			case QuestionType.TwoSquares:
 				gr.Rectangle (x, y, 0.1, 0.1);
 				gr.Rectangle (x + 0.05, y + 0.03, 0.1, 0.1);
 				gr.Stroke ();

@@ -36,7 +36,7 @@ namespace gbrainy.Games
 			typeof (PuzzleSquares),
 			typeof (PuzzleFigures),
 			typeof (PuzzleMoveFigure),
-			typeof (PuzzleCirclesRectangle),
+			typeof (PuzzleCirclesSquare),
 			typeof (PuzzlePencil),
 			typeof (PuzzleTriangles),
 			typeof (PuzzleCoverPercentage),
