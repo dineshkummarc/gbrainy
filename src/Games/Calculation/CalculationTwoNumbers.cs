@@ -51,10 +51,9 @@ namespace gbrainy.Games.Calculation
 			get {
 				switch (type) {
 				case SubGameTypes.Addition:
-					return String.Format (Catalog.GetString ("Which two numbers when added are {0} and when multiplied are {1}?"), op1, op2);
-
+					return String.Format (Catalog.GetString ("Which two numbers when added are {0} and when multiplied are {1}? Answer using two numbers (e.g.: 1 and 2)."), op1, op2);
 				case SubGameTypes.Subtraction:
-					return String.Format (Catalog.GetString ("Which two numbers when subtracted are {0} and when multiplied are {1}?"), op1, op2);
+					return String.Format (Catalog.GetString ("Which two numbers when subtracted are {0} and when multiplied are {1}? Answer using two numbers (e.g.: 1 and 2)."), op1, op2);
 				default:
 					throw new InvalidOperationException ();
 				}
@@ -115,28 +114,26 @@ namespace gbrainy.Games.Calculation
 
 		public override void Draw (CairoContextEx gr, int area_width, int area_height, bool rtl)
 		{	
-			double x = DrawAreaX + 0.1;
+			double x = DrawAreaX + 0.25;
 
 			base.Draw (gr, area_width, area_height, rtl);
 
 			gr.SetPangoLargeFontSize ();
-
 			gr.MoveTo (x, DrawAreaY + 0.22);
 
 			switch (type) {
 			case SubGameTypes.Addition:
-				gr.ShowPangoText (String.Format (Catalog.GetString ("number1 + number2 = {0}"), op1));
+				gr.ShowPangoText (String.Format (Catalog.GetString ("x + y = {0}"), op1));
 				break;
 			case SubGameTypes.Subtraction:
-				gr.ShowPangoText (String.Format (Catalog.GetString ("number1 - number2 = {0}"), op1));
+				gr.ShowPangoText (String.Format (Catalog.GetString ("x - y = {0}"), op1));
 				break;
 			default:
 				throw new InvalidOperationException ();
 			}
-		
-			gr.MoveTo (x, DrawAreaY + 0.44);
-			gr.ShowPangoText (String.Format (Catalog.GetString ("number1 * number2 = {0}"), op2));
-		}
 
+			gr.MoveTo (x, DrawAreaY + 0.44);
+			gr.ShowPangoText (String.Format (Catalog.GetString ("x * y = {0}"), op2));
+		}
 	}
 }
