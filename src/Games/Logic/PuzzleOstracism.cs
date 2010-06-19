@@ -57,7 +57,7 @@ namespace gbrainy.Games.Logic
 
 		public override string Question {
 			get {return String.Format (
-				Catalog.GetString ("Which element does not belong to the group? Answer {0}, {1}, {2}, {3} or {4}."),
+				Catalog.GetString ("Which element does not belong to the group? It is not related to divisibility of the numbers. Answer {0}, {1}, {2}, {3} or {4}."),
 				GetPossibleAnswer (0), GetPossibleAnswer (1), GetPossibleAnswer (2), GetPossibleAnswer (3), GetPossibleAnswer (4));}
 		}
 
