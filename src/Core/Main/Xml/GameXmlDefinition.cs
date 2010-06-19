@@ -38,6 +38,7 @@ namespace gbrainy.Core.Main
 		public string Tip { get; set; }
 		public string Rationale { get; set; }
 		public string Answer { get; set; }
+		public string Variables { get; set; }
 
 		public SVGImage Image;
 
