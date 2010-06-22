@@ -98,30 +98,33 @@ namespace gbrainy.Core.Main
 			variants = game.Variants.Count > 0;
 
 			if (variants && game.Variants[current.Variant].Question != null)
-				question = Catalog.GetString (game.Variants[current.Variant].Question);
+				question = CatalogGetString (game.Variants[current.Variant].Question);
 			else
-				question = Catalog.GetString (game.Question);
+				question = CatalogGetString (game.Question);
 
 			if (variants && game.Variants[current.Variant].Answer != null)
-				answer = Catalog.GetString (game.Variants[current.Variant].Answer);
+				answer = CatalogGetString (game.Variants[current.Variant].Answer);
 			else
-				answer = Catalog.GetString (game.Answer);
+				answer = CatalogGetString (game.Answer);
 
 			if (variants && game.Variants[current.Variant].Rationale != null)
-				rationale = Catalog.GetString (game.Variants[current.Variant].Rationale);
+				rationale = CatalogGetString (game.Variants[current.Variant].Rationale);
 			else
-				rationale = Catalog.GetString (game.Rationale);
+				rationale = CatalogGetString (game.Rationale);
 
 			if (variants && game.Variants[current.Variant].Variables != null)
 				variables = game.Variants[current.Variant].Variables;
 			else
 				variables = game.Variables;
 
-			// Evaluate code
-			EvaluateVariables (variables);
-			question = ReplaceVariables (question);
-			answer = ReplaceVariables (answer);
-			rationale = ReplaceVariables (rationale);
+			if (String.IsNullOrEmpty (variables) == false)
+			{
+				// Evaluate code
+				EvaluateVariables (variables);
+				question = ReplaceVariables (question);
+				answer = ReplaceVariables (answer);
+				rationale = ReplaceVariables (rationale);
+			}
 
 			right_answer = answer;
 		}
@@ -167,6 +170,15 @@ namespace gbrainy.Core.Main
 				for (int variant = 0; variant < games[game].Variants.Count; variant++)
 					locators.Add (new DefinitionLocator (game, variant));
 			}
+		}
+
+		// Protect from calling with null (exception)
+		string CatalogGetString (string str)
+		{
+			if (String.IsNullOrEmpty (str))
+				return str;
+
+			return Catalog.GetString (str);
 		}
 
 		/*
@@ -284,7 +296,7 @@ namespace gbrainy.Core.Main
 
 		static string ReplaceVariables (string str)
 		{
-			const string exp = "\\[[a-z]+\\]+";
+			const string exp = "\\[[a-z_]+\\]+";
 			string eval, var, vars, var_value;
 			Regex regex;
 			Match match;

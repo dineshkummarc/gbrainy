@@ -45,7 +45,12 @@ analogies_DATA = \
 	verbal_analogies.xml \
 	games.xml \
 	game-graphics/clock.svg \
-	game-graphics/family.svg
+	game-graphics/family.svg \
+	game-graphics/password.svg \
+	game-graphics/tennis.svg \
+	game-graphics/father_son.svg \
+	game-graphics/money.svg 
+	
 
 install-data-local:
 	@-$(mkinstalldirs) $(DESTDIR)$(hicolordir)/scalable/apps
@@ -61,6 +66,10 @@ install-data-local:
 	$(INSTALL_DATA) $(srcdir)/games.xml $(DESTDIR)$(images)/games.xml
 	$(INSTALL_DATA) $(srcdir)/game-graphics/clock.svg $(DESTDIR)$(images)/clock.svg
 	$(INSTALL_DATA) $(srcdir)/game-graphics/family.svg $(DESTDIR)$(images)/family.svg
+	$(INSTALL_DATA) $(srcdir)/game-graphics/password.svg $(DESTDIR)$(images)/password.svg
+	$(INSTALL_DATA) $(srcdir)/game-graphics/tennis.svg $(DESTDIR)$(images)/tennis.svg
+	$(INSTALL_DATA) $(srcdir)/game-graphics/father_son.svg $(DESTDIR)$(images)/father_son.svg
+	$(INSTALL_DATA) $(srcdir)/game-graphics/money.svg $(DESTDIR)$(images)/money.svg
 
 gtk_update_icon_cache = gtk-update-icon-cache -f -t $(datadir)/icons/hicolor
 

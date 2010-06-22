@@ -40,7 +40,9 @@ namespace gbrainy.Clients.Classical
 				"Anna Barber\u00e0 Mar\u00e9",
 				"Carme Cabal Sard\u00e0",
 				"Jordi Mas i Hernandez",
-				"Openclipart.org"
+				"Felipe Menegaz",
+				"Openclipart.org",
+
 			};
 
 			string [] documenters = new string [] {

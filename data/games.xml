@@ -11,13 +11,12 @@
 			* Answer regular expression + patterns
 -->
 <games>
-
 	<game>
 		<_name>Clock Rotation</_name>
 		<type>Logic</type>
 		<difficulty>All</difficulty>
 		<variables>
-			int num = random.Next (5) * 10;
+			int num = (1 + random.Next (5)) * 10;
 			int rslt = (2 * 360) + (num * 6);
 		</variables>
 		<_rationale>Every hour rotates 360 degrees.</_rationale>
@@ -25,20 +24,125 @@
 		<_question>How many degrees rotates the minute hand of a clock in 2 hours [num] minutes?</_question>
 		<answer>[rslt]</answer>
 	</game>
+
 	<game>
-		<_name>Family relations</_name>
+		<_name>Brothers and sisters</_name>
 		<type>Logic</type>
 		<difficulty>All</difficulty>
-		<svg file = "family.svg" x = "0.25" y = "0.25" width = "0.5" height = "0.5"/>
+		<svg file = "family.svg" x = "0.15" y = "0.25" width = "0.625" height = "0.5"/>
 		<variant>
-			<_question>A boy has as many brothers as he has sisters. Each brother has twice as many sisters as brothers. How many brothers and sisters the family has in total?</_question>
-			<answer>7</answer>
-			<_rationale>He has three brothers and four sisters.</_rationale>
+			<variables>
+				int people = 40;
+				int brothers = 10 + random.Next (8);
+				int sisters = 12 + random.Next (8);
+				int both = 5 + random.Next (5);
+				int brothers_only = (brothers - both);
+				int sisters_only = (sisters - both);
+				int rslt = people - brothers_only - sisters_only - both;
+			</variables>
+			<_question>Out of [people] people, [brothers] have brothers, [sisters] have sisters and [both] have both. How many people have neither brothers nor sisters?</_question>
+			<answer>[rslt]</answer>
+			<_rationale>[brothers_only] people have brothers only, [sisters_only] sisters only and [both] have sisters and brothers.</_rationale>
 		</variant>
-		<variant>
-			<_question>John's age is nowadays 5 times his son's age. 4 years ago John was 9 times older than his son. What's is John's age nowadays?</_question>
-			<answer>40</answer>
-		</variant>
+	</game>
 
+	<game>
+		<_name>Age</_name>
+		<type>Logic</type>
+		<difficulty>All</difficulty>
+		<svg file = "father_son.svg" x = "0.2" y = "0.25" width = "0.6" height = "0.4"/>
+		<!--- http://mathforum.org/library/drmath/view/58577.html -->
+		<variant>
+			<variables>
+				int father = 46;
+				int difference = 2 + random.Next (8);
+				int son = (father - difference) / 2;
+			</variables>
+			<_question>John's is 46 years old. His son is [difference] years older than twice John's age. How old is John's son?</_question>
+			<answer>[son]</answer>
+		</variant>
+		<variant>
+			<variables>
+				int [] proportions = new int [] {3,4,5};
+				int [] years = new int [] {12, 16, 18};
+				int idx = random.Next (years.Length);
+
+				int ago = years [idx];
+				int proportion = proportions [idx];
+			</variables>
+			<_question>John's age is nowadays 2 times his son's age. [ago] years ago, John was [proportion] times older than his son. How old is John's son nowadays?</_question>
+			<answer>40</answer>
+			<_rationale>[ago] years ago, John's age minus [ago] was equal to [proportion] times his son age minus [ago].</_rationale>
+		</variant>
+	</game>
+
+	<game>
+		<_name>Password</_name>
+		<type>Logic</type>
+		<difficulty>All</difficulty>
+		<svg file = "password.svg" x = "0.2" y = "0.25" width = "0.6" height = "0.3"/>
+		<variant>
+			<variables>
+				int digits = 4 + random.Next (3);
+				int rslt = (int) Math.Pow (10, digits);
+			</variables>
+			<_question>A file is protected by a password formed by a [digits] digit number (ranging from 0 to 9). How many different passwords can you have?</_question>
+			<answer>[rslt]</answer>
+			<_rationale>Every digit has 10 possibilities. The total number of possibilities is 10 at the power of [digits].</_rationale>
+		</variant>
+		<variant>
+			<variables>
+				int digits = 2 + random.Next (2);
+				int rslt = (int) Math.Pow (8, digits);
+			</variables>
+			<_question>A file is protected by a password formed by a [digits] digit octal number (ranging from 0 to 7). How many different passwords can you have?</_question>
+			<answer>[rslt]</answer>
+			<_rationale>Every digit has 8 possibilities. The total number of possibilities is 8 at the power of [digits].</_rationale>
+		</variant>
+	</game>
+
+	<game>
+		<_name>Tennis game</_name>
+		<type>Logic</type>
+		<difficulty>All</difficulty>
+		<svg file = "tennis.svg" x = "0.25" y = "0.25" width = "0.5" height = "0.5"/>
+		<variant>
+			<variables>
+				int games = 5 + random.Next (5);
+				int rslt = (int) Math.Pow (2, games);
+			</variables>
+			<_question>There are [games] tennis games played simultaneous. How many different forecast are possible?</_question>
+			<answer>[rslt]</answer>
+			<_rationale>Every game is an independent event with 2 possible results. The total number of possibilities is 2 at the power of [games].</_rationale>
+		</variant>
+		<variant>
+			<variables>
+				int players = 32 + (random.Next (16) * 2);
+				int rslt = players -1;
+			</variables>
+			<_question>How many matches does it take to determine the winner of a tennis tournament that starts with [players] players?</_question>
+			<_rationale>In every match you eliminate one player, you need the total number of games minus 1 to find out the winner..</_rationale>
+			<answer>[rslt]</answer>
+		</variant>
+	</game>
+
+	<game>
+		<_name>Bank interest</_name>
+		<type>Logic</type>
+		<difficulty>All</difficulty>
+		<svg file = "money.svg" x = "0.25" y = "0.25" width = "0.5" height = "0.5"/>
+		<variant>
+			<variables>
+				int years = 2;
+				double interest = 0.10;
+				int [] money_options = new int [] {100, 200, 300, 400, 500, 600};
+				int money = money_options [random.Next (money_options.Length)];
+
+				double rslt =  money * (Math.Pow (1 + interest, years));
+			</variables>
+			<_question>You have [money] monetary units in your bank account at 10% compound interest annually. How much money will you have at end of 2 years?</_question>
+			<answer>[rslt]</answer>
+			<_rationale>Compound interest is paid on the original amount and on the accumulated past interest.</_rationale>
+		</variant>
 	</game>
 </games>
