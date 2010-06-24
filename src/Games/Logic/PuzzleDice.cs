@@ -89,10 +89,10 @@ namespace gbrainy.Games.Logic
 			base.Draw (gr, area_width, area_height, rtl);
 			
 			if (problems[problem].single)
-				gr.DrawImageFromAssembly ("dice.svg", 0.3, 0.3, 0.4, 0.8);
+				gr.DrawImageFromAssembly ("dice.svg", 0.3, 0.3, 0.4, 0.4);
 			else {
-				gr.DrawImageFromAssembly ("dice.svg", 0.1, 0.3, 0.4, 0.8);
-				gr.DrawImageFromAssembly ("dice.svg", 0.5, 0.3, 0.4, 0.8);
+				gr.DrawImageFromAssembly ("dice.svg", 0.1, 0.3, 0.4, 0.4);
+				gr.DrawImageFromAssembly ("dice.svg", 0.5, 0.3, 0.4, 0.4);
 			}
 		}
 
