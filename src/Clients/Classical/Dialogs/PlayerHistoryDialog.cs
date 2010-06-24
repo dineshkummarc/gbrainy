@@ -45,9 +45,17 @@ namespace gbrainy.Clients.Classical
 			string label;
 
 			label = Catalog.GetString ("The graph below shows the player's game score evolution. ");
-			label +=  Catalog.GetPluralString ("You need more than one game session recorded to see the score evolution.",
-				"It is built using the results of {0} last recorded game sessions.", 
-				history.Games.Count < 2 ? 1 : 2);
+
+			if (history.Games.Count < 2)
+			{
+				label += Catalog.GetString ("You need more than one game session recorded to see the score evolution.");
+			}
+			else 
+			{
+				label +=  Catalog.GetPluralString ("It is built using the results of {0} last recorded game sessions.",
+					"It is built using the results of {0} last recorded game sessions.",
+					history.Games.Count);
+			}
 
 			label_playerhistory.Text = String.Format (label, history.Games.Count);
 
@@ -94,7 +102,7 @@ namespace gbrainy.Clients.Classical
 			drawing_area.QueueDraw ();
 		}
 
-		public class CairoPreview : DrawingArea 
+		public class CairoPreview : DrawingArea
 		{
 			PlayerHistoryView view;
 
@@ -106,7 +114,7 @@ namespace gbrainy.Clients.Classical
 			public PlayerHistoryView View {
 				get { return view; }
 			}
-	
+
 			protected override bool OnExposeEvent (Gdk.EventExpose args)
 			{
 				if(!IsRealized)
@@ -128,7 +136,7 @@ namespace gbrainy.Clients.Classical
 				if (nh < h) {
 					y = (h - nh) / 2;
 				}
-	
+
 				cr.Translate (x, y);
 				cr.Scale (nw, nh);
 
@@ -138,6 +146,6 @@ namespace gbrainy.Clients.Classical
 				((IDisposable)cr).Dispose();
 	   			return base.OnExposeEvent(args);
 			}
-		}	
+		}
 	}
 }
