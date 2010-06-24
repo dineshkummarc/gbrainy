@@ -70,25 +70,46 @@ namespace gbrainy.Clients.Classical
 		bool margins = false;
 		double offset_x, offset_y;
 		int drawing_square;
+		GameSession.Types initial_session;
 
-		public GtkClient (string [] args, params object [] props)
-		: base ("gbrainy", Defines.VERSION, Modules.UI,  args, props)
+		public GtkClient ()
+		: base ("gbrainy", Defines.VERSION, Modules.UI, new string [0])
 		{
-			bool show_toolbar;
-
 			Catalog.Init ("gbrainy", Defines.GNOME_LOCALE_DIR);
 			Unix.FixLocaleInfo ();
+
+			Initialize ();
+		}
+
+		public GameSession Session {
+			get { return session; }
+		}
+
+		public GameSession.Types InitialSessionType {
+			get { return initial_session; }
+			set { initial_session = value; }
+		}
+
+		void Initialize ()
+		{
+			session = new GameSession ();
+			session.DrawRequest += SessionDrawRequest;
+			session.UpdateUIElement += SessionUpdateUIElement;
+			session.SynchronizingObject = new GtkSynchronize ();
+			session.Difficulty = (Game.Difficulty) Preferences.GetIntValue (Preferences.DifficultyKey);
+
+			BuildUI ();
+		}
+
+		void BuildUI ()
+		{
+			bool show_toolbar;
 
 			GtkBeans.Builder builder = new GtkBeans.Builder ("gbrainy.ui");
 			builder.Autoconnect (this);
 
 			BuildToolBar ();
-			session = new GameSession ();
-			session.DrawRequest += SessionDrawRequest;
-			session.UpdateUIElement += SessionUpdateUIElement;
-			session.SynchronizingObject = new GtkSynchronize ();
 
-			session.Difficulty = (Game.Difficulty) Preferences.GetIntValue (Preferences.DifficultyKey);
 			drawing_area = new DrawingArea ();
 			drawing_area.ExposeEvent += OnDrawingAreaExposeEvent;
 			GameSensitiveUI ();
@@ -110,10 +131,10 @@ namespace gbrainy.Clients.Classical
 			solution_vbox.Add (solution_label);
 
 			EventBox eb = new EventBox (); // Provides a window for drawing area windowless widget
-			
+
 			eb.Events = Gdk.EventMask.PointerMotionMask;
 			drawing_vbox.Add (eb);
-	
+
 			eb.Add (drawing_area);
 
 			eb.MotionNotifyEvent += OnMouseMotionEvent;
@@ -138,6 +159,12 @@ namespace gbrainy.Clients.Classical
 			extensions_menuitem.Visible = false;
 		#endif
 			ActiveInputControls (false);
+		}
+
+		public void ProcessDefaults ()
+		{
+			if (InitialSessionType != GameSession.Types.None)
+				OnNewGame (InitialSessionType);
 		}
 
 		// Gamesession has requested a question refresh
@@ -172,9 +199,9 @@ namespace gbrainy.Clients.Classical
 			Cairo.Context cc = Gdk.CairoHelper.Create (args.Window);
 			CairoContextEx cr = new CairoContextEx (cc.Handle, drawing_area);
 
-			// We want a square drawing area for the puzzles then the figures are shown as designed. 
+			// We want a square drawing area for the puzzles then the figures are shown as designed.
 			// For example, squares are squares. This also makes sure that proportions are kept when resizing
-			drawing_square = Math.Min (w, h);	
+			drawing_square = Math.Min (w, h);
 
 			if (drawing_square < w)
 				offset_x = (w - drawing_square) / 2;
@@ -193,7 +220,7 @@ namespace gbrainy.Clients.Classical
 			((IDisposable)cc).Dispose();
 			((IDisposable)cr).Dispose();
 		}
-		
+
 		void OnMouseMotionEvent (object o, MotionNotifyEventArgs ev_args)
 		{
 			SendMouseEvent (ev_args.Event.X, ev_args.Event.Y, MouseEventType.Move);
@@ -214,7 +241,7 @@ namespace gbrainy.Clients.Classical
 			x = ev_x - offset_x;
 			y = ev_y - offset_y;
 
-			if (x < 0 || y < 0 || x > drawing_square || y > drawing_square) 
+			if (x < 0 || y < 0 || x > drawing_square || y > drawing_square)
 				return;
 
 			x =  x / drawing_square;
@@ -292,7 +319,7 @@ namespace gbrainy.Clients.Classical
 		}
 
 		void UpdateSolution (string solution)
-		{		
+		{
 			solution_label.Text = solution;
 		}
 
@@ -418,7 +445,7 @@ namespace gbrainy.Clients.Classical
 			OnAnswerButtonClicked (this, EventArgs.Empty);
 			session.CurrentGame.AnswerEvent -= OnAnswerFromGame; // User can only answer once
 		}
-	
+
 		void OnMenuAbout (object sender, EventArgs args)
 		{
 			AboutDialog about = new AboutDialog ();
@@ -427,9 +454,9 @@ namespace gbrainy.Clients.Classical
 
 		void OnMenuHelp (object sender, EventArgs args)
 		{
-			Unix.ShowUri (null, "ghelp:gbrainy", 
+			Unix.ShowUri (null, "ghelp:gbrainy",
 				Gdk.EventHelper.GetTime (new Gdk.Event(IntPtr.Zero)));
-		}	
+		}
 
 		void OnAnswerButtonClicked (object sender, EventArgs args)
 		{
@@ -437,7 +464,7 @@ namespace gbrainy.Clients.Classical
 
 			if (session.CurrentGame == null)
 				return;
-	
+
 			if (session.ScoreGame (answer_entry.Text) == true)
 				answer = "<span color='#00A000'>" + Catalog.GetString ("Congratulations.") + "</span>";
 			else
@@ -452,17 +479,17 @@ namespace gbrainy.Clients.Classical
 			ActiveInputControls (true);
 			next_button.GrabFocus ();
 			drawing_area.QueueDraw ();
-		}		
+		}
 
 		void OnQuit (object sender, EventArgs args)
 		{
-			Quit ();	
-		}	
+			Quit ();
+		}
 
 		void OnDeleteWindow (object sender, DeleteEventArgs args)
 		{
-			Quit ();	
-		}	
+			Quit ();
+		}
 
 		void OnNextButtonClicked (object sender, EventArgs args)
 		{
@@ -553,7 +580,7 @@ namespace gbrainy.Clients.Classical
 		void OnEndGame (object sender, EventArgs args)
 		{
 			session.End ();
-	
+
 			UpdateSolution (String.Empty);
 			UpdateQuestion (String.Empty);
 			UpdateStatusBar ();
@@ -617,12 +644,12 @@ namespace gbrainy.Clients.Classical
 			dialog = new PlayerHistoryDialog (session.PlayerHistory);
 			dialog.Run ();
 			dialog.Destroy ();
-		}	
+		}
 
 		private void AddIcon (IconFactory stock, string stockid, string resource)
 		{
 			Gtk.IconSet iconset = stock.Lookup (stockid);
-		
+
 			if (iconset != null)
 				return;
 
@@ -631,7 +658,7 @@ namespace gbrainy.Clients.Classical
 			IconSource source = new IconSource ();
 			source.Pixbuf = img;
 			iconset.AddSource (source);
-			stock.Add (stockid, iconset);		
+			stock.Add (stockid, iconset);
 		}
 
 		void OnFullscreen (object sender, EventArgs args)
@@ -653,14 +680,25 @@ namespace gbrainy.Clients.Classical
 			Process.Start ("http://live.gnome.org/gbrainy/Extending");
 		}
 
-		public static void Main (string [] args) 
+		public static void Main (string [] args)
 		{
 			try {
 				Unix.SetProcessName ("gbrainy");
 			} catch {}
 
-			GtkClient gui = new GtkClient (args);
-			gui.Run ();	
+			CommandLine line = new CommandLine (args);
+			line.Parse ();
+
+			if (line.Continue == false)
+				return;
+
+			GtkClient app = new GtkClient ();
+			if (line.PlayList != null) {
+				app.Session.GameManager.PlayList = line.PlayList;
+				app.InitialSessionType = GameSession.Types.Custom;
+			}
+			app.ProcessDefaults ();
+			app.Run ();
 		}
 	}
 }

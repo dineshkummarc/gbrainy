@@ -4,6 +4,7 @@ WRAPPER = gbrainy
 TARGET_CFG = ../../gbrainy.exe.config
 
 GBRAINY_CSDISTFILES =					\
+	$(srcdir)/CommandLine.cs 			\
 	$(srcdir)/gbrainy.cs 				\
 	$(srcdir)/GtkSynchronize.cs 			\
 	$(srcdir)/SimpleLabel.cs			\
