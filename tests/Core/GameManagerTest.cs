@@ -76,7 +76,52 @@ namespace gbrainyTest
 
 				dictionary.Add (game.Name, true);
 			}
+		}
 
+		[Test]
+		public void CustomGamesRandomOrder ()
+		{
+			Dictionary <int, string> dictionary;
+			GameManager.GameLocator [] games;
+
+			List <int> list = new List <int> ();
+			GameManager gm = new GameManager ();
+			gm.GameType = GameSession.Types.AllGames;
+			games = gm.AvailableGames;
+
+			// Create a hash to map from game name to locator
+			dictionary = new Dictionary <int, string> (games.Length);
+			for (int i = 0; i < games.Length; i++)
+			{
+				if (games[i].IsGame == false)
+					continue;
+
+				Game game = (Game) Activator.CreateInstance (games[i].TypeOf, true);
+				game.Variant = games[i].Variant;
+				dictionary.Add (i, game.Name);
+				list.Add (dictionary.Count - 1);
+			}
+
+			Game current;
+			string name;
+
+			gm.RandomOrder = false;
+			gm.PlayList = list.ToArray ();
+
+			for (int i = 0; i < list.Count; i++)
+			{
+				current = gm.GetPuzzle ();
+
+				try
+				{
+					name = dictionary [i];
+					Assert.AreEqual (true, name == current.Name);
+				}
+				catch (KeyNotFoundException)
+				{
+
+				}
+			}
 		}
 	}
 }

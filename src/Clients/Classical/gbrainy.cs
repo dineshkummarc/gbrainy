@@ -697,6 +697,9 @@ namespace gbrainy.Clients.Classical
 				app.Session.GameManager.PlayList = line.PlayList;
 				app.InitialSessionType = GameSession.Types.Custom;
 			}
+
+			app.Session.GameManager.RandomOrder = line.RandomOrder;
+
 			app.ProcessDefaults ();
 			app.Run ();
 		}

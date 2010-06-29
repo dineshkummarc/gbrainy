@@ -63,7 +63,7 @@ namespace gbrainyTest
 			get { return Attributes; }
 		}
 
-		public override void Initialize () {}
+		protected override void Initialize () {}
 		
 	}
 

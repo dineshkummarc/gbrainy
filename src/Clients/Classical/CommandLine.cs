@@ -35,6 +35,7 @@ namespace gbrainy.Clients.Classical
 		public CommandLine (string [] args)
 		{
 			this.args = args;
+			RandomOrder = true;
 		}
 
 		public bool Continue {
@@ -44,6 +45,8 @@ namespace gbrainy.Clients.Classical
 		public int [] PlayList {
 			get { return play_list; }
 		}
+
+		public bool RandomOrder { get; set; }
 
 		public void Parse ()
 		{
@@ -64,6 +67,9 @@ namespace gbrainy.Clients.Classical
 					GameList ();
 					cont_execution = false;
 					break;
+				case "--norandom":
+					RandomOrder = false;
+					break;
 				case "--version":
 					Version ();
 					cont_execution = false;
@@ -78,6 +84,7 @@ namespace gbrainy.Clients.Classical
 					cont_execution = false;
 					break;
 				default:
+					Console.WriteLine ("Unknown parameter {0}", args [idx]);
 					break;
 				}
 			}
@@ -149,6 +156,7 @@ namespace gbrainy.Clients.Classical
 			                "  --help\t\t\tPrint this usage message.\n" +
 			                "  --gamelist\t\t\tShows the list of available games\n" +
 			                "  --customgame [game1, gameN]\tSpecifies a list of games to play during a custom game\n" +
+					"  --norandom \t\t\tThe custom game list provided will not be randomized\n" +
 			                "  --versions \t\t\tShow dependencies\n");
 
 			Console.WriteLine (usage);

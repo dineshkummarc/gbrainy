@@ -81,6 +81,7 @@ namespace gbrainy.Core.Main
 			available_games = new List <GameLocator> ();
 			play_list = new List <int> ();
 			cnt_logic = cnt_memory = cnt_calculation = cnt_verbal = 0;
+			RandomOrder = true;
 
 			GamesXmlFactory.Read ();
 
@@ -154,9 +155,20 @@ namespace gbrainy.Core.Main
 			get { return play_list.ToArray ();}
 			set {
 				play_list = new List <int> (value);
-				enumerator = play_list.GetEnumerator ();
+
+				if (RandomOrder == true)
+				{
+					ArrayListIndicesRandom random = new ArrayListIndicesRandom (play_list.Count);
+					random.RandomizeFromArray (play_list);
+					enumerator = random.GetEnumerator ();
+				}
+				else
+					enumerator = play_list.GetEnumerator ();
 			}
 		}
+
+		// Indicates if the PlayList for CustomGames is delivered in RandomOrder
+ 		public bool RandomOrder { get; set; }
 
 		// Returns all the games available for playing
 		public GameLocator [] AvailableGames {
