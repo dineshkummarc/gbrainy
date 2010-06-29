@@ -154,10 +154,10 @@ namespace gbrainy.Clients.Classical
 			                "Usage: gbrainy [options]\n" +
 			                "  --version\t\t\tPrint version information.\n" +
 			                "  --help\t\t\tPrint this usage message.\n" +
-			                "  --gamelist\t\t\tShows the list of available games\n" +
-			                "  --customgame [game1, gameN]\tSpecifies a list of games to play during a custom game\n" +
-					"  --norandom \t\t\tThe custom game list provided will not be randomized\n" +
-			                "  --versions \t\t\tShow dependencies\n");
+			                "  --gamelist\t\t\tShows the list of available games.\n" +
+			                "  --customgame [game1, gameN]\tSpecifies a list of games to play during a custom game.\n" +
+					"  --norandom \t\t\tThe custom game list provided will not be randomized.\n" +
+			                "  --versions \t\t\tShow dependencies.\n");
 
 			Console.WriteLine (usage);
 		}
