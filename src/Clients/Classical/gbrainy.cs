@@ -77,8 +77,6 @@ namespace gbrainy.Clients.Classical
 		{
 			Catalog.Init ("gbrainy", Defines.GNOME_LOCALE_DIR);
 			Unix.FixLocaleInfo ();
-
-			Initialize ();
 		}
 
 		public GameSession Session {
@@ -90,7 +88,7 @@ namespace gbrainy.Clients.Classical
 			set { initial_session = value; }
 		}
 
-		void Initialize ()
+		public void Initialize ()
 		{
 			session = new GameSession ();
 			session.DrawRequest += SessionDrawRequest;
@@ -686,18 +684,19 @@ namespace gbrainy.Clients.Classical
 				Unix.SetProcessName ("gbrainy");
 			} catch {}
 
+			GtkClient app = new GtkClient ();
 			CommandLine line = new CommandLine (args);
 			line.Parse ();
 
 			if (line.Continue == false)
 				return;
 
-			GtkClient app = new GtkClient ();
 			if (line.PlayList != null) {
 				app.Session.GameManager.PlayList = line.PlayList;
 				app.InitialSessionType = GameSession.Types.Custom;
 			}
 
+			app.Initialize ();
 			app.Session.GameManager.RandomOrder = line.RandomOrder;
 
 			app.ProcessDefaults ();
