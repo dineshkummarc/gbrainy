@@ -56,9 +56,9 @@
 			<variables>
 				int father = 46;
 				int difference = 2 + random.Next (8);
-				int son = (father - difference) / 2;
+				int son = (father / 2) - difference;
 			</variables>
-			<_question>John's is 46 years old. His son is [difference] years older than twice John's age. How old is John's son?</_question>
+			<_question>John's is 46 years old. His son is [difference] years younger than half of John's age. How old is John's son?</_question>
 			<answer>[son]</answer>
 		</variant>
 		<variant>
