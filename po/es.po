@@ -11,8 +11,8 @@ msgstr ""
 "Project-Id-Version: gbrainy.HEAD\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=gbrainy&component=general\n"
-"POT-Creation-Date: 2010-06-28 19:20+0000\n"
-"PO-Revision-Date: 2010-06-29 05:41+0200\n"
+"POT-Creation-Date: 2010-06-29 23:23+0000\n"
+"PO-Revision-Date: 2010-07-01 21:30+0200\n"
 "Last-Translator: Jorge González <jorgegonz@svn.gnome.org>\n"
 "Language-Team: Español <gnome-es-list@gnome.org>\n"
 "MIME-Version: 1.0\n"
@@ -34,21 +34,18 @@ msgid ""
 msgstr ""
 
 #: ../data/games.xml.h:3
-#| msgid "Average"
 msgid "Age"
 msgstr "Edad"
 
 #: ../data/games.xml.h:4
 msgid "Bank interest"
-msgstr ""
+msgstr "Interés del banco"
 
 #: ../data/games.xml.h:5
-#| msgid "Squares and letters"
 msgid "Brothers and sisters"
 msgstr "Hermanos y hermanas"
 
 #: ../data/games.xml.h:6
-#| msgid "Calculation"
 msgid "Clock Rotation"
 msgstr "Rotación del reloj"
 
@@ -57,6 +54,8 @@ msgid ""
 "Compound interest is paid on the original amount and on the accumulated past "
 "interest."
 msgstr ""
+"El interés compuesto se paga sobre la cantidad original y sobre el interés "
+"acumulado anterior."
 
 #: ../data/games.xml.h:8
 msgid ""
@@ -78,7 +77,7 @@ msgstr ""
 
 #: ../data/games.xml.h:11
 msgid "Every hour rotates 360 degrees."
-msgstr ""
+msgstr "Cada hora rota 360 grados."
 
 #: ../data/games.xml.h:12
 msgid ""
@@ -94,8 +93,10 @@ msgstr ""
 #: ../data/games.xml.h:14
 msgid ""
 "In every match you eliminate one player, you need the total number of games "
-"minus 1 to find out the winner.."
+"minus 1 to find out the winner."
 msgstr ""
+"En cada partida eliminas un jugador, necesitas el número total de partidas "
+"menos 1 para saber el ganador."
 
 #: ../data/games.xml.h:15
 msgid ""
@@ -105,7 +106,7 @@ msgstr ""
 
 #: ../data/games.xml.h:16
 msgid ""
-"John's is 46 years old. His son is [difference] years older than twice "
+"John's is 46 years old. His son is [difference] years younger than half of "
 "John's age. How old is John's son?"
 msgstr ""
 
@@ -120,7 +121,6 @@ msgid "Password"
 msgstr "Contraseña"
 
 #: ../data/games.xml.h:19
-#| msgid "Tennis"
 msgid "Tennis game"
 msgstr "Tenis"
 
@@ -448,18 +448,18 @@ msgid "Which of the following sports is the odd one?"
 msgstr "¿Cuál de los siguientes deportes es el extraño?"
 
 #: ../data/verbal_analogies.xml.h:72
-#, fuzzy
 #| msgid "Which of the following words is the closest in meaning to 'censure'?"
 msgid "Which of the following words is closer to the meaning of 'asceticism'?"
 msgstr ""
-"¿Cuál de las siguientes palabras es la más cercana en significado a «censura»?"
+"¿Cuál de las siguientes palabras es la más cercana en significado a "
+"«ascetismo»?"
 
 #: ../data/verbal_analogies.xml.h:73
-#, fuzzy
 #| msgid "Which of the following words is the closest in meaning to 'censure'?"
 msgid "Which of the following words is closer to the meaning of 'hedonism'?"
 msgstr ""
-"¿Cuál de las siguientes palabras es la más cercana en significado a «censura»?"
+"¿Cuál de las siguientes palabras es la más cercana en significado a "
+"«hedonismo»?"
 
 #: ../data/verbal_analogies.xml.h:74
 msgid "Which of the following words is the closest in meaning to 'censure'?"
@@ -866,22 +866,22 @@ msgid "Total"
 msgstr "Total"
 
 #: ../src/Core/Views/FinishView.cs:99 ../src/Core/Main/GameTypes.cs:44
-#: ../src/Clients/Classical/gbrainy.cs:349
+#: ../src/Clients/Classical/gbrainy.cs:347
 msgid "Logic"
 msgstr "Lógica"
 
 #: ../src/Core/Views/FinishView.cs:106 ../src/Core/Main/GameTypes.cs:48
-#: ../src/Clients/Classical/gbrainy.cs:354
+#: ../src/Clients/Classical/gbrainy.cs:352
 msgid "Calculation"
 msgstr "Cálculo"
 
 #: ../src/Core/Views/FinishView.cs:113 ../src/Core/Main/GameTypes.cs:46
-#: ../src/Clients/Classical/gbrainy.cs:360
+#: ../src/Clients/Classical/gbrainy.cs:358
 msgid "Memory"
 msgstr "Memoria"
 
 #: ../src/Core/Views/FinishView.cs:120 ../src/Core/Main/GameTypes.cs:50
-#: ../src/Clients/Classical/gbrainy.cs:366
+#: ../src/Clients/Classical/gbrainy.cs:364
 msgid "Verbal"
 msgstr "Verbal"
 
@@ -1077,7 +1077,7 @@ msgstr "H"
 msgid "Figure {0}"
 msgstr "Figura {0}"
 
-#: ../src/Core/Main/GameManager.cs:99
+#: ../src/Core/Main/GameManager.cs:100
 #, csharp-format
 msgid ""
 "Games registered: {0}: {1} logic puzzles, {2} calculation trainers, {3} "
@@ -1316,57 +1316,57 @@ msgstr "Lee {0} analogías verbales del tipo {1}"
 msgid "Read a total of {0} verbal analogies"
 msgstr "Lee un total de {0} analogías verbales"
 
-#: ../src/Clients/Classical/gbrainy.cs:342
+#: ../src/Clients/Classical/gbrainy.cs:340
 msgid "Play all the games"
 msgstr "Jugar a todos los juegos"
 
-#: ../src/Clients/Classical/gbrainy.cs:343
+#: ../src/Clients/Classical/gbrainy.cs:341
 msgid "All"
 msgstr "Todo"
 
-#: ../src/Clients/Classical/gbrainy.cs:348
+#: ../src/Clients/Classical/gbrainy.cs:346
 msgid "Play games that challenge your reasoning and thinking"
 msgstr "Jugar a los juegos que desafíen mi razonamiento y pensamiento"
 
-#: ../src/Clients/Classical/gbrainy.cs:355
+#: ../src/Clients/Classical/gbrainy.cs:353
 msgid "Play games that challenge your mental calculation skills"
 msgstr "Jugar a los juegos que desafíen mis capacidades de cálculo mental"
 
-#: ../src/Clients/Classical/gbrainy.cs:361
+#: ../src/Clients/Classical/gbrainy.cs:359
 msgid "Play games that challenge your short term memory"
 msgstr "Jugar a los juegos que desafíen mi memoria a corto plazo"
 
-#: ../src/Clients/Classical/gbrainy.cs:367
+#: ../src/Clients/Classical/gbrainy.cs:365
 msgid "Play games that challenge your verbal aptitude"
 msgstr "Jugar a los juegos que desafíen mi aptitud verbal"
 
-#: ../src/Clients/Classical/gbrainy.cs:372
-#: ../src/Clients/Classical/gbrainy.cs:597
+#: ../src/Clients/Classical/gbrainy.cs:370
+#: ../src/Clients/Classical/gbrainy.cs:595
 msgid "Pause"
 msgstr "Pausar"
 
-#: ../src/Clients/Classical/gbrainy.cs:373
+#: ../src/Clients/Classical/gbrainy.cs:371
 msgid "Pause or resume the game"
 msgstr "Pausar o resumir el juego"
 
-#: ../src/Clients/Classical/gbrainy.cs:378
+#: ../src/Clients/Classical/gbrainy.cs:376
 msgid "End the game and show score"
 msgstr "Terminar el juego y mostrar la puntuación"
 
-#: ../src/Clients/Classical/gbrainy.cs:379
+#: ../src/Clients/Classical/gbrainy.cs:377
 msgid "Finish"
 msgstr "Terminar"
 
-#: ../src/Clients/Classical/gbrainy.cs:469
+#: ../src/Clients/Classical/gbrainy.cs:467
 msgid "Congratulations."
 msgstr "Enhorabuena."
 
-#: ../src/Clients/Classical/gbrainy.cs:471
+#: ../src/Clients/Classical/gbrainy.cs:469
 msgid "Incorrect answer."
 msgstr "Respuesta incorrecta."
 
 #
-#: ../src/Clients/Classical/gbrainy.cs:520
+#: ../src/Clients/Classical/gbrainy.cs:518
 msgid ""
 "Once you have an answer type it in the \"Answer:\" entry box and press the "
 "\"OK\" button."
@@ -1374,23 +1374,24 @@ msgstr ""
 "Una vez que tengas la respuesta escríbela en «Respuesta:» y pulsa el botón "
 "«Aceptar»."
 
-#: ../src/Clients/Classical/gbrainy.cs:601
+#: ../src/Clients/Classical/gbrainy.cs:599
 msgid "Resume"
 msgstr "Reanudar"
 
-#: ../src/Clients/Classical/CommandLine.cs:93
+#: ../src/Clients/Classical/CommandLine.cs:100
 msgid "List of available games"
 msgstr "Lista de los juegos disponibles"
 
-#: ../src/Clients/Classical/CommandLine.cs:147
+#: ../src/Clients/Classical/CommandLine.cs:154
 msgid ""
 "Usage: gbrainy [options]\n"
 "  --version\t\t\tPrint version information.\n"
 "  --help\t\t\tPrint this usage message.\n"
-"  --gamelist\t\t\tShows the list of available games\n"
+"  --gamelist\t\t\tShows the list of available games.\n"
 "  --customgame [game1, gameN]\tSpecifies a list of games to play during a "
-"custom game\n"
-"  --versions \t\t\tShow dependencies\n"
+"custom game.\n"
+"  --norandom \t\t\tThe custom game list provided will not be randomized.\n"
+"  --versions \t\t\tShow dependencies.\n"
 msgstr ""
 
 #. Translators: Replace by the name of the people that translated the application
@@ -1474,7 +1475,6 @@ msgstr ""
 "del jugador. "
 
 #: ../src/Clients/Classical/Dialogs/PlayerHistoryDialog.cs:51
-#, fuzzy
 #| msgid ""
 #| "You need more than one game session recorded to see the score evolution."
 #| msgid_plural ""
@@ -1482,7 +1482,7 @@ msgstr ""
 msgid ""
 "You need more than one game session recorded to see the score evolution."
 msgstr ""
-"Necesita más de una sesión de partidas grabadas para ver la evolución de la "
+"Necesitas más de una sesión de partidas grabadas para ver la evolución de la "
 "puntuación."
 
 #: ../src/Clients/Classical/Dialogs/PlayerHistoryDialog.cs:55
@@ -1491,7 +1491,10 @@ msgid "It is built using the results of {0} last recorded game sessions."
 msgid_plural ""
 "It is built using the results of {0} last recorded game sessions."
 msgstr[0] ""
+"Está generado usando los resultados de la última sesión de partidas grabadas."
 msgstr[1] ""
+"Está generado usando los resultados de las últimas {0} sesiones de partidas "
+"grabadas."
 
 #: ../src/Clients/Classical/Dialogs/PreferencesDialog.cs:82
 msgid "You are about to delete the player's game session history."
@@ -1967,7 +1970,6 @@ msgid "Every character of the text represents a property of the figure."
 msgstr "Cada letra del texto representa una propiedad de la figura."
 
 #: ../src/Games/Logic/PuzzleFigureLetter.cs:55
-#, fuzzy
 #| msgid ""
 #| "'A' indicates that the figures overlap, 'B' that are rectangles, 'C' that "
 #| "are circles, 'D' that the figures are separated, 'E' that there are three "
@@ -1977,7 +1979,7 @@ msgid ""
 "circles, 'D' that the figures are separated, 'E' that there are three "
 "figures and 'F' that there are two figures."
 msgstr ""
-"«A» indica que las figuras se superponen, «B» que son rectángulos, «C» que son "
+"«A» indica que las figuras se superponen, «B» que son cuadrados, «C» que son "
 "círculos, «D» que las figuras están separadas, «E» que hay tres figuras y «F» "
 "que hay dos figuras."
 
@@ -2417,7 +2419,7 @@ msgid "Ostracism"
 msgstr "Ostracismo"
 
 #: ../src/Games/Logic/PuzzleOstracism.cs:60
-#, fuzzy, csharp-format
+#, csharp-format
 #| msgid ""
 #| "Which circle does not belong to the group? It is not a sequence of "
 #| "elements. Answer {0}, {1}, {2} or {3}."
@@ -2425,8 +2427,8 @@ msgid ""
 "Which element does not belong to the group? It is not related to "
 "divisibility of the numbers. Answer {0}, {1}, {2}, {3} or {4}."
 msgstr ""
-"¿Qué círculo no pertenece al grupo? No es una secuencia de elementos. "
-"Responde {0}, {1}, {2} o {3}."
+"¿Qué elemento no pertenece al grupo? No está relacionado con la "
+"divisibilidad de los números. Responde {0}, {1}, {2}, {3} o {4}."
 
 #: ../src/Games/Logic/PuzzleOstracism.cs:68
 msgid ""
@@ -3080,7 +3082,6 @@ msgid "Memorize figures and text"
 msgstr "Memorizar figuras y texto"
 
 #: ../src/Games/Memory/MemoryFiguresAndText.cs:70
-#, fuzzy
 #| msgid ""
 #| "The list below enumerates the figures shown in the previous image except "
 #| "for one. Which is the missing figure? Possible answers are triangle, "
@@ -3092,7 +3093,7 @@ msgid ""
 msgstr ""
 "La lista de abajo enumera las figuras mostradas en la imagen anterior "
 "excepto una. ¿Cuál es la figura que falta? Las posibles respuestas son "
-"«triángulo», «rectángulo», «pentágono» y «círculo»."
+"«triángulo», «cuadrado», «pentágono» y «círculo»."
 
 #: ../src/Games/Memory/MemoryFiguresNumbers.cs:40
 msgid "Figures with numbers"
@@ -3465,7 +3466,7 @@ msgid "Ratio"
 msgstr "Proporción"
 
 #: ../src/Games/Calculation/CalculationRatio.cs:44
-#, fuzzy, csharp-format
+#, csharp-format
 #| msgid ""
 #| "Two numbers sum {0} and have a ratio of {1} to {2}. Which are these "
 #| "numbers?"
@@ -3474,7 +3475,7 @@ msgid ""
 "Answer using two numbers (e.g.: 1 and 2)."
 msgstr ""
 "Dos números suman {0} y tienen una proporción de {1} a {2}. ¿Cuáles son "
-"estos números?"
+"estos números? Responde usando dos números (ej: 1 y 2)."
 
 #: ../src/Games/Calculation/CalculationRatio.cs:51
 #, csharp-format
@@ -3509,21 +3510,25 @@ msgid "Two numbers"
 msgstr "Dos números"
 
 #: ../src/Games/Calculation/CalculationTwoNumbers.cs:54
-#, fuzzy, csharp-format
+#, csharp-format
 #| msgid "Which two numbers when added are {0} and when multiplied are {1}?"
 msgid ""
 "Which two numbers when added are {0} and when multiplied are {1}? Answer "
 "using two numbers (e.g.: 1 and 2)."
-msgstr "¿Qué dos números al sumarse dan {0} y al multiplicarse dan {1}?"
+msgstr ""
+"¿Qué dos números al sumarse dan {0} y al multiplicarse dan {1}? Responde "
+"usando dos números (ej: 1 y 2)."
 
 #: ../src/Games/Calculation/CalculationTwoNumbers.cs:56
-#, fuzzy, csharp-format
+#, csharp-format
 #| msgid ""
 #| "Which two numbers when subtracted are {0} and when multiplied are {1}?"
 msgid ""
 "Which two numbers when subtracted are {0} and when multiplied are {1}? "
 "Answer using two numbers (e.g.: 1 and 2)."
-msgstr "¿Qué dos números al restarse dan {0} y al multiplicarse dan {1}?"
+msgstr ""
+"¿Qué dos números al restarse dan {0} y al multiplicarse dan {1}? Responde "
+"usando dos números (ej: 1 y 2)."
 
 #: ../src/Games/Calculation/CalculationTwoNumbers.cs:129
 #, csharp-format
