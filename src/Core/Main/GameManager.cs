@@ -36,6 +36,7 @@ using Mono.Addins.Setup;
 #endif
 
 using gbrainy.Core.Main.Verbal;
+using gbrainy.Core.Main.Xml;
 
 namespace gbrainy.Core.Main
 {
@@ -69,6 +70,7 @@ namespace gbrainy.Core.Main
 		GameSession.Types game_type;
 		IEnumerator <int> enumerator;
 		Game.Difficulty difficulty;
+		GamesXmlFactory xml_games;
 
 		List <GameLocator> available_games; 	// List of all available games in the system
 		List <int> play_list;  		// Play list for the Selected difficulty, game types
@@ -83,12 +85,13 @@ namespace gbrainy.Core.Main
 			cnt_logic = cnt_memory = cnt_calculation = cnt_verbal = 0;
 			RandomOrder = true;
 
-			GamesXmlFactory.Read ();
+			xml_games = new GamesXmlFactory ();
+			xml_games.Read (Path.Combine (Defines.DATA_DIR, "games.xml"));
 
 			LoadAssemblyGames ();
 
 			// Load Analogies
-			cnt_verbal += AddGamesAndVariations (VerbalAnalogiesInternal);
+			cnt_verbal += AddVerbalGamesAndVariations (VerbalAnalogiesInternal);
 
 			// Load defined XML games
 			cnt_logic += LoadXmlGames ();
@@ -245,13 +248,31 @@ namespace gbrainy.Core.Main
 			return cnt;
 		}
 
+		// Adds all the games and its variants into the available games list
+		int AddVerbalGamesAndVariations (Type [] types)
+		{
+			Game game;
+			int cnt = 0;
+
+			foreach (Type type in types)
+			{
+				game = (Game) Activator.CreateInstance (type, true);
+				for (int i = 0; i < game.Variants; i++)
+				{
+					available_games.Add (new GameLocator (type, i, game.Type, true));
+				}
+				cnt += game.Variants;
+			}
+			return cnt;
+		}
+
 		// XML are stored using the Variant as a pointer to the game + the internal variant
 		int LoadXmlGames ()
 		{
 			Type type = typeof (GameXml);
 			int cnt = 0;
 
-			foreach (GameXmlDefinition game in GamesXmlFactory.Definitions)
+			foreach (GameXmlDefinition game in xml_games.Definitions)
 			{
 				available_games.Add (new GameLocator (type, cnt++, game.Type, true));
 				for (int i = 0; i < game.Variants.Count; i++)

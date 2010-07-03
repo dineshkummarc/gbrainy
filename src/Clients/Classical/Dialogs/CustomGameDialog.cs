@@ -46,13 +46,10 @@ namespace gbrainy.Clients.Classical
 		public CustomGameDialog (GameManager manager) : base ("CustomGameDialog.ui", "customgame")
 		{
 			Game game;
-			GameManager gm;
 
 			selection_done = false;
 			this.manager = manager;
-			gm = new GameManager ();
-			gm.GameType = GameSession.Types.AllGames;
-			games = gm.AvailableGames;
+			games = manager.AvailableGames;
 
 			drawing_area = new CairoPreview ();
 			preview_vbox.Add (drawing_area);

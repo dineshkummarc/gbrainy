@@ -1,11 +1,12 @@
-TARGET = gbrainy.Core.Test.dll
+CORE = gbrainy.Core.Test.dll
+CLASSICAL = gbrainy.Test.dll
 
 CSFLAGS =				\
 	-debug				\
 	-define:DEBUG			\
 	-target:library
 
-CSFILES =					\
+CSFILES_CORE =					\
 	$(srcdir)/Core/AnalogiesFactoryTest.cs	\
 	$(srcdir)/Core/PlayerHistoryTest.cs	\
 	$(srcdir)/Core/PlayerPersonalRecordTest.cs \
@@ -13,27 +14,38 @@ CSFILES =					\
 	$(srcdir)/Core/GameManagerTest.cs \
 	$(srcdir)/Core/GameTest.cs
 
+CSFILES_CLASSICAL =					\
+	$(srcdir)/Clients/Classical/CommandLineTest.cs
+
 ASSEMBLIES = \
 	$(NUNIT_LIBS)			\
 	$(MONO_ADDINS_LIBS)		\
-	-pkg:gbrainy
+	-r:../src/gbrainy.Core.dll	\
+	-r:../src/gbrainy.exe
 
 MONO_PATH = .:$(top_builddir)/src:
 
 RESSOURCES =
 
-$(TARGET): $(CSFILES) $(top_builddir)/src/gbrainy.exe
-	$(CSC) -out:$@ $(CSFLAGS) $(CSFILES) $(ASSEMBLIES) $(RESSOURCES)
+$(CORE): $(CSFILES_CORE) $(top_builddir)/src/gbrainy.exe
+	$(CSC) -out:$@ $(CSFLAGS) $(CSFILES_CORE) $(ASSEMBLIES) $(RESSOURCES)
+	MONO_PATH=$(MONO_PATH) $(NUNIT) $(CORE) -nologo
 
-test: $(TARGET)
-	MONO_PATH=$(MONO_PATH) $(NUNIT) $(TARGET) -nologo
+$(CLASSICAL): $(CSFILES_CLASSICAL) $(top_builddir)/src/gbrainy.exe
+	$(CSC) -out:$@ $(CSFLAGS) $(CSFILES_CLASSICAL) $(ASSEMBLIES) $(RESSOURCES)
+	MONO_PATH=$(MONO_PATH) $(NUNIT) $(CLASSICAL) -nologo
+
+test: $(CORE) $(CLASSICAL)
 
 EXTRA_DIST = 				\
-	$(CSFILES)
+	$(CSFILES_CORE)			\
+	$(CSFILES_CLASSICAL)
 
 CLEANFILES = 				\
-	$(TARGET)			\
-	$(TARGET).mdb			\
+	$(CORE)				\
+	$(CORE).mdb			\
+	$(CLASSICAL)			\
+	$(CLASSICAL).mdb		\
 	TestResult.xml
 
 .PHONY: test

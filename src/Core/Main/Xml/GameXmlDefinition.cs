@@ -21,7 +21,7 @@ using System;
 using System.Text;
 using System.Collections.Generic;
 
-namespace gbrainy.Core.Main
+namespace gbrainy.Core.Main.Xml
 {
 	public class GameXmlDefinitionVariant
 	{

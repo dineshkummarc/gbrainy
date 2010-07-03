@@ -145,6 +145,14 @@ if test "x$enable_debug" != "xno" ; then
 	CSC_DEFINES="$CSC_DEFINES -debug -d:DEBUG"
 fi
 
+dnl --- Assembly information 
+
+BUILD_TIME=`date +"%F %T %Z"`
+AC_SUBST(BUILD_TIME)
+
+COPYRIGHT="(c) 2007-2010 Jordi Mas i Hernandez"
+AC_SUBST(COPYRIGHT)
+
 dnl --- Prologue
 
 AC_SUBST(CFLAGS)
@@ -164,9 +172,6 @@ AC_CONFIG_FILES([src/Clients/Classical/gbrainy],[chmod +x src/Clients/Classical/
 
 GNOME_ICON_THEME_PREFIX=`$PKG_CONFIG --variable=prefix gnome-icon-theme`
 AC_SUBST(GNOME_ICON_THEME_PREFIX)
-
-COPYRIGHT="(c) 2007-2010 Jordi Mas i Hernandez"
-AC_SUBST(COPYRIGHT)
 
 AC_OUTPUT([
 src/Core/Main/Defines.cs

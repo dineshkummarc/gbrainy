@@ -42,7 +42,7 @@ namespace gbrainy.Core.Main.Verbal
 		}
 
 		public override string Name {
-			get { return Catalog.GetString ("Pair of words compare");}
+			get { return String.Format (Catalog.GetString ("Pair of words compare #{0}"), Variant);}
 		}
 
 		public override Dictionary <int, Analogy> List {

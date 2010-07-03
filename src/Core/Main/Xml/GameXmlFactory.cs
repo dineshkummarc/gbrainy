@@ -23,33 +23,23 @@ using System.IO;
 using System.Collections.Generic;
 using System.Globalization;
 
-using Mono.Unix;
-
-namespace gbrainy.Core.Main
+namespace gbrainy.Core.Main.Xml
 {
-	static public class GamesXmlFactory
+	public class GamesXmlFactory
 	{
-		static List <GameXmlDefinition> games;
-		static bool read = false;
+		List <GameXmlDefinition> games;
+		bool read = false;
 
-		static GamesXmlFactory ()
+		public GamesXmlFactory ()
 		{
 			games = new List <GameXmlDefinition> ();
 		}
 
-		static public List <GameXmlDefinition> Definitions {
-			get {
-				Read ();
-				return games;
-			}
+		public List <GameXmlDefinition> Definitions {
+			get { return games; }
 		}
 
-		static public void Read ()
-		{
-			Read (Path.Combine (Defines.DATA_DIR, "games.xml"));
-		}
-
-		static void Read (string file)
+		public void Read (string file)
 		{
 			GameXmlDefinition game;
 			string name, str;
@@ -220,6 +210,5 @@ namespace gbrainy.Core.Main
 				Console.WriteLine ("GameXmlFactory. Error loading: {0}", e.Message);
 			}
 		}
-
 	}
 }

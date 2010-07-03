@@ -37,7 +37,7 @@ namespace gbrainy.Core.Libraries
 				IntPtr r = gettext (ints);
 				return r != ints;
 			}
-			catch (Exception e) {
+			catch (Exception) {
 				return true;
 			}
 	

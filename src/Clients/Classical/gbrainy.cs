@@ -691,12 +691,11 @@ namespace gbrainy.Clients.Classical
 			if (line.Continue == false)
 				return;
 
-			if (line.PlayList != null) {
+			app.Initialize ();
+			if (line.PlayList.Length > 0) {
 				app.Session.GameManager.PlayList = line.PlayList;
 				app.InitialSessionType = GameSession.Types.Custom;
 			}
-
-			app.Initialize ();
 			app.Session.GameManager.RandomOrder = line.RandomOrder;
 
 			app.ProcessDefaults ();

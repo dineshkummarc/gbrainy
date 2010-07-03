@@ -40,7 +40,7 @@ namespace gbrainy.Core.Main.Verbal
 		}
 
 		public override string Name {
-			get { return Catalog.GetString ("Multiple options");}
+			get { return String.Format (Catalog.GetString ("Multiple options #{0}"), Variant);}
 		}
 
 		public override string Question {

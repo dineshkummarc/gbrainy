@@ -27,7 +27,7 @@ using System.Text.RegularExpressions;
 using Mono.CSharp;
 using Mono.Unix;
 
-namespace gbrainy.Core.Main
+namespace gbrainy.Core.Main.Xml
 {
 	public class GameXml : Game
 	{
@@ -297,7 +297,7 @@ namespace gbrainy.Core.Main
 		static string ReplaceVariables (string str)
 		{
 			const string exp = "\\[[a-z_]+\\]+";
-			string eval, var, vars, var_value;
+			string var, vars, var_value;
 			Regex regex;
 			Match match;
 

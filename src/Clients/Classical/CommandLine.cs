@@ -32,10 +32,13 @@ namespace gbrainy.Clients.Classical
 		int [] play_list;
 		bool cont_execution;
 
+		public static readonly char GAME_SEPARATOR = ',';
+
 		public CommandLine (string [] args)
 		{
 			this.args = args;
 			RandomOrder = true;
+			play_list = new int [0];
 		}
 
 		public bool Continue {
@@ -56,7 +59,13 @@ namespace gbrainy.Clients.Classical
 			{
 				switch (args [idx]) {
 				case "--customgame":
-					string [] names = args [idx+1].Split (',');
+					string [] names;
+
+					if (idx + 1 >= args.Length)
+						break;
+
+					idx++;
+					names = args [idx].Split (GAME_SEPARATOR);
 
 					for (int i = 0; i < names.Length; i++)
 						names[i] = names[i].Trim ();
@@ -115,7 +124,6 @@ namespace gbrainy.Clients.Classical
 			Dictionary <string, int> dictionary;
 			GameManager.GameLocator [] games;
 			GameManager gm = new GameManager ();
-			gm.GameType = GameSession.Types.AllGames;
 			games = gm.AvailableGames;
 
 			// Create a hash to map from game name to locator
@@ -127,7 +135,15 @@ namespace gbrainy.Clients.Classical
 
 				Game game = (Game) Activator.CreateInstance (games[i].TypeOf, true);
 				game.Variant = games[i].Variant;
-				dictionary.Add (game.Name, i);
+
+				try
+				{
+					dictionary.Add (game.Name, i);
+				}
+				catch (Exception e)
+				{
+					Console.WriteLine ("gbrainy. Error adding {0} {1}", game.Name, e.Message);
+				}
 			}
 
 			List <int> list = new List <int> (names.Length);
@@ -138,7 +154,7 @@ namespace gbrainy.Clients.Classical
 				{
 					list.Add (dictionary [names [i]]);
 				}
-				catch (KeyNotFoundException e)
+				catch (KeyNotFoundException)
 				{
 					Console.WriteLine ("gbrainy. Game [{0}] not found", names [i]);
 				}
@@ -159,12 +175,14 @@ namespace gbrainy.Clients.Classical
 					"  --norandom \t\t\tThe custom game list provided will not be randomized.\n" +
 			                "  --versions \t\t\tShow dependencies.\n");
 
+			Version ();
 			Console.WriteLine (usage);
 		}
 
 		static void Version ()
 		{
-			Console.WriteLine ("gbrainy " + Defines.VERSION);
+			Console.WriteLine ("gbrainy " + Defines.VERSION + " " + 
+				String.Format (Catalog.GetString ("(build on {0})"), Defines.BUILD_TIME));
 		}
 
 		static void Versions ()

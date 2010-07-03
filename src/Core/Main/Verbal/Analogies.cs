@@ -29,10 +29,6 @@ namespace gbrainy.Core.Main.Verbal
 	{
 		protected Analogy current;
 
-		public override string Name {
-			get { return Catalog.GetString ("Verbal analogies"); }
-		}
-
 		public override string Question {
 			get {
 				if (current == null)
