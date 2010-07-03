@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gbrainy\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-06-30 01:18+0200\n"
+"POT-Creation-Date: 2010-07-03 11:44+0200\n"
 "PO-Revision-Date: 2010-06-05 09:50+0100\n"
 "Last-Translator: Jordi Mas <jmas@softcatala.org>\n"
 "Language-Team: Catalan\n"
@@ -157,8 +157,8 @@ msgid ""
 "You have [money] monetary units in your bank account at 10% compound "
 "interest annually. How much money will you have at end of 2 years?"
 msgstr ""
-"Teniu [money] unitats monetàries en un compte bancari al 10% d'interès compost "
-"anual. Quants diners tindreu al final de 2 anys?"
+"Teniu [money] unitats monetàries en un compte bancari al 10% d'interès "
+"compost anual. Quants diners tindreu al final de 2 anys?"
 
 #: ../data/games.xml.h:23
 msgid ""
@@ -1112,7 +1112,7 @@ msgstr "H"
 msgid "Figure {0}"
 msgstr "Figura {0}"
 
-#: ../src/Core/Main/GameManager.cs:100
+#: ../src/Core/Main/GameManager.cs:103
 #, csharp-format
 msgid ""
 "Games registered: {0}: {1} logic puzzles, {2} calculation trainers, {3} "
@@ -1252,11 +1252,7 @@ msgstr "Memoritzeu els objectes d'abaix en el temps donat"
 msgid "Time left"
 msgstr "Temps restant"
 
-#: ../src/Core/Main/Verbal/Analogies.cs:33
-msgid "Verbal analogies"
-msgstr "Analogies verbals"
-
-#: ../src/Core/Main/Verbal/Analogies.cs:60
+#: ../src/Core/Main/Verbal/Analogies.cs:56
 #, csharp-format
 msgid "Possible correct answers are: {0}."
 msgstr "Les respostes correctes possibles són: {0}."
@@ -1265,15 +1261,16 @@ msgstr "Les respostes correctes possibles són: {0}."
 #. For example: "Possible correct answers are: sleep, rest."
 #. Translators: this the separator used when concatenating possible options for answering verbal analogies
 #. For example: "Possible correct answers are: a, b, c, d."
-#: ../src/Core/Main/Verbal/Analogies.cs:94
+#: ../src/Core/Main/Verbal/Analogies.cs:90
 #: ../src/Core/Main/Verbal/AnalogiesMultipleOptions.cs:63
 #: ../src/Core/Main/Verbal/AnalogiesPairOfWordsOptions.cs:66
 msgid ", "
 msgstr ", "
 
 #: ../src/Core/Main/Verbal/AnalogiesMultipleOptions.cs:43
-msgid "Multiple options"
-msgstr "Múltiples opcions"
+#, csharp-format
+msgid "Multiple options #{0}"
+msgstr "Múltiples opcions #{0}"
 
 #. Translators: {0} is replaced by a question and {1} by the suggestions on how to answer
 #. E.g: What is the correct option? Answer A, B, C.
@@ -1308,8 +1305,9 @@ msgid "Possible answers are:"
 msgstr "Les respostes possibles són:"
 
 #: ../src/Core/Main/Verbal/AnalogiesPairOfWordsCompare.cs:45
-msgid "Pair of words compare"
-msgstr "Compara dues paraules"
+#, csharp-format
+msgid "Pair of words compare #{0}"
+msgstr "Compara dues paraules #{0}"
 
 #: ../src/Core/Main/Verbal/AnalogiesPairOfWordsCompare.cs:61
 #, csharp-format
@@ -1326,8 +1324,9 @@ msgid "Words: {0}"
 msgstr "Paraules: {0}"
 
 #: ../src/Core/Main/Verbal/AnalogiesPairOfWordsOptions.cs:42
-msgid "Pair of words"
-msgstr "Parell de paraules"
+#, csharp-format
+msgid "Pair of words #{0}"
+msgstr "Parell de paraules #{0}"
 
 #: ../src/Core/Main/Verbal/AnalogiesPairOfWordsOptions.cs:71
 #, csharp-format
@@ -1339,8 +1338,9 @@ msgstr ""
 "té la relació més propera al parell donat? Responeu {1}."
 
 #: ../src/Core/Main/Verbal/AnalogiesQuestionAnswer.cs:40
-msgid "Question and answer"
-msgstr "Pregunta i resposta"
+#, csharp-format
+msgid "Question and answer #{0}"
+msgstr "Pregunta i resposta #{0}"
 
 #: ../src/Core/Main/Verbal/AnalogiesFactory.cs:155
 #, csharp-format
@@ -1416,11 +1416,11 @@ msgstr ""
 msgid "Resume"
 msgstr "Reprèn"
 
-#: ../src/Clients/Classical/CommandLine.cs:100
+#: ../src/Clients/Classical/CommandLine.cs:109
 msgid "List of available games"
 msgstr "Llista de jocs disponibles"
 
-#: ../src/Clients/Classical/CommandLine.cs:154
+#: ../src/Clients/Classical/CommandLine.cs:170
 msgid ""
 "Usage: gbrainy [options]\n"
 "  --version\t\t\tPrint version information.\n"
@@ -1439,6 +1439,11 @@ msgstr ""
 "per a una sessió.\n"
 "  --norandom \t\t\tLa llista personalitzada de jocs no serà aleatoritzada.\n"
 "  --versions \t\t\tMostra les dependències.\n"
+
+#: ../src/Clients/Classical/CommandLine.cs:185
+#, csharp-format
+msgid "(build on {0})"
+msgstr "(muntat al {0})"
 
 #. Translators: Replace by the name of the people that translated the application
 #: ../src/Clients/Classical/Dialogs/AboutDialog.cs:54
@@ -1496,15 +1501,15 @@ msgid "gbrainy web site"
 msgstr "Lloc web del gbrainy"
 
 #. Define columns
-#: ../src/Clients/Classical/Dialogs/CustomGameDialog.cs:67
+#: ../src/Clients/Classical/Dialogs/CustomGameDialog.cs:64
 msgid "Game Name"
 msgstr "Nom del joc"
 
-#: ../src/Clients/Classical/Dialogs/CustomGameDialog.cs:73
+#: ../src/Clients/Classical/Dialogs/CustomGameDialog.cs:70
 msgid "Type"
 msgstr "Tipus"
 
-#: ../src/Clients/Classical/Dialogs/CustomGameDialog.cs:80
+#: ../src/Clients/Classical/Dialogs/CustomGameDialog.cs:77
 msgid "Enabled"
 msgstr "Habilitat"
 
@@ -3784,3 +3789,6 @@ msgstr "_Desinstal·la..."
 #: ../src/Clients/Classical/mono-addins-strings.xml.h:35
 msgid "_Unselect All"
 msgstr "_Desselecciona-ho tot"
+
+#~ msgid "Verbal analogies"
+#~ msgstr "Analogies verbals"
