@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gbrainy master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gbrainy&component=general\n"
-"POT-Creation-Date: 2010-06-27 11:42+0000\n"
-"PO-Revision-Date: 2010-06-27 18:09+0100\n"
+"POT-Creation-Date: 2010-07-01 19:30+0000\n"
+"PO-Revision-Date: 2010-07-03 11:21+0100\n"
 "Last-Translator: Andrej Žnidaršič <andrej.znidarsic@gmail.com>\n"
 "Language-Team: Slovenian GNOME Translation Team <gnome-si@googlegroups.com>\n"
 "MIME-Version: 1.0\n"
@@ -22,7 +22,7 @@ msgstr ""
 
 #: ../data/games.xml.h:1
 msgid "A file is protected by a password formed by a [digits] digit number (ranging from 0 to 9). How many different passwords can you have?"
-msgstr ""
+msgstr "Datoteka je zaščitena z geslom sestavljenih iz [digits] števil (vrednosti od 0 do 9). Koliko različnih gesel obstaja?"
 
 #: ../data/games.xml.h:2
 msgid "A file is protected by a password formed by a [digits] digit octal number (ranging from 0 to 7). How many different passwords can you have?"
@@ -73,16 +73,16 @@ msgid "How many matches does it take to determine the winner of a tennis tournam
 msgstr "Koliko iger je potrebno odigrati za določitev zmagovalca teniškega turnirja, ki se začne z [players] igralci?"
 
 #: ../data/games.xml.h:14
-msgid "In every match you eliminate one player, you need the total number of games minus 1 to find out the winner.."
-msgstr "V vsaki tekmi je izločen en igralec. Za določitev igralce potrebujete celotno število iger minus 1."
+msgid "In every match you eliminate one player, you need the total number of games minus 1 to find out the winner."
+msgstr "V vsaki tekmi je izločen en igralec. Za določitev zmagovalca potrebujete celotno število iger minus 1."
 
 #: ../data/games.xml.h:15
 msgid "John's age is nowadays 2 times his son's age. [ago] years ago, John was [proportion] times older than his son. How old is John's son nowadays?"
 msgstr "Janez je danes 2 krat starejši kot njegov sin. [ago] let nazaj je bil Janez [proportion] krat starejši kot njegov sin. Koliko je Janez star danes?"
 
 #: ../data/games.xml.h:16
-msgid "John's is 46 years old. His son is [difference] years older than twice John's age. How old is John's son?"
-msgstr "Janez je star 46 let. Njegov sin je [difference] let starejši kot pol Janezove starosti. Koliko je star Janez?"
+msgid "John's is 46 years old. His son is [difference] years younger than half of John's age. How old is John's son?"
+msgstr "Janez je star 46 let. Njegov sin je [difference] let mlajši kot pol Janezove starosti. Koliko je star Janez?"
 
 #: ../data/games.xml.h:17
 msgid "Out of [people] people, [brothers] have brothers, [sisters] have sisters and [both] have both. How many people have neither brothers nor sisters?"
@@ -820,25 +820,25 @@ msgstr "Skupaj"
 
 #: ../src/Core/Views/FinishView.cs:99
 #: ../src/Core/Main/GameTypes.cs:44
-#: ../src/Clients/Classical/gbrainy.cs:349
+#: ../src/Clients/Classical/gbrainy.cs:347
 msgid "Logic"
 msgstr "Logika"
 
 #: ../src/Core/Views/FinishView.cs:106
 #: ../src/Core/Main/GameTypes.cs:48
-#: ../src/Clients/Classical/gbrainy.cs:354
+#: ../src/Clients/Classical/gbrainy.cs:352
 msgid "Calculation"
 msgstr "Računanje"
 
 #: ../src/Core/Views/FinishView.cs:113
 #: ../src/Core/Main/GameTypes.cs:46
-#: ../src/Clients/Classical/gbrainy.cs:360
+#: ../src/Clients/Classical/gbrainy.cs:358
 msgid "Memory"
 msgstr "Spomin"
 
 #: ../src/Core/Views/FinishView.cs:120
 #: ../src/Core/Main/GameTypes.cs:50
-#: ../src/Clients/Classical/gbrainy.cs:366
+#: ../src/Clients/Classical/gbrainy.cs:364
 msgid "Verbal"
 msgstr "Besede"
 
@@ -1008,7 +1008,7 @@ msgstr "H"
 msgid "Figure {0}"
 msgstr "Slika {0}"
 
-#: ../src/Core/Main/GameManager.cs:99
+#: ../src/Core/Main/GameManager.cs:100
 #, csharp-format
 msgid "Games registered: {0}: {1} logic puzzles, {2} calculation trainers, {3} memory trainers, {4} verbal analogies"
 msgstr "Vpisane igre: {0}: {1} logičnih iger, {2} računskih nalog, {3} urjenj spomina, {4} besednih analogij"
@@ -1214,81 +1214,83 @@ msgstr "Preberite {0} besednih analogij vrste {1}"
 msgid "Read a total of {0} verbal analogies"
 msgstr "Preberite {0} besednih analogij"
 
-#: ../src/Clients/Classical/gbrainy.cs:342
+#: ../src/Clients/Classical/gbrainy.cs:340
 msgid "Play all the games"
 msgstr "Igranje vseh iger"
 
-#: ../src/Clients/Classical/gbrainy.cs:343
+#: ../src/Clients/Classical/gbrainy.cs:341
 msgid "All"
 msgstr "Vse"
 
-#: ../src/Clients/Classical/gbrainy.cs:348
+#: ../src/Clients/Classical/gbrainy.cs:346
 msgid "Play games that challenge your reasoning and thinking"
 msgstr "Igrajte igre, ki so izziv vašemu sklepanju in razmišljanju."
 
-#: ../src/Clients/Classical/gbrainy.cs:355
+#: ../src/Clients/Classical/gbrainy.cs:353
 msgid "Play games that challenge your mental calculation skills"
 msgstr "Igrajte igre, ki so izziv vašim sposobnostim računanja."
 
-#: ../src/Clients/Classical/gbrainy.cs:361
+#: ../src/Clients/Classical/gbrainy.cs:359
 msgid "Play games that challenge your short term memory"
 msgstr "Igrajte igre, ki so izziv vašemu kratkoročnemu spominu."
 
-#: ../src/Clients/Classical/gbrainy.cs:367
+#: ../src/Clients/Classical/gbrainy.cs:365
 msgid "Play games that challenge your verbal aptitude"
 msgstr "Igrajte igre, ki so izziv vašim besednim sposobnostim."
 
-#: ../src/Clients/Classical/gbrainy.cs:372
-#: ../src/Clients/Classical/gbrainy.cs:597
+#: ../src/Clients/Classical/gbrainy.cs:370
+#: ../src/Clients/Classical/gbrainy.cs:595
 msgid "Pause"
 msgstr "Premor"
 
-#: ../src/Clients/Classical/gbrainy.cs:373
+#: ../src/Clients/Classical/gbrainy.cs:371
 msgid "Pause or resume the game"
 msgstr "Premor ali nadaljevanje igre"
 
-#: ../src/Clients/Classical/gbrainy.cs:378
+#: ../src/Clients/Classical/gbrainy.cs:376
 msgid "End the game and show score"
 msgstr "Končaj igro in pokaži rezultat"
 
-#: ../src/Clients/Classical/gbrainy.cs:379
+#: ../src/Clients/Classical/gbrainy.cs:377
 msgid "Finish"
 msgstr "Končaj"
 
-#: ../src/Clients/Classical/gbrainy.cs:469
+#: ../src/Clients/Classical/gbrainy.cs:467
 msgid "Congratulations."
 msgstr "Čestitke."
 
-#: ../src/Clients/Classical/gbrainy.cs:471
+#: ../src/Clients/Classical/gbrainy.cs:469
 msgid "Incorrect answer."
 msgstr "Napačen odgovor."
 
-#: ../src/Clients/Classical/gbrainy.cs:520
+#: ../src/Clients/Classical/gbrainy.cs:518
 msgid "Once you have an answer type it in the \"Answer:\" entry box and press the \"OK\" button."
 msgstr "Ko ste prepričani v odgovor, ga vnesite v vnosno polje \"Odgovor:\" in pritisnite gumb \"V redu\"."
 
-#: ../src/Clients/Classical/gbrainy.cs:601
+#: ../src/Clients/Classical/gbrainy.cs:599
 msgid "Resume"
 msgstr "Nadaljuj"
 
-#: ../src/Clients/Classical/CommandLine.cs:93
+#: ../src/Clients/Classical/CommandLine.cs:100
 msgid "List of available games"
 msgstr "Seznam razpoložljivih iger"
 
-#: ../src/Clients/Classical/CommandLine.cs:147
+#: ../src/Clients/Classical/CommandLine.cs:154
 msgid ""
 "Usage: gbrainy [options]\n"
 "  --version\t\t\tPrint version information.\n"
 "  --help\t\t\tPrint this usage message.\n"
-"  --gamelist\t\t\tShows the list of available games\n"
-"  --customgame [game1, gameN]\tSpecifies a list of games to play during a custom game\n"
-"  --versions \t\t\tShow dependencies\n"
+"  --gamelist\t\t\tShows the list of available games.\n"
+"  --customgame [game1, gameN]\tSpecifies a list of games to play during a custom game.\n"
+"  --norandom \t\t\tThe custom game list provided will not be randomized.\n"
+"  --versions \t\t\tShow dependencies.\n"
 msgstr ""
 "Uporaba: gbrainy [možnosti]\n"
 " --version\t\t\tNatisne podatke o različici.\n"
 " --help\t\t\tNatisne to sporočilo o uporabi.\n"
 " --gamelist\t\t\tPokaže seznam razpoložljivih iger\n"
 " --customgame [igra1, igraN]\tNavede seznam iger, igranih med igro po meri\n"
+" --norandom \t\t\tSeznam iger po meri ne bo naključen.\n"
 " --versions \t\tPokaže odvisnosti\n"
 
 #. Translators: Replace by the name of the people that translated the application
