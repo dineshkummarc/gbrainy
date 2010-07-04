@@ -85,6 +85,7 @@
     <Compile Include="src\Clients\Classical\Builder\BuilderConnectFunc.cs" />
     <Compile Include="src\Clients\Classical\Defines.cs" />
     <Compile Include="src\Clients\Classical\Dialogs\HigMessageDialog.cs" />
+    <Compile Include="src\Clients\Classical\CommandLine.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
@@ -97,7 +98,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="src\Clients\Classical\Dialogs\ui\PreferencesDialog.ui" />
     <EmbeddedResource Include="src\Clients\Classical\Dialogs\ui\PlayerHistoryDialog.ui" />
-    <EmbeddedResource Include="src\Clients\Classical\Dialogs\ui\CustomGameDialog.ui" />
+    <EmbeddedResource Include="src\Clients\Classical\Dialogs\ui\CustomGameDialog.ui">
+      <LogicalName>CustomGameDialog.ui</LogicalName>
+    </EmbeddedResource>
     <EmbeddedResource Include="data\app-graphics\allgames-32.png">
       <LogicalName>allgames-32.png</LogicalName>
     </EmbeddedResource>

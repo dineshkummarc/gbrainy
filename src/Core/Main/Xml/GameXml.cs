@@ -49,7 +49,6 @@ namespace gbrainy.Core.Main.Xml
 		// Shared with all instances
 		static List <GameXmlDefinition> games;
 		static List <DefinitionLocator> locators;
-		static bool? monofix_needed;
 
 		DefinitionLocator current;
 		GameXmlDefinition game;
@@ -120,10 +119,10 @@ namespace gbrainy.Core.Main.Xml
 			if (String.IsNullOrEmpty (variables) == false)
 			{
 				// Evaluate code
-				EvaluateVariables (variables);
-				question = ReplaceVariables (question);
-				answer = ReplaceVariables (answer);
-				rationale = ReplaceVariables (rationale);
+				CodeEvaluation.EvaluateVariables (variables);
+				question = CodeEvaluation.ReplaceVariables (question);
+				answer = CodeEvaluation.ReplaceVariables (answer);
+				rationale = CodeEvaluation.ReplaceVariables (rationale);
 			}
 
 			right_answer = answer;
@@ -155,9 +154,51 @@ namespace gbrainy.Core.Main.Xml
 		{
 			base.Draw (gr, area_width, area_height, rtl);
 
-			if (String.IsNullOrEmpty (game.Image.Filename) == false)
-				gr.DrawImageFromFile (Path.Combine (Defines.DATA_DIR, game.Image.Filename),
-					game.Image.X, game.Image.Y, game.Image.Width, game.Image.Height);
+			DrawObjects (gr, game); // Draw objects shared by all variants
+
+			if (game.Variants.Count > 0)
+				DrawObjects (gr, game.Variants[current.Variant]); // Draw variant specific objects
+		}
+
+		void DrawObjects (CairoContextEx gr, GameXmlDefinitionVariant definition)
+		{
+			if (definition.DrawingObjects != null)
+			{
+				foreach (DrawingObject draw_object in definition.DrawingObjects)
+				{
+					if (draw_object is TextDrawingObject)
+					{
+						string text;
+						TextDrawingObject draw_string = draw_object as TextDrawingObject;
+			
+						text = CatalogGetString (draw_string.Text);
+						text = CodeEvaluation.ReplaceVariables (text);
+
+						if (draw_string.Big)
+							gr.SetPangoLargeFontSize ();
+						else
+							gr.SetPangoNormalFontSize ();
+
+						if (draw_string.Centered) {
+							gr.DrawTextCentered (draw_string.X, draw_string.Y, text);
+						} else {
+							gr.MoveTo (draw_string.X, draw_string.Y);
+							gr.ShowPangoText (text);
+							gr.Stroke ();
+						}
+					} 
+					else if (draw_object is ImageDrawingObject)
+					{
+						ImageDrawingObject image = draw_object as ImageDrawingObject;
+
+						if (String.IsNullOrEmpty (image.Filename) == false)
+						{
+							gr.DrawImageFromFile (Path.Combine (Defines.DATA_DIR, image.Filename),
+								image.X, image.Y, image.Width, image.Height);
+						}
+					}
+				}
+			}
 		}
 
 		void BuildLocationList ()
@@ -180,148 +221,5 @@ namespace gbrainy.Core.Main.Xml
 
 			return Catalog.GetString (str);
 		}
-
-		/*
-			Code evaluation functions
-		*/
-
-		static void EvaluateVariables (string code)
-		{
-			string eval;
-
-			try
-			{
-				// Using's for the variables section
-				// We need to evaluate either declarations (like using) or expression/statements separately
-				eval = "using System;\n";
-				Mono.CSharp.Evaluator.Run (eval);
-
-				// Infrastructure for the user available
-				eval = "Random random = new Random ();\n";
-				Mono.CSharp.Evaluator.Run (eval);
-				Mono.CSharp.Evaluator.Run (code);
-			}
-
-			catch (Exception e)
-			{
-				Console.WriteLine ("GameXml. Error in games.xml: {0} when evaluating variable definition [{1}]", e.Message, code);
-			}
-		}
-
-		// Before Mono 2.6 (rev. 156533) there is no line separator between vars
-		static string FixGetVars (string str)
-		{
-			if (monofix_needed == null)
-			{
-				string eval, vars;
-
-				eval = "int a = 1; int b = 1;";
-				Evaluator.Run (eval);
-				vars = Evaluator.GetVars ();
-
-				monofix_needed = vars.IndexOf (System.Environment.NewLine) == -1;
-			}
-
-			if (monofix_needed == false)
-				return str;
-
-			// We just guarantee that int, doubles, and float are separated as modern Mono versions do
-			StringBuilder output = new StringBuilder ();
-			string [] keywords = new string [] {"int", "double", "float"};
-			int pos = 0, cur = 0, tmp_pos, keyword;
-
-			while (pos != -1)
-			{
-				pos = keyword = -1;
-				// Look for the nearest of these keywords
-				for (int i = 0; i < keywords.Length; i++)
-				{
-					tmp_pos = str.IndexOf (keywords [i], cur);
-					if (tmp_pos == -1)
-						continue;
-
-					if (pos == -1 || pos > 0 && tmp_pos < pos) {
-						keyword = i;
-						pos = tmp_pos;
-					}
-				}
-
-				if (pos == -1)
-					continue;
-
-				output.Append (str.Substring (cur, pos - cur));
-				output.AppendLine ();
-				output.Append (str.Substring (pos, keywords[keyword].Length));
-				cur = pos + keywords[keyword].Length;
-			}
-
-			output.Append (str.Substring (cur, str.Length - cur));
-			return output.ToString ();
-		}
-
-		static string GetVarValue (string vars, string _var)
-		{
-			const string exp = "([a-z0-9._%+-]+) ([a-z0-9._%+-]+) (=) ([0-9]+)";
-			Match match;
-			int idx, cur, newline_len;
-			string line;
-
-			Regex regex = new Regex (exp, RegexOptions.IgnoreCase);
-
-			newline_len = System.Environment.NewLine.Length;
-			cur = 0;
-
-			do
-			{
-				// Process a line
-				idx = vars.IndexOf (System.Environment.NewLine, cur);
-				if (idx == -1) idx = vars.Length;
-
-				line = vars.Substring (cur, idx - cur);
-				cur = idx + newline_len;
-				match = regex.Match (line);
-
-				//  "int num = 2";
-				//   group 1 -> int,  group 2 -> num,  group 3 -> =, group 4 -> 2
-				if (match.Groups.Count == 5)
-				{
-					if (match.Groups[2].Value == _var)
-						return match.Groups[4].Value;
-				}
-
-			} while (cur < vars.Length);
-
-			return string.Empty;
-		}
-
-		static string ReplaceVariables (string str)
-		{
-			const string exp = "\\[[a-z_]+\\]+";
-			string var, vars, var_value;
-			Regex regex;
-			Match match;
-
-			if (String.IsNullOrEmpty (str))
-				return str;
-
-			regex = new Regex (exp, RegexOptions.IgnoreCase);
-			match = regex.Match (str);
-
-			vars = Evaluator.GetVars ();
-			vars = FixGetVars (vars);
-
-			while (String.IsNullOrEmpty (match.Value) == false)
-			{
-				var = match.Value.Substring (1, match.Value.Length - 2);
-				var_value = GetVarValue (vars, var);
-
-				if (String.IsNullOrEmpty (var_value) == false)
-					str = str.Replace (match.Value, var_value);
-
-				match = match.NextMatch ();
-			}
-			return str;
-		}
-
 	}
 }

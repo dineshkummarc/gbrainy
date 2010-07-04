@@ -62,12 +62,15 @@ namespace gbrainy.Core.Main.Xml
 					case "games":
 						break;
 					case "type":
+						if (reader.NodeType != XmlNodeType.Element)
+							break;
+
+						game.Type = GameTypesDescription.FromString (reader.ReadElementString ());
 						break;
 					case "game":
 						if (reader.NodeType == XmlNodeType.Element) {
 							game = new GameXmlDefinition ();
 						} else if (reader.NodeType == XmlNodeType.EndElement) {
-
 							games.Add (game);
 						}
 						break;
@@ -107,31 +110,79 @@ namespace gbrainy.Core.Main.Xml
 						if (reader.NodeType != XmlNodeType.Element)
 							break;
 
-						game.Image.Filename = reader.GetAttribute ("file");
+						ImageDrawingObject draw_image = new ImageDrawingObject ();
+
+						if (processing_variant)
+							game.Variants[variant].AddDrawingObject (draw_image);
+						else
+							game.AddDrawingObject (draw_image);
+
+						draw_image.Filename = reader.GetAttribute ("file");
 
 						str = reader.GetAttribute ("x");
 						if (String.IsNullOrEmpty (str) == false)
-							game.Image.X = Double.Parse (str, CultureInfo.InvariantCulture);
+							draw_image.X = Double.Parse (str, CultureInfo.InvariantCulture);
 						else
-							game.Image.X = 0.1;
+							draw_image.X = 0.1;
 
 						str = reader.GetAttribute ("y");
 						if (String.IsNullOrEmpty (str) == false)
-							game.Image.Y = Double.Parse (str, CultureInfo.InvariantCulture);
+							draw_image.Y = Double.Parse (str, CultureInfo.InvariantCulture);
 						else
-							game.Image.Y = 0.1;
+							draw_image.Y = 0.1;
 
 						str = reader.GetAttribute ("width");
 						if (String.IsNullOrEmpty (str) == false)
-							game.Image.Width = Double.Parse (str, CultureInfo.InvariantCulture);
+							draw_image.Width = Double.Parse (str, CultureInfo.InvariantCulture);
 						else
-							game.Image.Width = 0.8;
+							draw_image.Width = 0.8;
 
 						str = reader.GetAttribute ("height");
 						if (String.IsNullOrEmpty (str) == false)
-							game.Image.Height = Double.Parse (str, CultureInfo.InvariantCulture);
+							draw_image.Height = Double.Parse (str, CultureInfo.InvariantCulture);
 						else
-							game.Image.Height = 0.8;
+							draw_image.Height = 0.8;
+
+						break;
+					case "string":
+						if (reader.NodeType != XmlNodeType.Element)
+							break;
+
+						TextDrawingObject draw_string = new TextDrawingObject ();
+
+						if (processing_variant)
+							game.Variants[variant].AddDrawingObject (draw_string);
+						else
+							game.AddDrawingObject (draw_string);
+
+						draw_string.Text = reader.GetAttribute ("text");
+	
+						if (String.IsNullOrEmpty (draw_string.Text))
+							draw_string.Text = reader.GetAttribute ("_text");
+
+						str = reader.GetAttribute ("x");
+						if (String.IsNullOrEmpty (str) == false)
+							draw_string.X = Double.Parse (str, CultureInfo.InvariantCulture);
+						else
+							draw_string.X = 0.1;
+
+						str = reader.GetAttribute ("y");
+						if (String.IsNullOrEmpty (str) == false)
+							draw_string.Y = Double.Parse (str, CultureInfo.InvariantCulture);
+						else
+							draw_string.Y = 0.1;
+
+						str = reader.GetAttribute ("centered");
+						if (String.Compare (str, "yes", true) == 0)
+							draw_string.Centered = true;
+						else
+							draw_string.Centered = false;
+
+						str = reader.GetAttribute ("size");
+						if (String.Compare (str, "big", true) == 0)
+							draw_string.Big = true;
+						else
+							draw_string.Big = false;
 
 						break;
 					case "_question":

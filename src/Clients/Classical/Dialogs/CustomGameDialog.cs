@@ -94,7 +94,7 @@ namespace gbrainy.Clients.Classical
 
 					game = (Game) Activator.CreateInstance (games [i].TypeOf, true);
 					game.Variant = games [i].Variant;
-					type = GameTypesDescription.Get (game.Type);
+					type = GameTypesDescription.GetLocalized(game.Type);
 					games_store.AppendValues (game.Name, type, true, game, i);
 				}
 			}

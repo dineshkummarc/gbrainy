@@ -49,7 +49,8 @@ analogies_DATA = \
 	game-graphics/password.svg \
 	game-graphics/tennis.svg \
 	game-graphics/father_son.svg \
-	game-graphics/money.svg 
+	game-graphics/money.svg \
+	game-graphics/box.svg
 	
 
 install-data-local:
@@ -70,6 +71,7 @@ install-data-local:
 	$(INSTALL_DATA) $(srcdir)/game-graphics/tennis.svg $(DESTDIR)$(images)/tennis.svg
 	$(INSTALL_DATA) $(srcdir)/game-graphics/father_son.svg $(DESTDIR)$(images)/father_son.svg
 	$(INSTALL_DATA) $(srcdir)/game-graphics/money.svg $(DESTDIR)$(images)/money.svg
+	$(INSTALL_DATA) $(srcdir)/game-graphics/box.svg $(DESTDIR)$(images)/box.svg
 
 gtk_update_icon_cache = gtk-update-icon-cache -f -t $(datadir)/icons/hicolor
 

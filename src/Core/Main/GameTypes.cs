@@ -35,8 +35,8 @@ namespace gbrainy.Core.Main
 	// Since we cannot override ToString in an enum type we use a helper class
 	public static class GameTypesDescription
 	{
-		// Type enum to string representation
-		static public string Get (GameTypes type)
+		// Type enum to string representation (locale sensitive)
+		static public string GetLocalized (GameTypes type)
 		{
 			switch (type) 
 			{
@@ -48,6 +48,24 @@ namespace gbrainy.Core.Main
 					return Catalog.GetString ("Calculation");
 				case GameTypes.VerbalAnalogy:
 					return Catalog.GetString ("Verbal");
+				default:
+					throw new InvalidOperationException ("Unknown game type");
+			}
+		}
+
+		// string (not localized) to enum representation 
+		static public GameTypes FromString (string type)
+		{
+			switch (type)
+			{
+				case "Logic":
+					return GameTypes.LogicPuzzle;
+				case "Memory":
+					return GameTypes.MemoryTrainer;
+				case "Calculation":
+					return GameTypes.MathTrainer;
+				case "Verbal":
+					return GameTypes.VerbalAnalogy;
 				default:
 					throw new InvalidOperationException ("Unknown game type");
 			}

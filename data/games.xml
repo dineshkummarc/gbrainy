@@ -145,4 +145,83 @@
 			<_rationale>Compound interest is paid on the original amount and on the accumulated past interest.</_rationale>
 		</variant>
 	</game>
+
+	<game>
+		<_name>Simple equations</_name>
+		<type>Calculation</type>
+		<difficulty>All</difficulty>
+
+		<!-- Addition -->
+		<variant>
+			<variables>
+				int num_a = 30 + random.Next (20);
+				int num_b = 60 + random.Next (20);
+				int rslt = num_b - num_a;
+			</variables>
+			<_question>What number plus [num_a] equals [num_b]?</_question>
+			<string _text = "x + [num_a] = [num_b]" x = "0.5" y = "0.4" centered = "yes" size = "big"/>
+			<answer>[rslt]</answer>
+			<_rationale>It is the result of the operation [num_b] - [num_a].</_rationale>
+		</variant>
+
+		<!-- Subtraction -->
+		<variant>
+			<variables>
+				int num_a = 30 + random.Next (20);
+				int num_b = 60 + random.Next (20);
+				int rslt = num_b + num_a;
+			</variables>
+			<_question>What number minus [num_a] equals [num_b]?</_question>
+			<string _text = "x - [num_a] = [num_b]" x = "0.5" y = "0.4" centered = "yes" size = "big"/>
+			<answer>[rslt]</answer>
+			<_rationale>It is the result of the operation [num_a] + [num_b].</_rationale>
+		</variant>
+
+		<!-- Multiplication -->
+		<variant>
+			<variables>
+				int num_a = 3 + random.Next (5);
+				int num_b = (30 + random.Next (20)) * num_a;
+				int rslt = num_b / num_a;
+			</variables>
+			<_question>What number multiplied by [num_a] equals [num_b]?</_question>
+			<string _text = "x * [num_a] = [num_b]" x = "0.5" y = "0.4" centered = "yes" size = "big"/>
+			<answer>[rslt]</answer>
+			<_rationale>It is the result of the operation [num_b] / [num_a].</_rationale>
+		</variant>
+
+		<!-- Division -->
+		<variant>
+			<variables>
+				int num_a = 3 + random.Next (5);
+				int num_b = 3 + random.Next (5); 
+				int rslt = num_a * num_b;
+			</variables>
+			<_question>What number divided by [num_a] equals [num_b]?</_question>
+			<string _text = "x / [num_a] = [num_b]" x = "0.5" y = "0.4" centered = "yes" size = "big"/>
+			<answer>[rslt]</answer>
+			<_rationale>It is the result of the operation [num_a] * [num_b].</_rationale>
+		</variant>
+	</game>
+
+	<game>
+		<_name>Boxes</_name>
+		<type>Logic</type>
+		<difficulty>All</difficulty>
+		<variant>
+			<svg file = "box.svg" x = "0.1" y = "0.1" width = "0.6" height = "0.5"/>
+			<string _text = "Container" x = "0.4" y = "0.62" centered = "yes" />
+			<svg file = "box.svg" x = "0.75" y = "0.2" width = "0.1" height = "0.1"/>
+			<string _text = "Box" x = "0.8" y = "0.32" centered = "yes" />
+			<variables>
+				double z = 4 + random.Next (5);
+				double big_box = 6 * 5 * z;
+				double small_box = 1 * 1 * 0.5;
+				double rslt = big_box / small_box;
+			</variables>
+			<_question>How many boxes measuring 1 x 1 x 0.5 can be packed into a container measuring 6 x 5 x [z]?</_question>
+			<answer>[rslt]</answer>
+			<_rationale>You can pack 6 * 5 boxes multiplied by the depth [z] * 2.</_rationale>
+		</variant>
+	</game>
 </games>

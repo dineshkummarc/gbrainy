@@ -94,7 +94,7 @@ namespace gbrainy.Core.Main
 			cnt_verbal += AddVerbalGamesAndVariations (VerbalAnalogiesInternal);
 
 			// Load defined XML games
-			cnt_logic += LoadXmlGames ();
+			LoadXmlGames ();
 
 			LoadPlugins ();
 
@@ -267,7 +267,7 @@ namespace gbrainy.Core.Main
 		}
 
 		// XML are stored using the Variant as a pointer to the game + the internal variant
-		int LoadXmlGames ()
+		void LoadXmlGames ()
 		{
 			Type type = typeof (GameXml);
 			int cnt = 0;
@@ -278,9 +278,19 @@ namespace gbrainy.Core.Main
 				for (int i = 0; i < game.Variants.Count; i++)
 				{
 					available_games.Add (new GameLocator (type, cnt++, game.Type, false));
+
+					switch (game.Type) {
+					case GameTypes.LogicPuzzle:
+						cnt_logic++;
+						break;
+					case GameTypes.MathTrainer:
+						cnt_calculation++;
+						break;
+					default:
+						break;
+					}
 				}
 			}
-			return cnt;
 		}
 
 		void LoadPlugins ()
@@ -422,7 +432,6 @@ namespace gbrainy.Core.Main
 					break;
 				}
 			}
-
 			enumerator = play_list.GetEnumerator ();
 		}
 

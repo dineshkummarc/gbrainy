@@ -23,24 +23,55 @@ using System.Collections.Generic;
 
 namespace gbrainy.Core.Main.Xml
 {
+	public class DrawingObject
+	{
+
+	}
+
+	public class ImageDrawingObject : DrawingObject
+	{
+		public string Filename { get; set; }
+		public double X { get; set; }
+		public double Y { get; set; }
+		public double Width { get; set; }
+		public double Height { get; set; }
+	};
+
+	public class TextDrawingObject : DrawingObject
+	{
+		public string Text { get; set; }
+		public double X { get; set; }
+		public double Y { get; set; }
+		public bool Centered { get; set; }
+		public bool Big { get; set; }
+	};
+
 	public class GameXmlDefinitionVariant
 	{
-		public struct SVGImage
-		{
-			public string Filename { get; set; }
-			public double X { get; set; }
-			public double Y { get; set; }
-			public double Width { get; set; }
-			public double Height { get; set; }
-		};
-
 		public string Question { get; set; }
 		public string Tip { get; set; }
 		public string Rationale { get; set; }
 		public string Answer { get; set; }
 		public string Variables { get; set; }
 
-		public SVGImage Image;
+		List <DrawingObject> drawing_objects;
+
+		public DrawingObject [] DrawingObjects {
+			get {
+				if (drawing_objects == null)
+					return null;
+	
+				return drawing_objects.ToArray ();
+			}
+		}
+
+		public void AddDrawingObject (DrawingObject obj)
+		{
+			if (drawing_objects == null)
+				drawing_objects = new List <DrawingObject> ();
+
+			drawing_objects.Add (obj);
+		}
 
 		public override string ToString ()
 		{
