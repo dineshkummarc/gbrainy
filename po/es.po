@@ -11,8 +11,8 @@ msgstr ""
 "Project-Id-Version: gbrainy.HEAD\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=gbrainy&component=general\n"
-"POT-Creation-Date: 2010-06-29 23:23+0000\n"
-"PO-Revision-Date: 2010-07-01 21:30+0200\n"
+"POT-Creation-Date: 2010-07-04 19:14+0000\n"
+"PO-Revision-Date: 2010-07-06 05:15+0200\n"
 "Last-Translator: Jorge González <jorgegonz@svn.gnome.org>\n"
 "Language-Team: Español <gnome-es-list@gnome.org>\n"
 "MIME-Version: 1.0\n"
@@ -42,14 +42,22 @@ msgid "Bank interest"
 msgstr "Interés del banco"
 
 #: ../data/games.xml.h:5
+msgid "Box"
+msgstr "Caja"
+
+#: ../data/games.xml.h:6
+msgid "Boxes"
+msgstr "Cajas"
+
+#: ../data/games.xml.h:7
 msgid "Brothers and sisters"
 msgstr "Hermanos y hermanas"
 
-#: ../data/games.xml.h:6
+#: ../data/games.xml.h:8
 msgid "Clock Rotation"
 msgstr "Rotación del reloj"
 
-#: ../data/games.xml.h:7
+#: ../data/games.xml.h:9
 msgid ""
 "Compound interest is paid on the original amount and on the accumulated past "
 "interest."
@@ -57,40 +65,51 @@ msgstr ""
 "El interés compuesto se paga sobre la cantidad original y sobre el interés "
 "acumulado anterior."
 
-#: ../data/games.xml.h:8
+#: ../data/games.xml.h:10
+#| msgid "Counting"
+msgid "Container"
+msgstr "Contenedor"
+
+#: ../data/games.xml.h:11
 msgid ""
 "Every digit has 10 possibilities. The total number of possibilities is 10 at "
 "the power of [digits]."
 msgstr ""
 
-#: ../data/games.xml.h:9
+#: ../data/games.xml.h:12
 msgid ""
 "Every digit has 8 possibilities. The total number of possibilities is 8 at "
 "the power of [digits]."
 msgstr ""
 
-#: ../data/games.xml.h:10
+#: ../data/games.xml.h:13
 msgid ""
 "Every game is an independent event with 2 possible results. The total number "
 "of possibilities is 2 at the power of [games]."
 msgstr ""
 
-#: ../data/games.xml.h:11
+#: ../data/games.xml.h:14
 msgid "Every hour rotates 360 degrees."
 msgstr "Cada hora rota 360 grados."
 
-#: ../data/games.xml.h:12
+#: ../data/games.xml.h:15
+msgid ""
+"How many boxes measuring 1 x 1 x 0.5 can be packed into a container "
+"measuring 6 x 5 x [z]?"
+msgstr ""
+
+#: ../data/games.xml.h:16
 msgid ""
 "How many degrees rotates the minute hand of a clock in 2 hours [num] minutes?"
 msgstr ""
 
-#: ../data/games.xml.h:13
+#: ../data/games.xml.h:17
 msgid ""
 "How many matches does it take to determine the winner of a tennis tournament "
 "that starts with [players] players?"
 msgstr ""
 
-#: ../data/games.xml.h:14
+#: ../data/games.xml.h:18
 msgid ""
 "In every match you eliminate one player, you need the total number of games "
 "minus 1 to find out the winner."
@@ -98,56 +117,117 @@ msgstr ""
 "En cada partida eliminas un jugador, necesitas el número total de partidas "
 "menos 1 para saber el ganador."
 
-#: ../data/games.xml.h:15
+#: ../data/games.xml.h:19
+#| msgid "What is the result of the equation below?"
+msgid "It is the result of the operation [num_a] * [num_b]."
+msgstr "Es el resultado de la operación [num_a] * [num_b]."
+
+#: ../data/games.xml.h:20
+#| msgid "What is the result of the equation below?"
+msgid "It is the result of the operation [num_a] + [num_b]."
+msgstr "Es el resultado de la operación [num_a] + [num_b]."
+
+#: ../data/games.xml.h:21
+#| msgid "What is the result of the equation below?"
+msgid "It is the result of the operation [num_b] - [num_a]."
+msgstr "Es el resultado de la operación [num_a] - [num_b]."
+
+#: ../data/games.xml.h:22
+#| msgid "What is the result of the equation below?"
+msgid "It is the result of the operation [num_b] / [num_a]."
+msgstr "Es el resultado de la operación [num_a] / [num_b]."
+
+#: ../data/games.xml.h:23
 msgid ""
 "John's age is nowadays 2 times his son's age. [ago] years ago, John was "
 "[proportion] times older than his son. How old is John's son nowadays?"
 msgstr ""
 
-#: ../data/games.xml.h:16
+#: ../data/games.xml.h:24
 msgid ""
 "John's is 46 years old. His son is [difference] years younger than half of "
 "John's age. How old is John's son?"
 msgstr ""
 
-#: ../data/games.xml.h:17
+#: ../data/games.xml.h:25
 msgid ""
 "Out of [people] people, [brothers] have brothers, [sisters] have sisters and "
 "[both] have both. How many people have neither brothers nor sisters?"
 msgstr ""
 
-#: ../data/games.xml.h:18
+#: ../data/games.xml.h:26
 msgid "Password"
 msgstr "Contraseña"
 
-#: ../data/games.xml.h:19
+#: ../data/games.xml.h:27
+#| msgid "Multiple options"
+msgid "Simple equations"
+msgstr "Ecuaciones simples"
+
+#: ../data/games.xml.h:28
 msgid "Tennis game"
 msgstr "Tenis"
 
-#: ../data/games.xml.h:20
+#: ../data/games.xml.h:29
 msgid ""
 "There are [games] tennis games played simultaneous. How many different "
 "forecast are possible?"
 msgstr ""
 
-#: ../data/games.xml.h:22
+#: ../data/games.xml.h:30
+msgid "What number divided by [num_a] equals [num_b]?"
+msgstr ""
+
+#: ../data/games.xml.h:31
+msgid "What number minus [num_a] equals [num_b]?"
+msgstr ""
+
+#: ../data/games.xml.h:32
+msgid "What number multiplied by [num_a] equals [num_b]?"
+msgstr ""
+
+#: ../data/games.xml.h:33
+msgid "What number plus [num_a] equals [num_b]?"
+msgstr ""
+
+#: ../data/games.xml.h:34
+msgid "You can pack 6 * 5 boxes multiplied by the depth [z] * 2."
+msgstr ""
+
+#: ../data/games.xml.h:36
 #, no-c-format
 msgid ""
 "You have [money] monetary units in your bank account at 10% compound "
 "interest annually. How much money will you have at end of 2 years?"
 msgstr ""
 
-#: ../data/games.xml.h:23
+#: ../data/games.xml.h:37
 msgid ""
 "[ago] years ago, John's age minus [ago] was equal to [proportion] times his "
 "son age minus [ago]."
 msgstr ""
 
-#: ../data/games.xml.h:24
+#: ../data/games.xml.h:38
 msgid ""
 "[brothers_only] people have brothers only, [sisters_only] sisters only and "
 "[both] have sisters and brothers."
 msgstr ""
+
+#: ../data/games.xml.h:39
+msgid "x * [num_a] = [num_b]"
+msgstr "x * [num_a] = [num_b]"
+
+#: ../data/games.xml.h:40
+msgid "x + [num_a] = [num_b]"
+msgstr "x + [num_a] = [num_b]"
+
+#: ../data/games.xml.h:41
+msgid "x - [num_a] = [num_b]"
+msgstr "x - [num_a] = [num_b]"
+
+#: ../data/games.xml.h:42
+msgid "x / [num_a] = [num_b]"
+msgstr "x / [num_a] = [num_b]"
 
 #: ../data/gbrainy.desktop.in.h:1
 msgid "Game"
@@ -448,14 +528,12 @@ msgid "Which of the following sports is the odd one?"
 msgstr "¿Cuál de los siguientes deportes es el extraño?"
 
 #: ../data/verbal_analogies.xml.h:72
-#| msgid "Which of the following words is the closest in meaning to 'censure'?"
 msgid "Which of the following words is closer to the meaning of 'asceticism'?"
 msgstr ""
 "¿Cuál de las siguientes palabras es la más cercana en significado a "
 "«ascetismo»?"
 
 #: ../data/verbal_analogies.xml.h:73
-#| msgid "Which of the following words is the closest in meaning to 'censure'?"
 msgid "Which of the following words is closer to the meaning of 'hedonism'?"
 msgstr ""
 "¿Cuál de las siguientes palabras es la más cercana en significado a "
@@ -1077,7 +1155,7 @@ msgstr "H"
 msgid "Figure {0}"
 msgstr "Figura {0}"
 
-#: ../src/Core/Main/GameManager.cs:100
+#: ../src/Core/Main/GameManager.cs:103
 #, csharp-format
 msgid ""
 "Games registered: {0}: {1} logic puzzles, {2} calculation trainers, {3} "
@@ -1216,11 +1294,7 @@ msgstr "Memoriza los siguientes objetos en el tiempo dado"
 msgid "Time left"
 msgstr "Tiempo restante"
 
-#: ../src/Core/Main/Verbal/Analogies.cs:33
-msgid "Verbal analogies"
-msgstr "Analogías verbales"
-
-#: ../src/Core/Main/Verbal/Analogies.cs:60
+#: ../src/Core/Main/Verbal/Analogies.cs:56
 #, csharp-format
 msgid "Possible correct answers are: {0}."
 msgstr "Las posibles respuestas correctas son: {0}."
@@ -1229,15 +1303,17 @@ msgstr "Las posibles respuestas correctas son: {0}."
 #. For example: "Possible correct answers are: sleep, rest."
 #. Translators: this the separator used when concatenating possible options for answering verbal analogies
 #. For example: "Possible correct answers are: a, b, c, d."
-#: ../src/Core/Main/Verbal/Analogies.cs:94
+#: ../src/Core/Main/Verbal/Analogies.cs:90
 #: ../src/Core/Main/Verbal/AnalogiesMultipleOptions.cs:63
 #: ../src/Core/Main/Verbal/AnalogiesPairOfWordsOptions.cs:66
 msgid ", "
 msgstr ", "
 
 #: ../src/Core/Main/Verbal/AnalogiesMultipleOptions.cs:43
-msgid "Multiple options"
-msgstr "Múltiples opciones"
+#, csharp-format
+#| msgid "Multiple options"
+msgid "Multiple options #{0}"
+msgstr "Múltiples opciones nº {0}"
 
 #. Translators: {0} is replaced by a question and {1} by the suggestions on how to answer
 #. E.g: What is the correct option? Answer A, B, C.
@@ -1272,8 +1348,10 @@ msgid "Possible answers are:"
 msgstr "Respuestas posibles:"
 
 #: ../src/Core/Main/Verbal/AnalogiesPairOfWordsCompare.cs:45
-msgid "Pair of words compare"
-msgstr "Comparación de pares de palabras"
+#, csharp-format
+#| msgid "Pair of words compare"
+msgid "Pair of words compare #{0}"
+msgstr "Par de palabas que comparar nº {0}"
 
 #: ../src/Core/Main/Verbal/AnalogiesPairOfWordsCompare.cs:61
 #, csharp-format
@@ -1290,8 +1368,10 @@ msgid "Words: {0}"
 msgstr "Palabras: {0}"
 
 #: ../src/Core/Main/Verbal/AnalogiesPairOfWordsOptions.cs:42
-msgid "Pair of words"
-msgstr "Par de palabras"
+#, csharp-format
+#| msgid "Pair of words"
+msgid "Pair of words #{0}"
+msgstr "Par de palabras nº {0}"
 
 #: ../src/Core/Main/Verbal/AnalogiesPairOfWordsOptions.cs:71
 #, csharp-format
@@ -1303,8 +1383,10 @@ msgstr ""
 "tiene la relación más cercana con el par dado? Responde {1}."
 
 #: ../src/Core/Main/Verbal/AnalogiesQuestionAnswer.cs:40
-msgid "Question and answer"
-msgstr "Pregunta y respuesta"
+#, csharp-format
+#| msgid "Question and answer"
+msgid "Question and answer #{0}"
+msgstr "Pregunta y respuesta nº {0}"
 
 #: ../src/Core/Main/Verbal/AnalogiesFactory.cs:155
 #, csharp-format
@@ -1378,11 +1460,11 @@ msgstr ""
 msgid "Resume"
 msgstr "Reanudar"
 
-#: ../src/Clients/Classical/CommandLine.cs:100
+#: ../src/Clients/Classical/CommandLine.cs:109
 msgid "List of available games"
 msgstr "Lista de los juegos disponibles"
 
-#: ../src/Clients/Classical/CommandLine.cs:154
+#: ../src/Clients/Classical/CommandLine.cs:170
 msgid ""
 "Usage: gbrainy [options]\n"
 "  --version\t\t\tPrint version information.\n"
@@ -1393,6 +1475,11 @@ msgid ""
 "  --norandom \t\t\tThe custom game list provided will not be randomized.\n"
 "  --versions \t\t\tShow dependencies.\n"
 msgstr ""
+
+#: ../src/Clients/Classical/CommandLine.cs:185
+#, csharp-format
+msgid "(build on {0})"
+msgstr "(construido en {0})"
 
 #. Translators: Replace by the name of the people that translated the application
 #: ../src/Clients/Classical/Dialogs/AboutDialog.cs:54
@@ -1456,15 +1543,15 @@ msgid "gbrainy web site"
 msgstr "Página web de gbrainy"
 
 #. Define columns
-#: ../src/Clients/Classical/Dialogs/CustomGameDialog.cs:67
+#: ../src/Clients/Classical/Dialogs/CustomGameDialog.cs:64
 msgid "Game Name"
 msgstr "Nombre del juego"
 
-#: ../src/Clients/Classical/Dialogs/CustomGameDialog.cs:73
+#: ../src/Clients/Classical/Dialogs/CustomGameDialog.cs:70
 msgid "Type"
 msgstr "Tipo"
 
-#: ../src/Clients/Classical/Dialogs/CustomGameDialog.cs:80
+#: ../src/Clients/Classical/Dialogs/CustomGameDialog.cs:77
 msgid "Enabled"
 msgstr "Activado"
 
@@ -1475,10 +1562,6 @@ msgstr ""
 "del jugador. "
 
 #: ../src/Clients/Classical/Dialogs/PlayerHistoryDialog.cs:51
-#| msgid ""
-#| "You need more than one game session recorded to see the score evolution."
-#| msgid_plural ""
-#| "It is built using the results of {0} last recorded game sessions."
 msgid ""
 "You need more than one game session recorded to see the score evolution."
 msgstr ""
@@ -1970,10 +2053,6 @@ msgid "Every character of the text represents a property of the figure."
 msgstr "Cada letra del texto representa una propiedad de la figura."
 
 #: ../src/Games/Logic/PuzzleFigureLetter.cs:55
-#| msgid ""
-#| "'A' indicates that the figures overlap, 'B' that are rectangles, 'C' that "
-#| "are circles, 'D' that the figures are separated, 'E' that there are three "
-#| "figures and 'F' that there are two figures."
 msgid ""
 "'A' indicates that the figures overlap, 'B' that are squares, 'C' that are "
 "circles, 'D' that the figures are separated, 'E' that there are three "
@@ -2420,9 +2499,6 @@ msgstr "Ostracismo"
 
 #: ../src/Games/Logic/PuzzleOstracism.cs:60
 #, csharp-format
-#| msgid ""
-#| "Which circle does not belong to the group? It is not a sequence of "
-#| "elements. Answer {0}, {1}, {2} or {3}."
 msgid ""
 "Which element does not belong to the group? It is not related to "
 "divisibility of the numbers. Answer {0}, {1}, {2}, {3} or {4}."
@@ -3082,10 +3158,6 @@ msgid "Memorize figures and text"
 msgstr "Memorizar figuras y texto"
 
 #: ../src/Games/Memory/MemoryFiguresAndText.cs:70
-#| msgid ""
-#| "The list below enumerates the figures shown in the previous image except "
-#| "for one. Which is the missing figure? Possible answers are triangle, "
-#| "rectangle, pentagon and circle."
 msgid ""
 "The list below enumerates the figures shown in the previous image except for "
 "one. Which is the missing figure? Possible answers are triangle, square, "
@@ -3467,9 +3539,6 @@ msgstr "Proporción"
 
 #: ../src/Games/Calculation/CalculationRatio.cs:44
 #, csharp-format
-#| msgid ""
-#| "Two numbers sum {0} and have a ratio of {1} to {2}. Which are these "
-#| "numbers?"
 msgid ""
 "Two numbers sum {0} and have a ratio of {1} to {2}. Which are these numbers? "
 "Answer using two numbers (e.g.: 1 and 2)."
@@ -3511,7 +3580,6 @@ msgstr "Dos números"
 
 #: ../src/Games/Calculation/CalculationTwoNumbers.cs:54
 #, csharp-format
-#| msgid "Which two numbers when added are {0} and when multiplied are {1}?"
 msgid ""
 "Which two numbers when added are {0} and when multiplied are {1}? Answer "
 "using two numbers (e.g.: 1 and 2)."
@@ -3521,8 +3589,6 @@ msgstr ""
 
 #: ../src/Games/Calculation/CalculationTwoNumbers.cs:56
 #, csharp-format
-#| msgid ""
-#| "Which two numbers when subtracted are {0} and when multiplied are {1}?"
 msgid ""
 "Which two numbers when subtracted are {0} and when multiplied are {1}? "
 "Answer using two numbers (e.g.: 1 and 2)."
@@ -3760,6 +3826,9 @@ msgstr "_Desinstalar…"
 #: ../src/Clients/Classical/mono-addins-strings.xml.h:35
 msgid "_Unselect All"
 msgstr "_Deseleccionar todo"
+
+#~ msgid "Verbal analogies"
+#~ msgstr "Analogías verbales"
 
 #~ msgid ""
 #~ "Which element does not belong to the group? Answer {0}, {1}, {2}, {3} or "
