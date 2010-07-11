@@ -1,14 +1,13 @@
 # Czech translation for gbrainy.
 # Copyright (C) 2009 gbrainy's COPYRIGHT HOLDER
 # This file is distributed under the same license as the gbrainy package.
-# Marek Černocký <marek@manet.cz>, 2009, 2010.
-#
+# Marek Černocký <marek@manet.c>, 2009, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: gbrainy master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-01-09 08:16+0000\n"
-"PO-Revision-Date: 2010-01-09 11:45+0100\n"
+"POT-Creation-Date: 2010-04-06 17:12+0000\n"
+"PO-Revision-Date: 2010-05-07 10:53+0200\n"
 "Last-Translator: Marek Černocký <marek@manet.cz\n"
 "Language-Team: Czech <gnome-cs-list@gnome.org>\n"
 "MIME-Version: 1.0\n"
@@ -38,649 +37,1414 @@ msgstr ""
 "kopírovat, upravovat a šířit ukázkový kód obsažený v tomto dokumentu za "
 "podmínek, které si zvolíte a bez omezení."
 
-#. When image changes, this message will be marked fuzzy or untranslated for you.
-#. It doesn't matter what you translate it to: it's not used at all.
-#: C/history.page:11(None)
-msgid "@@image: 'figures/history.png'; md5=c432b503d498019521a5374a8bc5ae76"
-msgstr "@@image: 'figures/history.png'; md5=c432b503d498019521a5374a8bc5ae76"
+#: C/times.page:7(desc)
+msgid "Change the challenge presentation time in memory games."
+msgstr "Jak změnit dobu zobrazení úkolu v paměťových hrách."
 
-#: C/history.page:5(title) C/results.page:5(title)
-msgid "3"
-msgstr "3"
+#: C/times.page:11(name) C/newgame.page:13(name) C/index.page:14(name)
+#: C/gameplay.page:12(name) C/score.page:11(name) C/multiplayer.page:11(name)
+#: C/history.page:9(name) C/difficulty.page:12(name) C/tips.page:12(name)
+#: C/pause.page:12(name) C/customgame.page:12(name)
+msgid "Milo Casagrande"
+msgstr "Milo Casagrande"
 
-#: C/history.page:9(title) C/preferences.page:39(title) C/index.page:23(title)
-msgid "Player's Game History"
-msgstr "Historie her hráče"
+#: C/times.page:12(email) C/newgame.page:14(email) C/index.page:15(email)
+#: C/gameplay.page:13(email) C/score.page:12(email)
+#: C/multiplayer.page:12(email) C/history.page:10(email)
+#: C/difficulty.page:13(email) C/tips.page:13(email) C/pause.page:13(email)
+#: C/customgame.page:13(email)
+msgid "milo@ubuntu.com"
+msgstr "milo@ubuntu.com"
 
-#: C/history.page:10(p)
+#: C/times.page:15(p) C/newgame.page:17(p) C/index.page:18(p)
+#: C/gameplay.page:16(p) C/score.page:15(p) C/multiplayer.page:15(p)
+#: C/history.page:13(p) C/difficulty.page:16(p) C/tips.page:16(p)
+#: C/pause.page:16(p) C/gametypes.page:12(p) C/customgame.page:16(p)
+msgid "Creative Commons Share Alike 3.0"
+msgstr "Creative Commons Share Alike 3.0"
+
+#: C/times.page:19(title)
+msgid "Change the challenge duration"
+msgstr "Změna doby zobrazení úkolu"
+
+#: C/times.page:20(p)
 msgid ""
-"You can access the <gui>Player's Game History</gui> from the main "
-"application menu."
-msgstr "<gui>Historie her hráče</gui> je přístupná z hlavní nabídky aplikace."
-
-#: C/history.page:12(p)
-msgid ""
-"In this dialog the player can see how his performance has been evolving from "
-"every game type during the last recorded game sessions."
+"To change the number of seconds you are given to memorize the challenge when "
+"playing memory games, proceed as follows:"
 msgstr ""
-"V tomto dialogovém okně hráč může vidět, jak se jeho výkony vyvíjely u "
-"každého typu hry během naposledy uloženého herního sezení."
+"Pokud chcete změnit počet sekund, které máte dané na zapamatování úkolu, "
+"když hrajete paměťové hry, postupujte následovně:"
 
-#: C/history.page:13(p)
+#: C/times.page:26(p) C/difficulty.page:26(p)
 msgid ""
-"By clicking on the <gui>Total</gui>, <gui>Logic</gui>, <gui>Memory</gui>, "
-"<gui>Mental Calculation</gui> and <gui>Verbal</gui> checkboxes the user can "
-"select which game types results are shown on the player's game history "
-"graphic."
+"Choose <guiseq><gui style=\"menu\">Settings</gui><gui style=\"menuitem"
+"\">Preferences</gui></guiseq>."
 msgstr ""
-"Kliknutím na zaškrtávací pole <gui>Celkově</gui>, <gui>Logické</gui>, "
-"<gui>Paměťové</gui>, <gui>Počítání z hlavy</gui> a <gui>Slovní</gui> si může "
-"uživatel vybrat, pro které typy her chce výsledky v grafu historie her hráče "
-"vykreslit."
+"Zvolte <guiseq><gui style=\"menu\">Natavení</gui><gui style=\"menuitem"
+"\">Předvolby</gui></guiseq>."
 
-#: C/history.page:14(p)
+#: C/times.page:31(p)
 msgid ""
-"<app>gbrainy</app> saves the player game scores to be able to track player's "
-"score evolution. Using the <link xref=\"preferences\">Preferences</link> the "
-"user can select how many games sessions are recorded and how many games you "
-"have to play to have the game results stored."
+"In the <gui>Memory Games</gui> section, use the spin box to increase or "
+"decrease the number of seconds that the challenge will be visible for."
 msgstr ""
-"Aplikace <app>gbrainy</app> ukládá hodnocení her hráče, aby bylo možné "
-"sledovat vývoj hráčova hodnocení. Pomocí <link xref=\"preferences"
-"\">Nastavení</link> si může uživatel vybrat, kolik herních sezení má být "
-"zaznamenáno a kolik her se musí odehrát, aby se hra vůbec uložila."
+"V části <gui>Paměťové hry</gui> použijte číselník ke zvýšení nebo snížení "
+"počtu sekund, po které je úkol zobrazen."
 
-#. When image changes, this message will be marked fuzzy or untranslated for you.
-#. It doesn't matter what you translate it to: it's not used at all.
-#: C/results.page:11(None)
-msgid "@@image: 'figures/results.png'; md5=ad0cea57566d0d2192a6262830e4b166"
-msgstr "@@image: 'figures/results.png'; md5=ad0cea57566d0d2192a6262830e4b166"
-
-#: C/results.page:9(title)
-msgid "Results"
-msgstr "Výsledky"
-
-#: C/results.page:10(p)
-msgid ""
-"When the game session is finished <app>gbrainy</app> shows a summary of the "
-"results of the session."
-msgstr ""
-"Jakmile je herní sezení skončeno, aplikace <app>gbrainy</app> zobrazí souhrn "
-"výsledků sezení."
-
-#: C/results.page:12(p)
-msgid ""
-"The results for every game type are computed using the <link xref=\"scoring"
-"\">scoring</link> algorithm that takes into account time used, tips and the "
-"number of total games."
-msgstr ""
-"Výsledky pro každý typ hry se vypočítávají pomocí <link xref=\"scoring"
-"\">hodnotícího</link> algoritmu, který bere v úvahu množství potřebného "
-"času, použití pomůcek a celkový počet her."
-
-#: C/results.page:13(p)
-msgid ""
-"<app>gbrainy</app> keeps track of the player's personal records using the "
-"player's game history. If you have obtained a better score that in previous "
-"games for any of the game types, <app>gbrainy</app> informs that a new "
-"personal record has been set. Otherwise, general tips on how to improve when "
-"playing next games are given."
-msgstr ""
-"Aplikace <app>gbrainy</app> sleduje hráčovy osobní záznamy pomocí historie "
-"her hráče. Když získáte pro libovolný typ hry lepší hodnocení než v "
-"předchozí hře, aplikace <app>gbrainy</app> vás informuje, že byl zaznamenán "
-"nový osobní rekord. V ostatních případech následují obecné rady, jak se "
-"zdokonalit při hraní dalších her."
-
-#: C/results.page:14(p)
-msgid ""
-"If the number of games played during the session are minimum defined in the "
-"<link xref=\"preferences\">Preferences</link> to store the session, then the "
-"results of the game session are recorded in the player's game history."
-msgstr ""
-"Pokud je počet her odehraných během herního sezení nejméně takový, jak je "
-"určeno v <link xref=\"preferences\">Nastavení</link>, aby se sezení uložilo, "
-"zaznamenají se výsledky herního sezení do historie her hráče."
+#: C/times.page:35(p)
+#| msgid "Verbal analogies in 30 seconds."
+msgid "The default value is 4 seconds."
+msgstr "Výchozí hodnota je 4 sekundy."
 
 #. When image changes, this message will be marked fuzzy or untranslated for you.
 #. It doesn't matter what you translate it to: it's not used at all.
-#: C/preferences.page:10(None)
-msgid ""
-"@@image: 'figures/preferences.png'; md5=77aea548de8fde67e9728440ebdb009d"
-msgstr ""
-"@@image: 'figures/preferences.png'; md5=77aea548de8fde67e9728440ebdb009d"
-
-#: C/preferences.page:7(title) C/index.page:27(title)
-msgid "Preferences"
-msgstr "Nastavení"
-
-#: C/preferences.page:9(p)
-msgid ""
-"You can access the <gui>Preferences</gui> from the main application menu."
-msgstr "<gui>Nastavení</gui> je přístupné z hlavní nabídky aplikace."
-
-#: C/preferences.page:13(title)
-msgid "General Settings"
-msgstr "Obecná nastavení"
-
-#: C/preferences.page:14(p)
-msgid ""
-"The <gui>Skip games that use colors</gui> option removes, from the list of "
-"available games, the games that use colors to challenge the player, making "
-"it friendly to color blind users."
-msgstr ""
-"Volba <gui>Přeskočit hry využívající barvy</gui> odstraní ze seznamu "
-"dostupných her takové, jejichž řešení je založené na použití barev. To má "
-"význam pro uživatele, kteří jsou barvoslepí."
-
-#: C/preferences.page:18(title)
-msgid "Difficulty Level"
-msgstr "Náročnost"
-
-#: C/preferences.page:19(p)
-msgid ""
-"The difficulty level establishes the complexity of the games during a gaming "
-"session. It influences the number of elements to remember in memory games, "
-"the size of numbers in calculation games, makes more obvious or obfuscated "
-"logic puzzles, etc. The available difficulty levels are:"
-msgstr ""
-"Úroveň náročnosti určuje obtížnost her zobrazovaných v průběhu herního "
-"sezení. Je tím ovlivněn počet prvků k zapamatování v paměťových hrách, "
-"velikost čísel v početních hrách, logické hlavolamy to dělá pochopitelnější "
-"nebo naopak více matoucí apod. Dostupné úrovně náročnosti jsou:"
-
-#: C/preferences.page:21(p)
-msgid "<gui>Easy</gui>. The complexity of the games is the average for kids."
-msgstr "<gui>Lehká</gui>. Obtížnost zobrazovaných her je v průměru pro děti."
-
-#: C/preferences.page:22(p)
-msgid ""
-"<gui>Medium</gui>. This is the default level of the difficulty of "
-"<app>gbrainy</app>. The complexity of the games is considered good for a "
-"regular player."
-msgstr ""
-"<gui>Střední</gui>. Jedná se o výchozí úroveň náročnosti aplikace "
-"<app>gbrainy</app>. Obtížnost zobrazovaných her je považována za dobrou pro "
-"běžného hráče."
-
-#: C/preferences.page:23(p)
-msgid ""
-"<gui>Master</gui>. Ideal for advanced players with a special talent for "
-"playing <app>gbrainy</app> alike games."
-msgstr ""
-"<gui>Těžká</gui>. Ideální pro pokročilé hráče se speciálním talentem na "
-"hraní her typu <app>gbrainy</app>."
-
-#: C/preferences.page:25(p)
-msgid ""
-"The difficulty level additionally fine tunes the scoring algorithm by being "
-"more generous when playing at the easy level or more demanding when playing "
-"at master level."
-msgstr ""
-"Úroveň náročnosti také detailně vylaďuje algoritmus hodnocení, aby byl více "
-"velkorysý, když hrajete jednoduchou úroveň nebo více přísný, když hrajete "
-"mistrovskou úroveň."
-
-#: C/preferences.page:30(title)
-msgid "Memory Games"
-msgstr "Paměťové hry"
-
-#: C/preferences.page:31(p)
-msgid "These options affect the behaviour of memory games:"
-msgstr "Tyto volby ovlivňují chování paměťových her:"
-
-#: C/preferences.page:33(p)
-msgid ""
-"<gui>Time in seconds to memorize the challenge</gui>. Establishes the time "
-"that a collection of objects is shown to allow the player to memorize it."
-msgstr ""
-"<gui>Čas v sekundách na zapamatování</gui>. Určuje čas, po který jsou sady "
-"objektů zobrazené, aby si je hráč mohl zapamatovat."
-
-#: C/preferences.page:34(p)
-msgid ""
-"<gui>Show countdown message</gui>. When checked shows the player a countdown "
-"message before every memory game. This is helpful when playing different "
-"game types in a single game session because indicates to the user that "
-"should get ready for a memory game. Advanced players usually disable this "
-"option."
-msgstr ""
-"<gui>Před hrou zobrazit odpočítávání</gui>. Pokud je zaškrtnuté, zobrazí se "
-"hráči před každou paměťovou hrou odpočítávání do začátku. To je užitečné, "
-"pokud hrajete různé typy her v jednom herním sezení, protože hráč dostane "
-"upozornění, že se má připravit na paměťovou hru. Pokročilí hráči tuto volbu "
-"obvykle vypínají."
-
-#: C/preferences.page:40(p)
-msgid "These options affect the behaviour of the player's game history:"
-msgstr "Tyto volby ovlivňují chování historie her hráče:"
-
-#: C/preferences.page:42(p)
-msgid ""
-"<gui>Minimum number of played games to store the game</gui>. Determines the "
-"number of games that a player should play in a game session to store it and "
-"make it available in the player's history."
-msgstr ""
-"<gui>Minimální počet her potřebný na uložení hry</gui> Určuje počet her, "
-"které by měl hráč v herním sezení odehrát, aby se uložilo a tak zpřístupnilo "
-"v historii her hráče."
-
-#: C/preferences.page:43(p)
-msgid ""
-"<gui>Maximum number of stored games in the player's history</gui>. Once this "
-"limit has been reach the result of the older games is removed to store the "
-"results of the new game sessions."
-msgstr ""
-"<gui>Maximální počet her uložených v historii hráče</gui>. Když je dosaženo "
-"tohoto limitu, začnou se před uložením nových herních sezení umazávat starší "
-"uložené výsledky her."
-
-#: C/preferences.page:44(p)
-msgid ""
-"<gui>Clear Player's Game History</gui>. Clears the player's game history by "
-"removing all the previous recorded game sessions results."
-msgstr ""
-"<gui>Vymazat historii her hráče</gui>. Vymaže historii her hráče odstraněním "
-"všech dříve uložených výsledků herních sezení."
-
-#: C/scoring.page:5(title) C/gametypes.page:5(title)
-msgid "2"
-msgstr "2"
-
-#: C/scoring.page:9(title)
-msgid "Scoring"
-msgstr "Hodnocení"
-
-#: C/scoring.page:12(title) C/introduction.page:8(title)
-#: C/index.page:15(title)
-msgid "Introduction"
-msgstr "Úvod"
-
-#: C/scoring.page:13(p)
-msgid ""
-"During a game session a player usually solves several games. <app>gbrainy</"
-"app> scores every individual game and then computes the totals for every set "
-"of game types played during the session."
-msgstr ""
-"Během herního sezení hráč obvykle řeší několik her. Aplikace <app>gbrainy</"
-"app> hodnotí každou jednotlivou hru a potom teprve vypočítá celkové "
-"hodnocení pro každou sadu her stejného typu odehraných během sezení."
-
-#: C/scoring.page:17(title)
-msgid "Scoring individual games"
-msgstr "Hodnocení jednotlivých her"
-
-#: C/scoring.page:18(p)
-msgid ""
-"If the player answers a game incorrectly, the player does not get any score "
-"for the answer. If the player answers the game correctly, <app>gbrainy</app> "
-"scores the player considering the time used and if the played used a tip "
-"during the game."
-msgstr ""
-"Pokud hráč neodpoví u hry správně, nedostane za odpověď žádné hodnocení. "
-"Pokud odpoví správně, aplikace <app>gbrainy</app> vezme při hodnocení v "
-"úvahu potřebný čas a zda byla během hry použita pomůcka."
-
-#: C/scoring.page:20(p)
-msgid ""
-"When playing at medium difficulty level the player is expected to solve in "
-"the time indicated the following game types:"
-msgstr ""
-"Když se hraje střední úroveň náročnosti, očekává se od hráče řešení v časech "
-"daných podle typu hry následovně:"
-
-#: C/scoring.page:22(p)
-msgid "Logic puzzles in 120 seconds."
-msgstr "Logické hlavolamy za 120 sekund."
-
-#: C/scoring.page:23(p)
-msgid "Mental calculation games in 60 seconds."
-msgstr "Výpočty z hlavy za 60 sekund."
-
-#: C/scoring.page:24(p)
-msgid "Memory trainers games in 30 seconds."
-msgstr "Paměťové hry za 30 sekund."
-
-#: C/scoring.page:25(p)
-msgid "Verbal analogies in 30 seconds."
-msgstr "Slovní analogie za 30 sekund."
-
-#: C/scoring.page:27(p)
-msgid ""
-"At easy difficulty level the player is given 30% more time and at master "
-"level is given only 70% of the previous times."
-msgstr ""
-"U lehké úrovni náročnosti dostává hráč 30% času navíc a při mistrovské "
-"úrovni naopak jen 70% času uvedeného v předchozím."
-
-#: C/scoring.page:28(p)
-msgid ""
-"With the expected time for the current difficulty level and the time used by "
-"the player to complete the game, the following logic is applied:"
-msgstr ""
-"S pomocí očekávaného času pro aktuální úroveň náročnosti a času, který hráč "
-"ve skutečnosti potřeboval k vyřešení, se použije následující logika:"
-
-#: C/scoring.page:30(p)
-msgid "If the player required less than the time expected scores 100%."
-msgstr "Pokud hráč potřeboval méně času, než se očekává, je hodnocení 100%."
-
-#: C/scoring.page:31(p)
-msgid "If the player required more than the time expected scores 80%."
-msgstr "Pokud hráč potřeboval více času, než se očekává, je hodnocení 80%."
-
-#: C/scoring.page:32(p)
-msgid ""
-"If the player required more than the double of time expected scores 70%."
-msgstr ""
-"Pokud hráč potřeboval více než dvojnásobek času, než se očekává, je "
-"hodnocení 70%."
-
-#: C/scoring.page:33(p)
-msgid ""
-"If the player required more than three times the time expected scores 60%."
-msgstr ""
-"Pokud hráč potřeboval více než trojnásobek času, než se očekává, je "
-"hodnocení 60%."
-
-#: C/scoring.page:35(p)
-msgid ""
-"Additionally, if the player used the tip then scores only 80% of the "
-"previous score for the game."
-msgstr ""
-"Navíc, pokud hráč použil pomůcku, sníží se hodnocení na 80% hodnocení hry "
-"uvedeného v předchozím."
-
-#: C/scoring.page:39(title)
-msgid "Computing the totals"
-msgstr "Výpočet celkového hodnocení"
-
-#: C/scoring.page:40(p)
-msgid ""
-"<app>gbrainy</app> keeps track of the different games types played. To "
-"compute the final score of every set of game types it sums all the results "
-"of the same game types played and then applies a factor based on the "
-"logarithm of 10 for the easy difficult level, 20 for the medium difficult "
-"level and 30 for master difficult level."
-msgstr ""
-"Aplikace <app>gbrainy</app> si pamatuje různé typy odehraných her. K výpočtu "
-"závěrečného hodnocení každé sady her stejného typu se sečtou všechny "
-"výsledky odehraných her stejného typu a použije se faktor založený na "
-"logaritmu 10 pro lehkou náročnost, 20 pro střední náročnost a 30 pro "
-"mistrovskou náročnost."
-
-#: C/scoring.page:41(p)
-msgid ""
-"This means that when playing at medium difficult level to get a score of "
-"100% you need to score 100% on at least 20 games of every game type played."
-msgstr ""
-"To znamená, že když se hraje střední úroveň náročnosti, je potřeba pro "
-"získání 100% hodnocení získat 100% hodnocení nejméně 20 her každého "
-"odehraného typu hry."
-
-#: C/scoring.page:42(p)
-msgid ""
-"This may sound challenging but allows players to compare game scores from "
-"different sessions (in the player's game history) and allows to track better "
-"the progression of the player during all the games that has played."
-msgstr ""
-"To může znít náročně, ale umožňuje to hráčům srovnávat hodnocení z různých "
-"sezení (v historii her hráče) a umožňuje to lépe sledovat vývoj hráče během "
-"všech her, co odehrál."
+#: C/newgame.page:66(None)
+#| msgid "@@image: 'figures/bottom.png'; md5=b30a680e13d6b48da12029414b4d2900"
+msgid "@@image: 'figures/all-games.png'; md5=b9b2464dfdb280d8de79b921e03a4705"
+msgstr "@@image: 'figures/all-games.png'; md5=b9b2464dfdb280d8de79b921e03a4705"
 
 #. When image changes, this message will be marked fuzzy or untranslated for you.
 #. It doesn't matter what you translate it to: it's not used at all.
-#: C/playing.page:12(None)
-msgid "@@image: 'figures/toolbar.png'; md5=01d6db1a4c09e048637eaa69d72f8c63"
-msgstr "@@image: 'figures/toolbar.png'; md5=01d6db1a4c09e048637eaa69d72f8c63"
+#: C/newgame.page:85(None) C/gametypes.page:36(None)
+#| msgid "@@image: 'figures/toolbar.png'; md5=01d6db1a4c09e048637eaa69d72f8c63"
+msgid ""
+"@@image: 'figures/logic-games.png'; md5=2679be12956397b6337da869bdbee82d"
+msgstr ""
+"@@image: 'figures/logic-games.png'; md5=2679be12956397b6337da869bdbee82d"
 
 #. When image changes, this message will be marked fuzzy or untranslated for you.
 #. It doesn't matter what you translate it to: it's not used at all.
-#: C/playing.page:31(None)
-msgid "@@image: 'figures/bottom.png'; md5=b30a680e13d6b48da12029414b4d2900"
-msgstr "@@image: 'figures/bottom.png'; md5=b30a680e13d6b48da12029414b4d2900"
+#: C/newgame.page:104(None) C/gametypes.page:57(None)
+#| msgid "@@image: 'figures/toolbar.png'; md5=01d6db1a4c09e048637eaa69d72f8c63"
+msgid "@@image: 'figures/math-games.png'; md5=208d189bcd6246b40e3dff184a5d5698"
+msgstr ""
+"@@image: 'figures/math-games.png'; md5=208d189bcd6246b40e3dff184a5d5698"
 
-#: C/playing.page:5(title) C/introduction.page:5(title)
+#. When image changes, this message will be marked fuzzy or untranslated for you.
+#. It doesn't matter what you translate it to: it's not used at all.
+#: C/newgame.page:123(None) C/gametypes.page:78(None)
+#| msgid "@@image: 'figures/history.png'; md5=c432b503d498019521a5374a8bc5ae76"
+msgid ""
+"@@image: 'figures/memory-games.png'; md5=2747c731e0a757a98a91c8e141748c75"
+msgstr ""
+"@@image: 'figures/memory-games.png'; md5=2747c731e0a757a98a91c8e141748c75"
+
+#. When image changes, this message will be marked fuzzy or untranslated for you.
+#. It doesn't matter what you translate it to: it's not used at all.
+#: C/newgame.page:142(None) C/gametypes.page:98(None)
+msgid ""
+"@@image: 'figures/verbal-games.png'; md5=6559e8d03907794b9983c5501df1aed2"
+msgstr ""
+"@@image: 'figures/verbal-games.png'; md5=6559e8d03907794b9983c5501df1aed2"
+
+#: C/newgame.page:6(title)
 msgid "1"
 msgstr "1"
 
-#: C/playing.page:8(title) C/index.page:19(title)
-msgid "Game Session"
+#: C/newgame.page:9(desc)
+#| msgid "Starting a game"
+msgid "Start and play a game."
+msgstr "Jak spustit a hrát hru."
+
+#: C/newgame.page:21(title)
+#| msgid "Game Session"
+msgid "Game session"
 msgstr "Herní sezení"
 
-#: C/playing.page:10(title)
-msgid "Starting a game"
-msgstr "Spuštění hry"
+#: C/newgame.page:24(title)
+#| msgid "During the game session"
+msgid "Start a new session"
+msgstr "Jak spustit nové sezení"
 
-#: C/playing.page:11(p)
+#: C/newgame.page:25(p)
+msgid "To start a new game, do one of the following:"
+msgstr "Když chcete spustit novou hru, udělejte jednu z následujících věcí:"
+
+#: C/newgame.page:30(p)
 msgid ""
-"You can start a new game by clicking on the different buttons of the "
-"application toolbar."
+"Choose <guiseq><gui style=\"menu\">Game</gui><gui style=\"menuitem\">New "
+"Game</gui></guiseq>, and select the type of game to play."
 msgstr ""
-"Novou hru můžete spustit kliknutím na různá tlačítka na panelu nástrojů "
-"aplikace."
+"Zvolte <guiseq><gui style=\"menu\">Hra</gui><gui style=\"menuitem\">Nová "
+"hra</gui></guiseq> a vyberte typ hry, který chcete hrát."
 
-#: C/playing.page:13(p)
-msgid "The following actions are associated to the buttons:"
-msgstr "Jednotlivá tlačítka mají následující účel:"
+#: C/newgame.page:36(p)
+msgid "Click on one of the buttons in the toolbar."
+msgstr "Klikněte na jedno z tlačítek na panelu nástrojů."
 
-#: C/playing.page:15(p)
-msgid "<gui>All</gui>. Starts a new game playing all the available game types."
-msgstr ""
-"<gui>Všechny</gui>. Spustí novou hru, ve které budete hrát všechny dostupné "
-"typy her."
+#: C/newgame.page:41(p)
+msgid "The toolbar buttons have the following meanings:"
+msgstr "Jednotlivá tlačítka na panelu nástrojů mají následující význam:"
 
-#: C/playing.page:16(p)
-msgid "<gui>Logic</gui>. Starts a new game playing only logic games."
-msgstr ""
-"<gui>Logické</gui>. Spustí novou hru, ve které budete hrát pouze logické hry."
+#: C/newgame.page:45(cite) C/newgame.page:176(cite) C/score.page:100(cite)
+msgid "Phil Bull"
+msgstr "Phil Bull"
 
-#: C/playing.page:17(p)
+#: C/newgame.page:46(p)
 msgid ""
-"<gui>Calculation</gui>. Starts a new game playing only calculation games."
+"The descriptions in the list below just echo the name of each button (X: "
+"Start a new game playing X games). Can we do anything more useful with them "
+"(e.g. link to descriptions of each game type, or give examples of the sorts "
+"of games in each category?)"
 msgstr ""
-"<gui>Matematické</gui>. Spustí novou hru, ve které budete hrát pouze "
-"matematické hry."
+"Popisy v následujícím seznamu akorát oznamují název jednotlivých tlačítek "
+"(X: Začne nové hraní her typu X). Můžeme s nimi udělat něco více (např. "
+"odkaz na popis daného typu hry nebo poskytnutí příkladů typů her v dané "
+"kategorii)?"
 
-#: C/playing.page:18(p)
-msgid "<gui>Memory</gui>. Starts a new game playing only memory games."
+#: C/newgame.page:58(title)
+msgid "All"
+msgstr "Všechny"
+
+#: C/newgame.page:59(p)
+#| msgid ""
+#| "<gui>All</gui>. Starts a new game playing all the available game types."
+msgid "Starts a new game playing all the available game types."
+msgstr "Spustí novou hru, ve které budete hrát všechny dostupné typy her."
+
+#: C/newgame.page:67(p)
+msgid "All games button"
+msgstr "Tlačítko všech her"
+
+#: C/newgame.page:77(title)
+msgid "Logic"
+msgstr "Logické"
+
+#: C/newgame.page:78(p)
+#| msgid "<gui>Logic</gui>. Starts a new game playing only logic games."
+msgid "Start a new game playing only logic games."
+msgstr "Spustí novou hru, ve které budete hrát pouze logické hry."
+
+#: C/newgame.page:86(p)
+msgid "Logic games button"
+msgstr "Tlačítko logických her"
+
+#: C/newgame.page:96(title)
+msgid "Calculation"
+msgstr "Početní"
+
+#: C/newgame.page:97(p)
+#| msgid ""
+#| "<gui>Calculation</gui>. Starts a new game playing only calculation games."
+msgid "Starts a new game playing only calculation games."
+msgstr "Spustí novou hru, ve které budete hrát pouze početní hry."
+
+#: C/newgame.page:105(p)
+#| msgid "Mental calculation games in 60 seconds."
+msgid "Calculation games button"
+msgstr "Tlačítko početních her"
+
+#: C/newgame.page:115(title)
+#| msgid "Memory Games"
+msgid "Memory"
+msgstr "Paměťové"
+
+#: C/newgame.page:116(p)
+#| msgid "<gui>Memory</gui>. Starts a new game playing only memory games."
+msgid "Starts a new game playing only memory games."
+msgstr "Spustí novou hru, ve které budete hrát pouze paměťové hry."
+
+#: C/newgame.page:124(p)
+#| msgid "Memory Games"
+msgid "Memory games button"
+msgstr "Tlačítko paměťových her"
+
+#: C/newgame.page:134(title)
+msgid "Verbal"
+msgstr "Slovní"
+
+#: C/newgame.page:135(p)
+#| msgid ""
+#| "<gui>Verbal</gui>. Starts a new game playing only verbal analogies games."
+msgid "Starts a new game playing only verbal analogy games."
 msgstr ""
-"<gui>Paměťové</gui>. Spustí novou hru, ve které budete hrát pouze paměťové "
-"hry."
+"Spustí novou hru, ve které budete hrát pouze hry se slovními analogiemi."
 
-#: C/playing.page:19(p)
+#: C/newgame.page:143(p)
+msgid "Verbal games button"
+msgstr "Tlačítko slovních her"
+
+#: C/newgame.page:151(p)
 msgid ""
-"<gui>Verbal</gui>. Starts a new game playing only verbal analogies games."
+"These descriptions also apply to the game types that you can select from the "
+"<gui style=\"menu\">Game</gui> menu."
 msgstr ""
-"<gui>Slovní</gui>. Spustí novou hru, ve které budete hrát pouze hry se "
-"slovními analogiemi."
+"Tento popis platí i pro typy her, které si můžete vybrat v nabídce <gui "
+"style=\"menu\">Hra</gui>."
 
-#: C/playing.page:21(p)
+#: C/newgame.page:158(title)
+#| msgid "Game Session"
+msgid "Play a session"
+msgstr "Jak hrát sezení"
+
+#: C/newgame.page:160(p)
+msgid "When you play a game, always read the instructions carefully!"
+msgstr "Když hrajete hru, vždy si pozorně přečtěte instrukce!"
+
+#: C/newgame.page:164(p)
 msgid ""
-"You have also the same functionality available under the <guiseq><gui>Game</"
-"gui><gui>New Game</gui></guiseq> menu."
+"The game session begins by showing you the problem and then asking for the "
+"answer. At the bottom of the window is the main set of controls that you can "
+"use to interact with the game."
 msgstr ""
-"Stejné funkce můžete najít také v nabídce <guiseq><gui>Hra</gui><gui>Nová "
-"hra</gui></guiseq>."
+"Herní sezení začíná zobrazením problému a dotazem na řešení. V dolní části "
+"okna jsou hlavní ovládací prvky, které muže použít ke komunikaci s hrou."
 
-#: C/playing.page:25(title)
-msgid "During the game session"
-msgstr "Průběh herního sezení"
-
-#: C/playing.page:27(p)
+#: C/newgame.page:168(p)
+#| msgid ""
+#| "Once you know the answer you have to type it in the entry field next to "
+#| "the <gui>Answer:</gui> label."
 msgid ""
-"The game session starts by showing a game and asking the user to solve it. "
-"Read always the instructions carefully."
+"Once you know the answer to the problem, type it in the <gui style=\"input"
+"\">Answer</gui> text entry and press <gui style=\"button\">OK</gui>."
 msgstr ""
-"Herní sezení započne zobrazením hry a žádostí uživatele o její vyřešení. "
-"Vždy si pečlivě přečtěte instrukce."
+"Až budete znát na problém odpověď, zapište ji do textového pole <gui style="
+"\"input\">Odpověď</gui> a stiskněte <gui style=\"button\">OK</gui>."
 
-#: C/playing.page:29(p)
-msgid ""
-"At the bottom of the application (see the capture below) you have the main "
-"set of controls to interact with the game."
+#: C/newgame.page:172(p)
+msgid "To proceed to the next game, click <gui style=\"button\">Next</gui>."
 msgstr ""
-"V dolní části aplikace (viz následující obrázek) máte hlavní ovládací prvky, "
-"kterými na hru reagujete."
+"Pro pokračování s další hrou klikněte na <gui style=\"button\">Další</gui>."
 
-#: C/playing.page:33(p)
+#: C/newgame.page:177(p)
 msgid ""
-"Once you know the answer you have to type it in the entry field next to the "
-"<gui>Answer:</gui> label."
+"I don't understand what this note means. Does it mean that the game will "
+"count negatively?"
 msgstr ""
-"Když znáte odpověď, musíte ji napsat do textového pole označeného jako "
-"<gui>Odpověď:</gui>."
+"Nerozumím, co tato poznámka znamená. Znamená to, že hra to bude započítávat "
+"negativně?"
 
-#: C/playing.page:35(p)
+#: C/newgame.page:182(p)
 msgid ""
-"Some games include a tip that gives some guidance when trying to solve them. "
-"You can use the <gui>Tip</gui> button when it is enabled to get the tip."
+"If you click <gui style=\"button\">Next</gui> before completing the game, or "
+"without providing an answer, that game will be counted in your results."
 msgstr ""
-"Některé hry obsahují rady, které vám pomohou při jejich řešení. Pokud "
-"takovou radu chcete, zkuste tlačítko <gui>Pomůcka</gui>."
+"Když kliknete na <gui style=\"button\">Další</gui> před dokončením hry nebo "
+"bez poskytnutí odpovědi, bude hra započítána do výsledků."
 
-#: C/playing.page:37(p)
+#. When image changes, this message will be marked fuzzy or untranslated for you.
+#. It doesn't matter what you translate it to: it's not used at all.
+#: C/index.page:23(None)
+#| msgid "@@image: 'figures/toolbar.png'; md5=01d6db1a4c09e048637eaa69d72f8c63"
+msgid "@@image: 'figures/gbrainy.png'; md5=d3b523ab1c8d00d00560d3f036d681bb"
+msgstr "@@image: 'figures/gbrainy.png'; md5=d3b523ab1c8d00d00560d3f036d681bb"
+
+#: C/index.page:7(title) C/index.page:8(title) C/index.page:11(title)
+#| msgid "gbrainy Help"
+msgid "gbrainy"
+msgstr "gbrainy"
+
+#: C/index.page:12(desc)
+msgid "The <app>gbrainy</app> help."
+msgstr "Nápověda aplikace <app>gbrainy</app>."
+
+#: C/index.page:22(title)
 msgid ""
-"Once you have answered the game you will be informed if you did provide the "
-"right answer. You can use the <gui>Next</gui> button to go to the next game."
+"<media type=\"image\" mime=\"image/png\" src=\"figures/gbrainy.png\">gbrainy "
+"logo</media> gbrainy"
 msgstr ""
-"Jakmile odpovíte, hra vás informuje, zda odpověď byla správná. Pomocí "
-"tlačítka <gui>Další</gui> se přesunete na následující hru."
+"<media type=\"image\" mime=\"image/png\" src=\"figures/gbrainy.png\">logo "
+"hry</media> gbrainy"
 
-#: C/playing.page:39(p)
+#: C/index.page:28(title)
+msgid "Basic Gameplay &amp; Usage"
+msgstr "Základy hraní a používání"
+
+#: C/index.page:32(title)
+msgid "Multiplayer Game"
+msgstr "Hra pro více hráčů"
+
+#: C/index.page:36(title)
+msgid "Tips &amp; Tricks"
+msgstr "Tipy a triky"
+
+#: C/gameplay.page:7(desc)
+msgid "Introduction to <app>gbrainy</app>."
+msgstr "Úvod do aplikace <app>gbrainy</app>."
+
+#: C/gameplay.page:20(title)
+msgid "Gameplay"
+msgstr "Hraní her"
+
+#: C/gameplay.page:22(p)
+#| msgid ""
+#| "<app>gbrainy</app> is a brain teaser game and trainer to have fun and to "
+#| "keep your brain trained."
 msgid ""
-"You can pause the game session using the <gui>Pause</gui> button and resume "
-"it at any moment."
+"<app>gbrainy</app> is a brain teaser game; the aim of the game is to have "
+"fun and keep your brain trained."
 msgstr ""
-"Herní sezení můžete pozastavit pomocí tlačítka <gui>Přestávka</gui> a "
-"později od daného místa pokračovat."
+"Aplikace <app>gbrainy</app> je trenér vašeho mozku. Cílem hry je poskytnout "
+"vám zábavu a přitom udržovat váš mozek v kondici."
 
-#: C/gametypes.page:8(title)
-msgid "Game Types"
-msgstr "Typy her"
-
-#: C/gametypes.page:10(p)
-msgid "<app>gbrainy</app> provides the following types of games:"
-msgstr "Aplikace <app>gbrainy</app> nabízí následující typy her:"
-
-#: C/gametypes.page:12(p)
+#: C/gameplay.page:26(p)
+#| msgid ""
+#| "It features different <link xref=\"gametypes\">game types</link> like "
+#| "logic puzzles, mental calculation games, memory trainers and verbal "
+#| "analogies designed to test different cognitive skills."
 msgid ""
-"Logic puzzles. Games designed to challenge your reasoning and thinking "
-"skills. These games are based on sequences of elements, visual and spatial "
-"reasoning or relationships between elements."
+"It features different game types like logic puzzles, mental calculation "
+"games, memory trainers and verbal analogies, designed to test different "
+"cognitive skills."
 msgstr ""
-"Logické hlavolamy. Hry navržené jako výzva vašemu logickému myšlení a "
-"rozumovým schopnostem. Tyto hry jsou založené na řadách prvků, obrazovém a "
-"prostorovém myšlení nebo vztazích mezi prvky."
+"Obsahuje různé typy her, jako jsou logické hlavolamy, počítání z hlavy, "
+"trénování paměti a slovní analogie, navržené tak, aby se otestovaly různé "
+"znalostní schopnosti."
 
-#: C/gametypes.page:13(p)
+#: C/gameplay.page:30(p)
+#| msgid ""
+#| "The player can choose different difficulty levels making <app>gbrainy</"
+#| "app> enjoyable for kids, adults or senior citizens. It also features "
+#| "player's game history, player's personal records, tips for the player and "
+#| "fullscreen mode support. <app>gbrainy</app> can also be <link href="
+#| "\"http://live.gnome.org/gbrainy/Extending\">extended</link> easily with "
+#| "new games developed by third parties."
 msgid ""
-"Mental calculation. Games based on arithmetical operations designed to prove "
-"your mental calculation skills. Games that require the player to use "
-"multiplication, division, addition and subtraction combined in different "
-"ways."
+"You can choose different difficulty levels making <app>gbrainy</app> "
+"enjoyable for kids, adults or senior citizens. It also features a game "
+"history, personal records, tips and fullscreen mode support. <app>gbrainy</"
+"app> can also be <link href=\"http://live.gnome.org/gbrainy/Extending"
+"\">extended</link> easily with new games developed by third parties."
 msgstr ""
-"Počítání z hlavy. Hry založené na aritmetických početních operacích, "
-"navržené ke zdokonalení vašich početních schopností. Hry, které po hráči "
-"vyžadují používat násobení, dělení, sčítání a odečítání a to vše kombinované "
-"různými způsoby."
+"Můžete si vybrat různou náročnost, což dělá aplikaci <app>gbrainy</app> "
+"zábavnou pro děti, dospělé i seniory. Obsahuje také historii her, osobní "
+"záznamy hráče, pomůcky pro hráče a podporu režimu celé obrazovky. Aplikaci "
+"<app>gbrainy</app> lze také jednoduše <link href=\"http://live.gnome.org/"
+"gbrainy/Extending\">rozšiřovat</link> o nové hry vyvinuté třetími stranami."
 
-#: C/gametypes.page:14(p)
+#: C/gameplay.page:37(p)
+#| msgid ""
+#| "<app>gbrainy</app> relies heavily on the talent of previous puzzle "
+#| "masters ranging from classic puzzles from the ancient times to the ideas "
+#| "of more recent works like <link href=\"http://en.wikipedia.org/wiki/"
+#| "Terry_Stickels\">Terry Stickels</link> puzzles or the <link href=\"http://"
+#| "en.wikipedia.org/wiki/Dr._Brain\">Dr. Brain</link> classical game."
 msgid ""
-"Memory trainers. Games designed to challenge your short term memory. These "
-"games show collections of objects and ask the player to recall them, "
-"sometimes establishing relationships between figures, words, numbers or "
-"colors."
-msgstr ""
-"Trénování paměti. Hry navržené jako výzva pro vaši krátkodobou paměť. Tyto "
-"hry zobrazí sadu objektů a po hráči chtějí, aby si vzpomněl jaké, někdy "
-"včetně určení vztahu mezi obrazci, slovy, čísly nebo barvami."
-
-#: C/gametypes.page:15(p)
-msgid ""
-"Verbal analogies. Games that challenge your verbal aptitude. Games that ask "
-"the player to identify cause and effect, use synonyms or antonyms, and use "
-"his vocabulary."
-msgstr ""
-"Slovní analogie. Hry, které jsou výzvou pro vaši slovní zásobu. Hry, které "
-"po hráči chtějí určit věci a jevy pomocí synonym nebo antonym a se zapojením "
-"jeho slovníku."
-
-#: C/introduction.page:9(p)
-msgid ""
-"<app>gbrainy</app> is a brain teaser game and trainer to have fun and to "
-"keep your brain trained."
-msgstr ""
-"Aplikace <app>gbrainy</app> je hra založená na hlavolamech, které váš mozek "
-"trénují zábavným způsobem a udržuje jej v kondici."
-
-#: C/introduction.page:10(p)
-msgid ""
-"It features different <link xref=\"gametypes\">game types</link> like logic "
-"puzzles, mental calculation games, memory trainers and verbal analogies "
-"designed to test different cognitive skills."
-msgstr ""
-"Obsahuje různé <link xref=\"gametypes\">typy her</link>, jako jsou logické "
-"hlavolamy, počítání z hlavy, trénování paměti a slovní analogie, navržené "
-"tak, aby se otestovaly různé znalostní schopnosti."
-
-#: C/introduction.page:11(p)
-msgid ""
-"<app>gbrainy</app> relies heavily on the talent of previous puzzle masters "
-"ranging from classic puzzles from the ancient times to the ideas of more "
-"recent works like <link href=\"http://en.wikipedia.org/wiki/Terry_Stickels"
-"\">Terry Stickels</link> puzzles or the <link href=\"http://en.wikipedia.org/"
-"wiki/Dr._Brain\">Dr. Brain</link> classical game."
+"<app>gbrainy</app> relies heavily on the work of previous puzzle masters, "
+"ranging from classic puzzles from ancient times to more recent works like "
+"<link href=\"http://en.wikipedia.org/wiki/Terry_Stickels\">Terry Stickels'</"
+"link> puzzles or the classic <link href=\"http://en.wikipedia.org/wiki/Dr."
+"_Brain\">Dr. Brain</link> game."
 msgstr ""
 "Aplikace <app>gbrainy</app> se hodně spoléhá na dřívější přední logické "
-"hlavolamy vycházející z klasických starodávných logických hlavolamů, které "
-"byly předlohou pro mnohem novější práce, jako jsou logické hlavolamy <link "
-"href=\"http://en.wikipedia.org/wiki/Terry_Stickels\">Terryho Stickela</link> "
-"nebo klasické hry <link href=\"http://en.wikipedia.org/wiki/Dr._Brain\">Dr. "
-"Brain</link>."
+"hlavolamy, od klasických hlavolamů z historických dob až po nedávné práce "
+"jako hlavolamy <link href=\"http://en.wikipedia.org/wiki/Terry_Stickels"
+"\">Terryho Stickela</link> nebo klasická hra <link href=\"http://en."
+"wikipedia.org/wiki/Dr._Brain\">Dr. Brain</link>."
 
-#: C/introduction.page:13(p)
+#: C/gameplay.page:45(p)
+#| msgid ""
+#| "There have been recent discussions in the scientific community regarding "
+#| "if playing brain training software improves cognitive performance. Most "
+#| "of the studies show that there is no or little improvement. However, you "
+#| "can have a good time playing games like <app>gbrainy</app>."
 msgid ""
-"The player can choose different difficulty levels making <app>gbrainy</app> "
-"enjoyable for kids, adults or senior citizens. It also features player's "
-"game history, player's personal records, tips for the player and fullscreen "
-"mode support. <app>gbrainy</app> can also be <link href=\"http://live.gnome."
-"org/gbrainy/Extending\">extended</link> easily with new games developed by "
-"third parties."
-msgstr ""
-"Hráč si může vybrat různé úrovně náročnosti, což dělá aplikaci <app>gbrainy</"
-"app> zábavnou pro děti, dospělé i seniory. Obsahuje také historii her hráče, "
-"osobní záznamy hráče, pomůcky pro hráče a podporu režimu celé obrazovky. "
-"Aplikaci <app>gbrainy</app> lze také jednoduše <link href=\"http://live."
-"gnome.org/gbrainy/Extending\">rozšiřovat</link> o nové hry vyvinuté třetími "
-"stranami."
-
-#: C/introduction.page:14(p)
-msgid ""
-"There have been recent discussions in the scientific community regarding if "
-"playing brain training software improves cognitive performance. Most of the "
-"studies show that there is no or little improvement. However, you can have a "
-"good time playing games like <app>gbrainy</app>."
+"There have been recent discussions in the scientific community regarding "
+"whether brain training software improves cognitive performance. Most of the "
+"studies show that there is little or no improvement, but that doesn't mean "
+"you can't have a good time playing games like <app>gbrainy</app>!"
 msgstr ""
 "Nedávno proběhla mezi vědci diskuze na téma, zda hraní programů pro "
 "trénování paměti opravdu zdokonaluje kognitivní výkonnost. Řada studií "
 "ukazuje, že přínos není žádný nebo jen malý. Navzdory tomu můžete s hrami "
 "jako je <app>gbrany</app> strávit příjemně čas."
 
-#: C/index.page:6(name)
-msgid "Jordi Mas i Hernandez"
-msgstr "Jordi Mas i Hernandez"
+#: C/score.page:8(desc)
+msgid "How the player scores are calculated."
+msgstr "Jak se počítá hodnocení hráče."
 
-#: C/index.page:7(email)
-msgid "jmas@softcatala.org"
-msgstr "jmas@softcatala.org"
+#: C/score.page:19(title)
+msgid "Game score and timings"
+msgstr "Hodnocení hry a měření času"
 
-#: C/index.page:12(title)
-msgid "gbrainy Help"
-msgstr "Nápověda k aplikaci gbrainy"
+#: C/score.page:20(p)
+msgid "If you answer a puzzle incorrectly, you will not get any score for it."
+msgstr ""
+"Pokud jste hlavolam nevyřešili správně, nedostanete za něj žádné hodnocení."
+
+#: C/score.page:23(p)
+msgid ""
+"If you answer a puzzle correctly, you will get a score which depends on the "
+"time taken to resolve the problem and whether you used the tip during the "
+"game."
+msgstr ""
+"Pokud jste hlavolam vyřešili správně, dostanete hodnocení závislé na čase, "
+"který jste k vyřešení problému potřebovali a zda jste v průběhu museli "
+"použít pomůcku."
+
+#: C/score.page:27(p)
+msgid ""
+"The following table summarizes the different game durations (in seconds) "
+"based on the difficulty level."
+msgstr ""
+"Následující tabulka podává souhrnný přehled o časových limitech her (v "
+"sekundách) pro jednotlivé náročnosti."
+
+#: C/score.page:34(p)
+msgid "Easy"
+msgstr "Lehká"
+
+#: C/score.page:35(p)
+msgid "Medium"
+msgstr "Střední"
+
+#: C/score.page:36(p)
+msgid "Master"
+msgstr "Těžká"
+
+#: C/score.page:39(p) C/gametypes.page:26(title)
+#| msgid "Logic puzzles in 120 seconds."
+msgid "Logic puzzles"
+msgstr "Logické hlavolamy"
+
+#: C/score.page:40(p)
+msgid "156"
+msgstr "156"
+
+#: C/score.page:41(p)
+msgid "120"
+msgstr "120"
+
+#: C/score.page:42(p)
+msgid "110"
+msgstr "110"
+
+#: C/score.page:45(p)
+#| msgid "Mental calculation games in 60 seconds."
+msgid "Mental calculation"
+msgstr "Výpočty z hlavy"
+
+#: C/score.page:46(p)
+msgid "78"
+msgstr "78"
+
+#: C/score.page:47(p)
+msgid "60"
+msgstr "60"
+
+#: C/score.page:48(p)
+msgid "55"
+msgstr "55"
+
+#: C/score.page:51(p) C/gametypes.page:68(title)
+#| msgid "Memory Games"
+msgid "Memory trainers"
+msgstr "Trénování paměti"
+
+#: C/score.page:52(p) C/score.page:58(p)
+#| msgid "3"
+msgid "39"
+msgstr "39"
+
+#: C/score.page:53(p) C/score.page:59(p)
+#| msgid "3"
+msgid "30"
+msgstr "30"
+
+#: C/score.page:54(p) C/score.page:60(p)
+#| msgid "2"
+msgid "27"
+msgstr "27"
+
+#: C/score.page:57(p) C/gametypes.page:89(title)
+#| msgid "Verbal analogies in 30 seconds."
+msgid "Verbal analogies"
+msgstr "Slovní analogie"
+
+#: C/score.page:63(p)
+#| msgid ""
+#| "With the expected time for the current difficulty level and the time used "
+#| "by the player to complete the game, the following logic is applied:"
+msgid ""
+"With the expected time for the chosen difficulty level and the time you take "
+"to complete the game, the following logic is applied:"
+msgstr ""
+"S pomocí očekávaného času pro aktuální náročnost a času, který hráč ve "
+"skutečnosti potřeboval k vyřešení, se použije následující logika:"
+
+#: C/score.page:69(p)
+#| msgid "If the player required less than the time expected scores 100%."
+msgid ""
+"If you take less than the time expected to complete the game, you score 100%."
+msgstr ""
+"Pokud jste potřeboval méně času, než se k dokončení očekává, je hodnocení "
+"100%."
+
+#: C/score.page:74(p)
+#| msgid "If the player required more than the time expected scores 80%."
+msgid ""
+"If you take more than the time expected to complete the game, you score 80%."
+msgstr ""
+"Pokud jste potřeboval více času, než se k dokončení hry očekává, je "
+"hodnocení 80%."
+
+#: C/score.page:79(p)
+#| msgid "If the player required more than the time expected scores 80%."
+msgid ""
+"If you take more than 2x the time expected to complete the game, you score "
+"70%."
+msgstr ""
+"Pokud jste potřeboval 2× více času, než se k dokončení hry očekává, je "
+"hodnocení 70%."
+
+#: C/score.page:85(p)
+#| msgid "If the player required more than the time expected scores 80%."
+msgid ""
+"If you take more than 3x the time expected to complete the game, you score "
+"60%."
+msgstr ""
+"Pokud jste potřeboval 3× více času, než se k dokončení hry očekává, je "
+"hodnocení 60%."
+
+#: C/score.page:91(p)
+msgid "If you use a tip, you score only the 80% of the original score."
+msgstr ""
+"Pokud jste použili pomůcku, bude vaše hodnocení pouze 80 % původního "
+"hodnocení."
+
+#: C/score.page:98(title)
+msgid "Computing the totals"
+msgstr "Výpočet celkového hodnocení"
+
+#: C/score.page:101(p)
+msgid ""
+"In this section, does \"logarithm of 20\" mean score = log_20(sum(results))?"
+msgstr ""
+"Znamená, v tomto oddíle, „logaritmus 20“ že hodnocení = log_20(suma"
+"(výsledky))?"
+
+#: C/score.page:105(p)
+#| msgid ""
+#| "<app>gbrainy</app> keeps track of the different games types played. To "
+#| "compute the final score of every set of game types it sums all the "
+#| "results of the same game types played and then applies a factor based on "
+#| "the logarithm of 10 for the easy difficult level, 20 for the medium "
+#| "difficult level and 30 for master difficult level."
+msgid ""
+"<app>gbrainy</app> keeps track of the different games types played. To "
+"compute the final score of every set of game types it sums all the results "
+"of the same game types played and then applies a factor based on: the "
+"logarithm of 10 for the easy level; on the logarithm of 20 for the medium "
+"level; and on the logarithm of 30 for the master level."
+msgstr ""
+"Aplikace <app>gbrainy</app> si pamatuje různé typy odehraných her. K výpočtu "
+"závěrečného hodnocení každé sady her stejného typu se sečtou všechny "
+"výsledky odehraných her stejného typu a použije se faktor založený na "
+"logaritmu 10 pro lehkou náročnost, 20 pro střední náročnost a 30 pro těžkou "
+"náročnost."
+
+#: C/score.page:112(p)
+#| msgid ""
+#| "This means that when playing at medium difficult level to get a score of "
+#| "100% you need to score 100% on at least 20 games of every game type "
+#| "played."
+msgid ""
+"This means that when playing at medium difficult level, to get a score of "
+"100% you need to score 100% on at least 20 games of every game type played."
+msgstr ""
+"To znamená, že když se hraje střední náročnost, je potřeba pro získání 100% "
+"hodnocení získat 100% hodnocení nejméně 20 her každého odehraného typu hry."
+
+#: C/score.page:116(p)
+#| msgid ""
+#| "This may sound challenging but allows players to compare game scores from "
+#| "different sessions (in the player's game history) and allows to track "
+#| "better the progression of the player during all the games that has played."
+msgid ""
+"This may sound challenging, but it allows players to compare game scores "
+"from different sessions (in the player's game history) and allows better "
+"tracking of the progression of the player through all of the games played."
+msgstr ""
+"To může znít jako obtížný úkol, ale umožňuje to hráčům srovnávat hodnocení z "
+"různých sezení (v historii her hráče) a umožňuje to lépe sledovat vývoj "
+"zlepšování hráče během všech her, co odehrál."
+
+#: C/multiplayer.page:7(desc)
+msgid "How to play with other people."
+msgstr "Jak hrát s ostatními lidmi."
+
+#: C/multiplayer.page:19(title)
+msgid "Play with other people"
+msgstr "Hraní s ostatními lidmi"
+
+#: C/multiplayer.page:21(p)
+msgid ""
+"It is not possible to play against other people over the Internet or a local "
+"network with <app>gbrainy</app>."
+msgstr ""
+"V aplikaci <app>gbrainy</app> není možné hrát proti jiným lidem přes "
+"Internet nebo místní síť."
+
+#: C/history.page:6(desc)
+msgid "Access your personal game history."
+msgstr "Jak si zobrazit historii svých her."
+
+#: C/history.page:17(title)
+#| msgid "Player's Game History"
+msgid "Personal game history"
+msgstr "Osobní historie her"
+
+#: C/history.page:19(p)
+#| msgid ""
+#| "In this dialog the player can see how his performance has been evolving "
+#| "from every game type during the last recorded game sessions."
+msgid ""
+"The <gui>Player's Game History</gui> dialog shows your performance in every "
+"game type during the last few game sessions."
+msgstr ""
+"Dialogové okno <gui>Seznam odehraných her</gui> zobrazuje váš výkon v "
+"jednotlivých typech her během několika posledních herních sezeních."
+
+#: C/history.page:25(title)
+msgid "View the games history"
+msgstr "Jak zobrazit historii her"
+
+#: C/history.page:26(p)
+msgid ""
+"To access your personal game history, choose <guiseq><gui style=\"menu"
+"\">View</gui><gui style=\"menuitem\">Player's Game History</gui></guiseq>."
+msgstr ""
+"Když se chcete podívat na svoji osobní historii her, zvolte <guiseq><gui "
+"style=\"menu\">Zobrazit</gui><gui style=\"menuitem\">Seznam odehraných her</"
+"gui></guiseq>."
+
+#: C/history.page:33(title)
+msgid "Select which results to show"
+msgstr "Jak vybrat, které výsledky zobrazit"
+
+#: C/history.page:34(p)
+msgid ""
+"To select the results that will be shown in the graphic, use the different "
+"check boxes located under the graph."
+msgstr ""
+"Pokud chcete vybrat, které výsledky se mají v grafu zobrazit, použijte "
+"zaškrtávací pole umístěná pod grafem."
+
+#: C/history.page:41(title)
+msgid "Change the number of saved games"
+msgstr "Jak změnit počet uložených her"
+
+#: C/history.page:42(p)
+msgid ""
+"<app>gbrainy</app> saves the player's scores so it can track how they evolve."
+msgstr ""
+"Aplikace <app>gbrainy</app> ukládá hráčovo hodnocení, takže je možné "
+"sledovat, jak se rozvíjel."
+
+#: C/history.page:45(p)
+msgid ""
+"In order to change the number of sessions recorded or how many games will be "
+"stored in the history, proceed as follows:"
+msgstr ""
+"Abyste mohli změnit počet zaznamenaných her nebo množství her, které budou "
+"uchovány v historii, postupujte takto:"
+
+#: C/history.page:51(p)
+msgid ""
+"Choose <guiseq><gui style=\"menu\">Settings</gui><gui style=\"menuitem\"> "
+"Preferences</gui></guiseq>."
+msgstr ""
+"Zvolte <guiseq><gui style=\"menu\">Nastavení</gui><gui style=\"menuitem\"> "
+"Předvolby</gui></guiseq>."
+
+#: C/history.page:57(p)
+#| msgid ""
+#| "You can access the <gui>Player's Game History</gui> from the main "
+#| "application menu."
+msgid "In the <gui>Player's Game History</gui> section:"
+msgstr "V části <gui>Historie her hráče</gui>:"
+
+#: C/history.page:62(p)
+msgid ""
+"Use the first spin box to change how many game sessions need to be recorded "
+"before you can start to see the results in the history graphic."
+msgstr ""
+"První číselník použijte k nastavení, kolik her je potřeba zaznamenat, než se "
+"vám výsledky zobrazí v grafu historie."
+
+#: C/history.page:68(p)
+msgid ""
+"Use the second spin box to change how many game sessions will be shown in "
+"the history graphic."
+msgstr ""
+"Druhý číselník použijte ke změně množství herních sezení, která se mají "
+"zobrazit v grafu historie."
+
+#: C/difficulty.page:6(title)
+msgid "2"
+msgstr "2"
+
+#: C/difficulty.page:8(desc)
+msgid "Change the difficulty level of the games."
+msgstr "Jak změnit náročnost her."
+
+#: C/difficulty.page:20(title)
+#| msgid "Difficulty Level"
+msgid "Difficulty levels"
+msgstr "Úrovně náročnosti"
+
+#: C/difficulty.page:21(p)
+msgid "To change the difficulty level of the game, proceed as follows:"
+msgstr "Když chcete změnit náročnost hry, postupujte následovně:"
+
+#: C/difficulty.page:31(p)
+msgid "In the <gui>Difficulty Level</gui> section, select the desired level."
+msgstr "V části <gui>Náročnost</gui> vyberte požadovanou úroveň."
+
+#: C/difficulty.page:34(p)
+msgid ""
+"You can choose from three different levels: <gui style=\"radiobutton\">Easy</"
+"gui>, <gui style=\"radiobutton\">Medium</gui>, and <gui style=\"radiobutton"
+"\">Master</gui>. The default level is <gui style=\"radiobutton\">Medium</"
+"gui>."
+msgstr ""
+"Můžete volit z těchto tří rozdílných úrovní: <gui style=\"radiobutton"
+"\">Lehká</gui>, <gui style=\"radiobutton\">Střední</gui> a <gui style="
+"\"radiobutton\">Těžká</gui>. Výchozí úroveň je <gui style=\"radiobutton"
+"\">Střední</gui>."
+
+#: C/tips.page:8(desc)
+msgid "Use the tips to solve a puzzle."
+msgstr "Jak použít pomůcky k řešení hlavolamu."
+
+#: C/tips.page:20(title)
+msgid "Tips"
+msgstr "Pomůcky"
+
+#: C/tips.page:21(p)
+msgid ""
+"With some of the games you can play, it is possible to get simple tips that "
+"can help you to solve the problem."
+msgstr ""
+"S některými hrami, které hrajete, dostanete možnost použít jednoduchou "
+"pomůcku, která vám pomůže problém vyřešit."
+
+#: C/tips.page:25(p)
+msgid ""
+"When playing a game, click on the <gui style=\"button\">Tip</gui> button at "
+"the bottom of the window (next to the <gui style=\"input\">Answer</gui> text "
+"entry)."
+msgstr ""
+"Během hry klikněte na tlačítko <gui style=\"button\">Pomůcka</gui> v dolní "
+"části okna (vedle textového pole <gui style=\"input\">Odpověď</gui>)."
+
+#: C/tips.page:29(p)
+msgid "This feature is not available for some of the games."
+msgstr "Tato funkce není u některých her dostupná."
+
+#: C/pause.page:6(title)
+msgid "4"
+msgstr "4"
+
+#: C/pause.page:9(desc)
+msgid "How to pause or stop a game."
+msgstr "Jak pozastavit a skončit hru."
+
+#: C/pause.page:20(title)
+msgid "Pause/Stop a game"
+msgstr "Pozastavení/skončení hry"
+
+#: C/pause.page:23(title)
+msgid "Pause and resume a game"
+msgstr "Jak pozastavit a znovu rozjet hru"
+
+#: C/pause.page:24(p)
+msgid ""
+"To pause a game so that you can resume it at the same point at a later time, "
+"perform one of the following:"
+msgstr ""
+"Pokud chcete hru pozastavit, abyste v ní později mohli od stejného místa "
+"pokračovat, proveďte následující:"
+
+#: C/pause.page:30(p) C/pause.page:45(p)
+msgid ""
+"Choose <guiseq><gui style=\"menu\">Game</gui><gui style=\"menuitem\">Pause "
+"Game</gui></guiseq>."
+msgstr ""
+"Zvolte <guiseq><gui style=\"menu\">Hra</gui><gui style=\"menuitem"
+"\">Pozastavit hru</gui></guiseq>."
+
+#: C/pause.page:35(p)
+msgid "Click on the <gui style=\"button\">Pause</gui> button in the toolbar."
+msgstr ""
+"Klikněte na panelu nástrojů na tlačítko <gui style=\"button\">Přestávka</"
+"gui>."
+
+#: C/pause.page:40(p)
+msgid ""
+"In order to resume the game after you paused it, perform one of the "
+"following:"
+msgstr ""
+"Když chcete v pozastavené hře dále řádně pokračovat, proveďte následující:"
+
+#: C/pause.page:50(p)
+msgid "Click on the <gui style=\"button\">Resume</gui> button in the toolbar."
+msgstr ""
+"Klikněte na panelu nástrojů na tlačítko <gui style=\"button\">Pokračovat</"
+"gui>."
+
+#: C/pause.page:58(title)
+#| msgid "Starting a game"
+msgid "Stop a game"
+msgstr "Jak skončit hru"
+
+#: C/pause.page:59(p)
+msgid "To stop a game, in order to end it, perform one of the following:"
+msgstr ""
+"Když chcete hru zastavit, abyste ji řádně skončili, proveďte následující:"
+
+#: C/pause.page:64(p)
+msgid ""
+"Choose <guiseq><gui style=\"menu\">Game</gui><gui style=\"menuitem\">End "
+"Game</gui></guiseq>."
+msgstr ""
+"Zvolte <guiseq><gui style=\"menu\">Hra</gui><gui style=\"menuitem\">Skončit "
+"hru</gui></guiseq>."
+
+#: C/pause.page:69(p)
+msgid "Click on the <gui style=\"button\">Finish</gui> button in the toolbar."
+msgstr ""
+"Klikněte na liště nástrojů na tlačítko <gui style=\"button\">Skončit</gui>."
+
+#: C/license.page:8(desc)
+msgid "Legal information."
+msgstr "Právní informace."
+
+#: C/license.page:11(title)
+msgid "License"
+msgstr "Licence"
+
+#: C/license.page:12(p)
+#| msgid ""
+#| "This work is licensed under a <link href=\"http://creativecommons.org/"
+#| "licenses/by-sa/3.0/\">Creative Commons Attribution-Share Alike 3.0 "
+#| "Unported License</link>."
+msgid ""
+"This work is distributed under a CreativeCommons Attribution-Share Alike 3.0 "
+"Unported license."
+msgstr ""
+"Tato práce je šířena pod licencí CreativeCommons Attribution-Share Alike 3.0 "
+"Unported license."
+
+#: C/license.page:18(p)
+msgid "You are free:"
+msgstr "Můžete volně:"
+
+#: C/license.page:23(em)
+msgid "To share"
+msgstr "Sdílet"
+
+#: C/license.page:24(p)
+msgid "To copy, distribute and transmit the work."
+msgstr "Kopírovat, šířit a rozesílat dílo."
+
+#: C/license.page:27(em)
+msgid "To remix"
+msgstr "Měnit"
+
+#: C/license.page:28(p)
+msgid "To adapt the work."
+msgstr "Přizpůsobovat dílo."
+
+#: C/license.page:31(p)
+msgid "Under the following conditions:"
+msgstr "Za následujících podmínek:"
+
+#: C/license.page:36(em)
+#| msgid "Introduction"
+msgid "Attribution"
+msgstr "Označení"
+
+#: C/license.page:37(p)
+msgid ""
+"You must attribute the work in the manner specified by the author or "
+"licensor (but not in any way that suggests that they endorse you or your use "
+"of the work)."
+msgstr ""
+"Musíte dílo označit v souladu s požadavky autora nebo licence (ale ne žádným "
+"způsobem, který předpokládá, že schvalují vás nebo vaše použití díla)."
+
+#: C/license.page:44(em)
+msgid "Share Alike"
+msgstr "Sdílení stejně"
+
+#: C/license.page:45(p)
+msgid ""
+"If you alter, transform, or build upon this work, you may distribute the "
+"resulting work only under the same, similar or a compatible license."
+msgstr ""
+"Pokud dílo změníte, převedete nebo na něm založíte jiné, můžete výsledek "
+"této práce šířit pouze pod stejnou, podobnou nebo kompatibilní licencí."
+
+#: C/license.page:51(p)
+#| msgid ""
+#| "This work is licensed under a <link href=\"http://creativecommons.org/"
+#| "licenses/by-sa/3.0/\">Creative Commons Attribution-Share Alike 3.0 "
+#| "Unported License</link>."
+msgid ""
+"For the full text of the license, see the <link href=\"http://"
+"creativecommons.org/licenses/by-sa/3.0/legalcode\">CreativeCommons website</"
+"link>, or read the full <link href=\"http://creativecommons.org/licenses/by-"
+"sa/3.0/\">Commons Deed</link>."
+msgstr ""
+"Text licence v plném znění najdete na <link href=\"http://creativecommons."
+"org/licenses/by-sa/3.0/legalcode\">webových stránkách CreativeCommons</link> "
+"nebo si přečtěte <link href=\"http://creativecommons.org/licenses/by-sa/3.0/"
+"\">výtah dokumentu pro neprávníky</link>."
+
+#: C/gametypes.page:5(title)
+msgid "3"
+msgstr "3"
+
+#: C/gametypes.page:6(desc)
+msgid "What types of game you can play."
+msgstr "Jaké typy her můžete hrát."
+
+#: C/gametypes.page:15(title)
+#| msgid "Game Types"
+msgid "Game types"
+msgstr "Typy her"
+
+#: C/gametypes.page:17(p)
+msgid "<app>gbrainy</app> provides the following types of games:"
+msgstr "Aplikace <app>gbrainy</app> nabízí následující typy her:"
+
+#: C/gametypes.page:27(p)
+#| msgid ""
+#| "Logic puzzles. Games designed to challenge your reasoning and thinking "
+#| "skills. These games are based on sequences of elements, visual and "
+#| "spatial reasoning or relationships between elements."
+msgid ""
+"Games designed to challenge your reasoning and thinking skills. These games "
+"are based on sequences of elements, visual and spatial reasoning or "
+"relationships between elements."
+msgstr ""
+"Hry navržené jako výzva vašemu logickému myšlení a rozumovým schopnostem. "
+"Tyto hry jsou založené na řadách prvků, obrazovém a prostorovém myšlení nebo "
+"vztazích mezi prvky."
+
+#: C/gametypes.page:37(p)
+msgid "Logic games logo"
+msgstr "Logo logických her"
+
+#: C/gametypes.page:47(title)
+#| msgid "Mental calculation games in 60 seconds."
+msgid "Mental calculations"
+msgstr "Výpočty z hlavy"
+
+#: C/gametypes.page:48(p)
+#| msgid ""
+#| "Mental calculation. Games based on arithmetical operations designed to "
+#| "prove your mental calculation skills. Games that require the player to "
+#| "use multiplication, division, addition and subtraction combined in "
+#| "different ways."
+msgid ""
+"Games based on arithmetical operations designed to improve your mental "
+"calculation skills. Games that require the player to use multiplication, "
+"division, addition and subtraction combined in different ways."
+msgstr ""
+"Hry založené na aritmetických početních operacích, navržené ke zdokonalení "
+"vašich početních schopností. Hry, které po hráči vyžadují používat násobení, "
+"dělení, sčítání a odečítání a to vše kombinované různými způsoby."
+
+#: C/gametypes.page:58(p)
+msgid "Calculation games logo"
+msgstr "Logo početních her"
+
+#: C/gametypes.page:69(p)
+#| msgid ""
+#| "Memory trainers. Games designed to challenge your short term memory. "
+#| "These games show collections of objects and ask the player to recall "
+#| "them, sometimes establishing relationships between figures, words, "
+#| "numbers or colors."
+msgid ""
+"Games designed to challenge your short-term memory. These games show "
+"collections of objects and ask the player to recall them, sometimes "
+"establishing relationships between figures, words, numbers or colors."
+msgstr ""
+"Hry navržené jako výzva pro vaši krátkodobou paměť. Tyto hry zobrazí sadu "
+"objektů a po hráči chtějí, aby si vzpomněl jaké, někdy včetně určení vztahu "
+"mezi obrazci, slovy, čísly nebo barvami."
+
+#: C/gametypes.page:79(p)
+#| msgid "Memory Games"
+msgid "Memory games logo"
+msgstr "Logo paměťových her"
+
+#: C/gametypes.page:90(p)
+#| msgid ""
+#| "Verbal analogies. Games that challenge your verbal aptitude. Games that "
+#| "ask the player to identify cause and effect, use synonyms or antonyms, "
+#| "and use his vocabulary."
+msgid ""
+"Games that challenge your verbal aptitude. These games ask the player to "
+"identify cause and effect, use synonyms or antonyms, and use their "
+"vocabulary."
+msgstr ""
+"Hry, které jsou výzvou pro vaši slovní zásobu. Hry, které po hráči chtějí "
+"určit věci a jevy pomocí synonym nebo antonym a se zapojením jeho slovníku."
+
+#: C/gametypes.page:99(p)
+#| msgid "Verbal analogies in 30 seconds."
+msgid "Verbal analogies games logo"
+msgstr "Logo her se slovními analogiemi"
+
+#: C/customgame.page:9(desc)
+#| msgid "Mental calculation games in 60 seconds."
+msgid "Start a custom games selection."
+msgstr "Jak spustit vlastní výběr her."
+
+#: C/customgame.page:20(title)
+msgid "Custom games selection"
+msgstr "Vlastní výběr her"
+
+#: C/customgame.page:21(p)
+msgid ""
+"It is possible to play a custom selection of all the games in <app>gbrainy</"
+"app>."
+msgstr ""
+"A aplikaci <app>gbrainy</app> je možné hrát i vlastní výběr ze všech her."
+
+#: C/customgame.page:24(p)
+msgid "To do so, proceed as follows:"
+msgstr "Udělá se to následovně:"
+
+#: C/customgame.page:29(p)
+msgid ""
+"Choose <guiseq><gui style=\"menu\">Game</gui><gui style=\"menuitem\">New "
+"Game</gui><gui style=\"menuitem\">Custom Game Selection</gui></guiseq>."
+msgstr ""
+"Zvolte <guiseq><gui style=\"menu\">Hra</gui><gui style=\"menuitem\">Nová "
+"hra</gui><gui style=\"menuitem\">Vlastní kombinace úloh ve hře</gui></"
+"guiseq>."
+
+#: C/customgame.page:35(p)
+msgid ""
+"In the <gui>Custom Game</gui> dialog, select the games that you would like "
+"to play by clicking on the check box next to the name of the game."
+msgstr ""
+"V dialogovém okně <gui>Vlastní hra</gui> vyberte klikáním na zaškrtávací "
+"pole vedle názvů her ty hry, které byste chtěli hrát"
+
+#: C/customgame.page:41(p)
+msgid ""
+"Once you are done, click on <gui style=\"button\">Start</gui> to start "
+"playing your custom games selection."
+msgstr ""
+"Až jste hotovi, klikněte na tlačítko <gui style=\"button\">Začít</gui> a "
+"začnete hrát svůj vlastní výběr her."
 
 #. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
 #: C/index.page:0(None)
 msgid "translator-credits"
 msgstr "Marek Černocký <marek@manet.cz>, 2009, 2010"
 
+#~ msgid ""
+#~ "By clicking on the <gui>Total</gui>, <gui>Logic</gui>, <gui>Memory</gui>, "
+#~ "<gui>Mental Calculation</gui> and <gui>Verbal</gui> checkboxes the user "
+#~ "can select which game types results are shown on the player's game "
+#~ "history graphic."
+#~ msgstr ""
+#~ "Kliknutím na zaškrtávací pole <gui>Celkově</gui>, <gui>Logické</gui>, "
+#~ "<gui>Paměťové</gui>, <gui>Počítání z hlavy</gui> a <gui>Slovní</gui> si "
+#~ "může uživatel vybrat, pro které typy her chce výsledky v grafu historie "
+#~ "her hráče vykreslit."
+
+#~ msgid ""
+#~ "<app>gbrainy</app> saves the player game scores to be able to track "
+#~ "player's score evolution. Using the <link xref=\"preferences"
+#~ "\">Preferences</link> the user can select how many games sessions are "
+#~ "recorded and how many games you have to play to have the game results "
+#~ "stored."
+#~ msgstr ""
+#~ "Aplikace <app>gbrainy</app> ukládá hodnocení her hráče, aby bylo možné "
+#~ "sledovat vývoj hráčova hodnocení. Pomocí <link xref=\"preferences"
+#~ "\">Nastavení</link> si může uživatel vybrat, kolik herních sezení má být "
+#~ "zaznamenáno a kolik her se musí odehrát, aby se hra vůbec uložila."
+
+#~ msgid "@@image: 'figures/results.png'; md5=ad0cea57566d0d2192a6262830e4b166"
+#~ msgstr ""
+#~ "@@image: 'figures/results.png'; md5=ad0cea57566d0d2192a6262830e4b166"
+
+#~ msgid "Results"
+#~ msgstr "Výsledky"
+
+#~ msgid ""
+#~ "When the game session is finished <app>gbrainy</app> shows a summary of "
+#~ "the results of the session."
+#~ msgstr ""
+#~ "Jakmile je herní sezení skončeno, aplikace <app>gbrainy</app> zobrazí "
+#~ "souhrn výsledků sezení."
+
+#~ msgid ""
+#~ "The results for every game type are computed using the <link xref="
+#~ "\"scoring\">scoring</link> algorithm that takes into account time used, "
+#~ "tips and the number of total games."
+#~ msgstr ""
+#~ "Výsledky pro každý typ hry se vypočítávají pomocí <link xref=\"scoring"
+#~ "\">hodnotícího</link> algoritmu, který bere v úvahu množství potřebného "
+#~ "času, použití pomůcek a celkový počet her."
+
+#~ msgid ""
+#~ "<app>gbrainy</app> keeps track of the player's personal records using the "
+#~ "player's game history. If you have obtained a better score that in "
+#~ "previous games for any of the game types, <app>gbrainy</app> informs that "
+#~ "a new personal record has been set. Otherwise, general tips on how to "
+#~ "improve when playing next games are given."
+#~ msgstr ""
+#~ "Aplikace <app>gbrainy</app> sleduje hráčovy osobní záznamy pomocí "
+#~ "historie her hráče. Když získáte pro libovolný typ hry lepší hodnocení "
+#~ "než v předchozí hře, aplikace <app>gbrainy</app> vás informuje, že byl "
+#~ "zaznamenán nový osobní rekord. V ostatních případech následují obecné "
+#~ "rady, jak se zdokonalit při hraní dalších her."
+
+#~ msgid ""
+#~ "If the number of games played during the session are minimum defined in "
+#~ "the <link xref=\"preferences\">Preferences</link> to store the session, "
+#~ "then the results of the game session are recorded in the player's game "
+#~ "history."
+#~ msgstr ""
+#~ "Pokud je počet her odehraných během herního sezení nejméně takový, jak je "
+#~ "určeno v <link xref=\"preferences\">Nastavení</link>, aby se sezení "
+#~ "uložilo, zaznamenají se výsledky herního sezení do historie her hráče."
+
+#~ msgid ""
+#~ "@@image: 'figures/preferences.png'; md5=77aea548de8fde67e9728440ebdb009d"
+#~ msgstr ""
+#~ "@@image: 'figures/preferences.png'; md5=77aea548de8fde67e9728440ebdb009d"
+
+#~ msgid "Preferences"
+#~ msgstr "Nastavení"
+
+#~ msgid ""
+#~ "You can access the <gui>Preferences</gui> from the main application menu."
+#~ msgstr "<gui>Nastavení</gui> je přístupné z hlavní nabídky aplikace."
+
+#~ msgid "General Settings"
+#~ msgstr "Obecná nastavení"
+
+#~ msgid ""
+#~ "The <gui>Skip games that use colors</gui> option removes, from the list "
+#~ "of available games, the games that use colors to challenge the player, "
+#~ "making it friendly to color blind users."
+#~ msgstr ""
+#~ "Volba <gui>Přeskočit hry využívající barvy</gui> odstraní ze seznamu "
+#~ "dostupných her takové, jejichž řešení je založené na použití barev. To má "
+#~ "význam pro uživatele, kteří jsou barvoslepí."
+
+#~ msgid ""
+#~ "The difficulty level establishes the complexity of the games during a "
+#~ "gaming session. It influences the number of elements to remember in "
+#~ "memory games, the size of numbers in calculation games, makes more "
+#~ "obvious or obfuscated logic puzzles, etc. The available difficulty levels "
+#~ "are:"
+#~ msgstr ""
+#~ "Úroveň náročnosti určuje obtížnost her zobrazovaných v průběhu herního "
+#~ "sezení. Je tím ovlivněn počet prvků k zapamatování v paměťových hrách, "
+#~ "velikost čísel v početních hrách, logické hlavolamy to dělá "
+#~ "pochopitelnější nebo naopak více matoucí apod. Dostupné úrovně náročnosti "
+#~ "jsou:"
+
+#~ msgid ""
+#~ "<gui>Easy</gui>. The complexity of the games is the average for kids."
+#~ msgstr ""
+#~ "<gui>Lehká</gui>. Obtížnost zobrazovaných her je v průměru pro děti."
+
+#~ msgid ""
+#~ "<gui>Medium</gui>. This is the default level of the difficulty of "
+#~ "<app>gbrainy</app>. The complexity of the games is considered good for a "
+#~ "regular player."
+#~ msgstr ""
+#~ "<gui>Střední</gui>. Jedná se o výchozí úroveň náročnosti aplikace "
+#~ "<app>gbrainy</app>. Obtížnost zobrazovaných her je považována za dobrou "
+#~ "pro běžného hráče."
+
+#~ msgid ""
+#~ "<gui>Master</gui>. Ideal for advanced players with a special talent for "
+#~ "playing <app>gbrainy</app> alike games."
+#~ msgstr ""
+#~ "<gui>Těžká</gui>. Ideální pro pokročilé hráče se speciálním talentem na "
+#~ "hraní her typu <app>gbrainy</app>."
+
+#~ msgid ""
+#~ "The difficulty level additionally fine tunes the scoring algorithm by "
+#~ "being more generous when playing at the easy level or more demanding when "
+#~ "playing at master level."
+#~ msgstr ""
+#~ "Úroveň náročnosti také detailně vylaďuje algoritmus hodnocení, aby byl "
+#~ "více velkorysý, když hrajete jednoduchou úroveň nebo více přísný, když "
+#~ "hrajete mistrovskou úroveň."
+
+#~ msgid "These options affect the behaviour of memory games:"
+#~ msgstr "Tyto volby ovlivňují chování paměťových her:"
+
+#~ msgid ""
+#~ "<gui>Time in seconds to memorize the challenge</gui>. Establishes the "
+#~ "time that a collection of objects is shown to allow the player to "
+#~ "memorize it."
+#~ msgstr ""
+#~ "<gui>Čas v sekundách na zapamatování</gui>. Určuje čas, po který jsou "
+#~ "sady objektů zobrazené, aby si je hráč mohl zapamatovat."
+
+#~ msgid ""
+#~ "<gui>Show countdown message</gui>. When checked shows the player a "
+#~ "countdown message before every memory game. This is helpful when playing "
+#~ "different game types in a single game session because indicates to the "
+#~ "user that should get ready for a memory game. Advanced players usually "
+#~ "disable this option."
+#~ msgstr ""
+#~ "<gui>Před hrou zobrazit odpočítávání</gui>. Pokud je zaškrtnuté, zobrazí "
+#~ "se hráči před každou paměťovou hrou odpočítávání do začátku. To je "
+#~ "užitečné, pokud hrajete různé typy her v jednom herním sezení, protože "
+#~ "hráč dostane upozornění, že se má připravit na paměťovou hru. Pokročilí "
+#~ "hráči tuto volbu obvykle vypínají."
+
+#~ msgid "These options affect the behaviour of the player's game history:"
+#~ msgstr "Tyto volby ovlivňují chování historie her hráče:"
+
+#~ msgid ""
+#~ "<gui>Minimum number of played games to store the game</gui>. Determines "
+#~ "the number of games that a player should play in a game session to store "
+#~ "it and make it available in the player's history."
+#~ msgstr ""
+#~ "<gui>Minimální počet her potřebný na uložení hry</gui> Určuje počet her, "
+#~ "které by měl hráč v herním sezení odehrát, aby se uložilo a tak "
+#~ "zpřístupnilo v historii her hráče."
+
+#~ msgid ""
+#~ "<gui>Maximum number of stored games in the player's history</gui>. Once "
+#~ "this limit has been reach the result of the older games is removed to "
+#~ "store the results of the new game sessions."
+#~ msgstr ""
+#~ "<gui>Maximální počet her uložených v historii hráče</gui>. Když je "
+#~ "dosaženo tohoto limitu, začnou se před uložením nových herních sezení "
+#~ "umazávat starší uložené výsledky her."
+
+#~ msgid ""
+#~ "<gui>Clear Player's Game History</gui>. Clears the player's game history "
+#~ "by removing all the previous recorded game sessions results."
+#~ msgstr ""
+#~ "<gui>Vymazat historii her hráče</gui>. Vymaže historii her hráče "
+#~ "odstraněním všech dříve uložených výsledků herních sezení."
+
+#~ msgid "Scoring"
+#~ msgstr "Hodnocení"
+
+#~ msgid ""
+#~ "During a game session a player usually solves several games. "
+#~ "<app>gbrainy</app> scores every individual game and then computes the "
+#~ "totals for every set of game types played during the session."
+#~ msgstr ""
+#~ "Během herního sezení hráč obvykle řeší několik her. Aplikace "
+#~ "<app>gbrainy</app> hodnotí každou jednotlivou hru a potom teprve vypočítá "
+#~ "celkové hodnocení pro každou sadu her stejného typu odehraných během "
+#~ "sezení."
+
+#~ msgid "Scoring individual games"
+#~ msgstr "Hodnocení jednotlivých her"
+
+#~ msgid ""
+#~ "If the player answers a game incorrectly, the player does not get any "
+#~ "score for the answer. If the player answers the game correctly, "
+#~ "<app>gbrainy</app> scores the player considering the time used and if the "
+#~ "played used a tip during the game."
+#~ msgstr ""
+#~ "Pokud hráč neodpoví u hry správně, nedostane za odpověď žádné hodnocení. "
+#~ "Pokud odpoví správně, aplikace <app>gbrainy</app> vezme při hodnocení v "
+#~ "úvahu potřebný čas a zda byla během hry použita pomůcka."
+
+#~ msgid ""
+#~ "When playing at medium difficulty level the player is expected to solve "
+#~ "in the time indicated the following game types:"
+#~ msgstr ""
+#~ "Když se hraje střední úroveň náročnosti, očekává se od hráče řešení v "
+#~ "časech daných podle typu hry následovně:"
+
+#~ msgid "Memory trainers games in 30 seconds."
+#~ msgstr "Paměťové hry za 30 sekund."
+
+#~ msgid ""
+#~ "At easy difficulty level the player is given 30% more time and at master "
+#~ "level is given only 70% of the previous times."
+#~ msgstr ""
+#~ "U lehké úrovni náročnosti dostává hráč 30% času navíc a při mistrovské "
+#~ "úrovni naopak jen 70% času uvedeného v předchozím."
+
+#~ msgid ""
+#~ "If the player required more than the double of time expected scores 70%."
+#~ msgstr ""
+#~ "Pokud hráč potřeboval více než dvojnásobek času, než se očekává, je "
+#~ "hodnocení 70%."
+
+#~ msgid ""
+#~ "If the player required more than three times the time expected scores 60%."
+#~ msgstr ""
+#~ "Pokud hráč potřeboval více než trojnásobek času, než se očekává, je "
+#~ "hodnocení 60%."
+
+#~ msgid ""
+#~ "Additionally, if the player used the tip then scores only 80% of the "
+#~ "previous score for the game."
+#~ msgstr ""
+#~ "Navíc, pokud hráč použil pomůcku, sníží se hodnocení na 80% hodnocení hry "
+#~ "uvedeného v předchozím."
+
+#~ msgid ""
+#~ "You can start a new game by clicking on the different buttons of the "
+#~ "application toolbar."
+#~ msgstr ""
+#~ "Novou hru můžete spustit kliknutím na různá tlačítka na panelu nástrojů "
+#~ "aplikace."
+
+#~ msgid "The following actions are associated to the buttons:"
+#~ msgstr "Jednotlivá tlačítka mají následující účel:"
+
+#~ msgid ""
+#~ "You have also the same functionality available under the "
+#~ "<guiseq><gui>Game</gui><gui>New Game</gui></guiseq> menu."
+#~ msgstr ""
+#~ "Stejné funkce můžete najít také v nabídce <guiseq><gui>Hra</gui><gui>Nová "
+#~ "hra</gui></guiseq>."
+
+#~ msgid ""
+#~ "The game session starts by showing a game and asking the user to solve "
+#~ "it. Read always the instructions carefully."
+#~ msgstr ""
+#~ "Herní sezení započne zobrazením hry a žádostí uživatele o její vyřešení. "
+#~ "Vždy si pečlivě přečtěte instrukce."
+
+#~ msgid ""
+#~ "At the bottom of the application (see the capture below) you have the "
+#~ "main set of controls to interact with the game."
+#~ msgstr ""
+#~ "V dolní části aplikace (viz následující obrázek) máte hlavní ovládací "
+#~ "prvky, kterými na hru reagujete."
+
+#~ msgid ""
+#~ "Some games include a tip that gives some guidance when trying to solve "
+#~ "them. You can use the <gui>Tip</gui> button when it is enabled to get the "
+#~ "tip."
+#~ msgstr ""
+#~ "Některé hry obsahují rady, které vám pomohou při jejich řešení. Pokud "
+#~ "takovou radu chcete, zkuste tlačítko <gui>Pomůcka</gui>."
+
+#~ msgid ""
+#~ "Once you have answered the game you will be informed if you did provide "
+#~ "the right answer. You can use the <gui>Next</gui> button to go to the "
+#~ "next game."
+#~ msgstr ""
+#~ "Jakmile odpovíte, hra vás informuje, zda odpověď byla správná. Pomocí "
+#~ "tlačítka <gui>Další</gui> se přesunete na následující hru."
+
+#~ msgid ""
+#~ "You can pause the game session using the <gui>Pause</gui> button and "
+#~ "resume it at any moment."
+#~ msgstr ""
+#~ "Herní sezení můžete pozastavit pomocí tlačítka <gui>Přestávka</gui> a "
+#~ "později od daného místa pokračovat."
+
+#~ msgid "Jordi Mas i Hernandez"
+#~ msgstr "Jordi Mas i Hernandez"
+
+#~ msgid "jmas@softcatala.org"
+#~ msgstr "jmas@softcatala.org"
