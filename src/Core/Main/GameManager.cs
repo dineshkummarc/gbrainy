@@ -86,7 +86,7 @@ namespace gbrainy.Core.Main
 			RandomOrder = true;
 
 			xml_games = new GamesXmlFactory ();
-			xml_games.Read (Path.Combine (Defines.DATA_DIR, "games.xml"));
+			xml_games.Read (System.IO.Path.Combine (Defines.DATA_DIR, "games.xml"));
 
 			LoadAssemblyGames ();
 
@@ -477,18 +477,25 @@ namespace gbrainy.Core.Main
 			int width = 400, height = 400, margin = 20, x, y, cnt, games_page = 4;
 			Game puzzle;
 			game_type = GameSession.Types.AllGames;
-			Type [] allgames = CustomGames;
+			GameManager.GameLocator [] games;
 
-			for (int i = 0; i < allgames.Length; i++)
-				games.Add (allgames [i]);
+
+			games = AvailableGames;
 
 			PdfSurface pdf = new PdfSurface ("games.pdf", (width + margin) * 2, (height + margin) * games_page / 2);
 			x = y = cnt = 0;
 			CairoContextEx cr = new CairoContextEx (pdf, "sans 12", 72);
-			for (int game = 0; game < games.Count; game++)
+
+			for (int i = 0; i < games.Length; i++)
 			{
-				puzzle =  (Game) Activator.CreateInstance ((Type) games [game], true);
-				puzzle.Initialize ();
+				if (games[i].IsGame == false)
+					continue;
+
+				puzzle = (Game) Activator.CreateInstance (games[i].TypeOf, true);
+				puzzle.Variant = games[i].Variant;
+
+				puzzle.Begin ();
+
 				cnt++;
 				cr.Save ();
 				cr.Translate (x, y);
