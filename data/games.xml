@@ -224,4 +224,25 @@
 			<_rationale>You can pack 6 * 5 boxes multiplied by the depth [z] * 2.</_rationale>
 		</variant>
 	</game>
+
+	<game>
+		<_name>Palindromic years</_name>
+		<type>Logic</type>
+		<difficulty>All</difficulty>
+		<variant>
+			<variables>
+				int [] years_start = new int [] {1991, 2992, 3993};
+				int [] years_end = new int [] {2002, 3003, 4004};
+				int idx = random.Next (years_start.Length - 1);
+				int year_start = years_start [idx];
+				int year_end = years_end [idx];
+				int rslt = years_start [idx + 1];
+			</variables>
+			<_question>[year_start] was a palindromic year as [year_end] was, a gap of 11 years. What will be the next year with the same gap to its precursor?</_question>
+			<_tip>A palindromic number is number that remains the same when its digits are reversed (e.g.: 2112).</_tip>
+			<answer>[rslt]</answer>
+			<_rationale>Palindrome years occur usually at 110 year intervals except for the end of each millennium that occur at a 11 years interval.</_rationale>
+		</variant>
+
+	</game>
 </games>
