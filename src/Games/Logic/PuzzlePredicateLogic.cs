@@ -79,7 +79,7 @@ namespace gbrainy.Games.Logic
 				Catalog.GetString ("None of the other options"),
 				3),
 
-			new Predicate (String.Format (Catalog.GetString ("If you whistle if you are happy and you only smile when you whistle. Which of the following sentences is correct? Answer {0}, {1}, {2} or {3}."),
+			new Predicate (String.Format (Catalog.GetString ("If you whistle if you are happy and you always smile when you whistle, which of the following sentences is correct? Answer {0}, {1}, {2} or {3}."),
 				GetPossibleAnswer (0), GetPossibleAnswer (1), GetPossibleAnswer (2), GetPossibleAnswer (3)),
 				Catalog.GetString ("You smile if you are happy"),
 				Catalog.GetString ("You are only happy if you whistle"),
