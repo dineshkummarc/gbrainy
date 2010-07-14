@@ -39,6 +39,8 @@ namespace gbrainy.Clients.Classical
 		GameManager.GameLocator [] games;
 		bool selection_done;
 
+		const int COL_NAME = 0;
+		const int COL_TYPE = 1;
 		const int COL_ENABLED = 2;
 		const int COL_OBJECT = 3;
 		const int COL_INDEX = 4;
@@ -60,19 +62,52 @@ namespace gbrainy.Clients.Classical
 			question_label.Visible = true;
 			question_vbox.Add (question_label);
 
-			// Define columns
+			treeview.HeadersClickable = true;
+
+			// Column: Game Name
 			TreeViewColumn name_column = new TreeViewColumn (Catalog.GetString("Game Name"), 
 				new CellRendererText(), "text", 0);
 
 			name_column.Expand = true;
+			name_column.Clickable = true;
+			name_column.Clicked += delegate (object sender, EventArgs args)
+			{
+				Gtk.SortType order;
+				Gtk.TreeViewColumn column = (Gtk.TreeViewColumn) sender;
+
+				if (column.SortOrder == Gtk.SortType.Ascending)
+					order = Gtk.SortType.Descending;
+				else 
+					order = Gtk.SortType.Ascending;
+
+				column.SortOrder = order;
+				games_store.SetSortColumnId (COL_NAME, order);
+			};
+
 			treeview.AppendColumn (name_column);
 
+			// Column: Type
 			TreeViewColumn type_column = new TreeViewColumn (Catalog.GetString("Type"), 
 				new CellRendererText(), "text", 1);
 
 			type_column.Expand = true;
 			treeview.AppendColumn (type_column);
+			type_column.Clickable = true;
+			type_column.Clicked += delegate (object sender, EventArgs args)
+			{
+				Gtk.SortType order;
+				Gtk.TreeViewColumn column = (Gtk.TreeViewColumn) sender;
 
+				if (column.SortOrder == Gtk.SortType.Ascending)
+					order = Gtk.SortType.Descending;
+				else 
+					order = Gtk.SortType.Ascending;
+
+				column.SortOrder = order;
+				games_store.SetSortColumnId (COL_TYPE, order);
+			};
+
+			// Column: Enabled
 			CellRendererToggle toggle_cell = new CellRendererToggle();
 			TreeViewColumn toggle_column = new TreeViewColumn(Catalog.GetString("Enabled"), 
 				toggle_cell, "active", COL_ENABLED);
@@ -84,6 +119,9 @@ namespace gbrainy.Clients.Classical
 
 			if (games_store == null) {
 				games_store = new ListStore (typeof(string), typeof (string), typeof(bool), typeof (Game), typeof (int));
+
+				games_store.SetSortFunc (0, new Gtk.TreeIterCompareFunc (GameSort));
+				games_store.SetSortColumnId (COL_TYPE, SortType.Ascending);
 					 
 				// Data
 				string type;
@@ -94,7 +132,7 @@ namespace gbrainy.Clients.Classical
 
 					game = (Game) Activator.CreateInstance (games [i].TypeOf, true);
 					game.Variant = games [i].Variant;
-					type = GameTypesDescription.GetLocalized(game.Type);
+					type = GameTypesDescription.GetLocalized (game.Type);
 					games_store.AppendValues (game.Name, type, true, game, i);
 				}
 			}
@@ -110,6 +148,20 @@ namespace gbrainy.Clients.Classical
 
 		public bool SelectionDone {
 			get { return selection_done;}
+		}
+
+		int GameSort (Gtk.TreeModel model, Gtk.TreeIter a, Gtk.TreeIter b)
+		{
+			string name_a, name_b;
+			int sort_column_id;
+			SortType order;
+			ListStore store = (ListStore) model;
+
+			store.GetSortColumnId (out sort_column_id, out order);
+
+			name_a = (string) model.GetValue (a, sort_column_id);
+			name_b = (string) model.GetValue (b, sort_column_id);
+			return String.Compare (name_a, name_b);
 		}
 
 		private void OnCursorChanged (object o, EventArgs args) 
