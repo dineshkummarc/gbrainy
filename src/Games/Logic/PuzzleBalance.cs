@@ -52,7 +52,7 @@ namespace gbrainy.Games.Logic
 		}
 
 		public override string Question {
-			get {return Catalog.GetString ("How many triangles are needed in the right part of the last figure to keep it balanced?");} 
+			get {return Catalog.GetString ("How many triangles are needed in the right part of the last figure to keep it balanced?");}
 		}
 
 		public override string Rationale {
@@ -70,7 +70,7 @@ namespace gbrainy.Games.Logic
 			int ans = 0;
 			group = random.Next (3);
 
-			for (int i = 0; i < elements; i++)	
+			for (int i = 0; i < elements; i++)
 				ans += balances [(group * elements * 6) + (4 * elements) + i];
 
 			right_answer = ans.ToString ();
@@ -80,7 +80,7 @@ namespace gbrainy.Games.Logic
 		{
 			const double width = 0.5;
 			double fig_x = x + 0.1, fig_y = y - 0.11;
-			int total = (full == true) ? (elements * 2) : elements; 
+			int total = (full == true) ? (elements * 2) : elements;
 
 			gr.Rectangle (x + 0.05, y - 0.12, 0.38, 0.08);
 			gr.Stroke ();
@@ -102,7 +102,7 @@ namespace gbrainy.Games.Logic
 					gr.Stroke ();
 					break;
 				}
-			
+
 				if (i == elements - 1)
 					fig_x = x + 0.54;
 				else
@@ -115,30 +115,33 @@ namespace gbrainy.Games.Logic
 			gr.LineTo (x + width, y);
 			gr.LineTo (x + width, y - 0.05);
 			gr.Stroke ();
-		
+
 			gr.MoveTo (x , y);
 			gr.LineTo (x , y - 0.05);
 			gr.Stroke ();
-		
+
 			gr.DrawEquilateralTriangle (x + (width / 2) - 0.04, y, 0.08);
 			gr.Stroke ();
-
 		}
 
 		public override void Draw (CairoContextEx gr, int area_width, int area_height, bool rtl)
-		{		
+		{
 			double x = 0.05, y = DrawAreaY + 0.1;
 
 			base.Draw (gr, area_width, area_height, rtl);
 
 			DrawBalance (gr, x, y, group * elements * 6, true);
 			y += 0.3;
-		
+
 			DrawBalance (gr, x, y, (group * elements * 6) + 1 * elements * 2, true);
 			y += 0.3;
 
 			DrawBalance (gr, x, y, (group * elements * 6) + 2 * elements * 2, false);
-		}
 
+			gr.SetPangoFontSize (0.05);
+			gr.MoveTo (0.74, 0.68);
+			gr.ShowPangoText ("?");
+			gr.Stroke ();
+		}
 	}
 }
