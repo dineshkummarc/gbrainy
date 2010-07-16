@@ -53,8 +53,8 @@ namespace gbrainy.Games.Calculation
 			get { return "[+*-/]"; }
 		}
 
-		public override AnswerCheckAttributes CheckAttributes {
-			get { return AnswerCheckAttributes.Trim | AnswerCheckAttributes.MatchAll; }
+		public override GameAnswerCheckAttributes CheckAttributes {
+			get { return GameAnswerCheckAttributes.Trim | GameAnswerCheckAttributes.MatchAll; }
 		}
 
 		public override string AnswerValue {

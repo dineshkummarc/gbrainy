@@ -27,7 +27,7 @@ namespace gbrainyTest
 	public class TestGame : Game
 	{
 		public string Expression { get; set; }
-		public Game.AnswerCheckAttributes Attributes { get; set; }
+		public GameAnswerCheckAttributes Attributes { get; set; }
 
 		public TestGame ()
 		{
@@ -59,7 +59,7 @@ namespace gbrainyTest
 			}
 		}
 
-		public override AnswerCheckAttributes CheckAttributes {
+		public override GameAnswerCheckAttributes CheckAttributes {
 			get { return Attributes; }
 		}
 
@@ -82,20 +82,20 @@ namespace gbrainyTest
 		{
 			TestGame game = new TestGame ();
 
-			game.Attributes = Game.AnswerCheckAttributes.None;
+			game.Attributes = GameAnswerCheckAttributes.None;
 			game.RightAnswer = "icon";
 			Assert.AreEqual (true, game.CheckAnswer ("icon"));
 			Assert.AreEqual (false, game.CheckAnswer (" icon "));
 
-			game.Attributes = Game.AnswerCheckAttributes.Trim;
+			game.Attributes = GameAnswerCheckAttributes.Trim;
 			Assert.AreEqual (true, game.CheckAnswer ("icon"));
 			Assert.AreEqual (true, game.CheckAnswer (" icon "));
 
-			game.Attributes = Game.AnswerCheckAttributes.MatchAll;
+			game.Attributes = GameAnswerCheckAttributes.MatchAll;
 			Assert.AreEqual (true, game.CheckAnswer ("icon"));
 			Assert.AreEqual (false, game.CheckAnswer (" icon "));
 
-			game.Attributes = Game.AnswerCheckAttributes.Trim | Game.AnswerCheckAttributes.MatchAll;
+			game.Attributes = GameAnswerCheckAttributes.Trim | GameAnswerCheckAttributes.MatchAll;
 			Assert.AreEqual (true, game.CheckAnswer ("icon"));
 			Assert.AreEqual (true, game.CheckAnswer (" icon "));
 		}
@@ -105,20 +105,20 @@ namespace gbrainyTest
 		{
 			TestGame game = new TestGame ();
 
-			game.Attributes = Game.AnswerCheckAttributes.None;
+			game.Attributes = GameAnswerCheckAttributes.None;
 			game.RightAnswer = "icon";
 			Assert.AreEqual (true, game.CheckAnswer ("icon"));
 			Assert.AreEqual (false, game.CheckAnswer ("ICON"));
 
-			game.Attributes = Game.AnswerCheckAttributes.IgnoreCase;
+			game.Attributes = GameAnswerCheckAttributes.IgnoreCase;
 			Assert.AreEqual (true, game.CheckAnswer ("icon"));
 			Assert.AreEqual (true, game.CheckAnswer ("ICON"));
 
-			game.Attributes = Game.AnswerCheckAttributes.MatchAll;
+			game.Attributes = GameAnswerCheckAttributes.MatchAll;
 			Assert.AreEqual (true, game.CheckAnswer ("icon"));
 			Assert.AreEqual (false, game.CheckAnswer ("ICON"));
 
-			game.Attributes = Game.AnswerCheckAttributes.IgnoreCase | Game.AnswerCheckAttributes.MatchAll;
+			game.Attributes = GameAnswerCheckAttributes.IgnoreCase | GameAnswerCheckAttributes.MatchAll;
 			Assert.AreEqual (true, game.CheckAnswer ("icon"));
 			Assert.AreEqual (true, game.CheckAnswer ("ICON"));
 		}
@@ -128,20 +128,20 @@ namespace gbrainyTest
 		{
 			TestGame game = new TestGame ();
 
-			game.Attributes = Game.AnswerCheckAttributes.None;
+			game.Attributes = GameAnswerCheckAttributes.None;
 			game.RightAnswer = "10 pm";
 			Assert.AreEqual (true, game.CheckAnswer ("10 pm"));
 			Assert.AreEqual (false, game.CheckAnswer ("10pm"));
 
-			game.Attributes = Game.AnswerCheckAttributes.IgnoreSpaces;
+			game.Attributes = GameAnswerCheckAttributes.IgnoreSpaces;
 			Assert.AreEqual (true, game.CheckAnswer ("10 pm"));
 			Assert.AreEqual (true, game.CheckAnswer ("10pm"));
 
-			game.Attributes = Game.AnswerCheckAttributes.MatchAll;
+			game.Attributes = GameAnswerCheckAttributes.MatchAll;
 			Assert.AreEqual (true, game.CheckAnswer ("10 pm"));
 			Assert.AreEqual (false, game.CheckAnswer ("10pm"));
 
-			game.Attributes = Game.AnswerCheckAttributes.IgnoreSpaces | Game.AnswerCheckAttributes.MatchAll;
+			game.Attributes = GameAnswerCheckAttributes.IgnoreSpaces | GameAnswerCheckAttributes.MatchAll;
 			Assert.AreEqual (true, game.CheckAnswer ("10 pm"));
 			Assert.AreEqual (true, game.CheckAnswer ("10pm"));
 		}
@@ -151,7 +151,7 @@ namespace gbrainyTest
 		{
 			TestGame game = new TestGame ();
 
-			game.Attributes = Game.AnswerCheckAttributes.MatchAllInOrder;
+			game.Attributes = GameAnswerCheckAttributes.MatchAllInOrder;
 			game.Expression = "[0-9]+";
 			game.RightAnswer = "10 | 20 | 30";
 
@@ -164,7 +164,7 @@ namespace gbrainyTest
 		{
 			TestGame game = new TestGame ();
 
-			game.Attributes = Game.AnswerCheckAttributes.MatchAll;
+			game.Attributes = GameAnswerCheckAttributes.MatchAll;
 			game.Expression = "[0-9]+";
 			game.RightAnswer = "10 | 20 | 30";
 			Assert.AreEqual (true, game.CheckAnswer ("10 20 30"));
@@ -203,7 +203,7 @@ namespace gbrainyTest
 		{
 			TestGame game = new TestGame ();
 			game.RightAnswer = "10 PM";
-			game.Attributes = Game.AnswerCheckAttributes.Trim | Game.AnswerCheckAttributes.IgnoreCase | Game.AnswerCheckAttributes.IgnoreSpaces;
+			game.Attributes = GameAnswerCheckAttributes.Trim | GameAnswerCheckAttributes.IgnoreCase | GameAnswerCheckAttributes.IgnoreSpaces;
 
 			Assert.AreEqual (true, game.CheckAnswer ("10 PM"));
 			Assert.AreEqual (true, game.CheckAnswer ("10 pm"));
@@ -221,7 +221,7 @@ namespace gbrainyTest
 			TestGame game = new TestGame ();
 			game.RightAnswer = "+ | -";
 			game.Expression = "[+*-/]";
-			game.Attributes = Game.AnswerCheckAttributes.Trim | Game.AnswerCheckAttributes.MatchAllInOrder;
+			game.Attributes = GameAnswerCheckAttributes.Trim | GameAnswerCheckAttributes.MatchAllInOrder;
 
 			Assert.AreEqual (true, game.CheckAnswer ("+ i -"));
 			Assert.AreEqual (true, game.CheckAnswer ("+ and -"));
@@ -238,7 +238,7 @@ namespace gbrainyTest
 	
 			game.RightAnswer = "A | B | C";
 			game.Expression = "[ABCDF]";
-			game.Attributes = Game.AnswerCheckAttributes.Trim | Game.AnswerCheckAttributes.IgnoreCase | Game.AnswerCheckAttributes.MatchAll;
+			game.Attributes = GameAnswerCheckAttributes.Trim | GameAnswerCheckAttributes.IgnoreCase | GameAnswerCheckAttributes.MatchAll;
 
 			Assert.AreEqual (true, game.CheckAnswer ("A B C"));
 			Assert.AreEqual (true, game.CheckAnswer ("C B A"));
@@ -277,7 +277,7 @@ namespace gbrainyTest
 			TestGame game = new TestGame ();
 			game.RightAnswer = "10 | 20";
 			game.Expression = "[0-9]+";
-			game.Attributes = Game.AnswerCheckAttributes.Trim | Game.AnswerCheckAttributes.MatchAll;
+			game.Attributes = GameAnswerCheckAttributes.Trim | GameAnswerCheckAttributes.MatchAll;
 
 			// Right answers
 			Assert.AreEqual (true, game.CheckAnswer ("10 and 20"));

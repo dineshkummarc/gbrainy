@@ -216,6 +216,37 @@ namespace gbrainy.Core.Main.Xml
 							game.Answer = reader.ReadElementString ();
 
 						break;
+					case "_answer_show":
+						if (reader.NodeType != XmlNodeType.Element)
+							break;
+
+						if (processing_variant)
+							game.Variants[variant].AnswerShow = reader.ReadElementString ();
+						else
+							game.AnswerShow = reader.ReadElementString ();
+
+						break;
+					case "answer_expression":
+						if (reader.NodeType != XmlNodeType.Element)
+							break;
+
+						if (processing_variant)
+							game.Variants[variant].AnswerCheckExpression = reader.ReadElementString ();
+						else
+							game.AnswerCheckExpression = reader.ReadElementString ();
+
+						break;
+					case "answer_checkattributes":
+						if (reader.NodeType != XmlNodeType.Element)
+							break;
+
+						if (processing_variant)
+							game.Variants[variant].CheckAttributes = GameAnswerCheckAttributesDescription.FromString (reader.ReadElementString ());
+						else
+							game.CheckAttributes = GameAnswerCheckAttributesDescription.FromString (reader.ReadElementString ());
+
+						game.CheckAttributes = GameAnswerCheckAttributesDescription.FromString (reader.ReadElementString ());
+						break;
 					case "_tip":
 						if (reader.NodeType != XmlNodeType.Element)
 							break;

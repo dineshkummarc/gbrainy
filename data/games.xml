@@ -221,7 +221,7 @@
 			</variables>
 			<_question>How many boxes measuring 1 x 1 x 0.5 can be packed into a container measuring 6 x 5 x [z]?</_question>
 			<answer>[rslt]</answer>
-			<_rationale>You can pack 6 * 5 * [z] * 2 boxes.</_rationale>
+			<_rationale>You can fit 6 * 5 * [z] * 2 boxes.</_rationale>
 		</variant>
 	</game>
 
@@ -236,11 +236,15 @@
 				int idx = random.Next (years_start.Length - 1);
 				int year_start = years_start [idx];
 				int year_end = years_end [idx];
-				int rslt = years_start [idx + 1];
+				int rslt_a = years_start [idx + 1];
+				int rslt_b = years_end [idx + 1];
 			</variables>
-			<_question>[year_start] was a palindromic year as [year_end] was, a gap of 11 years. What will be the next year with the same gap to its precursor?</_question>
+			<_question>[year_start] was a palindromic year as [year_end] was, a gap of 11 years. What are the next two palindromic years after [year_end] with the same gap?</_question>
 			<_tip>A palindromic number is number that remains the same when its digits are reversed (e.g.: 2112).</_tip>
-			<answer>[rslt]</answer>
+			<answer>[rslt_a] | [rslt_b]</answer>
+			<_answer_show>[rslt_a] and [rslt_b]</_answer_show>
+			<answer_expression>[0-9]+</answer_expression>
+			<answer_checkattributes>Trim | MatchAll </answer_checkattributes>
 			<_rationale>Palindrome years occur usually at 110 year intervals except for the end of each millennium that occur at a 11 years interval.</_rationale>
 		</variant>
 

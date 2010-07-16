@@ -56,8 +56,8 @@ namespace gbrainy.Games.Logic
 			}
 		}
 
-		public override AnswerCheckAttributes CheckAttributes {
-			get { return AnswerCheckAttributes.Trim | AnswerCheckAttributes.IgnoreCase | AnswerCheckAttributes.MatchAll; }
+		public override GameAnswerCheckAttributes CheckAttributes {
+			get { return GameAnswerCheckAttributes.Trim | GameAnswerCheckAttributes.IgnoreCase | GameAnswerCheckAttributes.MatchAll; }
 		}
 
 		public override string AnswerCheckExpression {

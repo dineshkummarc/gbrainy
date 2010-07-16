@@ -60,8 +60,8 @@ namespace gbrainy.Games.Calculation
 			}
 		}
 
-		public override AnswerCheckAttributes CheckAttributes {
-			get { return AnswerCheckAttributes.Trim | AnswerCheckAttributes.MatchAll; }
+		public override GameAnswerCheckAttributes CheckAttributes {
+			get { return GameAnswerCheckAttributes.Trim | GameAnswerCheckAttributes.MatchAll; }
 		}
 
 		public override string AnswerCheckExpression {

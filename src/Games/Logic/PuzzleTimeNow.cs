@@ -53,8 +53,8 @@ namespace gbrainy.Games.Logic
 			}
 		}
 
-		public override AnswerCheckAttributes CheckAttributes {
-			get { return AnswerCheckAttributes.Trim | AnswerCheckAttributes.IgnoreCase | AnswerCheckAttributes.IgnoreSpaces; }
+		public override GameAnswerCheckAttributes CheckAttributes {
+			get { return GameAnswerCheckAttributes.Trim | GameAnswerCheckAttributes.IgnoreCase | GameAnswerCheckAttributes.IgnoreSpaces; }
 		}
 
 		protected override void Initialize ()

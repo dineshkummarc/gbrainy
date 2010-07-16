@@ -53,6 +53,10 @@ namespace gbrainy.Core.Main.Xml
 		public string Rationale { get; set; }
 		public string Answer { get; set; }
 		public string Variables { get; set; }
+		public GameAnswerCheckAttributes CheckAttributes { get; set; }
+		public string AnswerCheckExpression  { get; set; }
+		public string AnswerShow { get; set; }
+		string expression;
 
 		List <DrawingObject> drawing_objects;
 
@@ -81,6 +85,8 @@ namespace gbrainy.Core.Main.Xml
 			str.AppendLine ("Tip: " + Tip);
 			str.AppendLine ("Rationale: " + Rationale);
 			str.AppendLine ("Answer: " + Answer);
+			str.AppendLine ("CheckAttributes: " + CheckAttributes);
+			str.AppendLine ("AnswerCheckExpression: " + AnswerCheckExpression);
 
 			return str.ToString ();
 		}

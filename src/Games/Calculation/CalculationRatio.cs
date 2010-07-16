@@ -57,8 +57,8 @@ namespace gbrainy.Games.Calculation
 			get { return Catalog.GetString ("A ratio specifies a proportion between two numbers. A ratio a:b means that for every 'a' parts you have 'b' parts.");}
 		}
 
-		public override AnswerCheckAttributes CheckAttributes {
-			get { return AnswerCheckAttributes.Trim | AnswerCheckAttributes.MatchAll; }
+		public override GameAnswerCheckAttributes CheckAttributes {
+			get { return GameAnswerCheckAttributes.Trim | GameAnswerCheckAttributes.MatchAll; }
 		}
 
 		public override string AnswerCheckExpression {

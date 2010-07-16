@@ -42,16 +42,7 @@ namespace gbrainy.Core.Main
 			All			= Easy | Medium | Master,
 		}
 
-		[Flags]
-		public enum AnswerCheckAttributes
-		{
-			None			= 0,
-			Trim			= 2,
-			IgnoreCase		= 4,
-			IgnoreSpaces		= 8,
-			MatchAll		= 16,
-			MatchAllInOrder		= 32,
-		}
+	
 
 		public const char AnswerSeparator = '|';
 		const int MAX_POSSIBLE_ANSWER = 7;
@@ -122,8 +113,8 @@ namespace gbrainy.Core.Main
 		}
 
 		// How to check the answer
-		public virtual AnswerCheckAttributes CheckAttributes {
-			get { return AnswerCheckAttributes.Trim | AnswerCheckAttributes.IgnoreCase; }
+		public virtual GameAnswerCheckAttributes CheckAttributes {
+			get { return GameAnswerCheckAttributes.Trim | GameAnswerCheckAttributes.IgnoreCase; }
 		}
 
 		public virtual string AnswerCheckExpression {
@@ -390,8 +381,8 @@ namespace gbrainy.Core.Main
 			if (String.IsNullOrEmpty (answer))
 				return false;
 
-			ignore_case = (CheckAttributes & AnswerCheckAttributes.IgnoreCase) == AnswerCheckAttributes.IgnoreCase;
-			ignore_spaces = (CheckAttributes & AnswerCheckAttributes.IgnoreSpaces) == AnswerCheckAttributes.IgnoreSpaces;
+			ignore_case = (CheckAttributes & GameAnswerCheckAttributes.IgnoreCase) == GameAnswerCheckAttributes.IgnoreCase;
+			ignore_spaces = (CheckAttributes & GameAnswerCheckAttributes.IgnoreSpaces) == GameAnswerCheckAttributes.IgnoreSpaces;
 
 			if (ignore_case == true) // This necessary to make pattern selection (e.g. [a-z]) case insensitive
 				regex = new Regex (AnswerCheckExpression, RegexOptions.IgnoreCase);
@@ -408,21 +399,21 @@ namespace gbrainy.Core.Main
 					right_answers [i] = RemoveWhiteSpace (right_answers [i]);
 			}
 
-			if ((CheckAttributes & AnswerCheckAttributes.Trim) == AnswerCheckAttributes.Trim)
+			if ((CheckAttributes & GameAnswerCheckAttributes.Trim) == GameAnswerCheckAttributes.Trim)
 				answer = answer.Trim ();
 
 			if (ignore_spaces)
 				answer = RemoveWhiteSpace (answer);
 
 			// All strings from the list of expected answers (two numbers: 22 | 44) must present in the answer
-			if ((CheckAttributes & AnswerCheckAttributes.MatchAll) == AnswerCheckAttributes.MatchAll ||
-				(CheckAttributes & AnswerCheckAttributes.MatchAllInOrder) == AnswerCheckAttributes.MatchAllInOrder)
+			if ((CheckAttributes & GameAnswerCheckAttributes.MatchAll) == GameAnswerCheckAttributes.MatchAll ||
+				(CheckAttributes & GameAnswerCheckAttributes.MatchAllInOrder) == GameAnswerCheckAttributes.MatchAllInOrder)
 			{
 				int pos = 0;
 				match = regex.Match (answer);
 				while (String.IsNullOrEmpty (match.Value) == false)
 				{
-					if ((CheckAttributes & AnswerCheckAttributes.MatchAll) == AnswerCheckAttributes.MatchAll)
+					if ((CheckAttributes & GameAnswerCheckAttributes.MatchAll) == GameAnswerCheckAttributes.MatchAll)
 					{
 						for (int i = 0; i < right_answers.Length; i++)
 						{
@@ -442,7 +433,7 @@ namespace gbrainy.Core.Main
 					match = match.NextMatch ();
 				}
 
-				if ((CheckAttributes & AnswerCheckAttributes.MatchAllInOrder) == AnswerCheckAttributes.MatchAllInOrder)
+				if ((CheckAttributes & GameAnswerCheckAttributes.MatchAllInOrder) == GameAnswerCheckAttributes.MatchAllInOrder)
 					return true;
 
 				// Have all the expected answers been matched?

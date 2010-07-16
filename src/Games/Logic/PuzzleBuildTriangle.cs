@@ -63,8 +63,8 @@ namespace gbrainy.Games.Logic
 			get { return Catalog.GetString ("The resulting triangle is isosceles.");}
 		}
 
-		public override AnswerCheckAttributes CheckAttributes {
-			get { return AnswerCheckAttributes.Trim | AnswerCheckAttributes.IgnoreCase | AnswerCheckAttributes.MatchAll; }
+		public override GameAnswerCheckAttributes CheckAttributes {
+			get { return GameAnswerCheckAttributes.Trim | GameAnswerCheckAttributes.IgnoreCase | GameAnswerCheckAttributes.MatchAll; }
 		}
 
 		public override string AnswerCheckExpression {

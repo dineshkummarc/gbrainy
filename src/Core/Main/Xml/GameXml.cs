@@ -48,7 +48,48 @@ namespace gbrainy.Core.Main.Xml
 
 		DefinitionLocator current;
 		GameXmlDefinition game;
-		string question, answer, rationale;
+		string question, answer, rationale, answer_value;
+
+		public override GameAnswerCheckAttributes CheckAttributes  {
+			get {
+				GameAnswerCheckAttributes attrib;
+
+				if (game.Variants.Count > 0 && game.Variants[current.Variant].CheckAttributes != GameAnswerCheckAttributes.None)
+					attrib = game.Variants[current.Variant].CheckAttributes;
+				else
+					attrib =  game.CheckAttributes;
+
+				if (attrib == GameAnswerCheckAttributes.None)
+					return base.CheckAttributes;
+
+				return attrib;
+			}
+		}
+
+		public override string AnswerCheckExpression {
+			get {
+				string expression;
+
+				if (game.Variants.Count > 0 && String.IsNullOrEmpty (game.Variants[current.Variant].AnswerCheckExpression) == false)
+					expression = game.Variants[current.Variant].AnswerCheckExpression;
+				else
+					expression =  game.AnswerCheckExpression;
+
+				if (String.IsNullOrEmpty (expression))
+					return base.AnswerCheckExpression;
+	
+				return expression;
+			}
+		}
+
+		public override string AnswerValue {
+			get {
+				if (String.IsNullOrEmpty (answer_value))
+					return base.AnswerValue;
+
+				return answer_value;
+			}
+		}
 
 		static public List <GameXmlDefinition> Definitions {
 			set {
@@ -107,6 +148,11 @@ namespace gbrainy.Core.Main.Xml
 			else
 				rationale = CatalogGetString (game.Rationale);
 
+			if (variants && game.Variants[current.Variant].AnswerShow != null)
+				answer_value = game.Variants[current.Variant].AnswerShow;
+			else
+				answer_value = game.AnswerShow;
+
 			if (variants && game.Variants[current.Variant].Variables != null)
 				variables = game.Variants[current.Variant].Variables;
 			else
@@ -119,6 +165,7 @@ namespace gbrainy.Core.Main.Xml
 				question = CodeEvaluation.ReplaceVariables (question);
 				answer = CodeEvaluation.ReplaceVariables (answer);
 				rationale = CodeEvaluation.ReplaceVariables (rationale);
+				answer_value = CodeEvaluation.ReplaceVariables (answer_value);
 			}
 
 			right_answer = answer;
