@@ -37,7 +37,7 @@ public class GameXmlToAssembly
 		StringBuilder strings = new StringBuilder ();
 		GamesXmlFactory factory;
 		TextWriter tw;
-		string file, games_file, template_file, output_file, str;
+		string games_file, template_file, output_file, str;
 		int cnt = 0;
 
 		output_file = args.Length > 1 ?  Path.Combine (args[1], output) : output;
