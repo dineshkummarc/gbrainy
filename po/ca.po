@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gbrainy\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-07-16 15:44+0200\n"
-"PO-Revision-Date: 2010-07-16 14:40+0100\n"
+"POT-Creation-Date: 2010-07-17 19:04+0200\n"
+"PO-Revision-Date: 2010-07-16 19:30+0100\n"
 "Last-Translator: Jordi Mas <jmas@softcatala.org>\n"
 "Language-Team: Catalan\n"
 "MIME-Version: 1.0\n"
@@ -19,23 +19,132 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
-#: ../data/games.xml.h:1
+#: ../tools/GameXmlGetString.cs:29
+msgid ""
+"How many degrees rotates the minute hand of a clock in 2 hours [num] minute?"
+msgid_plural ""
+"How many degrees rotates the minute hand of a clock in 2 hours [num] minutes?"
+msgstr[0] ""
+"Quants graus gira el l'agulla dels minuts d'un rellotge en 2 hores i [num] "
+"minut?"
+msgstr[1] ""
+"Quants graus gira el l'agulla dels minuts d'un rellotge en 2 hores [num] "
+"minuts?"
+
+#: ../tools/GameXmlGetString.cs:33
+msgid ""
+"John's is 46 years old. His son is [difference] year younger than half of "
+"John's age. How old is John's son?"
+msgid_plural ""
+"John's is 46 years old. His son is [difference] years younger than half of "
+"John's age. How old is John's son?"
+msgstr[0] ""
+"En Joan té 46 anys. El seu fill és [difference] any més jove que la meitat "
+"de l'edat d'en Joan. Quina edat té el fill d'en Joan?"
+msgstr[1] ""
+"En Joan té 46 anys. El seu fill és [difference] anys més jove que la meitat "
+"de l'edat d'en Joan. Quina edat té el fill d'en Joan?"
+
+#: ../tools/GameXmlGetString.cs:37
+msgid ""
+"John's age is nowadays 2 times his son's age. [ago] year ago, John was "
+"[proportion] times older than his son. How old is John's son nowadays?"
+msgid_plural ""
+"John's age is nowadays 2 times his son's age. [ago] years ago, John was "
+"[proportion] times older than his son. How old is John's son nowadays?"
+msgstr[0] ""
+"L'edat d'en Joan és avui en dia dos cops la del seu fill. Fa [ago] any, en "
+"Joan era [proportion] cops més gran que el seu fill. Quina edat té el fill "
+"d'en Joan avui en dia?"
+msgstr[1] ""
+"L'edat d'en Joan és avui en dia dos cops la del seu fill. Fa [ago] anys, en "
+"Joan era [proportion] cops més gran que el seu fill. Quina edat té el fill "
+"d'en Joan avui en dia?"
+
+#: ../tools/GameXmlGetString.cs:41
+msgid ""
+"[ago] year ago, John's age minus [ago] was equal to [proportion] times his "
+"son age minus [ago]."
+msgid_plural ""
+"[ago] years ago, John's age minus [ago] was equal to [proportion] times his "
+"son age minus [ago]."
+msgstr[0] ""
+"Fa [ago] any, l'edat del Joan menys [ago] era igual a [proportion] cops a "
+"l'edat del seu fill menys [ago].son age minus [ago]."
+msgstr[1] ""
+"Fa [ago] anys, l'edat del Joan menys [ago] era igual a [proportion] cops a "
+"l'edat del seu fill menys [ago].son age minus [ago]."
+
+#: ../tools/GameXmlGetString.cs:45
 msgid ""
 "A file is protected by a password formed by a [digits] digit number (ranging "
 "from 0 to 9). How many different passwords can you have?"
-msgstr ""
+msgid_plural ""
+"A file is protected by a password formed by a [digits] digits number "
+"(ranging from 0 to 9). How many different passwords can you have?"
+msgstr[0] ""
+"Un fitxer està protegit per una contrasenya composta per un número (de 0 a "
+"9) de [digits] dígit. Quantes contrasenyes diferents podeu tenir?"
+msgstr[1] ""
 "Un fitxer està protegit per una contrasenya composta per un número (de 0 a "
 "9) de [digits] dígits. Quantes contrasenyes diferents podeu tenir?"
 
-#: ../data/games.xml.h:2
+#: ../tools/GameXmlGetString.cs:49
 msgid ""
 "A file is protected by a password formed by a [digits] digit octal number "
 "(ranging from 0 to 7). How many different passwords can you have?"
-msgstr ""
+msgid_plural ""
+"A file is protected by a password formed by a [digits] digits octal number "
+"(ranging from 0 to 7). How many different passwords can you have?"
+msgstr[0] ""
+"Un fitxer està protegit per una contrasenya composta per un número octal (de "
+"0 a 7) [digits] dígit. Quantes contrasenyes diferents podeu tenir?"
+msgstr[1] ""
 "Un fitxer està protegit per una contrasenya composta per un número octal (de "
 "0 a 7) [digits] dígits. Quantes contrasenyes diferents podeu tenir?"
 
-#: ../data/games.xml.h:3
+#: ../tools/GameXmlGetString.cs:53
+msgid ""
+"There are [games] tennis game played simultaneous. How many different "
+"forecast are possible?"
+msgid_plural ""
+"There are [games] tennis games played simultaneous. How many different "
+"forecast are possible?"
+msgstr[0] ""
+"Es juga [games] partit de tennis. Quants resultats diferents són possibles?"
+msgstr[1] ""
+"Es juguen [games] partits de tennis simultàniament. Quants resultats "
+"diferents són possibles?"
+
+#: ../tools/GameXmlGetString.cs:57
+msgid ""
+"How many matches does it take to determine the winner of a tennis tournament "
+"that starts with [players] player?"
+msgid_plural ""
+"How many matches does it take to determine the winner of a tennis tournament "
+"that starts with [players] players?"
+msgstr[0] ""
+"Quants partits calen per determinar el guanyador a un torneig de tennis que "
+"comença amb [players] jugador?"
+msgstr[1] ""
+"Quants partits calen per determinar el guanyador a un torneig de tennis que "
+"comença amb [players] jugadors?"
+
+#: ../tools/GameXmlGetString.cs:61
+msgid ""
+"You have [money] monetary unit in your bank account at 10% compound interest "
+"annually. How much money will you have at end of 2 years?"
+msgid_plural ""
+"You have [money] monetary units in your bank account at 10% compound "
+"interest annually. How much money will you have at end of 2 years?"
+msgstr[0] ""
+"Teniu [money] unitats monetària en un compte bancari al 10% d'interès "
+"compost anual. Quants diners tindreu al final de 2 anys?"
+msgstr[1] ""
+"Teniu [money] unitats monetàries en un compte bancari al 10% d'interès "
+"compost anual. Quants diners tindreu al final de 2 anys?"
+
+#: ../data/games.xml.h:1
 msgid ""
 "A palindromic number is number that remains the same when its digits are "
 "reversed (e.g.: 2112)."
@@ -43,42 +152,42 @@ msgstr ""
 "Un nombre capicua no varia quan les seves xifres s'inverteixen (p. ex.: "
 "2112)."
 
-#: ../data/games.xml.h:4
+#: ../data/games.xml.h:2
 msgid "Age"
 msgstr "Edat"
 
-#: ../data/games.xml.h:5
+#: ../data/games.xml.h:3
 msgid "Bank interest"
 msgstr "Interès bancari"
 
-#: ../data/games.xml.h:6
+#: ../data/games.xml.h:4
 msgid "Box"
 msgstr "Caixa"
 
-#: ../data/games.xml.h:7
+#: ../data/games.xml.h:5
 msgid "Boxes"
 msgstr "Caixes"
 
-#: ../data/games.xml.h:8
+#: ../data/games.xml.h:6
 msgid "Brothers and sisters"
 msgstr "Germans i germanes"
 
-#: ../data/games.xml.h:9
+#: ../data/games.xml.h:7
 msgid "Clock Rotation"
 msgstr "Rotació del rellotge"
 
-#: ../data/games.xml.h:10
+#: ../data/games.xml.h:8
 msgid ""
 "Compound interest is paid on the original amount and on the accumulated past "
 "interest."
 msgstr ""
 "L'interès compost es paga sobre el valor original i els interessos acumulats."
 
-#: ../data/games.xml.h:11
+#: ../data/games.xml.h:9
 msgid "Container"
 msgstr "Contenidor"
 
-#: ../data/games.xml.h:12
+#: ../data/games.xml.h:10
 msgid ""
 "Every digit has 10 possibilities. The total number of possibilities is 10 at "
 "the power of [digits]."
@@ -86,7 +195,7 @@ msgstr ""
 "Cada digit té 10 possibilitats. El nombre total de possibilitats és 10 "
 "elevat a [digits]."
 
-#: ../data/games.xml.h:13
+#: ../data/games.xml.h:11
 msgid ""
 "Every digit has 8 possibilities. The total number of possibilities is 8 at "
 "the power of [digits]."
@@ -94,7 +203,7 @@ msgstr ""
 "Cada digit té 8 possibilitats. El nombre total de possibilitats és 8 elevat "
 "a [digits]."
 
-#: ../data/games.xml.h:14
+#: ../data/games.xml.h:12
 msgid ""
 "Every game is an independent event with 2 possible results. The total number "
 "of possibilities is 2 at the power of [games]."
@@ -102,11 +211,11 @@ msgstr ""
 "Cada joc és un esdeveniment independent amb dos possibles resultats. El "
 "nombre total de possibilitats és 2 elevat a [games]."
 
-#: ../data/games.xml.h:15
+#: ../data/games.xml.h:13
 msgid "Every hour rotates 360 degrees."
 msgstr "A cada hora gira 360 graus."
 
-#: ../data/games.xml.h:16
+#: ../data/games.xml.h:14
 msgid ""
 "How many boxes measuring 1 x 1 x 0.5 can be packed into a container "
 "measuring 6 x 5 x [z]?"
@@ -114,22 +223,7 @@ msgstr ""
 "Quantes caixes de mida 1 x 1 x 0.5 poden encabir-se en un contenidor de mida "
 "6 x 5 x [z]?"
 
-#: ../data/games.xml.h:17
-msgid ""
-"How many degrees rotates the minute hand of a clock in 2 hours [num] minutes?"
-msgstr ""
-"Quants graus gira el l'agulla dels minuts d'un rellotge en 2 hores [num] "
-"minuts?"
-
-#: ../data/games.xml.h:18
-msgid ""
-"How many matches does it take to determine the winner of a tennis tournament "
-"that starts with [players] players?"
-msgstr ""
-"Quants partits calen per determinar el guanyador a un torneig de tennis que "
-"comença amb [players] jugadors?"
-
-#: ../data/games.xml.h:19
+#: ../data/games.xml.h:15
 msgid ""
 "In every match you eliminate one player, you need the total number of games "
 "minus 1 to find out the winner."
@@ -137,40 +231,23 @@ msgstr ""
 "En tots els partits s'elimina un dels jugadors, cal el nombre total de "
 "partits menys 1 per obtenir el guanyador."
 
-#: ../data/games.xml.h:20
+#: ../data/games.xml.h:16
 msgid "It is the result of the operation [num_a] * [num_b]."
 msgstr "És el resultat de l'operació [num_a] * [num_b]."
 
-#: ../data/games.xml.h:21
+#: ../data/games.xml.h:17
 msgid "It is the result of the operation [num_a] + [num_b]."
 msgstr "És el resultat de l'operació [num_a] + [num_b]."
 
-#: ../data/games.xml.h:22
+#: ../data/games.xml.h:18
 msgid "It is the result of the operation [num_b] - [num_a]."
 msgstr "És el resultat de l'operació [num_b] - [num_a]."
 
-#: ../data/games.xml.h:23
+#: ../data/games.xml.h:19
 msgid "It is the result of the operation [num_b] / [num_a]."
 msgstr "És el resultat de l'operació [num_b] / [num_a]."
 
-#: ../data/games.xml.h:24
-msgid ""
-"John's age is nowadays 2 times his son's age. [ago] years ago, John was "
-"[proportion] times older than his son. How old is John's son nowadays?"
-msgstr ""
-"L'edat d'en Joan és avui en dia dos cops la del seu fill. Fa [ago] anys, en "
-"Joan era [proportion] cops més gran que el seu fill. Quina edat té el fill "
-"d'en Joan avui en dia?"
-
-#: ../data/games.xml.h:25
-msgid ""
-"John's is 46 years old. His son is [difference] years younger than half of "
-"John's age. How old is John's son?"
-msgstr ""
-"En Joan té 46 anys. El seu fill és [difference] anys més jove que la meitat "
-"de l'edat d'en Joan. Quina edat té el fill d'en Joan?"
-
-#: ../data/games.xml.h:26
+#: ../data/games.xml.h:20
 msgid ""
 "Out of [people] people, [brothers] have brothers, [sisters] have sisters and "
 "[both] have both. How many people have neither brothers nor sisters?"
@@ -179,7 +256,7 @@ msgstr ""
 "germanes i [both] tenen germanes i germanes. Quantes persones no tenen ni "
 "germans ni germanes?"
 
-#: ../data/games.xml.h:27
+#: ../data/games.xml.h:21
 msgid ""
 "Palindrome years occur usually at 110 year intervals except for the end of "
 "each millennium that occur at a 11 years interval."
@@ -187,68 +264,43 @@ msgstr ""
 "Els anys capicues ocorren en general a intervals de 110 anys, excepte al "
 "final de cada mil·lenni, que es produeixen en un interval de 11 anys."
 
-#: ../data/games.xml.h:28
+#: ../data/games.xml.h:22
 msgid "Palindromic years"
 msgstr "Anys capicua"
 
-#: ../data/games.xml.h:29
+#: ../data/games.xml.h:23
 msgid "Password"
 msgstr "Contrasenya"
 
-#: ../data/games.xml.h:30
+#: ../data/games.xml.h:24
 msgid "Simple equations"
 msgstr "Equacions simples"
 
-#: ../data/games.xml.h:31
+#: ../data/games.xml.h:25
 msgid "Tennis game"
 msgstr "Partida de tennis"
 
-#: ../data/games.xml.h:32
-msgid ""
-"There are [games] tennis games played simultaneous. How many different "
-"forecast are possible?"
-msgstr ""
-"Es juguen [games] partits de tennis simultàniament. Quants resultats "
-"diferents són possibles?"
-
-#: ../data/games.xml.h:33
+#: ../data/games.xml.h:26
 msgid "What number divided by [num_a] equals [num_b]?"
 msgstr "Quin número dividit per [num_a] és igual a [num_b]?"
 
-#: ../data/games.xml.h:34
+#: ../data/games.xml.h:27
 msgid "What number minus [num_a] equals [num_b]?"
 msgstr "Quin número menys [num_a] és igual a [num_b]?"
 
-#: ../data/games.xml.h:35
+#: ../data/games.xml.h:28
 msgid "What number multiplied by [num_a] equals [num_b]?"
 msgstr "Quin número multiplicat per [num_a] és igual a [num_b]?"
 
-#: ../data/games.xml.h:36
+#: ../data/games.xml.h:29
 msgid "What number plus [num_a] equals [num_b]?"
 msgstr "Quin número més [num_a] és igual a [num_b]?"
 
-#: ../data/games.xml.h:37
+#: ../data/games.xml.h:30
 msgid "You can fit 6 * 5 * [z] * 2 boxes."
 msgstr "Podeu encabir 6 * 5 * [z] * 2 caixes."
 
-#: ../data/games.xml.h:39
-#, no-c-format
-msgid ""
-"You have [money] monetary units in your bank account at 10% compound "
-"interest annually. How much money will you have at end of 2 years?"
-msgstr ""
-"Teniu [money] unitats monetàries en un compte bancari al 10% d'interès "
-"compost anual. Quants diners tindreu al final de 2 anys?"
-
-#: ../data/games.xml.h:40
-msgid ""
-"[ago] years ago, John's age minus [ago] was equal to [proportion] times his "
-"son age minus [ago]."
-msgstr ""
-"Fa [ago] anys, l'edat del Joan menys [ago] era igual a [proportion] cops a "
-"l'edat del seu fill menys [ago].son age minus [ago]."
-
-#: ../data/games.xml.h:41
+#: ../data/games.xml.h:31
 msgid ""
 "[brothers_only] people have brothers only, [sisters_only] sisters only and "
 "[both] have sisters and brothers."
@@ -256,11 +308,11 @@ msgstr ""
 "[brothers_only] persones tenen només germans, [sisters_only] tenen germanes "
 "només i [both] tenen germanes i germans."
 
-#: ../data/games.xml.h:42
+#: ../data/games.xml.h:32
 msgid "[rslt_a] and [rslt_b]"
 msgstr "[rslt_a] i [rslt_b]"
 
-#: ../data/games.xml.h:43
+#: ../data/games.xml.h:33
 msgid ""
 "[year_start] was a palindromic year as [year_end] was, a gap of 11 years. "
 "What are the next two palindromic years after [year_end] with the same gap?"
@@ -269,19 +321,19 @@ msgstr ""
 "anys. Quins seran els propers dos anys capicues després de [year_end] amb el "
 "mateix interval?"
 
-#: ../data/games.xml.h:44
+#: ../data/games.xml.h:34
 msgid "x * [num_a] = [num_b]"
 msgstr "x * [num_a] = [num_b]"
 
-#: ../data/games.xml.h:45
+#: ../data/games.xml.h:35
 msgid "x + [num_a] = [num_b]"
 msgstr "x + [num_a] = [num_b]"
 
-#: ../data/games.xml.h:46
+#: ../data/games.xml.h:36
 msgid "x - [num_a] = [num_b]"
 msgstr "x - [num_a] = [num_b]"
 
-#: ../data/games.xml.h:47
+#: ../data/games.xml.h:37
 msgid "x / [num_a] = [num_b]"
 msgstr "x / [num_a] = [num_b]"
 
