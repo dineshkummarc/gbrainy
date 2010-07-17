@@ -42,7 +42,7 @@ namespace gbrainy.Core.Main.Xml
 		public void Read (string file)
 		{
 			GameXmlDefinition game;
-			string name, str;
+			string name, str, plural;
 			bool processing_variant = false;
 			int variant = 0;
 
@@ -57,7 +57,7 @@ namespace gbrainy.Core.Main.Xml
 
 				while (reader.Read ())
 				{
-					name = reader.Name.ToLower ();
+					name = reader.Name.ToLower ();					
 					switch (name) {
 					case "games":
 						break;
@@ -186,24 +186,72 @@ namespace gbrainy.Core.Main.Xml
 
 						break;
 					case "_question":
+					case "question":
 						if (reader.NodeType != XmlNodeType.Element)
 							break;
 
-						if (processing_variant)
-							game.Variants[variant].Question = reader.ReadElementString ();
-						else
-							game.Question = reader.ReadElementString ();
+						// Create object if needed
+						if (processing_variant) {
+							if (game.Variants[variant].Question == null)
+								game.Variants[variant].Question = new LocalizableString ();
+						}
+						else {
+							if (game.Question == null)
+								game.Question = new LocalizableString ();
+						}
 
+						plural = reader.GetAttribute ("plural");
+
+						if (String.IsNullOrEmpty (plural) == false) { // Plural
+							if (processing_variant) {
+								game.Variants[variant].Question.PluralString = reader.ReadElementString ();
+								game.Variants[variant].Question.Value = plural;
+							}
+							else {
+								game.Question.PluralString = reader.ReadElementString ();
+								game.Question.Value = plural;
+							}
+						}
+						else {
+							if (processing_variant)
+								game.Variants[variant].Question.String = reader.ReadElementString ();
+							else
+								game.Question.String = reader.ReadElementString ();
+						}
 						break;
+					case "rationale":
 					case "_rationale":
 						if (reader.NodeType != XmlNodeType.Element)
 							break;
 
-						if (processing_variant)
-							game.Variants[variant].Rationale = reader.ReadElementString ();
-						else
-							game.Rationale = reader.ReadElementString ();
+						// Create object if needed
+						if (processing_variant) {
+							if (game.Variants[variant].Rationale == null)
+								game.Variants[variant].Rationale = new LocalizableString ();
+						}
+						else {
+							if (game.Rationale == null)
+								game.Rationale = new LocalizableString ();
+						}
 
+						plural = reader.GetAttribute ("plural");
+
+						if (String.IsNullOrEmpty (plural) == false) { // Plural
+							if (processing_variant) {
+								game.Variants[variant].Rationale.PluralString = reader.ReadElementString ();
+								game.Variants[variant].Rationale.Value = plural;
+							}
+							else {
+								game.Rationale.PluralString = reader.ReadElementString ();
+								game.Rationale.Value = plural;
+							}
+						}
+						else {
+							if (processing_variant)
+								game.Variants[variant].Rationale.String = reader.ReadElementString ();
+							else
+								game.Rationale.String = reader.ReadElementString ();
+						}
 						break;
 					case "answer":
 					case "_answer":

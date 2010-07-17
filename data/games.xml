@@ -1,5 +1,4 @@
 <!---
-
 		This is a collection of games definitions for gbrainy. This work is licensed under GPL 2.0 or higher license.
 		This is the same license that gbrainy package.
 
@@ -8,7 +7,6 @@
 
 		TODO:
 			* Mouse sensitive areas
-			* Answer regular expression + patterns
 -->
 <games>
 	<game>
@@ -21,7 +19,8 @@
 		</variables>
 		<_rationale>Every hour rotates 360 degrees.</_rationale>
 		<svg file = "clock.svg" x = "0.25" y = "0.25" width = "0.5" height = "0.5"/>
-		<_question>How many degrees rotates the minute hand of a clock in 2 hours [num] minutes?</_question>
+		<question>How many degrees rotates the minute hand of a clock in 2 hours [num] minute?</question>
+		<question plural ="[rslt]">How many degrees rotates the minute hand of a clock in 2 hours [num] minutes?</question>
 		<answer>[rslt]</answer>
 	</game>
 
@@ -58,7 +57,8 @@
 				int difference = 2 + random.Next (8);
 				int son = (father / 2) - difference;
 			</variables>
-			<_question>John's is 46 years old. His son is [difference] years younger than half of John's age. How old is John's son?</_question>
+			<question>John's is 46 years old. His son is [difference] year younger than half of John's age. How old is John's son?</question>
+			<question plural ="[difference]">John's is 46 years old. His son is [difference] years younger than half of John's age. How old is John's son?</question>
 			<answer>[son]</answer>
 		</variant>
 		<variant>
@@ -70,9 +70,11 @@
 				int ago = years [idx];
 				int proportion = proportions [idx];
 			</variables>
-			<_question>John's age is nowadays 2 times his son's age. [ago] years ago, John was [proportion] times older than his son. How old is John's son nowadays?</_question>
+			<question>John's age is nowadays 2 times his son's age. [ago] year ago, John was [proportion] times older than his son. How old is John's son nowadays?</question>
+			<question plural ="[ago]">John's age is nowadays 2 times his son's age. [ago] years ago, John was [proportion] times older than his son. How old is John's son nowadays?</question>
 			<answer>40</answer>
-			<_rationale>[ago] years ago, John's age minus [ago] was equal to [proportion] times his son age minus [ago].</_rationale>
+			<rationale>[ago] year ago, John's age minus [ago] was equal to [proportion] times his son age minus [ago].</rationale>
+			<rationale plural ="[ago]">[ago] years ago, John's age minus [ago] was equal to [proportion] times his son age minus [ago].</rationale>
 		</variant>
 	</game>
 
@@ -86,7 +88,8 @@
 				int digits = 4 + random.Next (3);
 				int rslt = (int) Math.Pow (10, digits);
 			</variables>
-			<_question>A file is protected by a password formed by a [digits] digit number (ranging from 0 to 9). How many different passwords can you have?</_question>
+			<question>A file is protected by a password formed by a [digits] digit number (ranging from 0 to 9). How many different passwords can you have?</question>
+			<question plural="[digits]">A file is protected by a password formed by a [digits] digits number (ranging from 0 to 9). How many different passwords can you have?</question>
 			<answer>[rslt]</answer>
 			<_rationale>Every digit has 10 possibilities. The total number of possibilities is 10 at the power of [digits].</_rationale>
 		</variant>
@@ -95,7 +98,8 @@
 				int digits = 2 + random.Next (2);
 				int rslt = (int) Math.Pow (8, digits);
 			</variables>
-			<_question>A file is protected by a password formed by a [digits] digit octal number (ranging from 0 to 7). How many different passwords can you have?</_question>
+			<question>A file is protected by a password formed by a [digits] digit octal number (ranging from 0 to 7). How many different passwords can you have?</question>
+			<question plural="[digits]">A file is protected by a password formed by a [digits] digits octal number (ranging from 0 to 7). How many different passwords can you have?</question>
 			<answer>[rslt]</answer>
 			<_rationale>Every digit has 8 possibilities. The total number of possibilities is 8 at the power of [digits].</_rationale>
 		</variant>
@@ -111,7 +115,8 @@
 				int games = 5 + random.Next (5);
 				int rslt = (int) Math.Pow (2, games);
 			</variables>
-			<_question>There are [games] tennis games played simultaneous. How many different forecast are possible?</_question>
+			<question>There are [games] tennis game played simultaneous. How many different forecast are possible?</question>
+			<question plural="[games]">There are [games] tennis games played simultaneous. How many different forecast are possible?</question>
 			<answer>[rslt]</answer>
 			<_rationale>Every game is an independent event with 2 possible results. The total number of possibilities is 2 at the power of [games].</_rationale>
 		</variant>
@@ -120,7 +125,8 @@
 				int players = 32 + (random.Next (16) * 2);
 				int rslt = players -1;
 			</variables>
-			<_question>How many matches does it take to determine the winner of a tennis tournament that starts with [players] players?</_question>
+			<question>How many matches does it take to determine the winner of a tennis tournament that starts with [players] player?</question>
+			<question plural ="[players]">How many matches does it take to determine the winner of a tennis tournament that starts with [players] players?</question>
 			<_rationale>In every match you eliminate one player, you need the total number of games minus 1 to find out the winner.</_rationale>
 			<answer>[rslt]</answer>
 		</variant>
@@ -140,7 +146,8 @@
 
 				double rslt =  money * (Math.Pow (1 + interest, years));
 			</variables>
-			<_question>You have [money] monetary units in your bank account at 10% compound interest annually. How much money will you have at end of 2 years?</_question>
+			<question>You have [money] monetary unit in your bank account at 10% compound interest annually. How much money will you have at end of 2 years?</question>
+			<question plural = "[money]">You have [money] monetary units in your bank account at 10% compound interest annually. How much money will you have at end of 2 years?</question>
 			<answer>[rslt]</answer>
 			<_rationale>Compound interest is paid on the original amount and on the accumulated past interest.</_rationale>
 		</variant>

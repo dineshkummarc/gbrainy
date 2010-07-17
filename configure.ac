@@ -182,6 +182,7 @@ src/Games/AssemblyInfo.cs
 Makefile
 po/Makefile.in
 src/Makefile
+tools/Makefile
 src/Core/Makefile
 src/Games/Makefile
 src/Clients/Classical/Makefile

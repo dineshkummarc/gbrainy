@@ -23,6 +23,24 @@ using System.Collections.Generic;
 
 namespace gbrainy.Core.Main.Xml
 {
+	public class LocalizableString
+	{
+		public string String { get; set; }
+		public string Value { get; set; }
+		public int ValueComputed { get; set; }
+		public string PluralString { get; set; }
+
+		public bool IsPlural ()
+		{
+			if (String.IsNullOrEmpty (String) == true ||
+				String.IsNullOrEmpty (PluralString) == true ||
+				String.IsNullOrEmpty (Value) == true)
+				return false;
+			else
+				return true;
+		}
+	}
+
 	public class DrawingObject
 	{
 
@@ -48,9 +66,9 @@ namespace gbrainy.Core.Main.Xml
 
 	public class GameXmlDefinitionVariant
 	{
-		public string Question { get; set; }
+		public LocalizableString Question { get; set; }
 		public string Tip { get; set; }
-		public string Rationale { get; set; }
+		public LocalizableString Rationale { get; set; }
 		public string Answer { get; set; }
 		public string Variables { get; set; }
 		public GameAnswerCheckAttributes CheckAttributes { get; set; }

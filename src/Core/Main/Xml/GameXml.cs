@@ -77,7 +77,7 @@ namespace gbrainy.Core.Main.Xml
 
 				if (String.IsNullOrEmpty (expression))
 					return base.AnswerCheckExpression;
-	
+
 				return expression;
 			}
 		}
@@ -103,7 +103,7 @@ namespace gbrainy.Core.Main.Xml
 		}
 
 		public override string Name {
-			get { return game.Name; }
+			get { return Catalog.GetString (game.Name); }
 		}
 
 		public override string Question {
@@ -130,8 +130,36 @@ namespace gbrainy.Core.Main.Xml
 		{
 			string variables;
 			bool variants;
+			LocalizableString localizable_question, localizable_rationale;
 
 			variants = game.Variants.Count > 0;
+
+			if (variants && game.Variants[current.Variant].Variables != null)
+				variables = game.Variants[current.Variant].Variables;
+			else
+				variables = game.Variables;
+
+			if (variants && game.Variants[current.Variant].Question != null)
+				localizable_question = game.Variants[current.Variant].Question;
+			else
+				localizable_question = game.Question;
+
+			if (variants && game.Variants[current.Variant].Rationale != null)
+				localizable_rationale = game.Variants[current.Variant].Rationale;
+			else
+				localizable_rationale = game.Rationale;
+
+			if (String.IsNullOrEmpty (variables) == false)
+			{
+				// Evaluate code
+				CodeEvaluation.EvaluateVariables (variables);
+
+				if (String.IsNullOrEmpty (localizable_question.Value) == false)
+					localizable_question.ValueComputed = Int32.Parse (CodeEvaluation.ReplaceVariables (localizable_question.Value));
+
+				if (localizable_rationale != null && String.IsNullOrEmpty (localizable_rationale.Value) == false)
+					localizable_rationale.ValueComputed = Int32.Parse (CodeEvaluation.ReplaceVariables (localizable_rationale.Value));
+			}
 
 			if (variants && game.Variants[current.Variant].Question != null)
 				question = CatalogGetString (game.Variants[current.Variant].Question);
@@ -153,18 +181,11 @@ namespace gbrainy.Core.Main.Xml
 			else
 				answer_value = game.AnswerShow;
 
-			if (variants && game.Variants[current.Variant].Variables != null)
-				variables = game.Variants[current.Variant].Variables;
-			else
-				variables = game.Variables;
-
 			if (String.IsNullOrEmpty (variables) == false)
 			{
-				// Evaluate code
-				CodeEvaluation.EvaluateVariables (variables);
 				question = CodeEvaluation.ReplaceVariables (question);
-				answer = CodeEvaluation.ReplaceVariables (answer);
 				rationale = CodeEvaluation.ReplaceVariables (rationale);
+				answer = CodeEvaluation.ReplaceVariables (answer);
 				answer_value = CodeEvaluation.ReplaceVariables (answer_value);
 			}
 
@@ -213,7 +234,7 @@ namespace gbrainy.Core.Main.Xml
 					{
 						string text;
 						TextDrawingObject draw_string = draw_object as TextDrawingObject;
-			
+
 						text = CatalogGetString (draw_string.Text);
 						text = CodeEvaluation.ReplaceVariables (text);
 
@@ -229,7 +250,7 @@ namespace gbrainy.Core.Main.Xml
 							gr.ShowPangoText (text);
 							gr.Stroke ();
 						}
-					} 
+					}
 					else if (draw_object is ImageDrawingObject)
 					{
 						ImageDrawingObject image = draw_object as ImageDrawingObject;
@@ -263,6 +284,18 @@ namespace gbrainy.Core.Main.Xml
 				return str;
 
 			return Catalog.GetString (str);
+		}
+
+		// Protect from calling with null + resolve plurals
+		string CatalogGetString (LocalizableString localizable)
+		{
+			if (localizable == null)
+				return string.Empty;
+
+			if (localizable.IsPlural () == false)
+				return CatalogGetString (localizable.String);
+
+			return Catalog.GetPluralString (localizable.String, localizable.PluralString, localizable.ValueComputed);
 		}
 	}
 }
