@@ -145,19 +145,6 @@ namespace gbrainy.Core.Main.Verbal
 
 				reader.Close ();
 				read = true;
-
-				int cnt = 0;	
-				for (int i = 0; i < (int) Analogy.Type.Last; i++) 
-				{
-					cnt += analogies_arrays[i].Count;
-
-					if (analogies_arrays[i].Count > 0) {
-						Console.WriteLine (Catalog.GetString ("Read {0} verbal analogies of type {1}"), analogies_arrays[i].Count, 
-							analogies_arrays[i][0].type.ToString ());
-					}
-				}
-			
-				Console.WriteLine (Catalog.GetString ("Read a total of {0} verbal analogies"), cnt);
 			}
 
 			catch (Exception e)

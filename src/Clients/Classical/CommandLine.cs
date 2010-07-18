@@ -80,7 +80,6 @@ namespace gbrainy.Clients.Classical
 					RandomOrder = false;
 					break;
 				case "--version":
-					Version ();
 					cont_execution = false;
 					break;
 				case "--versions":
@@ -97,6 +96,12 @@ namespace gbrainy.Clients.Classical
 					break;
 				}
 			}
+		}
+
+		public static void Version ()
+		{
+			Console.WriteLine ("gbrainy " + Defines.VERSION + " " + 
+				String.Format (Catalog.GetString ("(build on {0})"), Defines.BUILD_TIME));
 		}
 
 		static void GameList ()
@@ -175,19 +180,11 @@ namespace gbrainy.Clients.Classical
 					"  --norandom \t\t\tThe custom game list provided will not be randomized.\n" +
 			                "  --versions \t\t\tShow dependencies.\n");
 
-			Version ();
 			Console.WriteLine (usage);
-		}
-
-		static void Version ()
-		{
-			Console.WriteLine ("gbrainy " + Defines.VERSION + " " + 
-				String.Format (Catalog.GetString ("(build on {0})"), Defines.BUILD_TIME));
 		}
 
 		static void Versions ()
 		{
-			Version ();
 			Console.WriteLine ("Mono .NET Version: " + Environment.Version.ToString());
 			Console.WriteLine (String.Format("{0}Assembly Version Information:", Environment.NewLine));
 

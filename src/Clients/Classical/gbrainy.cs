@@ -684,7 +684,11 @@ namespace gbrainy.Clients.Classical
 				Unix.SetProcessName ("gbrainy");
 			} catch {}
 
+			DateTime start_time = DateTime.Now;
+			
 			GtkClient app = new GtkClient ();
+			CommandLine.Version ();
+
 			CommandLine line = new CommandLine (args);
 			line.Parse ();
 
@@ -697,8 +701,10 @@ namespace gbrainy.Clients.Classical
 				app.InitialSessionType = GameSession.Types.Custom;
 			}
 			app.Session.GameManager.RandomOrder = line.RandomOrder;
-
 			app.ProcessDefaults ();
+
+			TimeSpan span = DateTime.Now - start_time;
+			Console.WriteLine (Catalog.GetString ("Startup time {0}"), span);
 			app.Run ();
 		}
 	}
