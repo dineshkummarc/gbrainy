@@ -54,15 +54,15 @@ namespace gbrainy.Games.Calculation
 			int []mult = new int [3];
 
 			switch (CurrentDifficulty) {
-			case Difficulty.Easy:
+			case GameDifficulty.Easy:
 				max_num = 999;
 				num_answ_ques = 3;
 				break;
-			case Difficulty.Medium:
+			case GameDifficulty.Medium:
 				max_num = 999;
 				num_answ_ques = 4;
 				break;
-			case Difficulty.Master:
+			case GameDifficulty.Master:
 				max_num = 9999;
 				num_answ_ques = 4;
 				break;

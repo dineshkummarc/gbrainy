@@ -77,13 +77,13 @@ namespace gbrainy.Games.Calculation
 			type = (SubGameTypes) random.Next ((int) SubGameTypes.Length);
 
 			switch (CurrentDifficulty) {
-			case Difficulty.Easy:
+			case GameDifficulty.Easy:
 				max_operand = 8;
 				break;
-			case Difficulty.Medium:
+			case GameDifficulty.Medium:
 				max_operand = 10;
 				break;
-			case Difficulty.Master:
+			case GameDifficulty.Master:
 				max_operand = 15;
 				break;
 			}

@@ -169,7 +169,7 @@ namespace gbrainy.Games.Memory
 
 		protected override void Initialize ()
 		{
-			indications = new Indication [CurrentDifficulty == Difficulty.Easy ? 5 : 7];
+			indications = new Indication [CurrentDifficulty == GameDifficulty.Easy ? 5 : 7];
 			Indication.TurnDirection second_turn = (Indication.TurnDirection) 2 +  random.Next (2);
 		
 			indications[0] = new Indication (Indication.Type.Start, 0);
@@ -177,7 +177,7 @@ namespace gbrainy.Games.Memory
 			indications[2] = new Indication (Indication.Type.Turn, second_turn); // up or down
 			indications[3] = new Indication (Indication.Type.Turn, random.Next (2)); // right or left
 
-			if (CurrentDifficulty==Difficulty.Easy) {
+			if (CurrentDifficulty==GameDifficulty.Easy) {
 				indications[4] = new Indication (Indication.Type.End, 1);		
 			} else {
 				if (second_turn == Indication.TurnDirection.Up)
@@ -200,7 +200,7 @@ namespace gbrainy.Games.Memory
 				indications_wrongA[3] = new Indication (Indication.Type.Turn, Indication.TurnDirection.Right);
 			}
 
-			if (CurrentDifficulty == Difficulty.Easy) {
+			if (CurrentDifficulty == GameDifficulty.Easy) {
 				if ((Indication.TurnDirection) indications[2].obj == Indication.TurnDirection.Up) {
 					indications_wrongB[2] = new Indication (Indication.Type.Turn, Indication.TurnDirection.Down);
 				}

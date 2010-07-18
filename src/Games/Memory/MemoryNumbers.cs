@@ -126,14 +126,14 @@ namespace gbrainy.Games.Memory
 			int total;
 	
 			switch (CurrentDifficulty) {
-			case Difficulty.Easy:
+			case GameDifficulty.Easy:
 				total = 5;
 				break;
-			case Difficulty.Medium:
+			case GameDifficulty.Medium:
 			default:
 				total = 7;
 				break;
-			case Difficulty.Master:
+			case GameDifficulty.Master:
 				total = 9;
 				break;
 			}

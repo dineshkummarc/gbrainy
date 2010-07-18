@@ -58,13 +58,13 @@ namespace gbrainy.Games.Memory
 		protected override void Initialize ()
 		{
 			switch (CurrentDifficulty) {
-			case Difficulty.Easy:
+			case GameDifficulty.Easy:
 				maxdotscolor = 2;
 				break;
-			case Difficulty.Medium:
+			case GameDifficulty.Medium:
 				maxdotscolor = 5;
 				break;
-			case Difficulty.Master:
+			case GameDifficulty.Master:
 				maxdotscolor = 8;
 				break;
 			}

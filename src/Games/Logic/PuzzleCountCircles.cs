@@ -63,13 +63,13 @@ namespace gbrainy.Games.Logic
 			double x, y, rad;
 
 			switch (CurrentDifficulty) {
-			case Difficulty.Easy:
+			case GameDifficulty.Easy:
 				n_circles = 7;
 				break;
-			case Difficulty.Master:
+			case GameDifficulty.Master:
 				n_circles = 14;
 				break;		
-			case Difficulty.Medium:
+			case GameDifficulty.Medium:
 			default:
 				n_circles = 10;
 				break;		

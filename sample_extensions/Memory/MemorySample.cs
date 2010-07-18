@@ -58,13 +58,13 @@ public class MemorySample : Memory
 		animals.Add ("salmon");
 
 		switch (CurrentDifficulty) {
-		case Difficulty.Easy:
+		case GameDifficulty.Easy:
 			showed = 4;
 			break;
-		case Difficulty.Medium:
+		case GameDifficulty.Medium:
 			showed = 6;
 			break;
-		case Difficulty.Master:
+		case GameDifficulty.Master:
 			showed = 8;
 			break;
 		}

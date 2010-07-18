@@ -37,18 +37,18 @@ namespace gbrainy.Core.Main
 		*/
 
 		// Expected time in seconds that a player is expected to complete this game
-		static public int GameExpectedTime (GameTypes type, Game.Difficulty difficulty)
+		static public int GameExpectedTime (GameTypes type, GameDifficulty difficulty)
 		{
 			double factor;
 
 			switch (difficulty) {
-			case Game.Difficulty.Easy:
+			case GameDifficulty.Easy:
 				factor = 1.3;
 				break;
-			case Game.Difficulty.Master:
+			case GameDifficulty.Master:
 				factor = 0.7;
 				break;
-			case Game.Difficulty.Medium:
+			case GameDifficulty.Medium:
 			default:
 				factor = 1.0;
 				break;
@@ -111,7 +111,7 @@ namespace gbrainy.Core.Main
 
 			The final result is a number from 0 to 100
 		*/
-		static public void SessionUpdateHistoryScore (ref GameSessionHistoryExtended history, GameTypes type, Game.Difficulty difficulty, int game_score)
+		static public void SessionUpdateHistoryScore (ref GameSessionHistoryExtended history, GameTypes type, GameDifficulty difficulty, int game_score)
 		{
 			bool won;
 			int components = 0;
@@ -180,19 +180,19 @@ namespace gbrainy.Core.Main
 		//
 		// Applies scoring formula to the session
 		//
-		static int SessionScoreFormula (ref GameSessionHistoryExtended history, GameTypes type, Game.Difficulty difficulty)
+		static int SessionScoreFormula (ref GameSessionHistoryExtended history, GameTypes type, GameDifficulty difficulty)
 		{
 			int logbase, scored, played, won;
 			double score, factor;
 
 			switch (difficulty) {
-			case Game.Difficulty.Easy:
+			case GameDifficulty.Easy:
 				logbase = 10;
 				break;
-			case Game.Difficulty.Medium:
+			case GameDifficulty.Medium:
 				logbase = 20;
 				break;
-			case Game.Difficulty.Master:
+			case GameDifficulty.Master:
 				logbase = 30;
 				break;
 			default:

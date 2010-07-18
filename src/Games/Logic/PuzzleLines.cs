@@ -52,7 +52,7 @@ namespace gbrainy.Games.Logic
 
 		protected override void Initialize ()
 		{
-			if (CurrentDifficulty==Difficulty.Easy)
+			if (CurrentDifficulty==GameDifficulty.Easy)
 				type = 0;
 			else
 				type = random.Next (max_types);		

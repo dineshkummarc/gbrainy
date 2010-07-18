@@ -89,7 +89,7 @@ namespace gbrainy.Games.Logic
 
 		public override string Rationale {
 			get {
-				if (CurrentDifficulty ==  Difficulty.Easy) 
+				if (CurrentDifficulty ==  GameDifficulty.Easy) 
 					return Catalog.GetString ("It has the same number of elements inside the figure as the given figures.");
 				else
 					return Catalog.GetString ("It is the figure with the most elements in common compared to the given figures.");
@@ -121,7 +121,7 @@ namespace gbrainy.Games.Logic
 				}
 			}
 
-			if (CurrentDifficulty ==  Difficulty.Easy) {
+			if (CurrentDifficulty ==  GameDifficulty.Easy) {
 				// Answer 1 (good)
 				array.AddRange (new Element [] {Element.SmallCircle, Element.SmallCircle, Element.SmallCircle, 
 				Element.MediumCircle,Element.MediumCircle, Element.MediumCircleWithChild, Element.MediumCircleWithChild});

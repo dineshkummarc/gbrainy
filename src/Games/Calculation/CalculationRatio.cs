@@ -74,14 +74,14 @@ namespace gbrainy.Games.Calculation
 			int random_max;
 		
 			switch (CurrentDifficulty) {
-			case Difficulty.Easy:
+			case GameDifficulty.Easy:
 				random_max = 5;
 				break;
 			default:
-			case Difficulty.Medium:
+			case GameDifficulty.Medium:
 				random_max = 8;
 				break;
-			case Difficulty.Master:
+			case GameDifficulty.Master:
 				random_max = 15;
 				break;
 			}

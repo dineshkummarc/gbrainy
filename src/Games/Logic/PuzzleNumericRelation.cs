@@ -67,7 +67,7 @@ namespace gbrainy.Games.Logic
 		{
 			int group = 0, inc = 0;
 
-			if (CurrentDifficulty == Difficulty.Easy) {
+			if (CurrentDifficulty == GameDifficulty.Easy) {
 				sum_value = 10 + random.Next (10);
 				inc = 5;
 			}

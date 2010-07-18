@@ -64,7 +64,7 @@ namespace gbrainy.Games.Logic
 		{
 			int[] seeds;
 
-			formula = random.Next (CurrentDifficulty == Difficulty.Easy ? 2 : 3);
+			formula = random.Next (CurrentDifficulty == GameDifficulty.Easy ? 2 : 3);
 			numbers =  new int [max_num];
 
 			switch (formula) {

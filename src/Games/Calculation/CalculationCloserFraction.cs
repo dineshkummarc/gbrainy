@@ -66,16 +66,16 @@ namespace gbrainy.Games.Calculation
 			int i, ans_idx, basenum, randnum;
 
 			switch (CurrentDifficulty) {
-			case Difficulty.Easy:
+			case GameDifficulty.Easy:
 				basenum = 5;
 				randnum = 10;
 				break;
 			default:
-			case Difficulty.Medium:
+			case GameDifficulty.Medium:
 				basenum = 5;
 				randnum = 30;
 				break;
-			case Difficulty.Master:
+			case GameDifficulty.Master:
 				basenum = 9;
 				randnum = 60;
 				break;

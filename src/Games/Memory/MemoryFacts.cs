@@ -66,14 +66,14 @@ namespace gbrainy.Games.Memory
 			ArrayListIndicesRandom indices;
 
 			switch (CurrentDifficulty) {
-			case Difficulty.Easy:
+			case GameDifficulty.Easy:
 				questions = 1;
 				break;
 			default:
-			case Difficulty.Medium:
+			case GameDifficulty.Medium:
 				questions = 2;
 				break;
-			case Difficulty.Master:
+			case GameDifficulty.Master:
 				questions = 3;
 				break;
 			}

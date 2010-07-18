@@ -94,7 +94,7 @@ namespace gbrainy.Clients.Classical
 			session.DrawRequest += SessionDrawRequest;
 			session.UpdateUIElement += SessionUpdateUIElement;
 			session.SynchronizingObject = new GtkSynchronize ();
-			session.Difficulty = (Game.Difficulty) Preferences.GetIntValue (Preferences.DifficultyKey);
+			session.Difficulty = (GameDifficulty) Preferences.GetIntValue (Preferences.DifficultyKey);
 
 			BuildUI ();
 		}
@@ -540,7 +540,7 @@ namespace gbrainy.Clients.Classical
 
 			dialog = new PreferencesDialog (session.PlayerHistory);
 			if ((Gtk.ResponseType) dialog.Run () == ResponseType.Ok) {
-				session.Difficulty = (Game.Difficulty) Preferences.GetIntValue (Preferences.DifficultyKey);
+				session.Difficulty = (GameDifficulty) Preferences.GetIntValue (Preferences.DifficultyKey);
 			}
 			dialog.Destroy ();
 		}

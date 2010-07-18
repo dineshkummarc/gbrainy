@@ -75,18 +75,18 @@ namespace gbrainy.Games.Calculation
 			int nums, options_next, dist, num_size, which = 0;
 
 			switch (CurrentDifficulty) {
-			case Difficulty.Easy:
+			case GameDifficulty.Easy:
 				nums = 3;
 				dist = nums * 3;
 				num_size = 50;
 				break;
 			default:
-			case Difficulty.Medium:
+			case GameDifficulty.Medium:
 				nums = 5;
 				dist = nums * 3;
 				num_size = 150;
 				break;
-			case Difficulty.Master:
+			case GameDifficulty.Master:
 				nums = 7;
 				dist = nums * 3;
 				num_size = 500;

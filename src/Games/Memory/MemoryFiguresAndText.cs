@@ -76,16 +76,16 @@ namespace gbrainy.Games.Memory
 			int pos = 0;
 
 			switch (CurrentDifficulty) {
-			case Difficulty.Easy:
+			case GameDifficulty.Easy:
 				figures_active = 4;
 				rows = columns = 2;
 				break;
-			case Difficulty.Medium:
+			case GameDifficulty.Medium:
 				figures_active = 6;
 				rows = 2;
 				columns = 3;
 				break;
-			case Difficulty.Master:
+			case GameDifficulty.Master:
 				figures_active = 9;
 				columns = rows = 3;
 				break;

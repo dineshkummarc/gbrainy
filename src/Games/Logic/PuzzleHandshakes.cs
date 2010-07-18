@@ -49,13 +49,13 @@ namespace gbrainy.Games.Logic
 			handshakes = 0;
 
 			switch (CurrentDifficulty) {
-			case Difficulty.Easy:
+			case GameDifficulty.Easy:
 				people = 4 + random.Next (4);
 				break;
-			case Difficulty.Master:
+			case GameDifficulty.Master:
 				people = 5 + random.Next (8);
 				break;		
-			case Difficulty.Medium:
+			case GameDifficulty.Medium:
 			default:
 				people = 5 + random.Next (4);
 				break;		

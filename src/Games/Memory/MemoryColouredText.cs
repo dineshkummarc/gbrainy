@@ -51,13 +51,13 @@ namespace gbrainy.Games.Memory
 			bool done = false;
 
 			switch (CurrentDifficulty) {
-			case Difficulty.Easy:
+			case GameDifficulty.Easy:
 				colors_shown = 3;
 				break;
-			case Difficulty.Medium:
+			case GameDifficulty.Medium:
 				colors_shown = 4;
 				break;
-			case Difficulty.Master:
+			case GameDifficulty.Master:
 				colors_shown = 6;
 				break;
 			}

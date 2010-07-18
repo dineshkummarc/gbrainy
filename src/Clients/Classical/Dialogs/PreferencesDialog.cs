@@ -48,28 +48,28 @@ namespace gbrainy.Clients.Classical
 			minplayedspinbutton.Value = Preferences.GetIntValue (Preferences.MinPlayedGamesKey);
 			colorblindcheckbutton.Active = Preferences.GetBoolValue (Preferences.ColorBlindKey);
 
-			switch ((Game.Difficulty) Preferences.GetIntValue (Preferences.DifficultyKey)) {
-			case Game.Difficulty.Easy:
+			switch ((GameDifficulty) Preferences.GetIntValue (Preferences.DifficultyKey)) {
+			case GameDifficulty.Easy:
 				rb_easy.Active = rb_easy.HasFocus = true;
 				break;
-			case Game.Difficulty.Medium:
+			case GameDifficulty.Medium:
 				rb_medium.Active = rb_medium.HasFocus = true;
 				break;
-			case Game.Difficulty.Master:
+			case GameDifficulty.Master:
 				rb_master.Active = rb_master.HasFocus = true;
 				break;
 			}
 		}
 
-		private Game.Difficulty Difficulty {
+		private GameDifficulty Difficulty {
 			get {
 				if (rb_easy.Active)
-					return Game.Difficulty.Easy;
+					return GameDifficulty.Easy;
 
 				if (rb_master.Active)
-					return Game.Difficulty.Master;
+					return GameDifficulty.Master;
 
-				return Game.Difficulty.Medium;
+				return GameDifficulty.Medium;
 			}
 		}
 

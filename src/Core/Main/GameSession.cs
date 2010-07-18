@@ -109,7 +109,7 @@ namespace gbrainy.Core.Main
 			set {game_manager.GameType = value; }
 		}
 
-		public Game.Difficulty Difficulty {
+		public GameDifficulty Difficulty {
 			get {return game_manager.Difficulty; }
 			set {game_manager.Difficulty = value; }
 		}

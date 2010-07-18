@@ -59,15 +59,15 @@ namespace gbrainy.Games.Calculation
 			operation = (Operation) random.Next ((int) Operation.LastOperation);
 
 			switch (CurrentDifficulty) {
-			case Difficulty.Easy:
+			case GameDifficulty.Easy:
 				max_operations = 2;
 				max_operand = 50;
 				break;
-			case Difficulty.Medium:
+			case GameDifficulty.Medium:
 				max_operations = 3;
 				max_operand = 100;
 				break;
-			case Difficulty.Master:
+			case GameDifficulty.Master:
 				max_operations = 5;
 				max_operand = 500;
 				break;

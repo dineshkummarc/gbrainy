@@ -65,13 +65,13 @@ namespace gbrainy.Games.Memory
 		protected override void Initialize ()
 		{
 			switch (CurrentDifficulty) {
-			case Difficulty.Easy:
+			case GameDifficulty.Easy:
 				columns = rows = 5;
 				break;
-			case Difficulty.Medium:
+			case GameDifficulty.Medium:
 				columns = rows = 6;
 				break;
-			case Difficulty.Master:
+			case GameDifficulty.Master:
 				columns = rows = 7;
 				break;
 			}

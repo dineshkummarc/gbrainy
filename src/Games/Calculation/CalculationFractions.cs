@@ -92,18 +92,18 @@ namespace gbrainy.Games.Calculation
 			int factor = Factor;
 
 			switch (CurrentDifficulty) {
-			case Difficulty.Easy:
+			case GameDifficulty.Easy:
 				fractions_num = 2;
 				demominator_max = 5;
 				factor_max = 2;
 				break;
 			default:
-			case Difficulty.Medium:
+			case GameDifficulty.Medium:
 				fractions_num = 4;
 				demominator_max = 3;
 				factor_max = 3;
 				break;
-			case Difficulty.Master:
+			case GameDifficulty.Master:
 				fractions_num = 4;
 				demominator_max = 5;
 				factor_max = 4;

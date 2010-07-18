@@ -32,18 +32,7 @@ namespace gbrainy.Core.Main
 {
 	abstract public class Game : IDrawable, IDrawRequest, IMouseEvent
 	{
-		[Flags]
-		public enum Difficulty
-		{
-			None			= 0,
-			Easy			= 2,
-			Medium			= 4,
-			Master			= 8,
-			All			= Easy | Medium | Master,
-		}
-
 	
-
 		public const char AnswerSeparator = '|';
 		const int MAX_POSSIBLE_ANSWER = 7;
 
@@ -64,7 +53,7 @@ namespace gbrainy.Core.Main
 		private TimeSpan game_time;
 		private bool tip_used;
 		private bool preview;
-		private Difficulty difficulty;
+		private GameDifficulty difficulty;
 		private ISynchronizeInvoke synchronize;
 		private List <Toolkit.Container> containers;
 		private int variant;
@@ -75,7 +64,7 @@ namespace gbrainy.Core.Main
 
 		protected Game ()
 		{
-			difficulty = Difficulty.Medium;
+			difficulty = GameDifficulty.Medium;
 		}
 
 #region Methods to override in your own games
@@ -128,8 +117,8 @@ namespace gbrainy.Core.Main
 		}
 
 		// Indicates in which difficulty levels the game should be shown
-		public virtual Difficulty GameDifficulty {
-			get { return Difficulty.Master | Difficulty.Medium | Difficulty.Easy; }
+		public virtual GameDifficulty Difficulty {
+			get { return GameDifficulty.Master | GameDifficulty.Medium | GameDifficulty.Easy; }
 		}
 
 		// Indicates if the game should be excluded for color blind users
@@ -181,7 +170,7 @@ namespace gbrainy.Core.Main
 		}
 
 		// The level of difficulty selected for the current game
-		public Difficulty CurrentDifficulty {
+		public GameDifficulty CurrentDifficulty {
 			set { difficulty = value; }
 			get { return difficulty; }
 		}

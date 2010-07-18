@@ -159,7 +159,7 @@ namespace gbrainy.Core.Main
 			properties.Clear ();
 			properties.Add (MemQuestionWarnKey, true.ToString ());
 			properties.Add (MemQuestionTimeKey, "4");
-			properties.Add (DifficultyKey, ((int)(Game.Difficulty.Medium)).ToString ());
+			properties.Add (DifficultyKey, ((int)(GameDifficulty.Medium)).ToString ());
 			properties.Add (MinPlayedGamesKey, "5");
 			properties.Add (MaxStoredGamesKey, "20");
 			properties.Add (ToolbarKey, true.ToString ());

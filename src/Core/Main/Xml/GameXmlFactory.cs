@@ -86,25 +86,7 @@ namespace gbrainy.Core.Main.Xml
 
 						str = reader.ReadElementString ();
 						str.Trim ();
-
-						switch (str) {
-						case "Easy":
-							game.Difficulty = Game.Difficulty.Easy;
-							break;
-						case "Medium":
-							game.Difficulty = Game.Difficulty.Medium;
-							break;
-						case "Master":
-							game.Difficulty = Game.Difficulty.Master;
-							break;
-						case "All":
-							game.Difficulty = Game.Difficulty.All;
-							break;
-						default:
-							Console.WriteLine ("GameXmlFactory. Unknown difficulty level: {0}", str);
-							break;
-						}
-
+						game.Difficulty = GameDifficultyDescription.FromString (str);
 						break;
 					case "svg":
 						if (reader.NodeType != XmlNodeType.Element)

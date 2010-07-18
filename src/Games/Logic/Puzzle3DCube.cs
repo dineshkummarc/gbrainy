@@ -47,13 +47,13 @@ namespace gbrainy.Games.Logic
 			int ans, max_random;
 
 			switch (CurrentDifficulty) {
-			case Difficulty.Easy:
+			case GameDifficulty.Easy:
 				max_random = 1;
 				break;
-			case Difficulty.Master:
+			case GameDifficulty.Master:
 				max_random = 5;
 				break;
-			case Difficulty.Medium:
+			case GameDifficulty.Medium:
 			default:
 				max_random = 3;
 				break;		

@@ -99,13 +99,13 @@ namespace gbrainy.Games.Memory
 			words.Add (Catalog.GetString ("wolf"));
 
 			switch (CurrentDifficulty) {
-			case Difficulty.Easy:
+			case GameDifficulty.Easy:
 				showed = 6;
 				break;
-			case Difficulty.Medium:
+			case GameDifficulty.Medium:
 				showed = 9;
 				break;
-			case Difficulty.Master:
+			case GameDifficulty.Master:
 				showed = 12;
 				break;
 			}

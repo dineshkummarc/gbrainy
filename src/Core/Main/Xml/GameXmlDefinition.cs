@@ -114,14 +114,14 @@ namespace gbrainy.Core.Main.Xml
 	public class GameXmlDefinition : GameXmlDefinitionVariant
 	{
 		public string Name { get; set; }
-		public Game.Difficulty Difficulty { get; set; }
+		public GameDifficulty Difficulty { get; set; }
 		public GameTypes Type { get; set; }
 
 		public List <GameXmlDefinitionVariant> Variants { get; set; }
 
 		public GameXmlDefinition ()
 		{
-			Difficulty = Game.Difficulty.Medium;
+			Difficulty = GameDifficulty.Medium;
 			Type = GameTypes.LogicPuzzle; // TODO: temporary, should be mandatory in games.xml
 			Variants = new List <GameXmlDefinitionVariant> ();
 		}

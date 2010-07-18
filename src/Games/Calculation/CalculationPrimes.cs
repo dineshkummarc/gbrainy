@@ -173,17 +173,17 @@ namespace gbrainy.Games.Calculation
 			int max_primeidx;
 
 			switch (CurrentDifficulty) {
-			case Difficulty.Easy:
+			case GameDifficulty.Easy:
 				max = 500;
 				div3 = true;
 				max_primeidx = 94;
 				break;
-			case Difficulty.Master:
+			case GameDifficulty.Master:
 				max = 10000;
 				div3 = false;
 				max_primeidx = total_primes;
 				break;		
-			case Difficulty.Medium:
+			case GameDifficulty.Medium:
 			default:
 				max = 1000;
 				div3 = true;

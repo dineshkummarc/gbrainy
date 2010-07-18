@@ -53,7 +53,7 @@ namespace gbrainy.Games.Logic
 
 		protected override void Initialize ()
 		{
-			if (CurrentDifficulty==Difficulty.Easy)
+			if (CurrentDifficulty==GameDifficulty.Easy)
 				dots = 5;
 			else
 				dots = 5 + random.Next (2);

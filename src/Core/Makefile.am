@@ -13,6 +13,7 @@ CSDISTFILES =  \
 		$(srcdir)/Main/IMouseEvent.cs		\
 		$(srcdir)/Main/Game.cs			\
 		$(srcdir)/Main/GameAnswerCheckAttributes.cs \
+		$(srcdir)/Main/GameDifficulty.cs 	\
 		$(srcdir)/Main/GameManager.cs		\
 		$(srcdir)/Main/GameSession.cs		\
 		$(srcdir)/Main/GameSessionHistory.cs	\

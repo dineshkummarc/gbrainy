@@ -78,12 +78,12 @@ namespace gbrainy.Games.Logic
 		protected override void Initialize ()
 		{
 			switch (CurrentDifficulty) {
-			case Difficulty.Easy:
+			case GameDifficulty.Easy:
 				total_figures = 6;
 				space_figures = 0.26;
 				break;
-			case Difficulty.Medium:
-			case Difficulty.Master:
+			case GameDifficulty.Medium:
+			case GameDifficulty.Master:
 				total_figures = 8;
 				space_figures = 0.2;
 				break;

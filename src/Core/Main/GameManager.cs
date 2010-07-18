@@ -69,7 +69,7 @@ namespace gbrainy.Core.Main
 		bool once;
 		GameSession.Types game_type;
 		IEnumerator <int> enumerator;
-		Game.Difficulty difficulty;
+		GameDifficulty difficulty;
 		GamesXmlFactory xml_games;
 
 		List <GameLocator> available_games; 	// List of all available games in the system
@@ -79,7 +79,7 @@ namespace gbrainy.Core.Main
 		public GameManager ()
 		{
 			game_type = GameSession.Types.None;
-			difficulty = Game.Difficulty.Medium;
+			difficulty = GameDifficulty.Medium;
 			available_games = new List <GameLocator> ();
 			play_list = new List <int> ();
 			cnt_logic = cnt_memory = cnt_calculation = cnt_verbal = 0;
@@ -142,7 +142,7 @@ namespace gbrainy.Core.Main
 			}
 		}
 
-		public Game.Difficulty Difficulty {
+		public GameDifficulty Difficulty {
 			set {
 				if (difficulty == value)
 					return;
@@ -463,7 +463,7 @@ namespace gbrainy.Core.Main
 				if (first == null)
 					first = puzzle;
 
-				if ((puzzle.GameDifficulty & difficulty) == difficulty)
+				if ((puzzle.Difficulty & difficulty) == difficulty)
 					break;
 			}
 
