@@ -154,11 +154,18 @@ namespace gbrainy.Core.Main.Xml
 				// Evaluate code
 				CodeEvaluation.EvaluateVariables (variables);
 
-				if (String.IsNullOrEmpty (localizable_question.Value) == false)
-					localizable_question.ValueComputed = Int32.Parse (CodeEvaluation.ReplaceVariables (localizable_question.Value));
+				try {
 
-				if (localizable_rationale != null && String.IsNullOrEmpty (localizable_rationale.Value) == false)
-					localizable_rationale.ValueComputed = Int32.Parse (CodeEvaluation.ReplaceVariables (localizable_rationale.Value));
+					if (String.IsNullOrEmpty (localizable_question.Value) == false)
+						localizable_question.ValueComputed = Int32.Parse (CodeEvaluation.ReplaceVariables (localizable_question.Value));
+
+					if (localizable_rationale != null && String.IsNullOrEmpty (localizable_rationale.Value) == false)
+						localizable_rationale.ValueComputed = Int32.Parse (CodeEvaluation.ReplaceVariables (localizable_rationale.Value));
+				}
+				catch (Exception e)
+				{
+					Console.WriteLine ("GameXml.Initialize {0}", e);
+				}
 			}
 
 			if (variants && game.Variants[current.Variant].Question != null)

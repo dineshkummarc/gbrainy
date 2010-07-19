@@ -311,6 +311,7 @@ namespace gbrainy.Core.Main.Xml
 				}
 
 				reader.Close ();
+				myStream.Dispose ();
 				read = true;
 
 				GameXml.Definitions = games;

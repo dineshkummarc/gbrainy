@@ -46,8 +46,9 @@ namespace gbrainy.Core.Main.Xml
 
 				// Infrastructure for the user available
 				eval = "Random random = new Random ();\n";
-				Mono.CSharp.Evaluator.Run (eval);
-				Mono.CSharp.Evaluator.Run (code);
+
+				// As Mono 2.4.4 this call is killing in terms of memory leaking
+				Mono.CSharp.Evaluator.Run (eval + code);
 			}
 
 			catch (Exception e)
