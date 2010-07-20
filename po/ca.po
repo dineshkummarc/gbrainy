@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gbrainy\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-07-17 19:04+0200\n"
-"PO-Revision-Date: 2010-07-16 19:30+0100\n"
+"POT-Creation-Date: 2010-07-20 19:45+0200\n"
+"PO-Revision-Date: 2010-07-20 20:00+0100\n"
 "Last-Translator: Jordi Mas <jmas@softcatala.org>\n"
 "Language-Team: Catalan\n"
 "MIME-Version: 1.0\n"
@@ -33,10 +33,10 @@ msgstr[1] ""
 
 #: ../tools/GameXmlGetString.cs:33
 msgid ""
-"John's is 46 years old. His son is [difference] year younger than half of "
+"John is 46 years old. His son is [difference] year younger than half of "
 "John's age. How old is John's son?"
 msgid_plural ""
-"John's is 46 years old. His son is [difference] years younger than half of "
+"John is 46 years old. His son is [difference] years younger than half of "
 "John's age. How old is John's son?"
 msgstr[0] ""
 "En Joan té 46 anys. El seu fill és [difference] any més jove que la meitat "
@@ -64,16 +64,16 @@ msgstr[1] ""
 #: ../tools/GameXmlGetString.cs:41
 msgid ""
 "[ago] year ago, John's age minus [ago] was equal to [proportion] times his "
-"son age minus [ago]."
+"son's age minus [ago]."
 msgid_plural ""
 "[ago] years ago, John's age minus [ago] was equal to [proportion] times his "
-"son age minus [ago]."
+"son's age minus [ago]."
 msgstr[0] ""
 "Fa [ago] any, l'edat del Joan menys [ago] era igual a [proportion] cops a "
-"l'edat del seu fill menys [ago].son age minus [ago]."
+"l'edat del seu fill menys [ago]."
 msgstr[1] ""
 "Fa [ago] anys, l'edat del Joan menys [ago] era igual a [proportion] cops a "
-"l'edat del seu fill menys [ago].son age minus [ago]."
+"l'edat del seu fill menys [ago]."
 
 #: ../tools/GameXmlGetString.cs:45
 msgid ""
@@ -98,18 +98,18 @@ msgid_plural ""
 "(ranging from 0 to 7). How many different passwords can you have?"
 msgstr[0] ""
 "Un fitxer està protegit per una contrasenya composta per un número octal (de "
-"0 a 7) [digits] dígit. Quantes contrasenyes diferents podeu tenir?"
+"0 a 7) de [digits] dígit. Quantes contrasenyes diferents podeu tenir?"
 msgstr[1] ""
 "Un fitxer està protegit per una contrasenya composta per un número octal (de "
-"0 a 7) [digits] dígits. Quantes contrasenyes diferents podeu tenir?"
+"0 a 7) de [digits] dígits. Quantes contrasenyes diferents podeu tenir?"
 
 #: ../tools/GameXmlGetString.cs:53
 msgid ""
-"There are [games] tennis game played simultaneous. How many different "
-"forecast are possible?"
+"There is [games] tennis game played simultaneously. How many different "
+"forecasts are possible?"
 msgid_plural ""
-"There are [games] tennis games played simultaneous. How many different "
-"forecast are possible?"
+"There are [games] tennis games played simultaneously. How many different "
+"forecasts are possible?"
 msgstr[0] ""
 "Es juga [games] partit de tennis. Quants resultats diferents són possibles?"
 msgstr[1] ""
@@ -1122,22 +1122,22 @@ msgid "Total"
 msgstr "Total"
 
 #: ../src/Core/Views/FinishView.cs:99 ../src/Core/Main/GameTypes.cs:44
-#: ../src/Clients/Classical/gbrainy.cs:347
+#: ../src/Clients/Classical/gbrainy.cs:348
 msgid "Logic"
 msgstr "Lògica"
 
 #: ../src/Core/Views/FinishView.cs:106 ../src/Core/Main/GameTypes.cs:48
-#: ../src/Clients/Classical/gbrainy.cs:352
+#: ../src/Clients/Classical/gbrainy.cs:353
 msgid "Calculation"
 msgstr "Càlcul"
 
 #: ../src/Core/Views/FinishView.cs:113 ../src/Core/Main/GameTypes.cs:46
-#: ../src/Clients/Classical/gbrainy.cs:358
+#: ../src/Clients/Classical/gbrainy.cs:359
 msgid "Memory"
 msgstr "Memòria"
 
 #: ../src/Core/Views/FinishView.cs:120 ../src/Core/Main/GameTypes.cs:50
-#: ../src/Clients/Classical/gbrainy.cs:364
+#: ../src/Clients/Classical/gbrainy.cs:365
 msgid "Verbal"
 msgstr "Verbal"
 
@@ -1282,7 +1282,7 @@ msgid "white"
 msgstr "blanc"
 
 #
-#: ../src/Core/Main/Game.cs:164
+#: ../src/Core/Main/Game.cs:153
 #, csharp-format
 msgid "The correct answer is {0}."
 msgstr "La resposta correcta és {0}."
@@ -1294,46 +1294,46 @@ msgstr "La resposta correcta és {0}."
 #. For languages represented with the Latin alphabet use
 #. the same than English
 #. First possible answer for a series (e.g.: Figure A)
-#: ../src/Core/Main/Game.cs:329
+#: ../src/Core/Main/Game.cs:318
 msgid "A"
 msgstr "A"
 
 #. Second possible answer for a series
-#: ../src/Core/Main/Game.cs:331
+#: ../src/Core/Main/Game.cs:320
 msgid "B"
 msgstr "B"
 
 #. Third possible answer for a series
-#: ../src/Core/Main/Game.cs:333
+#: ../src/Core/Main/Game.cs:322
 msgid "C"
 msgstr "C"
 
 #. Fourth possible answer for a series
-#: ../src/Core/Main/Game.cs:335
+#: ../src/Core/Main/Game.cs:324
 msgid "D"
 msgstr "D"
 
 #. Fifth possible answer for a series
-#: ../src/Core/Main/Game.cs:337
+#: ../src/Core/Main/Game.cs:326
 msgid "E"
 msgstr "E"
 
 #. Sixth possible answer for a series
-#: ../src/Core/Main/Game.cs:339
+#: ../src/Core/Main/Game.cs:328
 msgid "F"
 msgstr "F"
 
 #. Seventh possible answer for a series
-#: ../src/Core/Main/Game.cs:341
+#: ../src/Core/Main/Game.cs:330
 msgid "G"
 msgstr "G"
 
 #. Eighth possible answer for a series
-#: ../src/Core/Main/Game.cs:343
+#: ../src/Core/Main/Game.cs:332
 msgid "H"
 msgstr "H"
 
-#: ../src/Core/Main/Game.cs:351
+#: ../src/Core/Main/Game.cs:340
 #, csharp-format
 msgid "Figure {0}"
 msgstr "Figura {0}"
@@ -1568,69 +1568,59 @@ msgstr ""
 msgid "Question and answer #{0}"
 msgstr "Pregunta i resposta #{0}"
 
-#: ../src/Core/Main/Verbal/AnalogiesFactory.cs:155
-#, csharp-format
-msgid "Read {0} verbal analogies of type {1}"
-msgstr "S'han llegit {0} analogies verbals del tipus {1}"
-
-#: ../src/Core/Main/Verbal/AnalogiesFactory.cs:160
-#, csharp-format
-msgid "Read a total of {0} verbal analogies"
-msgstr "S'han llegit un total de {0} analogies verbals"
-
-#: ../src/Clients/Classical/gbrainy.cs:340
+#: ../src/Clients/Classical/gbrainy.cs:341
 msgid "Play all the games"
 msgstr "Jugueu a tots els tipus de jocs"
 
-#: ../src/Clients/Classical/gbrainy.cs:341
+#: ../src/Clients/Classical/gbrainy.cs:342
 msgid "All"
 msgstr "Tots"
 
-#: ../src/Clients/Classical/gbrainy.cs:346
+#: ../src/Clients/Classical/gbrainy.cs:347
 msgid "Play games that challenge your reasoning and thinking"
 msgstr ""
 "Jugueu a jocs que desafien les vostres habilitats de raonament i pensament"
 
-#: ../src/Clients/Classical/gbrainy.cs:353
+#: ../src/Clients/Classical/gbrainy.cs:354
 msgid "Play games that challenge your mental calculation skills"
 msgstr "Jugueu a jocs que desafien les vostres habilitats de càlcul mental"
 
-#: ../src/Clients/Classical/gbrainy.cs:359
+#: ../src/Clients/Classical/gbrainy.cs:360
 msgid "Play games that challenge your short term memory"
 msgstr "Jugueu a jocs que desafien la vostra memòria a curt termini"
 
-#: ../src/Clients/Classical/gbrainy.cs:365
+#: ../src/Clients/Classical/gbrainy.cs:366
 msgid "Play games that challenge your verbal aptitude"
 msgstr "Jugueu a jocs que desafien les vostres aptituds verbals"
 
 #
-#: ../src/Clients/Classical/gbrainy.cs:370
-#: ../src/Clients/Classical/gbrainy.cs:595
+#: ../src/Clients/Classical/gbrainy.cs:371
+#: ../src/Clients/Classical/gbrainy.cs:596
 msgid "Pause"
 msgstr "Pausa"
 
-#: ../src/Clients/Classical/gbrainy.cs:371
+#: ../src/Clients/Classical/gbrainy.cs:372
 msgid "Pause or resume the game"
 msgstr "Fes una pausa o continua el joc"
 
 #
-#: ../src/Clients/Classical/gbrainy.cs:376
+#: ../src/Clients/Classical/gbrainy.cs:377
 msgid "End the game and show score"
 msgstr "Finalitza el joc i mostra la puntuació"
 
-#: ../src/Clients/Classical/gbrainy.cs:377
+#: ../src/Clients/Classical/gbrainy.cs:378
 msgid "Finish"
 msgstr "Finalitza"
 
-#: ../src/Clients/Classical/gbrainy.cs:467
+#: ../src/Clients/Classical/gbrainy.cs:468
 msgid "Congratulations."
 msgstr "Enhorabona."
 
-#: ../src/Clients/Classical/gbrainy.cs:469
+#: ../src/Clients/Classical/gbrainy.cs:470
 msgid "Incorrect answer."
 msgstr "Resposta incorrecta."
 
-#: ../src/Clients/Classical/gbrainy.cs:518
+#: ../src/Clients/Classical/gbrainy.cs:519
 msgid ""
 "Once you have an answer type it in the \"Answer:\" entry box and press the "
 "\"OK\" button."
@@ -1638,15 +1628,26 @@ msgstr ""
 "Un cop tingueu la resposta introduïu-la al quadre «Resposta:» i premeu el "
 "botó «D'acord»."
 
-#: ../src/Clients/Classical/gbrainy.cs:599
+#: ../src/Clients/Classical/gbrainy.cs:600
 msgid "Resume"
 msgstr "Reprèn"
 
-#: ../src/Clients/Classical/CommandLine.cs:109
+# csharp-format
+#: ../src/Clients/Classical/gbrainy.cs:708
+#, csharp-format
+msgid "Startup time {0}"
+msgstr "Temps d'iniciació {0}"
+
+#: ../src/Clients/Classical/CommandLine.cs:104
+#, csharp-format
+msgid "(build on {0})"
+msgstr "(muntat al {0})"
+
+#: ../src/Clients/Classical/CommandLine.cs:114
 msgid "List of available games"
 msgstr "Llista de jocs disponibles"
 
-#: ../src/Clients/Classical/CommandLine.cs:170
+#: ../src/Clients/Classical/CommandLine.cs:175
 msgid ""
 "Usage: gbrainy [options]\n"
 "  --version\t\t\tPrint version information.\n"
@@ -1665,11 +1666,6 @@ msgstr ""
 "per a una sessió.\n"
 "  --norandom \t\t\tLa llista personalitzada de jocs no serà aleatoritzada.\n"
 "  --versions \t\t\tMostra les dependències.\n"
-
-#: ../src/Clients/Classical/CommandLine.cs:185
-#, csharp-format
-msgid "(build on {0})"
-msgstr "(muntat al {0})"
 
 #. Translators: Replace by the name of the people that translated the application
 #: ../src/Clients/Classical/Dialogs/AboutDialog.cs:54
@@ -1752,12 +1748,12 @@ msgstr ""
 
 #: ../src/Clients/Classical/Dialogs/PlayerHistoryDialog.cs:55
 #, csharp-format
-msgid "It is built using the results of {0} last recorded game sessions."
+msgid "It is built using the results of {0} recorded game session."
 msgid_plural ""
-"It is built using the results of {0} last recorded game sessions."
+"It is built using the results of the last {0} recorded game sessions."
 msgstr[0] ""
-"S'ha elaborat utilitzant els resultats de les darreres {0} partides "
-"emmagatzemades."
+"S'ha elaborat utilitzant els resultats de {0} partida "
+"emmagatzemada."
 msgstr[1] ""
 "S'ha elaborat utilitzant els resultats de les darreres {0} partides "
 "emmagatzemades."
@@ -1775,7 +1771,7 @@ msgstr ""
 
 #: ../src/Clients/Classical/Dialogs/PreferencesDialog.cs:84
 msgid "_Delete"
-msgstr "_Suprimir"
+msgstr "_Suprimeix"
 
 #: ../src/Clients/Classical/Dialogs/ui/CustomGameDialog.ui.h:1
 msgid "Custom Game"
@@ -4017,8 +4013,3 @@ msgstr "_Desinstal·la..."
 msgid "_Unselect All"
 msgstr "_Desselecciona-ho tot"
 
-#~ msgid "John's father's sister's sister-in-law is also?"
-#~ msgstr "La cunyada de la germana del pare del Joan és també?"
-
-#~ msgid "Verbal analogies"
-#~ msgstr "Analogies verbals"
