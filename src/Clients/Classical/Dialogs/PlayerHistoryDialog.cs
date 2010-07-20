@@ -52,8 +52,8 @@ namespace gbrainy.Clients.Classical
 			}
 			else 
 			{
-				label +=  Catalog.GetPluralString ("It is built using the results of {0} last recorded game sessions.",
-					"It is built using the results of {0} last recorded game sessions.",
+				label +=  Catalog.GetPluralString ("It is built using the results of {0} recorded game session.",
+					"It is built using the results of the last {0} recorded game sessions.",
 					history.Games.Count);
 			}
 

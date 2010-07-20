@@ -57,8 +57,8 @@
 				int difference = 2 + random.Next (8);
 				int son = (father / 2) - difference;
 			</variables>
-			<question>John's is 46 years old. His son is [difference] year younger than half of John's age. How old is John's son?</question>
-			<question plural ="[difference]">John's is 46 years old. His son is [difference] years younger than half of John's age. How old is John's son?</question>
+			<question>John is 46 years old. His son is [difference] year younger than half of John's age. How old is John's son?</question>
+			<question plural ="[difference]">John is 46 years old. His son is [difference] years younger than half of John's age. How old is John's son?</question>
 			<answer>[son]</answer>
 		</variant>
 		<variant>
@@ -73,8 +73,8 @@
 			<question>John's age is nowadays 2 times his son's age. [ago] year ago, John was [proportion] times older than his son. How old is John's son nowadays?</question>
 			<question plural ="[ago]">John's age is nowadays 2 times his son's age. [ago] years ago, John was [proportion] times older than his son. How old is John's son nowadays?</question>
 			<answer>40</answer>
-			<rationale>[ago] year ago, John's age minus [ago] was equal to [proportion] times his son age minus [ago].</rationale>
-			<rationale plural ="[ago]">[ago] years ago, John's age minus [ago] was equal to [proportion] times his son age minus [ago].</rationale>
+			<rationale>[ago] year ago, John's age minus [ago] was equal to [proportion] times his son's age minus [ago].</rationale>
+			<rationale plural ="[ago]">[ago] years ago, John's age minus [ago] was equal to [proportion] times his son's age minus [ago].</rationale>
 		</variant>
 	</game>
 
@@ -115,8 +115,8 @@
 				int games = 5 + random.Next (5);
 				int rslt = (int) Math.Pow (2, games);
 			</variables>
-			<question>There are [games] tennis game played simultaneous. How many different forecast are possible?</question>
-			<question plural="[games]">There are [games] tennis games played simultaneous. How many different forecast are possible?</question>
+			<question>There is [games] tennis game played simultaneously. How many different forecasts are possible?</question>
+			<question plural="[games]">There are [games] tennis games played simultaneously. How many different forecasts are possible?</question>
 			<answer>[rslt]</answer>
 			<_rationale>Every game is an independent event with 2 possible results. The total number of possibilities is 2 at the power of [games].</_rationale>
 		</variant>
@@ -201,7 +201,7 @@
 		<variant>
 			<variables>
 				int num_a = 3 + random.Next (5);
-				int num_b = 3 + random.Next (5); 
+				int num_b = 3 + random.Next (5);
 				int rslt = num_a * num_b;
 			</variables>
 			<_question>What number divided by [num_a] equals [num_b]?</_question>
