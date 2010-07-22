@@ -2,15 +2,15 @@
 # Copyright (C) 2010 gbrainy's COPYRIGHT HOLDER.
 # This file is distributed under the same license as the gbrainy package.
 # Joe Hansen (joedalton2@yahoo.dk), 2009, 2010.
-# Korrekturlæst Torben Grøn Helligsø.
+# Korrekturlæst Torben Grøn Helligsø, 2009.
 # Korrekturlæst Kenneth Nielsen, 2010.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gbrainy master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-07-20 23:39+0200\n"
-"PO-Revision-Date: 2010-07-20 23:07+0200\n"
+"POT-Creation-Date: 2010-07-22 08:07+0200\n"
+"PO-Revision-Date: 2010-07-21 23:07+0200\n"
 "Last-Translator: Joe Hansen <joedalton2@yahoo.dk>\n"
 "Language-Team: Dansk-gruppen <dansk@dansk-gruppen.dk>\n"
 "MIME-Version: 1.0\n"
@@ -19,19 +19,16 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: ../tools/GameXmlGetString.cs:29
-#, fuzzy
 msgid ""
 "How many degrees rotates the minute hand of a clock in 2 hours [num] minute?"
 msgid_plural ""
 "How many degrees rotates the minute hand of a clock in 2 hours [num] minutes?"
 msgstr[0] ""
-"Hvor mange grader roterer den store viser på et ur på timer [num] minutter?"
+"Hvor mange grader roterer den store viser på et ur på 2 timer [num] minut?"
 msgstr[1] ""
-"Hvor mange grader roterer den store viser på et ur på timer [num] minutter?"
+"Hvor mange grader roterer den store viser på et ur på 2 timer [num] minutter?"
 
-# engelsk fejl
 #: ../tools/GameXmlGetString.cs:33
-#, fuzzy
 msgid ""
 "John is 46 years old. His son is [difference] year younger than half of "
 "John's age. How old is John's son?"
@@ -46,7 +43,6 @@ msgstr[1] ""
 "Johns alder. Hvor gammel er Johns søn?"
 
 #: ../tools/GameXmlGetString.cs:37
-#, fuzzy
 msgid ""
 "John's age is nowadays 2 times his son's age. [ago] year ago, John was "
 "[proportion] times older than his son. How old is John's son nowadays?"
@@ -61,7 +57,6 @@ msgstr[1] ""
 "[proportion] gange ældre end sin søn. Hvor gammel er Johns søn i dag?"
 
 #: ../tools/GameXmlGetString.cs:41
-#, fuzzy
 msgid ""
 "[ago] year ago, John's age minus [ago] was equal to [proportion] times his "
 "son's age minus [ago]."
@@ -76,7 +71,6 @@ msgstr[1] ""
 "hans søns alder minus [ago]."
 
 #: ../tools/GameXmlGetString.cs:45
-#, fuzzy
 msgid ""
 "A file is protected by a password formed by a [digits] digit number (ranging "
 "from 0 to 9). How many different passwords can you have?"
@@ -91,7 +85,6 @@ msgstr[1] ""
 "til 9). Hvor mange forskellige adgangskoder kan du vælge imellem?"
 
 #: ../tools/GameXmlGetString.cs:49
-#, fuzzy
 msgid ""
 "A file is protected by a password formed by a [digits] digit octal number "
 "(ranging from 0 to 7). How many different passwords can you have?"
@@ -106,7 +99,6 @@ msgstr[1] ""
 "(fra 0 til 7). Hvor mange forskellige adgangskoder kan du vælge imellem?"
 
 #: ../tools/GameXmlGetString.cs:53
-#, fuzzy
 msgid ""
 "There is [games] tennis game played simultaneously. How many different "
 "forecasts are possible?"
@@ -114,14 +106,13 @@ msgid_plural ""
 "There are [games] tennis games played simultaneously. How many different "
 "forecasts are possible?"
 msgstr[0] ""
-"[games] tenniskampe spilles samtidigt. Hvor mange forskellige forudsigelser "
+"[games] tenniskamp spilles samtidigt. Hvor mange forskellige forudsigelser "
 "er mulige?"
 msgstr[1] ""
 "[games] tenniskampe spilles samtidigt. Hvor mange forskellige forudsigelser "
 "er mulige?"
 
 #: ../tools/GameXmlGetString.cs:57
-#, fuzzy
 msgid ""
 "How many matches does it take to determine the winner of a tennis tournament "
 "that starts with [players] player?"
@@ -129,14 +120,13 @@ msgid_plural ""
 "How many matches does it take to determine the winner of a tennis tournament "
 "that starts with [players] players?"
 msgstr[0] ""
-"Hvor mange kampe kræves det for at finde vinderen af en tennisturnering som "
-"starter med [players] spillere?"
+"Hvor mange kampe kræves det for at finde vinderen af en tennisturnering, som "
+"starter med [players] spiller?"
 msgstr[1] ""
-"Hvor mange kampe kræves det for at finde vinderen af en tennisturnering som "
+"Hvor mange kampe kræves det for at finde vinderen af en tennisturnering, som "
 "starter med [players] spillere?"
 
 #: ../tools/GameXmlGetString.cs:61
-#, fuzzy
 msgid ""
 "You have [money] monetary unit in your bank account at 10% compound interest "
 "annually. How much money will you have at end of 2 years?"
@@ -144,17 +134,20 @@ msgid_plural ""
 "You have [money] monetary units in your bank account at 10% compound "
 "interest annually. How much money will you have at end of 2 years?"
 msgstr[0] ""
-"Du har [money] kroner på din bankkonto til 10 % rente (inklusive rentes "
+"Du har [money] krone på din bankkonto til 10 % rente (inklusive rentes "
 "rente). Hvor mange kroner vil du have efter 2 år?"
 msgstr[1] ""
 "Du har [money] kroner på din bankkonto til 10 % rente (inklusive rentes "
 "rente). Hvor mange kroner vil du have efter 2 år?"
 
+# engelsk fejl is a number 
 #: ../data/games.xml.h:1
 msgid ""
 "A palindromic number is number that remains the same when its digits are "
 "reversed (e.g.: 2112)."
 msgstr ""
+"Et palindromsk tal er et tal som forbliver det samme når de enkelte cifre "
+"vendes om (for eksempel: 2112)."
 
 #: ../data/games.xml.h:2
 msgid "Age"
@@ -265,10 +258,12 @@ msgid ""
 "Palindrome years occur usually at 110 year intervals except for the end of "
 "each millennium that occur at a 11 years interval."
 msgstr ""
+"Palindromiske år opstår normalt med 110 års intervaller undtaget slutningen "
+"af hvert årtusinde, hvor de opstår med 11 års interval."
 
 #: ../data/games.xml.h:22
 msgid "Palindromic years"
-msgstr ""
+msgstr "Palindromiske år"
 
 #: ../data/games.xml.h:23
 msgid "Password"
@@ -300,7 +295,7 @@ msgstr "Hvilket tal plus [num_a] giver [num_b]?"
 
 #: ../data/games.xml.h:30
 msgid "You can fit 6 * 5 * [z] * 2 boxes."
-msgstr ""
+msgstr "Du kan indpasse 6 * 5 * [z] * 2 bokse."
 
 #: ../data/games.xml.h:31
 msgid ""
@@ -312,13 +307,16 @@ msgstr ""
 
 #: ../data/games.xml.h:32
 msgid "[rslt_a] and [rslt_b]"
-msgstr ""
+msgstr "[rslt_a] og [rslt_b]"
 
 #: ../data/games.xml.h:33
 msgid ""
 "[year_start] was a palindromic year as [year_end] was, a gap of 11 years. "
 "What are the next two palindromic years after [year_end] with the same gap?"
 msgstr ""
+"[year_start] var et palindromisk år på samme måde som [year_end] var det, et "
+"interval på 11 år. Hvad er de næste to palindromiske år efter [year_end] med "
+"samme interval?"
 
 #: ../data/games.xml.h:34
 msgid "x * [num_a] = [num_b]"
@@ -526,6 +524,8 @@ msgid ""
 "John's father's sister's sister-in-law is also? Do not assume that John has "
 "any relative that has not been mentioned."
 msgstr ""
+"Johns fars søsters svigersøster er også? Gå ud fra John ikke har nogen "
+"familiemedlemmer, som ikke er blevet nævnt."
 
 #: ../data/verbal_analogies.xml.h:44
 msgid "Liter"
@@ -1677,9 +1677,9 @@ msgid "Resume"
 msgstr "Genoptag"
 
 #: ../src/Clients/Classical/gbrainy.cs:707
-#, fuzzy, csharp-format
+#, csharp-format
 msgid "Startup time {0}"
-msgstr "Start ved punkt nummer {0}"
+msgstr "Opstartstid {0}"
 
 #: ../src/Clients/Classical/CommandLine.cs:104
 #, csharp-format
@@ -1793,9 +1793,8 @@ msgid ""
 "You need more than one game session recorded to see the score evolution."
 msgstr "Du har brug for mere end et spil for at se pointudviklingen."
 
-# engelsk fejl?
 #: ../src/Clients/Classical/Dialogs/PlayerHistoryDialog.cs:55
-#, fuzzy, csharp-format
+#, csharp-format
 msgid "It is built using the results of {0} recorded game session."
 msgid_plural ""
 "It is built using the results of the last {0} recorded game sessions."
@@ -2813,13 +2812,13 @@ msgid "All people have a map"
 msgstr "Alle har et kort"
 
 #: ../src/Games/Logic/PuzzlePredicateLogic.cs:82
-#, fuzzy, csharp-format
+#, csharp-format
 msgid ""
 "If you whistle if you are happy and you always smile when you whistle, which "
 "of the following sentences is correct? Answer {0}, {1}, {2} or {3}."
 msgstr ""
-"Hvis du fløjter når du er glad og du kun smiler når du fløjter, hvilken af "
-"de følgende sætninger er så korrekt? {0}, {1}, {2} eller {3}."
+"Hvis du fløjter, når du er glad, og du kun smiler, når du fløjter, hvilken "
+"af de følgende sætninger er så korrekt? {0}, {1}, {2} eller {3}."
 
 #: ../src/Games/Logic/PuzzlePredicateLogic.cs:84
 msgid "You smile if you are happy"
