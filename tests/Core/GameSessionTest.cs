@@ -33,11 +33,20 @@ namespace gbrainyTest
 		{
 
 		}
+		
+		GameSession PrepareSession ()
+		{
+			GameSession session = new GameSession ();
+			session.GameManager.LoadAssemblyGames ("gbrainy.Games.dll");
+			session.GameManager.LoadPlugins ();
+			session.GameManager.LoadGamesFromXml (System.IO.Path.Combine (gbrainy.Core.Main.Defines.DATA_DIR, "games.xml"));
+			return session;
+		}
 
 		[Test]
 		public void Status ()
 		{
-			GameSession session = new GameSession ();
+			GameSession session = PrepareSession ();
 			Assert.AreEqual (GameSession.SessionStatus.NotPlaying, session.Status);
 
 			session.Type = GameSession.Types.LogicPuzzles;
@@ -54,7 +63,7 @@ namespace gbrainyTest
 		[Test]
 		public void Paused ()
 		{
-			GameSession session = new GameSession ();
+			GameSession session = PrepareSession ();
 			session.Type = GameSession.Types.LogicPuzzles;
 			session.New ();
 			Assert.AreEqual (GameSession.SessionStatus.NotPlaying, session.Status);
@@ -69,7 +78,7 @@ namespace gbrainyTest
 		[Test]
 		public void ID ()
 		{
-			GameSession session = new GameSession ();
+			GameSession session = PrepareSession ();
 			session.Type = GameSession.Types.LogicPuzzles;
 			session.New ();
 			Assert.AreEqual (1, session.ID);

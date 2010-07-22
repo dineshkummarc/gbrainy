@@ -1,0 +1,16 @@
+<games>
+	<game>
+		<_name>Clock Rotation</_name>
+		<type>Logic</type>
+		<difficulty>Medium | Master</difficulty>
+		<variables>
+			int num = (1 + random.Next (5)) * 10;
+			int rslt = (2 * 360) + (num * 6);
+		</variables>
+		<_rationale>Rationale text</_rationale>
+		<svg file = "clock.svg" x = "0.25" y = "0.25" width = "0.5" height = "0.5"/>
+		<question>How many degrees rotates the minute hand of a clock?</question>
+		<question plural ="[rslt]">How many degrees rotates the minute hand of a clocks?</question>
+		<answer>[rslt]</answer>
+	</game>
+</games>

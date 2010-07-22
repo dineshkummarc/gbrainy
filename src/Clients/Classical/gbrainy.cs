@@ -90,7 +90,16 @@ namespace gbrainy.Clients.Classical
 
 		public void Initialize ()
 		{
+			const string ASSEMBLY = "gbrainy.Games.dll";
+
 			session = new GameSession ();
+			
+			session.GameManager.LoadAssemblyGames (ASSEMBLY);
+			session.GameManager.LoadPlugins ();
+			session.GameManager.LoadGamesFromXml (System.IO.Path.Combine (Defines.DATA_DIR, "games.xml"));
+			session.GameManager.ShowGamesSummary ();
+
+			session.GameManager.ColorBlind = Preferences.GetBoolValue (Preferences.ColorBlindKey);
 			session.DrawRequest += SessionDrawRequest;
 			session.UpdateUIElement += SessionUpdateUIElement;
 			session.SynchronizingObject = new GtkSynchronize ();

@@ -12,10 +12,13 @@ CSFILES_CORE =					\
 	$(srcdir)/Core/PlayerPersonalRecordTest.cs \
 	$(srcdir)/Core/GameSessionTest.cs \
 	$(srcdir)/Core/GameManagerTest.cs \
-	$(srcdir)/Core/GameTest.cs
+	$(srcdir)/Core/GameTest.cs \
+	$(srcdir)/Core/GameXmlFactoryTest.cs
 
 CSFILES_CLASSICAL =					\
 	$(srcdir)/Clients/Classical/CommandLineTest.cs
+
+if ENABLE_TESTS
 
 ASSEMBLIES = \
 	$(NUNIT_LIBS)			\
@@ -29,13 +32,17 @@ RESSOURCES =
 
 $(CORE): $(CSFILES_CORE) $(top_builddir)/src/gbrainy.exe
 	$(CSC) -out:$@ $(CSFLAGS) $(CSFILES_CORE) $(ASSEMBLIES) $(RESSOURCES)
-	MONO_PATH=$(MONO_PATH) $(NUNIT) $(CORE) -nologo
 
 $(CLASSICAL): $(CSFILES_CLASSICAL) $(top_builddir)/src/gbrainy.exe
 	$(CSC) -out:$@ $(CSFLAGS) $(CSFILES_CLASSICAL) $(ASSEMBLIES) $(RESSOURCES)
-	MONO_PATH=$(MONO_PATH) $(NUNIT) $(CLASSICAL) -nologo
 
-test: $(CORE) $(CLASSICAL)
+all: $(CORE) $(CLASSICAL)
+
+run: $(CORE) $(CLASSICAL)
+	MONO_PATH=$(MONO_PATH) $(NUNIT) $(CLASSICAL) -nologo
+	MONO_PATH=$(MONO_PATH) $(NUNIT) $(CORE) -nologo
+
+endif
 
 EXTRA_DIST = 				\
 	$(CSFILES_CORE)			\

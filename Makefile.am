@@ -7,7 +7,6 @@ SUBDIRS = 		\
 	help
 
 
-
 CLEANFILES =			\
 	intltool-extract	\
 	intltool-update		\

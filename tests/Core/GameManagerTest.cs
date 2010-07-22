@@ -28,18 +28,18 @@ namespace gbrainyTest
 	[TestFixture]
 	public class GameManagerTest
 	{
+		GameManager manager;
+
 		[TestFixtureSetUp]
 		public void Construct ()
 		{
-
+			manager = new GameManager ();
 		}
 
 		//Lists the games without tip
 		public void GamesWithNoTip ()
 		{
 			int notip = 0;
-			GameManager manager = new GameManager ();
-
 			GameManager.GameLocator [] games = manager.AvailableGames;
 
 			foreach (GameManager.GameLocator locator in games)
@@ -59,7 +59,6 @@ namespace gbrainyTest
 		public void GamesNoDuplicatedName ()
 		{
 			Dictionary <string, bool> dictionary;
-			GameManager manager = new GameManager ();
 			GameManager.GameLocator [] games = manager.AvailableGames;
 			dictionary = new Dictionary <string, bool> (games.Length);
 
@@ -85,9 +84,7 @@ namespace gbrainyTest
 			GameManager.GameLocator [] games;
 
 			List <int> list = new List <int> ();
-			GameManager gm = new GameManager ();
-			gm.GameType = GameSession.Types.AllGames;
-			games = gm.AvailableGames;
+			games = manager.AvailableGames;
 
 			// Create a hash to map from game name to locator
 			dictionary = new Dictionary <int, string> (games.Length);
@@ -105,12 +102,12 @@ namespace gbrainyTest
 			Game current;
 			string name;
 
-			gm.RandomOrder = false;
-			gm.PlayList = list.ToArray ();
+			manager.RandomOrder = false;
+			manager.PlayList = list.ToArray ();
 
 			for (int i = 0; i < list.Count; i++)
 			{
-				current = gm.GetPuzzle ();
+				current = manager.GetPuzzle ();
 
 				try
 				{
@@ -122,6 +119,35 @@ namespace gbrainyTest
 
 				}
 			}
+		}
+
+		[Test]
+		public void ColorBlind ()
+		{
+			Game game;
+			GameManager.GameLocator [] games;
+
+			GameManager manager = new GameManager ();
+			manager.GameType = GameSession.Types.AllGames;
+			manager.ColorBlind = true;
+			games = manager.AvailableGames;
+
+			for (int i = 0; i < games.Length; i++)
+			{
+				game = (Game) manager.GetPuzzle ();
+				Assert.AreEqual (false, game.UsesColors);
+			}
+		}
+
+		[Test]
+		public void ResetAvailableGames ()
+		{
+			GameManager manager = new GameManager ();
+			manager.GameType = GameSession.Types.AllGames;
+			Assert.AreNotEqual (0, manager.AvailableGames.Length);
+
+			manager.ResetAvailableGames ();
+			Assert.AreEqual (0, manager.AvailableGames.Length);
 		}
 	}
 }

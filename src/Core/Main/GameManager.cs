@@ -66,11 +66,9 @@ namespace gbrainy.Core.Main
 			}
 		}
 
-		bool once;
 		GameSession.Types game_type;
 		IEnumerator <int> enumerator;
-		GameDifficulty difficulty;
-		GamesXmlFactory xml_games;
+		GameDifficulty difficulty;		
 
 		List <GameLocator> available_games; 	// List of all available games in the system
 		List <int> play_list;  		// Play list for the Selected difficulty, game types
@@ -85,25 +83,10 @@ namespace gbrainy.Core.Main
 			cnt_logic = cnt_memory = cnt_calculation = cnt_verbal = 0;
 			RandomOrder = true;
 
-			xml_games = new GamesXmlFactory ();
-			xml_games.Read (System.IO.Path.Combine (Defines.DATA_DIR, "games.xml"));
-
-			LoadAssemblyGames ();
-
 			// Load Analogies
 			cnt_verbal += AddVerbalGamesAndVariations (VerbalAnalogiesInternal);
 
-			// Load defined XML games
-			LoadXmlGames ();
-
 			LoadPlugins ();
-
-			if (once == false) {
-				once = true;
-				Console.WriteLine (Catalog.GetString ("Games registered: {0}: {1} logic puzzles, {2} calculation trainers, {3} memory trainers, {4} verbal analogies"),
-					cnt_logic + cnt_memory + cnt_calculation + cnt_verbal,
-					cnt_logic, cnt_calculation, cnt_memory, cnt_verbal);
-			}
 #if PDF_DUMP
 			GeneratePDF ();
 #endif
@@ -173,15 +156,16 @@ namespace gbrainy.Core.Main
 		// Indicates if the PlayList for CustomGames is delivered in RandomOrder
  		public bool RandomOrder { get; set; }
 
+		public bool ColorBlind { get; set; }
+
 		// Returns all the games available for playing
 		public GameLocator [] AvailableGames {
 			get { return available_games.ToArray (); }
 		}
 
 		// Dynamic load of the gbrainy.Games.Dll assembly
-		void LoadAssemblyGames ()
+		public void LoadAssemblyGames (string file)
 		{
-			const string ASSEMBLY = "gbrainy.Games.dll";
 			const string CLASS = "gbrainy.Games.GameList";
 			const string LOGIC_METHOD = "LogicPuzzles";
 			const string CALCULATION_METHOD = "CalculationTrainers";
@@ -198,7 +182,7 @@ namespace gbrainy.Core.Main
 				Assembly asm = Assembly.GetExecutingAssembly ();
 				string asm_dir = System.IO.Path.GetDirectoryName (asm.Location);
 
-				asem = Assembly.LoadFrom (System.IO.Path.Combine (asm_dir, ASSEMBLY));
+				asem = Assembly.LoadFrom (System.IO.Path.Combine (asm_dir, file));
 
 				foreach (Type t in asem.GetTypes())
 				{
@@ -230,45 +214,15 @@ namespace gbrainy.Core.Main
 			}
 		}
 
-		// Adds all the games and its variants into the available games list
-		int AddGamesAndVariations (Type [] types)
-		{
-			Game game;
-			int cnt = 0;
-
-			foreach (Type type in types)
-			{
-				game = (Game) Activator.CreateInstance (type, true);
-				for (int i = 0; i < game.Variants; i++)
-				{
-					available_games.Add (new GameLocator (type, i, game.Type, game.Variants == 1));
-				}
-				cnt += game.Variants;
-			}
-			return cnt;
-		}
-
-		// Adds all the games and its variants into the available games list
-		int AddVerbalGamesAndVariations (Type [] types)
-		{
-			Game game;
-			int cnt = 0;
-
-			foreach (Type type in types)
-			{
-				game = (Game) Activator.CreateInstance (type, true);
-				for (int i = 0; i < game.Variants; i++)
-				{
-					available_games.Add (new GameLocator (type, i, game.Type, true));
-				}
-				cnt += game.Variants;
-			}
-			return cnt;
-		}
-
 		// XML are stored using the Variant as a pointer to the game + the internal variant
-		void LoadXmlGames ()
+		public void LoadGamesFromXml (string file)
 		{
+			// Load defined XML games
+			GamesXmlFactory xml_games;
+
+			xml_games = new GamesXmlFactory ();
+			xml_games.Read (file);
+
 			Type type = typeof (GameXml);
 			int cnt = 0;
 
@@ -293,11 +247,10 @@ namespace gbrainy.Core.Main
 			}
 		}
 
-		void LoadPlugins ()
+		public void LoadPlugins ()
 		{
 
 	#if MONO_ADDINS
-
 			try {
 				ExtensionNodeList addins;
 				Game game;
@@ -305,7 +258,6 @@ namespace gbrainy.Core.Main
 				string dir = System.IO.Path.Combine (Environment.GetFolderPath (Environment.SpecialFolder.ApplicationData), "gbrainy");
 
 				AddinManager.Initialize (dir);
-				Console.WriteLine ("Pluggin database:" + dir);
 				AddinManager.Registry.Update (null);
 				new SetupService (AddinManager.Registry);
 
@@ -347,6 +299,60 @@ namespace gbrainy.Core.Main
 			}
 	#endif
 		}
+
+		// Unload previous assembly, xml and verbal analogies loaded games
+		public void ResetAvailableGames ()
+		{
+			available_games.Clear ();
+		}
+
+		public void ShowGamesSummary ()
+		{
+	#if MONO_ADDINS
+				Console.WriteLine ("Pluggin database:" +
+					System.IO.Path.Combine (Environment.GetFolderPath (Environment.SpecialFolder.ApplicationData), "gbrainy"));
+	#endif
+			Console.WriteLine (Catalog.GetString ("Games registered: {0}: {1} logic puzzles, {2} calculation trainers, {3} memory trainers, {4} verbal analogies"),
+					cnt_logic + cnt_memory + cnt_calculation + cnt_verbal,
+					cnt_logic, cnt_calculation, cnt_memory, cnt_verbal);
+		}
+
+		// Adds all the games and its variants into the available games list
+		int AddGamesAndVariations (Type [] types)
+		{
+			Game game;
+			int cnt = 0;
+
+			foreach (Type type in types)
+			{
+				game = (Game) Activator.CreateInstance (type, true);
+				for (int i = 0; i < game.Variants; i++)
+				{
+					available_games.Add (new GameLocator (type, i, game.Type, game.Variants == 1));
+				}
+				cnt += game.Variants;
+			}
+			return cnt;
+		}
+
+		// Adds all the games and its variants into the available games list
+		int AddVerbalGamesAndVariations (Type [] types)
+		{
+			Game game;
+			int cnt = 0;
+
+			foreach (Type type in types)
+			{
+				game = (Game) Activator.CreateInstance (type, true);
+				for (int i = 0; i < game.Variants; i++)
+				{
+					available_games.Add (new GameLocator (type, i, game.Type, true));
+				}
+				cnt += game.Variants;
+			}
+			return cnt;
+		}
+
 
 		// Taking a GameLocator list builds the play_list
 		void BuildPlayList (List <GameLocator> all_games)
@@ -457,7 +463,7 @@ namespace gbrainy.Core.Main
 				if (puzzle.IsPlayable == false)
 					continue;
 
-				if ((Preferences.GetBoolValue (Preferences.ColorBlindKey) == true) && puzzle.UsesColors == true)
+				if (ColorBlind == true && puzzle.UsesColors == true)
 					continue;
 
 				if (first == null)

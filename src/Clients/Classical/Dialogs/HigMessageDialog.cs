@@ -28,7 +28,6 @@ namespace gbrainy.Clients.Classical
 	{
 		Gtk.AccelGroup accel_group;
 		Gtk.VBox extra_widget_vbox;
-		Gtk.Widget extra_widget;
 		Gtk.Image image;
 
 		public HigMessageDialog (Gtk.Window parent,
