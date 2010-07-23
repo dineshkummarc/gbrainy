@@ -44,16 +44,8 @@ namespace gbrainy.Core.Main.Verbal
 
 		static public Dictionary <int, Analogy> Get (Analogy.Type type)
 		{
-			if (read == false)
-				Read ();
-
 			return analogies_arrays [(int) type];
 		}
-
-		static void Read ()
-		{
-			Read (Path.Combine (Defines.DATA_DIR, Defines.VERBAL_ANALOGIES));
-		}			
 
 		static public void Read (string file)
 		{

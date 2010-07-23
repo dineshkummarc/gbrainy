@@ -98,13 +98,8 @@ namespace gbrainy.Clients.Classical
 
 		public void Initialize ()
 		{
-			const string ASSEMBLY = "gbrainy.Games.dll";
-
 			session = new GameSession ();
-
-			session.GameManager.LoadAssemblyGames (ASSEMBLY);
-			session.GameManager.LoadPlugins ();
-			session.GameManager.LoadGamesFromXml (System.IO.Path.Combine (Defines.DATA_DIR, "games.xml"));
+			GameManagerPreload (session.GameManager);
 			session.GameManager.ShowGamesSummary ();
 
 			session.GameManager.ColorBlind = Preferences.GetBoolValue (Preferences.ColorBlindKey);
@@ -114,6 +109,14 @@ namespace gbrainy.Clients.Classical
 			session.Difficulty = (GameDifficulty) Preferences.GetIntValue (Preferences.DifficultyKey);
 
 			BuildUI ();
+		}
+
+		public static void GameManagerPreload (GameManager gm)
+		{
+			gm.LoadAssemblyGames (Defines.GAME_ASSEMBLY);
+			gm.LoadVerbalAnalogies (System.IO.Path.Combine (Defines.DATA_DIR, Defines.VERBAL_ANALOGIES));
+			gm.LoadGamesFromXml (System.IO.Path.Combine (Defines.DATA_DIR, Defines.GAMES_FILE));
+			gm.LoadPlugins ();
 		}
 
 		void BuildUI ()

@@ -144,6 +144,7 @@ namespace gbrainyTest
 		{
 			GameManager manager = new GameManager ();
 			manager.GameType = GameSession.Types.AllGames;
+			manager.LoadAssemblyGames ("gbrainy.Games.dll");
 			Assert.AreNotEqual (0, manager.AvailableGames.Length);
 
 			manager.ResetAvailableGames ();

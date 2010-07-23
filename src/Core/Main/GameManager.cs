@@ -82,11 +82,6 @@ namespace gbrainy.Core.Main
 			play_list = new List <int> ();
 			cnt_logic = cnt_memory = cnt_calculation = cnt_verbal = 0;
 			RandomOrder = true;
-
-			// Load Analogies
-			cnt_verbal += AddVerbalGamesAndVariations (VerbalAnalogiesInternal);
-
-			LoadPlugins ();
 #if PDF_DUMP
 			GeneratePDF ();
 #endif
@@ -247,6 +242,7 @@ namespace gbrainy.Core.Main
 			}
 		}
 
+		// Load Mono plugins
 		public void LoadPlugins ()
 		{
 
@@ -298,6 +294,13 @@ namespace gbrainy.Core.Main
 				Console.WriteLine (String.Format ("Exception {0} when loading the plugins", e));
 			}
 	#endif
+		}
+
+		// Load an XML file with analogies
+		public void LoadVerbalAnalogies (string file)
+		{
+			AnalogiesFactory.Read (file);
+			cnt_verbal += AddVerbalGamesAndVariations (VerbalAnalogiesInternal);
 		}
 
 		// Unload previous assembly, xml and verbal analogies loaded games

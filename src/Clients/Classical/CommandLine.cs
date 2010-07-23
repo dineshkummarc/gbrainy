@@ -108,6 +108,8 @@ namespace gbrainy.Clients.Classical
 		{
 			GameManager.GameLocator [] games;
 			GameManager gm = new GameManager ();
+
+			GtkClient.GameManagerPreload (gm);
 			gm.GameType = GameSession.Types.AllGames;
 			games = gm.AvailableGames;
 
@@ -129,6 +131,7 @@ namespace gbrainy.Clients.Classical
 			Dictionary <string, int> dictionary;
 			GameManager.GameLocator [] games;
 			GameManager gm = new GameManager ();
+			GtkClient.GameManagerPreload (gm);
 			games = gm.AvailableGames;
 
 			// Create a hash to map from game name to locator
