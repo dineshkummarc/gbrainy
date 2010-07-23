@@ -144,7 +144,7 @@ namespace gbrainy.Core.Main
 				controler.Status = value;
 
 				if (status == SessionStatus.Answered && CurrentGame != null)
-					CurrentGame.DisableMouseEvents ();
+					CurrentGame.EnableMouseEvents (false);
 			}
 		}
 
@@ -260,12 +260,14 @@ namespace gbrainy.Core.Main
 			EnableTimer = false;
 			paused = true;
 			current_time = Catalog.GetString ("Paused");
+			CurrentGame.EnableMouseEvents (false);
 		}
 
 		public void Resume ()
 		{
 			EnableTimer = true;
 			paused = false;
+			CurrentGame.EnableMouseEvents (true);
 		}
 
 		public bool ScoreGame (string answer)
