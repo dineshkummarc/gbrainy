@@ -20,7 +20,6 @@
 using System;
 using Cairo;
 using Gtk;
-using Gnome;
 using Mono.Unix;
 using System.Diagnostics;
 using Gdk;
@@ -34,9 +33,16 @@ using Mono.Addins;
 using Mono.Addins.Setup;
 #endif
 
+#if GNOME
+using Gnome;
+#endif
+
 namespace gbrainy.Clients.Classical
 {
-	public class GtkClient: Program
+	public class GtkClient
+#if GNOME
+		: Program
+#endif
 	{
 		[GtkBeans.Builder.Object("gbrainy")] Gtk.Window app_window;
 		[GtkBeans.Builder.Object] Gtk.CheckMenuItem toolbar_menuitem;
@@ -73,7 +79,9 @@ namespace gbrainy.Clients.Classical
 		GameSession.Types initial_session;
 
 		public GtkClient ()
+#if GNOME
 		: base ("gbrainy", Defines.VERSION, Modules.UI, new string [0])
+#endif
 		{
 			Catalog.Init ("gbrainy", Defines.GNOME_LOCALE_DIR);
 			Unix.FixLocaleInfo ();
@@ -93,7 +101,7 @@ namespace gbrainy.Clients.Classical
 			const string ASSEMBLY = "gbrainy.Games.dll";
 
 			session = new GameSession ();
-			
+
 			session.GameManager.LoadAssemblyGames (ASSEMBLY);
 			session.GameManager.LoadPlugins ();
 			session.GameManager.LoadGamesFromXml (System.IO.Path.Combine (Defines.DATA_DIR, "games.xml"));
@@ -490,12 +498,21 @@ namespace gbrainy.Clients.Classical
 
 		void OnQuit (object sender, EventArgs args)
 		{
+#if GNOME
 			Quit ();
+#else
+			Gtk.Application.Quit ();
+#endif
+
 		}
 
 		void OnDeleteWindow (object sender, DeleteEventArgs args)
 		{
+#if GNOME
 			Quit ();
+#else
+			Gtk.Application.Quit ();
+#endif
 		}
 
 		void OnNextButtonClicked (object sender, EventArgs args)
@@ -694,7 +711,7 @@ namespace gbrainy.Clients.Classical
 			} catch {}
 
 			DateTime start_time = DateTime.Now;
-			
+
 			GtkClient app = new GtkClient ();
 			CommandLine.Version ();
 
@@ -703,6 +720,9 @@ namespace gbrainy.Clients.Classical
 
 			if (line.Continue == false)
 				return;
+#if !GNOME
+			Gtk.Application.Init ();
+#endif
 
 			app.Initialize ();
 			if (line.PlayList.Length > 0) {
@@ -714,7 +734,12 @@ namespace gbrainy.Clients.Classical
 
 			TimeSpan span = DateTime.Now - start_time;
 			Console.WriteLine (Catalog.GetString ("Startup time {0}"), span);
+
+#if GNOME
 			app.Run ();
+#else
+			Gtk.Application.Run ();
+#endif
 		}
 	}
 }
