@@ -31,6 +31,7 @@ namespace gbrainy.Games.Calculation
 		int number_a, number_b;
 		int op1, op2, max_operand;
 		SubGameTypes type;
+		GameAnswerCheckAttributes attributes;
 
 		enum SubGameTypes
 		{
@@ -61,11 +62,11 @@ namespace gbrainy.Games.Calculation
 		}
 
 		public override GameAnswerCheckAttributes CheckAttributes {
-			get { return GameAnswerCheckAttributes.Trim | GameAnswerCheckAttributes.MatchAll; }
+			get { return attributes; }
 		}
 
 		public override string AnswerCheckExpression {
-			get { return "[0-9]+"; }
+			get { return "[-0-9]+"; }
 		}
 
 		public override string AnswerValue {
@@ -74,6 +75,7 @@ namespace gbrainy.Games.Calculation
 
 		protected override void Initialize ()
 		{
+			attributes = GameAnswerCheckAttributes.Trim | GameAnswerCheckAttributes.MatchAll;
 			type = (SubGameTypes) random.Next ((int) SubGameTypes.Length);
 
 			switch (CurrentDifficulty) {
@@ -113,7 +115,7 @@ namespace gbrainy.Games.Calculation
 		}
 
 		public override void Draw (CairoContextEx gr, int area_width, int area_height, bool rtl)
-		{	
+		{
 			double x = DrawAreaX + 0.25;
 
 			base.Draw (gr, area_width, area_height, rtl);
@@ -134,6 +136,27 @@ namespace gbrainy.Games.Calculation
 
 			gr.MoveTo (x, DrawAreaY + 0.44);
 			gr.ShowPangoText (String.Format (Catalog.GetString ("x * y = {0}"), op2));
+		}
+
+		public override bool CheckAnswer (string answer)
+		{
+			if (base.CheckAnswer (answer) == true)
+				return true;
+
+			// Support case: -b - (-a) / (-b) * (-a)
+			if (type == SubGameTypes.Subtraction) {
+				int tmp;
+
+				// No need to preserve original values since after CheckAnswer game is consider finished
+				tmp = number_a;
+				number_a = -number_b;
+				number_b = -tmp;
+				right_answer = String.Format ("{0} | {1}", number_a, number_b);
+				attributes = GameAnswerCheckAttributes.Trim | GameAnswerCheckAttributes.MatchAllInOrder;
+				return base.CheckAnswer (answer);
+			}
+
+			return false;
 		}
 	}
 }
