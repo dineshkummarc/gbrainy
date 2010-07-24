@@ -126,7 +126,9 @@ namespace gbrainy.Core.Main
 					return;
 
 				difficulty = value;
-				BuildPlayList (available_games);
+
+				if ((game_type & GameSession.Types.Custom) != GameSession.Types.Custom)
+					BuildPlayList (available_games);
 			}
 			get { return difficulty; }
 		}
