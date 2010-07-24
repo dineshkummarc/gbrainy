@@ -260,14 +260,18 @@ namespace gbrainy.Core.Main
 			EnableTimer = false;
 			paused = true;
 			current_time = Catalog.GetString ("Paused");
-			CurrentGame.EnableMouseEvents (false);
+
+			if (CurrentGame != null)
+				CurrentGame.EnableMouseEvents (false);
 		}
 
 		public void Resume ()
 		{
 			EnableTimer = true;
 			paused = false;
-			CurrentGame.EnableMouseEvents (true);
+
+			if (CurrentGame != null)
+				CurrentGame.EnableMouseEvents (true);
 		}
 
 		public bool ScoreGame (string answer)
