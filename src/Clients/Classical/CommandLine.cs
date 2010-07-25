@@ -18,6 +18,7 @@
  */
 
 using System;
+using System.Text;
 using Mono.Unix;
 using System.Collections.Generic;
 using System.Reflection;
@@ -100,8 +101,8 @@ namespace gbrainy.Clients.Classical
 
 		public static void Version ()
 		{
-			Console.WriteLine ("gbrainy " + Defines.VERSION + " " + 
-				String.Format (Catalog.GetString ("(build on {0})"), Defines.BUILD_TIME));
+			Console.WriteLine ("gbrainy " + Defines.VERSION + " " +
+				String.Format (Catalog.GetString ("(built on {0})"), Defines.BUILD_TIME));
 		}
 
 		static void GameList ()
@@ -173,17 +174,18 @@ namespace gbrainy.Clients.Classical
 
 		static void Usage ()
 		{
-			string usage =
-			        Catalog.GetString (
-			                "Usage: gbrainy [options]\n" +
-			                "  --version\t\t\tPrint version information.\n" +
-			                "  --help\t\t\tPrint this usage message.\n" +
-			                "  --gamelist\t\t\tShows the list of available games.\n" +
-			                "  --customgame [game1, gameN]\tSpecifies a list of games to play during a custom game.\n" +
-					"  --norandom \t\t\tThe custom game list provided will not be randomized.\n" +
-			                "  --versions \t\t\tShow dependencies.\n");
+			StringBuilder str;
 
-			Console.WriteLine (usage);
+			str = new StringBuilder ();
+			str.AppendLine (Catalog.GetString ("Usage: gbrainy [options]"));
+			str.AppendLine (Catalog.GetString ("  --version\t\t\tPrint version information."));
+			str.AppendLine (Catalog.GetString ("  --help\t\t\tPrint this usage message."));
+			str.AppendLine (Catalog.GetString ("  --gamelist\t\t\tShows the list of available games."));
+			str.AppendLine (Catalog.GetString ("  --customgame [game1, gameN]\tSpecifies a list of games to play during a custom game."));
+			str.AppendLine (Catalog.GetString ("  --norandom \t\t\tThe custom game list provided will not be randomized."));
+			str.AppendLine (Catalog.GetString ("  --versions \t\t\tShow dependencies."));
+
+			Console.WriteLine (str.ToString ());
 		}
 
 		static void Versions ()
