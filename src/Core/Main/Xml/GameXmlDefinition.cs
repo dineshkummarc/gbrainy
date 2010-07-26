@@ -74,7 +74,6 @@ namespace gbrainy.Core.Main.Xml
 		public GameAnswerCheckAttributes CheckAttributes { get; set; }
 		public string AnswerCheckExpression  { get; set; }
 		public string AnswerShow { get; set; }
-		string expression;
 
 		List <DrawingObject> drawing_objects;
 

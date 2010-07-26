@@ -29,10 +29,9 @@ namespace gbrainy.Core.Main.Verbal
 	static public class AnalogiesFactory
 	{
 		static Dictionary <int, Analogy> [] analogies_arrays;
-		static bool read = false;
-	
-		public const char Separator = '|';
 		static readonly string IgnoreAnalogy = "<ignore>";
+
+		public const char Separator = '|';
 
 		static AnalogiesFactory ()
 		{
@@ -136,7 +135,6 @@ namespace gbrainy.Core.Main.Verbal
 				}
 
 				reader.Close ();
-				read = true;
 			}
 
 			catch (Exception e)
