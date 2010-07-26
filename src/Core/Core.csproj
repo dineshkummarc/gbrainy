@@ -33,22 +33,18 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
-    <Reference Include="Mono.Cairo, Version=2.0.0.0, Culture=neutral, PublicKeyToken=0738eb9f132ed756" />
     <Reference Include="Mono.Posix" />
     <Reference Include="System.Xml" />
     <Reference Include="pango-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f">
-      <Package>gtk-sharp-2.0</Package>
     </Reference>
     <Reference Include="gtk-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f">
-      <Package>gtk-sharp-2.0</Package>
     </Reference>
     <Reference Include="gdk-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f">
-      <Package>gtk-sharp-2.0</Package>
     </Reference>
     <Reference Include="Mono.CSharp" />
+    <Reference Include="Mono.Cairo" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AssemblyInfo.cs" />
     <Compile Include="Main\ArrayListIndicesRandom.cs" />
     <Compile Include="Main\CairoContextEx.cs" />
     <Compile Include="Main\ColorPalette.cs" />
@@ -104,4 +100,33 @@
       <Properties InternalTargetFrameworkVersion="3.5" />
     </MonoDevelop>
   </ProjectExtensions>
+  <ItemGroup>
+    <Folder Include="Resources\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="..\..\data\app-graphics\background.svg">
+      <Link>Resources\background.svg</Link>
+      <LogicalName>background.svg</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\data\app-graphics\endgame.svg">
+      <Link>Resources\endgame.svg</Link>
+      <LogicalName>endgame.svg</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\data\app-graphics\logic-games.svg">
+      <Link>Resources\logic-games.svg</Link>
+      <LogicalName>logic-games.svg</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\data\app-graphics\math-games.svg">
+      <Link>Resources\math-games.svg</Link>
+      <LogicalName>math-games.svg</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\data\app-graphics\memory-games.svg">
+      <Link>Resources\memory-games.svg</Link>
+      <LogicalName>memory-games.svg</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\data\app-graphics\verbal-games.svg">
+      <Link>Resources\verbal-games.svg</Link>
+      <LogicalName>verbal-games.svg</LogicalName>
+    </EmbeddedResource>
+  </ItemGroup>
 </Project>

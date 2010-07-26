@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{84A80D6F-DB4D-4989-B441-D410D2260775}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Games</RootNamespace>
+    <AssemblyName>gbrainy.Games</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>none</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="Mono.Posix" />
+    <Reference Include="Mono.Cairo" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Logic\" />
+    <Folder Include="Calculation\" />
+    <Folder Include="Memory\" />
+    <Folder Include="Resources\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ProjectExtensions>
+    <MonoDevelop>
+      <Properties InternalTargetFrameworkVersion="3.5" />
+    </MonoDevelop>
+  </ProjectExtensions>
+  <ItemGroup>
+    <Compile Include="Logic\Puzzle3DCube.cs" />
+    <Compile Include="Logic\PuzzleBalance.cs" />
+    <Compile Include="Logic\PuzzleBuildTriangle.cs" />
+    <Compile Include="Logic\PuzzleCirclesSquare.cs" />
+    <Compile Include="Logic\PuzzleClocks.cs" />
+    <Compile Include="Logic\PuzzleCountCircles.cs" />
+    <Compile Include="Logic\PuzzleCounting.cs" />
+    <Compile Include="Logic\PuzzleCountSeries.cs" />
+    <Compile Include="Logic\PuzzleCoverPercentage.cs" />
+    <Compile Include="Logic\PuzzleCube.cs" />
+    <Compile Include="Logic\PuzzleDice.cs" />
+    <Compile Include="Logic\PuzzleDivideCircle.cs" />
+    <Compile Include="Logic\PuzzleEquation.cs" />
+    <Compile Include="Logic\PuzzleExtraCircle.cs" />
+    <Compile Include="Logic\PuzzleFigureLetter.cs" />
+    <Compile Include="Logic\PuzzleFigurePattern.cs" />
+    <Compile Include="Logic\PuzzleFigures.cs" />
+    <Compile Include="Logic\PuzzleFourSided.cs" />
+    <Compile Include="Logic\PuzzleHandshakes.cs" />
+    <Compile Include="Logic\PuzzleLargerShape.cs" />
+    <Compile Include="Logic\PuzzleLines.cs" />
+    <Compile Include="Logic\PuzzleMatrixGroups.cs" />
+    <Compile Include="Logic\PuzzleMatrixNumbers.cs" />
+    <Compile Include="Logic\PuzzleMissingPiece.cs" />
+    <Compile Include="Logic\PuzzleMissingSlice.cs" />
+    <Compile Include="Logic\PuzzleMostInCommon.cs" />
+    <Compile Include="Logic\PuzzleMoveFigure.cs" />
+    <Compile Include="Logic\PuzzleNextFigure.cs" />
+    <Compile Include="Logic\PuzzleNumericRelation.cs" />
+    <Compile Include="Logic\PuzzleNumericSequence.cs" />
+    <Compile Include="Logic\PuzzleOstracism.cs" />
+    <Compile Include="Logic\PuzzlePencil.cs" />
+    <Compile Include="Logic\PuzzlePeopleTable.cs" />
+    <Compile Include="Logic\PuzzlePercentage.cs" />
+    <Compile Include="Logic\PuzzlePredicateLogic.cs" />
+    <Compile Include="Logic\PuzzleQuadrilaterals.cs" />
+    <Compile Include="Logic\PuzzleSquareDots.cs" />
+    <Compile Include="Logic\PuzzleSquares.cs" />
+    <Compile Include="Logic\PuzzleSquaresAndLetters.cs" />
+    <Compile Include="Logic\PuzzleSquareSheets.cs" />
+    <Compile Include="Logic\PuzzleTetris.cs" />
+    <Compile Include="Logic\PuzzleTimeNow.cs" />
+    <Compile Include="Logic\PuzzleTrains.cs" />
+    <Compile Include="Logic\PuzzleTriangles.cs" />
+    <Compile Include="Logic\PuzzleTrianglesWithNumbers.cs" />
+    <Compile Include="Calculation\CalculationArithmetical.cs" />
+    <Compile Include="Calculation\CalculationAverage.cs" />
+    <Compile Include="Calculation\CalculationCloserFraction.cs" />
+    <Compile Include="Calculation\CalculationFractions.cs" />
+    <Compile Include="Calculation\CalculationGreatestDivisor.cs" />
+    <Compile Include="Calculation\CalculationOperator.cs" />
+    <Compile Include="Calculation\CalculationPrimes.cs" />
+    <Compile Include="Calculation\CalculationProportions.cs" />
+    <Compile Include="Calculation\CalculationRatio.cs" />
+    <Compile Include="Calculation\CalculationTwoNumbers.cs" />
+    <Compile Include="Memory\MemoryColouredFigures.cs" />
+    <Compile Include="Memory\MemoryColouredText.cs" />
+    <Compile Include="Memory\MemoryCountDots.cs" />
+    <Compile Include="Memory\MemoryFacts.cs" />
+    <Compile Include="Memory\MemoryFigures.cs" />
+    <Compile Include="Memory\MemoryFiguresAndText.cs" />
+    <Compile Include="Memory\MemoryFiguresNumbers.cs" />
+    <Compile Include="Memory\MemoryIndications.cs" />
+    <Compile Include="Memory\MemoryNumbers.cs" />
+    <Compile Include="Memory\MemoryWords.cs" />
+    <Compile Include="GameList.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Core\Core.csproj">
+      <Project>{9F2F1F0C-DF7E-4054-B6BA-94F3DD9FF3D9}</Project>
+      <Name>Core</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="..\..\data\game-graphics\dice.svg">
+      <Link>Resources\dice.svg</Link>
+      <LogicalName>dice.svg</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\data\game-graphics\handshake.svg">
+      <Link>Resources\handshake.svg</Link>
+      <LogicalName>handshake.svg</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\data\game-graphics\present.svg">
+      <Link>Resources\present.svg</Link>
+      <LogicalName>present.svg</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\data\game-graphics\train_left.svg">
+      <Link>Resources\train_left.svg</Link>
+      <LogicalName>train_left.svg</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\data\game-graphics\train_right.svg">
+      <Link>Resources\train_right.svg</Link>
+      <LogicalName>train_right.svg</LogicalName>
+    </EmbeddedResource>
+  </ItemGroup>
+</Project>

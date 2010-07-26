@@ -31,42 +31,19 @@
   <ItemGroup>
     <Reference Include="gtk-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f">
       <SpecificVersion>False</SpecificVersion>
-      <Package>gtk-sharp-2.0</Package>
     </Reference>
     <Reference Include="gdk-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f">
       <SpecificVersion>False</SpecificVersion>
-      <Package>gtk-sharp-2.0</Package>
     </Reference>
     <Reference Include="glib-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f">
       <SpecificVersion>False</SpecificVersion>
-      <Package>glib-sharp-2.0</Package>
     </Reference>
     <Reference Include="pango-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f">
       <SpecificVersion>False</SpecificVersion>
-      <Package>gtk-sharp-2.0</Package>
     </Reference>
     <Reference Include="Mono.Posix" />
     <Reference Include="Mono.Cairo" />
-    <Reference Include="gnome-sharp, Version=2.24.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f">
-      <Package>gnome-sharp-2.0</Package>
-    </Reference>
     <Reference Include="atk-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f">
-      <Package>gtk-sharp-2.0</Package>
-    </Reference>
-    <Reference Include="art-sharp, Version=2.24.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f">
-      <Package>art-sharp-2.0</Package>
-    </Reference>
-    <Reference Include="gnome-vfs-sharp, Version=2.24.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f">
-      <Package>gnome-vfs-sharp-2.0</Package>
-    </Reference>
-    <Reference Include="Mono.Addins, Version=0.4.0.0, Culture=neutral, PublicKeyToken=0738eb9f132ed756">
-      <Package>mono-addins</Package>
-    </Reference>
-    <Reference Include="Mono.Addins.Setup, Version=0.4.0.0, Culture=neutral, PublicKeyToken=0738eb9f132ed756">
-      <Package>mono-addins-setup</Package>
-    </Reference>
-    <Reference Include="Mono.Addins.Gui, Version=0.4.0.0, Culture=neutral, PublicKeyToken=0738eb9f132ed756">
-      <Package>mono-addins-gui</Package>
     </Reference>
     <Reference Include="System" />
   </ItemGroup>
@@ -96,8 +73,12 @@
     <EmbeddedResource Include="src\Clients\Classical\gbrainy.ui">
       <LogicalName>gbrainy.ui</LogicalName>
     </EmbeddedResource>
-    <EmbeddedResource Include="src\Clients\Classical\Dialogs\ui\PreferencesDialog.ui" />
-    <EmbeddedResource Include="src\Clients\Classical\Dialogs\ui\PlayerHistoryDialog.ui" />
+    <EmbeddedResource Include="src\Clients\Classical\Dialogs\ui\PreferencesDialog.ui">
+      <LogicalName>PreferencesDialog.ui</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\Clients\Classical\Dialogs\ui\PlayerHistoryDialog.ui">
+      <LogicalName>PlayerHistoryDialog.ui</LogicalName>
+    </EmbeddedResource>
     <EmbeddedResource Include="src\Clients\Classical\Dialogs\ui\CustomGameDialog.ui">
       <LogicalName>CustomGameDialog.ui</LogicalName>
     </EmbeddedResource>
@@ -128,6 +109,9 @@
     <EmbeddedResource Include="data\app-graphics\verbal-games-32.png">
       <LogicalName>verbal-games-32.png</LogicalName>
     </EmbeddedResource>
+    <EmbeddedResource Include="data\app-graphics\gbrainy.svg">
+      <LogicalName>gbrainy.svg</LogicalName>
+    </EmbeddedResource>
   </ItemGroup>
   <ProjectExtensions>
     <MonoDevelop>
@@ -149,5 +133,12 @@
       <Project>{9F2F1F0C-DF7E-4054-B6BA-94F3DD9FF3D9}</Project>
       <Name>Core</Name>
     </ProjectReference>
+    <ProjectReference Include="src\Games\Games.csproj">
+      <Project>{84A80D6F-DB4D-4989-B441-D410D2260775}</Project>
+      <Name>Games</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="data\app-graphics\" />
   </ItemGroup>
 </Project>
