@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gbrainy master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gbrainy&component=general\n"
-"POT-Creation-Date: 2010-07-24 06:37+0000\n"
-"PO-Revision-Date: 2010-07-24 11:50+0100\n"
+"POT-Creation-Date: 2010-07-31 09:55+0000\n"
+"PO-Revision-Date: 2010-07-31 12:01+0100\n"
 "Last-Translator: Andrej Žnidaršič <andrej.znidarsic@gmail.com>\n"
 "Language-Team: Slovenian GNOME Translation Team <gnome-si@googlegroups.com>\n"
 "MIME-Version: 1.0\n"
@@ -221,8 +221,8 @@ msgid "[rslt_a] and [rslt_b]"
 msgstr "[rslt_a] in [rslt_b]"
 
 #: ../data/games.xml.h:33
-msgid "[year_start] was a palindromic year as [year_end] was, a gap of 11 years. What are the next two palindromic years after [year_end] with the same gap?"
-msgstr "[year_start] je bilo palindromsko leto, tako kot je bilo [year_end] 11 let kasneje. Kateri dve leti sta naslednji palindromski leti po [year_end] z enako razliko med njima?"
+msgid "[year_start] was a palindromic year as [year_end] was, a gap of 11 years. What are the next two consecutive palindromic years after [year_end] with the same gap?"
+msgstr "[year_start] je bilo palindromsko leto, tako kot je bilo [year_end] 11 let kasneje. Kateri dve leti sta naslednji zaporedni palindromski leti po letu [year_end] z enako razliko med njima?"
 
 #: ../data/games.xml.h:34
 msgid "x * [num_a] = [num_b]"
@@ -1459,32 +1459,42 @@ msgstr "Nadaljuj"
 msgid "Startup time {0}"
 msgstr "Čas zaganjanja {0}"
 
-#: ../src/Clients/Classical/CommandLine.cs:104
+#: ../src/Clients/Classical/CommandLine.cs:105
 #, csharp-format
-msgid "(build on {0})"
-msgstr "(izgrajeno na {0})"
+msgid "(built on {0})"
+msgstr "(izgrajeno z {0})"
 
-#: ../src/Clients/Classical/CommandLine.cs:116
+#: ../src/Clients/Classical/CommandLine.cs:117
 msgid "List of available games"
 msgstr "Seznam razpoložljivih iger"
 
-#: ../src/Clients/Classical/CommandLine.cs:178
-msgid ""
-"Usage: gbrainy [options]\n"
-"  --version\t\t\tPrint version information.\n"
-"  --help\t\t\tPrint this usage message.\n"
-"  --gamelist\t\t\tShows the list of available games.\n"
-"  --customgame [game1, gameN]\tSpecifies a list of games to play during a custom game.\n"
-"  --norandom \t\t\tThe custom game list provided will not be randomized.\n"
-"  --versions \t\t\tShow dependencies.\n"
-msgstr ""
-"Uporaba: gbrainy [možnosti]\n"
-" --version\t\t\tNatisne podatke o različici.\n"
-" --help\t\t\tNatisne to sporočilo o uporabi.\n"
-" --gamelist\t\t\tPokaže seznam razpoložljivih iger\n"
-" --customgame [igra1, igraN]\tNavede seznam iger, igranih med igro po meri\n"
-" --norandom \t\t\tSeznam iger po meri ne bo naključen.\n"
-" --versions \t\tPokaže odvisnosti\n"
+#: ../src/Clients/Classical/CommandLine.cs:180
+msgid "Usage: gbrainy [options]"
+msgstr "Uporaba: gbrainy [možnosti ...]"
+
+#: ../src/Clients/Classical/CommandLine.cs:181
+msgid "  --version\t\t\tPrint version information."
+msgstr " --version\t\t\tNatisne podatke o različici."
+
+#: ../src/Clients/Classical/CommandLine.cs:182
+msgid "  --help\t\t\tPrint this usage message."
+msgstr " --help\t\t\tNatisne to sporočilo uporabe."
+
+#: ../src/Clients/Classical/CommandLine.cs:183
+msgid "  --gamelist\t\t\tShows the list of available games."
+msgstr " --gamelist\t\t\tPokaže seznam razpoložljivih iger."
+
+#: ../src/Clients/Classical/CommandLine.cs:184
+msgid "  --customgame [game1, gameN]\tSpecifies a list of games to play during a custom game."
+msgstr " --customgame [game1, gameN]\tNavede seznam iger za igranje med igro po meri."
+
+#: ../src/Clients/Classical/CommandLine.cs:185
+msgid "  --norandom \t\t\tThe custom game list provided will not be randomized."
+msgstr " --norandom \t\t\tSeznam iger po meri ne bo naključno razporejen."
+
+#: ../src/Clients/Classical/CommandLine.cs:186
+msgid "  --versions \t\t\tShow dependencies."
+msgstr " --versions \t\t\tPokaže odvisnosti."
 
 #. Translators: Replace by the name of the people that translated the application
 #: ../src/Clients/Classical/Dialogs/AboutDialog.cs:54
@@ -3301,23 +3311,22 @@ msgstr "_Odstrani ..."
 msgid "_Unselect All"
 msgstr "_Prekliči izbor vsega"
 
-#~ msgid "Read {0} verbal analogies of type {1}"
-#~ msgstr "Preberite {0} besednih analogij vrste {1}"
-#~ msgid "Read a total of {0} verbal analogies"
-#~ msgstr "Preberite {0} besednih analogij"
-#~ msgid "You can pack 6 * 5 boxes multiplied by the depth [z] * 2."
-#~ msgstr "Zapakirate lahko 6 * 5 škatel pomnoženih z globino [z] * 2."
-#~ msgid "John's father's sister's sister-in-law is also?"
-#~ msgstr "Svakinja sestre Janezovega očeta je tudi?"
-#~ msgid "Verbal analogies"
-#~ msgstr "Besedne analogije"
 #~ msgid ""
-#~ "Which element does not belong to the group? Answer {0}, {1}, {2}, {3} or "
-#~ "{4}."
+#~ "Usage: gbrainy [options]\n"
+#~ "  --version\t\t\tPrint version information.\n"
+#~ "  --help\t\t\tPrint this usage message.\n"
+#~ "  --gamelist\t\t\tShows the list of available games.\n"
+#~ "  --customgame [game1, gameN]\tSpecifies a list of games to play during a "
+#~ "custom game.\n"
+#~ "  --norandom \t\t\tThe custom game list provided will not be randomized.\n"
+#~ "  --versions \t\t\tShow dependencies.\n"
 #~ msgstr ""
-#~ "Kateri predmet ne spada v skupino? Odgovorite {0}, {1}, {2}, {3} ali {4}."
-#~ msgid "40"
-#~ msgstr "40"
-#~ msgid "7"
-#~ msgstr "7"
+#~ "Uporaba: gbrainy [možnosti]\n"
+#~ " --version\t\t\tNatisne podatke o različici.\n"
+#~ " --help\t\t\tNatisne to sporočilo o uporabi.\n"
+#~ " --gamelist\t\t\tPokaže seznam razpoložljivih iger\n"
+#~ " --customgame [igra1, igraN]\tNavede seznam iger, igranih med igro po "
+#~ "meri\n"
+#~ " --norandom \t\t\tSeznam iger po meri ne bo naključen.\n"
+#~ " --versions \t\tPokaže odvisnosti\n"
 
