@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gbrainy\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-07-23 00:25+0200\n"
-"PO-Revision-Date: 2010-07-23 00:24+0200\n"
+"POT-Creation-Date: 2010-08-04 08:41+0200\n"
+"PO-Revision-Date: 2010-07-30 16:46+0200\n"
 "Last-Translator: Petr Kovar <pknbe@volny.cz>\n"
 "Language-Team: Czech <gnome-cs-list@gnome.org>\n"
 "MIME-Version: 1.0\n"
@@ -340,11 +340,12 @@ msgstr "[rslt_a] a [rslt_b]"
 #: ../data/games.xml.h:33
 msgid ""
 "[year_start] was a palindromic year as [year_end] was, a gap of 11 years. "
-"What are the next two palindromic years after [year_end] with the same gap?"
+"What are the next two consecutive palindromic years after [year_end] with "
+"the same gap?"
 msgstr ""
 "Rok [year_start] byl palindromický, stejně jako rok [year_end], s prodlevou "
-"11 let mezi sebou. Jaký bude následující palindromický rok se stejnou "
-"prodlevou od svého předchůdce."
+"11 let mezi sebou. Jaké dva palindromické roky se stejnou prodlevou mezi "
+"sebou budou následovat po roce [year_end]."
 
 #: ../data/games.xml.h:34
 msgid "x * [num_a] = [num_b]"
@@ -1142,22 +1143,22 @@ msgid "Total"
 msgstr "Celkem"
 
 #: ../src/Core/Views/FinishView.cs:99 ../src/Core/Main/GameTypes.cs:44
-#: ../src/Clients/Classical/gbrainy.cs:356
+#: ../src/Clients/Classical/gbrainy.cs:367
 msgid "Logic"
 msgstr "Logické"
 
 #: ../src/Core/Views/FinishView.cs:106 ../src/Core/Main/GameTypes.cs:48
-#: ../src/Clients/Classical/gbrainy.cs:361
+#: ../src/Clients/Classical/gbrainy.cs:372
 msgid "Calculation"
 msgstr "Početní"
 
 #: ../src/Core/Views/FinishView.cs:113 ../src/Core/Main/GameTypes.cs:46
-#: ../src/Clients/Classical/gbrainy.cs:367
+#: ../src/Clients/Classical/gbrainy.cs:378
 msgid "Memory"
 msgstr "Paměťové"
 
 #: ../src/Core/Views/FinishView.cs:120 ../src/Core/Main/GameTypes.cs:50
-#: ../src/Clients/Classical/gbrainy.cs:373
+#: ../src/Clients/Classical/gbrainy.cs:384
 msgid "Verbal"
 msgstr "Slovní"
 
@@ -1352,7 +1353,7 @@ msgstr "H"
 msgid "Figure {0}"
 msgstr "Obrázek {0}"
 
-#: ../src/Core/Main/GameManager.cs:315
+#: ../src/Core/Main/GameManager.cs:320
 #, csharp-format
 msgid ""
 "Games registered: {0}: {1} logic puzzles, {2} calculation trainers, {3} "
@@ -1580,56 +1581,56 @@ msgstr ""
 msgid "Question and answer #{0}"
 msgstr "Otázka a odpověď č. {0}"
 
-#: ../src/Clients/Classical/gbrainy.cs:349
+#: ../src/Clients/Classical/gbrainy.cs:360
 msgid "Play all the games"
 msgstr "Zahrajte si všechny typy her"
 
-#: ../src/Clients/Classical/gbrainy.cs:350
+#: ../src/Clients/Classical/gbrainy.cs:361
 msgid "All"
 msgstr "Všechny"
 
-#: ../src/Clients/Classical/gbrainy.cs:355
+#: ../src/Clients/Classical/gbrainy.cs:366
 msgid "Play games that challenge your reasoning and thinking"
 msgstr "Zahrát si hry, které vyzkoušejí vaši dedukci a myšlení"
 
-#: ../src/Clients/Classical/gbrainy.cs:362
+#: ../src/Clients/Classical/gbrainy.cs:373
 msgid "Play games that challenge your mental calculation skills"
 msgstr "Zahrát si hry, které vyzkoušejí, jak umíte zpaměti počítat"
 
-#: ../src/Clients/Classical/gbrainy.cs:368
+#: ../src/Clients/Classical/gbrainy.cs:379
 msgid "Play games that challenge your short term memory"
 msgstr "Zahrát si hry, které vyzkoušejí vaši krátkodobou paměť"
 
-#: ../src/Clients/Classical/gbrainy.cs:374
+#: ../src/Clients/Classical/gbrainy.cs:385
 msgid "Play games that challenge your verbal aptitude"
 msgstr "Zahrát si hry, které vyzkoušejí vaši slovní zásobu"
 
-#: ../src/Clients/Classical/gbrainy.cs:379
-#: ../src/Clients/Classical/gbrainy.cs:604
+#: ../src/Clients/Classical/gbrainy.cs:390
+#: ../src/Clients/Classical/gbrainy.cs:624
 msgid "Pause"
 msgstr "Přestávka"
 
-#: ../src/Clients/Classical/gbrainy.cs:380
+#: ../src/Clients/Classical/gbrainy.cs:391
 msgid "Pause or resume the game"
 msgstr "Udělat si přestávku nebo pokračovat"
 
-#: ../src/Clients/Classical/gbrainy.cs:385
+#: ../src/Clients/Classical/gbrainy.cs:396
 msgid "End the game and show score"
 msgstr "Ukončit hru a zobrazit skóre"
 
-#: ../src/Clients/Classical/gbrainy.cs:386
+#: ../src/Clients/Classical/gbrainy.cs:397
 msgid "Finish"
 msgstr "Skončit"
 
-#: ../src/Clients/Classical/gbrainy.cs:476
+#: ../src/Clients/Classical/gbrainy.cs:487
 msgid "Congratulations."
 msgstr "Blahopřejeme."
 
-#: ../src/Clients/Classical/gbrainy.cs:478
+#: ../src/Clients/Classical/gbrainy.cs:489
 msgid "Incorrect answer."
 msgstr "Nesprávná odpověď."
 
-#: ../src/Clients/Classical/gbrainy.cs:527
+#: ../src/Clients/Classical/gbrainy.cs:547
 msgid ""
 "Once you have an answer type it in the \"Answer:\" entry box and press the "
 "\"OK\" button."
@@ -1637,42 +1638,56 @@ msgstr ""
 "Pokud znáte odpověď, napište ji do políčka „Odpověď:“ a stiskněte tlačítko "
 "„Budiž“."
 
-#: ../src/Clients/Classical/gbrainy.cs:608
+#: ../src/Clients/Classical/gbrainy.cs:628
 msgid "Resume"
 msgstr "Pokračovat"
 
-#: ../src/Clients/Classical/gbrainy.cs:716
+#: ../src/Clients/Classical/gbrainy.cs:739
 #, csharp-format
 msgid "Startup time {0}"
 msgstr "Začněte v bodě {0}"
 
-#: ../src/Clients/Classical/CommandLine.cs:104
+#: ../src/Clients/Classical/CommandLine.cs:105
 #, csharp-format
-msgid "(build on {0})"
+msgid "(built on {0})"
 msgstr "(sestaveno {0})"
 
-#: ../src/Clients/Classical/CommandLine.cs:114
+#: ../src/Clients/Classical/CommandLine.cs:117
 msgid "List of available games"
 msgstr "Seznam dostupných her"
 
-#: ../src/Clients/Classical/CommandLine.cs:175
+#: ../src/Clients/Classical/CommandLine.cs:180
+msgid "Usage: gbrainy [options]"
+msgstr "Použití: gbrainy [přepínače]"
+
+#: ../src/Clients/Classical/CommandLine.cs:181
+msgid "  --version\t\t\tPrint version information."
+msgstr "  --version\t\t\tVypsat informace o verzi."
+
+#: ../src/Clients/Classical/CommandLine.cs:182
+msgid "  --help\t\t\tPrint this usage message."
+msgstr "  --help\t\t\tVypsat tento návod k použití."
+
+#: ../src/Clients/Classical/CommandLine.cs:183
+msgid "  --gamelist\t\t\tShows the list of available games."
+msgstr "  --gamelist\t\t\tZobrazit seznam dostupných her."
+
+#: ../src/Clients/Classical/CommandLine.cs:184
 msgid ""
-"Usage: gbrainy [options]\n"
-"  --version\t\t\tPrint version information.\n"
-"  --help\t\t\tPrint this usage message.\n"
-"  --gamelist\t\t\tShows the list of available games.\n"
 "  --customgame [game1, gameN]\tSpecifies a list of games to play during a "
-"custom game.\n"
-"  --norandom \t\t\tThe custom game list provided will not be randomized.\n"
-"  --versions \t\t\tShow dependencies.\n"
+"custom game."
 msgstr ""
-"Použití: gbrainy [přepínače]\n"
-"  --version\t\t\tVypsat informace o verzi.\n"
-"  --help\t\t\tVypsat tuto nápovědu.\n"
-"  --gamelist\t\t\tZobrazit seznam dostupných her.\n"
-"  --customgame [game1, gameN]\tUrčuje seznam her pro hraní vlastní hry.\n"
-"  --norandom\t\t\tHry z poskytnutého vlastního seznamu nebudou náhodně.\n"
-"  --versions\t\t\tZobrazit závislosti.\n"
+"  --customgame [hra1, hraN]\tDefinuje seznam her pro hraní vlastní hry."
+
+#: ../src/Clients/Classical/CommandLine.cs:185
+msgid ""
+"  --norandom \t\t\tThe custom game list provided will not be randomized."
+msgstr ""
+"  --norandom \t\t\tU zadaného vlastního seznamu her nebude náhodné pořadí."
+
+#: ../src/Clients/Classical/CommandLine.cs:186
+msgid "  --versions \t\t\tShow dependencies."
+msgstr "  --versions \t\t\tZobrazit závislosti."
 
 #. Translators: Replace by the name of the people that translated the application
 #: ../src/Clients/Classical/Dialogs/AboutDialog.cs:54
@@ -3654,7 +3669,7 @@ msgstr ""
 
 #: ../src/Games/Calculation/CalculationOperator.cs:61
 #: ../src/Games/Calculation/CalculationRatio.cs:69
-#: ../src/Games/Calculation/CalculationTwoNumbers.cs:72
+#: ../src/Games/Calculation/CalculationTwoNumbers.cs:73
 #, csharp-format
 msgid "{0} and {1}"
 msgstr "{0} a {1}"
@@ -3719,7 +3734,7 @@ msgstr ""
 "každým „a“ dílům máte „b“ dílů."
 
 #: ../src/Games/Calculation/CalculationRatio.cs:110
-#: ../src/Games/Calculation/CalculationTwoNumbers.cs:126
+#: ../src/Games/Calculation/CalculationTwoNumbers.cs:128
 #, csharp-format
 msgid "x + y = {0}"
 msgstr "x + y = {0}"
@@ -3729,11 +3744,11 @@ msgstr "x + y = {0}"
 msgid "have a ratio of {0}:{1}"
 msgstr "jsou v poměru {0}:{1}"
 
-#: ../src/Games/Calculation/CalculationTwoNumbers.cs:43
+#: ../src/Games/Calculation/CalculationTwoNumbers.cs:44
 msgid "Two numbers"
 msgstr "Dvě čísla"
 
-#: ../src/Games/Calculation/CalculationTwoNumbers.cs:54
+#: ../src/Games/Calculation/CalculationTwoNumbers.cs:55
 #, csharp-format
 msgid ""
 "Which two numbers when added are {0} and when multiplied are {1}? Answer "
@@ -3742,7 +3757,7 @@ msgstr ""
 "Které dvě čísla se rovnají při vzájemném sčítání {0} a násobení {1}? "
 "Odpovězte pomocí dvou čísel (např. 1 2)"
 
-#: ../src/Games/Calculation/CalculationTwoNumbers.cs:56
+#: ../src/Games/Calculation/CalculationTwoNumbers.cs:57
 #, csharp-format
 msgid ""
 "Which two numbers when subtracted are {0} and when multiplied are {1}? "
@@ -3751,12 +3766,12 @@ msgstr ""
 "Které dvě čísla se rovnají při vzájemném odečtení {0} a násobení {1}? "
 "Odpovězte pomocí dvou čísel (např. 1 2)"
 
-#: ../src/Games/Calculation/CalculationTwoNumbers.cs:129
+#: ../src/Games/Calculation/CalculationTwoNumbers.cs:131
 #, csharp-format
 msgid "x - y = {0}"
 msgstr "x - y = {0}"
 
-#: ../src/Games/Calculation/CalculationTwoNumbers.cs:136
+#: ../src/Games/Calculation/CalculationTwoNumbers.cs:138
 #, csharp-format
 msgid "x * y = {0}"
 msgstr "x * y = {0}"
@@ -3984,6 +3999,24 @@ msgstr "_Odinstalovat…"
 #: ../src/Clients/Classical/mono-addins-strings.xml.h:35
 msgid "_Unselect All"
 msgstr "_Zrušit výběr"
+
+#~ msgid ""
+#~ "Usage: gbrainy [options]\n"
+#~ "  --version\t\t\tPrint version information.\n"
+#~ "  --help\t\t\tPrint this usage message.\n"
+#~ "  --gamelist\t\t\tShows the list of available games.\n"
+#~ "  --customgame [game1, gameN]\tSpecifies a list of games to play during a "
+#~ "custom game.\n"
+#~ "  --norandom \t\t\tThe custom game list provided will not be randomized.\n"
+#~ "  --versions \t\t\tShow dependencies.\n"
+#~ msgstr ""
+#~ "Použití: gbrainy [přepínače]\n"
+#~ "  --version\t\t\tVypsat informace o verzi.\n"
+#~ "  --help\t\t\tVypsat tuto nápovědu.\n"
+#~ "  --gamelist\t\t\tZobrazit seznam dostupných her.\n"
+#~ "  --customgame [game1, gameN]\tUrčuje seznam her pro hraní vlastní hry.\n"
+#~ "  --norandom\t\t\tHry z poskytnutého vlastního seznamu nebudou náhodně.\n"
+#~ "  --versions\t\t\tZobrazit závislosti.\n"
 
 #~ msgid "John's father's sister's sister-in-law is also?"
 #~ msgstr "Švagrová od sestry Honzova otce je také?"
