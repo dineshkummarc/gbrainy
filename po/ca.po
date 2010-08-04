@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gbrainy\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-07-24 13:54+0200\n"
+"POT-Creation-Date: 2010-08-04 16:54+0200\n"
 "PO-Revision-Date: 2010-07-24 15:01+0100\n"
 "Last-Translator: Jordi Mas <jmas@softcatala.org>\n"
 "Language-Team: Catalan\n"
@@ -1641,34 +1641,48 @@ msgstr "Reprèn"
 msgid "Startup time {0}"
 msgstr "Temps d'iniciació {0}"
 
-#: ../src/Clients/Classical/CommandLine.cs:104
+#: ../src/Clients/Classical/CommandLine.cs:105
 #, csharp-format
-msgid "(build on {0})"
+msgid "(built on {0})"
 msgstr "(muntat al {0})"
 
-#: ../src/Clients/Classical/CommandLine.cs:116
+#: ../src/Clients/Classical/CommandLine.cs:117
 msgid "List of available games"
 msgstr "Llista de jocs disponibles"
 
-#: ../src/Clients/Classical/CommandLine.cs:178
+#: ../src/Clients/Classical/CommandLine.cs:180
+msgid "Usage: gbrainy [options]"
+msgstr "Ús: gbrainy [opcions]"
+
+#: ../src/Clients/Classical/CommandLine.cs:181
+msgid "  --version\t\t\tPrint version information."
+msgstr "  --version\t\t\tMostra informació sobre la versió."
+
+#: ../src/Clients/Classical/CommandLine.cs:182
+msgid "  --help\t\t\tPrint this usage message."
+msgstr "  --help\t\t\tImprimeix aquest missatge."
+
+#: ../src/Clients/Classical/CommandLine.cs:183
+msgid "  --gamelist\t\t\tShows the list of available games."
+msgstr "  --gamelist\t\t\tMostra la llista de jocs disponibles."
+
+#: ../src/Clients/Classical/CommandLine.cs:184
 msgid ""
-"Usage: gbrainy [options]\n"
-"  --version\t\t\tPrint version information.\n"
-"  --help\t\t\tPrint this usage message.\n"
-"  --gamelist\t\t\tShows the list of available games.\n"
 "  --customgame [game1, gameN]\tSpecifies a list of games to play during a "
-"custom game.\n"
-"  --norandom \t\t\tThe custom game list provided will not be randomized.\n"
-"  --versions \t\t\tShow dependencies.\n"
+"custom game."
 msgstr ""
-"Ús: gbrainy [opcions]\n"
-"  --version\t\t\tMostra informació sobre la versió.\n"
-"  --help\t\t\tImprimeix aquest missatge.\n"
-"  --gamelist\t\t\tMostra la llista de jocs disponibles.\n"
 "  --customgame [game1, gameN]\tEspecifica la llista de jocs personalitzada "
-"per a una sessió.\n"
-"  --norandom \t\t\tLa llista personalitzada de jocs no serà aleatoritzada.\n"
-"  --versions \t\t\tMostra les dependències.\n"
+"per a una sessió."
+
+#: ../src/Clients/Classical/CommandLine.cs:185
+msgid ""
+"  --norandom \t\t\tThe custom game list provided will not be randomized."
+msgstr ""
+"  --norandom \t\t\tLa llista personalitzada de jocs proporcionada no serà aleatoritzada."
+
+#: ../src/Clients/Classical/CommandLine.cs:186
+msgid "  --versions \t\t\tShow dependencies."
+msgstr "  --versions \t\t\tMostra les dependències."
 
 #. Translators: Replace by the name of the people that translated the application
 #: ../src/Clients/Classical/Dialogs/AboutDialog.cs:54
@@ -4014,3 +4028,4 @@ msgstr "_Desinstal·la..."
 #: ../src/Clients/Classical/mono-addins-strings.xml.h:35
 msgid "_Unselect All"
 msgstr "_Desselecciona-ho tot"
+
