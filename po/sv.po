@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gbrainy\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-08-09 17:25+0200\n"
-"PO-Revision-Date: 2010-08-09 20:10+0100\n"
+"POT-Creation-Date: 2010-08-10 02:05+0200\n"
+"PO-Revision-Date: 2010-08-10 02:16+0100\n"
 "Last-Translator: Daniel Nylander <po@danielnylander.se>\n"
 "Language-Team: Swedish <tp-sv@listor.tp-sv.se>\n"
 "MIME-Version: 1.0\n"
@@ -476,9 +476,10 @@ msgstr "Synonym"
 msgid "Tennis"
 msgstr "Tennis"
 
+# Hmm. Inte bra
 #: ../data/verbal_analogies.xml.h:63
 msgid "The ethical doctrine holding that only what is pleasant is an intrinsic good."
-msgstr ""
+msgstr "Den etiska läran säger att endast det som är behagligt är en väsentlig godhet."
 
 #: ../data/verbal_analogies.xml.h:64
 msgid "The first word is the instrument and the second what it measures."
@@ -486,7 +487,7 @@ msgstr "Första ordet är instrumentet och det andra vad det mäter."
 
 #: ../data/verbal_analogies.xml.h:65
 msgid "The practice of austere self-discipline in order to achieve a higher or spiritual idea."
-msgstr ""
+msgstr "Utövningen av strikt självdisciplin för att uppnå en högre eller andlig idé."
 
 #: ../data/verbal_analogies.xml.h:66
 msgid "The word 'taxidermist' is used to define a person that?"
@@ -1303,9 +1304,9 @@ msgid ", "
 msgstr ", "
 
 #: ../src/Core/Main/Verbal/AnalogiesMultipleOptions.cs:43
-#, fuzzy, csharp-format
+#, csharp-format
 msgid "Multiple options #{0}"
-msgstr "Multipla alternativ"
+msgstr "Multipla alternativ {0}"
 
 #. Translators: {0} is replaced by a question and {1} by the suggestions on how to answer
 #. E.g: What is the correct option? Answer A, B, C.
@@ -1340,9 +1341,9 @@ msgid "Possible answers are:"
 msgstr "Möjliga svar är:"
 
 #: ../src/Core/Main/Verbal/AnalogiesPairOfWordsCompare.cs:45
-#, fuzzy, csharp-format
+#, csharp-format
 msgid "Pair of words compare #{0}"
-msgstr "Jämför ordpar"
+msgstr "Jämför ordpar {0}"
 
 #: ../src/Core/Main/Verbal/AnalogiesPairOfWordsCompare.cs:61
 #, csharp-format
@@ -1355,9 +1356,9 @@ msgid "Words: {0}"
 msgstr "Ord: {0}"
 
 #: ../src/Core/Main/Verbal/AnalogiesPairOfWordsOptions.cs:42
-#, fuzzy, csharp-format
+#, csharp-format
 msgid "Pair of words #{0}"
-msgstr "Ordpar"
+msgstr "Ordpar {0}"
 
 #: ../src/Core/Main/Verbal/AnalogiesPairOfWordsOptions.cs:71
 #, csharp-format
@@ -1367,7 +1368,7 @@ msgstr "Vilket av dessa svar har enligt förhållandet mellan orden \"{0}\" det 
 #: ../src/Core/Main/Verbal/AnalogiesQuestionAnswer.cs:40
 #, csharp-format
 msgid "Question and answer #{0}"
-msgstr ""
+msgstr "Fråga och svar {0}"
 
 #: ../src/Clients/Classical/gbrainy.cs:360
 msgid "Play all the games"
@@ -2510,7 +2511,7 @@ msgstr "Tåg"
 
 #: ../src/Games/Logic/PuzzleTrains.cs:55
 msgid "The distance formula is 'distance = rate x time'."
-msgstr ""
+msgstr "Avståndsformeln är \"avstånd = hastighet x tid'."
 
 #. Translators:
 #. - {0}, {1} and {2} are always greater than 2
@@ -2519,8 +2520,8 @@ msgstr ""
 #, csharp-format
 msgid "A train leaves the station traveling at {0} mph. {1} hour later a second train leaves the station traveling in the same direction at {2} mph. How many hours does it take the second train to overtake the first train?"
 msgid_plural "A train leaves the station traveling at {0} mph. {1} hours later a second train leaves the station traveling in the same direction at {2} mph. How many hours does it take the second train to overtake the first train?"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Ett tåg lämnar stationen och åker i {0} km/h. {1} timme senare lämnar ett annat tåg stationen i samma riktning fast i {2} km/h. Hur många timmar tar det för det andra tåget att köra förbi det första tåget?"
+msgstr[1] "Ett tåg lämnar stationen och åker i {0} km/h. {1} timmar senare lämnar ett annat tåg stationen i samma riktning fast i {2} km/h. Hur många timmar tar det för det andra tåget att köra förbi det första tåget?"
 
 #: ../src/Games/Logic/PuzzleTrains.cs:88
 #, csharp-format
@@ -2533,7 +2534,7 @@ msgstr "Du kan räkna ut svaret genom att multiplicera hastigheten för det andr
 #: ../src/Games/Logic/PuzzleTrains.cs:106
 #, csharp-format
 msgid "Two trains separated by {0} miles are heading towards each other on straight parallel tracks. One travels at {1} mph and the other at {2} mph. In how many hours do they meet?"
-msgstr ""
+msgstr "Två tåg separerade med {0} kilometer är på väg mot varandra på raka, parallella spår. Ett åker i {1} km/h och det andra i {2} km/h. Hur många timmar tar det innan de möts?"
 
 #: ../src/Games/Logic/PuzzleTrains.cs:109
 #: ../src/Games/Logic/PuzzleTrains.cs:130
@@ -2547,7 +2548,7 @@ msgstr "Du kan räkna ut svaret genom att dividera avståndet med summan av båd
 #: ../src/Games/Logic/PuzzleTrains.cs:127
 #, csharp-format
 msgid "Two trains on straight parallel tracks leave from the same point and time traveling in opposite directions at {0} and {1} mph respectively. In how many hours they will be {2} miles apart?"
-msgstr ""
+msgstr "Två tåg på raka, parallella spår som går från samma punkt och tid, åker i motsatt riktning i {0} och {1} km/h respektive. Hur många timmar kommer det att ta innan de är {2} kilometer från varandra?"
 
 #: ../src/Games/Logic/PuzzleTriangles.cs:34
 msgid "Triangles"
@@ -2930,7 +2931,7 @@ msgstr "Enligt talen: {0}. Vilket av följande tal är det närmsta till genomsn
 
 #: ../src/Games/Calculation/CalculationAverage.cs:62
 msgid "The average of a list of numbers is the sum of all of the numbers divided by the number of items in the list."
-msgstr ""
+msgstr "Genomsnittet av en lista av tal är summan av alla talen dividerat med antalet objekt i listan."
 
 #: ../src/Games/Calculation/CalculationAverage.cs:67
 #, csharp-format
