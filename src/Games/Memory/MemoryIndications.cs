@@ -60,7 +60,7 @@ namespace gbrainy.Games.Memory
 				const double line_length = 0.045;
 				const double points = 0.045;
 
-				if (type == Type.Start) {
+				if (type == Indication.Type.Start) {
 					gr.Rectangle (x, y, points, points);
 					gr.DrawTextCentered (x + points /2 , y + points /2, ((int)obj).ToString ());
 					gr.Stroke ();
@@ -82,7 +82,7 @@ namespace gbrainy.Games.Memory
 						break;
 					}
 			
-				} else if (type == Type.Turn) {
+				} else if (type == Indication.Type.Turn) {
 					gr.MoveTo (x, y);
 					switch ((TurnDirection) obj) {
 					case TurnDirection.Right:
@@ -101,7 +101,7 @@ namespace gbrainy.Games.Memory
 
 					gr.LineTo (x, y);
 					gr.Stroke ();
-				} else if (type == Type.End) {
+				} else if (type == Indication.Type.End) {
 					switch ((TurnDirection) next_prev.obj) {
 					case TurnDirection.Right:
 						y -= points / 2; 
@@ -127,9 +127,9 @@ namespace gbrainy.Games.Memory
 			public override string ToString ()
 			{
 				switch (type) {
-				case Type.Start:
+				case Indication.Type.Start:
 					return String.Format (Catalog.GetString ("Start at point number {0}"), (int) obj);
-				case Type.Turn: {
+				case Indication.Type.Turn: {
 					switch ((TurnDirection) obj) {
 					case TurnDirection.Right:
 						return Catalog.GetString ("Move right");
@@ -142,7 +142,7 @@ namespace gbrainy.Games.Memory
 					}
 					break;
 				}
-				case Type.End:
+				case Indication.Type.End:
 					return String.Format (Catalog.GetString ("End at point {0}"), obj);
 				}
 				return null;
