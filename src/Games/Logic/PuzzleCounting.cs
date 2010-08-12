@@ -17,12 +17,10 @@
  * Boston, MA 02111-1307, USA.
  */
 
-using Cairo;
 using Mono.Unix;
 using System;
 
 using gbrainy.Core.Main;
-using gbrainy.Core.Libraries;
 
 namespace gbrainy.Games.Logic
 {

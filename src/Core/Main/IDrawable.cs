@@ -17,10 +17,6 @@
  * Boston, MA 02111-1307, USA.
  */
 
-using System;
-using System.ComponentModel;
-
-using gbrainy.Core.Libraries;
 
 namespace gbrainy.Core.Main
 {

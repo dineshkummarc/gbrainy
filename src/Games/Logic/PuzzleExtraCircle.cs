@@ -22,7 +22,6 @@ using Cairo;
 using Mono.Unix;
 
 using gbrainy.Core.Main;
-using gbrainy.Core.Libraries;
 
 namespace gbrainy.Games.Logic
 {

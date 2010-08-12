@@ -25,7 +25,6 @@ using System.Diagnostics;
 using Gdk;
 
 using gbrainy.Core.Main;
-using gbrainy.Core.Libraries;
 using gbrainy.Core.Platform;
 
 #if MONO_ADDINS

@@ -19,11 +19,8 @@
 
 using System;
 using Cairo;
-using Mono.Unix;
-using System.Runtime.InteropServices;
 using Pango;
 
-using gbrainy.Core.Main;
 
 namespace gbrainy.Core.Libraries
 {

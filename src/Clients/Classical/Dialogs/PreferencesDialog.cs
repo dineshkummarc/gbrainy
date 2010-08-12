@@ -20,7 +20,6 @@
 using System;
 using Gtk;
 using Mono.Unix;
-using System.Collections;
 
 using gbrainy.Core.Main;
 

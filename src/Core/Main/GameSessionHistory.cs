@@ -18,13 +18,7 @@
  */
 
 using System;
-using Mono.Unix;
-using System.Timers;
-using System.ComponentModel;
 using System.Xml.Serialization;
-
-using gbrainy.Core.Views;
-using gbrainy.Core.Libraries;
 
 namespace gbrainy.Core.Main
 {

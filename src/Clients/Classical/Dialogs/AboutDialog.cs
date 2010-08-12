@@ -22,8 +22,6 @@ using Gtk;
 using Gdk;
 using Mono.Unix;
 using System.Text;
-using System.Reflection;
-using System.Runtime.InteropServices;
 
 namespace gbrainy.Clients.Classical
 {

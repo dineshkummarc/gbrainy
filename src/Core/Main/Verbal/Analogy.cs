@@ -18,12 +18,6 @@
  */
 
 using System;
-using System.Xml;
-using System.IO;
-using System.Collections.Generic;
-
-using Cairo;
-using Mono.Unix;
 
 namespace gbrainy.Core.Main.Verbal
 {

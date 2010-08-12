@@ -18,12 +18,10 @@
  */
 
 using System;
-using Cairo;
 using System.Text;
 using Mono.Unix;
 
 using gbrainy.Core.Main;
-using gbrainy.Core.Libraries;
 using gbrainy.Core.Toolkit;
 
 namespace gbrainy.Games.Logic

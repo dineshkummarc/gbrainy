@@ -18,9 +18,6 @@
  */
 
 using System;
-using System.Collections;
-using System.Collections.Generic;
-using Mono.Unix;
 
 using gbrainy.Games.Calculation;
 using gbrainy.Games.Logic;

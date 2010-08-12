@@ -24,7 +24,6 @@ using Mono.Unix;
 using System.Collections.Generic;
 
 using gbrainy.Core.Main;
-using gbrainy.Core.Libraries;
 using gbrainy.Core.Toolkit;
 
 namespace gbrainy.Core.Views

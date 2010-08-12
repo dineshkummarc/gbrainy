@@ -23,7 +23,6 @@ using Mono.Unix;
 using System.Timers;
 
 using gbrainy.Core.Views;
-using gbrainy.Core.Libraries;
 
 namespace gbrainy.Core.Main
 {

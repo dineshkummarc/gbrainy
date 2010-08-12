@@ -24,8 +24,6 @@ using System.Text.RegularExpressions;
 using System.Text;
 using Mono.Unix;
 
-using gbrainy.Core.Views;
-using gbrainy.Core.Libraries;
 using gbrainy.Core.Toolkit;
 
 namespace gbrainy.Core.Main

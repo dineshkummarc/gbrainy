@@ -20,8 +20,6 @@
 using System;
 using System.ComponentModel;
 
-using gbrainy.Core.Libraries;
-
 namespace gbrainy.Core.Main
 {
 	// Used by any class that can draw and due to logic requirements may need to request a redraw

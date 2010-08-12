@@ -17,10 +17,8 @@
  * Boston, MA 02111-1307, USA.
  */
 
-using System;
 using Cairo;
 
-using gbrainy.Core.Libraries;
 using gbrainy.Core.Main;
 
 namespace gbrainy.Core.Toolkit

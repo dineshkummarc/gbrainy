@@ -18,7 +18,6 @@
  */
 
 using System;
-using Mono.Unix;
 
 namespace gbrainy.Core.Main
 {

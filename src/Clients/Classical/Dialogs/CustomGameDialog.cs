@@ -23,7 +23,6 @@ using Mono.Unix;
 using System.Collections.Generic;
 
 using gbrainy.Core.Main;
-using gbrainy.Core.Libraries;
 
 namespace gbrainy.Clients.Classical
 {

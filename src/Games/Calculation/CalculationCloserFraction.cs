@@ -18,11 +18,9 @@
  */
 
 using System;
-using Cairo;
 using Mono.Unix;
 
 using gbrainy.Core.Main;
-using gbrainy.Core.Libraries;
 using gbrainy.Core.Toolkit;
 
 namespace gbrainy.Games.Calculation

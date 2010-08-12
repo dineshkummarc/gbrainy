@@ -24,7 +24,6 @@ using Mono.Unix;
 using System.Collections;
 
 using gbrainy.Core.Main;
-using gbrainy.Core.Libraries;
 using gbrainy.Core.Toolkit;
 
 namespace gbrainy.Games.Logic

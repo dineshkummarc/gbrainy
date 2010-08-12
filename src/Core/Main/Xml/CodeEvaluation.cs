@@ -18,13 +18,10 @@
  */
 
 using System;
-using System.Collections.Generic;
-using System.IO;
 using System.Text;
 using System.Text.RegularExpressions;
 
 using Mono.CSharp;
-using Mono.Unix;
 
 namespace gbrainy.Core.Main.Xml
 {

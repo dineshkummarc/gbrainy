@@ -20,7 +20,6 @@
 using System;
 
 using gbrainy.Core.Main;
-using gbrainy.Core.Libraries;
 
 namespace gbrainy.Core.Views
 {

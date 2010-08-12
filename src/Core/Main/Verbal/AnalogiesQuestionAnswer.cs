@@ -18,11 +18,9 @@
  */
 
 using System;
-using System.IO;
 using System.Collections.Generic;
 
 using Mono.Unix;
-using Cairo;
 
 namespace gbrainy.Core.Main.Verbal
 {
