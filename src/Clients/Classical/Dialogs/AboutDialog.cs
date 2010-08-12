@@ -82,7 +82,10 @@ namespace gbrainy.Clients.Classical
 		{
 			try {
 				return new Pixbuf (System.Reflection.Assembly.GetEntryAssembly (), resource);
-			} catch {
+			} 
+			catch (Exception e)
+			{
+				Console.WriteLine ("AboutDialog.LoadFromAssembly. Could not load resource {0}. Error {1}", resource, e);
 				return null;
 			}
 		}

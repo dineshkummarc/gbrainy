@@ -205,7 +205,7 @@ namespace gbrainy.Core.Main
 
 			catch (Exception e)
 			{
-				Console.WriteLine ("GameManager.LoadAssemblyGame. Exception: {0}", e);
+				Console.WriteLine ("GameManager.LoadAssemblyGames. Could not load file {0}. Error {1}", file, e);
 			}
 		}
 
@@ -291,7 +291,7 @@ namespace gbrainy.Core.Main
 			}
 			catch (Exception e)
 			{
-				Console.WriteLine (String.Format ("Exception {0} when loading the plugins", e));
+				Console.WriteLine ("GameManager.LoadPlugins. Error loading plugins. Error {0}", e);
 			}
 	#endif
 		}

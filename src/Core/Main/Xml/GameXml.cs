@@ -164,7 +164,7 @@ namespace gbrainy.Core.Main.Xml
 				}
 				catch (Exception e)
 				{
-					Console.WriteLine ("GameXml.Initialize {0}", e);
+					Console.WriteLine ("GameXml.Initialize. Error {0}", e);
 				}
 			}
 

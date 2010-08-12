@@ -710,7 +710,11 @@ namespace gbrainy.Clients.Classical
 		{
 			try {
 				Unix.SetProcessName ("gbrainy");
-			} catch {}
+			} 
+			catch (Exception e)
+			{
+				Console.WriteLine ("gbrainy.Main. Could not set process name. Error {0}", e);
+			}
 
 			DateTime start_time = DateTime.Now;
 

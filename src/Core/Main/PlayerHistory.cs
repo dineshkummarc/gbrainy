@@ -100,21 +100,25 @@ namespace gbrainy.Core.Main
 		
 			catch (Exception e)
 			{
-				Console.WriteLine ("PlayerHistory. Cannot save {0}", e);
+				Console.WriteLine ("PlayerHistory.Save. Could not save file {0}. Error {1}", file, e);
 			}
 		}
 
 		public void Load ()
 		{
-			try {
+			try {				
+				if (File.Exists (file) == false)
+					return;
+
 				using (FileStream str = File.OpenRead (file))
 				{
 					XmlSerializer bf = new XmlSerializer (typeof (List <GameSessionHistory>));
 				    	games = (List <GameSessionHistory>) bf.Deserialize(str);
 				}
 			}
-			catch (Exception)
+			catch (Exception e)
 			{
+				Console.WriteLine ("PlayerHistory.Load. Could not load file {0}. Error {1}", file, e);
 			}
 		}	
 	}

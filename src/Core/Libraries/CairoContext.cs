@@ -238,9 +238,9 @@ namespace gbrainy.Core.Libraries
 					DrawImage (image, x, y, width, height);
 				}
 			}
-			catch (Exception)
+			catch (Exception e)
 			{
-				return;
+				Console.WriteLine ("CairoContext.DrawImageFromAssembly. Could not load resource {0}. Error {1}", resource, e);
 			}
 		}
 
@@ -254,7 +254,7 @@ namespace gbrainy.Core.Libraries
 			}
 			catch (Exception e)
 			{
-				Console.WriteLine ("CairoContext. Error '{0}' when drawing image from filename {1}", e.Message, filename);
+				Console.WriteLine ("CairoContext.DrawImageFromFile. Could not load file {0}. Error {1}", filename, e);
 			}
 		}
 

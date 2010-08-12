@@ -129,8 +129,9 @@ namespace gbrainy.Core.Main
 				properties.WriteXml (writer);
 				writer.Close ();
 			}		
-			catch (Exception)
+			catch (Exception e)
 			{
+				Console.WriteLine ("Preferences.Save. Could not save file {0}. Error {1}", file, e);
 			}
 		}
 	
@@ -170,14 +171,18 @@ namespace gbrainy.Core.Main
 		{
 			try {
 				LoadDefaultValues ();
+				
+				if (File.Exists (file) == false)
+					return;
+
 				XmlTextReader reader = new XmlTextReader (file);
 				properties.ReadXml (reader);
 				reader.Close ();
 			}
-			catch (Exception)
+			catch (Exception e)
 			{
+				Console.WriteLine ("Preferences.Load. Could not load file {0}. Error {1}", file, e);
 			}
 		}
-	
 	}
 }
