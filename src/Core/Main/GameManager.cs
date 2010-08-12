@@ -309,15 +309,21 @@ namespace gbrainy.Core.Main
 			available_games.Clear ();
 		}
 
-		public void ShowGamesSummary ()
+		public string GetGamesSummary ()
 		{
+			String s = string.Empty;
 	#if MONO_ADDINS
-				Console.WriteLine ("Pluggin database:" +
-					System.IO.Path.Combine (Environment.GetFolderPath (Environment.SpecialFolder.ApplicationData), "gbrainy"));
+			s += Catalog.GetString ("Pluggin database:") + " " + 
+					System.IO.Path.Combine (Environment.GetFolderPath (Environment.SpecialFolder.ApplicationData), "gbrainy");
+
+			s += Environment.NewLine;
 	#endif
-			Console.WriteLine (Catalog.GetString ("Games registered: {0}: {1} logic puzzles, {2} calculation trainers, {3} memory trainers, {4} verbal analogies"),
+			// Translators: 'Games registered' is the games know to gbrainy (build-in and load from addins-in and external files)
+			s += String.Format (Catalog.GetString ("Games registered: {0}: {1} logic puzzles, {2} calculation trainers, {3} memory trainers, {4} verbal analogies"),
 					cnt_logic + cnt_memory + cnt_calculation + cnt_verbal,
 					cnt_logic, cnt_calculation, cnt_memory, cnt_verbal);
+
+			return s;
 		}
 
 		// Adds all the games and its variants into the available games list

@@ -99,7 +99,7 @@ namespace gbrainy.Clients.Classical
 		{
 			session = new GameSession ();
 			GameManagerPreload (session.GameManager);
-			session.GameManager.ShowGamesSummary ();
+			Console.WriteLine (session.GameManager.GetGamesSummary ());
 
 			session.GameManager.ColorBlind = Preferences.GetBoolValue (Preferences.ColorBlindKey);
 			session.DrawRequest += SessionDrawRequest;
