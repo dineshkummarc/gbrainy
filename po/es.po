@@ -1,4 +1,4 @@
-# translation of gbrainy.HEAD.po to Español
+# translation of gbrainy.master.po to Español
 # Spanish translation for gbrainy.
 # This file is distributed under the same license as the gbrainy package.
 #
@@ -8,11 +8,11 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: gbrainy.HEAD\n"
+"Project-Id-Version: gbrainy.master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=gbrainy&component=general\n"
-"POT-Creation-Date: 2010-08-12 11:22+0000\n"
-"PO-Revision-Date: 2010-08-16 08:47+0200\n"
+"POT-Creation-Date: 2010-08-17 15:12+0000\n"
+"PO-Revision-Date: 2010-08-17 18:03+0200\n"
 "Last-Translator: Jorge González <jorgegonz@svn.gnome.org>\n"
 "Language-Team: Español <gnome-es-list@gnome.org>\n"
 "MIME-Version: 1.0\n"
@@ -148,9 +148,12 @@ msgstr[1] ""
 "compuesto del 10% anual. ¿Cuánto dinero tendrás después de 2 años?"
 
 #: ../data/games.xml.h:1
+#| msgid ""
+#| "A palindromic number is number that remains the same when its digits are "
+#| "reversed (e.g.: 2112)."
 msgid ""
-"A palindromic number is number that remains the same when its digits are "
-"reversed (e.g.: 2112)."
+"A palindromic number remains the same when its digits are reversed (e.g.: "
+"2112)."
 msgstr ""
 "Un número palíndromo es un número que permanece igual cuando se cambian sus "
 "dígitos (ej: 2112)."
@@ -1094,8 +1097,9 @@ msgid "whirlpool / water | tornado"
 msgstr "remolino / agua | tornado"
 
 #: ../data/verbal_analogies.xml.h:188
-msgid "wild"
-msgstr "salvaje"
+#| msgid "wind | air"
+msgid "wild | savage"
+msgstr "salvaje | feroz"
 
 #: ../data/verbal_analogies.xml.h:189
 msgid "win"
@@ -1123,94 +1127,112 @@ msgstr "muñeca"
 msgid "Get ready to memorize the next objects..."
 msgstr "Prepárate para memorizar los siguientes objetos…"
 
-#: ../src/Core/Views/FinishView.cs:91
+#: ../src/Core/Views/FinishView.cs:97
 #: ../src/Core/Views/PlayerHistoryView.cs:67
 #: ../src/Clients/Classical/Dialogs/PlayerHistoryDialog.cs:64
 msgid "Total"
 msgstr "Total"
 
-#: ../src/Core/Views/FinishView.cs:98 ../src/Core/Main/GameTypes.cs:44
+#: ../src/Core/Views/FinishView.cs:104 ../src/Core/Main/GameTypes.cs:44
 #: ../src/Clients/Classical/gbrainy.cs:366
 msgid "Logic"
 msgstr "Lógica"
 
-#: ../src/Core/Views/FinishView.cs:105 ../src/Core/Main/GameTypes.cs:48
+#: ../src/Core/Views/FinishView.cs:111 ../src/Core/Main/GameTypes.cs:48
 #: ../src/Clients/Classical/gbrainy.cs:371
 msgid "Calculation"
 msgstr "Cálculo"
 
-#: ../src/Core/Views/FinishView.cs:112 ../src/Core/Main/GameTypes.cs:46
+#: ../src/Core/Views/FinishView.cs:118 ../src/Core/Main/GameTypes.cs:46
 #: ../src/Clients/Classical/gbrainy.cs:377
 msgid "Memory"
 msgstr "Memoria"
 
-#: ../src/Core/Views/FinishView.cs:119 ../src/Core/Main/GameTypes.cs:50
+#: ../src/Core/Views/FinishView.cs:125 ../src/Core/Main/GameTypes.cs:50
 #: ../src/Clients/Classical/gbrainy.cs:383
 msgid "Verbal"
 msgstr "Verbal"
 
-#: ../src/Core/Views/FinishView.cs:135
+#: ../src/Core/Views/FinishView.cs:141
 msgid "Score"
 msgstr "Puntuación"
 
-#: ../src/Core/Views/FinishView.cs:145
+#: ../src/Core/Views/FinishView.cs:151
 #, csharp-format
 msgid "Games won: {0} ({1} played)"
 msgstr "Partidos ganados: {0} ({1} jugadas)"
 
-#: ../src/Core/Views/FinishView.cs:147
+#: ../src/Core/Views/FinishView.cs:153
 #, csharp-format
 msgid "{0}. Games won: {1} ({2} played)"
 msgstr "{0}. Partidas ganadas: {1} ({2} jugadas)"
 
-#: ../src/Core/Views/FinishView.cs:151
+#: ../src/Core/Views/FinishView.cs:157
 #, csharp-format
 msgid "Time played {0} (average per game {1})"
 msgstr "Tiempo jugado {0} (media por partida {1})"
 
-#: ../src/Core/Views/FinishView.cs:163
+#: ../src/Core/Views/FinishView.cs:165
+msgid "For details on how gbrainy's scoring works refer to the help."
+msgstr ""
+"Para obtener más detalles acerca de cómo funciona la puntuación en gbrainy "
+"consulte la ayuda."
+
+#: ../src/Core/Views/FinishView.cs:175
 msgid "Tips for your next games"
 msgstr "Consejos para tus siguientes partidas"
 
-#: ../src/Core/Views/FinishView.cs:191
+#: ../src/Core/Views/FinishView.cs:203
 msgid "Congratulations! New personal record"
 msgstr "¡Enhorabuena! Récord personal nuevo."
 
-#: ../src/Core/Views/FinishView.cs:201
-#, csharp-format
-msgid ""
-"By scoring {0}% in logic puzzle games you have established a new personal "
-"record. Your previous record was {1}%."
-msgstr ""
-"Al puntuar {0}% en los puzles de lógica has establecido un récord personal "
-"nuevo. Tu récord anterior era {1}%."
-
-#: ../src/Core/Views/FinishView.cs:207
-#, csharp-format
-msgid ""
-"By scoring {0}% in calculation games you have established a new personal "
-"record. Your previous record was {1}%."
-msgstr ""
-"Al puntuar {0}% en juegos de cálculo has establecido un récord personal "
-"nuevo. Tu récord anterior era {1}%."
-
 #: ../src/Core/Views/FinishView.cs:213
 #, csharp-format
+#| msgid ""
+#| "By scoring {0}% in logic puzzle games you have established a new personal "
+#| "record. Your previous record was {1}%."
 msgid ""
-"By scoring {0}% in memory games you have established a new personal record. "
-"Your previous record was {1}%."
+"By scoring {0} in logic puzzle games you have established a new personal "
+"record. Your previous record was {1}."
 msgstr ""
-"Al puntuar {0}% en los juegos de memoria has establecido un récord personal "
-"nuevo. Tu récord anterior era {1}%."
+"Al puntuar {0} en los puzles de lógica has establecido un récord personal "
+"nuevo. Tu récord anterior era {1}."
 
 #: ../src/Core/Views/FinishView.cs:219
 #, csharp-format
+#| msgid ""
+#| "By scoring {0}% in calculation games you have established a new personal "
+#| "record. Your previous record was {1}%."
 msgid ""
-"By scoring {0}% in verbal analogies you have established a new personal "
-"record. Your previous record was {1}%."
+"By scoring {0} in calculation games you have established a new personal "
+"record. Your previous record was {1}."
 msgstr ""
-"Al puntuar {0}% en las analogías verbales has establecido un récord personal "
-"nuevo. Tu récord anterior era {1}%."
+"Al puntuar {0} en juegos de cálculo has establecido un récord personal "
+"nuevo. Tu récord anterior era {1}."
+
+#: ../src/Core/Views/FinishView.cs:225
+#, csharp-format
+#| msgid ""
+#| "By scoring {0}% in memory games you have established a new personal "
+#| "record. Your previous record was {1}%."
+msgid ""
+"By scoring {0} in memory games you have established a new personal record. "
+"Your previous record was {1}."
+msgstr ""
+"Al puntuar {0} en los juegos de memoria has establecido un récord personal "
+"nuevo. Tu récord anterior era {1}."
+
+#: ../src/Core/Views/FinishView.cs:231
+#, csharp-format
+#| msgid ""
+#| "By scoring {0}% in verbal analogies you have established a new personal "
+#| "record. Your previous record was {1}%."
+msgid ""
+"By scoring {0} in verbal analogies you have established a new personal "
+"record. Your previous record was {1}."
+msgstr ""
+"Al puntuar {0} en las analogías verbales has establecido un récord personal "
+"nuevo. Tu récord anterior era {1}."
 
 #: ../src/Core/Views/WelcomeView.cs:61
 msgid "Logic puzzles. Challenge your reasoning and thinking skills."
@@ -1341,12 +1363,12 @@ msgstr "H"
 msgid "Figure {0}"
 msgstr "Figura {0}"
 
-#: ../src/Core/Main/GameManager.cs:316
+#: ../src/Core/Main/GameManager.cs:319
 msgid "Pluggin database:"
 msgstr "Base de datos de complementos:"
 
 #. Translators: 'Games registered' is the games know to gbrainy (build-in and load from addins-in and external files)
-#: ../src/Core/Main/GameManager.cs:322
+#: ../src/Core/Main/GameManager.cs:325
 #, csharp-format
 msgid ""
 "Games registered: {0}: {1} logic puzzles, {2} calculation trainers, {3} "
@@ -1357,8 +1379,9 @@ msgstr ""
 
 #: ../src/Core/Main/GameSession.cs:175
 #, csharp-format
-msgid "Games played: {0} ({1}% score)"
-msgstr "Partidas jugadas: {0} (puntuación {1}%)"
+#| msgid "Games played: {0} ({1}% score)"
+msgid "Games played: {0} (Score: {1})"
+msgstr "Partidas jugadas: {0} (puntuación {1})"
 
 #: ../src/Core/Main/GameSession.cs:176
 #, csharp-format
@@ -1637,7 +1660,7 @@ msgstr ""
 msgid "Resume"
 msgstr "Reanudar"
 
-#: ../src/Clients/Classical/gbrainy.cs:738
+#: ../src/Clients/Classical/gbrainy.cs:742
 #, csharp-format
 msgid "Startup time {0}"
 msgstr "Tiempo de inicio {0}"
@@ -4032,6 +4055,9 @@ msgstr "_Desinstalar…"
 #: ../src/Clients/Classical/mono-addins-strings.xml.h:35
 msgid "_Unselect All"
 msgstr "_Deseleccionar todo"
+
+#~ msgid "wild"
+#~ msgstr "salvaje"
 
 #~ msgid "John's father's sister's sister-in-law is also?"
 #~ msgstr "¿La cuñada de la hermana del padre de Juan también es?"
