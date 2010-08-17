@@ -143,17 +143,21 @@ namespace gbrainy.Games.Calculation
 
 			// Support case: -b - (-a) / (-b) * (-a)
 			if (type == SubGameTypes.Subtraction) {
-				int tmp;
+				int num_a, num_b;
+	
+				num_a = number_a;
+				num_b = number_b;
+				number_a = -num_b;
+				number_b = -num_a;
 
-				// No need to preserve original values since after CheckAnswer game is consider finished
-				tmp = number_a;
-				number_a = -number_b;
-				number_b = -tmp;
 				right_answer = String.Format ("{0} | {1}", number_a, number_b);
 				attributes = GameAnswerCheckAttributes.Trim | GameAnswerCheckAttributes.MatchAllInOrder;
-				return base.CheckAnswer (answer);
-			}
+				if (base.CheckAnswer (answer) == true) 
+					return true;
 
+				number_a = num_a;
+				number_b = num_b;
+			}
 			return false;
 		}
 	}
