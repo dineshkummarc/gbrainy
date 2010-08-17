@@ -8,9 +8,43 @@
 			int rslt = (2 * 360) + (num * 6);
 		</variables>
 		<_rationale>Rationale text</_rationale>
-		<svg file = "clock.svg" x = "0.25" y = "0.25" width = "0.5" height = "0.5"/>
+		<svg file = "clock.svg" x = "0.30" y = "0.40" width = "0.50" height = "0.60"/>
+		<string _text = "Sample text for unit tests" x = "0.5" y = "0.4" centered = "yes" size = "big"/>
 		<question>How many degrees rotates the minute hand of a clock?</question>
 		<question plural ="[rslt]">How many degrees rotates the minute hand of a clocks?</question>
 		<answer>[rslt]</answer>
 	</game>
+
+	<game>
+		<_name>Age</_name>
+		<type>Logic</type>
+		<difficulty>All</difficulty>
+		<svg file = "father_son.svg" x = "0.2" y = "0.25" width = "0.6" height = "0.4"/>
+		<variant>
+			<variables>
+				int father = 46;
+				int difference = 2 + random.Next (8);
+				int son = (father / 2) - difference;
+			</variables>
+			<question>John is 46 years old. His son is [difference] year younger than half of John's age. How old is John's son?</question>
+			<question plural ="[difference]">John is 46 years old. His son is [difference] years younger than half of John's age. How old is John's son?</question>
+			<answer>[son]</answer>
+		</variant>
+		<variant>
+			<variables>
+				int [] proportions = new int [] {3,4,5};
+				int [] years = new int [] {12, 16, 18};
+				int idx = random.Next (years.Length);
+
+				int ago = years [idx];
+				int proportion = proportions [idx];
+			</variables>
+			<question>John's age is nowadays 2 times his son's age. [ago] year ago, John was [proportion] times older than his son. How old is John's son nowadays?</question>
+			<question plural ="[ago]">John's age is nowadays 2 times his son's age. [ago] years ago, John was [proportion] times older than his son. How old is John's son nowadays?</question>
+			<answer>24</answer>
+			<rationale>[ago] year ago, John's age minus [ago] was equal to [proportion] times his son's age minus [ago].</rationale>
+			<rationale plural ="[ago]">[ago] years ago, John's age minus [ago] was equal to [proportion] times his son's age minus [ago].</rationale>
+		</variant>
+	</game>
+
 </games>

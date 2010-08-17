@@ -279,7 +279,7 @@ namespace gbrainy.Core.Main.Xml
 			for (int game = 0; game < games.Count; game++)
 			{
 				locators.Add (new DefinitionLocator (game, 0));
-				for (int variant = 0; variant < games[game].Variants.Count; variant++)
+				for (int variant = 1; variant < games[game].Variants.Count; variant++)
 					locators.Add (new DefinitionLocator (game, variant));
 			}
 		}

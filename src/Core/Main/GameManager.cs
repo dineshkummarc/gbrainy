@@ -223,21 +223,24 @@ namespace gbrainy.Core.Main
 
 			foreach (GameXmlDefinition game in xml_games.Definitions)
 			{
+				// If the game has variants the game definition is used as reference 
+				// but only the variants are playable. The first variant is used as game (IsGame = true)
 				available_games.Add (new GameLocator (type, cnt++, game.Type, true));
-				for (int i = 0; i < game.Variants.Count; i++)
+				
+				switch (game.Type) {
+				case GameTypes.LogicPuzzle:
+					cnt_logic++;
+					break;
+				case GameTypes.MathTrainer:
+					cnt_calculation++;
+					break;
+				default:
+					break;
+				}
+					
+				for (int i = 1; i < game.Variants.Count; i++)
 				{
 					available_games.Add (new GameLocator (type, cnt++, game.Type, false));
-
-					switch (game.Type) {
-					case GameTypes.LogicPuzzle:
-						cnt_logic++;
-						break;
-					case GameTypes.MathTrainer:
-						cnt_calculation++;
-						break;
-					default:
-						break;
-					}
 				}
 			}
 		}

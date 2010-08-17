@@ -69,7 +69,7 @@ namespace gbrainyTest
 
 				Game game = (Game) Activator.CreateInstance (locator.TypeOf, true);
 				game.Variant = locator.Variant;
-			
+
 				Assert.AreEqual (false, dictionary.ContainsKey (game.Name),
 					String.Format ("Game name {0} is duplicated", game.Name));
 
@@ -149,6 +149,32 @@ namespace gbrainyTest
 
 			manager.ResetAvailableGames ();
 			Assert.AreEqual (0, manager.AvailableGames.Length);
+		}
+
+		[Test]
+		public void XmlGames ()
+		{
+			GameManager manager = new GameManager ();
+			manager.GameType = GameSession.Types.AllGames;
+			manager.LoadGamesFromXml ("test_games.xml");
+
+			Assert.AreEqual (3, manager.AvailableGames.Length);
+			int logic_variants = 0;
+			int logic_games = 0;
+
+			foreach (GameManager.GameLocator locator in manager.AvailableGames)
+			{
+				if (locator.GameType != GameTypes.LogicPuzzle)
+					continue;
+
+				if (locator.IsGame == true)
+					logic_games++;
+				else
+					logic_variants++;
+
+			}
+			Assert.AreEqual (2, logic_games);
+			Assert.AreEqual (1, logic_variants);
 		}
 	}
 }
