@@ -67,24 +67,24 @@
   <list>
     <item>
       <p>
-        If you take less than the time expected to complete the game, you score 100%.
+        If you take less than the time expected to complete the game, you score 10 points.
       </p>
     </item>
     <item>
       <p>
-        If you take more than the time expected to complete the game, you score 80%.
+        If you take more than the time expected to complete the game, you score 8 points.
       </p>
     </item>
     <item>
       <p>
         If you take more than 2x the time expected to complete the game,
-        you score 70%.
+        you score 7 points.
       </p>
     </item>
     <item>
       <p>
         If you take more than 3x the time expected to complete the game,
-        you score 60%.
+        you score 6 points.
       </p>
     </item>
     <item>
@@ -96,12 +96,6 @@
   
   <section id="computing-scores">
     <title>Computing the totals</title>
-    <comment>
-      <cite date="2010-04-05" href="mailto:philbull@gmail.com">Phil Bull</cite>
-      <p>
-      In this section, does "logarithm of 20" mean score = log_20(sum(results))?
-      </p>
-    </comment>
     <p>
       <app>gbrainy</app> keeps track of the different games types played. To compute
       the final score of every set of game types it sums all the results of the 
@@ -111,7 +105,7 @@
     </p>
 	  <p>
 	    This means that when playing at medium difficult level, to get a score of 
-	    100% you need to score 100% on at least 20 games of every game type played.
+	    100 points you need to score 10 points on at least 20 games of every game type played.
 	  </p>
 	  <p>
 	    This may sound challenging, but it allows players to compare game scores from 

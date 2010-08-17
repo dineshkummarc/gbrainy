@@ -172,7 +172,7 @@ namespace gbrainy.Core.Main
 					return string.Empty;
 
 				String text;
-				text = String.Format (Catalog.GetString ("Games played: {0} ({1}% score)"), history.GamesPlayed, history.TotalScore);
+				text = String.Format (Catalog.GetString ("Games played: {0} (Score: {1})"), history.GamesPlayed, history.TotalScore);
 				text += String.Format (Catalog.GetString (" - Time: {0}"), current_time);
 
 				if (CurrentGame != null)

@@ -30,6 +30,7 @@ namespace gbrainy.Core.Views
 	{
 		GameSession session;
 		const int tips_shown = 4;
+		const double smaller_font = 0.018;
 
 		// Caching mechanism to use always the same tips during different redraws of the same view
 		int cached_sessionid;
@@ -57,9 +58,7 @@ namespace gbrainy.Core.Views
 	
 			gr.Rectangle (x, y - h * per, w, h * per);
 			gr.FillGradient (x, y - h * per, w, h * per, new Cairo.Color (0, 0, 1));
-			gr.MoveTo (x, (y - 0.04) - h * per);
-			gr.ShowPangoText (String.Format ("{0}%", percentage));
-			gr.Stroke ();
+			gr.DrawTextCentered (x + w / 2, (y - 0.03) - h * per, String.Format ("{0}", percentage));
 
 			gr.Save ();
 			gr.Color = new Cairo.Color (0, 0, 0);	
@@ -72,13 +71,20 @@ namespace gbrainy.Core.Views
 			gr.Restore ();
 		}
 
-		void DrawGraphicBar (CairoContextEx gr, double x, double y)
+		void DrawColumnBarGraphic (CairoContextEx gr, double x, double y)
 		{
-			const double area_w = 0.9, area_h = 0.28;
+			const double area_w = 0.85, area_h = 0.28;
 			const double bar_w = 0.05, bar_h = area_h - 0.02;
-			const double space_x = 0.09;
+			const double space_x = 0.08;
 		
 			gr.LineWidth = 0.005;
+
+			// Draw X reference values
+			gr.SetPangoFontSize (smaller_font);
+			gr.DrawTextAlignedRight (x + 0.05, y, "100");
+			gr.DrawTextAlignedRight (x + 0.05, y + area_h - 0.02, "0");
+
+			x += 0.06;
 
 			// Axis
 			gr.MoveTo (x, y);
@@ -150,10 +156,16 @@ namespace gbrainy.Core.Views
 			gr.MoveTo (x, y);
 			gr.ShowPangoText (String.Format (Catalog.GetString ("Time played {0} (average per game {1})"), session.GameTime, session.TimePerGame));
 		
-			y += 0.1;
-			DrawGraphicBar (gr, x, y);
-			y += 0.4;
+			y += 0.09;
+			DrawColumnBarGraphic (gr, x, y);
 
+			y += 0.36;
+			gr.MoveTo (x, y);
+			gr.SetPangoFontSize (smaller_font);
+			gr.ShowPangoText (Catalog.GetString ("For details on how gbrainy's scoring works refer to the help."));
+
+			y += 0.07;
+			gr.SetPangoNormalFontSize ();
 			records	= session.PlayerHistory.GetLastGameRecords ();
 			gr.MoveTo (x, y);
 
@@ -198,25 +210,25 @@ namespace gbrainy.Core.Views
 					switch (records[i].GameType) {
 					case GameTypes.LogicPuzzle:
 						s = String.Format (Catalog.
-							GetString ("By scoring {0}% in logic puzzle games you have established a new personal record. Your previous record was {1}%."),
+							GetString ("By scoring {0} in logic puzzle games you have established a new personal record. Your previous record was {1}."),
 							records[i].NewScore,
 							records[i].PreviousScore);
 						break;
 					case GameTypes.MathTrainer:
 						s = String.Format (Catalog.
-							GetString ("By scoring {0}% in calculation games you have established a new personal record. Your previous record was {1}%."),
+							GetString ("By scoring {0} in calculation games you have established a new personal record. Your previous record was {1}."),
 							records[i].NewScore,
 							records[i].PreviousScore);
 						break;
 					case GameTypes.MemoryTrainer:
 						s = String.Format (Catalog.
-							GetString ("By scoring {0}% in memory games you have established a new personal record. Your previous record was {1}%."),
+							GetString ("By scoring {0} in memory games you have established a new personal record. Your previous record was {1}."),
 							records[i].NewScore,
 							records[i].PreviousScore);
 						break;
 					case GameTypes.VerbalAnalogy:
 						s = String.Format (Catalog.
-							GetString ("By scoring {0}% in verbal analogies you have established a new personal record. Your previous record was {1}%."),
+							GetString ("By scoring {0} in verbal analogies you have established a new personal record. Your previous record was {1}."),
 							records[i].NewScore,
 							records[i].PreviousScore);
 						break;
