@@ -316,7 +316,7 @@ namespace gbrainy.Core.Main
 		{
 			String s = string.Empty;
 	#if MONO_ADDINS
-			s += Catalog.GetString ("Pluggin database:") + " " + 
+			s += Catalog.GetString ("Extensions database:") + " " + 
 					System.IO.Path.Combine (Environment.GetFolderPath (Environment.SpecialFolder.ApplicationData), "gbrainy");
 
 			s += Environment.NewLine;
