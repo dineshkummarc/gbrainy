@@ -1,0 +1,15 @@
+This is an experimental gbrainy web client using Mono's ASP.NET 3.5
+
+* User preferences
+
+To avoid deal with database access:
+
+- We use the user session InProc session handler. The status.Aspx will not work with other session types.
+- We store the user language using a cookie (named lang)
+
+* Localization
+
+Based on GNU GetText to reuse current translations
+
+
+

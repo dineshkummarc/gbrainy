@@ -148,7 +148,8 @@ namespace gbrainy.Core.Main
 		}
 
 		public GameManager GameManager {
-			get {return  game_manager;}
+			get { return game_manager;}
+			set { game_manager = value;}
 		}
 
 		public string TimePlayed {

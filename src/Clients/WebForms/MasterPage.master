@@ -1,0 +1,28 @@
+<%@ Master Language="C#" Inherits="WebForms.MasterPage" AutoEventWireup="true" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+	<title>Welcome to gbrainy.com main page</title>
+	<link href="styles.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<form runat="server">
+<div class="Header">
+			<asp:HyperLink class="HeaderText" text ="Home" NavigateUrl ="Default.aspx" runat="server"/>
+			<span class="HeaderText">Play</span>
+			<span class="HeaderText">Download</span>
+			<span class="HeaderText">Help</span>
+			<span class="HeaderText">About</span>
+			<span class="HeaderText">
+				<asp:DropDownList id = "languages_drop" AutoPostBack="True" ViewStateMode="Enabled"
+					onselectedindexchanged="OnSelectedIndexChanged" runat="server">
+            		</asp:DropDownList>
+			</span>
+</div>
+
+<div class="MainContent">
+    <asp:contentplaceholder id="main_placeholder" runat="server" />
+</div>
+</form>
+</body>
+</html>

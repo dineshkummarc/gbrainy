@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{6F788C5C-17C2-47BC-82C8-2D318D91CB76}</ProjectGuid>
+    <ProjectTypeGuids>{349C5851-65DF-11DA-9384-00065B846F21};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <RootNamespace>WebForms</RootNamespace>
+    <AssemblyName>gbrainyWeb</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin</OutputPath>
+    <DefineConstants>DEBUG</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>none</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="gbrainy.Core, Version=1.51.0.0, Culture=neutral, PublicKeyToken=null">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\gbrainy.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="gbrainy.Games, Version=1.51.0.0, Culture=neutral, PublicKeyToken=null">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\gbrainy.Games.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="Mono.Cairo" />
+    <Reference Include="Mono.Posix" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="web.config" />
+    <Content Include="Default.aspx" />
+    <Content Include="images\allgames-32.png" />
+    <Content Include="images\endgame-32.png" />
+    <Content Include="images\logic-games-32.png" />
+    <Content Include="images\math-games-32.png" />
+    <Content Include="images\memory-games-32.png" />
+    <Content Include="images\pause-32.png" />
+    <Content Include="images\resume-32.png" />
+    <Content Include="images\verbal-games-32.png" />
+    <Content Include="MasterPage.master" />
+    <Content Include="styles.css" />
+    <Content Include="Status.aspx" />
+    <Content Include="Global.asax" />
+    <Content Include="Finish.aspx" />
+    <Content Include="Game.aspx" />
+    <Content Include="..\..\..\po\ca.gmo">
+      <Link>locale\ca.gmo</Link>
+      <DeployService-Deploy>true</DeployService-Deploy>
+      <DeployService-RelativeDeployPath>../locale/ca/LC_MESSAGES/gbrainy.mo</DeployService-RelativeDeployPath>
+      <DeployService-TargetDirectoryId>ProgramFiles</DeployService-TargetDirectoryId>
+    </Content>
+    <Content Include="..\..\..\po\de.gmo">
+      <Link>locale\de.gmo</Link>
+      <DeployService-Deploy>true</DeployService-Deploy>
+      <DeployService-RelativeDeployPath>../locale/de/LC_MESSAGES/gbrainy.mo</DeployService-RelativeDeployPath>
+      <DeployService-TargetDirectoryId>ProgramFiles</DeployService-TargetDirectoryId>
+    </Content>
+    <Content Include="..\..\..\po\es.gmo">
+      <Link>locale\es.gmo</Link>
+      <DeployService-Deploy>true</DeployService-Deploy>
+      <DeployService-RelativeDeployPath>../locale/es/LC_MESSAGES/gbrainy.mo</DeployService-RelativeDeployPath>
+      <DeployService-TargetDirectoryId>ProgramFiles</DeployService-TargetDirectoryId>
+    </Content>
+    <Content Include="..\..\..\data\verbal_analogies.xml">
+      <Link>data\verbal_analogies.xml</Link>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Game.aspx.cs">
+      <DependentUpon>Game.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Game.aspx.designer.cs">
+      <DependentUpon>Game.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MasterPage.master.cs">
+      <DependentUpon>MasterPage.master</DependentUpon>
+    </Compile>
+    <Compile Include="MasterPage.master.designer.cs">
+      <DependentUpon>MasterPage.master</DependentUpon>
+    </Compile>
+    <Compile Include="LanguageSupport.cs" />
+    <Compile Include="Logger.cs" />
+    <Compile Include="Status.aspx.cs">
+      <DependentUpon>Status.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Status.aspx.designer.cs">
+      <DependentUpon>Status.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="WebSession.cs" />
+    <Compile Include="Finish.aspx.cs">
+      <DependentUpon>Finish.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Finish.aspx.designer.cs">
+      <DependentUpon>Finish.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v9.0\WebApplications\Microsoft.WebApplication.targets" />
+  <ProjectExtensions>
+    <MonoDevelop>
+      <Properties VerifyCodeBehindFields="true" VerifyCodeBehindEvents="true">
+        <XspParameters Port="8080" Address="127.0.0.1" SslMode="None" SslProtocol="Default" KeyType="None" CertFile="" KeyFile="" PasswordOptions="None" Password="" Verbose="true" />
+        <WebDeployTargets>
+          <Target Name="">
+            <FileCopier Handler="MonoDevelop.Deployment.LocalFileCopyHandler" TargetDirectory="/home/jordi/dev/gbrainy_web/src/Clients/WebForms/web" ctype="LocalFileCopyConfiguration" />
+          </Target>
+        </WebDeployTargets>
+      </Properties>
+    </MonoDevelop>
+  </ProjectExtensions>
+  <ItemGroup>
+    <Folder Include="images\" />
+    <Folder Include="locale\" />
+    <Folder Include="data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="TODO" />
+    <None Include="README" />
+    <None Include="..\..\..\data\games.xml">
+      <Link>data\games.xml</Link>
+    </None>
+  </ItemGroup>
+</Project>
