@@ -11,8 +11,8 @@ msgstr ""
 "Project-Id-Version: gbrainy.master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=gbrainy&component=general\n"
-"POT-Creation-Date: 2010-08-17 15:12+0000\n"
-"PO-Revision-Date: 2010-08-17 18:03+0200\n"
+"POT-Creation-Date: 2010-08-18 18:25+0000\n"
+"PO-Revision-Date: 2010-08-19 20:58+0200\n"
 "Last-Translator: Jorge González <jorgegonz@svn.gnome.org>\n"
 "Language-Team: Español <gnome-es-list@gnome.org>\n"
 "MIME-Version: 1.0\n"
@@ -148,9 +148,6 @@ msgstr[1] ""
 "compuesto del 10% anual. ¿Cuánto dinero tendrás después de 2 años?"
 
 #: ../data/games.xml.h:1
-#| msgid ""
-#| "A palindromic number is number that remains the same when its digits are "
-#| "reversed (e.g.: 2112)."
 msgid ""
 "A palindromic number remains the same when its digits are reversed (e.g.: "
 "2112)."
@@ -1097,7 +1094,6 @@ msgid "whirlpool / water | tornado"
 msgstr "remolino / agua | tornado"
 
 #: ../data/verbal_analogies.xml.h:188
-#| msgid "wind | air"
 msgid "wild | savage"
 msgstr "salvaje | feroz"
 
@@ -1188,9 +1184,6 @@ msgstr "¡Enhorabuena! Récord personal nuevo."
 
 #: ../src/Core/Views/FinishView.cs:213
 #, csharp-format
-#| msgid ""
-#| "By scoring {0}% in logic puzzle games you have established a new personal "
-#| "record. Your previous record was {1}%."
 msgid ""
 "By scoring {0} in logic puzzle games you have established a new personal "
 "record. Your previous record was {1}."
@@ -1200,9 +1193,6 @@ msgstr ""
 
 #: ../src/Core/Views/FinishView.cs:219
 #, csharp-format
-#| msgid ""
-#| "By scoring {0}% in calculation games you have established a new personal "
-#| "record. Your previous record was {1}%."
 msgid ""
 "By scoring {0} in calculation games you have established a new personal "
 "record. Your previous record was {1}."
@@ -1212,9 +1202,6 @@ msgstr ""
 
 #: ../src/Core/Views/FinishView.cs:225
 #, csharp-format
-#| msgid ""
-#| "By scoring {0}% in memory games you have established a new personal "
-#| "record. Your previous record was {1}%."
 msgid ""
 "By scoring {0} in memory games you have established a new personal record. "
 "Your previous record was {1}."
@@ -1224,9 +1211,6 @@ msgstr ""
 
 #: ../src/Core/Views/FinishView.cs:231
 #, csharp-format
-#| msgid ""
-#| "By scoring {0}% in verbal analogies you have established a new personal "
-#| "record. Your previous record was {1}%."
 msgid ""
 "By scoring {0} in verbal analogies you have established a new personal "
 "record. Your previous record was {1}."
@@ -1364,8 +1348,9 @@ msgid "Figure {0}"
 msgstr "Figura {0}"
 
 #: ../src/Core/Main/GameManager.cs:319
-msgid "Pluggin database:"
-msgstr "Base de datos de complementos:"
+#| msgid "Extensions"
+msgid "Extensions database:"
+msgstr "Base de datos de extensiones:"
 
 #. Translators: 'Games registered' is the games know to gbrainy (build-in and load from addins-in and external files)
 #: ../src/Core/Main/GameManager.cs:325
@@ -1377,48 +1362,47 @@ msgstr ""
 "Juegos registrados: {0}: {1} puzles lógicos, {2} entrenadores de cálculo, "
 "{3} entrenadores de memoria, {4} analogías verbales"
 
-#: ../src/Core/Main/GameSession.cs:175
+#: ../src/Core/Main/GameSession.cs:176
 #, csharp-format
-#| msgid "Games played: {0} ({1}% score)"
 msgid "Games played: {0} (Score: {1})"
 msgstr "Partidas jugadas: {0} (puntuación {1})"
 
-#: ../src/Core/Main/GameSession.cs:176
+#: ../src/Core/Main/GameSession.cs:177
 #, csharp-format
 msgid " - Time: {0}"
 msgstr " - Tiempo: {0}"
 
-#: ../src/Core/Main/GameSession.cs:179
+#: ../src/Core/Main/GameSession.cs:180
 #, csharp-format
 msgid "- Game: {0}"
 msgstr " - Juego: {0}"
 
-#: ../src/Core/Main/GameSession.cs:192
+#: ../src/Core/Main/GameSession.cs:193
 #, csharp-format
 msgid "Outstanding results"
 msgstr "Resultados asombrosos"
 
-#: ../src/Core/Main/GameSession.cs:194
+#: ../src/Core/Main/GameSession.cs:195
 #, csharp-format
 msgid "Excellent results"
 msgstr "Resultados excelentes"
 
-#: ../src/Core/Main/GameSession.cs:196
+#: ../src/Core/Main/GameSession.cs:197
 #, csharp-format
 msgid "Good results"
 msgstr "Buenos resultados"
 
-#: ../src/Core/Main/GameSession.cs:198
+#: ../src/Core/Main/GameSession.cs:199
 #, csharp-format
 msgid "Poor results"
 msgstr "Resultados pobres"
 
-#: ../src/Core/Main/GameSession.cs:199
+#: ../src/Core/Main/GameSession.cs:200
 #, csharp-format
 msgid "Disappointing results"
 msgstr "Resultados decepcionantes"
 
-#: ../src/Core/Main/GameSession.cs:261
+#: ../src/Core/Main/GameSession.cs:262
 msgid "Paused"
 msgstr "Pausado"
 
@@ -4055,6 +4039,9 @@ msgstr "_Desinstalar…"
 #: ../src/Clients/Classical/mono-addins-strings.xml.h:35
 msgid "_Unselect All"
 msgstr "_Deseleccionar todo"
+
+#~ msgid "Pluggin database:"
+#~ msgstr "Base de datos de complementos:"
 
 #~ msgid "wild"
 #~ msgstr "salvaje"
