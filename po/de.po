@@ -11,8 +11,8 @@ msgstr ""
 "Project-Id-Version: gbrainy master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=gbrainy&component=general\n"
-"POT-Creation-Date: 2010-08-06 12:52+0000\n"
-"PO-Revision-Date: 2010-08-08 10:44+0200\n"
+"POT-Creation-Date: 2010-08-18 18:25+0000\n"
+"PO-Revision-Date: 2010-08-18 20:39+0200\n"
 "Last-Translator: Wolfgang Stoeggl <c72578@yahoo.de>\n"
 "Language-Team: German <gnome-de@gnome.org>\n"
 "MIME-Version: 1.0\n"
@@ -152,11 +152,11 @@ msgstr[1] ""
 
 #: ../data/games.xml.h:1
 msgid ""
-"A palindromic number is number that remains the same when its digits are "
-"reversed (e.g.: 2112)."
+"A palindromic number remains the same when its digits are reversed (e.g.: "
+"2112)."
 msgstr ""
-"Eine palindromische Zahl ist eine Zahl, die gleich bleibt, wenn man die "
-"Reihenfolge der Ziffern umkehrt (z.B. 2112)."
+"Eine palindromische Zahl bleibt gleich, wenn man die Reihenfolge der Ziffern "
+"umkehrt (z.B. 2112)."
 
 #: ../data/games.xml.h:2
 msgid "Age"
@@ -1100,8 +1100,8 @@ msgid "whirlpool / water | tornado"
 msgstr "Whirlpool / Wasser | Tornado"
 
 #: ../data/verbal_analogies.xml.h:188
-msgid "wild"
-msgstr "wild"
+msgid "wild | savage"
+msgstr "wild | bissig"
 
 # Eventuell win im Originalstring statt wins, passend zu solve.
 #: ../data/verbal_analogies.xml.h:189
@@ -1122,130 +1122,134 @@ msgid "work"
 msgstr "arbeiten | werken"
 
 #. Body parts
-#: ../data/verbal_analogies.xml.h:194 ../src/Games/Memory/MemoryWords.cs:53
+#: ../data/verbal_analogies.xml.h:194 ../src/Games/Memory/MemoryWords.cs:51
 msgid "wrist"
 msgstr "Handgelenk"
 
 # Wurde aus Platzgründen kürzer übersetzt
-#: ../src/Core/Views/CountDownView.cs:82
+#: ../src/Core/Views/CountDownView.cs:81
 msgid "Get ready to memorize the next objects..."
 msgstr "Bereiten Sie Ihr Gedächtnis vor …"
 
-#: ../src/Core/Views/FinishView.cs:92
-#: ../src/Core/Views/PlayerHistoryView.cs:68
-#: ../src/Clients/Classical/Dialogs/PlayerHistoryDialog.cs:66
+#: ../src/Core/Views/FinishView.cs:97
+#: ../src/Core/Views/PlayerHistoryView.cs:67
+#: ../src/Clients/Classical/Dialogs/PlayerHistoryDialog.cs:64
 msgid "Total"
 msgstr "Insgesamt"
 
-#: ../src/Core/Views/FinishView.cs:99 ../src/Core/Main/GameTypes.cs:44
-#: ../src/Clients/Classical/gbrainy.cs:367
+#: ../src/Core/Views/FinishView.cs:104 ../src/Core/Main/GameTypes.cs:44
+#: ../src/Clients/Classical/gbrainy.cs:366
 msgid "Logic"
 msgstr "Logik"
 
-#: ../src/Core/Views/FinishView.cs:106 ../src/Core/Main/GameTypes.cs:48
-#: ../src/Clients/Classical/gbrainy.cs:372
+#: ../src/Core/Views/FinishView.cs:111 ../src/Core/Main/GameTypes.cs:48
+#: ../src/Clients/Classical/gbrainy.cs:371
 msgid "Calculation"
 msgstr "Rechnen"
 
-#: ../src/Core/Views/FinishView.cs:113 ../src/Core/Main/GameTypes.cs:46
-#: ../src/Clients/Classical/gbrainy.cs:378
+#: ../src/Core/Views/FinishView.cs:118 ../src/Core/Main/GameTypes.cs:46
+#: ../src/Clients/Classical/gbrainy.cs:377
 msgid "Memory"
 msgstr "Gedächtnis"
 
-#: ../src/Core/Views/FinishView.cs:120 ../src/Core/Main/GameTypes.cs:50
-#: ../src/Clients/Classical/gbrainy.cs:384
+#: ../src/Core/Views/FinishView.cs:125 ../src/Core/Main/GameTypes.cs:50
+#: ../src/Clients/Classical/gbrainy.cs:383
 msgid "Verbal"
 msgstr "Verbal"
 
-#: ../src/Core/Views/FinishView.cs:136
+#: ../src/Core/Views/FinishView.cs:141
 msgid "Score"
 msgstr "Ergebnis"
 
-#: ../src/Core/Views/FinishView.cs:146
+#: ../src/Core/Views/FinishView.cs:151
 #, csharp-format
 msgid "Games won: {0} ({1} played)"
 msgstr "Gewonnene Spiele: {0} ({1} gespielt)"
 
-#: ../src/Core/Views/FinishView.cs:148
+#: ../src/Core/Views/FinishView.cs:153
 #, csharp-format
 msgid "{0}. Games won: {1} ({2} played)"
 msgstr "{0}. Gewonnene Spiele: {1} ({2} gespielt)"
 
-#: ../src/Core/Views/FinishView.cs:152
+#: ../src/Core/Views/FinishView.cs:157
 #, csharp-format
 msgid "Time played {0} (average per game {1})"
 msgstr "Gespielte Zeit: {0} (Durchschnitt pro Spiel {1})"
 
-#: ../src/Core/Views/FinishView.cs:164
+#: ../src/Core/Views/FinishView.cs:165
+msgid "For details on how gbrainy's scoring works refer to the help."
+msgstr "Details, wie gbrainy Ergebnisse berechnet, finden Sie in der Hilfe."
+
+#: ../src/Core/Views/FinishView.cs:175
 msgid "Tips for your next games"
 msgstr "Hinweise für die nächsten Spiele"
 
-#: ../src/Core/Views/FinishView.cs:192
+#: ../src/Core/Views/FinishView.cs:203
 msgid "Congratulations! New personal record"
 msgstr "Gratulation! Neuer persönlicher Rekord"
 
-#: ../src/Core/Views/FinishView.cs:202
+#: ../src/Core/Views/FinishView.cs:213
 #, csharp-format
 msgid ""
-"By scoring {0}% in logic puzzle games you have established a new personal "
-"record. Your previous record was {1}%."
+"By scoring {0} in logic puzzle games you have established a new personal "
+"record. Your previous record was {1}."
 msgstr ""
-"Durch Erreichen von {0}% bei den Logikrätseln haben Sie einen neuen "
-"persönlichen Rekord aufgestellt. Ihr alter Rekord war {1}%."
+"Durch Erreichen von {0} bei den Logikrätseln haben Sie einen neuen "
+"persönlichen Rekord aufgestellt. Ihr alter Rekord war {1}."
 
-#: ../src/Core/Views/FinishView.cs:208
+#: ../src/Core/Views/FinishView.cs:219
 #, csharp-format
 msgid ""
-"By scoring {0}% in calculation games you have established a new personal "
-"record. Your previous record was {1}%."
+"By scoring {0} in calculation games you have established a new personal "
+"record. Your previous record was {1}."
 msgstr ""
-"Durch Erreichen von {0}% bei den Kopfrechenaufgaben haben Sie einen neuen "
-"persönlichen Rekord aufgestellt. Ihr alter Rekord war {1}%."
+"Durch Erreichen von {0} bei den Kopfrechenaufgaben haben Sie einen neuen "
+"persönlichen Rekord aufgestellt. Ihr alter Rekord war {1}."
 
-#: ../src/Core/Views/FinishView.cs:214
+#: ../src/Core/Views/FinishView.cs:225
 #, csharp-format
 msgid ""
-"By scoring {0}% in memory games you have established a new personal record. "
-"Your previous record was {1}%."
+"By scoring {0} in memory games you have established a new personal record. "
+"Your previous record was {1}."
 msgstr ""
-"Durch Erreichen von {0}% bei den Gedächtnisübungen haben Sie einen neuen "
-"persönlichen Rekord aufgestellt. Ihr alter Rekord war {1}%."
+"Durch Erreichen von {0} bei den Gedächtnisübungen haben Sie einen neuen "
+"persönlichen Rekord aufgestellt. Ihr alter Rekord war {1}."
 
-#: ../src/Core/Views/FinishView.cs:220
+#: ../src/Core/Views/FinishView.cs:231
 #, csharp-format
 msgid ""
-"By scoring {0}% in verbal analogies you have established a new personal "
-"record. Your previous record was {1}%."
+"By scoring {0} in verbal analogies you have established a new personal "
+"record. Your previous record was {1}."
 msgstr ""
-"Durch Erreichen von {0}% bei den verbalen Analogien haben Sie einen neuen "
-"persönlichen Rekord aufgestellt. Ihr alter Rekord war {1}%."
+"Durch Erreichen von {0} bei den verbalen Analogien haben Sie einen neuen "
+"persönlichen Rekord aufgestellt. Ihr alter Rekord war {1}."
 
-#: ../src/Core/Views/WelcomeView.cs:62
+#: ../src/Core/Views/WelcomeView.cs:61
 msgid "Logic puzzles. Challenge your reasoning and thinking skills."
 msgstr ""
 "Logikrätsel. Herausforderungen Ihres Schlussfolgerungs- und Denkvermögens."
 
-#: ../src/Core/Views/WelcomeView.cs:83
+#: ../src/Core/Views/WelcomeView.cs:82
 msgid ""
 "Mental calculation. Arithmetical operations that test your mental "
 "calculation abilities."
 msgstr "Kopfrechnen. Rechenoperationen, die Ihre Kopfrechenfähigkeiten prüfen."
 
-#: ../src/Core/Views/WelcomeView.cs:104
+#: ../src/Core/Views/WelcomeView.cs:103
 msgid "Memory trainers. To prove your short term memory."
 msgstr "Gedächtnisübungen. Sie stellen Ihr Kurzzeitgedächtnis auf die Probe."
 
-#: ../src/Core/Views/WelcomeView.cs:125
+#: ../src/Core/Views/WelcomeView.cs:124
 msgid "Verbal analogies. Challenge your verbal aptitude."
 msgstr "Verbale Analogien. Fordern Sie Ihr verbales Geschick."
 
 #. Translators: {0} is the version number of the program
-#: ../src/Core/Views/WelcomeView.cs:142
+#: ../src/Core/Views/WelcomeView.cs:141
 #, csharp-format
 msgid "Welcome to gbrainy {0}"
 msgstr "Willkommen bei gbrainy {0}"
 
-#: ../src/Core/Views/WelcomeView.cs:146
+#: ../src/Core/Views/WelcomeView.cs:145
 msgid ""
 "gbrainy is a brain teaser game and trainer to have fun and to keep your "
 "brain trained. It includes:"
@@ -1253,7 +1257,7 @@ msgstr ""
 "gbrainy ist ein unterhaltsames Spiel, um das Gehirn zu trainieren. Es "
 "enthält:"
 
-#: ../src/Core/Views/WelcomeView.cs:150 ../src/Core/Main/GameTips.cs:67
+#: ../src/Core/Views/WelcomeView.cs:149 ../src/Core/Main/GameTips.cs:67
 msgid "Use the Settings to adjust the difficulty level of the game."
 msgstr ""
 "Sie können den Schwierigkeitsgrad des Spiels in den Einstellungen festlegen."
@@ -1290,7 +1294,7 @@ msgstr "schwarz"
 msgid "white"
 msgstr "weiß"
 
-#: ../src/Core/Main/Game.cs:153
+#: ../src/Core/Main/Game.cs:151
 #, csharp-format
 msgid "The correct answer is {0}."
 msgstr "Die richtige Antwort lautet {0}."
@@ -1302,51 +1306,56 @@ msgstr "Die richtige Antwort lautet {0}."
 #. For languages represented with the Latin alphabet use
 #. the same than English
 #. First possible answer for a series (e.g.: Figure A)
-#: ../src/Core/Main/Game.cs:318
+#: ../src/Core/Main/Game.cs:316
 msgid "A"
 msgstr "A"
 
 #. Second possible answer for a series
-#: ../src/Core/Main/Game.cs:320
+#: ../src/Core/Main/Game.cs:318
 msgid "B"
 msgstr "B"
 
 #. Third possible answer for a series
-#: ../src/Core/Main/Game.cs:322
+#: ../src/Core/Main/Game.cs:320
 msgid "C"
 msgstr "C"
 
 #. Fourth possible answer for a series
-#: ../src/Core/Main/Game.cs:324
+#: ../src/Core/Main/Game.cs:322
 msgid "D"
 msgstr "D"
 
 #. Fifth possible answer for a series
-#: ../src/Core/Main/Game.cs:326
+#: ../src/Core/Main/Game.cs:324
 msgid "E"
 msgstr "E"
 
 #. Sixth possible answer for a series
-#: ../src/Core/Main/Game.cs:328
+#: ../src/Core/Main/Game.cs:326
 msgid "F"
 msgstr "F"
 
 #. Seventh possible answer for a series
-#: ../src/Core/Main/Game.cs:330
+#: ../src/Core/Main/Game.cs:328
 msgid "G"
 msgstr "G"
 
 #. Eighth possible answer for a series
-#: ../src/Core/Main/Game.cs:332
+#: ../src/Core/Main/Game.cs:330
 msgid "H"
 msgstr "H"
 
-#: ../src/Core/Main/Game.cs:340
+#: ../src/Core/Main/Game.cs:338
 #, csharp-format
 msgid "Figure {0}"
 msgstr "Bild {0}"
 
-#: ../src/Core/Main/GameManager.cs:320
+#: ../src/Core/Main/GameManager.cs:319
+msgid "Extensions database:"
+msgstr "Datenbank mit Erweiterungen:"
+
+#. Translators: 'Games registered' is the games know to gbrainy (build-in and load from addins-in and external files)
+#: ../src/Core/Main/GameManager.cs:325
 #, csharp-format
 msgid ""
 "Games registered: {0}: {1} logic puzzles, {2} calculation trainers, {3} "
@@ -1357,8 +1366,8 @@ msgstr ""
 
 #: ../src/Core/Main/GameSession.cs:176
 #, csharp-format
-msgid "Games played: {0} ({1}% score)"
-msgstr "Anzahl der Spiele: {0} (Spielstand {1}%)"
+msgid "Games played: {0} (Score: {1})"
+msgstr "Anzahl der Spiele: {0} (Ergebnis: {1})"
 
 #: ../src/Core/Main/GameSession.cs:177
 #, csharp-format
@@ -1488,12 +1497,12 @@ msgstr ""
 "Achten Sie auf die Zeitform des Verbs, wenn Sie verbale Analogien "
 "beantworten."
 
-#: ../src/Core/Main/Memory.cs:54
+#: ../src/Core/Main/Memory.cs:53
 msgid "Memorize the objects below in the given time"
 msgstr ""
 "Merken Sie sich die unterhalb gezeigten Objekte in der vorgegebenen Zeit"
 
-#: ../src/Core/Main/Memory.cs:218
+#: ../src/Core/Main/Memory.cs:217
 msgid "Time left"
 msgstr "Verbleibende Zeit"
 
@@ -1508,7 +1517,7 @@ msgstr "Mögliche korrekte Antworten: {0}."
 #. For example: "Possible correct answers are: a, b, c, d."
 #: ../src/Core/Main/Verbal/Analogies.cs:90
 #: ../src/Core/Main/Verbal/AnalogiesMultipleOptions.cs:63
-#: ../src/Core/Main/Verbal/AnalogiesPairOfWordsOptions.cs:66
+#: ../src/Core/Main/Verbal/AnalogiesPairOfWordsOptions.cs:63
 msgid ", "
 msgstr ", "
 
@@ -1527,35 +1536,35 @@ msgstr "{0} Antwort {1}."
 
 #. Translators: this "option) answer" for example "a) "21 x 60 = 1260". This should not be changed for most of the languages
 #: ../src/Core/Main/Verbal/AnalogiesMultipleOptions.cs:105
-#: ../src/Core/Main/Verbal/AnalogiesPairOfWordsOptions.cs:104
-#: ../src/Games/Logic/PuzzleOstracism.cs:161
-#: ../src/Games/Logic/PuzzlePredicateLogic.cs:139
-#: ../src/Games/Calculation/CalculationCloserFraction.cs:163
-#: ../src/Games/Calculation/CalculationGreatestDivisor.cs:145
+#: ../src/Core/Main/Verbal/AnalogiesPairOfWordsOptions.cs:101
+#: ../src/Games/Logic/PuzzleOstracism.cs:159
+#: ../src/Games/Logic/PuzzlePredicateLogic.cs:137
+#: ../src/Games/Calculation/CalculationCloserFraction.cs:161
+#: ../src/Games/Calculation/CalculationGreatestDivisor.cs:143
 #, csharp-format
 msgid "{0}) {1}"
 msgstr "{0}) {1}"
 
 #: ../src/Core/Main/Verbal/AnalogiesMultipleOptions.cs:119
-#: ../src/Core/Main/Verbal/AnalogiesPairOfWordsOptions.cs:98
-#: ../src/Games/Logic/PuzzleFigurePattern.cs:192
-#: ../src/Games/Logic/PuzzleLargerShape.cs:303
-#: ../src/Games/Logic/PuzzleMissingPiece.cs:173
-#: ../src/Games/Logic/PuzzleMissingSlice.cs:217
-#: ../src/Games/Logic/PuzzleMostInCommon.cs:313
-#: ../src/Games/Logic/PuzzleNextFigure.cs:166
-#: ../src/Games/Logic/PuzzlePredicateLogic.cs:152
-#: ../src/Games/Logic/PuzzleSquareDots.cs:207
-#: ../src/Games/Logic/PuzzleTetris.cs:173
+#: ../src/Core/Main/Verbal/AnalogiesPairOfWordsOptions.cs:95
+#: ../src/Games/Logic/PuzzleFigurePattern.cs:190
+#: ../src/Games/Logic/PuzzleLargerShape.cs:302
+#: ../src/Games/Logic/PuzzleMissingPiece.cs:172
+#: ../src/Games/Logic/PuzzleMissingSlice.cs:216
+#: ../src/Games/Logic/PuzzleMostInCommon.cs:312
+#: ../src/Games/Logic/PuzzleNextFigure.cs:165
+#: ../src/Games/Logic/PuzzlePredicateLogic.cs:150
+#: ../src/Games/Logic/PuzzleSquareDots.cs:206
+#: ../src/Games/Logic/PuzzleTetris.cs:171
 msgid "Possible answers are:"
 msgstr "Mögliche Antworten:"
 
-#: ../src/Core/Main/Verbal/AnalogiesPairOfWordsCompare.cs:45
+#: ../src/Core/Main/Verbal/AnalogiesPairOfWordsCompare.cs:42
 #, csharp-format
 msgid "Pair of words compare #{0}"
 msgstr "Wörterpaare vergleichen #{0}"
 
-#: ../src/Core/Main/Verbal/AnalogiesPairOfWordsCompare.cs:61
+#: ../src/Core/Main/Verbal/AnalogiesPairOfWordsCompare.cs:58
 #, csharp-format
 msgid ""
 "Given the relationship between the two words below, which word has the same "
@@ -1564,17 +1573,17 @@ msgstr ""
 "Unten ist ein Wörterpaar angegeben; welches Wort ist am nächsten verwandt zu "
 "»{0}«?"
 
-#: ../src/Core/Main/Verbal/AnalogiesPairOfWordsCompare.cs:97
+#: ../src/Core/Main/Verbal/AnalogiesPairOfWordsCompare.cs:94
 #, csharp-format
 msgid "Words: {0}"
 msgstr "Wörter: {0}"
 
-#: ../src/Core/Main/Verbal/AnalogiesPairOfWordsOptions.cs:42
+#: ../src/Core/Main/Verbal/AnalogiesPairOfWordsOptions.cs:39
 #, csharp-format
 msgid "Pair of words #{0}"
 msgstr "Wörterpaar #{0}"
 
-#: ../src/Core/Main/Verbal/AnalogiesPairOfWordsOptions.cs:71
+#: ../src/Core/Main/Verbal/AnalogiesPairOfWordsOptions.cs:68
 #, csharp-format
 msgid ""
 "Given the relationship between the words '{0}', which of the possible "
@@ -1583,61 +1592,61 @@ msgstr ""
 "Unten ist ein Wörterpaar »{0}« angegeben. Welche der folgenden Antworten ist "
 "dem Wörterpaar »{0}« am ähnlichsten? Antwort {1}."
 
-#: ../src/Core/Main/Verbal/AnalogiesQuestionAnswer.cs:40
+#: ../src/Core/Main/Verbal/AnalogiesQuestionAnswer.cs:38
 #, csharp-format
 msgid "Question and answer #{0}"
 msgstr "Frage und Antwort #{0}"
 
-#: ../src/Clients/Classical/gbrainy.cs:360
+#: ../src/Clients/Classical/gbrainy.cs:359
 msgid "Play all the games"
 msgstr "Alle Spiele spielen"
 
-#: ../src/Clients/Classical/gbrainy.cs:361
+#: ../src/Clients/Classical/gbrainy.cs:360
 msgid "All"
 msgstr "Alle"
 
-#: ../src/Clients/Classical/gbrainy.cs:366
+#: ../src/Clients/Classical/gbrainy.cs:365
 msgid "Play games that challenge your reasoning and thinking"
 msgstr "Spiele, die Ihr Schlussfolgerungs- und Denkvermögen herausfordern"
 
-#: ../src/Clients/Classical/gbrainy.cs:373
+#: ../src/Clients/Classical/gbrainy.cs:372
 msgid "Play games that challenge your mental calculation skills"
 msgstr "Spiele, die Ihre Kopfrechenfähigkeiten herausfordern"
 
-#: ../src/Clients/Classical/gbrainy.cs:379
+#: ../src/Clients/Classical/gbrainy.cs:378
 msgid "Play games that challenge your short term memory"
 msgstr "Übungen, die Ihr Kurzzeitgedächtnis fordern"
 
-#: ../src/Clients/Classical/gbrainy.cs:385
+#: ../src/Clients/Classical/gbrainy.cs:384
 msgid "Play games that challenge your verbal aptitude"
 msgstr "Spiele, die Ihr verbales Geschick herausfordern"
 
-#: ../src/Clients/Classical/gbrainy.cs:390
-#: ../src/Clients/Classical/gbrainy.cs:624
+#: ../src/Clients/Classical/gbrainy.cs:389
+#: ../src/Clients/Classical/gbrainy.cs:623
 msgid "Pause"
 msgstr "Pause"
 
-#: ../src/Clients/Classical/gbrainy.cs:391
+#: ../src/Clients/Classical/gbrainy.cs:390
 msgid "Pause or resume the game"
 msgstr "Spiel anhalten oder fortsetzen"
 
-#: ../src/Clients/Classical/gbrainy.cs:396
+#: ../src/Clients/Classical/gbrainy.cs:395
 msgid "End the game and show score"
 msgstr "Das Spiel beenden und das Ergebnis anzeigen"
 
-#: ../src/Clients/Classical/gbrainy.cs:397
+#: ../src/Clients/Classical/gbrainy.cs:396
 msgid "Finish"
 msgstr "Fertig"
 
-#: ../src/Clients/Classical/gbrainy.cs:487
+#: ../src/Clients/Classical/gbrainy.cs:486
 msgid "Congratulations."
 msgstr "Gratulation."
 
-#: ../src/Clients/Classical/gbrainy.cs:489
+#: ../src/Clients/Classical/gbrainy.cs:488
 msgid "Incorrect answer."
 msgstr "Falsche Antwort."
 
-#: ../src/Clients/Classical/gbrainy.cs:547
+#: ../src/Clients/Classical/gbrainy.cs:546
 msgid ""
 "Once you have an answer type it in the \"Answer:\" entry box and press the "
 "\"OK\" button."
@@ -1645,11 +1654,11 @@ msgstr ""
 "Schreiben Sie die gefundene Antwort in das Eingabefeld und drücken Sie "
 "danach den »OK«-Knopf."
 
-#: ../src/Clients/Classical/gbrainy.cs:628
+#: ../src/Clients/Classical/gbrainy.cs:627
 msgid "Resume"
 msgstr "Fortsetzen"
 
-#: ../src/Clients/Classical/gbrainy.cs:739
+#: ../src/Clients/Classical/gbrainy.cs:742
 #, csharp-format
 msgid "Startup time {0}"
 msgstr "Startzeit {0}"
@@ -1699,7 +1708,7 @@ msgid "  --versions \t\t\tShow dependencies."
 msgstr "  --versions \t\t\tAbhängigkeiten und deren Versionen anzeigen."
 
 #. Translators: Replace by the name of the people that translated the application
-#: ../src/Clients/Classical/Dialogs/AboutDialog.cs:54
+#: ../src/Clients/Classical/Dialogs/AboutDialog.cs:52
 msgid "translator-credits"
 msgstr ""
 "Hendrik Richter <hendrikr@gnome.org>\n"
@@ -1707,7 +1716,7 @@ msgstr ""
 "Mario Blättermann <mariobl@gnome.org>\n"
 "Christian Kirbach <Christian.Kirbach@googlemail.com>"
 
-#: ../src/Clients/Classical/Dialogs/AboutDialog.cs:59
+#: ../src/Clients/Classical/Dialogs/AboutDialog.cs:57
 msgid ""
 "This program is free software; you can redistribute it and/or modify it "
 "under the terms of the GNU General Public License as  published by the Free "
@@ -1722,7 +1731,7 @@ msgstr ""
 "folgenden Lizenz.\n"
 "\n"
 
-#: ../src/Clients/Classical/Dialogs/AboutDialog.cs:60
+#: ../src/Clients/Classical/Dialogs/AboutDialog.cs:58
 msgid ""
 "This program is distributed in the hope that it will be useful, but WITHOUT "
 "ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or "
@@ -1737,7 +1746,7 @@ msgstr ""
 "nach.\n"
 "\n"
 
-#: ../src/Clients/Classical/Dialogs/AboutDialog.cs:61
+#: ../src/Clients/Classical/Dialogs/AboutDialog.cs:59
 msgid ""
 "You should have received a copy of the GNU General Public License along with "
 "this program; if not, write to the Free Software Foundation, Inc., 59 Temple "
@@ -1748,46 +1757,46 @@ msgstr ""
 "Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA "
 "02110-1301, USA."
 
-#: ../src/Clients/Classical/Dialogs/AboutDialog.cs:70
+#: ../src/Clients/Classical/Dialogs/AboutDialog.cs:68
 msgid "Based on ideas by Terry Stickels, MENSA books and Jordi Mas."
 msgstr ""
 "Basiert auf Ideen von Terry Stickels, aus den MENSA-Büchern und von Jordi "
 "Mas."
 
-#: ../src/Clients/Classical/Dialogs/AboutDialog.cs:72
+#: ../src/Clients/Classical/Dialogs/AboutDialog.cs:70
 msgid "A brain teaser game for fun and to keep your brain trained."
 msgstr "Ein Spiel, um Spaß zu haben und das Gehirn zu trainieren"
 
-#: ../src/Clients/Classical/Dialogs/AboutDialog.cs:74
+#: ../src/Clients/Classical/Dialogs/AboutDialog.cs:72
 msgid "gbrainy web site"
 msgstr "gbrainy-Website"
 
 #. Column: Game Name
-#: ../src/Clients/Classical/Dialogs/CustomGameDialog.cs:68
+#: ../src/Clients/Classical/Dialogs/CustomGameDialog.cs:67
 msgid "Game Name"
 msgstr "Name des Spieles"
 
 #. Column: Type
-#: ../src/Clients/Classical/Dialogs/CustomGameDialog.cs:90
+#: ../src/Clients/Classical/Dialogs/CustomGameDialog.cs:89
 msgid "Type"
 msgstr "Typ"
 
-#: ../src/Clients/Classical/Dialogs/CustomGameDialog.cs:112
+#: ../src/Clients/Classical/Dialogs/CustomGameDialog.cs:111
 msgid "Enabled"
 msgstr "Aktiviert"
 
-#: ../src/Clients/Classical/Dialogs/PlayerHistoryDialog.cs:47
+#: ../src/Clients/Classical/Dialogs/PlayerHistoryDialog.cs:45
 msgid "The graph below shows the player's game score evolution. "
 msgstr "Das untere Diagramm zeigt den Verlauf der Ergebnisse des Spielers. "
 
-#: ../src/Clients/Classical/Dialogs/PlayerHistoryDialog.cs:51
+#: ../src/Clients/Classical/Dialogs/PlayerHistoryDialog.cs:49
 msgid ""
 "You need more than one game session recorded to see the score evolution."
 msgstr ""
 "Es muss mehr als eine Spielsitzung gespeichert sein, um den Verlauf der "
 "Ergebnisse zu sehen."
 
-#: ../src/Clients/Classical/Dialogs/PlayerHistoryDialog.cs:55
+#: ../src/Clients/Classical/Dialogs/PlayerHistoryDialog.cs:53
 #, csharp-format
 msgid "It is built using the results of {0} recorded game session."
 msgid_plural ""
@@ -1796,11 +1805,11 @@ msgstr[0] "Es ergibt sich aus dem Ergebnis von {0} gespeicherten Spielsitzung."
 msgstr[1] ""
 "Es ergibt sich aus dem Ergebnis der letzten {0} gespeicherten Spielsitzungen."
 
-#: ../src/Clients/Classical/Dialogs/PreferencesDialog.cs:82
+#: ../src/Clients/Classical/Dialogs/PreferencesDialog.cs:81
 msgid "You are about to delete the player's game session history."
 msgstr "Sie sind dabei, die Chronik des Spielers zu löschen."
 
-#: ../src/Clients/Classical/Dialogs/PreferencesDialog.cs:83
+#: ../src/Clients/Classical/Dialogs/PreferencesDialog.cs:82
 msgid ""
 "If you proceed, you will lose the history of the previous game sessions. Do "
 "you want to continue?"
@@ -1808,7 +1817,7 @@ msgstr ""
 "Wenn Sie fortsetzen, werden Sie die Chronik früherer Spielsitzungen "
 "verlieren. Möchten Sie fortfahren?"
 
-#: ../src/Clients/Classical/Dialogs/PreferencesDialog.cs:84
+#: ../src/Clients/Classical/Dialogs/PreferencesDialog.cs:83
 msgid "_Delete"
 msgstr "_Löschen"
 
@@ -1897,11 +1906,11 @@ msgstr ""
 msgid "Time in seconds to memorize the challenge:"
 msgstr "Zeit in Sekunden, um sich die Aufgabe zu merken:"
 
-#: ../src/Games/Logic/Puzzle3DCube.cs:34
+#: ../src/Games/Logic/Puzzle3DCube.cs:32
 msgid "3D Cube"
 msgstr "3D-Würfel"
 
-#: ../src/Games/Logic/Puzzle3DCube.cs:38
+#: ../src/Games/Logic/Puzzle3DCube.cs:36
 #, csharp-format
 msgid ""
 "How many small cubes does it take to build the large cube below? Answer "
@@ -1910,17 +1919,17 @@ msgstr ""
 "Wie viele kleine Würfel sind erforderlich, um den unteren großen Würfel zu "
 "bauen? Antworten Sie mit einer Zahl."
 
-#: ../src/Games/Logic/Puzzle3DCube.cs:42
+#: ../src/Games/Logic/Puzzle3DCube.cs:40
 msgid "A cube is a regular solid object having six congruent square faces."
 msgstr ""
 "Ein Würfel ist ein reguläres, festes Objekt mit sechs kongruenten "
 "quadratischen Flächen."
 
-#: ../src/Games/Logic/PuzzleBalance.cs:51
+#: ../src/Games/Logic/PuzzleBalance.cs:49
 msgid "Balance"
 msgstr "Waage"
 
-#: ../src/Games/Logic/PuzzleBalance.cs:55
+#: ../src/Games/Logic/PuzzleBalance.cs:53
 msgid ""
 "How many triangles are needed in the right part of the last figure to keep "
 "it balanced?"
@@ -1928,19 +1937,19 @@ msgstr ""
 "Wie viele Dreiecke werden im rechten Teil des letzten Bildes benötigt, um "
 "das Gleichgewicht zu halten?"
 
-#: ../src/Games/Logic/PuzzleBalance.cs:60
+#: ../src/Games/Logic/PuzzleBalance.cs:58
 msgid "Every triangle counts as 1, each circle as 2 and each square as 3."
 msgstr "Jedes Dreieck zählt 1, jede Kreis 2 und jedes Quadrat 3."
 
-#: ../src/Games/Logic/PuzzleBalance.cs:65
+#: ../src/Games/Logic/PuzzleBalance.cs:63
 msgid "Every circle counts as two triangles."
 msgstr "Jede Kreis zählt als zwei Dreiecke."
 
-#: ../src/Games/Logic/PuzzleBuildTriangle.cs:53
+#: ../src/Games/Logic/PuzzleBuildTriangle.cs:51
 msgid "Build a triangle"
 msgstr "Formen Sie ein Dreieck"
 
-#: ../src/Games/Logic/PuzzleBuildTriangle.cs:58
+#: ../src/Games/Logic/PuzzleBuildTriangle.cs:56
 #, csharp-format
 msgid ""
 "Which three pieces can you use together to build a triangle? Answer using "
@@ -1950,19 +1959,19 @@ msgstr ""
 "formen? Antworten Sie unter Verwendung der Bezeichnungen der drei Teile, z. "
 "B.: {0}{1}{2}."
 
-#: ../src/Games/Logic/PuzzleBuildTriangle.cs:63
+#: ../src/Games/Logic/PuzzleBuildTriangle.cs:61
 msgid "The resulting triangle is isosceles."
 msgstr "Das resultierende Dreieck ist gleichschenklig."
 
-#: ../src/Games/Logic/PuzzleBuildTriangle.cs:184
+#: ../src/Games/Logic/PuzzleBuildTriangle.cs:182
 msgid "The triangle is:"
 msgstr "Das Dreieck ist:"
 
-#: ../src/Games/Logic/PuzzleCirclesSquare.cs:32
+#: ../src/Games/Logic/PuzzleCirclesSquare.cs:30
 msgid "Circles in a square"
 msgstr "Kreise in einem Quadrat"
 
-#: ../src/Games/Logic/PuzzleCirclesSquare.cs:36
+#: ../src/Games/Logic/PuzzleCirclesSquare.cs:34
 msgid ""
 "What is the maximum number of circles (as shown) that fit in the square "
 "below?"
@@ -1970,11 +1979,11 @@ msgstr ""
 "Wie lautet die maximale Anzahl an Kreisen (wie der gezeigte), die in das "
 "untere Quadrat passen?"
 
-#: ../src/Games/Logic/PuzzleCirclesSquare.cs:40
+#: ../src/Games/Logic/PuzzleCirclesSquare.cs:38
 msgid "You can fit more than 64 circles."
 msgstr "Sie können mehr als 64 Kreise unterbringen."
 
-#: ../src/Games/Logic/PuzzleCirclesSquare.cs:45
+#: ../src/Games/Logic/PuzzleCirclesSquare.cs:43
 #, csharp-format
 msgid ""
 "In the layout shown {0} units of height are gained in each row. This allows "
@@ -1983,23 +1992,23 @@ msgstr ""
 "In der gezeigten Anordnung werden {0} Höheneinheiten pro Reihe gewonnen. "
 "Dies ermöglicht die Verwendung einer zusätzlichen Reihe."
 
-#: ../src/Games/Logic/PuzzleCirclesSquare.cs:79
-#: ../src/Games/Logic/PuzzleCirclesSquare.cs:100
+#: ../src/Games/Logic/PuzzleCirclesSquare.cs:77
+#: ../src/Games/Logic/PuzzleCirclesSquare.cs:98
 msgid "8 units"
 msgstr "8 Einheiten"
 
-#: ../src/Games/Logic/PuzzleCirclesSquare.cs:119
-#: ../src/Games/Logic/PuzzleCirclesSquare.cs:138
+#: ../src/Games/Logic/PuzzleCirclesSquare.cs:117
+#: ../src/Games/Logic/PuzzleCirclesSquare.cs:136
 msgid "1 unit"
 msgstr "1 Einheit"
 
-#: ../src/Games/Logic/PuzzleClocks.cs:40
+#: ../src/Games/Logic/PuzzleClocks.cs:38
 msgid "Clocks"
 msgstr "Uhren"
 
 # Beispiel aus dem Spiel: Auf welche Ziffer soll der große Zeiger der Uhr in Bild A zeigen?
 #. Translators: {0} is replaced by 'Figure X'
-#: ../src/Games/Logic/PuzzleClocks.cs:46
+#: ../src/Games/Logic/PuzzleClocks.cs:44
 #, csharp-format
 msgid ""
 "To what number should the large handle of the '{0}' clock point? Answer "
@@ -2008,7 +2017,7 @@ msgstr ""
 "Auf welche Ziffer soll der große Zeiger der Uhr in »{0}« zeigen? Antworten "
 "Sie mit Zahlen."
 
-#: ../src/Games/Logic/PuzzleClocks.cs:52
+#: ../src/Games/Logic/PuzzleClocks.cs:50
 #, csharp-format
 msgid ""
 "Starting from the first clock sum {0} to the value indicated by the hands."
@@ -2016,28 +2025,28 @@ msgstr ""
 "Beginnen Sie mit der ersten Uhr und zählen Sie jeweils {0} zum Wert, der von "
 "den Zeigern angezeigt wird."
 
-#: ../src/Games/Logic/PuzzleClocks.cs:57
+#: ../src/Games/Logic/PuzzleClocks.cs:55
 msgid "The clocks do not follow the time logic."
 msgstr "Die Uhren folgen keiner zeitlichen Logik."
 
-#: ../src/Games/Logic/PuzzleCountCircles.cs:50
+#: ../src/Games/Logic/PuzzleCountCircles.cs:48
 msgid "Count circles"
 msgstr "Kreise zählen"
 
-#: ../src/Games/Logic/PuzzleCountCircles.cs:54
+#: ../src/Games/Logic/PuzzleCountCircles.cs:52
 msgid "How many circles do you count?"
 msgstr "Wie viele Kreise können Sie zählen?"
 
-#: ../src/Games/Logic/PuzzleCountCircles.cs:58
+#: ../src/Games/Logic/PuzzleCountCircles.cs:56
 msgid "It is an easy exercise if you systematically count the circles."
 msgstr "Die Übung ist leicht, wenn Sie die Kreise systematisch zählen."
 
-#: ../src/Games/Logic/PuzzleCounting.cs:43
+#: ../src/Games/Logic/PuzzleCounting.cs:41
 msgid "Counting"
 msgstr "Zählen"
 
 #. Translators: {0} and {1} are always numbers greater than 1
-#: ../src/Games/Logic/PuzzleCounting.cs:67
+#: ../src/Games/Logic/PuzzleCounting.cs:65
 #, csharp-format
 msgid ""
 "We have a {0} meters piece of fabric. Machine A takes {1} seconds to cut 1 "
@@ -2050,7 +2059,7 @@ msgstr ""
 "schneiden?"
 
 #. Translators: {0} is always a number greater than 1
-#: ../src/Games/Logic/PuzzleCounting.cs:71
+#: ../src/Games/Logic/PuzzleCounting.cs:69
 #, csharp-format
 msgid "With the {0} cut, Machine A creates two 1 meter pieces."
 msgstr ""
@@ -2058,7 +2067,7 @@ msgstr ""
 
 # Die Skizze im Programm zeigt eine Raute, daher wird hier Viereck und nicht Quadrat verwendet.
 #. Translators: {0} is always a number greater than 20
-#: ../src/Games/Logic/PuzzleCounting.cs:81
+#: ../src/Games/Logic/PuzzleCounting.cs:79
 #, csharp-format
 msgid ""
 "A fence is built to enclose a square shaped region. {0} fence poles are used "
@@ -2068,7 +2077,7 @@ msgstr ""
 "Zaunpfähle werden auf jeder Seite des Vierecks verwendet. Wie viele "
 "Zaunpfähle werden insgesamt benötigt?"
 
-#: ../src/Games/Logic/PuzzleCounting.cs:85
+#: ../src/Games/Logic/PuzzleCounting.cs:83
 #, csharp-format
 msgid ""
 "There are {0} fence poles since the poles on the corners of the square are "
@@ -2078,7 +2087,7 @@ msgstr ""
 "verwendet werden."
 
 #. Translators: {0} is always a number greater than 5
-#: ../src/Games/Logic/PuzzleCounting.cs:94
+#: ../src/Games/Logic/PuzzleCounting.cs:92
 #, csharp-format
 msgid ""
 "Wrapping an anniversary present costs one euro. The anniversary present "
@@ -2090,24 +2099,24 @@ msgstr ""
 "kosten Geschenk und Einpacken insgesamt?"
 
 # Der Originaltext passt nicht zum Ergebnis der Aufgabe.
-#: ../src/Games/Logic/PuzzleCounting.cs:96
+#: ../src/Games/Logic/PuzzleCounting.cs:94
 msgid "Individually, the present costs one euro more to purchase than to wrap."
 msgstr ""
 "Der Gesamtpreis setzt sich aus dem Preis des Geschenks und dem Einpacken "
 "zusammen."
 
-#: ../src/Games/Logic/PuzzleCountSeries.cs:42
+#: ../src/Games/Logic/PuzzleCountSeries.cs:39
 msgid "Count series"
 msgstr "Reihen zählen"
 
 # Aufgrund einer Benutzerrückmeldung ausführlicher übersetzt.
-#: ../src/Games/Logic/PuzzleCountSeries.cs:54
+#: ../src/Games/Logic/PuzzleCountSeries.cs:51
 msgid ""
 "How many numbers '9' are required to represent the numbers between 10 to 100?"
 msgstr ""
 "Wie oft tritt die Ziffer »9« in allen ganzen Zahlen zwischen 10 und 100 auf?"
 
-#: ../src/Games/Logic/PuzzleCountSeries.cs:59
+#: ../src/Games/Logic/PuzzleCountSeries.cs:56
 msgid ""
 "How many two digit numbers occur where the first digit is larger than the "
 "second (e.g.: 20 and 21)?"
@@ -2115,7 +2124,7 @@ msgstr ""
 "Wie viele zweistellige Zahlen kommen vor, wo die erste Ziffer größer ist als "
 "die zweite (z. B.: 20 und 21)?"
 
-#: ../src/Games/Logic/PuzzleCountSeries.cs:64
+#: ../src/Games/Logic/PuzzleCountSeries.cs:61
 msgid ""
 "How many two digit numbers occur where the first digit is smaller than the "
 "second (e.g.: 12 and 13)?"
@@ -2123,19 +2132,19 @@ msgstr ""
 "Wie viele zweistellige Zahlen kommen vor, wo die erste Ziffer kleiner ist "
 "als die zweite (z. B.: 12 und 13)?"
 
-#: ../src/Games/Logic/PuzzleCoverPercentage.cs:37
+#: ../src/Games/Logic/PuzzleCoverPercentage.cs:35
 msgid "Cover percentage"
 msgstr "Flächendeckungsanteil"
 
-#: ../src/Games/Logic/PuzzleCoverPercentage.cs:41
+#: ../src/Games/Logic/PuzzleCoverPercentage.cs:39
 msgid "What percentage of the figure is colored?"
 msgstr "Wie viel Prozent des Bildes gehören zur gefärbten Fläche?"
 
-#: ../src/Games/Logic/PuzzleCube.cs:47
+#: ../src/Games/Logic/PuzzleCube.cs:45
 msgid "Cube"
 msgstr "Würfel"
 
-#: ../src/Games/Logic/PuzzleCube.cs:51
+#: ../src/Games/Logic/PuzzleCube.cs:49
 #, csharp-format
 msgid ""
 "When folded as a cube, which face on the figure is opposite the face with a "
@@ -2144,7 +2153,7 @@ msgstr ""
 "Wenn man einen Würfel faltet, welche Fläche des Bildes liegt der Fläche mit "
 "einer {0} gegenüber? Geben Sie die Zahl auf der Fläche als Antwort."
 
-#: ../src/Games/Logic/PuzzleDice.cs:52
+#: ../src/Games/Logic/PuzzleDice.cs:50
 msgid ""
 "What is the probability of getting a '2' or a '6' in a single throw of a "
 "fair 6 sided die? Answer using a fraction (e.g.: 1/2)."
@@ -2153,11 +2162,11 @@ msgstr ""
 "Würfel in einem einzigen Wurf eine »2« oder »6« zu erhalten? Antworten Sie mit "
 "einem Bruch (z.B. 1/2)."
 
-#: ../src/Games/Logic/PuzzleDice.cs:54
+#: ../src/Games/Logic/PuzzleDice.cs:52
 msgid "There are 2 of 6 possibilities."
 msgstr "Es gibt 2 von insgesamt 6 Möglichkeiten."
 
-#: ../src/Games/Logic/PuzzleDice.cs:56
+#: ../src/Games/Logic/PuzzleDice.cs:54
 msgid ""
 "What is the probability of not getting a '5' in a single throw of a fair 6 "
 "sided die? Answer using a fraction (e.g.: 1/2)."
@@ -2166,11 +2175,11 @@ msgstr ""
 "Würfel in einem einzigen Wurf keine »5« zu erhalten? Antworten Sie mit einem "
 "Bruch (z.B. 1/2)."
 
-#: ../src/Games/Logic/PuzzleDice.cs:58
+#: ../src/Games/Logic/PuzzleDice.cs:56
 msgid "There are 5 of 6 possibilities."
 msgstr "Es gibt 5 von insgesamt 6 Möglichkeiten."
 
-#: ../src/Games/Logic/PuzzleDice.cs:60
+#: ../src/Games/Logic/PuzzleDice.cs:58
 msgid ""
 "Two fair 6 sided dices are thrown simultaneously. What is the probability of "
 "getting two even numbers? Answer using a fraction (e.g.: 1/2)."
@@ -2179,12 +2188,12 @@ msgstr ""
 "ist die Wahrscheinlichkeit, zwei gerade Zahlen zu erhalten? Antworten Sie "
 "mit einem Bruch (z.B. 1/2)."
 
-#: ../src/Games/Logic/PuzzleDice.cs:62
+#: ../src/Games/Logic/PuzzleDice.cs:60
 msgid "There are 9 of 36 possibilities of getting an even number."
 msgstr ""
 "Es gibt 9 von insgesamt 36 Möglichkeiten, zwei gerade Zahlen zu erhalten."
 
-#: ../src/Games/Logic/PuzzleDice.cs:64
+#: ../src/Games/Logic/PuzzleDice.cs:62
 msgid ""
 "Two fair 6 sided dices are thrown simultaneously. What is the probability of "
 "getting two '6'? Answer using a fraction (e.g.: 1/2)."
@@ -2193,7 +2202,7 @@ msgstr ""
 "ist die Wahrscheinlichkeit, auf beiden Würfeln eine »6« zu erhalten? "
 "Antworten Sie mit einem Bruch (z.B. 1/2)."
 
-#: ../src/Games/Logic/PuzzleDice.cs:66
+#: ../src/Games/Logic/PuzzleDice.cs:64
 msgid ""
 "There is 1 of 6 possibilities of getting a '6' on the first die and the same "
 "for the second die."
@@ -2201,15 +2210,15 @@ msgstr ""
 "Es gibt 1 von insgesamt 6 Möglichkeiten, auf dem ersten Würfel eine »6« und "
 "das Gleiche auf dem zweiten Würfel zu erhalten."
 
-#: ../src/Games/Logic/PuzzleDice.cs:70
+#: ../src/Games/Logic/PuzzleDice.cs:68
 msgid "Dice"
 msgstr "Würfel"
 
-#: ../src/Games/Logic/PuzzleDivideCircle.cs:47
+#: ../src/Games/Logic/PuzzleDivideCircle.cs:45
 msgid "Divide circles"
 msgstr "Kreisteilungen"
 
-#: ../src/Games/Logic/PuzzleDivideCircle.cs:51
+#: ../src/Games/Logic/PuzzleDivideCircle.cs:49
 msgid ""
 "In the last figure, in how many regions is the circle divided into when all "
 "dots are connected?"
@@ -2217,22 +2226,22 @@ msgstr ""
 "In wie viele Bereiche wird der letzte Kreis unterteilt, wenn alle Punkte "
 "verbunden werden?"
 
-#: ../src/Games/Logic/PuzzleDivideCircle.cs:115
-#: ../src/Games/Logic/PuzzleDivideCircle.cs:130
-#: ../src/Games/Logic/PuzzleDivideCircle.cs:147
+#: ../src/Games/Logic/PuzzleDivideCircle.cs:113
+#: ../src/Games/Logic/PuzzleDivideCircle.cs:128
+#: ../src/Games/Logic/PuzzleDivideCircle.cs:145
 #, csharp-format
 msgid "Has {0} regions"
 msgstr "Hat {0} Bereiche"
 
-#: ../src/Games/Logic/PuzzleEquation.cs:35
+#: ../src/Games/Logic/PuzzleEquation.cs:33
 msgid "Equation"
 msgstr "Gleichung"
 
-#: ../src/Games/Logic/PuzzleEquation.cs:39
+#: ../src/Games/Logic/PuzzleEquation.cs:37
 msgid "What is the result of the equation below?"
 msgstr "Wie lautet das Ergebnis der unteren Gleichung?"
 
-#: ../src/Games/Logic/PuzzleEquation.cs:44
+#: ../src/Games/Logic/PuzzleEquation.cs:42
 msgid ""
 "The order of arithmetical operations is always as follows: exponents and "
 "roots, multiplication and division, addition and subtraction."
@@ -2240,23 +2249,23 @@ msgstr ""
 "Die Reihenfolge arithmetischer Operationen ist immer wie folgt: Potenzieren "
 "und Wurzel ziehen, Multiplikation und Division, Addition und Subtraktion."
 
-#: ../src/Games/Logic/PuzzleExtraCircle.cs:42
+#: ../src/Games/Logic/PuzzleExtraCircle.cs:41
 msgid "Extra circle"
 msgstr "Extra Kreis"
 
 # Weggelassen, da im Widerspruch zur Antwort: Es handelt sich nicht um eine Folge von Elementen.
-#: ../src/Games/Logic/PuzzleExtraCircle.cs:51
+#: ../src/Games/Logic/PuzzleExtraCircle.cs:50
 #, csharp-format
 msgid ""
 "Which circle does not belong to the group? It is not a sequence of elements. "
 "Answer {0}, {1}, {2} or {3}."
 msgstr "Welcher Kreis gehört nicht zur Gruppe? Antwort {0}, {1}, {2} oder {3}."
 
-#: ../src/Games/Logic/PuzzleExtraCircle.cs:56
+#: ../src/Games/Logic/PuzzleExtraCircle.cs:55
 msgid "All circles share a common property except for one."
 msgstr "Alle Kreise bis auf einen teilen sich eine gemeinsame Eigenschaft."
 
-#: ../src/Games/Logic/PuzzleExtraCircle.cs:61
+#: ../src/Games/Logic/PuzzleExtraCircle.cs:60
 #, csharp-format
 msgid ""
 "In all circles the color slices follow the same order except for this one."
@@ -2264,11 +2273,11 @@ msgstr ""
 "In allen Kreisen bis auf diesen folgen die farbigen Teile derselben "
 "Reihenfolge."
 
-#: ../src/Games/Logic/PuzzleFigureLetter.cs:42
+#: ../src/Games/Logic/PuzzleFigureLetter.cs:40
 msgid "Figures and text"
 msgstr "Bilder und Text"
 
-#: ../src/Games/Logic/PuzzleFigureLetter.cs:46
+#: ../src/Games/Logic/PuzzleFigureLetter.cs:44
 msgid ""
 "The figures and the text are related. What text should go under the last "
 "figure?"
@@ -2276,11 +2285,11 @@ msgstr ""
 "Es besteht ein Zusammenhang zwischen den Bildern und dem Text. Welcher Text "
 "gehört unter das letzte Bild?"
 
-#: ../src/Games/Logic/PuzzleFigureLetter.cs:50
+#: ../src/Games/Logic/PuzzleFigureLetter.cs:48
 msgid "Every character of the text represents a property of the figure."
 msgstr "Jeder einzelne Buchstabe repräsentiert eine Eigenschaft des Bildes."
 
-#: ../src/Games/Logic/PuzzleFigureLetter.cs:55
+#: ../src/Games/Logic/PuzzleFigureLetter.cs:53
 msgid ""
 "'A' indicates that the figures overlap, 'B' that are squares, 'C' that are "
 "circles, 'D' that the figures are separated, 'E' that there are three "
@@ -2289,17 +2298,17 @@ msgstr ""
 "»A« bedeutet eine Überlappung der Bilder, »B« Quadrate, »C« Kreise, »D« "
 "getrennte Bilder, »E« drei Bilder und »F« zwei Bilder."
 
-#: ../src/Games/Logic/PuzzleFigurePattern.cs:42
+#: ../src/Games/Logic/PuzzleFigurePattern.cs:40
 msgid "Figure pattern"
 msgstr "Bildmuster"
 
-#: ../src/Games/Logic/PuzzleFigurePattern.cs:47
+#: ../src/Games/Logic/PuzzleFigurePattern.cs:45
 #, csharp-format
 msgid "What figure should replace the question mark? Answer {0}, {1} or {2}."
 msgstr ""
 "Welches Bild soll das Fragezeichen ersetzen? Antwort {0}, {1} oder {2}."
 
-#: ../src/Games/Logic/PuzzleFigurePattern.cs:52
+#: ../src/Games/Logic/PuzzleFigurePattern.cs:50
 msgid ""
 "The third figure of every row involves somehow combining the first two "
 "figures."
@@ -2307,7 +2316,7 @@ msgstr ""
 "Das dritte Bild jeder Reihe ergibt sich auf irgendeine Art und Weise aus den "
 "ersten beiden Bildern."
 
-#: ../src/Games/Logic/PuzzleFigurePattern.cs:57
+#: ../src/Games/Logic/PuzzleFigurePattern.cs:55
 msgid ""
 "Superpose the first and second figures and remove the lines that they have "
 "in common, then rotate the resulting figure 45 degrees."
@@ -2315,11 +2324,11 @@ msgstr ""
 "Überlagern Sie das erste und das zweite Bild, entfernen Sie die gemeinsamen "
 "Linien und drehen Sie das entstandene Bild um 45 Grad."
 
-#: ../src/Games/Logic/PuzzleFigures.cs:44
+#: ../src/Games/Logic/PuzzleFigures.cs:42
 msgid "Figures"
 msgstr "Bilder"
 
-#: ../src/Games/Logic/PuzzleFigures.cs:48
+#: ../src/Games/Logic/PuzzleFigures.cs:46
 msgid ""
 "What is the next logical sequence of objects in the last column? See below "
 "the convention when giving the answer."
@@ -2327,7 +2336,7 @@ msgstr ""
 "Wie lautet die nächste logische Sequenz an Objekten in der letzten Spalte? "
 "Werfen Sie beim Antworten einen Blick auf das unten angegebene Schema."
 
-#: ../src/Games/Logic/PuzzleFigures.cs:53
+#: ../src/Games/Logic/PuzzleFigures.cs:51
 msgid ""
 "It is the only combination that you can build with the given elements "
 "without repeating them."
@@ -2335,46 +2344,46 @@ msgstr ""
 "Dies ist die einzige Anordnung, die Sie mit den gegebenen Elementen ohne "
 "Wiederholung erstellen können."
 
-#: ../src/Games/Logic/PuzzleFigures.cs:80
-#: ../src/Games/Logic/PuzzleFigures.cs:92
-#: ../src/Games/Logic/PuzzleFigures.cs:105
+#: ../src/Games/Logic/PuzzleFigures.cs:78
+#: ../src/Games/Logic/PuzzleFigures.cs:90
+#: ../src/Games/Logic/PuzzleFigures.cs:103
 #, csharp-format
 msgid "{0} ->"
 msgstr "{0} ->"
 
-#: ../src/Games/Logic/PuzzleFigures.cs:161
+#: ../src/Games/Logic/PuzzleFigures.cs:159
 msgid "Convention when giving the answer is:"
 msgstr "Definition um die Antwort zu geben:"
 
-#: ../src/Games/Logic/PuzzleFigures.cs:165
+#: ../src/Games/Logic/PuzzleFigures.cs:163
 #, csharp-format
 msgid "E.g: {0}{1}{2} (pentagon, triangle, circle)"
 msgstr "Beispiel: {0}{1}{2} (Fünfeck, Dreieck, Kreis)"
 
-#: ../src/Games/Logic/PuzzleFourSided.cs:34
+#: ../src/Games/Logic/PuzzleFourSided.cs:32
 msgid "Four sided"
 msgstr "Vierseitig"
 
-#: ../src/Games/Logic/PuzzleFourSided.cs:38
+#: ../src/Games/Logic/PuzzleFourSided.cs:36
 msgid "How many four sided figures do you count in the figure below?"
 msgstr "Wie viele vierseitige Figuren können Sie im Bild unten zählen?"
 
-#: ../src/Games/Logic/PuzzleFourSided.cs:42
+#: ../src/Games/Logic/PuzzleFourSided.cs:40
 msgid "A four sided figure can be embedded inside another figure."
 msgstr ""
 "Eine vierseitige Figur kann sich innerhalb einer anderen Figur befinden."
 
-#: ../src/Games/Logic/PuzzleFourSided.cs:47
+#: ../src/Games/Logic/PuzzleFourSided.cs:45
 #, csharp-format
 msgid "The four sided figures are made by connecting the following points: {0}"
 msgstr ""
 "Die vierseitigen Figuren entstehen durch Verbindung folgender Punkte: {0}"
 
-#: ../src/Games/Logic/PuzzleHandshakes.cs:34
+#: ../src/Games/Logic/PuzzleHandshakes.cs:32
 msgid "Handshakes"
 msgstr "Handschläge"
 
-#: ../src/Games/Logic/PuzzleHandshakes.cs:39
+#: ../src/Games/Logic/PuzzleHandshakes.cs:37
 #, csharp-format
 msgid ""
 "All attendees to a party are introduced to one another. {0} handshakes are "
@@ -2384,18 +2393,18 @@ msgstr ""
 "insgesamt {0} Handschläge gegeben. Wie viele Personen nehmen an der Party "
 "teil?"
 
-#: ../src/Games/Logic/PuzzleHandshakes.cs:44
+#: ../src/Games/Logic/PuzzleHandshakes.cs:42
 msgid ""
 "Try to imagine a situation in which you are meeting a small number of people."
 msgstr ""
 "Versuchen Sie sich eine Situation vorzustellen, in der Sie eine geringe "
 "Anzahl an Personen treffen."
 
-#: ../src/Games/Logic/PuzzleLargerShape.cs:114
+#: ../src/Games/Logic/PuzzleLargerShape.cs:113
 msgid "Larger shape"
 msgstr "Größere Figur"
 
-#: ../src/Games/Logic/PuzzleLargerShape.cs:123
+#: ../src/Games/Logic/PuzzleLargerShape.cs:122
 #, csharp-format
 msgid ""
 "Which larger shape can you make combining the first two figures? Answer {0}, "
@@ -2404,11 +2413,11 @@ msgstr ""
 "Welche der größeren Figuren kann aus den ersten beiden Figuren erstellt "
 "werden? Antwort {0}, {1}, {2} oder {3}."
 
-#: ../src/Games/Logic/PuzzleLines.cs:36
+#: ../src/Games/Logic/PuzzleLines.cs:34
 msgid "Lines"
 msgstr "Linien"
 
-#: ../src/Games/Logic/PuzzleLines.cs:40
+#: ../src/Games/Logic/PuzzleLines.cs:38
 msgid ""
 "How many line segments in total are in the figures below? A line segment is "
 "a line between two points with no crossing lines."
@@ -2416,40 +2425,40 @@ msgstr ""
 "Wie viele Liniensegmente findet man insgesamt in den unteren Bildern? Als "
 "Liniensegment zählt eine Linie zwischen zwei Punkten ohne kreuzende Linien."
 
-#: ../src/Games/Logic/PuzzleLines.cs:45
+#: ../src/Games/Logic/PuzzleLines.cs:43
 #, csharp-format
 msgid ""
 "There are {0} lines in the figure to the left and {1} in the figure to the "
 "right."
 msgstr "Es sind {0} Linien im linken und {1} im rechten Bild."
 
-#: ../src/Games/Logic/PuzzleLines.cs:50
+#: ../src/Games/Logic/PuzzleLines.cs:48
 msgid "It is an easy exercise if you systematically count the lines."
 msgstr "Die Übung ist leicht, wenn Sie die Linien systematisch zählen."
 
-#: ../src/Games/Logic/PuzzleMatrixGroups.cs:37
+#: ../src/Games/Logic/PuzzleMatrixGroups.cs:35
 msgid "Matrix groups"
 msgstr "Matrixgruppen"
 
-#: ../src/Games/Logic/PuzzleMatrixGroups.cs:41
+#: ../src/Games/Logic/PuzzleMatrixGroups.cs:39
 msgid "One of numbers in the matrix must be circled. Which one?"
 msgstr "Eine der Zahlen in der Matrix sollte eingekreist sein. Welche?"
 
-#: ../src/Games/Logic/PuzzleMatrixGroups.cs:45
+#: ../src/Games/Logic/PuzzleMatrixGroups.cs:43
 msgid "All circled numbers share an arithmetical property."
 msgstr ""
 "Alle eingekreisten Zahlen haben eine arithmetische Eigenschaft gemeinsam."
 
-#: ../src/Games/Logic/PuzzleMatrixGroups.cs:50
+#: ../src/Games/Logic/PuzzleMatrixGroups.cs:48
 #, csharp-format
 msgid "Every circled number can be divided by {0}."
 msgstr "Jede eingekreiste Zahl kann durch {0} geteilt werden."
 
-#: ../src/Games/Logic/PuzzleMatrixNumbers.cs:46
+#: ../src/Games/Logic/PuzzleMatrixNumbers.cs:44
 msgid "Matrix numbers"
 msgstr "Zahlen einer Matrix"
 
-#: ../src/Games/Logic/PuzzleMatrixNumbers.cs:50
+#: ../src/Games/Logic/PuzzleMatrixNumbers.cs:48
 msgid ""
 "The numbers in the matrix follow a pattern. Which number should replace the "
 "question mark?"
@@ -2457,15 +2466,15 @@ msgstr ""
 "Die Zahlen in der Matrix folgen einem Muster. Welche Zahl sollte anstelle "
 "des Fragezeichens stehen?"
 
-#: ../src/Games/Logic/PuzzleMatrixNumbers.cs:56
+#: ../src/Games/Logic/PuzzleMatrixNumbers.cs:54
 msgid "The pattern is arithmetical and works vertically."
 msgstr "Das Muster ist arithmetisch und verläuft vertikal."
 
-#: ../src/Games/Logic/PuzzleMatrixNumbers.cs:58
+#: ../src/Games/Logic/PuzzleMatrixNumbers.cs:56
 msgid "The pattern is arithmetical and works horizontally."
 msgstr "Das Muster ist arithmetisch und verläuft horizontal."
 
-#: ../src/Games/Logic/PuzzleMatrixNumbers.cs:69
+#: ../src/Games/Logic/PuzzleMatrixNumbers.cs:67
 #, csharp-format
 msgid ""
 "The fourth row is calculated by multiplying the first two rows and adding "
@@ -2474,7 +2483,7 @@ msgstr ""
 "Die vierte Zeile wird durch Multiplikation der ersten beiden Zeilen und "
 "Addition der dritten berechnet."
 
-#: ../src/Games/Logic/PuzzleMatrixNumbers.cs:71
+#: ../src/Games/Logic/PuzzleMatrixNumbers.cs:69
 #, csharp-format
 msgid ""
 "The fourth column is calculated by multiplying the first two columns and "
@@ -2483,7 +2492,7 @@ msgstr ""
 "Die vierte Spalte wird durch Multiplikation der ersten beiden Spalten und "
 "Addition der dritten berechnet."
 
-#: ../src/Games/Logic/PuzzleMatrixNumbers.cs:76
+#: ../src/Games/Logic/PuzzleMatrixNumbers.cs:74
 #, csharp-format
 msgid ""
 "The fourth row is calculated by multiplying the first two rows and "
@@ -2492,7 +2501,7 @@ msgstr ""
 "Die vierte Zeile wird durch Multiplikation der ersten beiden Zeilen und "
 "Subtraktion der dritten berechnet."
 
-#: ../src/Games/Logic/PuzzleMatrixNumbers.cs:78
+#: ../src/Games/Logic/PuzzleMatrixNumbers.cs:76
 #, csharp-format
 msgid ""
 "The fourth column is calculated by multiplying the first two columns and "
@@ -2501,7 +2510,7 @@ msgstr ""
 "Die vierte Spalte wird durch Multiplikation der ersten beiden Spalten und "
 "Subtraktion der dritten berechnet."
 
-#: ../src/Games/Logic/PuzzleMatrixNumbers.cs:83
+#: ../src/Games/Logic/PuzzleMatrixNumbers.cs:81
 #, csharp-format
 msgid ""
 "The fourth row is calculated by adding the first two rows and subtracting "
@@ -2510,7 +2519,7 @@ msgstr ""
 "Die vierte Zeile wird durch Addition der ersten beiden Zeilen und "
 "Subtraktion der dritten berechnet."
 
-#: ../src/Games/Logic/PuzzleMatrixNumbers.cs:85
+#: ../src/Games/Logic/PuzzleMatrixNumbers.cs:83
 #, csharp-format
 msgid ""
 "The fourth column is calculated by adding the first two columns and "
@@ -2519,22 +2528,22 @@ msgstr ""
 "Die vierte Spalte wird durch Addition der ersten beiden Spalten und "
 "Subtraktion der dritten berechnet."
 
-#: ../src/Games/Logic/PuzzleMissingPiece.cs:36
+#: ../src/Games/Logic/PuzzleMissingPiece.cs:35
 msgid "Missing piece"
 msgstr "Fehlender Teil"
 
-#: ../src/Games/Logic/PuzzleMissingPiece.cs:41
+#: ../src/Games/Logic/PuzzleMissingPiece.cs:40
 #, csharp-format
 msgid "Which square completes the figure below? Answer {0}, {1} or {2}."
 msgstr ""
 "Welches Quadrat vervollständigt das Bild unten? Antwort {0}, {1} oder {2}."
 
-#: ../src/Games/Logic/PuzzleMissingPiece.cs:46
+#: ../src/Games/Logic/PuzzleMissingPiece.cs:45
 msgid "The logic works at row level."
 msgstr "Es handelt sich um eine reihenweise Logik."
 
 # 'and then flipping' ist laut Spiel nicht erforderlich
-#: ../src/Games/Logic/PuzzleMissingPiece.cs:51
+#: ../src/Games/Logic/PuzzleMissingPiece.cs:50
 msgid ""
 "In every row the third square is made by flipping the first square and "
 "superimposing it on the second square, followed by removing the matching "
@@ -2544,11 +2553,11 @@ msgstr ""
 "ersten Quadrates und Überlagerung mit dem zweiten Quadrat, wobei die "
 "gemeinsamen Linien entfernt werden."
 
-#: ../src/Games/Logic/PuzzleMissingSlice.cs:63
+#: ../src/Games/Logic/PuzzleMissingSlice.cs:62
 msgid "Missing slice"
 msgstr "Fehlendes Stück"
 
-#: ../src/Games/Logic/PuzzleMissingSlice.cs:68
+#: ../src/Games/Logic/PuzzleMissingSlice.cs:67
 #, csharp-format
 msgid ""
 "Some slices have a common property. Which is the missing slice in the circle "
@@ -2557,11 +2566,11 @@ msgstr ""
 "Einige Stücke haben eine gemeinsame Eigenschaft. Welches Stück fehlt im "
 "unteren Kreis? Antwort {0}, {1} oder {2}."
 
-#: ../src/Games/Logic/PuzzleMissingSlice.cs:73
+#: ../src/Games/Logic/PuzzleMissingSlice.cs:72
 msgid "Each slice is related to the opposite one."
 msgstr "Es besteht ein Zusammenhang zwischen gegenüberliegenden Stücken."
 
-#: ../src/Games/Logic/PuzzleMissingSlice.cs:78
+#: ../src/Games/Logic/PuzzleMissingSlice.cs:77
 #, csharp-format
 msgid ""
 "All numbers of each slice, when added to the ones of the opposite slice, add "
@@ -2570,11 +2579,11 @@ msgstr ""
 "Alle Zahlen eines Stücks ergeben immer {0}, wenn man sie zur Zahl im "
 "gegenüberliegenden Stück addiert."
 
-#: ../src/Games/Logic/PuzzleMostInCommon.cs:77
+#: ../src/Games/Logic/PuzzleMostInCommon.cs:76
 msgid "Most in common"
 msgstr "Größte Übereinstimmung"
 
-#: ../src/Games/Logic/PuzzleMostInCommon.cs:82
+#: ../src/Games/Logic/PuzzleMostInCommon.cs:81
 #, csharp-format
 msgid ""
 "Which of the possible answers have the most in common with the four given "
@@ -2583,19 +2592,19 @@ msgstr ""
 "Welche der möglichen Antworten stimmt am meisten mit den vier gezeigten "
 "Bildern überein? Antwort {0}, {1}, {2} oder {3}."
 
-#: ../src/Games/Logic/PuzzleMostInCommon.cs:87
+#: ../src/Games/Logic/PuzzleMostInCommon.cs:86
 msgid "Think of the common elements that the given figures have inside them."
 msgstr ""
 "Konzentrieren Sie sich auf die gemeinsamen Elemente, die sich innerhalb der "
 "Bilder befinden."
 
-#: ../src/Games/Logic/PuzzleMostInCommon.cs:93
+#: ../src/Games/Logic/PuzzleMostInCommon.cs:92
 msgid ""
 "It has the same number of elements inside the figure as the given figures."
 msgstr ""
 "Im Bild befinden sich gleich viele Elemente wie in den angegebenen Bildern."
 
-#: ../src/Games/Logic/PuzzleMostInCommon.cs:95
+#: ../src/Games/Logic/PuzzleMostInCommon.cs:94
 msgid ""
 "It is the figure with the most elements in common compared to the given "
 "figures."
@@ -2603,11 +2612,11 @@ msgstr ""
 "Es ist das Bild mit den meisten gemeinsamen Elementen verglichen mit den "
 "anderen."
 
-#: ../src/Games/Logic/PuzzleMoveFigure.cs:35
+#: ../src/Games/Logic/PuzzleMoveFigure.cs:33
 msgid "Move figure"
 msgstr "Bild bewegen"
 
-#: ../src/Games/Logic/PuzzleMoveFigure.cs:39
+#: ../src/Games/Logic/PuzzleMoveFigure.cs:37
 msgid ""
 "What is the minimum number of circles to be moved in order to convert the "
 "left figure into the right figure?"
@@ -2615,7 +2624,7 @@ msgstr ""
 "Wie lautet die minimale Anzahl an Kreisen, die bewegt werden müssen, um das "
 "linke Bild in das rechte zu verwandeln?"
 
-#: ../src/Games/Logic/PuzzleMoveFigure.cs:46
+#: ../src/Games/Logic/PuzzleMoveFigure.cs:44
 msgid ""
 "Move the circle from the first line to the second and move two circles from "
 "the fourth line to the second and the fifth lines."
@@ -2624,7 +2633,7 @@ msgstr ""
 "von der vierten Zeile zur zweiten sowie von der vierten zur neuen fünften "
 "Zeile."
 
-#: ../src/Games/Logic/PuzzleMoveFigure.cs:48
+#: ../src/Games/Logic/PuzzleMoveFigure.cs:46
 msgid ""
 "Move the first line to the seventh; move the two circles of the second line "
 "to third; and move first and last circles of the fifth line to the sixth."
@@ -2633,18 +2642,18 @@ msgstr ""
 "zweiten Zeile in die dritte sowie den ersten und letzten Kreis der fünften "
 "Zeile in die sechste Zeile."
 
-#: ../src/Games/Logic/PuzzleNextFigure.cs:54
+#: ../src/Games/Logic/PuzzleNextFigure.cs:53
 msgid "Next figure"
 msgstr "Nächstes Bild"
 
-#: ../src/Games/Logic/PuzzleNextFigure.cs:59
+#: ../src/Games/Logic/PuzzleNextFigure.cs:58
 #, csharp-format
 msgid ""
 "Which is the next logical figure in the sequence? Answer {0}, {1} or {2}."
 msgstr ""
 "Wie lautet das nächste logische Bild in der Folge? Antwort {0}, {1} oder {2}."
 
-#: ../src/Games/Logic/PuzzleNextFigure.cs:66
+#: ../src/Games/Logic/PuzzleNextFigure.cs:65
 #, csharp-format
 msgid ""
 "From first figure, the top circle advances by two positions clockwise, while "
@@ -2654,24 +2663,24 @@ msgstr ""
 "Uhrzeigersinn, während sich der linke Kreis eine Position in die "
 "Gegenrichtung bewegt."
 
-#: ../src/Games/Logic/PuzzleNumericRelation.cs:40
+#: ../src/Games/Logic/PuzzleNumericRelation.cs:38
 msgid "Numeric relation"
 msgstr "Numerischer Zusammenhang"
 
-#: ../src/Games/Logic/PuzzleNumericRelation.cs:44
+#: ../src/Games/Logic/PuzzleNumericRelation.cs:42
 msgid "What number should replace the question mark?"
 msgstr "Welche Zahl soll das Fragezeichen ersetzen?"
 
-#: ../src/Games/Logic/PuzzleNumericRelation.cs:48
+#: ../src/Games/Logic/PuzzleNumericRelation.cs:46
 msgid "The numbers are related arithmetically."
 msgstr "Zwischen den Zahlen besteht ein arithmetischer Zusammenhang."
 
-#: ../src/Games/Logic/PuzzleNumericRelation.cs:55
+#: ../src/Games/Logic/PuzzleNumericRelation.cs:53
 #, csharp-format
 msgid "Every group of {0} numbers sums exactly {1}."
 msgstr "Jede Gruppe von {0} Zahlen ergibt genau eine Summe von {1}."
 
-#: ../src/Games/Logic/PuzzleNumericRelation.cs:57
+#: ../src/Games/Logic/PuzzleNumericRelation.cs:55
 msgid ""
 "Divide the sequence in groups of three numbers. Every third number is "
 "calculated by multiplying by the two previous ones."
@@ -2679,7 +2688,7 @@ msgstr ""
 "Teilen Sie die Folge in Gruppen von drei Zahlen. Jede dritte Zahl wird durch "
 "Multiplikation der beiden vorherigen berechnet."
 
-#: ../src/Games/Logic/PuzzleNumericRelation.cs:59
+#: ../src/Games/Logic/PuzzleNumericRelation.cs:57
 msgid ""
 "Divide the sequence in groups of three numbers. Every third number is "
 "calculated by subtracting the second number from the first."
@@ -2687,11 +2696,11 @@ msgstr ""
 "Teilen Sie die Folge in Gruppen von drei Zahlen. Jede dritte Zahl wird durch "
 "Subtraktion der zweiten Zahl von der ersten berechnet."
 
-#: ../src/Games/Logic/PuzzleNumericSequence.cs:37
+#: ../src/Games/Logic/PuzzleNumericSequence.cs:35
 msgid "Numeric sequence"
 msgstr "Numerische Folge"
 
-#: ../src/Games/Logic/PuzzleNumericSequence.cs:41
+#: ../src/Games/Logic/PuzzleNumericSequence.cs:39
 msgid ""
 "The next sequence follows a logic. What number should replace the question "
 "mark?"
@@ -2699,13 +2708,13 @@ msgstr ""
 "Hinter der nächsten Folge steckt eine Logik. Welche Zahl soll das "
 "Fragezeichen ersetzen?"
 
-#: ../src/Games/Logic/PuzzleNumericSequence.cs:45
+#: ../src/Games/Logic/PuzzleNumericSequence.cs:43
 msgid "Every number in the sequence is related to the previous one."
 msgstr ""
 "Es besteht ein Zusammenhang zwischen jeder Zahl der Folge und der vorherigen "
 "Zahl."
 
-#: ../src/Games/Logic/PuzzleNumericSequence.cs:52
+#: ../src/Games/Logic/PuzzleNumericSequence.cs:50
 msgid ""
 "Every number in the sequence is the result of subtracting 1 from the "
 "previous number and multiplying it by 2."
@@ -2713,7 +2722,7 @@ msgstr ""
 "Jede Zahl der Folge ist das Ergebnis aus Subtraktion von 1 von der "
 "vorherigen Zahl und Multiplikation mit 2."
 
-#: ../src/Games/Logic/PuzzleNumericSequence.cs:54
+#: ../src/Games/Logic/PuzzleNumericSequence.cs:52
 msgid ""
 "Every number in the sequence is the result of adding 1 to the previous "
 "number and multiplying it by 3."
@@ -2721,7 +2730,7 @@ msgstr ""
 "Jede Zahl der Folge ist das Ergebnis aus Addition von 1 zur vorherigen Zahl "
 "und Multiplikation mit 3."
 
-#: ../src/Games/Logic/PuzzleNumericSequence.cs:56
+#: ../src/Games/Logic/PuzzleNumericSequence.cs:54
 msgid ""
 "Every number in the sequence is the result of subtracting 2 from the "
 "previous number and multiplying it by -2."
@@ -2729,12 +2738,12 @@ msgstr ""
 "Jede Zahl der Folge ist das Ergebnis aus Subtraktion von 2 von der "
 "vorherigen Zahl und Multiplikation mit -2."
 
-#: ../src/Games/Logic/PuzzleOstracism.cs:55
+#: ../src/Games/Logic/PuzzleOstracism.cs:53
 msgid "Ostracism"
 msgstr "Ostrakismos (Scherbengericht)"
 
 # Weggelassen, da im Widerspruch zur Antwort: Es handelt sich nicht um eine Folge von Elementen.
-#: ../src/Games/Logic/PuzzleOstracism.cs:60
+#: ../src/Games/Logic/PuzzleOstracism.cs:58
 #, csharp-format
 msgid ""
 "Which element does not belong to the group? It is not related to "
@@ -2743,7 +2752,7 @@ msgstr ""
 "Welches Element gehört nicht zur Gruppe? Es hat nichts mit Teilbarkeit der "
 "Zahlen zu tun. Antwort {0}, {1}, {2}, {3} oder {4}."
 
-#: ../src/Games/Logic/PuzzleOstracism.cs:68
+#: ../src/Games/Logic/PuzzleOstracism.cs:66
 msgid ""
 "The criteria for deciding if an equation belongs to the group is not "
 "arithmetical."
@@ -2751,7 +2760,7 @@ msgstr ""
 "Das Kriterium zur Entscheidung, ob die Gleichung zur Gruppe gehört, ist "
 "nicht arithmetisch."
 
-#: ../src/Games/Logic/PuzzleOstracism.cs:70
+#: ../src/Games/Logic/PuzzleOstracism.cs:68
 msgid ""
 "Consider that every number that belongs to the group has two parts that are "
 "related."
@@ -2759,7 +2768,7 @@ msgstr ""
 "Beachten Sie, dass jede Zahl, die zur Gruppe gehört, zwei Teile hat, "
 "zwischen denen ein Zusammenhang besteht."
 
-#: ../src/Games/Logic/PuzzleOstracism.cs:81
+#: ../src/Games/Logic/PuzzleOstracism.cs:79
 msgid ""
 "In all the other equations the digits from the left side appear also in the "
 "right side."
@@ -2767,7 +2776,7 @@ msgstr ""
 "In allen anderen Gleichungen kommen die Ziffern der linken Seite auch auf "
 "der rechten Seite vor."
 
-#: ../src/Games/Logic/PuzzleOstracism.cs:83
+#: ../src/Games/Logic/PuzzleOstracism.cs:81
 msgid ""
 "In all the other numbers the last three digits are the square of the first "
 "two digits."
@@ -2775,7 +2784,7 @@ msgstr ""
 "Bei allen anderen Zahlen sind die letzten drei Stellen das Quadrat der "
 "ersten beiden Stellen."
 
-#: ../src/Games/Logic/PuzzlePredicateLogic.cs:58
+#: ../src/Games/Logic/PuzzlePredicateLogic.cs:56
 #, csharp-format
 msgid ""
 "If all painters are artists and some citizens of Barcelona are artists. "
@@ -2785,26 +2794,26 @@ msgstr ""
 "Künstler sind, welche der folgenden Aussagen ist dann zutreffend? Antworten "
 "Sie mit {0}, {1}, {2} oder {3}."
 
-#: ../src/Games/Logic/PuzzlePredicateLogic.cs:60
+#: ../src/Games/Logic/PuzzlePredicateLogic.cs:58
 msgid "Some citizens of Barcelona are painters"
 msgstr "Einige Einwohner von Barcelona sind Maler"
 
-#: ../src/Games/Logic/PuzzlePredicateLogic.cs:61
+#: ../src/Games/Logic/PuzzlePredicateLogic.cs:59
 msgid "All citizens of Barcelona are painters"
 msgstr "Alle Einwohner von Barcelona sind Maler"
 
-#: ../src/Games/Logic/PuzzlePredicateLogic.cs:62
+#: ../src/Games/Logic/PuzzlePredicateLogic.cs:60
 msgid "No citizen of Barcelona is a painter"
 msgstr "Kein Einwohner von Barcelona ist ein Maler"
 
-#: ../src/Games/Logic/PuzzlePredicateLogic.cs:63
-#: ../src/Games/Logic/PuzzlePredicateLogic.cs:71
-#: ../src/Games/Logic/PuzzlePredicateLogic.cs:79
-#: ../src/Games/Logic/PuzzlePredicateLogic.cs:87
+#: ../src/Games/Logic/PuzzlePredicateLogic.cs:61
+#: ../src/Games/Logic/PuzzlePredicateLogic.cs:69
+#: ../src/Games/Logic/PuzzlePredicateLogic.cs:77
+#: ../src/Games/Logic/PuzzlePredicateLogic.cs:85
 msgid "None of the other options"
 msgstr "Keine der anderen Optionen"
 
-#: ../src/Games/Logic/PuzzlePredicateLogic.cs:66
+#: ../src/Games/Logic/PuzzlePredicateLogic.cs:64
 #, csharp-format
 msgid ""
 "If no ill artist is happy and some artists are happy. Which of the following "
@@ -2814,19 +2823,19 @@ msgstr ""
 "sind, welche der folgenden Aussagen ist dann zutreffend? Antworten Sie mit "
 "{0}, {1}, {2} oder {3}."
 
-#: ../src/Games/Logic/PuzzlePredicateLogic.cs:68
+#: ../src/Games/Logic/PuzzlePredicateLogic.cs:66
 msgid "Some artist are not ill"
 msgstr "Einige Künstler sind nicht krank"
 
-#: ../src/Games/Logic/PuzzlePredicateLogic.cs:69
+#: ../src/Games/Logic/PuzzlePredicateLogic.cs:67
 msgid "Some painters are not artists"
 msgstr "Einige Maler sind keine Künstler"
 
-#: ../src/Games/Logic/PuzzlePredicateLogic.cs:70
+#: ../src/Games/Logic/PuzzlePredicateLogic.cs:68
 msgid "All artists are happy"
 msgstr "Alle Künstler sind glücklich"
 
-#: ../src/Games/Logic/PuzzlePredicateLogic.cs:74
+#: ../src/Games/Logic/PuzzlePredicateLogic.cs:72
 #, csharp-format
 msgid ""
 "People that travel always buy a map. You are not going to travel. Which of "
@@ -2836,19 +2845,19 @@ msgstr ""
 "der folgenden Aussagen ist zutreffend? Antworten Sie mit {0}, {1}, {2} oder "
 "{3}."
 
-#: ../src/Games/Logic/PuzzlePredicateLogic.cs:76
+#: ../src/Games/Logic/PuzzlePredicateLogic.cs:74
 msgid "You do not have any map"
 msgstr "Sie besitzen überhaupt keine Karte"
 
-#: ../src/Games/Logic/PuzzlePredicateLogic.cs:77
+#: ../src/Games/Logic/PuzzlePredicateLogic.cs:75
 msgid "You do not buy a map"
 msgstr "Sie kaufen keine Karte"
 
-#: ../src/Games/Logic/PuzzlePredicateLogic.cs:78
+#: ../src/Games/Logic/PuzzlePredicateLogic.cs:76
 msgid "All people have a map"
 msgstr "Alle Leute haben eine Karte"
 
-#: ../src/Games/Logic/PuzzlePredicateLogic.cs:82
+#: ../src/Games/Logic/PuzzlePredicateLogic.cs:80
 #, csharp-format
 msgid ""
 "If you whistle if you are happy and you always smile when you whistle, which "
@@ -2858,27 +2867,27 @@ msgstr ""
 "pfeifen - welche der folgenden Aussagen ist dann zutreffend? Antworten Sie "
 "mit {0}, {1}, {2} oder {3}."
 
-#: ../src/Games/Logic/PuzzlePredicateLogic.cs:84
+#: ../src/Games/Logic/PuzzlePredicateLogic.cs:82
 msgid "You smile if you are happy"
 msgstr "Sie lächeln, wenn Sie glücklich sind"
 
-#: ../src/Games/Logic/PuzzlePredicateLogic.cs:85
+#: ../src/Games/Logic/PuzzlePredicateLogic.cs:83
 msgid "You are only happy if you whistle"
 msgstr "Sie sind nur dann glücklich, wenn Sie pfeifen"
 
-#: ../src/Games/Logic/PuzzlePredicateLogic.cs:86
+#: ../src/Games/Logic/PuzzlePredicateLogic.cs:84
 msgid "You whistle if you are not happy"
 msgstr "Sie pfeifen, wenn Sie nicht glücklich sind"
 
-#: ../src/Games/Logic/PuzzlePredicateLogic.cs:92
+#: ../src/Games/Logic/PuzzlePredicateLogic.cs:90
 msgid "Predicate Logic"
 msgstr "Prädikatenlogik"
 
-#: ../src/Games/Logic/PuzzlePencil.cs:39
+#: ../src/Games/Logic/PuzzlePencil.cs:38
 msgid "Pencil"
 msgstr "Bleistift"
 
-#: ../src/Games/Logic/PuzzlePencil.cs:44
+#: ../src/Games/Logic/PuzzlePencil.cs:43
 #, csharp-format
 msgid ""
 "Which of the following figures cannot be drawn without crossing any previous "
@@ -2888,11 +2897,11 @@ msgstr ""
 "vorhergehende Linie zu kreuzen oder den Bleistift anzuheben? Antwort {0}, "
 "{1}, {2}, {3} oder {4}."
 
-#: ../src/Games/Logic/PuzzlePeopleTable.cs:47
+#: ../src/Games/Logic/PuzzlePeopleTable.cs:45
 msgid "People at a table"
 msgstr "Leute an einem Tisch"
 
-#: ../src/Games/Logic/PuzzlePeopleTable.cs:51
+#: ../src/Games/Logic/PuzzlePeopleTable.cs:49
 #, csharp-format
 msgid ""
 "A group of people are sitting at round table, evenly spaced out. How many "
@@ -2901,7 +2910,7 @@ msgstr ""
 "Eine Gruppe Leute sitzt gleichmäßig verteilt um einen runden Tisch. Wie "
 "viele Leute sitzen dort, wenn die {0} Person der {1} genau gegenüber sitzt?"
 
-#: ../src/Games/Logic/PuzzlePeopleTable.cs:56
+#: ../src/Games/Logic/PuzzlePeopleTable.cs:54
 msgid ""
 "Subtracting the two positions you find out how many people are seated half "
 "way around the table. Doubling this number leaves you with the total amount "
@@ -2911,39 +2920,39 @@ msgstr ""
 "wie viele Personen auf einer Hälfte des Tisches sitzen. Eine Verdoppelung "
 "dieser Zahl führt zur gesuchten Gesamtanzahl an Leuten."
 
-#: ../src/Games/Logic/PuzzlePeopleTable.cs:64
+#: ../src/Games/Logic/PuzzlePeopleTable.cs:62
 msgid "5th"
 msgstr "5."
 
-#: ../src/Games/Logic/PuzzlePeopleTable.cs:65
+#: ../src/Games/Logic/PuzzlePeopleTable.cs:63
 msgid "19th"
 msgstr "19."
 
-#: ../src/Games/Logic/PuzzlePeopleTable.cs:69
+#: ../src/Games/Logic/PuzzlePeopleTable.cs:67
 msgid "4th"
 msgstr "4."
 
-#: ../src/Games/Logic/PuzzlePeopleTable.cs:70
+#: ../src/Games/Logic/PuzzlePeopleTable.cs:68
 msgid "12th"
 msgstr "12."
 
-#: ../src/Games/Logic/PuzzlePeopleTable.cs:74
+#: ../src/Games/Logic/PuzzlePeopleTable.cs:72
 msgid "9th"
 msgstr "9."
 
-#: ../src/Games/Logic/PuzzlePeopleTable.cs:75
+#: ../src/Games/Logic/PuzzlePeopleTable.cs:73
 msgid "22nd"
 msgstr "22."
 
-#: ../src/Games/Logic/PuzzlePeopleTable.cs:115
+#: ../src/Games/Logic/PuzzlePeopleTable.cs:113
 msgid "Two people in the table sitting across each other"
 msgstr "Zwei Personen sitzen einander am Tisch gegenüber"
 
-#: ../src/Games/Logic/PuzzlePercentage.cs:43
+#: ../src/Games/Logic/PuzzlePercentage.cs:41
 msgid "Percentage"
 msgstr "Anteil"
 
-#: ../src/Games/Logic/PuzzlePercentage.cs:80
+#: ../src/Games/Logic/PuzzlePercentage.cs:78
 #, csharp-format
 msgid ""
 "After getting {0}% discount you have paid {1} monetary units for a TV set. "
@@ -2952,7 +2961,7 @@ msgstr ""
 "Nachdem Sie einen Rabatt von {0}% erhielten, zahlten Sie {1} Geldeinheiten "
 "für ein Fernsehgerät. Was war der ursprüngliche Preis des Fernsehgerätes?"
 
-#: ../src/Games/Logic/PuzzlePercentage.cs:97
+#: ../src/Games/Logic/PuzzlePercentage.cs:95
 #, csharp-format
 msgid ""
 "John's shop had sales of {0} monetary units. This was an increase of {1}% "
@@ -2962,7 +2971,7 @@ msgstr ""
 "Steigerung von {1}% gegenüber dem vorherigen Monat. Wie hoch war der Umsatz "
 "im vorherigen Monat?"
 
-#: ../src/Games/Logic/PuzzlePercentage.cs:112
+#: ../src/Games/Logic/PuzzlePercentage.cs:110
 #, csharp-format
 msgid ""
 "The amount of water in a bucket decreases by {0}%. By what percentage must "
@@ -2972,15 +2981,15 @@ msgstr ""
 "muss die Wassermenge zunehmen, damit der ursprüngliche Stand wieder erreicht "
 "wird?"
 
-#: ../src/Games/Logic/PuzzlePercentage.cs:115
+#: ../src/Games/Logic/PuzzlePercentage.cs:113
 msgid "The objective is to obtain the same total amount."
 msgstr "Ziel ist es, die gleiche Gesamtmenge zu erreichen."
 
-#: ../src/Games/Logic/PuzzleQuadrilaterals.cs:46
+#: ../src/Games/Logic/PuzzleQuadrilaterals.cs:44
 msgid "Quadrilaterals"
 msgstr "Vierecke"
 
-#: ../src/Games/Logic/PuzzleQuadrilaterals.cs:51
+#: ../src/Games/Logic/PuzzleQuadrilaterals.cs:49
 #, csharp-format
 msgid ""
 "Which of the following figures does not belong to the group? Answer {0}, "
@@ -2989,15 +2998,15 @@ msgstr ""
 "Welches der folgenden Bilder gehört nicht zur Gruppe? Antwort {0}, {1}, {2}, "
 "{3}, {4} oder {5}."
 
-#: ../src/Games/Logic/PuzzleQuadrilaterals.cs:58
+#: ../src/Games/Logic/PuzzleQuadrilaterals.cs:56
 msgid "It is the only figure with all lines of equal length."
 msgstr "Es ist die einzige Figur, deren Linien alle gleich lang sind."
 
-#: ../src/Games/Logic/PuzzleSquareDots.cs:93
+#: ../src/Games/Logic/PuzzleSquareDots.cs:92
 msgid "Square with dots"
 msgstr "Quadrat mit Punkten"
 
-#: ../src/Games/Logic/PuzzleSquareDots.cs:98
+#: ../src/Games/Logic/PuzzleSquareDots.cs:97
 #, csharp-format
 msgid ""
 "What is the letter of the figure that represents the next logical figure in "
@@ -3006,11 +3015,11 @@ msgstr ""
 "Wie lautet der Buchstabe, der das nächste logische Bild in der Folge "
 "repräsentiert? Antwort {0}, {1} oder {2}."
 
-#: ../src/Games/Logic/PuzzleSquaresAndLetters.cs:37
+#: ../src/Games/Logic/PuzzleSquaresAndLetters.cs:35
 msgid "Squares and letters"
 msgstr "Quadrate und Buchstaben"
 
-#: ../src/Games/Logic/PuzzleSquaresAndLetters.cs:41
+#: ../src/Games/Logic/PuzzleSquaresAndLetters.cs:39
 msgid ""
 "The letters around the squares follow a pattern. Which letter should replace "
 "the question mark in the last square?"
@@ -3018,7 +3027,7 @@ msgstr ""
 "Die Buchstaben an den Quadraten folgen einem Muster. Welcher Buchstabe soll "
 "das Fragezeichen am letzten Quadrat ersetzen?"
 
-#: ../src/Games/Logic/PuzzleSquaresAndLetters.cs:46
+#: ../src/Games/Logic/PuzzleSquaresAndLetters.cs:44
 #, csharp-format
 msgid ""
 "Every letter is calculated by taking the alphabetical position of the "
@@ -3028,15 +3037,15 @@ msgstr ""
 "Jeder Buchstabe ergibt sich aus der Position des vorherigen im Alphabet, zu "
 "der man {0} hinzuzählt, um an die Position des neuen Buchstabens zu gelangen."
 
-#: ../src/Games/Logic/PuzzleSquares.cs:34
+#: ../src/Games/Logic/PuzzleSquares.cs:32
 msgid "Squares"
 msgstr "Quadrate"
 
-#: ../src/Games/Logic/PuzzleSquares.cs:38
+#: ../src/Games/Logic/PuzzleSquares.cs:36
 msgid "How many squares of any size do you count in the figure below?"
 msgstr "Wie viele Quadrate beliebiger Größe können Sie im Bild unten zählen?"
 
-#: ../src/Games/Logic/PuzzleSquares.cs:42
+#: ../src/Games/Logic/PuzzleSquares.cs:40
 msgid ""
 "A square is a rectangle with sides of equal length. A square can also be "
 "built from other squares."
@@ -3044,7 +3053,7 @@ msgstr ""
 "Ein Quadrat ist ein Rechteck mit vier gleich langen Seiten. Ein Quadrat kann "
 "auch aus anderen Quadraten bestehen."
 
-#: ../src/Games/Logic/PuzzleSquares.cs:49
+#: ../src/Games/Logic/PuzzleSquares.cs:47
 msgid ""
 "There are 16 single squares, 9 squares made by 4 single squares, 4 squares "
 "made by 9 single squares and 1 square made by 16 single squares."
@@ -3052,7 +3061,7 @@ msgstr ""
 "Es gibt 16 einzelne Quadrate, 9 Quadrate aus 4 einzelnen, 4 Quadrate aus 9 "
 "einzelnen und 1 Quadrat, das aus 16 einzelnen besteht."
 
-#: ../src/Games/Logic/PuzzleSquares.cs:51
+#: ../src/Games/Logic/PuzzleSquares.cs:49
 msgid ""
 "There are 9 single squares, 4 squares made by 4 single squares and 1 square "
 "made by 9 single squares."
@@ -3060,11 +3069,11 @@ msgstr ""
 "Es gibt 9 einzelne Quadrate, 4 Quadrate aus 4 einzelnen und 1 Quadrat, das "
 "aus 9 einzelnen besteht."
 
-#: ../src/Games/Logic/PuzzleSquareSheets.cs:32
+#: ../src/Games/Logic/PuzzleSquareSheets.cs:29
 msgid "Square sheets"
 msgstr "Quadratische Blätter"
 
-#: ../src/Games/Logic/PuzzleSquareSheets.cs:36
+#: ../src/Games/Logic/PuzzleSquareSheets.cs:33
 msgid ""
 "What is the minimum number of square sheets of paper of any size required to "
 "create the figure? Lines indicate frontiers between different sheets."
@@ -3073,11 +3082,11 @@ msgstr ""
 "Größe, um das Bild zu erstellen? Linien zeigen Grenzen zwischen "
 "unterschiedlichen Blättern."
 
-#: ../src/Games/Logic/PuzzleSquareSheets.cs:40
+#: ../src/Games/Logic/PuzzleSquareSheets.cs:37
 msgid "The sheets should overlap."
 msgstr "Die Blätter überlappen sich."
 
-#: ../src/Games/Logic/PuzzleSquareSheets.cs:45
+#: ../src/Games/Logic/PuzzleSquareSheets.cs:42
 msgid ""
 "The numbers in the figure reflect the different areas covered by each one of "
 "the sheets."
@@ -3085,17 +3094,17 @@ msgstr ""
 "Die Zahlen im Bild zeigen die unterschiedlichen Flächen, die jedes einzelne "
 "Blatt bedeckt."
 
-#: ../src/Games/Logic/PuzzleTetris.cs:37
+#: ../src/Games/Logic/PuzzleTetris.cs:35
 msgid "Tetris"
 msgstr "Tetris"
 
-#: ../src/Games/Logic/PuzzleTetris.cs:42
+#: ../src/Games/Logic/PuzzleTetris.cs:40
 #, csharp-format
 msgid "What figure completes the sequence below? Answer {0}, {1} or {2}."
 msgstr ""
 "Welches Bild vervollständigt die Folge unten? Antwort {0}, {1} oder {2}."
 
-#: ../src/Games/Logic/PuzzleTetris.cs:48
+#: ../src/Games/Logic/PuzzleTetris.cs:46
 msgid ""
 "It is the figure that completes all possible combinations with four blocks "
 "without taking into account rotations."
@@ -3103,7 +3112,7 @@ msgstr ""
 "Es handelt sich um das Bild, das alle möglichen Kombinationen mit vier "
 "Blöcken vervollständigt, ohne dabei Drehungen in Betracht zu ziehen."
 
-#: ../src/Games/Logic/PuzzleTimeNow.cs:36
+#: ../src/Games/Logic/PuzzleTimeNow.cs:34
 msgid "Time now"
 msgstr "Wie spät ist es"
 
@@ -3112,7 +3121,7 @@ msgstr "Wie spät ist es"
 #. http://msdn.microsoft.com/en-us/library/system.globalization.datetimeformatinfo.aspx
 #. For 12-hour clock format use {0:%h} and for 24-hour clock format use {0:%H}. The date formats {0:h} and {0:H} are invalid.
 #.
-#: ../src/Games/Logic/PuzzleTimeNow.cs:46
+#: ../src/Games/Logic/PuzzleTimeNow.cs:44
 #, csharp-format
 msgid ""
 "{0} hours ago it was as long after {1:h tt} as it was before {2:h tt} on the "
@@ -3122,7 +3131,7 @@ msgstr ""
 "Stunden früher als {2:%H} Uhr am selben Tag. Wie spät ist es jetzt? "
 "Antworten Sie mit der Uhrzeit (z.B.: {3:%H})"
 
-#: ../src/Games/Logic/PuzzleTimeNow.cs:52
+#: ../src/Games/Logic/PuzzleTimeNow.cs:50
 #, csharp-format
 msgid ""
 "You have to calculate the hour from which the distance is the same for the "
@@ -3138,21 +3147,21 @@ msgstr ""
 #. Explanation of the date and time format specifications can be found here:
 #. http://msdn.microsoft.com/en-us/library/system.globalization.datetimeformatinfo.aspx
 #. For 12-hour clock format use {0:%h} and for 24-hour clock format use {0:%H}. The date formats {0:h} and {0:H} are invalid.
-#: ../src/Games/Logic/PuzzleTimeNow.cs:78
+#: ../src/Games/Logic/PuzzleTimeNow.cs:76
 #, csharp-format
 msgid "{0:h tt}"
 msgstr "{0:%H}"
 
 #. No hands
-#: ../src/Games/Logic/PuzzleTimeNow.cs:87
+#: ../src/Games/Logic/PuzzleTimeNow.cs:85
 msgid "Sample clock"
 msgstr "Uhr"
 
-#: ../src/Games/Logic/PuzzleTrains.cs:43
+#: ../src/Games/Logic/PuzzleTrains.cs:41
 msgid "Trains"
 msgstr "Züge"
 
-#: ../src/Games/Logic/PuzzleTrains.cs:55
+#: ../src/Games/Logic/PuzzleTrains.cs:53
 msgid "The distance formula is 'distance = rate x time'."
 msgstr ""
 "Die Formel für die Entfernung lautet »Entfernung = Geschwindigkeit x Zeit«."
@@ -3160,7 +3169,7 @@ msgstr ""
 #. Translators:
 #. - {0}, {1} and {2} are always greater than 2
 #. - mph (miles per hour). You must localize this using the right unit of speed for your locale
-#: ../src/Games/Logic/PuzzleTrains.cs:84
+#: ../src/Games/Logic/PuzzleTrains.cs:82
 #, csharp-format
 msgid ""
 "A train leaves the station traveling at {0} mph. {1} hour later a second "
@@ -3181,7 +3190,7 @@ msgstr[1] ""
 "km/h. Wie viele Stunden dauert es, bis der zweite Zug den ersten Zug "
 "überholt?"
 
-#: ../src/Games/Logic/PuzzleTrains.cs:88
+#: ../src/Games/Logic/PuzzleTrains.cs:86
 #, csharp-format
 msgid ""
 "You can calculate the answer multiplying the second train speed by the time "
@@ -3194,7 +3203,7 @@ msgstr ""
 #. Translators:
 #. - {0}, {1} and {3} are always greater than 2
 #. - mph (miles per hour) and miles must be localized this using the right unit of speed for your locale
-#: ../src/Games/Logic/PuzzleTrains.cs:106
+#: ../src/Games/Logic/PuzzleTrains.cs:104
 #, csharp-format
 msgid ""
 "Two trains separated by {0} miles are heading towards each other on straight "
@@ -3205,8 +3214,8 @@ msgstr ""
 "parallelen Gleisen zu. Einer fährt mit {1} km/h, der andere mit {2} km/h. "
 "Nach wie vielen Stunden treffen sie sich?"
 
-#: ../src/Games/Logic/PuzzleTrains.cs:109
-#: ../src/Games/Logic/PuzzleTrains.cs:130
+#: ../src/Games/Logic/PuzzleTrains.cs:107
+#: ../src/Games/Logic/PuzzleTrains.cs:128
 #, csharp-format
 msgid ""
 "You can calculate the answer dividing the distance by the sum of both speeds."
@@ -3217,7 +3226,7 @@ msgstr ""
 #. Translators:
 #. - {0}, {1} and {2} are always greater than 2
 #. - mph (miles per hour). You must localize this using the right unit of speed for your locale
-#: ../src/Games/Logic/PuzzleTrains.cs:127
+#: ../src/Games/Logic/PuzzleTrains.cs:125
 #, csharp-format
 msgid ""
 "Two trains on straight parallel tracks leave from the same point and time "
@@ -3228,70 +3237,70 @@ msgstr ""
 "parallelen Gleisen in entgegengesetzte Richtungen mit {0} bzw. {1} km/h los. "
 "Nach wie vielen Stunden werden sie {2} km voneinander entfernt sein?"
 
-#: ../src/Games/Logic/PuzzleTriangles.cs:34
+#: ../src/Games/Logic/PuzzleTriangles.cs:32
 msgid "Triangles"
 msgstr "Dreiecke"
 
-#: ../src/Games/Logic/PuzzleTriangles.cs:38
+#: ../src/Games/Logic/PuzzleTriangles.cs:36
 msgid "How many triangles of any size do you count in the figure below?"
 msgstr "Wie viele Dreiecke beliebiger Größe zählen Sie im unteren Bild?"
 
-#: ../src/Games/Logic/PuzzleTriangles.cs:42
+#: ../src/Games/Logic/PuzzleTriangles.cs:40
 msgid "A triangle can be embedded inside another triangle."
 msgstr "Ein Dreieck kann sich innerhalb eines anderen Dreiecks befinden."
 
-#: ../src/Games/Logic/PuzzleTriangles.cs:47
+#: ../src/Games/Logic/PuzzleTriangles.cs:45
 #, csharp-format
 msgid "The triangles are made by connecting the following points: {0}"
 msgstr "Die Dreiecke entstehen durch Verbindung folgender Punkte: {0}"
 
-#: ../src/Games/Logic/PuzzleTrianglesWithNumbers.cs:60
+#: ../src/Games/Logic/PuzzleTrianglesWithNumbers.cs:58
 msgid "Triangles with numbers"
 msgstr "Dreiecke mit Zahlen"
 
-#: ../src/Games/Logic/PuzzleTrianglesWithNumbers.cs:64
+#: ../src/Games/Logic/PuzzleTrianglesWithNumbers.cs:62
 msgid "Which number should replace the question mark below?"
 msgstr "Welche Zahl soll das Fragezeichen unten ersetzen?"
 
-#: ../src/Games/Logic/PuzzleTrianglesWithNumbers.cs:69
+#: ../src/Games/Logic/PuzzleTrianglesWithNumbers.cs:67
 msgid "All the triangles share a property and are independent of the rest."
 msgstr ""
 "Alle Dreiecke teilen sich eine Eigenschaft und sind unabhängig von den "
 "anderen."
 
-#: ../src/Games/Logic/PuzzleTrianglesWithNumbers.cs:74
+#: ../src/Games/Logic/PuzzleTrianglesWithNumbers.cs:72
 #, csharp-format
 msgid "The result of multiplying the two numbers inside every triangle is {0}."
 msgstr ""
 "Das Ergebnis der Multiplikation beider Zahlen in jedem Dreieck ist {0}."
 
-#: ../src/Games/Memory/MemoryColouredFigures.cs:52
+#: ../src/Games/Memory/MemoryColouredFigures.cs:51
 msgid "Colored figures"
 msgstr "Farbige Bilder"
 
-#: ../src/Games/Memory/MemoryColouredFigures.cs:61
+#: ../src/Games/Memory/MemoryColouredFigures.cs:60
 #, csharp-format
 msgid ""
 "Which of these figures was previously shown? Answer {0}, {1}, {2} or {3}."
 msgstr ""
 "Welches dieser Bilder wurde zuvor gezeigt? Antwort {0}, {1}, {2} oder {3}."
 
-#: ../src/Games/Memory/MemoryColouredText.cs:37
+#: ../src/Games/Memory/MemoryColouredText.cs:36
 msgid "Colored text"
 msgstr "Farbiger Text"
 
-#: ../src/Games/Memory/MemoryColouredText.cs:46
+#: ../src/Games/Memory/MemoryColouredText.cs:45
 #, csharp-format
 msgid "What was the color of the text that said '{0}'?"
 msgstr "Welche Farbe hatte der Text mit der Bezeichnung »{0}«?"
 
-#: ../src/Games/Memory/MemoryCountDots.cs:42
+#: ../src/Games/Memory/MemoryCountDots.cs:41
 msgid "Counting dots"
 msgstr "Punkte zählen"
 
 # Am Ende des Satzes, sonst steht z.B. »Wie viele blau Punkte …«
 #. Translators: {0} is the name of the color. The color name is always singular
-#: ../src/Games/Memory/MemoryCountDots.cs:53
+#: ../src/Games/Memory/MemoryCountDots.cs:52
 #, csharp-format
 msgid ""
 "How many dots of {0} color were in the previous image? Answer using numbers."
@@ -3299,12 +3308,12 @@ msgstr ""
 "Wie viele Punkte der Farbe {0} waren im vorherigen Bild? Antworten Sie mit "
 "Zahlen."
 
-#: ../src/Games/Memory/MemoryFacts.cs:52
+#: ../src/Games/Memory/MemoryFacts.cs:49
 msgid "Memorize facts"
 msgstr "Fakten merken"
 
 #. Translators: {0} is replaced by a number, {1} by a year (like 1940)
-#: ../src/Games/Memory/MemoryFacts.cs:111
+#: ../src/Games/Memory/MemoryFacts.cs:108
 #, csharp-format
 msgid ""
 "Shiny Cars had already announced a {0} days production halt next month, but "
@@ -3314,17 +3323,17 @@ msgstr ""
 "Monat angekündigt, allerdings hatten sie davor die Produktion seit {1} nicht "
 "eingestellt."
 
-#: ../src/Games/Memory/MemoryFacts.cs:113
+#: ../src/Games/Memory/MemoryFacts.cs:110
 msgid "For how many days did Shiny Cars halt its production?"
 msgstr "Wie viele Tage lang stellten »Shiny Cars« die Produktion ein?"
 
-#: ../src/Games/Memory/MemoryFacts.cs:114
+#: ../src/Games/Memory/MemoryFacts.cs:111
 msgid "In what year did Shiny Cars last halt its production?"
 msgstr ""
 "In welchem Jahr stellten »Shiny Cars« das letzte Mal die Produktion ein?"
 
 #. Translators: {0} is replaced by a number, {1} by a year (like 1940)
-#: ../src/Games/Memory/MemoryFacts.cs:122
+#: ../src/Games/Memory/MemoryFacts.cs:119
 #, csharp-format
 msgid ""
 "Shiny Cars sales fell {0}% this past December, the worse decline since {1}."
@@ -3332,11 +3341,11 @@ msgstr ""
 "Der Umsatz von »Shiny Cars« fiel im letzten Dezember um {0}%, wobei dies der "
 "schlimmste Rückgang seit {1} war."
 
-#: ../src/Games/Memory/MemoryFacts.cs:124
+#: ../src/Games/Memory/MemoryFacts.cs:121
 msgid "By how much did company sales fall last December?"
 msgstr "Um wie viel fiel der Umsatz im letzten Dezember?"
 
-#: ../src/Games/Memory/MemoryFacts.cs:125
+#: ../src/Games/Memory/MemoryFacts.cs:122
 msgid ""
 "In what year did Shiny Cars record a sales total lower than that of last "
 "December?"
@@ -3344,21 +3353,21 @@ msgstr ""
 "In welchem Jahr verbuchten »Shiny Cars« einen geringeren Umsatz als im "
 "letzten Dezember?"
 
-#: ../src/Games/Memory/MemoryFacts.cs:130
+#: ../src/Games/Memory/MemoryFacts.cs:127
 #, csharp-format
 msgid "About {0}% of Shiny Cars produced worldwide are sold in Europe."
 msgstr ""
 "Ungefähr {0}% der von »Shiny Cars« weltweit hergestellten Autos werden in "
 "Europa verkauft."
 
-#: ../src/Games/Memory/MemoryFacts.cs:132
+#: ../src/Games/Memory/MemoryFacts.cs:129
 msgid ""
 "What percentage of all Shiny Cars produced worldwide are sold in Europe?"
 msgstr ""
 "Welcher Prozentsatz aller von »Shiny Cars« weltweit hergestellten Autos wird "
 "in Europa verkauft?"
 
-#: ../src/Games/Memory/MemoryFacts.cs:138
+#: ../src/Games/Memory/MemoryFacts.cs:135
 #, csharp-format
 msgid ""
 "About {0}% of Shiny Cars use diesel, {1}% use gasoline and the remainder use "
@@ -3367,19 +3376,19 @@ msgstr ""
 "Ungefähr {0}% der Autos von »Shiny Cars« fahren mit Diesel, {1}% fahren mit "
 "Benzin und der Rest wird elektrisch angetrieben."
 
-#: ../src/Games/Memory/MemoryFacts.cs:140
+#: ../src/Games/Memory/MemoryFacts.cs:137
 msgid "What percentage of Shiny Cars use diesel?"
 msgstr "Wie viel Prozent der Autos von »Shiny Cars« fahren mit Diesel?"
 
-#: ../src/Games/Memory/MemoryFacts.cs:141
+#: ../src/Games/Memory/MemoryFacts.cs:138
 msgid "What percentage of Shiny Cars use gasoline?"
 msgstr "Wie viel Prozent der Autos von »Shiny Cars« fahren mit Benzin?"
 
-#: ../src/Games/Memory/MemoryFigures.cs:56
+#: ../src/Games/Memory/MemoryFigures.cs:55
 msgid "Memory figures"
 msgstr "Bilder merken"
 
-#: ../src/Games/Memory/MemoryFigures.cs:61
+#: ../src/Games/Memory/MemoryFigures.cs:60
 msgid ""
 "In which cell is the other figure like the one shown below? Answer the cell "
 "number."
@@ -3387,27 +3396,27 @@ msgstr ""
 "In welcher Zelle befindet sich das andere Symbol wie das unten gezeigte? "
 "Geben Sie die Zellnummer ein."
 
-#: ../src/Games/Memory/MemoryFiguresAndText.cs:52
+#: ../src/Games/Memory/MemoryFiguresAndText.cs:51
 msgid "Triangle"
 msgstr "Dreieck"
 
-#: ../src/Games/Memory/MemoryFiguresAndText.cs:54
+#: ../src/Games/Memory/MemoryFiguresAndText.cs:53
 msgid "Square"
 msgstr "Quadrat"
 
-#: ../src/Games/Memory/MemoryFiguresAndText.cs:56
+#: ../src/Games/Memory/MemoryFiguresAndText.cs:55
 msgid "Pentagon"
 msgstr "Fünfeck"
 
-#: ../src/Games/Memory/MemoryFiguresAndText.cs:58
+#: ../src/Games/Memory/MemoryFiguresAndText.cs:57
 msgid "Circle"
 msgstr "Kreis"
 
-#: ../src/Games/Memory/MemoryFiguresAndText.cs:66
+#: ../src/Games/Memory/MemoryFiguresAndText.cs:65
 msgid "Memorize figures and text"
 msgstr "Merken von Bildern und Text"
 
-#: ../src/Games/Memory/MemoryFiguresAndText.cs:70
+#: ../src/Games/Memory/MemoryFiguresAndText.cs:69
 msgid ""
 "The list below enumerates the figures shown in the previous image except for "
 "one. Which is the missing figure? Possible answers are triangle, square, "
@@ -3417,48 +3426,48 @@ msgstr ""
 "gezeigten Elemente bis auf eines. Welches Element fehlt? Mögliche Antworten "
 "sind Dreieck, Quadrat, Fünfeck und Kreis."
 
-#: ../src/Games/Memory/MemoryFiguresNumbers.cs:40
+#: ../src/Games/Memory/MemoryFiguresNumbers.cs:39
 msgid "Figures with numbers"
 msgstr "Figuren mit Zahlen"
 
-#: ../src/Games/Memory/MemoryFiguresNumbers.cs:45
+#: ../src/Games/Memory/MemoryFiguresNumbers.cs:44
 #, csharp-format
 msgid ""
 "Which one of these squares was previously shown? Answer {0}, {1}, {2} or {3}."
 msgstr ""
 "Welches dieser Quadrate wurde zuvor gezeigt? Antwort {0}, {1}, {2} oder {3}."
 
-#: ../src/Games/Memory/MemoryIndications.cs:131
+#: ../src/Games/Memory/MemoryIndications.cs:130
 #, csharp-format
 msgid "Start at point number {0}"
 msgstr "Startpunkt {0}"
 
-#: ../src/Games/Memory/MemoryIndications.cs:135
+#: ../src/Games/Memory/MemoryIndications.cs:134
 msgid "Move right"
 msgstr "Nach rechts gehen"
 
-#: ../src/Games/Memory/MemoryIndications.cs:137
+#: ../src/Games/Memory/MemoryIndications.cs:136
 msgid "Move left"
 msgstr "Nach links gehen"
 
-#: ../src/Games/Memory/MemoryIndications.cs:139
+#: ../src/Games/Memory/MemoryIndications.cs:138
 msgid "Move up"
 msgstr "Nach oben gehen"
 
-#: ../src/Games/Memory/MemoryIndications.cs:141
+#: ../src/Games/Memory/MemoryIndications.cs:140
 msgid "Move down"
 msgstr "Nach unten gehen"
 
-#: ../src/Games/Memory/MemoryIndications.cs:146
+#: ../src/Games/Memory/MemoryIndications.cs:145
 #, csharp-format
 msgid "End at point {0}"
 msgstr "Endpunkt {0}"
 
-#: ../src/Games/Memory/MemoryIndications.cs:160
+#: ../src/Games/Memory/MemoryIndications.cs:159
 msgid "Memorize indications"
 msgstr "Angaben merken"
 
-#: ../src/Games/Memory/MemoryIndications.cs:166
+#: ../src/Games/Memory/MemoryIndications.cs:165
 #, csharp-format
 msgid ""
 "Which of the following graphics represent the indications previously given? "
@@ -3468,19 +3477,19 @@ msgstr ""
 "Anweisungen? Antwort {0}, {1}, {2} oder {3}."
 
 # Am Ende des Satzes, sonst steht z.B. »Wie viele blau Punkte …«
-#: ../src/Games/Memory/MemoryNumbers.cs:59
+#: ../src/Games/Memory/MemoryNumbers.cs:56
 msgid "How many odd numbers were in the previous image? Answer using numbers."
 msgstr ""
 "Wie viele ungerade Zahlen waren im vorherigen Bild? Antworten Sie mit Zahlen."
 
 # Am Ende des Satzes, sonst steht z.B. »Wie viele blau Punkte …«
-#: ../src/Games/Memory/MemoryNumbers.cs:79
+#: ../src/Games/Memory/MemoryNumbers.cs:76
 msgid "How many even numbers were in the previous image? Answer using numbers."
 msgstr ""
 "Wie viele gerade Zahlen waren im vorherigen Bild? Antworten Sie mit Zahlen."
 
 # Am Ende des Satzes, sonst steht z.B. »Wie viele blau Punkte …«
-#: ../src/Games/Memory/MemoryNumbers.cs:99
+#: ../src/Games/Memory/MemoryNumbers.cs:96
 msgid ""
 "How many numbers with more than one digit were in the previous image? Answer "
 "using numbers."
@@ -3488,15 +3497,15 @@ msgstr ""
 "Wie viele mehrstellige Zahlen waren im vorherigen Bild? Antworten Sie mit "
 "Zahlen."
 
-#: ../src/Games/Memory/MemoryNumbers.cs:116
+#: ../src/Games/Memory/MemoryNumbers.cs:113
 msgid "Memorize numbers"
 msgstr "Zahlen merken"
 
-#: ../src/Games/Memory/MemoryWords.cs:39
+#: ../src/Games/Memory/MemoryWords.cs:37
 msgid "Memorize words"
 msgstr "Wörter einprägen"
 
-#: ../src/Games/Memory/MemoryWords.cs:44
+#: ../src/Games/Memory/MemoryWords.cs:42
 #, csharp-format
 msgid ""
 "There is a missing word from the previous list. Which one is the missing "
@@ -3504,161 +3513,161 @@ msgid ""
 msgstr ""
 "Es fehlt ein Wort aus der vorherigen Liste. Wie lautet das fehlende Wort?"
 
-#: ../src/Games/Memory/MemoryWords.cs:54
+#: ../src/Games/Memory/MemoryWords.cs:52
 msgid "elbow"
 msgstr "Ellbogen"
 
-#: ../src/Games/Memory/MemoryWords.cs:55
+#: ../src/Games/Memory/MemoryWords.cs:53
 msgid "armpit"
 msgstr "Achsel"
 
-#: ../src/Games/Memory/MemoryWords.cs:56
+#: ../src/Games/Memory/MemoryWords.cs:54
 msgid "hand"
 msgstr "Hand"
 
-#: ../src/Games/Memory/MemoryWords.cs:57
+#: ../src/Games/Memory/MemoryWords.cs:55
 msgid "chest"
 msgstr "Brust"
 
 #. Fishes
-#: ../src/Games/Memory/MemoryWords.cs:60
+#: ../src/Games/Memory/MemoryWords.cs:58
 msgid "sardine"
 msgstr "Sardine"
 
-#: ../src/Games/Memory/MemoryWords.cs:61
+#: ../src/Games/Memory/MemoryWords.cs:59
 msgid "trout"
 msgstr "Forelle"
 
-#: ../src/Games/Memory/MemoryWords.cs:62
+#: ../src/Games/Memory/MemoryWords.cs:60
 msgid "monkfish"
 msgstr "Seeteufel"
 
-#: ../src/Games/Memory/MemoryWords.cs:63
+#: ../src/Games/Memory/MemoryWords.cs:61
 msgid "cod"
 msgstr "Kabeljau"
 
-#: ../src/Games/Memory/MemoryWords.cs:64
+#: ../src/Games/Memory/MemoryWords.cs:62
 msgid "salmon"
 msgstr "Lachs"
 
 #. Vegetables
-#: ../src/Games/Memory/MemoryWords.cs:67
+#: ../src/Games/Memory/MemoryWords.cs:65
 msgid "potato"
 msgstr "Kartoffel"
 
-#: ../src/Games/Memory/MemoryWords.cs:68
+#: ../src/Games/Memory/MemoryWords.cs:66
 msgid "ginger"
 msgstr "Ingwer"
 
-#: ../src/Games/Memory/MemoryWords.cs:69
+#: ../src/Games/Memory/MemoryWords.cs:67
 msgid "pepper"
 msgstr "Pfeffer"
 
-#: ../src/Games/Memory/MemoryWords.cs:70
+#: ../src/Games/Memory/MemoryWords.cs:68
 msgid "garlic"
 msgstr "Essig"
 
-#: ../src/Games/Memory/MemoryWords.cs:71
+#: ../src/Games/Memory/MemoryWords.cs:69
 msgid "pumpkin"
 msgstr "Kürbis"
 
 #. Bicycle
-#: ../src/Games/Memory/MemoryWords.cs:74
+#: ../src/Games/Memory/MemoryWords.cs:72
 msgid "brake"
 msgstr "Bremse"
 
-#: ../src/Games/Memory/MemoryWords.cs:75
+#: ../src/Games/Memory/MemoryWords.cs:73
 msgid "pedal"
 msgstr "Pedal"
 
-#: ../src/Games/Memory/MemoryWords.cs:76
+#: ../src/Games/Memory/MemoryWords.cs:74
 msgid "chain"
 msgstr "Kette"
 
-#: ../src/Games/Memory/MemoryWords.cs:77
+#: ../src/Games/Memory/MemoryWords.cs:75
 msgid "wheel"
 msgstr "Rad"
 
-#: ../src/Games/Memory/MemoryWords.cs:78
+#: ../src/Games/Memory/MemoryWords.cs:76
 msgid "handlebar"
 msgstr "Lenkrad"
 
 #. Music
-#: ../src/Games/Memory/MemoryWords.cs:81
+#: ../src/Games/Memory/MemoryWords.cs:79
 msgid "drummer"
 msgstr "Schlagzeug"
 
-#: ../src/Games/Memory/MemoryWords.cs:82
+#: ../src/Games/Memory/MemoryWords.cs:80
 msgid "speaker"
 msgstr "Lautsprecher"
 
-#: ../src/Games/Memory/MemoryWords.cs:83
+#: ../src/Games/Memory/MemoryWords.cs:81
 msgid "lyrics"
 msgstr "Texte"
 
-#: ../src/Games/Memory/MemoryWords.cs:84
+#: ../src/Games/Memory/MemoryWords.cs:82
 msgid "beat"
 msgstr "Takt"
 
-#: ../src/Games/Memory/MemoryWords.cs:85
+#: ../src/Games/Memory/MemoryWords.cs:83
 msgid "song"
 msgstr "Stück"
 
 #. Weather
-#: ../src/Games/Memory/MemoryWords.cs:88
+#: ../src/Games/Memory/MemoryWords.cs:86
 msgid "cloud"
 msgstr "Wolke"
 
-#: ../src/Games/Memory/MemoryWords.cs:89
+#: ../src/Games/Memory/MemoryWords.cs:87
 msgid "rain"
 msgstr "Regen"
 
-#: ../src/Games/Memory/MemoryWords.cs:90
+#: ../src/Games/Memory/MemoryWords.cs:88
 msgid "storm"
 msgstr "Sturm"
 
-#: ../src/Games/Memory/MemoryWords.cs:91
+#: ../src/Games/Memory/MemoryWords.cs:89
 msgid "fog"
 msgstr "Nebel"
 
-#: ../src/Games/Memory/MemoryWords.cs:92
+#: ../src/Games/Memory/MemoryWords.cs:90
 msgid "rainbow"
 msgstr "Regenbogen"
 
 #. Animals
-#: ../src/Games/Memory/MemoryWords.cs:95
+#: ../src/Games/Memory/MemoryWords.cs:93
 msgid "rabbit"
 msgstr "Hase"
 
-#: ../src/Games/Memory/MemoryWords.cs:96
+#: ../src/Games/Memory/MemoryWords.cs:94
 msgid "mouse"
 msgstr "Maus"
 
-#: ../src/Games/Memory/MemoryWords.cs:97
+#: ../src/Games/Memory/MemoryWords.cs:95
 msgid "monkey"
 msgstr "Affe"
 
-#: ../src/Games/Memory/MemoryWords.cs:98
+#: ../src/Games/Memory/MemoryWords.cs:96
 msgid "bear"
 msgstr "Bär"
 
-#: ../src/Games/Memory/MemoryWords.cs:99
+#: ../src/Games/Memory/MemoryWords.cs:97
 msgid "wolf"
 msgstr "Wolf"
 
-#: ../src/Games/Calculation/CalculationArithmetical.cs:45
+#: ../src/Games/Calculation/CalculationArithmetical.cs:42
 msgid "Arithmetical"
 msgstr "Arithmetik"
 
-#: ../src/Games/Calculation/CalculationArithmetical.cs:53
+#: ../src/Games/Calculation/CalculationArithmetical.cs:50
 msgid "What is the result of the arithmetical operation?"
 msgstr "Wie lautet das Ergebnis der Rechenaufgabe?"
 
-#: ../src/Games/Calculation/CalculationAverage.cs:40
+#: ../src/Games/Calculation/CalculationAverage.cs:38
 msgid "Average"
 msgstr "Durchschnitt"
 
-#: ../src/Games/Calculation/CalculationAverage.cs:57
+#: ../src/Games/Calculation/CalculationAverage.cs:55
 #, csharp-format
 msgid ""
 "Given the numbers: {0}. Which of the following numbers is the nearest to the "
@@ -3667,7 +3676,7 @@ msgstr ""
 "Zahlenangabe: {0}. Welche der folgenden Zahlen liegt dem Durchschnitt am "
 "nächsten? Antwort {1}, {2}, {3} oder {4}."
 
-#: ../src/Games/Calculation/CalculationAverage.cs:62
+#: ../src/Games/Calculation/CalculationAverage.cs:60
 msgid ""
 "The average of a list of numbers is the sum of all of the numbers divided by "
 "the number of items in the list."
@@ -3675,16 +3684,16 @@ msgstr ""
 "Der Durchschnitt einer Liste an Zahlen ist die Summe aller Zahlen dividiert "
 "durch die Anzahl an Einträgen der Liste."
 
-#: ../src/Games/Calculation/CalculationAverage.cs:67
+#: ../src/Games/Calculation/CalculationAverage.cs:65
 #, csharp-format
 msgid "The result of the operation is {0:##0.###}."
 msgstr "Das Ergebnis der Rechnung lautet {0:##0.###}."
 
-#: ../src/Games/Calculation/CalculationCloserFraction.cs:39
+#: ../src/Games/Calculation/CalculationCloserFraction.cs:37
 msgid "Closer fraction"
 msgstr "Näherer Bruch"
 
-#: ../src/Games/Calculation/CalculationCloserFraction.cs:48
+#: ../src/Games/Calculation/CalculationCloserFraction.cs:46
 #, csharp-format
 msgid ""
 "Which of the following numbers is closer to {0:##0.###}? Answer {1}, {2}, "
@@ -3693,16 +3702,16 @@ msgstr ""
 "Welche der folgenden Zahlen liegt näher bei {0:##0.###}? Antwort {1}, {2}, "
 "{3} oder {4}."
 
-#: ../src/Games/Calculation/CalculationCloserFraction.cs:56
+#: ../src/Games/Calculation/CalculationCloserFraction.cs:54
 #, csharp-format
 msgid "The result of the operation {0} / {1} is {2:##0.###}"
 msgstr "Das Ergebnis der Rechnung {0} / {1} lautet {2:##0.###}"
 
-#: ../src/Games/Calculation/CalculationFractions.cs:62
+#: ../src/Games/Calculation/CalculationFractions.cs:60
 msgid "Fractions"
 msgstr "Brüche"
 
-#: ../src/Games/Calculation/CalculationFractions.cs:70
+#: ../src/Games/Calculation/CalculationFractions.cs:68
 #, csharp-format
 msgid ""
 "What is the result of the given operation? Answer using either a fraction or "
@@ -3711,52 +3720,52 @@ msgstr ""
 "Wie lautet das Ergebnis der angegebenen Operation? Sie können als Antwort "
 "entweder einen Bruch oder eine Zahl angeben."
 
-#: ../src/Games/Calculation/CalculationGreatestDivisor.cs:39
+#: ../src/Games/Calculation/CalculationGreatestDivisor.cs:37
 msgid "Greatest divisor"
 msgstr "Größter Teiler"
 
-#: ../src/Games/Calculation/CalculationGreatestDivisor.cs:47
+#: ../src/Games/Calculation/CalculationGreatestDivisor.cs:45
 msgid ""
 "Which of the possible divisors is the greatest that divides all numbers?"
 msgstr "Welcher der folgenden Teiler ist der größte, der alle Zahlen teilt?"
 
-#: ../src/Games/Calculation/CalculationGreatestDivisor.cs:238
-#: ../src/Games/Calculation/CalculationPrimes.cs:235
+#: ../src/Games/Calculation/CalculationGreatestDivisor.cs:236
+#: ../src/Games/Calculation/CalculationPrimes.cs:233
 msgid "Numbers"
 msgstr "Zahlen"
 
-#: ../src/Games/Calculation/CalculationGreatestDivisor.cs:252
+#: ../src/Games/Calculation/CalculationGreatestDivisor.cs:250
 msgid "Possible divisors"
 msgstr "Mögliche Teiler"
 
-#: ../src/Games/Calculation/CalculationOperator.cs:37
+#: ../src/Games/Calculation/CalculationOperator.cs:35
 msgid "Operators"
 msgstr "Operatoren"
 
-#: ../src/Games/Calculation/CalculationOperator.cs:41
+#: ../src/Games/Calculation/CalculationOperator.cs:39
 #, csharp-format
 msgid "The first operator is {0}."
 msgstr "Der erste Operator ist {0}."
 
-#: ../src/Games/Calculation/CalculationOperator.cs:49
+#: ../src/Games/Calculation/CalculationOperator.cs:47
 #, csharp-format
 msgid "Which operators make {0}, {1}, and {2} equal {3}? Answer using '+-/*'."
 msgstr ""
 "Welche Rechenzeichen müssen eingesetzt werden, damit {0}, {1} und {2} die "
 "Zahl {3} ergeben? Antworten Sie mit »+-/*«."
 
-#: ../src/Games/Calculation/CalculationOperator.cs:61
-#: ../src/Games/Calculation/CalculationRatio.cs:69
-#: ../src/Games/Calculation/CalculationTwoNumbers.cs:73
+#: ../src/Games/Calculation/CalculationOperator.cs:59
+#: ../src/Games/Calculation/CalculationRatio.cs:67
+#: ../src/Games/Calculation/CalculationTwoNumbers.cs:71
 #, csharp-format
 msgid "{0} and {1}"
 msgstr "{0} und {1}"
 
-#: ../src/Games/Calculation/CalculationPrimes.cs:155
+#: ../src/Games/Calculation/CalculationPrimes.cs:153
 msgid "Primes"
 msgstr "Primzahlen"
 
-#: ../src/Games/Calculation/CalculationPrimes.cs:163
+#: ../src/Games/Calculation/CalculationPrimes.cs:161
 msgid ""
 "In the set of numbers below, which of the following numbers is a prime? A "
 "prime number is a positive integer that has exactly two different positive "
@@ -3766,7 +3775,7 @@ msgstr ""
 "eine natürliche Zahl mit genau zwei natürlichen Zahlen als Teiler, nämlich "
 "der Zahl 1 und sich selbst."
 
-#: ../src/Games/Calculation/CalculationPrimes.cs:167
+#: ../src/Games/Calculation/CalculationPrimes.cs:165
 msgid ""
 "If the sum of all digits in a given number is divisible by 3, then so is the "
 "number. For example 15 = 1 + 5 = 6, which is divisible by 3."
@@ -3775,20 +3784,20 @@ msgstr ""
 "Zahl selbst durch drei teilbar. Beispiel: Die Ziffernsumme von 15 ist 1 + 5 "
 "= 6, was durch drei teilbar ist."
 
-#: ../src/Games/Calculation/CalculationProportions.cs:39
+#: ../src/Games/Calculation/CalculationProportions.cs:37
 msgid "Proportions"
 msgstr "Größenverhältnisse"
 
-#: ../src/Games/Calculation/CalculationProportions.cs:49
+#: ../src/Games/Calculation/CalculationProportions.cs:47
 #, csharp-format
 msgid "What is {0}% of {1}/{2}? Answer {3}, {4}, {5} or {6}."
 msgstr "Wie viel sind {0}% von {1}/{2}? Antwort {3}, {4}, {5} oder {6}."
 
-#: ../src/Games/Calculation/CalculationRatio.cs:34
+#: ../src/Games/Calculation/CalculationRatio.cs:32
 msgid "Ratio"
 msgstr "Zahlenverhältnis"
 
-#: ../src/Games/Calculation/CalculationRatio.cs:44
+#: ../src/Games/Calculation/CalculationRatio.cs:42
 #, csharp-format
 msgid ""
 "Two numbers sum {0} and have a ratio of {1} to {2}. Which are these numbers? "
@@ -3797,7 +3806,7 @@ msgstr ""
 "Zwei Zahlen, deren Summe {0} ergibt, haben ein Verhältnis von {1} zu {2}. "
 "Wie lauten diese Zahlen? Antworten Sie mit zwei Zahlen (z.B.: 1 und 2)."
 
-#: ../src/Games/Calculation/CalculationRatio.cs:51
+#: ../src/Games/Calculation/CalculationRatio.cs:49
 #, csharp-format
 msgid ""
 "The second number is calculated by multiplying the first by {0} and dividing "
@@ -3807,7 +3816,7 @@ msgstr ""
 "durch {1} berechnet."
 
 # Die Formulierung liest sich seltsam.
-#: ../src/Games/Calculation/CalculationRatio.cs:57
+#: ../src/Games/Calculation/CalculationRatio.cs:55
 msgid ""
 "A ratio specifies a proportion between two numbers. A ratio a:b means that "
 "for every 'a' parts you have 'b' parts."
@@ -3815,22 +3824,22 @@ msgstr ""
 "Ein Verhältnis gibt die Proportion zwischen zwei Zahlen an. Ein Verhältnis a:"
 "b bedeutet, dass man für jeweils »a« Teile »b« Teile hat."
 
-#: ../src/Games/Calculation/CalculationRatio.cs:110
-#: ../src/Games/Calculation/CalculationTwoNumbers.cs:128
+#: ../src/Games/Calculation/CalculationRatio.cs:108
+#: ../src/Games/Calculation/CalculationTwoNumbers.cs:126
 #, csharp-format
 msgid "x + y = {0}"
 msgstr "x + y = {0}"
 
-#: ../src/Games/Calculation/CalculationRatio.cs:113
+#: ../src/Games/Calculation/CalculationRatio.cs:111
 #, csharp-format
 msgid "have a ratio of {0}:{1}"
 msgstr "haben ein Verhältnis von {0}:{1}"
 
-#: ../src/Games/Calculation/CalculationTwoNumbers.cs:44
+#: ../src/Games/Calculation/CalculationTwoNumbers.cs:42
 msgid "Two numbers"
 msgstr "Zwei Zahlen"
 
-#: ../src/Games/Calculation/CalculationTwoNumbers.cs:55
+#: ../src/Games/Calculation/CalculationTwoNumbers.cs:53
 #, csharp-format
 msgid ""
 "Which two numbers when added are {0} and when multiplied are {1}? Answer "
@@ -3839,7 +3848,7 @@ msgstr ""
 "Welche zwei Zahlen ergeben bei Addition {0} und bei Multiplikation {1}? "
 "Antworten Sie mit zwei Zahlen (z.B.: 1 und 2)."
 
-#: ../src/Games/Calculation/CalculationTwoNumbers.cs:57
+#: ../src/Games/Calculation/CalculationTwoNumbers.cs:55
 #, csharp-format
 msgid ""
 "Which two numbers when subtracted are {0} and when multiplied are {1}? "
@@ -3848,12 +3857,12 @@ msgstr ""
 "Welche zwei Zahlen ergeben bei Subtraktion {0} und bei Multiplikation {1}? "
 "Antworten Sie mit zwei Zahlen (z.B.: 1 und 2)."
 
-#: ../src/Games/Calculation/CalculationTwoNumbers.cs:131
+#: ../src/Games/Calculation/CalculationTwoNumbers.cs:129
 #, csharp-format
 msgid "x - y = {0}"
 msgstr "x - y = {0}"
 
-#: ../src/Games/Calculation/CalculationTwoNumbers.cs:138
+#: ../src/Games/Calculation/CalculationTwoNumbers.cs:136
 #, csharp-format
 msgid "x * y = {0}"
 msgstr "x * y = {0}"
@@ -4084,6 +4093,9 @@ msgstr "_Deinstallieren …"
 #: ../src/Clients/Classical/mono-addins-strings.xml.h:35
 msgid "_Unselect All"
 msgstr "_Nichts auswählen"
+
+#~ msgid "wild"
+#~ msgstr "wild"
 
 #~ msgid "John's father's sister's sister-in-law is also?"
 #~ msgstr "Die Schwägerin von Johanns Vaters Schwester ist auch?"
