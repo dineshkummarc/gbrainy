@@ -12,7 +12,7 @@
 # norootforbuild
 
 Name:           gbrainy
-Version:        1.40
+Version:        1.51
 Release:        1.0
 License:        GPL v2 or later
 Source:         %{name}-%{version}.tar.gz
@@ -20,7 +20,7 @@ Autoreqprov:    on
 PreReq:         filesystem
 URL:            http://live.gnome.org/gbrainy
 BuildRoot:      %{_tmppath}/%{name}-%{version}-build
-BuildRequires:  mono-devel gtk-sharp2 perl-XML-Parser intltool
+BuildRequires:  mono-devel gtk-sharp2 perl-XML-Parser intltool mono-core
 Group:          Games
 Summary:        gbrainy is a brain teaser game and trainer to have fun and to keep your brain trained.
 
@@ -72,7 +72,7 @@ rm -rf "$RPM_BUILD_ROOT"
 %{_libdir}/gbrainy/gbrainy.Core.dll
 %{_libdir}/gbrainy/gbrainy.Core.dll.config
 %{_libdir}/gbrainy/gbrainy.Games.dll
-%{_datadir}/applications/gbrainy.desktop
+%{_datadir}/games/gbrainy/games.xml
 %{_datadir}/games/gbrainy/verbal_analogies.xml
 %{_datadir}/icons/hicolor/*/apps/*
 %{_datadir}/locale/*/LC_MESSAGES/gbrainy.mo
@@ -84,6 +84,6 @@ rm -rf "$RPM_BUILD_ROOT"
 %{_libdir}/pkgconfig/gbrainy.pc
 %{_datadir}/games/gbrainy/*
 %{_datadir}/games/gbrainy/
-
+%{_datadir}/applications/gbrainy.desktop
 %changelog
 
