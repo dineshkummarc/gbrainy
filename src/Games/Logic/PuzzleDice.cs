@@ -57,7 +57,7 @@ namespace gbrainy.Games.Logic
 
 			new Problem (Catalog.GetString ("Two fair 6 sided dices are thrown simultaneously. What is the probability of getting two even numbers? Answer using a fraction (e.g.: 1/2)."),
 				"9/36",
-				Catalog.GetString ("There are 9 of 36 possibilities of getting an even number."), false),
+				Catalog.GetString ("There are 9 of 36 possibilities of getting two even numbers."), false),
 
 			new Problem (Catalog.GetString ("Two fair 6 sided dices are thrown simultaneously. What is the probability of getting two '6'? Answer using a fraction (e.g.: 1/2)."),
 				"1/36",
