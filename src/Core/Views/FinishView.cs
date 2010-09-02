@@ -162,6 +162,7 @@ namespace gbrainy.Core.Views
 			y += 0.36;
 			gr.MoveTo (x, y);
 			gr.SetPangoFontSize (smaller_font);
+			// Translators: translated string should not be longer that the English original (space restriction on the UI)
 			gr.ShowPangoText (Catalog.GetString ("For details on how gbrainy's scoring works refer to the help."));
 
 			y += 0.07;
