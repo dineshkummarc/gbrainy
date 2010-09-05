@@ -9,15 +9,16 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gbrainy\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-08-23 19:37+0200\n"
-"PO-Revision-Date: 2010-08-22 12:57+0200\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
+"product=gbrainy&component=general\n"
+"POT-Creation-Date: 2010-09-04 07:45+0000\n"
+"PO-Revision-Date: 2010-09-05 18:39+0200\n"
 "Last-Translator: Petr Kovar <pknbe@volny.cz>\n"
 "Language-Team: Czech <gnome-cs-list@gnome.org>\n"
-"Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: cs\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2\n"
 "X-Poedit-Language: Czech\n"
 "X-Poedit-SourceCharset: utf-8\n"
@@ -1184,21 +1185,22 @@ msgstr "{0}. Počet vyhraných her: {1} (z {2} odehraných)"
 msgid "Time played {0} (average per game {1})"
 msgstr "Strávený čas {0} ({1} průměrně na hru)"
 
-#: ../src/Core/Views/FinishView.cs:165
+#. Translators: translated string should not be longer that the English original (space restriction on the UI)
+#: ../src/Core/Views/FinishView.cs:166
 msgid "For details on how gbrainy's scoring works refer to the help."
 msgstr ""
 "Podrobnosti o tom, jak funguje hodnocení v aplikaci gbrainy, najdete v "
 "nápovědě."
 
-#: ../src/Core/Views/FinishView.cs:175
+#: ../src/Core/Views/FinishView.cs:176
 msgid "Tips for your next games"
 msgstr "Rady do dalších her"
 
-#: ../src/Core/Views/FinishView.cs:203
+#: ../src/Core/Views/FinishView.cs:204
 msgid "Congratulations! New personal record"
 msgstr "Gratulujeme! Nový osobní rekord"
 
-#: ../src/Core/Views/FinishView.cs:213
+#: ../src/Core/Views/FinishView.cs:214
 #, csharp-format
 msgid ""
 "By scoring {0} in logic puzzle games you have established a new personal "
@@ -1207,7 +1209,7 @@ msgstr ""
 "Hodnocením {0} v logických hlavolamech jste vytvořili nový osobní rekord. "
 "Váš předchozí rekord byl {1}."
 
-#: ../src/Core/Views/FinishView.cs:219
+#: ../src/Core/Views/FinishView.cs:220
 #, csharp-format
 msgid ""
 "By scoring {0} in calculation games you have established a new personal "
@@ -1216,7 +1218,7 @@ msgstr ""
 "Hodnocením {0} v početních hrách jste vytvořili nový osobní rekord. Váš "
 "předchozí rekord byl {1}."
 
-#: ../src/Core/Views/FinishView.cs:225
+#: ../src/Core/Views/FinishView.cs:226
 #, csharp-format
 msgid ""
 "By scoring {0} in memory games you have established a new personal record. "
@@ -1225,7 +1227,7 @@ msgstr ""
 "Hodnocením {0} v paměťových hrách jste vytvořili nový osobní rekord. Váš "
 "předchozí rekord byl {1}."
 
-#: ../src/Core/Views/FinishView.cs:231
+#: ../src/Core/Views/FinishView.cs:232
 #, csharp-format
 msgid ""
 "By scoring {0} in verbal analogies you have established a new personal "
@@ -2164,8 +2166,8 @@ msgstr ""
 "padnou dvě sudá čísla? Odpovězte v podobě podílu (např.: 1/2)."
 
 #: ../src/Games/Logic/PuzzleDice.cs:60
-msgid "There are 9 of 36 possibilities of getting an even number."
-msgstr "Je to 9 z 36 možností, že padne sudé číslo."
+msgid "There are 9 of 36 possibilities of getting two even numbers."
+msgstr "Je to 9 možností, že padnou dvě sudá čísla, z 36 možností."
 
 #: ../src/Games/Logic/PuzzleDice.cs:62
 msgid ""
@@ -3070,8 +3072,8 @@ msgid ""
 "same day. What is the time now? Answer using the hour (e.g.: {3:h tt})"
 msgstr ""
 "Před {0} hodinami to bylo tak dlouho po {1:h tt} jako bylo před {2:h tt} ten "
-"stejný den. Kolik je teď hodin? Odpověď napište ve formě času (např. "
-"{3:h tt})"
+"stejný den. Kolik je teď hodin? Odpověď napište ve formě času (např. {3:h "
+"tt})"
 
 #: ../src/Games/Logic/PuzzleTimeNow.cs:50
 #, csharp-format
@@ -4012,3 +4014,4 @@ msgstr "_Odinstalovat…"
 #: ../src/Clients/Classical/mono-addins-strings.xml.h:35
 msgid "_Unselect All"
 msgstr "_Zrušit výběr"
+
