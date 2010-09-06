@@ -25,7 +25,7 @@ using System.Collections.Generic;
 
 using gbrainy.Core.Main.Xml;
 
-public class GameXmlToAssembly
+public class GameXmlToGetString
 {
 	static readonly string output = "GameXmlGetString.cs";
 	static readonly string games = "../data/games.xml";
