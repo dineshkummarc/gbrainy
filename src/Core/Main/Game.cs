@@ -153,7 +153,7 @@ namespace gbrainy.Core.Main
 				if (String.IsNullOrEmpty (Rationale))
 					return str;
 
-				return str += " " + Rationale;
+				return str + " " + Rationale;
 			}
 		}
 

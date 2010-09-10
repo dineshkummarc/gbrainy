@@ -27,10 +27,7 @@ namespace gbrainy.Core.Main
 	// Implements functionality specific to gbrainy
 	public class CairoContextEx : CairoContext
 	{
-		static SVGImage image = null;
-
-		const double width_margin = 0.04;
-		const double line_spacing = 0.018;
+		static SVGImage image;
 
 		public CairoContextEx (IntPtr state, Gtk.Widget widget) : base (state, widget)
 		{

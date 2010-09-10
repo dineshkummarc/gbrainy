@@ -79,7 +79,7 @@ namespace gbrainy.Games.Calculation
 			options [options_next++] = correct;
 			options [options_next++] = percentage / 70d * num / den;
 			options [options_next++] = percentage / 120d * num / den;
-			options [options_next++] = percentage / 150d * num / den;;
+			options [options_next++] = percentage / 150d * num / den;
 
 			random_indices = new ArrayListIndicesRandom (options_cnt);
 			random_indices.Initialize ();

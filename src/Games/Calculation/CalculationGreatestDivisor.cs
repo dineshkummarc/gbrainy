@@ -69,7 +69,7 @@ namespace gbrainy.Games.Calculation
 			numbers = new int [num_answ_ques];
 			answers = new int [num_answ_ques];
 
-			// Common multiplayers for all numbers
+			// Common multipliers for all numbers
 			for (m = 0; m < mult.Length; m++) {
 				mult[m] = GetMultiplier (mult);
 			}

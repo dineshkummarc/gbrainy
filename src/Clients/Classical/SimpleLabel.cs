@@ -71,23 +71,20 @@ namespace gbrainy.Clients.Classical
 			if (String.IsNullOrEmpty (text))
 				return base.OnExposeEvent (args);
 
-			using (Cairo.Context cr = Gdk.CairoHelper.Create (args.Window))
-			{
-				int winWidth, winHeight;
-				Gdk.GC light = Style.ForegroundGC (StateType.Normal);
-				args.Window.GetSize (out winWidth, out winHeight);
+			int winWidth, winHeight;
+			Gdk.GC light = Style.ForegroundGC (StateType.Normal);
+			args.Window.GetSize (out winWidth, out winHeight);
 
-				using (Pango.Layout layout = new Pango.Layout (this.PangoContext))
-				{
-					if (Direction == Gtk.TextDirection.Rtl)
-						layout.Alignment = Pango.Alignment.Right;					
-					else
-						layout.Alignment = Pango.Alignment.Left;
-			
-					layout.Width = (winWidth - width_margin * 2) * (int) Pango.Scale.PangoScale;
-					layout.SetMarkup (text);
-					args.Window.DrawLayout (light, width_margin, height_margin, layout);
-				}
+			using (Pango.Layout layout = new Pango.Layout (this.PangoContext))
+			{
+				if (Direction == Gtk.TextDirection.Rtl)
+					layout.Alignment = Pango.Alignment.Right;					
+				else
+					layout.Alignment = Pango.Alignment.Left;
+		
+				layout.Width = (winWidth - width_margin * 2) * (int) Pango.Scale.PangoScale;
+				layout.SetMarkup (text);
+				args.Window.DrawLayout (light, width_margin, height_margin, layout);
 			}
 
 			return base.OnExposeEvent (args);
