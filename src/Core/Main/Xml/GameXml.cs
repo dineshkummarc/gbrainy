@@ -184,9 +184,9 @@ namespace gbrainy.Core.Main.Xml
 				rationale = CatalogGetString (game.Rationale);
 
 			if (variants && game.Variants[current.Variant].AnswerShow != null)
-				answer_value = game.Variants[current.Variant].AnswerShow;
+				answer_value = CatalogGetString (game.Variants[current.Variant].AnswerShow);
 			else
-				answer_value = game.AnswerShow;
+				answer_value = CatalogGetString (game.AnswerShow);
 
 			if (String.IsNullOrEmpty (variables) == false)
 			{
