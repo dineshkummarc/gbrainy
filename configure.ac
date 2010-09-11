@@ -128,7 +128,7 @@ else
 		AM_CONDITIONAL(ENABLE_TESTS, test "x$do_tests" = "xyes")
 
 		if test "x$do_tests" = "xno"; then
-			AC_MSG_WARN([Could not find nunit: tests will not be available])
+			AC_MSG_ERROR([Could not find nunit libraries])
 		fi
 	fi
 fi
