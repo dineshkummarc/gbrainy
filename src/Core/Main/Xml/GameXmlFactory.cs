@@ -275,7 +275,6 @@ namespace gbrainy.Core.Main.Xml
 						else
 							game.CheckAttributes = GameAnswerCheckAttributesDescription.FromString (reader.ReadElementString ());
 
-						game.CheckAttributes = GameAnswerCheckAttributesDescription.FromString (reader.ReadElementString ());
 						break;
 					case "_tip":
 						if (reader.NodeType != XmlNodeType.Element)
