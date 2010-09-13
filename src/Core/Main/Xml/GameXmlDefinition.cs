@@ -57,11 +57,25 @@ namespace gbrainy.Core.Main.Xml
 
 	public class TextDrawingObject : DrawingObject
 	{
+		public enum Sizes
+		{
+			Small,
+			Medium,
+			Large,
+			XLarge,
+			XXLarge,
+		}
+
 		public string Text { get; set; }
 		public double X { get; set; }
 		public double Y { get; set; }
 		public bool Centered { get; set; }
-		public bool Big { get; set; }
+		public Sizes Size { get; set; }
+
+		public TextDrawingObject ()
+		{
+			Size = Sizes.Medium;
+		}
 	};
 
 	public class GameXmlDefinitionVariant

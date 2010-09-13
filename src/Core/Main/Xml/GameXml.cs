@@ -245,10 +245,25 @@ namespace gbrainy.Core.Main.Xml
 						text = CatalogGetString (draw_string.Text);
 						text = CodeEvaluation.ReplaceVariables (text);
 
-						if (draw_string.Big)
-							gr.SetPangoLargeFontSize ();
-						else
-							gr.SetPangoNormalFontSize ();
+						switch (draw_string.Size) {
+						case TextDrawingObject.Sizes.Small:
+							gr.SetPangoFontSize (0.018);
+							break;
+						case TextDrawingObject.Sizes.Medium:
+							gr.SetPangoNormalFontSize (); // 0.022
+							break;
+						case TextDrawingObject.Sizes.Large:
+							gr.SetPangoLargeFontSize (); // 0.0325
+							break;
+						case TextDrawingObject.Sizes.XLarge:
+							gr.SetPangoFontSize (0.06);
+							break;
+						case TextDrawingObject.Sizes.XXLarge:
+							gr.SetPangoFontSize (0.08);
+							break;
+						default:
+							throw new InvalidOperationException ("Invalid value");
+						}
 
 						if (draw_string.Centered) {
 							gr.DrawTextCentered (draw_string.X, draw_string.Y, text);

@@ -89,7 +89,7 @@ namespace gbrainyTest
 			Assert.AreEqual (0.5, text.X);
 			Assert.AreEqual (0.4, text.Y);
 			Assert.AreEqual (true, text.Centered);
-			Assert.AreEqual (true, text.Big);
+			Assert.AreEqual (TextDrawingObject.Sizes.Large, text.Size);
 		}
 
 		[Test]

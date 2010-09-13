@@ -166,7 +166,7 @@
 				int rslt = num_b - num_a;
 			</variables>
 			<_question>What number plus [num_a] equals [num_b]?</_question>
-			<string _text = "x + [num_a] = [num_b]" x = "0.5" y = "0.4" centered = "yes" size = "big"/>
+			<string _text = "x + [num_a] = [num_b]" x = "0.5" y = "0.4" centered = "yes" size = "large"/>
 			<answer>[rslt]</answer>
 			<_rationale>It is the result of the operation [num_b] - [num_a].</_rationale>
 		</variant>
@@ -179,7 +179,7 @@
 				int rslt = num_b + num_a;
 			</variables>
 			<_question>What number minus [num_a] equals [num_b]?</_question>
-			<string _text = "x - [num_a] = [num_b]" x = "0.5" y = "0.4" centered = "yes" size = "big"/>
+			<string _text = "x - [num_a] = [num_b]" x = "0.5" y = "0.4" centered = "yes" size = "large"/>
 			<answer>[rslt]</answer>
 			<_rationale>It is the result of the operation [num_a] + [num_b].</_rationale>
 		</variant>
@@ -192,7 +192,7 @@
 				int rslt = num_b / num_a;
 			</variables>
 			<_question>What number multiplied by [num_a] equals [num_b]?</_question>
-			<string _text = "x * [num_a] = [num_b]" x = "0.5" y = "0.4" centered = "yes" size = "big"/>
+			<string _text = "x * [num_a] = [num_b]" x = "0.5" y = "0.4" centered = "yes" size = "large"/>
 			<answer>[rslt]</answer>
 			<_rationale>It is the result of the operation [num_b] / [num_a].</_rationale>
 		</variant>
@@ -205,7 +205,7 @@
 				int rslt = num_a * num_b;
 			</variables>
 			<_question>What number divided by [num_a] equals [num_b]?</_question>
-			<string _text = "x / [num_a] = [num_b]" x = "0.5" y = "0.4" centered = "yes" size = "big"/>
+			<string _text = "x / [num_a] = [num_b]" x = "0.5" y = "0.4" centered = "yes" size = "large"/>
 			<answer>[rslt]</answer>
 			<_rationale>It is the result of the operation [num_a] * [num_b].</_rationale>
 		</variant>
@@ -254,6 +254,5 @@
 			<answer_checkattributes>Trim | MatchAll </answer_checkattributes>
 			<_rationale>Palindrome years occur usually at 110 year intervals except for the end of each millennium that occur at a 11 years interval.</_rationale>
 		</variant>
-
 	</game>
 </games>
