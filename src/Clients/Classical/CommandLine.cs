@@ -147,7 +147,7 @@ namespace gbrainy.Clients.Classical
 
 				try
 				{
-					dictionary.Add (game.Name, i);
+					dictionary.Add (game.Name.ToLower (), i);
 				}
 				catch (Exception e)
 				{
@@ -161,7 +161,7 @@ namespace gbrainy.Clients.Classical
 			{
 				try
 				{
-					list.Add (dictionary [names [i]]);
+					list.Add (dictionary [names [i].ToLower ()]);
 				}
 				catch (KeyNotFoundException)
 				{
