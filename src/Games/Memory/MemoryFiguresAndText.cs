@@ -76,9 +76,6 @@ namespace gbrainy.Games.Memory
 
 			switch (CurrentDifficulty) {
 			case GameDifficulty.Easy:
-				figures_active = 4;
-				rows = columns = 2;
-				break;
 			case GameDifficulty.Medium:
 				figures_active = 6;
 				rows = 2;
