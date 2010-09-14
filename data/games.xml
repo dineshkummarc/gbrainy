@@ -255,4 +255,62 @@
 			<_rationale>Palindrome years occur usually at 110 year intervals except for the end of each millennium that occur at a 11 years interval.</_rationale>
 		</variant>
 	</game>
+
+	<game>
+		<_name>Dartboard</_name>
+		<type>Logic</type>
+		<difficulty>All</difficulty>
+		<variant>
+			<!-- 
+				* The array 'numbers' always contains 1 number that is not needed to accomplish the game
+				* There is a single combination that can solve the problem
+				* There are always 2 numbers that have to be repeated
+			-->
+			<variables>
+			int [] numbers = new int [] 
+			{
+				2, 20, 39, 10,
+				6, 30, 39, 11,
+				31, 12, 34, 8,
+				18, 20, 2, 31,
+				4, 14, 26, 27,
+				26, 7, 20, 27,
+			};
+
+			int [] ans = new int [] 
+			{
+				2, 20, 20, 39, 39,
+				6, 6, 30, 39, 39,
+				31, 31, 12, 12, 34,
+				18, 20, 20, 31, 31,
+				14, 26, 26, 27, 27,
+				26, 20, 20, 27, 27,
+			};
+
+			int idx = random.Next (6);
+			int value_a = numbers [4 * idx + 0];
+			int value_b = numbers [4 * idx + 1];
+			int value_c = numbers [4 * idx + 2];
+			int value_d = numbers [4 * idx + 3];
+
+			int answer_a = ans [5 * idx + 0];
+			int answer_b = ans [5 * idx + 1];
+			int answer_c = ans [5 * idx + 2];
+			int answer_d = ans [5 * idx + 3];
+			int answer_e = ans [5 * idx + 4];
+			</variables>
+			<_question>Where you have to hit the darts to add 120 points in 5 throws? Answer using a list of numbers (e.g.: 4, 5, 6, 3, 2)</_question>
+			<svg file = "dartboard.svg" x = "0.1" y = "0.1" width = "0.8" height = "0.8"/>
+
+			<string _text = "[value_a]" x = "0.35" y = "0.35" size = "x-large"/>
+			<string _text = "[value_b]" x = "0.54" y = "0.35" size = "x-large"/>
+			<string _text = "[value_c]" x = "0.35" y = "0.55" size = "x-large"/>
+			<string _text = "[value_d]" x = "0.54" y = "0.55" size = "x-large"/>
+
+			<_answer_show>[answer_a], [answer_b], [answer_c], [answer_d], [answer_e]</_answer_show>
+			<answer>[answer_a] | [answer_b] | [answer_c] | [answer_d] | [answer_e]</answer>
+			<answer_expression>[0-9]+</answer_expression>
+			<answer_checkattributes>Trim | MatchAll </answer_checkattributes>
+		</variant>
+	</game>
 </games>
