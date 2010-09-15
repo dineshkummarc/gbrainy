@@ -78,7 +78,10 @@ $(top_srcdir)/data/game-graphics/present.svg  	\
 $(top_srcdir)/data/game-graphics/handshake.svg	\
 $(top_srcdir)/data/game-graphics/dice.svg	\
 $(top_srcdir)/data/game-graphics/train_right.svg \
-$(top_srcdir)/data/game-graphics/train_left.svg
+$(top_srcdir)/data/game-graphics/train_left.svg \
+$(top_srcdir)/data/game-graphics/tv_set.svg \
+$(top_srcdir)/data/game-graphics/bucket.svg  \
+$(top_srcdir)/data/game-graphics/shop.svg
 
 
 REFS =  \
