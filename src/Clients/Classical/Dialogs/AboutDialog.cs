@@ -39,8 +39,8 @@ namespace gbrainy.Clients.Classical
 				"Carme Cabal Sard\u00e0",
 				"Jordi Mas i Hernandez",
 				"Felipe Menegaz",
+				"John Cliff",
 				"Openclipart.org",
-
 			};
 
 			string [] documenters = new string [] {

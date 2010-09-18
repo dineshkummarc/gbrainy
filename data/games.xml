@@ -313,4 +313,24 @@
 			<answer_checkattributes>Trim | MatchAll </answer_checkattributes>
 		</variant>
 	</game>
+
+	<game>
+		<_name>Horse race</_name>
+		<type>Logic</type>
+		<difficulty>All</difficulty>
+		<variant>
+			<svg file = "horses_men.svg" x = "0.2" y = "0.2" width = "0.6" height = "0.6"/>
+			<variables>
+				int men = 10 + random.Next (40);
+				int horses = 10 + random.Next (40);
+				int legs = 2 *  men + horses * 4;
+				int eyes = (men + horses) * 2;
+			</variables>
+			<_question>In a horse race there are people and horses. You can count [eyes] eye and [legs] leg. How many horses are present?</_question>
+			<question plural ="[eyes]">In a horse race there are people and horses. You can count [eyes] eyes and [legs] legs. How many horses are present?</question>
+			<answer>[horses]</answer>
+			<_rationale>There are [men] people and [horses] horses.</_rationale>
+			<_rationale plural ="[eyes]">There are [men] people and [horses] horses.</_rationale>
+		</variant>
+	</game>
 </games>
