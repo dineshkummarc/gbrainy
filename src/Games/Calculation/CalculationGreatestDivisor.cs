@@ -123,12 +123,12 @@ namespace gbrainy.Games.Calculation
 			right_answer = answer.ToString ();
 
 			// Drawing objects
-			Container container = new Container (DrawAreaX + 0.2, DrawAreaY + 0.25, 0.6, answers.Length * 0.15);
+			Container container = new Container (DrawAreaX + 0.2, DrawAreaY + 0.25, 0.4, answers.Length * 0.15);
 			AddWidget (container);
 	
 			for (int i = 0; i < answers.Length; i++)
 			{
-				DrawableArea drawable_area = new DrawableArea (0.5, 0.1);
+				DrawableArea drawable_area = new DrawableArea (0.3, 0.1);
 				drawable_area.X = DrawAreaX + 0.23;
 				drawable_area.Y = DrawAreaY + 0.27 + i * 0.15;
 				container.AddChild (drawable_area);
@@ -138,8 +138,8 @@ namespace gbrainy.Games.Calculation
 				drawable_area.DrawEventHandler += delegate (object sender, DrawEventArgs e)
 				{
 					int d = (int) e.Data;
-					e.Context.SetPangoLargeFontSize ();	
-					e.Context.MoveTo (0.05, 0.02);
+					e.Context.SetPangoLargeFontSize ();
+					e.Context.MoveTo (0.07, 0.02);
 					e.Context.ShowPangoText (String.Format (Catalog.GetString ("{0}) {1}"), GetPossibleAnswer (d),
 						answers[d].ToString ()));
 				};
