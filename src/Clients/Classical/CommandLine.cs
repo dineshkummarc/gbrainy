@@ -102,6 +102,7 @@ namespace gbrainy.Clients.Classical
 		public static void Version ()
 		{
 			Console.WriteLine ("gbrainy " + Defines.VERSION + " " +
+				// Translators: {0} is a date
 				String.Format (Catalog.GetString ("(built on {0})"), Defines.BUILD_TIME));
 		}
 
