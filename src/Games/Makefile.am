@@ -49,7 +49,8 @@ CSDISTFILES =  \
 		$(srcdir)/Logic/PuzzleTriangles.cs			\
 		$(srcdir)/Logic/PuzzleTrianglesWithNumbers.cs		\
 		$(srcdir)/Logic/PuzzlePredicateLogic.cs			\
-		$(srcdir)/Memory/MemoryColouredFigures.cs			\
+		$(srcdir)/Logic/PuzzleRelatedNumbers.cs			\
+		$(srcdir)/Memory/MemoryColouredFigures.cs		\
 		$(srcdir)/Memory/MemoryColouredText.cs			\
 		$(srcdir)/Memory/MemoryCountDots.cs			\
 		$(srcdir)/Memory/MemoryFacts.cs				\
@@ -67,7 +68,7 @@ CSDISTFILES =  \
 		$(srcdir)/Calculation/CalculationOperator.cs		\
 		$(srcdir)/Calculation/CalculationPrimes.cs		\
 		$(srcdir)/Calculation/CalculationProportions.cs		\
-		$(srcdir)/Calculation/CalculationRatio.cs			\
+		$(srcdir)/Calculation/CalculationRatio.cs		\
 		$(srcdir)/Calculation/CalculationTwoNumbers.cs
 
 CSFILES = $(CSDISTFILES)	\
