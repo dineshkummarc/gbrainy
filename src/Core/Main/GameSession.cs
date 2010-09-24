@@ -191,14 +191,14 @@ namespace gbrainy.Core.Main
 				if (history.GamesPlayed >= 10) {
 					int percentage_won = (int) (100 * history.GamesWon / history.GamesPlayed);
 					if (percentage_won >= 90)
-						s = String.Format (Catalog.GetString ("Outstanding results"));
+						s = Catalog.GetString ("Outstanding results");
 					else if (percentage_won >= 70)
-						s = String.Format (Catalog.GetString ("Excellent results"));
+						s = Catalog.GetString ("Excellent results");
 					else if (percentage_won >= 50)
-						s = String.Format (Catalog.GetString ("Good results"));
+						s = Catalog.GetString ("Good results");
 					else if (percentage_won >= 30)
-						s = String.Format (Catalog.GetString ("Poor results"));
-					else s = String.Format (Catalog.GetString ("Disappointing results"));
+						s = Catalog.GetString ("Poor results");
+					else s = Catalog.GetString ("Disappointing results");
 				} else
 					s = string.Empty;
 	
