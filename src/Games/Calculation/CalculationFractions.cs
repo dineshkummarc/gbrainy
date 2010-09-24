@@ -65,7 +65,7 @@ namespace gbrainy.Games.Calculation
 		}
 
 		public override string Question {
-			get {return String.Format (Catalog.GetString ("What is the result of the given operation? Answer using either a fraction or a number."));} 
+			get {return Catalog.GetString ("What is the result of the given operation? Answer using either a fraction or a number.");} 
 		}
 
 		private int Factor {

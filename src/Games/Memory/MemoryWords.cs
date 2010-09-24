@@ -39,7 +39,7 @@ namespace gbrainy.Games.Memory
 
 		public override string MemoryQuestion {
 			get { 
-				return String.Format (Catalog.GetString ("There is a missing word from the previous list. Which one is the missing word?"));}
+				return Catalog.GetString ("There is a missing word from the previous list. Which one is the missing word?");}
 		}
 
 		protected override void Initialize ()

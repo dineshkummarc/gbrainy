@@ -62,7 +62,7 @@ namespace gbrainy.Games.Logic
 
 		public override string Rationale {
 			get {
-				return String.Format (Catalog.GetString ("From first figure, the top circle advances by two positions clockwise, while the left circle goes backwards one position."));
+				return Catalog.GetString ("From first figure, the top circle advances by two positions clockwise, while the left circle goes backwards one position.");
 			}
 		}
 

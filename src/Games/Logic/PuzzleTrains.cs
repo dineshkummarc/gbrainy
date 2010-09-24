@@ -83,7 +83,7 @@ namespace gbrainy.Games.Logic
 						"A train leaves the station traveling at {0} mph. {1} hours later a second train leaves the station traveling in the same direction at {2} mph. How many hours does it take the second train to overtake the first train?", (int) hours),
 						speed_a, hours, speed_b);
 
-				answer = String.Format (Catalog.GetString ("You can calculate the answer multiplying the second train speed by the time and dividing it by the difference of speeds."));
+				answer = Catalog.GetString ("You can calculate the answer multiplying the second train speed by the time and dividing it by the difference of speeds.");
 
 				break;
 			}
@@ -104,7 +104,7 @@ namespace gbrainy.Games.Logic
 					Catalog.GetString ("Two trains separated by {0} miles are heading towards each other on straight parallel tracks. One travels at {1} mph and the other at {2} mph. In how many hours do they meet?"),
 						distance, speed_a, speed_b);
 
-				answer = String.Format (Catalog.GetString ("You can calculate the answer dividing the distance by the sum of both speeds."));
+				answer = Catalog.GetString ("You can calculate the answer dividing the distance by the sum of both speeds.");
 				break;
 			}
 			case GameType.Apart:
@@ -125,7 +125,7 @@ namespace gbrainy.Games.Logic
 					Catalog.GetString ("Two trains on straight parallel tracks leave from the same point and time traveling in opposite directions at {0} and {1} mph respectively. In how many hours they will be {2} miles apart?"), 
 						speed_a, speed_b, distance);
 
-				answer = String.Format (Catalog.GetString ("You can calculate the answer dividing the distance by the sum of both speeds."));
+				answer = Catalog.GetString ("You can calculate the answer dividing the distance by the sum of both speeds.");
 				break;
 			}
 			default:

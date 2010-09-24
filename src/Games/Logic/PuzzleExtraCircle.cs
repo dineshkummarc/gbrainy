@@ -57,7 +57,7 @@ namespace gbrainy.Games.Logic
 
 		public override string Rationale {
 			get {
-				return String.Format (Catalog.GetString ("In all circles the color slices follow the same order except for this one."));
+				return Catalog.GetString ("In all circles the color slices follow the same order except for this one.");
 			}
 		}
 
