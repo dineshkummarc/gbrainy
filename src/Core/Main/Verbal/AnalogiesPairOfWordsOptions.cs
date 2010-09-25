@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2009 Jordi Mas i Hernàndez <jmas@softcatala.org>
+ * Copyright (C) 2009-2010 Jordi Mas i Hernàndez <jmas@softcatala.org>
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License as
@@ -19,15 +19,16 @@
 
 using System;
 using System.Collections.Generic;
-
 using Mono.Unix;
 
+using gbrainy.Core.Toolkit;
 
 namespace gbrainy.Core.Main.Verbal
 {
 	public class AnalogiesPairOfWordsOptions : Analogies
 	{
 		static protected Dictionary <int, Analogy> analogies;
+		string samples, sample;
 
 		public AnalogiesPairOfWordsOptions ()
 		{
@@ -65,9 +66,8 @@ namespace gbrainy.Core.Main.Verbal
 				}
 
 				return String.Format (Catalog.GetString (
-					"Given the relationship between the words '{0}', which of the possible answers has the closest in relationship to the given pair? Answer {1}."),
-					current.question,
-					str);
+					"Given the relationship between the two words below, which word has the same relationship to '{0}'?"),
+					sample);
 			}
 		}
 
@@ -78,30 +78,60 @@ namespace gbrainy.Core.Main.Verbal
 			if (current == null || current.answers == null)
 				return;
 
+			string [] items;
+
+			items = current.question.Split (AnalogiesFactory.Separator);
+
+			if (items.Length == 2)
+				sample = items [1].Trim ();
+			else
+				sample = string.Empty;
+
+			samples = items [0].Trim ();
+
 			right_answer = GetPossibleAnswer (current.right);
+
+			Container container = new Container (DrawAreaX + 0.1, 0.50, 0.5, current.answers.Length * 0.15);
+			AddWidget (container);
+	
+			for (int i = 0; i <  current.answers.Length; i++)
+			{
+				DrawableArea drawable_area = new DrawableArea (0.8, 0.1);
+				drawable_area.X = DrawAreaX;
+				drawable_area.Y = DrawAreaY + 0.25 + i * 0.15;
+				container.AddChild (drawable_area);
+				drawable_area.Data = i;
+				drawable_area.DataEx = GetPossibleAnswer (i);
+
+				drawable_area.DrawEventHandler += delegate (object sender, DrawEventArgs e)
+				{
+					int n = (int) e.Data;
+
+					//e.Context.SetPangoLargeFontSize ();
+					e.Context.MoveTo (0.05, 0.02);
+					e.Context.ShowPangoText (String.Format (Catalog.GetString ("{0}) {1}"), GetPossibleAnswer (n), current.answers[n].ToString ()));
+				};
+			}
 		}
 
 		public override void Draw (CairoContextEx gr, int area_width, int area_height, bool rtl)
 		{
-			double x = DrawAreaX, y = DrawAreaY + 0.1;
-
-			base.Draw (gr, area_width, area_height, rtl);
+			double x = DrawAreaX, y = DrawAreaY;
 
 			if (current == null || current.answers == null || current.answers.Length <= 1)
 				return;
 
+			base.Draw (gr, area_width, area_height, rtl);
+
 			gr.SetPangoLargeFontSize ();
-			gr.MoveTo (0.1, y);
+
+			gr.MoveTo (0.1, y + 0.12);
 			gr.ShowPangoText (Catalog.GetString ("Possible answers are:"));
-			y += 0.12;
-			x += 0.05;
-			for (int n = 0; n < current.answers.Length; n++)
-			{
-				gr.MoveTo (x, y);
-				gr.ShowPangoText (String.Format (Catalog.GetString ("{0}) {1}"), GetPossibleAnswer (n), current.answers[n].ToString ()));
-				gr.Stroke ();
-				y += 0.15;
-			}
+			gr.Stroke ();
+
+			gr.DrawTextCentered (0.5, y,
+				String.Format (Catalog.GetString ("Words: {0}"), samples));
+
 		}
 	}
 }
