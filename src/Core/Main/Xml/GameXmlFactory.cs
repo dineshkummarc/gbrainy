@@ -161,11 +161,30 @@ namespace gbrainy.Core.Main.Xml
 							draw_string.Centered = false;
 
 						str = reader.GetAttribute ("size");
-						if (String.Compare (str, "big", true) == 0)
-							draw_string.Big = true;
-						else
-							draw_string.Big = false;
 
+						if (String.IsNullOrEmpty (str) == false)
+						{
+							switch (str.ToLower ()) {
+							case "small":
+								draw_string.Size = TextDrawingObject.Sizes.Small;
+								break;
+							case "medium":
+								draw_string.Size = TextDrawingObject.Sizes.Medium;
+								break;
+							case "large":
+								draw_string.Size = TextDrawingObject.Sizes.Large;
+								break;
+							case "x-large":
+								draw_string.Size = TextDrawingObject.Sizes.XLarge;
+								break;
+							case "xx-large":
+								draw_string.Size = TextDrawingObject.Sizes.XXLarge;
+								break;
+							default:
+								Console.WriteLine ("GameXmlFactory. Unsupported value for size attribute: {0}", str);
+								break;
+							}
+						}
 						break;
 					case "_question":
 					case "question":

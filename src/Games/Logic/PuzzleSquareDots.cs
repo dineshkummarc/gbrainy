@@ -28,25 +28,34 @@ namespace gbrainy.Games.Logic
 {
 	public class PuzzleSquareDots : Game
 	{
-		private const double figure_size = 0.25; 
-		private const int lines = 6;
-		private const int columns = 6;
-		private const int figures = 6;
-		private static bool X = true;
-		private static bool O = false;
-		private const double space_figures = 0.05;
-		private ArrayListIndicesRandom possible_answers;
+		const double figure_size = 0.25;
+		const int lines = 6;
+		const int columns = 6;
+		const int figures = 6;
+		static bool X = true;
+		static bool O = false;
+		const double space_figures = 0.05;
+		ArrayListIndicesRandom possible_answers;
 
-		private bool [] puzzle_A  = new bool []
+		bool [] [] puzzles = new bool [] []
+		{
+			puzzle_a,
+			puzzle_b,
+			puzzle_c,
+		};
+
+		bool [] puzzle;
+
+		static bool [] puzzle_a  = new bool []
 		{
 			// Figure A
 			O, O, O, O, O, O,
-			O, O, O, O, O, O, 	
+			O, O, O, O, O, O,
 			O, O, X, X, O, O,	// Down, Diagonal down left
 			O, O, X, X, O, O,	// Up, Diagonal up left
 			O, O, O, O, O, O,
 			O, O, O, O, O, O,
-		
+
 			// Figure B
 			O, O, O, O, O, O,
 			O, O, O, O, O, O,
@@ -88,6 +97,109 @@ namespace gbrainy.Games.Logic
 			O, X, X, O, O, O,
 		};
 
+		static bool [] puzzle_b = new bool []
+		{
+			// Figure A
+			X, O, O, O, O, O,
+			X, O, O, O, O, O,
+			X, O, O, O, O, O,
+			X, O, O, O, O, O,
+			X, O, O, O, O, O,
+			X, O, O, O, O, O,
+
+			// Figure B
+			O, O, X, X, X, X,
+			O, O, O, O, O, X,
+			O, O, O, O, O, X,
+			O, O, O, O, O, O,
+			O, O, O, O, O, O,
+			O, O, O, O, O, O,
+
+			// Figure C
+			O, O, O, O, O, O,
+			O, O, O, O, O, O,
+			O, O, O, O, O, O,
+			O, O, O, O, O, O,
+			O, O, O, O, O, O,
+			X, X, X, X, X, X,
+
+			// Wrong answer 1
+			O, O, O, O, O, O,
+			O, O, O, O, O, O,
+			O, O, O, O, O, O,
+			X, O, O, O, O, O,
+			X, O, O, O, O, O,
+			X, X, X, X, O, O,
+
+			// Correct Answer
+			O, O, O, O, O, O,
+			O, O, O, O, O, O,
+			X, O, O, O, O, O,
+			X, O, O, O, O, O,
+			X, O, O, O, O, O,
+			X, X, X, O, O, O,
+
+			// Wrong answer 2
+			O, O, O, O, O, O,
+			O, O, O, O, O, O,
+			O, O, O, O, O, O,
+			O, O, O, O, O, O,
+			X, O, O, O, O, O,
+			X, X, X, X, X, O,
+		};
+
+		static bool [] puzzle_c = new bool []
+		{
+			// Figure A
+			O, O, O, O, O, O,
+			O, O, O, O, O, O,
+			O, O, O, O, O, O,
+			O, O, O, O, O, O,
+			O, O, O, O, O, X,
+			O, O, X, X, X, X,
+
+			// Figure B
+			O, O, O, O, O, O,
+			O, O, O, O, O, O,
+			O, O, O, O, X, X,
+			O, O, O, O, O, X,
+			O, O, O, O, O, X,
+			O, O, O, O, O, X,
+
+			// Figure C
+			O, O, O, O, O, O,
+			O, O, O, O, O, O,
+			O, O, X, X, X, X,
+			O, O, X, O, O, O,
+			O, O, O, O, O, O,
+			O, O, O, O, O, O,
+
+			// Wrong answer 1
+			O, O, O, O, O, O,
+			O, O, O, O, O, O,
+			O, O, O, O, O, O,
+			O, O, X, O, O, O,
+			O, O, X, O, O, O,
+			O, O, X, X, X, O,
+
+			// Correct Answer
+			O, O, O, O, O, O,
+			O, O, O, O, O, O,
+			O, O, X, O, O, O,
+			O, O, X, O, O, O,
+			O, O, X, O, O, O,
+			O, O, X, X, O, O,
+
+
+			// Wrong answer 2
+			O, O, O, O, O, O,
+			O, O, O, O, O, O,
+			O, O, X, X, O, O,
+			O, O, X, O, O, O,
+			O, O, X, O, O, O,
+			O, O, X, O, O, O,
+		};
+
 		public override string Name {
 			get {return Catalog.GetString ("Square with dots");}
 		}
@@ -95,13 +207,15 @@ namespace gbrainy.Games.Logic
 		public override string Question {
 			get {return (String.Format (
 				Catalog.GetString ("What is the letter of the figure that represents the next logical figure in the sequence? Answer {0}, {1} or {2}."),
-				GetPossibleAnswer (0), GetPossibleAnswer (1), GetPossibleAnswer (2)));} 
+				GetPossibleAnswer (0), GetPossibleAnswer (1), GetPossibleAnswer (2)));}
 		}
 
 		protected override void Initialize ()
 		{
 			possible_answers = new ArrayListIndicesRandom (3);
 			possible_answers.Initialize ();
+
+			puzzle = puzzles [random.Next (puzzles.Length)];
 
 			DrawableArea drawable_area;
 			HorizontalContainer container = new HorizontalContainer (0.05, 0.5, 0.9, figure_size + 0.1);
@@ -113,13 +227,13 @@ namespace gbrainy.Games.Logic
 				drawable_area.Data = i;
 				drawable_area.DataEx = GetPossibleAnswer (i);
 				drawable_area.SelectedArea = new Rectangle (space_figures / 2, space_figures / 2, figure_size, figure_size);
-				
+
 				container.AddChild (drawable_area);
 
 				drawable_area.DrawEventHandler += delegate (object sender, DrawEventArgs e)
 				{
 					DrawPossibleAnswer (e.Context, space_figures / 2, space_figures / 2, possible_answers [(int)e.Data]);
-					e.Context.DrawTextCentered (space_figures / 2 + figure_size / 2, space_figures + figure_size, 
+					e.Context.DrawTextCentered (space_figures / 2 + figure_size / 2, space_figures + figure_size + 0.02,
 						GetPossibleFigureAnswer ((int)e.Data));
 				};
 			}
@@ -137,7 +251,7 @@ namespace gbrainy.Games.Logic
 			double pos_x = x, pos_y = y;
 			double square_size = figure_size / lines;
 			double center_square = square_size / 2;
-			double radius_square = (square_size - (LineWidth *2)) / 2;
+			double radius_square = (square_size - (LineWidth *2)) / 2.5;
 
 			gr.Rectangle (pos_x, pos_y, figure_size, figure_size);
 			gr.Stroke ();
@@ -161,9 +275,9 @@ namespace gbrainy.Games.Logic
 
 			pos_y = y + center_square;
 			pos_x = x + center_square;
-		
+
 			for (int line = 0; line < lines; line++) // Circles
-			{	
+			{
 				for (int column = 0; column < columns; column++)
 				{
 					if (puzzle[index + (columns * line) + column] == false)
@@ -180,27 +294,27 @@ namespace gbrainy.Games.Logic
 		{
 			switch (figure) {
 			case 0: // Good answer
-				DrawFigure (gr, x, y, puzzle_A, columns * lines * 4);
+				DrawFigure (gr, x, y, puzzle, columns * lines * 4);
 				break;
 			case 1:
-				DrawFigure (gr, x, y, puzzle_A,  columns * lines * 3);
+				DrawFigure (gr, x, y, puzzle,  columns * lines * 3);
 				break;
 			case 2:
-				DrawFigure (gr, x, y, puzzle_A, columns * lines * 5);
+				DrawFigure (gr, x, y, puzzle, columns * lines * 5);
 				break;
 			}
 		}
-	
+
 		public override void Draw (CairoContextEx gr, int area_width, int area_height, bool rtl)
 		{
 			double x = 0.05 + space_figures / 2, y = DrawAreaY;
 
 			base.Draw (gr, area_width, area_height, rtl);
 
-			DrawFigure (gr, x, y, puzzle_A, 0);
-			DrawFigure (gr, x + figure_size + space_figures, y, puzzle_A, columns * lines);
-			DrawFigure (gr, x + (figure_size + space_figures) * 2, y, puzzle_A, columns * lines * 2);
-	
+			DrawFigure (gr, x, y, puzzle, 0);
+			DrawFigure (gr, x + figure_size + space_figures, y, puzzle, columns * lines);
+			DrawFigure (gr, x + (figure_size + space_figures) * 2, y, puzzle, columns * lines * 2);
+
 			y += figure_size + 0.10;
 			gr.MoveTo (x, y - 0.02);
 			gr.ShowPangoText (Catalog.GetString ("Possible answers are:"));

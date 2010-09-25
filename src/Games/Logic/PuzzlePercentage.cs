@@ -34,7 +34,7 @@ namespace gbrainy.Games.Logic
 			Total
 		}
 
-		string question, answer;
+		string question, answer, svg_image;
 		GameType gametype;
 
 		public override string Name {
@@ -78,6 +78,7 @@ namespace gbrainy.Games.Logic
 					Catalog.GetString ("After getting {0}% discount you have paid {1} monetary units for a TV set. What was the original price of the TV set?"),
 					discount, paid);
 				ans = (int)price;
+				svg_image = "tv_set.svg";
 				break;
 			case GameType.Sales:
 				double sales, increase, previous;
@@ -95,6 +96,7 @@ namespace gbrainy.Games.Logic
 					Catalog.GetString ("John's shop had sales of {0} monetary units. This was an increase of {1}% over last month. What were last month sales?"),
 					sales, increase);
 				ans = (int) previous;
+				svg_image = "shop.svg";
 				break;
 			case GameType.Water:
 				double decrease, percentage;
@@ -112,6 +114,7 @@ namespace gbrainy.Games.Logic
 
 				answer = Catalog.GetString ("The objective is to obtain the same total amount.");
 				ans = (int) percentage;
+				svg_image = "bucket.svg";
 				break;
 			default:
 				throw new Exception ("Unexpected value");
@@ -123,6 +126,9 @@ namespace gbrainy.Games.Logic
 		public override void Draw (CairoContextEx gr, int area_width, int area_height, bool rtl)
 		{
 			base.Draw (gr, area_width, area_height, rtl);
+
+			if (String.IsNullOrEmpty (svg_image) == false)
+				gr.DrawImageFromAssembly (svg_image, 0.25, 0.25, 0.5, 0.5);
 		}
 	}
 }

@@ -62,6 +62,14 @@ public class GameXmlSttringFactory
 			"You have [money] monetary units in your bank account at 10% compound interest annually. How much money will you have at end of 2 years?",
 			variable);
 
+		Catalog.GetPluralString ("In a horse race there are people and horses. You can count [eyes] eye and [legs] leg. How many horses are present?",
+			"In a horse race there are people and horses. You can count [eyes] eyes and [legs] legs. How many horses are present?",
+			variable);
+
+		Catalog.GetPluralString ("There are [men] people and [horses] horses.",
+			"There are [men] people and [horses] horses.",
+			variable);
+
 
 	}
 }

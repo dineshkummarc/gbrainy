@@ -31,7 +31,15 @@ namespace gbrainy.Clients.Classical
 		{
 			StringBuilder license = new StringBuilder (256);
 			string [] authors = new string [] {
-				"Jordi Mas i Hernandez <jmas@softcatala.org>",
+				Catalog.GetString ("Software"),
+				"  Jordi Mas i Hernandez <jmas@softcatala.org>",
+				"",
+				Catalog.GetString ("Based on ideas by"),
+				"  Terry Stickels",
+				"  Jordi Mas i Hernandez",
+				"  Lewis Carroll",
+				("  " + Catalog.GetString ("MENSA works")),
+				"  mathforum.org"
 			};
 
 			string [] artists = new string [] {
@@ -39,8 +47,8 @@ namespace gbrainy.Clients.Classical
 				"Carme Cabal Sard\u00e0",
 				"Jordi Mas i Hernandez",
 				"Felipe Menegaz",
+				"John Cliff",
 				"Openclipart.org",
-
 			};
 
 			string [] documenters = new string [] {
@@ -64,8 +72,7 @@ namespace gbrainy.Clients.Classical
 			Documenters = documenters;
 			Logo = LoadFromAssembly ("gbrainy.svg");
 
-			Copyright = Defines.COPYRIGHT + "\n";
-			Copyright += Catalog.GetString ("Based on ideas by Terry Stickels, MENSA books and Jordi Mas.");
+			Copyright = Defines.COPYRIGHT;
 
 			Comments = Catalog.GetString ("A brain teaser game for fun and to keep your brain trained.");
 			Website = "http://live.gnome.org/gbrainy";
