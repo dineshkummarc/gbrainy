@@ -5,12 +5,15 @@
 # Korrekturlæst Torben Grøn Helligsø, 2009.
 # Korrekturlæst Kenneth Nielsen, 2010.
 #
+# palindromic number -> talpalindrom
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: gbrainy master\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-08-19 00:49+0200\n"
-"PO-Revision-Date: 2010-08-18 23:07+0200\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
+"product=gbrainy&component=general\n"
+"POT-Creation-Date: 2010-08-31 10:00+0000\n"
+"PO-Revision-Date: 2010-09-21 23:07+0200\n"
 "Last-Translator: Joe Hansen <joedalton2@yahoo.dk>\n"
 "Language-Team: Dansk-gruppen <dansk@dansk-gruppen.dk>\n"
 "MIME-Version: 1.0\n"
@@ -145,7 +148,7 @@ msgid ""
 "A palindromic number remains the same when its digits are reversed (e.g.: "
 "2112)."
 msgstr ""
-"Et palindromsk tal forbliver det samme, når de enkelte cifre vendes om (for "
+"Et talpalindrom forbliver det samme, når de enkelte cifre vendes om (for "
 "eksempel: 2112)."
 
 #: ../data/games.xml.h:2
@@ -314,8 +317,8 @@ msgid ""
 "What are the next two consecutive palindromic years after [year_end] with "
 "the same gap?"
 msgstr ""
-"[year_start] var et palindromisk år på samme måde som [year_end] var det, et "
-"interval på 11 år. Hvad er de næste to sammenhængende palindromiske år efter "
+"[year_start] var et palindromisk år ligesom [year_end] var det, et interval "
+"på 11 år. Hvad er de næste to sammenhængende palindromiske år efter "
 "[year_end] med samme interval?"
 
 #: ../data/games.xml.h:34
@@ -1692,10 +1695,11 @@ msgstr "Genoptag"
 msgid "Startup time {0}"
 msgstr "Opstartstid {0}"
 
+# er {0} en dato?
 #: ../src/Clients/Classical/CommandLine.cs:105
 #, csharp-format
 msgid "(built on {0})"
-msgstr "(kompileret på {0})"
+msgstr "(kompileret {0})"
 
 #: ../src/Clients/Classical/CommandLine.cs:117
 msgid "List of available games"
@@ -1703,7 +1707,7 @@ msgstr "Liste over tilgængelige spil"
 
 #: ../src/Clients/Classical/CommandLine.cs:180
 msgid "Usage: gbrainy [options]"
-msgstr "Brug: gbriany [tilvalg]"
+msgstr "Brug: gbrainy [tilvalg]"
 
 #: ../src/Clients/Classical/CommandLine.cs:181
 msgid "  --version\t\t\tPrint version information."
@@ -1729,7 +1733,7 @@ msgstr ""
 msgid ""
 "  --norandom \t\t\tThe custom game list provided will not be randomized."
 msgstr ""
-"  --norandom \t\t\tDen brugerdefinerede spilliste angivet vil ikke blive "
+"  --norandom \t\t\tDen tilbudte brugerdefinerede spilliste vil ikke blive "
 "udført tilfældigt"
 
 #: ../src/Clients/Classical/CommandLine.cs:186
@@ -2190,7 +2194,7 @@ msgstr ""
 "to lige tal? Svar med brug af en brøk (f.eks.: 1/2)."
 
 #: ../src/Games/Logic/PuzzleDice.cs:60
-msgid "There are 9 of 36 possibilities of getting an even number."
+msgid "There are 9 of 36 possibilities of getting two even numbers."
 msgstr "Der er 9 ud af 36 muligheder for at få et lige tal på begge terninger."
 
 #: ../src/Games/Logic/PuzzleDice.cs:62
