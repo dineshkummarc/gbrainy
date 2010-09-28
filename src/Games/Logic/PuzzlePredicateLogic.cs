@@ -42,7 +42,7 @@ namespace gbrainy.Games.Logic
 			{
 				this.question = question;
 				this.answer_index = answer_index;
-				
+
 				options = new string [num_options];
 				options[0] = op1;
 				options[1] = op2;
@@ -51,7 +51,7 @@ namespace gbrainy.Games.Logic
 			}
 		};
 
-		Predicate [] predicates = 
+		Predicate [] predicates =
 		{
 			new Predicate (String.Format (Catalog.GetString ("If all painters are artists and some citizens of Barcelona are artists. Which of the following sentences is correct? Answer {0}, {1}, {2} or {3}."),
 					GetPossibleAnswer (0), GetPossibleAnswer (1), GetPossibleAnswer (2), GetPossibleAnswer (3)),
@@ -84,6 +84,38 @@ namespace gbrainy.Games.Logic
 				Catalog.GetString ("You whistle if you are not happy"),
 				Catalog.GetString ("None of the other options"),
 				0),
+
+			new Predicate (String.Format (Catalog.GetString ("If your course is always honest and your course is always the best policy, which of the following sentences is correct? Answer {0}, {1}, {2} or {3}."),
+				GetPossibleAnswer (0), GetPossibleAnswer (1), GetPossibleAnswer (2), GetPossibleAnswer (3)),
+				Catalog.GetString ("Honesty is sometimes the best policy"),
+				Catalog.GetString ("Honesty is always the best policy"),
+				Catalog.GetString ("Honesty is not always the best policy"),
+				Catalog.GetString ("Some of the best policies are dishonest"),
+				0),
+
+			new Predicate (String.Format (Catalog.GetString ("If no old misers are cheerful and some old misers are thin, which of the following sentences is correct? Answer {0}, {1}, {2} or {3}."),
+				GetPossibleAnswer (0), GetPossibleAnswer (1), GetPossibleAnswer (2), GetPossibleAnswer (3)),
+				Catalog.GetString ("Some thin people are not cheerful"),
+				Catalog.GetString ("Thin people are not cheerful"),
+				Catalog.GetString ("Cheerful people are not thin"),
+				Catalog.GetString ("Some cheerful people are not thin"),
+				0),
+
+			new Predicate (String.Format (Catalog.GetString ("If all pigs are fat and nothing that is fed on barley-water is fat, which of the following sentences is correct? Answer {0}, {1}, {2} or {3}."),
+				GetPossibleAnswer (0), GetPossibleAnswer (1), GetPossibleAnswer (2), GetPossibleAnswer (3)),
+				Catalog.GetString ("All animals fed on barley-water are non pigs"),
+				Catalog.GetString ("No pigs are fed on barley-water"),
+				Catalog.GetString ("Pigs are not fed on barley-water"),
+				Catalog.GetString ("All the other options"),
+				3),
+
+			new Predicate (String.Format (Catalog.GetString ("If some pictures are first attempts and no first attempts are really good, which of the following sentences is correct? Answer {0}, {1}, {2} or {3}."),
+				GetPossibleAnswer (0), GetPossibleAnswer (1), GetPossibleAnswer (2), GetPossibleAnswer (3)),
+				Catalog.GetString ("Some bad pictures are not first attempts"),
+				Catalog.GetString ("Some pictures are not really good"),
+				Catalog.GetString ("All bad pictures are first attempts"),
+				Catalog.GetString ("All the others"),
+				1)
 		};
 
 		public override string Name {
@@ -91,7 +123,7 @@ namespace gbrainy.Games.Logic
 		}
 
 		public override string Question {
-			get {return predicates[question].question;} 
+			get {return predicates[question].question;}
 		}
 
 		protected override void Initialize ()
@@ -117,7 +149,7 @@ namespace gbrainy.Games.Logic
 
 			Container container = new Container (DrawAreaX, DrawAreaX + 0.2, 0.8, 0.6);
 			AddWidget (container);
-	
+
 			for (int i = 0; i <  predicates[question].options.Length; i++)
 			{
 				DrawableArea drawable_area = new DrawableArea (0.8, 0.1);
@@ -131,7 +163,7 @@ namespace gbrainy.Games.Logic
 				{
 					int data = (int) e.Data;
 					int option = random_indices [data];
-					
+
 					e.Context.SetPangoNormalFontSize ();
 					e.Context.MoveTo (0.05, 0.02);
 					e.Context.ShowPangoText (String.Format (Catalog.GetString ("{0}) {1}"), GetPossibleAnswer (data),
