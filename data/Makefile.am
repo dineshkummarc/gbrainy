@@ -52,7 +52,8 @@ analogies_DATA = \
 	game-graphics/money.svg \
 	game-graphics/box.svg \
 	game-graphics/dartboard.svg \
-	game-graphics/horses_men.svg
+	game-graphics/horses_men.svg \
+	game-graphics/lever.svg
 	
 
 install-data-local:
