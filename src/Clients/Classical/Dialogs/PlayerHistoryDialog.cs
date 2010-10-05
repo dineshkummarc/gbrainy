@@ -42,7 +42,7 @@ namespace gbrainy.Clients.Classical
 		{
 			string label;
 
-			label = Catalog.GetString ("The graph below shows the player's game score evolution. ");
+			label = Catalog.GetString ("The graph below shows the player's game score evolution.") + " ";
 
 			if (history.Games.Count < 2)
 			{

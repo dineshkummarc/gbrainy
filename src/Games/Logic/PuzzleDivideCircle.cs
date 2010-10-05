@@ -110,7 +110,7 @@ namespace gbrainy.Games.Logic
 				}, true);
 
 			gr.MoveTo (pos_x, pos_y + figure_size * 2 + 0.05);
-			gr.ShowPangoText (String.Format (Catalog.GetString ("Has {0} regions"), 2));
+			gr.ShowPangoText (HasNRegionString (2));
 			gr.Stroke ();
 
 			// Second circle
@@ -125,7 +125,7 @@ namespace gbrainy.Games.Logic
 				}, true);
 
 			gr.MoveTo (pos_x, pos_y + figure_size * 2 + 0.05);
-			gr.ShowPangoText (String.Format (Catalog.GetString ("Has {0} regions"), 4));
+			gr.ShowPangoText (HasNRegionString (4));
 			gr.Stroke ();
 
 			// Third circle
@@ -142,7 +142,7 @@ namespace gbrainy.Games.Logic
 				}, true);
 
 			gr.MoveTo (pos_x, pos_y + figure_size * 2 + 0.05);
-			gr.ShowPangoText (String.Format (Catalog.GetString ("Has {0} regions"), 8));
+			gr.ShowPangoText (HasNRegionString (8));
 			gr.Stroke ();
 
 			switch (dots) {
@@ -172,6 +172,13 @@ namespace gbrainy.Games.Logic
 			gr.Arc (pos_x + figure_size, pos_y + figure_size, figure_size, 0, 2 * Math.PI);
 			gr.Stroke ();		
 			DrawAndConnectPoints (gr, pos_x, pos_y, circles, DrawAnswer);
+		}
+		
+		string HasNRegionString (int regions)
+		{
+			return String.Format (Catalog.GetPluralString ("Has {0} region", 
+				"Has {0} regions", regions), regions);
+			
 		}
 	}
 }

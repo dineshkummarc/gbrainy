@@ -105,7 +105,9 @@ namespace gbrainy.Games.Memory
 				fact.answers [1] = 1914 + random.Next (50);
 				fact.fact = String.Format (
 					// Translators: {0} is replaced by a number, {1} by a year (like 1940)
-					Catalog.GetString ("Shiny Cars had already announced a {0} days production halt next month, but before that it had not cut production since {1}."),
+					Catalog.GetPluralString ("Shiny Cars had already announced a {0} day production halt next month, but before that it had not cut production since {1}.",
+					"Shiny Cars had already announced a {0} days production halt next month, but before that it had not cut production since {1}.",
+					fact.answers [0]),
 					fact.answers [0], fact.answers [1]);
 				fact.questions [0] = Catalog.GetString ("For how many days did Shiny Cars halt its production?");
 				fact.questions [1] = Catalog.GetString ("In what year did Shiny Cars last halt its production?");
