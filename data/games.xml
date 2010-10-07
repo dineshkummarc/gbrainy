@@ -246,13 +246,13 @@
 				int rslt_a = years_start [idx + 1];
 				int rslt_b = years_end [idx + 1];
 			</variables>
-			<_question>[year_start] was a palindromic year as [year_end] was, a gap of 11 years. What are the next two consecutive palindromic years after [year_end] with the same gap?</_question>
+			<_question>[year_start] is a palindromic year as [year_end] is, a gap of 11 years. What are the next two consecutive palindromic years after [year_end] with the same gap?</_question>
 			<_tip>A palindromic number remains the same when its digits are reversed (e.g.: 2112).</_tip>
 			<answer>[rslt_a] | [rslt_b]</answer>
 			<_answer_show>[rslt_a] and [rslt_b]</_answer_show>
 			<answer_expression>[0-9]+</answer_expression>
 			<answer_checkattributes>Trim | MatchAll </answer_checkattributes>
-			<_rationale>Palindrome years occur usually at 110 year intervals except for the end of each millennium that occur at a 11 years interval.</_rationale>
+			<_rationale>From year 1000 to year 10000, palindrome years occur at 110 year intervals except for the end of each millennium that occur at a 11 years interval.</_rationale>
 		</variant>
 	</game>
 
