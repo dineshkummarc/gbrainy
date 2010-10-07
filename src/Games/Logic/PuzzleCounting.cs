@@ -61,9 +61,13 @@ namespace gbrainy.Games.Logic
 				var = 2 + random.Next (5);
 				total = 50 + random.Next (100);
 				question = String.Format (
-					// Translators: {0} and {1} are always numbers greater than 1
-					Catalog.GetString ("We have a {0} meters piece of fabric. Machine A takes {1} seconds to cut 1 meter of this fabric. How many seconds does Machine A take to cut the entire piece of fabric into 1 meter pieces?"),
-					total, var);
+					Catalog.GetPluralString ("We have a {0} meter piece of fabric.", "We have a {0} meters piece of fabric.", total),
+					total);
+				question += " ";
+				question += String.Format (
+					Catalog.GetPluralString ("Machine A takes {0} second to cut 1 meter of this fabric. How many seconds does Machine A take to cut the entire piece of fabric into 1 meter pieces?",
+						"Machine A takes {0} seconds to cut 1 meter of this fabric. How many seconds does Machine A take to cut the entire piece of fabric into 1 meter pieces?"
+						, var), var);
 				answer = String.Format (
 					// Translators: {0} is always a number greater than 1
 					Catalog.GetString ("With the {0} cut, Machine A creates two 1 meter pieces."), (total - 1));
