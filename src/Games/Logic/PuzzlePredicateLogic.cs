@@ -53,7 +53,7 @@ namespace gbrainy.Games.Logic
 
 		Predicate [] predicates =
 		{
-			new Predicate (String.Format (Catalog.GetString ("If all painters are artists and some citizens of Barcelona are artists. Which of the following sentences is correct? Answer {0}, {1}, {2} or {3}."),
+			new Predicate (String.Format (Catalog.GetString ("If all painters are artists and some citizens of Barcelona are artists. Which of the following conclusions is correct? Answer {0}, {1}, {2} or {3}."),
 					GetPossibleAnswer (0), GetPossibleAnswer (1), GetPossibleAnswer (2), GetPossibleAnswer (3)),
 				Catalog.GetString ("Some citizens of Barcelona are painters"),
 				Catalog.GetString ("All citizens of Barcelona are painters"),
@@ -61,7 +61,7 @@ namespace gbrainy.Games.Logic
 				Catalog.GetString ("None of the other options"),
 				3),
 
-			new Predicate (String.Format (Catalog.GetString ("If no ill artist is happy and some artists are happy. Which of the following sentences is correct? Answer {0}, {1}, {2} or {3}."),
+			new Predicate (String.Format (Catalog.GetString ("If no ill artist is happy and some artists are happy. Which of the following conclusions is correct? Answer {0}, {1}, {2} or {3}."),
 					GetPossibleAnswer (0), GetPossibleAnswer (1), GetPossibleAnswer (2), GetPossibleAnswer (3)),
 				Catalog.GetString ("Some artist are not ill"),
 				Catalog.GetString ("Some painters are not artists"),
@@ -69,7 +69,7 @@ namespace gbrainy.Games.Logic
 				Catalog.GetString ("None of the other options"),
 				0),
 
-			new Predicate (String.Format (Catalog.GetString ("People that travel always buy a map. You are not going to travel. Which of the following sentences is correct? Answer {0}, {1}, {2} or {3}."),
+			new Predicate (String.Format (Catalog.GetString ("People that travel always buy a map. You are not going to travel. Which of the following conclusions is correct? Answer {0}, {1}, {2} or {3}."),
 				GetPossibleAnswer (0), GetPossibleAnswer (1), GetPossibleAnswer (2), GetPossibleAnswer (3)),
 				Catalog.GetString ("You do not have any map"),
 				Catalog.GetString ("You do not buy a map"),
@@ -77,7 +77,7 @@ namespace gbrainy.Games.Logic
 				Catalog.GetString ("None of the other options"),
 				3),
 
-			new Predicate (String.Format (Catalog.GetString ("If you whistle if you are happy and you always smile when you whistle, which of the following sentences is correct? Answer {0}, {1}, {2} or {3}."),
+			new Predicate (String.Format (Catalog.GetString ("If you whistle if you are happy and you always smile when you whistle, which of the following conclusions is correct? Answer {0}, {1}, {2} or {3}."),
 				GetPossibleAnswer (0), GetPossibleAnswer (1), GetPossibleAnswer (2), GetPossibleAnswer (3)),
 				Catalog.GetString ("You smile if you are happy"),
 				Catalog.GetString ("You are only happy if you whistle"),
@@ -116,6 +116,14 @@ namespace gbrainy.Games.Logic
 				Catalog.GetString ("All bad pictures are first attempts"),
 				Catalog.GetString ("All the others"),
 				1)
+
+			new Predicate (String.Format (Catalog.GetString ("If you have been out for a walk and you are feeling better, which of the following conclusions is correct? Answer {0}, {1}, {2} or {3}."),
+				GetPossibleAnswer (0), GetPossibleAnswer (1), GetPossibleAnswer (2), GetPossibleAnswer (3)),
+				Catalog.GetString ("To feel better, you must go out for a walk"),
+				Catalog.GetString ("If you go out for a walk, you will feel better"),
+				Catalog.GetString ("Some who go out for a walk feel better"),
+				Catalog.GetString ("No one feels better who does not go out for a walk"),
+				2),
 		};
 
 		public override string Name {
