@@ -39,7 +39,8 @@ namespace gbrainy.Clients.Classical
 				"  Jordi Mas i Hernandez",
 				"  Lewis Carroll",
 				("  " + Catalog.GetString ("MENSA works")),
-				"  mathforum.org"
+				"  mathforum.org",
+				"  Teun Spaans"
 			};
 
 			string [] artists = new string [] {

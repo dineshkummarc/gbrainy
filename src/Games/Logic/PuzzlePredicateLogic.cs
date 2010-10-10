@@ -115,7 +115,7 @@ namespace gbrainy.Games.Logic
 				Catalog.GetString ("Some pictures are not really good"),
 				Catalog.GetString ("All bad pictures are first attempts"),
 				Catalog.GetString ("All the others"),
-				1)
+				1),
 
 			new Predicate (String.Format (Catalog.GetString ("If you have been out for a walk and you are feeling better, which of the following conclusions is correct? Answer {0}, {1}, {2} or {3}."),
 				GetPossibleAnswer (0), GetPossibleAnswer (1), GetPossibleAnswer (2), GetPossibleAnswer (3)),
