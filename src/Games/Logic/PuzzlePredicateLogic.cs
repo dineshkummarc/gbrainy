@@ -85,7 +85,7 @@ namespace gbrainy.Games.Logic
 				Catalog.GetString ("None of the other options"),
 				0),
 
-			new Predicate (String.Format (Catalog.GetString ("If your course is always honest and your course is always the best policy, which of the following sentences is correct? Answer {0}, {1}, {2} or {3}."),
+			new Predicate (String.Format (Catalog.GetString ("If your course is always honest and your course is always the best policy, which of the following conclusions is correct? Answer {0}, {1}, {2} or {3}."),
 				GetPossibleAnswer (0), GetPossibleAnswer (1), GetPossibleAnswer (2), GetPossibleAnswer (3)),
 				Catalog.GetString ("Honesty is sometimes the best policy"),
 				Catalog.GetString ("Honesty is always the best policy"),
@@ -93,7 +93,7 @@ namespace gbrainy.Games.Logic
 				Catalog.GetString ("Some of the best policies are dishonest"),
 				0),
 
-			new Predicate (String.Format (Catalog.GetString ("If no old misers are cheerful and some old misers are thin, which of the following sentences is correct? Answer {0}, {1}, {2} or {3}."),
+			new Predicate (String.Format (Catalog.GetString ("If no old misers are cheerful and some old misers are thin, which of the following conclusions is correct? Answer {0}, {1}, {2} or {3}."),
 				GetPossibleAnswer (0), GetPossibleAnswer (1), GetPossibleAnswer (2), GetPossibleAnswer (3)),
 				Catalog.GetString ("Some thin people are not cheerful"),
 				Catalog.GetString ("Thin people are not cheerful"),
@@ -101,7 +101,7 @@ namespace gbrainy.Games.Logic
 				Catalog.GetString ("Some cheerful people are not thin"),
 				0),
 
-			new Predicate (String.Format (Catalog.GetString ("If all pigs are fat and nothing that is fed on barley-water is fat, which of the following sentences is correct? Answer {0}, {1}, {2} or {3}."),
+			new Predicate (String.Format (Catalog.GetString ("If all pigs are fat and nothing that is fed on barley-water is fat, which of the following conclusions is correct? Answer {0}, {1}, {2} or {3}."),
 				GetPossibleAnswer (0), GetPossibleAnswer (1), GetPossibleAnswer (2), GetPossibleAnswer (3)),
 				Catalog.GetString ("All animals fed on barley-water are non pigs"),
 				Catalog.GetString ("No pigs are fed on barley-water"),
@@ -109,7 +109,7 @@ namespace gbrainy.Games.Logic
 				Catalog.GetString ("All the other options"),
 				3),
 
-			new Predicate (String.Format (Catalog.GetString ("If some pictures are first attempts and no first attempts are really good, which of the following sentences is correct? Answer {0}, {1}, {2} or {3}."),
+			new Predicate (String.Format (Catalog.GetString ("If some pictures are first attempts and no first attempts are really good, which of the following conclusions is correct? Answer {0}, {1}, {2} or {3}."),
 				GetPossibleAnswer (0), GetPossibleAnswer (1), GetPossibleAnswer (2), GetPossibleAnswer (3)),
 				Catalog.GetString ("Some bad pictures are not first attempts"),
 				Catalog.GetString ("Some pictures are not really good"),
