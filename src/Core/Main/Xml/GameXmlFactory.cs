@@ -266,6 +266,7 @@ namespace gbrainy.Core.Main.Xml
 
 						break;
 					case "_answer_show":
+					case "answer_show":
 						if (reader.NodeType != XmlNodeType.Element)
 							break;
 
