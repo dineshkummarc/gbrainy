@@ -116,7 +116,7 @@ namespace gbrainy.Core.Main.Verbal
 
 		public override void Draw (CairoContextEx gr, int area_width, int area_height, bool rtl)
 		{
-			double x = DrawAreaX, y = DrawAreaY;
+			double y = DrawAreaY;
 
 			if (current == null || current.answers == null || current.answers.Length <= 1)
 				return;
