@@ -172,14 +172,20 @@ namespace gbrainy.Core.Main
 				if (Status == SessionStatus.NotPlaying)
 					return string.Empty;
 
-				String text;
-				text = String.Format (Catalog.GetString ("Games played: {0} (Score: {1})"), history.GamesPlayed, history.TotalScore);
-				text += String.Format (Catalog.GetString (" - Time: {0}"), current_time);
+				string played, time, game;
 
-				if (CurrentGame != null)
-	 				text += " " + String.Format (Catalog.GetString ("- Game: {0}"), CurrentGame.Name);
-	
-				return text;
+				played = String.Format (Catalog.GetString ("Games played: {0} (Score: {1})"), history.GamesPlayed, history.TotalScore);
+				time = String.Format (Catalog.GetString ("Time: {0}"), current_time);
+
+				if (CurrentGame != null) {
+					// Translators: {0} is the name of the game
+	 				game = String.Format (Catalog.GetString ("Game: {0}"), CurrentGame.Name);
+					// Translators: text in the status bar: games played - time - game name
+					return String.Format (Catalog.GetString ("{0} - {1} - {2}"), played, time, game);
+				} else {
+					// Translators: text in the status bar: games played - time
+					return String.Format (Catalog.GetString ("{0} - {1}"), played, time);
+				}	
 			}
 		}
 

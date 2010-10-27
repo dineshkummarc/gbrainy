@@ -40,22 +40,24 @@ namespace gbrainy.Clients.Classical
 
 		public PlayerHistoryDialog (PlayerHistory history) : base ("PlayerHistoryDialog.ui", "playerhistory")
 		{
-			string label;
+			string intro, built;
 
-			label = Catalog.GetString ("The graph below shows the player's game score evolution.") + " ";
+			intro = Catalog.GetString ("The graph below shows the player's game score evolution.");
 
 			if (history.Games.Count < 2)
 			{
-				label += Catalog.GetString ("You need more than one game session recorded to see the score evolution.");
+				built = Catalog.GetString ("You need more than one game session recorded to see the score evolution.");
 			}
 			else 
 			{
-				label +=  Catalog.GetPluralString ("It is built using the results of {0} recorded game session.",
+				built =  String.Format (Catalog.GetPluralString ("It is built using the results of {0} recorded game session.",
 					"It is built using the results of the last {0} recorded game sessions.",
-					history.Games.Count);
+					history.Games.Count),
+					history.Games.Count);	
 			}
 
-			label_playerhistory.Text = String.Format (label, history.Games.Count);
+			// Translators: "The graph below" +  "It is built using" sentences
+			label_playerhistory.Text = String.Format (Catalog.GetString ("{0} {1}"), intro, built);
 
 			drawing_area = new CairoPreview (history);
 			history_preview.Add (drawing_area);

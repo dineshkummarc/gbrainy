@@ -57,8 +57,9 @@ namespace gbrainy.Core.Main.Verbal
 
 				if (String.IsNullOrEmpty (Rationale))
 					return str;
-
-				return str += " " + Rationale;
+				
+				// Translators: answer + rationale of the answer
+				return  String.Format (Catalog.GetString ("{0} {1}"), str, Rationale);
 			}
 		}
 
