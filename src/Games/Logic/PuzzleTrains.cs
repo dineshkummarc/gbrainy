@@ -71,20 +71,19 @@ namespace gbrainy.Games.Logic
 					speed_a = 20 + (5 * random.Next (5));
 					speed_b = 50 + (5 * random.Next (5));
 					hours = 2 * (1 + random.Next (3));
-					rslt = speed_b * hours / (speed_b - speed_a);
+					rslt = speed_a * hours / (speed_b - speed_a);
 
 				}  while (rslt != Math.Truncate (rslt));
 
 				question = String.Format (
 					// Translators:
-					//  - {0}, {1} and {2} are always greater than 2
 					//  - mph (miles per hour). You must localize this using the right unit of speed for your locale
+					/// - The translated string should not use more characters than the original sentence
 					Catalog.GetPluralString ("A train leaves the station traveling at {0} mph. {1} hour later a second train leaves the station traveling in the same direction at {2} mph. How many hours does it take the second train to overtake the first train?",
 						"A train leaves the station traveling at {0} mph. {1} hours later a second train leaves the station traveling in the same direction at {2} mph. How many hours does it take the second train to overtake the first train?", (int) hours),
 						speed_a, hours, speed_b);
-
-				answer = Catalog.GetString ("You can calculate the answer multiplying the second train speed by the time and dividing it by the difference of speeds.");
-
+			
+				answer = Catalog.GetString ("You can calculate the answer multiplying the speed of the first train by the time and dividing it by the difference of speeds.");
 				break;
 			}
 			case GameType.Meet:
@@ -101,7 +100,9 @@ namespace gbrainy.Games.Logic
 					// Translators:
 					//  - {0}, {1} and {3} are always greater than 2
 					//  - mph (miles per hour) and miles must be localized this using the right unit of speed for your locale
-					Catalog.GetString ("Two trains separated by {0} miles are heading towards each other on straight parallel tracks. One travels at {1} mph and the other at {2} mph. In how many hours do they meet?"),
+					Catalog.GetPluralString ("Two trains separated by {0} mile are heading towards each other on straight parallel tracks. One travels at {1} mph and the other at {2} mph. In how many hours do they meet?",
+						"Two trains separated by {0} miles are heading towards each other on straight parallel tracks. One travels at {1} mph and the other at {2} mph. In how many hours do they meet?",
+						(int) distance),
 						distance, speed_a, speed_b);
 
 				answer = Catalog.GetString ("You can calculate the answer dividing the distance by the sum of both speeds.");
@@ -122,7 +123,9 @@ namespace gbrainy.Games.Logic
 					// Translators:
 					//  - {0}, {1} and {2} are always greater than 2
 					//  - mph (miles per hour). You must localize this using the right unit of speed for your locale
-					Catalog.GetString ("Two trains on straight parallel tracks leave from the same point and time traveling in opposite directions at {0} and {1} mph respectively. In how many hours they will be {2} miles apart?"), 
+					Catalog.GetPluralString ("Two trains on straight parallel tracks leave from the same point and time traveling in opposite directions at {0} and {1} mph respectively. In how many hours they will be {2} mile apart?",
+						"Two trains on straight parallel tracks leave from the same point and time traveling in opposite directions at {0} and {1} mph respectively. In how many hours they will be {2} miles apart?",
+						(int) distance),
 						speed_a, speed_b, distance);
 
 				answer = Catalog.GetString ("You can calculate the answer dividing the distance by the sum of both speeds.");
@@ -183,7 +186,7 @@ namespace gbrainy.Games.Logic
 		}
 
 		public override bool CheckAnswer (string answer)
-		{	
+		{
 			string num = string.Empty;
 
 			// Clean the answer from every non-numeric values after the numbers (like 5 hours)
