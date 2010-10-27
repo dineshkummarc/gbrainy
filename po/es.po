@@ -11,8 +11,8 @@ msgstr ""
 "Project-Id-Version: gbrainy.master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=gbrainy&component=general\n"
-"POT-Creation-Date: 2010-10-18 19:56+0000\n"
-"PO-Revision-Date: 2010-10-19 00:44+0200\n"
+"POT-Creation-Date: 2010-10-27 19:43+0000\n"
+"PO-Revision-Date: 2010-10-27 21:57+0200\n"
 "Last-Translator: Jorge González <jorgegonz@svn.gnome.org>\n"
 "Language-Team: Español <gnome-es-list@gnome.org>\n"
 "MIME-Version: 1.0\n"
@@ -474,7 +474,6 @@ msgid "Airline"
 msgstr "Compañía aérea"
 
 #: ../data/verbal_analogies.xml.h:13
-#| msgid "Acrophobia"
 msgid "Amphibians"
 msgstr "Anfibios"
 
@@ -517,7 +516,6 @@ msgid "Attic"
 msgstr "Ático"
 
 #: ../data/verbal_analogies.xml.h:22
-#| msgid "Author:"
 msgid "Authority"
 msgstr "Autoridad"
 
@@ -614,12 +612,10 @@ msgid "Cycling"
 msgstr "Ciclismo"
 
 #: ../data/verbal_analogies.xml.h:46
-#| msgid "Pentagon"
 msgid "Decagon"
 msgstr "Decágono"
 
 #: ../data/verbal_analogies.xml.h:47
-#| msgid "Pencil"
 msgid "Decimal"
 msgstr "Decimal"
 
@@ -628,7 +624,6 @@ msgid "Deer"
 msgstr "Ciervo"
 
 #: ../data/verbal_analogies.xml.h:49
-#| msgid "Memory"
 msgid "Democracy"
 msgstr "Democracia"
 
@@ -653,7 +648,6 @@ msgid "Fish"
 msgstr "Pescado"
 
 #: ../data/verbal_analogies.xml.h:55
-#| msgid "Fish"
 msgid "Fishes"
 msgstr "Peces"
 
@@ -738,7 +732,6 @@ msgid "Icon"
 msgstr "Icono"
 
 #: ../data/verbal_analogies.xml.h:76
-#| msgid "Icon"
 msgid "Icosagon"
 msgstr "Isodecágono"
 
@@ -783,7 +776,6 @@ msgid "It is the only one that is not a fruit."
 msgstr "Es el único que no es una fruta."
 
 #: ../data/verbal_analogies.xml.h:87
-#| msgid "It is the only one that is not a metal."
 msgid "It is the only one that is not a medical specialty."
 msgstr "Es el único que no es una especialidad médica."
 
@@ -852,7 +844,6 @@ msgid "Martyr"
 msgstr "Mártir"
 
 #: ../data/verbal_analogies.xml.h:102
-#| msgid "monkey"
 msgid "Money"
 msgstr "Dinero"
 
@@ -926,7 +917,6 @@ msgid "Printer"
 msgstr "Impresora"
 
 #: ../data/verbal_analogies.xml.h:121
-#| msgid "Proportions"
 msgid "Property"
 msgstr "Propiedad"
 
@@ -1053,7 +1043,6 @@ msgid "Titanium"
 msgstr "Titanio"
 
 #: ../data/verbal_analogies.xml.h:151
-#| msgid "Titanium"
 msgid "Totalitarianism"
 msgstr "Totalitarismo"
 
@@ -1070,7 +1059,6 @@ msgid "Violin"
 msgstr "Violín"
 
 #: ../data/verbal_analogies.xml.h:155
-#| msgid "Wheat"
 msgid "Wealthy"
 msgstr "Riqueza"
 
@@ -1274,7 +1262,6 @@ msgid "fish / submarine | bird"
 msgstr "pez / submarino | pájaro"
 
 #: ../data/verbal_analogies.xml.h:209
-#| msgid "feet / two | toes"
 msgid "five / pentagon | ten"
 msgstr "cinco / pentágono | diez"
 
@@ -1530,7 +1517,7 @@ msgstr "Prepárate para memorizar los siguientes objetos…"
 
 #: ../src/Core/Views/FinishView.cs:97
 #: ../src/Core/Views/PlayerHistoryView.cs:67
-#: ../src/Clients/Classical/Dialogs/PlayerHistoryDialog.cs:64
+#: ../src/Clients/Classical/Dialogs/PlayerHistoryDialog.cs:66
 msgid "Total"
 msgstr "Total"
 
@@ -1701,6 +1688,15 @@ msgstr "blanco"
 msgid "The correct answer is {0}."
 msgstr "La respuesta correcta es {0}."
 
+#. Translators: answer + rationale of the answer
+#. Translators: "The graph below" +  "It is built using" sentences
+#: ../src/Core/Main/Game.cs:157 ../src/Core/Main/Verbal/Analogies.cs:62
+#: ../src/Clients/Classical/Dialogs/PlayerHistoryDialog.cs:60
+#, csharp-format
+#| msgid "{0}) {1}"
+msgid "{0} {1}"
+msgstr "{0} {1}"
+
 #. Translators Note
 #. The following series of answers may need to be adapted
 #. in cultures with alphabets different to the Latin one.
@@ -1708,46 +1704,46 @@ msgstr "La respuesta correcta es {0}."
 #. For languages represented with the Latin alphabet use
 #. the same than English
 #. First possible answer for a series (e.g.: Figure A)
-#: ../src/Core/Main/Game.cs:316
+#: ../src/Core/Main/Game.cs:317
 msgid "A"
 msgstr "A"
 
 #. Second possible answer for a series
-#: ../src/Core/Main/Game.cs:318
+#: ../src/Core/Main/Game.cs:319
 msgid "B"
 msgstr "B"
 
 #. Third possible answer for a series
-#: ../src/Core/Main/Game.cs:320
+#: ../src/Core/Main/Game.cs:321
 msgid "C"
 msgstr "C"
 
 #. Fourth possible answer for a series
-#: ../src/Core/Main/Game.cs:322
+#: ../src/Core/Main/Game.cs:323
 msgid "D"
 msgstr "D"
 
 #. Fifth possible answer for a series
-#: ../src/Core/Main/Game.cs:324
+#: ../src/Core/Main/Game.cs:325
 msgid "E"
 msgstr "E"
 
 #. Sixth possible answer for a series
-#: ../src/Core/Main/Game.cs:326
+#: ../src/Core/Main/Game.cs:327
 msgid "F"
 msgstr "F"
 
 #. Seventh possible answer for a series
-#: ../src/Core/Main/Game.cs:328
+#: ../src/Core/Main/Game.cs:329
 msgid "G"
 msgstr "G"
 
 #. Eighth possible answer for a series
-#: ../src/Core/Main/Game.cs:330
+#: ../src/Core/Main/Game.cs:331
 msgid "H"
 msgstr "H"
 
-#: ../src/Core/Main/Game.cs:338
+#: ../src/Core/Main/Game.cs:339
 #, csharp-format
 msgid "Figure {0}"
 msgstr "Figura {0}"
@@ -1766,42 +1762,59 @@ msgstr ""
 "Juegos registrados: {0}: {1} puzles lógicos, {2} entrenadores de cálculo, "
 "{3} entrenadores de memoria, {4} analogías verbales"
 
-#: ../src/Core/Main/GameSession.cs:176
+#: ../src/Core/Main/GameSession.cs:177
 #, csharp-format
 msgid "Games played: {0} (Score: {1})"
 msgstr "Partidas jugadas: {0} (puntuación {1})"
 
-#: ../src/Core/Main/GameSession.cs:177
+#: ../src/Core/Main/GameSession.cs:178
 #, csharp-format
-msgid " - Time: {0}"
-msgstr " - Tiempo: {0}"
+#| msgid " - Time: {0}"
+msgid "Time: {0}"
+msgstr "Tiempo: {0}"
 
-#: ../src/Core/Main/GameSession.cs:180
+#. Translators: {0} is the name of the game
+#: ../src/Core/Main/GameSession.cs:182
 #, csharp-format
-msgid "- Game: {0}"
-msgstr " - Juego: {0}"
+#| msgid "- Game: {0}"
+msgid "Game: {0}"
+msgstr "Juego: {0}"
 
-#: ../src/Core/Main/GameSession.cs:194
+#. Translators: text in the status bar: games played - time - game name
+#: ../src/Core/Main/GameSession.cs:184
+#, csharp-format
+#| msgid "{0} and {1}"
+msgid "{0} - {1} - {2}"
+msgstr "{0}; {1}; {2}"
+
+#. Translators: text in the status bar: games played - time
+#: ../src/Core/Main/GameSession.cs:187
+#, csharp-format
+#| msgid "{0}) {1}"
+msgid "{0} - {1}"
+msgstr "{0}; {1}"
+
+#: ../src/Core/Main/GameSession.cs:200
 msgid "Outstanding results"
 msgstr "Resultados asombrosos"
 
-#: ../src/Core/Main/GameSession.cs:196
+#: ../src/Core/Main/GameSession.cs:202
 msgid "Excellent results"
 msgstr "Resultados excelentes"
 
-#: ../src/Core/Main/GameSession.cs:198
+#: ../src/Core/Main/GameSession.cs:204
 msgid "Good results"
 msgstr "Buenos resultados"
 
-#: ../src/Core/Main/GameSession.cs:200
+#: ../src/Core/Main/GameSession.cs:206
 msgid "Poor results"
 msgstr "Resultados pobres"
 
-#: ../src/Core/Main/GameSession.cs:201
+#: ../src/Core/Main/GameSession.cs:207
 msgid "Disappointing results"
 msgstr "Resultados decepcionantes"
 
-#: ../src/Core/Main/GameSession.cs:263
+#: ../src/Core/Main/GameSession.cs:269
 msgid "Paused"
 msgstr "Pausado"
 
@@ -1900,7 +1913,7 @@ msgstr "Las posibles respuestas correctas son: {0}."
 #. For example: "Possible correct answers are: sleep, rest."
 #. Translators: this the separator used when concatenating possible options for answering verbal analogies
 #. For example: "Possible correct answers are: a, b, c, d."
-#: ../src/Core/Main/Verbal/Analogies.cs:90
+#: ../src/Core/Main/Verbal/Analogies.cs:91
 #: ../src/Core/Main/Verbal/AnalogiesMultipleOptions.cs:63
 #: ../src/Core/Main/Verbal/AnalogiesPairOfWordsOptions.cs:64
 msgid ", "
@@ -3688,8 +3701,8 @@ msgid "The distance formula is 'distance = rate x time'."
 msgstr "La fórmula de la distancia es «distancia = espacio x tiempo»."
 
 #. Translators:
-#. - {0}, {1} and {2} are always greater than 2
 #. - mph (miles per hour). You must localize this using the right unit of speed for your locale
+#. / - The translated string should not use more characters than the original sentence
 #: ../src/Games/Logic/PuzzleTrains.cs:82
 #, csharp-format
 msgid ""
@@ -3710,29 +3723,44 @@ msgstr[1] ""
 "horas le lleva al segundo tren alcanzar al primero?"
 
 #: ../src/Games/Logic/PuzzleTrains.cs:86
+#| msgid ""
+#| "You can calculate the answer multiplying the second train speed by the "
+#| "time and dividing it by the difference of speeds."
 msgid ""
-"You can calculate the answer multiplying the second train speed by the time "
-"and dividing it by the difference of speeds."
+"You can calculate the answer multiplying the speed of the first train by the "
+"time and dividing it by the difference of speeds."
 msgstr ""
-"Puedes calcular la respuesta multiplicando la velocidad del segundo tren por "
+"Puedes calcular la respuesta multiplicando la velocidad del primer tren por "
 "el tiempo y dividiéndolo por la diferencia de velocidades."
 
 #. Translators:
 #. - {0}, {1} and {3} are always greater than 2
 #. - mph (miles per hour) and miles must be localized this using the right unit of speed for your locale
-#: ../src/Games/Logic/PuzzleTrains.cs:104
+#: ../src/Games/Logic/PuzzleTrains.cs:103
 #, csharp-format
+#| msgid ""
+#| "Two trains separated by {0} miles are heading towards each other on "
+#| "straight parallel tracks. One travels at {1} mph and the other at {2} "
+#| "mph. In how many hours do they meet?"
 msgid ""
+"Two trains separated by {0} mile are heading towards each other on straight "
+"parallel tracks. One travels at {1} mph and the other at {2} mph. In how "
+"many hours do they meet?"
+msgid_plural ""
 "Two trains separated by {0} miles are heading towards each other on straight "
 "parallel tracks. One travels at {1} mph and the other at {2} mph. In how "
 "many hours do they meet?"
-msgstr ""
+msgstr[0] ""
+"Dos trenes separados un kilómetro van en la misma dirección, uno hacia el "
+"otro, en vías rectas paralelas. Uno viaja a {1} km/h y el otro a {2} km/h. "
+"¿En cuántas horas se encontrarán?"
+msgstr[1] ""
 "Dos trenes separados {0} kilómetros van en la misma dirección, uno hacia el "
 "otro, en vías rectas paralelas. Uno viaja a {1} km/h y el otro a {2} km/h. "
 "¿En cuántas horas se encontrarán?"
 
-#: ../src/Games/Logic/PuzzleTrains.cs:107
-#: ../src/Games/Logic/PuzzleTrains.cs:128
+#: ../src/Games/Logic/PuzzleTrains.cs:108
+#: ../src/Games/Logic/PuzzleTrains.cs:131
 msgid ""
 "You can calculate the answer dividing the distance by the sum of both speeds."
 msgstr ""
@@ -3742,13 +3770,25 @@ msgstr ""
 #. Translators:
 #. - {0}, {1} and {2} are always greater than 2
 #. - mph (miles per hour). You must localize this using the right unit of speed for your locale
-#: ../src/Games/Logic/PuzzleTrains.cs:125
+#: ../src/Games/Logic/PuzzleTrains.cs:126
 #, csharp-format
+#| msgid ""
+#| "Two trains on straight parallel tracks leave from the same point and time "
+#| "traveling in opposite directions at {0} and {1} mph respectively. In how "
+#| "many hours they will be {2} miles apart?"
 msgid ""
 "Two trains on straight parallel tracks leave from the same point and time "
 "traveling in opposite directions at {0} and {1} mph respectively. In how "
+"many hours they will be {2} mile apart?"
+msgid_plural ""
+"Two trains on straight parallel tracks leave from the same point and time "
+"traveling in opposite directions at {0} and {1} mph respectively. In how "
 "many hours they will be {2} miles apart?"
-msgstr ""
+msgstr[0] ""
+"Dos trenes en vías rectas paralelas salen del mismo punto, en sentido "
+"opuesto a {0} y {1} km/h respectivamente. ¿En cuántas horas estarán "
+"separados un kilómetro?"
+msgstr[1] ""
 "Dos trenes en vías rectas paralelas salen del mismo punto, en sentido "
 "opuesto a {0} y {1} km/h respectivamente. ¿En cuántas horas estarán "
 "separados {2} kilómetros?"
