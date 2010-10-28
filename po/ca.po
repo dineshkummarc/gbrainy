@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gbrainy\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-10-18 20:44+0200\n"
-"PO-Revision-Date: 2010-10-18 21:30+0100\n"
+"POT-Creation-Date: 2010-10-28 09:15+0200\n"
+"PO-Revision-Date: 2010-10-18 09:38+0100\n"
 "Last-Translator: Jordi Mas <jmas@softcatala.org>\n"
 "Language-Team: Catalan\n"
 "MIME-Version: 1.0\n"
@@ -1509,7 +1509,7 @@ msgstr "Prepareu-vos per a memoritzar els objectes següents..."
 
 #: ../src/Core/Views/FinishView.cs:97
 #: ../src/Core/Views/PlayerHistoryView.cs:67
-#: ../src/Clients/Classical/Dialogs/PlayerHistoryDialog.cs:64
+#: ../src/Clients/Classical/Dialogs/PlayerHistoryDialog.cs:66
 msgid "Total"
 msgstr "Total"
 
@@ -1685,6 +1685,16 @@ msgstr "blanc"
 msgid "The correct answer is {0}."
 msgstr "La resposta correcta és {0}."
 
+#. Translators: answer + rationale of the answer
+#. Translators: "The graph below" +  "It is built using" sentences
+#. Translators: Concadenating two strings (rationale of answer + extra information).
+#: ../src/Core/Main/Game.cs:157 ../src/Core/Main/Verbal/Analogies.cs:62
+#: ../src/Clients/Classical/Dialogs/PlayerHistoryDialog.cs:60
+#: ../src/Games/Logic/PuzzleCountSeries.cs:93
+#, csharp-format
+msgid "{0} {1}"
+msgstr "{0} {1}"
+
 #. Translators Note
 #. The following series of answers may need to be adapted
 #. in cultures with alphabets different to the Latin one.
@@ -1692,46 +1702,46 @@ msgstr "La resposta correcta és {0}."
 #. For languages represented with the Latin alphabet use
 #. the same than English
 #. First possible answer for a series (e.g.: Figure A)
-#: ../src/Core/Main/Game.cs:316
+#: ../src/Core/Main/Game.cs:317
 msgid "A"
 msgstr "A"
 
 #. Second possible answer for a series
-#: ../src/Core/Main/Game.cs:318
+#: ../src/Core/Main/Game.cs:319
 msgid "B"
 msgstr "B"
 
 #. Third possible answer for a series
-#: ../src/Core/Main/Game.cs:320
+#: ../src/Core/Main/Game.cs:321
 msgid "C"
 msgstr "C"
 
 #. Fourth possible answer for a series
-#: ../src/Core/Main/Game.cs:322
+#: ../src/Core/Main/Game.cs:323
 msgid "D"
 msgstr "D"
 
 #. Fifth possible answer for a series
-#: ../src/Core/Main/Game.cs:324
+#: ../src/Core/Main/Game.cs:325
 msgid "E"
 msgstr "E"
 
 #. Sixth possible answer for a series
-#: ../src/Core/Main/Game.cs:326
+#: ../src/Core/Main/Game.cs:327
 msgid "F"
 msgstr "F"
 
 #. Seventh possible answer for a series
-#: ../src/Core/Main/Game.cs:328
+#: ../src/Core/Main/Game.cs:329
 msgid "G"
 msgstr "G"
 
 #. Eighth possible answer for a series
-#: ../src/Core/Main/Game.cs:330
+#: ../src/Core/Main/Game.cs:331
 msgid "H"
 msgstr "H"
 
-#: ../src/Core/Main/Game.cs:338
+#: ../src/Core/Main/Game.cs:339
 #, csharp-format
 msgid "Figure {0}"
 msgstr "Figura {0}"
@@ -1750,42 +1760,55 @@ msgstr ""
 "Jocs registrats: {0}: {1} trencaclosques lògics, {2} entrenadors de càlcul "
 "mental, {3} entrenadors de memòria, {4} analogies verbals"
 
-#: ../src/Core/Main/GameSession.cs:176
+#: ../src/Core/Main/GameSession.cs:177
 #, csharp-format
 msgid "Games played: {0} (Score: {1})"
 msgstr "Jocs: {0} (puntuació: {1})"
 
-#: ../src/Core/Main/GameSession.cs:177
+#: ../src/Core/Main/GameSession.cs:178
 #, csharp-format
-msgid " - Time: {0}"
-msgstr " - Temps: {0}"
+msgid "Time: {0}"
+msgstr "Temps: {0}"
 
-#: ../src/Core/Main/GameSession.cs:180
+#. Translators: {0} is the name of the game
+#: ../src/Core/Main/GameSession.cs:182
 #, csharp-format
-msgid "- Game: {0}"
-msgstr "- Joc: {0}"
+msgid "Game: {0}"
+msgstr "Joc: {0}"
 
-#: ../src/Core/Main/GameSession.cs:194
+#. Translators: text in the status bar: games played - time - game name
+#: ../src/Core/Main/GameSession.cs:184
+#, csharp-format
+msgid "{0} - {1} - {2}"
+msgstr "{0} - {1} - {2}"
+
+#. Translators: text in the status bar: games played - time
+#: ../src/Core/Main/GameSession.cs:187
+#, csharp-format
+msgid "{0} - {1}"
+msgstr "{0} - {1}"
+
+#: ../src/Core/Main/GameSession.cs:200
 msgid "Outstanding results"
 msgstr "Resultats extraordinaris"
 
-#: ../src/Core/Main/GameSession.cs:196
+#: ../src/Core/Main/GameSession.cs:202
 msgid "Excellent results"
 msgstr "Excel·lents resultats"
 
-#: ../src/Core/Main/GameSession.cs:198
+#: ../src/Core/Main/GameSession.cs:204
 msgid "Good results"
 msgstr "Bons resultats"
 
-#: ../src/Core/Main/GameSession.cs:200
+#: ../src/Core/Main/GameSession.cs:206
 msgid "Poor results"
 msgstr "Resultats pobres"
 
-#: ../src/Core/Main/GameSession.cs:201
+#: ../src/Core/Main/GameSession.cs:207
 msgid "Disappointing results"
 msgstr "Resultats decebedors"
 
-#: ../src/Core/Main/GameSession.cs:263
+#: ../src/Core/Main/GameSession.cs:269
 msgid "Paused"
 msgstr "En pausa"
 
@@ -1885,7 +1908,7 @@ msgstr "Les respostes correctes possibles són: {0}."
 #. For example: "Possible correct answers are: sleep, rest."
 #. Translators: this the separator used when concatenating possible options for answering verbal analogies
 #. For example: "Possible correct answers are: a, b, c, d."
-#: ../src/Core/Main/Verbal/Analogies.cs:90
+#: ../src/Core/Main/Verbal/Analogies.cs:91
 #: ../src/Core/Main/Verbal/AnalogiesMultipleOptions.cs:63
 #: ../src/Core/Main/Verbal/AnalogiesPairOfWordsOptions.cs:64
 msgid ", "
@@ -2472,18 +2495,18 @@ msgid "Individually, the present costs one euro more to purchase than to wrap."
 msgstr "Individualment, el regal costa un euro més que l'embolcall."
 
 #
-#: ../src/Games/Logic/PuzzleCountSeries.cs:39
+#: ../src/Games/Logic/PuzzleCountSeries.cs:40
 msgid "Count series"
 msgstr "Compte de sèries"
 
-#: ../src/Games/Logic/PuzzleCountSeries.cs:51
+#: ../src/Games/Logic/PuzzleCountSeries.cs:62
 msgid ""
 "How many numbers '9' are required to represent the numbers between 10 to 100?"
 msgstr ""
 "Quants números «9» són necessaris per a representar els números entre 10 i "
 "100?"
 
-#: ../src/Games/Logic/PuzzleCountSeries.cs:56
+#: ../src/Games/Logic/PuzzleCountSeries.cs:68
 msgid ""
 "How many two digit numbers occur where the first digit is larger than the "
 "second (e.g.: 20 and 21)?"
@@ -2491,13 +2514,28 @@ msgstr ""
 "Quants números de dos dígits tenen el primer dígit més gran que el segon (p. "
 "ex.: 20 i 21)?"
 
-#: ../src/Games/Logic/PuzzleCountSeries.cs:61
+#: ../src/Games/Logic/PuzzleCountSeries.cs:74
 msgid ""
 "How many two digit numbers occur where the first digit is smaller than the "
 "second (e.g.: 12 and 13)?"
 msgstr ""
 "Quants números de dos dígits tenen el primer dígit més petit que el segon "
 "(p. ex.: 12 i 13)?"
+
+#. Translators: A sequence of numbers 1, 2, 3, etc.
+#: ../src/Games/Logic/PuzzleCountSeries.cs:86
+#, csharp-format
+msgid "{0}, {1}"
+msgstr "{0}, {1}"
+
+#: ../src/Games/Logic/PuzzleCountSeries.cs:89
+#, csharp-format
+msgid "The numbers are: {0}."
+msgstr "Els nombres són: {0}."
+
+#: ../src/Games/Logic/PuzzleCountSeries.cs:94
+msgid "Notice that 99 contains two numbers '9'."
+msgstr "Adoneu-vos que 99 conté dos nombres «9»."
 
 #: ../src/Games/Logic/PuzzleCoverPercentage.cs:35
 msgid "Cover percentage"
@@ -3670,8 +3708,8 @@ msgid "The distance formula is 'distance = rate x time'."
 msgstr "La fórmula de la distància és «distància = rati x temps»."
 
 #. Translators:
-#. - {0}, {1} and {2} are always greater than 2
 #. - mph (miles per hour). You must localize this using the right unit of speed for your locale
+#. / - The translated string should not use more characters than the original sentence
 #: ../src/Games/Logic/PuzzleTrains.cs:82
 #, csharp-format
 msgid ""
@@ -3693,28 +3731,35 @@ msgstr[1] ""
 
 #: ../src/Games/Logic/PuzzleTrains.cs:86
 msgid ""
-"You can calculate the answer multiplying the second train speed by the time "
-"and dividing it by the difference of speeds."
+"You can calculate the answer multiplying the speed of the first train by the "
+"time and dividing it by the difference of speeds."
 msgstr ""
-"Podeu calcular la resposta multiplicant la velocitat del segon tren pel "
+"Podeu calcular la resposta multiplicant la velocitat del primer tren pel "
 "temps i dividint-la per la diferencia de les velocitats."
 
 #. Translators:
-#. - {0}, {1} and {3} are always greater than 2
 #. - mph (miles per hour) and miles must be localized this using the right unit of speed for your locale
-#: ../src/Games/Logic/PuzzleTrains.cs:104
+#: ../src/Games/Logic/PuzzleTrains.cs:102
 #, csharp-format
 msgid ""
+"Two trains separated by {0} mile are heading towards each other on straight "
+"parallel tracks. One travels at {1} mph and the other at {2} mph. In how "
+"many hours do they meet?"
+msgid_plural ""
 "Two trains separated by {0} miles are heading towards each other on straight "
 "parallel tracks. One travels at {1} mph and the other at {2} mph. In how "
 "many hours do they meet?"
-msgstr ""
+msgstr[0] ""
+"Dos trens separats per {0} kilòmetre es dirigeixen un cap a l'altre en vies "
+"rectes paral·leles. Un viatja a {1} km/h i l'altre a {2} km/h. Quantes hores "
+"trigaran en trobar-se?"
+msgstr[1] ""
 "Dos trens separats per {0} kilòmetres es dirigeixen un cap a l'altre en vies "
 "rectes paral·leles. Un viatja a {1} km/h i l'altre a {2} km/h. Quantes hores "
 "trigaran en trobar-se?"
 
 #: ../src/Games/Logic/PuzzleTrains.cs:107
-#: ../src/Games/Logic/PuzzleTrains.cs:128
+#: ../src/Games/Logic/PuzzleTrains.cs:129
 msgid ""
 "You can calculate the answer dividing the distance by the sum of both speeds."
 msgstr ""
@@ -3722,17 +3767,24 @@ msgstr ""
 "velocitats."
 
 #. Translators:
-#. - {0}, {1} and {2} are always greater than 2
-#. - mph (miles per hour). You must localize this using the right unit of speed for your locale
-#: ../src/Games/Logic/PuzzleTrains.cs:125
+#. - mph (miles per hour) and miles must be localized this using the right unit of speed for your locale
+#: ../src/Games/Logic/PuzzleTrains.cs:124
 #, csharp-format
 msgid ""
 "Two trains on straight parallel tracks leave from the same point and time "
 "traveling in opposite directions at {0} and {1} mph respectively. In how "
+"many hours they will be {2} mile apart?"
+msgid_plural ""
+"Two trains on straight parallel tracks leave from the same point and time "
+"traveling in opposite directions at {0} and {1} mph respectively. In how "
 "many hours they will be {2} miles apart?"
-msgstr ""
+msgstr[0] ""
 "Dos trens en vies rectes paral·leles marxen del mateix lloc i hora viatjant "
-"en direccions oposades a {0} i {1} km/h respectivament.Quantes hores "
+"en direccions oposades a {0} i {1} km/h respectivament. Quantes hores "
+"trigaran en trobar-se a {2} kilòmetre de distància?"
+msgstr[1] ""
+"Dos trens en vies rectes paral·leles marxen del mateix lloc i hora viatjant "
+"en direccions oposades a {0} i {1} km/h respectivament. Quantes hores "
 "trigaran en trobar-se a {2} kilòmetres de distància?"
 
 #: ../src/Games/Logic/PuzzleTriangles.cs:32
