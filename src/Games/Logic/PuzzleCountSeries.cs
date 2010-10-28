@@ -17,6 +17,7 @@
  * Boston, MA 02111-1307, USA.
  */
 
+using System;
 using Mono.Unix;
 
 using gbrainy.Core.Main;
@@ -33,7 +34,7 @@ namespace gbrainy.Games.Logic
 			Length		
 		}
 
-		private string question;
+		private string question, rationale;
 
 		public override string Name {
 			get {return Catalog.GetString ("Count series");}
@@ -43,30 +44,55 @@ namespace gbrainy.Games.Logic
 			get {return question;} 
 		}
 
+		public override string Rationale {
+			get {return rationale;} 
+		}
+
+		short []numbers;
+
 		protected override void Initialize ()
 		{
-			switch ((GameType) random.Next ((int) GameType.Length))
+			GameType game_type;
+		
+			game_type = (GameType) random.Next ((int) GameType.Length);
+
+			switch (game_type)
 			{
 				case GameType.HowManyNines:
 					question = Catalog.GetString ("How many numbers '9' are required to represent the numbers between 10 to 100?");
 					right_answer = "19";
+					numbers = new short [] {19, 29, 39, 49, 59, 69, 79, 89, 90, 91, 92 , 93, 94, 95, 96, 97, 98, 99};
 					break;
 
 				case GameType.HowManyBiggerDigits:
 					question = Catalog.GetString ("How many two digit numbers occur where the first digit is larger than the second (e.g.: 20 and 21)?");
 					right_answer = "45";
+					numbers = new short [] {10, 20, 21, 30, 31, 32, 40, 41, 42, 43, 50, 51, 52, 53, 54, 60, 61, 62, 63, 64, 65, 70, 71, 72, 73, 74, 75, 76, 80, 81, 82, 83, 84, 85, 86, 87, 90, 91, 92, 93, 94, 95, 96, 97, 98};
 					break;
 
 				case GameType.HowManySmallerDigits:
 					question = Catalog.GetString ("How many two digit numbers occur where the first digit is smaller than the second (e.g.: 12 and 13)?");
 					right_answer = "36";
+					numbers = new short [] {12, 13, 14, 15, 16, 17, 18, 19, 23, 24, 25, 26, 27, 28, 29, 34, 35, 36, 37, 38, 39, 45, 46, 47, 48, 49, 56, 57, 58, 59, 67, 68, 69, 78, 79, 89};
 					break;
+				default:
+					throw new InvalidOperationException ("Invalid value");
 			}
-		}
 
-		public override void Draw (CairoContextEx gr, int area_width, int area_height, bool rtl)
-		{
-			base.Draw (gr, area_width, area_height, rtl);
+			rationale = numbers[0].ToString ();
+			for (int i = 1; i < numbers.Length; i++)
+			{
+				// Translators: A sequence of numbers 1, 2, 3, etc.
+				rationale = string.Format (Catalog.GetString ("{0}, {1}"), rationale, numbers[i].ToString ());
+			}
+
+			rationale = string.Format (Catalog.GetString ("The numbers are: {0}."), rationale);
+
+			if (game_type == GameType.HowManyNines) {
+				// Translators: Concadenating two strings (rationale of answer + extra information).
+				rationale = string.Format (Catalog.GetString ("{0} {1}"), rationale,
+					Catalog.GetString ("Notice that 99 contains two numbers '9'."));
+			}				
 		}
 	}
 }
