@@ -11,8 +11,8 @@ msgstr ""
 "Project-Id-Version: gbrainy.master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=gbrainy&component=general\n"
-"POT-Creation-Date: 2010-10-27 19:43+0000\n"
-"PO-Revision-Date: 2010-10-27 21:57+0200\n"
+"POT-Creation-Date: 2010-10-28 07:07+0000\n"
+"PO-Revision-Date: 2010-10-28 10:22+0200\n"
 "Last-Translator: Jorge González <jorgegonz@svn.gnome.org>\n"
 "Language-Team: Español <gnome-es-list@gnome.org>\n"
 "MIME-Version: 1.0\n"
@@ -1690,10 +1690,11 @@ msgstr "La respuesta correcta es {0}."
 
 #. Translators: answer + rationale of the answer
 #. Translators: "The graph below" +  "It is built using" sentences
+#. Translators: Concadenating two strings (rationale of answer + extra information).
 #: ../src/Core/Main/Game.cs:157 ../src/Core/Main/Verbal/Analogies.cs:62
 #: ../src/Clients/Classical/Dialogs/PlayerHistoryDialog.cs:60
+#: ../src/Games/Logic/PuzzleCountSeries.cs:93
 #, csharp-format
-#| msgid "{0}) {1}"
 msgid "{0} {1}"
 msgstr "{0} {1}"
 
@@ -1769,28 +1770,24 @@ msgstr "Partidas jugadas: {0} (puntuación {1})"
 
 #: ../src/Core/Main/GameSession.cs:178
 #, csharp-format
-#| msgid " - Time: {0}"
 msgid "Time: {0}"
 msgstr "Tiempo: {0}"
 
 #. Translators: {0} is the name of the game
 #: ../src/Core/Main/GameSession.cs:182
 #, csharp-format
-#| msgid "- Game: {0}"
 msgid "Game: {0}"
 msgstr "Juego: {0}"
 
 #. Translators: text in the status bar: games played - time - game name
 #: ../src/Core/Main/GameSession.cs:184
 #, csharp-format
-#| msgid "{0} and {1}"
 msgid "{0} - {1} - {2}"
 msgstr "{0}; {1}; {2}"
 
 #. Translators: text in the status bar: games played - time
 #: ../src/Core/Main/GameSession.cs:187
 #, csharp-format
-#| msgid "{0}) {1}"
 msgid "{0} - {1}"
 msgstr "{0}; {1}"
 
@@ -2507,18 +2504,18 @@ msgstr ""
 msgid "Individually, the present costs one euro more to purchase than to wrap."
 msgstr "Individualmente, el regalo cuesta un euro más que envolverlo."
 
-#: ../src/Games/Logic/PuzzleCountSeries.cs:39
+#: ../src/Games/Logic/PuzzleCountSeries.cs:40
 msgid "Count series"
 msgstr "Contar series"
 
-#: ../src/Games/Logic/PuzzleCountSeries.cs:51
+#: ../src/Games/Logic/PuzzleCountSeries.cs:62
 msgid ""
 "How many numbers '9' are required to represent the numbers between 10 to 100?"
 msgstr ""
 "¿Cuántos números «9» son necesarios para representar los números entre 10 y "
 "100?"
 
-#: ../src/Games/Logic/PuzzleCountSeries.cs:56
+#: ../src/Games/Logic/PuzzleCountSeries.cs:68
 msgid ""
 "How many two digit numbers occur where the first digit is larger than the "
 "second (e.g.: 20 and 21)?"
@@ -2526,13 +2523,29 @@ msgstr ""
 "¿Cuańtos números de dos dígitos existen donde el primer dígito es mayor que "
 "el segundo (ej. 20 y 21)?"
 
-#: ../src/Games/Logic/PuzzleCountSeries.cs:61
+#: ../src/Games/Logic/PuzzleCountSeries.cs:74
 msgid ""
 "How many two digit numbers occur where the first digit is smaller than the "
 "second (e.g.: 12 and 13)?"
 msgstr ""
 "¿Cuántos números de dos dígitos existen donde el primer dígito es más "
 "pequeño que el segundo (ej. 12 y 13)?"
+
+#. Translators: A sequence of numbers 1, 2, 3, etc.
+#: ../src/Games/Logic/PuzzleCountSeries.cs:86
+#, csharp-format
+#| msgid "{0} {1}"
+msgid "{0}, {1}"
+msgstr "{0}, {1}"
+
+#: ../src/Games/Logic/PuzzleCountSeries.cs:89
+#, csharp-format
+msgid "The numbers are: {0}."
+msgstr "Los números son: {0}."
+
+#: ../src/Games/Logic/PuzzleCountSeries.cs:94
+msgid "Notice that 99 contains two numbers '9'."
+msgstr "Nota que 99 contiene dos números «9»."
 
 #: ../src/Games/Logic/PuzzleCoverPercentage.cs:35
 msgid "Cover percentage"
@@ -3723,9 +3736,6 @@ msgstr[1] ""
 "horas le lleva al segundo tren alcanzar al primero?"
 
 #: ../src/Games/Logic/PuzzleTrains.cs:86
-#| msgid ""
-#| "You can calculate the answer multiplying the second train speed by the "
-#| "time and dividing it by the difference of speeds."
 msgid ""
 "You can calculate the answer multiplying the speed of the first train by the "
 "time and dividing it by the difference of speeds."
@@ -3738,10 +3748,6 @@ msgstr ""
 #. - mph (miles per hour) and miles must be localized this using the right unit of speed for your locale
 #: ../src/Games/Logic/PuzzleTrains.cs:103
 #, csharp-format
-#| msgid ""
-#| "Two trains separated by {0} miles are heading towards each other on "
-#| "straight parallel tracks. One travels at {1} mph and the other at {2} "
-#| "mph. In how many hours do they meet?"
 msgid ""
 "Two trains separated by {0} mile are heading towards each other on straight "
 "parallel tracks. One travels at {1} mph and the other at {2} mph. In how "
@@ -3772,10 +3778,6 @@ msgstr ""
 #. - mph (miles per hour). You must localize this using the right unit of speed for your locale
 #: ../src/Games/Logic/PuzzleTrains.cs:126
 #, csharp-format
-#| msgid ""
-#| "Two trains on straight parallel tracks leave from the same point and time "
-#| "traveling in opposite directions at {0} and {1} mph respectively. In how "
-#| "many hours they will be {2} miles apart?"
 msgid ""
 "Two trains on straight parallel tracks leave from the same point and time "
 "traveling in opposite directions at {0} and {1} mph respectively. In how "
