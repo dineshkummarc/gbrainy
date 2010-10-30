@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gbrainy master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gbrainy&component=general\n"
-"POT-Creation-Date: 2010-10-21 20:30+0000\n"
-"PO-Revision-Date: 2010-10-22 14:49+0100\n"
+"POT-Creation-Date: 2010-10-28 20:04+0000\n"
+"PO-Revision-Date: 2010-10-30 07:56+0100\n"
 "Last-Translator: Andrej Žnidaršič <andrej.znidarsic@gmail.com>\n"
 "Language-Team: Slovenian <gnome-si@googlegroups.com>\n"
 "Language: sl\n"
@@ -1368,7 +1368,7 @@ msgstr "Pripravite se na pomnjenje naslednjih predmetov ..."
 
 #: ../src/Core/Views/FinishView.cs:97
 #: ../src/Core/Views/PlayerHistoryView.cs:67
-#: ../src/Clients/Classical/Dialogs/PlayerHistoryDialog.cs:64
+#: ../src/Clients/Classical/Dialogs/PlayerHistoryDialog.cs:66
 msgid "Total"
 msgstr "Skupaj"
 
@@ -1516,6 +1516,17 @@ msgstr "bela"
 msgid "The correct answer is {0}."
 msgstr "Pravilni odgovor je {0}."
 
+#. Translators: answer + rationale of the answer
+#. Translators: "The graph below" +  "It is built using" sentences
+#. Translators: Concadenating two strings (rationale of answer + extra information).
+#: ../src/Core/Main/Game.cs:157
+#: ../src/Core/Main/Verbal/Analogies.cs:62
+#: ../src/Clients/Classical/Dialogs/PlayerHistoryDialog.cs:60
+#: ../src/Games/Logic/PuzzleCountSeries.cs:93
+#, csharp-format
+msgid "{0} {1}"
+msgstr "{0} {1}"
+
 #. Translators Note
 #. The following series of answers may need to be adapted
 #. in cultures with alphabets different to the Latin one.
@@ -1523,46 +1534,46 @@ msgstr "Pravilni odgovor je {0}."
 #. For languages represented with the Latin alphabet use
 #. the same than English
 #. First possible answer for a series (e.g.: Figure A)
-#: ../src/Core/Main/Game.cs:316
+#: ../src/Core/Main/Game.cs:317
 msgid "A"
 msgstr "A"
 
 #. Second possible answer for a series
-#: ../src/Core/Main/Game.cs:318
+#: ../src/Core/Main/Game.cs:319
 msgid "B"
 msgstr "B"
 
 #. Third possible answer for a series
-#: ../src/Core/Main/Game.cs:320
+#: ../src/Core/Main/Game.cs:321
 msgid "C"
 msgstr "C"
 
 #. Fourth possible answer for a series
-#: ../src/Core/Main/Game.cs:322
+#: ../src/Core/Main/Game.cs:323
 msgid "D"
 msgstr "D"
 
 #. Fifth possible answer for a series
-#: ../src/Core/Main/Game.cs:324
+#: ../src/Core/Main/Game.cs:325
 msgid "E"
 msgstr "E"
 
 #. Sixth possible answer for a series
-#: ../src/Core/Main/Game.cs:326
+#: ../src/Core/Main/Game.cs:327
 msgid "F"
 msgstr "F"
 
 #. Seventh possible answer for a series
-#: ../src/Core/Main/Game.cs:328
+#: ../src/Core/Main/Game.cs:329
 msgid "G"
 msgstr "G"
 
 #. Eighth possible answer for a series
-#: ../src/Core/Main/Game.cs:330
+#: ../src/Core/Main/Game.cs:331
 msgid "H"
 msgstr "H"
 
-#: ../src/Core/Main/Game.cs:338
+#: ../src/Core/Main/Game.cs:339
 #, csharp-format
 msgid "Figure {0}"
 msgstr "Slika {0}"
@@ -1577,42 +1588,55 @@ msgstr "Podatkovna zbirka razširitev:"
 msgid "Games registered: {0}: {1} logic puzzles, {2} calculation trainers, {3} memory trainers, {4} verbal analogies"
 msgstr "Vpisane igre: {0}: {1} logičnih iger, {2} računskih nalog, {3} urjenj pomnjenja, {4} besednih analogij"
 
-#: ../src/Core/Main/GameSession.cs:176
+#: ../src/Core/Main/GameSession.cs:177
 #, csharp-format
 msgid "Games played: {0} (Score: {1})"
 msgstr "Odigrane igre: {0} (Rezultat: {1})"
 
-#: ../src/Core/Main/GameSession.cs:177
+#: ../src/Core/Main/GameSession.cs:178
 #, csharp-format
-msgid " - Time: {0}"
-msgstr " - Čas: {0}"
+msgid "Time: {0}"
+msgstr "Čas: {0}"
 
-#: ../src/Core/Main/GameSession.cs:180
+#. Translators: {0} is the name of the game
+#: ../src/Core/Main/GameSession.cs:182
 #, csharp-format
-msgid "- Game: {0}"
-msgstr "- Igra: {0}"
+msgid "Game: {0}"
+msgstr "Igra: {0}"
 
-#: ../src/Core/Main/GameSession.cs:194
+#. Translators: text in the status bar: games played - time - game name
+#: ../src/Core/Main/GameSession.cs:184
+#, csharp-format
+msgid "{0} - {1} - {2}"
+msgstr "{0} - {1} - {2}"
+
+#. Translators: text in the status bar: games played - time
+#: ../src/Core/Main/GameSession.cs:187
+#, csharp-format
+msgid "{0} - {1}"
+msgstr "{0} - {1}"
+
+#: ../src/Core/Main/GameSession.cs:200
 msgid "Outstanding results"
 msgstr "Izjemni rezultati"
 
-#: ../src/Core/Main/GameSession.cs:196
+#: ../src/Core/Main/GameSession.cs:202
 msgid "Excellent results"
 msgstr "Odlični rezultati"
 
-#: ../src/Core/Main/GameSession.cs:198
+#: ../src/Core/Main/GameSession.cs:204
 msgid "Good results"
 msgstr "Dobri rezultati"
 
-#: ../src/Core/Main/GameSession.cs:200
+#: ../src/Core/Main/GameSession.cs:206
 msgid "Poor results"
 msgstr "Slabi rezultati"
 
-#: ../src/Core/Main/GameSession.cs:201
+#: ../src/Core/Main/GameSession.cs:207
 msgid "Disappointing results"
 msgstr "Obupni rezultati"
 
-#: ../src/Core/Main/GameSession.cs:263
+#: ../src/Core/Main/GameSession.cs:269
 msgid "Paused"
 msgstr "V premoru"
 
@@ -1690,7 +1714,7 @@ msgstr "Mogoči pravilni odgovori so: {0}."
 #. For example: "Possible correct answers are: sleep, rest."
 #. Translators: this the separator used when concatenating possible options for answering verbal analogies
 #. For example: "Possible correct answers are: a, b, c, d."
-#: ../src/Core/Main/Verbal/Analogies.cs:90
+#: ../src/Core/Main/Verbal/Analogies.cs:91
 #: ../src/Core/Main/Verbal/AnalogiesMultipleOptions.cs:63
 #: ../src/Core/Main/Verbal/AnalogiesPairOfWordsOptions.cs:64
 msgid ", "
@@ -2183,21 +2207,36 @@ msgstr "Zavijanje božičnega darila stane en evro. Božično darilo stane {0} e
 msgid "Individually, the present costs one euro more to purchase than to wrap."
 msgstr "Nakup posameznega darila stane en evro več kot zavijanje."
 
-#: ../src/Games/Logic/PuzzleCountSeries.cs:39
+#: ../src/Games/Logic/PuzzleCountSeries.cs:40
 msgid "Count series"
 msgstr "Zaporedje števil"
 
-#: ../src/Games/Logic/PuzzleCountSeries.cs:51
+#: ../src/Games/Logic/PuzzleCountSeries.cs:62
 msgid "How many numbers '9' are required to represent the numbers between 10 to 100?"
 msgstr "Koliko številk '9' je mogoče najti v vseh številih med 10 in 100?"
 
-#: ../src/Games/Logic/PuzzleCountSeries.cs:56
+#: ../src/Games/Logic/PuzzleCountSeries.cs:68
 msgid "How many two digit numbers occur where the first digit is larger than the second (e.g.: 20 and 21)?"
 msgstr "Koliko je dvomestnih števil, kjer je prva številka večja kot druga (na primer 20 in 21)?"
 
-#: ../src/Games/Logic/PuzzleCountSeries.cs:61
+#: ../src/Games/Logic/PuzzleCountSeries.cs:74
 msgid "How many two digit numbers occur where the first digit is smaller than the second (e.g.: 12 and 13)?"
 msgstr "Koliko je dvomestnih števil, kjer je prva številka manjša kot druga (na primer 12 in 13)?"
+
+#. Translators: A sequence of numbers 1, 2, 3, etc.
+#: ../src/Games/Logic/PuzzleCountSeries.cs:86
+#, csharp-format
+msgid "{0}, {1}"
+msgstr "{0}, {1}"
+
+#: ../src/Games/Logic/PuzzleCountSeries.cs:89
+#, csharp-format
+msgid "The numbers are: {0}."
+msgstr "Števila so: {0}."
+
+#: ../src/Games/Logic/PuzzleCountSeries.cs:94
+msgid "Notice that 99 contains two numbers '9'."
+msgstr "Število 99 vsebuje dve števki '9'."
 
 #: ../src/Games/Logic/PuzzleCoverPercentage.cs:35
 msgid "Cover percentage"
@@ -3036,8 +3075,8 @@ msgid "The distance formula is 'distance = rate x time'."
 msgstr "Formula za razdaljo je 'razdalja = hitrost x čas'."
 
 #. Translators:
-#. - {0}, {1} and {2} are always greater than 2
 #. - mph (miles per hour). You must localize this using the right unit of speed for your locale
+#. / - The translated string should not use more characters than the original sentence
 #: ../src/Games/Logic/PuzzleTrains.cs:82
 #, csharp-format
 msgid "A train leaves the station traveling at {0} mph. {1} hour later a second train leaves the station traveling in the same direction at {2} mph. How many hours does it take the second train to overtake the first train?"
@@ -3048,29 +3087,35 @@ msgstr[2] "Vlak zapusti postajo s hitrostjo {0} kilometrov na uro. {1} uri kasne
 msgstr[3] "Vlak zapusti postajo s hitrostjo {0} kilometrov na uro. {1} ure kasneje železniško postajo zapusti drugi vlak, ki potuje v isti smeri s hitrostjo {2} kilometrov na uro. Koliko ur potrebuje drugi vlak, da dohiti prvi vlak?"
 
 #: ../src/Games/Logic/PuzzleTrains.cs:86
-msgid "You can calculate the answer multiplying the second train speed by the time and dividing it by the difference of speeds."
-msgstr "Odgovor lahko izračunate z množenjem hitrosti drugega vlaka s časom in deljenjem z razliko v hitrostih."
+msgid "You can calculate the answer multiplying the speed of the first train by the time and dividing it by the difference of speeds."
+msgstr "Odgovor lahko izračunate z množenjem hitrosti prvega vlaka s časom in deljenjem z razliko v hitrostih."
 
 #. Translators:
-#. - {0}, {1} and {3} are always greater than 2
 #. - mph (miles per hour) and miles must be localized this using the right unit of speed for your locale
-#: ../src/Games/Logic/PuzzleTrains.cs:104
+#: ../src/Games/Logic/PuzzleTrains.cs:102
 #, csharp-format
-msgid "Two trains separated by {0} miles are heading towards each other on straight parallel tracks. One travels at {1} mph and the other at {2} mph. In how many hours do they meet?"
-msgstr "Dva vlaka sta oddaljena {0} kilometrov in potujeta drug proti drugemu na ravnih vzporednih železniških progah. Prvi potuje s hitrostjo {1} kilometrov, drugi pa s hitrostjo {2} kilometrov na uro. Čez koliko ur se bosta srečata?"
+msgid "Two trains separated by {0} mile are heading towards each other on straight parallel tracks. One travels at {1} mph and the other at {2} mph. In how many hours do they meet?"
+msgid_plural "Two trains separated by {0} miles are heading towards each other on straight parallel tracks. One travels at {1} mph and the other at {2} mph. In how many hours do they meet?"
+msgstr[0] "Dva vlaka sta oddaljena {0} kilometrov in potujeta drug proti drugemu na ravnih vzporednih železniških progah. Prvi potuje s hitrostjo {1} kilometrov na uro, drugi pa s hitrostjo {2} kilometrov na uro. Čez koliko ur se bosta srečata?"
+msgstr[1] "Dva vlaka sta oddaljena {0} kilometer in potujeta drug proti drugemu na ravnih vzporednih železniških progah. Prvi potuje s hitrostjo {1} kilometrov na uro, drugi pa s hitrostjo {2} kilometrov na uro. Čez koliko ur se bosta srečata?"
+msgstr[2] "Dva vlaka sta oddaljena {0} kilometra in potujeta drug proti drugemu na ravnih vzporednih železniških progah. Prvi potuje s hitrostjo {1} kilometrov na uro, drugi pa s hitrostjo {2} kilometrov na uro. Čez koliko ur se bosta srečata?"
+msgstr[3] "Dva vlaka sta oddaljena {0} kilometre in potujeta drug proti drugemu na ravnih vzporednih železniških progah. Prvi potuje s hitrostjo {1} kilometrov na uro, drugi pa s hitrostjo {2} kilometrov na uro. Čez koliko ur se bosta srečata?"
 
 #: ../src/Games/Logic/PuzzleTrains.cs:107
-#: ../src/Games/Logic/PuzzleTrains.cs:128
+#: ../src/Games/Logic/PuzzleTrains.cs:129
 msgid "You can calculate the answer dividing the distance by the sum of both speeds."
 msgstr "Rezultat lahko izračunate z deljenjem razdalje z vsoto obeh hitrosti."
 
 #. Translators:
-#. - {0}, {1} and {2} are always greater than 2
-#. - mph (miles per hour). You must localize this using the right unit of speed for your locale
-#: ../src/Games/Logic/PuzzleTrains.cs:125
+#. - mph (miles per hour) and miles must be localized this using the right unit of speed for your locale
+#: ../src/Games/Logic/PuzzleTrains.cs:124
 #, csharp-format
-msgid "Two trains on straight parallel tracks leave from the same point and time traveling in opposite directions at {0} and {1} mph respectively. In how many hours they will be {2} miles apart?"
-msgstr "Dva vlaka na ravnih vzporednih železniških progah ob enakemu času z istega mesta odideta v nasprotnih smereh s hitrostjo {0} in {1} kilometrov na uro. Čez koliko ur bosta {2} kilometrov narazen?"
+msgid "Two trains on straight parallel tracks leave from the same point and time traveling in opposite directions at {0} and {1} mph respectively. In how many hours they will be {2} mile apart?"
+msgid_plural "Two trains on straight parallel tracks leave from the same point and time traveling in opposite directions at {0} and {1} mph respectively. In how many hours they will be {2} miles apart?"
+msgstr[0] "Dva vlaka na ravnih vzporednih železniških progah ob enakemu času z istega mesta odideta v nasprotnih smereh s hitrostjo {0} in {1} kilometrov na uro. Čez koliko ur bosta {2} kilometrov narazen?"
+msgstr[1] "Dva vlaka na ravnih vzporednih železniških progah ob enakemu času z istega mesta odideta v nasprotnih smereh s hitrostjo {0} in {1} kilometrov na uro. Čez koliko ur bosta {2} kilometer narazen?"
+msgstr[2] "Dva vlaka na ravnih vzporednih železniških progah ob enakemu času z istega mesta odideta v nasprotnih smereh s hitrostjo {0} in {1} kilometrov na uro. Čez koliko ur bosta {2} kilometra narazen?"
+msgstr[3] "Dva vlaka na ravnih vzporednih železniških progah ob enakemu času z istega mesta odideta v nasprotnih smereh s hitrostjo {0} in {1} kilometrov na uro. Čez koliko ur bosta {2} kilometrov narazen?"
 
 #: ../src/Games/Logic/PuzzleTriangles.cs:32
 msgid "Triangles"
@@ -3709,7 +3754,7 @@ msgstr "Za izvajanje dejanja so zahtevane dodatne razširitve."
 
 #: ../src/Clients/Classical/mono-addins-strings.xml.h:8
 msgid "All registered repositories"
-msgstr "Vsa vpisana skladišča"
+msgstr "Vsa vpisana odlagališča"
 
 #: ../src/Clients/Classical/mono-addins-strings.xml.h:9
 msgid "Author:"
@@ -3749,15 +3794,15 @@ msgstr "Pot:"
 
 #: ../src/Clients/Classical/mono-addins-strings.xml.h:18
 msgid "Register a local repository"
-msgstr "Vpis krajevnega skladišča"
+msgstr "Vpis krajevnega odlagališča"
 
 #: ../src/Clients/Classical/mono-addins-strings.xml.h:19
 msgid "Register an on-line repository"
-msgstr "Vpis spletnega skladišča"
+msgstr "Vpis spletnega odlagališča"
 
 #: ../src/Clients/Classical/mono-addins-strings.xml.h:20
 msgid "Repository"
-msgstr "Skladišče"
+msgstr "Odlagališče"
 
 #: ../src/Clients/Classical/mono-addins-strings.xml.h:21
 msgid "Select _All"
@@ -3765,7 +3810,7 @@ msgstr "Izberi _vse"
 
 #: ../src/Clients/Classical/mono-addins-strings.xml.h:22
 msgid "Select the location of the repository you want to register:"
-msgstr "Izberite mesto skladišča za vpis:"
+msgstr "Izberite mesto odlagališča za vpis:"
 
 #: ../src/Clients/Classical/mono-addins-strings.xml.h:23
 msgid "Show all packages"
@@ -3809,7 +3854,7 @@ msgstr "_Namesti vstavke ..."
 
 #: ../src/Clients/Classical/mono-addins-strings.xml.h:33
 msgid "_Repositories..."
-msgstr "_Skladišča ..."
+msgstr "_Odlagališča ..."
 
 #: ../src/Clients/Classical/mono-addins-strings.xml.h:34
 msgid "_Uninstall..."
