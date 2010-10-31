@@ -383,4 +383,48 @@
 		</variant>
 	</game>
 
+	<game>
+		<_name>Multiple number</_name>
+		<type>Calculation</type>
+		<difficulty>All</difficulty>
+		<variant>
+			<variables>
+				int [] indexes_a = new int [] {2, 4, 8};
+				int [] indexes_b = new int [] {3, 9, 15};
+				int index_a = random.Next (3);
+				int index_b = random.Next (3);
+				int num_x = indexes_a [index_a];
+				int num_y = indexes_b [index_b];
+				int option_a = num_x * num_y * indexes_b [index_b]; // valid
+				int option_b = num_y * num_x * indexes_a [index_a]; // valid
+				int option_c = num_y * 3;
+				int option_d = num_x * 4;
+				int product = num_x * num_y;
+			</variables>
+			<_question>The number X is multiple of [num_x] and the number Y of [num_y]. The product of both numbers (X * Y) is then multiple of? [option_answers]</_question>
+
+			<_tip>A multiple is a number that may be divided by another number with no remainder. For example, 10, 15 and 25 are multiples of 5.</_tip>
+
+			<option x = "0.3" y = "0.3" width ="0.45" height ="0.1" order ="randomized">
+				<string _text = "[option_prefix] [option_a] and [option_c]" x = "0.05" y = "0.02"  size = "large"/>
+			</option>
+
+			<option x = "0.3" y = "0.4" width ="0.45" height ="0.1" order ="randomized" correct = "yes">
+				<string _text = "[option_prefix] [option_a] and [option_b]" x = "0.05" y = "0.02" size = "large"/>
+			</option>
+
+			<option x = "0.3" y = "0.5" width ="0.45" height ="0.1" order ="randomized">
+				<string _text = "[option_prefix] [option_b] and [option_c]" x = "0.05" y = "0.02" size = "large"/>
+			</option>
+
+			<option x = "0.3" y = "0.6" width ="0.45" height ="0.1" order ="randomized">
+				<string _text = "[option_prefix] [option_c] and [option_d]" x = "0.05" y = "0.02" size = "large"/>
+			</option>
+		
+			<_rationale>[option_a] and [option_b] are both multiples of [product].</_rationale>
+
+		</variant>
+	</game>
+
+
 </games>
