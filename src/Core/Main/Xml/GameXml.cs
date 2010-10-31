@@ -23,6 +23,8 @@ using System.IO;
 
 using Mono.Unix;
 
+using gbrainy.Core.Toolkit;
+
 namespace gbrainy.Core.Main.Xml
 {
 	public class GameXml : Game
@@ -46,9 +48,13 @@ namespace gbrainy.Core.Main.Xml
 		static List <GameXmlDefinition> games;
 		static List <DefinitionLocator> locators;
 
+		static string option_prefix = "[option_prefix]";
+		static string option_answers = "[option_answers]";
+
 		DefinitionLocator current;
 		GameXmlDefinition game;
 		string question, answer, rationale, answer_value;
+		List <OptionDrawingObject> options;
 
 		public override GameAnswerCheckAttributes CheckAttributes  {
 			get {
@@ -196,7 +202,167 @@ namespace gbrainy.Core.Main.Xml
 				answer_value = CodeEvaluation.ReplaceVariables (answer_value);
 			}
 
-			right_answer = answer;
+			if (options != null && options.Count > 0)
+			{
+				string answers = string.Empty;
+
+				foreach (OptionDrawingObject option in options)
+				{
+					if (option.Correct == true)
+					{
+						right_answer = option.Answer;
+						break;
+					}
+				}
+	
+				string q;
+
+				for (int i = 0; i < options.Count - 1; i++)
+					answers += String.Format (Catalog.GetString ("{0}, "), GetPossibleAnswer (i));
+
+				answers += String.Format (Catalog.GetString ("{0}."), GetPossibleAnswer (options.Count - 1));
+
+				// Translators {0}: list of options (A, B, C)
+				answers = String.Format (Catalog.GetString ("Answer {0}"), answers);
+				question = question.Replace (option_answers, answers);					
+			}
+			else
+			{
+				right_answer = answer;
+			}
+		}
+
+		void CreateDrawingObjects (GameXmlDefinitionVariant game)
+		{
+			OptionDrawingObject option;
+			double x = 0, y = 0, width = 0, height = 0;
+			bool first = true;
+			int randomized_options = 0;
+
+			if (game.DrawingObjects == null)
+				return;
+
+			// Calculate the size of container from the options and count the number of random options
+			foreach (DrawingObject draw_object in game.DrawingObjects)
+			{
+				option = draw_object as OptionDrawingObject;
+
+				if (option == null)
+					continue;
+
+				if (option.RandomizedOrder)
+					randomized_options++;
+
+				if (first == true)
+				{
+					x = option.X;
+					y = option.Y;
+					width = option.Width;
+					height = option.Height;
+					first = false;
+					continue;
+				}
+
+				if (option.X < x) 
+					x = option.X;
+
+				if (option.Y < y) 
+					y = option.Y;
+
+				if (option.X + option.Width > width)
+					width = option.X + option.Width;
+
+				if (option.Y + option.Height > height) 
+					height = option.Y + option.Height;
+			}
+
+			if (first == true)
+				return;
+
+			// Randomize the order of the options
+			if (randomized_options > 0)
+			{
+				OptionDrawingObject [] originals;
+				ArrayListIndicesRandom random_indices;
+				DrawingObject temporary;
+				int index = 0;
+
+				random_indices = new ArrayListIndicesRandom (randomized_options);
+				originals = new OptionDrawingObject [randomized_options];
+				random_indices.Initialize ();
+
+				// Backup originals
+				for (int i = 0; i < game.DrawingObjects.Length; i++)
+				{
+					option = game.DrawingObjects[i] as OptionDrawingObject;
+
+					if (option == null)
+						continue;
+
+					originals[index] = option.Copy ();
+					index++;
+				}
+
+				// Swap
+				index = 0;
+				for (int i = 0; i < game.DrawingObjects.Length; i++)
+				{
+					option = game.DrawingObjects[i] as OptionDrawingObject;
+
+					if (option == null)
+						continue;
+
+					option.CopyRandomizedProperties (originals [random_indices [index]]);
+
+					// For randomized options the answer is always the option letter
+					option.Answer = GetPossibleAnswer (index);
+					index++;
+				}
+			}
+
+			Container container = new Container (x, y, width - x, height - y);
+			AddWidget (container);
+
+			if (options == null)
+				options = new List <OptionDrawingObject> ();
+
+			int idx = 0;
+
+			// Create drawing widgets objects
+			foreach (DrawingObject draw_object in game.DrawingObjects)
+			{
+				option = draw_object as OptionDrawingObject;
+
+				if (option == null)
+					continue;
+
+				DrawableArea drawable_area = new DrawableArea (option.Width, option.Height);
+				drawable_area.X = option.X;
+				drawable_area.Y = option.Y; // + i * 0.15;
+				container.AddChild (drawable_area);
+				
+				drawable_area.Data = idx;
+				drawable_area.DataEx = GetPossibleAnswer (idx);
+				options.Add (option);
+
+				idx++;
+				drawable_area.DrawEventHandler += DrawOption;
+			}
+		}
+
+		void DrawOption (object sender, DrawEventArgs e)
+		{
+			int idx = (int) e.Data;
+
+			if (options.Count == 0)
+				return;
+
+			OptionDrawingObject _option = options [idx];
+			Widget widget = (Widget) sender;
+			
+			e.Context.SetPangoLargeFontSize ();
+
+			DrawObjects (e.Context, _option.DrawingObjects, idx);
 		}
 
 		public override int Variants {
@@ -218,6 +384,11 @@ namespace gbrainy.Core.Main.Xml
 				current.Game = locator.Game;
 				current.Variant = locator.Variant;
 				game = games [locator.Game];
+
+				CreateDrawingObjects (game); // Draw objects shared by all variants
+
+				if (game.Variants.Count > 0)
+					CreateDrawingObjects (game.Variants[current.Variant]); // Draw variant specific objects
 			}
 		}
 
@@ -225,66 +396,81 @@ namespace gbrainy.Core.Main.Xml
 		{
 			base.Draw (gr, area_width, area_height, rtl);
 
-			DrawObjects (gr, game); // Draw objects shared by all variants
+			DrawObjects (gr, game.DrawingObjects, null); // Draw objects shared by all variants
 
 			if (game.Variants.Count > 0)
-				DrawObjects (gr, game.Variants[current.Variant]); // Draw variant specific objects
+				DrawObjects (gr, game.Variants[current.Variant].DrawingObjects, null); // Draw variant specific objects
 		}
 
-		void DrawObjects (CairoContextEx gr, GameXmlDefinitionVariant definition)
+		static void DrawObjects (CairoContextEx gr, DrawingObject [] drawing_objects, int? option)
 		{
-			if (definition.DrawingObjects != null)
+			if (drawing_objects == null)
+				return;
+
+			foreach (DrawingObject draw_object in drawing_objects)
 			{
-				foreach (DrawingObject draw_object in definition.DrawingObjects)
+				if (draw_object is OptionDrawingObject)
+					continue;
+
+				if (draw_object is TextDrawingObject)
 				{
-					if (draw_object is TextDrawingObject)
-					{
-						string text;
-						TextDrawingObject draw_string = draw_object as TextDrawingObject;
+					string text;
+					TextDrawingObject draw_string = draw_object as TextDrawingObject;
 
-						text = CatalogGetString (draw_string.Text);
-						text = CodeEvaluation.ReplaceVariables (text);
+					text = CatalogGetString (draw_string.Text);
+					text = CodeEvaluation.ReplaceVariables (text);
 
-						switch (draw_string.Size) {
-						case TextDrawingObject.Sizes.Small:
-							gr.SetPangoFontSize (0.018);
-							break;
-						case TextDrawingObject.Sizes.Medium:
-							gr.SetPangoNormalFontSize (); // 0.022
-							break;
-						case TextDrawingObject.Sizes.Large:
-							gr.SetPangoLargeFontSize (); // 0.0325
-							break;
-						case TextDrawingObject.Sizes.XLarge:
-							gr.SetPangoFontSize (0.06);
-							break;
-						case TextDrawingObject.Sizes.XXLarge:
-							gr.SetPangoFontSize (0.08);
-							break;
-						default:
-							throw new InvalidOperationException ("Invalid value");
-						}
-
-						if (draw_string.Centered) {
-							gr.DrawTextCentered (draw_string.X, draw_string.Y, text);
-						} else {
-							gr.MoveTo (draw_string.X, draw_string.Y);
-							gr.ShowPangoText (text);
-							gr.Stroke ();
-						}
+					switch (draw_string.Size) {
+					case TextDrawingObject.Sizes.Small:
+						gr.SetPangoFontSize (0.018);
+						break;
+					case TextDrawingObject.Sizes.Medium:
+						gr.SetPangoNormalFontSize (); // 0.022
+						break;
+					case TextDrawingObject.Sizes.Large:
+						gr.SetPangoLargeFontSize (); // 0.0325
+						break;
+					case TextDrawingObject.Sizes.XLarge:
+						gr.SetPangoFontSize (0.06);
+						break;
+					case TextDrawingObject.Sizes.XXLarge:
+						gr.SetPangoFontSize (0.08);
+						break;
+					default:
+						throw new InvalidOperationException ("Invalid value");
 					}
-					else if (draw_object is ImageDrawingObject)
-					{
-						ImageDrawingObject image = draw_object as ImageDrawingObject;
 
-						if (String.IsNullOrEmpty (image.Filename) == false)
-						{
-							gr.DrawImageFromFile (Path.Combine (Defines.DATA_DIR, image.Filename),
-								image.X, image.Y, image.Width, image.Height);
-						}
+					if (draw_string.Centered) {
+						gr.DrawTextCentered (draw_string.X, draw_string.Y, text);
+					} else {
+						gr.MoveTo (draw_string.X, draw_string.Y);
+						if (option == null)
+							gr.ShowPangoText (text);
+						else
+							gr.ShowPangoText (GetOptionPrefix (text, (int) option));
+
+						gr.Stroke ();
+					}
+				}
+				else if (draw_object is ImageDrawingObject)
+				{
+					ImageDrawingObject image = draw_object as ImageDrawingObject;
+
+					if (String.IsNullOrEmpty (image.Filename) == false)
+					{
+						gr.DrawImageFromFile (Path.Combine (Defines.DATA_DIR, image.Filename),
+							image.X, image.Y, image.Width, image.Height);
 					}
 				}
 			}
+		}
+
+		static string GetOptionPrefix (string str, int option)
+		{
+			string answer;
+			
+			answer = String.Format (Catalog.GetString ("{0}) "), GetPossibleAnswer (option));
+			return str.Replace (option_prefix, answer);
 		}
 
 		void BuildLocationList ()
@@ -300,7 +486,7 @@ namespace gbrainy.Core.Main.Xml
 		}
 
 		// Protect from calling with null (exception)
-		string CatalogGetString (string str)
+		static string CatalogGetString (string str)
 		{
 			if (String.IsNullOrEmpty (str))
 				return str;
@@ -309,7 +495,7 @@ namespace gbrainy.Core.Main.Xml
 		}
 
 		// Protect from calling with null + resolve plurals
-		string CatalogGetString (LocalizableString localizable)
+		static string CatalogGetString (LocalizableString localizable)
 		{
 			if (localizable == null)
 				return string.Empty;

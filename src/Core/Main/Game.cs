@@ -62,6 +62,7 @@ namespace gbrainy.Core.Main
 
 		protected Game ()
 		{
+			containers = new List <Toolkit.Container> ();
 			difficulty = GameDifficulty.Medium;
 		}
 
@@ -129,7 +130,6 @@ namespace gbrainy.Core.Main
 		{
 			random = new Random ();
 			default_color = new Cairo.Color (0, 0, 0);
-			containers = new List <Toolkit.Container> ();
 			Initialize ();
 		}
 

@@ -28,6 +28,7 @@ CSDISTFILES =  \
 		$(srcdir)/Main/Xml/GameXmlFactory.cs	\
 		$(srcdir)/Main/Xml/GameXmlDefinition.cs	\
 		$(srcdir)/Main/Xml/GameXmlDefinitionVariant.cs	\
+		$(srcdir)/Main/Xml/OptionDrawingObject.cs \
 		$(srcdir)/Main/Xml/TextDrawingObject.cs	\
 		$(srcdir)/Main/Memory.cs		\
 		$(srcdir)/Main/PlayerHistory.cs		\

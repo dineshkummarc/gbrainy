@@ -229,8 +229,6 @@ namespace gbrainy.Games.Calculation
 
 			base.Draw (gr, area_width, area_height, rtl);
 
-			
-
 			gr.MoveTo (0.05, y);
 			gr.SetPangoLargeFontSize ();
 			gr.ShowPangoText (Catalog.GetString ("Numbers"));

@@ -45,6 +45,7 @@ namespace gbrainy.Core.Main.Xml
 			string name, str, plural;
 			bool processing_variant = false;
 			int variant = 0;
+			OptionDrawingObject option = null;			
 
 			if (read == true)
 				return;
@@ -132,10 +133,17 @@ namespace gbrainy.Core.Main.Xml
 
 						TextDrawingObject draw_string = new TextDrawingObject ();
 
-						if (processing_variant)
-							game.Variants[variant].AddDrawingObject (draw_string);
+						if (option != null)
+						{
+							option.AddDrawingObject (draw_string);
+						}
 						else
-							game.AddDrawingObject (draw_string);
+						{
+							if (processing_variant)
+								game.Variants[variant].AddDrawingObject (draw_string);
+							else
+								game.AddDrawingObject (draw_string);
+						}
 
 						draw_string.Text = reader.GetAttribute ("text");
 	
@@ -320,6 +328,62 @@ namespace gbrainy.Core.Main.Xml
 							game.Variants[variant].Variables = reader.ReadElementString ();
 						else
 							game.Variables = reader.ReadElementString ();
+						break;
+					case "option":
+						if (reader.NodeType != XmlNodeType.Element)
+							break;
+
+						OptionDrawingObject option_draw = new OptionDrawingObject ();
+
+						if (reader.NodeType == XmlNodeType.Element) {
+							option = option_draw;
+						} else if (reader.NodeType == XmlNodeType.EndElement) {
+							option = null;
+							break;
+						}
+
+						if (processing_variant)
+							game.Variants[variant].AddDrawingObject (option_draw);
+						else
+							game.AddDrawingObject (option_draw);
+	
+						option_draw.Answer = reader.GetAttribute ("answer");
+	
+						if (String.IsNullOrEmpty (option_draw.Answer))
+							option_draw.Answer = reader.GetAttribute ("_answer");
+
+						str = reader.GetAttribute ("x");
+						if (String.IsNullOrEmpty (str) == false)
+							option_draw.X = Double.Parse (str, CultureInfo.InvariantCulture);
+						else
+							option_draw.X = 0.1;
+
+						str = reader.GetAttribute ("y");
+						if (String.IsNullOrEmpty (str) == false)
+							option_draw.Y = Double.Parse (str, CultureInfo.InvariantCulture);
+						else
+							option_draw.Y = 0.1;
+
+						str = reader.GetAttribute ("width");
+						if (String.IsNullOrEmpty (str) == false)
+							option_draw.Width = Double.Parse (str, CultureInfo.InvariantCulture);
+						else
+							option_draw.Width = 0.1;
+
+						str = reader.GetAttribute ("height");
+						if (String.IsNullOrEmpty (str) == false)
+							option_draw.Height = Double.Parse (str, CultureInfo.InvariantCulture);
+						else
+							option_draw.Height = 0.1;
+
+						str = reader.GetAttribute ("order");
+						if (String.IsNullOrEmpty (str) == false)
+							option_draw.RandomizedOrder = true;
+
+						str = reader.GetAttribute ("correct");
+						if (String.Compare (str, "yes", true) == 0)
+							option_draw.Correct = true;
+
 						break;
 					default:
 						if (String.IsNullOrEmpty (name) == false)
