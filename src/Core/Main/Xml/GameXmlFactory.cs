@@ -329,60 +329,67 @@ namespace gbrainy.Core.Main.Xml
 						else
 							game.Variables = reader.ReadElementString ();
 						break;
+
 					case "option":
-						if (reader.NodeType != XmlNodeType.Element)
+
+						switch (reader.NodeType) {
+						case XmlNodeType.Element:
+							option = new OptionDrawingObject ();
 							break;
+						case XmlNodeType.EndElement:
+							if (String.IsNullOrEmpty (option.Answer) && option.RandomizedOrder == false)
+								throw new InvalidOperationException ("If the option is not randomized, you need to define an answer");
 
-						OptionDrawingObject option_draw = new OptionDrawingObject ();
-
-						if (reader.NodeType == XmlNodeType.Element) {
-							option = option_draw;
-						} else if (reader.NodeType == XmlNodeType.EndElement) {
 							option = null;
+							break;
+						default: // Do do any processing
 							break;
 						}
 
+						if (option == null)
+							break;
+
 						if (processing_variant)
-							game.Variants[variant].AddDrawingObject (option_draw);
+							game.Variants[variant].AddDrawingObject (option);
 						else
-							game.AddDrawingObject (option_draw);
+							game.AddDrawingObject (option);
 	
-						option_draw.Answer = reader.GetAttribute ("answer");
+						option.Answer = reader.GetAttribute ("answer");
 	
-						if (String.IsNullOrEmpty (option_draw.Answer))
-							option_draw.Answer = reader.GetAttribute ("_answer");
+						if (String.IsNullOrEmpty (option.Answer))
+							option.Answer = reader.GetAttribute ("_answer");
 
 						str = reader.GetAttribute ("x");
 						if (String.IsNullOrEmpty (str) == false)
-							option_draw.X = Double.Parse (str, CultureInfo.InvariantCulture);
+							option.X = Double.Parse (str, CultureInfo.InvariantCulture);
 						else
-							option_draw.X = 0.1;
+							option.X = 0.1;
 
 						str = reader.GetAttribute ("y");
 						if (String.IsNullOrEmpty (str) == false)
-							option_draw.Y = Double.Parse (str, CultureInfo.InvariantCulture);
+							option.Y = Double.Parse (str, CultureInfo.InvariantCulture);
 						else
-							option_draw.Y = 0.1;
+							option.Y = 0.1;
 
 						str = reader.GetAttribute ("width");
 						if (String.IsNullOrEmpty (str) == false)
-							option_draw.Width = Double.Parse (str, CultureInfo.InvariantCulture);
+							option.Width = Double.Parse (str, CultureInfo.InvariantCulture);
 						else
-							option_draw.Width = 0.1;
+							option.Width = 0.1;
 
 						str = reader.GetAttribute ("height");
 						if (String.IsNullOrEmpty (str) == false)
-							option_draw.Height = Double.Parse (str, CultureInfo.InvariantCulture);
+							option.Height = Double.Parse (str, CultureInfo.InvariantCulture);
 						else
-							option_draw.Height = 0.1;
+							option.Height = 0.1;
 
 						str = reader.GetAttribute ("order");
 						if (String.IsNullOrEmpty (str) == false)
-							option_draw.RandomizedOrder = true;
+							option.RandomizedOrder = true;
 
 						str = reader.GetAttribute ("correct");
 						if (String.Compare (str, "yes", true) == 0)
-							option_draw.Correct = true;
+							option.Correct = true;
 
 						break;
 					default:
