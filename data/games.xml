@@ -402,8 +402,9 @@
 				int product = num_x * num_y;
 			</variables>
 			<_question>The number X is multiple of [num_x] and the number Y of [num_y]. The product of both numbers (X * Y) is then multiple of? [option_answers]</_question>
-
 			<_tip>A multiple is a number that may be divided by another number with no remainder. For example, 10, 15 and 25 are multiples of 5.</_tip>
+
+			<string _text = "Possible answers are:" x = "0.1" y = "0.15" size = "large"/>
 
 			<option x = "0.3" y = "0.3" width ="0.45" height ="0.1" order ="randomized">
 				<string _text = "[option_prefix] [option_a] and [option_c]" x = "0.05" y = "0.02"  size = "large"/>
@@ -426,5 +427,41 @@
 		</variant>
 	</game>
 
+	<game>
+		<_name>Cars in town</_name>
+		<type>Logic</type>
+		<difficulty>All</difficulty>
+		<variant>
+			<variables>
+				double all_cars =  50 + random.Next (2) * 10;
+				double males_cars = 10 + random.Next (3) * 10;
+				double female_cars = all_cars - males_cars;
+				double option_a = female_cars  / all_cars * 100;
+				double option_b = female_cars + ((2 + random.Next (3)) * 5);
+				double option_c = (all_cars - males_cars);
+				double option_d = (all_cars - males_cars) + 1 + random.Next (10);
+			</variables>
+			<_question>In a small town, [all_cars]% of the inhabitants have a car and [males_cars]% have a car and are males. What percentage of the total population are females and have a car? [option_answers]</_question>
 
+			<string _text = "Possible answers are:" x = "0.1" y = "0.15" size = "large"/>
+
+			<option x = "0.3" y = "0.3" width ="0.45" height ="0.1" order ="randomized" correct = "yes">
+				<string _text = "[option_prefix] [option_a]%" x = "0.05" y = "0.02" size = "large"/>
+			</option>
+
+			<option x = "0.3" y = "0.4" width ="0.45" height ="0.1" order ="randomized">
+				<string _text = "[option_prefix] [option_b]%" x = "0.05" y = "0.02" size = "large"/>
+			</option>
+
+			<option x = "0.3" y = "0.5" width ="0.45" height ="0.1" order ="randomized">
+				<string _text = "[option_prefix] [option_c]%" x = "0.05" y = "0.02" size = "large"/>
+			</option>
+
+			<option x = "0.3" y = "0.6" width ="0.45" height ="0.1" order ="randomized">
+				<string _text = "[option_prefix] [option_d]%" x = "0.05" y = "0.02" size = "large"/>
+			</option>
+
+			<_rationale>[female_cars]% ([all_cars] - [males_cars]) of the inhabitants are women and have a car, that is, [option_a]% of the total.</_rationale>
+		</variant>
+	</game>
 </games>
