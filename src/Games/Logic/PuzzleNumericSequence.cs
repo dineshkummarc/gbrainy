@@ -27,16 +27,23 @@ namespace gbrainy.Games.Logic
 {
 	public class PuzzleNumericSequence : Game
 	{
+		enum Formula
+		{
+			SubstractingOne,
+			Adding,
+			SubstractingTwo
+		};
+
 		private const int max_num = 6;
 		private int[] numbers;
-		private int formula;
+		private Formula formula;
 
 		public override string Name {
 			get {return Catalog.GetString ("Numeric sequence");}
 		}
 
 		public override string Question {
-			get {return Catalog.GetString ("The next sequence follows a logic. What number should replace the question mark?");} 
+			get {return Catalog.GetString ("The next sequence follows a logic. What number should replace the question mark?");}
 		}
 
 		public override string Tip {
@@ -44,13 +51,13 @@ namespace gbrainy.Games.Logic
 		}
 
 		public override string Rationale {
-			get { 
+			get {
 				switch (formula) {
-				case 0:
+				case Formula.SubstractingOne:
 					return Catalog.GetString ("Every number in the sequence is the result of subtracting 1 from the previous number and multiplying it by 2.");
-				case 1:
+				case Formula.Adding:
 					return Catalog.GetString ("Every number in the sequence is the result of adding 1 to the previous number and multiplying it by 3.");
-				case 2:
+				case Formula.SubstractingTwo:
 					return Catalog.GetString ("Every number in the sequence is the result of subtracting 2 from the previous number and multiplying it by -2.");
 				default:
 					return string.Empty;
@@ -62,20 +69,20 @@ namespace gbrainy.Games.Logic
 		{
 			int[] seeds;
 
-			formula = random.Next (CurrentDifficulty == GameDifficulty.Easy ? 2 : 3);
-			numbers =  new int [max_num];
+			formula = (Formula) random.Next (CurrentDifficulty == GameDifficulty.Easy ? 2 : 3);
+			numbers = new int [max_num];
 
 			switch (formula) {
-			case 0:
+			case Formula.SubstractingOne:
 				seeds = new int [] {3, 4, 5};
 				break;
-			case 1:
+			case Formula.Adding:
 				// Skipping seed value 5 -> 5,18,57,174,525
-				// The difference between given adjacent pairs ( right -left) is a sequence 13,39,117,351. 
+				// The difference between given adjacent pairs ( right -left) is a sequence 13,39,117,351.
 				// They can be related as 13 x 3 raised to sequential powers 0,1,2,3 ie 13*3^1 and so on.
 				seeds = new int [] {3, 4, 6};
 				break;
-			case 2:
+			case Formula.SubstractingTwo:
 				seeds = new int [] {3, 4, 5};
 				break;
 			default:
@@ -86,13 +93,13 @@ namespace gbrainy.Games.Logic
 
 			for (int i = 1; i < max_num; i++) {
 				switch (formula) {
-				case 0:
+				case Formula.SubstractingOne:
 					numbers[i] = (numbers[i - 1] - 1) * 2;
 					break;
-				case 1:
+				case Formula.Adding:
 					numbers[i] = (numbers[i - 1] + 1) * 3;
 					break;
-				case 2:
+				case Formula.SubstractingTwo:
 					numbers[i] = (numbers[i -1] - 2) * (-2);
 					break;
 				default:
@@ -102,7 +109,6 @@ namespace gbrainy.Games.Logic
 
 			right_answer = numbers[max_num-1].ToString ();
 		}
-
 
 		public override void Draw (CairoContextEx gr, int area_width, int area_height, bool rtl)
 		{
