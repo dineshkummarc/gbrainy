@@ -233,7 +233,7 @@ namespace gbrainy.Clients.Classical
 				manager.PlayList = play_list.ToArray ();
 		}
 
-		public class CairoPreview : DrawingArea 
+		class CairoPreview : DrawingArea 
 		{
 			public Game puzzle;
 

@@ -32,7 +32,7 @@ namespace gbrainy.Core.Main.Xml
 		// Every GameXml instance is capable of locating any XML defined game
 		// This struct translates from a Variant that is global to all games
 		// to a specific game + variant
-		public struct DefinitionLocator
+		struct DefinitionLocator
 		{
 			public int Game { get; set; }
 			public int Variant { get; set; }

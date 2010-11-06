@@ -29,7 +29,7 @@ namespace gbrainy.Games.Logic
 		int problem;
 		const string format_string = "{0:##0.###}";
 
-		internal struct Problem
+		struct Problem
 		{
 			internal string question;
 			internal string answer;

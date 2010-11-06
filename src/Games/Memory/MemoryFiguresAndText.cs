@@ -36,7 +36,7 @@ namespace gbrainy.Games.Memory
 		double rect_w, rect_h;
 		int question_pos, figures_active;
 
-		static internal class FigureType
+		static class FigureType
 		{
 			internal const int Triangle = 0;
 			internal const int Square = 1;

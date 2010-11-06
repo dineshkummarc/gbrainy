@@ -32,7 +32,7 @@ namespace gbrainy.Games.Logic
 		ArrayListIndicesRandom random_indices;
 		const int num_options = 4;
 
-		internal struct Predicate
+		struct Predicate
 		{
 			internal string question;
 			internal string [] options;

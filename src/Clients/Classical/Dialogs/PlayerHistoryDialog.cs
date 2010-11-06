@@ -102,7 +102,7 @@ namespace gbrainy.Clients.Classical
 			drawing_area.QueueDraw ();
 		}
 
-		public class CairoPreview : DrawingArea
+		class CairoPreview : DrawingArea
 		{
 			PlayerHistoryView view;
 

@@ -29,7 +29,7 @@ namespace gbrainy.Games.Memory
 		private Challenge current_game;
 		private const int num_games = 3;
 
-		public class Challenge
+		class Challenge
 		{
 			protected static int [] numbers;
 
@@ -49,7 +49,7 @@ namespace gbrainy.Games.Memory
 			}	
 		}
 
-		public class ChallengeOdds : Challenge
+		class ChallengeOdds : Challenge
 		{
 			public override string Question {
 				get {
@@ -69,7 +69,7 @@ namespace gbrainy.Games.Memory
 			}
 		}
 
-		public class ChallengeEvens : Challenge
+		class ChallengeEvens : Challenge
 		{
 			public override string Question {
 				get {
@@ -89,7 +89,7 @@ namespace gbrainy.Games.Memory
 			}
 		}
 
-		public class ChallengeTwoDigits : Challenge
+		class ChallengeTwoDigits : Challenge
 		{
 			public override string Question {
 				get {
