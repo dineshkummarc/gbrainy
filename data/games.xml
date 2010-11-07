@@ -464,4 +464,58 @@
 			<_rationale>[female_cars]% ([all_cars] - [males_cars]) of the inhabitants are women and have a car, that is, [option_a]% of the total.</_rationale>
 		</variant>
 	</game>
+
+	<game>
+		<_name>Compare variables</_name>
+		<type>Logic</type>
+		<difficulty>All</difficulty>
+
+		<variant>
+			<_question>If p &lt; x &lt; q and r &lt; y &lt; s. Which of the following options makes x &lt; y true? [option_answers]</_question>
+
+			<string _text = "Possible answers are:" x = "0.1" y = "0.15" size = "large"/>
+
+			<option x = "0.3" y = "0.3" width ="0.45" height ="0.1" order ="randomized" correct = "yes">
+				<string _text = "[option_prefix] q &lt; r" x = "0.05" y = "0.02" size = "large"/>
+			</option>
+
+			<option x = "0.3" y = "0.4" width ="0.45" height ="0.1" order ="randomized">
+				<string _text = "[option_prefix] p &lt; r" x = "0.05" y = "0.02" size = "large"/>
+			</option>
+
+			<option x = "0.3" y = "0.5" width ="0.45" height ="0.1" order ="randomized">
+				<string _text = "[option_prefix] p &gt; r" x = "0.05" y = "0.02" size = "large"/>
+			</option>
+
+			<option x = "0.3" y = "0.6" width ="0.45" height ="0.1" order ="randomized">
+				<string _text = "[option_prefix] q = s" x = "0.05" y = "0.02" size = "large"/>
+			</option>
+
+			<_rationale>The variable q is bigger than x and y bigger than r, if q is bigger than r then the condition x &lt; y is true.</_rationale>
+		</variant>
+
+		<variant>
+			<_question>If p &lt; x &lt; q and r &lt; y &lt; s. Which of the following options makes x &gt; y true? [option_answers]</_question>
+
+			<string _text = "Possible answers are:" x = "0.1" y = "0.15" size = "large"/>
+
+			<option x = "0.3" y = "0.3" width ="0.45" height ="0.1" order ="randomized" correct = "yes">
+				<string _text = "[option_prefix] q &gt; s" x = "0.05" y = "0.02" size = "large"/>
+			</option>
+
+			<option x = "0.3" y = "0.4" width ="0.45" height ="0.1" order ="randomized">
+				<string _text = "[option_prefix] p &lt; r" x = "0.05" y = "0.02" size = "large"/>
+			</option>
+
+			<option x = "0.3" y = "0.5" width ="0.45" height ="0.1" order ="randomized">
+				<string _text = "[option_prefix] p &gt; r" x = "0.05" y = "0.02" size = "large"/>
+			</option>
+
+			<option x = "0.3" y = "0.6" width ="0.45" height ="0.1" order ="randomized">
+				<string _text = "[option_prefix] q = s" x = "0.05" y = "0.02" size = "large"/>
+			</option>
+
+			<_rationale>The variable q is bigger than x and s is bigger than y, if q is bigger than s then the condition x &gt; y is true.</_rationale>
+		</variant>
+	</game>
 </games>
