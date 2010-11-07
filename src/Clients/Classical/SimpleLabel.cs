@@ -32,8 +32,10 @@ namespace gbrainy.Clients.Classical
 
 		public SimpleLabel ()
 		{
-
+			UseMarkup = true;
 		}
+
+		public bool UseMarkup  { get; set; }
 
 		public string Text {
 			get { return text;}
@@ -83,7 +85,12 @@ namespace gbrainy.Clients.Classical
 					layout.Alignment = Pango.Alignment.Left;
 		
 				layout.Width = (winWidth - width_margin * 2) * (int) Pango.Scale.PangoScale;
-				layout.SetMarkup (text);
+
+				if (UseMarkup)
+					layout.SetMarkup (text);
+				else
+					layout.SetText (text);
+
 				args.Window.DrawLayout (light, width_margin, height_margin, layout);
 			}
 

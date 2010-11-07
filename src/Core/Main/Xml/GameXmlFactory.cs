@@ -22,6 +22,7 @@ using System.Xml;
 using System.IO;
 using System.Collections.Generic;
 using System.Globalization;
+using System.Text;
 
 namespace gbrainy.Core.Main.Xml
 {
@@ -53,7 +54,7 @@ namespace gbrainy.Core.Main.Xml
 			try
 			{
 				StreamReader myStream = new StreamReader (file);
-				XmlTextReader reader = new XmlTextReader (myStream);
+				XmlTextReaderLiteral reader = new XmlTextReaderLiteral (myStream);
 				game = null;
 
 				while (reader.Read ())
@@ -213,19 +214,21 @@ namespace gbrainy.Core.Main.Xml
 
 						if (String.IsNullOrEmpty (plural) == false) { // Plural
 							if (processing_variant) {
-								game.Variants[variant].Question.PluralString = reader.ReadElementString ();
+								game.Variants[variant].Question.PluralString = reader.ReadElementStringAsItIs ();
 								game.Variants[variant].Question.Value = plural;
 							}
 							else {
-								game.Question.PluralString = reader.ReadElementString ();
+								game.Question.PluralString = reader.ReadElementStringAsItIs ();
 								game.Question.Value = plural;
 							}
 						}
 						else {
 							if (processing_variant)
-								game.Variants[variant].Question.String = reader.ReadElementString ();
+							{
+								game.Variants[variant].Question.String = reader.ReadElementStringAsItIs ();
+							}
 							else
-								game.Question.String = reader.ReadElementString ();
+								game.Question.String = reader.ReadElementStringAsItIs ();
 						}
 						break;
 					case "rationale":
@@ -247,19 +250,19 @@ namespace gbrainy.Core.Main.Xml
 
 						if (String.IsNullOrEmpty (plural) == false) { // Plural
 							if (processing_variant) {
-								game.Variants[variant].Rationale.PluralString = reader.ReadElementString ();
+								game.Variants[variant].Rationale.PluralString = reader.ReadElementStringAsItIs ();
 								game.Variants[variant].Rationale.Value = plural;
 							}
 							else {
-								game.Rationale.PluralString = reader.ReadElementString ();
+								game.Rationale.PluralString = reader.ReadElementStringAsItIs ();
 								game.Rationale.Value = plural;
 							}
 						}
 						else {
 							if (processing_variant)
-								game.Variants[variant].Rationale.String = reader.ReadElementString ();
+								game.Variants[variant].Rationale.String = reader.ReadElementStringAsItIs ();
 							else
-								game.Rationale.String = reader.ReadElementString ();
+								game.Rationale.String = reader.ReadElementStringAsItIs ();
 						}
 						break;
 					case "answer":
@@ -309,9 +312,9 @@ namespace gbrainy.Core.Main.Xml
 							break;
 
 						if (processing_variant)
-							game.Variants[variant].Tip = reader.ReadElementString ();
+							game.Variants[variant].Tip = reader.ReadElementStringAsItIs ();
 						else
-							game.Tip = reader.ReadElementString ();
+							game.Tip = reader.ReadElementStringAsItIs ();
 
 						break;
 					case "variant":
@@ -414,4 +417,35 @@ namespace gbrainy.Core.Main.Xml
 			}
 		}
 	}
+
+	// XmlTextReader translates the entities like '&gt;' into their correspondent character.
+	// Since the string returned is different that the one collected by intltool scripts into
+	// the PO files, a call to GetText does not return the localized version.
+	// We implement ReadElementStringAsItIs to read the string and it is in the XML without
+	// entities translation. Later Pango can render markup directly.
+	internal class XmlTextReaderLiteral : XmlTextReader
+	{
+		const int BUFFER_LEN = 16384;
+		char [] buffer;
+
+		public XmlTextReaderLiteral (StreamReader input) : base (input)
+		{
+			buffer = new char [BUFFER_LEN];
+		}
+
+		public string ReadElementStringAsItIs ()
+		{
+			int read;
+			StringBuilder str;
+
+			read = ReadChars (buffer, 0, BUFFER_LEN);
+			str = new StringBuilder (read);
+
+			for (int i =0; i < read; i++)
+				str.Append (buffer [i]);
+			
+			return str.ToString ();
+		}
+	}
+
 }
