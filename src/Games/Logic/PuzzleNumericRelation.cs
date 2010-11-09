@@ -31,8 +31,16 @@ namespace gbrainy.Games.Logic
 		private int sum_value;
 		private int question;
 		private int[] numbers;
-		private int formula;
+		private Formula formula;
 		private const int max_num = 9;
+
+		public enum Formula
+		{
+			AllAdding,
+			ThirdMultiply,
+			ThirdSubstracting,
+			Length
+		};
 
 		public override string Name {
 			get {return Catalog.GetString ("Numeric relation");}
@@ -49,21 +57,22 @@ namespace gbrainy.Games.Logic
 		public override string Rationale {
 			get {
 				switch (formula) {
-				case 0:
+				case Formula.AllAdding:
 					return String.Format (Catalog.GetString ("Every group of {0} numbers sums exactly {1}."), group_size, sum_value);
-				case 1:
+				case Formula.ThirdMultiply:
 					return Catalog.GetString ("Divide the sequence in groups of three numbers. Every third number is calculated by multiplying by the two previous ones.");
-				case 2:
+				case Formula.ThirdSubstracting:
 					return Catalog.GetString ("Divide the sequence in groups of three numbers. Every third number is calculated by subtracting the second number from the first.");
 				default:
-					return String.Empty;
+					throw new InvalidOperationException ("Invalid Value");
 				}
 			}
 		}
 
 		protected override void Initialize ()
 		{
-			int group = 0, inc = 0;
+			bool validate = false;
+			int group = 0, inc;
 
 			if (CurrentDifficulty == GameDifficulty.Easy) {
 				sum_value = 10 + random.Next (10);
@@ -74,33 +83,36 @@ namespace gbrainy.Games.Logic
 				inc = 12;
 			}
 
-			question = 1 + random.Next (max_num - 2);
-			formula = random.Next (3);
-			numbers =  new int [max_num];
+			while (validate == false)
+			{
+				question = 1 + random.Next (max_num - 2);
+				formula = (Formula) random.Next ((int) Formula.Length);
+				numbers =  new int [max_num];
 		
-			for (int i = 0; i < max_num; i++) {
-				if (group == group_size - 1) {	
-					switch (formula) {
-					case 0:
-						numbers[i] = sum_value - numbers[i - 1] - numbers[i - 2];
-						break;
-					case 1:
-						numbers[i] = numbers[i - 1] * numbers[i - 2];
-						break;
-					case 2:
-						numbers[i] = numbers[i - 2] - numbers[i - 1];
-						break;
+				for (int i = 0; i < max_num; i++) {
+					if (group == group_size - 1) {	
+						switch (formula) {
+						case Formula.AllAdding:
+							numbers[i] = sum_value - numbers[i - 1] - numbers[i - 2];
+							break;
+						case Formula.ThirdMultiply:
+							numbers[i] = numbers[i - 1] * numbers[i - 2];
+							break;
+						case Formula.ThirdSubstracting:
+							numbers[i] = numbers[i - 2] - numbers[i - 1];
+							break;
+						}
+						group = 0;
+						continue;
 					}
-					group = 0;
-					continue;
+					numbers[i] = 1 + random.Next (inc);
+					group++;
 				}
-				numbers[i] = 1 + random.Next (inc);
-				group++;
-			}
 
+				validate = Validate (numbers, formula, question);
+			}
 			right_answer = numbers[question].ToString ();
 		}
-
 
 		public override void Draw (CairoContextEx gr, int area_width, int area_height, bool rtl)
 		{
@@ -121,6 +133,64 @@ namespace gbrainy.Games.Logic
 			}
 			sequence.Append (numbers[max_num - 1]);
 			gr.DrawTextCentered (0.5, DrawAreaY + 0.3, sequence.ToString ());
+		}
+
+		/*
+			The objective of this validation is to make sure that the sequence
+			presented is not also a valid sequence using other logic criteria
+		*/	
+		public static bool Validate (int[] numbers, Formula formula, int question)
+		{
+			switch (formula) {
+			case Formula.AllAdding:
+				break;
+			case Formula.ThirdMultiply:
+				break;
+			case Formula.ThirdSubstracting:
+				return ValidateAddinginGroupsOfTree (numbers, question);
+			}
+
+			return true;
+		}
+
+		static int SumGroup (int[] numbers, int start, int len)
+		{
+			int sum = 0;
+		
+			for (int n = start; n < len + start; n++)
+				sum += numbers[n];
+
+			return sum;
+		}
+
+		// Taken the sequence (a b c) (d ? f) (g h i)
+		// If a + b + c = g + h = i you can calculate a replament for ? that makes then add too
+		static bool ValidateAddinginGroupsOfTree (int[] numbers, int question)
+		{
+			int group_f1, group_f2, group_q;			
+
+			group_q = question / group_size;
+			switch (group_q) {
+			case 0:
+				group_f1 = 1;
+				group_f2 = 2;
+				break;
+			case 1:
+				group_f1 = 0;
+				group_f2 = 2;
+				break;
+			case 2:
+				group_f1 = 0;
+				group_f2 = 1;
+				break;
+			default:
+				throw new InvalidOperationException ("group_q");
+			}
+
+			if (SumGroup (numbers, group_f1 * group_size, group_size) != SumGroup (numbers, group_f2 * group_size, group_size))
+				return true;
+
+			return false;
 		}
 	}
 }

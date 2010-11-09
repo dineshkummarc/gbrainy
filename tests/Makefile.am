@@ -1,5 +1,6 @@
 CORE = gbrainy.Core.Test.dll
-CLASSICAL = gbrainy.Test.dll
+CLASSICAL = gbrainy.ClassicalClient.Test.dll
+GAMES = gbrainy.Games.Test.dll
 
 CSFLAGS =				\
 	-debug				\
@@ -17,6 +18,9 @@ CSFILES_CORE =					\
 
 CSFILES_CLASSICAL =					\
 	$(srcdir)/Clients/Classical/CommandLineTest.cs
+
+CSFILES_GAMES =						\
+	$(srcdir)/Games/Logic/PuzzleNumericRelationTest.cs
 
 if ENABLE_TESTS
 
@@ -36,11 +40,15 @@ $(CORE): $(CSFILES_CORE) $(top_builddir)/src/gbrainy.exe
 $(CLASSICAL): $(CSFILES_CLASSICAL) $(top_builddir)/src/gbrainy.exe
 	$(CSC) -out:$@ $(CSFLAGS) $(CSFILES_CLASSICAL) $(ASSEMBLIES) $(RESSOURCES)
 
-all: $(CORE) $(CLASSICAL)
+$(GAMES): $(CSFILES_GAMES) $(top_builddir)/src/gbrainy.exe
+	$(CSC) -out:$@ $(CSFLAGS) $(CSFILES_GAMES) $(ASSEMBLIES) -r:../src/gbrainy.Games.dll $(RESSOURCES)
 
-run: $(CORE) $(CLASSICAL)
+all: $(CORE) $(CLASSICAL) $(GAMES)
+
+run: $(CORE) $(CLASSICAL)  $(GAMES)
 	MONO_PATH=$(MONO_PATH) $(NUNIT) $(CLASSICAL) -nologo
 	MONO_PATH=$(MONO_PATH) $(NUNIT) $(CORE) -nologo
+	MONO_PATH=$(MONO_PATH) $(NUNIT) $(GAMES) -nologo
 
 endif
 
