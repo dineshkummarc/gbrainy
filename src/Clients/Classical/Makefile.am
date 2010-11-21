@@ -7,7 +7,6 @@ GBRAINY_CSDISTFILES =					\
 	$(srcdir)/CommandLine.cs 			\
 	$(srcdir)/gbrainy.cs 				\
 	$(srcdir)/GtkSynchronize.cs 			\
-	$(srcdir)/SimpleLabel.cs			\
 	$(srcdir)/Builder/Builder.cs			\
 	$(srcdir)/Builder/BuilderConnectFunc.cs 	\
 	$(srcdir)/Builder/GtkBeansSharp.BuilderConnectFuncNative.cs \
@@ -17,7 +16,11 @@ GBRAINY_CSDISTFILES =					\
 	$(srcdir)/Dialogs/BuilderDialog.cs		\
 	$(srcdir)/Dialogs/HigMessageDialog.cs		\
 	$(srcdir)/Dialogs/PlayerHistoryDialog.cs	\
-	$(srcdir)/Dialogs/PreferencesDialog.cs
+	$(srcdir)/Dialogs/PreferencesDialog.cs		\
+	$(srcdir)/Dialogs/PdfExportDialog.cs		\
+	$(srcdir)/Widgets/SimpleLabel.cs		\
+	$(srcdir)/Widgets/BrowseFile.cs
+
 
 ASSEMBLIES = \
 	 $(GBRAINY_LIBS)    		\
@@ -31,6 +34,7 @@ RESOURCES =										\
 -resource:$(srcdir)/Dialogs/ui/PreferencesDialog.ui \
 -resource:$(srcdir)/Dialogs/ui/PlayerHistoryDialog.ui \
 -resource:$(srcdir)/Dialogs/ui/CustomGameDialog.ui \
+-resource:$(srcdir)/Dialogs/ui/PdfExportDialog.ui \
 -resource:$(top_srcdir)/data/app-graphics/resume-32.png  \
 -resource:$(top_srcdir)/data/app-graphics/endgame-32.png  \
 -resource:$(top_srcdir)/data/app-graphics/pause-32.png  \
@@ -52,7 +56,8 @@ GBRAINY_CSFILES = $(GBRAINY_CSDISTFILES)	\
 	Defines.cs
 
 ../../gbrainy.exe: $(GBRAINY_CSFILES) gbrainy.ui $(srcdir)/Dialogs/ui/PreferencesDialog.ui  \
-	$(srcdir)/Dialogs/ui/PlayerHistoryDialog.ui $(srcdir)/Dialogs/ui/CustomGameDialog.ui
+	$(srcdir)/Dialogs/ui/PlayerHistoryDialog.ui $(srcdir)/Dialogs/ui/CustomGameDialog.ui \
+	$(srcdir)/Dialogs/ui/PdfExportDialog.ui
 	$(CSC) -target:winexe -out:$@ $(EXTRAFLAGS) $(GBRAINY_CSFILES) $(ASSEMBLIES) $(RESOURCES)
 
 $(TARGET_CFG): gbrainy.exe.config.in
@@ -69,6 +74,7 @@ EXTRA_DIST =					\
 	$(srcdir)/Dialogs/ui/PreferencesDialog.ui \
 	$(srcdir)/Dialogs/ui/PlayerHistoryDialog.ui \
 	$(srcdir)/Dialogs/ui/CustomGameDialog.ui \
+	$(srcdir)/Dialogs/ui/PdfExportDialog.ui \
 	$(GBRAINY_CSDISTFILES)
 
 

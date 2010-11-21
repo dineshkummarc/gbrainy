@@ -23,8 +23,9 @@ using Mono.Unix;
 using System.Collections.Generic;
 
 using gbrainy.Core.Main;
+using gbrainy.Clients.Classical.Widgets;
 
-namespace gbrainy.Clients.Classical
+namespace gbrainy.Clients.Classical.Dialogs
 {
 	public class CustomGameDialog : BuilderDialog
 	{

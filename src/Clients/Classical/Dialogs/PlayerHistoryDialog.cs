@@ -24,7 +24,7 @@ using Mono.Unix;
 using gbrainy.Core.Main;
 using gbrainy.Core.Views;
 
-namespace gbrainy.Clients.Classical
+namespace gbrainy.Clients.Classical.Dialogs
 {
 	public class PlayerHistoryDialog : BuilderDialog
 	{

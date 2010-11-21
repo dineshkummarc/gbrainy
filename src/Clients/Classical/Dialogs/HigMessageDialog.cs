@@ -22,7 +22,7 @@
 using System;
 using Gtk;
 
-namespace gbrainy.Clients.Classical
+namespace gbrainy.Clients.Classical.Dialogs
 {
 	public class HigMessageDialog : Gtk.Dialog
 	{

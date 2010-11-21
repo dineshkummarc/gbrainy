@@ -23,7 +23,7 @@ using Mono.Unix;
 
 using gbrainy.Core.Main;
 
-namespace gbrainy.Clients.Classical
+namespace gbrainy.Clients.Classical.Dialogs
 {
 	public class PreferencesDialog : BuilderDialog
 	{

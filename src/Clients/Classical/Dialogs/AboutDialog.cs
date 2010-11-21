@@ -23,7 +23,7 @@ using Gdk;
 using Mono.Unix;
 using System.Text;
 
-namespace gbrainy.Clients.Classical
+namespace gbrainy.Clients.Classical.Dialogs
 {
 	public class AboutDialog : Gtk.AboutDialog
 	{

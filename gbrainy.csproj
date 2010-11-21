@@ -31,26 +31,30 @@
   <ItemGroup>
     <Reference Include="gtk-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f">
       <SpecificVersion>False</SpecificVersion>
+      <Package>gtk-sharp-2.0</Package>
     </Reference>
     <Reference Include="gdk-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f">
       <SpecificVersion>False</SpecificVersion>
+      <Package>gtk-sharp-2.0</Package>
     </Reference>
     <Reference Include="glib-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f">
       <SpecificVersion>False</SpecificVersion>
+      <Package>glib-sharp-2.0</Package>
     </Reference>
     <Reference Include="pango-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f">
       <SpecificVersion>False</SpecificVersion>
+      <Package>gtk-sharp-2.0</Package>
     </Reference>
     <Reference Include="Mono.Posix" />
     <Reference Include="Mono.Cairo" />
     <Reference Include="atk-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f">
+      <Package>gtk-sharp-2.0</Package>
     </Reference>
     <Reference Include="System" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="src\Clients\Classical\gbrainy.cs" />
     <Compile Include="src\Clients\Classical\GtkSynchronize.cs" />
-    <Compile Include="src\Clients\Classical\SimpleLabel.cs" />
     <Compile Include="src\Clients\Classical\Dialogs\CustomGameDialog.cs" />
     <Compile Include="src\Clients\Classical\Dialogs\PlayerHistoryDialog.cs" />
     <Compile Include="src\Clients\Classical\Dialogs\AboutDialog.cs" />
@@ -63,11 +67,15 @@
     <Compile Include="src\Clients\Classical\Defines.cs" />
     <Compile Include="src\Clients\Classical\Dialogs\HigMessageDialog.cs" />
     <Compile Include="src\Clients\Classical\CommandLine.cs" />
+    <Compile Include="src\Clients\Classical\Widgets\BrowseFile.cs" />
+    <Compile Include="src\Clients\Classical\Widgets\SimpleLabel.cs" />
+    <Compile Include="src\Clients\Classical\Dialogs\PdfExportDialog.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
     <None Include="data\game-graphics\handshake.svg" />
     <None Include="data\game-graphics\present.svg" />
+    <None Include="src\Clients\Classical\Dialogs\ui\PdfExportDialog.ui" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="src\Clients\Classical\gbrainy.ui">

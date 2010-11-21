@@ -31,6 +31,7 @@ CSDISTFILES =  \
 		$(srcdir)/Main/Xml/OptionDrawingObject.cs \
 		$(srcdir)/Main/Xml/TextDrawingObject.cs	\
 		$(srcdir)/Main/Memory.cs		\
+		$(srcdir)/Main/PdfExporter.cs		\		
 		$(srcdir)/Main/PlayerHistory.cs		\
 		$(srcdir)/Main/PlayerPersonalRecord.cs	\
 		$(srcdir)/Main/Preferences.cs		\

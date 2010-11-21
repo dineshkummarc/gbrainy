@@ -59,6 +59,9 @@ namespace gbrainy.Core.Libraries
 			}
 		}
 
+		// True if we want Pango to process XML entites and formatting attributes
+		public bool UseMarkup  { get; set; }
+
 		// No dispose of resources on this class
 		protected override void Dispose (bool disposing)
 		{
@@ -80,7 +83,14 @@ namespace gbrainy.Core.Libraries
 			and Pango paints on the top-left of the coordinates
 		*/
 
-
+		void SetText (string text)
+		{			
+			if (UseMarkup)
+				layout.SetMarkup (text);
+			else
+				layout.SetText (text);
+		}
+	
 		// Shows a text from the current position. No Width defined then no RTL positioning
 		public void ShowPangoText (string str)
 		{
@@ -88,7 +98,7 @@ namespace gbrainy.Core.Libraries
 
 			UpdateFontSize ();
 			Matrix = new Cairo.Matrix ();
-			layout.SetText (str);
+			SetText (str);
 			layout.SingleParagraphMode = true;
 			Pango.CairoHelper.ShowLayout (this, layout);
 			Matrix = old;
@@ -115,7 +125,7 @@ namespace gbrainy.Core.Libraries
 				UpdateFontSize ();
 				Matrix = new Cairo.Matrix ();
 				Rotate (rotation);
-				layout.SetText (str);
+				SetText (str);
 				layout.SingleParagraphMode = true;
 
 				Pango.CairoHelper.ShowLayout (this, layout);
@@ -147,7 +157,7 @@ namespace gbrainy.Core.Libraries
 			UpdateFontSize ();
 			Matrix = new Cairo.Matrix ();
 
-			layout.SetText (str);
+			SetText (str);
 			layout.SingleParagraphMode = true;
 			layout.Width = -1;
 			layout.GetPixelSize (out w, out h);
@@ -165,7 +175,7 @@ namespace gbrainy.Core.Libraries
 			UpdateFontSize ();
 			Matrix = new Cairo.Matrix ();
 
-			layout.SetText (str);
+			SetText (str);
 			layout.SingleParagraphMode = true;
 			layout.Width = -1;
 			layout.GetPixelSize (out w, out h);
@@ -179,7 +189,7 @@ namespace gbrainy.Core.Libraries
 			int w, h;
 			Cairo.Matrix old = Matrix;
 
-			if (max_width < 0 || max_width > 1)
+			if (max_width < 0 )
 				throw new ArgumentOutOfRangeException ("Invalid maximum width value");
 
 			MoveTo (x, y);
@@ -190,7 +200,7 @@ namespace gbrainy.Core.Libraries
 			layout.Spacing = (int) (line_spacing * (old.Yy * Pango.Scale.PangoScale));
 
 			layout.SingleParagraphMode = false;
-			layout.SetText (str);
+			SetText (str);
 			Pango.CairoHelper.ShowLayout (this, layout);
 			layout.GetPixelSize (out w, out h);
 			Matrix = old;
@@ -211,7 +221,7 @@ namespace gbrainy.Core.Libraries
 			layout.Spacing = (int) (line_spacing * (old.Xx * Pango.Scale.PangoScale));
 
 			layout.SingleParagraphMode = !wrapping;
-			layout.SetText (str);
+			SetText (str);
 			layout.GetPixelSize (out w, out h);
 			Matrix = old;
 			height = h / old.Yy;

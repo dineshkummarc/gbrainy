@@ -21,13 +21,11 @@
     <property name="step_increment">1</property>
   </object>
   <object class="GtkWindow" id="gbrainy">
-    <property name="visible">False</property>
     <property name="title" translatable="yes">gbrainy</property>
     <signal name="delete_event" handler="OnDeleteWindow"/>
     <child>
       <object class="GtkVBox" id="vbox1">
         <property name="visible">True</property>
-        <property name="orientation">vertical</property>
         <child>
           <object class="GtkMenuBar" id="menubar1">
             <property name="visible">True</property>
@@ -122,6 +120,19 @@
                       </object>
                     </child>
                     <child>
+                      <object class="GtkMenuItem" id="pdf_export_menuitem">
+                        <property name="visible">True</property>
+                        <property name="label" translatable="yes">Export Games to PDF for Off-line Playing...</property>
+                        <property name="use_underline">True</property>
+			<signal name="activate" handler="OnPdfExport"/>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkSeparatorMenuItem" id="separatormenuitem3">
+                        <property name="visible">True</property>
+                      </object>
+                    </child>
+                    <child>
                       <object class="GtkImageMenuItem" id="imagemenuitem5">
                         <property name="label">gtk-quit</property>
                         <property name="visible">True</property>
@@ -153,7 +164,7 @@
                     </child>
                     <child>
                       <object class="GtkImageMenuItem" id="imagemenuitem6">
-                        <property name="label" translatable="yes" >Player's Game Session History</property>
+                        <property name="label" translatable="yes">Player's Game Session History</property>
                         <property name="visible">True</property>
                         <property name="use_stock">False</property>
                         <signal name="activate" handler="OnHistory"/>

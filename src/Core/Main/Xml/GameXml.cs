@@ -215,8 +215,6 @@ namespace gbrainy.Core.Main.Xml
 					}
 				}
 	
-				string q;
-
 				for (int i = 0; i < options.Count - 1; i++)
 					answers += String.Format (Catalog.GetString ("{0}, "), GetPossibleAnswer (i));
 
@@ -284,7 +282,6 @@ namespace gbrainy.Core.Main.Xml
 			{
 				OptionDrawingObject [] originals;
 				ArrayListIndicesRandom random_indices;
-				DrawingObject temporary;
 				int index = 0;
 
 				random_indices = new ArrayListIndicesRandom (randomized_options);
@@ -358,8 +355,6 @@ namespace gbrainy.Core.Main.Xml
 				return;
 
 			OptionDrawingObject _option = options [idx];
-			Widget widget = (Widget) sender;
-			
 			e.Context.SetPangoLargeFontSize ();
 
 			DrawObjects (e.Context, _option.DrawingObjects, idx);

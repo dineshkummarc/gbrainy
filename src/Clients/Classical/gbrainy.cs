@@ -26,6 +26,8 @@ using Gdk;
 
 using gbrainy.Core.Main;
 using gbrainy.Core.Platform;
+using gbrainy.Clients.Classical.Dialogs;
+using gbrainy.Clients.Classical.Widgets;
 
 #if MONO_ADDINS
 using Mono.Addins;
@@ -465,7 +467,7 @@ namespace gbrainy.Clients.Classical
 
 		void OnMenuAbout (object sender, EventArgs args)
 		{
-			AboutDialog about = new AboutDialog ();
+			Dialogs.AboutDialog about = new Dialogs.AboutDialog ();
 			about.Run ();
 		}
 
@@ -560,6 +562,15 @@ namespace gbrainy.Clients.Classical
 		void OnMemoryOnly (object sender, EventArgs args)
 		{
 			OnNewGame (GameSession.Types.MemoryTrainers);
+		}
+
+		void OnPdfExport (object sender, EventArgs args)
+		{
+			PdfExportDialog pdf;
+			
+			pdf = new PdfExportDialog ();
+			pdf.Run ();
+			pdf.Destroy (); 
 		}
 
 		void OnPreferences (object sender, EventArgs args)

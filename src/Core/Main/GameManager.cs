@@ -22,12 +22,6 @@ using System.Collections.Generic;
 using System.Reflection;
 using Mono.Unix;
 
-// When defined, exports all the games in a single PDF
-#if PDF_DUMP
-using Cairo;
-using gbrainy.Core.Libraries;
-#endif
-
 #if MONO_ADDINS
 using Mono.Addins;
 using Mono.Addins.Setup;
@@ -488,59 +482,5 @@ namespace gbrainy.Core.Main
 			puzzle.CurrentDifficulty = Difficulty;
 			return puzzle;
 		}
-#if PDF_DUMP
-		// Generates a single PDF document with all the puzzles contained in gbrainy (4 games per page)
-		public void GeneratePDF ()
-		{
-			int width = 400, height = 400, margin = 20, x, y, cnt, games_page = 4;
-			Game puzzle;
-			game_type = GameSession.Types.AllGames;
-			GameManager.GameLocator [] games;
-
-
-			games = AvailableGames;
-
-			PdfSurface pdf = new PdfSurface ("games.pdf", (width + margin) * 2, (height + margin) * games_page / 2);
-			x = y = cnt = 0;
-			CairoContextEx cr = new CairoContextEx (pdf, "sans 12", 72);
-
-			for (int i = 0; i < games.Length; i++)
-			{
-				if (games[i].IsGame == false)
-					continue;
-
-				puzzle = (Game) Activator.CreateInstance (games[i].TypeOf, true);
-				puzzle.Variant = games[i].Variant;
-
-				puzzle.Begin ();
-
-				cnt++;
-				cr.Save ();
-				cr.Translate (x, y);
-				cr.Rectangle (0, 0, width, height);;
-				cr.Clip ();
-				cr.Save ();
-				puzzle.DrawPreview (cr, width, height, false);
-				x += width + margin;
-				if (x > width + margin) {
-					x = 0;
-					y += height + margin;
-				}
-				cr.Restore ();
-				cr.MoveTo (50,  height - 10);
-				cr.ShowText (String.Format ("Game: {0} / D:{1}", puzzle.Name, puzzle.GameDifficulty));
-				cr.Stroke ();
-				cr.Restore ();
-
-				if (cnt >= games_page) {
-					cr.ShowPage ();
-					cnt = x = y = 0;
-				}
-			}
-			pdf.Finish ();
-			((IDisposable)cr).Dispose();
-			return;
-		}
-#endif
 	}
 }

@@ -20,7 +20,7 @@
 using Gtk;
 using GtkBeans;
 
-namespace gbrainy.Clients.Classical
+namespace gbrainy.Clients.Classical.Dialogs
 {
 	public class BuilderDialog : Gtk.Dialog
 	{
