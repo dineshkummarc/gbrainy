@@ -52,7 +52,7 @@ namespace gbrainy.Games.Memory
 		}
 
 		public override string Name {
-			get {return Catalog.GetString ("Memory figures");}
+			get {return Catalog.GetString ("Memorize figures");}
 		}
 
 		public override string MemoryQuestion {

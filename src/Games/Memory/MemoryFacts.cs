@@ -145,11 +145,6 @@ namespace gbrainy.Games.Memory
 
 			return fact;
 		}
-
-		public override void DrawPossibleAnswers (CairoContextEx gr, int area_width, int area_height, bool rtl)
-		{
-
-		}
 	
 		public override void DrawObjectToMemorize (CairoContextEx gr, int area_width, int area_height, bool rtl)
 		{
