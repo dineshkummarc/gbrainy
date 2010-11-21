@@ -42,11 +42,11 @@ namespace gbrainy.Games.Calculation
 		}
 
 		public override string Question {
-			get {return Catalog.GetString ("Which of the possible divisors is the greatest that divides all numbers?");} 
+			get {return Catalog.GetString ("Which of the possible divisors is the greatest that divides all numbers?");}
 		}
 
 		protected override void Initialize ()
-		{	
+		{
 			bool found;
 			int n, m;
 			int []mult = new int [3];
@@ -73,19 +73,19 @@ namespace gbrainy.Games.Calculation
 			for (m = 0; m < mult.Length; m++) {
 				mult[m] = GetMultiplier (mult);
 			}
-		
+
 			n = 0;
 			while (n < numbers.Length) {
 				numbers [n] = 4 + random.Next (5);
 				for (int i = 1; i < 5; i++) {
 					numbers [n] =  numbers [n]  * (1 + random.Next (10));
 				}
-		
+
 				for (m = 0; m < mult.Length; m++) {
 					numbers[n] = numbers [n] * mult[m];
 				}
-			
-				if (numbers[n] > max_num || numbers[n] < 50) 
+
+				if (numbers[n] > max_num || numbers[n] < 50)
 					continue;
 
 				found = false;
@@ -93,30 +93,36 @@ namespace gbrainy.Games.Calculation
 					if (numbers[i]  == numbers [n]) {
 						found = true;
 						break;
-					}				
+					}
 				}
-				if (found == false)
+				if (found == false) {
 					n++;
-			}
-
-			for (n = 0; n < answers.Length; n++) {
-				answers[n] = GetUniqueAnswer (mult, answers);
-			}
-
-			n = 0;
-			int answer = 0;
-			for (int a = 0; a < answers.Length; a++)
-			{
-				for (n = 0; n < answers.Length; n++)
-				{
-					if ((double)numbers[n] / (double)answers[a] !=  Math.Abs (numbers[n] / answers[a]))
-						break;								
 				}
-			
-				if (n == answers.Length && answers[a] > answer)
+			}
+
+			int answer = 0;
+			// Avoid generating a set of answers in which none matches the condition
+			while (answer == 0)
+			{
+				// Build a list of answers
+				for (n = 0; n < answers.Length; n++) {
+					answers[n] = GetUniqueAnswer (mult, answers);
+				}
+
+				n = 0;
+				for (int a = 0; a < answers.Length; a++)
 				{
-					answer = answers[a];
-					answer_idx = a;
+					for (n = 0; n < answers.Length; n++)
+					{
+						if ((double)numbers[n] / (double)answers[a] !=  Math.Abs (numbers[n] / answers[a]))
+							break;
+					}
+
+					if (n == answers.Length && answers[a] > answer)
+					{
+						answer = answers[a];
+						answer_idx = a;
+					}
 				}
 			}
 
@@ -125,7 +131,7 @@ namespace gbrainy.Games.Calculation
 			// Drawing objects
 			Container container = new Container (DrawAreaX + 0.2, DrawAreaY + 0.25, 0.4, answers.Length * 0.15);
 			AddWidget (container);
-	
+
 			for (int i = 0; i < answers.Length; i++)
 			{
 				DrawableArea drawable_area = new DrawableArea (0.3, 0.1);
@@ -160,7 +166,7 @@ namespace gbrainy.Games.Calculation
 				case 1:
 					answer = mult[0] * mult[1];
 					break;
-				case 2:	
+				case 2:
 					answer = mult[0] * mult[2];
 					break;
 				case 3:
@@ -185,7 +191,7 @@ namespace gbrainy.Games.Calculation
 				if (n == answers.Length)
 					found = true;
 			}
-	
+
 			return answer;
 		}
 
@@ -212,7 +218,7 @@ namespace gbrainy.Games.Calculation
 
 				}
 				for (n = 0; n < nums.Length; n++) {
-					if (nums[n] == rslt) 
+					if (nums[n] == rslt)
 						break;
 				}
 
@@ -224,7 +230,7 @@ namespace gbrainy.Games.Calculation
 		}
 
 		public override void Draw (CairoContextEx gr, int area_width, int area_height, bool rtl)
-		{	
+		{
 			double x = DrawAreaX, y = 0.05;
 
 			base.Draw (gr, area_width, area_height, rtl);
@@ -241,7 +247,7 @@ namespace gbrainy.Games.Calculation
 				gr.Stroke ();
 				x += 0.17;
 			}
-		
+
 			y += 0.16;
 
 			gr.MoveTo (0.05, y);
@@ -249,11 +255,11 @@ namespace gbrainy.Games.Calculation
 		}
 
 		public override bool CheckAnswer (string answer)
-		{	
+		{
 			if (base.CheckAnswer (answer) == true)
 				return true;
 
-			if (String.Compare (answer, GetPossibleAnswer (answer_idx), true) == 0) 
+			if (String.Compare (answer, GetPossibleAnswer (answer_idx), true) == 0)
 				return true;
 
 			return false;
