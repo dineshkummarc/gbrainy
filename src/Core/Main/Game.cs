@@ -345,6 +345,8 @@ namespace gbrainy.Core.Main
 			gr.DrawBackground ();
 			gr.Color = default_color;
 			gr.LineWidth = LineWidth;
+			// Not all Cairo surfaces have a default font size (like PDF)
+			gr.SetPangoNormalFontSize ();
 		}
 
 		public virtual void Draw (CairoContextEx gr, int width, int height, bool rtl)
