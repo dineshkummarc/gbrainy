@@ -143,28 +143,21 @@ namespace gbrainy.Games.Logic
 		{
 			switch (formula) {
 			case Formula.AllAdding:
-				break;
+				return ValidateAddinginGroupsOfTree (numbers, question); // In 0.15% of the cases returns invalid
 			case Formula.ThirdMultiply:
 				break;
 			case Formula.ThirdSubstracting:
-				return ValidateAddinginGroupsOfTree (numbers, question);
+				return ValidateAllAdding (numbers, question); // In 8.3% of the cases returns invalid
 			}
 
 			return true;
 		}
 
-		static int SumGroup (int[] numbers, int start, int len)
-		{
-			int sum = 0;
-		
-			for (int n = start; n < len + start; n++)
-				sum += numbers[n];
-
-			return sum;
+		static bool ThirdSubstractingGroup (int[] numbers, int start, int len)
+		{		
+			return (numbers [start + 1] + numbers [start + 0]) == numbers [start + 2];
 		}
 
-		// Taken the sequence (a b c) (d ? f) (g h i)
-		// If a + b + c = g + h = i you can calculate a replament for ? that makes then add too
 		static bool ValidateAddinginGroupsOfTree (int[] numbers, int question)
 		{
 			int group_f1, group_f2, group_q;			
@@ -187,10 +180,45 @@ namespace gbrainy.Games.Logic
 				throw new InvalidOperationException ("group_q");
 			}
 
-			if (SumGroup (numbers, group_f1 * group_size, group_size) != SumGroup (numbers, group_f2 * group_size, group_size))
-				return true;
+			return (! (ThirdSubstractingGroup (numbers, group_f1 * group_size, group_size) == true &&
+				ThirdSubstractingGroup (numbers, group_f2 * group_size, group_size) == true));
+		}		
 
-			return false;
+		static int SumGroup (int[] numbers, int start, int len)
+		{
+			int sum = 0;
+		
+			for (int n = start; n < len + start; n++)
+				sum += numbers[n];
+
+			return sum;
+		}
+
+		// Taken the sequence (a b c) (d ? f) (g h i)
+		// If a + b + c = g + h = i you can calculate a replament for ? that makes then add too
+		static bool ValidateAllAdding (int[] numbers, int question)
+		{
+			int group_f1, group_f2, group_q;			
+
+			group_q = question / group_size;
+			switch (group_q) {
+			case 0:
+				group_f1 = 1;
+				group_f2 = 2;
+				break;
+			case 1:
+				group_f1 = 0;
+				group_f2 = 2;
+				break;
+			case 2:
+				group_f1 = 0;
+				group_f2 = 1;
+				break;
+			default:
+				throw new InvalidOperationException ("group_q");
+			}
+
+			return SumGroup (numbers, group_f1 * group_size, group_size) != SumGroup (numbers, group_f2 * group_size, group_size);
 		}
 	}
 }
