@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gbrainy\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-11-07 19:25+0100\n"
+"POT-Creation-Date: 2010-11-23 01:47+0100\n"
 "PO-Revision-Date: 2010-11-07 19:30+0100\n"
 "Last-Translator: Jordi Mas <jmas@softcatala.org>\n"
 "Language-Team: Catalan\n"
@@ -305,16 +305,16 @@ msgid ""
 "If p &lt; x &lt; q and r &lt; y &lt; s. Which of the following options makes "
 "x &gt; y true? [option_answers]"
 msgstr ""
-"Si «p &lt; x &lt; q» i «r &lt; y &lt; s». Quina de les següents opcions fa que  "
-"«x &lt; y» sigui cert? [option_answers]"
+"Si «p &lt; x &lt; q» i «r &lt; y &lt; s». Quina de les següents opcions fa "
+"que  «x &lt; y» sigui cert? [option_answers]"
 
 #: ../data/games.xml.h:25
 msgid ""
 "If p &lt; x &lt; q and r &lt; y &lt; s. Which of the following options makes "
 "x &lt; y true? [option_answers]"
 msgstr ""
-"Si «p &lt; x &lt; q» i «r &lt; y &lt; s». Quina de les següents opcions fa que  "
-"«x &lt; y» sigui cert? [option_answers]"
+"Si «p &lt; x &lt; q» i «r &lt; y &lt; s». Quina de les següents opcions fa "
+"que  «x &lt; y» sigui cert? [option_answers]"
 
 #: ../data/games.xml.h:28
 #, no-c-format
@@ -570,7 +570,7 @@ msgstr ""
 "Jugueu a trencaclosques que desafien les vostres habilitats lògiques, "
 "verbals, de càlcul i memòria"
 
-#: ../data/gbrainy.desktop.in.h:3 ../src/Clients/Classical/gbrainy.ui.h:23
+#: ../data/gbrainy.desktop.in.h:3 ../src/Clients/Classical/gbrainy.ui.h:24
 msgid "gbrainy"
 msgstr "gbrainy"
 
@@ -1672,22 +1672,25 @@ msgid "Total"
 msgstr "Total"
 
 #: ../src/Core/Views/FinishView.cs:104 ../src/Core/Main/GameTypes.cs:44
-#: ../src/Clients/Classical/gbrainy.cs:367
+#: ../src/Clients/Classical/gbrainy.cs:368
+#: ../src/Clients/Classical/Dialogs/ui/PdfExportDialog.ui.h:8
 msgid "Logic"
 msgstr "Lògica"
 
 #: ../src/Core/Views/FinishView.cs:111 ../src/Core/Main/GameTypes.cs:48
-#: ../src/Clients/Classical/gbrainy.cs:372
+#: ../src/Clients/Classical/gbrainy.cs:373
+#: ../src/Clients/Classical/Dialogs/ui/PdfExportDialog.ui.h:6
 msgid "Calculation"
 msgstr "Càlcul"
 
 #: ../src/Core/Views/FinishView.cs:118 ../src/Core/Main/GameTypes.cs:46
-#: ../src/Clients/Classical/gbrainy.cs:378
+#: ../src/Clients/Classical/gbrainy.cs:379
 msgid "Memory"
 msgstr "Memòria"
 
 #: ../src/Core/Views/FinishView.cs:125 ../src/Core/Main/GameTypes.cs:50
-#: ../src/Clients/Classical/gbrainy.cs:384
+#: ../src/Clients/Classical/gbrainy.cs:385
+#: ../src/Clients/Classical/Dialogs/ui/PdfExportDialog.ui.h:16
 msgid "Verbal"
 msgstr "Verbal"
 
@@ -1904,12 +1907,12 @@ msgstr "H"
 msgid "Figure {0}"
 msgstr "Figura {0}"
 
-#: ../src/Core/Main/GameManager.cs:319
+#: ../src/Core/Main/GameManager.cs:313
 msgid "Extensions database:"
 msgstr "Base de dades d'extensions:"
 
 #. Translators: 'Games registered' is the games know to gbrainy (build-in and load from addins-in and external files)
-#: ../src/Core/Main/GameManager.cs:325
+#: ../src/Core/Main/GameManager.cs:319
 #, csharp-format
 msgid ""
 "Games registered: {0}: {1} logic puzzles, {2} calculation trainers, {3} "
@@ -2057,6 +2060,18 @@ msgstr "Memoritzeu els objectes d'abaix en el temps donat"
 msgid "Time left"
 msgstr "Temps restant"
 
+# csharp-format
+#. Translators: {0} is the game number and {1} the game question or answer
+#. The number is used as reference when looking for the game solution in the PDF
+#: ../src/Core/Main/PdfExporter.cs:70 ../src/Core/Main/PdfExporter.cs:122
+#, csharp-format
+msgid "Game {0}. {1}"
+msgstr "Joc: {0}. {1}"
+
+#: ../src/Core/Main/PdfExporter.cs:114
+msgid "Solutions"
+msgstr "Solucions"
+
 #: ../src/Core/Main/Verbal/Analogies.cs:56
 #, csharp-format
 msgid "Possible correct answers are: {0}."
@@ -2090,7 +2105,7 @@ msgstr "{0} Responeu {1}."
 #: ../src/Games/Logic/PuzzleOstracism.cs:159
 #: ../src/Games/Logic/PuzzlePredicateLogic.cs:177
 #: ../src/Games/Calculation/CalculationCloserFraction.cs:161
-#: ../src/Games/Calculation/CalculationGreatestDivisor.cs:143
+#: ../src/Games/Calculation/CalculationGreatestDivisor.cs:149
 #, csharp-format
 msgid "{0}) {1}"
 msgstr "{0}) {1}"
@@ -2126,80 +2141,80 @@ msgstr "Parell de paraules #{0}"
 msgid "Question and answer #{0}"
 msgstr "Pregunta i resposta #{0}"
 
-#: ../src/Core/Main/Xml/GameXml.cs:221
+#: ../src/Core/Main/Xml/GameXml.cs:219
 #, csharp-format
 msgid "{0}, "
 msgstr "{0}, "
 
-#: ../src/Core/Main/Xml/GameXml.cs:223
+#: ../src/Core/Main/Xml/GameXml.cs:221
 #, csharp-format
 msgid "{0}."
 msgstr "{0}."
 
 #. Translators {0}: list of options (A, B, C)
-#: ../src/Core/Main/Xml/GameXml.cs:226
+#: ../src/Core/Main/Xml/GameXml.cs:224
 #, csharp-format
 msgid "Answer {0}"
 msgstr "Responeu {0}"
 
-#: ../src/Core/Main/Xml/GameXml.cs:472
+#: ../src/Core/Main/Xml/GameXml.cs:467
 #, csharp-format
 msgid "{0}) "
 msgstr "{0}) "
 
-#: ../src/Clients/Classical/gbrainy.cs:360
+#: ../src/Clients/Classical/gbrainy.cs:361
 msgid "Play all the games"
 msgstr "Jugueu a tots els tipus de jocs"
 
-#: ../src/Clients/Classical/gbrainy.cs:361
+#: ../src/Clients/Classical/gbrainy.cs:362
 msgid "All"
 msgstr "Tots"
 
-#: ../src/Clients/Classical/gbrainy.cs:366
+#: ../src/Clients/Classical/gbrainy.cs:367
 msgid "Play games that challenge your reasoning and thinking"
 msgstr ""
 "Jugueu a jocs que desafien les vostres habilitats de raonament i pensament"
 
-#: ../src/Clients/Classical/gbrainy.cs:373
+#: ../src/Clients/Classical/gbrainy.cs:374
 msgid "Play games that challenge your mental calculation skills"
 msgstr "Jugueu a jocs que desafien les vostres habilitats de càlcul mental"
 
-#: ../src/Clients/Classical/gbrainy.cs:379
+#: ../src/Clients/Classical/gbrainy.cs:380
 msgid "Play games that challenge your short term memory"
 msgstr "Jugueu a jocs que desafien la vostra memòria a curt termini"
 
-#: ../src/Clients/Classical/gbrainy.cs:385
+#: ../src/Clients/Classical/gbrainy.cs:386
 msgid "Play games that challenge your verbal aptitude"
 msgstr "Jugueu a jocs que desafien les vostres aptituds verbals"
 
 #
-#: ../src/Clients/Classical/gbrainy.cs:390
-#: ../src/Clients/Classical/gbrainy.cs:624
+#: ../src/Clients/Classical/gbrainy.cs:391
+#: ../src/Clients/Classical/gbrainy.cs:634
 msgid "Pause"
 msgstr "Pausa"
 
-#: ../src/Clients/Classical/gbrainy.cs:391
+#: ../src/Clients/Classical/gbrainy.cs:392
 msgid "Pause or resume the game"
 msgstr "Fes una pausa o continua la partida"
 
 #
-#: ../src/Clients/Classical/gbrainy.cs:396
+#: ../src/Clients/Classical/gbrainy.cs:397
 msgid "End the game and show score"
 msgstr "Finalitza la partida i mostra la puntuació"
 
-#: ../src/Clients/Classical/gbrainy.cs:397
+#: ../src/Clients/Classical/gbrainy.cs:398
 msgid "Finish"
 msgstr "Finalitza"
 
-#: ../src/Clients/Classical/gbrainy.cs:487
+#: ../src/Clients/Classical/gbrainy.cs:488
 msgid "Congratulations."
 msgstr "Enhorabona."
 
-#: ../src/Clients/Classical/gbrainy.cs:489
+#: ../src/Clients/Classical/gbrainy.cs:490
 msgid "Incorrect answer."
 msgstr "Resposta incorrecta."
 
-#: ../src/Clients/Classical/gbrainy.cs:547
+#: ../src/Clients/Classical/gbrainy.cs:548
 msgid ""
 "Once you have an answer type it in the \"Answer:\" entry box and press the "
 "\"OK\" button."
@@ -2207,12 +2222,12 @@ msgstr ""
 "Un cop tingueu la resposta introduïu-la al quadre «Resposta:» i premeu el "
 "botó «D'acord»."
 
-#: ../src/Clients/Classical/gbrainy.cs:628
+#: ../src/Clients/Classical/gbrainy.cs:638
 msgid "Resume"
 msgstr "Reprèn"
 
 # csharp-format
-#: ../src/Clients/Classical/gbrainy.cs:743
+#: ../src/Clients/Classical/gbrainy.cs:753
 #, csharp-format
 msgid "Startup time {0}"
 msgstr "Temps d'iniciació {0}"
@@ -2326,18 +2341,26 @@ msgid "gbrainy web site"
 msgstr "Lloc web del gbrainy"
 
 #. Column: Game Name
-#: ../src/Clients/Classical/Dialogs/CustomGameDialog.cs:67
+#: ../src/Clients/Classical/Dialogs/CustomGameDialog.cs:68
 msgid "Game Name"
 msgstr "Nom del joc"
 
 #. Column: Type
-#: ../src/Clients/Classical/Dialogs/CustomGameDialog.cs:89
+#: ../src/Clients/Classical/Dialogs/CustomGameDialog.cs:90
 msgid "Type"
 msgstr "Tipus"
 
-#: ../src/Clients/Classical/Dialogs/CustomGameDialog.cs:111
+#: ../src/Clients/Classical/Dialogs/CustomGameDialog.cs:112
 msgid "Enabled"
 msgstr "Habilitat"
+
+#: ../src/Clients/Classical/Dialogs/PdfExportDialog.cs:75
+msgid "PDF files"
+msgstr "Fitxers PDF"
+
+#: ../src/Clients/Classical/Dialogs/PdfExportDialog.cs:79
+msgid "All files"
+msgstr "Tots els fitxers"
 
 #: ../src/Clients/Classical/Dialogs/PlayerHistoryDialog.cs:45
 msgid "The graph below shows the player's game score evolution."
@@ -2391,22 +2414,80 @@ msgstr "Desselecciona-ho tot"
 msgid "_Start"
 msgstr "_Inicia"
 
+#: ../src/Clients/Classical/Dialogs/ui/PdfExportDialog.ui.h:1
+#: ../src/Clients/Classical/Dialogs/ui/PreferencesDialog.ui.h:1
+msgid "<b>Difficulty Level</b>"
+msgstr "<b>Nivell de dificultat</b>"
+
+#: ../src/Clients/Classical/Dialogs/ui/PdfExportDialog.ui.h:2
+msgid "<b>Game Types</b>"
+msgstr "<b>Tipus de de jocs</b>"
+
+#: ../src/Clients/Classical/Dialogs/ui/PdfExportDialog.ui.h:3
+#: ../src/Clients/Classical/Dialogs/ui/PreferencesDialog.ui.h:2
+msgid "<b>General Settings</b>"
+msgstr "<b>Configuració general</b>"
+
+#: ../src/Clients/Classical/Dialogs/ui/PdfExportDialog.ui.h:4
+msgid "<b>Number of games</b>"
+msgstr "<b>Nombre de jocs</b>"
+
+#: ../src/Clients/Classical/Dialogs/ui/PdfExportDialog.ui.h:5
+msgid "<b>Output File</b>"
+msgstr "<b>Fitxer de sortida</b>"
+
+#: ../src/Clients/Classical/Dialogs/ui/PdfExportDialog.ui.h:7
+#: ../src/Clients/Classical/Dialogs/ui/PreferencesDialog.ui.h:6
+msgid "Easy"
+msgstr "Fàcil"
+
+#: ../src/Clients/Classical/Dialogs/ui/PdfExportDialog.ui.h:9
+#: ../src/Clients/Classical/Dialogs/ui/PreferencesDialog.ui.h:7
+msgid "Master"
+msgstr "Mestre"
+
+#: ../src/Clients/Classical/Dialogs/ui/PdfExportDialog.ui.h:10
+#: ../src/Clients/Classical/Dialogs/ui/PreferencesDialog.ui.h:9
+msgid "Medium"
+msgstr "Mitjà"
+
+#: ../src/Clients/Classical/Dialogs/ui/PdfExportDialog.ui.h:11
+msgid "Number of games per page:"
+msgstr "Nombre de jocs per pàgina:"
+
+#: ../src/Clients/Classical/Dialogs/ui/PdfExportDialog.ui.h:12
+msgid "PDF export"
+msgstr "Exportació PDF"
+
+#: ../src/Clients/Classical/Dialogs/ui/PdfExportDialog.ui.h:13
+#: ../src/Clients/Classical/Dialogs/ui/PreferencesDialog.ui.h:13
+msgid "Skip games that use colors (friendly to colorblind users)"
+msgstr "Omet jocs que usen colors (amigable a usuaris daltònics)"
+
+#: ../src/Clients/Classical/Dialogs/ui/PdfExportDialog.ui.h:14
+msgid ""
+"This option allows to export a set of games in a PDF file. You can complete "
+"the puzzles without a computer."
+msgstr ""
+"Aquesta opció permet exportar un conjunt de jocs a un fitxer PDF. Podeu "
+"completar els jocs sense un ordinador."
+
+#: ../src/Clients/Classical/Dialogs/ui/PdfExportDialog.ui.h:15
+msgid "Total number of games:"
+msgstr "Nombre total de jocs:"
+
+#: ../src/Clients/Classical/Dialogs/ui/PdfExportDialog.ui.h:17
+msgid "_Save"
+msgstr "_Desa"
+
 #: ../src/Clients/Classical/Dialogs/ui/PlayerHistoryDialog.ui.h:1
-#: ../src/Clients/Classical/gbrainy.ui.h:9
+#: ../src/Clients/Classical/gbrainy.ui.h:10
 msgid "Player's Game Session History"
 msgstr "Històric de partides del jugador"
 
 #: ../src/Clients/Classical/Dialogs/ui/PlayerHistoryDialog.ui.h:2
 msgid "Show:"
 msgstr "Mostra:"
-
-#: ../src/Clients/Classical/Dialogs/ui/PreferencesDialog.ui.h:1
-msgid "<b>Difficulty Level</b>"
-msgstr "<b>Nivell de dificultat</b>"
-
-#: ../src/Clients/Classical/Dialogs/ui/PreferencesDialog.ui.h:2
-msgid "<b>General Settings</b>"
-msgstr "<b>Configuració general</b>"
 
 #: ../src/Clients/Classical/Dialogs/ui/PreferencesDialog.ui.h:3
 msgid "<b>Memory Games</b>"
@@ -2420,28 +2501,16 @@ msgstr "<b>Històric de partides del jugador</b>"
 msgid "Delete Player's Game Session History"
 msgstr "Suprimeix l'històric de partides del jugador"
 
-#: ../src/Clients/Classical/Dialogs/ui/PreferencesDialog.ui.h:6
-msgid "Easy"
-msgstr "Fàcil"
-
-#: ../src/Clients/Classical/Dialogs/ui/PreferencesDialog.ui.h:7
-msgid "Master"
-msgstr "Mestre"
-
 #: ../src/Clients/Classical/Dialogs/ui/PreferencesDialog.ui.h:8
 msgid "Maximum number of records in the player's game session history:"
 msgstr "Nombre màxim de jocs desats a l'històric de partides del jugador:"
-
-#: ../src/Clients/Classical/Dialogs/ui/PreferencesDialog.ui.h:9
-msgid "Medium"
-msgstr "Mitjà"
 
 #: ../src/Clients/Classical/Dialogs/ui/PreferencesDialog.ui.h:10
 msgid "Minimum number of played games to store the game session:"
 msgstr "Nombre mínim de jocs jugats per desar la partida:"
 
 #: ../src/Clients/Classical/Dialogs/ui/PreferencesDialog.ui.h:11
-#: ../src/Clients/Classical/gbrainy.ui.h:10
+#: ../src/Clients/Classical/gbrainy.ui.h:11
 msgid "Preferences"
 msgstr "Preferències"
 
@@ -2449,13 +2518,18 @@ msgstr "Preferències"
 msgid "Show countdown message"
 msgstr "Mostra el missatge de compte enrere"
 
-#: ../src/Clients/Classical/Dialogs/ui/PreferencesDialog.ui.h:13
-msgid "Skip games that use colors (friendly to colorblind users)"
-msgstr "Omet jocs que usen colors (amigable a usuaris daltònics)"
-
 #: ../src/Clients/Classical/Dialogs/ui/PreferencesDialog.ui.h:14
 msgid "Time in seconds to memorize the challenge:"
 msgstr "Temps en segons per a memoritzar el repte:"
+
+#: ../src/Clients/Classical/Widgets/BrowseFile.cs:43
+#: ../src/Clients/Classical/mono-addins-strings.xml.h:10
+msgid "Browse..."
+msgstr "Navega..."
+
+#: ../src/Clients/Classical/Widgets/BrowseFile.cs:84
+msgid "Open Location"
+msgstr "Obre ubicació"
 
 #: ../src/Games/Logic/Puzzle3DCube.cs:32
 msgid "3D Cube"
@@ -3223,24 +3297,24 @@ msgstr ""
 "de les agulles del rellotge, mentre que el cercle esquerre va cap enrere una "
 "posició."
 
-#: ../src/Games/Logic/PuzzleNumericRelation.cs:38
+#: ../src/Games/Logic/PuzzleNumericRelation.cs:46
 msgid "Numeric relation"
 msgstr "Relació numèrica"
 
-#: ../src/Games/Logic/PuzzleNumericRelation.cs:42
+#: ../src/Games/Logic/PuzzleNumericRelation.cs:50
 msgid "What number should replace the question mark?"
 msgstr "Quin és el número que ha de reemplaçar l'interrogant?"
 
-#: ../src/Games/Logic/PuzzleNumericRelation.cs:46
+#: ../src/Games/Logic/PuzzleNumericRelation.cs:54
 msgid "The numbers are related arithmetically."
 msgstr "La relació dels números és aritmètica."
 
-#: ../src/Games/Logic/PuzzleNumericRelation.cs:53
+#: ../src/Games/Logic/PuzzleNumericRelation.cs:61
 #, csharp-format
 msgid "Every group of {0} numbers sums exactly {1}."
 msgstr "Cada grup de {0} números suma exactament {1}."
 
-#: ../src/Games/Logic/PuzzleNumericRelation.cs:55
+#: ../src/Games/Logic/PuzzleNumericRelation.cs:63
 msgid ""
 "Divide the sequence in groups of three numbers. Every third number is "
 "calculated by multiplying by the two previous ones."
@@ -3248,7 +3322,7 @@ msgstr ""
 "Dividiu la seqüència en grups de tres números. Cada tercer número es calcula "
 "multiplicant els dos anteriors."
 
-#: ../src/Games/Logic/PuzzleNumericRelation.cs:57
+#: ../src/Games/Logic/PuzzleNumericRelation.cs:65
 msgid ""
 "Divide the sequence in groups of three numbers. Every third number is "
 "calculated by subtracting the second number from the first."
@@ -3256,11 +3330,11 @@ msgstr ""
 "Dividiu la seqüència en grups de tres números. Cada tercer número es calcula "
 "restant el segon número del primer."
 
-#: ../src/Games/Logic/PuzzleNumericSequence.cs:35
+#: ../src/Games/Logic/PuzzleNumericSequence.cs:42
 msgid "Numeric sequence"
 msgstr "Seqüència numèrica"
 
-#: ../src/Games/Logic/PuzzleNumericSequence.cs:39
+#: ../src/Games/Logic/PuzzleNumericSequence.cs:46
 msgid ""
 "The next sequence follows a logic. What number should replace the question "
 "mark?"
@@ -3268,11 +3342,11 @@ msgstr ""
 "La seqüència següent segueix una lògica. Quin és el número que ha de "
 "reemplaçar l'interrogant?"
 
-#: ../src/Games/Logic/PuzzleNumericSequence.cs:43
+#: ../src/Games/Logic/PuzzleNumericSequence.cs:50
 msgid "Every number in the sequence is related to the previous one."
 msgstr "Cada número de la seqüència està relacionat amb l'anterior."
 
-#: ../src/Games/Logic/PuzzleNumericSequence.cs:50
+#: ../src/Games/Logic/PuzzleNumericSequence.cs:57
 msgid ""
 "Every number in the sequence is the result of subtracting 1 from the "
 "previous number and multiplying it by 2."
@@ -3280,7 +3354,7 @@ msgstr ""
 "Cada número de la seqüència és el resultat de restar 1 al número anterior i "
 "multiplicar-lo per 2."
 
-#: ../src/Games/Logic/PuzzleNumericSequence.cs:52
+#: ../src/Games/Logic/PuzzleNumericSequence.cs:59
 msgid ""
 "Every number in the sequence is the result of adding 1 to the previous "
 "number and multiplying it by 3."
@@ -3288,7 +3362,7 @@ msgstr ""
 "Cada número de la seqüència és el resultat d'afegir 1 al número anterior i "
 "multiplicar-lo per 3."
 
-#: ../src/Games/Logic/PuzzleNumericSequence.cs:54
+#: ../src/Games/Logic/PuzzleNumericSequence.cs:61
 msgid ""
 "Every number in the sequence is the result of subtracting 2 from the "
 "previous number and multiplying it by -2."
@@ -4103,7 +4177,7 @@ msgid "What percentage of Shiny Cars use gasoline?"
 msgstr "Quin percentatge dels Cotxes Lluents usen benzina?"
 
 #: ../src/Games/Memory/MemoryFigures.cs:55
-msgid "Memory figures"
+msgid "Memorize figures"
 msgstr "Memoritzeu figures"
 
 #: ../src/Games/Memory/MemoryFigures.cs:60
@@ -4454,13 +4528,13 @@ msgstr ""
 "Quin dels divisors possibles és el més gran que divideix tots els números?"
 
 #
-#: ../src/Games/Calculation/CalculationGreatestDivisor.cs:234
+#: ../src/Games/Calculation/CalculationGreatestDivisor.cs:240
 #: ../src/Games/Calculation/CalculationPrimes.cs:233
 msgid "Numbers"
 msgstr "Números"
 
 #
-#: ../src/Games/Calculation/CalculationGreatestDivisor.cs:248
+#: ../src/Games/Calculation/CalculationGreatestDivisor.cs:254
 msgid "Possible divisors"
 msgstr "Divisors possibles"
 
@@ -4604,70 +4678,74 @@ msgid "Custom Game Selection..."
 msgstr "Selecció de la partida personalitzada..."
 
 #: ../src/Clients/Classical/gbrainy.ui.h:4
+msgid "Export Games to PDF for Off-line Playing..."
+msgstr "Exporta jocs a PDF per a jugar fora de línia..."
+
+#: ../src/Clients/Classical/gbrainy.ui.h:5
 msgid "Extensions"
 msgstr "Extensions"
 
-#: ../src/Clients/Classical/gbrainy.ui.h:5
+#: ../src/Clients/Classical/gbrainy.ui.h:6
 msgid "How to Extend gbrainy's Functionality"
 msgstr "Com estendre la funcionalitat del gbrainy"
 
-#: ../src/Clients/Classical/gbrainy.ui.h:6
+#: ../src/Clients/Classical/gbrainy.ui.h:7
 msgid "Logic Puzzles Only"
 msgstr "Només trencaclosques lògics"
 
-#: ../src/Clients/Classical/gbrainy.ui.h:7
+#: ../src/Clients/Classical/gbrainy.ui.h:8
 msgid "Memory Trainers Only"
 msgstr "Només entrenadors de memòria"
 
-#: ../src/Clients/Classical/gbrainy.ui.h:8
+#: ../src/Clients/Classical/gbrainy.ui.h:9
 msgid "Mental Calculation Trainers Only"
 msgstr "Només entrenadors de càlcul mental"
 
-#: ../src/Clients/Classical/gbrainy.ui.h:11
+#: ../src/Clients/Classical/gbrainy.ui.h:12
 msgid "Toolbar"
 msgstr "Barra d'eines"
 
-#: ../src/Clients/Classical/gbrainy.ui.h:12
+#: ../src/Clients/Classical/gbrainy.ui.h:13
 msgid "Verbal Analogies Only"
 msgstr "Només analogies verbals"
 
-#: ../src/Clients/Classical/gbrainy.ui.h:13
+#: ../src/Clients/Classical/gbrainy.ui.h:14
 msgid "_Contents"
 msgstr "_Continguts"
 
-#: ../src/Clients/Classical/gbrainy.ui.h:14
+#: ../src/Clients/Classical/gbrainy.ui.h:15
 msgid "_End Game"
 msgstr "_Finalitza la partida"
 
-#: ../src/Clients/Classical/gbrainy.ui.h:15
+#: ../src/Clients/Classical/gbrainy.ui.h:16
 msgid "_Game"
 msgstr "P_artida"
 
-#: ../src/Clients/Classical/gbrainy.ui.h:16
+#: ../src/Clients/Classical/gbrainy.ui.h:17
 msgid "_Help"
 msgstr "A_juda"
 
-#: ../src/Clients/Classical/gbrainy.ui.h:17
+#: ../src/Clients/Classical/gbrainy.ui.h:18
 msgid "_New Game"
 msgstr "_Partida nova"
 
-#: ../src/Clients/Classical/gbrainy.ui.h:18
+#: ../src/Clients/Classical/gbrainy.ui.h:19
 msgid "_Next"
 msgstr "_Següent"
 
-#: ../src/Clients/Classical/gbrainy.ui.h:19
+#: ../src/Clients/Classical/gbrainy.ui.h:20
 msgid "_Pause Game"
 msgstr "_Fes una pausa a la partida"
 
-#: ../src/Clients/Classical/gbrainy.ui.h:20
+#: ../src/Clients/Classical/gbrainy.ui.h:21
 msgid "_Settings"
 msgstr "_Paràmetres"
 
-#: ../src/Clients/Classical/gbrainy.ui.h:21
+#: ../src/Clients/Classical/gbrainy.ui.h:22
 msgid "_Tip"
 msgstr "P_ista"
 
-#: ../src/Clients/Classical/gbrainy.ui.h:22
+#: ../src/Clients/Classical/gbrainy.ui.h:23
 msgid "_View"
 msgstr "_Visualitza"
 
@@ -4707,10 +4785,6 @@ msgstr "Tots els dipòsits registrats"
 #: ../src/Clients/Classical/mono-addins-strings.xml.h:9
 msgid "Author:"
 msgstr "Autor:"
-
-#: ../src/Clients/Classical/mono-addins-strings.xml.h:10
-msgid "Browse..."
-msgstr "Navega..."
 
 #: ../src/Clients/Classical/mono-addins-strings.xml.h:11
 msgid "Copyright:"
@@ -4811,4 +4885,3 @@ msgstr "_Desinstal·la..."
 #: ../src/Clients/Classical/mono-addins-strings.xml.h:35
 msgid "_Unselect All"
 msgstr "_Desselecciona-ho"
-
