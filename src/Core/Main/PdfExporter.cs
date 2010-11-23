@@ -65,7 +65,7 @@ namespace gbrainy.Core.Main
 				cr.Rectangle (0, 0, width, height + question_height);
 				cr.Clip ();
 
-				// Translators: {0} is the game number and {1} the game question
+				// Translators: {0} is the game number and {1} the game question or answer
 				// The number is used as reference when looking for the game solution in the PDF
 				str = String.Format (Catalog.GetString ("Game {0}. {1}"), i + 1, puzzle.Question);
 
@@ -119,9 +119,7 @@ namespace gbrainy.Core.Main
 			cr.UseMarkup = true;
 			for (int i = 0; i < games.Length; i++)
 			{
-				// Translators: {0} is the game number and {1} the game answer
-				// The number is used as reference to find the question to which this solution refers in the PDF
-				str = String.Format (Catalog.GetString ("Game {0}. {1} "), i + 1, games[i].Answer);
+				str = String.Format (Catalog.GetString ("Game {0}. {1}"), i + 1, games[i].Answer);
 
 				// Draw Solution
 				cr.DrawStringWithWrapping (x + margin, y + margin, str, width - margin);
