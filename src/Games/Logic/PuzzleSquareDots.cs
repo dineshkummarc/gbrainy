@@ -206,7 +206,7 @@ namespace gbrainy.Games.Logic
 
 		public override string Question {
 			get {return (String.Format (
-				Catalog.GetString ("What is the letter of the figure that represents the next logical figure in the sequence? Answer {0}, {1} or {2}."),
+				Catalog.GetString ("Which is the next logical figure in the sequence? Answer {0}, {1} or {2}."),
 				GetPossibleAnswer (0), GetPossibleAnswer (1), GetPossibleAnswer (2)));}
 		}
 

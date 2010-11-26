@@ -64,7 +64,7 @@ namespace gbrainy.Games.Logic
 
 		public override string Question {
 			get {return String.Format (
-				Catalog.GetString ("Some slices have a common property. Which is the missing slice in the circle below? Answer {0}, {1} or {2}."),
+				Catalog.GetString ("The slices below have some kind of relation. Which is the missing slice in the circle below? Answer {0}, {1} or {2}."),
 				GetPossibleAnswer (0), GetPossibleAnswer (1), GetPossibleAnswer (2));}
 		}
 
