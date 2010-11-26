@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gbrainy\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-11-23 01:47+0100\n"
-"PO-Revision-Date: 2010-11-07 19:30+0100\n"
+"POT-Creation-Date: 2010-11-26 22:30+0100\n"
+"PO-Revision-Date: 2010-11-26 23:01+0100\n"
 "Last-Translator: Jordi Mas <jmas@softcatala.org>\n"
 "Language-Team: Catalan\n"
 "MIME-Version: 1.0\n"
@@ -323,7 +323,7 @@ msgid ""
 "have a car and are males. What percentage of the total population are "
 "females and have a car? [option_answers]"
 msgstr ""
-"En una petita ciutat, [all_cars]% dels habitants tenen un cotxe i el "
+"En una petita ciutat, el [all_cars]% dels habitants tenen un cotxe i el "
 "[males_cars]% tenen un cotxe i són homes. Quin percentatge total de la "
 "població són dones i tenen un cotxe? [option_answers]"
 
@@ -437,7 +437,7 @@ msgstr "Quin número dividit per [num_a] és igual a [num_b]?"
 
 #: ../data/games.xml.h:48
 msgid "What number minus [num_a] equals [num_b]?"
-msgstr "Quin número menys [num_a] és igual a [num_b]?"
+msgstr "Quin número restat a [num_a] és igual a [num_b]?"
 
 #: ../data/games.xml.h:49
 msgid "What number multiplied by [num_a] equals [num_b]?"
@@ -445,7 +445,7 @@ msgstr "Quin número multiplicat per [num_a] és igual a [num_b]?"
 
 #: ../data/games.xml.h:50
 msgid "What number plus [num_a] equals [num_b]?"
-msgstr "Quin número més [num_a] és igual a [num_b]?"
+msgstr "Quin número sumat a [num_a] és igual a [num_b]?"
 
 #: ../data/games.xml.h:51
 msgid "You can fit 6 * 5 * [z] * 2 boxes."
@@ -889,7 +889,7 @@ msgstr "Icosàgon"
 
 #: ../data/verbal_analogies.xml.h:80
 msgid "Ignore"
-msgstr "ignorar"
+msgstr "Ignorar"
 
 #: ../data/verbal_analogies.xml.h:81
 msgid "Ink"
@@ -1666,7 +1666,7 @@ msgid "Get ready to memorize the next objects..."
 msgstr "Prepareu-vos per a memoritzar els objectes següents..."
 
 #: ../src/Core/Views/FinishView.cs:97
-#: ../src/Core/Views/PlayerHistoryView.cs:67
+#: ../src/Core/Views/PlayerHistoryView.cs:83
 #: ../src/Clients/Classical/Dialogs/PlayerHistoryDialog.cs:66
 msgid "Total"
 msgstr "Total"
@@ -1695,6 +1695,7 @@ msgid "Verbal"
 msgstr "Verbal"
 
 #: ../src/Core/Views/FinishView.cs:141
+#: ../src/Core/Views/PlayerHistoryView.cs:275
 msgid "Score"
 msgstr "Puntuació"
 
@@ -1762,6 +1763,10 @@ msgid ""
 msgstr ""
 "En puntuar {0} a les analogies verbals heu assolit un nou record personal. "
 "El vostre record anterior era {1}."
+
+#: ../src/Core/Views/PlayerHistoryView.cs:274
+msgid "Time"
+msgstr "Temps"
 
 #: ../src/Core/Views/WelcomeView.cs:61
 msgid "Logic puzzles. Challenge your reasoning and thinking skills."
@@ -2791,10 +2796,10 @@ msgstr "Cub"
 #: ../src/Games/Logic/PuzzleCube.cs:49
 #, csharp-format
 msgid ""
-"The figure below, when folded as a cube, which face on the figure is "
+"When you fold the figure below as a cube, which face on the figure is "
 "opposite the face with a {0} drawn on it? Answer the number written on face."
 msgstr ""
-"La figura de baix, quan es doblega com un cub, quina és la cara de la figura "
+"Quan doblegueu figura de baix com un cub, quina és la cara de la figura "
 "contrària a la que té un {0} dibuixat? Responeu amb el número escrit a la "
 "cara."
 
@@ -3197,11 +3202,11 @@ msgstr "Tall que manca"
 #: ../src/Games/Logic/PuzzleMissingSlice.cs:67
 #, csharp-format
 msgid ""
-"Some slices have a common property. Which is the missing slice in the circle "
-"below? Answer {0}, {1} or {2}."
+"The slices below have some kind of relation. Which is the missing slice in "
+"the circle below? Answer {0}, {1} or {2}."
 msgstr ""
-"Alguns dels talls tenen una propietat en comú. Quin és el tall que manca en "
-"el cercle de baix? Responeu {0}, {1} o {2}."
+"Els talls de baix tenen algun tipus de relació. Quin és el tall que manca en "
+"el cercle de sota? Responeu {0}, {1} o {2}."
 
 #: ../src/Games/Logic/PuzzleMissingSlice.cs:72
 msgid "Each slice is related to the opposite one."
@@ -3282,6 +3287,7 @@ msgid "Next figure"
 msgstr "Figura següent"
 
 #: ../src/Games/Logic/PuzzleNextFigure.cs:58
+#: ../src/Games/Logic/PuzzleSquareDots.cs:209
 #, csharp-format
 msgid ""
 "Which is the next logical figure in the sequence? Answer {0}, {1} or {2}."
@@ -3537,8 +3543,8 @@ msgid ""
 "If no old misers are cheerful and some old misers are thin, which of the "
 "following conclusions is correct? Answer {0}, {1}, {2} or {3}."
 msgstr ""
-"Si cap artista malalt està content i alguns artistes estan contents. Quina "
-"de les següents conclusions és correcta? Responeu {0}, {1}, {2} o {3}."
+"Si no hi ha cap avar vell que sigui alegre i alguns avars vells són prims, quina de "
+"les següents conclusions és correcta? Responeu {0}, {1}, {2} o {3}."
 
 #: ../src/Games/Logic/PuzzlePredicateLogic.cs:98
 msgid "Some thin people are not cheerful"
@@ -3789,15 +3795,6 @@ msgstr ""
 #: ../src/Games/Logic/PuzzleSquareDots.cs:204
 msgid "Square with dots"
 msgstr "Quadrat amb punts"
-
-#: ../src/Games/Logic/PuzzleSquareDots.cs:209
-#, csharp-format
-msgid ""
-"What is the letter of the figure that represents the next logical figure in "
-"the sequence? Answer {0}, {1} or {2}."
-msgstr ""
-"Quina és la lletra de la figura que representa la següent figura lògica a la "
-"seqüència? Responeu {0}, {1} o {2}."
 
 #: ../src/Games/Logic/PuzzleSquaresAndLetters.cs:35
 msgid "Squares and letters"
