@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gbrainy master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gbrainy&component=general\n"
-"POT-Creation-Date: 2010-11-09 07:55+0000\n"
-"PO-Revision-Date: 2010-11-11 21:44+0100\n"
+"POT-Creation-Date: 2010-11-25 19:48+0000\n"
+"PO-Revision-Date: 2010-11-26 14:49+0100\n"
 "Last-Translator: Andrej Žnidaršič <andrej.znidarsic@gmail.com>\n"
 "Language-Team: Slovenian <gnome-si@googlegroups.com>\n"
 "Language: sl\n"
@@ -417,7 +417,7 @@ msgid "Play games that challenge your logic, verbal, calculation and memory abil
 msgstr "Igrajte igre ki izzivajo vaše besedne sposobnosti, sposobnosti miselnega računanja, logike in pomnjenja"
 
 #: ../data/gbrainy.desktop.in.h:3
-#: ../src/Clients/Classical/gbrainy.ui.h:23
+#: ../src/Clients/Classical/gbrainy.ui.h:24
 msgid "gbrainy"
 msgstr "gbrainy"
 
@@ -1499,25 +1499,28 @@ msgstr "Skupaj"
 
 #: ../src/Core/Views/FinishView.cs:104
 #: ../src/Core/Main/GameTypes.cs:44
-#: ../src/Clients/Classical/gbrainy.cs:366
+#: ../src/Clients/Classical/gbrainy.cs:368
+#: ../src/Clients/Classical/Dialogs/ui/PdfExportDialog.ui.h:8
 msgid "Logic"
 msgstr "Logika"
 
 #: ../src/Core/Views/FinishView.cs:111
 #: ../src/Core/Main/GameTypes.cs:48
-#: ../src/Clients/Classical/gbrainy.cs:371
+#: ../src/Clients/Classical/gbrainy.cs:373
+#: ../src/Clients/Classical/Dialogs/ui/PdfExportDialog.ui.h:6
 msgid "Calculation"
 msgstr "Računanje"
 
 #: ../src/Core/Views/FinishView.cs:118
 #: ../src/Core/Main/GameTypes.cs:46
-#: ../src/Clients/Classical/gbrainy.cs:377
+#: ../src/Clients/Classical/gbrainy.cs:379
 msgid "Memory"
 msgstr "Pomnjenje"
 
 #: ../src/Core/Views/FinishView.cs:125
 #: ../src/Core/Main/GameTypes.cs:50
-#: ../src/Clients/Classical/gbrainy.cs:383
+#: ../src/Clients/Classical/gbrainy.cs:385
+#: ../src/Clients/Classical/Dialogs/ui/PdfExportDialog.ui.h:16
 msgid "Verbal"
 msgstr "Besede"
 
@@ -1703,12 +1706,12 @@ msgstr "H"
 msgid "Figure {0}"
 msgstr "Slika {0}"
 
-#: ../src/Core/Main/GameManager.cs:319
+#: ../src/Core/Main/GameManager.cs:313
 msgid "Extensions database:"
 msgstr "Podatkovna zbirka razširitev:"
 
 #. Translators: 'Games registered' is the games know to gbrainy (build-in and load from addins-in and external files)
-#: ../src/Core/Main/GameManager.cs:325
+#: ../src/Core/Main/GameManager.cs:319
 #, csharp-format
 msgid "Games registered: {0}: {1} logic puzzles, {2} calculation trainers, {3} memory trainers, {4} verbal analogies"
 msgstr "Vpisane igre: {0}: {1} logičnih iger, {2} računskih nalog, {3} urjenj pomnjenja, {4} besednih analogij"
@@ -1830,6 +1833,18 @@ msgstr "Zapomnite si spodnje predmete v danemu času"
 msgid "Time left"
 msgstr "Preostali čas"
 
+#. Translators: {0} is the game number and {1} the game question or answer
+#. The number is used as reference when looking for the game solution in the PDF
+#: ../src/Core/Main/PdfExporter.cs:70
+#: ../src/Core/Main/PdfExporter.cs:122
+#, csharp-format
+msgid "Game {0}. {1}"
+msgstr "Igra {0}. {1}"
+
+#: ../src/Core/Main/PdfExporter.cs:114
+msgid "Solutions"
+msgstr "Rešitve"
+
 #: ../src/Core/Main/Verbal/Analogies.cs:56
 #, csharp-format
 msgid "Possible correct answers are: {0}."
@@ -1863,7 +1878,7 @@ msgstr "{0} Odgovorite z izbiro črke {1}."
 #: ../src/Games/Logic/PuzzleOstracism.cs:159
 #: ../src/Games/Logic/PuzzlePredicateLogic.cs:177
 #: ../src/Games/Calculation/CalculationCloserFraction.cs:161
-#: ../src/Games/Calculation/CalculationGreatestDivisor.cs:143
+#: ../src/Games/Calculation/CalculationGreatestDivisor.cs:149
 #, csharp-format
 msgid "{0}) {1}"
 msgstr "{0}) {1}"
@@ -1895,85 +1910,85 @@ msgstr "Besedni par št.{0}"
 msgid "Question and answer #{0}"
 msgstr "Vprašanje in odgovor št.{0}"
 
-#: ../src/Core/Main/Xml/GameXml.cs:221
+#: ../src/Core/Main/Xml/GameXml.cs:219
 #, csharp-format
 msgid "{0}, "
 msgstr "{0}, "
 
-#: ../src/Core/Main/Xml/GameXml.cs:223
+#: ../src/Core/Main/Xml/GameXml.cs:221
 #, csharp-format
 msgid "{0}."
 msgstr "{0}."
 
 #. Translators {0}: list of options (A, B, C)
-#: ../src/Core/Main/Xml/GameXml.cs:226
+#: ../src/Core/Main/Xml/GameXml.cs:224
 #, csharp-format
 msgid "Answer {0}"
 msgstr "Odgovor {0}"
 
-#: ../src/Core/Main/Xml/GameXml.cs:472
+#: ../src/Core/Main/Xml/GameXml.cs:467
 #, csharp-format
 msgid "{0}) "
 msgstr "{0}) "
 
-#: ../src/Clients/Classical/gbrainy.cs:359
+#: ../src/Clients/Classical/gbrainy.cs:361
 msgid "Play all the games"
 msgstr "Igranje vseh iger"
 
-#: ../src/Clients/Classical/gbrainy.cs:360
+#: ../src/Clients/Classical/gbrainy.cs:362
 msgid "All"
 msgstr "Vse"
 
-#: ../src/Clients/Classical/gbrainy.cs:365
+#: ../src/Clients/Classical/gbrainy.cs:367
 msgid "Play games that challenge your reasoning and thinking"
 msgstr "Igrajte igre, ki so izziv vašemu sklepanju in razmišljanju."
 
-#: ../src/Clients/Classical/gbrainy.cs:372
+#: ../src/Clients/Classical/gbrainy.cs:374
 msgid "Play games that challenge your mental calculation skills"
 msgstr "Igrajte igre, ki so izziv vašim sposobnostim računanja."
 
-#: ../src/Clients/Classical/gbrainy.cs:378
+#: ../src/Clients/Classical/gbrainy.cs:380
 msgid "Play games that challenge your short term memory"
 msgstr "Igrajte igre, ki so izziv vašemu kratkoročnemu spominu."
 
-#: ../src/Clients/Classical/gbrainy.cs:384
+#: ../src/Clients/Classical/gbrainy.cs:386
 msgid "Play games that challenge your verbal aptitude"
 msgstr "Igrajte igre, ki so izziv vašim besednim sposobnostim."
 
-#: ../src/Clients/Classical/gbrainy.cs:389
-#: ../src/Clients/Classical/gbrainy.cs:623
+#: ../src/Clients/Classical/gbrainy.cs:391
+#: ../src/Clients/Classical/gbrainy.cs:634
 msgid "Pause"
 msgstr "Premor"
 
-#: ../src/Clients/Classical/gbrainy.cs:390
+#: ../src/Clients/Classical/gbrainy.cs:392
 msgid "Pause or resume the game"
 msgstr "Premor ali nadaljevanje igre"
 
-#: ../src/Clients/Classical/gbrainy.cs:395
+#: ../src/Clients/Classical/gbrainy.cs:397
 msgid "End the game and show score"
 msgstr "Končaj igro in pokaži rezultat"
 
-#: ../src/Clients/Classical/gbrainy.cs:396
+#: ../src/Clients/Classical/gbrainy.cs:398
 msgid "Finish"
 msgstr "Končaj"
 
-#: ../src/Clients/Classical/gbrainy.cs:486
+#: ../src/Clients/Classical/gbrainy.cs:488
 msgid "Congratulations."
 msgstr "Čestitke."
 
-#: ../src/Clients/Classical/gbrainy.cs:488
+#: ../src/Clients/Classical/gbrainy.cs:490
 msgid "Incorrect answer."
 msgstr "Napačen odgovor."
 
-#: ../src/Clients/Classical/gbrainy.cs:546
+#: ../src/Clients/Classical/gbrainy.cs:548
 msgid "Once you have an answer type it in the \"Answer:\" entry box and press the \"OK\" button."
 msgstr "Ko ste prepričani v odgovor, ga vnesite v vnosno polje \"Odgovor:\" in pritisnite gumb \"V redu\"."
 
-#: ../src/Clients/Classical/gbrainy.cs:627
+#: ../src/Clients/Classical/gbrainy.cs:638
 msgid "Resume"
 msgstr "Nadaljuj"
 
-#: ../src/Clients/Classical/gbrainy.cs:742
+#: ../src/Clients/Classical/gbrainy.cs:753
 #, csharp-format
 msgid "Startup time {0}"
 msgstr "Čas zaganjanja {0}"
@@ -2062,18 +2077,26 @@ msgid "gbrainy web site"
 msgstr "Spletišče gbrainy"
 
 #. Column: Game Name
-#: ../src/Clients/Classical/Dialogs/CustomGameDialog.cs:67
+#: ../src/Clients/Classical/Dialogs/CustomGameDialog.cs:68
 msgid "Game Name"
 msgstr "Ime igre"
 
 #. Column: Type
-#: ../src/Clients/Classical/Dialogs/CustomGameDialog.cs:89
+#: ../src/Clients/Classical/Dialogs/CustomGameDialog.cs:90
 msgid "Type"
 msgstr "Vrsta"
 
-#: ../src/Clients/Classical/Dialogs/CustomGameDialog.cs:111
+#: ../src/Clients/Classical/Dialogs/CustomGameDialog.cs:112
 msgid "Enabled"
 msgstr "Omogočeno"
+
+#: ../src/Clients/Classical/Dialogs/PdfExportDialog.cs:75
+msgid "PDF files"
+msgstr "Datoteke PDF"
+
+#: ../src/Clients/Classical/Dialogs/PdfExportDialog.cs:79
+msgid "All files"
+msgstr "Vse datoteke"
 
 #: ../src/Clients/Classical/Dialogs/PlayerHistoryDialog.cs:45
 msgid "The graph below shows the player's game score evolution."
@@ -2121,22 +2144,76 @@ msgstr "Odstrani izbor vsega"
 msgid "_Start"
 msgstr "_Začni"
 
+#: ../src/Clients/Classical/Dialogs/ui/PdfExportDialog.ui.h:1
+#: ../src/Clients/Classical/Dialogs/ui/PreferencesDialog.ui.h:1
+msgid "<b>Difficulty Level</b>"
+msgstr "<b>Zahtevnost</b>"
+
+#: ../src/Clients/Classical/Dialogs/ui/PdfExportDialog.ui.h:2
+msgid "<b>Game Types</b>"
+msgstr "<b>Vrste iger</b>"
+
+#: ../src/Clients/Classical/Dialogs/ui/PdfExportDialog.ui.h:3
+#: ../src/Clients/Classical/Dialogs/ui/PreferencesDialog.ui.h:2
+msgid "<b>General Settings</b>"
+msgstr "<b>Splošne nastavitve</b>"
+
+#: ../src/Clients/Classical/Dialogs/ui/PdfExportDialog.ui.h:4
+msgid "<b>Number of games</b>"
+msgstr "<b>Število iger</b>"
+
+#: ../src/Clients/Classical/Dialogs/ui/PdfExportDialog.ui.h:5
+msgid "<b>Output File</b>"
+msgstr "<b>Izhodna datoteka</b>"
+
+#: ../src/Clients/Classical/Dialogs/ui/PdfExportDialog.ui.h:7
+#: ../src/Clients/Classical/Dialogs/ui/PreferencesDialog.ui.h:6
+msgid "Easy"
+msgstr "Enostavno"
+
+#: ../src/Clients/Classical/Dialogs/ui/PdfExportDialog.ui.h:9
+#: ../src/Clients/Classical/Dialogs/ui/PreferencesDialog.ui.h:7
+msgid "Master"
+msgstr "Mojster"
+
+#: ../src/Clients/Classical/Dialogs/ui/PdfExportDialog.ui.h:10
+#: ../src/Clients/Classical/Dialogs/ui/PreferencesDialog.ui.h:9
+msgid "Medium"
+msgstr "Srednje"
+
+#: ../src/Clients/Classical/Dialogs/ui/PdfExportDialog.ui.h:11
+msgid "Number of games per page:"
+msgstr "Število iger na stran:"
+
+#: ../src/Clients/Classical/Dialogs/ui/PdfExportDialog.ui.h:12
+msgid "PDF export"
+msgstr "Izvoz v PDF"
+
+#: ../src/Clients/Classical/Dialogs/ui/PdfExportDialog.ui.h:13
+#: ../src/Clients/Classical/Dialogs/ui/PreferencesDialog.ui.h:13
+msgid "Skip games that use colors (friendly to colorblind users)"
+msgstr "Preskoči igre, ki uporabljajo barve (prijazno do barvno slepih uporabnikov)"
+
+#: ../src/Clients/Classical/Dialogs/ui/PdfExportDialog.ui.h:14
+msgid "This option allows to export a set of games in a PDF file. You can complete the puzzles without a computer."
+msgstr "Ta možnost vam omogoča izvoz niza iger v datoteko PDF. Uganke lahko dopolnite brez računalnika."
+
+#: ../src/Clients/Classical/Dialogs/ui/PdfExportDialog.ui.h:15
+msgid "Total number of games:"
+msgstr "Celotno število iger:"
+
+#: ../src/Clients/Classical/Dialogs/ui/PdfExportDialog.ui.h:17
+msgid "_Save"
+msgstr "_Shrani"
+
 #: ../src/Clients/Classical/Dialogs/ui/PlayerHistoryDialog.ui.h:1
-#: ../src/Clients/Classical/gbrainy.ui.h:9
+#: ../src/Clients/Classical/gbrainy.ui.h:10
 msgid "Player's Game Session History"
 msgstr "Igralčeva zgodovina iger"
 
 #: ../src/Clients/Classical/Dialogs/ui/PlayerHistoryDialog.ui.h:2
 msgid "Show:"
 msgstr "Pokaži:"
-
-#: ../src/Clients/Classical/Dialogs/ui/PreferencesDialog.ui.h:1
-msgid "<b>Difficulty Level</b>"
-msgstr "<b>Zahtevnost</b>"
-
-#: ../src/Clients/Classical/Dialogs/ui/PreferencesDialog.ui.h:2
-msgid "<b>General Settings</b>"
-msgstr "<b>Splošne nastavitve</b>"
 
 #: ../src/Clients/Classical/Dialogs/ui/PreferencesDialog.ui.h:3
 msgid "<b>Memory Games</b>"
@@ -2150,28 +2227,16 @@ msgstr "<b>Igralčeva zgodovina iger</b>"
 msgid "Delete Player's Game Session History"
 msgstr "Počisti igralčevo zgodovino iger"
 
-#: ../src/Clients/Classical/Dialogs/ui/PreferencesDialog.ui.h:6
-msgid "Easy"
-msgstr "Enostavno"
-
-#: ../src/Clients/Classical/Dialogs/ui/PreferencesDialog.ui.h:7
-msgid "Master"
-msgstr "Mojster"
-
 #: ../src/Clients/Classical/Dialogs/ui/PreferencesDialog.ui.h:8
 msgid "Maximum number of records in the player's game session history:"
 msgstr "Največje število shranjenih iger v igralčevi zgodovini iger:"
-
-#: ../src/Clients/Classical/Dialogs/ui/PreferencesDialog.ui.h:9
-msgid "Medium"
-msgstr "Srednje"
 
 #: ../src/Clients/Classical/Dialogs/ui/PreferencesDialog.ui.h:10
 msgid "Minimum number of played games to store the game session:"
 msgstr "Najmanjše število igranih iger za shranjevanje seje iger:"
 
 #: ../src/Clients/Classical/Dialogs/ui/PreferencesDialog.ui.h:11
-#: ../src/Clients/Classical/gbrainy.ui.h:10
+#: ../src/Clients/Classical/gbrainy.ui.h:11
 msgid "Preferences"
 msgstr "Možnosti"
 
@@ -2179,13 +2244,18 @@ msgstr "Možnosti"
 msgid "Show countdown message"
 msgstr "Prikaži sporočilo odštevanja"
 
-#: ../src/Clients/Classical/Dialogs/ui/PreferencesDialog.ui.h:13
-msgid "Skip games that use colors (friendly to colorblind users)"
-msgstr "Preskoči igre, ki uporabljajo barve (prijazno do barvno slepih uporabnikov)"
-
 #: ../src/Clients/Classical/Dialogs/ui/PreferencesDialog.ui.h:14
 msgid "Time in seconds to memorize the challenge:"
 msgstr "Čas za pomnjenje izziva v sekundah:"
+
+#: ../src/Clients/Classical/Widgets/BrowseFile.cs:43
+#: ../src/Clients/Classical/mono-addins-strings.xml.h:10
+msgid "Browse..."
+msgstr "Prebrskaj ..."
+
+#: ../src/Clients/Classical/Widgets/BrowseFile.cs:84
+msgid "Open Location"
+msgstr "Odpri mesto"
 
 #: ../src/Games/Logic/Puzzle3DCube.cs:32
 msgid "3D Cube"
@@ -3370,8 +3440,8 @@ msgid "What percentage of Shiny Cars use gasoline?"
 msgstr "Koliko odstotkov bleščečih avtomobilov uporablja bencin?"
 
 #: ../src/Games/Memory/MemoryFigures.cs:55
-msgid "Memory figures"
-msgstr "Pomnjenje slik"
+msgid "Memorize figures"
+msgstr "Zapomnite si slike"
 
 #: ../src/Games/Memory/MemoryFigures.cs:60
 msgid "In which cell is the other figure like the one shown below? Answer the cell number."
@@ -3672,12 +3742,12 @@ msgstr "Največji skupni delitelj"
 msgid "Which of the possible divisors is the greatest that divides all numbers?"
 msgstr "Kateri od mogočih deliteljev je največji, ki deli vsa števila?"
 
-#: ../src/Games/Calculation/CalculationGreatestDivisor.cs:234
+#: ../src/Games/Calculation/CalculationGreatestDivisor.cs:240
 #: ../src/Games/Calculation/CalculationPrimes.cs:233
 msgid "Numbers"
 msgstr "Števila"
 
-#: ../src/Games/Calculation/CalculationGreatestDivisor.cs:248
+#: ../src/Games/Calculation/CalculationGreatestDivisor.cs:254
 msgid "Possible divisors"
 msgstr "Mogoči delitelji"
 
@@ -3789,70 +3859,74 @@ msgid "Custom Game Selection..."
 msgstr "Izbira igre po meri ..."
 
 #: ../src/Clients/Classical/gbrainy.ui.h:4
+msgid "Export Games to PDF for Off-line Playing..."
+msgstr "Izvozi igre v PDF za igranje brez računalnika ..."
+
+#: ../src/Clients/Classical/gbrainy.ui.h:5
 msgid "Extensions"
 msgstr "Razširitve"
 
-#: ../src/Clients/Classical/gbrainy.ui.h:5
+#: ../src/Clients/Classical/gbrainy.ui.h:6
 msgid "How to Extend gbrainy's Functionality"
 msgstr "Kako razširiti zmožnosti programa"
 
-#: ../src/Clients/Classical/gbrainy.ui.h:6
+#: ../src/Clients/Classical/gbrainy.ui.h:7
 msgid "Logic Puzzles Only"
 msgstr "Le logične naloge"
 
-#: ../src/Clients/Classical/gbrainy.ui.h:7
+#: ../src/Clients/Classical/gbrainy.ui.h:8
 msgid "Memory Trainers Only"
 msgstr "Le trening pomnjenja"
 
-#: ../src/Clients/Classical/gbrainy.ui.h:8
+#: ../src/Clients/Classical/gbrainy.ui.h:9
 msgid "Mental Calculation Trainers Only"
 msgstr "Le trening miselnega računanja"
 
-#: ../src/Clients/Classical/gbrainy.ui.h:11
+#: ../src/Clients/Classical/gbrainy.ui.h:12
 msgid "Toolbar"
 msgstr "Orodna vrstica"
 
-#: ../src/Clients/Classical/gbrainy.ui.h:12
+#: ../src/Clients/Classical/gbrainy.ui.h:13
 msgid "Verbal Analogies Only"
 msgstr "Le besedne analogije"
 
-#: ../src/Clients/Classical/gbrainy.ui.h:13
+#: ../src/Clients/Classical/gbrainy.ui.h:14
 msgid "_Contents"
 msgstr "_Vsebina"
 
-#: ../src/Clients/Classical/gbrainy.ui.h:14
+#: ../src/Clients/Classical/gbrainy.ui.h:15
 msgid "_End Game"
 msgstr "_Končaj igro"
 
-#: ../src/Clients/Classical/gbrainy.ui.h:15
+#: ../src/Clients/Classical/gbrainy.ui.h:16
 msgid "_Game"
 msgstr "_Igra"
 
-#: ../src/Clients/Classical/gbrainy.ui.h:16
+#: ../src/Clients/Classical/gbrainy.ui.h:17
 msgid "_Help"
 msgstr "Pomo_č"
 
-#: ../src/Clients/Classical/gbrainy.ui.h:17
+#: ../src/Clients/Classical/gbrainy.ui.h:18
 msgid "_New Game"
 msgstr "_Nova Igra"
 
-#: ../src/Clients/Classical/gbrainy.ui.h:18
+#: ../src/Clients/Classical/gbrainy.ui.h:19
 msgid "_Next"
 msgstr "_Naprej"
 
-#: ../src/Clients/Classical/gbrainy.ui.h:19
+#: ../src/Clients/Classical/gbrainy.ui.h:20
 msgid "_Pause Game"
 msgstr "_Premor igre"
 
-#: ../src/Clients/Classical/gbrainy.ui.h:20
+#: ../src/Clients/Classical/gbrainy.ui.h:21
 msgid "_Settings"
 msgstr "_Nastavitve"
 
-#: ../src/Clients/Classical/gbrainy.ui.h:21
+#: ../src/Clients/Classical/gbrainy.ui.h:22
 msgid "_Tip"
 msgstr "N_amig"
 
-#: ../src/Clients/Classical/gbrainy.ui.h:22
+#: ../src/Clients/Classical/gbrainy.ui.h:23
 msgid "_View"
 msgstr "_Pogled"
 
@@ -3891,10 +3965,6 @@ msgstr "Vsa vpisana odlagališča"
 #: ../src/Clients/Classical/mono-addins-strings.xml.h:9
 msgid "Author:"
 msgstr "Avtor:"
-
-#: ../src/Clients/Classical/mono-addins-strings.xml.h:10
-msgid "Browse..."
-msgstr "Prebrskaj ..."
 
 #: ../src/Clients/Classical/mono-addins-strings.xml.h:11
 msgid "Copyright:"
