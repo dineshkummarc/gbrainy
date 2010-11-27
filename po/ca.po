@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gbrainy\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-11-26 22:30+0100\n"
-"PO-Revision-Date: 2010-11-26 23:01+0100\n"
+"POT-Creation-Date: 2010-11-27 11:03+0100\n"
+"PO-Revision-Date: 2010-11-27 11:12+0100\n"
 "Last-Translator: Jordi Mas <jmas@softcatala.org>\n"
 "Language-Team: Catalan\n"
 "MIME-Version: 1.0\n"
@@ -2068,12 +2068,17 @@ msgstr "Temps restant"
 # csharp-format
 #. Translators: {0} is the game number and {1} the game question or answer
 #. The number is used as reference when looking for the game solution in the PDF
-#: ../src/Core/Main/PdfExporter.cs:70 ../src/Core/Main/PdfExporter.cs:122
+#: ../src/Core/Main/PdfExporter.cs:93 ../src/Core/Main/PdfExporter.cs:155
 #, csharp-format
 msgid "Game {0}. {1}"
-msgstr "Joc: {0}. {1}"
+msgstr "Joc {0}. {1}"
 
-#: ../src/Core/Main/PdfExporter.cs:114
+#: ../src/Core/Main/PdfExporter.cs:110
+#, csharp-format
+msgid "Created by gbrainy {0}"
+msgstr "Creat amb el gbrainy {0}"
+
+#: ../src/Core/Main/PdfExporter.cs:147
 msgid "Solutions"
 msgstr "Solucions"
 
@@ -2457,12 +2462,12 @@ msgid "Medium"
 msgstr "Mitjà"
 
 #: ../src/Clients/Classical/Dialogs/ui/PdfExportDialog.ui.h:11
-msgid "Number of games per page:"
-msgstr "Nombre de jocs per pàgina:"
-
-#: ../src/Clients/Classical/Dialogs/ui/PdfExportDialog.ui.h:12
 msgid "PDF export"
 msgstr "Exportació PDF"
+
+#: ../src/Clients/Classical/Dialogs/ui/PdfExportDialog.ui.h:12
+msgid "Pages per side:"
+msgstr "Pàgines per cara:"
 
 #: ../src/Clients/Classical/Dialogs/ui/PdfExportDialog.ui.h:13
 #: ../src/Clients/Classical/Dialogs/ui/PreferencesDialog.ui.h:13
@@ -3543,8 +3548,8 @@ msgid ""
 "If no old misers are cheerful and some old misers are thin, which of the "
 "following conclusions is correct? Answer {0}, {1}, {2} or {3}."
 msgstr ""
-"Si no hi ha cap avar vell que sigui alegre i alguns avars vells són prims, quina de "
-"les següents conclusions és correcta? Responeu {0}, {1}, {2} o {3}."
+"Si no hi ha cap avar vell que sigui alegre i alguns avars vells són prims, "
+"quina de les següents conclusions és correcta? Responeu {0}, {1}, {2} o {3}."
 
 #: ../src/Games/Logic/PuzzlePredicateLogic.cs:98
 msgid "Some thin people are not cheerful"
