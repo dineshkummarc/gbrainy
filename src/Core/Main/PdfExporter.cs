@@ -29,25 +29,48 @@ namespace gbrainy.Core.Main
 	static public class PdfExporter
 	{
 		static readonly int width = 400, height = 400, margin = 20, question_height = 100;
-		static readonly int columns = 2, rows = 2;
 		static readonly int page_margin = 20; // space between vertical and hortizontal pages
 		static readonly int page_width = width + page_margin;
 		static readonly int page_height = height + question_height + page_margin;
+		static int [] pages_side = {1, 2, 4};
+
+		static public int [] PagesPerSide
+		{
+			get { return pages_side; }
+		}
 
 		static public void GeneratePdf (Game [] games, int games_page, string file)
 		{
+			int columns, rows;
+			switch (games_page) {
+			case 1:
+				columns = 1;
+				rows = 1;
+				break;
+			case 2:
+				columns = 2;
+				rows = 1;
+				break;
+			case 4:
+				columns = 2;
+				rows = 2;
+				break;
+			default:
+				throw new InvalidOperationException ("Invalid games per page value");
+			}
+
 			PdfSurface pdf = new PdfSurface (file, page_width * columns, page_height * rows);
 			CairoContextEx cr = new CairoContextEx (pdf, "sans 12", 72);
 
-			GenerateQuestions (cr, games);
-			GenerateAnswers (cr, games);
+			GenerateQuestions (cr, games, columns, rows);
+			GenerateAnswers (cr, games, columns, rows);
 
 			pdf.Finish ();
 			((IDisposable)cr).Dispose();
 			return;
 		}
 
-		static void GenerateQuestions (CairoContextEx cr, Game [] games)
+		static void GenerateQuestions (CairoContextEx cr, Game [] games, int columns, int rows)
 		{
 			int x, y, page;
 			Game puzzle;
@@ -80,6 +103,15 @@ namespace gbrainy.Core.Main
 				// Translate adds always to previous matrix's transformation
 				cr.Translate (0, question_height);
 				puzzle.DrawPreview (cr, width, height, false);
+				if (i == 0) {
+					cr.Save ();
+					cr.SetPangoFontSize (0.02);
+					cr.MoveTo (0.05, 0.95);
+					cr.ShowPangoText (String.Format (Catalog.GetString ("Created by gbrainy {0}"), Defines.VERSION));
+					cr.Stroke ();
+					cr.Restore ();
+				}				
+
 				x += width + margin;
 				if (x > width + margin) {
 					x = 0;
@@ -98,12 +130,13 @@ namespace gbrainy.Core.Main
 				cr.ShowPage ();
 		}
 
-		static void GenerateAnswers (CairoContextEx cr, Game [] games)
+		static void GenerateAnswers (CairoContextEx cr, Game [] games, int columns, int rows)
 		{
 			int x, y, page;
 			Game puzzle;
 			string str;
 			int column, row;
+			const int space_lines = 80;
 
 			x = y = page = 0;
 			column = row = 0;
@@ -112,7 +145,7 @@ namespace gbrainy.Core.Main
 			cr.SetPangoFontSize (20);
 			cr.DrawStringWithWrapping (x + margin, y + margin,
 				Catalog.GetString ("Solutions"), width - margin);
-			y += 75;
+			y += space_lines;
 			cr.Stroke ();
 
 			cr.SetPangoFontSize (12);
@@ -125,10 +158,10 @@ namespace gbrainy.Core.Main
 				cr.DrawStringWithWrapping (x + margin, y + margin, str, width - margin);
 				cr.Stroke ();
 
-				y += 75;
+				y += space_lines;
 
 				// Next lateral page (right)
-				if (y >= page_height * (row + 1) && x + page_width < page_width * columns) {
+				if (y + space_lines >= page_height * (row + 1) && x + page_width < page_width * columns) {
 					column++;
 
 					x = column * page_width;
@@ -136,7 +169,7 @@ namespace gbrainy.Core.Main
 					page++;
 				} else {
 					// No more space (right), new row
-					if (y >= page_height * (row + 1) && x + page_width >= page_width * columns) {
+					if (y + space_lines >= page_height * (row + 1) && x + page_width >= page_width * columns) {
 						row++;
 						column = 0;
 

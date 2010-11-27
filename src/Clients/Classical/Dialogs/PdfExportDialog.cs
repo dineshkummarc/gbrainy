@@ -30,8 +30,7 @@ namespace gbrainy.Clients.Classical.Dialogs
 	public class PdfExportDialog : BuilderDialog
 	{
 		[GtkBeans.Builder.Object] Gtk.HBox hbox_file;
-		[GtkBeans.Builder.Object] Gtk.SpinButton games_spinbutton;	
-		[GtkBeans.Builder.Object] Gtk.SpinButton gamesperpage_spinbutton;
+		[GtkBeans.Builder.Object] Gtk.SpinButton games_spinbutton;
 		[GtkBeans.Builder.Object] Gtk.CheckButton colorblindcheckbutton;
 		[GtkBeans.Builder.Object] Gtk.RadioButton rb_easy;
 		[GtkBeans.Builder.Object] Gtk.RadioButton rb_medium;
@@ -39,18 +38,20 @@ namespace gbrainy.Clients.Classical.Dialogs
 		[GtkBeans.Builder.Object] Gtk.CheckButton checkbox_logic;
 		[GtkBeans.Builder.Object] Gtk.CheckButton checkbox_calculation;
 		[GtkBeans.Builder.Object] Gtk.CheckButton checkbox_verbal;
-	
+		[GtkBeans.Builder.Object] Gtk.ComboBox layout_combo;
+
 		BrowseFile file;
+		const int COLUMN_VALUE = 1;
+		const int DEF_SIDEVALUE = 4;
 
 		public PdfExportDialog () : base ("PdfExportDialog.ui", "pdfexportbox")
 		{
 			games_spinbutton.Value = 10;
-			gamesperpage_spinbutton.Value = 4;
 			checkbox_logic.Active = checkbox_calculation.Active = checkbox_verbal.Active = true;
 
 			// Use defaults from Preferences
 		 	switch ((GameDifficulty) Preferences.GetIntValue (Preferences.DifficultyKey)) {
-			case GameDifficulty.Easy:	
+			case GameDifficulty.Easy:
 				rb_easy.Active = rb_easy.HasFocus = true;
 				break;
 			case GameDifficulty.Medium:
@@ -62,7 +63,6 @@ namespace gbrainy.Clients.Classical.Dialogs
 			}
 			// File selection
 			string def_file;
-
 			def_file = System.IO.Path.Combine (
 				Environment.GetFolderPath (Environment.SpecialFolder.MyDocuments),
 				"games.pdf");
@@ -79,6 +79,29 @@ namespace gbrainy.Clients.Classical.Dialogs
 			filters[1].Name = Catalog.GetString ("All files");
 
 			file.Filters = filters;
+
+			ListStore layout_store = new ListStore (typeof (string), typeof (int)); // DisplayName, index to array
+			CellRenderer layout_cell = new CellRendererText ();
+			layout_combo.Model = layout_store;
+			layout_combo.PackStart (layout_cell, true);
+			layout_combo.SetCellDataFunc (layout_cell, ComboBoxCellFunc);
+
+			int [] per_side = PdfExporter.PagesPerSide;
+
+			for (int i = 0; i < per_side.Length; i++)
+				layout_store.AppendValues (per_side[i].ToString (), per_side[i]);
+
+			// Default value
+			TreeIter iter;
+			bool more = layout_store.GetIterFirst (out iter);
+			while (more)
+			{
+				if ((int) layout_store.GetValue (iter, COLUMN_VALUE) == DEF_SIDEVALUE) {
+					layout_combo.SetActiveIter (iter);
+					break;
+				}
+				more = layout_store.IterNext (ref iter);
+			}
 		}
 
 		GameDifficulty Difficulty {
@@ -104,11 +127,17 @@ namespace gbrainy.Clients.Classical.Dialogs
 				types |= GameSession.Types.CalculationTrainers;
 
 			if (checkbox_verbal.Active)
-				types |= GameSession.Types.VerbalAnalogies; 
-			
+				types |= GameSession.Types.VerbalAnalogies;
+
+
+			TreeIter iter;
+
+			layout_combo.GetActiveIter (out iter);
+			int sides = (int) layout_combo.Model.GetValue (iter, COLUMN_VALUE);
+
 			GeneratePdf (types,
 				(int) games_spinbutton.Value,
-				(int) gamesperpage_spinbutton.Value, 
+				sides,
 				Difficulty,
 				colorblindcheckbutton.Active,
 				file.Filename);
@@ -118,20 +147,26 @@ namespace gbrainy.Clients.Classical.Dialogs
 		{
 			Game [] games;
 			GameManager gm;
-			
+
 			games = new Game [num_games];
 			gm = new GameManager ();
 			gm.ColorBlind = colorblind;
 			gm.Difficulty = difficulty;
 			GtkClient.GameManagerPreload (gm);
 			gm.GameType = types;
-		
+
 			for (int n = 0; n < num_games; n++)
 			{
-				 games [n] = gm.GetPuzzle (); 
+				 games [n] = gm.GetPuzzle ();
 			}
-			
+
 			PdfExporter.GeneratePdf (games, gamespage, filename);
+		}
+
+		static public void ComboBoxCellFunc (CellLayout cell_layout, CellRenderer cell, TreeModel tree_model, TreeIter iter)
+		{
+			string name = (string)tree_model.GetValue (iter, 0);
+			(cell as CellRendererText).Text = name;
 		}
 	}
 }
