@@ -53,8 +53,8 @@ namespace gbrainy.Core.Main.Xml
 
 			try
 			{
-				StreamReader myStream = new StreamReader (file);
-				XmlTextReaderLiteral reader = new XmlTextReaderLiteral (myStream);
+				StreamReader stream = new StreamReader (file);
+				XmlTextReaderLiteral reader = new XmlTextReaderLiteral (stream);
 				game = null;
 
 				while (reader.Read ())
@@ -404,7 +404,7 @@ namespace gbrainy.Core.Main.Xml
 				}
 
 				reader.Close ();
-				myStream.Dispose ();
+				stream.Dispose ();
 				read = true;
 
 				GameXml.Definitions = games;

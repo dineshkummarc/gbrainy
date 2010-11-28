@@ -54,8 +54,8 @@ namespace gbrainy.Core.Main.Verbal
 
 			try
 			{
-				StreamReader myStream = new StreamReader (file);
-				XmlTextReader reader = new XmlTextReader (myStream);
+				StreamReader stream = new StreamReader (file);
+				XmlTextReader reader = new XmlTextReader (stream);
 				answers = new List <string> ();
 
 				for (int i = 0; i < (int) Analogy.Type.Last; i++)
@@ -135,6 +135,7 @@ namespace gbrainy.Core.Main.Verbal
 				}
 
 				reader.Close ();
+				stream.Dispose ();
 			}
 
 			catch (Exception e)
