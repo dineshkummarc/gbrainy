@@ -77,7 +77,7 @@ namespace gbrainy.Games
 			typeof (PuzzleRelatedNumbers),
 		};
 
-		static Type[] CalculationTrainersInternal = new Type[] 
+		static Type[] CalculationInternal = new Type[] 
 		{
 			typeof (CalculationArithmetical),
 			typeof (CalculationGreatestDivisor),
@@ -91,7 +91,7 @@ namespace gbrainy.Games
 			typeof (CalculationRatio),
 		};
 
-		static Type[] MemoryTrainersInternal = new Type[] 
+		static Type[] MemoryInternal = new Type[] 
 		{
 			typeof (MemoryColouredFigures),
 			typeof (MemoryFiguresNumbers),
@@ -112,17 +112,17 @@ namespace gbrainy.Games
 			}
 		}
 
-		public static Type [] CalculationTrainers
+		public static Type [] Calculation
 		{
 			get {
-				return CalculationTrainersInternal;
+				return CalculationInternal;
 			}
 		}
 
-		public static Type [] MemoryTrainers
+		public static Type [] Memory
 		{
 			get {
-				return MemoryTrainersInternal;
+				return MemoryInternal;
 			}
 		}
 	}

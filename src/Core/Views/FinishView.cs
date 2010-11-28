@@ -215,13 +215,13 @@ namespace gbrainy.Core.Views
 							records[i].NewScore,
 							records[i].PreviousScore);
 						break;
-					case GameTypes.MathTrainer:
+					case GameTypes.Calculation:
 						s = String.Format (Catalog.
 							GetString ("By scoring {0} in calculation games you have established a new personal record. Your previous record was {1}."),
 							records[i].NewScore,
 							records[i].PreviousScore);
 						break;
-					case GameTypes.MemoryTrainer:
+					case GameTypes.Memory:
 						s = String.Format (Catalog.
 							GetString ("By scoring {0} in memory games you have established a new personal record. Your previous record was {1}."),
 							records[i].NewScore,

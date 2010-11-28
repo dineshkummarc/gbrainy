@@ -124,7 +124,7 @@ namespace gbrainy.Clients.Classical.Dialogs
 				types |= GameSession.Types.LogicPuzzles;
 
 			if (checkbox_calculation.Active)
-				types |= GameSession.Types.CalculationTrainers;
+				types |= GameSession.Types.Calculation;
 
 			if (checkbox_verbal.Active)
 				types |= GameSession.Types.VerbalAnalogies;

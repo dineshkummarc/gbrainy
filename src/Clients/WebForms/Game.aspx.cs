@@ -43,7 +43,7 @@ namespace WebForms
 
 			manager.Difficulty = gbrainy.Core.Main.GameDifficulty.Medium;
 			manager.GameType = gbrainy.Core.Main.GameSession.Types.LogicPuzzles |
-				 gbrainy.Core.Main.GameSession.Types.CalculationTrainers |
+				 gbrainy.Core.Main.GameSession.Types.Calculation |
 				gbrainy.Core.Main.GameSession.Types.VerbalAnalogies;
 			return manager;
 		}

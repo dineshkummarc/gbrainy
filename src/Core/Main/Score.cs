@@ -48,9 +48,9 @@ namespace gbrainy.Core.Main
 			}
 
 			switch (type) {
-			case GameTypes.MemoryTrainer:
+			case GameTypes.Memory:
 				return (int) (30 * factor);
-			case GameTypes.MathTrainer:
+			case GameTypes.Calculation:
 				return (int) (60 * factor);
 			case GameTypes.VerbalAnalogy:
 				return (int) (30 * factor);
@@ -122,13 +122,13 @@ namespace gbrainy.Core.Main
 				if (won) history.LogicWon++;
 				history.LogicScore = SessionScoreFormula (ref history, type, difficulty);
 				break;
-			case GameTypes.MemoryTrainer:
+			case GameTypes.Memory:
 				history.MemoryRawScore += game_score;
 				history.MemoryPlayed++;
 				if (won) history.MemoryWon++;
 				history.MemoryScore = SessionScoreFormula (ref history, type, difficulty);
 				break;
-			case GameTypes.MathTrainer:
+			case GameTypes.Calculation:
 				history.MathRawScore += game_score;
 				history.MathPlayed++;
 				if (won) history.MathWon++;
@@ -198,12 +198,12 @@ namespace gbrainy.Core.Main
 				played = history.LogicPlayed;
 				won = history.LogicWon;
 				break;
-			case GameTypes.MemoryTrainer:
+			case GameTypes.Memory:
 				scored = history.MemoryRawScore;
 				played = history.MemoryPlayed;
 				won = history.MemoryWon;
 				break;
-			case GameTypes.MathTrainer:
+			case GameTypes.Calculation:
 				scored = history.MathRawScore;
 				played = history.MathPlayed;
 				won = history.MathWon;

@@ -65,8 +65,8 @@ namespace gbrainy.Clients.Classical.Dialogs
 
 	 		checkbutton_total.Label = Catalog.GetString ("Total");
 	 		checkbutton_logic.Label = GameTypesDescription.GetLocalized (GameTypes.LogicPuzzle);
-	 		checkbutton_calculation.Label = GameTypesDescription.GetLocalized (GameTypes.MathTrainer);
-	 		checkbutton_memory.Label = GameTypesDescription.GetLocalized (GameTypes.MemoryTrainer);
+	 		checkbutton_calculation.Label = GameTypesDescription.GetLocalized (GameTypes.Calculation);
+	 		checkbutton_memory.Label = GameTypesDescription.GetLocalized (GameTypes.Memory);
 	 		checkbutton_verbal.Label = GameTypesDescription.GetLocalized (GameTypes.VerbalAnalogy);
 
 	 		checkbutton_total.Active = checkbutton_memory.Active = checkbutton_logic.Active = checkbutton_calculation.Active = checkbutton_verbal.Active = true;

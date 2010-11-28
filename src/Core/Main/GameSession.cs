@@ -33,11 +33,11 @@ namespace gbrainy.Core.Main
 		{	
 			None			= 0,
 			LogicPuzzles		= 2,
-			MemoryTrainers		= 4,
-			CalculationTrainers	= 8,
+			Memory			= 4,
+			Calculation		= 8,
 			VerbalAnalogies		= 16,
 			Custom			= 32,
-			AllGames		= MemoryTrainers | CalculationTrainers | LogicPuzzles | VerbalAnalogies
+			AllGames		= Memory | Calculation | LogicPuzzles | VerbalAnalogies
 		}
 
 		public enum SessionStatus

@@ -27,8 +27,8 @@ namespace gbrainy.Core.Main
 	{	
 		None			= 0,
 		LogicPuzzle		= 2,
-		MemoryTrainer		= 4,
-		MathTrainer		= 8,
+		Memory			= 4,
+		Calculation		= 8,
 		VerbalAnalogy		= 16,
 	}
 
@@ -42,9 +42,9 @@ namespace gbrainy.Core.Main
 			{
 				case GameTypes.LogicPuzzle:
 					return Catalog.GetString ("Logic");
-				case GameTypes.MemoryTrainer:
+				case GameTypes.Memory:
 					return Catalog.GetString ("Memory");
-				case GameTypes.MathTrainer:
+				case GameTypes.Calculation:
 					return Catalog.GetString ("Calculation");
 				case GameTypes.VerbalAnalogy:
 					return Catalog.GetString ("Verbal");
@@ -61,9 +61,9 @@ namespace gbrainy.Core.Main
 				case "Logic":
 					return GameTypes.LogicPuzzle;
 				case "Memory":
-					return GameTypes.MemoryTrainer;
+					return GameTypes.Memory;
 				case "Calculation":
-					return GameTypes.MathTrainer;
+					return GameTypes.Calculation;
 				case "Verbal":
 					return GameTypes.VerbalAnalogy;
 				default:

@@ -38,7 +38,7 @@ namespace gbrainy.Games.Calculation
 		}
 
 		public override GameTypes Type {
-			get { return GameTypes.MathTrainer;}
+			get { return GameTypes.Calculation;}
 		}
 
 		public override string Question {

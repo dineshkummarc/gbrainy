@@ -35,7 +35,7 @@ public class CalculationSample : Game
 	}
 
 	public override GameTypes Type {
-		get { return GameTypes.MathTrainer;}
+		get { return GameTypes.Calculation;}
 	}
 
 	public override string Question {

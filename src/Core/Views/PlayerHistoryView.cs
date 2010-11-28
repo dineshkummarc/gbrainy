@@ -99,7 +99,7 @@ namespace gbrainy.Core.Views
 			cr.Stroke ();
 			cr.Color = text_color;
 			cr.MoveTo (x + line_size + offset_x, y - 0.01);
-			cr.ShowPangoText (GameTypesDescription.GetLocalized (GameTypes.MemoryTrainer));
+			cr.ShowPangoText (GameTypesDescription.GetLocalized (GameTypes.Memory));
 			cr.Stroke ();
 
 			cr.Color = math_color;
@@ -108,7 +108,7 @@ namespace gbrainy.Core.Views
 			cr.Stroke ();
 			cr.Color = text_color;
 			cr.MoveTo (x + line_size + offset_x, y - 0.01 + second_row);
-			cr.ShowPangoText (GameTypesDescription.GetLocalized (GameTypes.MathTrainer));
+			cr.ShowPangoText (GameTypesDescription.GetLocalized (GameTypes.Calculation));
 			cr.Stroke ();
 
 			x += space_hor;

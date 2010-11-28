@@ -69,10 +69,10 @@ namespace gbrainy.Core.Main
 				records.Add (new PlayerPersonalRecord (GameTypes.LogicPuzzle, higher.LogicScore, games[last_game].LogicScore));
 
 			if (games[last_game].MathScore > higher.MathScore)
-				records.Add (new PlayerPersonalRecord (GameTypes.MathTrainer, higher.MathScore, games[last_game].MathScore));
+				records.Add (new PlayerPersonalRecord (GameTypes.Calculation, higher.MathScore, games[last_game].MathScore));
 
 			if (games[last_game].MemoryScore > higher.MemoryScore)
-				records.Add (new PlayerPersonalRecord (GameTypes.MemoryTrainer, higher.MemoryScore, games[last_game].MemoryScore));
+				records.Add (new PlayerPersonalRecord (GameTypes.Memory, higher.MemoryScore, games[last_game].MemoryScore));
 
 			if (games[last_game].VerbalScore > higher.VerbalScore)
 				records.Add (new PlayerPersonalRecord (GameTypes.VerbalAnalogy, higher.VerbalScore, games[last_game].VerbalScore));

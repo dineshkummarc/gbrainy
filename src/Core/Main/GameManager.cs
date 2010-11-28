@@ -87,10 +87,10 @@ namespace gbrainy.Core.Main
 					types |= GameTypes.LogicPuzzle;
 
 				if (cnt_calculation > 0)
-					types |= GameTypes.MathTrainer;
+					types |= GameTypes.Calculation;
 
 				if (cnt_memory > 0)
-					types |= GameTypes.MemoryTrainer;
+					types |= GameTypes.Memory;
 
 				if (cnt_verbal > 0)
 					types |= GameTypes.VerbalAnalogy;
@@ -157,8 +157,8 @@ namespace gbrainy.Core.Main
 		{
 			const string CLASS = "gbrainy.Games.GameList";
 			const string LOGIC_METHOD = "LogicPuzzles";
-			const string CALCULATION_METHOD = "CalculationTrainers";
-			const string MEMORY_METHOD = "MemoryTrainers";
+			const string CALCULATION_METHOD = "Calculation";
+			const string MEMORY_METHOD = "Memory";
 
 			Assembly asem;
 			Type type = null;
@@ -225,7 +225,7 @@ namespace gbrainy.Core.Main
 				case GameTypes.LogicPuzzle:
 					cnt_logic++;
 					break;
-				case GameTypes.MathTrainer:
+				case GameTypes.Calculation:
 					cnt_calculation++;
 					break;
 				default:
@@ -385,8 +385,8 @@ namespace gbrainy.Core.Main
 			else
 			{
 				logic = (game_type & GameSession.Types.LogicPuzzles) == GameSession.Types.LogicPuzzles;
-				calculation = (game_type & GameSession.Types.CalculationTrainers) == GameSession.Types.CalculationTrainers;
-				memory = (game_type & GameSession.Types.MemoryTrainers) == GameSession.Types.MemoryTrainers;
+				calculation = (game_type & GameSession.Types.Calculation) == GameSession.Types.Calculation;
+				memory = (game_type & GameSession.Types.Memory) == GameSession.Types.Memory;
 				verbal = (game_type & GameSession.Types.VerbalAnalogies) == GameSession.Types.VerbalAnalogies;
 			}
 
@@ -398,11 +398,11 @@ namespace gbrainy.Core.Main
 					if (logic)
 						logic_indices.Add (indices [n]);
 					break;
-				case GameTypes.MemoryTrainer:
+				case GameTypes.Memory:
 					if (memory)
 						memory_indices.Add (indices [n]);
 					break;
-				case GameTypes.MathTrainer:
+				case GameTypes.Calculation:
 					if (calculation)
 						calculation_indices.Add (indices [n]);
 					break;

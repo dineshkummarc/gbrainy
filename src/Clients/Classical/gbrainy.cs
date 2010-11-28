@@ -417,12 +417,12 @@ namespace gbrainy.Clients.Classical
 			else
 				logic_menuitem.Sensitive = logic_tbbutton.Sensitive = false;
 
-			if (playing == false && ((available & GameTypes.MemoryTrainer) == GameTypes.MemoryTrainer))
+			if (playing == false && ((available & GameTypes.Calculation) == GameTypes.Calculation))
 				memory_menuitem.Sensitive = memory_tbbutton.Sensitive = true;
 			else
 				memory_menuitem.Sensitive = memory_tbbutton.Sensitive = false;
 
-			if (playing == false && ((available & GameTypes.MathTrainer) == GameTypes.MathTrainer))
+			if (playing == false && ((available & GameTypes.Calculation) == GameTypes.Calculation))
 				calculation_menuitem.Sensitive = calculation_tbbutton.Sensitive = true;
 			else
 				calculation_menuitem.Sensitive = calculation_tbbutton.Sensitive = false;
@@ -551,7 +551,7 @@ namespace gbrainy.Clients.Classical
 
 		void OnMathOnly (object sender, EventArgs args)
 		{
-			OnNewGame (GameSession.Types.CalculationTrainers);
+			OnNewGame (GameSession.Types.Calculation);
 		}
 
 		void OnVerbalOnly (object sender, EventArgs args)
@@ -561,7 +561,7 @@ namespace gbrainy.Clients.Classical
 
 		void OnMemoryOnly (object sender, EventArgs args)
 		{
-			OnNewGame (GameSession.Types.MemoryTrainers);
+			OnNewGame (GameSession.Types.Memory);
 		}
 
 		void OnPdfExport (object sender, EventArgs args)
