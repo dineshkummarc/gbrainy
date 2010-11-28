@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gbrainy\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-11-27 11:03+0100\n"
-"PO-Revision-Date: 2010-11-27 11:12+0100\n"
+"POT-Creation-Date: 2010-11-28 18:30+0100\n"
+"PO-Revision-Date: 2010-11-28 19:12+0100\n"
 "Last-Translator: Jordi Mas <jmas@softcatala.org>\n"
 "Language-Team: Catalan\n"
 "MIME-Version: 1.0\n"
@@ -144,7 +144,7 @@ msgstr[1] ""
 "Teniu [money] unitats monetàries en un compte bancari al 10% d'interès "
 "compost anual. Quants diners tindreu al final de 2 anys?"
 
-#: ../tools/GameXmlGetString.cs:65 ../data/games.xml.h:26
+#: ../tools/GameXmlGetString.cs:65 ../data/games.xml.h:27
 msgid ""
 "In a horse race there are people and horses. You can count [eyes] eye and "
 "[legs] leg. How many horses are present?"
@@ -158,7 +158,7 @@ msgstr[1] ""
 "En una cursa de cavalls hi ha persones i cavalls. Compteu [eyes] ulls i "
 "[legs] cames. Quants cavalls hi ha?"
 
-#: ../tools/GameXmlGetString.cs:69 ../data/games.xml.h:46
+#: ../tools/GameXmlGetString.cs:69 ../data/games.xml.h:49
 msgid "There are [men] people and [horses] horses."
 msgid_plural "There are [men] people and [horses] horses."
 msgstr[0] "Hi ha [men] persona i [horses] cavall."
@@ -281,10 +281,19 @@ msgstr ""
 "en un interval d'11 anys."
 
 #: ../data/games.xml.h:21
+msgid ""
+"Given two integer numbers x and y, if x is even and y odd, which of the "
+"following expressions gives always an odd result? [option_answers]"
+msgstr ""
+"Donats dos nombres enters «x» i «y», si «x» és parell i «y» és senar, quina de "
+"les expressions següents sempre té com a resultat un nombre senar? "
+"[option_answers]"
+
+#: ../data/games.xml.h:22
 msgid "Horse race"
 msgstr "Cursa de cavalls"
 
-#: ../data/games.xml.h:22
+#: ../data/games.xml.h:23
 msgid ""
 "How many boxes measuring 1 x 1 x 0.5 can be packed into a container "
 "measuring 6 x 5 x [z]?"
@@ -292,7 +301,7 @@ msgstr ""
 "Quantes caixes de mida 1 x 1 x 0.5 poden encabir-se en un contenidor de mida "
 "6 x 5 x [z]?"
 
-#: ../data/games.xml.h:23
+#: ../data/games.xml.h:24
 msgid ""
 "How much weight is need at the point indicated by the question mark to "
 "balance the lever?"
@@ -300,23 +309,23 @@ msgstr ""
 "Quant pes cal en el punt indicat pel signe d'interrogació per equilibrar la "
 "palanca?"
 
-#: ../data/games.xml.h:24
+#: ../data/games.xml.h:25
 msgid ""
 "If p &lt; x &lt; q and r &lt; y &lt; s. Which of the following options makes "
 "x &gt; y true? [option_answers]"
 msgstr ""
-"Si «p &lt; x &lt; q» i «r &lt; y &lt; s». Quina de les següents opcions fa "
-"que  «x &lt; y» sigui cert? [option_answers]"
+"Si «p &lt; x &lt; q» i «r &lt; y &lt; s». Quina de les següents opcions fa que "
+"«x &lt; y» sigui cert? [option_answers]"
 
-#: ../data/games.xml.h:25
+#: ../data/games.xml.h:26
 msgid ""
 "If p &lt; x &lt; q and r &lt; y &lt; s. Which of the following options makes "
 "x &lt; y true? [option_answers]"
 msgstr ""
-"Si «p &lt; x &lt; q» i «r &lt; y &lt; s». Quina de les següents opcions fa "
-"que  «x &lt; y» sigui cert? [option_answers]"
+"Si «p &lt; x &lt; q» i «r &lt; y &lt; s». Quina de les següents opcions fa que "
+"«x &lt; y» sigui cert? [option_answers]"
 
-#: ../data/games.xml.h:28
+#: ../data/games.xml.h:29
 #, no-c-format
 msgid ""
 "In a small town, [all_cars]% of the inhabitants have a car and [males_cars]% "
@@ -327,7 +336,7 @@ msgstr ""
 "[males_cars]% tenen un cotxe i són homes. Quin percentatge total de la "
 "població són dones i tenen un cotxe? [option_answers]"
 
-#: ../data/games.xml.h:29
+#: ../data/games.xml.h:30
 msgid ""
 "In every match you eliminate one player, you need the total number of games "
 "minus 1 to find out the winner."
@@ -335,31 +344,35 @@ msgstr ""
 "En tots els partits s'elimina un dels jugadors, per trobar el guanyador cal "
 "restar 1 al nombre total de partits."
 
-#: ../data/games.xml.h:30
+#: ../data/games.xml.h:31
 msgid "It is the result of the operation [num_a] * [num_b]."
 msgstr "És el resultat de l'operació [num_a] * [num_b]."
 
-#: ../data/games.xml.h:31
+#: ../data/games.xml.h:32
 msgid "It is the result of the operation [num_a] + [num_b]."
 msgstr "És el resultat de l'operació [num_a] + [num_b]."
 
-#: ../data/games.xml.h:32
+#: ../data/games.xml.h:33
 msgid "It is the result of the operation [num_b] - [num_a]."
 msgstr "És el resultat de l'operació [num_b] - [num_a]."
 
-#: ../data/games.xml.h:33
+#: ../data/games.xml.h:34
 msgid "It is the result of the operation [num_b] / [num_a]."
 msgstr "És el resultat de l'operació [num_b] / [num_a]."
 
-#: ../data/games.xml.h:34
+#: ../data/games.xml.h:35
 msgid "Lever"
 msgstr "Palanca"
 
-#: ../data/games.xml.h:35
+#: ../data/games.xml.h:36
 msgid "Multiple number"
 msgstr "Nombres múltiples"
 
-#: ../data/games.xml.h:36
+#: ../data/games.xml.h:37
+msgid "Odd number"
+msgstr "Nombre senar"
+
+#: ../data/games.xml.h:38
 msgid ""
 "On the dartboard below, where you have to hit the darts to add 120 points in "
 "5 throws? Answer using a list of numbers (e.g.: 4, 5, 6, 3, 2)"
@@ -367,7 +380,7 @@ msgstr ""
 "A la diana d'abaix, on heu de clavar els dards per aconseguir 120 punts en 5 "
 "tirades? Responeu usant una llista de nombres (p. ex. 4, 5, 6, 3, 2)"
 
-#: ../data/games.xml.h:37
+#: ../data/games.xml.h:39
 msgid ""
 "Out of [people] people, [brothers] have brothers, [sisters] have sisters and "
 "[both] have both. How many people have neither brothers nor sisters?"
@@ -376,15 +389,15 @@ msgstr ""
 "germanes i [both] tenen germanes i germanes. Quantes persones no tenen ni "
 "germans ni germanes?"
 
-#: ../data/games.xml.h:38
+#: ../data/games.xml.h:40
 msgid "Palindromic years"
 msgstr "Anys capicua"
 
-#: ../data/games.xml.h:39
+#: ../data/games.xml.h:41
 msgid "Password"
 msgstr "Contrasenya"
 
-#: ../data/games.xml.h:40
+#: ../data/games.xml.h:42
 #: ../src/Core/Main/Verbal/AnalogiesMultipleOptions.cs:119
 #: ../src/Core/Main/Verbal/AnalogiesPairOfWordsOptions.cs:129
 #: ../src/Games/Logic/PuzzleFigurePattern.cs:190
@@ -399,15 +412,25 @@ msgstr "Contrasenya"
 msgid "Possible answers are:"
 msgstr "Les respostes possibles són:"
 
-#: ../data/games.xml.h:41
+#: ../data/games.xml.h:43
 msgid "Simple equations"
 msgstr "Equacions simples"
 
-#: ../data/games.xml.h:42
+#: ../data/games.xml.h:44
+msgid ""
+"Since x is always an even number multiplying it by 2 always produces a even "
+"number. Adding an even number to an odd number (y) always produces an odd "
+"number."
+msgstr ""
+"Atès que «x» és sempre un nombre parell multiplicant-lo per 2 sempre resulta "
+"en un nombre parell. Sumar un nombre parell a un nombre senar («y») sempre "
+"produeix un nombre senar."
+
+#: ../data/games.xml.h:45
 msgid "Tennis game"
 msgstr "Partida de tennis"
 
-#: ../data/games.xml.h:43
+#: ../data/games.xml.h:46
 msgid ""
 "The number X is multiple of [num_x] and the number Y of [num_y]. The product "
 "of both numbers (X * Y) is then multiple of? [option_answers]"
@@ -415,7 +438,7 @@ msgstr ""
 "El nombre X és múltiple de [num_x] i el nombre Y de [num_y]. El producte "
 "d'ambdós nombres (X * Y) és múltiple de? [option_answers]"
 
-#: ../data/games.xml.h:44
+#: ../data/games.xml.h:47
 msgid ""
 "The variable q is bigger than x and s is bigger than y, if q is bigger than "
 "s then the condition x &gt; y is true."
@@ -423,7 +446,7 @@ msgstr ""
 "La variable q és més gran que x i s és més gran que y, si q és més gran que "
 "s llavors la condició x &gt; y és certa."
 
-#: ../data/games.xml.h:45
+#: ../data/games.xml.h:48
 msgid ""
 "The variable q is bigger than x and y bigger than r, if q is bigger than r "
 "then the condition x &lt; y is true."
@@ -431,27 +454,27 @@ msgstr ""
 "La variable q és més gran que x i y és més gran que r, si q és més gran que "
 "r llavors la condició x &gt; y és certa."
 
-#: ../data/games.xml.h:47
+#: ../data/games.xml.h:50
 msgid "What number divided by [num_a] equals [num_b]?"
 msgstr "Quin número dividit per [num_a] és igual a [num_b]?"
 
-#: ../data/games.xml.h:48
+#: ../data/games.xml.h:51
 msgid "What number minus [num_a] equals [num_b]?"
 msgstr "Quin número restat a [num_a] és igual a [num_b]?"
 
-#: ../data/games.xml.h:49
+#: ../data/games.xml.h:52
 msgid "What number multiplied by [num_a] equals [num_b]?"
 msgstr "Quin número multiplicat per [num_a] és igual a [num_b]?"
 
-#: ../data/games.xml.h:50
+#: ../data/games.xml.h:53
 msgid "What number plus [num_a] equals [num_b]?"
 msgstr "Quin número sumat a [num_a] és igual a [num_b]?"
 
-#: ../data/games.xml.h:51
+#: ../data/games.xml.h:54
 msgid "You can fit 6 * 5 * [z] * 2 boxes."
 msgstr "Podeu encabir 6 * 5 * [z] * 2 caixes."
 
-#: ../data/games.xml.h:52
+#: ../data/games.xml.h:55
 msgid ""
 "[brothers_only] people have brothers only, [sisters_only] sisters only and "
 "[both] have sisters and brothers."
@@ -459,7 +482,7 @@ msgstr ""
 "[brothers_only] persones tenen només germans, [sisters_only] tenen germanes "
 "només i [both] tenen germanes i germans."
 
-#: ../data/games.xml.h:54
+#: ../data/games.xml.h:57
 #, no-c-format
 msgid ""
 "[female_cars]% ([all_cars] - [males_cars]) of the inhabitants are women and "
@@ -468,71 +491,87 @@ msgstr ""
 "El [female_cars]% ([all_cars] - [males_cars]) dels habitants són dones i "
 "tenen un cotxe, és a dir, el [option_a]% del total."
 
-#: ../data/games.xml.h:55
+#: ../data/games.xml.h:58
 msgid "[option_a] and [option_b] are both multiples of [product]."
 msgstr "[option_a] i [option_b] són ambdós múltiples de [product]."
 
-#: ../data/games.xml.h:56
+#: ../data/games.xml.h:59
+msgid "[option_prefix] (x - y) * 2"
+msgstr "[option_prefix] (x - y) * 2"
+
+#: ../data/games.xml.h:60
+msgid "[option_prefix] 2x + y"
+msgstr "[option_prefix] 2x + y"
+
+#: ../data/games.xml.h:61
 msgid "[option_prefix] [option_a] and [option_b]"
 msgstr "[option_prefix] [option_a] i [option_b]"
 
-#: ../data/games.xml.h:57
+#: ../data/games.xml.h:62
 msgid "[option_prefix] [option_a] and [option_c]"
 msgstr "[option_prefix] [option_a] i [option_c]"
 
-#: ../data/games.xml.h:59
+#: ../data/games.xml.h:64
 #, no-c-format
 msgid "[option_prefix] [option_a]%"
 msgstr "[option_prefix] [option_a]%"
 
-#: ../data/games.xml.h:60
+#: ../data/games.xml.h:65
 msgid "[option_prefix] [option_b] and [option_c]"
 msgstr "[option_prefix] [option_b] i [option_c]"
 
-#: ../data/games.xml.h:62
+#: ../data/games.xml.h:67
 #, no-c-format
 msgid "[option_prefix] [option_b]%"
 msgstr "[option_prefix] [option_b]%"
 
-#: ../data/games.xml.h:63
+#: ../data/games.xml.h:68
 msgid "[option_prefix] [option_c] and [option_d]"
 msgstr "[option_prefix] [option_c] i [option_d]"
 
-#: ../data/games.xml.h:65
+#: ../data/games.xml.h:70
 #, no-c-format
 msgid "[option_prefix] [option_c]%"
 msgstr "[option_prefix] [option_c]%"
 
-#: ../data/games.xml.h:67
+#: ../data/games.xml.h:72
 #, no-c-format
 msgid "[option_prefix] [option_d]%"
 msgstr "[option_prefix] [option_d]%"
 
-#: ../data/games.xml.h:68
+#: ../data/games.xml.h:73
 msgid "[option_prefix] p < r"
 msgstr "[option_prefix] p < r"
 
-#: ../data/games.xml.h:69
+#: ../data/games.xml.h:74
 msgid "[option_prefix] p > r"
 msgstr "[option_prefix] p > r"
 
-#: ../data/games.xml.h:70
+#: ../data/games.xml.h:75
 msgid "[option_prefix] q < r"
 msgstr "[option_prefix] q < r"
 
-#: ../data/games.xml.h:71
+#: ../data/games.xml.h:76
 msgid "[option_prefix] q = s"
 msgstr "[option_prefix] q = s"
 
-#: ../data/games.xml.h:72
+#: ../data/games.xml.h:77
 msgid "[option_prefix] q > s"
 msgstr "[option_prefix] q > s"
 
-#: ../data/games.xml.h:73
+#: ../data/games.xml.h:78
+msgid "[option_prefix] x * y"
+msgstr "[option_prefix] x * y"
+
+#: ../data/games.xml.h:79
+msgid "[option_prefix] x * y * 2"
+msgstr "[option_prefix] x * y * 2"
+
+#: ../data/games.xml.h:80
 msgid "[rslt_a] and [rslt_b]"
 msgstr "[rslt_a] i [rslt_b]"
 
-#: ../data/games.xml.h:74
+#: ../data/games.xml.h:81
 msgid ""
 "[year_start] is a palindromic year as [year_end] is, a gap of 11 years. What "
 "are the next two consecutive palindromic years after [year_end] with the "
@@ -542,19 +581,19 @@ msgstr ""
 "anys. Quins són els propers dos anys capicua consecutius després de "
 "[year_end] amb la mateix diferència?"
 
-#: ../data/games.xml.h:75
+#: ../data/games.xml.h:82
 msgid "x * [num_a] = [num_b]"
 msgstr "x * [num_a] = [num_b]"
 
-#: ../data/games.xml.h:76
+#: ../data/games.xml.h:83
 msgid "x + [num_a] = [num_b]"
 msgstr "x + [num_a] = [num_b]"
 
-#: ../data/games.xml.h:77
+#: ../data/games.xml.h:84
 msgid "x - [num_a] = [num_b]"
 msgstr "x - [num_a] = [num_b]"
 
-#: ../data/games.xml.h:78
+#: ../data/games.xml.h:85
 msgid "x / [num_a] = [num_b]"
 msgstr "x / [num_a] = [num_b]"
 
@@ -2068,17 +2107,17 @@ msgstr "Temps restant"
 # csharp-format
 #. Translators: {0} is the game number and {1} the game question or answer
 #. The number is used as reference when looking for the game solution in the PDF
-#: ../src/Core/Main/PdfExporter.cs:93 ../src/Core/Main/PdfExporter.cs:155
+#: ../src/Core/Main/PdfExporter.cs:104 ../src/Core/Main/PdfExporter.cs:166
 #, csharp-format
 msgid "Game {0}. {1}"
 msgstr "Joc {0}. {1}"
 
-#: ../src/Core/Main/PdfExporter.cs:110
+#: ../src/Core/Main/PdfExporter.cs:121
 #, csharp-format
 msgid "Created by gbrainy {0}"
 msgstr "Creat amb el gbrainy {0}"
 
-#: ../src/Core/Main/PdfExporter.cs:147
+#: ../src/Core/Main/PdfExporter.cs:158
 msgid "Solutions"
 msgstr "Solucions"
 
@@ -2364,13 +2403,28 @@ msgstr "Tipus"
 msgid "Enabled"
 msgstr "Habilitat"
 
-#: ../src/Clients/Classical/Dialogs/PdfExportDialog.cs:75
+#. Translators: default file name used when exporting PDF files (keep the pdf extension please)
+#: ../src/Clients/Classical/Dialogs/PdfExportDialog.cs:69
+msgid "games.pdf"
+msgstr "jocs.pdf"
+
+#: ../src/Clients/Classical/Dialogs/PdfExportDialog.cs:76
 msgid "PDF files"
 msgstr "Fitxers PDF"
 
-#: ../src/Clients/Classical/Dialogs/PdfExportDialog.cs:79
+#: ../src/Clients/Classical/Dialogs/PdfExportDialog.cs:80
 msgid "All files"
 msgstr "Tots els fitxers"
+
+#: ../src/Clients/Classical/Dialogs/PdfExportDialog.cs:167
+msgid "The PDF file has been exported correctly."
+msgstr "El fitxer PDF s'ha exportat correctament."
+
+#: ../src/Clients/Classical/Dialogs/PdfExportDialog.cs:170
+msgid ""
+"There was a problem generating the PDF file. The file has not been created."
+msgstr ""
+"S'ha produït un problema al generar el fitxer PDF. El fitxer no s'ha creat."
 
 #: ../src/Clients/Classical/Dialogs/PlayerHistoryDialog.cs:45
 msgid "The graph below shows the player's game score evolution."
