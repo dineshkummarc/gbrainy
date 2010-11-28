@@ -167,7 +167,7 @@ namespace gbrainy.Clients.Classical.Dialogs
 				msg = Catalog.GetString ("The PDF file has been exported correctly.");
 				msg_type = MessageType.Info;
 			} else {
-				msg = Catalog.GetString ("There was a problem generating the PDF file. The file has not be created.");
+				msg = Catalog.GetString ("There was a problem generating the PDF file. The file has not been created.");
 				msg_type = MessageType.Error;
 			}
 
