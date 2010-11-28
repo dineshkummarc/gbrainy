@@ -39,7 +39,7 @@ namespace gbrainy.Core.Main
 			get { return pages_side; }
 		}
 
-		static public void GeneratePdf (Game [] games, int games_page, string file)
+		static public bool GeneratePdf (Game [] games, int games_page, string file)
 		{
 			int columns, rows;
 			switch (games_page) {
@@ -59,15 +59,26 @@ namespace gbrainy.Core.Main
 				throw new InvalidOperationException ("Invalid games per page value");
 			}
 
-			PdfSurface pdf = new PdfSurface (file, page_width * columns, page_height * rows);
-			CairoContextEx cr = new CairoContextEx (pdf, "sans 12", 72);
+			try {
 
-			GenerateQuestions (cr, games, columns, rows);
-			GenerateAnswers (cr, games, columns, rows);
+				PdfSurface pdf = new PdfSurface (file, page_width * columns, page_height * rows);
 
-			pdf.Finish ();
-			((IDisposable)cr).Dispose();
-			return;
+				if (pdf.Status != Status.Success)
+					return false;
+
+				CairoContextEx cr = new CairoContextEx (pdf, "sans 12", 72);
+
+				GenerateQuestions (cr, games, columns, rows);
+				GenerateAnswers (cr, games, columns, rows);
+
+				pdf.Finish ();
+				((IDisposable)cr).Dispose();
+				return true;
+			}
+			catch (Exception e)
+			{
+				return false;
+			}
 		}
 
 		static void GenerateQuestions (CairoContextEx cr, Game [] games, int columns, int rows)

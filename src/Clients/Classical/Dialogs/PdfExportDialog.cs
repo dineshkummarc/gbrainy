@@ -65,7 +65,8 @@ namespace gbrainy.Clients.Classical.Dialogs
 			string def_file;
 			def_file = System.IO.Path.Combine (
 				Environment.GetFolderPath (Environment.SpecialFolder.MyDocuments),
-				"games.pdf");
+				// Translators: default file name used when exporting PDF files (keep the pdf extension please)
+				Catalog.GetString ("games.pdf"));
 
 			file = new BrowseFile (hbox_file, def_file, true);
 
@@ -147,6 +148,8 @@ namespace gbrainy.Clients.Classical.Dialogs
 		{
 			Game [] games;
 			GameManager gm;
+			string msg;
+			MessageType msg_type;
 
 			games = new Game [num_games];
 			gm = new GameManager ();
@@ -160,7 +163,18 @@ namespace gbrainy.Clients.Classical.Dialogs
 				 games [n] = gm.GetPuzzle ();
 			}
 
-			PdfExporter.GeneratePdf (games, gamespage, filename);
+			if (PdfExporter.GeneratePdf (games, gamespage, filename) == true) {
+				msg = Catalog.GetString ("The PDF file has been exported correctly.");
+				msg_type = MessageType.Info;
+			} else {
+				msg = Catalog.GetString ("There was a problem generating the PDF file. The file has not be created.");
+				msg_type = MessageType.Error;
+			}
+
+			// Notify operation result
+			MessageDialog md = new MessageDialog (this, DialogFlags.Modal, msg_type, ButtonsType.Ok, msg);
+			md.Run ();
+			md.Destroy ();
 		}
 
 		static public void ComboBoxCellFunc (CellLayout cell_layout, CellRenderer cell, TreeModel tree_model, TreeIter iter)
