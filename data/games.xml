@@ -518,4 +518,35 @@
 			<_rationale>The variable q is bigger than x and s is bigger than y, if q is bigger than s then the condition x &gt; y is true.</_rationale>
 		</variant>
 	</game>
+
+	<game>
+		<_name>Odd number</_name>
+		<type>Logic</type>
+		<difficulty>All</difficulty>
+		<variant>
+			<_question>Given two integer numbers x and y, if x is even and y odd, which of the following expressions gives always an odd result? [option_answers]</_question>
+
+			<string _text = "Possible answers are:" x = "0.1" y = "0.15" size = "large"/>
+
+			<option x = "0.3" y = "0.3" width ="0.45" height ="0.1" order ="randomized" correct = "yes">
+				<string _text = "[option_prefix] 2x + y" x = "0.05" y = "0.02" size = "large"/>
+			</option>
+
+			<option x = "0.3" y = "0.4" width ="0.45" height ="0.1" order ="randomized">
+				<string _text = "[option_prefix] x * y" x = "0.05" y = "0.02" size = "large"/>
+			</option>
+
+			<option x = "0.3" y = "0.5" width ="0.45" height ="0.1" order ="randomized">
+				<string _text = "[option_prefix] x * y * 2" x = "0.05" y = "0.02" size = "large"/>
+			</option>
+
+			<option x = "0.3" y = "0.6" width ="0.45" height ="0.1" order ="randomized">
+				<string _text = "[option_prefix] (x - y) * 2" x = "0.05" y = "0.02" size = "large"/>
+			</option>
+
+			<_rationale>Since x is always an even number, multiplying it by 2 always produces a even number, and adding an even number to an odd number (y) always produces an odd number.</_rationale>
+		</variant>
+
+	</game>
+
 </games>
