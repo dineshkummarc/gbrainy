@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2008 Jordi Mas i Hernàndez <jmas@softcatala.org>
+ * Copyright (C) 2008-2010 Jordi Mas i Hernàndez <jmas@softcatala.org>
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License as
@@ -34,7 +34,7 @@ namespace gbrainy.Games.Memory
 			protected static int [] numbers;
 
 			public Challenge () {}
-		
+
 			public static int[] Numbers {
 				set { numbers = value;}
 				get { return numbers;}
@@ -42,11 +42,11 @@ namespace gbrainy.Games.Memory
 
 			virtual public string Question {
 				get {return string.Empty; }
-			}	
+			}
 
 			virtual public string Answer {
 				get {return string.Empty; }
-			}	
+			}
 		}
 
 		class ChallengeOdds : Challenge
@@ -55,7 +55,7 @@ namespace gbrainy.Games.Memory
 				get {
 					return Catalog.GetString ("How many odd numbers were in the previous image? Answer using numbers.");
 				}
-			}		
+			}
 
 			public override string Answer {
 				get {
@@ -75,7 +75,7 @@ namespace gbrainy.Games.Memory
 				get {
 					return Catalog.GetString ("How many even numbers were in the previous image? Answer using numbers.");
 				}
-			}		
+			}
 
 			public override string Answer {
 				get {
@@ -95,7 +95,7 @@ namespace gbrainy.Games.Memory
 				get {
 					return Catalog.GetString ("How many numbers with more than one digit were in the previous image? Answer using numbers.");
 				}
-			}		
+			}
 
 			public override string Answer {
 				get {
@@ -121,7 +121,7 @@ namespace gbrainy.Games.Memory
 		{
 			base.Initialize ();
 			int total;
-	
+
 			switch (CurrentDifficulty) {
 			case GameDifficulty.Easy:
 				total = 5;
@@ -138,10 +138,12 @@ namespace gbrainy.Games.Memory
 			int[] nums = new int [total];
 
 			for (int i = 0; i < nums.Length; i++)
-				nums[i] = 1 + random.Next (15);
+			{
+				nums[i] = GetUniqueRandomNumber (nums);
+			}
 
 			switch (random.Next (num_games)) {
-			case 0: 
+			case 0:
 				current_game = new ChallengeOdds ();
 				break;
 			case 1:
@@ -151,14 +153,36 @@ namespace gbrainy.Games.Memory
 				current_game = new ChallengeTwoDigits ();
 				break;
 			}
-		
+
 			Challenge.Numbers = nums;
 			right_answer = current_game.Answer;
 		}
 
+		// Generate a random number that is unique at the numbers array
+		int GetUniqueRandomNumber (int [] numbers)
+		{
+			int candidate;
+			bool unique = true;
+
+			do
+			{
+				candidate = 1 + random.Next (15);
+				unique = true;
+				for (int i = 0; i < numbers.Length; i++)
+				{
+					if (numbers[i] == candidate)
+					{
+						unique = false;
+						break;
+					}
+				}
+			} while (unique == false);
+
+			return candidate;
+		}
+
 		public override void DrawObjectToMemorize (CairoContextEx gr, int area_width, int area_height, bool rtl)
 		{
-
 			StringBuilder sequence = new StringBuilder (64);
 
 			base.DrawObjectToMemorize (gr, area_width, area_height, rtl);
