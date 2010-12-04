@@ -75,7 +75,7 @@ namespace gbrainy.Core.Main
 				((IDisposable)cr).Dispose();
 				return true;
 			}
-			catch (Exception e)
+			catch (Exception)
 			{
 				return false;
 			}
@@ -144,7 +144,6 @@ namespace gbrainy.Core.Main
 		static void GenerateAnswers (CairoContextEx cr, Game [] games, int columns, int rows)
 		{
 			int x, y, page;
-			Game puzzle;
 			string str;
 			int column, row;
 			const int space_lines = 80;
