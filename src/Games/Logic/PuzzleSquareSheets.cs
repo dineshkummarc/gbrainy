@@ -39,13 +39,14 @@ namespace gbrainy.Games.Logic
 
 		public override string Rationale {
 			get {
-				return Catalog.GetString ("The numbers in the figure reflect the different areas covered by each one of the sheets.");
+				// Translators: the translated version should not take more characters that the English original
+				return Catalog.GetString ("A full sized square of paper, a 3/4 of the whole size square of paper in the bottom right corner, another 3/4 square of paper in the top left corner and a 1/4 square of paper in the top left corner.");
 			}
 		}
 
 		protected override void Initialize ()
 		{
-			right_answer = "5";
+			right_answer = "4";
 		}
 
 		public override void Draw (CairoContextEx gr, int area_width, int area_height, bool rtl)
