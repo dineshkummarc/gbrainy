@@ -4,17 +4,17 @@
 #
 # (c) 2007 Santiago Martinez Varela, 2007.
 # Eduardo Retamales <eretamales@gnome.cl>, 2007, 2008.
-# Daniel Mustieles <daniel.mustieles@gmail.com>, 2010.
 # Jorge González <jorgegonz@svn.gnome.org>, 2007, 2008, 2010.
+# Daniel Mustieles <daniel.mustieles@gmail.com>, 2010.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gbrainy.master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=gbrainy&component=general\n"
-"POT-Creation-Date: 2010-11-30 22:26+0000\n"
-"PO-Revision-Date: 2010-12-02 19:22+0100\n"
-"Last-Translator: Jorge González <jorgegonz@svn.gnome.org>\n"
+"POT-Creation-Date: 2010-12-04 20:56+0000\n"
+"PO-Revision-Date: 2010-12-03 10:28+0100\n"
+"Last-Translator: Daniel Mustieles <daniel.mustieles@gmail.com>\n"
 "Language-Team: Español <gnome-es-list@gnome.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -447,16 +447,16 @@ msgid ""
 "The variable q is bigger than x and s is bigger than y, if q is bigger than "
 "s then the condition x &gt; y is true."
 msgstr ""
-"La variable «q» es mayor que «x» y «s» es mayor que «y», si «q» es mayor que "
-"«s» entonces la condición «x &gt; y» es cierta."
+"La variable «q» es mayor que «x» y «s» es mayor que «y», si «q» es mayor que «s» "
+"entonces la condición «x &gt; y» es cierta."
 
 #: ../data/games.xml.h:48
 msgid ""
 "The variable q is bigger than x and y bigger than r, if q is bigger than r "
 "then the condition x &lt; y is true."
 msgstr ""
-"La variable «q» es mayor que «x» e «y» es mayor que «r», si «q» es mayor que "
-"«r» entonces la condición «x &lt; y» es cierta."
+"La variable «q» es mayor que «x» e «y» es mayor que «r», si «q» es mayor que «r» "
+"entonces la condición «x &lt; y» es cierta."
 
 #: ../data/games.xml.h:50
 msgid "What number divided by [num_a] equals [num_b]?"
@@ -739,7 +739,7 @@ msgstr "Pájaros"
 #. Translators: referred to the life style
 #: ../data/verbal_analogies.xml.h:32
 msgid "Bohemian"
-msgstr ""
+msgstr "Bohemio"
 
 #: ../data/verbal_analogies.xml.h:33
 msgid "Broken"
@@ -1039,7 +1039,7 @@ msgstr "Mártir"
 
 #: ../data/verbal_analogies.xml.h:105
 msgid "Misunderstood"
-msgstr ""
+msgstr "Malentendido"
 
 #: ../data/verbal_analogies.xml.h:106
 msgid "Money"
@@ -1304,8 +1304,7 @@ msgstr ""
 #: ../data/verbal_analogies.xml.h:171
 msgid "Which of the following words is the closest in meaning to 'censure'?"
 msgstr ""
-"¿Cuál de las siguientes palabras es la más cercana en significado a "
-"«censura»?"
+"¿Cuál de las siguientes palabras es la más cercana en significado a «censura»?"
 
 #: ../data/verbal_analogies.xml.h:172
 msgid "Which of the following words is the odd one?"
@@ -1516,7 +1515,9 @@ msgid "letter / word | page"
 msgstr "letra / palabra | página"
 
 #: ../data/verbal_analogies.xml.h:227
-msgid "lip | mouth"
+#, fuzzy
+#| msgid "lip | mouth"
+msgid "lip | upper lip | mouth"
 msgstr "labio | boca"
 
 #: ../data/verbal_analogies.xml.h:228
@@ -2109,7 +2110,7 @@ msgstr "Tiempo restante"
 
 #. Translators: {0} is the game number and {1} the game question or answer
 #. The number is used as reference when looking for the game solution in the PDF
-#: ../src/Core/Main/PdfExporter.cs:104 ../src/Core/Main/PdfExporter.cs:166
+#: ../src/Core/Main/PdfExporter.cs:104 ../src/Core/Main/PdfExporter.cs:165
 #, csharp-format
 msgid "Game {0}. {1}"
 msgstr "Juego: {0}. {1}."
@@ -2119,7 +2120,7 @@ msgstr "Juego: {0}. {1}."
 msgid "Created by gbrainy {0}"
 msgstr "Creado por gbrainy {0}"
 
-#: ../src/Core/Main/PdfExporter.cs:158
+#: ../src/Core/Main/PdfExporter.cs:157
 msgid "Solutions"
 msgstr "Soluciones"
 
@@ -2876,8 +2877,8 @@ msgid ""
 "What is the probability of getting a '2' or a '6' in a single throw of a "
 "fair 6 sided die? Answer using a fraction (e.g.: 1/2)."
 msgstr ""
-"¿Cuál es la probabilidad de obtener un «2» o un «6» en un solo lanzamiento "
-"de un dado no cargado de 6 caras? Responde usando una fracción (ej.: 1/2)."
+"¿Cuál es la probabilidad de obtener un «2» o un «6» en un solo lanzamiento de "
+"un dado no cargado de 6 caras? Responde usando una fracción (ej.: 1/2)."
 
 #: ../src/Games/Logic/PuzzleDice.cs:52
 msgid "There are 2 of 6 possibilities."
@@ -2921,8 +2922,8 @@ msgid ""
 "There is 1 of 6 possibilities of getting a '6' on the first die and the same "
 "for the second die."
 msgstr ""
-"Existe 1 de 6 probabilidades de obtener un «6» en el primer dado y las "
-"mismas para el segundo dado."
+"Existe 1 de 6 probabilidades de obtener un «6» en el primer dado y las mismas "
+"para el segundo dado."
 
 #: ../src/Games/Logic/PuzzleDice.cs:68
 msgid "Dice"
@@ -3010,8 +3011,8 @@ msgid ""
 "figures and 'F' that there are two figures."
 msgstr ""
 "«A» indica que las figuras se superponen, «B» que son cuadrados, «C» que son "
-"círculos, «D» que las figuras están separadas, «E» que hay tres figuras y "
-"«F» que hay dos figuras."
+"círculos, «D» que las figuras están separadas, «E» que hay tres figuras y «F» "
+"que hay dos figuras."
 
 #: ../src/Games/Logic/PuzzleFigurePattern.cs:40
 msgid "Figure pattern"
@@ -3933,13 +3934,13 @@ msgstr ""
 msgid "The sheets should overlap."
 msgstr "Las hojas no se deben superponer."
 
-#: ../src/Games/Logic/PuzzleSquareSheets.cs:42
+#. Translators: the translated version should not take more characters that the English original
+#: ../src/Games/Logic/PuzzleSquareSheets.cs:43
 msgid ""
-"The numbers in the figure reflect the different areas covered by each one of "
-"the sheets."
+"A full sized square of paper, a 3/4 of the whole size square of paper in the "
+"bottom right corner, another 3/4 square of paper in the top left corner and "
+"a 1/4 square of paper in the top left corner."
 msgstr ""
-"Los números en la figura reflejan las diferentes áreas cubiertas por cada "
-"una de las hojas."
 
 #: ../src/Games/Logic/PuzzleTetris.cs:35
 msgid "Tetris"
@@ -4944,6 +4945,13 @@ msgstr "_Desinstalar…"
 #: ../src/Clients/Classical/mono-addins-strings.xml.h:35
 msgid "_Unselect All"
 msgstr "_Deseleccionar todo"
+
+#~ msgid ""
+#~ "The numbers in the figure reflect the different areas covered by each one "
+#~ "of the sheets."
+#~ msgstr ""
+#~ "Los números en la figura reflejan las diferentes áreas cubiertas por cada "
+#~ "una de las hojas."
 
 #~ msgid "Icon"
 #~ msgstr "Icono"
