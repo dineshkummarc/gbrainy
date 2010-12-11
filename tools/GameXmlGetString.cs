@@ -66,7 +66,7 @@ public class GameXmlSttringFactory
 			"In a horse race there are people and horses. You can count [eyes] eyes and [legs] legs. How many horses are present?",
 			variable);
 
-		Catalog.GetPluralString ("There are [men] people and [horses] horses.",
+		Catalog.GetPluralString ("There is [men] person and [horses] horse.",
 			"There are [men] people and [horses] horses.",
 			variable);
 
