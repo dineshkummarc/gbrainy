@@ -11,15 +11,16 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gbrainy master\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-12-04 21:27+0100\n"
-"PO-Revision-Date: 2010-12-04 23:07+0200\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
+"product=gbrainy&component=general\n"
+"POT-Creation-Date: 2010-12-08 18:57+0000\n"
+"PO-Revision-Date: 2010-12-09 23:07+0200\n"
 "Last-Translator: Joe Hansen <joedalton2@yahoo.dk>\n"
 "Language-Team: Dansk-gruppen <dansk@dansk-gruppen.dk>\n"
-"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: \n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: ../tools/GameXmlGetString.cs:29
@@ -153,17 +154,17 @@ msgid_plural ""
 "In a horse race there are people and horses. You can count [eyes] eyes and "
 "[legs] legs. How many horses are present?"
 msgstr[0] ""
-"I et hesteløb er der mennesker og heste. Du kan tælle til [eyes] øje og "
+"I et hestevæddeløb er der mennesker og heste. Du kan tælle til [eyes] øjne og "
 "[legs] ben. Hvor mange heste er til stede?"
 msgstr[1] ""
-"I et hesteløb er der mennesker og heste. Du kan tælle til [eyes] øjne og "
+"I et hestevæddeløb er der mennesker og heste. Du kan tælle til [eyes] øjne og "
 "[legs] ben. Hvor mange heste er til stede?"
 
 # ups dobbelt, den virker vist ikke.
 #: ../tools/GameXmlGetString.cs:69 ../data/games.xml.h:49
 msgid "There are [men] people and [horses] horses."
 msgid_plural "There are [men] people and [horses] horses."
-msgstr[0] "Der er [men] menneske og [horses] hest."
+msgstr[0] "Der er [men] mennesker og [horses] heste."
 msgstr[1] "Der er [men] mennesker og [horses] heste."
 
 #: ../data/games.xml.h:1
@@ -244,7 +245,7 @@ msgstr "Beholder"
 
 #: ../data/games.xml.h:15
 msgid "Dartboard"
-msgstr "Dartbræt"
+msgstr "Dartskiv"
 
 #: ../data/games.xml.h:16
 msgid ""
@@ -288,12 +289,12 @@ msgid ""
 "Given two integer numbers x and y, if x is even and y odd, which of the "
 "following expressions gives always an odd result? [option_answers]"
 msgstr ""
-"Givet to heltal x og y, hvis x er lige og y ulige, hvilket af de følgende to "
+"Givet to heltal x og y, hvor x er lige og y ulige, hvilket af de følgende to "
 "udtryk giver så altid et ulige resultat? [option_answers]"
 
 #: ../data/games.xml.h:22
 msgid "Horse race"
-msgstr "Hesteløb"
+msgstr "Hestevæddeløb"
 
 #: ../data/games.xml.h:23
 msgid ""
@@ -366,10 +367,11 @@ msgstr "Det er resultatet af udregningen [num_a] / [num_b]."
 msgid "Lever"
 msgstr "Vægtstang"
 
-# hvad er dette?
+# Det her er navnet på et spil.
+# RO har også multipla
 #: ../data/games.xml.h:36
 msgid "Multiple number"
-msgstr "Flere tal"
+msgstr "Multipler"
 
 #: ../data/games.xml.h:37
 msgid "Odd number"
@@ -380,7 +382,7 @@ msgid ""
 "On the dartboard below, where you have to hit the darts to add 120 points in "
 "5 throws? Answer using a list of numbers (e.g.: 4, 5, 6, 3, 2)"
 msgstr ""
-"På dartbrættet nedenfor, hvor du skal ramme dartpilene for at tilføje 120 "
+"Hvor på dartskiven nedenfor skal du ramme dartpilene for at tilføje 120 "
 "point med 5 kast? Svar med brug af tallisten (f.eks.: 4, 5, 6, 3, 2)"
 
 #: ../data/games.xml.h:39
@@ -425,7 +427,7 @@ msgid ""
 "number."
 msgstr ""
 "Da x altid er et lige tal, vil det at gange tallet med 2 altid give et lige "
-"tal. Summering af et lige tal til et ulige tal (y) giver altid et ulige tal."
+"tal. Summering af et lige tal og et ulige tal (y) giver altid et ulige tal."
 
 #: ../data/games.xml.h:45
 msgid "Tennis game"
@@ -437,7 +439,7 @@ msgid ""
 "of both numbers (X * Y) is then multiple of? [option_answers]"
 msgstr ""
 "Tallet X er et multiplum af [num_x] og tallet Y af [num_y]. Produktet af "
-"begge numre (X * Y) er multiplum af? [option_answers]"
+"de to tal (X * Y) er et multiplum af? [option_answers]"
 
 #: ../data/games.xml.h:47
 msgid ""
@@ -445,7 +447,7 @@ msgid ""
 "s then the condition x &gt; y is true."
 msgstr ""
 "Variablen q er større end x og s er større end y, hvis q er større end s så "
-"er betingelsen x&gt; y sand."
+"er betingelsen x &gt; y sand."
 
 #: ../data/games.xml.h:48
 msgid ""
@@ -490,7 +492,7 @@ msgid ""
 "have a car, that is, [option_a]% of the total."
 msgstr ""
 "[female_cars]% ([all_cars] - [males_cars]) af indbyggerne er kvinder og har "
-"en bil, det er [option_a]% af det samlede antal."
+"en bil. Det er [option_a]% af det samlede antal."
 
 #: ../data/games.xml.h:58
 msgid "[option_a] and [option_b] are both multiples of [product]."
@@ -651,9 +653,10 @@ msgstr "Afholdenhed"
 msgid "Acrophobia"
 msgstr "Højdeskræk"
 
+#  (fobi for åbne pladser)
 #: ../data/verbal_analogies.xml.h:11
 msgid "Agoraphobia"
-msgstr "Agorafobi (fobi for åbne pladser)"
+msgstr "Agorafobi"
 
 #: ../data/verbal_analogies.xml.h:12
 msgid "Aircraft"
@@ -685,7 +688,7 @@ msgstr "Vinkel"
 
 #: ../data/verbal_analogies.xml.h:18
 msgid "Ant / Vertebrate"
-msgstr "Myre / Ryghvirveldyr"
+msgstr "Myre / Hvirveldyr"
 
 #. Translators: Anthophobia is fear of flowers that poses little or no danger
 #: ../data/verbal_analogies.xml.h:20
@@ -811,9 +814,10 @@ msgstr "Krokodille"
 msgid "Cycling"
 msgstr "Cykling"
 
+# http://www.denstoredanske.dk/Samfund,_jura_og_politik/Sprog/Fremmedord/d-dh/dekagon
 #: ../data/verbal_analogies.xml.h:51
 msgid "Decagon"
-msgstr "Decagon"
+msgstr "Dekagon"
 
 #: ../data/verbal_analogies.xml.h:52
 msgid "Decimal"
@@ -953,7 +957,7 @@ msgstr "Ironisk"
 
 #: ../data/verbal_analogies.xml.h:85
 msgid "Island"
-msgstr "Øer"
+msgstr "Ø"
 
 #: ../data/verbal_analogies.xml.h:86
 msgid "It is the only one that does not use a ball in the game."
@@ -973,7 +977,7 @@ msgstr "Det er den eneste, som ikke er en frugt."
 
 #: ../data/verbal_analogies.xml.h:90
 msgid "It is the only one that is not a medical specialty."
-msgstr "Det er den eneste, som ikke er en medicinsk specialitet."
+msgstr "Det er den eneste, som ikke er en medicinsk specialisering."
 
 #: ../data/verbal_analogies.xml.h:91
 msgid "It is the only one that is not a metal."
@@ -1005,8 +1009,8 @@ msgstr ""
 
 #: ../data/verbal_analogies.xml.h:97
 msgid ""
-"John's mother's brother's brother-in-law is also is also? Do not assume that "
-"John has any relative that has not been mentioned."
+"John's mother's brother's brother-in-law is also? Do not assume that John "
+"has any relative that has not been mentioned."
 msgstr ""
 "Johns mors brors svigerbror er også? Gå ud fra John ikke har nogen "
 "familiemedlemmer, som ikke er blevet nævnt."
@@ -1040,9 +1044,10 @@ msgstr "Mango"
 msgid "Martyr"
 msgstr "Martyr"
 
+# Tror det er tillægsord, 'Misforstået'
 #: ../data/verbal_analogies.xml.h:105
 msgid "Misunderstood"
-msgstr "Misforstod"
+msgstr "Misforstået"
 
 #: ../data/verbal_analogies.xml.h:106
 msgid "Money"
@@ -1078,7 +1083,7 @@ msgstr "Løg"
 #. Translators: refers to the fruit
 #: ../data/verbal_analogies.xml.h:114
 msgid "Orange"
-msgstr "Orange"
+msgstr "Appelsin"
 
 #: ../data/verbal_analogies.xml.h:115
 msgid "Ostentation"
@@ -1295,7 +1300,7 @@ msgstr "Hvede"
 
 #: ../data/verbal_analogies.xml.h:163
 msgid "Which of the following sentences defines better an 'ostracized' person?"
-msgstr "Hvilken af de følgende sætninger forklarer en 'udstødt' person bedst?"
+msgstr "Hvilket af de følgende ord forklarer en 'ostrakistisk' person bedst?"
 
 #.
 #. Translators, please check these recommendations when translating gbrainy: http://live.gnome.org/gbrainy/Localizing
@@ -1322,11 +1327,11 @@ msgstr "Hvilket af de følgende ord er tættest på at betyde at 'censurere'?"
 
 #: ../data/verbal_analogies.xml.h:172
 msgid "Which of the following words is the odd one?"
-msgstr "Hvilken af de følgende ord skiller sig ud fra de andre?"
+msgstr "Hvilket af de følgende ord skiller sig ud fra de andre?"
 
 #: ../data/verbal_analogies.xml.h:173
 msgid "Which of the following words means fear of people?"
-msgstr "Hvilken af de følgende ord betyder frygt for mennesker?"
+msgstr "Hvilket af de følgende ord betyder frygt for mennesker?"
 
 #: ../data/verbal_analogies.xml.h:174
 msgid "Winery"
@@ -1386,11 +1391,11 @@ msgstr "boks / åbn | banan"
 msgid "bridge / over | tunnel"
 msgstr "bro / over | tunnel"
 
-# givet smide ud/knuse hvilket ord har så den tætteste
+# givet smide skål/gå i stykker hvilket ord har så den tætteste
 # forbindelse med 'ballon'?
 #: ../data/verbal_analogies.xml.h:189
 msgid "burst | pop"
-msgstr "brage | pifte | sprænge"
+msgstr "brage | pifte | sprænge | bladre"
 
 # problemstillingen tast/nøgle burde ikke være der på dansk.
 #. Translators: key refers to a key used to open a lock
@@ -1422,7 +1427,7 @@ msgstr "slag | hug | slå"
 
 #: ../data/verbal_analogies.xml.h:197
 msgid "circle / semicircle | diameter"
-msgstr "cirkel / semicirkel | diameter"
+msgstr "cirkel / halvcirkel | diameter"
 
 #: ../data/verbal_analogies.xml.h:198
 msgid "coins"
@@ -1448,9 +1453,10 @@ msgstr "dans | kunstart | kunst"
 msgid "desert / oasis | sea"
 msgstr "ørken / oase | hav"
 
+# svarmuligheder: brage, pifte, sprænge, baldre
 #: ../data/verbal_analogies.xml.h:204
 msgid "dish / break | balloon"
-msgstr "smide ud / knuse | ballon"
+msgstr "skål / gå i stykker | ballon"
 
 #: ../data/verbal_analogies.xml.h:205
 msgid "dog / tame | wolf"
@@ -1504,7 +1510,7 @@ msgstr "planteædende | planteæder"
 # http://www.denstoredanske.dk/Samfund,_jura_og_politik/Sprog/Fremmedord/hl-h%C3%A5/hortikultur
 #: ../data/verbal_analogies.xml.h:218
 msgid "horticulture / plants | ornithology"
-msgstr "hortikultur / panter | ornitologi"
+msgstr "hortikultur / planter | ornitologi"
 
 #: ../data/verbal_analogies.xml.h:219
 msgid "hour / minute | minute"
@@ -1518,6 +1524,7 @@ msgstr "sulten / spis | træt"
 msgid "hunter / rifle | photographer"
 msgstr "jæger / riffel | fotograf"
 
+# svarmuligheder: klistret, klæbende, 
 #: ../data/verbal_analogies.xml.h:222
 msgid "ice / slippery | glue"
 msgstr "is / glat | lim"
@@ -1539,9 +1546,8 @@ msgid "letter / word | page"
 msgstr "bogstav / ord | side"
 
 #: ../data/verbal_analogies.xml.h:227
-#, fuzzy
 msgid "lip | upper lip | mouth"
-msgstr "læbe | mund"
+msgstr "læbe | overlæbe | mund"
 
 #: ../data/verbal_analogies.xml.h:228
 msgid "nest"
@@ -1573,7 +1579,7 @@ msgstr "skrælle"
 
 #: ../data/verbal_analogies.xml.h:234
 msgid "pessimist / optimist | poor"
-msgstr "pessimist /optimist | dårlig"
+msgstr "pessimist / optimist | dårlig"
 
 #: ../data/verbal_analogies.xml.h:235
 msgid "poems / anthology | maps"
@@ -1633,9 +1639,10 @@ msgstr "sur"
 msgid "stick / float | stone"
 msgstr "pind / flyd | sten"
 
+# svarmuligheder for ordparret is/glat
 #: ../data/verbal_analogies.xml.h:249
 msgid "sticky"
-msgstr "klistret | klæbende"
+msgstr "klistret | klæbende | klæbrigt"
 
 # Er svaret på
 # Givet ordparret leopard/pletter, hvilket ord har så den tætteste
@@ -1702,15 +1709,14 @@ msgstr "spor | jernbane | jernbanespor | togskinner"
 
 # givet ordparret knap/tryk, hvilket ord har så den
 # tætteste forbindelse med 'nøgle'?
-# på 
 #: ../data/verbal_analogies.xml.h:265
 msgid "turn"
-msgstr "drej | åben | lås op"
+msgstr "drej | åbn | lås op"
 
 #. Translators: letter refers to letter (in paper form)
 #: ../data/verbal_analogies.xml.h:267
 msgid "turtle / shell | letter"
-msgstr "skildpadde / skjold | bogstav"
+msgstr "skildpadde / skjold | brev"
 
 # givet ordparret appelsin/frugt, hvilket ord har så 
 # den tætteste forbindelse med 'spinat'?
@@ -1818,8 +1824,8 @@ msgstr "Spilletid {0} (gennemsnit per spil {1})"
 #: ../src/Core/Views/FinishView.cs:166
 msgid "For details on how gbrainy's scoring works refer to the help."
 msgstr ""
-"Hvordan gbrainys pointgivning virker, kan du se yderligere oplysninger om i "
-"hjælpen."
+"I hjælpen kan du finde yderligere oplysninger om hvordan gbrainys "
+"pointgivning virker."
 
 #: ../src/Core/Views/FinishView.cs:176
 msgid "Tips for your next games"
@@ -2155,7 +2161,7 @@ msgstr "Når du svarer på mundtlige analogier, så vær opmærksom på bøjning
 
 #: ../src/Core/Main/Memory.cs:53
 msgid "Memorize the objects below in the given time"
-msgstr "Husk alle objekterne nedenfor indenfor den tildelte tidsperiode"
+msgstr "Husk alle objekterne nedenfor inden for den tildelte tidsperiode"
 
 #: ../src/Core/Main/Memory.cs:217
 msgid "Time left"
@@ -2171,7 +2177,7 @@ msgstr "Spil: {0}. {1}"
 #: ../src/Core/Main/PdfExporter.cs:121
 #, csharp-format
 msgid "Created by gbrainy {0}"
-msgstr "Skabt af gbrainy {0}"
+msgstr "Skrevet af gbrainy {0}"
 
 #: ../src/Core/Main/PdfExporter.cs:157
 msgid "Solutions"
@@ -2552,9 +2558,10 @@ msgstr "<b>Generel opsætning</b>"
 msgid "<b>Number of games</b>"
 msgstr "<b>Antal spil</b>"
 
+# (det er 'udskriv til fil'-funktionen at dømme efter kildehenvisningen)
 #: ../src/Clients/Classical/Dialogs/ui/PdfExportDialog.ui.h:5
 msgid "<b>Output File</b>"
-msgstr "<b>Uddatafil</b>"
+msgstr "<b>Udskriftsfil</b>"
 
 #: ../src/Clients/Classical/Dialogs/ui/PdfExportDialog.ui.h:7
 #: ../src/Clients/Classical/Dialogs/ui/PreferencesDialog.ui.h:6
@@ -2577,7 +2584,7 @@ msgstr "PDF-eksport"
 
 #: ../src/Clients/Classical/Dialogs/ui/PdfExportDialog.ui.h:12
 msgid "Pages per side:"
-msgstr "Sider per part:"
+msgstr "Sider per ark:"
 
 #: ../src/Clients/Classical/Dialogs/ui/PdfExportDialog.ui.h:13
 #: ../src/Clients/Classical/Dialogs/ui/PreferencesDialog.ui.h:13
@@ -2855,8 +2862,8 @@ msgstr "Tæl serier"
 msgid ""
 "How many numbers '9' are required to represent the numbers between 10 to 100?"
 msgstr ""
-"Hvor mange tal af værdien »9« kræves for at repræsentere tallene mellem 10 "
-"og 100?"
+"Hvor mange tal af værdien »9« kræves for at repræsentere tallene mellem 10 og "
+"100?"
 
 #: ../src/Games/Logic/PuzzleCountSeries.cs:68
 msgid ""
@@ -2887,7 +2894,7 @@ msgstr "Tallene er: {0}."
 
 #: ../src/Games/Logic/PuzzleCountSeries.cs:94
 msgid "Notice that 99 contains two numbers '9'."
-msgstr "Bemærk at 99 indeholder to tal '9'."
+msgstr "Bemærk at 99 indeholder to 9-taller."
 
 #: ../src/Games/Logic/PuzzleCoverPercentage.cs:35
 msgid "Cover percentage"
@@ -3204,7 +3211,7 @@ msgstr "Alle de cirkelmarkerede tal kan deles med {0}."
 
 #: ../src/Games/Logic/PuzzleMatrixNumbers.cs:44
 msgid "Matrix numbers"
-msgstr "Matricetal"
+msgstr "Matrixtal"
 
 #: ../src/Games/Logic/PuzzleMatrixNumbers.cs:48
 msgid ""
@@ -3590,7 +3597,7 @@ msgid ""
 "If you whistle if you are happy and you always smile when you whistle, which "
 "of the following conclusions is correct? Answer {0}, {1}, {2} or {3}."
 msgstr ""
-"Hvis du fløjter, når du er glad, og du kun smiler, når du fløjter, hvilken "
+"Hvis du fløjter, når du er glad, og du altid smiler, når du fløjter, hvilken "
 "af de følgende konklusioner er så korrekt? {0}, {1}, {2} eller {3}."
 
 #: ../src/Games/Logic/PuzzlePredicateLogic.cs:82
@@ -3611,8 +3618,9 @@ msgid ""
 "If your course is always honest and your course is always the best policy, "
 "which of the following conclusions is correct? Answer {0}, {1}, {2} or {3}."
 msgstr ""
-"Hvis du fløjter, når du er glad, og du kun smiler, når du fløjter, hvilken "
-"af de følgende konklusioner er så korrekt? {0}, {1}, {2} eller {3}."
+"Hvis din sag altid er ærlig ment og din sag altid er den bedste politik "
+"at føre, hvilken af de følgende konklusioner er så korrekt? {0}, {1}, {2} "
+"eller {3}."
 
 #: ../src/Games/Logic/PuzzlePredicateLogic.cs:90
 msgid "Honesty is sometimes the best policy"
@@ -3628,7 +3636,7 @@ msgstr "Ærlighed er ikke altid den bedste politik"
 
 #: ../src/Games/Logic/PuzzlePredicateLogic.cs:93
 msgid "Some of the best policies are dishonest"
-msgstr "Nogle af de bedste politikker er uærlighed"
+msgstr "Nogle af de bedste politikker er uærlige"
 
 #: ../src/Games/Logic/PuzzlePredicateLogic.cs:96
 #, csharp-format
@@ -3636,7 +3644,7 @@ msgid ""
 "If no old misers are cheerful and some old misers are thin, which of the "
 "following conclusions is correct? Answer {0}, {1}, {2} or {3}."
 msgstr ""
-"Hvis ingen pengepugere er muntre og nogle gamle pengepugere er tynde, "
+"Hvis ingen gamle pengepugere er muntre og nogle gamle pengepugere er tynde, "
 "hvilken af de følgende konklusioner er så korrekt? Svar {0}, {1}, {2} eller "
 "{3}."
 
@@ -3656,27 +3664,27 @@ msgstr "Muntre mennesker er ikke tynde"
 msgid "Some cheerful people are not thin"
 msgstr "Nogle muntre mennesker er ikke tynde"
 
-# http://en.wikipedia.org/wiki/Barley-water
+# http://en.wikipedia.org/wiki/Barley-water skal ikke bruges
 #: ../src/Games/Logic/PuzzlePredicateLogic.cs:104
 #, csharp-format
 msgid ""
 "If all pigs are fat and nothing that is fed on barley-water is fat, which of "
 "the following conclusions is correct? Answer {0}, {1}, {2} or {3}."
 msgstr ""
-"Hvis alle grise er fede og intet som fedes op med barleyvand er fed, hvilken "
+"Hvis alle grise er fede og intet som fodres med byg er fed, hvilken "
 "af de følgende konklusioner er så korrekt? Svar {0}, {1}, {2} eller {3}."
 
 #: ../src/Games/Logic/PuzzlePredicateLogic.cs:106
 msgid "All animals fed on barley-water are non pigs"
-msgstr "Alle dyr der fedes op med barleyvand er ikke grise"
+msgstr "Alle dyr der fedes op med byg er ikke-grise"
 
 #: ../src/Games/Logic/PuzzlePredicateLogic.cs:107
 msgid "No pigs are fed on barley-water"
-msgstr "Ingen grise fedes op med barleyvand"
+msgstr "Ingen grise fedes op med byg"
 
 #: ../src/Games/Logic/PuzzlePredicateLogic.cs:108
 msgid "Pigs are not fed on barley-water"
-msgstr "Grise fedes ikke op med barleyvand"
+msgstr "Grise fedes ikke op med byg"
 
 #: ../src/Games/Logic/PuzzlePredicateLogic.cs:109
 msgid "All the other options"
@@ -3866,7 +3874,7 @@ msgid ""
 "The number on the middle in every row is equal to half of the sum of the "
 "other numbers of the row."
 msgstr ""
-"Tallet i midten af hver række svarer til halvdelen af summen på de andre tal "
+"Tallet i midten af hver række er lig med halvdelen af summen af de andre tal "
 "i rækken."
 
 #: ../src/Games/Logic/PuzzleRelatedNumbers.cs:176
@@ -3874,7 +3882,7 @@ msgid ""
 "The number on the middle in every row is equal the sum of the other numbers "
 "of the row."
 msgstr ""
-"Tallet i midten af hver række svarer til summen af de andre tal i rækken."
+"Tallet i midten af hver række er lig med summen af de andre tal i rækken."
 
 #: ../src/Games/Logic/PuzzleRelatedNumbers.cs:178
 msgid ""
@@ -3882,7 +3890,7 @@ msgid ""
 "the other numbers of the row."
 msgstr ""
 "Tallet i midten af hver række svarer til det dobbelte af summen af de andre "
-"Tal i rækken."
+"tal i rækken."
 
 #: ../src/Games/Logic/PuzzleSquareDots.cs:204
 msgid "Square with dots"
@@ -3960,12 +3968,16 @@ msgstr ""
 msgid "The sheets should overlap."
 msgstr "Arkene bør lappe over hinanden."
 
-#: ../src/Games/Logic/PuzzleSquareSheets.cs:42
+#. Translators: the translated version should not take more characters that the English original
+#: ../src/Games/Logic/PuzzleSquareSheets.cs:43
 msgid ""
-"The numbers in the figure reflect the different areas covered by each one of "
-"the sheets."
+"A full sized square of paper, a 3/4 of the whole size square of paper in the "
+"bottom right corner, another 3/4 square of paper in the top left corner and "
+"a 1/4 square of paper in the top left corner."
 msgstr ""
-"Tallene i figuren angiver de forskellige områder dækket af hver af arkene."
+"Et papirark i fuld størrelse, et ark på 3/4 af størrelsen i det nederste "
+"højre hjørne, et andet 3/4 i det øverste venstre hjørne og et ark på 1/4 i "
+"det øverste venstre hjørne." 
 
 #: ../src/Games/Logic/PuzzleTetris.cs:35
 msgid "Tetris"
@@ -3999,9 +4011,9 @@ msgid ""
 "{0} hours ago it was as long after {1:h tt} as it was before {2:h tt} on the "
 "same day. What is the time now? Answer using the hour (e.g.: {3:h tt})"
 msgstr ""
-"{0:%H} timer siden var det lige så længe efter {1:%H tt}, som det var før "
-"{2:%H tt} på den samme dag. Hvad er klokken nu? Svar med brug af tiden (f."
-"eks.: {3:%H tt}"
+"{0:%H} timer siden var det lige så længe efter {1:%H tt}, som det var før {2:"
+"%H tt} på den samme dag. Hvad er klokken nu? Svar med brug af tiden (f.eks.: "
+"{3:%H tt}"
 
 #: ../src/Games/Logic/PuzzleTimeNow.cs:50
 #, csharp-format
@@ -4063,7 +4075,7 @@ msgid ""
 "time and dividing it by the difference of speeds."
 msgstr ""
 "Du kan udregne svaret ved at gange hastigheden på det første tog med tiden "
-"og dividere denne med forskellen i hastigheden."
+"og dividere dette resultat med forskellen i hastigheden."
 
 #. Translators:
 #. - mph (miles per hour) and miles must be localized this using the right unit of speed for your locale
@@ -4078,11 +4090,11 @@ msgid_plural ""
 "parallel tracks. One travels at {1} mph and the other at {2} mph. In how "
 "many hours do they meet?"
 msgstr[0] ""
-"To toge adskilt af {0} kilometer kører mod hinanden på parallelle spor. En "
+"To tog adskilt af {0} kilometer kører mod hinanden på parallelle spor. Et "
 "kører med {1} km/t og det andet tog med {2} km/t. Efter hvor mange timer "
 "møder de hinanden?"
 msgstr[1] ""
-"To toge adskilt af {0} kilometer kører mod hinanden på parallelle spor. En "
+"To tog adskilt af {0} kilometer kører mod hinanden på parallelle spor. Et "
 "kører med {1} km/t og det andet tog med {2} km/t. Efter hvor mange timer "
 "møder de hinanden?"
 
@@ -4200,10 +4212,10 @@ msgid_plural ""
 "Shiny Cars had already announced a {0} days production halt next month, but "
 "before that it had not cut production since {1}."
 msgstr[0] ""
-"Skinnende Biler havde allerede annonceret en {0}-dags produktionstandsning "
+"Skinnende Biler havde allerede annonceret en {0}-dags produktionsstandsning "
 "næste måned, men før det havde de ikke nedsat produktionen siden {1}."
 msgstr[1] ""
-"Skinnende Biler havde allerede annonceret en {0}-dags produktionstandsning "
+"Skinnende Biler havde allerede annonceret en {0}-dages produktionsstandsning "
 "næste måned, men før det havde de ikke nedsat produktionen siden {1}."
 
 #: ../src/Games/Memory/MemoryFacts.cs:112
@@ -4540,7 +4552,7 @@ msgstr "ulv"
 
 #: ../src/Games/Calculation/CalculationArithmetical.cs:42
 msgid "Arithmetical"
-msgstr "Matematisk"
+msgstr "Matematik"
 
 #: ../src/Games/Calculation/CalculationArithmetical.cs:50
 msgid "What is the result of the arithmetical operation?"
@@ -4666,7 +4678,7 @@ msgstr ""
 
 #: ../src/Games/Calculation/CalculationProportions.cs:37
 msgid "Proportions"
-msgstr "Forhold"
+msgstr "Proportioner"
 
 #: ../src/Games/Calculation/CalculationProportions.cs:47
 #, csharp-format
@@ -4733,7 +4745,7 @@ msgid ""
 "Which two numbers when subtracted are {0} and when multiplied are {1}? "
 "Answer using two numbers (e.g.: 1 and 2)."
 msgstr ""
-"Hvilke to tal giver {0}, når de trækkes fra hinanden og {1}, når de ganges?"
+"Hvilke to tal giver {0}, når de trækkes fra hinanden og {1}, når de ganges? "
 "Svar med to tal (f.eks.: 1 og 2)."
 
 #: ../src/Games/Calculation/CalculationTwoNumbers.cs:129
@@ -4969,163 +4981,4 @@ msgstr "A_finstaller..."
 msgid "_Unselect All"
 msgstr "Fr_avælg alle"
 
-#~ msgid "Meter"
-#~ msgstr "Meter"
 
-#~ msgid "book"
-#~ msgstr "bog"
-
-# fornyer, reformator
-#~ msgid "innovator"
-#~ msgstr "fornyer"
-
-#~ msgid "win"
-#~ msgstr "vind | vinde | sejre | triumfere"
-
-#~ msgid ""
-#~ "Given the relationship between the words '{0}', which of the possible "
-#~ "answers has the closest in relationship to the given pair? Answer {1}."
-#~ msgstr ""
-#~ "Givet ordparret '{0}', hvilket af de mulige svar har så den tætteste "
-#~ "forbindelse med det givne ordpar? Svar {1}."
-
-#~ msgid "Based on ideas by Terry Stickels, MENSA books and Jordi Mas."
-#~ msgstr "Baseret på ideer af Terry Stickels, MENSA-bøger og Jordi Mas."
-
-#~ msgid ""
-#~ "What is the letter of the figure that represents the next logical figure "
-#~ "in the sequence? Answer {0}, {1} or {2}."
-#~ msgstr ""
-#~ "Hvad er bogstavet på den figur, som repræsenterer den næste logiske figur "
-#~ "i sekvensen? Svar {0}, {1} eller {2}."
-
-#~ msgid "wild"
-#~ msgstr "vild"
-
-#~ msgid ""
-#~ "Usage: gbrainy [options]\n"
-#~ "  --version\t\t\tPrint version information.\n"
-#~ "  --help\t\t\tPrint this usage message.\n"
-#~ "  --gamelist\t\t\tShows the list of available games.\n"
-#~ "  --customgame [game1, gameN]\tSpecifies a list of games to play during a "
-#~ "custom game.\n"
-#~ "  --norandom \t\t\tThe custom game list provided will not be randomized.\n"
-#~ "  --versions \t\t\tShow dependencies.\n"
-#~ msgstr ""
-#~ "Brug: gbrainy [tilvalg]\n"
-#~ "  --version\t\t\tVis versionsinformation.\n"
-#~ "  --help\t\t\tVis denne hjælpebesked.\n"
-#~ "  --gamelist\t\t\tViser listen over tilgængelige spil.\n"
-#~ "  --customgame [spil1, spilN]\tAngiver en liste af spil der skal spilles "
-#~ "i et tilpasset spil.\n"
-#~ "  --norandom \t\t\tDen tilpassede spilliste vil ikke have vilkårlig "
-#~ "rækkefølge.\n"
-#~ "  --versions \t\t\tVis afhængigheder.\n"
-
-#~ msgid "You can pack 6 * 5 boxes multiplied by the depth [z] * 2."
-#~ msgstr "Du kan pakke 6 * 5 bokse ganget med dybden [z] * 2."
-
-#~ msgid "John's father's sister's sister-in-law is also?"
-#~ msgstr "Johns fars søsters svigersøster er også?"
-
-#~ msgid "Read {0} verbal analogies of type {1}"
-#~ msgstr "Læs {0} sproglige analogier af type {1}"
-
-#~ msgid "Read a total of {0} verbal analogies"
-#~ msgstr "Læs en total af {0} mundtlige analogier"
-
-#~ msgid "cage | zoo"
-#~ msgstr "bur | zoo"
-
-#~ msgid "Verbal analogies"
-#~ msgstr "Mundtlige analogier"
-
-#~ msgid ""
-#~ "Which element does not belong to the group? Answer {0}, {1}, {2}, {3} or "
-#~ "{4}."
-#~ msgstr ""
-#~ "Hvilket element hører ikke til gruppen? Svar {0}, {1}, {2}, {3} eller {4}."
-
-#~ msgid "Rectangle"
-#~ msgstr "Rektangel"
-
-#~ msgid "Diamond"
-#~ msgstr "Diamant"
-
-#~ msgid "number1 + number2 = {0}"
-#~ msgstr "tal 1 + tal 2 = {0}"
-
-#~ msgid "number1 - number2 = {0}"
-#~ msgstr "tal 1 - tal 2 = {0}"
-
-#~ msgid "number1 * number2 = {0}"
-#~ msgstr "tal 1 × tal 2 = {0}"
-
-#~ msgid "Water polo"
-#~ msgstr "Vandpolo"
-
-# er svaret på et blivende ikon (martyr, pioner, fornyer er de
-# andre muligheder).
-#~ msgid "emblem"
-#~ msgstr "symbol"
-
-#~ msgid "theatre"
-#~ msgstr "teater"
-
-# er svaret på
-# givet ordparret fisk/akvarium, hvilket ord har så den 
-# tætteste forbindelse med 'abe'?
-#~ msgid "zoo"
-#~ msgstr "zoo"
-
-#~ msgid "Mental Calculation"
-#~ msgstr "Hovedregning"
-
-#~ msgid "_FullScreen"
-#~ msgstr "_Fuldskærm"
-
-#~ msgid "ant / insect"
-#~ msgstr "myre / insekt"
-
-#~ msgid "art / studio | music"
-#~ msgstr "kunst / atelier | musik"
-
-# givet ordparret tårer/øjne, hvilket ord har så den
-# tætteste forbindelse med 'sved'?
-#~ msgid "body"
-#~ msgstr "armhule | krop | legeme"
-
-#~ msgid "conservatory"
-#~ msgstr "konservatorium"
-
-# Givet ordparret øjebryn/øje, hvilket ord har så den 
-# tætteste forbindelse med 'moustache'?
-#~ msgid "lip"
-#~ msgstr "læbe | overlæbe"
-
-#~ msgid "track"
-#~ msgstr "spor"
-
-#~ msgid "wind"
-#~ msgstr "vind"
-
-#~ msgid "There are no verbal analogies available."
-#~ msgstr "Der er ingen sproglige analogier tilgængelige."
-
-#~ msgid "Turn right"
-#~ msgstr "Gå mod højre"
-
-#~ msgid "Go up"
-#~ msgstr "Gå op"
-
-# Evt. "Kun øvelse (hovedregning og hukommelse)"
-#~ msgid "Trainers Only (Mental Calculation and Memory)"
-#~ msgstr "Kun øvelser (hovedregning og hukommelse)"
-
-# givet ordparret fod/to, hvilket ord har så den tætteste
-# forbindelse med 'tå'?
-#~ msgid "ten"
-#~ msgstr "ti | 10"
-
-#~ msgid "A brain teaser game for fun and to keep your brain trained"
-#~ msgstr "Et sjovt grublespil, der kan holde din hjerne i tip-top stand"
