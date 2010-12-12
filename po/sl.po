@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gbrainy master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gbrainy&component=general\n"
-"POT-Creation-Date: 2010-12-02 18:23+0000\n"
-"PO-Revision-Date: 2010-12-03 13:04+0100\n"
+"POT-Creation-Date: 2010-12-09 22:46+0000\n"
+"PO-Revision-Date: 2010-12-10 10:37+0100\n"
 "Last-Translator: Andrej Žnidaršič <andrej.znidarsic@gmail.com>\n"
 "Language-Team: Slovenian <gnome-si@googlegroups.com>\n"
 "Language: sl\n"
@@ -823,8 +823,8 @@ msgid "John's father's sister's sister-in-law is also? Do not assume that John h
 msgstr "Svakinja sestre Janezovega očeta je tudi? Predpostavljajte da ima Janez samo omenjene sorodnike."
 
 #: ../data/verbal_analogies.xml.h:97
-msgid "John's mother's brother's brother-in-law is also is also? Do not assume that John has any relative that has not been mentioned."
-msgstr "Svakinja brate Janezove matere je tudi? Predpostavljajte, da ima Janez samo omenjene sorodnike."
+msgid "John's mother's brother's brother-in-law is also? Do not assume that John has any relative that has not been mentioned."
+msgstr "Svak brata Janezove matere je tudi? Predpostavljajte, da ima Janez samo omenjene sorodnike."
 
 #: ../data/verbal_analogies.xml.h:98
 msgid "Kilometer"
@@ -1324,8 +1324,8 @@ msgid "letter / word | page"
 msgstr "črka / beseda | stran"
 
 #: ../data/verbal_analogies.xml.h:227
-msgid "lip | mouth"
-msgstr "ustnice | usta"
+msgid "lip | upper lip | mouth"
+msgstr "ustnica | zgornja ustnica | usta"
 
 #: ../data/verbal_analogies.xml.h:228
 msgid "nest"
@@ -1870,7 +1870,7 @@ msgstr "Preostali čas"
 #. Translators: {0} is the game number and {1} the game question or answer
 #. The number is used as reference when looking for the game solution in the PDF
 #: ../src/Core/Main/PdfExporter.cs:104
-#: ../src/Core/Main/PdfExporter.cs:166
+#: ../src/Core/Main/PdfExporter.cs:165
 #, csharp-format
 msgid "Game {0}. {1}"
 msgstr "Igra {0}. {1}"
@@ -1880,7 +1880,7 @@ msgstr "Igra {0}. {1}"
 msgid "Created by gbrainy {0}"
 msgstr "Ustvarjeno z gbrainy {0}"
 
-#: ../src/Core/Main/PdfExporter.cs:158
+#: ../src/Core/Main/PdfExporter.cs:157
 msgid "Solutions"
 msgstr "Rešitve"
 
@@ -3265,9 +3265,10 @@ msgstr "Kolikšno je najmanjše število kvadratnih listov papirja katerekoli ve
 msgid "The sheets should overlap."
 msgstr "Listi naj se prekrivajo."
 
-#: ../src/Games/Logic/PuzzleSquareSheets.cs:42
-msgid "The numbers in the figure reflect the different areas covered by each one of the sheets."
-msgstr "Števila v sliki kažejo različna področja, ki jih pokriva vsak list."
+#. Translators: the translated version should not take more characters that the English original
+#: ../src/Games/Logic/PuzzleSquareSheets.cs:43
+msgid "A full sized square of paper, a 3/4 of the whole size square of paper in the bottom right corner, another 3/4 square of paper in the top left corner and a 1/4 square of paper in the top left corner."
+msgstr "Kvadrat polne velikosti papirja, 3/4 celega kvadrata papirja v spodnjem desnem kotu, 3/4 kvadrata papirja v zgornjem levem kotu in 1/4 kvadrata papirja v zgornjem levem kotu."
 
 #: ../src/Games/Logic/PuzzleTetris.cs:35
 msgid "Tetris"
@@ -4114,6 +4115,10 @@ msgstr "_Odstrani ..."
 msgid "_Unselect All"
 msgstr "_Prekliči izbor vsega"
 
+#~ msgid ""
+#~ "The numbers in the figure reflect the different areas covered by each one "
+#~ "of the sheets."
+#~ msgstr "Števila v sliki kažejo različna področja, ki jih pokriva vsak list."
 #~ msgid "Icon"
 #~ msgstr "Ikona"
 #~ msgid "Innovator"
