@@ -37,7 +37,7 @@ namespace gbrainy.Games.Logic
 
 		public override string Question {
 			get {return String.Format (
-				Catalog.GetString ("What figure completes the sequence below? Answer {0}, {1} or {2}."),
+				Catalog.GetString ("What figure completes the set below? Answer {0}, {1} or {2}."),
 				GetPossibleAnswer (0), GetPossibleAnswer (1), GetPossibleAnswer (2));}
 		}
 
