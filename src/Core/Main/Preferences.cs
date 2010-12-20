@@ -36,7 +36,8 @@ namespace gbrainy.Core.Main
 		public const string DifficultyKey = "Difficulty";
 		public const string MinPlayedGamesKey = "MinPlayedGames";
 		public const string MaxStoredGamesKey = "MaxStoredGames";
-		public const string ToolbarKey = "Toolbar";
+		public const string ToolbarShowKey = "ToolbarShow";
+		public const string ToolbarOrientationKey = "ToolbarOrientation";
 		public const string ColorBlindKey = "ColorBlind";
 
 		const string element_item = "item";
@@ -163,7 +164,8 @@ namespace gbrainy.Core.Main
 			properties.Add (DifficultyKey, ((int)(GameDifficulty.Medium)).ToString ());
 			properties.Add (MinPlayedGamesKey, "5");
 			properties.Add (MaxStoredGamesKey, "20");
-			properties.Add (ToolbarKey, true.ToString ());
+			properties.Add (ToolbarShowKey, true.ToString ());
+			properties.Add (ToolbarOrientationKey, "0");
 			properties.Add (ColorBlindKey, false.ToString ());
 		}
 
