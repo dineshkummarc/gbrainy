@@ -31,12 +31,22 @@ namespace gbrainy.Core.Main
 
 		public CairoContextEx (IntPtr state, Gtk.Widget widget) : base (state, widget)
 		{
-			SetPangoNormalFontSize ();
+			CommonConstructor ();		
 		}
 
 		// Used by GeneratePDF
 		public CairoContextEx (Cairo.Surface s, string font, int dpis) : base (s, font, dpis)
 		{
+			CommonConstructor ();
+		}
+
+		void CommonConstructor ()
+		{
+			Theme theme;
+	
+			theme = ThemeManager.FromName (Preferences.GetStringValue (Preferences.ThemeKey));
+			FontFace = theme.FontFace;
+
 			SetPangoNormalFontSize ();
 		}
 
@@ -44,15 +54,22 @@ namespace gbrainy.Core.Main
 		{
 			try {
 				if (image == null)
-					image = new SVGImage (System.Reflection.Assembly.GetCallingAssembly (), "background.svg");
+				{
+					Theme theme;
+	
+					theme = ThemeManager.FromName (Preferences.GetStringValue (Preferences.ThemeKey));
+					image = new SVGImage (System.IO.Path.Combine (Defines.DATA_DIR, theme.BackgroundImage));
+				}
 
 				Save ();
 				Rectangle (0, 0, 1, 1);
 				Scale (0.999 / image.Width, 0.999 / image.Height);
 				image.RenderToCairo (Handle);
 				Restore ();
-
-			} catch {
+			}
+			catch (Exception e)
+			{
+				Console.WriteLine ("CairoContextEx.DrawBackground {0}", e);
 			}
 		}
 

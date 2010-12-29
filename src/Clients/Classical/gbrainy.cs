@@ -838,10 +838,10 @@ namespace gbrainy.Clients.Classical
 			}
 			app.Session.GameManager.RandomOrder = line.RandomOrder;
 			app.ProcessDefaults ();
+			ThemeManager.Load ();
 
 			TimeSpan span = DateTime.Now - start_time;
 			Console.WriteLine (Catalog.GetString ("Startup time {0}"), span);
-
 #if GNOME
 			app.Run ();
 #else

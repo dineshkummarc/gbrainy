@@ -39,6 +39,7 @@ namespace gbrainy.Core.Main
 		public const string ToolbarShowKey = "ToolbarShow";
 		public const string ToolbarOrientationKey = "ToolbarOrientation";
 		public const string ColorBlindKey = "ColorBlind";
+		public const string ThemeKey = "Theme";
 
 		const string element_item = "item";
 		const string element_key = "key";
@@ -146,6 +147,11 @@ namespace gbrainy.Core.Main
 			return Boolean.Parse (properties [key]);
 		}
 
+		public static string GetStringValue (string key)
+		{
+			return properties [key];
+		}
+
 		public static void SetIntValue (string key, int value)
 		{
 			properties[key] = value.ToString ();
@@ -154,6 +160,11 @@ namespace gbrainy.Core.Main
 		public static void SetBoolValue (string key, bool value)
 		{
 			properties [key] = value.ToString ();
+		}
+
+		public static void SetStringValue (string key, string value)
+		{
+			properties [key] = value;
 		}
 
 		public static void LoadDefaultValues ()
@@ -167,6 +178,7 @@ namespace gbrainy.Core.Main
 			properties.Add (ToolbarShowKey, true.ToString ());
 			properties.Add (ToolbarOrientationKey, "0");
 			properties.Add (ColorBlindKey, false.ToString ());
+			properties.Add (ThemeKey, "classic");
 		}
 
 		static void Load ()

@@ -1,10 +1,10 @@
-
 pixmapdir = $(datadir)/pixmaps
 pixmap_DATA = app-graphics/gbrainy.png \
 		app-graphics/gbrainy.svg \
 		app-graphics/gbrainy16.png
 
 analogiesdir = $(datadir)/games/gbrainy
+themesdir = $(datadir)/games/gbrainy
 
 hicolordir = $(datadir)/icons/hicolor
 images = $(datadir)/games/gbrainy
@@ -26,10 +26,6 @@ pkgconfig_DATA = gbrainy.pc
 tango_icons = 				\
 	app-graphics/gbrainy.png	\
 	app-graphics/gbrainy.svg	\
-	app-graphics/background.svg	\
-	app-graphics/math-games.svg	\
-	app-graphics/logic-games.svg	\
-	app-graphics/memory-games.svg	\
 	app-graphics/math-games-32.png	\
 	app-graphics/logic-games-32.png	\
 	app-graphics/memory-games-32.png	\
@@ -37,7 +33,6 @@ tango_icons = 				\
 	app-graphics/endgame-32.png		\
 	app-graphics/allgames-32.png		\
 	app-graphics/pause-32.png \
-	app-graphics/verbal-games.svg \
 	app-graphics/verbal-games-32.png
 
 
@@ -54,7 +49,12 @@ analogies_DATA = \
 	game-graphics/dartboard.svg \
 	game-graphics/horses_men.svg \
 	game-graphics/lever.svg
-	
+
+
+themes_DATA = \
+	themes/themes.xml \
+	themes/classic_background.svg \
+	themes/blackboard_background.svg
 
 install-data-local:
 	@-$(mkinstalldirs) $(DESTDIR)$(hicolordir)/scalable/apps
@@ -100,4 +100,4 @@ noinst_DATA =
 
 DISTCLEANFILES = $(desktop_files)
 
-EXTRA_DIST = $(pixmap_DATA) $(tango_icons) $(man_MANS) $(analogies_DATA) $(desktop_in_files) gbrainy.pc.in
+EXTRA_DIST = $(pixmap_DATA) $(tango_icons) $(man_MANS) $(analogies_DATA) $(desktop_in_files) $(themes_DATA) gbrainy.pc.in

@@ -59,6 +59,13 @@ namespace gbrainy.Core.Libraries
 			}
 		}
 
+		public string FontFace {
+			set {
+				if (String.IsNullOrEmpty (value) == false)
+					layout.FontDescription = Pango.FontDescription.FromString (value);
+			}
+		}
+
 		// True if we want Pango to process XML entites and formatting attributes
 		public bool UseMarkup  { get; set; }
 
