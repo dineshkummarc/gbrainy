@@ -7,8 +7,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gbrainy.help.master\n"
-"POT-Creation-Date: 2010-08-18 19:00+0000\n"
-"PO-Revision-Date: 2010-08-19 20:58+0200\n"
+"POT-Creation-Date: 2010-12-26 22:08+0000\n"
+"PO-Revision-Date: 2010-12-29 23:08+0100\n"
 "Last-Translator: Jorge González <jorgegonz@svn.gnome.org>\n"
 "Language-Team: Español <gnome-es-list@gnome.org>\n"
 "MIME-Version: 1.0\n"
@@ -17,52 +17,81 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: KBabel 1.11.4\n"
 
-#: C/legal.xml:3(p)
-msgid ""
-"This work is licensed under a <link href=\"http://creativecommons.org/"
-"licenses/by-sa/3.0/\">Creative Commons Attribution-Share Alike 3.0 Unported "
-"License</link>."
-msgstr ""
-"Este trabajo está licenciado bajo una <link href=\"http://creativecommons."
-"org/licenses/by-sa/3.0/us/\">Licencia Creative Commons atribución - "
-"compartir igual 3.0 para los Estados Unidos</link>."
+#: C/export.page:7(desc)
+msgid "Export the games for playing off-line."
+msgstr "Exportar los juegos para jugar desconectado."
 
-#: C/legal.xml:6(p)
-msgid ""
-"As a special exception, the copyright holders give you permission to copy, "
-"modify, and distribute the example code contained in this document under the "
-"terms of your choosing, without restriction."
-msgstr ""
-"Como excepción especial, los poseedores de los derechos de autor le dan "
-"permiso para copiar, modificar y distribuir el ejemplo de código contenido "
-"en este documento bajo los términos que usted elija, sin restricción."
-
-#: C/times.page:7(desc)
-msgid "Change the challenge presentation time in memory games."
-msgstr ""
-"Cambiar el tiempo de la presentación del desafío en los juegos de memoria."
-
-#: C/times.page:11(name) C/newgame.page:13(name) C/index.page:14(name)
-#: C/gameplay.page:12(name) C/score.page:11(name) C/multiplayer.page:11(name)
-#: C/history.page:9(name) C/difficulty.page:12(name) C/tips.page:12(name)
-#: C/pause.page:12(name) C/customgame.page:12(name)
+#: C/export.page:10(name) C/times.page:11(name) C/newgame.page:13(name)
+#: C/index.page:14(name) C/gameplay.page:12(name) C/score.page:11(name)
+#: C/multiplayer.page:11(name) C/history.page:9(name)
+#: C/difficulty.page:12(name) C/tips.page:12(name) C/pause.page:12(name)
+#: C/customgame.page:12(name)
 msgid "Milo Casagrande"
 msgstr "Milo Casagrande"
 
-#: C/times.page:12(email) C/newgame.page:14(email) C/index.page:15(email)
-#: C/gameplay.page:13(email) C/score.page:12(email)
+#: C/export.page:11(email) C/times.page:12(email) C/newgame.page:14(email)
+#: C/index.page:15(email) C/gameplay.page:13(email) C/score.page:12(email)
 #: C/multiplayer.page:12(email) C/history.page:10(email)
 #: C/difficulty.page:13(email) C/tips.page:13(email) C/pause.page:13(email)
 #: C/customgame.page:13(email)
 msgid "milo@ubuntu.com"
 msgstr "milo@ubuntu.com"
 
-#: C/times.page:15(p) C/newgame.page:17(p) C/index.page:18(p)
-#: C/gameplay.page:16(p) C/score.page:15(p) C/multiplayer.page:15(p)
-#: C/history.page:13(p) C/difficulty.page:16(p) C/tips.page:16(p)
-#: C/pause.page:16(p) C/gametypes.page:12(p) C/customgame.page:16(p)
+#: C/export.page:14(p) C/times.page:15(p) C/newgame.page:17(p)
+#: C/index.page:18(p) C/gameplay.page:16(p) C/score.page:15(p)
+#: C/multiplayer.page:15(p) C/history.page:13(p) C/difficulty.page:16(p)
+#: C/tips.page:16(p) C/pause.page:16(p) C/gametypes.page:12(p)
+#: C/customgame.page:16(p)
 msgid "Creative Commons Share Alike 3.0"
 msgstr "Creative Commons Compartir Igual 3.0"
+
+#: C/export.page:20(title)
+msgid "Export the games"
+msgstr "Exportar los juegos"
+
+#: C/export.page:21(p)
+msgid ""
+"It is possible to export and then print the games provided by the app for "
+"playing while not at the computer."
+msgstr ""
+"Es posible exportar y después imprimir los juegos proporcionados por la "
+"aplicación para jugar sin estar en el equipo."
+
+#: C/export.page:25(p)
+msgid ""
+"The games will be saved in a <file>PDF</file> file in the selected folder."
+msgstr ""
+"Los juegos se guardarán en un archivo <file>PDF</file> en la carpeta "
+"seleccionada."
+
+#: C/export.page:28(p)
+msgid "To export the games:"
+msgstr "Para exportar los juegos:"
+
+#: C/export.page:33(p)
+#| msgid ""
+#| "Choose <guiseq><gui style=\"menu\">Game</gui><gui style=\"menuitem\">End "
+#| "Game</gui></guiseq>."
+msgid ""
+"Choose <guiseq><gui style=\"menu\">Game</gui><gui style=\"menuitem\">Export "
+"Games to PDF for Off-Line Playing</gui></guiseq>."
+msgstr ""
+"Elije <guiseq><gui style=\"menu\">Juego</gui><gui style=\"menuitem"
+"\">Exportar los juegos a PDF para jugar desconectado...</gui></guiseq>"
+
+#: C/export.page:38(p)
+msgid ""
+"Select the type of games, the difficult level, and how many games to export. "
+"When done click <gui style=\"button\">Save</gui>."
+msgstr ""
+"Selecciona el tipo de juegos, el nivel de dificultar y cuántos juegos "
+"quieres exportar. Cuando hayas terminado pulsa <gui style=\"button"
+"\">Guardar</gui>."
+
+#: C/times.page:7(desc)
+msgid "Change the challenge presentation time in memory games."
+msgstr ""
+"Cambiar el tiempo de la presentación del desafío en los juegos de memoria."
 
 #: C/times.page:19(title)
 msgid "Change the challenge duration"
@@ -486,9 +515,6 @@ msgstr ""
 "dificultad actual y el tiempo usado para completar la partida:"
 
 #: C/score.page:69(p)
-#| msgid ""
-#| "If you take less than the time expected to complete the game, you score "
-#| "100%."
 msgid ""
 "If you take less than the time expected to complete the game, you score 10 "
 "points."
@@ -497,9 +523,6 @@ msgstr ""
 "puntos."
 
 #: C/score.page:74(p)
-#| msgid ""
-#| "If you take more than the time expected to complete the game, you score "
-#| "80%."
 msgid ""
 "If you take more than the time expected to complete the game, you score 8 "
 "points."
@@ -507,9 +530,6 @@ msgstr ""
 "Si completar el juego te lleva más del tiempo esperado consigues 8 puntos."
 
 #: C/score.page:79(p)
-#| msgid ""
-#| "If you take more than 2x the time expected to complete the game, you "
-#| "score 70%."
 msgid ""
 "If you take more than 2x the time expected to complete the game, you score 7 "
 "points."
@@ -518,9 +538,6 @@ msgstr ""
 "consigues 7 puntos."
 
 #: C/score.page:85(p)
-#| msgid ""
-#| "If you take more than 3x the time expected to complete the game, you "
-#| "score 60%."
 msgid ""
 "If you take more than 3x the time expected to complete the game, you score 6 "
 "points."
@@ -554,10 +571,6 @@ msgstr ""
 "avanzado."
 
 #: C/score.page:106(p)
-#| msgid ""
-#| "This means that when playing at medium difficult level, to get a score of "
-#| "100% you need to score 100% on at least 20 games of every game type "
-#| "played."
 msgid ""
 "This means that when playing at medium difficult level, to get a score of "
 "100 points you need to score 10 points on at least 20 games of every game "
@@ -1025,6 +1038,25 @@ msgstr ""
 #: C/index.page:0(None)
 msgid "translator-credits"
 msgstr "Jorge González <jorgegonz@svn.gnome.org>, 2010"
+
+#~ msgid ""
+#~ "This work is licensed under a <link href=\"http://creativecommons.org/"
+#~ "licenses/by-sa/3.0/\">Creative Commons Attribution-Share Alike 3.0 "
+#~ "Unported License</link>."
+#~ msgstr ""
+#~ "Este trabajo está licenciado bajo una <link href=\"http://creativecommons."
+#~ "org/licenses/by-sa/3.0/us/\">Licencia Creative Commons atribución - "
+#~ "compartir igual 3.0 para los Estados Unidos</link>."
+
+#~ msgid ""
+#~ "As a special exception, the copyright holders give you permission to "
+#~ "copy, modify, and distribute the example code contained in this document "
+#~ "under the terms of your choosing, without restriction."
+#~ msgstr ""
+#~ "Como excepción especial, los poseedores de los derechos de autor le dan "
+#~ "permiso para copiar, modificar y distribuir el ejemplo de código "
+#~ "contenido en este documento bajo los términos que usted elija, sin "
+#~ "restricción."
 
 #~ msgid "Phil Bull"
 #~ msgstr "Phil Bull"
