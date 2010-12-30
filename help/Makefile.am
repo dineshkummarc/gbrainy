@@ -25,8 +25,9 @@ DOC_PAGES = \
 	gameplay.page	\	
 	index.page	\
 	newgame.page	\
-	times.page
+	times.page	\
+	export.page
 
-DOC_LINGUAS = ca cs da de es fr gl hi nl sl
+DOC_LINGUAS = af ca cs da de es fr gl hi nl sl
 
 dist-hook: doc-dist-hook

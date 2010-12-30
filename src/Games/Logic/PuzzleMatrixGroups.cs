@@ -36,7 +36,7 @@ namespace gbrainy.Games.Logic
 		}
 
 		public override string Question {
-			get {return Catalog.GetString ("One of numbers in the matrix must be circled. Which one?");}
+			get {return Catalog.GetString ("One of the numbers in the matrix must be circled. Which one?");}
 		}
 
 		public override string Tip {
