@@ -100,6 +100,7 @@ namespace gbrainy.Core.Libraries
 			Matrix = new Cairo.Matrix ();
 			SetText (str);
 			layout.SingleParagraphMode = true;
+			layout.Width = -1;
 			Pango.CairoHelper.ShowLayout (this, layout);
 			Matrix = old;
 		}
@@ -135,7 +136,6 @@ namespace gbrainy.Core.Libraries
 				ShowPangoText (str);
 
 			layout.FontDescription.Weight = Pango.Weight.Normal;
-			layout.Width = -1;
 			layout.Alignment = align;
 		}
 
@@ -186,7 +186,7 @@ namespace gbrainy.Core.Libraries
 
 		public void DrawStringWithWrapping (double x, double y, string str, double max_width)
 		{
-			int w, h;
+			int w, h, spacing;
 			Cairo.Matrix old = Matrix;
 
 			if (max_width < 0 )
@@ -196,6 +196,7 @@ namespace gbrainy.Core.Libraries
 			UpdateFontSize ();
 			Matrix = new Cairo.Matrix ();
 
+			spacing = layout.Spacing;
 			layout.Width = (int) (max_width * old.Xx * Pango.Scale.PangoScale);
 			layout.Spacing = (int) (line_spacing * (old.Yy * Pango.Scale.PangoScale));
 
@@ -203,12 +204,14 @@ namespace gbrainy.Core.Libraries
 			SetText (str);
 			Pango.CairoHelper.ShowLayout (this, layout);
 			layout.GetPixelSize (out w, out h);
+
+			layout.Spacing = spacing;
 			Matrix = old;
 		}
 
 		public void MeasureString (string str, double max_width, bool wrapping, out double width, out double height)
 		{
-			int w, h;
+			int w, h, spacing;
 			Cairo.Matrix old = Matrix;
 
 			if (max_width < 0 || max_width > 1)
@@ -217,6 +220,7 @@ namespace gbrainy.Core.Libraries
 			UpdateFontSize ();
 			Matrix = new Cairo.Matrix ();
 
+			spacing = layout.Spacing;
 			layout.Width = (int) (max_width * old.Xx * Pango.Scale.PangoScale);
 			layout.Spacing = (int) (line_spacing * (old.Xx * Pango.Scale.PangoScale));
 
@@ -224,6 +228,8 @@ namespace gbrainy.Core.Libraries
 			SetText (str);
 			layout.GetPixelSize (out w, out h);
 			Matrix = old;
+			layout.Spacing = spacing;
+
 			height = h / old.Yy;
 			width = w / old.Xx;
 		}
