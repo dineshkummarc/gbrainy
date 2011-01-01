@@ -5,15 +5,15 @@
 # (c) 2007 Santiago Martinez Varela, 2007.
 # Eduardo Retamales <eretamales@gnome.cl>, 2007, 2008.
 # Jorge González <jorgegonz@svn.gnome.org>, 2007, 2008, 2010.
-# Daniel Mustieles <daniel.mustieles@gmail.com>, 2010.
+# Daniel Mustieles <daniel.mustieles@gmail.com>, 2010, 2011.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gbrainy.master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=gbrainy&component=general\n"
-"POT-Creation-Date: 2010-12-23 07:31+0000\n"
-"PO-Revision-Date: 2010-12-23 10:37+0100\n"
+"POT-Creation-Date: 2010-12-31 15:03+0000\n"
+"PO-Revision-Date: 2011-01-01 14:43+0100\n"
 "Last-Translator: Daniel Mustieles <daniel.mustieles@gmail.com>\n"
 "Language-Team: Español <gnome-es-list@gnome.org>\n"
 "MIME-Version: 1.0\n"
@@ -447,16 +447,16 @@ msgid ""
 "The variable q is bigger than x and s is bigger than y, if q is bigger than "
 "s then the condition x &gt; y is true."
 msgstr ""
-"La variable «q» es mayor que «x» y «s» es mayor que «y», si «q» es mayor que «s» "
-"entonces la condición «x &gt; y» es cierta."
+"La variable «q» es mayor que «x» y «s» es mayor que «y», si «q» es mayor que "
+"«s» entonces la condición «x &gt; y» es cierta."
 
 #: ../data/games.xml.h:48
 msgid ""
 "The variable q is bigger than x and y bigger than r, if q is bigger than r "
 "then the condition x &lt; y is true."
 msgstr ""
-"La variable «q» es mayor que «x» e «y» es mayor que «r», si «q» es mayor que «r» "
-"entonces la condición «x &lt; y» es cierta."
+"La variable «q» es mayor que «x» e «y» es mayor que «r», si «q» es mayor que "
+"«r» entonces la condición «x &lt; y» es cierta."
 
 #: ../data/games.xml.h:49
 msgid "There are [men] people and [horses] horses."
@@ -1312,7 +1312,8 @@ msgstr ""
 #: ../data/verbal_analogies.xml.h:172
 msgid "Which of the following words is the closest in meaning to 'censure'?"
 msgstr ""
-"¿Cuál de las siguientes palabras es la más cercana en significado a «censura»?"
+"¿Cuál de las siguientes palabras es la más cercana en significado a "
+"«censura»?"
 
 #: ../data/verbal_analogies.xml.h:173
 msgid "Which of the following words is the odd one?"
@@ -2640,20 +2641,26 @@ msgid "Balance"
 msgstr "Balanza"
 
 #: ../src/Games/Logic/PuzzleBalance.cs:53
+#| msgid ""
+#| "How many triangles are needed in the right part of the last figure to "
+#| "keep it balanced?"
 msgid ""
-"How many triangles are needed in the right part of the last figure to keep "
-"it balanced?"
+"Using triangles only, how many triangles are needed in the right part of the "
+"last figure to keep it balanced?"
 msgstr ""
-"¿Cuántos triángulos se necesitan en la parte derecha de la última figura "
-"para mantener el equilibrio?"
+"Usando solamente triángulos ¿cuántos triángulos se necesitan en la parte "
+"derecha de la última figura para mantener el equilibrio?"
 
 #: ../src/Games/Logic/PuzzleBalance.cs:58
-msgid "Every triangle counts as 1, each circle as 2 and each square as 3."
+msgid ""
+"Every circle is equivalent to two triangles and every square to three "
+"triangles."
 msgstr ""
-"Cada triángulo cuenta como 1, cada círculo como 2 y cada cuadrado como 3."
+"Cada círculo cuenta como dos triángulos y cada cuadrado a tres triángulos."
 
 #: ../src/Games/Logic/PuzzleBalance.cs:63
-msgid "Every circle counts as two triangles."
+#| msgid "Every circle counts as two triangles."
+msgid "Every circle is equivalent two triangles."
 msgstr "Cada círculo cuenta como dos triángulos."
 
 #: ../src/Games/Logic/PuzzleBuildTriangle.cs:51
@@ -2884,8 +2891,8 @@ msgid ""
 "What is the probability of getting a '2' or a '6' in a single throw of a "
 "fair 6 sided die? Answer using a fraction (e.g.: 1/2)."
 msgstr ""
-"¿Cuál es la probabilidad de obtener un «2» o un «6» en un solo lanzamiento de "
-"un dado no cargado de 6 caras? Responde usando una fracción (ej.: 1/2)."
+"¿Cuál es la probabilidad de obtener un «2» o un «6» en un solo lanzamiento "
+"de un dado no cargado de 6 caras? Responde usando una fracción (ej.: 1/2)."
 
 #: ../src/Games/Logic/PuzzleDice.cs:52
 msgid "There are 2 of 6 possibilities."
@@ -2929,8 +2936,8 @@ msgid ""
 "There is 1 of 6 possibilities of getting a '6' on the first die and the same "
 "for the second die."
 msgstr ""
-"Existe 1 de 6 probabilidades de obtener un «6» en el primer dado y las mismas "
-"para el segundo dado."
+"Existe 1 de 6 probabilidades de obtener un «6» en el primer dado y las "
+"mismas para el segundo dado."
 
 #: ../src/Games/Logic/PuzzleDice.cs:68
 msgid "Dice"
@@ -3018,8 +3025,8 @@ msgid ""
 "figures and 'F' that there are two figures."
 msgstr ""
 "«A» indica que las figuras se superponen, «B» que son cuadrados, «C» que son "
-"círculos, «D» que las figuras están separadas, «E» que hay tres figuras y «F» "
-"que hay dos figuras."
+"círculos, «D» que las figuras están separadas, «E» que hay tres figuras y "
+"«F» que hay dos figuras."
 
 #: ../src/Games/Logic/PuzzleFigurePattern.cs:40
 msgid "Figure pattern"
@@ -3164,7 +3171,6 @@ msgid "Matrix groups"
 msgstr "Grupos de matriz"
 
 #: ../src/Games/Logic/PuzzleMatrixGroups.cs:39
-#| msgid "One of numbers in the matrix must be circled. Which one?"
 msgid "One of the numbers in the matrix must be circled. Which one?"
 msgstr "Uno de los números de la matriz se debe rodear. ¿Cuál?"
 
@@ -4962,6 +4968,10 @@ msgstr "_Desinstalar…"
 #: ../src/Clients/Classical/mono-addins-strings.xml.h:35
 msgid "_Unselect All"
 msgstr "_Deseleccionar todo"
+
+#~ msgid "Every triangle counts as 1, each circle as 2 and each square as 3."
+#~ msgstr ""
+#~ "Cada triángulo cuenta como 1, cada círculo como 2 y cada cuadrado como 3."
 
 #~ msgid "Horse / Pony"
 #~ msgstr "Caballo / Poni"
