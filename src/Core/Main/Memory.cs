@@ -186,7 +186,6 @@ namespace gbrainy.Core.Main
 		public override void DrawPreview (CairoContextEx gr, int width, int height, bool rtl)
 		{
 			gr.Scale (width, height);
-			gr.DrawBackground ();
 			gr.Color = new Cairo.Color (0, 0, 0);
 			gr.LineWidth = LineWidth;
 			DrawObjectToMemorize (gr, width, height, rtl);

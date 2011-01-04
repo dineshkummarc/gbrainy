@@ -131,7 +131,6 @@ namespace gbrainy.Core.Views
 			double y = 0.03;
 
 			gr.Scale (area_width, area_height);
-			gr.DrawBackground ();
 			gr.LineWidth = 0.005;
 
 			gr.Color = new Cairo.Color (0, 0, 0, 1);

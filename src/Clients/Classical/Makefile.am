@@ -18,7 +18,7 @@ GBRAINY_CSDISTFILES =					\
 	$(srcdir)/Dialogs/PlayerHistoryDialog.cs	\
 	$(srcdir)/Dialogs/PreferencesDialog.cs		\
 	$(srcdir)/Dialogs/PdfExportDialog.cs		\
-	$(srcdir)/Widgets/SimpleLabel.cs		\
+	$(srcdir)/Widgets/GameDrawingArea.cs		\
 	$(srcdir)/Widgets/BrowseFile.cs
 
 

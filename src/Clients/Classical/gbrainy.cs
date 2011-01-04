@@ -50,8 +50,6 @@ namespace gbrainy.Clients.Classical
 		[GtkBeans.Builder.Object] Box drawing_vbox;
 		[GtkBeans.Builder.Object] Gtk.HBox main_hbox;
 		[GtkBeans.Builder.Object] Gtk.VBox framework_vbox;
-		[GtkBeans.Builder.Object] Gtk.VBox question_vbox;
-		[GtkBeans.Builder.Object] Gtk.VBox solution_vbox;
 		[GtkBeans.Builder.Object] Gtk.Entry answer_entry;
 		[GtkBeans.Builder.Object] Gtk.Button answer_button;
 		[GtkBeans.Builder.Object] Gtk.Button tip_button;
@@ -73,16 +71,11 @@ namespace gbrainy.Clients.Classical
 
 		Gtk.Toolbar toolbar;
 
-		DrawingArea drawing_area;
+		GameDrawingArea drawing_area;
 		GameSession session;
 		ToolButton all_tbbutton, logic_tbbutton, calculation_tbbutton, memory_tbbutton, verbal_tbbutton, pause_tbbutton, finish_tbbutton;
 		bool low_res;
 		bool full_screen;
-		SimpleLabel question_label;
-		SimpleLabel solution_label;
-		bool margins = false;
-		double offset_x, offset_y;
-		int drawing_square;
 		GameSession.Types initial_session;
 		bool init_completed = false;
 
@@ -182,8 +175,8 @@ namespace gbrainy.Clients.Classical
 			BuildToolBar ();
 			AttachToolBar ();
 
-			drawing_area = new DrawingArea ();
-			drawing_area.ExposeEvent += OnDrawingAreaExposeEvent;
+			drawing_area = new GameDrawingArea ();
+			drawing_area.Drawable = session;
 			GameSensitiveUI ();
 
 			// For low resolutions, hide the toolbar and made the drawing area smaller
@@ -193,14 +186,6 @@ namespace gbrainy.Clients.Classical
 					low_res = true;
 				}
 			}
-
-			question_label = new SimpleLabel ();
-			question_label.HeightMargin = 2;
-			question_vbox.Add (question_label);
-
-			solution_label = new SimpleLabel ();
-			solution_label.HeightMargin = 2;
-			solution_vbox.Add (solution_label);
 
 			EventBox eb = new EventBox (); // Provides a window for drawing area windowless widget
 
@@ -276,38 +261,6 @@ namespace gbrainy.Clients.Classical
 			drawing_area.QueueDraw ();
 		}
 
-		void OnDrawingAreaExposeEvent (object o, ExposeEventArgs ar)
-		{
-			Gdk.EventExpose args = ar.Event;
-
-			int w, h;
-			args.Window.GetSize (out w, out h);
-
-			Cairo.Context cc = Gdk.CairoHelper.Create (args.Window);
-			CairoContextEx cr = new CairoContextEx (cc.Handle, drawing_area);
-
-			// We want a square drawing area for the puzzles then the figures are shown as designed.
-			// For example, squares are squares. This also makes sure that proportions are kept when resizing
-			drawing_square = Math.Min (w, h);
-
-			if (drawing_square < w)
-				offset_x = (w - drawing_square) / 2;
-
-			if (drawing_square < h)
-				offset_y = (h - drawing_square) / 2;
-
-			if (margins)
-				SetMargin ((int) offset_x);
-			else
-				SetMargin (2);
-
-			cr.Translate (offset_x, offset_y);
-			session.Draw (cr, drawing_square, drawing_square, drawing_area.Direction == Gtk.TextDirection.Rtl);
-
-			((IDisposable)cc).Dispose();
-			((IDisposable)cr).Dispose();
-		}
-
 		void OnMouseMotionEvent (object o, MotionNotifyEventArgs ev_args)
 		{
 			SendMouseEvent (ev_args.Event.X, ev_args.Event.Y, MouseEventType.Move);
@@ -324,9 +277,10 @@ namespace gbrainy.Clients.Classical
 		void SendMouseEvent (double ev_x, double ev_y, MouseEventType type)
 		{
 			double x, y;
+			int drawing_square = drawing_area.DrawingSquare;
 
-			x = ev_x - offset_x;
-			y = ev_y - offset_y;
+			x = ev_x - drawing_area.OffsetX;
+			y = ev_y - drawing_area.OffsetY;
 
 			if (x < 0 || y < 0 || x > drawing_square || y > drawing_square)
 				return;
@@ -391,7 +345,7 @@ namespace gbrainy.Clients.Classical
 
 		public void UpdateQuestion (string question)
 		{
-			question_label.Text = question;
+			drawing_area.Question = question;
 		}
 
 		public void QueueDraw ()
@@ -399,15 +353,10 @@ namespace gbrainy.Clients.Classical
 			drawing_area.QueueDraw ();
 		}
 
-		public void SetMargin (int margin)
-		{
-			question_label.WidthMargin = margin;
-			solution_label.WidthMargin = margin;
-		}
-
 		void UpdateSolution (string solution)
 		{
-			solution_label.Text = solution;
+			drawing_area.Solution = solution;
+			QueueDraw ();
 		}
 
 		void BuildToolBar ()
@@ -791,11 +740,9 @@ namespace gbrainy.Clients.Classical
 		void OnFullscreen (object sender, EventArgs args)
 		{
 			if (full_screen == false) {
-				margins = true;
 				app_window.Fullscreen ();
 			}
 			else {
-				margins = false;
 				app_window.Unfullscreen ();
 			}
 

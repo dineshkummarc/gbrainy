@@ -134,7 +134,6 @@ namespace gbrainy.Core.Views
 			double width, height;
 
 			gr.Scale (area_width, area_height);
-			gr.DrawBackground ();
 			gr.Color = new Cairo.Color (0, 0, 0, 1);
 
 			gr.MoveTo (x, y);
