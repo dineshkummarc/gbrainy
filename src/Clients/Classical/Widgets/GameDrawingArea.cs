@@ -22,7 +22,6 @@ using Gtk;
 using Cairo;
 
 using gbrainy.Core.Main;
-//using gbrainy.Core.Platform;
 
 namespace gbrainy.Clients.Classical.Widgets
 {
@@ -80,6 +79,7 @@ namespace gbrainy.Clients.Classical.Widgets
 				OffsetY = 0;
 
 			// Draw a background taking all the area
+			double line_space = cr.FontLineSpace;
 			cr.Save ();
 			{
 				const double text_margin = 0.015;
@@ -109,7 +109,7 @@ namespace gbrainy.Clients.Classical.Widgets
 				cr.Stroke ();
 			}
 
-			cr.FontLineSpace = 0.018;
+			cr.FontLineSpace = line_space;
 			cr.Restore ();
 
 			// Draw the game area

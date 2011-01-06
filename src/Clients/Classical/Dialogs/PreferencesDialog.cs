@@ -67,9 +67,6 @@ namespace gbrainy.Clients.Classical.Dialogs
 			themes_combobox.PackStart (layout_cell, true);
 			themes_combobox.SetCellDataFunc (layout_cell, ComboBoxCellFunc);
 
-
-			Theme [] themes = ThemeManager.Themes;
-
 			foreach (Theme theme in ThemeManager.Themes)
 				store.AppendValues (Catalog.GetString(theme.LocalizedName), theme);
 

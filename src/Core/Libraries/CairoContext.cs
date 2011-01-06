@@ -60,7 +60,7 @@ namespace gbrainy.Core.Libraries
 			FontLineSpace = def_linespace;
 		}
 
-		public string FontFace {
+		new public string FontFace {
 			set {
 				if (String.IsNullOrEmpty (value) == true)
 					return;

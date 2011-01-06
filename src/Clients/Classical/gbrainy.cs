@@ -126,16 +126,32 @@ namespace gbrainy.Clients.Classical
 
 			if (toolbar != null)
 			{
+				Box box;
+				
 				switch (toolbar.Orientation) {
 				case Gtk.Orientation.Vertical:
-					main_hbox.Remove (toolbar);
+					box = main_hbox;
 					break;
 				case Gtk.Orientation.Horizontal:
-					framework_vbox.Remove (toolbar);
+				{
+					box = framework_vbox;
 					break;
+				}
 				default:
 					throw new InvalidOperationException ();
 				}
+				
+				bool contained = false;
+				foreach (var ch in box.AllChildren)
+				{
+					if (ch == toolbar)
+					{
+						contained = true;
+						break;
+					}
+				}
+				if (contained == true)
+					box.Remove (toolbar);
 			}
 			toolbar.Orientation = (Gtk.Orientation) Preferences.GetIntValue (Preferences.ToolbarOrientationKey);
 
