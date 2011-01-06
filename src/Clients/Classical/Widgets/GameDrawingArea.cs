@@ -78,6 +78,8 @@ namespace gbrainy.Clients.Classical.Widgets
 			else
 				OffsetY = 0;
 
+			OffsetY += question_high + total_margin;
+
 			// Draw a background taking all the area
 			double line_space = cr.FontLineSpace;
 			cr.Save ();
@@ -113,7 +115,7 @@ namespace gbrainy.Clients.Classical.Widgets
 			cr.Restore ();
 
 			// Draw the game area
-			cr.Translate (OffsetX, OffsetY + question_high + total_margin);
+			cr.Translate (OffsetX, OffsetY);
 			cr.SetPangoNormalFontSize ();
 			Drawable.Draw (cr, DrawingSquare, DrawingSquare, Direction == Gtk.TextDirection.Rtl);
 
