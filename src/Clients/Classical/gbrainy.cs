@@ -663,10 +663,12 @@ namespace gbrainy.Clients.Classical
 		void SetPauseResumeButtonUI (bool pause)
 		{
 			if (pause) {
+				drawing_area.Paused = false;
 				pause_tbbutton.StockId = "pause";
 				pause_tbbutton.Label = Catalog.GetString ("Pause");
 				ActiveInputControls (true);
 			} else {
+				drawing_area.Paused = true;	
 				pause_tbbutton.StockId = "resume";
 				pause_tbbutton.Label = Catalog.GetString ("Resume");
 				ActiveInputControls (false);

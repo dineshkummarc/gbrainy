@@ -20,6 +20,7 @@
 using System;
 using Gtk;
 using Cairo;
+using Mono.Unix;
 
 using gbrainy.Core.Main;
 
@@ -30,6 +31,8 @@ namespace gbrainy.Clients.Classical.Widgets
 	// question or answer, etc.
 	public class GameDrawingArea : DrawingArea
 	{
+		bool paused;
+
 		public IDrawable Drawable { get; set; }
 		public string Question { get; set; }
 		public string Solution { get; set; }
@@ -37,6 +40,20 @@ namespace gbrainy.Clients.Classical.Widgets
 		public int OffsetX { get; private set; }
 		public int OffsetY { get; private set; }
 		public bool UseSolutionArea { get; set; }
+
+		public bool Paused { 
+			get { return paused; }
+			set {
+				paused = value;
+				QueueDraw ();
+			}
+		}
+
+		// Constants
+		const int question_high = 55;
+		const int solution_high = 55;
+		const int total_margin = 0; // Margin applied as in-box for themes
+		const double text_margin = 0.015;
 
 		public GameDrawingArea ()
 		{
@@ -49,9 +66,6 @@ namespace gbrainy.Clients.Classical.Widgets
 				return false;
 
 			int w, h, total_w, total_h;
-			const int question_high = 55;
-			const int solution_high = 55;
-			const int total_margin = 0; // Margin applied as in-box for themes
 
 			Cairo.Context cc = Gdk.CairoHelper.Create (args.Window);
 			CairoContextEx cr = new CairoContextEx (cc.Handle, this);
@@ -80,48 +94,64 @@ namespace gbrainy.Clients.Classical.Widgets
 
 			OffsetY += question_high + total_margin;
 
-			// Draw a background taking all the area
-			double line_space = cr.FontLineSpace;
 			cr.Save ();
-			{
-				const double text_margin = 0.015;
-				double scaled_margin;
-				double max_width;
 
-				cr.Scale (total_w, total_h);
-				cr.DrawBackground ();
-				cr.FontLineSpace = 0.004;
-				cr.SetPangoFontSize (0.018);
-
-				scaled_margin = (double) total_margin / (double) total_w;
-				max_width = 1 - (scaled_margin * 2) - (text_margin * 2);
-				cr.UseMarkup = true;
-
-				if (String.IsNullOrEmpty (Question) == false)
-				{
-					// Question drawing
-					cr.DrawStringWithWrapping (scaled_margin + text_margin, scaled_margin + text_margin, Question, max_width);
-				}
-
-				if (UseSolutionArea && String.IsNullOrEmpty (Solution) == false)
-				{
-					// Solution drawing
-					cr.DrawStringWithWrapping (scaled_margin + text_margin, 1 - 0.12 - scaled_margin - text_margin, Solution, max_width);
-				}
+			// Draw a background taking all the window area
+			cr.Scale (total_w, total_h);
+			cr.DrawBackground ();
+			
+			if (Paused == false) {
+				DrawQuestionAndAnswer (cr, total_w, total_h);
+			} else {
+				cr.SetPangoFontSize (0.08);
+				cr.DrawTextCentered (0.5, 0.5, Catalog.GetString ("Paused"));
 				cr.Stroke ();
 			}
-
-			cr.FontLineSpace = line_space;
 			cr.Restore ();
 
-			// Draw the game area
-			cr.Translate (OffsetX, OffsetY);
-			cr.SetPangoNormalFontSize ();
-			Drawable.Draw (cr, DrawingSquare, DrawingSquare, Direction == Gtk.TextDirection.Rtl);
+			if (Paused == false)
+			{
+				// Draw the game area
+				cr.Translate (OffsetX, OffsetY);
+				cr.SetPangoNormalFontSize ();
+				cr.Color = new Color (1, 1, 1, 0.5);
+				Drawable.Draw (cr, DrawingSquare, DrawingSquare, Direction == Gtk.TextDirection.Rtl);
+				cr.Stroke ();
+			}
 
 			((IDisposable)cc).Dispose();
 			((IDisposable)cr).Dispose();
 			return true;
+		}
+
+		void DrawQuestionAndAnswer (CairoContextEx cr, int width, int height)
+		{
+			double scaled_margin;
+			double max_width;
+			double line_space;
+
+			line_space = cr.FontLineSpace;
+			cr.FontLineSpace = 0.004;
+			cr.SetPangoFontSize (0.018);
+
+			scaled_margin = (double) total_margin / (double) width;
+			max_width = 1 - (scaled_margin * 2) - (text_margin * 2);
+			cr.UseMarkup = true;
+
+			if (String.IsNullOrEmpty (Question) == false)
+			{
+				// Question drawing
+				cr.DrawStringWithWrapping (scaled_margin + text_margin, scaled_margin + text_margin, Question, max_width);
+			}
+
+			if (UseSolutionArea && String.IsNullOrEmpty (Solution) == false)
+			{
+				// Solution drawing
+				cr.DrawStringWithWrapping (scaled_margin + text_margin, 1 - 0.12 - scaled_margin - text_margin, Solution, max_width);
+			}
+			cr.UseMarkup = false;
+			cr.Stroke ();
+			cr.FontLineSpace = line_space;
 		}
 	}
 }
