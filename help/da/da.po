@@ -1,15 +1,15 @@
 # Danish translation for gbrainy.
 # Copyright (C) 2010 gbrainy's COPYRIGHT HOLDER
 # This file is distributed under the same license as the gbrainy package.
-# Joe Hansen (joedalton2@yahoo.dk), 2009, 2010.
+# Joe Hansen (joedalton2@yahoo.dk), 2009, 2010, 2011.
 #
 # spin box -> rulleboks
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: gbrainy master\n"
-"POT-Creation-Date: 2010-08-18 19:00+0000\n"
-"PO-Revision-Date: 2010-08-19 23:07+0200\n"
+"POT-Creation-Date: 2010-12-26 22:08+0000\n"
+"PO-Revision-Date: 2011-01-08 23:07+0200\n"
 "Last-Translator: Joe Hansen <joedalton2@yahoo.dk>\n"
 "Language-Team: Dansk-gruppen <dansk@dansk-gruppen.dk>\n"
 "MIME-Version: 1.0\n"
@@ -17,51 +17,75 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: C/legal.xml:3(p)
-msgid ""
-"This work is licensed under a <link href=\"http://creativecommons.org/"
-"licenses/by-sa/3.0/\">Creative Commons Attribution-Share Alike 3.0 Unported "
-"License</link>."
-msgstr ""
-"Denne manual er udgivet under <link href=\"http://creativecommons.org/"
-"licenses/by-sa/3.0/\">Creative Commons Attribution-Share Alike 3.0 Unported "
-"License</link>."
+#: C/export.page:7(desc)
+msgid "Export the games for playing off-line."
+msgstr "Eksporter spillene så de kan spilles adskilt fra computeren"
 
-#: C/legal.xml:6(p)
-msgid ""
-"As a special exception, the copyright holders give you permission to copy, "
-"modify, and distribute the example code contained in this document under the "
-"terms of your choosing, without restriction."
-msgstr ""
-"Som en speciel undtagelse, giver ophavsretindehaveren dig tilladelse til at "
-"kopiere, ændre og distribuere kodeeksemplerne i dette dokumnet under de "
-"betingelser du måtte vælge, uden begrænsning."
-
-#: C/times.page:7(desc)
-msgid "Change the challenge presentation time in memory games."
-msgstr "Ændre den tid som du har til at løse en opgave i hukommelsesspil."
-
-#: C/times.page:11(name) C/newgame.page:13(name) C/index.page:14(name)
-#: C/gameplay.page:12(name) C/score.page:11(name) C/multiplayer.page:11(name)
-#: C/history.page:9(name) C/difficulty.page:12(name) C/tips.page:12(name)
-#: C/pause.page:12(name) C/customgame.page:12(name)
+#: C/export.page:10(name) C/times.page:11(name) C/newgame.page:13(name)
+#: C/index.page:14(name) C/gameplay.page:12(name) C/score.page:11(name)
+#: C/multiplayer.page:11(name) C/history.page:9(name)
+#: C/difficulty.page:12(name) C/tips.page:12(name) C/pause.page:12(name)
+#: C/customgame.page:12(name)
 msgid "Milo Casagrande"
 msgstr "Milo Casagrande"
 
-#: C/times.page:12(email) C/newgame.page:14(email) C/index.page:15(email)
-#: C/gameplay.page:13(email) C/score.page:12(email)
+#: C/export.page:11(email) C/times.page:12(email) C/newgame.page:14(email)
+#: C/index.page:15(email) C/gameplay.page:13(email) C/score.page:12(email)
 #: C/multiplayer.page:12(email) C/history.page:10(email)
 #: C/difficulty.page:13(email) C/tips.page:13(email) C/pause.page:13(email)
 #: C/customgame.page:13(email)
 msgid "milo@ubuntu.com"
 msgstr "milo@ubuntu.com"
 
-#: C/times.page:15(p) C/newgame.page:17(p) C/index.page:18(p)
-#: C/gameplay.page:16(p) C/score.page:15(p) C/multiplayer.page:15(p)
-#: C/history.page:13(p) C/difficulty.page:16(p) C/tips.page:16(p)
-#: C/pause.page:16(p) C/gametypes.page:12(p) C/customgame.page:16(p)
+#: C/export.page:14(p) C/times.page:15(p) C/newgame.page:17(p)
+#: C/index.page:18(p) C/gameplay.page:16(p) C/score.page:15(p)
+#: C/multiplayer.page:15(p) C/history.page:13(p) C/difficulty.page:16(p)
+#: C/tips.page:16(p) C/pause.page:16(p) C/gametypes.page:12(p)
+#: C/customgame.page:16(p)
 msgid "Creative Commons Share Alike 3.0"
 msgstr "Creative Commons Share Alike 3.0"
+
+#: C/export.page:20(title)
+msgid "Export the games"
+msgstr "Eksporter spillene"
+
+#: C/export.page:21(p)
+msgid ""
+"It is possible to export and then print the games provided by the app for "
+"playing while not at the computer."
+msgstr ""
+"Det er muligt at eksportere og så udskrive spillene, som tilbydes af programmet, "
+"så de kan spilles uden at computeren er tændt."
+
+#: C/export.page:25(p)
+msgid ""
+"The games will be saved in a <file>PDF</file> file in the selected folder."
+msgstr ""
+"Spillene vil blive gemt i en <file>PDF-fil</file> i den valgte mappe."
+
+#: C/export.page:28(p)
+msgid "To export the games:"
+msgstr "For at eksportere spillene:"
+
+#: C/export.page:33(p)
+msgid ""
+"Choose <guiseq><gui style=\"menu\">Game</gui><gui style=\"menuitem\">Export "
+"Games to PDF for Off-Line Playing</gui></guiseq>."
+msgstr ""
+"Vælg <guiseq><gui style=\"menu\">Spil</gui><gui style=\"menuitem\">Eksporter "
+"spil til PDF så du kan spille uden computeren</gui></guiseq>."
+
+#: C/export.page:38(p)
+msgid ""
+"Select the type of games, the difficult level, and how many games to export. "
+"When done click <gui style=\"button\">Save</gui>."
+msgstr ""
+"Vælg typen af spil, sværhedsgraden og hvor mange spil der skal eksporteres. "
+"Når du er færdig så klik på <gui style=\"button\">Gem</gui>."
+
+#: C/times.page:7(desc)
+msgid "Change the challenge presentation time in memory games."
+msgstr "Ændre den tid som du har til at løse en opgave i hukommelsesspil."
 
 #: C/times.page:19(title)
 msgid "Change the challenge duration"
@@ -265,8 +289,8 @@ msgstr ""
 #: C/newgame.page:163(p)
 msgid "To proceed to the next game, click <gui style=\"button\">Next</gui>."
 msgstr ""
-"For at fortsætte til det næste spil, så klik på "
-"<gui style=\"button\">Næste</gui>."
+"For at fortsætte til det næste spil, så klik på <gui style=\"button\">Næste</"
+"gui>."
 
 #: C/newgame.page:167(p)
 msgid ""
@@ -345,11 +369,11 @@ msgid ""
 "app> can also be <link href=\"http://live.gnome.org/gbrainy/Extending"
 "\">extended</link> easily with new games developed by third parties."
 msgstr ""
-"Du kan vælge forskellige sværhedsgrader, hvilket gør, at <app>gbrainy</"
-"app> kan nydes af børn, voksne og ældre. Det har også en spilhistorik, "
-"spillerens personlige rekord, tip til spilleren og understøttelse af "
-"fuldskærm. <app>gbrainy</app> kan også nemt <link href=\"http://live.gnome."
-"org/gbrainy/Extending\">udvides</link> med spil udviklet af andre."
+"Du kan vælge forskellige sværhedsgrader, hvilket gør, at <app>gbrainy</app> "
+"kan nydes af børn, voksne og ældre. Det har også en spilhistorik, spillerens "
+"personlige rekord, tip til spilleren og understøttelse af fuldskærm. "
+"<app>gbrainy</app> kan også nemt <link href=\"http://live.gnome.org/gbrainy/"
+"Extending\">udvides</link> med spil udviklet af andre."
 
 #: C/gameplay.page:37(p)
 msgid ""
@@ -625,8 +649,8 @@ msgid ""
 "In order to change the number of sessions recorded or how many games will be "
 "stored in the history, proceed as follows:"
 msgstr ""
-"For at ændre antallet af sessioner optaget eller hvor mange spil der vil blive "
-"gemt i historikken, fortsæt som angivet i det følgende:"
+"For at ændre antallet af sessioner optaget eller hvor mange spil der vil "
+"blive gemt i historikken, fortsæt som angivet i det følgende:"
 
 #: C/history.page:51(p)
 msgid ""
@@ -685,8 +709,7 @@ msgid ""
 msgstr ""
 "Du kan vælge fra tre forskellige niveauer: <gui style=\"radiobutton\">Let</"
 "gui>, <gui style=\"radiobutton\">Mellem</gui>, and <gui style=\"radiobutton"
-"\">Øvet</gui>. Standardniveauet er <gui style=\"radiobutton\">Mellem</"
-"gui>."
+"\">Øvet</gui>. Standardniveauet er <gui style=\"radiobutton\">Mellem</gui>."
 
 #: C/tips.page:8(desc)
 msgid "Use the tips to solve a puzzle."
@@ -710,8 +733,8 @@ msgid ""
 "the bottom of the window (next to the <gui style=\"input\">Answer</gui> text "
 "entry)."
 msgstr ""
-"Når du spiller så klik på knappen <gui style=\"button\">Tip</gui> nederst "
-"i vinduet (ved siden af tekstpunktet <gui style=\"input\">Svar</gui>)."
+"Når du spiller så klik på knappen <gui style=\"button\">Tip</gui> nederst i "
+"vinduet (ved siden af tekstpunktet <gui style=\"input\">Svar</gui>)."
 
 #: C/tips.page:29(p)
 msgid "This feature is not available for some of the games."
@@ -738,16 +761,16 @@ msgid ""
 "To pause a game so that you can resume it at the same point at a later time, "
 "perform one of the following:"
 msgstr ""
-"For at sætte et spil på pause, så du kan genoptage det samme sted på et senere "
-"tidspunkt, udføres en af følgende muligheder:"
+"For at sætte et spil på pause, så du kan genoptage det samme sted på et "
+"senere tidspunkt, udføres en af følgende muligheder:"
 
 #: C/pause.page:30(p) C/pause.page:45(p)
 msgid ""
 "Choose <guiseq><gui style=\"menu\">Game</gui><gui style=\"menuitem\">Pause "
 "Game</gui></guiseq>."
 msgstr ""
-"Vælg <guiseq><gui style=\"menu\">Spil</gui><gui style=\"menuitem\">Pause"
-"</gui></guiseq>."
+"Vælg <guiseq><gui style=\"menu\">Spil</gui><gui style=\"menuitem\">Pause</"
+"gui></guiseq>."
 
 #: C/pause.page:35(p)
 msgid "Click on the <gui style=\"button\">Pause</gui> button in the toolbar."
@@ -762,7 +785,8 @@ msgstr ""
 
 #: C/pause.page:50(p)
 msgid "Click on the <gui style=\"button\">Resume</gui> button in the toolbar."
-msgstr "Klik på knappen <gui style=\"button\">Genoptag</gui> i værktøjsbjælken."
+msgstr ""
+"Klik på knappen <gui style=\"button\">Genoptag</gui> i værktøjsbjælken."
 
 #: C/pause.page:58(title)
 msgid "Stop a game"
@@ -966,8 +990,8 @@ msgid ""
 "Choose <guiseq><gui style=\"menu\">Game</gui><gui style=\"menuitem\">New "
 "Game</gui><gui style=\"menuitem\">Custom Game Selection</gui></guiseq>."
 msgstr ""
-"Vælg <guiseq><gui style=\"menu\">Spil</gui><gui style=\"menuitem\">Nyt "
-"spil</gui><gui style=\"menuitem\">Tilpasset spiludvælgelse</gui></guiseq>."
+"Vælg <guiseq><gui style=\"menu\">Spil</gui><gui style=\"menuitem\">Nyt spil</"
+"gui><gui style=\"menuitem\">Tilpasset spiludvælgelse</gui></guiseq>."
 
 #: C/customgame.page:35(p)
 msgid ""
@@ -982,8 +1006,8 @@ msgid ""
 "Once you are done, click on <gui style=\"button\">Start</gui> to start "
 "playing your custom games selection."
 msgstr ""
-"Når du er færdig, klik på <gui style=\"button\">Start</gui> for at starte "
-"et spil med dine tilpasninger."
+"Når du er færdig, klik på <gui style=\"button\">Start</gui> for at starte et "
+"spil med dine tilpasninger."
 
 #. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
 #: C/index.page:0(None)
@@ -994,4 +1018,20 @@ msgstr ""
 "Dansk-gruppen <dansk@dansk-gruppen.dk>\n"
 "Mere info: http://www.dansk-gruppen.dk"
 
+#~ msgid ""
+#~ "This work is licensed under a <link href=\"http://creativecommons.org/"
+#~ "licenses/by-sa/3.0/\">Creative Commons Attribution-Share Alike 3.0 "
+#~ "Unported License</link>."
+#~ msgstr ""
+#~ "Denne manual er udgivet under <link href=\"http://creativecommons.org/"
+#~ "licenses/by-sa/3.0/\">Creative Commons Attribution-Share Alike 3.0 "
+#~ "Unported License</link>."
 
+#~ msgid ""
+#~ "As a special exception, the copyright holders give you permission to "
+#~ "copy, modify, and distribute the example code contained in this document "
+#~ "under the terms of your choosing, without restriction."
+#~ msgstr ""
+#~ "Som en speciel undtagelse, giver ophavsretindehaveren dig tilladelse til "
+#~ "at kopiere, ændre og distribuere kodeeksemplerne i dette dokumnet under "
+#~ "de betingelser du måtte vælge, uden begrænsning."
