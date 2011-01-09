@@ -261,13 +261,13 @@
 		<type>Logic</type>
 		<difficulty>All</difficulty>
 		<variant>
-			<!-- 
+			<!--
 				* The array 'numbers' always contains 1 number that is not needed to accomplish the game
 				* There is a single combination that can solve the problem
 				* There are always 2 numbers that have to be repeated
 			-->
 			<variables>
-			int [] numbers = new int [] 
+			int [] numbers = new int []
 			{
 				2, 20, 39, 10,
 				6, 30, 39, 11,
@@ -277,7 +277,7 @@
 				26, 7, 20, 27,
 			};
 
-			int [] ans = new int [] 
+			int [] ans = new int []
 			{
 				2, 20, 20, 39, 39,
 				6, 6, 30, 39, 39,
@@ -342,43 +342,29 @@
 		<_tip>Consider the sentence attributed to Archimedes: give me a lever long enough and a place to stand, and I can move the Earth.</_tip>
 		<_rationale>A lever is in equilibrium at distances reciprocally proportional to their weights.</_rationale>
 		<svg file = "lever.svg" x = "0.1" y = "0.1" width = "0.8" height = "0.8"/>
-	
 		<variant>
 			<variables>
 			int right_pos = 2;
-			int left_pos = 3;
-			int weight = 2 + random.Next (8);
-			int right_weight = right_pos * weight;
+			int left_pos = 4;
+			int weight = 2 + random.Next (8) * 2;
 			int left_weight = left_pos * weight;
+			int right_weight = left_pos * weight / right_pos;
 			</variables>
 			<string text = "?" x = "0.66" y = "0.4" centered = "yes" size = "large"/>
-			<string text = "[left_weight]" x = "0.26" y = "0.4" centered = "yes" size = "large"/>
+			<string text = "[left_weight]" x = "0.18" y = "0.4" centered = "yes" size = "large"/>
 			<answer>[right_weight]</answer>
 		</variant>
 
 		<variant>
 			<variables>
-			int right_pos = 4;
-			int left_pos = 3;
-			int weight = 2 + random.Next (8);
-			int right_weight = right_pos * weight;
+			int right_pos = 1;
+			int left_pos = 4;
+			int weight = 2 + random.Next (8) * 2;
 			int left_weight = left_pos * weight;
+			int right_weight =  weight;
 			</variables>
-			<string text = "?" x = "0.82" y = "0.4" centered = "yes" size = "large"/>
-			<string text = "[left_weight]" x = "0.26" y = "0.4" centered = "yes" size = "large"/>
-			<answer>[right_weight]</answer>
-		</variant>
-
-		<variant>
-			<variables>
-			int right_pos = 3;
-			int left_pos = 1;
-			int weight = 2 + random.Next (8);
-			int right_weight = right_pos * weight;
-			int left_weight = left_pos * weight;
-			</variables>
-			<string text = "?" x = "0.74" y = "0.4" centered = "yes" size = "large"/>
-			<string text = "[left_weight]" x = "0.42" y = "0.4" centered = "yes" size = "large"/>
+			<string text = "?" x = "0.58" y = "0.4" centered = "yes" size = "large"/>
+			<string text = "[left_weight]" x = "0.18" y = "0.4" centered = "yes" size = "large"/>
 			<answer>[right_weight]</answer>
 		</variant>
 	</game>
@@ -421,7 +407,7 @@
 			<option x = "0.3" y = "0.6" width ="0.45" height ="0.1" order ="randomized">
 				<string _text = "[option_prefix] [option_c] and [option_d]" x = "0.05" y = "0.02" size = "large"/>
 			</option>
-		
+
 			<_rationale>[option_a] and [option_b] are both multiples of [product].</_rationale>
 
 		</variant>
