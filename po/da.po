@@ -14,8 +14,8 @@ msgstr ""
 "Project-Id-Version: gbrainy master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=gbrainy&component=general\n"
-"POT-Creation-Date: 2011-01-01 15:37+0000\n"
-"PO-Revision-Date: 2011-01-09 11:07+0200\n"
+"POT-Creation-Date: 2011-01-09 08:02+0000\n"
+"PO-Revision-Date: 2011-01-09 13:37+0200\n"
 "Last-Translator: Joe Hansen <joedalton2@yahoo.dk>\n"
 "Language-Team: Dansk-gruppen <dansk@dansk-gruppen.dk>\n"
 "MIME-Version: 1.0\n"
@@ -358,11 +358,11 @@ msgstr "Det er resultatet af udregningen [num_a] + [num_b]."
 
 #: ../data/games.xml.h:33
 msgid "It is the result of the operation [num_b] - [num_a]."
-msgstr "Det er resultatet af udregningen [num_a] - [num_b]."
+msgstr "Det er resultatet af udregningen [num_b] - [num_a]."
 
 #: ../data/games.xml.h:34
 msgid "It is the result of the operation [num_b] / [num_a]."
-msgstr "Det er resultatet af udregningen [num_a] / [num_b]."
+msgstr "Det er resultatet af udregningen [num_b] / [num_a]."
 
 #: ../data/games.xml.h:35
 msgid "Lever"
@@ -1706,59 +1706,60 @@ msgstr "termometer / temperatur | ur"
 msgid "tiger / carnivore | cow"
 msgstr "tiger / rovdyr | ko"
 
-#: ../data/verbal_analogies.xml.h:263
+#. Translators: time as duration of an event. What a clock measures
+#: ../data/verbal_analogies.xml.h:264
 msgid "time"
 msgstr "tid"
 
-#: ../data/verbal_analogies.xml.h:264
+#: ../data/verbal_analogies.xml.h:265
 msgid "toy / play | tool"
 msgstr "legetøj / leg | værktøj"
 
-#: ../data/verbal_analogies.xml.h:265
+#: ../data/verbal_analogies.xml.h:266
 msgid "track | railway | rails"
 msgstr "spor | jernbane | jernbanespor | togskinner"
 
 # givet ordparret knap/tryk, hvilket ord har så den
 # tætteste forbindelse med 'nøgle'?
-#: ../data/verbal_analogies.xml.h:266
+#: ../data/verbal_analogies.xml.h:267
 msgid "turn"
 msgstr "drej | åbn | lås op"
 
 #. Translators: letter refers to letter (in paper form)
-#: ../data/verbal_analogies.xml.h:268
+#: ../data/verbal_analogies.xml.h:269
 msgid "turtle / shell | letter"
 msgstr "skildpadde / skjold | brev"
 
 # givet ordparret appelsin/frugt, hvilket ord har så 
 # den tætteste forbindelse med 'spinat'?
-#: ../data/verbal_analogies.xml.h:269
+#: ../data/verbal_analogies.xml.h:270
 msgid "vegetable"
 msgstr "grøntsag | grønsag"
 
-#: ../data/verbal_analogies.xml.h:270
+#: ../data/verbal_analogies.xml.h:271
 msgid "whirlpool / water | tornado"
 msgstr "strømhvirvel / vand | tornado"
 
-#: ../data/verbal_analogies.xml.h:271
+#: ../data/verbal_analogies.xml.h:272
 msgid "wild | savage"
 msgstr "vild | vildmand"
 
-#: ../data/verbal_analogies.xml.h:272
+#: ../data/verbal_analogies.xml.h:273
 msgid "win | play"
 msgstr "vinde | spille"
 
-#: ../data/verbal_analogies.xml.h:273
+#: ../data/verbal_analogies.xml.h:274
 msgid "wind | air"
 msgstr "vind | luft"
 
-#: ../data/verbal_analogies.xml.h:274
+#: ../data/verbal_analogies.xml.h:275
 msgid "wine / grape | rum"
 msgstr "vin / vindrue | rom"
 
 # er svaret på
 # Givet ordparret sæler/luffer, hvilket ord har så den
 # tætteste forbindelse med 'fugl'?
-#: ../data/verbal_analogies.xml.h:275
+#: ../data/verbal_analogies.xml.h:276
 msgid "wings"
 msgstr "vinger"
 
@@ -1766,15 +1767,15 @@ msgstr "vinger"
 # Givet ordparret legetøj/leg, hvilket ord har så den tætteste
 # forbindelse med 'værktøj'?
 #. Translators: 'work' is used as a verb (to work)
-#: ../data/verbal_analogies.xml.h:277
+#: ../data/verbal_analogies.xml.h:278
 msgid "work"
 msgstr "arbejde | job"
 
-#: ../data/verbal_analogies.xml.h:278
+#: ../data/verbal_analogies.xml.h:279
 msgid "wrist | arm"
 msgstr "vrist | arm"
 
-#: ../data/verbal_analogies.xml.h:279
+#: ../data/verbal_analogies.xml.h:280
 msgid "write / pen | eat"
 msgstr "skriv / kuglepen | spis"
 
@@ -2703,8 +2704,7 @@ msgstr ""
 msgid ""
 "Every circle is equivalent to two triangles and every square to three "
 "triangles."
-msgstr ""
-"Hver cirkel svarer til to trekanter og hver firkant til tre trekanter."
+msgstr "Hver cirkel svarer til to trekanter og hver firkant til tre trekanter."
 
 #: ../src/Games/Logic/PuzzleBalance.cs:63
 msgid "Every circle is equivalent two triangles."
@@ -3023,11 +3023,11 @@ msgstr ""
 "Rækkefølgen på regnehandlinger er altid således: eksponenter og rødder, "
 "gange og division, addition (lægge sammen) og subtraktion (trække fra)."
 
-#: ../src/Games/Logic/PuzzleExtraCircle.cs:41
+#: ../src/Games/Logic/PuzzleExtraCircle.cs:53
 msgid "Extra circle"
 msgstr "Ekstra cirkel"
 
-#: ../src/Games/Logic/PuzzleExtraCircle.cs:50
+#: ../src/Games/Logic/PuzzleExtraCircle.cs:62
 #, csharp-format
 msgid ""
 "Which circle does not belong to the group? It is not a sequence of elements. "
@@ -3036,11 +3036,11 @@ msgstr ""
 "Hvilken cirkel hører ikke til gruppen? Det er ikke en sekvens af elementer. "
 "Svar {0}, {1}, {2} eller {3}."
 
-#: ../src/Games/Logic/PuzzleExtraCircle.cs:55
+#: ../src/Games/Logic/PuzzleExtraCircle.cs:67
 msgid "All circles share a common property except for one."
 msgstr "Alle cirkler har en fælles egenskab med undtagelse af en."
 
-#: ../src/Games/Logic/PuzzleExtraCircle.cs:60
+#: ../src/Games/Logic/PuzzleExtraCircle.cs:72
 msgid ""
 "In all circles the color slices follow the same order except for this one."
 msgstr ""
@@ -4684,9 +4684,9 @@ msgid ""
 "integer that has exactly two different positive divisors, 1 and itself. "
 "Answer {0}, {1}, {2} or {3}."
 msgstr ""
-"Hvilket af de følgende tal er primtal? Et primtal er et positivt heltal "
-"som har præcis to forskellige positive divisorer, 1 og sig selv. "
-"Svar {0}, {1}, {2} eller {3}."
+"Hvilket af de følgende tal er primtal? Et primtal er et positivt heltal som "
+"har præcis to forskellige positive divisorer, 1 og sig selv. Svar {0}, {1}, "
+"{2} eller {3}."
 
 #: ../src/Games/Calculation/CalculationPrimes.cs:82
 msgid ""
@@ -5005,5 +5005,3 @@ msgstr "A_finstaller..."
 #: ../src/Clients/Classical/mono-addins-strings.xml.h:35
 msgid "_Unselect All"
 msgstr "Fr_avælg alle"
-
-
