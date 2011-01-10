@@ -246,20 +246,27 @@ namespace gbrainy.Core.Main
 		}
 
 		public void NextGame ()
-		{	
-			if (CurrentGame != null)
-				CurrentGame.Finish ();
+		{
+			try
+			{
+				if (CurrentGame != null)
+					CurrentGame.Finish ();
 
-			history.GamesPlayed++;
-			CurrentGame = game_manager.GetPuzzle ();
-			CurrentGame.SynchronizingObject = SynchronizingObject;
-			CurrentGame.DrawRequest += GameDrawRequest;
-			CurrentGame.UpdateUIElement += GameUpdateUIElement;
+				history.GamesPlayed++;
+				CurrentGame = game_manager.GetPuzzle ();
+				CurrentGame.SynchronizingObject = SynchronizingObject;
+				CurrentGame.DrawRequest += GameDrawRequest;
+				CurrentGame.UpdateUIElement += GameUpdateUIElement;
 
-			CurrentGame.Begin ();
+				CurrentGame.Begin ();
 
-			CurrentGame.GameTime = TimeSpan.Zero;
-			Status = SessionStatus.Playing;
+				CurrentGame.GameTime = TimeSpan.Zero;
+				Status = SessionStatus.Playing;
+			}
+			catch (Exception e)
+			{
+				Console.WriteLine ("GameSession.NextGame {0}", e);
+			}
 		}
 
 		public void Pause ()
