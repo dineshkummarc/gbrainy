@@ -12,8 +12,8 @@ msgstr ""
 "Project-Id-Version: gbrainy master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=gbrainy&component=general\n"
-"POT-Creation-Date: 2011-01-01 15:37+0000\n"
-"PO-Revision-Date: 2010-07-31 23:14+0700\n"
+"POT-Creation-Date: 2011-01-09 20:58+0000\n"
+"PO-Revision-Date: 2011-01-10 13:08+0800\n"
 "Last-Translator: lainme <lainme993@gmail.com>\n"
 "Language-Team: Chinese (simplified) <i18n-zh@googlegroup.com>\n"
 "MIME-Version: 1.0\n"
@@ -307,11 +307,11 @@ msgstr "这是 [num_a] + [num_b] 的结果。"
 
 #: ../data/games.xml.h:33
 msgid "It is the result of the operation [num_b] - [num_a]."
-msgstr "这是 [num_a] - [num_b] 的结果。"
+msgstr "这是 [num_b] - [num_a] 的结果。"
 
 #: ../data/games.xml.h:34
 msgid "It is the result of the operation [num_b] / [num_a]."
-msgstr "这是 [num_a] / [num_b] 的结果。"
+msgstr "这是 [num_b] / [num_a] 的结果。"
 
 #: ../data/games.xml.h:35
 #, fuzzy
@@ -362,7 +362,7 @@ msgstr "密码"
 #: ../src/Games/Logic/PuzzleMissingSlice.cs:216
 #: ../src/Games/Logic/PuzzleMostInCommon.cs:312
 #: ../src/Games/Logic/PuzzleNextFigure.cs:165
-#: ../src/Games/Logic/PuzzlePredicateLogic.cs:190
+#: ../src/Games/Logic/PuzzlePredicateLogic.cs:189
 #: ../src/Games/Logic/PuzzleSquareDots.cs:320
 #: ../src/Games/Logic/PuzzleTetris.cs:171
 msgid "Possible answers are:"
@@ -1679,71 +1679,72 @@ msgstr ""
 msgid "tiger / carnivore | cow"
 msgstr ""
 
-#: ../data/verbal_analogies.xml.h:263
+#. Translators: time as duration of an event. What a clock measures
+#: ../data/verbal_analogies.xml.h:264
 msgid "time"
 msgstr ""
 
-#: ../data/verbal_analogies.xml.h:264
+#: ../data/verbal_analogies.xml.h:265
 msgid "toy / play | tool"
 msgstr "玩具/娱乐|工具"
 
-#: ../data/verbal_analogies.xml.h:265
+#: ../data/verbal_analogies.xml.h:266
 msgid "track | railway | rails"
 msgstr "轨道|铁路|铁轨"
 
-#: ../data/verbal_analogies.xml.h:266
+#: ../data/verbal_analogies.xml.h:267
 msgid "turn"
 msgstr "转|拧|扭"
 
 #. Translators: letter refers to letter (in paper form)
-#: ../data/verbal_analogies.xml.h:268
+#: ../data/verbal_analogies.xml.h:269
 msgid "turtle / shell | letter"
 msgstr ""
 
-#: ../data/verbal_analogies.xml.h:269
+#: ../data/verbal_analogies.xml.h:270
 msgid "vegetable"
 msgstr "蔬菜"
 
-#: ../data/verbal_analogies.xml.h:270
+#: ../data/verbal_analogies.xml.h:271
 msgid "whirlpool / water | tornado"
 msgstr "漩涡/水|龙卷风"
 
-#: ../data/verbal_analogies.xml.h:271
+#: ../data/verbal_analogies.xml.h:272
 #, fuzzy
 #| msgid "wind | air"
 msgid "wild | savage"
 msgstr "风|空气"
 
-#: ../data/verbal_analogies.xml.h:272
+#: ../data/verbal_analogies.xml.h:273
 #, fuzzy
 #| msgid "wind | air"
 msgid "win | play"
 msgstr "风|空气"
 
-#: ../data/verbal_analogies.xml.h:273
+#: ../data/verbal_analogies.xml.h:274
 msgid "wind | air"
 msgstr "风|空气"
 
-#: ../data/verbal_analogies.xml.h:274
+#: ../data/verbal_analogies.xml.h:275
 msgid "wine / grape | rum"
 msgstr ""
 
-#: ../data/verbal_analogies.xml.h:275
+#: ../data/verbal_analogies.xml.h:276
 msgid "wings"
 msgstr "翅膀"
 
 #. Translators: 'work' is used as a verb (to work)
-#: ../data/verbal_analogies.xml.h:277
+#: ../data/verbal_analogies.xml.h:278
 msgid "work"
 msgstr "工作"
 
-#: ../data/verbal_analogies.xml.h:278
+#: ../data/verbal_analogies.xml.h:279
 #, fuzzy
 #| msgid "wind | air"
 msgid "wrist | arm"
 msgstr "风|空气"
 
-#: ../data/verbal_analogies.xml.h:279
+#: ../data/verbal_analogies.xml.h:280
 #, fuzzy
 #| msgid "tears / eyes | sweat"
 msgid "write / pen | eat"
@@ -2202,7 +2203,7 @@ msgstr "{0} 回答 {1}。"
 #: ../src/Core/Main/Verbal/AnalogiesMultipleOptions.cs:105
 #: ../src/Core/Main/Verbal/AnalogiesPairOfWordsOptions.cs:112
 #: ../src/Games/Logic/PuzzleOstracism.cs:159
-#: ../src/Games/Logic/PuzzlePredicateLogic.cs:177
+#: ../src/Games/Logic/PuzzlePredicateLogic.cs:176
 #: ../src/Games/Calculation/CalculationCloserFraction.cs:161
 #: ../src/Games/Calculation/CalculationGreatestDivisor.cs:149
 #, csharp-format
@@ -2983,22 +2984,22 @@ msgid ""
 "roots, multiplication and division, addition and subtraction."
 msgstr "算术操作的顺序一直如下：指数和开方，乘和除，加和减。"
 
-#: ../src/Games/Logic/PuzzleExtraCircle.cs:41
+#: ../src/Games/Logic/PuzzleExtraCircle.cs:53
 msgid "Extra circle"
 msgstr "额外的圆形"
 
-#: ../src/Games/Logic/PuzzleExtraCircle.cs:50
+#: ../src/Games/Logic/PuzzleExtraCircle.cs:62
 #, csharp-format
 msgid ""
 "Which circle does not belong to the group? It is not a sequence of elements. "
 "Answer {0}, {1}, {2} or {3}."
 msgstr "哪一个圆形不属于该组？非元素顺序。回答{0}, {1}, {2} 或 {3}。"
 
-#: ../src/Games/Logic/PuzzleExtraCircle.cs:55
+#: ../src/Games/Logic/PuzzleExtraCircle.cs:67
 msgid "All circles share a common property except for one."
 msgstr "除了一个外所有的圆形都分享一个共有属性。"
 
-#: ../src/Games/Logic/PuzzleExtraCircle.cs:60
+#: ../src/Games/Logic/PuzzleExtraCircle.cs:72
 msgid ""
 "In all circles the color slices follow the same order except for this one."
 msgstr "在所有的圆形内，除了这个以外的颜色条都遵循同样的顺序。"
