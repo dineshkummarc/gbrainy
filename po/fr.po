@@ -4026,9 +4026,9 @@ msgid ""
 "{0} hours ago it was as long after {1:h tt} as it was before {2:h tt} on the "
 "same day. What is the time now? Answer using the hour (e.g.: {3:h tt})"
 msgstr ""
-"Il y a {0} heures cela faisait aussi longtemps après {1:H} que c'était avant "
-"{2:H} le même jour. Quel heure est-il maintenant ? Répondez en indiquant une "
-"heure (par ex. : {3:H})"
+"Il y a {0} heures cela faisait aussi longtemps après {1:%H} que c'était avant "
+"{2:%H} le même jour. Quel heure est-il maintenant ? Répondez en indiquant une "
+"heure (par ex. : {3:%H})"
 
 #: ../src/Games/Logic/PuzzleTimeNow.cs:50
 #, csharp-format
@@ -4047,7 +4047,7 @@ msgstr ""
 #: ../src/Games/Logic/PuzzleTimeNow.cs:76
 #, csharp-format
 msgid "{0:h tt}"
-msgstr "{0:H}"
+msgstr "{0:%H}"
 
 #. No hands
 #: ../src/Games/Logic/PuzzleTimeNow.cs:85
