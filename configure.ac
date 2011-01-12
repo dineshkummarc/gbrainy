@@ -1,4 +1,4 @@
-AC_INIT(gbrainy, 1.61)
+AC_INIT(gbrainy, 1.62)
 AC_CONFIG_SRCDIR(src/Core/)
 
 AM_CONFIG_HEADER(config.h)
@@ -62,7 +62,7 @@ MONO_ADDINS=0.3
 PKG_CHECK_MODULES(GBRAINY_CORE, mono >= $MONO_REQUIRED)
 
 
-PKG_CHECK_MODULES(GBRAINY, 
+PKG_CHECK_MODULES(GBRAINY,
 	gtk-sharp-2.0 >= $GTKSHARP_REQUIRED
 	gnome-sharp-2.0 >= $GTKSHARP_REQUIRED)
 AC_SUBST(GBRAINY_LIBS)
@@ -145,12 +145,12 @@ if test "x$enable_debug" != "xno" ; then
 	CSC_DEFINES="$CSC_DEFINES -debug -d:DEBUG"
 fi
 
-dnl --- Assembly information 
+dnl --- Assembly information
 
 BUILD_TIME=`date +"%F %T %Z"`
 AC_SUBST(BUILD_TIME)
 
-COPYRIGHT="(c) 2007-2010 Jordi Mas i Hernandez"
+COPYRIGHT="(c) 2007-2011 Jordi Mas i Hernandez"
 AC_SUBST(COPYRIGHT)
 
 dnl --- Prologue

@@ -155,14 +155,14 @@ namespace gbrainy.Games.Logic
 				}
 			}
 
-			Container container = new Container (DrawAreaX, DrawAreaX + 0.2, 0.8, 0.6);
+			Container container = new Container (DrawAreaX, DrawAreaY + 0.15, 0.8, 0.6);
 			AddWidget (container);
 
 			for (int i = 0; i <  predicates[question].options.Length; i++)
 			{
-				DrawableArea drawable_area = new DrawableArea (0.8, 0.1);
+				DrawableArea drawable_area = new DrawableArea (0.8, 0.12);
 				drawable_area.X = DrawAreaX;
-				drawable_area.Y = DrawAreaY + 0.2 + i * 0.15;
+				drawable_area.Y = DrawAreaY + 0.15 + i * 0.18;
 				container.AddChild (drawable_area);
 				drawable_area.Data = i;
 				drawable_area.DataEx = GetPossibleAnswer (i);
@@ -173,9 +173,8 @@ namespace gbrainy.Games.Logic
 					int option = random_indices [data];
 
 					e.Context.SetPangoNormalFontSize ();
-					e.Context.MoveTo (0.05, 0.02);
-					e.Context.ShowPangoText (String.Format (Catalog.GetString ("{0}) {1}"), GetPossibleAnswer (data),
-						predicates[question].options[option].ToString ()));
+					e.Context.DrawStringWithWrapping (0.05, 0.02, String.Format (Catalog.GetString ("{0}) {1}"), GetPossibleAnswer (data),
+						predicates[question].options[option].ToString ()), 0.8 - DrawAreaX);
 					e.Context.Stroke ();
 				};
 			}
@@ -186,7 +185,7 @@ namespace gbrainy.Games.Logic
 			base.Draw (gr, area_width, area_height, rtl);
 
 			gr.SetPangoLargeFontSize ();
-			gr.MoveTo (0.1, DrawAreaY + 0.05);
+			gr.MoveTo (0.1, DrawAreaY);
 			gr.ShowPangoText (Catalog.GetString ("Possible answers are:"));
 		}
 	}

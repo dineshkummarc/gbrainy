@@ -42,7 +42,10 @@ namespace gbrainy.Games.Calculation
 		}
 
 		public override string Question {
-			get {return Catalog.GetString ("Which of the possible divisors is the greatest that divides all numbers?");}
+			get { return String.Format (Catalog.GetString (
+				"Which of the possible divisors is the greatest that divides all numbers? Answer {0}, {1}, {2} or {3}."),
+				GetPossibleAnswer (0), GetPossibleAnswer (1), GetPossibleAnswer (2), GetPossibleAnswer (3));
+			}
 		}
 
 		protected override void Initialize ()

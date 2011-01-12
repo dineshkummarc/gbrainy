@@ -29,7 +29,6 @@ namespace gbrainy.Games.Calculation
 	{
 		const int total_primes = 302;
 		const int total_nums = 4;
-		double width_box, height_box;
 		bool div3;
 		int []numbers;
 		int max_primeidx, answer, answer_idx;

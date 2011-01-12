@@ -50,17 +50,17 @@ namespace gbrainy.Games.Logic
 		}
 
 		public override string Question {
-			get {return Catalog.GetString ("How many triangles are needed in the right part of the last figure to keep it balanced?");}
+			get {return Catalog.GetString ("Using triangles only, how many triangles are needed in the right part of the last figure to keep it balanced?");}
 		}
 
 		public override string Rationale {
 			get {
-				return Catalog.GetString ("Every triangle counts as 1, each circle as 2 and each square as 3.");
+				return Catalog.GetString ("Every circle is equivalent to two triangles and every square to three triangles.");
 			}
 		}
 
 		public override string Tip {
-			get { return Catalog.GetString ("Every circle counts as two triangles.");}
+			get { return Catalog.GetString ("Every circle is equivalent two triangles.");}
 		}
 
 		protected override void Initialize ()

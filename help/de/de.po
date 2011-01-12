@@ -3,65 +3,94 @@
 # This file is distributed under the same license as the gbrainy package.
 # Wolfgang Stöggl <c72578@yahoo.de>, 2009, 2010.
 # Christian Kirbach <Christian.Kirbach@googlemail.com>, 2010.
+# Paul Seyfert <pseyfert@mathphys.fsk.uni-heidelberg.de>, 2011.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: gbrainy master\n"
+"Project-Id-Version: gbrainy help master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?\n"
-"POT-Creation-Date: 2010-08-18 19:00+0000\n"
-"PO-Revision-Date: 2010-08-18 22:38+0200\n"
-"Last-Translator: Christian Kirbach <Christian.Kirbach@googlemail.com>\n"
+"POT-Creation-Date: 2011-01-01 16:51+0000\n"
+"PO-Revision-Date: 2011-01-01 19:33+0100\n"
+"Last-Translator: Mario Blättermann <mariobl@gnome.org>\n"
 "Language-Team: Deutsch <gnome-de@gnome.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-Language: German\n"
+"X-Poedit-Country: GERMANY\n"
 
-#: C/legal.xml:3(p)
-msgid ""
-"This work is licensed under a <link href=\"http://creativecommons.org/"
-"licenses/by-sa/3.0/\">Creative Commons Attribution-Share Alike 3.0 Unported "
-"License</link>."
-msgstr ""
-"Diese Arbeit ist lizenziert unter einer <link href=\"http://creativecommons."
-"org/licenses/by-sa/3.0/\">Creative Commons Attribution-Share Alike 3.0 "
-"Unported License</link>."
+#: C/export.page:7(desc)
+msgid "Export the games for playing off-line."
+msgstr "Spiele exportieren, um offline zu spielen."
 
-#: C/legal.xml:6(p)
-msgid ""
-"As a special exception, the copyright holders give you permission to copy, "
-"modify, and distribute the example code contained in this document under the "
-"terms of your choosing, without restriction."
-msgstr ""
-"Als besondere Ausnahme erteilen Ihnen die Urheberrechtsinhaber die "
-"Genehmigung, den in diesem Dokument enthaltenen Beispielcode ohne "
-"Einschränkung unter den Bedingungen Ihrer Wahl zu verbreiten."
-
-#: C/times.page:7(desc)
-msgid "Change the challenge presentation time in memory games."
-msgstr "Ändern der für Gedächtnisaufgaben zur Verfügung stehenden Zeit"
-
-#: C/times.page:11(name) C/newgame.page:13(name) C/index.page:14(name)
-#: C/gameplay.page:12(name) C/score.page:11(name) C/multiplayer.page:11(name)
-#: C/history.page:9(name) C/difficulty.page:12(name) C/tips.page:12(name)
-#: C/pause.page:12(name) C/customgame.page:12(name)
+#: C/export.page:10(name) C/times.page:11(name) C/newgame.page:13(name)
+#: C/index.page:14(name) C/gameplay.page:12(name) C/score.page:11(name)
+#: C/multiplayer.page:11(name) C/history.page:9(name)
+#: C/difficulty.page:12(name) C/tips.page:12(name) C/pause.page:12(name)
+#: C/customgame.page:12(name)
 msgid "Milo Casagrande"
 msgstr "Milo Casagrande"
 
-#: C/times.page:12(email) C/newgame.page:14(email) C/index.page:15(email)
-#: C/gameplay.page:13(email) C/score.page:12(email)
+#: C/export.page:11(email) C/times.page:12(email) C/newgame.page:14(email)
+#: C/index.page:15(email) C/gameplay.page:13(email) C/score.page:12(email)
 #: C/multiplayer.page:12(email) C/history.page:10(email)
 #: C/difficulty.page:13(email) C/tips.page:13(email) C/pause.page:13(email)
 #: C/customgame.page:13(email)
 msgid "milo@ubuntu.com"
 msgstr "milo@ubuntu.com"
 
-#: C/times.page:15(p) C/newgame.page:17(p) C/index.page:18(p)
-#: C/gameplay.page:16(p) C/score.page:15(p) C/multiplayer.page:15(p)
-#: C/history.page:13(p) C/difficulty.page:16(p) C/tips.page:16(p)
-#: C/pause.page:16(p) C/gametypes.page:12(p) C/customgame.page:16(p)
+#: C/export.page:14(p) C/times.page:15(p) C/newgame.page:17(p)
+#: C/index.page:18(p) C/gameplay.page:16(p) C/score.page:15(p)
+#: C/multiplayer.page:15(p) C/history.page:13(p) C/difficulty.page:16(p)
+#: C/tips.page:16(p) C/pause.page:16(p) C/gametypes.page:12(p)
+#: C/customgame.page:16(p)
 msgid "Creative Commons Share Alike 3.0"
 msgstr "Creative Commons Share Alike 3.0"
+
+#: C/export.page:20(title)
+msgid "Export the games"
+msgstr "Spiele exportieren"
+
+#: C/export.page:21(p)
+msgid ""
+"It is possible to export and then print the games provided by the app for "
+"playing while not at the computer."
+msgstr ""
+"Es ist möglich, die Spiele von <app>gbrainy</app> zu exportieren und zu "
+"drucken, um sie ohne Rechner spielen zu können."
+
+#: C/export.page:25(p)
+msgid ""
+"The games will be saved in a <file>PDF</file> file in the selected folder."
+msgstr ""
+"Die Spiele werden in einer <file>PDF</file>-Datei im ausgewählten Ordner "
+"gespeichert."
+
+# Siehe Standardübersetzungen
+#: C/export.page:28(p)
+msgid "To export the games:"
+msgstr "So exportieren Sie Spiele:"
+
+#: C/export.page:33(p)
+msgid ""
+"Choose <guiseq><gui style=\"menu\">Game</gui><gui style=\"menuitem\">Export "
+"Games to PDF for Off-Line Playing</gui></guiseq>."
+msgstr ""
+"Wählen Sie <guiseq><gui style=\"menu\">Spiel</gui><gui style=\"menuitem"
+"\">Spiele als PDF-Datei exportieren …</gui></guiseq>."
+
+#: C/export.page:38(p)
+msgid ""
+"Select the type of games, the difficult level, and how many games to export. "
+"When done click <gui style=\"button\">Save</gui>."
+msgstr ""
+"Wählen Sie den Spieltyp, Schwierigkeitsgrad und die Anzahl der zu "
+"exportierenden Spiele. Klicken Sie anschließend auf <gui style=\"button"
+"\">Speichern</gui>."
+
+#: C/times.page:7(desc)
+msgid "Change the challenge presentation time in memory games."
+msgstr "Ändern der für Gedächtnisaufgaben zur Verfügung stehenden Zeit"
 
 # Kürzer übersetzt. Darunter steht: Ändern der für Gedächtnisaufgaben zur Verfügung stehenden Zeit
 #: C/times.page:19(title)
@@ -1019,7 +1048,27 @@ msgstr ""
 #. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
 #: C/index.page:0(None)
 msgid "translator-credits"
-msgstr "Wolfgang Stöggl <c72578@yahoo.de>, 2010"
+msgstr ""
+"Wolfgang Stöggl <c72578@yahoo.de>, 2010\n"
+"Paul Seyfert <pseyfert@mathphys.fsk.uni-heidelberg.de>, 2011"
+
+#~ msgid ""
+#~ "This work is licensed under a <link href=\"http://creativecommons.org/"
+#~ "licenses/by-sa/3.0/\">Creative Commons Attribution-Share Alike 3.0 "
+#~ "Unported License</link>."
+#~ msgstr ""
+#~ "Diese Arbeit ist lizenziert unter einer <link href=\"http://"
+#~ "creativecommons.org/licenses/by-sa/3.0/\">Creative Commons Attribution-"
+#~ "Share Alike 3.0 Unported License</link>."
+
+#~ msgid ""
+#~ "As a special exception, the copyright holders give you permission to "
+#~ "copy, modify, and distribute the example code contained in this document "
+#~ "under the terms of your choosing, without restriction."
+#~ msgstr ""
+#~ "Als besondere Ausnahme erteilen Ihnen die Urheberrechtsinhaber die "
+#~ "Genehmigung, den in diesem Dokument enthaltenen Beispielcode ohne "
+#~ "Einschränkung unter den Bedingungen Ihrer Wahl zu verbreiten."
 
 #~ msgid "Phil Bull"
 #~ msgstr "Phil Bull"
@@ -1263,92 +1312,3 @@ msgstr "Wolfgang Stöggl <c72578@yahoo.de>, 2010"
 
 #~ msgid "Memory trainers games in 30 seconds."
 #~ msgstr "Gedächtnisübungen in 30 Sekunden."
-
-# 'previous times' als vorgegebene Zeit übersetzt.
-#~ msgid ""
-#~ "At easy difficulty level the player is given 30% more time and at master "
-#~ "level is given only 70% of the previous times."
-#~ msgstr ""
-#~ "Im leichten Schwierigkeitsgrad steht dem Spieler 30 % mehr Zeit zur "
-#~ "Verfügung und auf der schweren Stufe nur 70 % der vorgegebenen Zeit."
-
-#~ msgid ""
-#~ "If the player required more than the double of time expected scores 70%."
-#~ msgstr ""
-#~ "Wenn der Spieler mehr als die doppelte erwartete Zeit benötigte, ergibt "
-#~ "70 %."
-
-#~ msgid ""
-#~ "If the player required more than three times the time expected scores 60%."
-#~ msgstr ""
-#~ "Wenn der Spieler mehr als die dreifache erwartete Zeit benötigte, ergibt "
-#~ "60 %."
-
-#~ msgid ""
-#~ "Additionally, if the player used the tip then scores only 80% of the "
-#~ "previous score for the game."
-#~ msgstr ""
-#~ "Wenn ein Spieler darüber hinaus den Hinweis zu Rate zieht, so erhält er "
-#~ "nur 80 % des vorherigen Ergebnisses für das Spiel."
-
-#~ msgid ""
-#~ "You can start a new game by clicking on the different buttons of the "
-#~ "application toolbar."
-#~ msgstr ""
-#~ "Sie können eine neues Spiel durch Klicken auf die unterschiedlichen "
-#~ "Knöpfe der Anwendungs-Werkzeugleiste starten."
-
-#~ msgid "The following actions are associated to the buttons:"
-#~ msgstr "Folgende Aktionen sind den Knöpfen zugewiesen:"
-
-#~ msgid ""
-#~ "You have also the same functionality available under the "
-#~ "<guiseq><gui>Game</gui><gui>New Game</gui></guiseq> menu."
-#~ msgstr ""
-#~ "Dieselbe Funktionalität finden Sie auch unter dem Menüeintrag "
-#~ "<guiseq><gui>Spiel</gui><gui>Neues Spiel</gui></guiseq>."
-
-#~ msgid ""
-#~ "The game session starts by showing a game and asking the user to solve "
-#~ "it. Read always the instructions carefully."
-#~ msgstr ""
-#~ "Die Spielsitzung beginnt durch Anzeigen eines Spiels und Frage an den "
-#~ "Benutzer, es zu lösen. Lesen Sie die Anweisungen immer aufmerksam durch."
-
-#~ msgid ""
-#~ "At the bottom of the application (see the capture below) you have the "
-#~ "main set of controls to interact with the game."
-#~ msgstr ""
-#~ "Am unteren Rand der Anwendung (siehe Bildschirmfoto unten) finden Sie die "
-#~ "Hauptkontrollelemente, um das Spiel zu steuern."
-
-#~ msgid ""
-#~ "Some games include a tip that gives some guidance when trying to solve "
-#~ "them. You can use the <gui>Tip</gui> button when it is enabled to get the "
-#~ "tip."
-#~ msgstr ""
-#~ "Einige Spiele enthalten einen Hinweis, der beim Lösen der Aufgabe "
-#~ "hilfreich sein kann. Sie können den <gui>Hinweis</gui>-Knopf verwenden, "
-#~ "wenn er aktiv ist, um den Hinweis zu erhalten."
-
-#~ msgid ""
-#~ "Once you have answered the game you will be informed if you did provide "
-#~ "the right answer. You can use the <gui>Next</gui> button to go to the "
-#~ "next game."
-#~ msgstr ""
-#~ "Sobald Sie die Übung beantwortet haben, werden Sie informiert, ob die "
-#~ "Antwort korrekt war. Sie können den <gui>Weiter</gui>-Knopf verwenden, um "
-#~ "zur nächsten Aufgabe zu gelangen."
-
-#~ msgid ""
-#~ "You can pause the game session using the <gui>Pause</gui> button and "
-#~ "resume it at any moment."
-#~ msgstr ""
-#~ "Sie können das Spiel jederzeit unter Verwendung des <gui>Pause</gui>-"
-#~ "Knopfs anhalten und später wieder fortsetzen."
-
-#~ msgid "Jordi Mas i Hernandez"
-#~ msgstr "Jordi Mas i Hernandez"
-
-#~ msgid "jmas@softcatala.org"
-#~ msgstr "jmas@softcatala.org"

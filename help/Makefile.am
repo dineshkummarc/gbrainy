@@ -28,6 +28,6 @@ DOC_PAGES = \
 	times.page	\
 	export.page
 
-DOC_LINGUAS = af ca cs da de es fr gl hi nl sl
+DOC_LINGUAS = af ca cs da de es fr gl hi hu nl sl
 
 dist-hook: doc-dist-hook
