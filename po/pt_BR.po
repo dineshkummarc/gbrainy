@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: grainy 1.50\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=gbrainy&component=general\n"
-"POT-Creation-Date: 2011-01-01 16:51+0000\n"
+"POT-Creation-Date: 2011-01-10 19:51+0000\n"
 "PO-Revision-Date: 2011-01-01 18:22-0200\n"
 "Last-Translator: Flamarion Jorge <jorge.flamarion@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <gnome-pt_br-list@gnome.com>\n"
@@ -335,7 +335,7 @@ msgid ""
 "have a car and are males. What percentage of the total population are "
 "females and have a car? [option_answers]"
 msgstr ""
-"Em uma pequena cidade, [all_cars]% dos habitantes tem um carro e "
+"Em uma pequena cidade, [all_caras]% dos habitantes tem um carro e "
 "[males_cars]% tem um carro e são homens. Qual a porcentagem do total da "
 "população são mulheres e tem um carro? [option_answers]"
 
@@ -357,7 +357,7 @@ msgstr "Este é o resultado da operação [num_a] + [num_b]."
 
 #: ../data/games.xml.h:33
 msgid "It is the result of the operation [num_b] - [num_a]."
-msgstr "Este é o resultado da operação [num_b] - [num_a]."
+msgstr "Este é o resultado da operação [num_d] - [num_a]."
 
 #: ../data/games.xml.h:34
 msgid "It is the result of the operation [num_b] / [num_a]."
@@ -409,7 +409,7 @@ msgstr "Senha"
 #: ../src/Games/Logic/PuzzleMissingSlice.cs:216
 #: ../src/Games/Logic/PuzzleMostInCommon.cs:312
 #: ../src/Games/Logic/PuzzleNextFigure.cs:165
-#: ../src/Games/Logic/PuzzlePredicateLogic.cs:190
+#: ../src/Games/Logic/PuzzlePredicateLogic.cs:189
 #: ../src/Games/Logic/PuzzleSquareDots.cs:320
 #: ../src/Games/Logic/PuzzleTetris.cs:171
 msgid "Possible answers are:"
@@ -1651,65 +1651,66 @@ msgstr "termômetro / temperatura | relógio"
 msgid "tiger / carnivore | cow"
 msgstr "tigre / carnívoro | vaca"
 
-#: ../data/verbal_analogies.xml.h:263
+#. Translators: time as duration of an event. What a clock measures
+#: ../data/verbal_analogies.xml.h:264
 msgid "time"
 msgstr "tempo"
 
-#: ../data/verbal_analogies.xml.h:264
+#: ../data/verbal_analogies.xml.h:265
 msgid "toy / play | tool"
 msgstr "brinquedo / jogar | ferramenta"
 
-#: ../data/verbal_analogies.xml.h:265
+#: ../data/verbal_analogies.xml.h:266
 msgid "track | railway | rails"
 msgstr "trilho | ferrovia | trilhos"
 
-#: ../data/verbal_analogies.xml.h:266
+#: ../data/verbal_analogies.xml.h:267
 msgid "turn"
 msgstr "virar"
 
 #. Translators: letter refers to letter (in paper form)
-#: ../data/verbal_analogies.xml.h:268
+#: ../data/verbal_analogies.xml.h:269
 msgid "turtle / shell | letter"
 msgstr "tartaruga / concha | carta"
 
-#: ../data/verbal_analogies.xml.h:269
+#: ../data/verbal_analogies.xml.h:270
 msgid "vegetable"
 msgstr "verdura"
 
-#: ../data/verbal_analogies.xml.h:270
+#: ../data/verbal_analogies.xml.h:271
 msgid "whirlpool / water | tornado"
 msgstr "redemoinho / água | tornado"
 
-#: ../data/verbal_analogies.xml.h:271
+#: ../data/verbal_analogies.xml.h:272
 msgid "wild | savage"
 msgstr "selvagem | violento"
 
-#: ../data/verbal_analogies.xml.h:272
+#: ../data/verbal_analogies.xml.h:273
 msgid "win | play"
 msgstr "vitória | jogo"
 
-#: ../data/verbal_analogies.xml.h:273
+#: ../data/verbal_analogies.xml.h:274
 msgid "wind | air"
 msgstr "vento | ar"
 
-#: ../data/verbal_analogies.xml.h:274
+#: ../data/verbal_analogies.xml.h:275
 msgid "wine / grape | rum"
 msgstr "vinho / uva | rum"
 
-#: ../data/verbal_analogies.xml.h:275
+#: ../data/verbal_analogies.xml.h:276
 msgid "wings"
 msgstr "asas"
 
 #. Translators: 'work' is used as a verb (to work)
-#: ../data/verbal_analogies.xml.h:277
+#: ../data/verbal_analogies.xml.h:278
 msgid "work"
 msgstr "funcionar | consertar"
 
-#: ../data/verbal_analogies.xml.h:278
+#: ../data/verbal_analogies.xml.h:279
 msgid "wrist | arm"
 msgstr "pulso | braço"
 
-#: ../data/verbal_analogies.xml.h:279
+#: ../data/verbal_analogies.xml.h:280
 msgid "write / pen | eat"
 msgstr "escrever / caneta | comer"
 
@@ -2018,7 +2019,7 @@ msgstr "Resultados ruins"
 msgid "Disappointing results"
 msgstr "Resultados decepcionantes"
 
-#: ../src/Core/Main/GameSession.cs:269
+#: ../src/Core/Main/GameSession.cs:276
 msgid "Paused"
 msgstr "Pausado"
 
@@ -2155,7 +2156,7 @@ msgstr "{0} Resposta {1}."
 #: ../src/Core/Main/Verbal/AnalogiesMultipleOptions.cs:105
 #: ../src/Core/Main/Verbal/AnalogiesPairOfWordsOptions.cs:112
 #: ../src/Games/Logic/PuzzleOstracism.cs:159
-#: ../src/Games/Logic/PuzzlePredicateLogic.cs:177
+#: ../src/Games/Logic/PuzzlePredicateLogic.cs:176
 #: ../src/Games/Calculation/CalculationCloserFraction.cs:161
 #: ../src/Games/Calculation/CalculationGreatestDivisor.cs:149
 #, csharp-format
@@ -2958,11 +2959,11 @@ msgstr ""
 "A ordem das operações aritméticas sempre são as seguintes: expoentes e "
 "raízes, multiplicação e divisão, adição e subtração."
 
-#: ../src/Games/Logic/PuzzleExtraCircle.cs:41
+#: ../src/Games/Logic/PuzzleExtraCircle.cs:53
 msgid "Extra circle"
 msgstr "Círculo extra"
 
-#: ../src/Games/Logic/PuzzleExtraCircle.cs:50
+#: ../src/Games/Logic/PuzzleExtraCircle.cs:62
 #, csharp-format
 msgid ""
 "Which circle does not belong to the group? It is not a sequence of elements. "
@@ -2971,11 +2972,11 @@ msgstr ""
 "Qual círculo não pertence ao grupo? Isto não é uma sequência de elementos. "
 "Responda {0}, {1}, {2} ou {3}."
 
-#: ../src/Games/Logic/PuzzleExtraCircle.cs:55
+#: ../src/Games/Logic/PuzzleExtraCircle.cs:67
 msgid "All circles share a common property except for one."
 msgstr "Todos os círculos compartilham de uma propriedade em comum, exceto um."
 
-#: ../src/Games/Logic/PuzzleExtraCircle.cs:60
+#: ../src/Games/Logic/PuzzleExtraCircle.cs:72
 msgid ""
 "In all circles the color slices follow the same order except for this one."
 msgstr ""
