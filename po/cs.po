@@ -12,8 +12,8 @@ msgstr ""
 "Project-Id-Version: gbrainy\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=gbrainy&component=general\n"
-"POT-Creation-Date: 2011-01-12 20:51+0000\n"
-"PO-Revision-Date: 2011-01-13 10:52+0100\n"
+"POT-Creation-Date: 2011-01-15 20:24+0000\n"
+"PO-Revision-Date: 2011-01-16 10:13+0100\n"
 "Last-Translator: Marek Černocký <marek@manet.cz>\n"
 "Language-Team: Czech <gnome-cs-list@gnome.org>\n"
 "MIME-Version: 1.0\n"
@@ -358,10 +358,10 @@ msgstr ""
 #, no-c-format
 msgid ""
 "In a small town, [all_cars]% of the inhabitants have a car and [males_cars]% "
-"have a car and are males. What percentage of the total population are "
-"females and have a car? [option_answers]"
+"have a car and are males. What percentage of the population are females and "
+"have a car? [option_answers]"
 msgstr ""
-"V malém městě má [all_cars] % z obyvatel auto a [males_cars] % z obyvatel má "
+"V malém městě má [all_cars] % z obyvatel auto a [males_cars] % z obyvatel má "
 "auto a zároveň jsou muži. Kolik procent obyvatel tvoří ženy vlastnící auto? "
 "[option_answers]"
 
@@ -518,10 +518,10 @@ msgstr ""
 #, no-c-format
 msgid ""
 "[female_cars]% ([all_cars] - [males_cars]) of the inhabitants are women and "
-"have a car, that is, [option_a]% of the total."
+"have a car."
 msgstr ""
-"[female_cars] % ([all_cars] - [males_cars]) z obyvatel jsou ženy a zároveň "
-"mají auto, což je [option_a] % z celkového počtu."
+"[female_cars] % ([all_cars] - [males_cars]) z obyvatel jsou ženy a zároveň "
+"mají auto."
 
 #: ../data/games.xml.h:59
 msgid "[option_a] and [option_b] are both multiples of [product]."
@@ -1760,7 +1760,7 @@ msgstr "Paměťové"
 
 #: ../src/Core/Views/FinishView.cs:125 ../src/Core/Main/GameTypes.cs:50
 #: ../src/Clients/Classical/gbrainy.cs:385
-#: ../src/Clients/Classical/Dialogs/ui/PdfExportDialog.ui.h:17
+#: ../src/Clients/Classical/Dialogs/ui/PdfExportDialog.ui.h:18
 msgid "Verbal"
 msgstr "Slovní"
 
@@ -2544,11 +2544,14 @@ msgid "Pages per side:"
 msgstr "Stránek na stranu:"
 
 #: ../src/Clients/Classical/Dialogs/ui/PdfExportDialog.ui.h:14
-#: ../src/Clients/Classical/Dialogs/ui/PreferencesDialog.ui.h:13
-msgid "Skip games that use colors (friendly to colorblind users)"
-msgstr "Přeskočit hry využívající barvy (vhodné pro barvoslepé uživatele)"
+msgid ""
+"Skip games that use colors\n"
+" (friendly to colorblind users)"
+msgstr ""
+"Přeskočit hry využívající barvy\n"
+" (vhodné pro barvoslepé uživatele)"
 
-#: ../src/Clients/Classical/Dialogs/ui/PdfExportDialog.ui.h:15
+#: ../src/Clients/Classical/Dialogs/ui/PdfExportDialog.ui.h:16
 msgid ""
 "This option allows to export a set of games in a PDF file. You can complete "
 "the puzzles without a computer."
@@ -2556,11 +2559,11 @@ msgstr ""
 "Pomocí této volby lze vyexportovat sadu her do souboru PDF. Můžete tak "
 "hlavolamy řešit i bez počítače."
 
-#: ../src/Clients/Classical/Dialogs/ui/PdfExportDialog.ui.h:16
+#: ../src/Clients/Classical/Dialogs/ui/PdfExportDialog.ui.h:17
 msgid "Total number of games:"
 msgstr "Celkový počet her:"
 
-#: ../src/Clients/Classical/Dialogs/ui/PdfExportDialog.ui.h:18
+#: ../src/Clients/Classical/Dialogs/ui/PdfExportDialog.ui.h:19
 msgid "_Save"
 msgstr "_Uložit"
 
@@ -2602,6 +2605,10 @@ msgstr "Předvolby"
 #: ../src/Clients/Classical/Dialogs/ui/PreferencesDialog.ui.h:12
 msgid "Show countdown message"
 msgstr "Před hrou zobrazit odpočítávání"
+
+#: ../src/Clients/Classical/Dialogs/ui/PreferencesDialog.ui.h:13
+msgid "Skip games that use colors (friendly to colorblind users)"
+msgstr "Přeskočit hry využívající barvy (vhodné pro barvoslepé uživatele)"
 
 #: ../src/Clients/Classical/Dialogs/ui/PreferencesDialog.ui.h:14
 msgid "Time in seconds to memorize the challenge:"
