@@ -62,9 +62,7 @@ MONO_ADDINS=0.3
 PKG_CHECK_MODULES(GBRAINY_CORE, mono >= $MONO_REQUIRED)
 
 
-PKG_CHECK_MODULES(GBRAINY,
-	gtk-sharp-2.0 >= $GTKSHARP_REQUIRED
-	gnome-sharp-2.0 >= $GTKSHARP_REQUIRED)
+PKG_CHECK_MODULES(GBRAINY, gtk-sharp-2.0 >= $GTKSHARP_REQUIRED)
 AC_SUBST(GBRAINY_LIBS)
 
 AC_ARG_ENABLE(addins, AC_HELP_STRING([--disable-addins], [Disable mono-addins support]), , enable_addins="yes")
@@ -137,12 +135,25 @@ dnl --- Debugging support
 
 AC_ARG_ENABLE(debug,
 	AC_HELP_STRING([--enable-debug],
-		[Use 'Debug' Configuration [default=yes]]),
+		[Use 'Debug' Configuration [default=no]]),
 		enable_debug=$enableval, enable_debug=no)
 AM_CONDITIONAL(ENABLE_DEBUG, test "x$enable_debug" != "xno")
 
 if test "x$enable_debug" != "xno" ; then
 	CSC_DEFINES="$CSC_DEFINES -debug -d:DEBUG"
+fi
+
+dnl --- Gnome support
+
+AC_ARG_ENABLE(gnome,
+	AC_HELP_STRING([--enable-gnome],
+		[Compile with GNOME support [default=yes]]),
+		enable_gnome=$enableval, enable_gnome=yes)
+
+if test "x$enable_gnome" != "xno" ; then
+	PKG_CHECK_MODULES(GNOME,gnome-sharp-2.0 >= $GTKSHARP_REQUIRED)
+	AC_SUBST(GNOME_LIBS)
+	CSC_DEFINES="$CSC_DEFINES -d:GNOME"
 fi
 
 dnl --- Assembly information
@@ -192,6 +203,7 @@ data/gbrainy.pc
 help/Makefile
 ])
 
+echo "GNOME enabled:		${enable_gnome}"
 echo "Mono-addins:		${enable_addins_sharp}"
 echo "NUnit:			${enable_tests}"
 echo "Debug enabled:		${enable_debug}"
