@@ -346,9 +346,9 @@
 			<variables>
 			int right_pos = 2;
 			int left_pos = 4;
-			int weight = 2 + random.Next (8) * 2;
-			int left_weight = left_pos * weight;
-			int right_weight = left_pos * weight / right_pos;
+			int left_weight = 2 + random.Next (8) * 2;
+			int force = left_pos * left_weight;
+			int right_weight = force / right_pos;
 			</variables>
 			<string text = "?" x = "0.66" y = "0.4" centered = "yes" size = "large"/>
 			<string text = "[left_weight]" x = "0.18" y = "0.4" centered = "yes" size = "large"/>
@@ -359,9 +359,9 @@
 			<variables>
 			int right_pos = 1;
 			int left_pos = 4;
-			int weight = 2 + random.Next (8) * 2;
-			int left_weight = left_pos * weight;
-			int right_weight =  weight;
+			int left_weight = 2 + random.Next (8) * 2;
+			int force = left_pos * left_weight;
+			int right_weight =  force / right_pos;
 			</variables>
 			<string text = "?" x = "0.58" y = "0.4" centered = "yes" size = "large"/>
 			<string text = "[left_weight]" x = "0.18" y = "0.4" centered = "yes" size = "large"/>
