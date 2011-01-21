@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gbrainy master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gbrainy&component=general\n"
-"POT-Creation-Date: 2011-01-13 21:17+0000\n"
-"PO-Revision-Date: 2011-01-15 12:10+0100\n"
+"POT-Creation-Date: 2011-01-17 22:04+0000\n"
+"PO-Revision-Date: 2011-01-21 09:03+0100\n"
 "Last-Translator: Andrej Žnidaršič <andrej.znidarsic@gmail.com>\n"
 "Language-Team: Slovenian <gnome-si@googlegroups.com>\n"
 "Language: sl\n"
@@ -217,8 +217,8 @@ msgstr "p &lt; x &lt; q in r &lt; y &lt; s. Katera od naslednjih možnosti ustre
 
 #: ../data/games.xml.h:29
 #, no-c-format
-msgid "In a small town, [all_cars]% of the inhabitants have a car and [males_cars]% have a car and are males. What percentage of the total population are females and have a car? [option_answers]"
-msgstr "V majhnem mestu ima [all_cars]% prebivalcev od tega je [males_cars]% moških. Kolikšen odstotek od skupnih prebivalcev so ženske z avtomobili? [option_answers]"
+msgid "In a small town, [all_cars]% of the inhabitants have a car and [males_cars]% have a car and are males. What percentage of the population are females and have a car? [option_answers]"
+msgstr "V majhnem mestu ima [all_cars]% prebivalcev avto od tega je [males_cars]% moških. Kolikšen odstotek od skupnih prebivalcev so ženske z avtomobili? [option_answers]"
 
 #: ../data/games.xml.h:30
 msgid "In every match you eliminate one player, you need the total number of games minus 1 to find out the winner."
@@ -337,8 +337,8 @@ msgstr "[brothers_only] ljudje imajo le brate, [sisters_only] imajo le sestre in
 
 #: ../data/games.xml.h:58
 #, no-c-format
-msgid "[female_cars]% ([all_cars] - [males_cars]) of the inhabitants are women and have a car, that is, [option_a]% of the total."
-msgstr "[female_cars]% ([all_cars] - [males_cars]) prebivalcev so ženske, ki imajo avtomobileof the inhabitants are women and have a car, that is, [option_a]% of the total."
+msgid "[female_cars]% ([all_cars] - [males_cars]) of the inhabitants are women and have a car."
+msgstr "[female_cars]% ([all_cars] - [males_cars]) prebivalcev so ženske, ki imajo avtomobile."
 
 #: ../data/games.xml.h:59
 msgid "[option_a] and [option_b] are both multiples of [product]."
@@ -1558,7 +1558,7 @@ msgstr "Pomnjenje"
 #: ../src/Core/Views/FinishView.cs:125
 #: ../src/Core/Main/GameTypes.cs:50
 #: ../src/Clients/Classical/gbrainy.cs:385
-#: ../src/Clients/Classical/Dialogs/ui/PdfExportDialog.ui.h:17
+#: ../src/Clients/Classical/Dialogs/ui/PdfExportDialog.ui.h:18
 msgid "Verbal"
 msgstr "Besede"
 
@@ -2252,19 +2252,22 @@ msgid "Pages per side:"
 msgstr "Strani na stran:"
 
 #: ../src/Clients/Classical/Dialogs/ui/PdfExportDialog.ui.h:14
-#: ../src/Clients/Classical/Dialogs/ui/PreferencesDialog.ui.h:13
-msgid "Skip games that use colors (friendly to colorblind users)"
-msgstr "Preskoči igre, ki uporabljajo barve (prijazno do barvno slepih uporabnikov)"
+msgid ""
+"Skip games that use colors\n"
+" (friendly to colorblind users)"
+msgstr ""
+"Preskoči igre, ki uporabljajo barve\n"
+"(prijazno do barvno slepih uporabnikov)"
 
-#: ../src/Clients/Classical/Dialogs/ui/PdfExportDialog.ui.h:15
+#: ../src/Clients/Classical/Dialogs/ui/PdfExportDialog.ui.h:16
 msgid "This option allows to export a set of games in a PDF file. You can complete the puzzles without a computer."
 msgstr "Ta možnost vam omogoča izvoz niza iger v datoteko PDF. Uganke lahko dopolnite brez računalnika."
 
-#: ../src/Clients/Classical/Dialogs/ui/PdfExportDialog.ui.h:16
+#: ../src/Clients/Classical/Dialogs/ui/PdfExportDialog.ui.h:17
 msgid "Total number of games:"
 msgstr "Celotno število iger:"
 
-#: ../src/Clients/Classical/Dialogs/ui/PdfExportDialog.ui.h:18
+#: ../src/Clients/Classical/Dialogs/ui/PdfExportDialog.ui.h:19
 msgid "_Save"
 msgstr "_Shrani"
 
@@ -2305,6 +2308,10 @@ msgstr "Možnosti"
 #: ../src/Clients/Classical/Dialogs/ui/PreferencesDialog.ui.h:12
 msgid "Show countdown message"
 msgstr "Prikaži sporočilo odštevanja"
+
+#: ../src/Clients/Classical/Dialogs/ui/PreferencesDialog.ui.h:13
+msgid "Skip games that use colors (friendly to colorblind users)"
+msgstr "Preskoči igre, ki uporabljajo barve (prijazno do barvno slepih uporabnikov)"
 
 #: ../src/Clients/Classical/Dialogs/ui/PreferencesDialog.ui.h:14
 msgid "Time in seconds to memorize the challenge:"
