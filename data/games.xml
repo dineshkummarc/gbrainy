@@ -346,9 +346,9 @@
 			<variables>
 			int right_pos = 2;
 			int left_pos = 4;
-			int weight = 2 + random.Next (8) * 2;
-			int left_weight = left_pos * weight;
-			int right_weight = left_pos * weight / right_pos;
+			int left_weight = 2 + random.Next (8) * 2;
+			int force = left_pos * left_weight;
+			int right_weight = force / right_pos;
 			</variables>
 			<string text = "?" x = "0.66" y = "0.4" centered = "yes" size = "large"/>
 			<string text = "[left_weight]" x = "0.18" y = "0.4" centered = "yes" size = "large"/>
@@ -359,9 +359,9 @@
 			<variables>
 			int right_pos = 1;
 			int left_pos = 4;
-			int weight = 2 + random.Next (8) * 2;
-			int left_weight = left_pos * weight;
-			int right_weight =  weight;
+			int left_weight = 2 + random.Next (8) * 2;
+			int force = left_pos * left_weight;
+			int right_weight =  force / right_pos;
 			</variables>
 			<string text = "?" x = "0.58" y = "0.4" centered = "yes" size = "large"/>
 			<string text = "[left_weight]" x = "0.18" y = "0.4" centered = "yes" size = "large"/>
@@ -419,7 +419,7 @@
 		<difficulty>All</difficulty>
 		<variant>
 			<variables>
-				double all_cars =  50 + random.Next (2) * 10;
+				double all_cars =  30 + random.Next (4) * 10;
 				double males_cars = 10 + random.Next (3) * 10;
 				double female_cars = all_cars - males_cars;
 				double option_a = female_cars  / all_cars * 100;
@@ -427,11 +427,11 @@
 				double option_c = (all_cars - males_cars);
 				double option_d = (all_cars - males_cars) + 1 + random.Next (10);
 			</variables>
-			<_question>In a small town, [all_cars]% of the inhabitants have a car and [males_cars]% have a car and are males. What percentage of the total population are females and have a car? [option_answers]</_question>
+			<_question>In a small town, [all_cars]% of the inhabitants have a car and [males_cars]% have a car and are males. What percentage of the population are females and have a car? [option_answers]</_question>
 
 			<string _text = "Possible answers are:" x = "0.1" y = "0.15" size = "large"/>
 
-			<option x = "0.3" y = "0.3" width ="0.45" height ="0.1" order ="randomized" correct = "yes">
+			<option x = "0.3" y = "0.3" width ="0.45" height ="0.1" order ="randomized">
 				<string _text = "[option_prefix] [option_a]%" x = "0.05" y = "0.02" size = "large"/>
 			</option>
 
@@ -439,7 +439,7 @@
 				<string _text = "[option_prefix] [option_b]%" x = "0.05" y = "0.02" size = "large"/>
 			</option>
 
-			<option x = "0.3" y = "0.5" width ="0.45" height ="0.1" order ="randomized">
+			<option x = "0.3" y = "0.5" width ="0.45" height ="0.1" order ="randomized" correct = "yes">
 				<string _text = "[option_prefix] [option_c]%" x = "0.05" y = "0.02" size = "large"/>
 			</option>
 
@@ -447,7 +447,7 @@
 				<string _text = "[option_prefix] [option_d]%" x = "0.05" y = "0.02" size = "large"/>
 			</option>
 
-			<_rationale>[female_cars]% ([all_cars] - [males_cars]) of the inhabitants are women and have a car, that is, [option_a]% of the total.</_rationale>
+			<_rationale>[female_cars]% ([all_cars] - [males_cars]) of the inhabitants are women and have a car.</_rationale>
 		</variant>
 	</game>
 

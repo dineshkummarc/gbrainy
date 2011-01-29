@@ -22,6 +22,7 @@ using System.IO;
 using System.Web;
 using System.Web.UI;
 using gbrainy.Core.Main;
+using gbrainy.Core.Toolkit;
 
 namespace WebForms
 {
@@ -36,10 +37,7 @@ namespace WebForms
 		{
 			manager = new GameManager ();
 			manager.LoadAssemblyGames ("bin/gbrainy.Games.dll");
-
 			manager.LoadVerbalAnalogies (System.IO.Path.Combine ("data/", "verbal_analogies.xml"));
-			//manager.LoadGamesFromXml (System.IO.Path.Combine (Defines.DATA_DIR, "games.xml"));
-			//manager.LoadPlugins ();
 
 			manager.Difficulty = gbrainy.Core.Main.GameDifficulty.Medium;
 			manager.GameType = gbrainy.Core.Main.GameSession.Types.LogicPuzzles |
@@ -54,9 +52,8 @@ namespace WebForms
 
 			Logger.Debug ("Game.Page_Load. Page load starts. Session ID {0}, IsPostBack {1}", Session.SessionID,
 				IsPostBack);
-
-			if (web_session.GameState == null ||
-				web_session.GameState.Status == GameSession.SessionStatus.Finished)
+			
+			if (web_session.GameState == null)
 			{
 				Logger.Debug ("Game.Page_Load creating new session");
 				session = new gbrainy.Core.Main.GameSession ();
@@ -68,8 +65,13 @@ namespace WebForms
 				// send the user to the home page
 				//Logger.Debug ("New Session, redirecting to Default.aspx");
 				//Response.Redirect ("Default.aspx");
-			} else
+			} else if (web_session.GameState != null && web_session.GameState.Status == GameSession.SessionStatus.Finished)
+			{
+				image.ImageUrl = Game.CreateImage (web_session);
+			}		
+			else {
 				session = web_session.GameState;
+			}
 
 			if (IsPostBack == true) {
 				Logger.Debug ("Game.Page_Load. Ignoring postback");
@@ -79,16 +81,61 @@ namespace WebForms
 			string answer = answer_textbox.Text;
 
 			Logger.Debug ("Game.Page_Load. Got answer: {0}", answer);
-
-			_game = GetNextGame ();
-
-			UpdateGame ();
+			
+			if (web_session.GameState.Status != GameSession.SessionStatus.Finished)
+			{
+				_game = GetNextGame ();
+				UpdateGame ();
+			}
+			
+			// Toolbar
+			allgames_label.Text = LanguageSupport.GetString (web_session, "All");
+			endgames_label.Text = LanguageSupport.GetString (web_session, "Finish");
 
 			nextgame_link.Text = "Next Game";
-			endgame_link.Text = "End Game";
 			Logger.Debug ("Game.Page_Load. Page load completed");
 		}
+		
+#if _IMAGEMAP_
+		
+		string ProcessWidget (Widget widget)
+		{
+			string str;
+			
+			str = String.Format ("<area shape=\"rect\" coords=\"{0},{1},{2},{3}\" href=http://en.wikipedia.org/ />",
+			                     widget.X, widget.Y, widget.Width, widget.Height);
 
+			return str;
+		}
+		
+		public string ImageMap
+		{ 
+			get {
+				string str;
+				
+				if (_game == null)
+					return "Nothing";
+				
+				str = String.Format ("<img src={0}  usemap=\"#mapname\" />",
+					image.ImageUrl);
+			
+				foreach (Widget widget in _game.Widgets)
+				{
+					if (widget is Container)
+					{
+						foreach (Widget child in _game.Widgets)
+						{
+							str += ProcessWidget (child);
+						}
+					}
+					else {
+						str += ProcessWidget (widget);
+					}
+				}
+				return str;
+			}
+		}
+#endif
 		void UpdateGame ()
 		{
 			if (_game == null)
@@ -194,13 +241,19 @@ namespace WebForms
 			answer_button.Enabled = false;
 		}
 
-		public virtual void OnClickEndGame (Object sender, EventArgs e)
+		protected void OnClickEndGame (Object sender, EventArgs e)
 		{
 			Logger.Debug ("Game.OnClickEndGame");
 			session.End ();
-
-			Response.Redirect ("Finish.aspx");
+			
+			Response.Redirect ("Game.aspx");
 		}
-
+		
+		protected void OnStartAllGames (Object sender, EventArgs e)
+		{
+			web_session.GameState = null;
+			Response.Redirect ("Game.aspx");
+		}
+		
 	}
 }

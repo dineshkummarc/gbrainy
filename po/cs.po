@@ -1,18 +1,19 @@
 # Czech translation of gbrainy
 # Copyright (C) 2010 the author(s) of gbrainy.
 # This file is distributed under the same license as the gbrainy package.
+#
 # Jaroslav Ryník <jrynik@yahoo.co.uk>, 2009. (original Slovak translation).
 # Lucas Lommer <llommer@svn.gnome.org>, 2009. (based on Mr. Rynik's work).
 # Petr Kovar <pknbe@volny.cz>, 2010.
-# Marek Černocký <marek@manet.cz>, 2009, 2010, 2011.
+# Marek Černocký <marek@manet.cz>, 2009 – 2011.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gbrainy\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=gbrainy&component=general\n"
-"POT-Creation-Date: 2011-01-09 11:11+0000\n"
-"PO-Revision-Date: 2011-01-09 13:20+0100\n"
+"POT-Creation-Date: 2011-01-15 20:24+0000\n"
+"PO-Revision-Date: 2011-01-16 10:13+0100\n"
 "Last-Translator: Marek Černocký <marek@manet.cz>\n"
 "Language-Team: Czech <gnome-cs-list@gnome.org>\n"
 "MIME-Version: 1.0\n"
@@ -20,9 +21,6 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Language: cs\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2\n"
-"X-Poedit-Language: Czech\n"
-"X-Poedit-SourceCharset: utf-8\n"
-"X-Generator: Lokalize 1.0\n"
 
 #: ../tools/GameXmlGetString.cs:29
 msgid ""
@@ -360,10 +358,10 @@ msgstr ""
 #, no-c-format
 msgid ""
 "In a small town, [all_cars]% of the inhabitants have a car and [males_cars]% "
-"have a car and are males. What percentage of the total population are "
-"females and have a car? [option_answers]"
+"have a car and are males. What percentage of the population are females and "
+"have a car? [option_answers]"
 msgstr ""
-"V malém městě má [all_cars] % z obyvatel auto a [males_cars] % z obyvatel má "
+"V malém městě má [all_cars] % z obyvatel auto a [males_cars] % z obyvatel má "
 "auto a zároveň jsou muži. Kolik procent obyvatel tvoří ženy vlastnící auto? "
 "[option_answers]"
 
@@ -436,7 +434,7 @@ msgstr "Heslo"
 #: ../src/Games/Logic/PuzzleMissingSlice.cs:216
 #: ../src/Games/Logic/PuzzleMostInCommon.cs:312
 #: ../src/Games/Logic/PuzzleNextFigure.cs:165
-#: ../src/Games/Logic/PuzzlePredicateLogic.cs:190
+#: ../src/Games/Logic/PuzzlePredicateLogic.cs:189
 #: ../src/Games/Logic/PuzzleSquareDots.cs:320
 #: ../src/Games/Logic/PuzzleTetris.cs:171
 msgid "Possible answers are:"
@@ -520,10 +518,10 @@ msgstr ""
 #, no-c-format
 msgid ""
 "[female_cars]% ([all_cars] - [males_cars]) of the inhabitants are women and "
-"have a car, that is, [option_a]% of the total."
+"have a car."
 msgstr ""
-"[female_cars] % ([all_cars] - [males_cars]) z obyvatel jsou ženy a zároveň "
-"mají auto, což je [option_a] % z celkového počtu."
+"[female_cars] % ([all_cars] - [males_cars]) z obyvatel jsou ženy a zároveň "
+"mají auto."
 
 #: ../data/games.xml.h:59
 msgid "[option_a] and [option_b] are both multiples of [product]."
@@ -1762,7 +1760,7 @@ msgstr "Paměťové"
 
 #: ../src/Core/Views/FinishView.cs:125 ../src/Core/Main/GameTypes.cs:50
 #: ../src/Clients/Classical/gbrainy.cs:385
-#: ../src/Clients/Classical/Dialogs/ui/PdfExportDialog.ui.h:17
+#: ../src/Clients/Classical/Dialogs/ui/PdfExportDialog.ui.h:18
 msgid "Verbal"
 msgstr "Slovní"
 
@@ -2041,7 +2039,7 @@ msgstr "Slabé"
 msgid "Disappointing results"
 msgstr "Zklamání"
 
-#: ../src/Core/Main/GameSession.cs:269
+#: ../src/Core/Main/GameSession.cs:276
 msgid "Paused"
 msgstr "Přestávka"
 
@@ -2179,9 +2177,9 @@ msgstr "{0} Odpovězte {1}."
 #: ../src/Core/Main/Verbal/AnalogiesMultipleOptions.cs:105
 #: ../src/Core/Main/Verbal/AnalogiesPairOfWordsOptions.cs:112
 #: ../src/Games/Logic/PuzzleOstracism.cs:159
-#: ../src/Games/Logic/PuzzlePredicateLogic.cs:177
+#: ../src/Games/Logic/PuzzlePredicateLogic.cs:176
 #: ../src/Games/Calculation/CalculationCloserFraction.cs:161
-#: ../src/Games/Calculation/CalculationGreatestDivisor.cs:149
+#: ../src/Games/Calculation/CalculationGreatestDivisor.cs:152
 #, csharp-format
 msgid "{0}) {1}"
 msgstr "{0}) {1}"
@@ -2546,11 +2544,14 @@ msgid "Pages per side:"
 msgstr "Stránek na stranu:"
 
 #: ../src/Clients/Classical/Dialogs/ui/PdfExportDialog.ui.h:14
-#: ../src/Clients/Classical/Dialogs/ui/PreferencesDialog.ui.h:13
-msgid "Skip games that use colors (friendly to colorblind users)"
-msgstr "Přeskočit hry využívající barvy (vhodné pro barvoslepé uživatele)"
+msgid ""
+"Skip games that use colors\n"
+" (friendly to colorblind users)"
+msgstr ""
+"Přeskočit hry využívající barvy\n"
+" (vhodné pro barvoslepé uživatele)"
 
-#: ../src/Clients/Classical/Dialogs/ui/PdfExportDialog.ui.h:15
+#: ../src/Clients/Classical/Dialogs/ui/PdfExportDialog.ui.h:16
 msgid ""
 "This option allows to export a set of games in a PDF file. You can complete "
 "the puzzles without a computer."
@@ -2558,11 +2559,11 @@ msgstr ""
 "Pomocí této volby lze vyexportovat sadu her do souboru PDF. Můžete tak "
 "hlavolamy řešit i bez počítače."
 
-#: ../src/Clients/Classical/Dialogs/ui/PdfExportDialog.ui.h:16
+#: ../src/Clients/Classical/Dialogs/ui/PdfExportDialog.ui.h:17
 msgid "Total number of games:"
 msgstr "Celkový počet her:"
 
-#: ../src/Clients/Classical/Dialogs/ui/PdfExportDialog.ui.h:18
+#: ../src/Clients/Classical/Dialogs/ui/PdfExportDialog.ui.h:19
 msgid "_Save"
 msgstr "_Uložit"
 
@@ -2604,6 +2605,10 @@ msgstr "Předvolby"
 #: ../src/Clients/Classical/Dialogs/ui/PreferencesDialog.ui.h:12
 msgid "Show countdown message"
 msgstr "Před hrou zobrazit odpočítávání"
+
+#: ../src/Clients/Classical/Dialogs/ui/PreferencesDialog.ui.h:13
+msgid "Skip games that use colors (friendly to colorblind users)"
+msgstr "Přeskočit hry využívající barvy (vhodné pro barvoslepé uživatele)"
 
 #: ../src/Clients/Classical/Dialogs/ui/PreferencesDialog.ui.h:14
 msgid "Time in seconds to memorize the challenge:"
@@ -4586,18 +4591,21 @@ msgstr ""
 msgid "Greatest divisor"
 msgstr "Největší dělitel"
 
-#: ../src/Games/Calculation/CalculationGreatestDivisor.cs:45
+#: ../src/Games/Calculation/CalculationGreatestDivisor.cs:46
+#, csharp-format
 msgid ""
-"Which of the possible divisors is the greatest that divides all numbers?"
+"Which of the possible divisors is the greatest that divides all numbers? "
+"Answer {0}, {1}, {2} or {3}."
 msgstr ""
-"Který z možných dělitelů je největší, kterým lze vydělit všechna čísla?"
+"Který z možných dělitelů je největší takový, kterým lze vydělit všechna "
+"čísla? Odpovězte {0}, {1}, {2} nebo {3}."
 
-#: ../src/Games/Calculation/CalculationGreatestDivisor.cs:240
+#: ../src/Games/Calculation/CalculationGreatestDivisor.cs:243
 #: ../src/Games/Calculation/CalculationPrimes.cs:151
 msgid "Numbers"
 msgstr "Čísla"
 
-#: ../src/Games/Calculation/CalculationGreatestDivisor.cs:254
+#: ../src/Games/Calculation/CalculationGreatestDivisor.cs:257
 msgid "Possible divisors"
 msgstr "Možní dělitelé"
 

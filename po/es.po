@@ -4,17 +4,17 @@
 #
 # (c) 2007 Santiago Martinez Varela, 2007.
 # Eduardo Retamales <eretamales@gnome.cl>, 2007, 2008.
-# Daniel Mustieles <daniel.mustieles@gmail.com>, 2010, 2011.
 # Jorge González <jorgegonz@svn.gnome.org>, 2007, 2008, 2010, 2011.
+# Daniel Mustieles <daniel.mustieles@gmail.com>, 2010, 2011.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gbrainy.master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=gbrainy&component=general\n"
-"POT-Creation-Date: 2011-01-01 15:37+0000\n"
-"PO-Revision-Date: 2011-01-11 08:07+0100\n"
-"Last-Translator: Jorge González <jorgegonz@svn.gnome.org>\n"
+"POT-Creation-Date: 2011-01-15 20:24+0000\n"
+"PO-Revision-Date: 2011-01-16 13:13+0100\n"
+"Last-Translator: Daniel Mustieles <daniel.mustieles@gmail.com>\n"
 "Language-Team: Español <gnome-es-list@gnome.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -331,10 +331,14 @@ msgstr ""
 
 #: ../data/games.xml.h:29
 #, no-c-format
+#| msgid ""
+#| "In a small town, [all_cars]% of the inhabitants have a car and "
+#| "[males_cars]% have a car and are males. What percentage of the total "
+#| "population are females and have a car? [option_answers]"
 msgid ""
 "In a small town, [all_cars]% of the inhabitants have a car and [males_cars]% "
-"have a car and are males. What percentage of the total population are "
-"females and have a car? [option_answers]"
+"have a car and are males. What percentage of the population are females and "
+"have a car? [option_answers]"
 msgstr ""
 "En una ciudad pequeña [all_cars]% de los habitantes tienen un coche y "
 "[males_cars]% tienen un coche y son hombres. ¿Qué porcentaje del total de la "
@@ -410,7 +414,7 @@ msgstr "Contraseña"
 #: ../src/Games/Logic/PuzzleMissingSlice.cs:216
 #: ../src/Games/Logic/PuzzleMostInCommon.cs:312
 #: ../src/Games/Logic/PuzzleNextFigure.cs:165
-#: ../src/Games/Logic/PuzzlePredicateLogic.cs:190
+#: ../src/Games/Logic/PuzzlePredicateLogic.cs:189
 #: ../src/Games/Logic/PuzzleSquareDots.cs:320
 #: ../src/Games/Logic/PuzzleTetris.cs:171
 msgid "Possible answers are:"
@@ -492,12 +496,15 @@ msgstr ""
 
 #: ../data/games.xml.h:58
 #, no-c-format
+#| msgid ""
+#| "[female_cars]% ([all_cars] - [males_cars]) of the inhabitants are women "
+#| "and have a car, that is, [option_a]% of the total."
 msgid ""
 "[female_cars]% ([all_cars] - [males_cars]) of the inhabitants are women and "
-"have a car, that is, [option_a]% of the total."
+"have a car."
 msgstr ""
 "[female_cars]% ([all_cars] - [males_cars]) de los habitantes son mujeres y "
-"tienen un coche, esto es, [option_a]% del total."
+"tienen un coche."
 
 #: ../data/games.xml.h:59
 msgid "[option_a] and [option_b] are both multiples of [product]."
@@ -862,7 +869,6 @@ msgid "Flower"
 msgstr "Flor"
 
 #: ../data/verbal_analogies.xml.h:62
-#| msgid "blue"
 msgid "Flute"
 msgstr "Faluta"
 
@@ -1656,65 +1662,66 @@ msgstr "termómetro / temperatura | reloj"
 msgid "tiger / carnivore | cow"
 msgstr "tigre / carnívoro | vaca"
 
-#: ../data/verbal_analogies.xml.h:263
+#. Translators: time as duration of an event. What a clock measures
+#: ../data/verbal_analogies.xml.h:264
 msgid "time"
 msgstr "tiempo"
 
-#: ../data/verbal_analogies.xml.h:264
+#: ../data/verbal_analogies.xml.h:265
 msgid "toy / play | tool"
 msgstr "juguete / jugar | herramienta"
 
-#: ../data/verbal_analogies.xml.h:265
+#: ../data/verbal_analogies.xml.h:266
 msgid "track | railway | rails"
 msgstr "vía | vía férrea"
 
-#: ../data/verbal_analogies.xml.h:266
+#: ../data/verbal_analogies.xml.h:267
 msgid "turn"
 msgstr "girar"
 
 #. Translators: letter refers to letter (in paper form)
-#: ../data/verbal_analogies.xml.h:268
+#: ../data/verbal_analogies.xml.h:269
 msgid "turtle / shell | letter"
 msgstr "tortuga / caparazón | carta"
 
-#: ../data/verbal_analogies.xml.h:269
+#: ../data/verbal_analogies.xml.h:270
 msgid "vegetable"
 msgstr "vegetal | verdura | hortaliza"
 
-#: ../data/verbal_analogies.xml.h:270
+#: ../data/verbal_analogies.xml.h:271
 msgid "whirlpool / water | tornado"
 msgstr "remolino / agua | tornado"
 
-#: ../data/verbal_analogies.xml.h:271
+#: ../data/verbal_analogies.xml.h:272
 msgid "wild | savage"
 msgstr "salvaje | feroz"
 
-#: ../data/verbal_analogies.xml.h:272
+#: ../data/verbal_analogies.xml.h:273
 msgid "win | play"
 msgstr "ganar | jugar"
 
-#: ../data/verbal_analogies.xml.h:273
+#: ../data/verbal_analogies.xml.h:274
 msgid "wind | air"
 msgstr "viento | aire"
 
-#: ../data/verbal_analogies.xml.h:274
+#: ../data/verbal_analogies.xml.h:275
 msgid "wine / grape | rum"
 msgstr "vino / uva | ron"
 
-#: ../data/verbal_analogies.xml.h:275
+#: ../data/verbal_analogies.xml.h:276
 msgid "wings"
 msgstr "alas"
 
 #. Translators: 'work' is used as a verb (to work)
-#: ../data/verbal_analogies.xml.h:277
+#: ../data/verbal_analogies.xml.h:278
 msgid "work"
 msgstr "trabajar"
 
-#: ../data/verbal_analogies.xml.h:278
+#: ../data/verbal_analogies.xml.h:279
 msgid "wrist | arm"
 msgstr "muñeca | brazo"
 
-#: ../data/verbal_analogies.xml.h:279
+#: ../data/verbal_analogies.xml.h:280
 msgid "write / pen | eat"
 msgstr "escribir / bolígrafo | comer"
 
@@ -1747,7 +1754,7 @@ msgstr "Memoria"
 
 #: ../src/Core/Views/FinishView.cs:125 ../src/Core/Main/GameTypes.cs:50
 #: ../src/Clients/Classical/gbrainy.cs:385
-#: ../src/Clients/Classical/Dialogs/ui/PdfExportDialog.ui.h:17
+#: ../src/Clients/Classical/Dialogs/ui/PdfExportDialog.ui.h:18
 msgid "Verbal"
 msgstr "Verbal"
 
@@ -2026,7 +2033,7 @@ msgstr "Resultados pobres"
 msgid "Disappointing results"
 msgstr "Resultados decepcionantes"
 
-#: ../src/Core/Main/GameSession.cs:269
+#: ../src/Core/Main/GameSession.cs:276
 msgid "Paused"
 msgstr "Pausado"
 
@@ -2164,9 +2171,9 @@ msgstr "{0} Responde {1}."
 #: ../src/Core/Main/Verbal/AnalogiesMultipleOptions.cs:105
 #: ../src/Core/Main/Verbal/AnalogiesPairOfWordsOptions.cs:112
 #: ../src/Games/Logic/PuzzleOstracism.cs:159
-#: ../src/Games/Logic/PuzzlePredicateLogic.cs:177
+#: ../src/Games/Logic/PuzzlePredicateLogic.cs:176
 #: ../src/Games/Calculation/CalculationCloserFraction.cs:161
-#: ../src/Games/Calculation/CalculationGreatestDivisor.cs:149
+#: ../src/Games/Calculation/CalculationGreatestDivisor.cs:152
 #, csharp-format
 msgid "{0}) {1}"
 msgstr "{0}) {1}"
@@ -2546,11 +2553,15 @@ msgid "Pages per side:"
 msgstr "Páginas por hoja:"
 
 #: ../src/Clients/Classical/Dialogs/ui/PdfExportDialog.ui.h:14
-#: ../src/Clients/Classical/Dialogs/ui/PreferencesDialog.ui.h:13
-msgid "Skip games that use colors (friendly to colorblind users)"
-msgstr "Omitir los juegos que usan colores (amigable para usuarios daltónicos)"
+#| msgid "Skip games that use colors (friendly to colorblind users)"
+msgid ""
+"Skip games that use colors\n"
+" (friendly to colorblind users)"
+msgstr ""
+"Omitir los juegos que usan colores\n"
+" (amigable para usuarios daltónicos)"
 
-#: ../src/Clients/Classical/Dialogs/ui/PdfExportDialog.ui.h:15
+#: ../src/Clients/Classical/Dialogs/ui/PdfExportDialog.ui.h:16
 msgid ""
 "This option allows to export a set of games in a PDF file. You can complete "
 "the puzzles without a computer."
@@ -2558,11 +2569,11 @@ msgstr ""
 "Esta opción permite exportar un conjunto de juegos a un archivo PDF. Puedes "
 "completar los puzles sin un equipo."
 
-#: ../src/Clients/Classical/Dialogs/ui/PdfExportDialog.ui.h:16
+#: ../src/Clients/Classical/Dialogs/ui/PdfExportDialog.ui.h:17
 msgid "Total number of games:"
 msgstr "Número total de juegos:"
 
-#: ../src/Clients/Classical/Dialogs/ui/PdfExportDialog.ui.h:18
+#: ../src/Clients/Classical/Dialogs/ui/PdfExportDialog.ui.h:19
 msgid "_Save"
 msgstr "_Guardar"
 
@@ -2606,6 +2617,10 @@ msgstr "Preferencias"
 #: ../src/Clients/Classical/Dialogs/ui/PreferencesDialog.ui.h:12
 msgid "Show countdown message"
 msgstr "Mostrar el mensaje del tiempo restante"
+
+#: ../src/Clients/Classical/Dialogs/ui/PreferencesDialog.ui.h:13
+msgid "Skip games that use colors (friendly to colorblind users)"
+msgstr "Omitir los juegos que usan colores (amigable para usuarios daltónicos)"
 
 #: ../src/Clients/Classical/Dialogs/ui/PreferencesDialog.ui.h:14
 msgid "Time in seconds to memorize the challenge:"
@@ -2976,11 +2991,11 @@ msgstr ""
 "El orden de las operaciones aritméticas siempre es: exponentes y raíces, "
 "multiplicación y división, suma y resta."
 
-#: ../src/Games/Logic/PuzzleExtraCircle.cs:41
+#: ../src/Games/Logic/PuzzleExtraCircle.cs:53
 msgid "Extra circle"
 msgstr "Círculo adicional"
 
-#: ../src/Games/Logic/PuzzleExtraCircle.cs:50
+#: ../src/Games/Logic/PuzzleExtraCircle.cs:62
 #, csharp-format
 msgid ""
 "Which circle does not belong to the group? It is not a sequence of elements. "
@@ -2989,11 +3004,11 @@ msgstr ""
 "¿Qué círculo no pertenece al grupo? No es una secuencia de elementos. "
 "Responde {0}, {1}, {2} o {3}."
 
-#: ../src/Games/Logic/PuzzleExtraCircle.cs:55
+#: ../src/Games/Logic/PuzzleExtraCircle.cs:67
 msgid "All circles share a common property except for one."
 msgstr "Todos los círculos comparten una propiedad común excepto uno."
 
-#: ../src/Games/Logic/PuzzleExtraCircle.cs:60
+#: ../src/Games/Logic/PuzzleExtraCircle.cs:72
 msgid ""
 "In all circles the color slices follow the same order except for this one."
 msgstr ""
@@ -4597,18 +4612,23 @@ msgstr ""
 msgid "Greatest divisor"
 msgstr "Máximo común divisor"
 
-#: ../src/Games/Calculation/CalculationGreatestDivisor.cs:45
+#: ../src/Games/Calculation/CalculationGreatestDivisor.cs:46
+#, csharp-format
+#| msgid ""
+#| "Which of the possible divisors is the greatest that divides all numbers?"
 msgid ""
-"Which of the possible divisors is the greatest that divides all numbers?"
+"Which of the possible divisors is the greatest that divides all numbers? "
+"Answer {0}, {1}, {2} or {3}."
 msgstr ""
-"¿Cuál de los divisores posibles es el mayor que divide a todos los números?"
+"¿Cuál de los divisores posibles es el mayor que divide a todos los números? "
+"Respuesta: {0}, {1}, {2} o {3}."
 
-#: ../src/Games/Calculation/CalculationGreatestDivisor.cs:240
+#: ../src/Games/Calculation/CalculationGreatestDivisor.cs:243
 #: ../src/Games/Calculation/CalculationPrimes.cs:151
 msgid "Numbers"
 msgstr "Números"
 
-#: ../src/Games/Calculation/CalculationGreatestDivisor.cs:254
+#: ../src/Games/Calculation/CalculationGreatestDivisor.cs:257
 msgid "Possible divisors"
 msgstr "Posibles divisores"
 

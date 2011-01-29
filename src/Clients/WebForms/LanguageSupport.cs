@@ -63,7 +63,7 @@ namespace WebForms
 			Environment.SetEnvironmentVariable ("LANGUAGE",
 				LanguageSupport.GetFromIndex (session.LanguageIndex).LangCode);
 
-			Catalog.Init ("gbrainy", "locale/");
+			Catalog.Init ("gbrainy", "po/");
 			s = Catalog.GetString (str);
 
 			if (String.IsNullOrEmpty (s) == true)

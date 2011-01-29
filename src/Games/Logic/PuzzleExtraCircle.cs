@@ -43,7 +43,7 @@ namespace gbrainy.Games.Logic
 		{
 			public Color [] Colors {get; set; }
 
-			public CircleParameters (Color [] colors)
+			public CircleParameters (Color [] colors) : this ()
 			{
 				Colors = colors;
 			}

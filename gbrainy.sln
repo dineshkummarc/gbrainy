@@ -1,4 +1,4 @@
-
+﻿
 Microsoft Visual Studio Solution File, Format Version 9.00
 # Visual Studio 2005
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "gbrainy", "gbrainy.csproj", "{A5DF4079-EF3D-43F8-A36E-EB47058631A7}"
@@ -7,12 +7,18 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core", "src\Core\Core.cspro
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Games", "src\Games\Games.csproj", "{84A80D6F-DB4D-4989-B441-D410D2260775}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebForms", "src\Clients\WebForms\WebForms.csproj", "{6F788C5C-17C2-47BC-82C8-2D318D91CB76}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6F788C5C-17C2-47BC-82C8-2D318D91CB76}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6F788C5C-17C2-47BC-82C8-2D318D91CB76}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6F788C5C-17C2-47BC-82C8-2D318D91CB76}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6F788C5C-17C2-47BC-82C8-2D318D91CB76}.Release|Any CPU.Build.0 = Release|Any CPU
 		{84A80D6F-DB4D-4989-B441-D410D2260775}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{84A80D6F-DB4D-4989-B441-D410D2260775}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{84A80D6F-DB4D-4989-B441-D410D2260775}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -27,7 +33,7 @@ Global
 		{A5DF4079-EF3D-43F8-A36E-EB47058631A7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
-		StartupItem = gbrainy.csproj
+		StartupItem = src\Clients\WebForms\WebForms.csproj
 		Policies = $0
 		$0.TextStylePolicy = $1
 		$1.inheritsSet = null

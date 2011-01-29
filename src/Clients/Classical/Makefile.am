@@ -25,6 +25,7 @@ GBRAINY_CSDISTFILES =					\
 ASSEMBLIES = \
 	 $(GBRAINY_LIBS)    		\
 	 $(MONO_ADDINS_LIBS)    	\
+	 $(GNOME_LIBS)    		\
 	-r:Mono.Cairo.dll		\
 	-r:../../gbrainy.Core.dll	\
 	-r:Mono.Posix

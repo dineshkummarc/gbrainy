@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
@@ -10,7 +10,6 @@
     <OutputType>Library</OutputType>
     <RootNamespace>WebForms</RootNamespace>
     <AssemblyName>gbrainyWeb</AssemblyName>
-    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -30,14 +29,6 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
-    <Reference Include="gbrainy.Core, Version=1.51.0.0, Culture=neutral, PublicKeyToken=null">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\gbrainy.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="gbrainy.Games, Version=1.51.0.0, Culture=neutral, PublicKeyToken=null">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\gbrainy.Games.dll</HintPath>
-    </Reference>
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Extensions" />
     <Reference Include="Mono.Cairo" />
@@ -46,6 +37,7 @@
   <ItemGroup>
     <Content Include="web.config" />
     <Content Include="Default.aspx" />
+    <Content Include="Download.aspx" />
     <Content Include="images\allgames-32.png" />
     <Content Include="images\endgame-32.png" />
     <Content Include="images\logic-games-32.png" />
@@ -58,7 +50,6 @@
     <Content Include="styles.css" />
     <Content Include="Status.aspx" />
     <Content Include="Global.asax" />
-    <Content Include="Finish.aspx" />
     <Content Include="Game.aspx" />
     <Content Include="..\..\..\po\ca.gmo">
       <Link>locale\ca.gmo</Link>
@@ -83,8 +74,14 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Download.aspx.cs">
+      <DependentUpon>Download.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Download.aspx.designer.cs">
+      <DependentUpon>Download.aspx</DependentUpon>
     </Compile>
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
@@ -113,22 +110,16 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="WebSession.cs" />
-    <Compile Include="Finish.aspx.cs">
-      <DependentUpon>Finish.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Finish.aspx.designer.cs">
-      <DependentUpon>Finish.aspx</DependentUpon>
-    </Compile>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
-  <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v9.0\WebApplications\Microsoft.WebApplication.targets" />
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v8.0\WebApplications\Microsoft.WebApplication.targets" />
   <ProjectExtensions>
     <MonoDevelop>
-      <Properties VerifyCodeBehindFields="true" VerifyCodeBehindEvents="true">
+      <Properties InternalTargetFrameworkVersion="3.5" VerifyCodeBehindFields="true" VerifyCodeBehindEvents="true">
         <XspParameters Port="8080" Address="127.0.0.1" SslMode="None" SslProtocol="Default" KeyType="None" CertFile="" KeyFile="" PasswordOptions="None" Password="" Verbose="true" />
         <WebDeployTargets>
           <Target Name="">
-            <FileCopier Handler="MonoDevelop.Deployment.LocalFileCopyHandler" TargetDirectory="/home/jordi/dev/gbrainy_web/src/Clients/WebForms/web" ctype="LocalFileCopyConfiguration" />
+            <FileCopier Handler="MonoDevelop.Deployment.LocalFileCopyHandler" TargetDirectory="/home/jordi/dev/gbrainy/src/Clients/WebForms/web" ctype="LocalFileCopyConfiguration" />
           </Target>
         </WebDeployTargets>
       </Properties>
@@ -145,5 +136,15 @@
     <None Include="..\..\..\data\games.xml">
       <Link>data\games.xml</Link>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Games\Games.csproj">
+      <Project>{84A80D6F-DB4D-4989-B441-D410D2260775}</Project>
+      <Name>Games</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Core\Core.csproj">
+      <Project>{9F2F1F0C-DF7E-4054-B6BA-94F3DD9FF3D9}</Project>
+      <Name>Core</Name>
+    </ProjectReference>
   </ItemGroup>
 </Project>

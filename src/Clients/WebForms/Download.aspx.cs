@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2010 Jordi Mas i Hernàndez <jmas@softcatala.org>
+ * Copyright (C) 2011 Jordi Mas i Hernàndez <jmas@softcatala.org>
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License as
@@ -18,21 +18,15 @@
  */
 
 using System;
+using System.IO;
 using System.Web;
 using System.Web.UI;
+using gbrainy.Core.Main;
 
 namespace WebForms
 {
-	public partial class Finish : System.Web.UI.Page
+	public partial class Download : System.Web.UI.Page
 	{
-		void Page_Load (object o, EventArgs e)
-        	{
-			WebSession web_session;
-			gbrainy.Core.Main.GameSession session;
 
-			web_session = Global.Sessions [Session.SessionID];
-			image.ImageUrl = Game.CreateImage (web_session);
-		}
 	}
 }
-
