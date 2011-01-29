@@ -10,13 +10,10 @@
 <div class="Header">
 			<asp:HyperLink class="HeaderText" text ="Home" NavigateUrl ="Default.aspx" runat="server"/>
 			<span class="HeaderText">Play</span>
-			<span class="HeaderText">Download</span>
+			<asp:HyperLink class="HeaderText" text ="Download" NavigateUrl ="Download.aspx" runat="server"/>
 			<span class="HeaderText">Help</span>
 			<span class="HeaderText">About</span>
 			<span class="HeaderText">
-				<asp:DropDownList id = "languages_drop" AutoPostBack="True" ViewStateMode="Enabled"
-					onselectedindexchanged="OnSelectedIndexChanged" runat="server">
-            		</asp:DropDownList>
 			</span>
 </div>
 

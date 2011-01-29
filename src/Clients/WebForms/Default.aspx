@@ -56,5 +56,9 @@
 	<br/>
 	<br/>
 	<asp:Button id="start_button" Text="Start game!" OnClick="OnStartGame" runat="server"/>
+	
+	<asp:DropDownList id = "languages_drop" AutoPostBack="True" ViewStateMode="Enabled"
+		onselectedindexchanged="OnSelectedIndexChanged" runat="server">
+	</asp:DropDownList>
 
 </asp:content>
