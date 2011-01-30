@@ -20,8 +20,7 @@
 using System;
 using System.Collections.Generic;
 
-using Mono.Unix;
-
+using gbrainy.Core.Services;
 
 namespace gbrainy.Core.Main.Verbal
 {
@@ -39,7 +38,7 @@ namespace gbrainy.Core.Main.Verbal
 		}
 
 		public override string Name {
-			get { return String.Format (Catalog.GetString ("Pair of words compare #{0}"), Variant);}
+			get { return String.Format (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Pair of words compare #{0}"), Variant);}
 		}
 
 		public override Dictionary <int, Analogy> List {
@@ -54,7 +53,7 @@ namespace gbrainy.Core.Main.Verbal
 				if (current.answers == null)
 					return current.question;
 
-				return String.Format (Catalog.GetString (
+				return String.Format (ServiceLocator.Instance.GetService <ITranslations> ().GetString (
 					"Given the relationship between the two words below, which word has the same relationship to '{0}'?"),
 					sample);
 			}
@@ -91,7 +90,7 @@ namespace gbrainy.Core.Main.Verbal
 
 			gr.SetPangoLargeFontSize ();
 			gr.DrawTextCentered (0.5, y + 0.25,
-				String.Format (Catalog.GetString ("Words: {0}"), samples));
+				String.Format (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Words: {0}"), samples));
 		}
 	}
 }

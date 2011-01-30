@@ -26,6 +26,7 @@ using Gdk;
 
 using gbrainy.Core.Main;
 using gbrainy.Core.Platform;
+using gbrainy.Core.Services;
 using gbrainy.Clients.Classical.Dialogs;
 using gbrainy.Clients.Classical.Widgets;
 
@@ -783,6 +784,9 @@ namespace gbrainy.Clients.Classical
 			}
 
 			DateTime start_time = DateTime.Now;
+
+			// Register services
+			ServiceLocator.Instance.RegisterService <ITranslations> (new TranslationsCatalog ());
 
 			GtkClient app = new GtkClient ();
 			CommandLine.Version ();

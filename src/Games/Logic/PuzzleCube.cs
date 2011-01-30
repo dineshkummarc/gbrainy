@@ -17,11 +17,11 @@
  * Boston, MA 02111-1307, USA.
  */
 
-using Mono.Unix;
 using System;
 
 using gbrainy.Core.Main;
 using gbrainy.Core.Toolkit;
+using gbrainy.Core.Services;
 
 namespace gbrainy.Games.Logic
 {
@@ -42,11 +42,11 @@ namespace gbrainy.Games.Logic
 		};
 
 		public override string Name {
-			get {return Catalog.GetString ("Cube");}
+			get {return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Cube");}
 		}
 
 		public override string Question {
-			get {return String.Format (Catalog.GetString ("When you fold the figure below as a cube, which face on the figure is opposite the face with a {0} drawn on it? Answer the number written on face."), question);} 
+			get {return String.Format (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("When you fold the figure below as a cube, which face on the figure is opposite the face with a {0} drawn on it? Answer the number written on face."), question);} 
 		}
 
 		protected override void Initialize ()

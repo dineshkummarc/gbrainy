@@ -18,9 +18,9 @@
  */
 
 using System;
-using Mono.Unix;
 
 using gbrainy.Core.Main;
+using gbrainy.Core.Services;
 
 namespace gbrainy.Games.Memory
 {
@@ -33,7 +33,7 @@ namespace gbrainy.Games.Memory
 		private ArrayListIndicesRandom color_order;
 
 		public override string Name {
-			get {return Catalog.GetString ("Colored text");}
+			get {return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Colored text");}
 		}
 
 		public override bool UsesColors {
@@ -42,7 +42,7 @@ namespace gbrainy.Games.Memory
 
 		public override string MemoryQuestion {
 			get { 
-				return String.Format (Catalog.GetString ("What was the color of the text that said '{0}'?"), question_colorname);}
+				return String.Format (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("What was the color of the text that said '{0}'?"), question_colorname);}
 		}
 
 		protected override void Initialize ()

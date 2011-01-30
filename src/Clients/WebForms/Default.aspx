@@ -1,4 +1,4 @@
-<%@ Page Language="C#" MasterPageFile = "MasterPage.master" Inherits="WebForms.Default" %>
+<%@ Page Language="C#" MasterPageFile = "MasterPage.master" Inherits="gbrainy.Clients.WebForms.Default" %>
 <%@ Import Namespace="System.Data" %>
 
 <asp:content id="main_content" ContentPlaceHolderID ="main_placeholder" runat="server">

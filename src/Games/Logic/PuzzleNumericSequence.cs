@@ -19,9 +19,9 @@
 
 using System;
 using System.Text;
-using Mono.Unix;
 
 using gbrainy.Core.Main;
+using gbrainy.Core.Services;
 
 namespace gbrainy.Games.Logic
 {
@@ -39,26 +39,26 @@ namespace gbrainy.Games.Logic
 		private Formula formula;
 
 		public override string Name {
-			get {return Catalog.GetString ("Numeric sequence");}
+			get {return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Numeric sequence");}
 		}
 
 		public override string Question {
-			get {return Catalog.GetString ("The next sequence follows a logic. What number should replace the question mark?");}
+			get {return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("The next sequence follows a logic. What number should replace the question mark?");}
 		}
 
 		public override string Tip {
-			get { return Catalog.GetString ("Every number in the sequence is related to the previous one.");}
+			get { return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Every number in the sequence is related to the previous one.");}
 		}
 
 		public override string Rationale {
 			get {
 				switch (formula) {
 				case Formula.SubstractingOne:
-					return Catalog.GetString ("Every number in the sequence is the result of subtracting 1 from the previous number and multiplying it by 2.");
+					return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Every number in the sequence is the result of subtracting 1 from the previous number and multiplying it by 2.");
 				case Formula.Adding:
-					return Catalog.GetString ("Every number in the sequence is the result of adding 1 to the previous number and multiplying it by 3.");
+					return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Every number in the sequence is the result of adding 1 to the previous number and multiplying it by 3.");
 				case Formula.SubstractingTwo:
-					return Catalog.GetString ("Every number in the sequence is the result of subtracting 2 from the previous number and multiplying it by -2.");
+					return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Every number in the sequence is the result of subtracting 2 from the previous number and multiplying it by -2.");
 				default:
 					return string.Empty;
 				}

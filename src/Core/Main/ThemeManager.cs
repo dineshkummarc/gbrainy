@@ -65,8 +65,6 @@ namespace gbrainy.Core.Main
 			throw new InvalidOperationException (String.Format ("ThemeManager. Theme not found '{0}'", name));
 		}
 
-
-
 		static public void Load ()
 		{
 			try {

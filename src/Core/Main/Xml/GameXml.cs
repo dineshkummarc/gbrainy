@@ -21,9 +21,8 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 
-using Mono.Unix;
-
 using gbrainy.Core.Toolkit;
+using gbrainy.Core.Services;
 
 namespace gbrainy.Core.Main.Xml
 {
@@ -109,7 +108,7 @@ namespace gbrainy.Core.Main.Xml
 		}
 
 		public override string Name {
-			get { return Catalog.GetString (game.Name); }
+			get { return ServiceLocator.Instance.GetService <ITranslations> ().GetString (game.Name); }
 		}
 
 		public override string Question {
@@ -123,10 +122,10 @@ namespace gbrainy.Core.Main.Xml
 		public override string Tip {
 			get {
 				if (game.Variants.Count > 0 && game.Variants[current.Variant].Tip != null)
-					return Catalog.GetString (game.Variants[current.Variant].Tip);
+					return ServiceLocator.Instance.GetService <ITranslations> ().GetString (game.Variants[current.Variant].Tip);
 				else
 					if (String.IsNullOrEmpty (game.Tip) == false)
-						return Catalog.GetString (game.Tip);
+						return ServiceLocator.Instance.GetService <ITranslations> ().GetString (game.Tip);
 					else
 						return null;
 			}
@@ -216,12 +215,12 @@ namespace gbrainy.Core.Main.Xml
 				}
 	
 				for (int i = 0; i < options.Count - 1; i++)
-					answers += String.Format (Catalog.GetString ("{0}, "), GetPossibleAnswer (i));
+					answers += String.Format (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("{0}, "), GetPossibleAnswer (i));
 
-				answers += String.Format (Catalog.GetString ("{0}."), GetPossibleAnswer (options.Count - 1));
+				answers += String.Format (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("{0}."), GetPossibleAnswer (options.Count - 1));
 
 				// Translators {0}: list of options (A, B, C)
-				answers = String.Format (Catalog.GetString ("Answer {0}"), answers);
+				answers = String.Format (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Answer {0}"), answers);
 				question = question.Replace (option_answers, answers);					
 			}
 			else
@@ -464,7 +463,7 @@ namespace gbrainy.Core.Main.Xml
 		{
 			string answer;
 			
-			answer = String.Format (Catalog.GetString ("{0}) "), GetPossibleAnswer (option));
+			answer = String.Format (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("{0}) "), GetPossibleAnswer (option));
 			return str.Replace (option_prefix, answer);
 		}
 
@@ -486,7 +485,7 @@ namespace gbrainy.Core.Main.Xml
 			if (String.IsNullOrEmpty (str))
 				return str;
 
-			return Catalog.GetString (str);
+			return ServiceLocator.Instance.GetService <ITranslations> ().GetString (str);
 		}
 
 		// Protect from calling with null + resolve plurals
@@ -498,7 +497,7 @@ namespace gbrainy.Core.Main.Xml
 			if (localizable.IsPlural () == false)
 				return CatalogGetString (localizable.String);
 
-			return Catalog.GetPluralString (localizable.String, localizable.PluralString, localizable.ValueComputed);
+			return ServiceLocator.Instance.GetService <ITranslations> ().GetPluralString (localizable.String, localizable.PluralString, localizable.ValueComputed);
 		}
 	}
 }

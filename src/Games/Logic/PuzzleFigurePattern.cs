@@ -18,9 +18,9 @@
  */
 
 using System;
-using Mono.Unix;
 
 using gbrainy.Core.Main;
+using gbrainy.Core.Services;
 
 namespace gbrainy.Games.Logic
 {
@@ -37,22 +37,22 @@ namespace gbrainy.Games.Logic
 		};
 
 		public override string Name {
-			get {return Catalog.GetString ("Figure pattern");}
+			get {return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Figure pattern");}
 		}
 
 		public override string Question {
 			get {return String.Format (
-				Catalog.GetString ("What figure should replace the question mark? Answer {0}, {1} or {2}."),
+				ServiceLocator.Instance.GetService <ITranslations> ().GetString ("What figure should replace the question mark? Answer {0}, {1} or {2}."),
 				GetPossibleAnswer (0), GetPossibleAnswer (1), GetPossibleAnswer (2));}
 		}
 
 		public override string Tip {
-			get { return Catalog.GetString ("The third figure of every row involves somehow combining the first two figures.");}
+			get { return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("The third figure of every row involves somehow combining the first two figures.");}
 		}
 
 		public override string Rationale {
 			get {
-				return Catalog.GetString ("Superpose the first and second figures and remove the lines that they have in common, then rotate the resulting figure 45 degrees.");
+				return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Superpose the first and second figures and remove the lines that they have in common, then rotate the resulting figure 45 degrees.");
 			}
 		}
 
@@ -187,7 +187,7 @@ namespace gbrainy.Games.Logic
 			gr.Stroke ();
 	
 			gr.MoveTo (0.05, y - 0.01 + space_y);
-			gr.ShowPangoText (Catalog.GetString ("Possible answers are:"));
+			gr.ShowPangoText (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Possible answers are:"));
 
 			// Answers
 			x = org_x;

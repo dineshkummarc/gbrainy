@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2010 Jordi Mas i Hernàndez <jmas@softcatala.org>
+ * Copyright (C) 2011 Jordi Mas i Hernàndez <jmas@softcatala.org>
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License as
@@ -17,42 +17,25 @@
  * Boston, MA 02111-1307, USA.
  */
 
-using System;
 using Mono.Unix;
 
-namespace gbrainy.Clients.WebForms
+namespace gbrainy.Core.Services
 {
-	static class LanguageSupport
+	public class TranslationsCatalog : ITranslations
 	{
-		public class Language
+		public void Init (string package, string localedir)
 		{
-			public string Name { get; set; }
-			public string LangCode { get; set; }
-
-			public Language (string name, string code)
-			{
-				Name = name;
-				LangCode = code;
-			}
-		};
-
-		static Language [] languages =
+			Catalog.Init (package, localedir);
+		}
+		
+		public string GetString (string s)
 		{
-			new Language ("English", "en_US.utf8"),
-			new Language ("Catalan", "ca_ES.utf8"),
-			new Language ("Spanish", "es_ES.utf8"),
-			new Language ("German", "de_DE.utf8")
-		};
-
-		static public Language [] Languages
-		{
-			get { return languages;}
-
+			return Catalog.GetString (s);
 		}
 
-		static public Language GetFromIndex (int i)
+		public string GetPluralString (string s, string p, int n)
 		{
-			return languages [i];
+			return Catalog.GetPluralString (s, p, n);
 		}
 	}
 }

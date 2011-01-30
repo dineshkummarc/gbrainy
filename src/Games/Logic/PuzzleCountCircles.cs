@@ -17,10 +17,10 @@
  * Boston, MA 02111-1307, USA.
  */
 
-using Mono.Unix;
 using System;
 
 using gbrainy.Core.Main;
+using gbrainy.Core.Services;
 
 namespace gbrainy.Games.Logic
 {
@@ -45,15 +45,15 @@ namespace gbrainy.Games.Logic
 		ItemCircle[] circles;
 
 		public override string Name {
-			get {return Catalog.GetString ("Count circles");}
+			get {return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Count circles");}
 		}
 
 		public override string Question {
-			get {return Catalog.GetString ("How many circles do you count?");} 
+			get {return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("How many circles do you count?");} 
 		}
 
 		public override string Tip {
-			get { return Catalog.GetString ("It is an easy exercise if you systematically count the circles.");}
+			get { return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("It is an easy exercise if you systematically count the circles.");}
 		}
 
 		protected override void Initialize ()

@@ -19,10 +19,10 @@
 
 using System;
 using Cairo;
-using Mono.Unix;
 
 using gbrainy.Core.Main;
 using gbrainy.Core.Toolkit;
+using gbrainy.Core.Services;
 
 namespace gbrainy.Games.Logic
 {
@@ -59,22 +59,22 @@ namespace gbrainy.Games.Logic
 		};
 
 		public override string Name {
-			get {return Catalog.GetString ("Missing slice");}
+			get {return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Missing slice");}
 		}
 
 		public override string Question {
 			get {return String.Format (
-				Catalog.GetString ("The slices below have some kind of relation. Which is the missing slice in the circle below? Answer {0}, {1} or {2}."),
+				ServiceLocator.Instance.GetService <ITranslations> ().GetString ("The slices below have some kind of relation. Which is the missing slice in the circle below? Answer {0}, {1} or {2}."),
 				GetPossibleAnswer (0), GetPossibleAnswer (1), GetPossibleAnswer (2));}
 		}
 
 		public override string Tip {
-			get { return Catalog.GetString ("Each slice is related to the opposite one.");}
+			get { return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Each slice is related to the opposite one.");}
 		}
 
 		public override string Rationale {
 			get {
-				return String.Format (Catalog.GetString ("All numbers of each slice, when added to the ones of the opposite slice, add always {0}."), sum_offset + 8);
+				return String.Format (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("All numbers of each slice, when added to the ones of the opposite slice, add always {0}."), sum_offset + 8);
 			}
 		}
 
@@ -213,7 +213,7 @@ namespace gbrainy.Games.Logic
 			}
 
 			gr.MoveTo (0.1, 0.61);
-			gr.ShowPangoText (Catalog.GetString ("Possible answers are:"));
+			gr.ShowPangoText (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Possible answers are:"));
 			gr.Stroke ();
 		}
 	}

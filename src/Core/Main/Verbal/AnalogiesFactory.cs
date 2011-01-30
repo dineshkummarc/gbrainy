@@ -22,7 +22,7 @@ using System.Xml;
 using System.IO;
 using System.Collections.Generic;
 
-using Mono.Unix;
+using gbrainy.Core.Services;
 
 namespace gbrainy.Core.Main.Verbal
 {
@@ -74,7 +74,7 @@ namespace gbrainy.Core.Main.Verbal
 						else {
 							if (reader.NodeType == XmlNodeType.EndElement &&
 								// Ignores verbal analogies disabled for a specific locale
-								Catalog.GetString (analogy.question) != IgnoreAnalogy) {
+								ServiceLocator.Instance.GetService <ITranslations> ().GetString (analogy.question) != IgnoreAnalogy) {
 								analogy.answers = answers.ToArray ();
 								analogies_arrays [(int) analogy.type].Add (analogies_arrays [(int) analogy.type].Count, analogy);
 							}

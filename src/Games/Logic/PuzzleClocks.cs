@@ -17,11 +17,11 @@
  * Boston, MA 02111-1307, USA.
  */
 
-using Mono.Unix;
 using System;
 
 using gbrainy.Core.Main;
 using gbrainy.Core.Toolkit;
+using gbrainy.Core.Services;
 
 namespace gbrainy.Games.Logic
 {
@@ -35,24 +35,24 @@ namespace gbrainy.Games.Logic
 		private const int handle_num = 2;
 
 		public override string Name {
-			get {return Catalog.GetString ("Clocks");}
+			get {return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Clocks");}
 		}
 
 		public override string Question {
 			get {return (String.Format (
 				// Translators: {0} is replaced by 'Figure X'
-				Catalog.GetString ("To what number should the large handle of the '{0}' clock point? Answer using numbers."),
+				ServiceLocator.Instance.GetService <ITranslations> ().GetString ("To what number should the large handle of the '{0}' clock point? Answer using numbers."),
 				GetPossibleFigureAnswer (3)));}
 		}
 
 		public override string Rationale {
 			get {
-				return String.Format (Catalog.GetString ("Starting from the first clock sum {0} to the value indicated by the hands."), addition);
+				return String.Format (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Starting from the first clock sum {0} to the value indicated by the hands."), addition);
 			}
 		}
 
 		public override string Tip {
-			get { return Catalog.GetString ("The clocks do not follow the time logic.");}
+			get { return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("The clocks do not follow the time logic.");}
 		}
 
 		protected override void Initialize ()

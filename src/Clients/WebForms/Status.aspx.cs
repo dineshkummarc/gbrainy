@@ -25,7 +25,7 @@ using System.Web.UI.WebControls;
 using System.Reflection;
 using System.Diagnostics;
 
-namespace WebForms
+namespace gbrainy.Clients.WebForms
 {
     public partial class Status : System.Web.UI.Page
     {

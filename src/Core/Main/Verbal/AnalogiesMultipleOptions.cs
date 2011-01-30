@@ -22,10 +22,10 @@ using System.IO;
 using System.Collections.Generic;
 
 using Cairo;
-using Mono.Unix;
 
 using gbrainy.Core.Libraries;
 using gbrainy.Core.Toolkit;
+using gbrainy.Core.Services;
 
 namespace gbrainy.Core.Main.Verbal
 {
@@ -40,7 +40,7 @@ namespace gbrainy.Core.Main.Verbal
 		}
 
 		public override string Name {
-			get { return String.Format (Catalog.GetString ("Multiple options #{0}"), Variant);}
+			get { return String.Format (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Multiple options #{0}"), Variant);}
 		}
 
 		public override string Question {
@@ -60,13 +60,13 @@ namespace gbrainy.Core.Main.Verbal
 					if (n +1 < current.answers.Length) {
 						// Translators: this the separator used when concatenating possible options for answering verbal analogies
 						// For example: "Possible correct answers are: a, b, c, d."						
-						str += Catalog.GetString (", ");
+						str += ServiceLocator.Instance.GetService <ITranslations> ().GetString (", ");
 					}
 				}
 
 				// Translators: {0} is replaced by a question and {1} by the suggestions on how to answer
 				// E.g: What is the correct option? Answer A, B, C.
-				return String.Format (Catalog.GetString ("{0} Answer {1}."),
+				return String.Format (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("{0} Answer {1}."),
 					current.question,
 					str);
 			}
@@ -102,7 +102,7 @@ namespace gbrainy.Core.Main.Verbal
 					int n = (int) e.Data;
 
 					e.Context.MoveTo (0.05, 0.02);
-					e.Context.ShowPangoText (String.Format (Catalog.GetString ("{0}) {1}"), GetPossibleAnswer (n), current.answers[n].ToString ()));
+					e.Context.ShowPangoText (String.Format (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("{0}) {1}"), GetPossibleAnswer (n), current.answers[n].ToString ()));
 				};
 			}
 		}
@@ -116,7 +116,7 @@ namespace gbrainy.Core.Main.Verbal
 
 			gr.SetPangoLargeFontSize ();
 			gr.MoveTo (0.1, DrawAreaY + 0.05);
-			gr.ShowPangoText (Catalog.GetString ("Possible answers are:"));
+			gr.ShowPangoText (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Possible answers are:"));
 		}
 	}
 }

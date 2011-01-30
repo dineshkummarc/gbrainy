@@ -19,7 +19,7 @@
  */
 
 using Cairo;
-using Mono.Unix;
+using gbrainy.Core.Services;
 
 namespace gbrainy.Core.Main
 {
@@ -45,14 +45,14 @@ namespace gbrainy.Core.Main
 		};
 
 		private static readonly string[] ColorName= new string[] {
-			Catalog.GetString ("red"),
-			Catalog.GetString ("green"),
-			Catalog.GetString ("blue"),
-			Catalog.GetString ("yellow"),
-			Catalog.GetString ("magenta"),
-			Catalog.GetString ("orange"),
-			Catalog.GetString ("black"),
-			Catalog.GetString ("white")
+			ServiceLocator.Instance.GetService <ITranslations> ().GetString ("red"),
+			ServiceLocator.Instance.GetService <ITranslations> ().GetString ("green"),
+			ServiceLocator.Instance.GetService <ITranslations> ().GetString ("blue"),
+			ServiceLocator.Instance.GetService <ITranslations> ().GetString ("yellow"),
+			ServiceLocator.Instance.GetService <ITranslations> ().GetString ("magenta"),
+			ServiceLocator.Instance.GetService <ITranslations> ().GetString ("orange"),
+			ServiceLocator.Instance.GetService <ITranslations> ().GetString ("black"),
+			ServiceLocator.Instance.GetService <ITranslations> ().GetString ("white")
 		};
 
 		private static Cairo.Color[] CairoColor = new Cairo.Color[] {

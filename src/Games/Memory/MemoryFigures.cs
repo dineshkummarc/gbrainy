@@ -19,10 +19,10 @@
 
 using System;
 using Cairo;
-using Mono.Unix;
 
 using gbrainy.Core.Main;
 using gbrainy.Core.Toolkit;
+using gbrainy.Core.Services;
 
 namespace gbrainy.Games.Memory
 {
@@ -52,12 +52,12 @@ namespace gbrainy.Games.Memory
 		}
 
 		public override string Name {
-			get {return Catalog.GetString ("Memorize figures");}
+			get {return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Memorize figures");}
 		}
 
 		public override string MemoryQuestion {
 			get { 
-				return Catalog.GetString ("In which cell is the other figure like the one shown below? Answer the cell number." );}
+				return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("In which cell is the other figure like the one shown below? Answer the cell number." );}
 		}
 
 		protected override void Initialize ()

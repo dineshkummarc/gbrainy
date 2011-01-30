@@ -18,9 +18,9 @@
  */
 
 using System;
-using Mono.Unix;
 
 using gbrainy.Core.Main;
+using gbrainy.Core.Services;
 
 namespace gbrainy.Games.Logic
 {
@@ -55,21 +55,21 @@ namespace gbrainy.Games.Logic
 		};
 
 		public override string Name {
-			get {return Catalog.GetString ("Triangles with numbers");}
+			get {return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Triangles with numbers");}
 		}
 
 		public override string Question {
-			get {return Catalog.GetString ("Which number should replace the question mark below?");} 
+			get {return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Which number should replace the question mark below?");} 
 		}
 
 
 		public override string Tip {
-			get { return Catalog.GetString ("All the triangles share a property and are independent of the rest.");}
+			get { return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("All the triangles share a property and are independent of the rest.");}
 		}
 
 		public override string Rationale {
 			get {
-				return String.Format (Catalog.GetString ("The result of multiplying the two numbers inside every triangle is {0}."), answer_number);
+				return String.Format (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("The result of multiplying the two numbers inside every triangle is {0}."), answer_number);
 			}
 		}
 

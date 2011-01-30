@@ -17,10 +17,10 @@
  * Boston, MA 02111-1307, USA.
  */
 
-using Mono.Unix;
 using System;
 
 using gbrainy.Core.Main;
+using gbrainy.Core.Services;
 
 namespace gbrainy.Games.Logic
 {
@@ -37,20 +37,20 @@ namespace gbrainy.Games.Logic
 		}
 
 		public override string Name {
-			get {return Catalog.GetString ("Figures and text");}
+			get {return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Figures and text");}
 		}
 
 		public override string Question {
-			get {return Catalog.GetString ("The figures and the text are related. What text should go under the last figure?");} 
+			get {return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("The figures and the text are related. What text should go under the last figure?");} 
 		}
 
 		public override string Tip {
-			get { return Catalog.GetString ("Every character of the text represents a property of the figure.");}
+			get { return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Every character of the text represents a property of the figure.");}
 		}
 
 		public override string Rationale {
 			get {
-				return Catalog.GetString ("'A' indicates that the figures overlap, 'B' that are squares, 'C' that are circles, 'D' that the figures are separated, 'E' that there are three figures and 'F' that there are two figures.");
+				return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("'A' indicates that the figures overlap, 'B' that are squares, 'C' that are circles, 'D' that the figures are separated, 'E' that there are three figures and 'F' that there are two figures.");
 			}
 		}
 

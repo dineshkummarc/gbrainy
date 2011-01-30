@@ -17,10 +17,10 @@
  * Boston, MA 02111-1307, USA.
  */
 
-using Mono.Unix;
 using System;
 
 using gbrainy.Core.Main;
+using gbrainy.Core.Services;
 
 namespace gbrainy.Games.Logic
 {
@@ -38,7 +38,7 @@ namespace gbrainy.Games.Logic
 		GameType gametype;
 
 		public override string Name {
-			get {return Catalog.GetString ("Percentage");}
+			get {return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Percentage");}
 		}
 
 		public override string Question {
@@ -75,7 +75,7 @@ namespace gbrainy.Games.Logic
 				}  while (paid != Math.Truncate (paid));
 
 				question = String.Format (
-					Catalog.GetString ("After getting {0}% discount you have paid {1} monetary units for a TV set. What was the original price of the TV set?"),
+					ServiceLocator.Instance.GetService <ITranslations> ().GetString ("After getting {0}% discount you have paid {1} monetary units for a TV set. What was the original price of the TV set?"),
 					discount, paid);
 				ans = (int)price;
 				svg_image = "tv_set.svg";
@@ -93,7 +93,7 @@ namespace gbrainy.Games.Logic
 
 			
 				question = String.Format (
-					Catalog.GetString ("John's shop had sales of {0} monetary units. This was an increase of {1}% over last month. What were last month sales?"),
+					ServiceLocator.Instance.GetService <ITranslations> ().GetString ("John's shop had sales of {0} monetary units. This was an increase of {1}% over last month. What were last month sales?"),
 					sales, increase);
 				ans = (int) previous;
 				svg_image = "shop.svg";
@@ -109,10 +109,10 @@ namespace gbrainy.Games.Logic
 				} while (percentage != Math.Truncate (percentage));
 			
 				question = String.Format (
-					Catalog.GetString ("The amount of water in a bucket decreases by {0}%. By what percentage must the amount of water increase to reach its original value?"),
+					ServiceLocator.Instance.GetService <ITranslations> ().GetString ("The amount of water in a bucket decreases by {0}%. By what percentage must the amount of water increase to reach its original value?"),
 					decrease);
 
-				answer = Catalog.GetString ("The objective is to obtain the same total amount.");
+				answer = ServiceLocator.Instance.GetService <ITranslations> ().GetString ("The objective is to obtain the same total amount.");
 				ans = (int) percentage;
 				svg_image = "bucket.svg";
 				break;

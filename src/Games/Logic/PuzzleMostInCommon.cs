@@ -20,11 +20,11 @@
 
 using System;
 using Cairo;
-using Mono.Unix;
 using System.Collections;
 
 using gbrainy.Core.Main;
 using gbrainy.Core.Toolkit;
+using gbrainy.Core.Services;
 
 namespace gbrainy.Games.Logic
 {
@@ -73,25 +73,25 @@ namespace gbrainy.Games.Logic
 		private const double pos7_y = 0.11;
 
 		public override string Name {
-			get {return Catalog.GetString ("Most in common");}
+			get {return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Most in common");}
 		}
 
 		public override string Question {
 			get {return String.Format (
-				Catalog.GetString ("Which of the possible answers have the most in common with the four given figures? Answer {0}, {1}, {2} or {3}."),
+				ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Which of the possible answers have the most in common with the four given figures? Answer {0}, {1}, {2} or {3}."),
 					GetPossibleAnswer (0), GetPossibleAnswer (1), GetPossibleAnswer (2), GetPossibleAnswer (3));}
 		}
 
 		public override string Tip {
-			get { return Catalog.GetString ("Think of the common elements that the given figures have inside them.");}
+			get { return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Think of the common elements that the given figures have inside them.");}
 		}
 
 		public override string Rationale {
 			get {
 				if (CurrentDifficulty ==  GameDifficulty.Easy) 
-					return Catalog.GetString ("It has the same number of elements inside the figure as the given figures.");
+					return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("It has the same number of elements inside the figure as the given figures.");
 				else
-					return Catalog.GetString ("It is the figure with the most elements in common compared to the given figures.");
+					return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("It is the figure with the most elements in common compared to the given figures.");
 			}
 		}
 
@@ -309,7 +309,7 @@ namespace gbrainy.Games.Logic
 			y += 0.28;
 			x = DrawAreaX;
 			gr.MoveTo (x - 0.06, y);
-			gr.ShowPangoText (Catalog.GetString ("Possible answers are:"));
+			gr.ShowPangoText (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Possible answers are:"));
 			gr.Stroke ();
 		}
 	}

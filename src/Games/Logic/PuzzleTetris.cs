@@ -17,11 +17,11 @@
  * Boston, MA 02111-1307, USA.
  */
 
-using Mono.Unix;
 using System;
 
 using gbrainy.Core.Main;
 using gbrainy.Core.Toolkit;
+using gbrainy.Core.Services;
 
 namespace gbrainy.Games.Logic
 {
@@ -32,18 +32,18 @@ namespace gbrainy.Games.Logic
 		private const double rect_witdh = 0.04, rect_height = 0.04, space_figures = 0.22;
 
 		public override string Name {
-			get {return Catalog.GetString ("Tetris");}
+			get {return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Tetris");}
 		}
 
 		public override string Question {
 			get {return String.Format (
-				Catalog.GetString ("What figure completes the set below? Answer {0}, {1} or {2}."),
+				ServiceLocator.Instance.GetService <ITranslations> ().GetString ("What figure completes the set below? Answer {0}, {1} or {2}."),
 				GetPossibleAnswer (0), GetPossibleAnswer (1), GetPossibleAnswer (2));}
 		}
 
 		public override string Rationale {
 			get {
-				return Catalog.GetString ("It is the figure that completes all possible combinations with four blocks without taking into account rotations.");
+				return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("It is the figure that completes all possible combinations with four blocks without taking into account rotations.");
 			}
 		}
 
@@ -168,7 +168,7 @@ namespace gbrainy.Games.Logic
 			}
 
 			gr.MoveTo (0.1, 0.4 - 0.02);
-			gr.ShowPangoText (Catalog.GetString ("Possible answers are:"));
+			gr.ShowPangoText (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Possible answers are:"));
 		}
 	}
 }

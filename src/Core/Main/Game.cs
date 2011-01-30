@@ -22,9 +22,10 @@ using System.ComponentModel;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
 using System.Text;
-using Mono.Unix;
+
 
 using gbrainy.Core.Toolkit;
+using gbrainy.Core.Services;
 
 namespace gbrainy.Core.Main
 {
@@ -148,13 +149,13 @@ namespace gbrainy.Core.Main
 			get {
 				string str;
 
-				str = String.Format (Catalog.GetString ("The correct answer is {0}."), AnswerValue);
+				str = String.Format (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("The correct answer is {0}."), AnswerValue);
 
 				if (String.IsNullOrEmpty (Rationale))
 					return str;
 				
 				// Translators: answer + rationale of the answer
-				return String.Format (Catalog.GetString ("{0} {1}"), str, Rationale);
+				return String.Format (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("{0} {1}"), str, Rationale);
 			}
 		}
 
@@ -314,21 +315,21 @@ namespace gbrainy.Core.Main
 				// For languages represented with the Latin alphabet use
 				// the same than English
 			case 0: // First possible answer for a series (e.g.: Figure A)
-				return Catalog.GetString ("A");
+				return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("A");
 			case 1: // Second possible answer for a series
-				return Catalog.GetString ("B");
+				return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("B");
 			case 2: // Third possible answer for a series
-				return Catalog.GetString ("C");
+				return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("C");
 			case 3: // Fourth possible answer for a series
-				return Catalog.GetString ("D");
+				return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("D");
 			case 4: // Fifth possible answer for a series
-				return Catalog.GetString ("E");
+				return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("E");
 			case 5: // Sixth possible answer for a series
-				return Catalog.GetString ("F");
+				return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("F");
 			case 6: // Seventh possible answer for a series
-				return Catalog.GetString ("G");
+				return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("G");
 			case 7: // Eighth possible answer for a series
-				return Catalog.GetString ("H");
+				return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("H");
 			default:
 				throw new ArgumentOutOfRangeException ("Do not have an option for this answer");
 			}
@@ -336,7 +337,7 @@ namespace gbrainy.Core.Main
 
 		public string GetPossibleFigureAnswer (int answer)
 		{
-			return String.Format (Catalog.GetString ("Figure {0}"), GetPossibleAnswer (answer));
+			return String.Format (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Figure {0}"), GetPossibleAnswer (answer));
 		}
 
 		protected void InitDraw (CairoContextEx gr, int width, int height, bool rtl)

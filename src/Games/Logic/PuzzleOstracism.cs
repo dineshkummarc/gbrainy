@@ -18,10 +18,10 @@
  */
 
 using System;
-using Mono.Unix;
 
 using gbrainy.Core.Main;
 using gbrainy.Core.Toolkit;
+using gbrainy.Core.Services;
 
 namespace gbrainy.Games.Logic
 {
@@ -50,12 +50,12 @@ namespace gbrainy.Games.Logic
 		string [] equations;
 
 		public override string Name {
-			get {return Catalog.GetString ("Ostracism");}
+			get {return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Ostracism");}
 		}
 
 		public override string Question {
 			get {return String.Format (
-				Catalog.GetString ("Which element does not belong to the group? It is not related to divisibility of the numbers. Answer {0}, {1}, {2}, {3} or {4}."),
+				ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Which element does not belong to the group? It is not related to divisibility of the numbers. Answer {0}, {1}, {2}, {3} or {4}."),
 				GetPossibleAnswer (0), GetPossibleAnswer (1), GetPossibleAnswer (2), GetPossibleAnswer (3), GetPossibleAnswer (4));}
 		}
 
@@ -63,9 +63,9 @@ namespace gbrainy.Games.Logic
 			get {
 				switch (gametype) {
 				case GameType.Equations:
-					return Catalog.GetString ("The criteria for deciding if an equation belongs to the group is not arithmetical.");
+					return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("The criteria for deciding if an equation belongs to the group is not arithmetical.");
 				case GameType.Numbers:
-					return Catalog.GetString ("Consider that every number that belongs to the group has two parts that are related.");
+					return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Consider that every number that belongs to the group has two parts that are related.");
 				default:
 					throw new InvalidOperationException ();
 				}
@@ -76,9 +76,9 @@ namespace gbrainy.Games.Logic
 			get {
 				switch (gametype) {
 				case GameType.Equations:
-					return Catalog.GetString ("In all the other equations the digits from the left side appear also in the right side.");
+					return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("In all the other equations the digits from the left side appear also in the right side.");
 				case GameType.Numbers:
-					return Catalog.GetString ("In all the other numbers the last three digits are the square of the first two digits.");
+					return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("In all the other numbers the last three digits are the square of the first two digits.");
 				default:
 					throw new InvalidOperationException ();
 				}
@@ -156,7 +156,7 @@ namespace gbrainy.Games.Logic
 					e.Context.SetPangoLargeFontSize ();
 					e.Context.MoveTo (0.05, 0.02);
 					// Translators: this "option) answer" for example "a) "21 x 60 = 1260". This should not be changed for most of the languages
-					e.Context.ShowPangoText (String.Format (Catalog.GetString ("{0}) {1}"), GetPossibleAnswer (n), equations [random_indices[n]]));
+					e.Context.ShowPangoText (String.Format (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("{0}) {1}"), GetPossibleAnswer (n), equations [random_indices[n]]));
 				};
 			}
 		}

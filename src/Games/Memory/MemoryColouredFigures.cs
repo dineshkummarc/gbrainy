@@ -19,10 +19,10 @@
 
 using System;
 using Cairo;
-using Mono.Unix;
 
 using gbrainy.Core.Main;
 using gbrainy.Core.Toolkit;
+using gbrainy.Core.Services;
 
 namespace gbrainy.Games.Memory
 {
@@ -48,7 +48,7 @@ namespace gbrainy.Games.Memory
 		private const double block_space = 0.35;
 
 		public override string Name {
-			get {return Catalog.GetString ("Colored figures");}
+			get {return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Colored figures");}
 		}
 
 		public override bool UsesColors {
@@ -57,7 +57,7 @@ namespace gbrainy.Games.Memory
 
 		public override string MemoryQuestion {
 			get { return String.Format (
-				Catalog.GetString ("Which of these figures was previously shown? Answer {0}, {1}, {2} or {3}."),
+				ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Which of these figures was previously shown? Answer {0}, {1}, {2} or {3}."),
 				GetPossibleAnswer (0), GetPossibleAnswer (1), GetPossibleAnswer (2), GetPossibleAnswer (3));}
 		}
 

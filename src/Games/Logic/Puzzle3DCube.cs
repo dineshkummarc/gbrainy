@@ -17,10 +17,10 @@
  * Boston, MA 02111-1307, USA.
  */
 
-using Mono.Unix;
 using System;
 
 using gbrainy.Core.Main;
+using gbrainy.Core.Services;
 
 namespace gbrainy.Games.Logic
 {
@@ -29,15 +29,15 @@ namespace gbrainy.Games.Logic
 		int rows, columns, depth;
 
 		public override string Name {
-			get {return Catalog.GetString ("3D Cube");}
+			get {return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("3D Cube");}
 		}
 
 		public override string Question {
-			get {return Catalog.GetString ("How many small cubes does it take to build the large cube below? Answer using a number.");}
+			get {return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("How many small cubes does it take to build the large cube below? Answer using a number.");}
 		}
 
 		public override string Tip {
-			get { return Catalog.GetString ("A cube is a regular solid object having six congruent square faces.");}
+			get { return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("A cube is a regular solid object having six congruent square faces.");}
 		}
 
 		protected override void Initialize ()

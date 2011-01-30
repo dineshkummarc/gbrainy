@@ -22,7 +22,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace WebForms
+namespace gbrainy.Clients.WebForms
 {
 	public partial class Default : System.Web.UI.Page
 	{

@@ -18,9 +18,9 @@
  */
 
 using System;
-using Mono.Unix;
 
 using gbrainy.Core.Main;
+using gbrainy.Core.Services;
 
 namespace gbrainy.Games.Logic
 {
@@ -30,20 +30,20 @@ namespace gbrainy.Games.Logic
 		private int type;
 
 		public override string Name {
-			get {return Catalog.GetString ("Move figure");}
+			get {return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Move figure");}
 		}
 
 		public override string Question {
-			get {return Catalog.GetString ("What is the minimum number of circles to be moved in order to convert the left figure into the right figure?");} 
+			get {return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("What is the minimum number of circles to be moved in order to convert the left figure into the right figure?");} 
 		}
 	
 		public override string Rationale {
 			get {
 				switch (type) {
 				case 0:
-					return Catalog.GetString ("Move the circle from the first line to the second and move two circles from the fourth line to the second and the fifth lines.");
+					return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Move the circle from the first line to the second and move two circles from the fourth line to the second and the fifth lines.");
 				case 1:
-					return Catalog.GetString ("Move the first line to the seventh; move the two circles of the second line to third; and move first and last circles of the fifth line to the sixth.");
+					return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Move the first line to the seventh; move the two circles of the second line to third; and move first and last circles of the fifth line to the sixth.");
 				default:	
 					return string.Empty;
 				}

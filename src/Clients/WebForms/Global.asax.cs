@@ -7,7 +7,10 @@ using System.Collections.Generic;
 using System.Web;
 using System.Web.SessionState;
 
-namespace WebForms
+using gbrainy.Core.Services;
+using gbrainy.Core.Main;
+
+namespace gbrainy.Clients.WebForms
 {
 	public class Global : System.Web.HttpApplication
 	{
@@ -25,6 +28,10 @@ namespace WebForms
 				Logger.LogLevel = Level.INFO;
 				Logger.LogDevice = new ConsoleLogger ();
 			}
+			
+			// Setup core services
+			ServiceLocator.Instance.RegisterService <ITranslations> (new TranslationsWeb ());
+			ThemeManager.ConfigPath = Defines.THEMES_DIR;
 
 			Logger.Info ("Global.Application_Start.gbrainy web starting");
 		}

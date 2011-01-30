@@ -2,7 +2,7 @@ using System;
 using System.Web.SessionState;
 using gbrainy.Core;
 
-namespace WebForms
+namespace gbrainy.Clients.WebForms
 {
 	public class WebSession
 	{

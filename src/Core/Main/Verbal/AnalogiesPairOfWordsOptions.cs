@@ -19,9 +19,9 @@
 
 using System;
 using System.Collections.Generic;
-using Mono.Unix;
 
 using gbrainy.Core.Toolkit;
+using gbrainy.Core.Services;
 
 namespace gbrainy.Core.Main.Verbal
 {
@@ -37,7 +37,7 @@ namespace gbrainy.Core.Main.Verbal
 		}
 
 		public override string Name {
-			get { return String.Format (Catalog.GetString ("Pair of words #{0}"), Variant);}
+			get { return String.Format (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Pair of words #{0}"), Variant);}
 		}
 
 		public override Dictionary <int, Analogy> List {
@@ -61,11 +61,11 @@ namespace gbrainy.Core.Main.Verbal
 					if (n +1 < current.answers.Length) {
 						// Translators: this the separator used when concatenating possible options for answering verbal analogies
 						// For example: "Possible correct answers are: a, b, c, d."						
-						str += Catalog.GetString (", ");
+						str += ServiceLocator.Instance.GetService <ITranslations> ().GetString (", ");
 					}
 				}
 
-				return String.Format (Catalog.GetString (
+				return String.Format (ServiceLocator.Instance.GetService <ITranslations> ().GetString (
 					"Given the relationship between the two words below, which word has the same relationship to '{0}'?"),
 					sample);
 			}
@@ -109,7 +109,7 @@ namespace gbrainy.Core.Main.Verbal
 
 					//e.Context.SetPangoLargeFontSize ();
 					e.Context.MoveTo (0.05, 0.02);
-					e.Context.ShowPangoText (String.Format (Catalog.GetString ("{0}) {1}"), GetPossibleAnswer (n), current.answers[n].ToString ()));
+					e.Context.ShowPangoText (String.Format (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("{0}) {1}"), GetPossibleAnswer (n), current.answers[n].ToString ()));
 				};
 			}
 		}
@@ -126,11 +126,11 @@ namespace gbrainy.Core.Main.Verbal
 			gr.SetPangoLargeFontSize ();
 
 			gr.MoveTo (0.1, y + 0.12);
-			gr.ShowPangoText (Catalog.GetString ("Possible answers are:"));
+			gr.ShowPangoText (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Possible answers are:"));
 			gr.Stroke ();
 
 			gr.DrawTextCentered (0.5, y,
-				String.Format (Catalog.GetString ("Words: {0}"), samples));
+				String.Format (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Words: {0}"), samples));
 
 		}
 	}

@@ -18,9 +18,9 @@
  */
 
 using System.Text;
-using Mono.Unix;
 
 using gbrainy.Core.Main;
+using gbrainy.Core.Services;
 
 namespace gbrainy.Games.Memory
 {
@@ -53,7 +53,7 @@ namespace gbrainy.Games.Memory
 		{
 			public override string Question {
 				get {
-					return Catalog.GetString ("How many odd numbers were in the previous image? Answer using numbers.");
+					return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("How many odd numbers were in the previous image? Answer using numbers.");
 				}
 			}
 
@@ -73,7 +73,7 @@ namespace gbrainy.Games.Memory
 		{
 			public override string Question {
 				get {
-					return Catalog.GetString ("How many even numbers were in the previous image? Answer using numbers.");
+					return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("How many even numbers were in the previous image? Answer using numbers.");
 				}
 			}
 
@@ -93,7 +93,7 @@ namespace gbrainy.Games.Memory
 		{
 			public override string Question {
 				get {
-					return Catalog.GetString ("How many numbers with more than one digit were in the previous image? Answer using numbers.");
+					return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("How many numbers with more than one digit were in the previous image? Answer using numbers.");
 				}
 			}
 
@@ -110,7 +110,7 @@ namespace gbrainy.Games.Memory
 		}
 
 		public override string Name {
-			get {return Catalog.GetString  ("Memorize numbers");}
+			get {return ServiceLocator.Instance.GetService <ITranslations> ().GetString  ("Memorize numbers");}
 		}
 
 		public override string MemoryQuestion {

@@ -24,7 +24,9 @@ using System.Web.UI;
 using gbrainy.Core.Main;
 using gbrainy.Core.Toolkit;
 
-namespace WebForms
+using gbrainy.Core.Services;
+
+namespace gbrainy.Clients.WebForms
 {
 	public partial class Game : System.Web.UI.Page
 	{
@@ -36,8 +38,8 @@ namespace WebForms
 		static public GameManager CreateManager ()
 		{
 			manager = new GameManager ();
-			manager.LoadAssemblyGames ("bin/gbrainy.Games.dll");
-			manager.LoadVerbalAnalogies (System.IO.Path.Combine ("data/", "verbal_analogies.xml"));
+			manager.LoadAssemblyGames (Defines.GAME_ASSEMBLY);
+			manager.LoadVerbalAnalogies (System.IO.Path.Combine ("data/", Defines.VERBAL_ANALOGIES));
 
 			manager.Difficulty = gbrainy.Core.Main.GameDifficulty.Medium;
 			manager.GameType = gbrainy.Core.Main.GameSession.Types.LogicPuzzles |
@@ -46,13 +48,23 @@ namespace WebForms
 			return manager;
 		}
 
+		int GetLanguageIndexFromSessionHandler ()
+		{
+			web_session = Global.Sessions [Session.SessionID];
+			return web_session.LanguageIndex;
+		}
+
 		private void Page_Load (Object sender, EventArgs e)
 		{
 			web_session = Global.Sessions [Session.SessionID];
 
 			Logger.Debug ("Game.Page_Load. Page load starts. Session ID {0}, IsPostBack {1}", Session.SessionID,
 				IsPostBack);
-			
+
+			TranslationsWeb service = (TranslationsWeb) ServiceLocator.Instance.GetService <ITranslations> ();
+
+			service.GetLanguageIndexFromSession = GetLanguageIndexFromSessionHandler;
+
 			if (web_session.GameState == null)
 			{
 				Logger.Debug ("Game.Page_Load creating new session");
@@ -74,6 +86,10 @@ namespace WebForms
 			}
 
 			if (IsPostBack == true) {
+				
+				if (web_session.GameState.Status != GameSession.SessionStatus.Finished)
+					UpdateGame ();
+				
 				Logger.Debug ("Game.Page_Load. Ignoring postback");
 				return;
 			}
@@ -89,8 +105,8 @@ namespace WebForms
 			}
 			
 			// Toolbar
-			allgames_label.Text = LanguageSupport.GetString (web_session, "All");
-			endgames_label.Text = LanguageSupport.GetString (web_session, "Finish");
+			allgames_label.Text = ServiceLocator.Instance.GetService <ITranslations> ().GetString ("All");
+			endgames_label.Text = ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Finish");
 
 			nextgame_link.Text = "Next Game";
 			Logger.Debug ("Game.Page_Load. Page load completed");
@@ -142,7 +158,7 @@ namespace WebForms
 				return;
 
 			status.Text = session.StatusText;
-			question.Text = LanguageSupport.GetString (web_session, _game.Question);
+			question.Text = _game.Question;
 		 	image.ImageUrl = CreateImage (web_session);
 		}
 
@@ -204,13 +220,6 @@ namespace WebForms
 		public virtual void OnClickNextGame (Object sender, EventArgs e)
 		{
 			Logger.Debug ("Game.OnClickNextGame");
-			/*
-			Console.WriteLine ("--> OnClick Next Game");
-			Cache.Remove ("game");
-
-			_game = GetNextGame ();
-			UpdateGame ();
-			*/
 
 			// TODO: This should be done at GameSession.Level
 			session.ScoreGame (String.Empty);
@@ -227,15 +236,15 @@ namespace WebForms
 			if (String.IsNullOrEmpty (answer) == false)
 			{
 				if (session.ScoreGame (answer) == true) {
-					result_label.Text = LanguageSupport.GetString (web_session, "Congratulations.");
+					result_label.Text = ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Congratulations.");
 					result_label.CssClass = "CorrectAnswer";
 				}
 				else {
-					result_label.Text = LanguageSupport.GetString (web_session, "Incorrect. ");
+					result_label.Text = ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Incorrect. ");
 					result_label.CssClass = null;
 				}
 
-				rationale_label.Text = LanguageSupport.GetString (web_session, session.CurrentGame.Answer);
+				rationale_label.Text = ServiceLocator.Instance.GetService <ITranslations> ().GetString (session.CurrentGame.Answer);
 			} else
 
 			answer_button.Enabled = false;
@@ -254,6 +263,5 @@ namespace WebForms
 			web_session.GameState = null;
 			Response.Redirect ("Game.aspx");
 		}
-		
 	}
 }

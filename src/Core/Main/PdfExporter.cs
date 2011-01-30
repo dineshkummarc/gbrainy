@@ -18,10 +18,10 @@
  */
 
 using System;
-using Mono.Unix;
-
 using Cairo;
+
 using gbrainy.Core.Libraries;
+using gbrainy.Core.Services;
 
 namespace gbrainy.Core.Main
 {
@@ -101,7 +101,7 @@ namespace gbrainy.Core.Main
 
 				// Translators: {0} is the game number and {1} the game question or answer
 				// The number is used as reference when looking for the game solution in the PDF
-				str = String.Format (Catalog.GetString ("Game {0}. {1}"), i + 1, puzzle.Question);
+				str = String.Format (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Game {0}. {1}"), i + 1, puzzle.Question);
 
 				// Draw question
 				cr.SetPangoFontSize (12);
@@ -118,7 +118,7 @@ namespace gbrainy.Core.Main
 					cr.Save ();
 					cr.SetPangoFontSize (0.02);
 					cr.MoveTo (0.05, 0.95);
-					cr.ShowPangoText (String.Format (Catalog.GetString ("Created by gbrainy {0}"), Defines.VERSION));
+					cr.ShowPangoText (String.Format (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Created by gbrainy {0}"), Defines.VERSION));
 					cr.Stroke ();
 					cr.Restore ();
 				}				
@@ -154,7 +154,7 @@ namespace gbrainy.Core.Main
 			// Draw solution title
 			cr.SetPangoFontSize (20);
 			cr.DrawStringWithWrapping (x + margin, y + margin,
-				Catalog.GetString ("Solutions"), width - margin);
+				ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Solutions"), width - margin);
 			y += space_lines;
 			cr.Stroke ();
 
@@ -162,7 +162,7 @@ namespace gbrainy.Core.Main
 			cr.UseMarkup = true;
 			for (int i = 0; i < games.Length; i++)
 			{
-				str = String.Format (Catalog.GetString ("Game {0}. {1}"), i + 1, games[i].Answer);
+				str = String.Format (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Game {0}. {1}"), i + 1, games[i].Answer);
 
 				// Draw Solution
 				cr.DrawStringWithWrapping (x + margin, y + margin, str, width - margin);

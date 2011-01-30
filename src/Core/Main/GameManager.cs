@@ -20,7 +20,8 @@
 using System;
 using System.Collections.Generic;
 using System.Reflection;
-using Mono.Unix;
+
+using gbrainy.Core.Services;
 
 #if MONO_ADDINS
 using Mono.Addins;
@@ -170,8 +171,13 @@ namespace gbrainy.Core.Main
 				// Expects the assembly to be in the same dir than this assembly
 				Assembly asm = Assembly.GetExecutingAssembly ();
 				string asm_dir = System.IO.Path.GetDirectoryName (asm.Location);
-
+#if _ASPNET_	
+				string s = System.IO.Path.GetFileName (file);
+				AssemblyName aname = AssemblyName.GetAssemblyName (file);
+				asem = Assembly.Load (aname);
+#else
 				asem = Assembly.LoadFrom (System.IO.Path.Combine (asm_dir, file));
+#endif				
 
 				foreach (Type t in asem.GetTypes())
 				{
@@ -310,13 +316,13 @@ namespace gbrainy.Core.Main
 		{
 			String s = string.Empty;
 	#if MONO_ADDINS
-			s += Catalog.GetString ("Extensions database:") + " " + 
+			s += ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Extensions database:") + " " + 
 					System.IO.Path.Combine (Environment.GetFolderPath (Environment.SpecialFolder.ApplicationData), "gbrainy");
 
 			s += Environment.NewLine;
 	#endif
 			// Translators: 'Games registered' is the games know to gbrainy (build-in and load from addins-in and external files)
-			s += String.Format (Catalog.GetString ("Games registered: {0}: {1} logic puzzles, {2} calculation trainers, {3} memory trainers, {4} verbal analogies"),
+			s += String.Format (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Games registered: {0}: {1} logic puzzles, {2} calculation trainers, {3} memory trainers, {4} verbal analogies"),
 					cnt_logic + cnt_memory + cnt_calculation + cnt_verbal,
 					cnt_logic, cnt_calculation, cnt_memory, cnt_verbal);
 

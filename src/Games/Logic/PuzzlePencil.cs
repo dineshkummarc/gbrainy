@@ -19,10 +19,10 @@
 
 using System;
 using Cairo;
-using Mono.Unix;
 
 using gbrainy.Core.Main;
 using gbrainy.Core.Toolkit;
+using gbrainy.Core.Services;
 
 namespace gbrainy.Games.Logic
 {
@@ -35,11 +35,11 @@ namespace gbrainy.Games.Logic
 		private const int answer_index = 4;
 
 		public override string Name {
-			get {return Catalog.GetString ("Pencil");}
+			get {return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Pencil");}
 		}
 
 		public override string Question {
-			get {return String.Format ( Catalog.GetString 
+			get {return String.Format ( ServiceLocator.Instance.GetService <ITranslations> ().GetString 
 				("Which of the following figures cannot be drawn without crossing any previous lines nor lifting the pencil? Answer {0}, {1}, {2}, {3} or {4}."),
 				GetPossibleAnswer (0), GetPossibleAnswer (1), GetPossibleAnswer (2), GetPossibleAnswer (3), GetPossibleAnswer (4));} 
 		}

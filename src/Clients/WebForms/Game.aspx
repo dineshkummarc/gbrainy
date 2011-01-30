@@ -1,4 +1,4 @@
-<%@ Page Language="C#" MasterPageFile = "MasterPage.master" Inherits="WebForms.Game" %>
+<%@ Page Language="C#" MasterPageFile = "MasterPage.master" Inherits="gbrainy.Clients.WebForms.Game" %>
 
 <asp:content id="main_content" ContentPlaceHolderID ="main_placeholder" runat="server">
 

@@ -18,9 +18,9 @@
  */
 
 using System;
-using Mono.Unix;
 
 using gbrainy.Core.Main;
+using gbrainy.Core.Services;
 
 namespace gbrainy.Games.Logic
 {
@@ -41,19 +41,19 @@ namespace gbrainy.Games.Logic
 		private const double figure_size = 0.15;
 
 		public override string Name {
-			get {return Catalog.GetString ("Quadrilaterals");}
+			get {return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Quadrilaterals");}
 		}
 
 		public override string Question {
 			get {return String.Format (
-				Catalog.GetString ("Which of the following figures does not belong to the group? Answer {0}, {1}, {2}, {3}, {4} or {5}."),
+				ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Which of the following figures does not belong to the group? Answer {0}, {1}, {2}, {3}, {4} or {5}."),
 					GetPossibleAnswer (0), GetPossibleAnswer (1), GetPossibleAnswer (2), GetPossibleAnswer (3), GetPossibleAnswer (4), 
 					GetPossibleAnswer (5));}
 		}
 
 		public override string Rationale {
 			get {
-				return Catalog.GetString ("It is the only figure with all lines of equal length.");
+				return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("It is the only figure with all lines of equal length.");
 			}
 		}
 

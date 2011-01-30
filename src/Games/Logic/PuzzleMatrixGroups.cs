@@ -18,9 +18,9 @@
  */
 
 using System;
-using Mono.Unix;
 
 using gbrainy.Core.Main;
+using gbrainy.Core.Services;
 
 namespace gbrainy.Games.Logic
 {
@@ -32,20 +32,20 @@ namespace gbrainy.Games.Logic
 		private int divisor;
 
 		public override string Name {
-			get {return Catalog.GetString ("Matrix groups");}
+			get {return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Matrix groups");}
 		}
 
 		public override string Question {
-			get {return Catalog.GetString ("One of the numbers in the matrix must be circled. Which one?");}
+			get {return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("One of the numbers in the matrix must be circled. Which one?");}
 		}
 
 		public override string Tip {
-			get { return Catalog.GetString ("All circled numbers share an arithmetical property.");}
+			get { return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("All circled numbers share an arithmetical property.");}
 		}
 
 		public override string Rationale {
 			get {
-				return String.Format (Catalog.GetString ("Every circled number can be divided by {0}."), divisor);
+				return String.Format (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Every circled number can be divided by {0}."), divisor);
 			}
 		}
 

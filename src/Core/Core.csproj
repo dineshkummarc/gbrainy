@@ -45,7 +45,7 @@
       <Package>gtk-sharp-2.0</Package>
     </Reference>
     <Reference Include="Mono.CSharp" />
-    <Reference Include="Mono.Cairo" />
+    <Reference Include="Mono.Cairo, Version=2.0.0.0, Culture=neutral, PublicKeyToken=0738eb9f132ed756" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Main\ArrayListIndicesRandom.cs" />
@@ -103,6 +103,12 @@
     <Compile Include="Main\Xml\TextDrawingObject.cs" />
     <Compile Include="Main\Xml\DrawingObject.cs" />
     <Compile Include="Main\PdfExporter.cs" />
+    <Compile Include="Services\IService.cs" />
+    <Compile Include="Services\ITranslations.cs" />
+    <Compile Include="Services\ServiceLocator.cs" />
+    <Compile Include="Main\Theme.cs" />
+    <Compile Include="Main\ThemeManager.cs" />
+    <Compile Include="Libraries\TranslationsCatalog.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ProjectExtensions>
@@ -114,10 +120,6 @@
     <Folder Include="Resources\" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="..\..\data\app-graphics\background.svg">
-      <Link>Resources\background.svg</Link>
-      <LogicalName>background.svg</LogicalName>
-    </EmbeddedResource>
     <EmbeddedResource Include="..\..\data\app-graphics\endgame.svg">
       <Link>Resources\endgame.svg</Link>
       <LogicalName>endgame.svg</LogicalName>

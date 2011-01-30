@@ -18,9 +18,9 @@
  */
 
 using System;
-using Mono.Unix;
 
 using gbrainy.Core.Main;
+using gbrainy.Core.Services;
 
 namespace gbrainy.Games.Logic
 {
@@ -156,26 +156,26 @@ namespace gbrainy.Games.Logic
 		}
 
 		public override string Name {
-			get {return Catalog.GetString ("Related numbers");}
+			get {return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Related numbers");}
 		}
 
 		public override string Question {
-			get {return Catalog.GetString ("In the matrix below, which number should replace the question mark?");}
+			get {return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("In the matrix below, which number should replace the question mark?");}
 		}
 
 		public override string Tip {
-			get { return Catalog.GetString ("The pattern is arithmetical and works horizontally."); }
+			get { return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("The pattern is arithmetical and works horizontally."); }
 		}
 
 		public override string Rationale {
 			get {
 				switch (operation) {
 				case Operation.AddHalf:
-					return Catalog.GetString ("The number on the middle in every row is equal to half of the sum of the other numbers of the row.");
+					return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("The number on the middle in every row is equal to half of the sum of the other numbers of the row.");
 				case Operation.Add:
-					return Catalog.GetString ("The number on the middle in every row is equal the sum of the other numbers of the row.");
+					return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("The number on the middle in every row is equal the sum of the other numbers of the row.");
 				case Operation.AddDouble:
-					return Catalog.GetString ("The number on the middle in every row is equal to the double of the sum of the other numbers of the row.");
+					return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("The number on the middle in every row is equal to the double of the sum of the other numbers of the row.");
 				default:
 					throw new InvalidOperationException ("Invalid value");
 				}

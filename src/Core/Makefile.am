@@ -62,7 +62,11 @@ CSDISTFILES =  \
 		$(srcdir)/Platform/Unix.cs		\
 		$(srcdir)/Libraries/CairoContext.cs	\
 		$(srcdir)/Libraries/GetText.cs		\
-		$(srcdir)/Libraries/SVGImage.cs
+		$(srcdir)/Libraries/SVGImage.cs		\
+		$(srcdir)/Services/IService.cs		\
+		$(srcdir)/Services/ServiceLocator.cs	\
+		$(srcdir)/Services/ITranslations.cs	\
+		$(srcdir)/Libraries/TranslationsCatalog.cs
 
 CSFILES = $(CSDISTFILES)	\
 	Main/Defines.cs	\

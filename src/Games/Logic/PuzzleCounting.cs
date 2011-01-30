@@ -17,10 +17,10 @@
  * Boston, MA 02111-1307, USA.
  */
 
-using Mono.Unix;
 using System;
 
 using gbrainy.Core.Main;
+using gbrainy.Core.Services;
 
 namespace gbrainy.Games.Logic
 {
@@ -38,7 +38,7 @@ namespace gbrainy.Games.Logic
 		GameType gametype;
 
 		public override string Name {
-			get {return Catalog.GetString ("Counting");}
+			get {return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Counting");}
 		}
 
 		public override string Question {
@@ -61,16 +61,16 @@ namespace gbrainy.Games.Logic
 				var = 2 + random.Next (5);
 				total = 50 + random.Next (100);
 				question = String.Format (
-					Catalog.GetPluralString ("We have a {0} meter piece of fabric.", "We have a {0} meters piece of fabric.", total),
+					ServiceLocator.Instance.GetService <ITranslations> ().GetPluralString ("We have a {0} meter piece of fabric.", "We have a {0} meters piece of fabric.", total),
 					total);
 				question += " ";
 				question += String.Format (
-					Catalog.GetPluralString ("Machine A takes {0} second to cut 1 meter of this fabric. How many seconds does Machine A take to cut the entire piece of fabric into 1 meter pieces?",
+					ServiceLocator.Instance.GetService <ITranslations> ().GetPluralString ("Machine A takes {0} second to cut 1 meter of this fabric. How many seconds does Machine A take to cut the entire piece of fabric into 1 meter pieces?",
 						"Machine A takes {0} seconds to cut 1 meter of this fabric. How many seconds does Machine A take to cut the entire piece of fabric into 1 meter pieces?"
 						, var), var);
 				answer = String.Format (
 					// Translators: {0} is always a number greater than 1
-					Catalog.GetString ("With the {0} cut, Machine A creates two 1 meter pieces."), (total - 1));
+					ServiceLocator.Instance.GetService <ITranslations> ().GetString ("With the {0} cut, Machine A creates two 1 meter pieces."), (total - 1));
 	
 				ans = (total - 1) * var;
 				break;
@@ -80,11 +80,11 @@ namespace gbrainy.Games.Logic
 				ans = 4 * total - 4;
 				question = String.Format (
 					// Translators: {0} is always a number greater than 20
-					Catalog.GetString ("A fence is built to enclose a square shaped region. {0} fence poles are used in each side of the square. How many fence poles are used in total?"),
+					ServiceLocator.Instance.GetService <ITranslations> ().GetString ("A fence is built to enclose a square shaped region. {0} fence poles are used in each side of the square. How many fence poles are used in total?"),
 					total);
 					// Translators: {0} is always a number greater than 20
 				answer = String.Format (
-					Catalog.GetString ("There are {0} fence poles since the poles on the corners of the square are shared."), ans);
+					ServiceLocator.Instance.GetService <ITranslations> ().GetString ("There are {0} fence poles since the poles on the corners of the square are shared."), ans);
 				break;
 
 			case GameType.Present:
@@ -93,9 +93,9 @@ namespace gbrainy.Games.Logic
 				ans = total;
 				question = String.Format (
 					// Translators: {0} is always a number greater than 5
-					Catalog.GetString ("Wrapping an anniversary present costs one euro. The anniversary present costs {0} euros more than the cost to wrap it. How much does it cost to both purchase and wrap the present?"),
+					ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Wrapping an anniversary present costs one euro. The anniversary present costs {0} euros more than the cost to wrap it. How much does it cost to both purchase and wrap the present?"),
 					present);
-				answer = Catalog.GetString ("Individually, the present costs one euro more to purchase than to wrap.");
+				answer = ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Individually, the present costs one euro more to purchase than to wrap.");
 				break;
 			default:
 				throw new Exception ("Unexpected value");

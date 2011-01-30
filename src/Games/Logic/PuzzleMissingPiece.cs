@@ -19,10 +19,10 @@
 
 using System;
 using Cairo;
-using Mono.Unix;
 
 using gbrainy.Core.Main;
 using gbrainy.Core.Toolkit;
+using gbrainy.Core.Services;
 
 namespace gbrainy.Games.Logic
 {
@@ -32,22 +32,22 @@ namespace gbrainy.Games.Logic
 		private const double sub_figure = 0.15;
 
 		public override string Name {
-			get {return Catalog.GetString ("Missing piece");}
+			get {return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Missing piece");}
 		}
 
 		public override string Question {
 			get {return String.Format (
-				Catalog.GetString ("Which square completes the figure below? Answer {0}, {1} or {2}."),
+				ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Which square completes the figure below? Answer {0}, {1} or {2}."),
 				GetPossibleAnswer (0), GetPossibleAnswer (1), GetPossibleAnswer (2));}
 		}
 
 		public override string Tip {
-			get { return Catalog.GetString ("The logic works at row level.");}
+			get { return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("The logic works at row level.");}
 		}
 
 		public override string Rationale {
 			get {
-				return Catalog.GetString ("In every row the third square is made by flipping the first square and superimposing it on the second square, followed by removing the matching lines.");
+				return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("In every row the third square is made by flipping the first square and superimposing it on the second square, followed by removing the matching lines.");
 			}
 		}
 
@@ -169,7 +169,7 @@ namespace gbrainy.Games.Logic
 			DrawFigureSequence (gr, x, DrawAreaY + sub_figure * 2 , 2, false);
 
 			gr.MoveTo (0.1, 0.62);
-			gr.ShowPangoText (Catalog.GetString ("Possible answers are:"));
+			gr.ShowPangoText (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Possible answers are:"));
 		}
 	}
 }

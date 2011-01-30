@@ -18,9 +18,9 @@
  */
 
 using System;
-using Mono.Unix;
 
 using gbrainy.Core.Main;
+using gbrainy.Core.Services;
 
 namespace gbrainy.Games.Logic
 {
@@ -42,11 +42,11 @@ namespace gbrainy.Games.Logic
 		}
 
 		public override string Name {
-			get {return Catalog.GetString ("Divide circles");}
+			get {return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Divide circles");}
 		}
 
 		public override string Question {
-			get {return Catalog.GetString ("In the last figure, in how many regions is the circle divided into when all dots are connected?");} 
+			get {return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("In the last figure, in how many regions is the circle divided into when all dots are connected?");} 
 		}
 
 		protected override void Initialize ()
@@ -176,7 +176,7 @@ namespace gbrainy.Games.Logic
 		
 		string HasNRegionString (int regions)
 		{
-			return String.Format (Catalog.GetPluralString ("Has {0} region", 
+			return String.Format (ServiceLocator.Instance.GetService <ITranslations> ().GetPluralString ("Has {0} region", 
 				"Has {0} regions", regions), regions);
 			
 		}

@@ -17,9 +17,8 @@
  * Boston, MA 02111-1307, USA.
  */
 
-using Mono.Unix;
-
 using gbrainy.Core.Main;
+using gbrainy.Core.Services;
 
 namespace gbrainy.Games.Calculation
 {
@@ -39,7 +38,7 @@ namespace gbrainy.Games.Calculation
 		private int max_operations;
 
 		public override string Name {
-			get {return Catalog.GetString ("Arithmetical");}
+			get {return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Arithmetical");}
 		}
 
 		public override GameTypes Type {
@@ -47,7 +46,7 @@ namespace gbrainy.Games.Calculation
 		}
 
 		public override string Question {
-			get {return Catalog.GetString ("What is the result of the arithmetical operation?");} 
+			get {return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("What is the result of the arithmetical operation?");} 
 		}
 
 		protected override void Initialize ()

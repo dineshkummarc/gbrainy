@@ -17,10 +17,10 @@
  * Boston, MA 02111-1307, USA.
  */
 
-using Mono.Unix;
 using System;
 
 using gbrainy.Core.Main;
+using gbrainy.Core.Services;
 
 namespace gbrainy.Games.Logic
 {
@@ -31,21 +31,21 @@ namespace gbrainy.Games.Logic
 		private int fig1, fig2;
 
 		public override string Name {
-			get {return Catalog.GetString ("Lines");}
+			get {return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Lines");}
 		}
 
 		public override string Question {
-			get {return Catalog.GetString ("How many line segments in total are in the figures below? A line segment is a line between two points with no crossing lines.");}
+			get {return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("How many line segments in total are in the figures below? A line segment is a line between two points with no crossing lines.");}
 		}
 
 		public override string Rationale {
 			get {
-				return String.Format (Catalog.GetString ("There are {0} lines in the figure to the left and {1} in the figure to the right."), fig1, fig2);
+				return String.Format (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("There are {0} lines in the figure to the left and {1} in the figure to the right."), fig1, fig2);
 			}
 		}
 
 		public override string Tip {
-			get { return Catalog.GetString ("It is an easy exercise if you systematically count the lines.");}
+			get { return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("It is an easy exercise if you systematically count the lines.");}
 		}
 
 		protected override void Initialize ()
