@@ -19,7 +19,6 @@
 
 using System;
 using System.Collections.Generic;
-using SL = gbrainy.Core.Services.ServiceLocator;
 
 namespace gbrainy.Core.Services
 {
@@ -27,7 +26,7 @@ namespace gbrainy.Core.Services
 	{
 		Dictionary <Type, object> services;
 		static ServiceLocator instance = new ServiceLocator ();
-		static readonly object  sync = new object ();
+		static readonly object sync = new object ();
 
 		public ServiceLocator ()
 		{
