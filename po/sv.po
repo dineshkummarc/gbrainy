@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gbrainy\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-01-09 16:21+0100\n"
-"PO-Revision-Date: 2011-01-09 16:26+0100\n"
+"POT-Creation-Date: 2011-01-30 23:15+0100\n"
+"PO-Revision-Date: 2011-01-30 23:26+0100\n"
 "Last-Translator: Daniel Nylander <po@danielnylander.se>\n"
 "Language-Team: Swedish <tp-sv@listor.tp-sv.se>\n"
 "Language: sv\n"
@@ -191,7 +191,7 @@ msgstr "Om p &lt; x &lt; q och r &lt; y &lt; s. Vilket av följande alternativ g
 
 #: ../data/games.xml.h:29
 #, no-c-format
-msgid "In a small town, [all_cars]% of the inhabitants have a car and [males_cars]% have a car and are males. What percentage of the total population are females and have a car? [option_answers]"
+msgid "In a small town, [all_cars]% of the inhabitants have a car and [males_cars]% have a car and are males. What percentage of the population are females and have a car? [option_answers]"
 msgstr "I en liten stad har [all_cars]% av invånarna en bil och [males_cars]% som har en bil är män. Vilken procentandel av befolkningen är kvinnor och har en bil? [option_answers]"
 
 #: ../data/games.xml.h:30
@@ -251,7 +251,7 @@ msgstr "Lösenord"
 #: ../src/Games/Logic/PuzzleMissingSlice.cs:216
 #: ../src/Games/Logic/PuzzleMostInCommon.cs:312
 #: ../src/Games/Logic/PuzzleNextFigure.cs:165
-#: ../src/Games/Logic/PuzzlePredicateLogic.cs:190
+#: ../src/Games/Logic/PuzzlePredicateLogic.cs:189
 #: ../src/Games/Logic/PuzzleSquareDots.cs:320
 #: ../src/Games/Logic/PuzzleTetris.cs:171
 msgid "Possible answers are:"
@@ -311,8 +311,8 @@ msgstr "[brothers_only] personer har endast bröder, [sisters_only] har endast s
 
 #: ../data/games.xml.h:58
 #, no-c-format
-msgid "[female_cars]% ([all_cars] - [males_cars]) of the inhabitants are women and have a car, that is, [option_a]% of the total."
-msgstr "[female_cars]% ([all_cars] - [males_cars]) av invånarna är kvinnor och har en bil, alltså [option_a]% av totalen."
+msgid "[female_cars]% ([all_cars] - [males_cars]) of the inhabitants are women and have a car."
+msgstr "[female_cars]% ([all_cars] - [males_cars]) av invånarna är kvinnor och har en bil."
 
 #: ../data/games.xml.h:59
 msgid "[option_a] and [option_b] are both multiples of [product]."
@@ -1527,7 +1527,7 @@ msgstr "Minne"
 #: ../src/Core/Views/FinishView.cs:125
 #: ../src/Core/Main/GameTypes.cs:50
 #: ../src/Clients/Classical/gbrainy.cs:385
-#: ../src/Clients/Classical/Dialogs/ui/PdfExportDialog.ui.h:17
+#: ../src/Clients/Classical/Dialogs/ui/PdfExportDialog.ui.h:18
 msgid "Verbal"
 msgstr "Verbalt"
 
@@ -1776,7 +1776,7 @@ msgstr "Dåligt resultat"
 msgid "Disappointing results"
 msgstr "Uselt resultat"
 
-#: ../src/Core/Main/GameSession.cs:269
+#: ../src/Core/Main/GameSession.cs:276
 msgid "Paused"
 msgstr "Pausat"
 
@@ -1893,9 +1893,9 @@ msgstr "{0} Svara {1}."
 #: ../src/Core/Main/Verbal/AnalogiesMultipleOptions.cs:105
 #: ../src/Core/Main/Verbal/AnalogiesPairOfWordsOptions.cs:112
 #: ../src/Games/Logic/PuzzleOstracism.cs:159
-#: ../src/Games/Logic/PuzzlePredicateLogic.cs:177
+#: ../src/Games/Logic/PuzzlePredicateLogic.cs:176
 #: ../src/Games/Calculation/CalculationCloserFraction.cs:161
-#: ../src/Games/Calculation/CalculationGreatestDivisor.cs:149
+#: ../src/Games/Calculation/CalculationGreatestDivisor.cs:152
 #, csharp-format
 msgid "{0}) {1}"
 msgstr "{0}) {1}"
@@ -2093,9 +2093,14 @@ msgstr "Du bör ha fått en kopia av GNU General Public License tillsammans med 
 msgid "A brain teaser game for fun and to keep your brain trained."
 msgstr "En hjärnretare att ha kul med och träna dina hjärnmuskler."
 
-#: ../src/Clients/Classical/Dialogs/AboutDialog.cs:80
-msgid "gbrainy web site"
-msgstr "webbplatsen för gbrainy"
+#: ../src/Clients/Classical/Dialogs/AboutDialog.cs:81
+#, csharp-format
+msgid "You can also play on-line at {0}"
+msgstr "Du kan även spela på nätet på {0}"
+
+#: ../src/Clients/Classical/Dialogs/AboutDialog.cs:84
+msgid "gbrainy project web site"
+msgstr "Webbplats för gbrainy-projektet"
 
 #. Column: Game Name
 #: ../src/Clients/Classical/Dialogs/CustomGameDialog.cs:68
@@ -2222,19 +2227,22 @@ msgid "Pages per side:"
 msgstr "Sidor per ark:"
 
 #: ../src/Clients/Classical/Dialogs/ui/PdfExportDialog.ui.h:14
-#: ../src/Clients/Classical/Dialogs/ui/PreferencesDialog.ui.h:13
-msgid "Skip games that use colors (friendly to colorblind users)"
-msgstr "Hoppa över spel som använder färger (snällt mot färgblinda användare)"
+msgid ""
+"Skip games that use colors\n"
+" (friendly to colorblind users)"
+msgstr ""
+"Hoppa över spel som använder färger\n"
+" (snällt mot färgblinda användare)"
 
-#: ../src/Clients/Classical/Dialogs/ui/PdfExportDialog.ui.h:15
+#: ../src/Clients/Classical/Dialogs/ui/PdfExportDialog.ui.h:16
 msgid "This option allows to export a set of games in a PDF file. You can complete the puzzles without a computer."
 msgstr "Detta alternativ gör att du kan exportera en uppsättning spel till en PDF-fil. Du kan färdigställa pusslen utan en dator."
 
-#: ../src/Clients/Classical/Dialogs/ui/PdfExportDialog.ui.h:16
+#: ../src/Clients/Classical/Dialogs/ui/PdfExportDialog.ui.h:17
 msgid "Total number of games:"
 msgstr "Antal spel:"
 
-#: ../src/Clients/Classical/Dialogs/ui/PdfExportDialog.ui.h:18
+#: ../src/Clients/Classical/Dialogs/ui/PdfExportDialog.ui.h:19
 msgid "_Save"
 msgstr "_Spara"
 
@@ -2275,6 +2283,10 @@ msgstr "Inställningar"
 #: ../src/Clients/Classical/Dialogs/ui/PreferencesDialog.ui.h:12
 msgid "Show countdown message"
 msgstr "Visa nedräkningsmeddelande"
+
+#: ../src/Clients/Classical/Dialogs/ui/PreferencesDialog.ui.h:13
+msgid "Skip games that use colors (friendly to colorblind users)"
+msgstr "Hoppa över spel som använder färger (snällt mot färgblinda användare)"
 
 #: ../src/Clients/Classical/Dialogs/ui/PreferencesDialog.ui.h:14
 msgid "Time in seconds to memorize the challenge:"
@@ -3763,16 +3775,17 @@ msgstr "Vad är resultatet av angiven operation? Svara med antingen ett bråk el
 msgid "Greatest divisor"
 msgstr "Största faktor"
 
-#: ../src/Games/Calculation/CalculationGreatestDivisor.cs:45
-msgid "Which of the possible divisors is the greatest that divides all numbers?"
-msgstr "Vilket av dessa faktorer är den största som delar alla tal?"
+#: ../src/Games/Calculation/CalculationGreatestDivisor.cs:46
+#, csharp-format
+msgid "Which of the possible divisors is the greatest that divides all numbers? Answer {0}, {1}, {2} or {3}."
+msgstr "Vilket av dessa faktorer är den största som delar alla tal? Svara {0}, {1}, {2} eller {3}."
 
-#: ../src/Games/Calculation/CalculationGreatestDivisor.cs:240
+#: ../src/Games/Calculation/CalculationGreatestDivisor.cs:243
 #: ../src/Games/Calculation/CalculationPrimes.cs:151
 msgid "Numbers"
 msgstr "Tal"
 
-#: ../src/Games/Calculation/CalculationGreatestDivisor.cs:254
+#: ../src/Games/Calculation/CalculationGreatestDivisor.cs:257
 msgid "Possible divisors"
 msgstr "Möjliga faktorer"
 
