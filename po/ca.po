@@ -12,8 +12,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gbrainy\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-01-01 16:39+0100\n"
-"PO-Revision-Date: 2011-01-01 16:48+0100\n"
+"POT-Creation-Date: 2011-01-30 22:24+0100\n"
+"PO-Revision-Date: 2011-01-30 22:35+0100\n"
 "Last-Translator: Jordi Mas <jmas@softcatala.org>\n"
 "Language-Team: Catalan\n"
 "Language: \n"
@@ -332,12 +332,12 @@ msgstr ""
 #, no-c-format
 msgid ""
 "In a small town, [all_cars]% of the inhabitants have a car and [males_cars]% "
-"have a car and are males. What percentage of the total population are "
-"females and have a car? [option_answers]"
+"have a car and are males. What percentage of the population are females and "
+"have a car? [option_answers]"
 msgstr ""
 "En una petita ciutat, el [all_cars]% dels habitants tenen un cotxe i el "
-"[males_cars]% tenen un cotxe i són homes. Quin percentatge total de la "
-"població són dones i tenen un cotxe? [option_answers]"
+"[males_cars]% tenen un cotxe i són homes. Quin percentatge de la població "
+"són dones i tenen un cotxe? [option_answers]"
 
 #: ../data/games.xml.h:30
 msgid ""
@@ -409,7 +409,7 @@ msgstr "Contrasenya"
 #: ../src/Games/Logic/PuzzleMissingSlice.cs:216
 #: ../src/Games/Logic/PuzzleMostInCommon.cs:312
 #: ../src/Games/Logic/PuzzleNextFigure.cs:165
-#: ../src/Games/Logic/PuzzlePredicateLogic.cs:190
+#: ../src/Games/Logic/PuzzlePredicateLogic.cs:189
 #: ../src/Games/Logic/PuzzleSquareDots.cs:320
 #: ../src/Games/Logic/PuzzleTetris.cs:171
 msgid "Possible answers are:"
@@ -493,10 +493,10 @@ msgstr ""
 #, no-c-format
 msgid ""
 "[female_cars]% ([all_cars] - [males_cars]) of the inhabitants are women and "
-"have a car, that is, [option_a]% of the total."
+"have a car."
 msgstr ""
 "El [female_cars]% ([all_cars] - [males_cars]) dels habitants són dones i "
-"tenen un cotxe, és a dir, el [option_a]% del total."
+"tenen un cotxe."
 
 #: ../data/games.xml.h:59
 msgid "[option_a] and [option_b] are both multiples of [product]."
@@ -1651,65 +1651,66 @@ msgstr "termòmetre / temperatura | rellotge"
 msgid "tiger / carnivore | cow"
 msgstr "tigre / carnívor | vaca"
 
-#: ../data/verbal_analogies.xml.h:263
+#. Translators: time as duration of an event. What a clock measures
+#: ../data/verbal_analogies.xml.h:264
 msgid "time"
 msgstr "temps"
 
-#: ../data/verbal_analogies.xml.h:264
+#: ../data/verbal_analogies.xml.h:265
 msgid "toy / play | tool"
 msgstr "joguina / jugar | eina"
 
-#: ../data/verbal_analogies.xml.h:265
+#: ../data/verbal_analogies.xml.h:266
 msgid "track | railway | rails"
 msgstr "via | ferrovia | rail"
 
-#: ../data/verbal_analogies.xml.h:266
+#: ../data/verbal_analogies.xml.h:267
 msgid "turn"
 msgstr "girar"
 
 #. Translators: letter refers to letter (in paper form)
-#: ../data/verbal_analogies.xml.h:268
+#: ../data/verbal_analogies.xml.h:269
 msgid "turtle / shell | letter"
 msgstr "tortuga / closca | carta"
 
-#: ../data/verbal_analogies.xml.h:269
+#: ../data/verbal_analogies.xml.h:270
 msgid "vegetable"
 msgstr "vegetal | verdura | hortalissa"
 
-#: ../data/verbal_analogies.xml.h:270
+#: ../data/verbal_analogies.xml.h:271
 msgid "whirlpool / water | tornado"
 msgstr "remolí / aigua | tornado"
 
-#: ../data/verbal_analogies.xml.h:271
+#: ../data/verbal_analogies.xml.h:272
 msgid "wild | savage"
 msgstr "salvatge | feréstec"
 
-#: ../data/verbal_analogies.xml.h:272
+#: ../data/verbal_analogies.xml.h:273
 msgid "win | play"
 msgstr "guanyar | jugar"
 
-#: ../data/verbal_analogies.xml.h:273
+#: ../data/verbal_analogies.xml.h:274
 msgid "wind | air"
 msgstr "vent | aire"
 
-#: ../data/verbal_analogies.xml.h:274
+#: ../data/verbal_analogies.xml.h:275
 msgid "wine / grape | rum"
 msgstr "vi / raïm | rom"
 
-#: ../data/verbal_analogies.xml.h:275
+#: ../data/verbal_analogies.xml.h:276
 msgid "wings"
 msgstr "ales"
 
 #. Translators: 'work' is used as a verb (to work)
-#: ../data/verbal_analogies.xml.h:277
+#: ../data/verbal_analogies.xml.h:278
 msgid "work"
 msgstr "treballar"
 
-#: ../data/verbal_analogies.xml.h:278
+#: ../data/verbal_analogies.xml.h:279
 msgid "wrist | arm"
 msgstr "canell | braç"
 
-#: ../data/verbal_analogies.xml.h:279
+#: ../data/verbal_analogies.xml.h:280
 msgid "write / pen | eat"
 msgstr "escriure / bolígraf | menjar"
 
@@ -1742,7 +1743,7 @@ msgstr "Memòria"
 
 #: ../src/Core/Views/FinishView.cs:125 ../src/Core/Main/GameTypes.cs:50
 #: ../src/Clients/Classical/gbrainy.cs:385
-#: ../src/Clients/Classical/Dialogs/ui/PdfExportDialog.ui.h:17
+#: ../src/Clients/Classical/Dialogs/ui/PdfExportDialog.ui.h:18
 msgid "Verbal"
 msgstr "Verbal"
 
@@ -2026,7 +2027,7 @@ msgstr "Resultats pobres"
 msgid "Disappointing results"
 msgstr "Resultats decebedors"
 
-#: ../src/Core/Main/GameSession.cs:269
+#: ../src/Core/Main/GameSession.cs:276
 msgid "Paused"
 msgstr "En pausa"
 
@@ -2165,9 +2166,9 @@ msgstr "{0} Responeu {1}."
 #: ../src/Core/Main/Verbal/AnalogiesMultipleOptions.cs:105
 #: ../src/Core/Main/Verbal/AnalogiesPairOfWordsOptions.cs:112
 #: ../src/Games/Logic/PuzzleOstracism.cs:159
-#: ../src/Games/Logic/PuzzlePredicateLogic.cs:177
+#: ../src/Games/Logic/PuzzlePredicateLogic.cs:176
 #: ../src/Games/Calculation/CalculationCloserFraction.cs:161
-#: ../src/Games/Calculation/CalculationGreatestDivisor.cs:149
+#: ../src/Games/Calculation/CalculationGreatestDivisor.cs:152
 #, csharp-format
 msgid "{0}) {1}"
 msgstr "{0}) {1}"
@@ -2398,9 +2399,14 @@ msgstr ""
 msgid "A brain teaser game for fun and to keep your brain trained."
 msgstr "Un joc per divertir-se i mantenir el vostre cervell entrenat"
 
-#: ../src/Clients/Classical/Dialogs/AboutDialog.cs:80
-msgid "gbrainy web site"
-msgstr "Lloc web del gbrainy"
+#: ../src/Clients/Classical/Dialogs/AboutDialog.cs:81
+#, csharp-format
+msgid "You can also play on-line at {0}"
+msgstr "Podeu també jugar en línia a {0}"
+
+#: ../src/Clients/Classical/Dialogs/AboutDialog.cs:84
+msgid "gbrainy project web site"
+msgstr "Lloc web del projecte gbrainy"
 
 #. Column: Game Name
 #: ../src/Clients/Classical/Dialogs/CustomGameDialog.cs:68
@@ -2538,11 +2544,14 @@ msgid "Pages per side:"
 msgstr "Pàgines per cara:"
 
 #: ../src/Clients/Classical/Dialogs/ui/PdfExportDialog.ui.h:14
-#: ../src/Clients/Classical/Dialogs/ui/PreferencesDialog.ui.h:13
-msgid "Skip games that use colors (friendly to colorblind users)"
-msgstr "Omet jocs que usen colors (amigable a usuaris daltònics)"
+msgid ""
+"Skip games that use colors\n"
+" (friendly to colorblind users)"
+msgstr ""
+"Omet jocs que usen colors\n"
+"(amigable a usuaris daltònics)"
 
-#: ../src/Clients/Classical/Dialogs/ui/PdfExportDialog.ui.h:15
+#: ../src/Clients/Classical/Dialogs/ui/PdfExportDialog.ui.h:16
 msgid ""
 "This option allows to export a set of games in a PDF file. You can complete "
 "the puzzles without a computer."
@@ -2550,11 +2559,11 @@ msgstr ""
 "Aquesta opció permet exportar un conjunt de jocs a un fitxer PDF. Podeu "
 "completar els jocs sense un ordinador."
 
-#: ../src/Clients/Classical/Dialogs/ui/PdfExportDialog.ui.h:16
+#: ../src/Clients/Classical/Dialogs/ui/PdfExportDialog.ui.h:17
 msgid "Total number of games:"
 msgstr "Nombre total de jocs:"
 
-#: ../src/Clients/Classical/Dialogs/ui/PdfExportDialog.ui.h:18
+#: ../src/Clients/Classical/Dialogs/ui/PdfExportDialog.ui.h:19
 msgid "_Save"
 msgstr "_Desa"
 
@@ -2596,6 +2605,10 @@ msgstr "Preferències"
 msgid "Show countdown message"
 msgstr "Mostra el missatge de compte enrere"
 
+#: ../src/Clients/Classical/Dialogs/ui/PreferencesDialog.ui.h:13
+msgid "Skip games that use colors (friendly to colorblind users)"
+msgstr "Omet jocs que usen colors (amigable a usuaris daltònics)"
+
 #: ../src/Clients/Classical/Dialogs/ui/PreferencesDialog.ui.h:14
 msgid "Time in seconds to memorize the challenge:"
 msgstr "Temps en segons per a memoritzar el repte:"
@@ -2635,14 +2648,15 @@ msgid ""
 "Using triangles only, how many triangles are needed in the right part of the "
 "last figure to keep it balanced?"
 msgstr ""
-"Utilitzant només triangles, quants triangles són necessaris en la part dreta de l'última balança per "
-"mantenir-la en equilibri?"
+"Utilitzant només triangles, quants triangles són necessaris en la part dreta "
+"de l'última balança per mantenir-la en equilibri?"
 
 #: ../src/Games/Logic/PuzzleBalance.cs:58
 msgid ""
 "Every circle is equivalent to two triangles and every square to three "
 "triangles."
-msgstr "Cada cercle és equivalent a dos triangles i cada quadrat a tres triangles."
+msgstr ""
+"Cada cercle és equivalent a dos triangles i cada quadrat a tres triangles."
 
 #: ../src/Games/Logic/PuzzleBalance.cs:63
 msgid "Every circle is equivalent two triangles."
@@ -2970,11 +2984,11 @@ msgstr ""
 "L'ordre de les operacions aritmètiques és sempre: exponents i arrels, "
 "multiplicacions i divisions, sumes i restes."
 
-#: ../src/Games/Logic/PuzzleExtraCircle.cs:41
+#: ../src/Games/Logic/PuzzleExtraCircle.cs:53
 msgid "Extra circle"
 msgstr "Cercle extra"
 
-#: ../src/Games/Logic/PuzzleExtraCircle.cs:50
+#: ../src/Games/Logic/PuzzleExtraCircle.cs:62
 #, csharp-format
 msgid ""
 "Which circle does not belong to the group? It is not a sequence of elements. "
@@ -2983,11 +2997,11 @@ msgstr ""
 "Quin és el cercle que no pertany al grup? No és una seqüència d'elements. "
 "Responeu {0}, {1}, {2} o {3}."
 
-#: ../src/Games/Logic/PuzzleExtraCircle.cs:55
+#: ../src/Games/Logic/PuzzleExtraCircle.cs:67
 msgid "All circles share a common property except for one."
 msgstr "Tots els cercles comparteixen una propietat excepte un."
 
-#: ../src/Games/Logic/PuzzleExtraCircle.cs:60
+#: ../src/Games/Logic/PuzzleExtraCircle.cs:72
 msgid ""
 "In all circles the color slices follow the same order except for this one."
 msgstr ""
@@ -4594,20 +4608,21 @@ msgstr ""
 msgid "Greatest divisor"
 msgstr "Divisor més gran"
 
-#: ../src/Games/Calculation/CalculationGreatestDivisor.cs:45
+#: ../src/Games/Calculation/CalculationGreatestDivisor.cs:46
+#, csharp-format
 msgid ""
-"Which of the possible divisors is the greatest that divides all numbers?"
+"Which of the possible divisors is the greatest that divides all numbers? "
+"Answer {0}, {1}, {2} or {3}."
 msgstr ""
-"Quin dels divisors possibles és el més gran que divideix tots els números?"
+"Quin dels divisors possibles és el més gran que divideix tots els números? "
+"Responeu {0}, {1}, {2} o {3}."
 
-#
-#: ../src/Games/Calculation/CalculationGreatestDivisor.cs:240
+#: ../src/Games/Calculation/CalculationGreatestDivisor.cs:243
 #: ../src/Games/Calculation/CalculationPrimes.cs:151
 msgid "Numbers"
 msgstr "Números"
 
-#
-#: ../src/Games/Calculation/CalculationGreatestDivisor.cs:254
+#: ../src/Games/Calculation/CalculationGreatestDivisor.cs:257
 msgid "Possible divisors"
 msgstr "Divisors possibles"
 
@@ -4964,4 +4979,3 @@ msgstr "_Desinstal·la..."
 #: ../src/Clients/Classical/mono-addins-strings.xml.h:35
 msgid "_Unselect All"
 msgstr "_Desselecciona-ho"
-
