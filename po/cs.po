@@ -5,15 +5,15 @@
 # Jaroslav Ryník <jrynik@yahoo.co.uk>, 2009. (original Slovak translation).
 # Lucas Lommer <llommer@svn.gnome.org>, 2009. (based on Mr. Rynik's work).
 # Petr Kovar <pknbe@volny.cz>, 2010.
-# Marek Černocký <marek@manet.cz>, 2009 – 2011.
+# Marek Černocký <marek@manet.cz>, 2009, 2010, 2011.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gbrainy\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=gbrainy&component=general\n"
-"POT-Creation-Date: 2011-01-15 20:24+0000\n"
-"PO-Revision-Date: 2011-01-16 10:13+0100\n"
+"POT-Creation-Date: 2011-01-30 21:27+0000\n"
+"PO-Revision-Date: 2011-01-31 15:39+0100\n"
 "Last-Translator: Marek Černocký <marek@manet.cz>\n"
 "Language-Team: Czech <gnome-cs-list@gnome.org>\n"
 "MIME-Version: 1.0\n"
@@ -2405,9 +2405,15 @@ msgid "A brain teaser game for fun and to keep your brain trained."
 msgstr ""
 "Hra na lámání hlavy, při které se pobavíte a udržíte mozek v dobré kondici."
 
-#: ../src/Clients/Classical/Dialogs/AboutDialog.cs:80
-msgid "gbrainy web site"
-msgstr "Webové stránky aplikace gbrainy"
+#: ../src/Clients/Classical/Dialogs/AboutDialog.cs:81
+#, csharp-format
+msgid "You can also play on-line at {0}"
+msgstr "Můžete hrát také on-line na {0}"
+
+#: ../src/Clients/Classical/Dialogs/AboutDialog.cs:84
+#| msgid "gbrainy web site"
+msgid "gbrainy project web site"
+msgstr "webové stránky aplikace gbrainy"
 
 #. Column: Game Name
 #: ../src/Clients/Classical/Dialogs/CustomGameDialog.cs:68
@@ -3980,8 +3986,8 @@ msgid ""
 "same day. What is the time now? Answer using the hour (e.g.: {3:h tt})"
 msgstr ""
 "Před {0} hodinami to bylo tak dlouho po {1:h tt} jako bylo před {2:h tt} ten "
-"stejný den. Kolik je teď hodin? Odpověď napište ve formě času (např. {3:h "
-"tt})"
+"stejný den. Kolik je teď hodin? Odpověď napište ve formě času (např. "
+"{3:h tt})"
 
 #: ../src/Games/Logic/PuzzleTimeNow.cs:50
 #, csharp-format
