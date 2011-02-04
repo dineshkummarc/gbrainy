@@ -14,8 +14,8 @@ msgstr ""
 "Project-Id-Version: gbrainy master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=gbrainy&component=general\n"
-"POT-Creation-Date: 2011-01-09 08:02+0000\n"
-"PO-Revision-Date: 2011-01-09 13:37+0200\n"
+"POT-Creation-Date: 2011-01-30 21:27+0000\n"
+"PO-Revision-Date: 2011-02-03 13:37+0200\n"
 "Last-Translator: Joe Hansen <joedalton2@yahoo.dk>\n"
 "Language-Team: Dansk-gruppen <dansk@dansk-gruppen.dk>\n"
 "MIME-Version: 1.0\n"
@@ -333,8 +333,8 @@ msgstr ""
 #, no-c-format
 msgid ""
 "In a small town, [all_cars]% of the inhabitants have a car and [males_cars]% "
-"have a car and are males. What percentage of the total population are "
-"females and have a car? [option_answers]"
+"have a car and are males. What percentage of the population are females and "
+"have a car? [option_answers]"
 msgstr ""
 "I en lille by har [all_cars]% af indbyggerne en bil og [males_cars]% har en "
 "bil og er mænd. Hvilken procentdel af den samlede befolkning er kvinder og "
@@ -411,7 +411,7 @@ msgstr "Adgangskode"
 #: ../src/Games/Logic/PuzzleMissingSlice.cs:216
 #: ../src/Games/Logic/PuzzleMostInCommon.cs:312
 #: ../src/Games/Logic/PuzzleNextFigure.cs:165
-#: ../src/Games/Logic/PuzzlePredicateLogic.cs:190
+#: ../src/Games/Logic/PuzzlePredicateLogic.cs:189
 #: ../src/Games/Logic/PuzzleSquareDots.cs:320
 #: ../src/Games/Logic/PuzzleTetris.cs:171
 msgid "Possible answers are:"
@@ -494,10 +494,10 @@ msgstr ""
 #, no-c-format
 msgid ""
 "[female_cars]% ([all_cars] - [males_cars]) of the inhabitants are women and "
-"have a car, that is, [option_a]% of the total."
+"have a car."
 msgstr ""
 "[female_cars]% ([all_cars] - [males_cars]) af indbyggerne er kvinder og har "
-"en bil. Det er [option_a]% af det samlede antal."
+"en bil."
 
 #: ../data/games.xml.h:59
 msgid "[option_a] and [option_b] are both multiples of [product]."
@@ -1808,7 +1808,7 @@ msgstr "Hukommelse"
 
 #: ../src/Core/Views/FinishView.cs:125 ../src/Core/Main/GameTypes.cs:50
 #: ../src/Clients/Classical/gbrainy.cs:385
-#: ../src/Clients/Classical/Dialogs/ui/PdfExportDialog.ui.h:17
+#: ../src/Clients/Classical/Dialogs/ui/PdfExportDialog.ui.h:18
 msgid "Verbal"
 msgstr "Sproglig"
 
@@ -2089,7 +2089,7 @@ msgstr "Dårlige resultater"
 msgid "Disappointing results"
 msgstr "Skuffende resultater"
 
-#: ../src/Core/Main/GameSession.cs:269
+#: ../src/Core/Main/GameSession.cs:276
 msgid "Paused"
 msgstr "Pause"
 
@@ -2226,9 +2226,9 @@ msgstr "{0} Svar {1}."
 #: ../src/Core/Main/Verbal/AnalogiesMultipleOptions.cs:105
 #: ../src/Core/Main/Verbal/AnalogiesPairOfWordsOptions.cs:112
 #: ../src/Games/Logic/PuzzleOstracism.cs:159
-#: ../src/Games/Logic/PuzzlePredicateLogic.cs:177
+#: ../src/Games/Logic/PuzzlePredicateLogic.cs:176
 #: ../src/Games/Calculation/CalculationCloserFraction.cs:161
-#: ../src/Games/Calculation/CalculationGreatestDivisor.cs:149
+#: ../src/Games/Calculation/CalculationGreatestDivisor.cs:152
 #, csharp-format
 msgid "{0}) {1}"
 msgstr "{0}) {1}"
@@ -2461,9 +2461,14 @@ msgstr ""
 msgid "A brain teaser game for fun and to keep your brain trained."
 msgstr "Et sjovt grublespil, der kan holde din hjerne i tip-top stand."
 
-#: ../src/Clients/Classical/Dialogs/AboutDialog.cs:80
-msgid "gbrainy web site"
-msgstr "gbrainys hjemmeside"
+#: ../src/Clients/Classical/Dialogs/AboutDialog.cs:81
+#, csharp-format
+msgid "You can also play on-line at {0}"
+msgstr "Du kan også spille på nettet på adressen {0}"
+
+#: ../src/Clients/Classical/Dialogs/AboutDialog.cs:84
+msgid "gbrainy project web site"
+msgstr "gbrainys projekthjemmeside"
 
 #. Column: Game Name
 #: ../src/Clients/Classical/Dialogs/CustomGameDialog.cs:68
@@ -2600,11 +2605,14 @@ msgid "Pages per side:"
 msgstr "Sider per ark:"
 
 #: ../src/Clients/Classical/Dialogs/ui/PdfExportDialog.ui.h:14
-#: ../src/Clients/Classical/Dialogs/ui/PreferencesDialog.ui.h:13
-msgid "Skip games that use colors (friendly to colorblind users)"
-msgstr "Udelad spil som bruger farver (for farveblinde)"
+msgid ""
+"Skip games that use colors\n"
+" (friendly to colorblind users)"
+msgstr ""
+"Udelad spil som bruger farver\n"
+" (for farveblinde)"
 
-#: ../src/Clients/Classical/Dialogs/ui/PdfExportDialog.ui.h:15
+#: ../src/Clients/Classical/Dialogs/ui/PdfExportDialog.ui.h:16
 msgid ""
 "This option allows to export a set of games in a PDF file. You can complete "
 "the puzzles without a computer."
@@ -2612,11 +2620,11 @@ msgstr ""
 "Denne indstilling gør det muligt at eksportere et sæt spil i en PDF-fil. Du "
 "kan herefter færdiggøre puslespillene uden en computer."
 
-#: ../src/Clients/Classical/Dialogs/ui/PdfExportDialog.ui.h:16
+#: ../src/Clients/Classical/Dialogs/ui/PdfExportDialog.ui.h:17
 msgid "Total number of games:"
 msgstr "Samlet antal spil:"
 
-#: ../src/Clients/Classical/Dialogs/ui/PdfExportDialog.ui.h:18
+#: ../src/Clients/Classical/Dialogs/ui/PdfExportDialog.ui.h:19
 msgid "_Save"
 msgstr "_Gem"
 
@@ -2657,6 +2665,10 @@ msgstr "Indstillinger"
 #: ../src/Clients/Classical/Dialogs/ui/PreferencesDialog.ui.h:12
 msgid "Show countdown message"
 msgstr "Vis nedtællingsbesked"
+
+#: ../src/Clients/Classical/Dialogs/ui/PreferencesDialog.ui.h:13
+msgid "Skip games that use colors (friendly to colorblind users)"
+msgstr "Udelad spil som bruger farver (for farveblinde)"
 
 #: ../src/Clients/Classical/Dialogs/ui/PreferencesDialog.ui.h:14
 msgid "Time in seconds to memorize the challenge:"
@@ -4637,17 +4649,21 @@ msgstr ""
 msgid "Greatest divisor"
 msgstr "Største nævner"
 
-#: ../src/Games/Calculation/CalculationGreatestDivisor.cs:45
+#: ../src/Games/Calculation/CalculationGreatestDivisor.cs:46
+#, csharp-format
 msgid ""
-"Which of the possible divisors is the greatest that divides all numbers?"
-msgstr "Hvilken af de mulige nævnere er den største, som går op i alle tal?"
+"Which of the possible divisors is the greatest that divides all numbers? "
+"Answer {0}, {1}, {2} or {3}."
+msgstr ""
+"Hvilken af de mulige nævnere er den største, som går op i alle tal? "
+"Svar {0}, {1}, {2} eller {3}."
 
-#: ../src/Games/Calculation/CalculationGreatestDivisor.cs:240
+#: ../src/Games/Calculation/CalculationGreatestDivisor.cs:243
 #: ../src/Games/Calculation/CalculationPrimes.cs:151
 msgid "Numbers"
 msgstr "Tal"
 
-#: ../src/Games/Calculation/CalculationGreatestDivisor.cs:254
+#: ../src/Games/Calculation/CalculationGreatestDivisor.cs:257
 msgid "Possible divisors"
 msgstr "Mulige nævnere"
 
