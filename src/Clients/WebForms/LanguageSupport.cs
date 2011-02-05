@@ -39,9 +39,23 @@ namespace gbrainy.Clients.WebForms
 		static Language [] languages =
 		{
 			new Language ("English", "en_US.utf8"),
+			new Language ("Afrikaans", "af_ZA.utf8"),
 			new Language ("Catalan", "ca_ES.utf8"),
+			new Language ("Czech", "cs_CZ.utf8"),
+			new Language ("Danish", "da_DK.utf8"),
+			new Language ("German", "de_DE.utf8"),
+			new Language ("Basque", "eu_ES.utf8"),
 			new Language ("Spanish", "es_ES.utf8"),
-			new Language ("German", "de_DE.utf8")
+			new Language ("French", "fr_FR.utf8"),
+			new Language ("Galician", "gl_ES.utf8"),
+			new Language ("Hungarian", "hu_HU.utf8"),
+			new Language ("Dutch", "nl_NL.utf8"),
+			new Language ("Portuguese", "pt_PT.utf8"),
+			new Language ("Romanian", "ro_RO.utf8"),
+			new Language ("Brazilian Portuguese", "pt_BR.utf8"),
+			new Language ("Slovenian", "sl_SI.utf8"),
+			new Language ("Swedish", "sv_SE.utf8"),
+			new Language ("Serbian", "sr_RS.utf8")
 		};
 
 		static public Language [] Languages

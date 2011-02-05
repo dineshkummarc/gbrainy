@@ -13,6 +13,8 @@ namespace gbrainy.Clients.WebForms {
 	
 	public partial class MasterPage {
 		
+		protected System.Web.UI.HtmlControls.HtmlForm main_form;
+		
 		protected System.Web.UI.WebControls.ContentPlaceHolder main_placeholder;
 	}
 }

@@ -8,7 +8,6 @@ cd package
 
 mkdir bin
 mkdir tmp
-mkdir po
 mkdir data
 mkdir images
 mkdir locale
@@ -26,17 +25,17 @@ cp ../../../../data/game-graphics/* images
 cp ../../../../data/app-graphics/* images
 cp ../../../../data/themes/* themes
 
-mkdir locale/ca
-mkdir locale/ca/LC_MESSAGES
-cp ../../../../po/ca.gmo locale/ca/LC_MESSAGES/gbrainy.mo
+LOCALES=(af ca cs da de eu es fr gl hu nl pt ro pt_BR sl sr sv)
 
-mkdir locale/es
-mkdir locale/es/LC_MESSAGES
-cp ../../../../po/es.gmo locale/es/LC_MESSAGES/gbrainy.mo
+for i in "${LOCALES[@]}"
+do
+	:
+	mkdir locale/$i
+	mkdir locale/$i/LC_MESSAGES
+	cp ../../../../po/$i.gmo locale/$i/LC_MESSAGES/gbrainy.mo
+   echo $i
+done
 
-mkdir locale/de
-mkdir locale/de/LC_MESSAGES
-cp ../../../../po/de.gmo locale/de/LC_MESSAGES/gbrainy.mo
 
 tar -cvf gbrainy_web.tar *
 cp gbrainy_web.tar ../

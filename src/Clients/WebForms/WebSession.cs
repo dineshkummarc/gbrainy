@@ -6,6 +6,7 @@ namespace gbrainy.Clients.WebForms
 {
 	public class WebSession
 	{
+		public bool NextGame;
 		public HttpSessionState Session { get; set; }
 		public DateTime Started { get; set; }
 		public gbrainy.Core.Main.GameSession GameState { get; set; }
@@ -15,6 +16,7 @@ namespace gbrainy.Clients.WebForms
 		{
 			Session = session;
 			Started = DateTime.Now;
+			NextGame = false;
             	}
         }
 }

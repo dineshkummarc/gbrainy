@@ -15,16 +15,6 @@ namespace gbrainy.Clients.WebForms {
 		
 		protected System.Web.UI.WebControls.Content main_content;
 		
-		protected System.Web.UI.WebControls.Label intro_label;
-		
-		protected System.Web.UI.WebControls.Label logic_label;
-		
-		protected System.Web.UI.WebControls.Label calculation_label;
-		
-		protected System.Web.UI.WebControls.Label memory_label;
-		
-		protected System.Web.UI.WebControls.Label verbal_label;
-		
 		protected System.Web.UI.WebControls.Button start_button;
 		
 		protected System.Web.UI.WebControls.DropDownList languages_drop;

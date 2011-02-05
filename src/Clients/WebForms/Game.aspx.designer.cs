@@ -17,21 +17,23 @@ namespace gbrainy.Clients.WebForms {
 		
 		protected System.Web.UI.WebControls.Label allgames_label;
 		
+		protected System.Web.UI.WebControls.ImageButton endgames_button;
+		
 		protected System.Web.UI.WebControls.Label endgames_label;
 		
 		protected System.Web.UI.WebControls.Label question;
 		
-		protected System.Web.UI.WebControls.Image image;
+		protected System.Web.UI.WebControls.Image game_image;
 		
 		protected System.Web.UI.WebControls.TextBox answer_textbox;
 		
 		protected System.Web.UI.WebControls.Button answer_button;
 		
+		protected System.Web.UI.WebControls.Button nextgame_link;
+		
 		protected System.Web.UI.WebControls.Label result_label;
 		
 		protected System.Web.UI.WebControls.Label rationale_label;
-		
-		protected System.Web.UI.WebControls.LinkButton nextgame_link;
 		
 		protected System.Web.UI.WebControls.Label status;
 	}

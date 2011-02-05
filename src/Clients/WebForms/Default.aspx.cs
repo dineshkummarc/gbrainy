@@ -38,12 +38,6 @@ namespace gbrainy.Clients.WebForms
 			
 			web_session = Global.Sessions [Session.SessionID];
 
-                	intro_label.Text = "gbrainy is a brain teaser game and trainer to have fun and to keep your brain trained. It includes:";
-			logic_label.Text = "Logic puzzles. Challenge your reasoning and thinking skills.";
-			calculation_label.Text = "Mental calculation. Arithmetical operations that test your mental calculation abilities.";
-			memory_label.Text = "Memory trainers. To prove your short term memory.";
-			verbal_label.Text = "Verbal analogies. Challenge your verbal aptitude.";
-			
 			for (int i = 0; i <LanguageSupport.Languages.Length; i++)
 			{
 				languages_drop.Items.Add (new ListItem (LanguageSupport.Languages[i].Name,
@@ -59,28 +53,19 @@ namespace gbrainy.Clients.WebForms
 				Int32.Parse (languages_drop.SelectedValue);
 	        }
 		
-		protected void OnSelectedIndexChanged (object sender, EventArgs e)
-        	{
-			if (Response.Cookies[CookieName].Value == languages_drop.SelectedValue)
-				return;
-
-			Response.Cookies[CookieName].Value = languages_drop.SelectedValue;
-			Response.Cookies[CookieName].Expires =  DateTime.Now.AddYears (1);
-
-			Logger.Debug ("MasterPage.OnSelectedIndexChanged. Set lang cookie to: {0}",
-				languages_drop.SelectedValue);
-
-			Global.Sessions [Session.SessionID].LanguageIndex =
-				Int32.Parse (languages_drop.SelectedValue);
-
-			///Response.Redirect ("Default.aspx");
-
-        	}
 		
 		protected void OnStartGame (Object sender, EventArgs e)
 		{
 			web_session = Global.Sessions [Session.SessionID];
 			web_session.GameState = null;
+
+			// Collect language cookie
+			Global.Sessions [Session.SessionID].LanguageIndex =
+				Int32.Parse (languages_drop.SelectedValue);
+			
+			Response.Cookies[CookieName].Value = languages_drop.SelectedValue;
+			Response.Cookies[CookieName].Expires =  DateTime.Now.AddYears (1);
+
 			Logger.Debug ("Default.OnStartGame. Start game button click");
 			Response.Redirect ("Game.aspx");
 		}

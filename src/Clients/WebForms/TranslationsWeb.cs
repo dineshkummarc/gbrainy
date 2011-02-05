@@ -19,6 +19,7 @@
 
 using System;
 using Mono.Unix;
+using System.IO;
 
 using gbrainy.Core.Services;
 
@@ -33,6 +34,8 @@ namespace gbrainy.Clients.WebForms
 
 		public void Init (string package, string localedir)
 		{
+			string s = Directory.GetCurrentDirectory ();
+			
 			Catalog.Init (package, localedir);
 		}
 

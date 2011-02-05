@@ -4,12 +4,12 @@
 <head>
 	<title>Welcome to gbrainy.com main page</title>
 	<link href="styles.css" rel="stylesheet" type="text/css"/>
+	<link rel="shortcut icon" href="images/gbrainy.ico" />
 </head>
 <body>
-<form runat="server">
+<form runat="server" id = "main_form">
 <div class="Header">
 			<asp:HyperLink class="HeaderText" text ="Home" NavigateUrl ="Default.aspx" runat="server"/>
-			<span class="HeaderText">Play</span>
 			<asp:HyperLink class="HeaderText" text ="Download" NavigateUrl ="Download.aspx" runat="server"/>
 			<span class="HeaderText">Help</span>
 			<span class="HeaderText">About</span>
