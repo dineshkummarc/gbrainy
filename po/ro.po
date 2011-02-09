@@ -2,23 +2,23 @@
 # Copyright (c) 2010 Rosetta Contributors and Canonical Ltd 2010
 # This file is distributed under the same license as the gbrainy package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2010.
-# Daniel Șerbănescu <cyber19rider@gmail.com>, 2010.
+# Daniel Șerbănescu <cyber19rider@gmail.com>, 2010, 2011.
 # Cristofor Ochinca <chrisochinca@yahoo.com>, 2010.
 # Chris <chrisochinca@yahoo.com>, 2010.
 # Lucian Adrian Grijincu <lucian.grijincu@gmail.com>, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: gbrainy\n"
-"Report-Msgid-Bugs-To: "
-"http://bugzilla.gnome.org/enter_bug.cgi?product=gbrainy&component=general\n"
-"POT-Creation-Date: 2010-12-04 20:56+0000\n"
-"PO-Revision-Date: 2010-12-08 18:06+0300\n"
-"Last-Translator: Lucian Adrian Grijincu <lucian.grijincu@gmail.com>\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
+"product=gbrainy&component=general\n"
+"POT-Creation-Date: 2011-02-01 20:17+0000\n"
+"PO-Revision-Date: 2011-02-02 23:15+0100\n"
+"Last-Translator: Daniel Șerbănescu <cyber19rider@gmail.com>\n"
 "Language-Team: Romanian Gnome Team <gnomero-list@lists.sourceforge.net>\n"
-"Language: ro\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: ro\n"
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : (n==0 || (n%100 > 0 && n%100 < "
 "20)) ? 1 : 2);;\n"
 "X-Generator: Virtaal 0.6.1\n"
@@ -193,12 +193,12 @@ msgstr[2] ""
 "Într-o cursă de cai sunt oameni și cai. Puteți număra [eyes] de ochi și "
 "[legs] de picioare. Câți cai sunt prezenți?"
 
-#: ../tools/GameXmlGetString.cs:69 ../data/games.xml.h:49
-msgid "There are [men] people and [horses] horses."
+#: ../tools/GameXmlGetString.cs:69 ../data/games.xml.h:50
+msgid "There is [men] person and [horses] horse."
 msgid_plural "There are [men] people and [horses] horses."
-msgstr[0] "Sunt [men] oameni și [horses] cai."
-msgstr[1] "Sunt [men] oameni și [horses] cai."
-msgstr[2] "Sunt [men] de oameni și [horses] de cai."
+msgstr[0] "Sunt [men] persoane și [horses] cai."
+msgstr[1] "Sunt [men] persoane și [horses] cai."
+msgstr[2] "Sunt [men] de persoane și [horses] de cai."
 
 #: ../data/games.xml.h:1
 msgid ""
@@ -339,7 +339,7 @@ msgstr ""
 
 #: ../data/games.xml.h:24
 msgid ""
-"How much weight is need at the point indicated by the question mark to "
+"How much weight is needed at the point indicated by the question mark to "
 "balance the lever?"
 msgstr ""
 "Ce greutate trebuie amplasată pe punctul indicat de semnul de întrebare "
@@ -365,8 +365,8 @@ msgstr ""
 #, no-c-format
 msgid ""
 "In a small town, [all_cars]% of the inhabitants have a car and [males_cars]% "
-"have a car and are males. What percentage of the total population are "
-"females and have a car? [option_answers]"
+"have a car and are males. What percentage of the population are females and "
+"have a car? [option_answers]"
 msgstr ""
 "Într-un oraș mic, [all_cars]% dintre locuitori au mașină și [males_cars]% "
 "dintre ei sunt bărbați. Care este procentul femeilor din oraș care au "
@@ -442,7 +442,7 @@ msgstr "Parola"
 #: ../src/Games/Logic/PuzzleMissingSlice.cs:216
 #: ../src/Games/Logic/PuzzleMostInCommon.cs:312
 #: ../src/Games/Logic/PuzzleNextFigure.cs:165
-#: ../src/Games/Logic/PuzzlePredicateLogic.cs:190
+#: ../src/Games/Logic/PuzzlePredicateLogic.cs:189
 #: ../src/Games/Logic/PuzzleSquareDots.cs:320
 #: ../src/Games/Logic/PuzzleTetris.cs:171
 msgid "Possible answers are:"
@@ -454,9 +454,9 @@ msgstr "Ecuații simple"
 
 #: ../data/games.xml.h:44
 msgid ""
-"Since x is always an even number multiplying it by 2 always produces a even "
-"number. Adding an even number to an odd number (y) always produces an odd "
-"number."
+"Since x is always an even number, multiplying it by 2 always produces an "
+"even number. Adding an even number to an odd number (y) always produces an "
+"odd number."
 msgstr ""
 "Din moment ce x este întotdeauna un număr impar, înmulțindu-l cu 2 "
 "întotdeauna va rezulta un număr par. Adunarea unui număr par la unul impar "
@@ -490,27 +490,31 @@ msgstr ""
 "Variabila q este mai mare ca x și y este mai mare ca r. Dacă q este mai mare "
 "ca r atunci afirmația x &lt; y este adevărată."
 
-#: ../data/games.xml.h:50
+#: ../data/games.xml.h:49
+msgid "There are [men] people and [horses] horses."
+msgstr "Sunt [men] oameni și [horses] cai."
+
+#: ../data/games.xml.h:51
 msgid "What number divided by [num_a] equals [num_b]?"
 msgstr "Ce număr împărțit la [num_a] dă [num_b]?"
 
-#: ../data/games.xml.h:51
+#: ../data/games.xml.h:52
 msgid "What number minus [num_a] equals [num_b]?"
 msgstr "Ce număr scăzut cu [num_a] dă [num_b]?"
 
-#: ../data/games.xml.h:52
+#: ../data/games.xml.h:53
 msgid "What number multiplied by [num_a] equals [num_b]?"
 msgstr "Ce număr înmulțit cu [num_a] dă [num_b]?"
 
-#: ../data/games.xml.h:53
+#: ../data/games.xml.h:54
 msgid "What number plus [num_a] equals [num_b]?"
 msgstr "Ce număr adunat cu [num_a] dă [num_b]?"
 
-#: ../data/games.xml.h:54
+#: ../data/games.xml.h:55
 msgid "You can fit 6 * 5 * [z] * 2 boxes."
 msgstr "Puteți pune 6 * 5 * [z] * 2 cutii."
 
-#: ../data/games.xml.h:55
+#: ../data/games.xml.h:56
 msgid ""
 "[brothers_only] people have brothers only, [sisters_only] sisters only and "
 "[both] have sisters and brothers."
@@ -518,96 +522,96 @@ msgstr ""
 "[brothers_only] oameni au numai frați, [sisters_only] au numai surori și "
 "[both] au și frați și surori."
 
-#: ../data/games.xml.h:57
+#: ../data/games.xml.h:58
 #, no-c-format
 msgid ""
 "[female_cars]% ([all_cars] - [males_cars]) of the inhabitants are women and "
-"have a car, that is, [option_a]% of the total."
+"have a car."
 msgstr ""
 "[female_cars]% ([all_cars] - [males_cars]) dintre locuitori sunt femei și au "
-"mașină, aceasta fiind [option_a]% din total."
+"mașină."
 
-#: ../data/games.xml.h:58
+#: ../data/games.xml.h:59
 msgid "[option_a] and [option_b] are both multiples of [product]."
 msgstr "Ambele numere [option_a] și [option_b] sunt multiplii lui [product]."
 
-#: ../data/games.xml.h:59
+#: ../data/games.xml.h:60
 msgid "[option_prefix] (x - y) * 2"
 msgstr "[option_prefix] (x - y) * 2"
 
-#: ../data/games.xml.h:60
+#: ../data/games.xml.h:61
 msgid "[option_prefix] 2x + y"
 msgstr "[option_prefix] 2x + y"
 
-#: ../data/games.xml.h:61
+#: ../data/games.xml.h:62
 msgid "[option_prefix] [option_a] and [option_b]"
 msgstr "[option_prefix] [option_a] și [option_b]"
 
-#: ../data/games.xml.h:62
+#: ../data/games.xml.h:63
 msgid "[option_prefix] [option_a] and [option_c]"
 msgstr "[option_prefix] [option_a] și [option_c]"
 
-#: ../data/games.xml.h:64
+#: ../data/games.xml.h:65
 #, no-c-format
 msgid "[option_prefix] [option_a]%"
 msgstr "[option_prefix] [option_a]%"
 
-#: ../data/games.xml.h:65
+#: ../data/games.xml.h:66
 msgid "[option_prefix] [option_b] and [option_c]"
 msgstr "[option_prefix] [option_b] și [option_c]"
 
-#: ../data/games.xml.h:67
+#: ../data/games.xml.h:68
 #, no-c-format
 msgid "[option_prefix] [option_b]%"
 msgstr "[option_prefix] [option_b]%"
 
-#: ../data/games.xml.h:68
+#: ../data/games.xml.h:69
 msgid "[option_prefix] [option_c] and [option_d]"
 msgstr "[option_prefix] [option_c] și [option_d]"
 
-#: ../data/games.xml.h:70
+#: ../data/games.xml.h:71
 #, no-c-format
 msgid "[option_prefix] [option_c]%"
 msgstr "[option_prefix] [option_c]%"
 
-#: ../data/games.xml.h:72
+#: ../data/games.xml.h:73
 #, no-c-format
 msgid "[option_prefix] [option_d]%"
 msgstr "[option_prefix] [option_d]%"
 
-#: ../data/games.xml.h:73
+#: ../data/games.xml.h:74
 msgid "[option_prefix] p < r"
 msgstr "[option_prefix] p < r"
 
-#: ../data/games.xml.h:74
+#: ../data/games.xml.h:75
 msgid "[option_prefix] p > r"
 msgstr "[option_prefix] p > r"
 
-#: ../data/games.xml.h:75
+#: ../data/games.xml.h:76
 msgid "[option_prefix] q < r"
 msgstr "[option_prefix] q < r"
 
-#: ../data/games.xml.h:76
+#: ../data/games.xml.h:77
 msgid "[option_prefix] q = s"
 msgstr "[option_prefix] q = s"
 
-#: ../data/games.xml.h:77
+#: ../data/games.xml.h:78
 msgid "[option_prefix] q > s"
 msgstr "[option_prefix] q > s"
 
-#: ../data/games.xml.h:78
+#: ../data/games.xml.h:79
 msgid "[option_prefix] x * y"
 msgstr "[option_prefix] x * y"
 
-#: ../data/games.xml.h:79
+#: ../data/games.xml.h:80
 msgid "[option_prefix] x * y * 2"
 msgstr "[option_prefix] x * y * 2"
 
-#: ../data/games.xml.h:80
+#: ../data/games.xml.h:81
 msgid "[rslt_a] and [rslt_b]"
 msgstr "[rslt_a] și [rslt_b]"
 
-#: ../data/games.xml.h:81
+#: ../data/games.xml.h:82
 msgid ""
 "[year_start] is a palindromic year as [year_end] is, a gap of 11 years. What "
 "are the next two consecutive palindromic years after [year_end] with the "
@@ -617,19 +621,19 @@ msgstr ""
 "ani. Care sunt următorii doi ani consecutivi palindromici după anul "
 "[year_end], cu aceeași diferență?"
 
-#: ../data/games.xml.h:82
+#: ../data/games.xml.h:83
 msgid "x * [num_a] = [num_b]"
 msgstr "x * [num_a] = [num_b]"
 
-#: ../data/games.xml.h:83
+#: ../data/games.xml.h:84
 msgid "x + [num_a] = [num_b]"
 msgstr "x + [num_a] = [num_b]"
 
-#: ../data/games.xml.h:84
+#: ../data/games.xml.h:85
 msgid "x - [num_a] = [num_b]"
 msgstr "x - [num_a] = [num_b]"
 
-#: ../data/games.xml.h:85
+#: ../data/games.xml.h:86
 msgid "x / [num_a] = [num_b]"
 msgstr "x / [num_a] = [num_b]"
 
@@ -677,7 +681,7 @@ msgid "A terrier is to a dog like a?"
 msgstr "Un terrier este pentru un câine ca un/o ...?"
 
 #: ../data/verbal_analogies.xml.h:7
-msgid "A turtle is inside a shell and a letter is inside an envelop."
+msgid "A turtle is inside a shell and a letter is inside an envelope."
 msgstr ""
 "O broască țestoasă se află într-o carapace și o scrisoare se află într-un "
 "plic."
@@ -750,128 +754,130 @@ msgid "Authority"
 msgstr "Autoritate"
 
 #: ../data/verbal_analogies.xml.h:26
-msgid "Bagpipes"
-msgstr "Cimpoaie"
-
-#: ../data/verbal_analogies.xml.h:27
 msgid "Basketball"
 msgstr "Baschet"
 
-#: ../data/verbal_analogies.xml.h:28
+#: ../data/verbal_analogies.xml.h:27
 msgid "Bassoon"
 msgstr "Fagot"
 
-#: ../data/verbal_analogies.xml.h:29
+#: ../data/verbal_analogies.xml.h:28
 msgid "Beach"
 msgstr "Plajă"
 
-#: ../data/verbal_analogies.xml.h:30
+#: ../data/verbal_analogies.xml.h:29
 msgid "Birds"
 msgstr "Păsări"
 
 #. Translators: referred to the life style
-#: ../data/verbal_analogies.xml.h:32
+#: ../data/verbal_analogies.xml.h:31
 msgid "Bohemian"
 msgstr "Boem"
 
-#: ../data/verbal_analogies.xml.h:33
+#: ../data/verbal_analogies.xml.h:32
 msgid "Broken"
 msgstr "Stricat"
 
-#: ../data/verbal_analogies.xml.h:34
+#: ../data/verbal_analogies.xml.h:33
 msgid "Bunker"
 msgstr "Buncăr"
 
-#: ../data/verbal_analogies.xml.h:35
+#: ../data/verbal_analogies.xml.h:34
 msgid "Carbon"
 msgstr "Carbon"
 
-#: ../data/verbal_analogies.xml.h:36
+#: ../data/verbal_analogies.xml.h:35
 msgid "Cardiology"
 msgstr "Cardiologie"
 
-#: ../data/verbal_analogies.xml.h:37
+#: ../data/verbal_analogies.xml.h:36
 msgid "Cellulose"
 msgstr "Celuloză"
 
-#: ../data/verbal_analogies.xml.h:38
-msgid "Chicken / Bird"
-msgstr "Găină / Pasăre"
+#: ../data/verbal_analogies.xml.h:37
+msgid "Chicken / Parrot"
+msgstr "Găină / Papagal"
 
-#: ../data/verbal_analogies.xml.h:39
+#: ../data/verbal_analogies.xml.h:38
 msgid "Chord"
 msgstr "Coardă"
 
-#: ../data/verbal_analogies.xml.h:40
+#: ../data/verbal_analogies.xml.h:39
 msgid "Coast"
 msgstr "Coastă"
 
-#: ../data/verbal_analogies.xml.h:41
+#: ../data/verbal_analogies.xml.h:40
 msgid "Collectivism"
 msgstr "Colectivism"
 
-#: ../data/verbal_analogies.xml.h:42
+#: ../data/verbal_analogies.xml.h:41
 msgid "Column"
 msgstr "Coloană"
 
-#: ../data/verbal_analogies.xml.h:43
+#: ../data/verbal_analogies.xml.h:42
 msgid "Condemn"
 msgstr "A dezaproba"
 
-#: ../data/verbal_analogies.xml.h:44
+#: ../data/verbal_analogies.xml.h:43
 msgid "Connoisseur"
 msgstr "Cunoscător"
 
-#: ../data/verbal_analogies.xml.h:45
+#: ../data/verbal_analogies.xml.h:44
 msgid "Conspirator"
 msgstr "Conspirator"
 
-#: ../data/verbal_analogies.xml.h:46
+#: ../data/verbal_analogies.xml.h:45
 msgid "Contradictory"
 msgstr "Contradictoriu"
 
-#: ../data/verbal_analogies.xml.h:47
+#: ../data/verbal_analogies.xml.h:46
 msgid "Corn"
 msgstr "Porumb"
 
-#: ../data/verbal_analogies.xml.h:48
+#: ../data/verbal_analogies.xml.h:47
 msgid "Cousin"
 msgstr "Văr"
 
-#: ../data/verbal_analogies.xml.h:49
+#: ../data/verbal_analogies.xml.h:48
 msgid "Crocodile"
 msgstr "Crocodil"
 
-#: ../data/verbal_analogies.xml.h:50
+#: ../data/verbal_analogies.xml.h:49
 msgid "Cycling"
 msgstr "Ciclism"
 
-#: ../data/verbal_analogies.xml.h:51
+#: ../data/verbal_analogies.xml.h:50
 msgid "Decagon"
 msgstr "Decagon"
 
-#: ../data/verbal_analogies.xml.h:52
+#: ../data/verbal_analogies.xml.h:51
 msgid "Decimal"
 msgstr "Zecimal"
 
-#: ../data/verbal_analogies.xml.h:53
+#: ../data/verbal_analogies.xml.h:52
 msgid "Deer"
 msgstr "Căprioară"
 
-#: ../data/verbal_analogies.xml.h:54
+#: ../data/verbal_analogies.xml.h:53
 msgid "Democracy"
 msgstr "Democrație"
 
-#: ../data/verbal_analogies.xml.h:55
+#: ../data/verbal_analogies.xml.h:54
 msgid "Dog / Cat"
 msgstr "Câine / Pisică"
+
+#: ../data/verbal_analogies.xml.h:55
+msgid "Dog and horse are species and terrier and pony are breeds."
+msgstr ""
+"Câinele și calul sunt specii și terrier-ul și poneiul sunt varietăți ale "
+"speciei."
 
 #: ../data/verbal_analogies.xml.h:56
 msgid "Enneagram"
 msgstr "Eneagramă"
 
 #: ../data/verbal_analogies.xml.h:57
-msgid "Envelop"
+msgid "Envelope"
 msgstr "Plic"
 
 #: ../data/verbal_analogies.xml.h:58
@@ -891,68 +897,68 @@ msgid "Flower"
 msgstr "Floare"
 
 #: ../data/verbal_analogies.xml.h:62
+msgid "Flute"
+msgstr "Flaut"
+
+#: ../data/verbal_analogies.xml.h:63
 msgid "Fork"
 msgstr "Furculiță"
 
-#: ../data/verbal_analogies.xml.h:63
+#: ../data/verbal_analogies.xml.h:64
 msgid "Fossil"
 msgstr "Fosilă"
 
-#: ../data/verbal_analogies.xml.h:64
+#: ../data/verbal_analogies.xml.h:65
 msgid "Frog"
 msgstr "Broască"
 
-#: ../data/verbal_analogies.xml.h:65
+#: ../data/verbal_analogies.xml.h:66
 msgid "Gallon"
 msgstr "Galon"
 
-#: ../data/verbal_analogies.xml.h:66
+#: ../data/verbal_analogies.xml.h:67
 msgid "Golf"
 msgstr "Golf"
 
-#: ../data/verbal_analogies.xml.h:67
+#: ../data/verbal_analogies.xml.h:68
 msgid "Grain"
 msgstr "Cereale"
 
-#: ../data/verbal_analogies.xml.h:68
+#: ../data/verbal_analogies.xml.h:69
 msgid "Grape"
 msgstr "Strugure"
 
-#: ../data/verbal_analogies.xml.h:69
+#: ../data/verbal_analogies.xml.h:70
 msgid "Hangar"
 msgstr "Hangar"
 
-#: ../data/verbal_analogies.xml.h:70
+#: ../data/verbal_analogies.xml.h:71
 msgid "Has no relation"
 msgstr "Nu este înrudit"
 
-#: ../data/verbal_analogies.xml.h:71
+#: ../data/verbal_analogies.xml.h:72
 msgid "Hectogram"
 msgstr "Hectogramă"
 
-#: ../data/verbal_analogies.xml.h:72
+#: ../data/verbal_analogies.xml.h:73
 msgid "Hematology"
 msgstr "Hematologie"
 
-#: ../data/verbal_analogies.xml.h:73
+#: ../data/verbal_analogies.xml.h:74
 msgid "Hide"
 msgstr "A ascunde"
 
-#: ../data/verbal_analogies.xml.h:74
+#: ../data/verbal_analogies.xml.h:75
 msgid "His father"
 msgstr "Tatăl lui"
 
-#: ../data/verbal_analogies.xml.h:75
+#: ../data/verbal_analogies.xml.h:76
 msgid "His mother"
 msgstr "Mama lui"
 
-#: ../data/verbal_analogies.xml.h:76
+#: ../data/verbal_analogies.xml.h:77
 msgid "Homeless"
 msgstr "Fără adăpost"
-
-#: ../data/verbal_analogies.xml.h:77
-msgid "Horse / Pony"
-msgstr "Cal / Ponei"
 
 #: ../data/verbal_analogies.xml.h:78
 msgid "Hyena"
@@ -1036,8 +1042,8 @@ msgstr ""
 
 #: ../data/verbal_analogies.xml.h:97
 msgid ""
-"John's mother's brother's brother-in-law is also is also? Do not assume that "
-"John has any relative that has not been mentioned."
+"John's mother's brother's brother-in-law is also? Do not assume that John "
+"has any relative that has not been mentioned."
 msgstr ""
 "Cumnatul fratelui mamei lui John este de asemenea și ...? Nu presupuneți că "
 "John are orice altă rudă decât cele menționate."
@@ -1132,120 +1138,124 @@ msgid "Pleasure"
 msgstr "Plăcere"
 
 #: ../data/verbal_analogies.xml.h:121
+msgid "Pony / Horse"
+msgstr "Ponei / Cal"
+
+#: ../data/verbal_analogies.xml.h:122
 msgid "Portico"
 msgstr "Portic"
 
-#: ../data/verbal_analogies.xml.h:122
+#: ../data/verbal_analogies.xml.h:123
 msgid "Positivism"
 msgstr "Pozitivism"
 
-#: ../data/verbal_analogies.xml.h:123
+#: ../data/verbal_analogies.xml.h:124
 msgid "Potato"
 msgstr "Cartof"
 
-#: ../data/verbal_analogies.xml.h:124
+#: ../data/verbal_analogies.xml.h:125
 msgid "Printer"
 msgstr "Imprimantă"
 
-#: ../data/verbal_analogies.xml.h:125
+#: ../data/verbal_analogies.xml.h:126
 msgid "Property"
 msgstr "Proprietate"
 
-#: ../data/verbal_analogies.xml.h:126
+#: ../data/verbal_analogies.xml.h:127
 msgid "Psychiatry"
 msgstr "Psihiatrie"
 
-#: ../data/verbal_analogies.xml.h:127
+#: ../data/verbal_analogies.xml.h:128
 msgid "Radius"
 msgstr "Rază"
 
-#: ../data/verbal_analogies.xml.h:128
+#: ../data/verbal_analogies.xml.h:129
 msgid "Related"
 msgstr "Înrudit"
 
-#: ../data/verbal_analogies.xml.h:129
+#: ../data/verbal_analogies.xml.h:130
 msgid "Repugnance"
 msgstr "Aversiune"
 
-#: ../data/verbal_analogies.xml.h:130
+#: ../data/verbal_analogies.xml.h:131
 msgid "Restaurant"
 msgstr "Restaurant"
 
-#: ../data/verbal_analogies.xml.h:131
+#: ../data/verbal_analogies.xml.h:132
 msgid "Rice"
 msgstr "Orez"
 
-#: ../data/verbal_analogies.xml.h:132
+#: ../data/verbal_analogies.xml.h:133
 msgid "River"
 msgstr "Râu"
 
-#: ../data/verbal_analogies.xml.h:133
+#: ../data/verbal_analogies.xml.h:134
 msgid "Shame"
 msgstr "Rușine"
 
-#: ../data/verbal_analogies.xml.h:134
+#: ../data/verbal_analogies.xml.h:135
 msgid "Simplistic"
 msgstr "Simplist"
 
-#: ../data/verbal_analogies.xml.h:135
+#: ../data/verbal_analogies.xml.h:136
 msgid "Snake"
 msgstr "Șarpe"
 
-#: ../data/verbal_analogies.xml.h:136
+#: ../data/verbal_analogies.xml.h:137
 msgid "Sodium"
 msgstr "Sodiu"
 
-#: ../data/verbal_analogies.xml.h:137
+#: ../data/verbal_analogies.xml.h:138
 msgid "Son-in-law"
 msgstr "Ginere"
 
-#: ../data/verbal_analogies.xml.h:138
+#: ../data/verbal_analogies.xml.h:139
 msgid "Specializes in skin diseases"
 msgstr "Este specialist în bolile pielii"
 
-#: ../data/verbal_analogies.xml.h:139
+#: ../data/verbal_analogies.xml.h:140
 msgid "Sport"
 msgstr "Sport"
 
-#: ../data/verbal_analogies.xml.h:140
+#: ../data/verbal_analogies.xml.h:141
 msgid "Suffers a skin disease"
 msgstr "Suferă de o boală de piele"
 
-#: ../data/verbal_analogies.xml.h:141
+#: ../data/verbal_analogies.xml.h:142
 msgid "Sugarcane"
 msgstr "Trestie de zahăr"
 
-#: ../data/verbal_analogies.xml.h:142
+#: ../data/verbal_analogies.xml.h:143
 msgid "Sweet corn"
 msgstr "Porumb dulce"
 
-#: ../data/verbal_analogies.xml.h:143
+#: ../data/verbal_analogies.xml.h:144
 msgid "Synonym"
 msgstr "Sinonim"
 
-#: ../data/verbal_analogies.xml.h:144
+#: ../data/verbal_analogies.xml.h:145
 msgid "Table"
 msgstr "Masă"
 
-#: ../data/verbal_analogies.xml.h:145
+#: ../data/verbal_analogies.xml.h:146
 msgid "Tangent"
 msgstr "Tangentă"
 
-#: ../data/verbal_analogies.xml.h:146
+#: ../data/verbal_analogies.xml.h:147
 msgid "Tennis"
 msgstr "Tenis"
 
-#: ../data/verbal_analogies.xml.h:147
+#: ../data/verbal_analogies.xml.h:148
 msgid ""
 "The ethical doctrine holding that only what is pleasant is an intrinsic good."
 msgstr ""
 "Doctrina etică care deține numai ceea ce este plăcut este un bun intrinsec."
 
-#: ../data/verbal_analogies.xml.h:148
+#: ../data/verbal_analogies.xml.h:149
 msgid "The first word is the instrument and the second what it measures."
 msgstr "Primul cuvânt este instrumentul, iar al doilea ceea ce măsoară."
 
-#: ../data/verbal_analogies.xml.h:149
+#: ../data/verbal_analogies.xml.h:150
 msgid ""
 "The practice of austere self-discipline in order to achieve a higher or "
 "spiritual idea."
@@ -1253,60 +1263,60 @@ msgstr ""
 "Practica auto-disciplinei austere pentru a realiza o idee mai mare sau "
 "spirituală."
 
-#: ../data/verbal_analogies.xml.h:150
+#: ../data/verbal_analogies.xml.h:151
 msgid "The radius of a circle is half the diameter."
 msgstr "Raza unui cerc este jumătate din diametru."
 
-#: ../data/verbal_analogies.xml.h:151
+#: ../data/verbal_analogies.xml.h:152
 msgid "The word 'taxidermist' is used to define a person that?"
 msgstr ""
 "Cuvântul „taxidermist” este utilizat pentru a defini o persoană care...?"
 
-#: ../data/verbal_analogies.xml.h:152
+#: ../data/verbal_analogies.xml.h:153
 msgid "Think of the items used in the game."
 msgstr "Gândiți-vă la elementele utilizate în joc."
 
-#: ../data/verbal_analogies.xml.h:153
+#: ../data/verbal_analogies.xml.h:154
 msgid "Tiger"
 msgstr "Tigru"
 
-#: ../data/verbal_analogies.xml.h:154
+#: ../data/verbal_analogies.xml.h:155
 msgid "Titanium"
 msgstr "Titan"
 
-#: ../data/verbal_analogies.xml.h:155
+#: ../data/verbal_analogies.xml.h:156
 msgid "Totalitarianism"
 msgstr "Totalitarism"
 
-#: ../data/verbal_analogies.xml.h:156
+#: ../data/verbal_analogies.xml.h:157
 msgid "Turtle"
 msgstr "Țestoasă"
 
-#: ../data/verbal_analogies.xml.h:157
+#: ../data/verbal_analogies.xml.h:158
 msgid "Unorthodox"
 msgstr "Neortodox"
 
-#: ../data/verbal_analogies.xml.h:158
+#: ../data/verbal_analogies.xml.h:159
 msgid "Violin"
 msgstr "Vioară"
 
-#: ../data/verbal_analogies.xml.h:159
+#: ../data/verbal_analogies.xml.h:160
 msgid "Wealthy"
 msgstr "Bogat"
 
-#: ../data/verbal_analogies.xml.h:160
+#: ../data/verbal_analogies.xml.h:161
 msgid "Weapon"
 msgstr "Armă"
 
-#: ../data/verbal_analogies.xml.h:161
+#: ../data/verbal_analogies.xml.h:162
 msgid "What is a 'halberd'?"
 msgstr "Ce este o „halebardă”?"
 
-#: ../data/verbal_analogies.xml.h:162
+#: ../data/verbal_analogies.xml.h:163
 msgid "Wheat"
 msgstr "Grâu"
 
-#: ../data/verbal_analogies.xml.h:163
+#: ../data/verbal_analogies.xml.h:164
 msgid "Which of the following sentences defines better an 'ostracized' person?"
 msgstr ""
 "Care dintre următoarele fraze definește cel mai bine o persoană "
@@ -1315,429 +1325,429 @@ msgstr ""
 #.
 #. Translators, please check these recommendations when translating gbrainy: http://live.gnome.org/gbrainy/Localizing
 #.
-#: ../data/verbal_analogies.xml.h:167
+#: ../data/verbal_analogies.xml.h:168
 msgid "Which of the following sports is the odd one?"
 msgstr "Care din următoarele sporturi nu aparține grupului?"
 
-#: ../data/verbal_analogies.xml.h:168
+#: ../data/verbal_analogies.xml.h:169
 msgid "Which of the following words is closer to the meaning of 'asceticism'?"
 msgstr ""
 "Care din următoarele cuvinte este cel mai apropiat în sensul de „ascetism”?"
 
-#: ../data/verbal_analogies.xml.h:169
+#: ../data/verbal_analogies.xml.h:170
 msgid "Which of the following words is closer to the meaning of 'hedonism'?"
 msgstr ""
 "Care din următoarele cuvinte este cel mai apropiat în sensul de „hedonism”?"
 
-#: ../data/verbal_analogies.xml.h:170
+#: ../data/verbal_analogies.xml.h:171
 msgid "Which of the following words is closer to the meaning of 'oxymoron'?"
 msgstr ""
 "Care din următoarele cuvinte este cel mai apropiat în sensul de „oximoron”?"
 
-#: ../data/verbal_analogies.xml.h:171
+#: ../data/verbal_analogies.xml.h:172
 msgid "Which of the following words is the closest in meaning to 'censure'?"
 msgstr ""
 "Care din următoarele cuvinte este cel mai apropiat în sensul de „cenzură”?"
 
-#: ../data/verbal_analogies.xml.h:172
+#: ../data/verbal_analogies.xml.h:173
 msgid "Which of the following words is the odd one?"
 msgstr "Care dintre următoarele cuvinte nu aparține grupului?"
 
-#: ../data/verbal_analogies.xml.h:173
+#: ../data/verbal_analogies.xml.h:174
 msgid "Which of the following words means fear of people?"
 msgstr "Care din următoarele cuvinte înseamnă frica de oameni?"
 
-#: ../data/verbal_analogies.xml.h:174
+#: ../data/verbal_analogies.xml.h:175
 msgid "Winery"
 msgstr "Vinărie"
 
-#: ../data/verbal_analogies.xml.h:175
+#: ../data/verbal_analogies.xml.h:176
 msgid "Wolf"
 msgstr "Lup"
 
-#: ../data/verbal_analogies.xml.h:176
+#: ../data/verbal_analogies.xml.h:177
 msgid "Works with dead animals"
 msgstr "Lucrează cu animale moarte"
 
-#: ../data/verbal_analogies.xml.h:177
+#: ../data/verbal_analogies.xml.h:178
 msgid "Works with leather"
 msgstr "Lucrează cu piele"
 
-#: ../data/verbal_analogies.xml.h:178
+#: ../data/verbal_analogies.xml.h:179
 msgid "Zinc"
 msgstr "Zinc"
 
-#: ../data/verbal_analogies.xml.h:179
+#: ../data/verbal_analogies.xml.h:180
 msgid "airplane | aeroplane | plane"
 msgstr "aeroplan | avion"
 
-#: ../data/verbal_analogies.xml.h:180
+#: ../data/verbal_analogies.xml.h:181
 msgid "ankle"
 msgstr "mână"
 
-#: ../data/verbal_analogies.xml.h:181
+#: ../data/verbal_analogies.xml.h:182
 msgid "art / gallery | drama"
 msgstr "artă / galerie | dramă"
 
-#: ../data/verbal_analogies.xml.h:182
+#: ../data/verbal_analogies.xml.h:183
 msgid "atlas"
 msgstr "atlas"
 
-#: ../data/verbal_analogies.xml.h:183
+#: ../data/verbal_analogies.xml.h:184
 msgid "bite"
 msgstr "a mușca | mușca | mușcă"
 
-#: ../data/verbal_analogies.xml.h:184
+#: ../data/verbal_analogies.xml.h:185
 msgid "body | skin"
 msgstr "piele"
 
-#: ../data/verbal_analogies.xml.h:185
+#: ../data/verbal_analogies.xml.h:186
 msgid "book | magazine | document"
 msgstr "carte | revistă | document"
 
 #. Translators: 'open' is used as a verb (open a box)
-#: ../data/verbal_analogies.xml.h:187
+#: ../data/verbal_analogies.xml.h:188
 msgid "box / open | banana"
 msgstr "cutie / a deschide | banană"
 
-#: ../data/verbal_analogies.xml.h:188
+#: ../data/verbal_analogies.xml.h:189
 msgid "bridge / over | tunnel"
 msgstr "pod / deasupra  | tunel"
 
-#: ../data/verbal_analogies.xml.h:189
+#: ../data/verbal_analogies.xml.h:190
 msgid "burst | pop"
 msgstr "explodează | sparge | se sparge"
 
 #. Translators: key refers to a key used to open a lock
-#: ../data/verbal_analogies.xml.h:191
+#: ../data/verbal_analogies.xml.h:192
 msgid "button / push | key (used in a lock)"
 msgstr "buton / a apăsa | cheie"
 
-#: ../data/verbal_analogies.xml.h:192
+#: ../data/verbal_analogies.xml.h:193
 msgid "cage | zoo | zoological garden"
 msgstr "cușcă | zoo | grădina zoologică | grădină zoologică"
 
-#: ../data/verbal_analogies.xml.h:193
+#: ../data/verbal_analogies.xml.h:194
 msgid "camera"
 msgstr "camera | cameră | cameră de fotografiat"
 
-#: ../data/verbal_analogies.xml.h:194
+#: ../data/verbal_analogies.xml.h:195
 msgid "car / garage | plane"
 msgstr "mașină / garaj | avion"
 
-#: ../data/verbal_analogies.xml.h:195
+#: ../data/verbal_analogies.xml.h:196
 msgid "car / road | train"
 msgstr "mașină / drum | tren"
 
-#: ../data/verbal_analogies.xml.h:196
+#: ../data/verbal_analogies.xml.h:197
 msgid "chop"
 msgstr "a tăia | tăia | taie"
 
-#: ../data/verbal_analogies.xml.h:197
+#: ../data/verbal_analogies.xml.h:198
 msgid "circle / semicircle | diameter"
 msgstr "cerc / semicerc | diametru"
 
-#: ../data/verbal_analogies.xml.h:198
+#: ../data/verbal_analogies.xml.h:199
 msgid "coins"
 msgstr "monede"
 
-#: ../data/verbal_analogies.xml.h:199
+#: ../data/verbal_analogies.xml.h:200
 msgid "composer | songwriter | lyricist"
 msgstr "compozitor | textier"
 
-#: ../data/verbal_analogies.xml.h:200
+#: ../data/verbal_analogies.xml.h:201
 msgid "constellation / stars | archipelago"
 msgstr "constelație / stele | arhipelag"
 
 #. Translators: 'dance' is used as a noun
-#: ../data/verbal_analogies.xml.h:202
+#: ../data/verbal_analogies.xml.h:203
 msgid "dance"
 msgstr "dans"
 
-#: ../data/verbal_analogies.xml.h:203
+#: ../data/verbal_analogies.xml.h:204
 msgid "desert / oasis | sea"
 msgstr "deșert / oază | ocean"
 
-#: ../data/verbal_analogies.xml.h:204
+#: ../data/verbal_analogies.xml.h:205
 msgid "dish / break | balloon"
 msgstr "vas / se sparge | balon"
 
-#: ../data/verbal_analogies.xml.h:205
+#: ../data/verbal_analogies.xml.h:206
 msgid "dog / tame | wolf"
 msgstr "câine / blând | lup"
 
-#: ../data/verbal_analogies.xml.h:206
+#: ../data/verbal_analogies.xml.h:207
 msgid "elbow / knee | wrist"
 msgstr "cot / genunchi | încheietură"
 
-#: ../data/verbal_analogies.xml.h:207
+#: ../data/verbal_analogies.xml.h:208
 msgid "error / correct | damage"
 msgstr "eroare / a corecta | daune"
 
-#: ../data/verbal_analogies.xml.h:208
+#: ../data/verbal_analogies.xml.h:209
 msgid "eyebrow / eye | mustache"
 msgstr "sprânceană / ochi | mustață"
 
 #. Translators: the concept 'toe' (http://en.wikipedia.org/wiki/Toe) does not exist in all languages. Feel free to change it to 'fingers' and adapt the answer accordingly
-#: ../data/verbal_analogies.xml.h:210
+#: ../data/verbal_analogies.xml.h:211
 msgid "feet / two | toes"
 msgstr "picioare / două | degete"
 
-#: ../data/verbal_analogies.xml.h:211
+#: ../data/verbal_analogies.xml.h:212
 msgid "fish / aquarium | monkey"
 msgstr "pește / acvariu | maimuță"
 
-#: ../data/verbal_analogies.xml.h:212
+#: ../data/verbal_analogies.xml.h:213
 msgid "fish / submarine | bird"
 msgstr "pește / submarin | pasăre"
 
-#: ../data/verbal_analogies.xml.h:213
+#: ../data/verbal_analogies.xml.h:214
 msgid "five / pentagon | ten"
 msgstr "cinci / pentagon | zece"
 
-#: ../data/verbal_analogies.xml.h:214
+#: ../data/verbal_analogies.xml.h:215
 msgid "fox / den | bird"
 msgstr "vulpe / vizuină | pasăre"
 
-#: ../data/verbal_analogies.xml.h:215
+#: ../data/verbal_analogies.xml.h:216
 msgid "glass / break | paper"
 msgstr "pahar / se sparge | hârtie"
 
-#: ../data/verbal_analogies.xml.h:216
+#: ../data/verbal_analogies.xml.h:217
 msgid "hands / grab | teeth"
 msgstr "mâini / a apuca | dinți"
 
-#: ../data/verbal_analogies.xml.h:217
+#: ../data/verbal_analogies.xml.h:218
 msgid "herbivorous | herbivore"
 msgstr "erbivor"
 
-#: ../data/verbal_analogies.xml.h:218
+#: ../data/verbal_analogies.xml.h:219
 msgid "horticulture / plants | ornithology"
 msgstr "horticultură / plante | ornitologie"
 
-#: ../data/verbal_analogies.xml.h:219
+#: ../data/verbal_analogies.xml.h:220
 msgid "hour / minute | minute"
 msgstr "oră / minut | minut"
 
-#: ../data/verbal_analogies.xml.h:220
+#: ../data/verbal_analogies.xml.h:221
 msgid "hungry / eat | tired"
 msgstr "foame / a mânca | obosit"
 
-#: ../data/verbal_analogies.xml.h:221
+#: ../data/verbal_analogies.xml.h:222
 msgid "hunter / rifle | photographer"
 msgstr "vânător / pușcă | fotograf"
 
-#: ../data/verbal_analogies.xml.h:222
+#: ../data/verbal_analogies.xml.h:223
 msgid "ice / slippery | glue"
 msgstr "gheață / alunecos | lipici"
 
-#: ../data/verbal_analogies.xml.h:223
+#: ../data/verbal_analogies.xml.h:224
 msgid "in | under | through"
 msgstr "în | sub | prin"
 
-#: ../data/verbal_analogies.xml.h:224
+#: ../data/verbal_analogies.xml.h:225
 msgid "islands"
 msgstr "insule"
 
-#: ../data/verbal_analogies.xml.h:225
+#: ../data/verbal_analogies.xml.h:226
 msgid "leopard / spots | tiger"
 msgstr "leopard / pete | tigru"
 
-#: ../data/verbal_analogies.xml.h:226
+#: ../data/verbal_analogies.xml.h:227
 msgid "letter / word | page"
 msgstr "scrisoare / cuvânt | pagină"
 
-#: ../data/verbal_analogies.xml.h:227
-#| msgid "lip | mouth"
+#: ../data/verbal_analogies.xml.h:228
 msgid "lip | upper lip | mouth"
 msgstr "buză | buză superioară | gură"
 
-#: ../data/verbal_analogies.xml.h:228
+#: ../data/verbal_analogies.xml.h:229
 msgid "nest"
 msgstr "cuib"
 
-#: ../data/verbal_analogies.xml.h:229
+#: ../data/verbal_analogies.xml.h:230
 msgid "nose"
 msgstr "nas"
 
-#: ../data/verbal_analogies.xml.h:230
+#: ../data/verbal_analogies.xml.h:231
 msgid "novel / author | song"
 msgstr "roman / autor | piesă"
 
-#: ../data/verbal_analogies.xml.h:231
+#: ../data/verbal_analogies.xml.h:232
 msgid "orange / fruit | spinach"
 msgstr "portocală / fruct | spanac"
 
-#: ../data/verbal_analogies.xml.h:232
+#: ../data/verbal_analogies.xml.h:233
 msgid "pediatrics / children | numismatics"
 msgstr "pediatri / copii | numismatici"
 
-#: ../data/verbal_analogies.xml.h:233
+#: ../data/verbal_analogies.xml.h:234
 msgid "peel"
 msgstr "a decoji"
 
-#: ../data/verbal_analogies.xml.h:234
+#: ../data/verbal_analogies.xml.h:235
 msgid "pessimist / optimist | poor"
 msgstr "pesimist / optimist | sărac"
 
-#: ../data/verbal_analogies.xml.h:235
+#: ../data/verbal_analogies.xml.h:236
 msgid "poems / anthology | maps"
 msgstr "poezii / antologie | hărți"
 
-#: ../data/verbal_analogies.xml.h:236
+#: ../data/verbal_analogies.xml.h:237
 msgid "puzzle / solve | game"
 msgstr "puzzle / a rezolva | joc"
 
-#: ../data/verbal_analogies.xml.h:237
+#: ../data/verbal_analogies.xml.h:238
 msgid "repair | fix"
 msgstr "a repara | a renova"
 
-#: ../data/verbal_analogies.xml.h:238
+#: ../data/verbal_analogies.xml.h:239
 msgid "ring / finger | bracelet"
 msgstr "inel / deget | brățară"
 
-#: ../data/verbal_analogies.xml.h:239
+#: ../data/verbal_analogies.xml.h:240
 msgid "seal / flippers | bird"
 msgstr "focă / înotătoare | pasăre"
 
 #. Translators: refers to the unit of time
-#: ../data/verbal_analogies.xml.h:241
+#: ../data/verbal_analogies.xml.h:242
 msgid "second"
 msgstr "secundă"
 
-#: ../data/verbal_analogies.xml.h:242
+#: ../data/verbal_analogies.xml.h:243
 msgid "shovel / dig | axe"
 msgstr "lopată / a săpa | topor"
 
-#: ../data/verbal_analogies.xml.h:243
+#: ../data/verbal_analogies.xml.h:244
 msgid "sink"
 msgstr "se scufundă | scufundă"
 
-#: ../data/verbal_analogies.xml.h:244
+#: ../data/verbal_analogies.xml.h:245
 msgid "sleep | rest"
 msgstr "somn | odihnă | a dormi"
 
-#: ../data/verbal_analogies.xml.h:245
+#: ../data/verbal_analogies.xml.h:246
 msgid "slurp / tongue | snort"
 msgstr "sorbit / limbă | sforăit"
 
-#: ../data/verbal_analogies.xml.h:246
+#: ../data/verbal_analogies.xml.h:247
 msgid "sour"
 msgstr "acru"
 
 #. Translators: stick refers to a piece of wood
-#: ../data/verbal_analogies.xml.h:248
+#: ../data/verbal_analogies.xml.h:249
 msgid "stick / float | stone"
 msgstr "băț / plutește | piatră"
 
-#: ../data/verbal_analogies.xml.h:249
+#: ../data/verbal_analogies.xml.h:250
 msgid "sticky"
 msgstr "lipicios"
 
-#: ../data/verbal_analogies.xml.h:250
+#: ../data/verbal_analogies.xml.h:251
 msgid "stripes"
 msgstr "dungi"
 
-#: ../data/verbal_analogies.xml.h:251
+#: ../data/verbal_analogies.xml.h:252
 msgid "sugar / sweet | vinegar"
 msgstr "zahăr / dulce | oțet"
 
-#: ../data/verbal_analogies.xml.h:252
+#: ../data/verbal_analogies.xml.h:253
 msgid "talk / yell | dislike"
 msgstr "a vorbi / a urla | a displace"
 
-#: ../data/verbal_analogies.xml.h:253
+#: ../data/verbal_analogies.xml.h:254
 msgid "tear | rip"
 msgstr "se rupe | rupe"
 
-#: ../data/verbal_analogies.xml.h:254
+#: ../data/verbal_analogies.xml.h:255
 msgid "tears / eyes | sweat"
 msgstr "lacrimi / ochi | sudoare"
 
 #. Translators: referred to 'feet / two | toes'
-#: ../data/verbal_analogies.xml.h:256
+#: ../data/verbal_analogies.xml.h:257
 msgid "ten | 10"
 msgstr "douăzeci | 20"
 
-#: ../data/verbal_analogies.xml.h:257
+#: ../data/verbal_analogies.xml.h:258
 msgid "tennis / sport | ballet"
 msgstr "tenis / sport | balet"
 
-#: ../data/verbal_analogies.xml.h:258
+#: ../data/verbal_analogies.xml.h:259
 msgid "thankful / ingratitude | despotism"
 msgstr "mulțumire / ingratitudine | despotism"
 
-#: ../data/verbal_analogies.xml.h:259
+#: ../data/verbal_analogies.xml.h:260
 msgid "theatre | theater"
 msgstr "teatru"
 
-#: ../data/verbal_analogies.xml.h:260
+#: ../data/verbal_analogies.xml.h:261
 msgid "thermometer / temperature | clock"
 msgstr "termometru / temperatură | ceas"
 
-#: ../data/verbal_analogies.xml.h:261
+#: ../data/verbal_analogies.xml.h:262
 msgid "tiger / carnivore | cow"
 msgstr "tigru / carnivor | vacă"
 
-#: ../data/verbal_analogies.xml.h:262
+#. Translators: time as duration of an event. What a clock measures
+#: ../data/verbal_analogies.xml.h:264
 msgid "time"
 msgstr "timp"
 
-#: ../data/verbal_analogies.xml.h:263
+#: ../data/verbal_analogies.xml.h:265
 msgid "toy / play | tool"
 msgstr "jucărie / a se juca | unealtă"
 
-#: ../data/verbal_analogies.xml.h:264
+#: ../data/verbal_analogies.xml.h:266
 msgid "track | railway | rails"
 msgstr "șină | cale ferată | șine"
 
-#: ../data/verbal_analogies.xml.h:265
+#: ../data/verbal_analogies.xml.h:267
 msgid "turn"
 msgstr "a răsuci | răsuci | răsucește | se răsucește"
 
 #. Translators: letter refers to letter (in paper form)
-#: ../data/verbal_analogies.xml.h:267
+#: ../data/verbal_analogies.xml.h:269
 msgid "turtle / shell | letter"
 msgstr "țestoasă / carapace | scrisoare"
 
-#: ../data/verbal_analogies.xml.h:268
+#: ../data/verbal_analogies.xml.h:270
 msgid "vegetable"
 msgstr "legumă | zarzavat"
 
-#: ../data/verbal_analogies.xml.h:269
+#: ../data/verbal_analogies.xml.h:271
 msgid "whirlpool / water | tornado"
 msgstr "vârtej / apă | tornadă"
 
-#: ../data/verbal_analogies.xml.h:270
+#: ../data/verbal_analogies.xml.h:272
 msgid "wild | savage"
 msgstr "sălbatic"
 
-#: ../data/verbal_analogies.xml.h:271
+#: ../data/verbal_analogies.xml.h:273
 msgid "win | play"
 msgstr "a câștiga | a juca"
 
-#: ../data/verbal_analogies.xml.h:272
+#: ../data/verbal_analogies.xml.h:274
 msgid "wind | air"
 msgstr "vânt | aer"
 
-#: ../data/verbal_analogies.xml.h:273
+#: ../data/verbal_analogies.xml.h:275
 msgid "wine / grape | rum"
 msgstr "vin / strugure | rom"
 
-#: ../data/verbal_analogies.xml.h:274
+#: ../data/verbal_analogies.xml.h:276
 msgid "wings"
 msgstr "aripi | aripă"
 
 #. Translators: 'work' is used as a verb (to work)
-#: ../data/verbal_analogies.xml.h:276
+#: ../data/verbal_analogies.xml.h:278
 msgid "work"
 msgstr "a munci | a lucra"
 
-#: ../data/verbal_analogies.xml.h:277
+#: ../data/verbal_analogies.xml.h:279
 msgid "wrist | arm"
 msgstr "încheietura mâinii | mână"
 
-#: ../data/verbal_analogies.xml.h:278
+#: ../data/verbal_analogies.xml.h:280
 msgid "write / pen | eat"
 msgstr "scrie / pix | a mânca"
 
@@ -1770,7 +1780,7 @@ msgstr "Memorie"
 
 #: ../src/Core/Views/FinishView.cs:125 ../src/Core/Main/GameTypes.cs:50
 #: ../src/Clients/Classical/gbrainy.cs:385
-#: ../src/Clients/Classical/Dialogs/ui/PdfExportDialog.ui.h:16
+#: ../src/Clients/Classical/Dialogs/ui/PdfExportDialog.ui.h:18
 msgid "Verbal"
 msgstr "Verbale"
 
@@ -2050,15 +2060,14 @@ msgstr "Rezultate slabe"
 msgid "Disappointing results"
 msgstr "Rezultate dezamăgitoare"
 
-#: ../src/Core/Main/GameSession.cs:269
+#: ../src/Core/Main/GameSession.cs:276
 msgid "Paused"
 msgstr "Întrerupt"
 
 #: ../src/Core/Main/GameTips.cs:51
 msgid "Read the instructions carefully and identify the data and given clues."
 msgstr ""
-"Citiți cu atenție instrucțiunile și identificați datele și indiciile "
-"primite."
+"Citiți cu atenție instrucțiunile și identificați datele și indiciile primite."
 
 #: ../src/Core/Main/GameTips.cs:53
 msgid ""
@@ -2196,9 +2205,9 @@ msgstr "{0} Răspundeți folosind {1}."
 #: ../src/Core/Main/Verbal/AnalogiesMultipleOptions.cs:105
 #: ../src/Core/Main/Verbal/AnalogiesPairOfWordsOptions.cs:112
 #: ../src/Games/Logic/PuzzleOstracism.cs:159
-#: ../src/Games/Logic/PuzzlePredicateLogic.cs:177
+#: ../src/Games/Logic/PuzzlePredicateLogic.cs:176
 #: ../src/Games/Calculation/CalculationCloserFraction.cs:161
-#: ../src/Games/Calculation/CalculationGreatestDivisor.cs:149
+#: ../src/Games/Calculation/CalculationGreatestDivisor.cs:152
 #, csharp-format
 msgid "{0}) {1}"
 msgstr "{0}) {1}"
@@ -2352,8 +2361,8 @@ msgid ""
 "  --customgame [game1, gameN]\tSpecifies a list of games to play during a "
 "custom game."
 msgstr ""
-"  --customgame [game1, gameN]\tSpecifică o listă de jocuri pentru a fi jucată "
-"în timpul unui joc personalizat."
+"  --customgame [game1, gameN]\tSpecifică o listă de jocuri pentru a fi "
+"jucată în timpul unui joc personalizat."
 
 #: ../src/Clients/Classical/CommandLine.cs:186
 msgid ""
@@ -2425,9 +2434,14 @@ msgstr ""
 msgid "A brain teaser game for fun and to keep your brain trained."
 msgstr "Un joc de inteligență distractiv pentru antrenarea creierului."
 
-#: ../src/Clients/Classical/Dialogs/AboutDialog.cs:80
-msgid "gbrainy web site"
-msgstr "Pagina web gbrainy"
+#: ../src/Clients/Classical/Dialogs/AboutDialog.cs:81
+#, csharp-format
+msgid "You can also play on-line at {0}"
+msgstr "Puteți juca și on-line la {0}"
+
+#: ../src/Clients/Classical/Dialogs/AboutDialog.cs:84
+msgid "gbrainy project web site"
+msgstr "Pagina web a proiectului gbrainy"
 
 #. Column: Game Name
 #: ../src/Clients/Classical/Dialogs/CustomGameDialog.cs:68
@@ -2567,18 +2581,20 @@ msgstr "Mediu"
 msgid "PDF export"
 msgstr "export PDF"
 
-#: ../src/Clients/Classical/Dialogs/ui/PdfExportDialog.ui.h:12
+#. Translators: this the number of pages that are included by side when exporting a PDF"
+#: ../src/Clients/Classical/Dialogs/ui/PdfExportDialog.ui.h:13
 msgid "Pages per side:"
 msgstr "Jocuri pe pagină:"
 
-#: ../src/Clients/Classical/Dialogs/ui/PdfExportDialog.ui.h:13
-#: ../src/Clients/Classical/Dialogs/ui/PreferencesDialog.ui.h:13
-msgid "Skip games that use colors (friendly to colorblind users)"
-msgstr ""
-"Omite jocurile care utilizează culori (prietenos cu utilizatorii cu "
-"deficiențe în distingerea culorilor)"
-
 #: ../src/Clients/Classical/Dialogs/ui/PdfExportDialog.ui.h:14
+msgid ""
+"Skip games that use colors\n"
+" (friendly to colorblind users)"
+msgstr ""
+"Omite jocurile care utilizează culori\n"
+"(prietenos cu utilizatorii cu deficiențe în distingerea culorilor)"
+
+#: ../src/Clients/Classical/Dialogs/ui/PdfExportDialog.ui.h:16
 msgid ""
 "This option allows to export a set of games in a PDF file. You can complete "
 "the puzzles without a computer."
@@ -2586,11 +2602,11 @@ msgstr ""
 "Această opțiune permite exportarea unui set de jocuri într-un fișier PDF. "
 "Puteți completa puzzle-uri fără un calculator."
 
-#: ../src/Clients/Classical/Dialogs/ui/PdfExportDialog.ui.h:15
+#: ../src/Clients/Classical/Dialogs/ui/PdfExportDialog.ui.h:17
 msgid "Total number of games:"
 msgstr "Numărul total de jocuri:"
 
-#: ../src/Clients/Classical/Dialogs/ui/PdfExportDialog.ui.h:17
+#: ../src/Clients/Classical/Dialogs/ui/PdfExportDialog.ui.h:19
 msgid "_Save"
 msgstr "_Salvează"
 
@@ -2632,6 +2648,12 @@ msgstr "Preferințe"
 msgid "Show countdown message"
 msgstr "Arată numărătoarea inversă"
 
+#: ../src/Clients/Classical/Dialogs/ui/PreferencesDialog.ui.h:13
+msgid "Skip games that use colors (friendly to colorblind users)"
+msgstr ""
+"Omite jocurile care utilizează culori (prietenos cu utilizatorii cu "
+"deficiențe în distingerea culorilor)"
+
 #: ../src/Clients/Classical/Dialogs/ui/PreferencesDialog.ui.h:14
 msgid "Time in seconds to memorize the challenge:"
 msgstr "Timpul în secunde pentru a memora provocarea:"
@@ -2668,21 +2690,23 @@ msgstr "Balanța"
 
 #: ../src/Games/Logic/PuzzleBalance.cs:53
 msgid ""
-"How many triangles are needed in the right part of the last figure to keep "
-"it balanced?"
+"Using triangles only, how many triangles are needed in the right part of the "
+"last figure to keep it balanced?"
 msgstr ""
-"Câte triunghiuri sunt necesare în partea din dreapta a figurii pentru a "
-"menține echilibrul?"
+"Folosind doar triunghiuri, câte sunt necesare în partea din dreapta a "
+"figurii pentru a menține echilibrul?"
 
 #: ../src/Games/Logic/PuzzleBalance.cs:58
-msgid "Every triangle counts as 1, each circle as 2 and each square as 3."
+msgid ""
+"Every circle is equivalent to two triangles and every square to three "
+"triangles."
 msgstr ""
-"Fiecare triunghi valorează o unitate, fiecare cerc 2 unități și fiecare "
-"pătrat 3 unități."
+"Fiecare cerc este echivalent cu două triunghiuri și fiecare pătrat este "
+"echivalent cu trei triunghiuri."
 
 #: ../src/Games/Logic/PuzzleBalance.cs:63
-msgid "Every circle counts as two triangles."
-msgstr "Fiecare cerc valoreaza cât două triunghiuri."
+msgid "Every circle is equivalent two triangles."
+msgstr "Fiecare cerc este echivalent cu două triunghiuri."
 
 #: ../src/Games/Logic/PuzzleBuildTriangle.cs:51
 msgid "Build a triangle"
@@ -2840,8 +2864,7 @@ msgid ""
 "purchase and wrap the present?"
 msgstr ""
 "Ambalarea unui cadou de aniversare costă un euro. Cadoul de aniversare costă "
-"cu {0} euro mai mult decât ambalajul lui. Cât costă cadoul și ambalajul "
-"lui?"
+"cu {0} euro mai mult decât ambalajul lui. Cât costă cadoul și ambalajul lui?"
 
 #: ../src/Games/Logic/PuzzleCounting.cs:98
 msgid "Individually, the present costs one euro more to purchase than to wrap."
@@ -3004,11 +3027,11 @@ msgstr ""
 "Ordinea operațiilor aritmetice este întotdeauna aceeași: exponenții și "
 "radicalii, înmulțirea și împărțirea, adunarea și scăderea."
 
-#: ../src/Games/Logic/PuzzleExtraCircle.cs:41
+#: ../src/Games/Logic/PuzzleExtraCircle.cs:53
 msgid "Extra circle"
 msgstr "Cercul suplimentar"
 
-#: ../src/Games/Logic/PuzzleExtraCircle.cs:50
+#: ../src/Games/Logic/PuzzleExtraCircle.cs:62
 #, csharp-format
 msgid ""
 "Which circle does not belong to the group? It is not a sequence of elements. "
@@ -3017,11 +3040,11 @@ msgstr ""
 "Care cerc nu aparține grupului? Nu este o secvență a elementelor. Răspundeți "
 "folosind {0}, {1}, {2} sau {3}."
 
-#: ../src/Games/Logic/PuzzleExtraCircle.cs:55
+#: ../src/Games/Logic/PuzzleExtraCircle.cs:67
 msgid "All circles share a common property except for one."
 msgstr "Toate cercurile au o proprietate comună, cu excepția unuia."
 
-#: ../src/Games/Logic/PuzzleExtraCircle.cs:60
+#: ../src/Games/Logic/PuzzleExtraCircle.cs:72
 msgid ""
 "In all circles the color slices follow the same order except for this one."
 msgstr ""
@@ -3194,8 +3217,8 @@ msgid "Matrix groups"
 msgstr "Grupuri de matrice"
 
 #: ../src/Games/Logic/PuzzleMatrixGroups.cs:39
-msgid "One of numbers in the matrix must be circled. Which one?"
-msgstr "Unul din numerele matricii ar trebui încercuit. Care este acela?"
+msgid "One of the numbers in the matrix must be circled. Which one?"
+msgstr "Unul dintre numerele matricii ar trebui încercuit. Care este acela?"
 
 #: ../src/Games/Logic/PuzzleMatrixGroups.cs:43
 msgid "All circled numbers share an arithmetical property."
@@ -3306,9 +3329,6 @@ msgstr "Secțiunea lipsă"
 
 #: ../src/Games/Logic/PuzzleMissingSlice.cs:67
 #, csharp-format
-#| msgid ""
-#| "Some slices have a common property. Which is the missing slice in the "
-#| "circle below? Answer {0}, {1} or {2}."
 msgid ""
 "The slices below have some kind of relation. Which is the missing slice in "
 "the circle below? Answer {0}, {1} or {2}."
@@ -3837,9 +3857,8 @@ msgid ""
 "John's shop had sales of {0} monetary units. This was an increase of {1}% "
 "over last month. What were last month sales?"
 msgstr ""
-"Magazinul lui John a făcut vânzări de {0} unități monetare. Aceste vânzări "
-"s-au mărit cu {1}% față de luna trecută. Care au fost vânzările lunii "
-"trecute?"
+"Magazinul lui John a făcut vânzări de {0} unități monetare. Aceste vânzări s-"
+"au mărit cu {1}% față de luna trecută. Care au fost vânzările lunii trecute?"
 
 #: ../src/Games/Logic/PuzzlePercentage.cs:112
 #, csharp-format
@@ -3999,10 +4018,9 @@ msgstr "Tetris"
 
 #: ../src/Games/Logic/PuzzleTetris.cs:40
 #, csharp-format
-msgid "What figure completes the sequence below? Answer {0}, {1} or {2}."
+msgid "What figure completes the set below? Answer {0}, {1} or {2}."
 msgstr ""
-"Ce figură completează secvența de mai jos? Răspundeți folosind {0}, {1} sau "
-"{2}."
+"Ce figură completează setul de mai jos? Răspundeți folosind {0}, {1} sau {2}."
 
 #: ../src/Games/Logic/PuzzleTetris.cs:46
 msgid ""
@@ -4651,19 +4669,21 @@ msgstr ""
 msgid "Greatest divisor"
 msgstr "Cel mai mare divizor"
 
-#: ../src/Games/Calculation/CalculationGreatestDivisor.cs:45
+#: ../src/Games/Calculation/CalculationGreatestDivisor.cs:46
+#, csharp-format
 msgid ""
-"Which of the possible divisors is the greatest that divides all numbers?"
+"Which of the possible divisors is the greatest that divides all numbers? "
+"Answer {0}, {1}, {2} or {3}."
 msgstr ""
 "Care dintre divizorii posibili este cel mai mare ce poate divide toate "
-"numerele?"
+"numerele? Răspundeți folosind {0}, {1}, {2} sau {3}."
 
-#: ../src/Games/Calculation/CalculationGreatestDivisor.cs:240
-#: ../src/Games/Calculation/CalculationPrimes.cs:233
+#: ../src/Games/Calculation/CalculationGreatestDivisor.cs:243
+#: ../src/Games/Calculation/CalculationPrimes.cs:151
 msgid "Numbers"
 msgstr "Numere"
 
-#: ../src/Games/Calculation/CalculationGreatestDivisor.cs:254
+#: ../src/Games/Calculation/CalculationGreatestDivisor.cs:257
 msgid "Possible divisors"
 msgstr "Divizori posibili"
 
@@ -4690,20 +4710,22 @@ msgstr ""
 msgid "{0} and {1}"
 msgstr "{0} și {1}"
 
-#: ../src/Games/Calculation/CalculationPrimes.cs:153
+#: ../src/Games/Calculation/CalculationPrimes.cs:68
 msgid "Primes"
 msgstr "Numere prime"
 
-#: ../src/Games/Calculation/CalculationPrimes.cs:161
+#: ../src/Games/Calculation/CalculationPrimes.cs:77
+#, csharp-format
 msgid ""
-"In the set of numbers below, which of the following numbers is a prime? A "
-"prime number is a positive integer that has exactly two different positive "
-"divisors, 1 and itself."
+"Which of the following numbers is a prime? A prime number is a positive "
+"integer that has exactly two different positive divisors, 1 and itself. "
+"Answer {0}, {1}, {2} or {3}."
 msgstr ""
 "Care dintre numerele de mai jos este prim? Un număr prim este un întreg "
-"pozitiv care are exact doi divizori pozitivi diferiți, 1 și el însuși."
+"pozitiv care are exact doi divizori pozitivi diferiți, 1 și el însuși. "
+"Răspundeți folosind {0}, {1}, {2} sau {3}."
 
-#: ../src/Games/Calculation/CalculationPrimes.cs:165
+#: ../src/Games/Calculation/CalculationPrimes.cs:82
 msgid ""
 "If the sum of all digits in a given number is divisible by 3, then so is the "
 "number. For example 15 = 1 + 5 = 6, which is divisible by 3."
@@ -4711,6 +4733,11 @@ msgstr ""
 "Dacă suma tuturor cifrelor dintr-un număr dat este divizibilă cu 3, atunci "
 "și numărul este divizibil cu 3. De exemplu 15 = 1 + 5 = 6, care este "
 "divizibil cu 3."
+
+#: ../src/Games/Calculation/CalculationPrimes.cs:87
+#, csharp-format
+msgid "The number {0} is a primer number."
+msgstr "Numărul {0} este prim."
 
 #: ../src/Games/Calculation/CalculationProportions.cs:37
 msgid "Proportions"
@@ -4740,8 +4767,8 @@ msgid ""
 "The second number is calculated by multiplying the first by {0} and dividing "
 "it by {1}."
 msgstr ""
-"Al doilea număr este calculat prin înmulțirea primului cu {0} și "
-"împărțindu-l la {1}."
+"Al doilea număr este calculat prin înmulțirea primului cu {0} și împărțindu-"
+"l la {1}."
 
 #: ../src/Games/Calculation/CalculationRatio.cs:55
 msgid ""
@@ -5014,6 +5041,17 @@ msgstr "_Dezinstalează..."
 #: ../src/Clients/Classical/mono-addins-strings.xml.h:35
 msgid "_Unselect All"
 msgstr "_Deselectează tot"
+
+#~ msgid "Bagpipes"
+#~ msgstr "Cimpoaie"
+
+#~ msgid "Horse / Pony"
+#~ msgstr "Cal / Ponei"
+
+#~ msgid "Every triangle counts as 1, each circle as 2 and each square as 3."
+#~ msgstr ""
+#~ "Fiecare triunghi valorează o unitate, fiecare cerc 2 unități și fiecare "
+#~ "pătrat 3 unități."
 
 #~ msgid ""
 #~ "The numbers in the figure reflect the different areas covered by each one "
