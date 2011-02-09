@@ -75,7 +75,6 @@
   <ItemGroup>
     <None Include="data\game-graphics\handshake.svg" />
     <None Include="data\game-graphics\present.svg" />
-    <None Include="src\Clients\Classical\Dialogs\ui\PdfExportDialog.ui" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="src\Clients\Classical\gbrainy.ui">
@@ -119,6 +118,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="data\app-graphics\gbrainy.svg">
       <LogicalName>gbrainy.svg</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\Clients\Classical\Dialogs\ui\PdfExportDialog.ui">
+      <LogicalName>PdfExportDialog.ui</LogicalName>
     </EmbeddedResource>
   </ItemGroup>
   <ProjectExtensions>
