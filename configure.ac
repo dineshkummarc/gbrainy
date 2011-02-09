@@ -164,7 +164,7 @@ AC_SUBST(BUILD_TIME)
 COPYRIGHT="(c) 2007-2011 Jordi Mas i Hernandez"
 AC_SUBST(COPYRIGHT)
 
-WEB_SITE="http://live.gnome.org/gbrainy"
+WEB_SITE="http://www.gbrainy.com"
 AC_SUBST(WEB_SITE)
 
 dnl --- Prologue
