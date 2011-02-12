@@ -27,15 +27,13 @@ namespace gbrainy.Clients.WebForms
 {
 	public class TranslationsWeb : ITranslations
 	{
-		public delegate int GetLanguageIndexFromSessionHandler ();
+		public delegate string GetLanguageFromSessionHandler ();
 		static readonly object sync = new object ();
 
-		public GetLanguageIndexFromSessionHandler GetLanguageIndexFromSession;
+		public GetLanguageFromSessionHandler GetLanguageFromSession;
 
 		public void Init (string package, string localedir)
 		{
-			string s = Directory.GetCurrentDirectory ();
-			
 			Catalog.Init (package, localedir);
 		}
 
@@ -45,8 +43,8 @@ namespace gbrainy.Clients.WebForms
 
 			lock (sync)
 			{
-				int index = GetLanguageIndexFromSession ();
-				SetContext (index);
+				string code = GetLanguageFromSession ();
+				SetContext (code);
 				str = Catalog.GetString (s);
 			}
 			return str;
@@ -58,16 +56,16 @@ namespace gbrainy.Clients.WebForms
 
 			lock (sync)
 			{
-				int index = GetLanguageIndexFromSession ();
-				SetContext (index);
+				string code = GetLanguageFromSession ();
+				SetContext (code);
 				str = Catalog.GetPluralString (s, p, n);
 			}
 			return str;
 		}
 
-		void SetContext (int index)
+		void SetContext (string code)
 		{
-			string langcode = LanguageSupport.GetFromIndex (index).LangCode;
+			string langcode = LanguageSupport.GetFromCode (code).LocaleLanguage;
 			Environment.SetEnvironmentVariable ("LANGUAGE", langcode);
 			Init ("gbrainy", Defines.LOCALE_DIR);
 		}

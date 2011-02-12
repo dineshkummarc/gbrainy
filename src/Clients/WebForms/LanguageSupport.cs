@@ -18,6 +18,7 @@
  */
 
 using System;
+using System.Collections.Generic;
 using Mono.Unix;
 
 namespace gbrainy.Clients.WebForms
@@ -27,15 +28,36 @@ namespace gbrainy.Clients.WebForms
 		public class Language
 		{
 			public string Name { get; set; }
-			public string LangCode { get; set; }
+			public string LocaleLanguage { get; set; }
+			public string LangCode  { get; set; }
 
 			public Language (string name, string code)
 			{
 				Name = name;
-				LangCode = code;
+				LocaleLanguage = code;
 			}
 		};
-
+		
+		// code -> language
+		static Dictionary <string, Language> langmap;
+		
+		static LanguageSupport ()
+		{
+			string code;
+			int idx;
+			
+			langmap = new Dictionary <string, Language> ();
+			foreach (Language language in languages)
+			{
+				idx = language.LocaleLanguage.IndexOf (".");
+				code =  language.LocaleLanguage.Substring (0, idx);
+				language.LangCode = code;
+				langmap.Add (code, language);
+			}
+			
+		}
+				
+		// List of exposed locales
 		static Language [] languages =
 		{
 			new Language ("English", "en_US.utf8"),
@@ -64,9 +86,9 @@ namespace gbrainy.Clients.WebForms
 
 		}
 
-		static public Language GetFromIndex (int i)
+		static public Language GetFromCode (string code)
 		{
-			return languages [i];
+			return langmap [code];
 		}
 	}
 }

@@ -109,6 +109,8 @@
     <Compile Include="Main\Theme.cs" />
     <Compile Include="Main\ThemeManager.cs" />
     <Compile Include="Libraries\TranslationsCatalog.cs" />
+    <Compile Include="Services\IConfiguration.cs" />
+    <Compile Include="Services\MemoryConfiguration.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ProjectExtensions>

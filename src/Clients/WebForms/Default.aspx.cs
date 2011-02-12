@@ -27,7 +27,8 @@ namespace gbrainy.Clients.WebForms
 	public partial class Default : System.Web.UI.Page
 	{
 		WebSession web_session;
-		const string CookieName = "Lang";
+		const string CookieName = "Language";
+		const string DefaultLocale = "en_US";
 
 		void Page_Load (object o, EventArgs e)
         	{
@@ -41,18 +42,16 @@ namespace gbrainy.Clients.WebForms
 			for (int i = 0; i <LanguageSupport.Languages.Length; i++)
 			{
 				languages_drop.Items.Add (new ListItem (LanguageSupport.Languages[i].Name,
-					i.ToString ()));
+					LanguageSupport.Languages[i].LangCode));
 			}
 
 			if (Request.Cookies [CookieName] != null)
     				languages_drop.SelectedValue = Request.Cookies[CookieName].Value;
 			else // Default language value
-				languages_drop.SelectedValue = "0";
+				languages_drop.SelectedValue = DefaultLocale;
 
-			Global.Sessions [Session.SessionID].LanguageIndex =
-				Int32.Parse (languages_drop.SelectedValue);
+			Global.Sessions [Session.SessionID].LanguageCode = languages_drop.SelectedValue;
 	        }
-		
 		
 		protected void OnStartGame (Object sender, EventArgs e)
 		{
@@ -60,11 +59,10 @@ namespace gbrainy.Clients.WebForms
 			web_session.GameState = null;
 
 			// Collect language cookie
-			Global.Sessions [Session.SessionID].LanguageIndex =
-				Int32.Parse (languages_drop.SelectedValue);
+			Global.Sessions [Session.SessionID].LanguageCode = languages_drop.SelectedValue;
 			
 			Response.Cookies[CookieName].Value = languages_drop.SelectedValue;
-			Response.Cookies[CookieName].Expires =  DateTime.Now.AddYears (1);
+			Response.Cookies[CookieName].Expires = DateTime.Now.AddYears (1);
 
 			Logger.Debug ("Default.OnStartGame. Start game button click");
 			Response.Redirect ("Game.aspx");

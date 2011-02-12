@@ -66,7 +66,9 @@ CSDISTFILES =  \
 		$(srcdir)/Services/IService.cs		\
 		$(srcdir)/Services/ServiceLocator.cs	\
 		$(srcdir)/Services/ITranslations.cs	\
-		$(srcdir)/Libraries/TranslationsCatalog.cs
+		$(srcdir)/Libraries/TranslationsCatalog.cs \
+		$(srcdir)/Services/IConfiguration.cs	\
+		$(srcdir)/Services/MemoryConfiguration.cs
 
 CSFILES = $(CSDISTFILES)	\
 	Main/Defines.cs	\

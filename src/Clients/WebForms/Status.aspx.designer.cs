@@ -19,6 +19,8 @@ namespace gbrainy.Clients.WebForms {
 		
 		protected System.Web.UI.WebControls.Table sessions_table;
 		
+		protected System.Web.UI.WebControls.Table application_table;
+		
 		protected System.Web.UI.WebControls.Label total_label;
 		
 		protected System.Web.UI.WebControls.Label games_label;

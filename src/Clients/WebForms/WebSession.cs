@@ -10,7 +10,7 @@ namespace gbrainy.Clients.WebForms
 		public HttpSessionState Session { get; set; }
 		public DateTime Started { get; set; }
 		public gbrainy.Core.Main.GameSession GameState { get; set; }
-		public int LanguageIndex  { get; set; }
+		public string LanguageCode  { get; set; }
 
 		public WebSession (HttpSessionState session)
 		{

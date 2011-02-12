@@ -773,6 +773,18 @@ namespace gbrainy.Clients.Classical
 			Process.Start ("http://live.gnome.org/gbrainy/Extending");
 		}
 
+		static void InitCoreLibraries ()
+		{
+			// Register services
+			ServiceLocator.Instance.RegisterService <ITranslations> (new TranslationsCatalog ());
+			ServiceLocator.Instance.RegisterService <IConfiguration> (new MemoryConfiguration ());
+			
+			// Configuration
+			ServiceLocator.Instance.GetService <IConfiguration> ().Set (ConfigurationKeys.GamesDefinitions, Defines.DATA_DIR);
+			ServiceLocator.Instance.GetService <IConfiguration> ().Set (ConfigurationKeys.GamesGraphics, Defines.DATA_DIR);
+			ServiceLocator.Instance.GetService <IConfiguration> ().Set (ConfigurationKeys.ThemesDir, Defines.DATA_DIR);
+		}
+
 		public static void Main (string [] args)
 		{
 			try {
@@ -785,9 +797,8 @@ namespace gbrainy.Clients.Classical
 
 			DateTime start_time = DateTime.Now;
 
-			// Register services
-			ServiceLocator.Instance.RegisterService <ITranslations> (new TranslationsCatalog ());
-
+			InitCoreLibraries ();
+			
 			GtkClient app = new GtkClient ();
 			CommandLine.Version ();
 

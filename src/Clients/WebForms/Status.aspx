@@ -21,6 +21,14 @@
 				<asp:TableHeaderCell Runat="server">Time Started</asp:TableHeaderCell>
 			</asp:TableHeaderRow>
 		</asp:Table>
+		<br/><br/>
+		<asp:Table id="application_table" GridLines="Both" CellPadding="5" CellSpacing="5" Runat="server">
+			<asp:TableHeaderRow Runat="server">
+				<asp:TableHeaderCell Runat="server">Indicator</asp:TableHeaderCell>
+				<asp:TableHeaderCell Runat="server">Value</asp:TableHeaderCell>
+			</asp:TableHeaderRow>
+		</asp:Table>
+		
 		<br/>
     		<asp:Label runat ="server" ID="total_label"/>
     		<br/><br/>

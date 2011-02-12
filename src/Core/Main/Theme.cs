@@ -18,11 +18,14 @@
  */
 
 using System;
+using System.IO;
 using System.Xml.Serialization;
 using System.Text.RegularExpressions;
 using System.Globalization;
 
 using Cairo;
+
+using gbrainy.Core.Services;
 
 namespace gbrainy.Core.Main
 {
@@ -82,6 +85,13 @@ namespace gbrainy.Core.Main
 
 				return new Cairo.Color ((double) r / 255d, (double) g / 255d, (double) b / 255d, (double) a / 255d);
 			}
+		}
+		
+		public string GetFullPath (string path)
+		{
+			IConfiguration config = ServiceLocator.Instance.GetService <IConfiguration> ();
+			
+			return System.IO.Path.Combine (config.Get <string> (ConfigurationKeys.ThemesDir), path);
 		}
 	}
 }

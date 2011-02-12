@@ -40,9 +40,11 @@ namespace gbrainy.Clients.WebForms
 		gbrainy.Core.Main.GameSession session;
 		WebSession web_session;
 
-
 		static public GameManager CreateManager ()
 		{
+			if (manager != null)
+				return manager;
+			
 			manager = new GameManager ();
 			manager.LoadAssemblyGames (Defines.GAME_ASSEMBLY);
 			manager.LoadVerbalAnalogies (System.IO.Path.Combine ("data/", Defines.VERBAL_ANALOGIES));
@@ -63,9 +65,9 @@ namespace gbrainy.Clients.WebForms
 			}
 		}
 
-		int GetLanguageIndexFromSessionHandler ()
+		string GetLanguageFromSessionHandler ()
 		{
-			return WebSession.LanguageIndex;
+			return WebSession.LanguageCode;
 		}
 
 		// Page Life-Cycle Events
@@ -140,7 +142,7 @@ namespace gbrainy.Clients.WebForms
 		void InitPage ()
 		{
 			TranslationsWeb service = (TranslationsWeb) ServiceLocator.Instance.GetService <ITranslations> ();
-			service.GetLanguageIndexFromSession = GetLanguageIndexFromSessionHandler;
+			service.GetLanguageFromSession = GetLanguageFromSessionHandler;
 
 			game_image.Width = image_width;
 			game_image.Height = image_height;
@@ -230,12 +232,12 @@ namespace gbrainy.Clients.WebForms
 
 			try
 			{
-				cairo_image = new Cairo.ImageSurface (Cairo.Format.ARGB32, 400, 400);
+				cairo_image = new Cairo.ImageSurface (Cairo.Format.ARGB32, image_width, image_height);
 				cr = new gbrainy.Core.Main.CairoContextEx (cairo_image, "sans 12", 96);
 				file = GetImageFileName (_session.Session.SessionID);
 
 				// Draw Image
-				_session.GameState.Draw (cr, 400, 400, false);
+				_session.GameState.Draw (cr, image_width, image_height, false);
 				cairo_image.WriteToPng (file);
 
 				if (File.Exists (file) == false)
@@ -299,6 +301,10 @@ namespace gbrainy.Clients.WebForms
 
 			if (session != null)
 				session.End ();
+			
+			Global.TotalGamesSessions++;
+			Global.TotalGames += session.History.GamesPlayed;
+			Global.TotalTimeSeconds += session.GameTime.Seconds;
 
 			Response.Redirect ("Game.aspx");
 		}
