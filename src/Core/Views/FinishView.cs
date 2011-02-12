@@ -19,10 +19,10 @@
 
 using System;
 using Cairo;
-using Mono.Unix;
 using System.Collections.Generic;
 
 using gbrainy.Core.Main;
+using gbrainy.Core.Services;
 
 namespace gbrainy.Core.Views
 {
@@ -94,35 +94,35 @@ namespace gbrainy.Core.Views
 
 			x = x + space_x;
 			DrawBar (gr, x, y + area_h, bar_w, bar_h, session.History.TotalScore);
-			gr.DrawTextCentered (x + bar_w / 2, y + area_h + 0.03, Catalog.GetString ("Total"));
+			gr.DrawTextCentered (x + bar_w / 2, y + area_h + 0.03, ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Total"));
 
 			x = x + space_x * 2;
 
 			if (session.History.LogicPlayed > 0)
 				DrawBar (gr, x, y + area_h, bar_w, bar_h, session.History.LogicScore);
 
-			gr.DrawTextCentered (x + bar_w / 2, y + area_h + 0.03, 	Catalog.GetString ("Logic")); 
+			gr.DrawTextCentered (x + bar_w / 2, y + area_h + 0.03, 	ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Logic")); 
 
 			x = x + space_x * 2;
 
 			if (session.History.MathPlayed > 0)
 				DrawBar (gr, x, y + area_h, bar_w, bar_h, session.History.MathScore);
 
-			gr.DrawTextCentered (x + bar_w / 2, y + area_h + 0.03, Catalog.GetString ("Calculation"));
+			gr.DrawTextCentered (x + bar_w / 2, y + area_h + 0.03, ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Calculation"));
 
 			x = x + space_x * 2;
 
 			if (session.History.MemoryPlayed > 0)
 				DrawBar (gr, x, y + area_h, bar_w, bar_h, session.History.MemoryScore);
 
-			gr.DrawTextCentered (x + bar_w / 2, y + area_h + 0.03, Catalog.GetString ("Memory"));
+			gr.DrawTextCentered (x + bar_w / 2, y + area_h + 0.03, ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Memory"));
 
 			x = x + space_x * 2;
 
 			if (session.History.VerbalPlayed > 0)
 				DrawBar (gr, x, y + area_h, bar_w, bar_h, session.History.VerbalScore);
 
-			gr.DrawTextCentered (x + bar_w / 2, y + area_h + 0.03, Catalog.GetString ("Verbal"));
+			gr.DrawTextCentered (x + bar_w / 2, y + area_h + 0.03, ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Verbal"));
 		}
 
 		public void Draw (CairoContextEx gr, int area_width, int area_height, bool rtl)
@@ -134,11 +134,10 @@ namespace gbrainy.Core.Views
 			double width, height;
 
 			gr.Scale (area_width, area_height);
-			gr.DrawBackground ();
 			gr.Color = new Cairo.Color (0, 0, 0, 1);
 
 			gr.MoveTo (x, y);
-			gr.ShowPangoText (Catalog.GetString ("Score"), false, -1, 0);
+			gr.ShowPangoText (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Score"), false, -1, 0);
 			DrawBand (gr, 0.03, y - 0.01);
 
 			y += 0.08;
@@ -148,13 +147,13 @@ namespace gbrainy.Core.Views
 	
 			s = session.Result;
 			if (s == string.Empty)
-				gr.ShowPangoText (String.Format (Catalog.GetString ("Games won: {0} ({1} played)"), session.History.GamesWon, session.History.GamesPlayed));
+				gr.ShowPangoText (String.Format (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Games won: {0} ({1} played)"), session.History.GamesWon, session.History.GamesPlayed));
 			else
-				gr.ShowPangoText (String.Format (Catalog.GetString ("{0}. Games won: {1} ({2} played)"), s, session.History.GamesWon, session.History.GamesPlayed));
+				gr.ShowPangoText (String.Format (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("{0}. Games won: {1} ({2} played)"), s, session.History.GamesWon, session.History.GamesPlayed));
 
 			y += 0.06;
 			gr.MoveTo (x, y);
-			gr.ShowPangoText (String.Format (Catalog.GetString ("Time played {0} (average per game {1})"), session.GameTime, session.TimePerGame));
+			gr.ShowPangoText (String.Format (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Time played {0} (average per game {1})"), session.GameTime, session.TimePerGame));
 		
 			y += 0.09;
 			DrawColumnBarGraphic (gr, x, y);
@@ -163,7 +162,7 @@ namespace gbrainy.Core.Views
 			gr.MoveTo (x, y);
 			gr.SetPangoFontSize (smaller_font);
 			// Translators: translated string should not be longer that the English original (space restriction on the UI)
-			gr.ShowPangoText (Catalog.GetString ("For details on how gbrainy's scoring works refer to the help."));
+			gr.ShowPangoText (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("For details on how gbrainy's scoring works refer to the help."));
 
 			y += 0.07;
 			gr.SetPangoNormalFontSize ();
@@ -173,7 +172,7 @@ namespace gbrainy.Core.Views
 			if (records.Count == 0) {
 				bool caching = cached_sessionid != session.ID;
 	
-				gr.ShowPangoText (Catalog.GetString ("Tips for your next games"), false, -1, 0);
+				gr.ShowPangoText (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Tips for your next games"), false, -1, 0);
 				DrawBand (gr, 0.03, y - 0.01);
 
 				y += 0.08;
@@ -201,7 +200,7 @@ namespace gbrainy.Core.Views
 					cached_sessionid = session.ID;
 			} 
 			else  {
-				gr.ShowPangoText (Catalog.GetString ("Congratulations! New personal record"), false, -1, 0);
+				gr.ShowPangoText (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Congratulations! New personal record"), false, -1, 0);
 				DrawBand (gr, 0.03, y - 0.01);
 
 				y += 0.08;
@@ -210,25 +209,25 @@ namespace gbrainy.Core.Views
 				{
 					switch (records[i].GameType) {
 					case GameTypes.LogicPuzzle:
-						s = String.Format (Catalog.
+						s = String.Format (ServiceLocator.Instance.GetService <ITranslations> ().
 							GetString ("By scoring {0} in logic puzzle games you have established a new personal record. Your previous record was {1}."),
 							records[i].NewScore,
 							records[i].PreviousScore);
 						break;
 					case GameTypes.Calculation:
-						s = String.Format (Catalog.
+						s = String.Format (ServiceLocator.Instance.GetService <ITranslations> ().
 							GetString ("By scoring {0} in calculation games you have established a new personal record. Your previous record was {1}."),
 							records[i].NewScore,
 							records[i].PreviousScore);
 						break;
 					case GameTypes.Memory:
-						s = String.Format (Catalog.
+						s = String.Format (ServiceLocator.Instance.GetService <ITranslations> ().
 							GetString ("By scoring {0} in memory games you have established a new personal record. Your previous record was {1}."),
 							records[i].NewScore,
 							records[i].PreviousScore);
 						break;
 					case GameTypes.VerbalAnalogy:
-						s = String.Format (Catalog.
+						s = String.Format (ServiceLocator.Instance.GetService <ITranslations> ().
 							GetString ("By scoring {0} in verbal analogies you have established a new personal record. Your previous record was {1}."),
 							records[i].NewScore,
 							records[i].PreviousScore);

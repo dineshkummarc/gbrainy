@@ -18,10 +18,10 @@
  */
 
 using System;
-using Mono.Unix;
 
 using gbrainy.Core.Main;
 using gbrainy.Core.Toolkit;
+using gbrainy.Core.Services;
 
 namespace gbrainy.Games.Calculation
 {
@@ -65,7 +65,7 @@ namespace gbrainy.Games.Calculation
 		};
 
 		public override string Name {
-			get {return Catalog.GetString ("Primes");}
+			get {return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Primes");}
 		}
 
 		public override GameTypes Type {
@@ -74,17 +74,17 @@ namespace gbrainy.Games.Calculation
 
 		public override string Question {
 			get { return String.Format (
-				Catalog.GetString ("Which of the following numbers is a prime? A prime number is a positive integer that has exactly two different positive divisors, 1 and itself. Answer {0}, {1}, {2} or {3}."),
+				ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Which of the following numbers is a prime? A prime number is a positive integer that has exactly two different positive divisors, 1 and itself. Answer {0}, {1}, {2} or {3}."),
 				GetPossibleAnswer (0), GetPossibleAnswer (1), GetPossibleAnswer (2), GetPossibleAnswer (3));}
 		}
 
 		public override string Tip {
-			get { return Catalog.GetString ("If the sum of all digits in a given number is divisible by 3, then so is the number. For example 15 = 1 + 5 = 6, which is divisible by 3.");}
+			get { return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("If the sum of all digits in a given number is divisible by 3, then so is the number. For example 15 = 1 + 5 = 6, which is divisible by 3.");}
 		}
 
 		public override string Rationale {
 			get { 
-				return String.Format (Catalog.GetString ("The number {0} is a primer number."), answer);
+				return String.Format (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("The number {0} is a primer number."), answer);
 			}
 		}
 
@@ -148,7 +148,7 @@ namespace gbrainy.Games.Calculation
 			gr.SetPangoLargeFontSize ();
 
 			gr.MoveTo (0.05, DrawAreaY + 0.1);
-			gr.ShowPangoText (Catalog.GetString ("Numbers"));
+			gr.ShowPangoText (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Numbers"));
 		}
 
 		short GenerateNonPrime ()

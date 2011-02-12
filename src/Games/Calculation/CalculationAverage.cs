@@ -18,10 +18,10 @@
  */
 
 using System;
-using Mono.Unix;
 
 using gbrainy.Core.Main;
 using gbrainy.Core.Toolkit;
+using gbrainy.Core.Services;
 
 namespace gbrainy.Games.Calculation
 {
@@ -35,7 +35,7 @@ namespace gbrainy.Games.Calculation
 		double correct;
 
 		public override string Name {
-			get {return Catalog.GetString ("Average");}
+			get {return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Average");}
 		}
 
 		public override GameTypes Type {
@@ -52,17 +52,17 @@ namespace gbrainy.Games.Calculation
 				nums += numbers [numbers.Length - 1];
 
 				return String.Format (
-					Catalog.GetString ("Given the numbers: {0}. Which of the following numbers is the nearest to the average? Answer {1}, {2}, {3} or {4}."), nums,
+					ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Given the numbers: {0}. Which of the following numbers is the nearest to the average? Answer {1}, {2}, {3} or {4}."), nums,
 					GetPossibleAnswer (0), GetPossibleAnswer (1), GetPossibleAnswer (2), GetPossibleAnswer (3));}
 		}
 
 		public override string Tip {
-			get { return Catalog.GetString ("The average of a list of numbers is the sum of all of the numbers divided by the number of items in the list.");}
+			get { return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("The average of a list of numbers is the sum of all of the numbers divided by the number of items in the list.");}
 		}
 
 		public override string Rationale {
 			get { 
-				return String.Format (Catalog.GetString ("The result of the operation is {0:##0.###}."), 
+				return String.Format (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("The result of the operation is {0:##0.###}."), 
 					correct);				
 			}
 		}

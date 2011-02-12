@@ -20,9 +20,9 @@
 
 using System;
 using Cairo;
-using Mono.Unix;
 
 using gbrainy.Core.Main;
+using gbrainy.Core.Services;
 
 namespace gbrainy.Core.Views
 {
@@ -80,7 +80,7 @@ namespace gbrainy.Core.Views
 			cr.Stroke ();
 			cr.Color = text_color;
 			cr.MoveTo (x + line_size + offset_x, y - 0.01);
-			cr.ShowPangoText (Catalog.GetString ("Total"));
+			cr.ShowPangoText (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Total"));
 			cr.Stroke ();
 
 			cr.Color = logic_color;
@@ -271,8 +271,8 @@ namespace gbrainy.Core.Views
 			DrawLegend (cr, x + grid_offsetx, y + area_h + 0.06);
 			DrawGrid (cr, grid_x, grid_y);
 
-			DrawAxisDescription (cr, x + area_w + 0.01, 0.78, Catalog.GetString ("Time"));
-			DrawAxisDescription (cr, 0, 0.03, Catalog.GetString ("Score"));
+			DrawAxisDescription (cr, x + area_w + 0.01, 0.78, ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Time"));
+			DrawAxisDescription (cr, 0, 0.03, ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Score"));
 		}
 	}
 }

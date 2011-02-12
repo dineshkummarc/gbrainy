@@ -19,10 +19,10 @@
 
 using System;
 using System.Text;
-using Mono.Unix;
 
 using gbrainy.Core.Main;
 using gbrainy.Core.Toolkit;
+using gbrainy.Core.Services;
 
 namespace gbrainy.Games.Logic
 {
@@ -39,16 +39,16 @@ namespace gbrainy.Games.Logic
 		private const double figure_width = 0.1, figure_height = 0.1, space_width = 0.05, space_height = 0;
 
 		public override string Name {
-			get {return Catalog.GetString ("Figures");}
+			get {return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Figures");}
 		}
 
 		public override string Question {
-			get {return Catalog.GetString ("What is the next logical sequence of objects in the last column? See below the convention when giving the answer.");} 
+			get {return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("What is the next logical sequence of objects in the last column? See below the convention when giving the answer.");} 
 		}
 
 		public override string Rationale {
 			get {
-				return Catalog.GetString ("It is the only combination that you can build with the given elements without repeating them.");
+				return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("It is the only combination that you can build with the given elements without repeating them.");
 			}
 		}
 
@@ -75,7 +75,7 @@ namespace gbrainy.Games.Logic
 			drawable_area.DrawEventHandler += delegate (object sender, DrawEventArgs e)
 			{
 				e.Context.MoveTo (0, 0.05);
-				e.Context.ShowPangoText (String.Format (Catalog.GetString ("{0} ->"), GetPossibleAnswer (0)));
+				e.Context.ShowPangoText (String.Format (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("{0} ->"), GetPossibleAnswer (0)));
 				e.Context.DrawPentagon (0.1, 0, 0.1);
 				e.Context.Stroke ();
 			};
@@ -87,7 +87,7 @@ namespace gbrainy.Games.Logic
 			drawable_area.DrawEventHandler += delegate (object sender, DrawEventArgs e)
 			{
 				e.Context.MoveTo (0, 0.05);
-				e.Context.ShowPangoText (String.Format (Catalog.GetString ("{0} ->"), GetPossibleAnswer (1)));
+				e.Context.ShowPangoText (String.Format (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("{0} ->"), GetPossibleAnswer (1)));
 				e.Context.Stroke ();
 				e.Context.Arc (0.15, 0.05, 0.05, 0, 2 * Math.PI);
 				e.Context.Stroke ();
@@ -100,7 +100,7 @@ namespace gbrainy.Games.Logic
 			drawable_area.DrawEventHandler += delegate (object sender, DrawEventArgs e)
 			{
 				e.Context.MoveTo (0, 0.05);
-				e.Context.ShowPangoText (String.Format (Catalog.GetString ("{0} ->"), GetPossibleAnswer (2)));
+				e.Context.ShowPangoText (String.Format (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("{0} ->"), GetPossibleAnswer (2)));
 				e.Context.DrawEquilateralTriangle (0.1, 0, 0.1);
 			};
 		}
@@ -156,11 +156,11 @@ namespace gbrainy.Games.Logic
 			x = DrawAreaX;
 			gr.MoveTo (x, y - 0.01);
 			y += 0.05;
-			gr.ShowPangoText (Catalog.GetString ("Convention when giving the answer is:"));
+			gr.ShowPangoText (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Convention when giving the answer is:"));
 
 			y += 0.16;
 			gr.MoveTo (x, y);		
-			gr.ShowPangoText (String.Format (Catalog.GetString ("E.g: {0}{1}{2} (pentagon, triangle, circle)"),
+			gr.ShowPangoText (String.Format (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("E.g: {0}{1}{2} (pentagon, triangle, circle)"),
 				GetPossibleAnswer (0), GetPossibleAnswer (2), GetPossibleAnswer (1)));
 		}
 	}

@@ -19,7 +19,8 @@
 
 
 using System;
-using Mono.Unix;
+
+using gbrainy.Core.Services;
 
 namespace gbrainy.Core.Main
 {
@@ -48,35 +49,35 @@ namespace gbrainy.Core.Main
 		{
 			switch (tip) {
 			case 0:
-				return Catalog.GetString ("Read the instructions carefully and identify the data and given clues.");
+				return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Read the instructions carefully and identify the data and given clues.");
 			case 1:
-				return Catalog.GetString ("To score the player gbrainy uses the time and tips needed to complete each game.");
+				return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("To score the player gbrainy uses the time and tips needed to complete each game.");
 			case 2:
-				return Catalog.GetString ("In logic games, elements that may seem irrelevant can be very important.");
+				return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("In logic games, elements that may seem irrelevant can be very important.");
 			case 3:
-				return Catalog.GetString ("Break the mental blocks and look into the boundaries of problems.");
+				return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Break the mental blocks and look into the boundaries of problems.");
 			case 4:
-				return Catalog.GetString ("Enjoy making mistakes, they are part of the learning process.");
+				return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Enjoy making mistakes, they are part of the learning process.");
 			case 5:
-				return Catalog.GetString ("Do all the problems, even the difficult ones. Improvement comes from practicing.");
+				return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Do all the problems, even the difficult ones. Improvement comes from practicing.");
 			case 6:
-				return Catalog.GetString ("Play on a daily basis, you will notice progress soon.");
+				return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Play on a daily basis, you will notice progress soon.");
 			case 7: // Translators: Custom Game Selection is a menu option
-				return Catalog.GetString ("Use the 'Custom Game Selection' to choose exactly which games you want to play.");
+				return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Use the 'Custom Game Selection' to choose exactly which games you want to play.");
 			case 8:
-				return Catalog.GetString ("Use the Settings to adjust the difficulty level of the game.");
+				return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Use the Settings to adjust the difficulty level of the game.");
 			case 9:
-				return Catalog.GetString ("Association of elements is a common technique for remembering things.");
+				return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Association of elements is a common technique for remembering things.");
 			case 10:
-				return Catalog.GetString ("Grouping elements into categories is a common technique for remembering things.");
+				return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Grouping elements into categories is a common technique for remembering things.");
 			case 11:
-				return Catalog.GetString ("Build acronyms using the first letter of each fact to be remembered.");
+				return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Build acronyms using the first letter of each fact to be remembered.");
 			case 12:
-				return Catalog.GetString ("The enjoyment obtained from a puzzle is proportional to the time spent on it.");
+				return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("The enjoyment obtained from a puzzle is proportional to the time spent on it.");
 			case 13:
-				return Catalog.GetString ("Think of breaking down every problem into simpler components.");
+				return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Think of breaking down every problem into simpler components.");
 			case 14:
-				return Catalog.GetString ("When answering verbal analogies pay attention to the verb tense.");
+				return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("When answering verbal analogies pay attention to the verb tense.");
 			default:
 				throw new InvalidOperationException ();
 			}

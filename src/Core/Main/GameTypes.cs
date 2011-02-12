@@ -18,7 +18,8 @@
  */
 
 using System;
-using Mono.Unix;
+
+using gbrainy.Core.Services;
 
 namespace gbrainy.Core.Main
 {
@@ -41,13 +42,13 @@ namespace gbrainy.Core.Main
 			switch (type) 
 			{
 				case GameTypes.LogicPuzzle:
-					return Catalog.GetString ("Logic");
+					return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Logic");
 				case GameTypes.Memory:
-					return Catalog.GetString ("Memory");
+					return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Memory");
 				case GameTypes.Calculation:
-					return Catalog.GetString ("Calculation");
+					return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Calculation");
 				case GameTypes.VerbalAnalogy:
-					return Catalog.GetString ("Verbal");
+					return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Verbal");
 				default:
 					throw new InvalidOperationException ("Unknown game type");
 			}

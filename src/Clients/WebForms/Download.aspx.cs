@@ -23,7 +23,7 @@ using System.Web;
 using System.Web.UI;
 using gbrainy.Core.Main;
 
-namespace WebForms
+namespace gbrainy.Clients.WebForms
 {
 	public partial class Download : System.Web.UI.Page
 	{

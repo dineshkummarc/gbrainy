@@ -1,4 +1,4 @@
-<%@ Page Language="C#" Inherits="WebForms.Download" MasterPageFile="~/MasterPage.master" %>
+<%@ Page Language="C#" Inherits="gbrainy.Clients.WebForms.Download" MasterPageFile="~/MasterPage.master" %>
 <%@ MasterType VirtualPath="~/MasterPage.master" %>
 <asp:Content ContentPlaceHolderID="main_placeholder" ID="main_placeholderContent" runat="server">
 

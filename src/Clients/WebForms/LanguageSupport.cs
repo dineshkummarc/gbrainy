@@ -18,30 +18,66 @@
  */
 
 using System;
+using System.Collections.Generic;
 using Mono.Unix;
 
-namespace WebForms
+namespace gbrainy.Clients.WebForms
 {
-	static public class LanguageSupport
+	static class LanguageSupport
 	{
 		public class Language
 		{
 			public string Name { get; set; }
-			public string LangCode { get; set; }
+			public string LocaleLanguage { get; set; }
+			public string LangCode  { get; set; }
 
 			public Language (string name, string code)
 			{
 				Name = name;
-				LangCode = code;
+				LocaleLanguage = code;
 			}
 		};
-
+		
+		// code -> language
+		static Dictionary <string, Language> langmap;
+		
+		static LanguageSupport ()
+		{
+			string code;
+			int idx;
+			
+			langmap = new Dictionary <string, Language> ();
+			foreach (Language language in languages)
+			{
+				idx = language.LocaleLanguage.IndexOf (".");
+				code =  language.LocaleLanguage.Substring (0, idx);
+				language.LangCode = code;
+				langmap.Add (code, language);
+			}
+			
+		}
+				
+		// List of exposed locales
 		static Language [] languages =
 		{
 			new Language ("English", "en_US.utf8"),
+			new Language ("Afrikaans", "af_ZA.utf8"),
 			new Language ("Catalan", "ca_ES.utf8"),
+			new Language ("Czech", "cs_CZ.utf8"),
+			new Language ("Danish", "da_DK.utf8"),
+			new Language ("German", "de_DE.utf8"),
+			new Language ("Basque", "eu_ES.utf8"),
 			new Language ("Spanish", "es_ES.utf8"),
-			new Language ("German", "de_DE.utf8")
+			new Language ("French", "fr_FR.utf8"),
+			new Language ("Galician", "gl_ES.utf8"),
+			new Language ("Hungarian", "hu_HU.utf8"),
+			new Language ("Dutch", "nl_NL.utf8"),
+			new Language ("Portuguese", "pt_PT.utf8"),
+			new Language ("Romanian", "ro_RO.utf8"),
+			new Language ("Brazilian Portuguese", "pt_BR.utf8"),
+			new Language ("Slovenian", "sl_SI.utf8"),
+			new Language ("Swedish", "sv_SE.utf8"),
+			new Language ("Serbian", "sr_RS.utf8")
 		};
 
 		static public Language [] Languages
@@ -50,28 +86,10 @@ namespace WebForms
 
 		}
 
-		static public Language GetFromIndex (int i)
+		static public Language GetFromCode (string code)
 		{
-			return languages [i];
+			return langmap [code];
 		}
-
-		static public String GetString (WebSession session, string str)
-		{
-			// GetText
-			string s = null;
-
-			Environment.SetEnvironmentVariable ("LANGUAGE",
-				LanguageSupport.GetFromIndex (session.LanguageIndex).LangCode);
-
-			Catalog.Init ("gbrainy", "po/");
-			s = Catalog.GetString (str);
-
-			if (String.IsNullOrEmpty (s) == true)
-				return str;
-
-			return s;
-		}
-
 	}
 }
 

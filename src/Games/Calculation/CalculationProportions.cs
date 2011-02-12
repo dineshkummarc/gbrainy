@@ -18,10 +18,10 @@
  */
 
 using System;
-using Mono.Unix;
 
 using gbrainy.Core.Main;
 using gbrainy.Core.Toolkit;
+using gbrainy.Core.Services;
 
 namespace gbrainy.Games.Calculation
 {
@@ -34,7 +34,7 @@ namespace gbrainy.Games.Calculation
 		double num, den, percentage, correct;
 
 		public override string Name {
-			get {return Catalog.GetString ("Proportions");}
+			get {return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Proportions");}
 		}
 
 		public override GameTypes Type {
@@ -44,7 +44,7 @@ namespace gbrainy.Games.Calculation
 		public override string Question {
 			get {
 				return String.Format (
-					Catalog.GetString ("What is {0}% of {1}/{2}? Answer {3}, {4}, {5} or {6}."), 
+					ServiceLocator.Instance.GetService <ITranslations> ().GetString ("What is {0}% of {1}/{2}? Answer {3}, {4}, {5} or {6}."), 
 					percentage, num, den, GetPossibleAnswer (0), GetPossibleAnswer (1), GetPossibleAnswer (2), GetPossibleAnswer (3));}
 		}
 

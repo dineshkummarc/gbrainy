@@ -18,10 +18,10 @@
  */
 
 using System;
-using Mono.Unix;
 using System.Collections.Generic;
 
 using gbrainy.Core.Main;
+using gbrainy.Core.Services;
 
 namespace gbrainy.Games.Memory
 {
@@ -34,12 +34,12 @@ namespace gbrainy.Games.Memory
 		private int answer;
 
 		public override string Name {
-			get {return Catalog.GetString ("Memorize words");}
+			get {return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Memorize words");}
 		}
 
 		public override string MemoryQuestion {
 			get { 
-				return Catalog.GetString ("There is a missing word from the previous list. Which one is the missing word?");}
+				return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("There is a missing word from the previous list. Which one is the missing word?");}
 		}
 
 		protected override void Initialize ()
@@ -48,53 +48,53 @@ namespace gbrainy.Games.Memory
 			words = new List <string> (total_words);
 
 			// Body parts
-			words.Add (Catalog.GetString ("wrist"));
-			words.Add (Catalog.GetString ("elbow"));
-			words.Add (Catalog.GetString ("armpit"));
-			words.Add (Catalog.GetString ("hand"));
-			words.Add (Catalog.GetString ("chest"));
+			words.Add (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("wrist"));
+			words.Add (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("elbow"));
+			words.Add (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("armpit"));
+			words.Add (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("hand"));
+			words.Add (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("chest"));
 			
 			//Fishes
-			words.Add (Catalog.GetString ("sardine"));
-			words.Add (Catalog.GetString ("trout"));
-			words.Add (Catalog.GetString ("monkfish"));
-			words.Add (Catalog.GetString ("cod"));
-			words.Add (Catalog.GetString ("salmon"));
+			words.Add (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("sardine"));
+			words.Add (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("trout"));
+			words.Add (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("monkfish"));
+			words.Add (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("cod"));
+			words.Add (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("salmon"));
 
 			// Vegetables
-			words.Add (Catalog.GetString ("potato"));
-			words.Add (Catalog.GetString ("ginger"));			
-			words.Add (Catalog.GetString ("pepper"));
-			words.Add (Catalog.GetString ("garlic"));
-			words.Add (Catalog.GetString ("pumpkin"));
+			words.Add (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("potato"));
+			words.Add (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("ginger"));			
+			words.Add (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("pepper"));
+			words.Add (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("garlic"));
+			words.Add (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("pumpkin"));
 
 			// Bicycle
-			words.Add (Catalog.GetString ("brake"));
-			words.Add (Catalog.GetString ("pedal"));
-			words.Add (Catalog.GetString ("chain"));			
-			words.Add (Catalog.GetString ("wheel"));
-			words.Add (Catalog.GetString ("handlebar"));
+			words.Add (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("brake"));
+			words.Add (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("pedal"));
+			words.Add (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("chain"));			
+			words.Add (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("wheel"));
+			words.Add (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("handlebar"));
 
 			// Music
-			words.Add (Catalog.GetString ("drummer"));
-			words.Add (Catalog.GetString ("speaker"));
-			words.Add (Catalog.GetString ("lyrics"));
-			words.Add (Catalog.GetString ("beat"));			
-			words.Add (Catalog.GetString ("song"));
+			words.Add (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("drummer"));
+			words.Add (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("speaker"));
+			words.Add (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("lyrics"));
+			words.Add (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("beat"));			
+			words.Add (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("song"));
 
 			// Weather
-			words.Add (Catalog.GetString ("cloud"));
-			words.Add (Catalog.GetString ("rain"));
-			words.Add (Catalog.GetString ("storm"));
-			words.Add (Catalog.GetString ("fog"));
-			words.Add (Catalog.GetString ("rainbow"));
+			words.Add (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("cloud"));
+			words.Add (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("rain"));
+			words.Add (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("storm"));
+			words.Add (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("fog"));
+			words.Add (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("rainbow"));
 
 			// Animals
-			words.Add (Catalog.GetString ("rabbit"));
-			words.Add (Catalog.GetString ("mouse"));
-			words.Add (Catalog.GetString ("monkey"));
-			words.Add (Catalog.GetString ("bear"));
-			words.Add (Catalog.GetString ("wolf"));
+			words.Add (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("rabbit"));
+			words.Add (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("mouse"));
+			words.Add (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("monkey"));
+			words.Add (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("bear"));
+			words.Add (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("wolf"));
 
 			switch (CurrentDifficulty) {
 			case GameDifficulty.Easy:

@@ -17,10 +17,10 @@
  * Boston, MA 02111-1307, USA.
  */
 
-using Mono.Unix;
 using System;
 
 using gbrainy.Core.Main;
+using gbrainy.Core.Services;
 
 namespace gbrainy.Games.Logic
 {
@@ -29,17 +29,17 @@ namespace gbrainy.Games.Logic
 		int people, handshakes;
 
 		public override string Name {
-			get {return Catalog.GetString ("Handshakes");}
+			get {return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Handshakes");}
 		}
 
 		public override string Question {
 			get {return String.Format (
-				Catalog.GetString ("All attendees to a party are introduced to one another. {0} handshakes are made in total. How many people are attending the party?"), 				handshakes);
+				ServiceLocator.Instance.GetService <ITranslations> ().GetString ("All attendees to a party are introduced to one another. {0} handshakes are made in total. How many people are attending the party?"), 				handshakes);
 			}
 		}
 
 		public override string Tip {
-			get { return Catalog.GetString ("Try to imagine a situation in which you are meeting a small number of people.");}
+			get { return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Try to imagine a situation in which you are meeting a small number of people.");}
 		}
 
 		protected override void Initialize ()

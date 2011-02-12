@@ -46,11 +46,11 @@
       <Package>gtk-sharp-2.0</Package>
     </Reference>
     <Reference Include="Mono.Posix" />
-    <Reference Include="Mono.Cairo" />
     <Reference Include="atk-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f">
       <Package>gtk-sharp-2.0</Package>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="Mono.Cairo, Version=2.0.0.0, Culture=neutral, PublicKeyToken=0738eb9f132ed756" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="src\Clients\Classical\gbrainy.cs" />
@@ -68,8 +68,8 @@
     <Compile Include="src\Clients\Classical\Dialogs\HigMessageDialog.cs" />
     <Compile Include="src\Clients\Classical\CommandLine.cs" />
     <Compile Include="src\Clients\Classical\Widgets\BrowseFile.cs" />
-    <Compile Include="src\Clients\Classical\Widgets\SimpleLabel.cs" />
     <Compile Include="src\Clients\Classical\Dialogs\PdfExportDialog.cs" />
+    <Compile Include="src\Clients\Classical\Widgets\GameDrawingArea.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>

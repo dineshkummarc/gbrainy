@@ -19,8 +19,8 @@
 
 using System;
 using Cairo;
-using Mono.Unix;
 using System.Timers;
+using gbrainy.Core.Services;
 
 using gbrainy.Core.Views;
 
@@ -50,7 +50,7 @@ namespace gbrainy.Core.Main
 
 		public override string Question {
 			get {
-				return Catalog.GetString ("Memorize the objects below in the given time");
+				return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Memorize the objects below in the given time");
 			}
 		}
 
@@ -186,7 +186,6 @@ namespace gbrainy.Core.Main
 		public override void DrawPreview (CairoContextEx gr, int width, int height, bool rtl)
 		{
 			gr.Scale (width, height);
-			gr.DrawBackground ();
 			gr.Color = new Cairo.Color (0, 0, 0);
 			gr.LineWidth = LineWidth;
 			DrawObjectToMemorize (gr, width, height, rtl);
@@ -214,7 +213,7 @@ namespace gbrainy.Core.Main
 			double width = 0.04, height = 0.6;
 			const double w = 0.003, h = 0.003;
 
-			gr.DrawTextCentered (x + (width / 2), y + height + 0.05, Catalog.GetString ("Time left"));
+			gr.DrawTextCentered (x + (width / 2), y + height + 0.05, ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Time left"));
 			gr.Stroke ();
 
 			gr.Save ();

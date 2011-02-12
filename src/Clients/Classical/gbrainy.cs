@@ -26,6 +26,7 @@ using Gdk;
 
 using gbrainy.Core.Main;
 using gbrainy.Core.Platform;
+using gbrainy.Core.Services;
 using gbrainy.Clients.Classical.Dialogs;
 using gbrainy.Clients.Classical.Widgets;
 
@@ -46,16 +47,15 @@ namespace gbrainy.Clients.Classical
 #endif
 	{
 		[GtkBeans.Builder.Object("gbrainy")] Gtk.Window app_window;
-		[GtkBeans.Builder.Object] Gtk.CheckMenuItem toolbar_menuitem;
+		[GtkBeans.Builder.Object] Gtk.CheckMenuItem showtoolbar_menuitem;
 		[GtkBeans.Builder.Object] Box drawing_vbox;
-		[GtkBeans.Builder.Object] Gtk.VBox question_vbox;
-		[GtkBeans.Builder.Object] Gtk.VBox solution_vbox;
+		[GtkBeans.Builder.Object] Gtk.HBox main_hbox;
+		[GtkBeans.Builder.Object] Gtk.VBox framework_vbox;
 		[GtkBeans.Builder.Object] Gtk.Entry answer_entry;
 		[GtkBeans.Builder.Object] Gtk.Button answer_button;
 		[GtkBeans.Builder.Object] Gtk.Button tip_button;
 		[GtkBeans.Builder.Object] Gtk.Button next_button;
 		[GtkBeans.Builder.Object] Gtk.Statusbar statusbar;
-		[GtkBeans.Builder.Object] Gtk.Toolbar toolbar;
 		[GtkBeans.Builder.Object] Gtk.MenuBar menubar;
 		[GtkBeans.Builder.Object] Gtk.MenuItem pause_menuitem;
 		[GtkBeans.Builder.Object] Gtk.MenuItem finish_menuitem;
@@ -66,18 +66,19 @@ namespace gbrainy.Clients.Classical
 		[GtkBeans.Builder.Object] Gtk.MenuItem memory_menuitem;
 		[GtkBeans.Builder.Object] Gtk.MenuItem verbal_menuitem;
 		[GtkBeans.Builder.Object] Gtk.MenuItem extensions_menuitem;
+		[GtkBeans.Builder.Object] Gtk.RadioMenuItem vertical_radiomenuitem;
+		[GtkBeans.Builder.Object] Gtk.RadioMenuItem horizontal_radiomenuitem;
+		[GtkBeans.Builder.Object] Gtk.MenuItem toolbar_orientation_menuitem;
 
-		DrawingArea drawing_area;
+		Gtk.Toolbar toolbar;
+
+		GameDrawingArea drawing_area;
 		GameSession session;
 		ToolButton all_tbbutton, logic_tbbutton, calculation_tbbutton, memory_tbbutton, verbal_tbbutton, pause_tbbutton, finish_tbbutton;
 		bool low_res;
 		bool full_screen;
-		SimpleLabel question_label;
-		SimpleLabel solution_label;
-		bool margins = false;
-		double offset_x, offset_y;
-		int drawing_square;
 		GameSession.Types initial_session;
+		bool init_completed = false;
 
 		public GtkClient ()
 #if GNOME
@@ -120,6 +121,62 @@ namespace gbrainy.Clients.Classical
 			gm.LoadPlugins ();
 		}
 
+		void AttachToolBar ()
+		{
+			Gtk.Box.BoxChild child;
+
+			if (toolbar != null)
+			{
+				Box box;
+				
+				switch (toolbar.Orientation) {
+				case Gtk.Orientation.Vertical:
+					box = main_hbox;
+					break;
+				case Gtk.Orientation.Horizontal:
+				{
+					box = framework_vbox;
+					break;
+				}
+				default:
+					throw new InvalidOperationException ();
+				}
+				
+				bool contained = false;
+				foreach (var ch in box.AllChildren)
+				{
+					if (ch == toolbar)
+					{
+						contained = true;
+						break;
+					}
+				}
+				if (contained == true)
+					box.Remove (toolbar);
+			}
+			toolbar.Orientation = (Gtk.Orientation) Preferences.GetIntValue (Preferences.ToolbarOrientationKey);
+
+			switch (toolbar.Orientation) {
+			case Gtk.Orientation.Vertical:
+				main_hbox.Add (toolbar);
+				main_hbox.ReorderChild (toolbar, 0);
+				child = ((Gtk.Box.BoxChild)(main_hbox[toolbar]));
+				break;
+			case Gtk.Orientation.Horizontal:
+				framework_vbox.Add (toolbar);
+				framework_vbox.ReorderChild (toolbar, 1);
+				child = ((Gtk.Box.BoxChild)(framework_vbox[toolbar]));
+				break;
+			default:
+				throw new InvalidOperationException ();
+			}
+
+			child.Expand = false;
+			child.Fill = false;
+			toolbar.ShowAll ();
+			init_completed = true;
+		}
+
 		void BuildUI ()
 		{
 			bool show_toolbar;
@@ -127,10 +184,16 @@ namespace gbrainy.Clients.Classical
 			GtkBeans.Builder builder = new GtkBeans.Builder ("gbrainy.ui");
 			builder.Autoconnect (this);
 
-			BuildToolBar ();
+			show_toolbar = Preferences.GetBoolValue (Preferences.ToolbarShowKey) == true && low_res == false;
 
-			drawing_area = new DrawingArea ();
-			drawing_area.ExposeEvent += OnDrawingAreaExposeEvent;
+			// Toolbar creation
+			toolbar = new Gtk.Toolbar ();
+			toolbar.ToolbarStyle = ToolbarStyle.Both;
+			BuildToolBar ();
+			AttachToolBar ();
+
+			drawing_area = new GameDrawingArea ();
+			drawing_area.Drawable = session;
 			GameSensitiveUI ();
 
 			// For low resolutions, hide the toolbar and made the drawing area smaller
@@ -140,14 +203,6 @@ namespace gbrainy.Clients.Classical
 					low_res = true;
 				}
 			}
-
-			question_label = new SimpleLabel ();
-			question_label.HeightMargin = 2;
-			question_vbox.Add (question_label);
-
-			solution_label = new SimpleLabel ();
-			solution_label.HeightMargin = 2;
-			solution_vbox.Add (solution_label);
 
 			EventBox eb = new EventBox (); // Provides a window for drawing area windowless widget
 
@@ -159,7 +214,7 @@ namespace gbrainy.Clients.Classical
 			eb.MotionNotifyEvent += OnMouseMotionEvent;
 			eb.ButtonPressEvent += OnHandleButtonPress;
 
-			show_toolbar = Preferences.GetBoolValue (Preferences.ToolbarKey) == true && low_res == false;
+			show_toolbar = Preferences.GetBoolValue (Preferences.ToolbarShowKey) == true && low_res == false;
 
 			// We only disable the Arrow if we are going to show the toolbar.
 			// It has an impact on the total window width size even if you we do not show it
@@ -167,10 +222,25 @@ namespace gbrainy.Clients.Classical
 				toolbar.ShowArrow = false;
 
 			app_window.IconName = "gbrainy";
+
 			app_window.ShowAll ();
 
 			if (show_toolbar == false)
-				toolbar_menuitem.Active = false;
+				showtoolbar_menuitem.Active = false;
+
+			toolbar_orientation_menuitem.Sensitive = toolbar.Visible;
+
+			// Check default radio button
+			switch (toolbar.Orientation) {
+			case Gtk.Orientation.Vertical:
+				vertical_radiomenuitem.Active = true;
+				break;
+			case Gtk.Orientation.Horizontal:
+				horizontal_radiomenuitem.Active = true;
+				break;
+			default:
+				throw new InvalidOperationException ();
+			}
 
 		#if MONO_ADDINS
 			extensions_menuitem.Activated += delegate (object sender, EventArgs ar) { Mono.Addins.Gui.AddinManagerWindow.Run (app_window);};
@@ -208,38 +278,6 @@ namespace gbrainy.Clients.Classical
 			drawing_area.QueueDraw ();
 		}
 
-		void OnDrawingAreaExposeEvent (object o, ExposeEventArgs ar)
-		{
-			Gdk.EventExpose args = ar.Event;
-
-			int w, h;
-			args.Window.GetSize (out w, out h);
-
-			Cairo.Context cc = Gdk.CairoHelper.Create (args.Window);
-			CairoContextEx cr = new CairoContextEx (cc.Handle, drawing_area);
-
-			// We want a square drawing area for the puzzles then the figures are shown as designed.
-			// For example, squares are squares. This also makes sure that proportions are kept when resizing
-			drawing_square = Math.Min (w, h);
-
-			if (drawing_square < w)
-				offset_x = (w - drawing_square) / 2;
-
-			if (drawing_square < h)
-				offset_y = (h - drawing_square) / 2;
-
-			if (margins)
-				SetMargin ((int) offset_x);
-			else
-				SetMargin (2);
-
-			cr.Translate (offset_x, offset_y);
-			session.Draw (cr, drawing_square, drawing_square, drawing_area.Direction == Gtk.TextDirection.Rtl);
-
-			((IDisposable)cc).Dispose();
-			((IDisposable)cr).Dispose();
-		}
-
 		void OnMouseMotionEvent (object o, MotionNotifyEventArgs ev_args)
 		{
 			SendMouseEvent (ev_args.Event.X, ev_args.Event.Y, MouseEventType.Move);
@@ -256,9 +294,10 @@ namespace gbrainy.Clients.Classical
 		void SendMouseEvent (double ev_x, double ev_y, MouseEventType type)
 		{
 			double x, y;
+			int drawing_square = drawing_area.DrawingSquare;
 
-			x = ev_x - offset_x;
-			y = ev_y - offset_y;
+			x = ev_x - drawing_area.OffsetX;
+			y = ev_y - drawing_area.OffsetY;
 
 			if (x < 0 || y < 0 || x > drawing_square || y > drawing_square)
 				return;
@@ -323,7 +362,7 @@ namespace gbrainy.Clients.Classical
 
 		public void UpdateQuestion (string question)
 		{
-			question_label.Text = question;
+			drawing_area.Question = question;
 		}
 
 		public void QueueDraw ()
@@ -331,15 +370,10 @@ namespace gbrainy.Clients.Classical
 			drawing_area.QueueDraw ();
 		}
 
-		public void SetMargin (int margin)
-		{
-			question_label.WidthMargin = margin;
-			solution_label.WidthMargin = margin;
-		}
-
 		void UpdateSolution (string solution)
 		{
-			solution_label.Text = solution;
+			drawing_area.Solution = solution;
+			QueueDraw ();
 		}
 
 		void BuildToolBar ()
@@ -630,10 +664,12 @@ namespace gbrainy.Clients.Classical
 		void SetPauseResumeButtonUI (bool pause)
 		{
 			if (pause) {
+				drawing_area.Paused = false;
 				pause_tbbutton.StockId = "pause";
 				pause_tbbutton.Label = Catalog.GetString ("Pause");
 				ActiveInputControls (true);
 			} else {
+				drawing_area.Paused = true;	
 				pause_tbbutton.StockId = "resume";
 				pause_tbbutton.Label = Catalog.GetString ("Resume");
 				ActiveInputControls (false);
@@ -657,21 +693,43 @@ namespace gbrainy.Clients.Classical
 			SetPauseResumeButton (session.Paused);
 		}
 
-		private void OnToolbarActivate (object sender, System.EventArgs args)
+		void OnActivateToolbar (object sender, System.EventArgs args)
 		{
 			int width, height;
 			Requisition requisition;
 
-			requisition =  toolbar.SizeRequest ();
+			requisition = toolbar.SizeRequest ();
 			app_window.GetSize (out width, out height);
 			toolbar.Visible = !toolbar.Visible;
 
 			if (toolbar.Visible)
 				toolbar.ShowArrow = false;
 
-			Preferences.SetBoolValue (Preferences.ToolbarKey, toolbar.Visible);
+			toolbar_orientation_menuitem.Sensitive = toolbar.Visible;
+
+			Preferences.SetBoolValue (Preferences.ToolbarShowKey, toolbar.Visible);
 			Preferences.Save ();
 			app_window.Resize (width, height - requisition.Height);
+		}
+
+		void OnVerticalToolbar (object sender, System.EventArgs args)
+		{
+			if (init_completed  == false)
+				return;
+
+			Preferences.SetIntValue (Preferences.ToolbarOrientationKey, (int) Gtk.Orientation.Vertical);
+			Preferences.Save ();
+			AttachToolBar ();
+		}
+
+		void OnHorizontalToolbar (object sender, System.EventArgs args)
+		{
+			if (init_completed  == false)
+				return;
+
+			Preferences.SetIntValue (Preferences.ToolbarOrientationKey, (int) Gtk.Orientation.Horizontal);
+			Preferences.Save ();
+			AttachToolBar ();
 		}
 
 		void OnHistory (object sender, EventArgs args)
@@ -701,11 +759,9 @@ namespace gbrainy.Clients.Classical
 		void OnFullscreen (object sender, EventArgs args)
 		{
 			if (full_screen == false) {
-				margins = true;
 				app_window.Fullscreen ();
 			}
 			else {
-				margins = false;
 				app_window.Unfullscreen ();
 			}
 
@@ -715,6 +771,18 @@ namespace gbrainy.Clients.Classical
 		void OnExtending (object sender, EventArgs args)
 		{
 			Process.Start ("http://live.gnome.org/gbrainy/Extending");
+		}
+
+		static void InitCoreLibraries ()
+		{
+			// Register services
+			ServiceLocator.Instance.RegisterService <ITranslations> (new TranslationsCatalog ());
+			ServiceLocator.Instance.RegisterService <IConfiguration> (new MemoryConfiguration ());
+			
+			// Configuration
+			ServiceLocator.Instance.GetService <IConfiguration> ().Set (ConfigurationKeys.GamesDefinitions, Defines.DATA_DIR);
+			ServiceLocator.Instance.GetService <IConfiguration> ().Set (ConfigurationKeys.GamesGraphics, Defines.DATA_DIR);
+			ServiceLocator.Instance.GetService <IConfiguration> ().Set (ConfigurationKeys.ThemesDir, Defines.DATA_DIR);
 		}
 
 		public static void Main (string [] args)
@@ -729,6 +797,8 @@ namespace gbrainy.Clients.Classical
 
 			DateTime start_time = DateTime.Now;
 
+			InitCoreLibraries ();
+			
 			GtkClient app = new GtkClient ();
 			CommandLine.Version ();
 
@@ -748,10 +818,10 @@ namespace gbrainy.Clients.Classical
 			}
 			app.Session.GameManager.RandomOrder = line.RandomOrder;
 			app.ProcessDefaults ();
+			ThemeManager.Load ();
 
 			TimeSpan span = DateTime.Now - start_time;
 			Console.WriteLine (Catalog.GetString ("Startup time {0}"), span);
-
 #if GNOME
 			app.Run ();
 #else

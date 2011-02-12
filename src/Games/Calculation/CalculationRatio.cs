@@ -18,9 +18,9 @@
  */
 
 using System;
-using Mono.Unix;
 
 using gbrainy.Core.Main;
+using gbrainy.Core.Services;
 
 namespace gbrainy.Games.Calculation
 {
@@ -29,7 +29,7 @@ namespace gbrainy.Games.Calculation
 		int number_a, number_b, ratio_a, ratio_b;
 
 		public override string Name {
-			get {return Catalog.GetString ("Ratio");}
+			get {return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Ratio");}
 		}
 
 		public override GameTypes Type {
@@ -39,20 +39,20 @@ namespace gbrainy.Games.Calculation
 		public override string Question {
 			get {
 				return String.Format (
-					Catalog.GetString ("Two numbers sum {0} and have a ratio of {1} to {2}. Which are these numbers? Answer using two numbers (e.g.: 1 and 2)."), 
+					ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Two numbers sum {0} and have a ratio of {1} to {2}. Which are these numbers? Answer using two numbers (e.g.: 1 and 2)."), 
 					number_a + number_b, ratio_a, ratio_b);
 			}
 		}
 
 		public override string Rationale {
 			get {
-				return String.Format (Catalog.GetString ("The second number is calculated by multiplying the first by {0} and dividing it by {1}."),
+				return String.Format (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("The second number is calculated by multiplying the first by {0} and dividing it by {1}."),
 					ratio_a, ratio_b);
 			}
 		}
 
 		public override string Tip {
-			get { return Catalog.GetString ("A ratio specifies a proportion between two numbers. A ratio a:b means that for every 'a' parts you have 'b' parts.");}
+			get { return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("A ratio specifies a proportion between two numbers. A ratio a:b means that for every 'a' parts you have 'b' parts.");}
 		}
 
 		public override GameAnswerCheckAttributes CheckAttributes {
@@ -64,7 +64,7 @@ namespace gbrainy.Games.Calculation
 		}
 
 		public override string AnswerValue {
-			get { return String.Format (Catalog.GetString ("{0} and {1}"), number_a, number_b); }
+			get { return String.Format (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("{0} and {1}"), number_a, number_b); }
 		}
 
 		protected override void Initialize ()
@@ -105,10 +105,10 @@ namespace gbrainy.Games.Calculation
 			gr.SetPangoLargeFontSize ();
 
 			gr.MoveTo (x, DrawAreaY + 0.22);
-			gr.ShowPangoText (String.Format (Catalog.GetString ("x + y = {0}"), number_a + number_b));
+			gr.ShowPangoText (String.Format (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("x + y = {0}"), number_a + number_b));
 		
 			gr.MoveTo (x, DrawAreaY + 0.44);
-			gr.ShowPangoText (String.Format (Catalog.GetString ("have a ratio of {0}:{1}"), ratio_a, ratio_b));
+			gr.ShowPangoText (String.Format (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("have a ratio of {0}:{1}"), ratio_a, ratio_b));
 		}
 	}
 }

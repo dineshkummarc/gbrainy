@@ -18,10 +18,10 @@
  */
 
 using System;
-using Mono.Unix;
 
 using gbrainy.Core.Main;
 using gbrainy.Core.Toolkit;
+using gbrainy.Core.Services;
 
 namespace gbrainy.Games.Calculation
 {
@@ -34,7 +34,7 @@ namespace gbrainy.Games.Calculation
 		private int answer_idx;
 
 		public override string Name {
-			get {return Catalog.GetString ("Greatest divisor");}
+			get {return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Greatest divisor");}
 		}
 
 		public override GameTypes Type {
@@ -42,7 +42,7 @@ namespace gbrainy.Games.Calculation
 		}
 
 		public override string Question {
-			get { return String.Format (Catalog.GetString (
+			get { return String.Format (ServiceLocator.Instance.GetService <ITranslations> ().GetString (
 				"Which of the possible divisors is the greatest that divides all numbers? Answer {0}, {1}, {2} or {3}."),
 				GetPossibleAnswer (0), GetPossibleAnswer (1), GetPossibleAnswer (2), GetPossibleAnswer (3));
 			}
@@ -149,7 +149,7 @@ namespace gbrainy.Games.Calculation
 					int d = (int) e.Data;
 					e.Context.SetPangoLargeFontSize ();
 					e.Context.MoveTo (0.07, 0.02);
-					e.Context.ShowPangoText (String.Format (Catalog.GetString ("{0}) {1}"), GetPossibleAnswer (d),
+					e.Context.ShowPangoText (String.Format (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("{0}) {1}"), GetPossibleAnswer (d),
 						answers[d].ToString ()));
 				};
 			}
@@ -240,7 +240,7 @@ namespace gbrainy.Games.Calculation
 
 			gr.MoveTo (0.05, y);
 			gr.SetPangoLargeFontSize ();
-			gr.ShowPangoText (Catalog.GetString ("Numbers"));
+			gr.ShowPangoText (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Numbers"));
 			y += 0.08;
 
 			for (int n = 0; n < numbers.Length; n++)
@@ -254,7 +254,7 @@ namespace gbrainy.Games.Calculation
 			y += 0.16;
 
 			gr.MoveTo (0.05, y);
-			gr.ShowPangoText (Catalog.GetString ("Possible divisors"));
+			gr.ShowPangoText (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Possible divisors"));
 		}
 
 		public override bool CheckAnswer (string answer)

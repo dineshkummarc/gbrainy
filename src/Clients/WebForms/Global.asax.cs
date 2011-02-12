@@ -7,14 +7,27 @@ using System.Collections.Generic;
 using System.Web;
 using System.Web.SessionState;
 
-namespace WebForms
+using gbrainy.Core.Services;
+using gbrainy.Core.Main;
+
+namespace gbrainy.Clients.WebForms
 {
 	public class Global : System.Web.HttpApplication
 	{
+		// Application counters
+		static public int TotalSessions { get; set; }
+		static public int TotalGamesSessions { get; set; }
+		static public int TotalGames { get; set; }
+		static public int TotalTimeSeconds { get; set; }
+		static public DateTime Started { get; set; }
+		
+		
 		static public Dictionary <string, WebSession> Sessions = new Dictionary <string, WebSession> ();
 
 		protected virtual void Application_Start (Object sender, EventArgs e)
 		{
+			 Started = DateTime.Now;
+			
 			// Init log system
 			if (String.Compare (Environment.GetEnvironmentVariable ("GBRAINY_DEBUG"), "false", false) != 0)
 			{
@@ -25,6 +38,10 @@ namespace WebForms
 				Logger.LogLevel = Level.INFO;
 				Logger.LogDevice = new ConsoleLogger ();
 			}
+			
+			// Setup core services
+			ServiceLocator.Instance.RegisterService <ITranslations> (new TranslationsWeb ());
+			ThemeManager.ConfigPath = Defines.THEMES_DIR;
 
 			Logger.Info ("Global.Application_Start.gbrainy web starting");
 		}
@@ -41,6 +58,7 @@ namespace WebForms
 			}
 			else
 			{
+				TotalSessions++;
 				Sessions.Add (Session.SessionID, details);
 			}
 		}

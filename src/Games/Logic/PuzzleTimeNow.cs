@@ -17,10 +17,10 @@
  * Boston, MA 02111-1307, USA.
  */
 
-using Mono.Unix;
 using System;
 
 using gbrainy.Core.Main;
+using gbrainy.Core.Services;
 
 namespace gbrainy.Games.Logic
 {
@@ -31,7 +31,7 @@ namespace gbrainy.Games.Logic
 		DateTime position_a, position_b, ans;
 
 		public override string Name {
-			get {return Catalog.GetString ("Time now");}
+			get {return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Time now");}
 		}
 
 		public override string Question {
@@ -41,13 +41,13 @@ namespace gbrainy.Games.Logic
 				// http://msdn.microsoft.com/en-us/library/system.globalization.datetimeformatinfo.aspx
 				// For 12-hour clock format use {0:%h} and for 24-hour clock format use {0:%H}. The date formats {0:h} and {0:H} are invalid.
 				//
-				Catalog.GetString ("{0} hours ago it was as long after {1:h tt} as it was before {2:h tt} on the same day. What is the time now? Answer using the hour (e.g.: {3:h tt})"),
+				ServiceLocator.Instance.GetService <ITranslations> ().GetString ("{0} hours ago it was as long after {1:h tt} as it was before {2:h tt} on the same day. What is the time now? Answer using the hour (e.g.: {3:h tt})"),
 				after, position_a, position_b, position_b));}
 		}
 
 		public override string Rationale {
 			get {
-				return String.Format (Catalog.GetString ("You have to calculate the hour from which the distance is the same for the given times, and then add the {0} hours to convert it to present time."), after);
+				return String.Format (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("You have to calculate the hour from which the distance is the same for the given times, and then add the {0} hours to convert it to present time."), after);
 			}
 		}
 
@@ -73,7 +73,7 @@ namespace gbrainy.Games.Logic
  			// Explanation of the date and time format specifications can be found here:
 			// http://msdn.microsoft.com/en-us/library/system.globalization.datetimeformatinfo.aspx
 			// For 12-hour clock format use {0:%h} and for 24-hour clock format use {0:%H}. The date formats {0:h} and {0:H} are invalid.
-			right_answer = String.Format (Catalog.GetString ("{0:h tt}"), ans);
+			right_answer = String.Format (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("{0:h tt}"), ans);
 		}
 
 		public override void Draw (CairoContextEx gr, int area_width, int area_height, bool rtl)
@@ -82,7 +82,7 @@ namespace gbrainy.Games.Logic
 			gr.DrawClock (DrawAreaX + 0.4, DrawAreaY + 0.4, figure_size,
 				0, 0 /* No hands */);
 
-			gr.DrawTextCentered (0.5, DrawAreaY + 0.3 + figure_size, Catalog.GetString ("Sample clock"));
+			gr.DrawTextCentered (0.5, DrawAreaY + 0.3 + figure_size, ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Sample clock"));
 		}
 	}
 }

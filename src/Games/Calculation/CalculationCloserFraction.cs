@@ -18,10 +18,10 @@
  */
 
 using System;
-using Mono.Unix;
 
 using gbrainy.Core.Main;
 using gbrainy.Core.Toolkit;
+using gbrainy.Core.Services;
 
 namespace gbrainy.Games.Calculation
 {
@@ -34,7 +34,7 @@ namespace gbrainy.Games.Calculation
 		private int which;
 
 		public override string Name {
-			get {return Catalog.GetString ("Closer fraction");}
+			get {return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Closer fraction");}
 		}
 
 		public override GameTypes Type {
@@ -43,7 +43,7 @@ namespace gbrainy.Games.Calculation
 
 		public override string Question {
 			get {return String.Format (
-				Catalog.GetString ("Which of the following numbers is closer to {0:##0.###}? Answer {1}, {2}, {3} or {4}."), question_num,
+				ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Which of the following numbers is closer to {0:##0.###}? Answer {1}, {2}, {3} or {4}."), question_num,
 				GetPossibleAnswer (0), GetPossibleAnswer (1), GetPossibleAnswer (2), GetPossibleAnswer (3));}
 		}
 
@@ -51,7 +51,7 @@ namespace gbrainy.Games.Calculation
 			get {
 				int ans_idx = random_indices[which];
 
-				return String.Format (Catalog.GetString ("The result of the operation {0} / {1} is {2:##0.###}"), 
+				return String.Format (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("The result of the operation {0} / {1} is {2:##0.###}"), 
 					options[ans_idx * 2], options[(ans_idx * 2) + 1], question_num);
 			}
 		}
@@ -158,7 +158,7 @@ namespace gbrainy.Games.Calculation
 
 					e.Context.SetPangoLargeFontSize ();
 					e.Context.MoveTo (0.02, 0.02);
-					e.Context.ShowPangoText (String.Format (Catalog.GetString ("{0}) {1}"), GetPossibleAnswer (n) , 
+					e.Context.ShowPangoText (String.Format (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("{0}) {1}"), GetPossibleAnswer (n) , 
 						options [indx * 2] +  " / " + options [(indx  * 2) +1]));
 				};
 			}

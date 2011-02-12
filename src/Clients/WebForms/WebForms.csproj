@@ -31,44 +31,18 @@
     <Reference Include="System" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Extensions" />
-    <Reference Include="Mono.Cairo" />
     <Reference Include="Mono.Posix" />
+    <Reference Include="Mono.Cairo, Version=2.0.0.0, Culture=neutral, PublicKeyToken=0738eb9f132ed756" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="web.config" />
     <Content Include="Default.aspx" />
     <Content Include="Download.aspx" />
-    <Content Include="images\allgames-32.png" />
-    <Content Include="images\endgame-32.png" />
-    <Content Include="images\logic-games-32.png" />
-    <Content Include="images\math-games-32.png" />
-    <Content Include="images\memory-games-32.png" />
-    <Content Include="images\pause-32.png" />
-    <Content Include="images\resume-32.png" />
-    <Content Include="images\verbal-games-32.png" />
     <Content Include="MasterPage.master" />
     <Content Include="styles.css" />
     <Content Include="Status.aspx" />
     <Content Include="Global.asax" />
     <Content Include="Game.aspx" />
-    <Content Include="..\..\..\po\ca.gmo">
-      <Link>locale\ca.gmo</Link>
-      <DeployService-Deploy>true</DeployService-Deploy>
-      <DeployService-RelativeDeployPath>../locale/ca/LC_MESSAGES/gbrainy.mo</DeployService-RelativeDeployPath>
-      <DeployService-TargetDirectoryId>ProgramFiles</DeployService-TargetDirectoryId>
-    </Content>
-    <Content Include="..\..\..\po\de.gmo">
-      <Link>locale\de.gmo</Link>
-      <DeployService-Deploy>true</DeployService-Deploy>
-      <DeployService-RelativeDeployPath>../locale/de/LC_MESSAGES/gbrainy.mo</DeployService-RelativeDeployPath>
-      <DeployService-TargetDirectoryId>ProgramFiles</DeployService-TargetDirectoryId>
-    </Content>
-    <Content Include="..\..\..\po\es.gmo">
-      <Link>locale\es.gmo</Link>
-      <DeployService-Deploy>true</DeployService-Deploy>
-      <DeployService-RelativeDeployPath>../locale/es/LC_MESSAGES/gbrainy.mo</DeployService-RelativeDeployPath>
-      <DeployService-TargetDirectoryId>ProgramFiles</DeployService-TargetDirectoryId>
-    </Content>
     <Content Include="..\..\..\data\verbal_analogies.xml">
       <Link>data\verbal_analogies.xml</Link>
     </Content>
@@ -110,6 +84,8 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="WebSession.cs" />
+    <Compile Include="TranslationsWeb.cs" />
+    <Compile Include="Defines.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v8.0\WebApplications\Microsoft.WebApplication.targets" />
@@ -126,8 +102,6 @@
     </MonoDevelop>
   </ProjectExtensions>
   <ItemGroup>
-    <Folder Include="images\" />
-    <Folder Include="locale\" />
     <Folder Include="data\" />
   </ItemGroup>
   <ItemGroup>

@@ -17,10 +17,10 @@
  * Boston, MA 02111-1307, USA.
  */
 
-using Mono.Unix;
 using System;
 
 using gbrainy.Core.Main;
+using gbrainy.Core.Services;
 
 namespace gbrainy.Games.Logic
 {
@@ -30,16 +30,16 @@ namespace gbrainy.Games.Logic
 		private string formula;
 
 		public override string Name {
-			get {return Catalog.GetString ("Equation");}
+			get {return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Equation");}
 		}
 
 		public override string Question {
-			get {return Catalog.GetString ("What is the result of the equation below?");} 
+			get {return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("What is the result of the equation below?");} 
 		}
 
 		public override string Rationale {
 			get {
-				return Catalog.GetString ("The order of arithmetical operations is always as follows: exponents and roots, multiplication and division, addition and subtraction.");
+				return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("The order of arithmetical operations is always as follows: exponents and roots, multiplication and division, addition and subtraction.");
 			}
 		}
 

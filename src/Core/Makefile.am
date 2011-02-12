@@ -1,4 +1,4 @@
-CSFLAGS = -unsafe -target:library $(CSC_DEFINES) 
+CSFLAGS = -unsafe -target:library $(CSC_DEFINES)
 
 #Active when designing games
 #CSFLAGS += -D:DESIGN_MODE
@@ -31,11 +31,13 @@ CSDISTFILES =  \
 		$(srcdir)/Main/Xml/OptionDrawingObject.cs \
 		$(srcdir)/Main/Xml/TextDrawingObject.cs	\
 		$(srcdir)/Main/Memory.cs		\
-		$(srcdir)/Main/PdfExporter.cs		\		
+		$(srcdir)/Main/PdfExporter.cs		\
 		$(srcdir)/Main/PlayerHistory.cs		\
 		$(srcdir)/Main/PlayerPersonalRecord.cs	\
 		$(srcdir)/Main/Preferences.cs		\
 		$(srcdir)/Main/Score.cs			\
+		$(srcdir)/Main/Theme.cs			\
+		$(srcdir)/Main/ThemeManager.cs		\
 		$(srcdir)/Main/UpdateUIStateEventArgs.cs \
 		$(srcdir)/Main/Verbal/Analogies.cs 	\
 		$(srcdir)/Main/Verbal/AnalogiesFactory.cs	\
@@ -60,14 +62,19 @@ CSDISTFILES =  \
 		$(srcdir)/Platform/Unix.cs		\
 		$(srcdir)/Libraries/CairoContext.cs	\
 		$(srcdir)/Libraries/GetText.cs		\
-		$(srcdir)/Libraries/SVGImage.cs
+		$(srcdir)/Libraries/SVGImage.cs		\
+		$(srcdir)/Services/IService.cs		\
+		$(srcdir)/Services/ServiceLocator.cs	\
+		$(srcdir)/Services/ITranslations.cs	\
+		$(srcdir)/Libraries/TranslationsCatalog.cs \
+		$(srcdir)/Services/IConfiguration.cs	\
+		$(srcdir)/Services/MemoryConfiguration.cs
 
 CSFILES = $(CSDISTFILES)	\
 	Main/Defines.cs	\
-	AssemblyInfo.cs	
+	AssemblyInfo.cs
 
 RES = \
-$(top_srcdir)/data/app-graphics/background.svg  	\
 $(top_srcdir)/data/app-graphics/logic-games.svg		\
 $(top_srcdir)/data/app-graphics/math-games.svg		\
 $(top_srcdir)/data/app-graphics/memory-games.svg	\

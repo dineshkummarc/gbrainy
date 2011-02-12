@@ -18,9 +18,9 @@
  */
 
 using System;
-using Mono.Unix;
 
 using gbrainy.Core.Main;
+using gbrainy.Core.Services;
 
 namespace gbrainy.Games.Calculation
 {
@@ -57,7 +57,7 @@ namespace gbrainy.Games.Calculation
 		private const string format_string = "{0:##0.###}";
 
 		public override string Name {
-			get {return Catalog.GetString ("Fractions");}
+			get {return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Fractions");}
 		}
 
 		public override GameTypes Type {
@@ -65,7 +65,7 @@ namespace gbrainy.Games.Calculation
 		}
 
 		public override string Question {
-			get {return Catalog.GetString ("What is the result of the given operation? Answer using either a fraction or a number.");} 
+			get {return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("What is the result of the given operation? Answer using either a fraction or a number.");} 
 		}
 
 		private int Factor {

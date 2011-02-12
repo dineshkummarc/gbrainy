@@ -18,11 +18,11 @@
  */
 
 using Cairo;
-using Mono.Unix;
 using System;
 
 using gbrainy.Core.Main;
 using gbrainy.Core.Toolkit;
+using gbrainy.Core.Services;
 
 namespace gbrainy.Games.Logic
 {
@@ -50,19 +50,19 @@ namespace gbrainy.Games.Logic
 		};
 
 		public override string Name {
-			get {return Catalog.GetString ("Next figure");}
+			get {return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Next figure");}
 		}
 
 		public override string Question {
 			get {return String.Format (
-				Catalog.GetString ("Which is the next logical figure in the sequence? Answer {0}, {1} or {2}."),
+				ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Which is the next logical figure in the sequence? Answer {0}, {1} or {2}."),
 				GetPossibleAnswer (0), GetPossibleAnswer (1), GetPossibleAnswer (2));} 
 		}
 
 
 		public override string Rationale {
 			get {
-				return Catalog.GetString ("From first figure, the top circle advances by two positions clockwise, while the left circle goes backwards one position.");
+				return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("From first figure, the top circle advances by two positions clockwise, while the left circle goes backwards one position.");
 			}
 		}
 
@@ -162,7 +162,7 @@ namespace gbrainy.Games.Logic
 		
 			y += figure_size + 0.06;
 			gr.MoveTo (x, y);
-			gr.ShowPangoText (Catalog.GetString ("Possible answers are:"));
+			gr.ShowPangoText (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Possible answers are:"));
 			gr.Stroke ();
 		}
 	}

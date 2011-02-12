@@ -18,9 +18,9 @@
  */
 
 using System;
-using Mono.Unix;
 
 using gbrainy.Core.Main;
+using gbrainy.Core.Services;
 
 namespace gbrainy.Games.Calculation
 {
@@ -39,7 +39,7 @@ namespace gbrainy.Games.Calculation
 		};
 
 		public override string Name {
-			get {return Catalog.GetString ("Two numbers");}
+			get {return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Two numbers");}
 		}
 
 		public override GameTypes Type {
@@ -50,9 +50,9 @@ namespace gbrainy.Games.Calculation
 			get {
 				switch (type) {
 				case SubGameTypes.Addition:
-					return String.Format (Catalog.GetString ("Which two numbers when added are {0} and when multiplied are {1}? Answer using two numbers (e.g.: 1 and 2)."), op1, op2);
+					return String.Format (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Which two numbers when added are {0} and when multiplied are {1}? Answer using two numbers (e.g.: 1 and 2)."), op1, op2);
 				case SubGameTypes.Subtraction:
-					return String.Format (Catalog.GetString ("Which two numbers when subtracted are {0} and when multiplied are {1}? Answer using two numbers (e.g.: 1 and 2)."), op1, op2);
+					return String.Format (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Which two numbers when subtracted are {0} and when multiplied are {1}? Answer using two numbers (e.g.: 1 and 2)."), op1, op2);
 				default:
 					throw new InvalidOperationException ();
 				}
@@ -68,7 +68,7 @@ namespace gbrainy.Games.Calculation
 		}
 
 		public override string AnswerValue {
-			get { return String.Format (Catalog.GetString ("{0} and {1}"), number_a, number_b); }
+			get { return String.Format (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("{0} and {1}"), number_a, number_b); }
 		}
 
 		protected override void Initialize ()
@@ -123,17 +123,17 @@ namespace gbrainy.Games.Calculation
 
 			switch (type) {
 			case SubGameTypes.Addition:
-				gr.ShowPangoText (String.Format (Catalog.GetString ("x + y = {0}"), op1));
+				gr.ShowPangoText (String.Format (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("x + y = {0}"), op1));
 				break;
 			case SubGameTypes.Subtraction:
-				gr.ShowPangoText (String.Format (Catalog.GetString ("x - y = {0}"), op1));
+				gr.ShowPangoText (String.Format (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("x - y = {0}"), op1));
 				break;
 			default:
 				throw new InvalidOperationException ();
 			}
 
 			gr.MoveTo (x, DrawAreaY + 0.44);
-			gr.ShowPangoText (String.Format (Catalog.GetString ("x * y = {0}"), op2));
+			gr.ShowPangoText (String.Format (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("x * y = {0}"), op2));
 		}
 
 		public override bool CheckAnswer (string answer)

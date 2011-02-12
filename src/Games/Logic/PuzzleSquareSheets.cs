@@ -17,30 +17,29 @@
  * Boston, MA 02111-1307, USA.
  */
 
-using Mono.Unix;
-
 using gbrainy.Core.Main;
+using gbrainy.Core.Services;
 
 namespace gbrainy.Games.Logic
 {
 	public class PuzzleSquareSheets : Game
 	{
 		public override string Name {
-			get {return Catalog.GetString ("Square sheets");}
+			get {return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Square sheets");}
 		}
 
 		public override string Question {
-			get {return Catalog.GetString ("What is the minimum number of square sheets of paper of any size required to create the figure? Lines indicate frontiers between different sheets.");} 
+			get {return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("What is the minimum number of square sheets of paper of any size required to create the figure? Lines indicate frontiers between different sheets.");} 
 		}
 
 		public override string Tip {
-			get { return Catalog.GetString ("The sheets should overlap.");}
+			get { return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("The sheets should overlap.");}
 		}
 
 		public override string Rationale {
 			get {
 				// Translators: the translated version should not take more characters that the English original
-				return Catalog.GetString ("A full sized square of paper, a 3/4 of the whole size square of paper in the bottom right corner, another 3/4 square of paper in the top left corner and a 1/4 square of paper in the top left corner.");
+				return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("A full sized square of paper, a 3/4 of the whole size square of paper in the bottom right corner, another 3/4 square of paper in the top left corner and a 1/4 square of paper in the top left corner.");
 			}
 		}
 

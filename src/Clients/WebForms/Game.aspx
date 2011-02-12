@@ -1,4 +1,4 @@
-<%@ Page Language="C#" MasterPageFile = "MasterPage.master" Inherits="WebForms.Game" %>
+<%@ Page Language="C#" MasterPageFile = "MasterPage.master" Inherits="gbrainy.Clients.WebForms.Game" %>
 
 <asp:content id="main_content" ContentPlaceHolderID ="main_placeholder" runat="server">
 
@@ -35,7 +35,7 @@
 -->
 	<tr>
 		<td align = "center">
-			<asp:ImageButton ImageUrl = "images/endgame-32.png" OnClick="OnClickEndGame" runat="server"></asp:ImageButton>
+			<asp:ImageButton ImageUrl = "images/endgame-32.png" id = "endgames_button" OnClick="OnClickEndGame" runat="server"></asp:ImageButton>
 			<div>
 				<asp:Label id="endgames_label" runat="server"/>
 			</div>
@@ -54,17 +54,16 @@
 		</tr>
 		<tr>
 			<td>
-				 <asp:Image id="image" runat="server" />
+				 <asp:Image id="game_image" runat="server" />
 			</td>
 		</tr>
 		<tr>
 			<td>
-				<asp:TextBox id = "answer_textbox" AutoCompleteType="None" EnableViewState="true" runat="server"></asp:TextBox>
+				<asp:TextBox id = "answer_textbox" AutoCompleteType="Disabled" EnableViewState="true" runat="server"></asp:TextBox>
 				<asp:Button id = "answer_button" Text = "Answer" OnClick ="OnClickAnswer" runat="server"></asp:Button>
+				<asp:Button id = "nextgame_link" OnClick ="OnClickNextGame" runat="server" />				
 				<asp:Label id="result_label" runat="server"></asp:Label>
 				<asp:Label id="rationale_label" runat="server"></asp:Label>
-
-				<asp:LinkButton id="nextgame_link" OnClick ="OnClickNextGame" runat="server" />				
 			</td>
 		</tr>
 

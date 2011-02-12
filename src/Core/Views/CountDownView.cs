@@ -20,11 +20,11 @@
 
 using System;
 using Cairo;
-using Mono.Unix;
 using System.Timers;
 using System.ComponentModel;
 
 using gbrainy.Core.Main;
+using gbrainy.Core.Services;
 
 namespace gbrainy.Core.Views
 {
@@ -78,7 +78,7 @@ namespace gbrainy.Core.Views
 			gr.Color = new Cairo.Color (0, 0, 0, 1);
 
 			gr.SetPangoLargeFontSize ();
-			gr.DrawTextCentered (0.5, 0.1, Catalog.GetString ("Get ready to memorize the next objects..."));
+			gr.DrawTextCentered (0.5, 0.1, ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Get ready to memorize the next objects..."));
 			gr.Stroke ();
 
 			gr.SetPangoFontSize (0.35);

@@ -33,9 +33,8 @@ namespace gbrainy.Core.Libraries
 	{
 		Pango.Layout layout;
 		double font_size;
-
+		const double def_linespace = 0.018;
 		const double width_margin = 0.04;
-		const double line_spacing = 0.018;
 
 		public CairoContext (IntPtr state, Gtk.Widget widget) : base (state)
 		{
@@ -44,6 +43,7 @@ namespace gbrainy.Core.Libraries
 			// We do not honor DPI settings or font sizes (just font name)
 			// User should resize the window
 			layout.FontDescription = widget.PangoContext.FontDescription.Copy ();
+			FontLineSpace = def_linespace;
 		}
 
 		// Used by GeneratePDF
@@ -57,7 +57,19 @@ namespace gbrainy.Core.Libraries
 				Pango.CairoHelper.ContextSetResolution (c, dpis);
 				c.Dispose ();
 			}
+			FontLineSpace = def_linespace;
 		}
+
+		new public string FontFace {
+			set {
+				if (String.IsNullOrEmpty (value) == true)
+					return;
+
+				layout.FontDescription = Pango.FontDescription.FromString (value);
+			}
+		}
+
+		public double FontLineSpace { get; set; }
 
 		// True if we want Pango to process XML entites and formatting attributes
 		public bool UseMarkup  { get; set; }
@@ -198,7 +210,7 @@ namespace gbrainy.Core.Libraries
 
 			spacing = layout.Spacing;
 			layout.Width = (int) (max_width * old.Xx * Pango.Scale.PangoScale);
-			layout.Spacing = (int) (line_spacing * (old.Yy * Pango.Scale.PangoScale));
+			layout.Spacing = (int) (FontLineSpace * (old.Yy * Pango.Scale.PangoScale));
 
 			layout.SingleParagraphMode = false;
 			SetText (str);
@@ -222,7 +234,7 @@ namespace gbrainy.Core.Libraries
 
 			spacing = layout.Spacing;
 			layout.Width = (int) (max_width * old.Xx * Pango.Scale.PangoScale);
-			layout.Spacing = (int) (line_spacing * (old.Xx * Pango.Scale.PangoScale));
+			layout.Spacing = (int) (FontLineSpace * (old.Xx * Pango.Scale.PangoScale));
 
 			layout.SingleParagraphMode = !wrapping;
 			SetText (str);

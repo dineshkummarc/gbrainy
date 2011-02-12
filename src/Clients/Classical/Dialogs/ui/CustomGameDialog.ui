@@ -1,33 +1,28 @@
-<?xml version="1.0"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <interface>
   <!-- interface-requires gtk+ 2.12 -->
   <!-- interface-naming-policy toplevel-contextual -->
   <object class="GtkDialog" id="customgame">
-    <property name="width_request">750</property>
-    <property name="height_request">480</property>
+    <property name="width_request">840</property>
+    <property name="height_request">550</property>
     <property name="visible">True</property>
     <property name="border_width">7</property>
     <property name="title" translatable="yes">Custom Game</property>
-    <property name="default_width">470</property>
-    <property name="default_height">280</property>
     <property name="type_hint">dialog</property>
-    <property name="has_separator">False</property>
     <child internal-child="vbox">
       <object class="GtkVBox" id="dialog-vbox2">
         <property name="visible">True</property>
-        <property name="orientation">vertical</property>
         <child>
-          <object class="GtkHBox" id="hbox8">
+          <object class="GtkHBox" id="all_hbox">
             <property name="visible">True</property>
             <property name="border_width">5</property>
             <property name="spacing">12</property>
             <child>
-              <object class="GtkVBox" id="vbox8">
+              <object class="GtkVBox" id="gamelist_container">
                 <property name="visible">True</property>
-                <property name="orientation">vertical</property>
                 <child>
-                  <object class="GtkScrolledWindow" id="scrolledwindow1">
-                    <property name="width_request">400</property>
+                  <object class="GtkScrolledWindow" id="tree_scrolledwindow">
+                    <property name="width_request">360</property>
                     <property name="visible">True</property>
                     <property name="can_focus">True</property>
                     <property name="hscrollbar_policy">automatic</property>
@@ -45,7 +40,7 @@
                   </packing>
                 </child>
                 <child>
-                  <object class="GtkHButtonBox" id="hbuttonbox1">
+                  <object class="GtkHButtonBox" id="selection_hbuttonbox">
                     <property name="height_request">35</property>
                     <property name="visible">True</property>
                     <child>
@@ -93,33 +88,10 @@
               </packing>
             </child>
             <child>
-              <object class="GtkVBox" id="puzzle_vbox">
+              <object class="GtkVBox" id="preview_vbox">
                 <property name="visible">True</property>
-                <property name="orientation">vertical</property>
                 <child>
-                  <object class="GtkVBox" id="question_vbox">
-                    <property name="height_request">60</property>
-                    <property name="visible">True</property>
-                    <property name="orientation">vertical</property>
-                    <child>
-                      <placeholder/>
-                    </child>
-                  </object>
-                  <packing>
-                    <property name="expand">False</property>
-                    <property name="position">0</property>
-                  </packing>
-                </child>
-                <child>
-                  <object class="GtkVBox" id="preview_vbox">
-                    <property name="visible">True</property>
-                    <child>
-                      <placeholder/>
-                    </child>
-                  </object>
-                  <packing>
-                    <property name="position">1</property>
-                  </packing>
+                  <placeholder/>
                 </child>
               </object>
               <packing>

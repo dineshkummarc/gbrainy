@@ -25,7 +25,7 @@ using System.Web.UI.WebControls;
 using System.Reflection;
 using System.Diagnostics;
 
-namespace WebForms
+namespace gbrainy.Clients.WebForms
 {
     public partial class Status : System.Web.UI.Page
     {
@@ -47,9 +47,14 @@ namespace WebForms
 	{
 		new PerfCounter ("Mono Memory", "Allocated Objects"),
 		new PerfCounter ("ASP.NET", "Requests Total"),
-
 	};
-
+		
+	void AddCell (TableRow r, string s)
+	{
+		TableCell c = new TableCell ();
+	        c.Controls.Add (new LiteralControl (s));
+	        r.Cells.Add (c);
+	}
 
         public void Page_Load (object sender, EventArgs e)
 	{
@@ -72,8 +77,37 @@ namespace WebForms
 
 			sessions_table.Rows.Add (r);
 		}
+				
+		// Application counters		
+		{
+			TableRow r = new TableRow ();
+				
+			AddCell (r, "Server started");
+			AddCell (r, Global.Started.ToString());
+			application_table.Rows.Add (r);	
+			
+			r = new TableRow ();
+			AddCell (r, "Total sessions");
+			AddCell (r, Global.TotalSessions.ToString ());
+			application_table.Rows.Add (r);
+				
+			r = new TableRow ();
+			AddCell (r, "Total games played");
+			AddCell (r, Global.TotalGames.ToString ());
+			application_table.Rows.Add (r);
 
-            	total_label.Text = "Total sessions: " + Global.Sessions.Count;
+			r = new TableRow ();
+			AddCell (r, "Total seconds played");
+			AddCell (r, Global.TotalTimeSeconds.ToString ());
+			application_table.Rows.Add (r);
+				
+			r = new TableRow ();
+			AddCell (r, "Memory used");
+			AddCell (r,  GC.GetTotalMemory(false).ToString ());
+			application_table.Rows.Add (r);
+		}	
+
+            	total_label.Text = "Total active sessions: " + Global.Sessions.Count;
 
 		// Games
 		string text = Game.CreateManager ().GetGamesSummary ();
@@ -99,7 +133,7 @@ namespace WebForms
 			assemblies_table.Rows.Add (r);
 		}
 
-		// Performace counters
+		// Performance counters
 		foreach (PerfCounter perf in PerfCounters)
 		{
 			TableRow r = new TableRow ();
@@ -121,6 +155,7 @@ namespace WebForms
 
 			counters_table.Rows.Add (r);
 		}
+			
         }
 
 	string ReadCounter (string category, string counter)

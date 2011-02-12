@@ -19,10 +19,10 @@
 
 using System;
 using Cairo;
-using Mono.Unix;
 
 using gbrainy.Core.Main;
 using gbrainy.Core.Toolkit;
+using gbrainy.Core.Services;
 
 namespace gbrainy.Games.Memory
 {
@@ -127,22 +127,22 @@ namespace gbrainy.Games.Memory
 			{
 				switch (type) {
 				case Indication.Type.Start:
-					return String.Format (Catalog.GetString ("Start at point number {0}"), (int) obj);
+					return String.Format (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Start at point number {0}"), (int) obj);
 				case Indication.Type.Turn: {
 					switch ((TurnDirection) obj) {
 					case TurnDirection.Right:
-						return Catalog.GetString ("Move right");
+						return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Move right");
 					case TurnDirection.Left:
-						return Catalog.GetString ("Move left");
+						return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Move left");
 					case TurnDirection.Up:
-						return Catalog.GetString ("Move up");
+						return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Move up");
 					case TurnDirection.Down:
-						return Catalog.GetString ("Move down");
+						return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Move down");
 					}
 					break;
 				}
 				case Indication.Type.End:
-					return String.Format (Catalog.GetString ("End at point {0}"), obj);
+					return String.Format (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("End at point {0}"), obj);
 				}
 				return null;
 			}
@@ -156,13 +156,13 @@ namespace gbrainy.Games.Memory
 		private int ans;
 
 		public override string Name {
-			get {return Catalog.GetString ("Memorize indications");}
+			get {return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Memorize indications");}
 		}
 
 		public override string MemoryQuestion {
 			get { 
 				return String.Format (
-					Catalog.GetString ("Which of the following graphics represent the indications previously given? Answer {0}, {1}, {2} or {3}."),
+					ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Which of the following graphics represent the indications previously given? Answer {0}, {1}, {2} or {3}."),
 					GetPossibleAnswer (0), GetPossibleAnswer (1), GetPossibleAnswer (2), GetPossibleAnswer (3));}
 		}
 

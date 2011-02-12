@@ -19,9 +19,9 @@
 
 using System;
 using Cairo;
-using Mono.Unix;
 
 using gbrainy.Core.Main;
+using gbrainy.Core.Services;
 
 namespace gbrainy.Games.Memory
 {
@@ -48,13 +48,13 @@ namespace gbrainy.Games.Memory
 			{
 				switch (type) {
 				case Triangle:
-					return Catalog.GetString ("Triangle");
+					return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Triangle");
 				case Square:
-					return Catalog.GetString ("Square");
+					return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Square");
 				case Pentagon:
-					return Catalog.GetString ("Pentagon");
+					return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Pentagon");
 				case Circle:
-					return Catalog.GetString ("Circle");
+					return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Circle");
 				default:
 					throw new InvalidOperationException ();
 				}
@@ -62,11 +62,11 @@ namespace gbrainy.Games.Memory
 		}
 
 		public override string Name {
-			get {return Catalog.GetString ("Memorize figures and text");}
+			get {return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Memorize figures and text");}
 		}
 
 		public override string MemoryQuestion {
-			get {return Catalog.GetString ("The list below enumerates the figures shown in the previous image except for one. Which is the missing figure? Possible answers are triangle, square, pentagon and circle." );}
+			get {return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("The list below enumerates the figures shown in the previous image except for one. Which is the missing figure? Possible answers are triangle, square, pentagon and circle." );}
 		}
 
 		protected override void Initialize ()

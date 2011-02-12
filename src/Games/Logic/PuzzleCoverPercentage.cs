@@ -18,9 +18,9 @@
  */
 
 using Cairo;
-using Mono.Unix;
 
 using gbrainy.Core.Main;
+using gbrainy.Core.Services;
 
 namespace gbrainy.Games.Logic
 {
@@ -32,11 +32,11 @@ namespace gbrainy.Games.Logic
 		private const double line_width = 0.001;
 
 		public override string Name {
-			get {return Catalog.GetString ("Cover percentage");}
+			get {return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Cover percentage");}
 		}
 
 		public override string Question {
-			get {return Catalog.GetString ("What percentage of the figure is colored?");} 
+			get {return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("What percentage of the figure is colored?");} 
 		}
 
 		public override string AnswerCheckExpression {

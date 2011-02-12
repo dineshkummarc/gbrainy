@@ -19,9 +19,9 @@
 
 
 using System;
-using Mono.Unix;
 
 using gbrainy.Core.Main;
+using gbrainy.Core.Services;
 
 namespace gbrainy.Games.Logic
 {
@@ -29,20 +29,20 @@ namespace gbrainy.Games.Logic
 	{
 		int type;
 		public override string Name {
-			get {return Catalog.GetString ("Triangles");}
+			get {return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Triangles");}
 		}
 
 		public override string Question {
-			get {return Catalog.GetString ("How many triangles of any size do you count in the figure below?");} 
+			get {return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("How many triangles of any size do you count in the figure below?");} 
 		}
 
 		public override string Tip {
-			get { return Catalog.GetString ("A triangle can be embedded inside another triangle.");}
+			get { return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("A triangle can be embedded inside another triangle.");}
 		}
 
 		public override string Rationale {
 			get {
-				return String.Format (Catalog.GetString ("The triangles are made by connecting the following points: {0}"),
+				return String.Format (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("The triangles are made by connecting the following points: {0}"),
 					(type == 0) ? "bdc, dcf, dfg, abd, ade, edg, acg, abg, bcg, afg, ecg, acd, acf, ace, adg, cdg." : 
 					"dcf, ade, acg, afg, ecg, acd, acf, ace.");
 			}

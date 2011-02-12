@@ -18,11 +18,11 @@
  */
 
 using System;
-using Mono.Unix;
 using System.Timers;
 using System.ComponentModel;
 
 using gbrainy.Core.Views;
+using gbrainy.Core.Services;
 
 namespace gbrainy.Core.Main
 {
@@ -174,17 +174,17 @@ namespace gbrainy.Core.Main
 
 				string played, time, game;
 
-				played = String.Format (Catalog.GetString ("Games played: {0} (Score: {1})"), history.GamesPlayed, history.TotalScore);
-				time = String.Format (Catalog.GetString ("Time: {0}"), current_time);
+				played = String.Format (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Games played: {0} (Score: {1})"), history.GamesPlayed, history.TotalScore);
+				time = String.Format (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Time: {0}"), current_time);
 
 				if (CurrentGame != null) {
 					// Translators: {0} is the name of the game
-	 				game = String.Format (Catalog.GetString ("Game: {0}"), CurrentGame.Name);
+	 				game = String.Format (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Game: {0}"), CurrentGame.Name);
 					// Translators: text in the status bar: games played - time - game name
-					return String.Format (Catalog.GetString ("{0} - {1} - {2}"), played, time, game);
+					return String.Format (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("{0} - {1} - {2}"), played, time, game);
 				} else {
 					// Translators: text in the status bar: games played - time
-					return String.Format (Catalog.GetString ("{0} - {1}"), played, time);
+					return String.Format (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("{0} - {1}"), played, time);
 				}	
 			}
 		}
@@ -197,14 +197,14 @@ namespace gbrainy.Core.Main
 				if (history.GamesPlayed >= 10) {
 					int percentage_won = (int) (100 * history.GamesWon / history.GamesPlayed);
 					if (percentage_won >= 90)
-						s = Catalog.GetString ("Outstanding results");
+						s = ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Outstanding results");
 					else if (percentage_won >= 70)
-						s = Catalog.GetString ("Excellent results");
+						s = ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Excellent results");
 					else if (percentage_won >= 50)
-						s = Catalog.GetString ("Good results");
+						s = ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Good results");
 					else if (percentage_won >= 30)
-						s = Catalog.GetString ("Poor results");
-					else s = Catalog.GetString ("Disappointing results");
+						s = ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Poor results");
+					else s = ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Disappointing results");
 				} else
 					s = string.Empty;
 	
@@ -273,7 +273,7 @@ namespace gbrainy.Core.Main
 		{
 			EnableTimer = false;
 			paused = true;
-			current_time = Catalog.GetString ("Paused");
+			current_time = ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Paused");
 
 			if (CurrentGame != null)
 				CurrentGame.EnableMouseEvents (false);

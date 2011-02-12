@@ -20,8 +20,7 @@
 using System;
 using System.Web;
 
-
-namespace WebForms
+namespace gbrainy.Clients.WebForms
 {
 	public partial class MasterPage : System.Web.UI.MasterPage
 	{

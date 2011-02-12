@@ -32,9 +32,7 @@ namespace gbrainy.Clients.Classical.Dialogs
 		static ListStore games_store;
 		[GtkBeans.Builder.Object] Gtk.TreeView treeview;
 		[GtkBeans.Builder.Object] Box preview_vbox;
-		[GtkBeans.Builder.Object] Gtk.Box question_vbox;
-		CairoPreview drawing_area;
-		SimpleLabel question_label;
+		GameDrawingArea drawing_area;
 		GameManager manager;
 		GameManager.GameLocator [] games;
 		bool selection_done;
@@ -53,15 +51,10 @@ namespace gbrainy.Clients.Classical.Dialogs
 			this.manager = manager;
 			games = manager.AvailableGames;
 
-			drawing_area = new CairoPreview ();
+			drawing_area = new GameDrawingArea ();
+			drawing_area.UseSolutionArea = false;
 			preview_vbox.Add (drawing_area);
 			drawing_area.Visible = true;
-
-			question_label = new SimpleLabel ();
-			question_label.HeightMargin = 2;
-			question_label.Visible = true;
-			question_vbox.Add (question_label);
-
 			treeview.HeadersClickable = true;
 
 			// Column: Game Name
@@ -107,9 +100,9 @@ namespace gbrainy.Clients.Classical.Dialogs
 				games_store.SetSortColumnId (COL_TYPE, order);
 			};
 
-			// Column: Enabled
+			// Column: Selected
 			CellRendererToggle toggle_cell = new CellRendererToggle();
-			TreeViewColumn toggle_column = new TreeViewColumn(Catalog.GetString("Enabled"), 
+			TreeViewColumn toggle_column = new TreeViewColumn(Catalog.GetString("Selected"),
 				toggle_cell, "active", COL_ENABLED);
 			toggle_cell.Activatable = true;
 			toggle_cell.Toggled += OnActiveToggled;
@@ -141,8 +134,8 @@ namespace gbrainy.Clients.Classical.Dialogs
 			game = (Game) Activator.CreateInstance (games [0].TypeOf, true);
 			game.Variant = 0;
 			game.Begin ();
-			drawing_area.puzzle = game;
-			question_label.Text = game.Question;
+			drawing_area.Drawable = game;
+			drawing_area.Question = game.Question;
 			treeview.ColumnsAutosize ();
 		}
 
@@ -181,8 +174,8 @@ namespace gbrainy.Clients.Classical.Dialogs
 				game.Begin ();
 			}
 
-			question_label.Text = game.Question;
-			drawing_area.puzzle = game;
+			drawing_area.Drawable = game;
+			drawing_area.Question = game.Question;
 			drawing_area.QueueDraw ();
 		}
 
@@ -233,38 +226,5 @@ namespace gbrainy.Clients.Classical.Dialogs
 			if (selection_done == true)
 				manager.PlayList = play_list.ToArray ();
 		}
-
-		class CairoPreview : DrawingArea 
-		{
-			public Game puzzle;
-
-			protected override bool OnExposeEvent (Gdk.EventExpose args)
-			{
-				if(!IsRealized)
-					return false;
-
-				int w, h, nw, nh;
-				double x = 0, y = 0;
-				Cairo.Context cc = Gdk.CairoHelper.Create (args.Window);
-				CairoContextEx cr = new CairoContextEx (cc.Handle, this);
-				args.Window.GetSize (out w, out h);
-
-				nh = nw = Math.Min (w, h);
-
-				if (nw < w) {
-					x = (w - nw) / 2;
-				}
-
-				if (nh < h) {
-					y = (h - nh) / 2;
-				}
-
-				cr.Translate (x, y);
-				puzzle.DrawPreview (cr, nw, nh, Direction == Gtk.TextDirection.Rtl);
-				((IDisposable)cc).Dispose();
-				((IDisposable)cr).Dispose();
-	   			return base.OnExposeEvent(args);
-			}
-		}	
 	}
 }

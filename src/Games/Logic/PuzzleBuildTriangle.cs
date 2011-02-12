@@ -19,9 +19,9 @@
 
 
 using System;
-using Mono.Unix;
 
 using gbrainy.Core.Main;
+using gbrainy.Core.Services;
 
 namespace gbrainy.Games.Logic
 {
@@ -48,17 +48,17 @@ namespace gbrainy.Games.Logic
 		private double radian = Math.PI / 180;
 
 		public override string Name {
-			get {return Catalog.GetString ("Build a triangle");}
+			get {return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Build a triangle");}
 		}
 
 		public override string Question {
 			get {return String.Format (
-				Catalog.GetString ("Which three pieces can you use together to build a triangle? Answer using the three figure names, e.g.: {0}{1}{2}."),
+				ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Which three pieces can you use together to build a triangle? Answer using the three figure names, e.g.: {0}{1}{2}."),
 					GetPossibleAnswer (0), GetPossibleAnswer (1), GetPossibleAnswer (2));}
 		}
 
 		public override string Tip {
-			get { return Catalog.GetString ("The resulting triangle is isosceles.");}
+			get { return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("The resulting triangle is isosceles.");}
 		}
 
 		public override GameAnswerCheckAttributes CheckAttributes {
@@ -179,7 +179,7 @@ namespace gbrainy.Games.Logic
 				return;
 
 			gr.MoveTo (DrawAreaX, y + 0.28);
-			gr.ShowPangoText (Catalog.GetString ("The triangle is:"));
+			gr.ShowPangoText (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("The triangle is:"));
 			gr.Stroke ();
 		
 			x = DrawAreaX + 0.35;

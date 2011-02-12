@@ -20,11 +20,11 @@
 
 using System;
 using Cairo;
-using Mono.Unix;
 using System.Collections.Generic;
 
 using gbrainy.Core.Main;
 using gbrainy.Core.Toolkit;
+using gbrainy.Core.Services;
 
 namespace gbrainy.Core.Views
 {
@@ -58,7 +58,7 @@ namespace gbrainy.Core.Views
 			drawable_area.DrawEventHandler += delegate (object sender, DrawEventArgs e)
 			{
 				e.Context.DrawStringWithWrapping (0, 0,
-					Catalog.GetString ("Logic puzzles. Challenge your reasoning and thinking skills."), 
+					ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Logic puzzles. Challenge your reasoning and thinking skills."), 
 					e.Width);
 			};
 
@@ -79,7 +79,7 @@ namespace gbrainy.Core.Views
 			drawable_area.DrawEventHandler += delegate (object sender, DrawEventArgs e)
 			{
 				e.Context.DrawStringWithWrapping (0, 0,
-					Catalog.GetString ("Mental calculation. Arithmetical operations that test your mental calculation abilities."),
+					ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Mental calculation. Arithmetical operations that test your mental calculation abilities."),
 					e.Width);
 			};
 
@@ -100,7 +100,7 @@ namespace gbrainy.Core.Views
 			drawable_area.DrawEventHandler += delegate (object sender, DrawEventArgs e)
 			{
 				e.Context.DrawStringWithWrapping (0, 0,
-					Catalog.GetString ("Memory trainers. To prove your short term memory."),
+					ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Memory trainers. To prove your short term memory."),
 					e.Width);
 			};
 
@@ -121,7 +121,7 @@ namespace gbrainy.Core.Views
 			drawable_area.DrawEventHandler += delegate (object sender, DrawEventArgs e)
 			{
 				e.Context.DrawStringWithWrapping (0, 0,
-					Catalog.GetString ("Verbal analogies. Challenge your verbal aptitude."),
+					ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Verbal analogies. Challenge your verbal aptitude."),
 					e.Width);
 			};
 		}
@@ -131,22 +131,21 @@ namespace gbrainy.Core.Views
 			double y = 0.03;
 
 			gr.Scale (area_width, area_height);
-			gr.DrawBackground ();
 			gr.LineWidth = 0.005;
 
 			gr.Color = new Cairo.Color (0, 0, 0, 1);
 
 			gr.MoveTo (0.05, y);
 			// Translators: {0} is the version number of the program
-			gr.ShowPangoText (String.Format (Catalog.GetString ("Welcome to gbrainy {0}"), Defines.VERSION), true, -1, 0);
+			gr.ShowPangoText (String.Format (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Welcome to gbrainy {0}"), Defines.VERSION), true, -1, 0);
 			gr.Stroke ();
 
 			gr.DrawStringWithWrapping (0.05, y + 0.07, 
-				Catalog.GetString ("gbrainy is a brain teaser game and trainer to have fun and to keep your brain trained. It includes:"),
+				ServiceLocator.Instance.GetService <ITranslations> ().GetString ("gbrainy is a brain teaser game and trainer to have fun and to keep your brain trained. It includes:"),
 				1 - 0.05);
 
 			y = 0.22 + space * 3;
-			gr.DrawStringWithWrapping (0.05, y + 0.17,  Catalog.GetString ("Use the Settings to adjust the difficulty level of the game."),
+			gr.DrawStringWithWrapping (0.05, y + 0.17,  ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Use the Settings to adjust the difficulty level of the game."),
 				1 - 0.05);
 			gr.Stroke ();
 

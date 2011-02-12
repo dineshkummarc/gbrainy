@@ -19,10 +19,10 @@
 
 using System;
 using Cairo;
-using Mono.Unix;
 
 using gbrainy.Core.Main;
 using gbrainy.Core.Toolkit;
+using gbrainy.Core.Services;
 
 namespace gbrainy.Games.Logic
 {
@@ -201,12 +201,12 @@ namespace gbrainy.Games.Logic
 		};
 
 		public override string Name {
-			get {return Catalog.GetString ("Square with dots");}
+			get {return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Square with dots");}
 		}
 
 		public override string Question {
 			get {return (String.Format (
-				Catalog.GetString ("Which is the next logical figure in the sequence? Answer {0}, {1} or {2}."),
+				ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Which is the next logical figure in the sequence? Answer {0}, {1} or {2}."),
 				GetPossibleAnswer (0), GetPossibleAnswer (1), GetPossibleAnswer (2)));}
 		}
 
@@ -317,7 +317,7 @@ namespace gbrainy.Games.Logic
 
 			y += figure_size + 0.10;
 			gr.MoveTo (x, y - 0.02);
-			gr.ShowPangoText (Catalog.GetString ("Possible answers are:"));
+			gr.ShowPangoText (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Possible answers are:"));
 		}
 	}
 }

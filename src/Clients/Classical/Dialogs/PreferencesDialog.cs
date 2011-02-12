@@ -35,7 +35,9 @@ namespace gbrainy.Clients.Classical.Dialogs
 		[GtkBeans.Builder.Object] Gtk.RadioButton rb_easy;
 		[GtkBeans.Builder.Object] Gtk.RadioButton rb_medium;
 		[GtkBeans.Builder.Object] Gtk.RadioButton rb_master;
+		[GtkBeans.Builder.Object] Gtk.ComboBox themes_combobox;
 
+		const int COLUMN_VALUE = 1;
 		PlayerHistory history;
 
 		public PreferencesDialog (PlayerHistory history) : base ("PreferencesDialog.ui", "preferences")
@@ -57,6 +59,30 @@ namespace gbrainy.Clients.Classical.Dialogs
 			case GameDifficulty.Master:
 				rb_master.Active = rb_master.HasFocus = true;
 				break;
+			}
+
+			ListStore store = new ListStore (typeof (string), typeof (Theme)); // DisplayName, theme referenece
+			CellRenderer layout_cell = new CellRendererText ();
+			themes_combobox.Model = store;
+			themes_combobox.PackStart (layout_cell, true);
+			themes_combobox.SetCellDataFunc (layout_cell, ComboBoxCellFunc);
+
+			foreach (Theme theme in ThemeManager.Themes)
+				store.AppendValues (Catalog.GetString(theme.LocalizedName), theme);
+
+			// Default value
+			TreeIter iter;
+			bool more = store.GetIterFirst (out iter);
+			while (more)
+			{
+				Theme theme = (Theme) store.GetValue (iter, COLUMN_VALUE);
+
+				if (String.Compare (theme.Name, Preferences.GetStringValue (Preferences.ThemeKey), true) == 0)
+				{
+					themes_combobox.SetActiveIter (iter);
+					break;
+				}
+				more = store.IterNext (ref iter);
 			}
 		}
 
@@ -94,7 +120,19 @@ namespace gbrainy.Clients.Classical.Dialogs
 			Preferences.SetIntValue (Preferences.MaxStoredGamesKey, (int) maxstoredspinbutton.Value);
 			Preferences.SetIntValue (Preferences.MinPlayedGamesKey, (int) minplayedspinbutton.Value);
 			Preferences.SetBoolValue (Preferences.ColorBlindKey, colorblindcheckbutton.Active);
+
+			TreeIter iter;
+			themes_combobox.GetActiveIter (out iter);
+			Theme theme = (Theme) themes_combobox.Model.GetValue (iter, COLUMN_VALUE);
+			Preferences.SetStringValue (Preferences.ThemeKey, theme.Name);
+
 			Preferences.Save ();
+		}
+
+		static public void ComboBoxCellFunc (CellLayout cell_layout, CellRenderer cell, TreeModel tree_model, TreeIter iter)
+		{
+			string name = (string)tree_model.GetValue (iter, 0);
+			(cell as CellRendererText).Text = name;
 		}
 	}
 }

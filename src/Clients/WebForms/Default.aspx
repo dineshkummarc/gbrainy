@@ -1,4 +1,4 @@
-<%@ Page Language="C#" MasterPageFile = "MasterPage.master" Inherits="WebForms.Default" %>
+<%@ Page Language="C#" MasterPageFile = "MasterPage.master" Inherits="gbrainy.Clients.WebForms.Default" %>
 <%@ Import Namespace="System.Data" %>
 
 <asp:content id="main_content" ContentPlaceHolderID ="main_placeholder" runat="server">
@@ -7,7 +7,8 @@
 	<br/>
 
 	<br/>
-	<asp:Label id="intro_label" runat="server"/>
+	<br/>
+		gbrainy is a brain teaser game and trainer to have fun and to keep your brain trained. gbrainy includes the following games:
 	<br/>
 	<br/>
 
@@ -17,7 +18,7 @@
 	</span>
 
 	<span class="WelcomeRight">
-		<asp:Label id="logic_label" runat="server"/>
+		Logic puzzles. Challenge your reasoning and thinking skills.
 	</span>
 	<br/>
 	<br/>
@@ -28,18 +29,7 @@
 	</span>
 
 	<span class="WelcomeRight">
-		<asp:Label id="calculation_label" runat="server"/>
-	</span>
-	<br/>
-	<br/>
-
-	<!-- Memory -->
-	<span class="WelcomeLeft">
-	 	<img src = "images/memory-games-32.png"/>
-	</span>
-
-	<span class="WelcomeRight">
-		<asp:Label id="memory_label" runat="server"/>
+		Mental calculation. Arithmetical operations that test your mental calculation abilities.
 	</span>
 	<br/>
 	<br/>
@@ -50,15 +40,19 @@
 	</span>
 
 	<span class="WelcomeRight">
-		<asp:Label id="verbal_label" runat="server"/>
+		Verbal analogies. Challenge your verbal aptitude.
 	</span>
 
 	<br/>
 	<br/>
-	<asp:Button id="start_button" Text="Start game!" OnClick="OnStartGame" runat="server"/>
-	
-	<asp:DropDownList id = "languages_drop" AutoPostBack="True" ViewStateMode="Enabled"
-		onselectedindexchanged="OnSelectedIndexChanged" runat="server">
+	<asp:Button id="start_button" Text="Start a new game" OnClick="OnStartGame" runat="server"/>
+	in
+	<asp:DropDownList id = "languages_drop" ViewStateMode="Enabled" runat="server">
 	</asp:DropDownList>
-
+	language
+	<p>
+		<small>
+		This web site is based on in the open source project called <a href="http://live.gnome.org/gbrainy">gbrainy</a>. Contact e-mail address: jmas at softcatala dot org
+		</small>
+	</p>
 </asp:content>

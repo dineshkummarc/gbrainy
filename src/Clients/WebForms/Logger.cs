@@ -20,7 +20,7 @@
 using System;
 using System.IO;
 
-namespace WebForms
+namespace gbrainy.Clients.WebForms
 {
 	public enum Level { DEBUG, INFO, WARN, ERROR, FATAL };
 

@@ -19,9 +19,9 @@
 
 using System;
 using System.Text;
-using Mono.Unix;
 
 using gbrainy.Core.Main;
+using gbrainy.Core.Services;
 
 namespace gbrainy.Games.Logic
 {
@@ -43,26 +43,26 @@ namespace gbrainy.Games.Logic
 		};
 
 		public override string Name {
-			get {return Catalog.GetString ("Numeric relation");}
+			get {return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Numeric relation");}
 		}
 
 		public override string Question {
-			get {return Catalog.GetString ("What number should replace the question mark?");} 
+			get {return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("What number should replace the question mark?");} 
 		}
 
 		public override string Tip {
-			get { return Catalog.GetString ("The numbers are related arithmetically.");}
+			get { return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("The numbers are related arithmetically.");}
 		}
 
 		public override string Rationale {
 			get {
 				switch (formula) {
 				case Formula.AllAdding:
-					return String.Format (Catalog.GetString ("Every group of {0} numbers sums exactly {1}."), group_size, sum_value);
+					return String.Format (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Every group of {0} numbers sums exactly {1}."), group_size, sum_value);
 				case Formula.ThirdMultiply:
-					return Catalog.GetString ("Divide the sequence in groups of three numbers. Every third number is calculated by multiplying by the two previous ones.");
+					return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Divide the sequence in groups of three numbers. Every third number is calculated by multiplying by the two previous ones.");
 				case Formula.ThirdSubstracting:
-					return Catalog.GetString ("Divide the sequence in groups of three numbers. Every third number is calculated by subtracting the second number from the first.");
+					return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Divide the sequence in groups of three numbers. Every third number is calculated by subtracting the second number from the first.");
 				default:
 					throw new InvalidOperationException ("Invalid Value");
 				}

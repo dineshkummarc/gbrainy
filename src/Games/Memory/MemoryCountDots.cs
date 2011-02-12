@@ -19,9 +19,9 @@
 
 using System;
 using Cairo;
-using Mono.Unix;
 
 using gbrainy.Core.Main;
+using gbrainy.Core.Services;
 
 namespace gbrainy.Games.Memory
 {
@@ -38,7 +38,7 @@ namespace gbrainy.Games.Memory
 		private int [] dotsPerColor;
 
 		public override string Name {
-			get {return Catalog.GetString ("Counting dots");}
+			get {return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Counting dots");}
 		}
 
 		public override bool UsesColors {
@@ -49,7 +49,7 @@ namespace gbrainy.Games.Memory
 			get { 
 				return String.Format (
 					// Translators: {0} is the name of the color. The color name is always singular
-					Catalog.GetString ("How many dots of {0} color were in the previous image? Answer using numbers."),
+					ServiceLocator.Instance.GetService <ITranslations> ().GetString ("How many dots of {0} color were in the previous image? Answer using numbers."),
 					palette.Name (0));
 			}
 		}

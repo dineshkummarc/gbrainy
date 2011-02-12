@@ -18,11 +18,11 @@
  */
 
 using Cairo;
-using Mono.Unix;
 using System;
 
 using gbrainy.Core.Main;
 using gbrainy.Core.Toolkit;
+using gbrainy.Core.Services;
 
 namespace gbrainy.Games.Logic
 {
@@ -110,7 +110,7 @@ namespace gbrainy.Games.Logic
 		};
 
 		public override string Name {
-			get {return Catalog.GetString ("Larger shape");}
+			get {return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Larger shape");}
 		}
 
 		public override bool UsesColors {
@@ -119,7 +119,7 @@ namespace gbrainy.Games.Logic
 
 		public override string Question {
 			get {return String.Format (
-				Catalog.GetString ("Which larger shape can you make combining the first two figures? Answer {0}, {1}, {2} or {3}."),
+				ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Which larger shape can you make combining the first two figures? Answer {0}, {1}, {2} or {3}."),
 				GetPossibleAnswer (0), GetPossibleAnswer (1), GetPossibleAnswer (2), GetPossibleAnswer (3));}
 		}
 
@@ -299,7 +299,7 @@ namespace gbrainy.Games.Logic
 			base.Draw (gr, area_width, area_height, rtl);
 
 			gr.MoveTo (0.1, 0.3);
-			gr.ShowPangoText (Catalog.GetString ("Possible answers are:"));
+			gr.ShowPangoText (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Possible answers are:"));
 			gr.Stroke ();
 		}
 	}
