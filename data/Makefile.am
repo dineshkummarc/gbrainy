@@ -33,7 +33,10 @@ tango_icons = 				\
 	app-graphics/endgame-32.png		\
 	app-graphics/allgames-32.png		\
 	app-graphics/pause-32.png \
-	app-graphics/verbal-games-32.png
+	app-graphics/verbal-games-32.png \
+	app-graphics/gtk-info.svg \
+	app-graphics/gtk-stop.svg \
+	app-graphics/gtk-ok.svg
 
 
 analogies_DATA = \

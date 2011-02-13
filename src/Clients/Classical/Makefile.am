@@ -46,7 +46,9 @@ RESOURCES =										\
 -resource:$(top_srcdir)/data/app-graphics/memory-games-32.png  \
 -resource:$(top_srcdir)/data/app-graphics/verbal-games.svg  \
 -resource:$(top_srcdir)/data/app-graphics/verbal-games-32.png  \
--resource:$(top_srcdir)/data/app-graphics/gbrainy.svg
+-resource:$(top_srcdir)/data/app-graphics/gtk-info.svg \
+-resource:$(top_srcdir)/data/app-graphics/gtk-stop.svg \
+-resource:$(top_srcdir)/data/app-graphics/gtk-ok.svg
 
 gbrainydir = $(libdir)/gbrainy
 gbrainy_SCRIPTS = ../../gbrainy.exe ../../gbrainy.exe.config

@@ -15,7 +15,7 @@
  * Boston, MA 02111-1307, USA.
  *
  *
- * Based largely on code Tomboy project source code
+ * Based largely on Tomboy project source code
  *
  */
 

@@ -31,7 +31,13 @@ namespace gbrainy.Clients.Classical.Widgets
 	// question or answer, etc.
 	public class GameDrawingArea : DrawingArea
 	{
-		bool paused;
+		public enum SolutionType
+		{
+			None,
+			CorrectAnswer,
+			InvalidAnswer,
+			Tip,
+		};
 
 		public IDrawable Drawable { get; set; }
 		public string Question { get; set; }
@@ -40,8 +46,10 @@ namespace gbrainy.Clients.Classical.Widgets
 		public int OffsetX { get; private set; }
 		public int OffsetY { get; private set; }
 		public bool UseSolutionArea { get; set; }
+		public SolutionType SolutionIcon { get; set; }
 
-		public bool Paused { 
+		bool paused;
+		public bool Paused {
 			get { return paused; }
 			set {
 				paused = value;
@@ -54,10 +62,14 @@ namespace gbrainy.Clients.Classical.Widgets
 		const int solution_high = 55;
 		const int total_margin = 0; // Margin applied as in-box for themes
 		const double text_margin = 0.015;
+		const double icon_size = 0.08;
+		const double icon_margin = 0.01;
+
 
 		public GameDrawingArea ()
 		{
 			UseSolutionArea = true;
+			SolutionIcon = SolutionType.None;
 		}
 
 		protected override bool OnExposeEvent (Gdk.EventExpose args)
@@ -99,7 +111,7 @@ namespace gbrainy.Clients.Classical.Widgets
 			// Draw a background taking all the window area
 			cr.Scale (total_w, total_h);
 			cr.DrawBackground ();
-			
+
 			if (Paused == false) {
 				DrawQuestionAndAnswer (cr, total_w, total_h);
 			} else {
@@ -109,8 +121,7 @@ namespace gbrainy.Clients.Classical.Widgets
 			}
 			cr.Restore ();
 
-			if (Paused == false)
-			{
+			if (Paused == false) {
 				// Draw the game area
 				cr.Translate (OffsetX, OffsetY);
 				cr.SetPangoNormalFontSize ();
@@ -131,8 +142,8 @@ namespace gbrainy.Clients.Classical.Widgets
 			double line_space;
 
 			line_space = cr.FontLineSpace;
-			cr.FontLineSpace = 0.004;
-			cr.SetPangoFontSize (0.018);
+			cr.FontLineSpace = 0;
+			cr.SetPangoFontSize (0.016);
 
 			scaled_margin = (double) total_margin / (double) width;
 			max_width = 1 - (scaled_margin * 2) - (text_margin * 2);
@@ -142,16 +153,73 @@ namespace gbrainy.Clients.Classical.Widgets
 			{
 				// Question drawing
 				cr.DrawStringWithWrapping (scaled_margin + text_margin, scaled_margin + text_margin, Question, max_width);
+				cr.Stroke ();
+
+				cr.LineWidth = 0.002;
+				double question_high_scaled = question_high / (double) height;
+				cr.MoveTo (0.01, question_high_scaled + 0.02);
+				cr.LineTo (0.98, question_high_scaled + 0.02);
+				cr.Stroke ();
 			}
 
+			// Solution drawing
 			if (UseSolutionArea && String.IsNullOrEmpty (Solution) == false)
 			{
-				// Solution drawing
-				cr.DrawStringWithWrapping (scaled_margin + text_margin, 1 - 0.12 - scaled_margin - text_margin, Solution, max_width);
+				const double box_margin = 0.005;
+				const double box_height = 0.12;
+
+				cr.Save ();
+				cr.LineWidth = 0.001;
+
+				// Draw black box
+				cr.Color = new Color (0.1, 0.1, 0.1);
+				cr.Rectangle (scaled_margin + text_margin - box_margin,
+					1 - box_height - scaled_margin - text_margin - box_margin,
+					max_width + (box_margin * 2),
+					box_height + box_margin * box_margin);
+				cr.Fill ();
+				cr.Stroke ();
+
+				// Measure string to be able to centered vertically within the box
+				double width_str, height_str;
+				cr.MeasureString (Solution, max_width - icon_size, true, out width_str, out height_str);
+				cr.Color = new Color (1, 1, 1);
+				cr.DrawStringWithWrapping (scaled_margin + icon_size + text_margin,
+					(1 - box_height - scaled_margin - text_margin) + ((box_height - height_str) / 2),
+					Solution, max_width - icon_size);
+				cr.Stroke ();
+
+				DrawSolutionIcon (cr, 0, 1 - box_height);
+				cr.Restore ();
 			}
 			cr.UseMarkup = false;
-			cr.Stroke ();
 			cr.FontLineSpace = line_space;
+		}
+
+		void DrawSolutionIcon (CairoContextEx cr, double x, double y)
+		{
+			string image;
+
+			switch (SolutionIcon) {
+			case SolutionType.CorrectAnswer:
+				image = "gtk-ok.svg";
+				break;
+			case SolutionType.InvalidAnswer:
+				image = "gtk-stop.svg";
+				break;
+			case SolutionType.Tip:
+				image = "gtk-info.svg";
+				break;
+			default:
+				image = null;
+				break;
+			}
+
+			if (image == null)
+				return;
+			
+			cr.DrawImageFromAssembly (image,
+				x + icon_margin, y, icon_size, icon_size);
 		}
 	}
 }

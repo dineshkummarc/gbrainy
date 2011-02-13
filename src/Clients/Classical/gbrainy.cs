@@ -128,7 +128,7 @@ namespace gbrainy.Clients.Classical
 			if (toolbar != null)
 			{
 				Box box;
-				
+
 				switch (toolbar.Orientation) {
 				case Gtk.Orientation.Vertical:
 					box = main_hbox;
@@ -141,7 +141,7 @@ namespace gbrainy.Clients.Classical
 				default:
 					throw new InvalidOperationException ();
 				}
-				
+
 				bool contained = false;
 				foreach (var ch in box.AllChildren)
 				{
@@ -370,9 +370,10 @@ namespace gbrainy.Clients.Classical
 			drawing_area.QueueDraw ();
 		}
 
-		void UpdateSolution (string solution)
+		void UpdateSolution (string solution, GameDrawingArea.SolutionType solution_type)
 		{
 			drawing_area.Solution = solution;
+			drawing_area.SolutionIcon = solution_type;
 			QueueDraw ();
 		}
 
@@ -477,7 +478,7 @@ namespace gbrainy.Clients.Classical
 
 		private void GetNextGame ()
 		{
-			UpdateSolution (String.Empty);
+			UpdateSolution (String.Empty, GameDrawingArea.SolutionType.None);
 			UpdateQuestion (String.Empty);
 			session.NextGame ();
 			session.CurrentGame.AnswerEvent += OnAnswerFromGame;
@@ -514,19 +515,23 @@ namespace gbrainy.Clients.Classical
 		void OnAnswerButtonClicked (object sender, EventArgs args)
 		{
 			string answer;
+			bool correct;
 
 			if (session.CurrentGame == null)
 				return;
 
-			if (session.ScoreGame (answer_entry.Text) == true)
-				answer = "<span color='#00A000'>" + Catalog.GetString ("Congratulations.") + "</span>";
+			correct = session.ScoreGame (answer_entry.Text);
+			if (correct)
+				answer = Catalog.GetString ("Congratulations.");
 			else
 				answer = Catalog.GetString ("Incorrect answer.");
 
 			session.EnableTimer = false;
 			answer_entry.Text = String.Empty;
 			UpdateStatusBar ();
-			UpdateSolution (answer + " " + session.CurrentGame.Answer);
+			UpdateSolution (answer + " " + session.CurrentGame.Answer,
+				correct == true ? GameDrawingArea.SolutionType.CorrectAnswer :
+			        GameDrawingArea.SolutionType.InvalidAnswer);
 
 			session.CurrentGame.DrawAnswer = true;
 			ActiveInputControls (true);
@@ -570,7 +575,7 @@ namespace gbrainy.Clients.Classical
 			if (session.CurrentGame == null)
 				return;
 
-			UpdateSolution (session.CurrentGame.TipString);
+			UpdateSolution (session.CurrentGame.TipString, GameDrawingArea.SolutionType.Tip);
 		}
 
 		void OnNewGame (GameSession.Types type)
@@ -579,7 +584,8 @@ namespace gbrainy.Clients.Classical
 			session.New ();
 			GetNextGame ();
 			GameSensitiveUI ();
-			UpdateSolution (Catalog.GetString ("Once you have an answer type it in the \"Answer:\" entry box and press the \"OK\" button."));
+			UpdateSolution (Catalog.GetString ("Once you have an answer type it in the \"Answer:\" entry box and press the \"OK\" button."),
+				GameDrawingArea.SolutionType.Tip);
 			UpdateStatusBar ();
 		}
 
@@ -601,10 +607,10 @@ namespace gbrainy.Clients.Classical
 		void OnPdfExport (object sender, EventArgs args)
 		{
 			PdfExportDialog pdf;
-			
+
 			pdf = new PdfExportDialog ();
 			pdf.Run ();
-			pdf.Destroy (); 
+			pdf.Destroy ();
 		}
 
 		void OnPreferences (object sender, EventArgs args)
@@ -652,7 +658,7 @@ namespace gbrainy.Clients.Classical
 		{
 			session.End ();
 
-			UpdateSolution (String.Empty);
+			UpdateSolution (String.Empty, GameDrawingArea.SolutionType.None);
 			UpdateQuestion (String.Empty);
 			UpdateStatusBar ();
 			GameSensitiveUI ();
@@ -669,7 +675,7 @@ namespace gbrainy.Clients.Classical
 				pause_tbbutton.Label = Catalog.GetString ("Pause");
 				ActiveInputControls (true);
 			} else {
-				drawing_area.Paused = true;	
+				drawing_area.Paused = true;
 				pause_tbbutton.StockId = "resume";
 				pause_tbbutton.Label = Catalog.GetString ("Resume");
 				ActiveInputControls (false);
@@ -778,7 +784,7 @@ namespace gbrainy.Clients.Classical
 			// Register services
 			ServiceLocator.Instance.RegisterService <ITranslations> (new TranslationsCatalog ());
 			ServiceLocator.Instance.RegisterService <IConfiguration> (new MemoryConfiguration ());
-			
+
 			// Configuration
 			ServiceLocator.Instance.GetService <IConfiguration> ().Set (ConfigurationKeys.GamesDefinitions, Defines.DATA_DIR);
 			ServiceLocator.Instance.GetService <IConfiguration> ().Set (ConfigurationKeys.GamesGraphics, Defines.DATA_DIR);
@@ -789,7 +795,7 @@ namespace gbrainy.Clients.Classical
 		{
 			try {
 				Unix.SetProcessName ("gbrainy");
-			} 
+			}
 			catch (Exception e)
 			{
 				Console.WriteLine ("gbrainy.Main. Could not set process name. Error {0}", e);
@@ -798,7 +804,7 @@ namespace gbrainy.Clients.Classical
 			DateTime start_time = DateTime.Now;
 
 			InitCoreLibraries ();
-			
+
 			GtkClient app = new GtkClient ();
 			CommandLine.Version ();
 

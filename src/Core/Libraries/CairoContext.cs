@@ -201,7 +201,7 @@ namespace gbrainy.Core.Libraries
 			int w, h, spacing;
 			Cairo.Matrix old = Matrix;
 
-			if (max_width < 0 )
+			if (max_width < 0)
 				throw new ArgumentOutOfRangeException ("Invalid maximum width value");
 
 			MoveTo (x, y);

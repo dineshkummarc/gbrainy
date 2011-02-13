@@ -102,9 +102,9 @@ namespace gbrainy.Games.Logic
 			right_answer = GetPossibleAnswer (ans_pos);
 
 			const double text_offset = 0.04;
-			const double with_used = 0.9; // Total width used for drawing all the figures
+			const double witdh_used = 0.9; // Total width used for drawing all the figures
 			const double margin = 0.1 / circles / 2;
-			const double box_size = with_used / circles;
+			const double box_size = witdh_used / circles;
 			double y;
 			HorizontalContainer container;
 			DrawableArea drawable_area;
@@ -112,7 +112,7 @@ namespace gbrainy.Games.Logic
 
 			y = DrawAreaY + 0.1 + (radius / 2);
 
-			container = new HorizontalContainer (0.05, y, with_used, box_size);
+			container = new HorizontalContainer (0.05, y, witdh_used, box_size);
 			AddWidget (container);
 
 			circle_parameters = new CircleParameters [circles];
