@@ -12,8 +12,8 @@ msgstr ""
 "Project-Id-Version: gbrainy\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=gbrainy&component=general\n"
-"POT-Creation-Date: 2011-01-30 21:27+0000\n"
-"PO-Revision-Date: 2011-01-31 15:39+0100\n"
+"POT-Creation-Date: 2011-02-12 13:50+0000\n"
+"PO-Revision-Date: 2011-02-15 11:39+0100\n"
 "Last-Translator: Marek Černocký <marek@manet.cz>\n"
 "Language-Team: Czech <gnome-cs-list@gnome.org>\n"
 "MIME-Version: 1.0\n"
@@ -641,9 +641,18 @@ msgstr ""
 "Zahrát si hry, které vyzkoušejí vaše logické, slovní, početní a paměťové "
 "schopnosti"
 
-#: ../data/gbrainy.desktop.in.h:3 ../src/Clients/Classical/gbrainy.ui.h:24
+#: ../data/gbrainy.desktop.in.h:3 ../src/Clients/Classical/gbrainy.ui.h:28
 msgid "gbrainy"
 msgstr "gbrainy"
+
+#: ../data/themes/themes.xml.h:1
+#| msgid "Dartboard"
+msgid "Blackboard"
+msgstr "Černá plocha"
+
+#: ../data/themes/themes.xml.h:2
+msgid "Classic"
+msgstr "Klasický"
 
 #: ../data/verbal_analogies.xml.h:1
 msgid "A car engine that is poorly designed and lacking of sophistication is?"
@@ -1741,66 +1750,66 @@ msgstr "Připravte se na zapamatování si několika věcí…"
 msgid "Total"
 msgstr "Celkem"
 
-#: ../src/Core/Views/FinishView.cs:104 ../src/Core/Main/GameTypes.cs:44
-#: ../src/Clients/Classical/gbrainy.cs:368
+#: ../src/Core/Views/FinishView.cs:104 ../src/Core/Main/GameTypes.cs:45
+#: ../src/Clients/Classical/gbrainy.cs:402
 #: ../src/Clients/Classical/Dialogs/ui/PdfExportDialog.ui.h:8
 msgid "Logic"
 msgstr "Logické"
 
-#: ../src/Core/Views/FinishView.cs:111 ../src/Core/Main/GameTypes.cs:48
-#: ../src/Clients/Classical/gbrainy.cs:373
+#: ../src/Core/Views/FinishView.cs:111 ../src/Core/Main/GameTypes.cs:49
+#: ../src/Clients/Classical/gbrainy.cs:407
 #: ../src/Clients/Classical/Dialogs/ui/PdfExportDialog.ui.h:6
 msgid "Calculation"
 msgstr "Početní"
 
-#: ../src/Core/Views/FinishView.cs:118 ../src/Core/Main/GameTypes.cs:46
-#: ../src/Clients/Classical/gbrainy.cs:379
+#: ../src/Core/Views/FinishView.cs:118 ../src/Core/Main/GameTypes.cs:47
+#: ../src/Clients/Classical/gbrainy.cs:413
 msgid "Memory"
 msgstr "Paměťové"
 
-#: ../src/Core/Views/FinishView.cs:125 ../src/Core/Main/GameTypes.cs:50
-#: ../src/Clients/Classical/gbrainy.cs:385
+#: ../src/Core/Views/FinishView.cs:125 ../src/Core/Main/GameTypes.cs:51
+#: ../src/Clients/Classical/gbrainy.cs:419
 #: ../src/Clients/Classical/Dialogs/ui/PdfExportDialog.ui.h:18
 msgid "Verbal"
 msgstr "Slovní"
 
-#: ../src/Core/Views/FinishView.cs:141
+#: ../src/Core/Views/FinishView.cs:140
 #: ../src/Core/Views/PlayerHistoryView.cs:275
 msgid "Score"
 msgstr "Hodnocení"
 
 # Plural forms should be here
-#: ../src/Core/Views/FinishView.cs:151
+#: ../src/Core/Views/FinishView.cs:150
 #, csharp-format
 msgid "Games won: {0} ({1} played)"
 msgstr "Počet vyhraných her: {0} (z {1} hraných)"
 
-#: ../src/Core/Views/FinishView.cs:153
+#: ../src/Core/Views/FinishView.cs:152
 #, csharp-format
 msgid "{0}. Games won: {1} ({2} played)"
 msgstr "{0}. Počet vyhraných her: {1} (z {2} odehraných)"
 
-#: ../src/Core/Views/FinishView.cs:157
+#: ../src/Core/Views/FinishView.cs:156
 #, csharp-format
 msgid "Time played {0} (average per game {1})"
 msgstr "Strávený čas {0} ({1} průměrně na hru)"
 
 #. Translators: translated string should not be longer that the English original (space restriction on the UI)
-#: ../src/Core/Views/FinishView.cs:166
+#: ../src/Core/Views/FinishView.cs:165
 msgid "For details on how gbrainy's scoring works refer to the help."
 msgstr ""
 "Podrobnosti o tom, jak funguje hodnocení v aplikaci gbrainy, najdete v "
 "nápovědě."
 
-#: ../src/Core/Views/FinishView.cs:176
+#: ../src/Core/Views/FinishView.cs:175
 msgid "Tips for your next games"
 msgstr "Rady do dalších her"
 
-#: ../src/Core/Views/FinishView.cs:204
+#: ../src/Core/Views/FinishView.cs:203
 msgid "Congratulations! New personal record"
 msgstr "Gratulujeme! Nový osobní rekord"
 
-#: ../src/Core/Views/FinishView.cs:214
+#: ../src/Core/Views/FinishView.cs:213
 #, csharp-format
 msgid ""
 "By scoring {0} in logic puzzle games you have established a new personal "
@@ -1809,7 +1818,7 @@ msgstr ""
 "Hodnocením {0} v logických hlavolamech jste vytvořili nový osobní rekord. "
 "Váš předchozí rekord byl {1}."
 
-#: ../src/Core/Views/FinishView.cs:220
+#: ../src/Core/Views/FinishView.cs:219
 #, csharp-format
 msgid ""
 "By scoring {0} in calculation games you have established a new personal "
@@ -1818,7 +1827,7 @@ msgstr ""
 "Hodnocením {0} v početních hrách jste vytvořili nový osobní rekord. Váš "
 "předchozí rekord byl {1}."
 
-#: ../src/Core/Views/FinishView.cs:226
+#: ../src/Core/Views/FinishView.cs:225
 #, csharp-format
 msgid ""
 "By scoring {0} in memory games you have established a new personal record. "
@@ -1827,7 +1836,7 @@ msgstr ""
 "Hodnocením {0} v paměťových hrách jste vytvořili nový osobní rekord. Váš "
 "předchozí rekord byl {1}."
 
-#: ../src/Core/Views/FinishView.cs:232
+#: ../src/Core/Views/FinishView.cs:231
 #, csharp-format
 msgid ""
 "By scoring {0} in verbal analogies you have established a new personal "
@@ -1862,12 +1871,12 @@ msgid "Verbal analogies. Challenge your verbal aptitude."
 msgstr "Slovní analogie. Výzva pro vaši slovní zásobu."
 
 #. Translators: {0} is the version number of the program
-#: ../src/Core/Views/WelcomeView.cs:141
+#: ../src/Core/Views/WelcomeView.cs:140
 #, csharp-format
 msgid "Welcome to gbrainy {0}"
 msgstr "Vítejte v aplikaci gbrainy {0}"
 
-#: ../src/Core/Views/WelcomeView.cs:145
+#: ../src/Core/Views/WelcomeView.cs:144
 msgid ""
 "gbrainy is a brain teaser game and trainer to have fun and to keep your "
 "brain trained. It includes:"
@@ -1875,7 +1884,7 @@ msgstr ""
 "gbrainy je hra na lámání hlavy, pobavení a na udržení mozku v dobré kondici. "
 "Najdete tu:"
 
-#: ../src/Core/Views/WelcomeView.cs:149 ../src/Core/Main/GameTips.cs:67
+#: ../src/Core/Views/WelcomeView.cs:148 ../src/Core/Main/GameTips.cs:68
 msgid "Use the Settings to adjust the difficulty level of the game."
 msgstr "Prostřednictvím dialogu Nastavení můžete nastavit obtížnost hry."
 
@@ -1911,7 +1920,7 @@ msgstr "černá"
 msgid "white"
 msgstr "bílá"
 
-#: ../src/Core/Main/Game.cs:151
+#: ../src/Core/Main/Game.cs:152
 #, csharp-format
 msgid "The correct answer is {0}."
 msgstr "Správná odpověď je {0}."
@@ -1919,7 +1928,7 @@ msgstr "Správná odpověď je {0}."
 #. Translators: answer + rationale of the answer
 #. Translators: "The graph below" +  "It is built using" sentences
 #. Translators: Concadenating two strings (rationale of answer + extra information).
-#: ../src/Core/Main/Game.cs:157 ../src/Core/Main/Verbal/Analogies.cs:62
+#: ../src/Core/Main/Game.cs:158 ../src/Core/Main/Verbal/Analogies.cs:62
 #: ../src/Clients/Classical/Dialogs/PlayerHistoryDialog.cs:60
 #: ../src/Games/Logic/PuzzleCountSeries.cs:93
 #, csharp-format
@@ -1933,56 +1942,56 @@ msgstr "{0} {1}"
 #. For languages represented with the Latin alphabet use
 #. the same than English
 #. First possible answer for a series (e.g.: Figure A)
-#: ../src/Core/Main/Game.cs:317
+#: ../src/Core/Main/Game.cs:318
 msgid "A"
 msgstr "A"
 
 #. Second possible answer for a series
-#: ../src/Core/Main/Game.cs:319
+#: ../src/Core/Main/Game.cs:320
 msgid "B"
 msgstr "B"
 
 #. Third possible answer for a series
-#: ../src/Core/Main/Game.cs:321
+#: ../src/Core/Main/Game.cs:322
 msgid "C"
 msgstr "C"
 
 #. Fourth possible answer for a series
-#: ../src/Core/Main/Game.cs:323
+#: ../src/Core/Main/Game.cs:324
 msgid "D"
 msgstr "D"
 
 #. Fifth possible answer for a series
-#: ../src/Core/Main/Game.cs:325
+#: ../src/Core/Main/Game.cs:326
 msgid "E"
 msgstr "E"
 
 #. Sixth possible answer for a series
-#: ../src/Core/Main/Game.cs:327
+#: ../src/Core/Main/Game.cs:328
 msgid "F"
 msgstr "F"
 
 #. Seventh possible answer for a series
-#: ../src/Core/Main/Game.cs:329
+#: ../src/Core/Main/Game.cs:330
 msgid "G"
 msgstr "G"
 
 #. Eighth possible answer for a series
-#: ../src/Core/Main/Game.cs:331
+#: ../src/Core/Main/Game.cs:332
 msgid "H"
 msgstr "H"
 
-#: ../src/Core/Main/Game.cs:339
+#: ../src/Core/Main/Game.cs:340
 #, csharp-format
 msgid "Figure {0}"
 msgstr "Obrázek {0}"
 
-#: ../src/Core/Main/GameManager.cs:313
+#: ../src/Core/Main/GameManager.cs:319
 msgid "Extensions database:"
 msgstr "Databáze rozšíření:"
 
 #. Translators: 'Games registered' is the games know to gbrainy (build-in and load from addins-in and external files)
-#: ../src/Core/Main/GameManager.cs:319
+#: ../src/Core/Main/GameManager.cs:325
 #, csharp-format
 msgid ""
 "Games registered: {0}: {1} logic puzzles, {2} calculation trainers, {3} "
@@ -2040,15 +2049,16 @@ msgid "Disappointing results"
 msgstr "Zklamání"
 
 #: ../src/Core/Main/GameSession.cs:276
+#: ../src/Clients/Classical/Widgets/GameDrawingArea.cs:107
 msgid "Paused"
 msgstr "Přestávka"
 
-#: ../src/Core/Main/GameTips.cs:51
+#: ../src/Core/Main/GameTips.cs:52
 msgid "Read the instructions carefully and identify the data and given clues."
 msgstr ""
 "Pozorně si pročtěte zadání, pomůcky a určete, které informace jsou důležité."
 
-#: ../src/Core/Main/GameTips.cs:53
+#: ../src/Core/Main/GameTips.cs:54
 msgid ""
 "To score the player gbrainy uses the time and tips needed to complete each "
 "game."
@@ -2056,33 +2066,33 @@ msgstr ""
 "Při hodnocení se bere v úvahu i čas a pomůcky, které jste na dokončení každé "
 "hry potřebovali."
 
-#: ../src/Core/Main/GameTips.cs:55
+#: ../src/Core/Main/GameTips.cs:56
 msgid ""
 "In logic games, elements that may seem irrelevant can be very important."
 msgstr ""
 "Prvky, které se v logických hrách zdají nepodstatné, mohou být velmi "
 "důležité."
 
-#: ../src/Core/Main/GameTips.cs:57
+#: ../src/Core/Main/GameTips.cs:58
 msgid "Break the mental blocks and look into the boundaries of problems."
 msgstr "Prolomte myšlenkové bariéry a podívejte se za hranice problémů."
 
-#: ../src/Core/Main/GameTips.cs:59
+#: ../src/Core/Main/GameTips.cs:60
 msgid "Enjoy making mistakes, they are part of the learning process."
 msgstr "Užijte si vlastní chyby, jsou součástí procesu učení."
 
-#: ../src/Core/Main/GameTips.cs:61
+#: ../src/Core/Main/GameTips.cs:62
 msgid ""
 "Do all the problems, even the difficult ones. Improvement comes from "
 "practicing."
 msgstr "Řešte všechny úlohy, i ty těžké. Zlepšení přichází s praxí."
 
-#: ../src/Core/Main/GameTips.cs:63
+#: ../src/Core/Main/GameTips.cs:64
 msgid "Play on a daily basis, you will notice progress soon."
 msgstr "Hrajte denně a brzy si všimnete pokroku."
 
 #. Translators: Custom Game Selection is a menu option
-#: ../src/Core/Main/GameTips.cs:65
+#: ../src/Core/Main/GameTips.cs:66
 msgid ""
 "Use the 'Custom Game Selection' to choose exactly which games you want to "
 "play."
@@ -2090,35 +2100,35 @@ msgstr ""
 "Položka „Vlastní kombinace úloh ve hře“ vám umožňuje sestavit si sadu úkolů, "
 "které chcete řešit."
 
-#: ../src/Core/Main/GameTips.cs:69
+#: ../src/Core/Main/GameTips.cs:70
 msgid "Association of elements is a common technique for remembering things."
 msgstr ""
 "Vytváření logických spojení mezi věcmi je běžný způsob jejich zapamatování."
 
-#: ../src/Core/Main/GameTips.cs:71
+#: ../src/Core/Main/GameTips.cs:72
 msgid ""
 "Grouping elements into categories is a common technique for remembering "
 "things."
 msgstr "Seskupování věcí do kategorií je běžný způsob, jak si je zapamatovat."
 
-#: ../src/Core/Main/GameTips.cs:73
+#: ../src/Core/Main/GameTips.cs:74
 msgid "Build acronyms using the first letter of each fact to be remembered."
 msgstr ""
 "Vytvořte akronymy používající první písmeno každého faktu, který si máte "
 "zapamatovat."
 
-#: ../src/Core/Main/GameTips.cs:75
+#: ../src/Core/Main/GameTips.cs:76
 msgid ""
 "The enjoyment obtained from a puzzle is proportional to the time spent on it."
 msgstr ""
 "Potěšení získané z logického hlavolamu je přímo úměrné času strávenému nad "
 "ním."
 
-#: ../src/Core/Main/GameTips.cs:77
+#: ../src/Core/Main/GameTips.cs:78
 msgid "Think of breaking down every problem into simpler components."
 msgstr "Zkuste si každý problém rozložit na jednodušší části."
 
-#: ../src/Core/Main/GameTips.cs:79
+#: ../src/Core/Main/GameTips.cs:80
 msgid "When answering verbal analogies pay attention to the verb tense."
 msgstr "Když odpovídáte na slovní analogie, dávejte pozor na tvar slov."
 
@@ -2126,7 +2136,7 @@ msgstr "Když odpovídáte na slovní analogie, dávejte pozor na tvar slov."
 msgid "Memorize the objects below in the given time"
 msgstr "V časovém limitu si zapamatujte věci níže"
 
-#: ../src/Core/Main/Memory.cs:217
+#: ../src/Core/Main/Memory.cs:216
 msgid "Time left"
 msgstr "Zbývající čas"
 
@@ -2184,12 +2194,12 @@ msgstr "{0} Odpovězte {1}."
 msgid "{0}) {1}"
 msgstr "{0}) {1}"
 
-#: ../src/Core/Main/Verbal/AnalogiesPairOfWordsCompare.cs:42
+#: ../src/Core/Main/Verbal/AnalogiesPairOfWordsCompare.cs:41
 #, csharp-format
 msgid "Pair of words compare #{0}"
 msgstr "Srovnání páru slov č. {0}"
 
-#: ../src/Core/Main/Verbal/AnalogiesPairOfWordsCompare.cs:58
+#: ../src/Core/Main/Verbal/AnalogiesPairOfWordsCompare.cs:57
 #: ../src/Core/Main/Verbal/AnalogiesPairOfWordsOptions.cs:69
 #, csharp-format
 msgid ""
@@ -2197,7 +2207,7 @@ msgid ""
 "relationship to '{0}'?"
 msgstr "Níže je dán vztah mezi párem slov. Jaké slovo má stejný vztah k „{0}“?"
 
-#: ../src/Core/Main/Verbal/AnalogiesPairOfWordsCompare.cs:94
+#: ../src/Core/Main/Verbal/AnalogiesPairOfWordsCompare.cs:93
 #: ../src/Core/Main/Verbal/AnalogiesPairOfWordsOptions.cs:133
 #, csharp-format
 msgid "Words: {0}"
@@ -2213,77 +2223,77 @@ msgstr "Pár slov č. {0}"
 msgid "Question and answer #{0}"
 msgstr "Otázka a odpověď č. {0}"
 
-#: ../src/Core/Main/Xml/GameXml.cs:219
+#: ../src/Core/Main/Xml/GameXml.cs:218
 #, csharp-format
 msgid "{0}, "
 msgstr "{0}, "
 
-#: ../src/Core/Main/Xml/GameXml.cs:221
+#: ../src/Core/Main/Xml/GameXml.cs:220
 #, csharp-format
 msgid "{0}."
 msgstr "{0}."
 
 #. Translators {0}: list of options (A, B, C)
-#: ../src/Core/Main/Xml/GameXml.cs:224
+#: ../src/Core/Main/Xml/GameXml.cs:223
 #, csharp-format
 msgid "Answer {0}"
 msgstr "Odpovězte {0}"
 
-#: ../src/Core/Main/Xml/GameXml.cs:467
+#: ../src/Core/Main/Xml/GameXml.cs:466
 #, csharp-format
 msgid "{0}) "
 msgstr "{0}) "
 
-#: ../src/Clients/Classical/gbrainy.cs:361
+#: ../src/Clients/Classical/gbrainy.cs:395
 msgid "Play all the games"
 msgstr "Zahrajte si všechny typy her"
 
-#: ../src/Clients/Classical/gbrainy.cs:362
+#: ../src/Clients/Classical/gbrainy.cs:396
 msgid "All"
 msgstr "Všechny"
 
-#: ../src/Clients/Classical/gbrainy.cs:367
+#: ../src/Clients/Classical/gbrainy.cs:401
 msgid "Play games that challenge your reasoning and thinking"
 msgstr "Zahrát si hry, které vyzkoušejí vaši dedukci a myšlení"
 
-#: ../src/Clients/Classical/gbrainy.cs:374
+#: ../src/Clients/Classical/gbrainy.cs:408
 msgid "Play games that challenge your mental calculation skills"
 msgstr "Zahrát si hry, které vyzkoušejí, jak umíte zpaměti počítat"
 
-#: ../src/Clients/Classical/gbrainy.cs:380
+#: ../src/Clients/Classical/gbrainy.cs:414
 msgid "Play games that challenge your short term memory"
 msgstr "Zahrát si hry, které vyzkoušejí vaši krátkodobou paměť"
 
-#: ../src/Clients/Classical/gbrainy.cs:386
+#: ../src/Clients/Classical/gbrainy.cs:420
 msgid "Play games that challenge your verbal aptitude"
 msgstr "Zahrát si hry, které vyzkoušejí vaši slovní zásobu"
 
-#: ../src/Clients/Classical/gbrainy.cs:391
-#: ../src/Clients/Classical/gbrainy.cs:634
+#: ../src/Clients/Classical/gbrainy.cs:425
+#: ../src/Clients/Classical/gbrainy.cs:669
 msgid "Pause"
 msgstr "Přestávka"
 
-#: ../src/Clients/Classical/gbrainy.cs:392
+#: ../src/Clients/Classical/gbrainy.cs:426
 msgid "Pause or resume the game"
 msgstr "Udělat si přestávku nebo pokračovat"
 
-#: ../src/Clients/Classical/gbrainy.cs:397
+#: ../src/Clients/Classical/gbrainy.cs:431
 msgid "End the game and show score"
 msgstr "Ukončit hru a zobrazit hodnocení"
 
-#: ../src/Clients/Classical/gbrainy.cs:398
+#: ../src/Clients/Classical/gbrainy.cs:432
 msgid "Finish"
 msgstr "Skončit"
 
-#: ../src/Clients/Classical/gbrainy.cs:488
+#: ../src/Clients/Classical/gbrainy.cs:522
 msgid "Congratulations."
 msgstr "Blahopřejeme."
 
-#: ../src/Clients/Classical/gbrainy.cs:490
+#: ../src/Clients/Classical/gbrainy.cs:524
 msgid "Incorrect answer."
 msgstr "Nesprávná odpověď."
 
-#: ../src/Clients/Classical/gbrainy.cs:548
+#: ../src/Clients/Classical/gbrainy.cs:582
 msgid ""
 "Once you have an answer type it in the \"Answer:\" entry box and press the "
 "\"OK\" button."
@@ -2291,11 +2301,11 @@ msgstr ""
 "Pokud znáte odpověď, napište ji do políčka „Odpověď:“ a stiskněte tlačítko "
 "„Budiž“."
 
-#: ../src/Clients/Classical/gbrainy.cs:638
+#: ../src/Clients/Classical/gbrainy.cs:674
 msgid "Resume"
 msgstr "Pokračovat"
 
-#: ../src/Clients/Classical/gbrainy.cs:753
+#: ../src/Clients/Classical/gbrainy.cs:824
 #, csharp-format
 msgid "Startup time {0}"
 msgstr "Začněte v bodě {0}"
@@ -2405,29 +2415,30 @@ msgid "A brain teaser game for fun and to keep your brain trained."
 msgstr ""
 "Hra na lámání hlavy, při které se pobavíte a udržíte mozek v dobré kondici."
 
-#: ../src/Clients/Classical/Dialogs/AboutDialog.cs:81
+#: ../src/Clients/Classical/Dialogs/AboutDialog.cs:80
+#| msgid "gbrainy project web site"
+msgid "gbrainy project web site:http://live.gnome.org/gbrainy"
+msgstr "webové stránky projektu: http://live.gnome.org/gbrainy"
+
+#: ../src/Clients/Classical/Dialogs/AboutDialog.cs:82
 #, csharp-format
 msgid "You can also play on-line at {0}"
 msgstr "Můžete hrát také on-line na {0}"
 
-#: ../src/Clients/Classical/Dialogs/AboutDialog.cs:84
-#| msgid "gbrainy web site"
-msgid "gbrainy project web site"
-msgstr "webové stránky aplikace gbrainy"
-
 #. Column: Game Name
-#: ../src/Clients/Classical/Dialogs/CustomGameDialog.cs:68
+#: ../src/Clients/Classical/Dialogs/CustomGameDialog.cs:61
 msgid "Game Name"
 msgstr "Název hry"
 
 #. Column: Type
-#: ../src/Clients/Classical/Dialogs/CustomGameDialog.cs:90
+#: ../src/Clients/Classical/Dialogs/CustomGameDialog.cs:83
 msgid "Type"
 msgstr "Druh"
 
-#: ../src/Clients/Classical/Dialogs/CustomGameDialog.cs:112
-msgid "Enabled"
-msgstr "Vybráno"
+#: ../src/Clients/Classical/Dialogs/CustomGameDialog.cs:105
+#| msgid "Related"
+msgid "Selected"
+msgstr "Vybrána"
 
 #. Translators: default file name used when exporting PDF files (keep the pdf extension please)
 #: ../src/Clients/Classical/Dialogs/PdfExportDialog.cs:69
@@ -2471,11 +2482,11 @@ msgstr[0] "Je sestaven z výsledků {0} posledního zaznamenaného herního seze
 msgstr[1] "Je sestaven z výsledků {0} posledních zaznamenaných herních sezení."
 msgstr[2] "Je sestaven z výsledků {0} posledních zaznamenaných herních sezení."
 
-#: ../src/Clients/Classical/Dialogs/PreferencesDialog.cs:81
+#: ../src/Clients/Classical/Dialogs/PreferencesDialog.cs:107
 msgid "You are about to delete the player's game session history."
 msgstr "Chystáte se smazat historii herních sezení hráče."
 
-#: ../src/Clients/Classical/Dialogs/PreferencesDialog.cs:82
+#: ../src/Clients/Classical/Dialogs/PreferencesDialog.cs:108
 msgid ""
 "If you proceed, you will lose the history of the previous game sessions. Do "
 "you want to continue?"
@@ -2483,7 +2494,7 @@ msgstr ""
 "Pokud budete souhlasit, přijdete o historii předchozích herních sezení. "
 "Chcete pokračovat?"
 
-#: ../src/Clients/Classical/Dialogs/PreferencesDialog.cs:83
+#: ../src/Clients/Classical/Dialogs/PreferencesDialog.cs:109
 msgid "_Delete"
 msgstr "_Smazat"
 
@@ -2574,7 +2585,7 @@ msgid "_Save"
 msgstr "_Uložit"
 
 #: ../src/Clients/Classical/Dialogs/ui/PlayerHistoryDialog.ui.h:1
-#: ../src/Clients/Classical/gbrainy.ui.h:10
+#: ../src/Clients/Classical/gbrainy.ui.h:12
 msgid "Player's Game Session History"
 msgstr "Historie herního sezení hráče"
 
@@ -2604,7 +2615,7 @@ msgstr ""
 "Minimální počet odehraných hlavolamů potřebný na uložení herního sezení:"
 
 #: ../src/Clients/Classical/Dialogs/ui/PreferencesDialog.ui.h:11
-#: ../src/Clients/Classical/gbrainy.ui.h:11
+#: ../src/Clients/Classical/gbrainy.ui.h:13
 msgid "Preferences"
 msgstr "Předvolby"
 
@@ -2617,6 +2628,11 @@ msgid "Skip games that use colors (friendly to colorblind users)"
 msgstr "Přeskočit hry využívající barvy (vhodné pro barvoslepé uživatele)"
 
 #: ../src/Clients/Classical/Dialogs/ui/PreferencesDialog.ui.h:14
+#| msgid "Time"
+msgid "Theme:"
+msgstr "Motiv:"
+
+#: ../src/Clients/Classical/Dialogs/ui/PreferencesDialog.ui.h:15
 msgid "Time in seconds to memorize the challenge:"
 msgstr "Čas v sekundách na zapamatování:"
 
@@ -3892,15 +3908,15 @@ msgstr ""
 "Pořadí nového písmena v anglické abecedě vypočítáte tak, že k pořadí (v "
 "anglické abecedě) předcházejícího písmena připočítáte {0}."
 
-#: ../src/Games/Logic/PuzzleSquares.cs:32
+#: ../src/Games/Logic/PuzzleSquares.cs:31
 msgid "Squares"
 msgstr "Čtverce"
 
-#: ../src/Games/Logic/PuzzleSquares.cs:36
+#: ../src/Games/Logic/PuzzleSquares.cs:35
 msgid "How many squares of any size do you count in the figure below?"
 msgstr "Kolik čtverců libovolné velikosti se dá napočítat na tomto obrázku?"
 
-#: ../src/Games/Logic/PuzzleSquares.cs:40
+#: ../src/Games/Logic/PuzzleSquares.cs:39
 msgid ""
 "A square is a rectangle with sides of equal length. A square can also be "
 "built from other squares."
@@ -3908,7 +3924,7 @@ msgstr ""
 "Čtverec je pravoúhlý čtyřúhelník, jehož všechny strany mají stejnou délku. "
 "Čtverec může být také složen z jiných čtverců."
 
-#: ../src/Games/Logic/PuzzleSquares.cs:47
+#: ../src/Games/Logic/PuzzleSquares.cs:46
 msgid ""
 "There are 16 single squares, 9 squares made by 4 single squares, 4 squares "
 "made by 9 single squares and 1 square made by 16 single squares."
@@ -3917,7 +3933,7 @@ msgstr ""
 "čtverců, 4 čtverce vytvořené pomocí 9 samostatných čtverců a 1 čtverec, "
 "který se skládá ze 16 samostatných čtverců."
 
-#: ../src/Games/Logic/PuzzleSquares.cs:49
+#: ../src/Games/Logic/PuzzleSquares.cs:48
 msgid ""
 "There are 9 single squares, 4 squares made by 4 single squares and 1 square "
 "made by 9 single squares."
@@ -3925,11 +3941,11 @@ msgstr ""
 "Na obrázku je 9 samostatných čtverců, 4 čtverce vytvořené pomocí 4 "
 "samostatných čtverců a 1 čtverec, který tvoří 9 samostatných čtverců."
 
-#: ../src/Games/Logic/PuzzleSquareSheets.cs:29
+#: ../src/Games/Logic/PuzzleSquareSheets.cs:28
 msgid "Square sheets"
 msgstr "Čtvercové listy papíru"
 
-#: ../src/Games/Logic/PuzzleSquareSheets.cs:33
+#: ../src/Games/Logic/PuzzleSquareSheets.cs:32
 msgid ""
 "What is the minimum number of square sheets of paper of any size required to "
 "create the figure? Lines indicate frontiers between different sheets."
@@ -3938,12 +3954,12 @@ msgstr ""
 "na vytvoření tohoto obrazce? Čáry ukazují hranice mezi jednotlivými listy "
 "papíru."
 
-#: ../src/Games/Logic/PuzzleSquareSheets.cs:37
+#: ../src/Games/Logic/PuzzleSquareSheets.cs:36
 msgid "The sheets should overlap."
 msgstr "Listy papíru by se měly překrývat."
 
 #. Translators: the translated version should not take more characters that the English original
-#: ../src/Games/Logic/PuzzleSquareSheets.cs:43
+#: ../src/Games/Logic/PuzzleSquareSheets.cs:42
 msgid ""
 "A full sized square of paper, a 3/4 of the whole size square of paper in the "
 "bottom right corner, another 3/4 square of paper in the top left corner and "
@@ -4530,11 +4546,11 @@ msgstr "medvěd"
 msgid "wolf"
 msgstr "vlk"
 
-#: ../src/Games/Calculation/CalculationArithmetical.cs:42
+#: ../src/Games/Calculation/CalculationArithmetical.cs:41
 msgid "Arithmetical"
 msgstr "Počítání"
 
-#: ../src/Games/Calculation/CalculationArithmetical.cs:50
+#: ../src/Games/Calculation/CalculationArithmetical.cs:49
 msgid "What is the result of the arithmetical operation?"
 msgstr "Jaký je výsledek tohoto příkladu?"
 
@@ -4768,66 +4784,85 @@ msgid "Extensions"
 msgstr "Rozšíření"
 
 #: ../src/Clients/Classical/gbrainy.ui.h:6
+msgid "Horizontal"
+msgstr "Vodorovně"
+
+#: ../src/Clients/Classical/gbrainy.ui.h:7
 msgid "How to Extend gbrainy's Functionality"
 msgstr "Jak rozšířit funkcionalitu gbrainy"
 
-#: ../src/Clients/Classical/gbrainy.ui.h:7
+#: ../src/Clients/Classical/gbrainy.ui.h:8
 msgid "Logic Puzzles Only"
 msgstr "Jen logické obrazce"
 
-#: ../src/Clients/Classical/gbrainy.ui.h:8
+#: ../src/Clients/Classical/gbrainy.ui.h:9
 msgid "Memory Trainers Only"
 msgstr "Jen paměťová cvičení"
 
-#: ../src/Clients/Classical/gbrainy.ui.h:9
+#: ../src/Clients/Classical/gbrainy.ui.h:10
 msgid "Mental Calculation Trainers Only"
 msgstr "Jen cvičení na počítání z hlavy"
 
-#: ../src/Clients/Classical/gbrainy.ui.h:12
+#: ../src/Clients/Classical/gbrainy.ui.h:11
+#| msgid "Ostentation"
+msgid "Orientation"
+msgstr "Orientace"
+
+#: ../src/Clients/Classical/gbrainy.ui.h:14
+#| msgid "Show:"
+msgid "Show"
+msgstr "Zobrazit"
+
+#: ../src/Clients/Classical/gbrainy.ui.h:15
 msgid "Toolbar"
 msgstr "Nástrojová lišta"
 
-#: ../src/Clients/Classical/gbrainy.ui.h:13
+#: ../src/Clients/Classical/gbrainy.ui.h:16
 msgid "Verbal Analogies Only"
 msgstr "Jen slovní analogie"
 
-#: ../src/Clients/Classical/gbrainy.ui.h:14
+#: ../src/Clients/Classical/gbrainy.ui.h:17
+#| msgid "Verbal"
+msgid "Vertical"
+msgstr "Svisle"
+
+#: ../src/Clients/Classical/gbrainy.ui.h:18
 msgid "_Contents"
 msgstr "_Obsah"
 
-#: ../src/Clients/Classical/gbrainy.ui.h:15
+#: ../src/Clients/Classical/gbrainy.ui.h:19
 msgid "_End Game"
 msgstr "_Skončit hru"
 
-#: ../src/Clients/Classical/gbrainy.ui.h:16
+#: ../src/Clients/Classical/gbrainy.ui.h:20
 msgid "_Game"
 msgstr "_Hra"
 
-#: ../src/Clients/Classical/gbrainy.ui.h:17
+#: ../src/Clients/Classical/gbrainy.ui.h:21
 msgid "_Help"
 msgstr "_Nápověda"
 
-#: ../src/Clients/Classical/gbrainy.ui.h:18
+#: ../src/Clients/Classical/gbrainy.ui.h:22
 msgid "_New Game"
 msgstr "_Nová hra"
 
-#: ../src/Clients/Classical/gbrainy.ui.h:19
+#: ../src/Clients/Classical/gbrainy.ui.h:23
 msgid "_Next"
 msgstr "D_alší"
 
-#: ../src/Clients/Classical/gbrainy.ui.h:20
+#: ../src/Clients/Classical/gbrainy.ui.h:24
 msgid "_Pause Game"
 msgstr "_Pozastavit hru"
 
-#: ../src/Clients/Classical/gbrainy.ui.h:21
+#: ../src/Clients/Classical/gbrainy.ui.h:25
 msgid "_Settings"
 msgstr "Na_stavení"
 
-#: ../src/Clients/Classical/gbrainy.ui.h:22
+#: ../src/Clients/Classical/gbrainy.ui.h:26
 msgid "_Tip"
 msgstr "_Pomůcka"
 
-#: ../src/Clients/Classical/gbrainy.ui.h:23
+#: ../src/Clients/Classical/gbrainy.ui.h:27
 msgid "_View"
 msgstr "_Zobrazit"
 
@@ -4970,6 +5005,9 @@ msgstr "_Odinstalovat…"
 #: ../src/Clients/Classical/mono-addins-strings.xml.h:35
 msgid "_Unselect All"
 msgstr "_Zrušit výběr"
+
+#~ msgid "Enabled"
+#~ msgstr "Vybráno"
 
 #~ msgid "Bagpipes"
 #~ msgstr "dudy"
