@@ -7,19 +7,19 @@
 # Erwin Poeze <erwin.poeze@gmail.com>, 2009.
 # Redmar van den Berg <redmar@ubuntu-nl.org>, 2010.
 # Hannie Dumoleyn <hannie@ubuntu-nl.org>, 2010, 2011.
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: gbrainy\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
-"product=gbrainy&component=general\n"
-"POT-Creation-Date: 2011-01-31 18:40+0000\n"
-"PO-Revision-Date: 2011-02-01 16:20+0100\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-02-16 23:42+0100\n"
+"PO-Revision-Date: 2011-02-16 17:13+0100\n"
 "Last-Translator: Hannie Dumoleyn <hannie@ubuntu-nl.org>\n"
 "Language-Team: Dutch <vertaling@vrijschrift.org>\n"
+"Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: nl\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Launchpad-Export-Date: 2010-08-10 18:40+0000\n"
 "X-Generator: Lokalize 1.1\n"
@@ -329,11 +329,7 @@ msgstr ""
 "dat x &lt; y waar is? [option_answers]"
 
 #: ../data/games.xml.h:29
-#, fuzzy, no-c-format
-#| msgid ""
-#| "In a small town, [all_cars]% of the inhabitants have a car and "
-#| "[males_cars]% have a car and are males. What percentage of the total "
-#| "population are females and have a car? [option_answers]"
+#, no-c-format
 msgid ""
 "In a small town, [all_cars]% of the inhabitants have a car and [males_cars]% "
 "have a car and are males. What percentage of the population are females and "
@@ -495,16 +491,13 @@ msgstr ""
 "alleen zussen en [both] hebben zowel broers als zussen."
 
 #: ../data/games.xml.h:58
-#, fuzzy, no-c-format
-#| msgid ""
-#| "[female_cars]% ([all_cars] - [males_cars]) of the inhabitants are women "
-#| "and have a car, that is, [option_a]% of the total."
+#, no-c-format
 msgid ""
 "[female_cars]% ([all_cars] - [males_cars]) of the inhabitants are women and "
 "have a car."
 msgstr ""
-"[female_cars]% ([all_cars] - [males_cars]) van de inwoners is vrouw enbezit "
-"een auto, dat is, [option_a]% van het totaal."
+"[female_cars]% ([all_cars] - [males_cars]) van de inwoners is vrouw en bezit "
+"een auto."
 
 #: ../data/games.xml.h:59
 msgid "[option_a] and [option_b] are both multiples of [product]."
@@ -624,9 +617,17 @@ msgstr ""
 "Speel spelletjes die uw vaardigheden op het vlak van logisch denken, verbale "
 "vaardigheden, rekenen en geheugen op de proef stellen"
 
-#: ../data/gbrainy.desktop.in.h:3 ../src/Clients/Classical/gbrainy.ui.h:24
+#: ../data/gbrainy.desktop.in.h:3 ../src/Clients/Classical/gbrainy.ui.h:28
 msgid "gbrainy"
 msgstr "gbrainy"
+
+#: ../data/themes/themes.xml.h:1
+msgid "Blackboard"
+msgstr "Schoolbord"
+
+#: ../data/themes/themes.xml.h:2
+msgid "Classic"
+msgstr "Klassiek"
 
 #: ../data/verbal_analogies.xml.h:1
 msgid "A car engine that is poorly designed and lacking of sophistication is?"
@@ -1732,64 +1733,64 @@ msgstr "Maak u klaar om de volgende objecten te onthouden…"
 msgid "Total"
 msgstr "Totaal"
 
-#: ../src/Core/Views/FinishView.cs:104 ../src/Core/Main/GameTypes.cs:44
-#: ../src/Clients/Classical/gbrainy.cs:368
+#: ../src/Core/Views/FinishView.cs:104 ../src/Core/Main/GameTypes.cs:45
+#: ../src/Clients/Classical/gbrainy.cs:403
 #: ../src/Clients/Classical/Dialogs/ui/PdfExportDialog.ui.h:8
 msgid "Logic"
 msgstr "Logica"
 
-#: ../src/Core/Views/FinishView.cs:111 ../src/Core/Main/GameTypes.cs:48
-#: ../src/Clients/Classical/gbrainy.cs:373
+#: ../src/Core/Views/FinishView.cs:111 ../src/Core/Main/GameTypes.cs:49
+#: ../src/Clients/Classical/gbrainy.cs:408
 #: ../src/Clients/Classical/Dialogs/ui/PdfExportDialog.ui.h:6
 msgid "Calculation"
 msgstr "Berekening"
 
-#: ../src/Core/Views/FinishView.cs:118 ../src/Core/Main/GameTypes.cs:46
-#: ../src/Clients/Classical/gbrainy.cs:379
+#: ../src/Core/Views/FinishView.cs:118 ../src/Core/Main/GameTypes.cs:47
+#: ../src/Clients/Classical/gbrainy.cs:414
 msgid "Memory"
 msgstr "Geheugen"
 
-#: ../src/Core/Views/FinishView.cs:125 ../src/Core/Main/GameTypes.cs:50
-#: ../src/Clients/Classical/gbrainy.cs:385
+#: ../src/Core/Views/FinishView.cs:125 ../src/Core/Main/GameTypes.cs:51
+#: ../src/Clients/Classical/gbrainy.cs:420
 #: ../src/Clients/Classical/Dialogs/ui/PdfExportDialog.ui.h:18
 msgid "Verbal"
 msgstr "Verbaal"
 
-#: ../src/Core/Views/FinishView.cs:141
+#: ../src/Core/Views/FinishView.cs:140
 #: ../src/Core/Views/PlayerHistoryView.cs:275
 msgid "Score"
 msgstr "Score"
 
-#: ../src/Core/Views/FinishView.cs:151
+#: ../src/Core/Views/FinishView.cs:150
 #, csharp-format
 msgid "Games won: {0} ({1} played)"
 msgstr "Spellen gewonnen: {0} ({1} gespeeld)"
 
-#: ../src/Core/Views/FinishView.cs:153
+#: ../src/Core/Views/FinishView.cs:152
 #, csharp-format
 msgid "{0}. Games won: {1} ({2} played)"
 msgstr "{0}. Spellen gewonnen: {1} ({2} gespeeld)"
 
-#: ../src/Core/Views/FinishView.cs:157
+#: ../src/Core/Views/FinishView.cs:156
 #, csharp-format
 msgid "Time played {0} (average per game {1})"
 msgstr "Gespeelde tijd is {0} (gemiddeld {1} per spel)"
 
 #. Translators: translated string should not be longer that the English original (space restriction on the UI)
-#: ../src/Core/Views/FinishView.cs:166
+#: ../src/Core/Views/FinishView.cs:165
 msgid "For details on how gbrainy's scoring works refer to the help."
 msgstr ""
 "Raadpleeg Help voor details over hoe de puntentelling van gbrainy werkt."
 
-#: ../src/Core/Views/FinishView.cs:176
+#: ../src/Core/Views/FinishView.cs:175
 msgid "Tips for your next games"
 msgstr "Hints voor uw volgende spellen"
 
-#: ../src/Core/Views/FinishView.cs:204
+#: ../src/Core/Views/FinishView.cs:203
 msgid "Congratulations! New personal record"
 msgstr "Gefeliciteerd! Een nieuw persoonlijk record"
 
-#: ../src/Core/Views/FinishView.cs:214
+#: ../src/Core/Views/FinishView.cs:213
 #, csharp-format
 msgid ""
 "By scoring {0} in logic puzzle games you have established a new personal "
@@ -1798,7 +1799,7 @@ msgstr ""
 "Door {0} op het onderdeel logica te scoren heeft u een nieuw persoonlijk "
 "record behaald. Uw vorig record was {1}."
 
-#: ../src/Core/Views/FinishView.cs:220
+#: ../src/Core/Views/FinishView.cs:219
 #, csharp-format
 msgid ""
 "By scoring {0} in calculation games you have established a new personal "
@@ -1807,7 +1808,7 @@ msgstr ""
 "Door {0} op het onderdeel rekenen te scoren heeft u een nieuw persoonlijk "
 "record behaald. Uw vorig record was {1}."
 
-#: ../src/Core/Views/FinishView.cs:226
+#: ../src/Core/Views/FinishView.cs:225
 #, csharp-format
 msgid ""
 "By scoring {0} in memory games you have established a new personal record. "
@@ -1816,7 +1817,7 @@ msgstr ""
 "Door {0} op het onderdeel geheugen te scoren heeft u een nieuw persoonlijk "
 "record behaald. Uw vorig record was {1}."
 
-#: ../src/Core/Views/FinishView.cs:232
+#: ../src/Core/Views/FinishView.cs:231
 #, csharp-format
 msgid ""
 "By scoring {0} in verbal analogies you have established a new personal "
@@ -1848,12 +1849,12 @@ msgid "Verbal analogies. Challenge your verbal aptitude."
 msgstr "Verbale analogieën. Toon uw kennis van woordbetekenissen."
 
 #. Translators: {0} is the version number of the program
-#: ../src/Core/Views/WelcomeView.cs:141
+#: ../src/Core/Views/WelcomeView.cs:140
 #, csharp-format
 msgid "Welcome to gbrainy {0}"
 msgstr "Welkom bij gbrainy {0}"
 
-#: ../src/Core/Views/WelcomeView.cs:145
+#: ../src/Core/Views/WelcomeView.cs:144
 msgid ""
 "gbrainy is a brain teaser game and trainer to have fun and to keep your "
 "brain trained. It includes:"
@@ -1861,7 +1862,7 @@ msgstr ""
 "gbrainy is een hersenkraker- en trainingsspel, voor uw vermaak en om uw "
 "brein fit te houden.  Het bevat:"
 
-#: ../src/Core/Views/WelcomeView.cs:149 ../src/Core/Main/GameTips.cs:67
+#: ../src/Core/Views/WelcomeView.cs:148 ../src/Core/Main/GameTips.cs:68
 msgid "Use the Settings to adjust the difficulty level of the game."
 msgstr ""
 "Gebruik 'Instellingen' om de moeilijkheidsgraad van het spel aan te passen."
@@ -1898,7 +1899,7 @@ msgstr "zwart"
 msgid "white"
 msgstr "wit"
 
-#: ../src/Core/Main/Game.cs:151
+#: ../src/Core/Main/Game.cs:152
 #, csharp-format
 msgid "The correct answer is {0}."
 msgstr "Het juiste antwoord is {0}."
@@ -1906,7 +1907,7 @@ msgstr "Het juiste antwoord is {0}."
 #. Translators: answer + rationale of the answer
 #. Translators: "The graph below" +  "It is built using" sentences
 #. Translators: Concadenating two strings (rationale of answer + extra information).
-#: ../src/Core/Main/Game.cs:157 ../src/Core/Main/Verbal/Analogies.cs:62
+#: ../src/Core/Main/Game.cs:158 ../src/Core/Main/Verbal/Analogies.cs:62
 #: ../src/Clients/Classical/Dialogs/PlayerHistoryDialog.cs:60
 #: ../src/Games/Logic/PuzzleCountSeries.cs:93
 #, csharp-format
@@ -1920,56 +1921,56 @@ msgstr "{0}) {1}"
 #. For languages represented with the Latin alphabet use
 #. the same than English
 #. First possible answer for a series (e.g.: Figure A)
-#: ../src/Core/Main/Game.cs:317
+#: ../src/Core/Main/Game.cs:318
 msgid "A"
 msgstr "A"
 
 #. Second possible answer for a series
-#: ../src/Core/Main/Game.cs:319
+#: ../src/Core/Main/Game.cs:320
 msgid "B"
 msgstr "B"
 
 #. Third possible answer for a series
-#: ../src/Core/Main/Game.cs:321
+#: ../src/Core/Main/Game.cs:322
 msgid "C"
 msgstr "C"
 
 #. Fourth possible answer for a series
-#: ../src/Core/Main/Game.cs:323
+#: ../src/Core/Main/Game.cs:324
 msgid "D"
 msgstr "D"
 
 #. Fifth possible answer for a series
-#: ../src/Core/Main/Game.cs:325
+#: ../src/Core/Main/Game.cs:326
 msgid "E"
 msgstr "E"
 
 #. Sixth possible answer for a series
-#: ../src/Core/Main/Game.cs:327
+#: ../src/Core/Main/Game.cs:328
 msgid "F"
 msgstr "F"
 
 #. Seventh possible answer for a series
-#: ../src/Core/Main/Game.cs:329
+#: ../src/Core/Main/Game.cs:330
 msgid "G"
 msgstr "G"
 
 #. Eighth possible answer for a series
-#: ../src/Core/Main/Game.cs:331
+#: ../src/Core/Main/Game.cs:332
 msgid "H"
 msgstr "H"
 
-#: ../src/Core/Main/Game.cs:339
+#: ../src/Core/Main/Game.cs:340
 #, csharp-format
 msgid "Figure {0}"
 msgstr "Figuur {0}"
 
-#: ../src/Core/Main/GameManager.cs:313
+#: ../src/Core/Main/GameManager.cs:319
 msgid "Extensions database:"
 msgstr "Gegevensbron uitbreidingen:"
 
 #. Translators: 'Games registered' is the games know to gbrainy (build-in and load from addins-in and external files)
-#: ../src/Core/Main/GameManager.cs:319
+#: ../src/Core/Main/GameManager.cs:325
 #, csharp-format
 msgid ""
 "Games registered: {0}: {1} logic puzzles, {2} calculation trainers, {3} "
@@ -2027,16 +2028,17 @@ msgid "Disappointing results"
 msgstr "Teleurstellend resultaat"
 
 #: ../src/Core/Main/GameSession.cs:276
+#: ../src/Clients/Classical/Widgets/GameDrawingArea.cs:119
 msgid "Paused"
 msgstr "Gepauzeerd"
 
-#: ../src/Core/Main/GameTips.cs:51
+#: ../src/Core/Main/GameTips.cs:52
 msgid "Read the instructions carefully and identify the data and given clues."
 msgstr ""
 "Lees de instructies aandachtig en bepaal wat de gegevens en de aanwijzingen "
 "zijn."
 
-#: ../src/Core/Main/GameTips.cs:53
+#: ../src/Core/Main/GameTips.cs:54
 msgid ""
 "To score the player gbrainy uses the time and tips needed to complete each "
 "game."
@@ -2044,35 +2046,35 @@ msgstr ""
 "Om de speler te beoordelen kijkt gbrainy naar de benodigde tijd en de "
 "gebruikte tips."
 
-#: ../src/Core/Main/GameTips.cs:55
+#: ../src/Core/Main/GameTips.cs:56
 msgid ""
 "In logic games, elements that may seem irrelevant can be very important."
 msgstr ""
 "In logica-spellen kunnen elementen die onbelangrijk lijken erg belangrijk "
 "zijn."
 
-#: ../src/Core/Main/GameTips.cs:57
+#: ../src/Core/Main/GameTips.cs:58
 msgid "Break the mental blocks and look into the boundaries of problems."
 msgstr "Doorbreek mentale blokkades en verken de grenzen van de problemen."
 
-#: ../src/Core/Main/GameTips.cs:59
+#: ../src/Core/Main/GameTips.cs:60
 msgid "Enjoy making mistakes, they are part of the learning process."
 msgstr ""
 "Heb er plezier in om fouten te maken, dit is een onderdeel van het "
 "leerproces."
 
-#: ../src/Core/Main/GameTips.cs:61
+#: ../src/Core/Main/GameTips.cs:62
 msgid ""
 "Do all the problems, even the difficult ones. Improvement comes from "
 "practicing."
 msgstr "Probeer alle vraagstukken, zelfs de lastige. Oefening baart kunst."
 
-#: ../src/Core/Main/GameTips.cs:63
+#: ../src/Core/Main/GameTips.cs:64
 msgid "Play on a daily basis, you will notice progress soon."
 msgstr "Als u dagelijks speelt, zult u snel voortgang boeken."
 
 #. Translators: Custom Game Selection is a menu option
-#: ../src/Core/Main/GameTips.cs:65
+#: ../src/Core/Main/GameTips.cs:66
 msgid ""
 "Use the 'Custom Game Selection' to choose exactly which games you want to "
 "play."
@@ -2080,11 +2082,11 @@ msgstr ""
 "Gebruik de ‘Handmatige spelselectie’ om te bepalen welke spellen u wilt "
 "spelen."
 
-#: ../src/Core/Main/GameTips.cs:69
+#: ../src/Core/Main/GameTips.cs:70
 msgid "Association of elements is a common technique for remembering things."
 msgstr "Associatie is een bekende techniek om dingen te onthouden."
 
-#: ../src/Core/Main/GameTips.cs:71
+#: ../src/Core/Main/GameTips.cs:72
 msgid ""
 "Grouping elements into categories is a common technique for remembering "
 "things."
@@ -2092,23 +2094,23 @@ msgstr ""
 "Elementen in categorieën onderbrengen is een bekende techniek om dingen te "
 "onthouden."
 
-#: ../src/Core/Main/GameTips.cs:73
+#: ../src/Core/Main/GameTips.cs:74
 msgid "Build acronyms using the first letter of each fact to be remembered."
 msgstr ""
 "Maak een acroniem van de eerste letter van alle feiten die u moet onthouden."
 
-#: ../src/Core/Main/GameTips.cs:75
+#: ../src/Core/Main/GameTips.cs:76
 msgid ""
 "The enjoyment obtained from a puzzle is proportional to the time spent on it."
 msgstr ""
 "Het plezier dat u aan een puzzel beleefd is evenredig aan de tijd die u er "
 "aan besteedt."
 
-#: ../src/Core/Main/GameTips.cs:77
+#: ../src/Core/Main/GameTips.cs:78
 msgid "Think of breaking down every problem into simpler components."
 msgstr "Probeer elk vraagstuk in eenvoudigere onderdelen op te delen."
 
-#: ../src/Core/Main/GameTips.cs:79
+#: ../src/Core/Main/GameTips.cs:80
 msgid "When answering verbal analogies pay attention to the verb tense."
 msgstr "Let op de werkwoordsvorm bij het oplossen van verbale analogieën."
 
@@ -2116,7 +2118,7 @@ msgstr "Let op de werkwoordsvorm bij het oplossen van verbale analogieën."
 msgid "Memorize the objects below in the given time"
 msgstr "Onthoud de onderstaande objecten in de gegeven tijd"
 
-#: ../src/Core/Main/Memory.cs:217
+#: ../src/Core/Main/Memory.cs:216
 msgid "Time left"
 msgstr "Tijd over"
 
@@ -2174,12 +2176,12 @@ msgstr "{0} Antwoord {1}."
 msgid "{0}) {1}"
 msgstr "{0}) {1}"
 
-#: ../src/Core/Main/Verbal/AnalogiesPairOfWordsCompare.cs:42
+#: ../src/Core/Main/Verbal/AnalogiesPairOfWordsCompare.cs:41
 #, csharp-format
 msgid "Pair of words compare #{0}"
 msgstr "Vergelijk woordparen #{0}"
 
-#: ../src/Core/Main/Verbal/AnalogiesPairOfWordsCompare.cs:58
+#: ../src/Core/Main/Verbal/AnalogiesPairOfWordsCompare.cs:57
 #: ../src/Core/Main/Verbal/AnalogiesPairOfWordsOptions.cs:69
 #, csharp-format
 msgid ""
@@ -2189,7 +2191,7 @@ msgstr ""
 "De relatie tussen twee woorden is gegeven. Welk woord deelt deze relatie met "
 "'{0}'?"
 
-#: ../src/Core/Main/Verbal/AnalogiesPairOfWordsCompare.cs:94
+#: ../src/Core/Main/Verbal/AnalogiesPairOfWordsCompare.cs:93
 #: ../src/Core/Main/Verbal/AnalogiesPairOfWordsOptions.cs:133
 #, csharp-format
 msgid "Words: {0}"
@@ -2205,77 +2207,77 @@ msgstr "Woordpaar #{0}"
 msgid "Question and answer #{0}"
 msgstr "Vraag en antwoord #{0}"
 
-#: ../src/Core/Main/Xml/GameXml.cs:219
+#: ../src/Core/Main/Xml/GameXml.cs:218
 #, csharp-format
 msgid "{0}, "
 msgstr "{0}, "
 
-#: ../src/Core/Main/Xml/GameXml.cs:221
+#: ../src/Core/Main/Xml/GameXml.cs:220
 #, csharp-format
 msgid "{0}."
 msgstr "{0}."
 
 #. Translators {0}: list of options (A, B, C)
-#: ../src/Core/Main/Xml/GameXml.cs:224
+#: ../src/Core/Main/Xml/GameXml.cs:223
 #, csharp-format
 msgid "Answer {0}"
 msgstr "Antwoord {0}"
 
-#: ../src/Core/Main/Xml/GameXml.cs:467
+#: ../src/Core/Main/Xml/GameXml.cs:466
 #, csharp-format
 msgid "{0}) "
 msgstr "{0}) "
 
-#: ../src/Clients/Classical/gbrainy.cs:361
+#: ../src/Clients/Classical/gbrainy.cs:396
 msgid "Play all the games"
 msgstr "Alle spellen spelen"
 
-#: ../src/Clients/Classical/gbrainy.cs:362
+#: ../src/Clients/Classical/gbrainy.cs:397
 msgid "All"
 msgstr "Alles"
 
-#: ../src/Clients/Classical/gbrainy.cs:367
+#: ../src/Clients/Classical/gbrainy.cs:402
 msgid "Play games that challenge your reasoning and thinking"
 msgstr "Speel spellen die uw redeneer- en denkvermogen op de proef stellen"
 
-#: ../src/Clients/Classical/gbrainy.cs:374
+#: ../src/Clients/Classical/gbrainy.cs:409
 msgid "Play games that challenge your mental calculation skills"
 msgstr "Speel spellen die uw hoofdrekenvaardigheden op de proef stellen"
 
-#: ../src/Clients/Classical/gbrainy.cs:380
+#: ../src/Clients/Classical/gbrainy.cs:415
 msgid "Play games that challenge your short term memory"
 msgstr "Speel spellen die uw kortetermijngeheugen op de proef stellen"
 
-#: ../src/Clients/Classical/gbrainy.cs:386
+#: ../src/Clients/Classical/gbrainy.cs:421
 msgid "Play games that challenge your verbal aptitude"
 msgstr "Speel spellen die uw verbale vaardigheden op de proef stellen"
 
-#: ../src/Clients/Classical/gbrainy.cs:391
-#: ../src/Clients/Classical/gbrainy.cs:634
+#: ../src/Clients/Classical/gbrainy.cs:426
+#: ../src/Clients/Classical/gbrainy.cs:675
 msgid "Pause"
 msgstr "Pauze"
 
-#: ../src/Clients/Classical/gbrainy.cs:392
+#: ../src/Clients/Classical/gbrainy.cs:427
 msgid "Pause or resume the game"
 msgstr "Het spel pauzeren of hervatten"
 
-#: ../src/Clients/Classical/gbrainy.cs:397
+#: ../src/Clients/Classical/gbrainy.cs:432
 msgid "End the game and show score"
 msgstr "Het spel beëindigen en de score tonen"
 
-#: ../src/Clients/Classical/gbrainy.cs:398
+#: ../src/Clients/Classical/gbrainy.cs:433
 msgid "Finish"
 msgstr "Voltooien"
 
-#: ../src/Clients/Classical/gbrainy.cs:488
+#: ../src/Clients/Classical/gbrainy.cs:525
 msgid "Congratulations."
 msgstr "Gefeliciteerd."
 
-#: ../src/Clients/Classical/gbrainy.cs:490
+#: ../src/Clients/Classical/gbrainy.cs:527
 msgid "Incorrect answer."
 msgstr "Onjuist antwoord."
 
-#: ../src/Clients/Classical/gbrainy.cs:548
+#: ../src/Clients/Classical/gbrainy.cs:587
 msgid ""
 "Once you have an answer type it in the \"Answer:\" entry box and press the "
 "\"OK\" button."
@@ -2283,11 +2285,11 @@ msgstr ""
 "Zodra u een antwoord weet typt u het in het ‘Antwoord:’-invoerveld en drukt "
 "u op de \"OK\"-knop."
 
-#: ../src/Clients/Classical/gbrainy.cs:638
+#: ../src/Clients/Classical/gbrainy.cs:680
 msgid "Resume"
 msgstr "Hervatten"
 
-#: ../src/Clients/Classical/gbrainy.cs:753
+#: ../src/Clients/Classical/gbrainy.cs:830
 #, csharp-format
 msgid "Startup time {0}"
 msgstr "Opstarttijd {0}"
@@ -2415,30 +2417,28 @@ msgstr ""
 msgid "A brain teaser game for fun and to keep your brain trained."
 msgstr "Een hersenkrakerspel voor vermaak en om uw brein fit te houden."
 
-#: ../src/Clients/Classical/Dialogs/AboutDialog.cs:81
+#: ../src/Clients/Classical/Dialogs/AboutDialog.cs:80
+msgid "gbrainy project web site:http://live.gnome.org/gbrainy"
+msgstr "Website van het gbrainy-project: http://live.gnome.org/gbrainy"
+
+#: ../src/Clients/Classical/Dialogs/AboutDialog.cs:82
 #, csharp-format
 msgid "You can also play on-line at {0}"
-msgstr ""
-
-#: ../src/Clients/Classical/Dialogs/AboutDialog.cs:84
-#, fuzzy
-#| msgid "gbrainy web site"
-msgid "gbrainy project web site"
-msgstr "gbrainy-website"
+msgstr "U kunt ook online spelen op {0}"
 
 #. Column: Game Name
-#: ../src/Clients/Classical/Dialogs/CustomGameDialog.cs:68
+#: ../src/Clients/Classical/Dialogs/CustomGameDialog.cs:61
 msgid "Game Name"
 msgstr "Naam van het spel"
 
 #. Column: Type
-#: ../src/Clients/Classical/Dialogs/CustomGameDialog.cs:90
+#: ../src/Clients/Classical/Dialogs/CustomGameDialog.cs:83
 msgid "Type"
 msgstr "Type"
 
-#: ../src/Clients/Classical/Dialogs/CustomGameDialog.cs:112
-msgid "Enabled"
-msgstr "Ingeschakeld"
+#: ../src/Clients/Classical/Dialogs/CustomGameDialog.cs:105
+msgid "Selected"
+msgstr "Geselecteerd"
 
 #. Translators: default file name used when exporting PDF files (keep the pdf extension please)
 #: ../src/Clients/Classical/Dialogs/PdfExportDialog.cs:69
@@ -2483,12 +2483,12 @@ msgid_plural ""
 msgstr[0] "Het is opgebouwd met de resultaten van {0} spelsessie."
 msgstr[1] "Het is opgebouwd met de resultaten van {0} spelsessies."
 
-#: ../src/Clients/Classical/Dialogs/PreferencesDialog.cs:81
+#: ../src/Clients/Classical/Dialogs/PreferencesDialog.cs:107
 msgid "You are about to delete the player's game session history."
 msgstr ""
 "U staat op het punt om de spelgeschiedenis van deze speler te verwijderen."
 
-#: ../src/Clients/Classical/Dialogs/PreferencesDialog.cs:82
+#: ../src/Clients/Classical/Dialogs/PreferencesDialog.cs:108
 msgid ""
 "If you proceed, you will lose the history of the previous game sessions. Do "
 "you want to continue?"
@@ -2496,7 +2496,7 @@ msgstr ""
 "Als u verder gaat zult u de geschiedenis van de afgelopen spelsessies "
 "verliezen. Wilt u doorgaan?"
 
-#: ../src/Clients/Classical/Dialogs/PreferencesDialog.cs:83
+#: ../src/Clients/Classical/Dialogs/PreferencesDialog.cs:109
 msgid "_Delete"
 msgstr "_Verwijderen"
 
@@ -2563,12 +2563,12 @@ msgid "Pages per side:"
 msgstr "Pagina's per kant:"
 
 #: ../src/Clients/Classical/Dialogs/ui/PdfExportDialog.ui.h:14
-#, fuzzy
-#| msgid "Skip games that use colors (friendly to colorblind users)"
 msgid ""
 "Skip games that use colors\n"
 " (friendly to colorblind users)"
-msgstr "Sla spellen die kleuren gebruiken over (voor kleurenblinde gebruikers)"
+msgstr ""
+"Sla spellen die kleuren gebruiken over\n"
+" (voor gebruikers die kleurenblind zijn)"
 
 #: ../src/Clients/Classical/Dialogs/ui/PdfExportDialog.ui.h:16
 msgid ""
@@ -2587,7 +2587,7 @@ msgid "_Save"
 msgstr "_Opslaan"
 
 #: ../src/Clients/Classical/Dialogs/ui/PlayerHistoryDialog.ui.h:1
-#: ../src/Clients/Classical/gbrainy.ui.h:10
+#: ../src/Clients/Classical/gbrainy.ui.h:12
 msgid "Player's Game Session History"
 msgstr "Spelgeschiedenis van de speler"
 
@@ -2618,7 +2618,7 @@ msgstr ""
 "opgeslagen:"
 
 #: ../src/Clients/Classical/Dialogs/ui/PreferencesDialog.ui.h:11
-#: ../src/Clients/Classical/gbrainy.ui.h:11
+#: ../src/Clients/Classical/gbrainy.ui.h:13
 msgid "Preferences"
 msgstr "Voorkeuren"
 
@@ -2631,6 +2631,10 @@ msgid "Skip games that use colors (friendly to colorblind users)"
 msgstr "Sla spellen die kleuren gebruiken over (voor kleurenblinde gebruikers)"
 
 #: ../src/Clients/Classical/Dialogs/ui/PreferencesDialog.ui.h:14
+msgid "Theme:"
+msgstr "Thema:"
+
+#: ../src/Clients/Classical/Dialogs/ui/PreferencesDialog.ui.h:15
 msgid "Time in seconds to memorize the challenge:"
 msgstr "Tijd in seconden om objecten uit het hoofd te leren:"
 
@@ -3922,16 +3926,16 @@ msgstr ""
 "letter te nemen en er {0} bij op te tellen om de positie van de nieuwe "
 "letter te verkrijgen."
 
-#: ../src/Games/Logic/PuzzleSquares.cs:32
+#: ../src/Games/Logic/PuzzleSquares.cs:31
 msgid "Squares"
 msgstr "Vierkanten"
 
-#: ../src/Games/Logic/PuzzleSquares.cs:36
+#: ../src/Games/Logic/PuzzleSquares.cs:35
 msgid "How many squares of any size do you count in the figure below?"
 msgstr ""
 "Hoeveel vierkanten van welke grootte dan ook telt u in de figuur hieronder?"
 
-#: ../src/Games/Logic/PuzzleSquares.cs:40
+#: ../src/Games/Logic/PuzzleSquares.cs:39
 msgid ""
 "A square is a rectangle with sides of equal length. A square can also be "
 "built from other squares."
@@ -3939,7 +3943,7 @@ msgstr ""
 "Een vierkant is een rechthoek met zijden van gelijke lengte. Een vierkant "
 "kan opgebouwd zijn uit andere vierkanten."
 
-#: ../src/Games/Logic/PuzzleSquares.cs:47
+#: ../src/Games/Logic/PuzzleSquares.cs:46
 msgid ""
 "There are 16 single squares, 9 squares made by 4 single squares, 4 squares "
 "made by 9 single squares and 1 square made by 16 single squares."
@@ -3948,7 +3952,7 @@ msgstr ""
 "enkelvoudige vierkanten, 4 vierkanten die bestaan uit 9 enkelvoudige "
 "vierkanten, en 1 vierkant dat bestaat uit 16 enkelvoudige vierkanten."
 
-#: ../src/Games/Logic/PuzzleSquares.cs:49
+#: ../src/Games/Logic/PuzzleSquares.cs:48
 msgid ""
 "There are 9 single squares, 4 squares made by 4 single squares and 1 square "
 "made by 9 single squares."
@@ -3957,11 +3961,11 @@ msgstr ""
 "enkelvoudige vierkanten, en 1 vierkant dat bestaat uit 9 enkelvoudige "
 "vierkanten."
 
-#: ../src/Games/Logic/PuzzleSquareSheets.cs:29
+#: ../src/Games/Logic/PuzzleSquareSheets.cs:28
 msgid "Square sheets"
 msgstr "Vierkante vellen"
 
-#: ../src/Games/Logic/PuzzleSquareSheets.cs:33
+#: ../src/Games/Logic/PuzzleSquareSheets.cs:32
 msgid ""
 "What is the minimum number of square sheets of paper of any size required to "
 "create the figure? Lines indicate frontiers between different sheets."
@@ -3970,12 +3974,12 @@ msgstr ""
 "ook, dat nodig is om de figuur te maken? Lijnen geven grenzen tussen "
 "verschillende vellen aan."
 
-#: ../src/Games/Logic/PuzzleSquareSheets.cs:37
+#: ../src/Games/Logic/PuzzleSquareSheets.cs:36
 msgid "The sheets should overlap."
 msgstr "De vellen horen te overlappen."
 
 #. Translators: the translated version should not take more characters that the English original
-#: ../src/Games/Logic/PuzzleSquareSheets.cs:43
+#: ../src/Games/Logic/PuzzleSquareSheets.cs:42
 msgid ""
 "A full sized square of paper, a 3/4 of the whole size square of paper in the "
 "bottom right corner, another 3/4 square of paper in the top left corner and "
@@ -4564,11 +4568,11 @@ msgstr "beer"
 msgid "wolf"
 msgstr "wolf"
 
-#: ../src/Games/Calculation/CalculationArithmetical.cs:42
+#: ../src/Games/Calculation/CalculationArithmetical.cs:41
 msgid "Arithmetical"
 msgstr "Rekenkundig"
 
-#: ../src/Games/Calculation/CalculationArithmetical.cs:50
+#: ../src/Games/Calculation/CalculationArithmetical.cs:49
 msgid "What is the result of the arithmetical operation?"
 msgstr "Wat is het resultaat van de rekenkundige bewerking?"
 
@@ -4634,13 +4638,13 @@ msgid "Greatest divisor"
 msgstr "Grootste gemene deler"
 
 #: ../src/Games/Calculation/CalculationGreatestDivisor.cs:46
-#, fuzzy, csharp-format
-#| msgid ""
-#| "Which of the possible divisors is the greatest that divides all numbers?"
+#, csharp-format
 msgid ""
 "Which of the possible divisors is the greatest that divides all numbers? "
 "Answer {0}, {1}, {2} or {3}."
-msgstr "Welk van de mogelijke delers is de grootste die alle getallen deelt?"
+msgstr ""
+"Welk van de mogelijke delers is de grootste die alle getallen deelt? "
+"Antwoord {0}, {1}, {2} of {3}."
 
 #: ../src/Games/Calculation/CalculationGreatestDivisor.cs:243
 #: ../src/Games/Calculation/CalculationPrimes.cs:151
@@ -4806,66 +4810,82 @@ msgid "Extensions"
 msgstr "Uitbreidingen"
 
 #: ../src/Clients/Classical/gbrainy.ui.h:6
+msgid "Horizontal"
+msgstr "Horizontaal"
+
+#: ../src/Clients/Classical/gbrainy.ui.h:7
 msgid "How to Extend gbrainy's Functionality"
 msgstr "Hoe u de functionaliteit van gbrainy uit kunt breiden"
 
-#: ../src/Clients/Classical/gbrainy.ui.h:7
+#: ../src/Clients/Classical/gbrainy.ui.h:8
 msgid "Logic Puzzles Only"
 msgstr "Alleen logicapuzzels"
 
-#: ../src/Clients/Classical/gbrainy.ui.h:8
+#: ../src/Clients/Classical/gbrainy.ui.h:9
 msgid "Memory Trainers Only"
 msgstr "Alleen geheugentrainingen"
 
-#: ../src/Clients/Classical/gbrainy.ui.h:9
+#: ../src/Clients/Classical/gbrainy.ui.h:10
 msgid "Mental Calculation Trainers Only"
 msgstr "Alleen hoofdrekentrainingen"
 
-#: ../src/Clients/Classical/gbrainy.ui.h:12
+#: ../src/Clients/Classical/gbrainy.ui.h:11
+msgid "Orientation"
+msgstr "Oriëntatie"
+
+#: ../src/Clients/Classical/gbrainy.ui.h:14
+msgid "Show"
+msgstr "Toon"
+
+#: ../src/Clients/Classical/gbrainy.ui.h:15
 msgid "Toolbar"
 msgstr "Werkbalk"
 
-#: ../src/Clients/Classical/gbrainy.ui.h:13
+#: ../src/Clients/Classical/gbrainy.ui.h:16
 msgid "Verbal Analogies Only"
 msgstr "Alleen verbale analogieën"
 
-#: ../src/Clients/Classical/gbrainy.ui.h:14
+#: ../src/Clients/Classical/gbrainy.ui.h:17
+msgid "Vertical"
+msgstr "Verticaal"
+
+#: ../src/Clients/Classical/gbrainy.ui.h:18
 msgid "_Contents"
 msgstr "_Inhoud"
 
-#: ../src/Clients/Classical/gbrainy.ui.h:15
+#: ../src/Clients/Classical/gbrainy.ui.h:19
 msgid "_End Game"
 msgstr "Spel b_eëindigen"
 
-#: ../src/Clients/Classical/gbrainy.ui.h:16
+#: ../src/Clients/Classical/gbrainy.ui.h:20
 msgid "_Game"
 msgstr "_Spel"
 
-#: ../src/Clients/Classical/gbrainy.ui.h:17
+#: ../src/Clients/Classical/gbrainy.ui.h:21
 msgid "_Help"
 msgstr "_Hulp"
 
-#: ../src/Clients/Classical/gbrainy.ui.h:18
+#: ../src/Clients/Classical/gbrainy.ui.h:22
 msgid "_New Game"
 msgstr "_Nieuw spel"
 
-#: ../src/Clients/Classical/gbrainy.ui.h:19
+#: ../src/Clients/Classical/gbrainy.ui.h:23
 msgid "_Next"
 msgstr "V_olgende"
 
-#: ../src/Clients/Classical/gbrainy.ui.h:20
+#: ../src/Clients/Classical/gbrainy.ui.h:24
 msgid "_Pause Game"
 msgstr "Spel _pauzeren"
 
-#: ../src/Clients/Classical/gbrainy.ui.h:21
+#: ../src/Clients/Classical/gbrainy.ui.h:25
 msgid "_Settings"
 msgstr "_Instellingen"
 
-#: ../src/Clients/Classical/gbrainy.ui.h:22
+#: ../src/Clients/Classical/gbrainy.ui.h:26
 msgid "_Tip"
 msgstr "_Tip"
 
-#: ../src/Clients/Classical/gbrainy.ui.h:23
+#: ../src/Clients/Classical/gbrainy.ui.h:27
 msgid "_View"
 msgstr "_Weergave"
 
@@ -5007,6 +5027,9 @@ msgstr "_Deïnstalleren…"
 #: ../src/Clients/Classical/mono-addins-strings.xml.h:35
 msgid "_Unselect All"
 msgstr "Alles _deselecteren"
+
+#~ msgid "Enabled"
+#~ msgstr "Ingeschakeld"
 
 #~ msgid "Bagpipes"
 #~ msgstr "Doedelzak"
