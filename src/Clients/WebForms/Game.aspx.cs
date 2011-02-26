@@ -48,6 +48,7 @@ namespace gbrainy.Clients.WebForms
 			manager = new GameManager ();
 			manager.LoadAssemblyGames (Defines.GAME_ASSEMBLY);
 			manager.LoadVerbalAnalogies (System.IO.Path.Combine ("data/", Defines.VERBAL_ANALOGIES));
+			manager.LoadGamesFromXml (System.IO.Path.Combine ("data/", "games.xml"));
 
 			manager.Difficulty = gbrainy.Core.Main.GameDifficulty.Medium;
 			manager.GameType = gbrainy.Core.Main.GameSession.Types.LogicPuzzles |
@@ -97,7 +98,7 @@ namespace gbrainy.Clients.WebForms
 			Logger.Debug ("Game.Page_Load. Page load starts. Session ID {0}, IsPostBack {1}", Session.SessionID,
 				IsPostBack);
 
-			HtmlForm form = (HtmlForm) Master.FindControl("main_form");
+			HtmlForm form = (HtmlForm) Master.FindControl ("main_form");
 			form.DefaultButton = answer_button.UniqueID;
 
 			if (WebSession.GameState == null)
@@ -107,6 +108,7 @@ namespace gbrainy.Clients.WebForms
 				session.GameManager = CreateManager ();
 				session.New ();
 				WebSession.GameState = session;
+				Global.TotalGamesSessions++;
 
 				_game = GetNextGame ();
 				UpdateGame ();
@@ -142,7 +144,7 @@ namespace gbrainy.Clients.WebForms
 		void InitPage ()
 		{
 			TranslationsWeb service = (TranslationsWeb) ServiceLocator.Instance.GetService <ITranslations> ();
-			service.GetLanguageFromSession = GetLanguageFromSessionHandler;
+			service.OnGetLanguageFromSession = GetLanguageFromSessionHandler;
 
 			game_image.Width = image_width;
 			game_image.Height = image_height;
@@ -302,7 +304,7 @@ namespace gbrainy.Clients.WebForms
 			if (session != null)
 				session.End ();
 			
-			Global.TotalGamesSessions++;
+			Global.TotalEndedSessions++;			
 			Global.TotalGames += session.History.GamesPlayed;
 			Global.TotalTimeSeconds += session.GameTime.Seconds;
 

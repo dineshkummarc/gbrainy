@@ -20,6 +20,7 @@ cp ../*.asax .
 cp ../web.config .
 
 cp ../bin/*.dll bin
+cp ../bin/*.config bin
 cp ../../../../data/*.xml data
 cp ../../../../data/game-graphics/* images
 cp ../../../../data/app-graphics/* images

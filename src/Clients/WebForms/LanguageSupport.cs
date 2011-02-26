@@ -60,7 +60,7 @@ namespace gbrainy.Clients.WebForms
 		// List of exposed locales
 		static Language [] languages =
 		{
-			new Language ("English", "en_US.utf8"),
+			new Language ("English", "en_US.utf8"), // English always the first one, used as default
 			new Language ("Afrikaans", "af_ZA.utf8"),
 			new Language ("Catalan", "ca_ES.utf8"),
 			new Language ("Czech", "cs_CZ.utf8"),
@@ -88,6 +88,9 @@ namespace gbrainy.Clients.WebForms
 
 		static public Language GetFromCode (string code)
 		{
+			if (langmap.ContainsKey (code) == false)
+				return languages [0];
+			
 			return langmap [code];
 		}
 	}

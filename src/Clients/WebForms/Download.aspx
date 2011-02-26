@@ -7,7 +7,7 @@
 <p>You can download gbrainy from the following links:</p>
 <ul>
 <li><a href="http://live.gnome.org/gbrainy#Download">Linux</a></li>
-<li><a href="http://live.gnome.org/gbrainy/Windows">Windows</a></li>
+<li><a href="https://sourceforge.net/projects/gbrainy/files/gbrainy/">Windows</a></li>
 </ul>
 </asp:Content> 
 

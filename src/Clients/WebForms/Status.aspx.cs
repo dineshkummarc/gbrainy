@@ -87,8 +87,18 @@ namespace gbrainy.Clients.WebForms
 			application_table.Rows.Add (r);	
 			
 			r = new TableRow ();
-			AddCell (r, "Total sessions");
+			AddCell (r, "Total sessions (as assigned by .Net)");
 			AddCell (r, Global.TotalSessions.ToString ());
+			application_table.Rows.Add (r);
+			
+			r = new TableRow ();
+			AddCell (r, "Total started game sessions");
+			AddCell (r, Global.TotalGamesSessions.ToString ());
+			application_table.Rows.Add (r);
+			
+			r = new TableRow ();
+			AddCell (r, "Total ended game sessions");
+			AddCell (r, Global.TotalEndedSessions.ToString ());
 			application_table.Rows.Add (r);
 				
 			r = new TableRow ();

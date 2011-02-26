@@ -23,6 +23,7 @@ using Gtk;
 using Mono.Unix;
 using System.Diagnostics;
 using Gdk;
+using System.Reflection;
 
 using gbrainy.Core.Main;
 using gbrainy.Core.Platform;
@@ -789,6 +790,10 @@ namespace gbrainy.Clients.Classical
 			ServiceLocator.Instance.GetService <IConfiguration> ().Set (ConfigurationKeys.GamesDefinitions, Defines.DATA_DIR);
 			ServiceLocator.Instance.GetService <IConfiguration> ().Set (ConfigurationKeys.GamesGraphics, Defines.DATA_DIR);
 			ServiceLocator.Instance.GetService <IConfiguration> ().Set (ConfigurationKeys.ThemesDir, Defines.DATA_DIR);
+			
+			string assemblies_dir;
+			assemblies_dir =  System.IO.Path.GetDirectoryName (Assembly.GetExecutingAssembly ().Location);				
+			ServiceLocator.Instance.GetService <IConfiguration> ().Set (ConfigurationKeys.AssembliesDir, assemblies_dir);
 		}
 
 		public static void Main (string [] args)

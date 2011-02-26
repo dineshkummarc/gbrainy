@@ -24,6 +24,7 @@ namespace gbrainy.Core.Services
 		GamesDefinitions,	// Analogies.xml and games.xml
 		GamesGraphics,
 		ThemesDir,
+		AssembliesDir,
 	};
 
 	public interface IConfiguration : IService

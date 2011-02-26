@@ -22,15 +22,27 @@ using System.Text;
 using System.Text.RegularExpressions;
 
 using Mono.CSharp;
+using System.Reflection;
+using gbrainy.Core.Services;
 
 namespace gbrainy.Core.Main.Xml
 {
-	// Code evaluation functions
-	public static class CodeEvaluation
+	// This class proxys data from one domain to another
+	public class CrossDomainProxy : MarshalByRefObject
 	{
-		static bool? monofix_needed;
-
-		static public void EvaluateVariables (string code)
+		string code;
+				
+		public void SetCode (string c)
+		{
+			code = c;
+		}
+		
+		public string GetVars ()
+		{
+			return Evaluator.GetVars ();
+		}
+		
+		public void EvaluateVariables ()
 		{
 			string eval;
 
@@ -53,7 +65,51 @@ namespace gbrainy.Core.Main.Xml
 				Console.WriteLine ("GameXml. Error in games.xml: {0} when evaluating variable definition [{1}]", e.Message, code);
 			}
 		}
+	}
 
+	// Code evaluation functions
+	public static class CodeEvaluation
+	{
+		static bool? monofix_needed;
+		static string stored_vars;
+		static int unload_domain = 0;
+		static AppDomain tempDomain;
+		const int maximum_uses = 5;
+		
+		static public void EvaluateVariables (string c)
+		{
+			if (tempDomain == null)
+				tempDomain = AppDomain.CreateDomain ("MonoCSharpDomain");
+			
+			// Load the Mono Compiler service in a separate domain then
+			// we can recycle it to reduce memory consumption
+			//
+			// After Mono 2.12 this is no longer need
+			// http://tirania.org/blog/archive/2011/Feb-24.html			 			
+			IConfiguration config = ServiceLocator.Instance.GetService <IConfiguration> ();	
+			string asm_dir = config.Get <string> (ConfigurationKeys.AssembliesDir);
+			string full_name = System.IO.Path.Combine (asm_dir, "gbrainy.Core.dll");
+			AssemblyName aname = AssemblyName.GetAssemblyName (full_name);
+			Assembly asem = tempDomain.Load (aname);
+			
+  			CrossDomainProxy proxy = (CrossDomainProxy) tempDomain.CreateInstanceAndUnwrap(asem.FullName, 
+				typeof (CrossDomainProxy).FullName);
+   			
+			proxy.SetCode (c);
+			tempDomain.DoCallBack (proxy.EvaluateVariables);
+			stored_vars = proxy.GetVars ();
+			
+					
+			if (unload_domain > maximum_uses)
+			{			
+				AppDomain.Unload (tempDomain);
+				unload_domain = 0;
+				tempDomain = null;
+			}
+			else 
+				unload_domain++;
+		}
+		
 		static public string ReplaceVariables (string str)
 		{
 			const string exp = "\\[[a-z_]+\\]+";
@@ -67,7 +123,7 @@ namespace gbrainy.Core.Main.Xml
 			regex = new Regex (exp, RegexOptions.IgnoreCase);
 			match = regex.Match (str);
 
-			vars = Evaluator.GetVars ();
+			vars = stored_vars;
 			vars = FixGetVars (vars);
 
 			while (String.IsNullOrEmpty (match.Value) == false)

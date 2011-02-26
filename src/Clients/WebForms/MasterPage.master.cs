@@ -19,11 +19,14 @@
 
 using System;
 using System.Web;
+using System.Configuration;
 
 namespace gbrainy.Clients.WebForms
 {
 	public partial class MasterPage : System.Web.UI.MasterPage
 	{
+		static string PRODUCTION = "production";
+		static bool ?includeGoogleAnalytics = null;
 
 		// Instead of Page_Load we do Page_Init (Executed before)
 		// To make sure that this code is executed before Page_Load the first page load
@@ -33,8 +36,20 @@ namespace gbrainy.Clients.WebForms
 
 			if (IsPostBack == true)
 				return;
-
 			
+			analytics.Visible = IncludeGoogleAnalytics;			
+		}
+		
+		public bool IncludeGoogleAnalytics {
+			get {
+				if (includeGoogleAnalytics != null)
+					return includeGoogleAnalytics == true;
+				
+				var content = ConfigurationSettings.AppSettings [PRODUCTION];
+				
+				includeGoogleAnalytics = (content == "1");
+				return includeGoogleAnalytics == true;
+			}		
 		}
 	}
 }

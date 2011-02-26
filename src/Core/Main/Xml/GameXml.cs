@@ -452,7 +452,13 @@ namespace gbrainy.Core.Main.Xml
 
 					if (String.IsNullOrEmpty (image.Filename) == false)
 					{
-						gr.DrawImageFromFile (Path.Combine (Defines.DATA_DIR, image.Filename),
+						string dir;
+						IConfiguration config;
+
+						config = ServiceLocator.Instance.GetService <IConfiguration> ();
+						dir = config.Get <string> (ConfigurationKeys.GamesGraphics);
+
+						gr.DrawImageFromFile (Path.Combine (dir, image.Filename),
 							image.X, image.Y, image.Width, image.Height);
 					}
 				}

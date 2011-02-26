@@ -152,6 +152,17 @@ namespace gbrainy.Core.Main
 		public GameLocator [] AvailableGames {
 			get { return available_games.ToArray (); }
 		}
+		
+		// Gives the Assembly.Load used in GamaManager the right path to load the application assemblies
+		static Assembly ResolveAssemblyLoad (object sender, ResolveEventArgs args)
+		{
+			IConfiguration config = ServiceLocator.Instance.GetService <IConfiguration> ();	
+			string asm_dir = config.Get <string> (ConfigurationKeys.AssembliesDir);
+        		string full_name = System.IO.Path.Combine (asm_dir, args.Name);
+			return Assembly.LoadFile (full_name);
+   		}
+		
+		static bool domain_load;
 
 		// Dynamic load of the gbrainy.Games.Dll assembly
 		public void LoadAssemblyGames (string file)
@@ -168,17 +179,14 @@ namespace gbrainy.Core.Main
 
 			try
 			{
-				// Expects the assembly to be in the same dir than this assembly
-				Assembly asm = Assembly.GetExecutingAssembly ();
-				string asm_dir = System.IO.Path.GetDirectoryName (asm.Location);
-#if _ASPNET_	
-				string s = System.IO.Path.GetFileName (file);
-				AssemblyName aname = AssemblyName.GetAssemblyName (file);
-				asem = Assembly.Load (aname);
-#else
-				asem = Assembly.LoadFrom (System.IO.Path.Combine (asm_dir, file));
-#endif				
-
+				if (domain_load == false)
+				{
+					AppDomain.CurrentDomain.AssemblyResolve += new ResolveEventHandler (ResolveAssemblyLoad);
+					domain_load = true;					
+				}
+				
+				asem = Assembly.Load (file);
+				
 				foreach (Type t in asem.GetTypes())
 				{
 					if (t.FullName == CLASS)

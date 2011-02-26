@@ -30,11 +30,19 @@ namespace gbrainy.Clients.WebForms
 		public delegate string GetLanguageFromSessionHandler ();
 		static readonly object sync = new object ();
 
-		public GetLanguageFromSessionHandler GetLanguageFromSession;
+		public GetLanguageFromSessionHandler OnGetLanguageFromSession;
 
 		public void Init (string package, string localedir)
 		{
 			Catalog.Init (package, localedir);
+		}
+		
+		string GetLanguageFromSession ()
+		{
+			if (OnGetLanguageFromSession == null)
+				return LanguageSupport.Languages [0].LangCode;
+			
+			return OnGetLanguageFromSession ();
 		}
 
 		public string GetString (string s)

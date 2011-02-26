@@ -16,6 +16,7 @@ namespace gbrainy.Clients.WebForms
 	{
 		// Application counters
 		static public int TotalSessions { get; set; }
+		static public int TotalEndedSessions { get; set; }
 		static public int TotalGamesSessions { get; set; }
 		static public int TotalGames { get; set; }
 		static public int TotalTimeSeconds { get; set; }
@@ -39,9 +40,14 @@ namespace gbrainy.Clients.WebForms
 				Logger.LogDevice = new ConsoleLogger ();
 			}
 			
-			// Setup core services
+			// Register services
 			ServiceLocator.Instance.RegisterService <ITranslations> (new TranslationsWeb ());
+			ServiceLocator.Instance.RegisterService <IConfiguration> (new MemoryConfiguration ());
 			ThemeManager.ConfigPath = Defines.THEMES_DIR;
+			
+			// Configuration
+			ServiceLocator.Instance.GetService <IConfiguration> ().Set (ConfigurationKeys.GamesGraphics, "images/");	
+			ServiceLocator.Instance.GetService <IConfiguration> ().Set (ConfigurationKeys.AssembliesDir, "bin/");
 
 			Logger.Info ("Global.Application_Start.gbrainy web starting");
 		}

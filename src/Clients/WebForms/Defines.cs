@@ -28,7 +28,7 @@ namespace gbrainy.Clients.WebForms
 		public const string THEMES_DIR = "themes/";
 
 		public const string VERBAL_ANALOGIES = "verbal_analogies.xml";
-		public const string GAME_ASSEMBLY = "bin/gbrainy.Games.dll";
+		public const string GAME_ASSEMBLY = "gbrainy.Games.dll";
 		public const string GAMES_FILE = "games.xml";
 	}
 }
