@@ -117,7 +117,8 @@ namespace gbrainy.Core.Main.Xml
 			Regex regex;
 			Match match;
 
-			if (String.IsNullOrEmpty (str))
+			if (String.IsNullOrEmpty (str) ||
+				String.IsNullOrEmpty (stored_vars))
 				return str;
 
 			regex = new Regex (exp, RegexOptions.IgnoreCase);
