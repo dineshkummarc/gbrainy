@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2007-2009 Jordi Mas i Hernàndez <jmas@softcatala.org>
+ * Copyright (C) 2007-2011 Jordi Mas i Hernàndez <jmas@softcatala.org>
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License as
@@ -43,33 +43,11 @@ namespace gbrainy.Core.Platform
 		static extern unsafe bool gtk_show_uri(IntPtr screen, IntPtr uri, uint timestamp, out IntPtr error);
 
 		/* Taken from locale.h  */
-		[StructLayout (LayoutKind.Sequential)]
+		[StructLayout (LayoutKind.Sequential,  Pack = 1, Size = 68)]
 		struct lconv
 		{
 			public string decimal_point;
-			public string thousands_sep;		
-			public string grouping;
-			public string int_curr_symbol;
-			public string currency_symbol;
-			public string mon_decimal_point;
-			public string mon_thousands_sep;
-			public string mon_grouping;
-			public string positive_sign;
-			public string negative_sign;
-			char int_frac_digits;
-			char frac_digits;
-			char p_cs_precedes;
-			char p_sep_by_space;
-			char n_cs_precedes;
-			char n_sep_by_space;
-			char p_sign_posn;
-			char n_sign_posn;
-			char int_p_cs_precedes;
-			char int_p_sep_by_space;
-			char int_n_cs_precedes;
-			char int_n_sep_by_space;
-			char int_p_sign_posn;
-			char int_n_sign_posn;
+			// 64 bytes follow
 		}
 
 		// Mono supports less locales that Unix systems
@@ -78,13 +56,13 @@ namespace gbrainy.Core.Platform
 		// has not been identified and the default Mono locale is used
 		//
 		// See: https://bugzilla.novell.com/show_bug.cgi?id=420468
-		// 
+		//
 		static public void FixLocaleInfo ()
 		{
 			IntPtr st = IntPtr.Zero;
 			lconv lv;
 			int platform = (int) Environment.OSVersion.Platform;
-		
+
 			if (platform != 4 && platform != 128) // Only in Unix based systems
 				return;
 
@@ -96,32 +74,35 @@ namespace gbrainy.Core.Platform
 				if (st == IntPtr.Zero) return;
 
 				lv = (lconv) Marshal.PtrToStructure (st, typeof (lconv));
-				CultureInfo culture =  (CultureInfo) CultureInfo.CurrentCulture.Clone ();
+				CultureInfo culture = (CultureInfo) CultureInfo.CurrentCulture.Clone ();
 				culture.NumberFormat.NumberDecimalSeparator = lv.decimal_point;
 				Thread.CurrentThread.CurrentCulture = culture;
 			}
-			catch (Exception) {}
+			catch (Exception e)
+			{
+				Console.WriteLine ("Unix.FixLocaleInfo. Could not load file {0}. Error {1}", file, e);
+			}
 		}
 
 		public static void SetProcessName (string name)
 		{
-			int platform = (int) Environment.OSVersion.Platform;		
+			int platform = (int) Environment.OSVersion.Platform;
 			if (platform != 4 && platform != 128)
 				return;
 
 			try {
 				if (prctl (15 /* PR_SET_NAME */, Encoding.ASCII.GetBytes (name + "\0"),
 					IntPtr.Zero, IntPtr.Zero, IntPtr.Zero) != 0) {
-					throw new ApplicationException ("Error setting process name: " + 
+					throw new ApplicationException ("Error setting process name: " +
 						Mono.Unix.Native.Stdlib.GetLastError ());
 				}
 			} catch (EntryPointNotFoundException) {
-				setproctitle (Encoding.ASCII.GetBytes ("%s\0"), 
+				setproctitle (Encoding.ASCII.GetBytes ("%s\0"),
 					Encoding.ASCII.GetBytes (name + "\0"));
 			}
 		}
 
-		public static unsafe bool ShowUri (Gdk.Screen screen, string uri, uint timestamp) 
+		public static unsafe bool ShowUri (Gdk.Screen screen, string uri, uint timestamp)
 		{
 			IntPtr native_uri = GLib.Marshaller.StringToPtrGStrdup (uri);
 			IntPtr error = IntPtr.Zero;
