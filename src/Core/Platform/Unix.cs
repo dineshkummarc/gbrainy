@@ -80,7 +80,7 @@ namespace gbrainy.Core.Platform
 			}
 			catch (Exception e)
 			{
-				Console.WriteLine ("Unix.FixLocaleInfo. Could not load file {0}. Error {1}", file, e);
+				Console.WriteLine ("Unix.FixLocaleInfo. Error {0}", e);
 			}
 		}
 
