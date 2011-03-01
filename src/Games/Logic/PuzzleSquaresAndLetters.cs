@@ -62,7 +62,7 @@ namespace gbrainy.Games.Logic
 				}				
 			}
 
-			right_answer = ToStr (characters[((figures - 1) * 4) + 3]);
+			Answer.Correct = ToStr (characters[((figures - 1) * 4) + 3]);
 			characters[((figures - 1) * 4) + 3] = '?';
 		}
 

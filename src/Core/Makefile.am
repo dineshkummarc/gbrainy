@@ -12,7 +12,9 @@ CSDISTFILES =  \
 		$(srcdir)/Main/ColorPalette.cs		\
 		$(srcdir)/Main/IMouseEvent.cs		\
 		$(srcdir)/Main/Game.cs			\
+		$(srcdir)/Main/GameAnswer.cs		\
 		$(srcdir)/Main/GameAnswerCheckAttributes.cs \
+		$(srcdir)/Main/GameAnswerEventArgs.cs	\
 		$(srcdir)/Main/GameDifficulty.cs 	\
 		$(srcdir)/Main/GameManager.cs		\
 		$(srcdir)/Main/GameSession.cs		\

@@ -56,7 +56,7 @@ namespace gbrainy.Games.Logic
 		public override string Question {
 			get {return String.Format (
 				ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Which is the next logical figure in the sequence? Answer {0}, {1} or {2}."),
-				GetPossibleAnswer (0), GetPossibleAnswer (1), GetPossibleAnswer (2));} 
+				GameAnswer.GetMultiOption (0), GameAnswer.GetMultiOption (1), GameAnswer.GetMultiOption (2));} 
 		}
 
 
@@ -74,7 +74,7 @@ namespace gbrainy.Games.Logic
 			for (int i = 0; i < (int) Figures.Last; i++)
 			{
 				if (random_indices[i] == (int) Figures.Third) {
-					right_answer = GetPossibleAnswer (i);
+					Answer.Correct = GameAnswer.GetMultiOption (i);
 					break;
 				}
 			}
@@ -89,7 +89,7 @@ namespace gbrainy.Games.Logic
 				drawable_area = new DrawableArea (space_figures, 0.2);						
 				drawable_area.SelectedArea = new Rectangle (0, 0, figure_size, figure_size);
 				drawable_area.Data = i;
-				drawable_area.DataEx = GetPossibleAnswer (i);
+				drawable_area.DataEx = GameAnswer.GetMultiOption (i);
 				container.AddChild (drawable_area);
 
 				drawable_area.DrawEventHandler += delegate (object sender, DrawEventArgs e)
@@ -111,7 +111,7 @@ namespace gbrainy.Games.Logic
 					}
 
 					e.Context.MoveTo (0.02, 0.25);
-					e.Context.ShowPangoText (GetPossibleFigureAnswer (n));
+					e.Context.ShowPangoText (Answer.GetMultiOptionFigureName (n));
 					e.Context.Stroke ();
 				};
 			}

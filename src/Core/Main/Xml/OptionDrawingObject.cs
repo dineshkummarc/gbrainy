@@ -28,7 +28,7 @@ namespace gbrainy.Core.Main.Xml
 		public double Y { get; set; }
 		public double Width { get; set; }
 		public double Height { get; set; }
-		public string Answer { get; set; }
+		public string AnswerText { get; set; }
 		public bool Correct { get; set; }
 		public bool RandomizedOrder { get; set; }
 
@@ -53,7 +53,7 @@ namespace gbrainy.Core.Main.Xml
 
 		public void CopyRandomizedProperties (OptionDrawingObject obj)
 		{
-			Answer = obj.Answer;
+			AnswerText = obj.AnswerText;
 			Correct = obj.Correct;
 			drawing_objects = obj.drawing_objects;
 		}
@@ -67,7 +67,7 @@ namespace gbrainy.Core.Main.Xml
 			option.Y = Y;
 			option.Width = Width;
 			option.Height = Height;
-			option.Answer = Answer;
+			option.AnswerText = AnswerText;
 			option.Correct = Correct;
 			option.RandomizedOrder = RandomizedOrder;
 			

@@ -81,7 +81,7 @@ namespace gbrainy.Games.Memory
 				before = dotsPerColor[i];
 			}
 
-			right_answer = (dotsPerColor[0]+1).ToString ();
+			Answer.Correct = (dotsPerColor[0]+1).ToString ();
 		
 			base.Initialize ();
 		}

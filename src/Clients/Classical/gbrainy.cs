@@ -494,9 +494,9 @@ namespace gbrainy.Clients.Classical
 		}
 
 		// The user has clicked with the mouse in an answer and generated this event
-		void OnAnswerFromGame (object obj, Game.AnswerEventArgs args)
+		void OnAnswerFromGame (object obj, GameAnswerEventArgs args)
 		{
-			answer_entry.Text = args.Answer;
+			answer_entry.Text = args.AnswerText;
 			OnAnswerButtonClicked (this, EventArgs.Empty);
 			session.CurrentGame.AnswerEvent -= OnAnswerFromGame; // User can only answer once
 		}
@@ -530,7 +530,7 @@ namespace gbrainy.Clients.Classical
 			session.EnableTimer = false;
 			answer_entry.Text = String.Empty;
 			UpdateStatusBar ();
-			UpdateSolution (answer + " " + session.CurrentGame.Answer,
+			UpdateSolution (answer + " " + session.CurrentGame.AnswerText,
 				correct == true ? GameDrawingArea.SolutionType.CorrectAnswer :
 			        GameDrawingArea.SolutionType.InvalidAnswer);
 

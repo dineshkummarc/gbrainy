@@ -78,15 +78,15 @@ namespace gbrainy.Games.Logic
 			group = random.Next (3);
 			switch (group) {
 			case 0:
-				right_answer = "10";
+				Answer.Correct = "10";
 				answer_number = "210";
 				break;
 			case 1:
-				right_answer = "160";
+				Answer.Correct = "160";
 				answer_number = "160";
 				break;
 			case 2:
-				right_answer = "60";
+				Answer.Correct = "60";
 				answer_number = "120";
 				break;
 			}

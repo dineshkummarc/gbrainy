@@ -70,7 +70,7 @@ namespace gbrainy.Games.Logic
 				break;
 			}
 
-			right_answer = (fig1 + fig2).ToString ();
+			Answer.Correct = (fig1 + fig2).ToString ();
 		}
 
 		static private void DrawLine (CairoContextEx gr, double x, double y, double w, double h)

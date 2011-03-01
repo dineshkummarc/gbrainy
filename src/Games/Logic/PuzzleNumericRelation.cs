@@ -111,7 +111,7 @@ namespace gbrainy.Games.Logic
 
 				validate = Validate (numbers, formula, question);
 			}
-			right_answer = numbers[question].ToString ();
+			Answer.Correct = numbers[question].ToString ();
 		}
 
 		public override void Draw (CairoContextEx gr, int area_width, int area_height, bool rtl)

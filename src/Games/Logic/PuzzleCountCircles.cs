@@ -84,7 +84,7 @@ namespace gbrainy.Games.Logic
 				circles[i] = new ItemCircle (x, y, rad);
 			}
 
-			right_answer = n_circles.ToString ();
+			Answer.Correct = n_circles.ToString ();
 		}	
 
 

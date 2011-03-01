@@ -53,10 +53,6 @@ namespace gbrainy.Games.Memory
 			get { return question;}
 		}
 
-		public override string AnswerCheckExpression {
-			get { return "[0-9]+";}
-		}
-
 		protected override void Initialize ()
 		{
 			int fact_idx, quest_idx, questions;
@@ -87,11 +83,13 @@ namespace gbrainy.Games.Memory
 			fact_idx = random.Next (questions);
 			quest_idx = random.Next (facts [fact_idx].Length);
 			question = facts [fact_idx].questions [quest_idx];
-			right_answer = (facts [fact_idx].answers [quest_idx]).ToString ();
+			Answer.Correct = (facts [fact_idx].answers [quest_idx]).ToString ();
+			Answer.CheckExpression = "[0-9]+";
 
 			// Since this particular test requires to read and understand text
 			// lets give the user twice time to be able to understand the text properly
 			TotalTime = TotalTime * 2;
+			
 		}
 
 		Fact GetFact (int index)

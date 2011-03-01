@@ -55,37 +55,6 @@ namespace gbrainy.Core.Main.Xml
 		string question, answer, rationale, answer_value;
 		List <OptionDrawingObject> options;
 
-		public override GameAnswerCheckAttributes CheckAttributes  {
-			get {
-				GameAnswerCheckAttributes attrib;
-
-				if (game.Variants.Count > 0 && game.Variants[current.Variant].CheckAttributes != GameAnswerCheckAttributes.None)
-					attrib = game.Variants[current.Variant].CheckAttributes;
-				else
-					attrib =  game.CheckAttributes;
-
-				if (attrib == GameAnswerCheckAttributes.None)
-					return base.CheckAttributes;
-
-				return attrib;
-			}
-		}
-
-		public override string AnswerCheckExpression {
-			get {
-				string expression;
-
-				if (game.Variants.Count > 0 && String.IsNullOrEmpty (game.Variants[current.Variant].AnswerCheckExpression) == false)
-					expression = game.Variants[current.Variant].AnswerCheckExpression;
-				else
-					expression =  game.AnswerCheckExpression;
-
-				if (String.IsNullOrEmpty (expression))
-					return base.AnswerCheckExpression;
-
-				return expression;
-			}
-		}
 
 		public override string AnswerValue {
 			get {
@@ -104,7 +73,7 @@ namespace gbrainy.Core.Main.Xml
 		}
 
 		public override GameTypes Type {
-			get { return game.Type;}
+			get { return game.Type; }
 		}
 
 		public override string Name {
@@ -129,6 +98,36 @@ namespace gbrainy.Core.Main.Xml
 					else
 						return null;
 			}
+		}
+
+		void SetCheckExpression ()
+		{
+			string expression;
+
+			if (game.Variants.Count > 0 && String.IsNullOrEmpty (game.Variants[current.Variant].AnswerCheckExpression) == false)
+				expression = game.Variants[current.Variant].AnswerCheckExpression;
+			else
+				expression = game.AnswerCheckExpression;
+
+			if (String.IsNullOrEmpty (expression))
+				return;
+
+			Answer.CheckExpression = expression;
+		}
+		
+		void SetCheckAttributes ()
+		{
+			GameAnswerCheckAttributes attrib;
+
+			if (game.Variants.Count > 0 && game.Variants[current.Variant].CheckAttributes != GameAnswerCheckAttributes.None)
+				attrib = game.Variants[current.Variant].CheckAttributes;
+			else
+				attrib =  game.CheckAttributes;
+
+			if (attrib == GameAnswerCheckAttributes.None)
+				return;
+
+			Answer.CheckAttributes = attrib;
 		}
 
 		protected override void Initialize ()
@@ -178,10 +177,10 @@ namespace gbrainy.Core.Main.Xml
 			else
 				question = CatalogGetString (game.Question);
 
-			if (variants && game.Variants[current.Variant].Answer != null)
-				answer = CatalogGetString (game.Variants[current.Variant].Answer);
+			if (variants && game.Variants[current.Variant].AnswerText != null)
+				answer = CatalogGetString (game.Variants[current.Variant].AnswerText);
 			else
-				answer = CatalogGetString (game.Answer);
+				answer = CatalogGetString (game.AnswerText);
 
 			if (variants && game.Variants[current.Variant].Rationale != null)
 				rationale = CatalogGetString (game.Variants[current.Variant].Rationale);
@@ -209,15 +208,15 @@ namespace gbrainy.Core.Main.Xml
 				{
 					if (option.Correct == true)
 					{
-						right_answer = option.Answer;
+						Answer.Correct = option.AnswerText;
 						break;
 					}
 				}
 	
 				for (int i = 0; i < options.Count - 1; i++)
-					answers += String.Format (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("{0}, "), GetPossibleAnswer (i));
+					answers += String.Format (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("{0}, "), GameAnswer.GetMultiOption (i));
 
-				answers += String.Format (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("{0}."), GetPossibleAnswer (options.Count - 1));
+				answers += String.Format (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("{0}."), GameAnswer.GetMultiOption (options.Count - 1));
 
 				// Translators {0}: list of options (A, B, C)
 				answers = String.Format (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Answer {0}"), answers);
@@ -225,8 +224,11 @@ namespace gbrainy.Core.Main.Xml
 			}
 			else
 			{
-				right_answer = answer;
+				Answer.Correct = answer;
 			}
+
+			SetCheckExpression ();
+			SetCheckAttributes ();			
 		}
 
 		void CreateDrawingObjects (GameXmlDefinitionVariant game)
@@ -311,7 +313,7 @@ namespace gbrainy.Core.Main.Xml
 					option.CopyRandomizedProperties (originals [random_indices [index]]);
 
 					// For randomized options the answer is always the option letter
-					option.Answer = GetPossibleAnswer (index);
+					option.AnswerText = GameAnswer.GetMultiOption (index);
 					index++;
 				}
 			}
@@ -338,7 +340,7 @@ namespace gbrainy.Core.Main.Xml
 				container.AddChild (drawable_area);
 				
 				drawable_area.Data = idx;
-				drawable_area.DataEx = GetPossibleAnswer (idx);
+				drawable_area.DataEx = GameAnswer.GetMultiOption (idx);
 				options.Add (option);
 
 				idx++;
@@ -383,6 +385,9 @@ namespace gbrainy.Core.Main.Xml
 
 				if (game.Variants.Count > 0)
 					CreateDrawingObjects (game.Variants[current.Variant]); // Draw variant specific objects
+
+				SetCheckExpression ();
+				SetCheckAttributes ();
 			}
 		}
 
@@ -469,7 +474,7 @@ namespace gbrainy.Core.Main.Xml
 		{
 			string answer;
 			
-			answer = String.Format (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("{0}) "), GetPossibleAnswer (option));
+			answer = String.Format (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("{0}) "), GameAnswer.GetMultiOption (option));
 			return str.Replace (option_prefix, answer);
 		}
 

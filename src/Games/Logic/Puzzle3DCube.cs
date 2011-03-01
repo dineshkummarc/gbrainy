@@ -59,7 +59,7 @@ namespace gbrainy.Games.Logic
 
 			rows = columns = depth = 4 + random.Next (max_random);
 			ans = rows * columns * depth;
-			right_answer += ans.ToString ();	
+			Answer.Correct += ans.ToString ();	
 		}
 
 		public override void Draw (CairoContextEx gr, int area_width, int area_height, bool rtl)

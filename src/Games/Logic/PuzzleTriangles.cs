@@ -56,9 +56,9 @@ namespace gbrainy.Games.Logic
 				type = random.Next (2);
 
 			if (type == 0)	
-				right_answer = "16";
+				Answer.Correct = "16";
 			else
-				right_answer = "8";
+				Answer.Correct = "8";
 		}
 
 		public override void Draw (CairoContextEx gr, int area_width, int area_height, bool rtl)

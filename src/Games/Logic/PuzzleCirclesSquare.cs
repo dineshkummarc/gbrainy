@@ -46,7 +46,7 @@ namespace gbrainy.Games.Logic
 
 		protected override void Initialize ()
 		{
-			right_answer = "68";
+			Answer.Correct = "68";
 		}
 
 		public override void Draw (CairoContextEx gr, int area_width, int area_height, bool rtl)

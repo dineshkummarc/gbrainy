@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2007-2010 Jordi Mas i Hernàndez <jmas@softcatala.org>
+ * Copyright (C) 2007-2011 Jordi Mas i Hernàndez <jmas@softcatala.org>
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License as
@@ -31,23 +31,8 @@ namespace gbrainy.Core.Main
 {
 	abstract public class Game : IDrawable, IDrawRequest, IMouseEvent
 	{
-	
-		public const char AnswerSeparator = '|';
-		const int MAX_POSSIBLE_ANSWER = 7;
-
-		public class AnswerEventArgs : EventArgs
-		{
-			public AnswerEventArgs (string answer)
-			{
-				Answer = answer;
-			}
-
-			public string Answer { get; set; }
-		}
-
 		private bool draw_answer;
 		private Cairo.Color default_color;
-		protected string right_answer;
 		protected Random random;
 		private TimeSpan game_time;
 		private bool tip_used;
@@ -56,15 +41,22 @@ namespace gbrainy.Core.Main
 		private ISynchronizeInvoke synchronize;
 		private List <Toolkit.Container> containers;
 		private int variant;
+		private GameAnswer answer;
 
 		public event EventHandler DrawRequest;
 		public event EventHandler <UpdateUIStateEventArgs> UpdateUIElement;
-		public event EventHandler <AnswerEventArgs> AnswerEvent;
+		public event EventHandler <GameAnswerEventArgs> AnswerEvent;
 
 		protected Game ()
 		{
 			containers = new List <Toolkit.Container> ();
 			difficulty = GameDifficulty.Medium;
+			answer = new GameAnswer ();
+		}
+
+		public GameAnswer Answer {
+			get {return answer; }
+			set {answer = value; }
 		}
 
 #region Methods to override in your own games
@@ -101,19 +93,10 @@ namespace gbrainy.Core.Main
 			get { return GameTypes.LogicPuzzle;}
 		}
 
-		// How to check the answer
-		public virtual GameAnswerCheckAttributes CheckAttributes {
-			get { return GameAnswerCheckAttributes.Trim | GameAnswerCheckAttributes.IgnoreCase; }
-		}
-
-		public virtual string AnswerCheckExpression {
-			get { return ".+"; }
-		}
-
 		// Right answer as shown to the user. Usually equals to right_answer, can be different
 		// when the answer contains multiple options (e.g. 1 | 2 shown as 1 and 2).
 		public virtual string AnswerValue {
-			get { return right_answer; }
+			get { return Answer.Correct; }
 		}
 
 		// Indicates in which difficulty levels the game should be shown
@@ -140,12 +123,12 @@ namespace gbrainy.Core.Main
 				if (value < 0 || value > Variants)
 					throw new ArgumentOutOfRangeException (String.Format ("Variant out of range {0}", value));
 
-				variant = value; 
+				variant = value;
 			}
 		}
 
 		// Builds a text answer for the puzzle
-		public virtual string Answer {
+		public virtual string AnswerText {
 			get {
 				string str;
 
@@ -153,7 +136,7 @@ namespace gbrainy.Core.Main
 
 				if (String.IsNullOrEmpty (Rationale))
 					return str;
-				
+
 				// Translators: answer + rationale of the answer
 				return String.Format (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("{0} {1}"), str, Rationale);
 			}
@@ -286,59 +269,13 @@ namespace gbrainy.Core.Main
 			container.SelectedEvent += delegate (object sender, SeletectedEventArgs e)
 			{
 				if (AnswerEvent != null)
-					AnswerEvent (this, new AnswerEventArgs ((string) e.DataEx));
+					AnswerEvent (this, new GameAnswerEventArgs ((string) e.DataEx));
 			};
 
 			containers.Add (container);
 		}
 
 		public virtual void Finish () {}
-
-		protected string GetPossibleAnswersExpression ()
-		{
-			StringBuilder str = new StringBuilder ();
-			str.Append ("[");
-			for (int i = 0; i < MAX_POSSIBLE_ANSWER; i++)
-				str.Append (GetPossibleAnswer (i));
-
-			str.Append ("]");
-			return str.ToString ();
-		}
-
-		static public string GetPossibleAnswer (int answer)
-		{
-			switch (answer) {
-				// Translators Note
-				// The following series of answers may need to be adapted
-				// in cultures with alphabets different to the Latin one.
-				// The idea is to enumerate a sequence of possible answers
-				// For languages represented with the Latin alphabet use
-				// the same than English
-			case 0: // First possible answer for a series (e.g.: Figure A)
-				return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("A");
-			case 1: // Second possible answer for a series
-				return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("B");
-			case 2: // Third possible answer for a series
-				return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("C");
-			case 3: // Fourth possible answer for a series
-				return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("D");
-			case 4: // Fifth possible answer for a series
-				return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("E");
-			case 5: // Sixth possible answer for a series
-				return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("F");
-			case 6: // Seventh possible answer for a series
-				return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("G");
-			case 7: // Eighth possible answer for a series
-				return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("H");
-			default:
-				throw new ArgumentOutOfRangeException ("Do not have an option for this answer");
-			}
-		}
-
-		public string GetPossibleFigureAnswer (int answer)
-		{
-			return String.Format (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Figure {0}"), GetPossibleAnswer (answer));
-		}
 
 		protected void InitDraw (CairoContextEx gr, int width, int height, bool rtl)
 		{
@@ -364,98 +301,7 @@ namespace gbrainy.Core.Main
 
 		public virtual bool CheckAnswer (string answer)
 		{
-			Regex regex;
-			Match match;
-			bool ignore_case, ignore_spaces;
-
-			if (String.IsNullOrEmpty (answer))
-				return false;
-
-			ignore_case = (CheckAttributes & GameAnswerCheckAttributes.IgnoreCase) == GameAnswerCheckAttributes.IgnoreCase;
-			ignore_spaces = (CheckAttributes & GameAnswerCheckAttributes.IgnoreSpaces) == GameAnswerCheckAttributes.IgnoreSpaces;
-
-			if (ignore_case == true) // This necessary to make pattern selection (e.g. [a-z]) case insensitive
-				regex = new Regex (AnswerCheckExpression, RegexOptions.IgnoreCase);
-			else
-				regex = new Regex (AnswerCheckExpression);
-
-			string [] right_answers = right_answer.Split (AnswerSeparator);
-
-			for (int i = 0; i < right_answers.Length; i++)
-			{
-				right_answers [i] = right_answers[i].Trim ();
-
-				if (ignore_spaces)
-					right_answers [i] = RemoveWhiteSpace (right_answers [i]);
-			}
-
-			if ((CheckAttributes & GameAnswerCheckAttributes.Trim) == GameAnswerCheckAttributes.Trim)
-				answer = answer.Trim ();
-
-			if (ignore_spaces)
-				answer = RemoveWhiteSpace (answer);
-
-			// All strings from the list of expected answers (two numbers: 22 | 44) must present in the answer
-			if ((CheckAttributes & GameAnswerCheckAttributes.MatchAll) == GameAnswerCheckAttributes.MatchAll ||
-				(CheckAttributes & GameAnswerCheckAttributes.MatchAllInOrder) == GameAnswerCheckAttributes.MatchAllInOrder)
-			{
-				int pos = 0;
-				match = regex.Match (answer);
-				while (String.IsNullOrEmpty (match.Value) == false)
-				{
-					if ((CheckAttributes & GameAnswerCheckAttributes.MatchAll) == GameAnswerCheckAttributes.MatchAll)
-					{
-						for (int i = 0; i < right_answers.Length; i++)
-						{
-							if (String.Compare (match.Value, right_answers[i], ignore_case) == 0)
-							{
-								right_answers[i] = null;
-								break;
-							}
-						}
-					}
-					else //MatchAllInOrder
-					{
-						if (String.Compare (match.Value, right_answers[pos++], ignore_case) != 0)
-							return false;
-
-					}
-					match = match.NextMatch ();
-				}
-
-				if ((CheckAttributes & GameAnswerCheckAttributes.MatchAllInOrder) == GameAnswerCheckAttributes.MatchAllInOrder)
-					return true;
-
-				// Have all the expected answers been matched?
-				for (int i = 0; i < right_answers.Length; i++)
-				{
-					if (right_answers[i] != null)
-						return false;
-				}
-
-				return true;
-			}
-			else // Any string from the list of possible answers (answer1 | answer2) present in the answer will do it
-			{
-				foreach (string s in right_answers)
-				{
-					match = regex.Match (answer);
-					if (String.Compare (match.Value, s, ignore_case) == 0)
-						return true;
-				}
-			}
-			return false;
-		}
-
-		static string RemoveWhiteSpace (string source)
-		{
-			string str = string.Empty;
-			for (int n = 0; n < source.Length; n++)
-			{
-				if (char.IsWhiteSpace (source [n]) == false)
-					str += source [n];
-			}
-			return str;
+			return Answer.CheckAnswer (answer);
 		}
 
 		public void EnableMouseEvents (bool enable)

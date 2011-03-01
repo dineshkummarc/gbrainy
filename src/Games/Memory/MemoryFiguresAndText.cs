@@ -106,7 +106,7 @@ namespace gbrainy.Games.Memory
 			}
 
 			question_pos = random.Next (figures_active);
-			right_answer = FigureType.ToString (figures[question_pos]);
+			Answer.Correct = FigureType.ToString (figures[question_pos]);
 			base.Initialize ();
 		}
 

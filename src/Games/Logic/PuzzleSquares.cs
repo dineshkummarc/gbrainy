@@ -65,9 +65,9 @@ namespace gbrainy.Games.Logic
 			if (type == 0) {
 				rows++;
 				columns++;
-				right_answer = "30";
+				Answer.Correct = "30";
 			} else {
-				right_answer = "14";
+				Answer.Correct = "14";
 			}
 		}
 

@@ -59,11 +59,11 @@ namespace gbrainy.Games.Logic
 
 			StringBuilder sb = new StringBuilder (3);
 	
-			sb.Append (GetPossibleAnswer (figures[random_indices [5]]));
-			sb.Append (GetPossibleAnswer (figures[6 + random_indices [5]]));
-			sb.Append (GetPossibleAnswer (figures[(2 * 6) + random_indices [5]]));
+			sb.Append (GameAnswer.GetMultiOption (figures[random_indices [5]]));
+			sb.Append (GameAnswer.GetMultiOption (figures[6 + random_indices [5]]));
+			sb.Append (GameAnswer.GetMultiOption (figures[(2 * 6) + random_indices [5]]));
 
-			right_answer = sb.ToString ();
+			Answer.Correct = sb.ToString ();
 
 			HorizontalContainer container = new HorizontalContainer (DrawAreaX, 0.75, 0.8, 0.1);
 			AddWidget (container);
@@ -75,7 +75,7 @@ namespace gbrainy.Games.Logic
 			drawable_area.DrawEventHandler += delegate (object sender, DrawEventArgs e)
 			{
 				e.Context.MoveTo (0, 0.05);
-				e.Context.ShowPangoText (String.Format (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("{0} ->"), GetPossibleAnswer (0)));
+				e.Context.ShowPangoText (String.Format (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("{0} ->"), GameAnswer.GetMultiOption (0)));
 				e.Context.DrawPentagon (0.1, 0, 0.1);
 				e.Context.Stroke ();
 			};
@@ -87,7 +87,7 @@ namespace gbrainy.Games.Logic
 			drawable_area.DrawEventHandler += delegate (object sender, DrawEventArgs e)
 			{
 				e.Context.MoveTo (0, 0.05);
-				e.Context.ShowPangoText (String.Format (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("{0} ->"), GetPossibleAnswer (1)));
+				e.Context.ShowPangoText (String.Format (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("{0} ->"), GameAnswer.GetMultiOption (1)));
 				e.Context.Stroke ();
 				e.Context.Arc (0.15, 0.05, 0.05, 0, 2 * Math.PI);
 				e.Context.Stroke ();
@@ -100,7 +100,7 @@ namespace gbrainy.Games.Logic
 			drawable_area.DrawEventHandler += delegate (object sender, DrawEventArgs e)
 			{
 				e.Context.MoveTo (0, 0.05);
-				e.Context.ShowPangoText (String.Format (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("{0} ->"), GetPossibleAnswer (2)));
+				e.Context.ShowPangoText (String.Format (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("{0} ->"), GameAnswer.GetMultiOption (2)));
 				e.Context.DrawEquilateralTriangle (0.1, 0, 0.1);
 			};
 		}
@@ -161,7 +161,7 @@ namespace gbrainy.Games.Logic
 			y += 0.16;
 			gr.MoveTo (x, y);		
 			gr.ShowPangoText (String.Format (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("E.g: {0}{1}{2} (pentagon, triangle, circle)"),
-				GetPossibleAnswer (0), GetPossibleAnswer (2), GetPossibleAnswer (1)));
+				GameAnswer.GetMultiOption (0), GameAnswer.GetMultiOption (2), GameAnswer.GetMultiOption (1)));
 		}
 	}
 }

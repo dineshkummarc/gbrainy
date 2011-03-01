@@ -54,19 +54,11 @@ namespace gbrainy.Games.Logic
 		public override string Question {
 			get {return String.Format (
 				ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Which three pieces can you use together to build a triangle? Answer using the three figure names, e.g.: {0}{1}{2}."),
-					GetPossibleAnswer (0), GetPossibleAnswer (1), GetPossibleAnswer (2));}
+					GameAnswer.GetMultiOption (0), GameAnswer.GetMultiOption (1), GameAnswer.GetMultiOption (2));}
 		}
 
 		public override string Tip {
 			get { return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("The resulting triangle is isosceles.");}
-		}
-
-		public override GameAnswerCheckAttributes CheckAttributes {
-			get { return GameAnswerCheckAttributes.Trim | GameAnswerCheckAttributes.IgnoreCase | GameAnswerCheckAttributes.MatchAll; }
-		}
-
-		public override string AnswerCheckExpression {
-			get { return GetPossibleAnswersExpression ();}
 		}
 
 		public override string AnswerValue {
@@ -95,18 +87,20 @@ namespace gbrainy.Games.Logic
 			{
 				switch ((Figures) random_indices_answers[i]) {
 				case Figures.TriangleB:
-					answers[0] =  GetPossibleAnswer (i);
+					answers[0] =  GameAnswer.GetMultiOption (i);
 					break;
 				case Figures.TriangleC:
-					answers[1] =  GetPossibleAnswer (i);
+					answers[1] =  GameAnswer.GetMultiOption (i);
 					break;
 				case Figures.Square:
-					answers[2] =  GetPossibleAnswer (i);
+					answers[2] =  GameAnswer.GetMultiOption (i);
 					break;
 				}
 			}
 
-			right_answer = answers[0] + " | " + answers[1] + " | " + answers[2];
+			Answer.Correct = answers[0] + " | " + answers[1] + " | " + answers[2];
+			Answer.CheckExpression = Answer.GetMultiOptionsExpression ();
+			Answer.CheckAttributes = GameAnswerCheckAttributes.Trim | GameAnswerCheckAttributes.IgnoreCase | GameAnswerCheckAttributes.MatchAll;
 		}
 
 		private static void DrawFigure (CairoContextEx gr, double x, double y, Figures figure)
@@ -165,7 +159,7 @@ namespace gbrainy.Games.Logic
 			{
 				DrawFigure (gr, x, y, (Figures) random_indices_answers[i]);
 				gr.MoveTo (x, y + 0.13);
-				gr.ShowPangoText (GetPossibleFigureAnswer (i));
+				gr.ShowPangoText (Answer.GetMultiOptionFigureName (i));
 
 				if (i  == (total_figures / 2) - 1) {
 					y+= 0.30;

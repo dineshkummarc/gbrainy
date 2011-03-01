@@ -28,7 +28,7 @@ namespace gbrainy.Core.Main.Xml
 		public LocalizableString Question { get; set; }
 		public string Tip { get; set; }
 		public LocalizableString Rationale { get; set; }
-		public string Answer { get; set; }
+		public string AnswerText { get; set; }
 		public string Variables { get; set; }
 		public GameAnswerCheckAttributes CheckAttributes { get; set; }
 		public string AnswerCheckExpression  { get; set; }
@@ -60,9 +60,9 @@ namespace gbrainy.Core.Main.Xml
 			str.AppendLine ("Question: " + Question);
 			str.AppendLine ("Tip: " + Tip);
 			str.AppendLine ("Rationale: " + Rationale);
-			str.AppendLine ("Answer: " + Answer);
+			str.AppendLine ("Answer: " + AnswerText);
 			str.AppendLine ("CheckAttributes: " + CheckAttributes);
-			str.AppendLine ("AnswerCheckExpression: " + AnswerCheckExpression);
+			str.AppendLine ("Answer.CheckExpression: " + AnswerCheckExpression);
 
 			return str.ToString ();
 		}

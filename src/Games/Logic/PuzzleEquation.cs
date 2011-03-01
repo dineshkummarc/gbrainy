@@ -62,7 +62,7 @@ namespace gbrainy.Games.Logic
 			}
 
 			formula = String.Format ("{0} * {1} + {2} * {3} - {4} = ?", num_a, num_b, num_c, num_d, num_e);
-			right_answer = (order).ToString ();
+			Answer.Correct = (order).ToString ();
 		}
 
 		public override void Draw (CairoContextEx gr, int area_width, int area_height, bool rtl)

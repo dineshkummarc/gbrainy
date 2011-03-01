@@ -107,7 +107,7 @@ namespace gbrainy.Games.Logic
 				}
 			}
 
-			right_answer = numbers[max_num-1].ToString ();
+			Answer.Correct = numbers[max_num-1].ToString ();
 		}
 
 		public override void Draw (CairoContextEx gr, int area_width, int area_height, bool rtl)

@@ -76,7 +76,7 @@ namespace gbrainy.Core.Main.Verbal
 				sample = string.Empty;
 
 			samples = items [0].Trim ();
-			right_answer = current.answers [current.right];
+			Answer.Correct = current.answers [current.right];
 		}
 	
 		public override void Draw (CairoContextEx gr, int area_width, int area_height, bool rtl)

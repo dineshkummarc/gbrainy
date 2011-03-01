@@ -54,14 +54,6 @@ namespace gbrainy.Games.Logic
 			}
 		}
 
-		public override GameAnswerCheckAttributes CheckAttributes {
-			get { return GameAnswerCheckAttributes.Trim | GameAnswerCheckAttributes.IgnoreCase | GameAnswerCheckAttributes.MatchAll; }
-		}
-
-		public override string AnswerCheckExpression {
-			get { return GetPossibleAnswersExpression ();}
-		}
-
 		public override string AnswerValue {
 			get {
 				switch (question) {
@@ -83,17 +75,20 @@ namespace gbrainy.Games.Logic
 
 			switch (question) {
 			case QuestionType.TwoSquares:
-				right_answer = "A | B | F";
+				Answer.Correct = "A | B | F";
 				break;
 			case QuestionType.TwoCercles:
-				right_answer = "C | D | F";
+				Answer.Correct = "C | D | F";
 				break;
 			case QuestionType.ThreeCercles:
-				right_answer = "A | C | E";
+				Answer.Correct = "A | C | E";
 				break;
 			default:
 				throw new InvalidOperationException ();
 			}
+			
+			Answer.CheckExpression = Answer.GetMultiOptionsExpression ();
+			Answer.CheckAttributes = GameAnswerCheckAttributes.Trim | GameAnswerCheckAttributes.IgnoreCase | GameAnswerCheckAttributes.MatchAll;
 		}
 
 		public override void Draw (CairoContextEx gr, int area_width, int area_height, bool rtl)

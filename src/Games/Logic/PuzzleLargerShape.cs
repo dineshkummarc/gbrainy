@@ -120,7 +120,7 @@ namespace gbrainy.Games.Logic
 		public override string Question {
 			get {return String.Format (
 				ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Which larger shape can you make combining the first two figures? Answer {0}, {1}, {2} or {3}."),
-				GetPossibleAnswer (0), GetPossibleAnswer (1), GetPossibleAnswer (2), GetPossibleAnswer (3));}
+				GameAnswer.GetMultiOption (0), GameAnswer.GetMultiOption (1), GameAnswer.GetMultiOption (2), GameAnswer.GetMultiOption (3));}
 		}
 
 		protected override void Initialize ()
@@ -148,7 +148,7 @@ namespace gbrainy.Games.Logic
 			for (int i = 0; i < answers; i++)
 			{
 				if (random_indices[i] == ranswer) {
-					right_answer = GetPossibleAnswer (i);
+					Answer.Correct = GameAnswer.GetMultiOption (i);
 					break;
 				}
 			}
@@ -187,7 +187,7 @@ namespace gbrainy.Games.Logic
 			{
 				drawable_area = new DrawableArea (container.Width / 2, 0.25);
 				drawable_area.Data = i;
-				drawable_area.DataEx = GetPossibleAnswer (i);
+				drawable_area.DataEx = GameAnswer.GetMultiOption (i);
 				container.AddChild (drawable_area);
 
 				drawable_area.DrawEventHandler += delegate (object sender, DrawEventArgs e)
@@ -195,7 +195,7 @@ namespace gbrainy.Games.Logic
 					int n = (int) e.Data;
 					DrawPossibleAnswer (e.Context, 0.12, 0.03, answer, random_indices [n], n);
 
-					e.Context.DrawTextCentered (drawable_area.Width / 2, 0.22, GetPossibleFigureAnswer (n));
+					e.Context.DrawTextCentered (drawable_area.Width / 2, 0.22, Answer.GetMultiOptionFigureName (n));
 					e.Context.Stroke ();
 				};
 			}
@@ -207,7 +207,7 @@ namespace gbrainy.Games.Logic
 			{
 				drawable_area = new DrawableArea (container.Width / 2, 0.25);
 				drawable_area.Data = i;
-				drawable_area.DataEx = GetPossibleAnswer (i);
+				drawable_area.DataEx = GameAnswer.GetMultiOption (i);
 				container.AddChild (drawable_area);
 
 				drawable_area.DrawEventHandler += delegate (object sender, DrawEventArgs e)
@@ -215,7 +215,7 @@ namespace gbrainy.Games.Logic
 					int n = (int) e.Data;
 					DrawPossibleAnswer (e.Context, 0.12, 0.03, answer, random_indices [n], n);
 
-					e.Context.DrawTextCentered (drawable_area.Width / 2, 0.22, GetPossibleFigureAnswer (n));
+					e.Context.DrawTextCentered (drawable_area.Width / 2, 0.22, Answer.GetMultiOptionFigureName (n));
 					e.Context.Stroke ();
 				};
 			}

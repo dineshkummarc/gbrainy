@@ -47,11 +47,11 @@ namespace gbrainy.Core.Main.Verbal
 			}
 		}
 
-		public override string Answer {
+		public override string AnswerText {
 			get {
 				string str;
 				if (current == null || current.MultipleAnswers == false)
-					return base.Answer;
+					return base.AnswerText;
 
 				str = String.Format (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Possible correct answers are: {0}."), AnswerValue);
 
@@ -75,12 +75,12 @@ namespace gbrainy.Core.Main.Verbal
 		public override string AnswerValue {
 			get { 
 				if (current == null || current.MultipleAnswers == false)
-					return right_answer;
+					return Answer.Correct;
 
 				string [] items;
 				string str = string.Empty;
 
-				items = right_answer.Split (AnalogiesFactory.Separator);
+				items = Answer.Correct.Split (AnalogiesFactory.Separator);
 
 				for (int i = 0 ; i < items.Length; i++)
 				{

@@ -50,11 +50,7 @@ namespace gbrainy.Games.Logic
 				return String.Format (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("You have to calculate the hour from which the distance is the same for the given times, and then add the {0} hours to convert it to present time."), after);
 			}
 		}
-
-		public override GameAnswerCheckAttributes CheckAttributes {
-			get { return GameAnswerCheckAttributes.Trim | GameAnswerCheckAttributes.IgnoreCase | GameAnswerCheckAttributes.IgnoreSpaces; }
-		}
-
+		
 		protected override void Initialize ()
 		{
 			int hour;
@@ -73,7 +69,9 @@ namespace gbrainy.Games.Logic
  			// Explanation of the date and time format specifications can be found here:
 			// http://msdn.microsoft.com/en-us/library/system.globalization.datetimeformatinfo.aspx
 			// For 12-hour clock format use {0:%h} and for 24-hour clock format use {0:%H}. The date formats {0:h} and {0:H} are invalid.
-			right_answer = String.Format (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("{0:h tt}"), ans);
+			Answer.Correct = String.Format (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("{0:h tt}"), ans);
+			
+			Answer.CheckAttributes = GameAnswerCheckAttributes.Trim | GameAnswerCheckAttributes.IgnoreCase | GameAnswerCheckAttributes.IgnoreSpaces;
 		}
 
 		public override void Draw (CairoContextEx gr, int area_width, int area_height, bool rtl)

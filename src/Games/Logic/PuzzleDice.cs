@@ -79,7 +79,7 @@ namespace gbrainy.Games.Logic
 		protected override void Initialize ()
 		{
 			problem = random.Next (problems.Length);
-			right_answer = problems[problem].answer;
+			Answer.Correct = problems[problem].answer;
 		}
 
 		public override void Draw (CairoContextEx gr, int area_width, int area_height, bool rtl)

@@ -56,7 +56,7 @@ namespace gbrainy.Games.Logic
 		public override string Question {
 			get {return String.Format (
 				ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Which element does not belong to the group? It is not related to divisibility of the numbers. Answer {0}, {1}, {2}, {3} or {4}."),
-				GetPossibleAnswer (0), GetPossibleAnswer (1), GetPossibleAnswer (2), GetPossibleAnswer (3), GetPossibleAnswer (4));}
+				GameAnswer.GetMultiOption (0), GameAnswer.GetMultiOption (1), GameAnswer.GetMultiOption (2), GameAnswer.GetMultiOption (3), GameAnswer.GetMultiOption (4));}
 		}
 
 		public override string Tip {
@@ -127,12 +127,12 @@ namespace gbrainy.Games.Logic
 
 			random_indices = new ArrayListIndicesRandom (equations.Length);
 			random_indices.Initialize ();
-			right_answer = string.Empty;
+			Answer.Correct = string.Empty;
 
 			for (int i = 0; i < random_indices.Count; i++)
 			{
 				if (random_indices[i] == wrong_answer) {
-					right_answer = GetPossibleAnswer (i);
+					Answer.Correct = GameAnswer.GetMultiOption (i);
 					break;
 				}
 			}
@@ -147,7 +147,7 @@ namespace gbrainy.Games.Logic
 				drawable_area.Y = DrawAreaY + 0.2 + i * 0.1;
 				container.AddChild (drawable_area);
 				drawable_area.Data = i;
-				drawable_area.DataEx = GetPossibleAnswer (i);
+				drawable_area.DataEx = GameAnswer.GetMultiOption (i);
 
 				drawable_area.DrawEventHandler += delegate (object sender, DrawEventArgs e)
 				{
@@ -156,7 +156,7 @@ namespace gbrainy.Games.Logic
 					e.Context.SetPangoLargeFontSize ();
 					e.Context.MoveTo (0.05, 0.02);
 					// Translators: this "option) answer" for example "a) "21 x 60 = 1260". This should not be changed for most of the languages
-					e.Context.ShowPangoText (String.Format (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("{0}) {1}"), GetPossibleAnswer (n), equations [random_indices[n]]));
+					e.Context.ShowPangoText (String.Format (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("{0}) {1}"), GameAnswer.GetMultiOption (n), equations [random_indices[n]]));
 				};
 			}
 		}

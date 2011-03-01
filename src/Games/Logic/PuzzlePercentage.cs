@@ -51,10 +51,6 @@ namespace gbrainy.Games.Logic
 			}
 		}
 
-		public override string AnswerCheckExpression {
-			get { return "[0-9]+";}
-		}
-
 		protected override void Initialize ()
 		{
 			int ans;
@@ -120,7 +116,8 @@ namespace gbrainy.Games.Logic
 				throw new Exception ("Unexpected value");
 			}
 
-			right_answer = (ans).ToString ();
+			Answer.Correct = (ans).ToString ();
+			Answer.CheckExpression = "[0-9]+";
 		}
 
 		public override void Draw (CairoContextEx gr, int area_width, int area_height, bool rtl)

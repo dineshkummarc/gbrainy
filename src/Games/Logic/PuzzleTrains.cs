@@ -134,7 +134,7 @@ namespace gbrainy.Games.Logic
 			}
 
 			ans = (int) rslt;
-			right_answer = (ans).ToString ();
+			Answer.Correct = (ans).ToString ();
 		}
 
 		public override void Draw (CairoContextEx gr, int area_width, int area_height, bool rtl)

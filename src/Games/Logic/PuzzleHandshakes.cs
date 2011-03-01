@@ -62,7 +62,7 @@ namespace gbrainy.Games.Logic
 			for (int i = 1; i < people; i++)
 				handshakes += i;
 		
-			right_answer = people.ToString ();
+			Answer.Correct = people.ToString ();
 		}
 
 		public override void Draw (CairoContextEx gr, int area_width, int area_height, bool rtl)

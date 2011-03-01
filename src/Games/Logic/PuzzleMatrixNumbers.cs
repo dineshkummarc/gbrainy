@@ -122,7 +122,7 @@ namespace gbrainy.Games.Logic
 				}			
 			}
 
-			right_answer = numbers[3*coordinateA + 3*coordinateB].ToString ();
+			Answer.Correct = numbers[3*coordinateA + 3*coordinateB].ToString ();
 		}
 
 		public override void Draw (CairoContextEx gr, int area_width, int area_height, bool rtl)

@@ -194,7 +194,7 @@ namespace gbrainy.Games.Logic
 			lines [5] = CreateNumbers (operation, 2);
 			lines [6] = CreateNumbers (operation, 1);
 
-			right_answer = (lines [lines.Length - 1].Middle).ToString ();
+			Answer.Correct = (lines [lines.Length - 1].Middle).ToString ();
 		}
 
 		public override void Draw (CairoContextEx gr, int area_width, int area_height, bool rtl)

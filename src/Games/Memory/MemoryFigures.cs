@@ -102,7 +102,7 @@ namespace gbrainy.Games.Memory
 					break;
 				}
 			}
-			right_answer = question_answer.ToString ();
+			Answer.Correct = question_answer.ToString ();
 			base.Initialize ();
 
 			// Answers controls

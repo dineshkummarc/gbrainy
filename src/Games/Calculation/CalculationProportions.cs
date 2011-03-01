@@ -45,7 +45,7 @@ namespace gbrainy.Games.Calculation
 			get {
 				return String.Format (
 					ServiceLocator.Instance.GetService <ITranslations> ().GetString ("What is {0}% of {1}/{2}? Answer {3}, {4}, {5} or {6}."), 
-					percentage, num, den, GetPossibleAnswer (0), GetPossibleAnswer (1), GetPossibleAnswer (2), GetPossibleAnswer (3));}
+					percentage, num, den, GameAnswer.GetMultiOption (0), GameAnswer.GetMultiOption (1), GameAnswer.GetMultiOption (2), GameAnswer.GetMultiOption (3));}
 		}
 
 		protected override void Initialize ()
@@ -92,7 +92,7 @@ namespace gbrainy.Games.Calculation
 				}
 			}
 
-			right_answer += GetPossibleAnswer (which);
+			Answer.Correct += GameAnswer.GetMultiOption (which);
 
 			// Options
 			double x = DrawAreaX + 0.25, y = DrawAreaY + 0.16;
@@ -106,7 +106,7 @@ namespace gbrainy.Games.Calculation
 				drawable_area.Y = y + i * 0.15;
 				container.AddChild (drawable_area);
 				drawable_area.Data = i;
-				drawable_area.DataEx = GetPossibleAnswer (i);
+				drawable_area.DataEx = GameAnswer.GetMultiOption (i);
 
 				drawable_area.DrawEventHandler += delegate (object sender, DrawEventArgs e)
 				{
@@ -115,7 +115,7 @@ namespace gbrainy.Games.Calculation
 
 					e.Context.SetPangoLargeFontSize ();
 					e.Context.MoveTo (0.02, 0.02);
-					e.Context.ShowPangoText (String.Format ("{0}) {1:##0.##}", GetPossibleAnswer (n), options [indx]));
+					e.Context.ShowPangoText (String.Format ("{0}) {1:##0.##}", GameAnswer.GetMultiOption (n), options [indx]));
 				};
 			}
 		}

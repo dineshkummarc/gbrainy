@@ -82,7 +82,7 @@ namespace gbrainy.Games.Logic
 				if (count > 5 && count < 10)
 					completed = true;
 			}
-			right_answer = numbers[good_pos].ToString ();
+			Answer.Correct = numbers[good_pos].ToString ();
 		}
 
 		private int GetUnique (int max)

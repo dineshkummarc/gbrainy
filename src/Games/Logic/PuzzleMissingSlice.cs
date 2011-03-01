@@ -65,7 +65,7 @@ namespace gbrainy.Games.Logic
 		public override string Question {
 			get {return String.Format (
 				ServiceLocator.Instance.GetService <ITranslations> ().GetString ("The slices below have some kind of relation. Which is the missing slice in the circle below? Answer {0}, {1} or {2}."),
-				GetPossibleAnswer (0), GetPossibleAnswer (1), GetPossibleAnswer (2));}
+				GameAnswer.GetMultiOption (0), GameAnswer.GetMultiOption (1), GameAnswer.GetMultiOption (2));}
 		}
 
 		public override string Tip {
@@ -84,7 +84,7 @@ namespace gbrainy.Games.Logic
 			random_indices = new ArrayListIndicesRandom (slices.Length / items_per_slice);
 			random_indices.Initialize ();
 			ans_pos = random.Next (possible_answers);
-			right_answer = GetPossibleAnswer (ans_pos);
+			Answer.Correct = GameAnswer.GetMultiOption (ans_pos);
 		
 			bad_answers = new int [possible_answers * items_per_slice];
 			for (int i = 0; i < bad_answers.Length; i++) {
@@ -100,7 +100,7 @@ namespace gbrainy.Games.Logic
 				drawable_area = new DrawableArea (0.8 / 3, 0.3);
 				drawable_area.SelectedArea = new Rectangle (0, 0, radius, 0.2);
 				drawable_area.Data = i;
-				drawable_area.DataEx = GetPossibleAnswer (i);
+				drawable_area.DataEx = GameAnswer.GetMultiOption (i);
 				container.AddChild (drawable_area);
 
 				drawable_area.DrawEventHandler += delegate (object sender, DrawEventArgs e)
@@ -122,7 +122,7 @@ namespace gbrainy.Games.Logic
 					}
 			
 					e.Context.MoveTo (0.0, 0.25);
-					e.Context.ShowPangoText (GetPossibleFigureAnswer (n));
+					e.Context.ShowPangoText (Answer.GetMultiOptionFigureName (n));
 					e.Context.Stroke ();
 				};
 			}

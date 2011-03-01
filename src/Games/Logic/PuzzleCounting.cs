@@ -101,7 +101,7 @@ namespace gbrainy.Games.Logic
 				throw new Exception ("Unexpected value");
 			}
 
-			right_answer = (ans).ToString ();
+			Answer.Correct = (ans).ToString ();
 		}
 
 		public override void Draw (CairoContextEx gr, int area_width, int area_height, bool rtl)

@@ -50,7 +50,7 @@ namespace gbrainy.Core.Main.Verbal
 				return;
 
 			if (current.answers != null) 
-				right_answer = current.answers [current.right];
+				Answer.Correct = current.answers [current.right];
 		}
 	}
 }

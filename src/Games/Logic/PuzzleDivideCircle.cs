@@ -58,10 +58,10 @@ namespace gbrainy.Games.Logic
 
 			switch (dots) {
 			case 5:
-				right_answer = "16";
+				Answer.Correct = "16";
 				break;
 			case 6:
-				right_answer = "30";
+				Answer.Correct = "30";
 				break;
 			}			
 		}

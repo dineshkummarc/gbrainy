@@ -39,10 +39,6 @@ namespace gbrainy.Games.Logic
 			get {return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("What percentage of the figure is colored?");} 
 		}
 
-		public override string AnswerCheckExpression {
-			get { return "[0-9]+";}
-		}
-
 		protected override void Initialize ()
 		{
 			int total = 0;
@@ -74,7 +70,8 @@ namespace gbrainy.Games.Logic
 
 			partial_zones = random.Next (2) + 1;
 			total += partial_zones * 5;
-			right_answer = total.ToString ();
+			Answer.Correct = total.ToString ();
+			Answer.CheckExpression = "[0-9]+";
 		}
 
 		private static void Fill (CairoContextEx gr, double x, double y, double w, double h)

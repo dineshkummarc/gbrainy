@@ -29,7 +29,6 @@ namespace gbrainy.Games.Calculation
 		int number_a, number_b;
 		int op1, op2, max_operand;
 		SubGameTypes type;
-		GameAnswerCheckAttributes attributes;
 
 		enum SubGameTypes
 		{
@@ -59,21 +58,13 @@ namespace gbrainy.Games.Calculation
 			}
 		}
 
-		public override GameAnswerCheckAttributes CheckAttributes {
-			get { return attributes; }
-		}
-
-		public override string AnswerCheckExpression {
-			get { return "[-0-9]+"; }
-		}
-
 		public override string AnswerValue {
 			get { return String.Format (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("{0} and {1}"), number_a, number_b); }
 		}
 
 		protected override void Initialize ()
 		{
-			attributes = GameAnswerCheckAttributes.Trim | GameAnswerCheckAttributes.MatchAll;
+			Answer.CheckAttributes = GameAnswerCheckAttributes.Trim | GameAnswerCheckAttributes.MatchAll;
 			type = (SubGameTypes) random.Next ((int) SubGameTypes.Length);
 
 			switch (CurrentDifficulty) {
@@ -109,7 +100,8 @@ namespace gbrainy.Games.Calculation
 			}
 
 			op2 = number_a * number_b;
-			right_answer = String.Format ("{0} | {1}", number_a, number_b);
+			Answer.Correct = String.Format ("{0} | {1}", number_a, number_b);
+			Answer.CheckExpression = "[-0-9]+";
 		}
 
 		public override void Draw (CairoContextEx gr, int area_width, int area_height, bool rtl)
@@ -150,8 +142,8 @@ namespace gbrainy.Games.Calculation
 				number_a = -num_b;
 				number_b = -num_a;
 
-				right_answer = String.Format ("{0} | {1}", number_a, number_b);
-				attributes = GameAnswerCheckAttributes.Trim | GameAnswerCheckAttributes.MatchAllInOrder;
+				Answer.Correct = String.Format ("{0} | {1}", number_a, number_b);
+				Answer.CheckAttributes = GameAnswerCheckAttributes.Trim | GameAnswerCheckAttributes.MatchAllInOrder;
 				if (base.CheckAnswer (answer) == true) 
 					return true;
 

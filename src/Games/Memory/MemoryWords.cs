@@ -112,7 +112,7 @@ namespace gbrainy.Games.Memory
 			words_order.Initialize ();
 			answer = random.Next (showed);
 			tmp = words_order [answer];
-			right_answer = words [tmp];
+			Answer.Correct = words [tmp];
 			base.Initialize ();
 		}
 	

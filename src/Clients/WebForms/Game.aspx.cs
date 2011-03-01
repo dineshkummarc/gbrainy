@@ -292,7 +292,7 @@ namespace gbrainy.Clients.WebForms
 					result_label.CssClass = null;
 				}
 
-				rationale_label.Text = WebSession.GameState.CurrentGame.Answer;
+				rationale_label.Text = WebSession.GameState.CurrentGame.AnswerText;
 				answer_button.Enabled = false;
 			}
 		}

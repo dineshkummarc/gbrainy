@@ -129,7 +129,7 @@ namespace gbrainy.Games.Calculation
 				}			
 			}
 
-			right_answer = String.Format (format_string, rslt);
+			Answer.Correct = String.Format (format_string, rslt);
 		}
 
 		public override void Draw (CairoContextEx gr, int area_width, int area_height, bool rtl)
@@ -209,7 +209,7 @@ namespace gbrainy.Games.Calculation
 			catch (FormatException) {
 				return false;
 			}
-			return right_answer.Equals (String.Format (format_string, rslt));
+			return Answer.Correct.Equals (String.Format (format_string, rslt));
 		}
 	}
 }

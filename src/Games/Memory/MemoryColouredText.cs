@@ -78,7 +78,7 @@ namespace gbrainy.Games.Memory
 			}			
 		
 			question = random.Next (colors_shown);
-			right_answer = palette.Name (color_order [question]);
+			Answer.Correct = palette.Name (color_order [question]);
 			question_colorname = palette.Name (question);
 		
 			base.Initialize ();

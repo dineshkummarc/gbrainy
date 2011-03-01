@@ -47,8 +47,8 @@ namespace gbrainy.Games.Logic
 		public override string Question {
 			get {return String.Format (
 				ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Which of the following figures does not belong to the group? Answer {0}, {1}, {2}, {3}, {4} or {5}."),
-					GetPossibleAnswer (0), GetPossibleAnswer (1), GetPossibleAnswer (2), GetPossibleAnswer (3), GetPossibleAnswer (4), 
-					GetPossibleAnswer (5));}
+					GameAnswer.GetMultiOption (0), GameAnswer.GetMultiOption (1), GameAnswer.GetMultiOption (2), GameAnswer.GetMultiOption (3), GameAnswer.GetMultiOption (4), 
+					GameAnswer.GetMultiOption (5));}
 		}
 
 		public override string Rationale {
@@ -65,7 +65,7 @@ namespace gbrainy.Games.Logic
 			for (int i = 0; i < (int) Figures.Last; i++)
 			{
 				if ((Figures) random_indices[i] == Figures.FigureA) {
-					right_answer = GetPossibleAnswer (i);
+					Answer.Correct = GameAnswer.GetMultiOption (i);
 					break;
 				}
 			}
@@ -140,7 +140,7 @@ namespace gbrainy.Games.Logic
 			for (int i = 0; i < random_indices.Count; i++) {
 				DrawFigure (gr, x, y, (Figures) random_indices[i]);
 				gr.MoveTo (x, y - 0.02 + figure_size * 1.6);
-				gr.ShowPangoText (GetPossibleFigureAnswer (i));
+				gr.ShowPangoText (Answer.GetMultiOptionFigureName (i));
 
 				if (i == 2) {
 					x = DrawAreaX;

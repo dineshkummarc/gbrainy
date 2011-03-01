@@ -38,7 +38,7 @@ namespace gbrainy.Games.Logic
 		public override string Question {
 			get {return String.Format (
 				ServiceLocator.Instance.GetService <ITranslations> ().GetString ("What figure completes the set below? Answer {0}, {1} or {2}."),
-				GetPossibleAnswer (0), GetPossibleAnswer (1), GetPossibleAnswer (2));}
+				GameAnswer.GetMultiOption (0), GameAnswer.GetMultiOption (1), GameAnswer.GetMultiOption (2));}
 		}
 
 		public override string Rationale {
@@ -57,7 +57,7 @@ namespace gbrainy.Games.Logic
 
 			for (int i = 0; i < random_indices_answers.Count; i++) {
 				if ((int) random_indices_answers [i] == 0) {
-					right_answer = GetPossibleAnswer (i);
+					Answer.Correct = GameAnswer.GetMultiOption (i);
 					break;
 				}
 			}
@@ -70,7 +70,7 @@ namespace gbrainy.Games.Logic
 			{
 				drawable_area = new DrawableArea (0.8 / 3, 0.4);
 				drawable_area.Data = i;
-				drawable_area.DataEx = GetPossibleAnswer (i);
+				drawable_area.DataEx = GameAnswer.GetMultiOption (i);
 				container.AddChild (drawable_area);
 
 				drawable_area.DrawEventHandler += delegate (object sender, DrawEventArgs e)
@@ -79,7 +79,7 @@ namespace gbrainy.Games.Logic
 
 					DrawAnswerFigures (e.Context, 0.05, 0.2, random_indices_answers [n]);
 					e.Context.MoveTo (0.05, 0.33);
-					e.Context.ShowPangoText (GetPossibleFigureAnswer (n));
+					e.Context.ShowPangoText (Answer.GetMultiOptionFigureName (n));
 				};
 			}
 		}

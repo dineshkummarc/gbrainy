@@ -271,9 +271,9 @@ namespace gbrainy.Core.Main.Xml
 							break;
 
 						if (processing_variant)
-							game.Variants[variant].Answer = reader.ReadElementString ();
+							game.Variants[variant].AnswerText = reader.ReadElementString ();
 						else
-							game.Answer = reader.ReadElementString ();
+							game.AnswerText = reader.ReadElementString ();
 
 						break;
 					case "_answer_show":
@@ -340,7 +340,7 @@ namespace gbrainy.Core.Main.Xml
 							option = new OptionDrawingObject ();
 							break;
 						case XmlNodeType.EndElement:
-							if (String.IsNullOrEmpty (option.Answer) && option.RandomizedOrder == false)
+							if (String.IsNullOrEmpty (option.AnswerText) && option.RandomizedOrder == false)
 								throw new InvalidOperationException ("If the option is not randomized, you need to define an answer");
 
 							option = null;
@@ -357,10 +357,10 @@ namespace gbrainy.Core.Main.Xml
 						else
 							game.AddDrawingObject (option);
 	
-						option.Answer = reader.GetAttribute ("answer");
+						option.AnswerText = reader.GetAttribute ("answer");
 	
-						if (String.IsNullOrEmpty (option.Answer))
-							option.Answer = reader.GetAttribute ("_answer");
+						if (String.IsNullOrEmpty (option.AnswerText))
+							option.AnswerText = reader.GetAttribute ("_answer");
 
 						str = reader.GetAttribute ("x");
 						if (String.IsNullOrEmpty (str) == false)

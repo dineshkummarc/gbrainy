@@ -155,7 +155,7 @@ namespace gbrainy.Games.Memory
 			}
 
 			Challenge.Numbers = nums;
-			right_answer = current_game.Answer;
+			Answer.Correct = current_game.Answer;
 		}
 
 		// Generate a random number that is unique at the numbers array

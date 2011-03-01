@@ -61,17 +61,17 @@ namespace gbrainy.Games.Logic
 			case 0:
 				ques1 = ServiceLocator.Instance.GetService <ITranslations> ().GetString ("5th");
 				ques2 = ServiceLocator.Instance.GetService <ITranslations> ().GetString ("19th");
-				right_answer = "28";
+				Answer.Correct = "28";
 				break;
 			case 1:
 				ques1 = ServiceLocator.Instance.GetService <ITranslations> ().GetString ("4th");
 				ques2 = ServiceLocator.Instance.GetService <ITranslations> ().GetString ("12th");
-				right_answer = "16";
+				Answer.Correct = "16";
 				break;
 			case 2:
 				ques1 = ServiceLocator.Instance.GetService <ITranslations> ().GetString ("9th");
 				ques2 = ServiceLocator.Instance.GetService <ITranslations> ().GetString ("22nd");
-				right_answer = "26";
+				Answer.Correct = "26";
 				break;
 			}			
 		}

@@ -97,7 +97,7 @@ namespace gbrainy.Games.Calculation
 					break;
 				}
 			}
-			right_answer = result.ToString ();
+			Answer.Correct = result.ToString ();
 		}
 	
 		public override void Draw (CairoContextEx gr, int area_width, int area_height, bool rtl)
@@ -137,7 +137,7 @@ namespace gbrainy.Games.Calculation
 			gr.Stroke ();
 
 			if (DrawAnswer) {
-				gr.DrawTextAlignedRight (aligned_pos, operand_y + 0.03, right_answer);
+				gr.DrawTextAlignedRight (aligned_pos, operand_y + 0.03, Answer.Correct);
 			}
 		}
 

@@ -207,7 +207,7 @@ namespace gbrainy.Games.Logic
 		public override string Question {
 			get {return (String.Format (
 				ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Which is the next logical figure in the sequence? Answer {0}, {1} or {2}."),
-				GetPossibleAnswer (0), GetPossibleAnswer (1), GetPossibleAnswer (2)));}
+				GameAnswer.GetMultiOption (0), GameAnswer.GetMultiOption (1), GameAnswer.GetMultiOption (2)));}
 		}
 
 		protected override void Initialize ()
@@ -225,7 +225,7 @@ namespace gbrainy.Games.Logic
 
 				drawable_area = new DrawableArea (figure_size + space_figures, figure_size + 0.1);
 				drawable_area.Data = i;
-				drawable_area.DataEx = GetPossibleAnswer (i);
+				drawable_area.DataEx = GameAnswer.GetMultiOption (i);
 				drawable_area.SelectedArea = new Rectangle (space_figures / 2, space_figures / 2, figure_size, figure_size);
 
 				container.AddChild (drawable_area);
@@ -234,13 +234,13 @@ namespace gbrainy.Games.Logic
 				{
 					DrawPossibleAnswer (e.Context, space_figures / 2, space_figures / 2, possible_answers [(int)e.Data]);
 					e.Context.DrawTextCentered (space_figures / 2 + figure_size / 2, space_figures + figure_size + 0.02,
-						GetPossibleFigureAnswer ((int)e.Data));
+						Answer.GetMultiOptionFigureName ((int)e.Data));
 				};
 			}
 
 			for (int i = 0; i < possible_answers.Count; i++) {
 				if (possible_answers[i] == 0) {
-					right_answer = GetPossibleAnswer (i);
+					Answer.Correct = GameAnswer.GetMultiOption (i);
 					break;
 				}
 			}

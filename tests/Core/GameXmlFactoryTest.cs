@@ -55,7 +55,7 @@ namespace gbrainyTest
 			Assert.AreEqual ("Rationale text", definition.Rationale.String);
 			Assert.AreEqual ("How many degrees rotates the minute hand of a clock?", definition.Question.String);
 			Assert.AreEqual ("How many degrees rotates the minute hand of a clocks?", definition.Question.PluralString);
-			Assert.AreEqual ("[rslt]", definition.Answer);
+			Assert.AreEqual ("[rslt]", definition.AnswerText);
 
 
 		}
@@ -108,13 +108,13 @@ namespace gbrainyTest
 			// Variant: John is 46 years old.
 			variant = definition.Variants [0];
 			Assert.AreEqual (true, variant.Question.String.Contains ("John is 46 years old"));
-			Assert.AreEqual ("[son]", variant.Answer);
+			Assert.AreEqual ("[son]", variant.AnswerText);
 			Assert.AreEqual (true, variant.Variables.Contains ("int father = 46;"));
 
 			// Variant: John's age is nowadays 2 times his son's age.
 			variant = definition.Variants [1];
 			Assert.AreEqual (true, variant.Question.String.Contains ("John's age is nowadays 2 times his son's age."));
-			Assert.AreEqual ("24", variant.Answer);
+			Assert.AreEqual ("24", variant.AnswerText);
 			Assert.AreEqual (true, variant.Variables.Contains ("int ago = years [idx];"));
 		}
 	}

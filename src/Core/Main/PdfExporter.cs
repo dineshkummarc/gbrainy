@@ -162,7 +162,7 @@ namespace gbrainy.Core.Main
 			cr.UseMarkup = true;
 			for (int i = 0; i < games.Length; i++)
 			{
-				str = String.Format (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Game {0}. {1}"), i + 1, games[i].Answer);
+				str = String.Format (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Game {0}. {1}"), i + 1, games[i].AnswerText);
 
 				// Draw Solution
 				cr.DrawStringWithWrapping (x + margin, y + margin, str, width - margin);

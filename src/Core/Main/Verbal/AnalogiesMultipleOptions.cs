@@ -55,7 +55,7 @@ namespace gbrainy.Core.Main.Verbal
 
 				for (int n = 0; n < current.answers.Length; n++)
 				{
-					str+= GetPossibleAnswer (n);
+					str+= GameAnswer.GetMultiOption (n);
 
 					if (n +1 < current.answers.Length) {
 						// Translators: this the separator used when concatenating possible options for answering verbal analogies
@@ -83,7 +83,7 @@ namespace gbrainy.Core.Main.Verbal
 			if (current == null || current.answers == null)
 				return;
 
-			right_answer = GetPossibleAnswer (current.right);
+			Answer.Correct = GameAnswer.GetMultiOption (current.right);
 
 			Container container = new Container (DrawAreaX + 0.1, 0.50, 0.5, current.answers.Length * 0.15);
 			AddWidget (container);
@@ -95,14 +95,14 @@ namespace gbrainy.Core.Main.Verbal
 				drawable_area.Y = DrawAreaY + 0.2 + i * 0.15;
 				container.AddChild (drawable_area);
 				drawable_area.Data = i;
-				drawable_area.DataEx = GetPossibleAnswer (i);
+				drawable_area.DataEx = GameAnswer.GetMultiOption (i);
 
 				drawable_area.DrawEventHandler += delegate (object sender, DrawEventArgs e)
 				{
 					int n = (int) e.Data;
 
 					e.Context.MoveTo (0.05, 0.02);
-					e.Context.ShowPangoText (String.Format (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("{0}) {1}"), GetPossibleAnswer (n), current.answers[n].ToString ()));
+					e.Context.ShowPangoText (String.Format (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("{0}) {1}"), GameAnswer.GetMultiOption (n), current.answers[n].ToString ()));
 				};
 			}
 		}

@@ -71,7 +71,7 @@ namespace gbrainy.Games.Logic
 			for (int i = 0; i < elements; i++)
 				ans += balances [(group * elements * 6) + (4 * elements) + i];
 
-			right_answer = ans.ToString ();
+			Answer.Correct = ans.ToString ();
 		}
 
 		public void DrawBalance (CairoContextEx gr, double x, double y, int index, bool full)

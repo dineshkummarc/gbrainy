@@ -42,7 +42,7 @@ namespace gbrainy.Games.Memory
 		public override string MemoryQuestion {
 			get { return String.Format (
 				ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Which one of these squares was previously shown? Answer {0}, {1}, {2} or {3}."),
-				GetPossibleAnswer (0), GetPossibleAnswer (1), GetPossibleAnswer (2), GetPossibleAnswer (3));}
+				GameAnswer.GetMultiOption (0), GameAnswer.GetMultiOption (1), GameAnswer.GetMultiOption (2), GameAnswer.GetMultiOption (3));}
 		}
 
 		protected override void Initialize ()
@@ -77,7 +77,7 @@ namespace gbrainy.Games.Memory
 
 			for (int i = 0; i < answers_order.Count; i++) {
 				if ((int) answers_order[i] == 0) {
-					right_answer = GetPossibleAnswer (i);
+					Answer.Correct = GameAnswer.GetMultiOption (i);
 					break;
 				}
 			}
@@ -98,7 +98,7 @@ namespace gbrainy.Games.Memory
 				container.AddChild (drawable_area);
 				drawable_area.SelectedArea = new Rectangle (0.05, 0, 0.3, 0.3);
 				drawable_area.Data = i;
-				drawable_area.DataEx = GetPossibleAnswer (i);
+				drawable_area.DataEx = GameAnswer.GetMultiOption (i);
 
 				drawable_area.DrawEventHandler += delegate (object sender, DrawEventArgs e)
 				{
@@ -106,7 +106,7 @@ namespace gbrainy.Games.Memory
 
 					DrawSquare (e.Context, 0.05, 0, numbers, squares * answers_order[n]);
 					e.Context.MoveTo (0.05, block_space - 0.02);
-					e.Context.ShowPangoText (GetPossibleFigureAnswer (n));
+					e.Context.ShowPangoText (Answer.GetMultiOptionFigureName (n));
 					e.Context.Stroke ();
 				};
 			}

@@ -55,14 +55,6 @@ namespace gbrainy.Games.Calculation
 			get { return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("A ratio specifies a proportion between two numbers. A ratio a:b means that for every 'a' parts you have 'b' parts.");}
 		}
 
-		public override GameAnswerCheckAttributes CheckAttributes {
-			get { return GameAnswerCheckAttributes.Trim | GameAnswerCheckAttributes.MatchAll; }
-		}
-
-		public override string AnswerCheckExpression {
-			get { return "[0-9]+"; }
-		}
-
 		public override string AnswerValue {
 			get { return String.Format (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("{0} and {1}"), number_a, number_b); }
 		}
@@ -93,7 +85,9 @@ namespace gbrainy.Games.Calculation
 			ratio_b = 3 + random.Next (random_max);
 			number_b = number_a / ratio_a * ratio_b;
 
-			right_answer = String.Format ("{0} | {1}", number_a, number_b);
+			Answer.Correct = String.Format ("{0} | {1}", number_a, number_b);
+			Answer.CheckExpression = "[0-9]+";
+			Answer.CheckAttributes = GameAnswerCheckAttributes.Trim | GameAnswerCheckAttributes.MatchAll;
 		}
 
 		public override void Draw (CairoContextEx gr, int area_width, int area_height, bool rtl)

@@ -44,7 +44,7 @@ namespace gbrainy.Games.Calculation
 		public override string Question {
 			get { return String.Format (ServiceLocator.Instance.GetService <ITranslations> ().GetString (
 				"Which of the possible divisors is the greatest that divides all numbers? Answer {0}, {1}, {2} or {3}."),
-				GetPossibleAnswer (0), GetPossibleAnswer (1), GetPossibleAnswer (2), GetPossibleAnswer (3));
+				GameAnswer.GetMultiOption (0), GameAnswer.GetMultiOption (1), GameAnswer.GetMultiOption (2), GameAnswer.GetMultiOption (3));
 			}
 		}
 
@@ -129,7 +129,7 @@ namespace gbrainy.Games.Calculation
 				}
 			}
 
-			right_answer = answer.ToString ();
+			Answer.Correct = answer.ToString ();
 
 			// Drawing objects
 			Container container = new Container (DrawAreaX + 0.2, DrawAreaY + 0.25, 0.4, answers.Length * 0.15);
@@ -142,14 +142,14 @@ namespace gbrainy.Games.Calculation
 				drawable_area.Y = DrawAreaY + 0.27 + i * 0.15;
 				container.AddChild (drawable_area);
 				drawable_area.Data = i;
-				drawable_area.DataEx = GetPossibleAnswer (i);
+				drawable_area.DataEx = GameAnswer.GetMultiOption (i);
 
 				drawable_area.DrawEventHandler += delegate (object sender, DrawEventArgs e)
 				{
 					int d = (int) e.Data;
 					e.Context.SetPangoLargeFontSize ();
 					e.Context.MoveTo (0.07, 0.02);
-					e.Context.ShowPangoText (String.Format (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("{0}) {1}"), GetPossibleAnswer (d),
+					e.Context.ShowPangoText (String.Format (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("{0}) {1}"), GameAnswer.GetMultiOption (d),
 						answers[d].ToString ()));
 				};
 			}
@@ -262,7 +262,7 @@ namespace gbrainy.Games.Calculation
 			if (base.CheckAnswer (answer) == true)
 				return true;
 
-			if (String.Compare (answer, GetPossibleAnswer (answer_idx), true) == 0)
+			if (String.Compare (answer, GameAnswer.GetMultiOption (answer_idx), true) == 0)
 				return true;
 
 			return false;
