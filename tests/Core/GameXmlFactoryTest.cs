@@ -28,7 +28,7 @@ namespace gbrainyTest
 {
 
 	[TestFixture]
-	public class GameXmlFactoryTest
+	public class GameXmlFactoryTest : UnitTestSupport
 	{
 		GamesXmlFactory factory;
 		List <GameXmlDefinition> definitions;
@@ -37,7 +37,7 @@ namespace gbrainyTest
 		[TestFixtureSetUp]
 		public void Construct ()
 		{
-
+			RegisterDefaultServices ();
 		}
 
 		[Test]

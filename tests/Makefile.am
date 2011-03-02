@@ -8,6 +8,7 @@ CSFLAGS =				\
 	-target:library
 
 CSFILES_CORE =					\
+	$(srcdir)/TestSupport/UnitTestSupport.cs \
 	$(srcdir)/Core/AnalogiesFactoryTest.cs	\
 	$(srcdir)/Core/PlayerHistoryTest.cs	\
 	$(srcdir)/Core/PlayerPersonalRecordTest.cs \
@@ -17,9 +18,11 @@ CSFILES_CORE =					\
 	$(srcdir)/Core/GameXmlFactoryTest.cs
 
 CSFILES_CLASSICAL =					\
+	$(srcdir)/TestSupport/UnitTestSupport.cs \
 	$(srcdir)/Clients/Classical/CommandLineTest.cs
 
 CSFILES_GAMES =						\
+	$(srcdir)/TestSupport/UnitTestSupport.cs \
 	$(srcdir)/Games/Logic/PuzzleNumericRelationTest.cs
 
 if ENABLE_TESTS

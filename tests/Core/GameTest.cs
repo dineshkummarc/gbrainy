@@ -48,12 +48,12 @@ namespace gbrainyTest
 	}
 
 	[TestFixture]
-	public class GameTest
+	public class GameTest : UnitTestSupport
 	{
 		[TestFixtureSetUp]
 		public void Construct ()
 		{
-
+			RegisterDefaultServices ();
 		}
 
 		// Test individual attributes (MatchAll follows a different logic path)

@@ -26,11 +26,12 @@ using gbrainy.Core.Main.Verbal;
 namespace gbrainyTest
 {
 	[TestFixture]
-	public class AnalogiesFactoryTest
+	public class AnalogiesFactoryTest : UnitTestSupport
 	{
 		[TestFixtureSetUp]
 		public void Construct ()
 		{
+			RegisterDefaultServices ();
 			AnalogiesFactory.Read ("test_analogies.xml");
 		}
 

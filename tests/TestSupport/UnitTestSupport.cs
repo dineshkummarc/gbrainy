@@ -18,43 +18,23 @@
  */
 
 using System;
-using System.Collections.Generic;
+using NUnit.Framework;
 
-namespace gbrainy.Core.Services
+using gbrainy.Core.Main;
+using gbrainy.Core.Services;
+
+namespace gbrainyTest
 {
-	public class MemoryConfiguration : IConfiguration
+	public class UnitTestSupport
 	{
-		Dictionary <ConfigurationKeys, object> keys;
-
-		public MemoryConfiguration ()
+		public void RegisterDefaultServices ()
 		{
-			keys = new Dictionary <ConfigurationKeys, object> ();
-		}
+			// Register services
+			ServiceLocator.Instance.RegisterService <ITranslations> (new TranslationsCatalog ());
+			ServiceLocator.Instance.RegisterService <IConfiguration> (new MemoryConfiguration ());
 
-		public T Get <T> (ConfigurationKeys key)
-		{
-			try
-			{
-				return (T) keys [key];
-			}
-
-			catch (KeyNotFoundException e)
-			{
-				throw new KeyNotFoundException (String.Format ("MemoryConfiguration.Get. Key '{0}' not found", key));
-			}
-		}
-
-		public void Set <T> (ConfigurationKeys key, T val)
-		{
-			if (keys.ContainsKey (key) == false)
-			{
-				keys.Add (key, val);
-			}
-			else
-			{
-				keys[key] = val;
-			}
+			// Configuration
+			ServiceLocator.Instance.GetService <IConfiguration> ().Set (ConfigurationKeys.AssembliesDir, "../src/");
 		}
 	}
 }
-

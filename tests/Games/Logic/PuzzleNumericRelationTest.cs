@@ -25,12 +25,12 @@ using gbrainy.Games.Logic;
 namespace gbrainyTest.Games.Logic
 {
 	[TestFixture]
-	public class PuzzleNumericRelationTest
+	public class PuzzleNumericRelationTest : UnitTestSupport
 	{
 		[TestFixtureSetUp]
 		public void Construct ()
 		{
-
+			RegisterDefaultServices ();
 		}
 
 		[Test]

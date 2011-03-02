@@ -26,13 +26,14 @@ using gbrainy.Core.Main;
 namespace gbrainyTest
 {
 	[TestFixture]
-	public class GameManagerTest
+	public class GameManagerTest : UnitTestSupport
 	{
 		GameManager manager;
 
 		[TestFixtureSetUp]
 		public void Construct ()
 		{
+			RegisterDefaultServices ();
 			manager = new GameManager ();
 		}
 

@@ -26,13 +26,14 @@ using gbrainy.Core.Main;
 namespace gbrainyTest
 {
 	[TestFixture]
-	public class PlayerHistoryTest
+	public class PlayerHistoryTest : UnitTestSupport
 	{
 		PlayerHistory history;
 
 		[TestFixtureSetUp]
 		public void Construct ()
 		{
+			RegisterDefaultServices ();
 			// Ignore gbrainy instance preferences
 			Preferences.LoadDefaultValues ();
 		}

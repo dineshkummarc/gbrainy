@@ -26,12 +26,12 @@ using gbrainy.Core.Main;
 namespace gbrainyTest
 {
 	[TestFixture]
-	public class GameSessionTest
+	public class GameSessionTest : UnitTestSupport
 	{
 		[TestFixtureSetUp]
 		public void Construct ()
 		{
-
+			RegisterDefaultServices ();
 		}
 		
 		GameSession PrepareSession ()

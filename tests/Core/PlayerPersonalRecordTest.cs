@@ -26,11 +26,12 @@ using gbrainy.Core.Main;
 namespace gbrainyTest
 {
 	[TestFixture]
-	public class PlayerPersonalRecordTest
+	public class PlayerPersonalRecordTest : UnitTestSupport
 	{
 		[TestFixtureSetUp]
 		public void Construct ()
 		{
+			RegisterDefaultServices ();
 			// Ignore gbrainy instance preferences
 			Preferences.LoadDefaultValues ();
 		}
