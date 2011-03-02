@@ -136,7 +136,7 @@ namespace gbrainy.Games.Logic
 			gr.ShowPangoText (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("1 unit"), false, -1, 270 * Math.PI/180);
 			gr.Stroke ();
 
-			if (DrawAnswer == false)
+			if (Answer.Draw == false)
 				return;
 
 			double x;

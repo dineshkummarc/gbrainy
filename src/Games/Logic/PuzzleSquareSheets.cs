@@ -73,7 +73,7 @@ namespace gbrainy.Games.Logic
 			gr.LineTo (x + 0.3, y + height - 0.1);  // Second vertical
 			gr.Stroke ();
 
-			if (DrawAnswer == false)
+			if (Answer.Draw == false)
 				return;
 
 			gr.LineTo (x + 0.04, y + 0.06);

@@ -171,7 +171,7 @@ namespace gbrainy.Games.Logic
 			pos_x += 0.4;
 			gr.Arc (pos_x + figure_size, pos_y + figure_size, figure_size, 0, 2 * Math.PI);
 			gr.Stroke ();		
-			DrawAndConnectPoints (gr, pos_x, pos_y, circles, DrawAnswer);
+			DrawAndConnectPoints (gr, pos_x, pos_y, circles, Answer.Draw);
 		}
 		
 		string HasNRegionString (int regions)

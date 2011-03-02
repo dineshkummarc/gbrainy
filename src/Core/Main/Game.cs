@@ -31,7 +31,6 @@ namespace gbrainy.Core.Main
 {
 	abstract public class Game : IDrawable, IDrawRequest, IMouseEvent
 	{
-		private bool draw_answer;
 		private Cairo.Color default_color;
 		protected Random random;
 		private TimeSpan game_time;
@@ -171,11 +170,6 @@ namespace gbrainy.Core.Main
 
 		public virtual bool ButtonsActive {
 			get { return true;}
-		}
-
-		public bool DrawAnswer {
-			get { return draw_answer; }
-			set { draw_answer = value; }
 		}
 
 		// An initialized game cannot be playable (for example, missing external files)

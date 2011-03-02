@@ -85,7 +85,7 @@ namespace gbrainy.Games.Logic
 			gr.LineTo (x + witdh, y);
 			gr.Stroke ();
 
-			if (DrawAnswer == false)
+			if (Answer.Draw == false)
 				return;
 
 			// References

@@ -131,10 +131,10 @@ namespace gbrainy.Games.Calculation
 			gr.DrawTextAlignedRight (aligned_pos, DrawAreaY + 0.55, total.ToString ());
 
 			gr.MoveTo (DrawAreaX + 0.2, DrawAreaY + 0.25);
-			gr.ShowPangoText ((DrawAnswer == true) ? oper1.ToString () : "?");
+			gr.ShowPangoText ((Answer.Draw == true) ? oper1.ToString () : "?");
 
 			gr.MoveTo (DrawAreaX + 0.2, DrawAreaY + 0.35);
-			gr.ShowPangoText ((DrawAnswer == true) ?  oper2.ToString () : "?");
+			gr.ShowPangoText ((Answer.Draw == true) ?  oper2.ToString () : "?");
 
 		}
 	}

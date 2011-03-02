@@ -45,8 +45,8 @@ namespace gbrainy.Core.Main
 		}
 
 		public string Correct { get; set; }
-
 		public string CheckExpression { get; set; }
+		public bool Draw { get; set; }
 
 		public GameAnswerCheckAttributes CheckAttributes { get; set; }
 

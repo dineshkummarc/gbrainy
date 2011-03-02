@@ -314,7 +314,7 @@ namespace gbrainy.Games.Memory
 		{
 			base.DrawObjectToMemorize (gr, area_width, area_height, rtl);
 
-			if (DrawAnswer == false) {
+			if (Answer.Draw == false) {
 				for (int i = 0; i < indications.Length; i++)
 				{
 					gr.MoveTo (0.3, 0.2 + i * 0.08);

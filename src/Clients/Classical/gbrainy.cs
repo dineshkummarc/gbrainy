@@ -489,7 +489,7 @@ namespace gbrainy.Clients.Classical
 			UpdateQuestion (session.CurrentGame.Question);
 			answer_entry.Text = string.Empty;
 			UpdateStatusBar ();
-			session.CurrentGame.DrawAnswer = false;
+			session.CurrentGame.Answer.Draw = false;
 			drawing_area.QueueDraw ();
 		}
 
@@ -534,7 +534,7 @@ namespace gbrainy.Clients.Classical
 				correct == true ? GameDrawingArea.SolutionType.CorrectAnswer :
 			        GameDrawingArea.SolutionType.InvalidAnswer);
 
-			session.CurrentGame.DrawAnswer = true;
+			session.CurrentGame.Answer.Draw = true;
 			ActiveInputControls (true);
 			next_button.GrabFocus ();
 			drawing_area.QueueDraw ();

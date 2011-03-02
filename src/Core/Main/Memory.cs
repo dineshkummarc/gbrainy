@@ -176,7 +176,7 @@ namespace gbrainy.Core.Main
 		
 			alpha = 1;
 			gr.Color = new Color (DefaultDrawingColor.R, DefaultDrawingColor.G, DefaultDrawingColor.B, alpha);
-			if (request_answer && DrawAnswer == false) {
+			if (request_answer && Answer.Draw == false) {
 				DrawPossibleAnswers (gr, area_width, area_height, rtl);
 			} else {
 				DrawObjectToMemorize (gr, area_width, area_height, rtl);

@@ -169,7 +169,7 @@ namespace gbrainy.Games.Logic
 					x+= space_figures;
 			}
 
-			if (DrawAnswer == false)
+			if (Answer.Draw == false)
 				return;
 
 			gr.MoveTo (DrawAreaX, y + 0.28);

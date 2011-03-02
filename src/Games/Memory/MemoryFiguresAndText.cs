@@ -116,7 +116,7 @@ namespace gbrainy.Games.Memory
 			int pos = 0;
 			gr.Color = new Color (DefaultDrawingColor.R, DefaultDrawingColor.G, DefaultDrawingColor.B, 1);
 
-			if (DrawAnswer ==  true) {
+			if (Answer.Draw ==  true) {
 				DrawAllFigures (gr, start_x_ans, start_y, area_width, area_height);
 				return;
 			}

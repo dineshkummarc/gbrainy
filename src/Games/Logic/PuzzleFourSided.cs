@@ -90,7 +90,7 @@ namespace gbrainy.Games.Logic
 				gr.Stroke ();
 			}
 
-			if (DrawAnswer == false)
+			if (Answer.Draw == false)
 				return;
 
 			// References

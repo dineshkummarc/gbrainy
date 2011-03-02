@@ -136,7 +136,7 @@ namespace gbrainy.Games.Calculation
 			gr.LineTo (DrawAreaX + 0.5, operand_y);
 			gr.Stroke ();
 
-			if (DrawAnswer) {
+			if (Answer.Draw) {
 				gr.DrawTextAlignedRight (aligned_pos, operand_y + 0.03, Answer.Correct);
 			}
 		}

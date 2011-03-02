@@ -113,7 +113,7 @@ namespace gbrainy.Games.Logic
 
 			base.Draw (gr, area_width, area_height, rtl);
 
-			for (int i = 0; i < (DrawAnswer ? 6 : 5) ; i++)
+			for (int i = 0; i < (Answer.Draw ? 6 : 5) ; i++)
 			{
 				element = random_indices [i];
 				y = DrawAreaY;
@@ -139,7 +139,7 @@ namespace gbrainy.Games.Logic
 				x+= figure_width + space_width;
 			}
 
-			if (DrawAnswer == false) {
+			if (Answer.Draw == false) {
 				y = DrawAreaY;
 				gr.Save ();
 				gr.SetPangoFontSize (0.1);

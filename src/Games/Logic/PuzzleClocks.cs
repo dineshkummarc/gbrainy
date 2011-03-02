@@ -136,7 +136,7 @@ namespace gbrainy.Games.Logic
 
 			drawable_area.DrawEventHandler += delegate (object sender, DrawEventArgs e)
 			{
-				DrawClock (e.Context, 0.2, 0.16, handles[6], handles[7], DrawAnswer == true);
+				DrawClock (e.Context, 0.2, 0.16, handles[6], handles[7], Answer.Draw == true);
 				e.Context.MoveTo (0.03, 0.29);
 				e.Context.DrawTextCentered (drawable_area.Width / 2, 0.36, Answer.GetMultiOptionFigureName (3));
 				e.Context.Stroke ();
