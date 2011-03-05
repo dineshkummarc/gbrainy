@@ -19,7 +19,7 @@
 
 using System;
 using Cairo;
-using Mono.Unix;
+
 using System.Timers;
 using System.Collections.Generic;
 
@@ -73,7 +73,7 @@ public class MemorySample : Memory
 		animals_order.Initialize ();
 		answer = random.Next (showed);
 		tmp = animals_order [answer];
-		right_answer = animals [tmp];
+		Answer.Correct = animals [tmp];
 		base.Initialize ();
 	}
 

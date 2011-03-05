@@ -9,6 +9,17 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Games", "src\Games\Games.cs
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebForms", "src\Clients\WebForms\WebForms.csproj", "{6F788C5C-17C2-47BC-82C8-2D318D91CB76}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Extensions", "Extensions", "{229D47C2-80E9-4171-AB6B-95A034BA9186}"
+	ProjectSection(SolutionItems) = preProject
+		sample_extensions\README = sample_extensions\README
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "memory_extension", "sample_extensions\memory_extension.csproj", "{DC13845E-1990-4713-90CD-AC154D9B4D10}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "logic_extension", "sample_extensions\logic_extension.csproj", "{DC13845E-1990-4713-90CD-DC154D9B4C12}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "calculation_extension", "sample_extensions\calculation_extension.csproj", "{DC13845E-1990-4713-90CD-DE154D924D12}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -31,6 +42,31 @@ Global
 		{A5DF4079-EF3D-43F8-A36E-EB47058631A7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A5DF4079-EF3D-43F8-A36E-EB47058631A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A5DF4079-EF3D-43F8-A36E-EB47058631A7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DC13845E-1990-4713-90CD-AC154D9B4D10}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DC13845E-1990-4713-90CD-AC154D9B4D10}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DC13845E-1990-4713-90CD-AC154D9B4D10}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DC13845E-1990-4713-90CD-AC154D9B4D10}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DC13845E-1990-4713-90CD-DC154D9B4C12}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DC13845E-1990-4713-90CD-DC154D9B4C12}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DC13845E-1990-4713-90CD-DC154D9B4C12}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DC13845E-1990-4713-90CD-DC154D9B4C12}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DC13845E-1990-4713-90CD-DE154D924D12}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DC13845E-1990-4713-90CD-DE154D924D12}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DC13845E-1990-4713-90CD-DE154D924D12}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DC13845E-1990-4713-90CD-DE154D924D12}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DC13845E-1990-4713-90CD-DC154D9B4C12}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DC13845E-1990-4713-90CD-DC154D9B4C12}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DC13845E-1990-4713-90CD-DC154D9B4C12}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DC13845E-1990-4713-90CD-DC154D9B4C12}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DC13845E-1990-4713-90CD-DC154D9B4C12}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DC13845E-1990-4713-90CD-DC154D9B4C12}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DC13845E-1990-4713-90CD-DC154D9B4C12}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DC13845E-1990-4713-90CD-DC154D9B4C12}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{DC13845E-1990-4713-90CD-AC154D9B4D10} = {229D47C2-80E9-4171-AB6B-95A034BA9186}
+		{DC13845E-1990-4713-90CD-DC154D9B4C12} = {229D47C2-80E9-4171-AB6B-95A034BA9186}
+		{DC13845E-1990-4713-90CD-DE154D924D12} = {229D47C2-80E9-4171-AB6B-95A034BA9186}
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
 		StartupItem = src\Clients\WebForms\WebForms.csproj

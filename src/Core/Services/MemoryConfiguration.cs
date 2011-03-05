@@ -38,7 +38,7 @@ namespace gbrainy.Core.Services
 				return (T) keys [key];
 			}
 
-			catch (KeyNotFoundException e)
+			catch (KeyNotFoundException)
 			{
 				throw new KeyNotFoundException (String.Format ("MemoryConfiguration.Get. Key '{0}' not found", key));
 			}

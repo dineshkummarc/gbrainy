@@ -18,7 +18,6 @@
  */
 
 using Cairo;
-using Mono.Unix;
 using System;
 
 using gbrainy.Core.Main;
@@ -36,7 +35,7 @@ public class PuzzleSample : Game
 
 	protected override void Initialize ()
 	{
-		right_answer = "8";
+		Answer.Correct = "8";
 	}
 
 	public override void Draw (CairoContextEx gr, int area_width, int area_height, bool rtl)
