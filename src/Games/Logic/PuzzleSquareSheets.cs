@@ -29,7 +29,7 @@ namespace gbrainy.Games.Logic
 		}
 
 		public override string Question {
-			get {return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("What is the minimum number of square sheets of paper of any size required to create the figure? Lines indicate frontiers between different sheets.");} 
+			get {return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("What is the minimum number of square sheets of paper of any size required to create the figure? Lines indicate frontiers between different sheets.");}
 		}
 
 		public override string Tip {
@@ -56,7 +56,7 @@ namespace gbrainy.Games.Logic
 
 			gr.Rectangle (x, y, width, height);
 			gr.Stroke ();
-		
+
 			gr.MoveTo (x, y + 0.1);
 			gr.LineTo (x + width, y + 0.1);  // First horizontal
 			gr.Stroke ();
@@ -72,31 +72,6 @@ namespace gbrainy.Games.Logic
 			gr.MoveTo (x + 0.3, y);
 			gr.LineTo (x + 0.3, y + height - 0.1);  // Second vertical
 			gr.Stroke ();
-
-			if (Answer.Draw == false)
-				return;
-
-			gr.LineTo (x + 0.04, y + 0.06);
-			gr.ShowPangoText ("1");
-
-			gr.LineTo (x + 0.18, y + 0.06);
-			gr.ShowPangoText ("2");
-
-			gr.LineTo (x + 0.34, y + 0.06);
-			gr.ShowPangoText ("3");
-		
-			gr.LineTo (x + 0.04, y + 0.2);
-			gr.ShowPangoText ("2");
-
-			gr.LineTo (x + 0.18, y + 0.2);
-			gr.ShowPangoText ("4");
-
-			gr.LineTo (x + 0.34, y + 0.2);
-			gr.ShowPangoText ("5");
-
-			gr.LineTo (x + 0.04, y + 0.36);
-			gr.ShowPangoText ("3");
-
 		}
 	}
 }
