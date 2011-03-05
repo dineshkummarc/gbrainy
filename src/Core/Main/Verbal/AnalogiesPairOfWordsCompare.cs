@@ -47,11 +47,11 @@ namespace gbrainy.Core.Main.Verbal
 
 		public override string Question {
 			get {
-				if (current == null)
+				if (Current == null)
 					return string.Empty;
 
-				if (current.answers == null)
-					return current.question;
+				if (Current.answers == null)
+					return Current.question;
 
 				return String.Format (ServiceLocator.Instance.GetService <ITranslations> ().GetString (
 					"Given the relationship between the two words below, which word has the same relationship to '{0}'?"),
@@ -61,14 +61,14 @@ namespace gbrainy.Core.Main.Verbal
 
 		protected override void Initialize ()
 		{
-			current = GetNext ();
+			Current = GetNext ();
 
-			if (current == null || current.answers == null)
+			if (Current == null || Current.answers == null)
 				return;
 
 			string [] items;
 
-			items = current.question.Split (AnalogiesFactory.Separator);
+			items = Current.question.Split (AnalogiesFactory.Separator);
 
 			if (items.Length == 2)
 				sample = items [1].Trim ();
@@ -76,7 +76,8 @@ namespace gbrainy.Core.Main.Verbal
 				sample = string.Empty;
 
 			samples = items [0].Trim ();
-			Answer.Correct = current.answers [current.right];
+			Answer.Correct = Current.answers [Current.right];
+			SetAnswerCorrectShow ();
 		}
 	
 		public override void Draw (CairoContextEx gr, int area_width, int area_height, bool rtl)
@@ -85,7 +86,7 @@ namespace gbrainy.Core.Main.Verbal
 
 			base.Draw (gr, area_width, area_height, rtl);
 
-			if (current == null || current.answers == null)
+			if (Current == null || Current.answers == null)
 				return;
 
 			gr.SetPangoLargeFontSize ();

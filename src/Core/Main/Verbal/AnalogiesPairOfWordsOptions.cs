@@ -48,17 +48,17 @@ namespace gbrainy.Core.Main.Verbal
 			get {
 				string str = string.Empty;
 	
-				if (current == null)
+				if (Current == null)
 					return string.Empty;
 
-				if (current.answers == null)
-					return current.question;
+				if (Current.answers == null)
+					return Current.question;
 
-				for (int n = 0; n < current.answers.Length; n++)
+				for (int n = 0; n < Current.answers.Length; n++)
 				{
 					str+= GameAnswer.GetMultiOption (n);
 
-					if (n +1 < current.answers.Length) {
+					if (n +1 < Current.answers.Length) {
 						// Translators: this the separator used when concatenating possible options for answering verbal analogies
 						// For example: "Possible correct answers are: a, b, c, d."						
 						str += ServiceLocator.Instance.GetService <ITranslations> ().GetString (", ");
@@ -73,14 +73,14 @@ namespace gbrainy.Core.Main.Verbal
 
 		protected override void Initialize ()
 		{
-			current = GetNext ();
+			Current = GetNext ();
 
-			if (current == null || current.answers == null)
+			if (Current == null || Current.answers == null)
 				return;
 
 			string [] items;
 
-			items = current.question.Split (AnalogiesFactory.Separator);
+			items = Current.question.Split (AnalogiesFactory.Separator);
 
 			if (items.Length == 2)
 				sample = items [1].Trim ();
@@ -89,12 +89,12 @@ namespace gbrainy.Core.Main.Verbal
 
 			samples = items [0].Trim ();
 
-			Answer.Correct = GameAnswer.GetMultiOption (current.right);
+			Answer.Correct = GameAnswer.GetMultiOption (Current.right);
 
-			Container container = new Container (DrawAreaX + 0.1, 0.50, 0.5, current.answers.Length * 0.15);
+			Container container = new Container (DrawAreaX + 0.1, 0.50, 0.5, Current.answers.Length * 0.15);
 			AddWidget (container);
 	
-			for (int i = 0; i <  current.answers.Length; i++)
+			for (int i = 0; i <  Current.answers.Length; i++)
 			{
 				DrawableArea drawable_area = new DrawableArea (0.8, 0.1);
 				drawable_area.X = DrawAreaX;
@@ -107,18 +107,18 @@ namespace gbrainy.Core.Main.Verbal
 				{
 					int n = (int) e.Data;
 
-					//e.Context.SetPangoLargeFontSize ();
 					e.Context.MoveTo (0.05, 0.02);
-					e.Context.ShowPangoText (String.Format (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("{0}) {1}"), GameAnswer.GetMultiOption (n), current.answers[n].ToString ()));
+					e.Context.ShowPangoText (String.Format (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("{0}) {1}"), GameAnswer.GetMultiOption (n), Current.answers[n].ToString ()));
 				};
 			}
+			SetAnswerCorrectShow ();
 		}
 
 		public override void Draw (CairoContextEx gr, int area_width, int area_height, bool rtl)
 		{
 			double y = DrawAreaY;
 
-			if (current == null || current.answers == null || current.answers.Length <= 1)
+			if (Current == null || Current.answers == null || Current.answers.Length <= 1)
 				return;
 
 			base.Draw (gr, area_width, area_height, rtl);

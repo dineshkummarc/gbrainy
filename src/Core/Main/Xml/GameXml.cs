@@ -52,17 +52,17 @@ namespace gbrainy.Core.Main.Xml
 
 		DefinitionLocator current;
 		GameXmlDefinition game;
-		string question, answer, rationale, answer_value;
+		string question, answer, rationale, answer_show;
 		List <OptionDrawingObject> options;
 
+		
+		void SetAnswerCorrectShow ()
+		{
+		
+			if (String.IsNullOrEmpty (answer_show))
+				return;
 
-		public override string AnswerValue {
-			get {
-				if (String.IsNullOrEmpty (answer_value))
-					return base.AnswerValue;
-
-				return answer_value;
-			}
+			Answer.CorrectShow = answer_show;
 		}
 
 		static public List <GameXmlDefinition> Definitions {
@@ -188,16 +188,16 @@ namespace gbrainy.Core.Main.Xml
 				rationale = CatalogGetString (game.Rationale);
 
 			if (variants && game.Variants[current.Variant].AnswerShow != null)
-				answer_value = CatalogGetString (game.Variants[current.Variant].AnswerShow);
+				answer_show = CatalogGetString (game.Variants[current.Variant].AnswerShow);
 			else
-				answer_value = CatalogGetString (game.AnswerShow);
+				answer_show = CatalogGetString (game.AnswerShow);
 
 			if (String.IsNullOrEmpty (variables) == false)
 			{
 				question = CodeEvaluation.ReplaceVariables (question);
 				rationale = CodeEvaluation.ReplaceVariables (rationale);
 				answer = CodeEvaluation.ReplaceVariables (answer);
-				answer_value = CodeEvaluation.ReplaceVariables (answer_value);
+				answer_show = CodeEvaluation.ReplaceVariables (answer_show);
 			}
 
 			if (options != null && options.Count > 0)
@@ -228,7 +228,8 @@ namespace gbrainy.Core.Main.Xml
 			}
 
 			SetCheckExpression ();
-			SetCheckAttributes ();			
+			SetCheckAttributes ();
+			SetAnswerCorrectShow ();
 		}
 
 		void CreateDrawingObjects (GameXmlDefinitionVariant game)
@@ -388,6 +389,7 @@ namespace gbrainy.Core.Main.Xml
 
 				SetCheckExpression ();
 				SetCheckAttributes ();
+				SetAnswerCorrectShow ();
 			}
 		}
 

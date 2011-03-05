@@ -92,12 +92,6 @@ namespace gbrainy.Core.Main
 			get { return GameTypes.LogicPuzzle;}
 		}
 
-		// Right answer as shown to the user. Usually equals to right_answer, can be different
-		// when the answer contains multiple options (e.g. 1 | 2 shown as 1 and 2).
-		public virtual string AnswerValue {
-			get { return Answer.Correct; }
-		}
-
 		// Indicates in which difficulty levels the game should be shown
 		public virtual GameDifficulty Difficulty {
 			get { return GameDifficulty.Master | GameDifficulty.Medium | GameDifficulty.Easy; }
@@ -131,7 +125,8 @@ namespace gbrainy.Core.Main
 			get {
 				string str;
 
-				str = String.Format (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("The correct answer is {0}."), AnswerValue);
+				str = String.Format (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("The correct answer is {0}."),
+				                     Answer.CorrectShow);
 
 				if (String.IsNullOrEmpty (Rationale))
 					return str;

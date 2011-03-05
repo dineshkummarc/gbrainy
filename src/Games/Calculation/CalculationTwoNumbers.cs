@@ -58,10 +58,6 @@ namespace gbrainy.Games.Calculation
 			}
 		}
 
-		public override string AnswerValue {
-			get { return String.Format (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("{0} and {1}"), number_a, number_b); }
-		}
-
 		protected override void Initialize ()
 		{
 			Answer.CheckAttributes = GameAnswerCheckAttributes.Trim | GameAnswerCheckAttributes.MatchAll;
@@ -102,6 +98,7 @@ namespace gbrainy.Games.Calculation
 			op2 = number_a * number_b;
 			Answer.Correct = String.Format ("{0} | {1}", number_a, number_b);
 			Answer.CheckExpression = "[-0-9]+";
+			Answer.CorrectShow = String.Format (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("{0} and {1}"), number_a, number_b);
 		}
 
 		public override void Draw (CairoContextEx gr, int area_width, int area_height, bool rtl)

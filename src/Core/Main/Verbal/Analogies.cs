@@ -27,33 +27,34 @@ namespace gbrainy.Core.Main.Verbal
 {
 	public abstract class Analogies : Game
 	{
-		protected Analogy current;
+		public Analogy Current { get; set; }
 
 		public override string Question {
 			get {
-				if (current == null)
+				if (Current == null)
 					return string.Empty;
 
-				return current.question;
+				return Current.question;
 			}
 		}
 
 		public override string Tip {
 			get {
-				if (current == null)
+				if (Current == null)
 					return null;
 				else
-					return current.tip;
+					return Current.tip;
 			}
 		}
 
 		public override string AnswerText {
 			get {
 				string str;
-				if (current == null || current.MultipleAnswers == false)
+				if (Current == null || Current.MultipleAnswers == false)
 					return base.AnswerText;
 
-				str = String.Format (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Possible correct answers are: {0}."), AnswerValue);
+				str = String.Format (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Possible correct answers are: {0}."), 
+				                     Answer.CorrectShow);
 
 				if (String.IsNullOrEmpty (Rationale))
 					return str;
@@ -65,34 +66,35 @@ namespace gbrainy.Core.Main.Verbal
 
 		public override string Rationale {
 			get {
-				if (current == null)
+				if (Current == null)
 					return string.Empty;
 				
-				return current.rationale;
+				return Current.rationale;
 			}
 		}
 
-		public override string AnswerValue {
-			get { 
-				if (current == null || current.MultipleAnswers == false)
-					return Answer.Correct;
+		protected void SetAnswerCorrectShow ()
+		{
+			if (Current == null || 
+			    Current.MultipleAnswers == false ||
+			    String.IsNullOrEmpty (Answer.Correct))
+				return;
 
-				string [] items;
-				string str = string.Empty;
+			string [] items;
+			string str = string.Empty;
 
-				items = Answer.Correct.Split (AnalogiesFactory.Separator);
+			items = Answer.Correct.Split (AnalogiesFactory.Separator);
 
-				for (int i = 0 ; i < items.Length; i++)
-				{
-					str += items [i].Trim ();
-					if (i + 1 < items.Length) {
-						// Translators: this the separator used when concatenating multiple possible answers for verbal analogies
-						// For example: "Possible correct answers are: sleep, rest."
-						str += ServiceLocator.Instance.GetService <ITranslations> ().GetString (", ");
-					}
+			for (int i = 0 ; i < items.Length; i++)
+			{
+				str += items [i].Trim ();
+				if (i + 1 < items.Length) {
+					// Translators: this the separator used when concatenating multiple possible answers for verbal analogies
+					// For example: "Possible correct answers are: sleep, rest."
+					str += ServiceLocator.Instance.GetService <ITranslations> ().GetString (", ");
 				}
-				return str;
 			}
+			Answer.CorrectShow = str;
 		}
 
 		public override GameTypes Type {
@@ -170,7 +172,6 @@ namespace gbrainy.Core.Main.Verbal
 					analogy.answers = answers;
 				}
 			}
-
 			return analogy;
 		}
 	}

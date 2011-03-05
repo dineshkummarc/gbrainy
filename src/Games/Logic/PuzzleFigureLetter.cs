@@ -54,21 +54,6 @@ namespace gbrainy.Games.Logic
 			}
 		}
 
-		public override string AnswerValue {
-			get {
-				switch (question) {
-				case QuestionType.TwoSquares:
-					return "ABF";
-				case QuestionType.TwoCercles:
-					return "CDF";
-				case QuestionType.ThreeCercles:
-					return "ACE";
-				default:
-					throw new InvalidOperationException ();
-				}
-			}
-		}
-
 		protected override void Initialize ()
 		{
 			question = (QuestionType) random.Next ((int) QuestionType.Length);
@@ -76,12 +61,15 @@ namespace gbrainy.Games.Logic
 			switch (question) {
 			case QuestionType.TwoSquares:
 				Answer.Correct = "A | B | F";
+				Answer.CorrectShow = "ABF";
 				break;
 			case QuestionType.TwoCercles:
 				Answer.Correct = "C | D | F";
+				Answer.CorrectShow = "CDF";
 				break;
 			case QuestionType.ThreeCercles:
 				Answer.Correct = "A | C | E";
+				Answer.CorrectShow = "ACE";
 				break;
 			default:
 				throw new InvalidOperationException ();

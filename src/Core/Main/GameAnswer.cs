@@ -33,6 +33,7 @@ namespace gbrainy.Core.Main
 	{
 		static char separator = '|';
 		const int MAX_POSSIBLE_ANSWER = 7;
+		string correct;
 
 		public GameAnswer ()
 		{
@@ -44,7 +45,20 @@ namespace gbrainy.Core.Main
 			get { return separator; }
 		}
 
-		public string Correct { get; set; }
+		// Correct answer as shown to the user. Usually equals to Correct, but can be different
+		// when the answer contains multiple options (e.g. 1 | 2 shown as 1 and 2).
+		public string CorrectShow { get; set; }
+
+		// This is the correct answer used for validating the answer (a | b)
+		public string Correct {
+			get { return correct;}
+			set {
+				correct = value;
+				if (CorrectShow == null) // Set default answer to show
+					CorrectShow = correct;
+			}
+		}
+
 		public string CheckExpression { get; set; }
 		public bool Draw { get; set; }
 

@@ -61,10 +61,6 @@ namespace gbrainy.Games.Logic
 			get { return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("The resulting triangle is isosceles.");}
 		}
 
-		public override string AnswerValue {
-			get { return answers[0] + answers[1] + answers[2]; }
-		}
-
 		protected override void Initialize ()
 		{
 			switch (CurrentDifficulty) {
@@ -101,6 +97,7 @@ namespace gbrainy.Games.Logic
 			Answer.Correct = answers[0] + " | " + answers[1] + " | " + answers[2];
 			Answer.CheckExpression = Answer.GetMultiOptionsExpression ();
 			Answer.CheckAttributes = GameAnswerCheckAttributes.Trim | GameAnswerCheckAttributes.IgnoreCase | GameAnswerCheckAttributes.MatchAll;
+			Answer.CorrectShow = answers[0] + answers[1] + answers[2];
 		}
 
 		private static void DrawFigure (CairoContextEx gr, double x, double y, Figures figure)

@@ -44,13 +44,15 @@ namespace gbrainy.Core.Main.Verbal
 
 		protected override void Initialize ()
 		{
-			current = GetNext ();
+			Current = GetNext ();
 
-			if (current == null)
+			if (Current == null)
 				return;
 
-			if (current.answers != null) 
-				Answer.Correct = current.answers [current.right];
+			if (Current.answers != null) 
+				Answer.Correct = Current.answers [Current.right];
+			
+			SetAnswerCorrectShow ();
 		}
 	}
 }

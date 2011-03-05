@@ -47,10 +47,6 @@ namespace gbrainy.Games.Calculation
 			get {return String.Format (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Which operators make {0}, {1}, and {2} equal {3}? Answer using '+-/*'."), number_a, number_b, number_c, total);}
 		}
 
-		public override string AnswerValue {
-			get { return String.Format (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("{0} and {1}"), oper1, oper2); }
-		}
-
 		private double ProcessOperation (double total, double number, char op)
 		{
 			switch (op) {
@@ -111,6 +107,7 @@ namespace gbrainy.Games.Calculation
 			Answer.Correct = String.Format ("{0} | {1}", oper1, oper2);
 			Answer.CheckExpression = "[+*-/]";
 			Answer.CheckAttributes = GameAnswerCheckAttributes.Trim | GameAnswerCheckAttributes.MatchAll;
+			Answer.CorrectShow = String.Format (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("{0} and {1}"), oper1, oper2);
 		}
 
 		public override void Draw (CairoContextEx gr, int area_width, int area_height, bool rtl)
