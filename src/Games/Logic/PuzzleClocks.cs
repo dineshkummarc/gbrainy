@@ -202,10 +202,5 @@ namespace gbrainy.Games.Logic
 			gr.LineTo (x + x0 * 0.4, y + y0 * 0.4);
 			gr.Stroke ();
 		}
-
-		public override void Draw (CairoContextEx gr, int area_width, int area_height, bool rtl)
-		{
-			base.Draw (gr, area_width, area_height, rtl);
-		}
 	}
 }

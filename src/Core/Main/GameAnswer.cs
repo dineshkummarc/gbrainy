@@ -184,13 +184,13 @@ namespace gbrainy.Core.Main
 
 		static string RemoveWhiteSpace (string source)
 		{
-			string str = string.Empty;
+			StringBuilder str = new StringBuilder ();
 			for (int n = 0; n < source.Length; n++)
 			{
 				if (char.IsWhiteSpace (source [n]) == false)
-					str += source [n];
+					str.Append (source[n]);
 			}
-			return str;
+			return str.ToString ();
 		}
 	}
 }

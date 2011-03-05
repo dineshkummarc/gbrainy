@@ -49,12 +49,11 @@ namespace gbrainy.Clients.WebForms
 			langmap = new Dictionary <string, Language> ();
 			foreach (Language language in languages)
 			{
-				idx = language.LocaleLanguage.IndexOf (".");
+				idx = language.LocaleLanguage.IndexOf ('.');
 				code =  language.LocaleLanguage.Substring (0, idx);
 				language.LangCode = code;
 				langmap.Add (code, language);
 			}
-			
 		}
 				
 		// List of exposed locales

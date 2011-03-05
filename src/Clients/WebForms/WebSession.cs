@@ -16,7 +16,6 @@ namespace gbrainy.Clients.WebForms
 		{
 			Session = session;
 			Started = DateTime.Now;
-			NextGame = false;
             	}
         }
 }

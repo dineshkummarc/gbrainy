@@ -29,8 +29,6 @@ namespace gbrainy.Clients.WebForms
 {
     public partial class Status : System.Web.UI.Page
     {
-	//protected System.Web.UI.WebControls.ListView ListView1;
-
 	public class PerfCounter
 	{
 		public string Category { get; set; }
@@ -170,9 +168,13 @@ namespace gbrainy.Clients.WebForms
 
 	string ReadCounter (string category, string counter)
 	{
-		PerformanceCounter pc = new PerformanceCounter (category, counter);
-		pc.NextValue ();
-		return pc.NextValue ().ToString ();
+		string rslt;
+		using (PerformanceCounter pc = new PerformanceCounter (category, counter))
+		{
+			pc.NextValue ();
+			rslt =  pc.NextValue ().ToString ();
+		}
+		return rslt;
 	}
     }
 }
