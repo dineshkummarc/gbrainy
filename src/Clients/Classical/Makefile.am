@@ -19,7 +19,8 @@ GBRAINY_CSDISTFILES =					\
 	$(srcdir)/Dialogs/PreferencesDialog.cs		\
 	$(srcdir)/Dialogs/PdfExportDialog.cs		\
 	$(srcdir)/Widgets/GameDrawingArea.cs		\
-	$(srcdir)/Widgets/BrowseFile.cs
+	$(srcdir)/Widgets/BrowseFile.cs			\
+	$(srcdir)/Widgets/Toolbar.cs
 
 
 ASSEMBLIES = \

@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2007-2010 Jordi Mas i Hernàndez <jmas@softcatala.org>
+ * Copyright (C) 2007-2011 Jordi Mas i Hernàndez <jmas@softcatala.org>
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License as
@@ -71,15 +71,13 @@ namespace gbrainy.Clients.Classical
 		[GtkBeans.Builder.Object] Gtk.RadioMenuItem horizontal_radiomenuitem;
 		[GtkBeans.Builder.Object] Gtk.MenuItem toolbar_orientation_menuitem;
 
-		Gtk.Toolbar toolbar;
+		Widgets.Toolbar toolbar;
 
 		GameDrawingArea drawing_area;
 		GameSession session;
-		ToolButton all_tbbutton, logic_tbbutton, calculation_tbbutton, memory_tbbutton, verbal_tbbutton, pause_tbbutton, finish_tbbutton;
 		bool low_res;
 		bool full_screen;
 		GameSession.Types initial_session;
-		bool init_completed = false;
 
 		public GtkClient ()
 #if GNOME
@@ -122,61 +120,6 @@ namespace gbrainy.Clients.Classical
 			gm.LoadPlugins ();
 		}
 
-		void AttachToolBar ()
-		{
-			Gtk.Box.BoxChild child;
-
-			if (toolbar != null)
-			{
-				Box box;
-
-				switch (toolbar.Orientation) {
-				case Gtk.Orientation.Vertical:
-					box = main_hbox;
-					break;
-				case Gtk.Orientation.Horizontal:
-				{
-					box = framework_vbox;
-					break;
-				}
-				default:
-					throw new InvalidOperationException ();
-				}
-
-				bool contained = false;
-				foreach (var ch in box.AllChildren)
-				{
-					if (ch == toolbar)
-					{
-						contained = true;
-						break;
-					}
-				}
-				if (contained == true)
-					box.Remove (toolbar);
-			}
-			toolbar.Orientation = (Gtk.Orientation) Preferences.GetIntValue (Preferences.ToolbarOrientationKey);
-
-			switch (toolbar.Orientation) {
-			case Gtk.Orientation.Vertical:
-				main_hbox.Add (toolbar);
-				main_hbox.ReorderChild (toolbar, 0);
-				child = ((Gtk.Box.BoxChild)(main_hbox[toolbar]));
-				break;
-			case Gtk.Orientation.Horizontal:
-				framework_vbox.Add (toolbar);
-				framework_vbox.ReorderChild (toolbar, 1);
-				child = ((Gtk.Box.BoxChild)(framework_vbox[toolbar]));
-				break;
-			default:
-				throw new InvalidOperationException ();
-			}
-
-			child.Expand = false;
-			child.Fill = false;
-			toolbar.ShowAll ();
-			init_completed = true;
-		}
 
 		void BuildUI ()
 		{
@@ -188,10 +131,14 @@ namespace gbrainy.Clients.Classical
 			show_toolbar = Preferences.GetBoolValue (Preferences.ToolbarShowKey) == true && low_res == false;
 
 			// Toolbar creation
-			toolbar = new Gtk.Toolbar ();
-			toolbar.ToolbarStyle = ToolbarStyle.Both;
-			BuildToolBar ();
-			AttachToolBar ();
+			toolbar = new Widgets.Toolbar (main_hbox, framework_vbox);
+			toolbar.AllButton.Clicked += OnAllGames;
+			toolbar.LogicButton.Clicked += OnLogicOnly;
+			toolbar.CalculationButton.Clicked += OnMathOnly;
+			toolbar.MemoryButton.Clicked += OnMemoryOnly;
+			toolbar.VerbalButton.Clicked += OnVerbalOnly;
+			toolbar.PauseButton.Clicked += OnPauseGame;
+			toolbar.FinishButton.Clicked += OnEndGame;
 
 			drawing_area = new GameDrawingArea ();
 			drawing_area.Drawable = session;
@@ -355,7 +302,7 @@ namespace gbrainy.Clients.Classical
 			answer_entry.Sensitive = entry;
 			next_button.Sensitive = next;
 			tip_button.Sensitive = tip;
-			pause_menuitem.Sensitive = pause_tbbutton.Sensitive = can_pause;
+			pause_menuitem.Sensitive = toolbar.PauseButton.Sensitive = can_pause;
 
 			if (entry == true)
 				answer_entry.GrabFocus ();
@@ -378,64 +325,6 @@ namespace gbrainy.Clients.Classical
 			QueueDraw ();
 		}
 
-		void BuildToolBar ()
-		{
-			IconFactory icon_factory = new IconFactory ();
-		        AddIcon (icon_factory, "logic-games", "logic-games-32.png");
-			AddIcon (icon_factory, "math-games", "math-games-32.png");
-			AddIcon (icon_factory, "memory-games", "memory-games-32.png");
-			AddIcon (icon_factory, "verbal-games", "verbal-games-32.png");
-			AddIcon (icon_factory, "pause", "pause-32.png");
-			AddIcon (icon_factory, "resume", "resume-32.png");
-			AddIcon (icon_factory, "endgame", "endgame-32.png");
-			AddIcon (icon_factory, "allgames", "allgames-32.png");
-			icon_factory.AddDefault ();
-
-			toolbar.IconSize = Gtk.IconSize.Dnd;
-
-			all_tbbutton = new ToolButton ("allgames");
-			all_tbbutton.TooltipText = Catalog.GetString ("Play all the games");
-			all_tbbutton.Label = Catalog.GetString ("All");
-			all_tbbutton.Clicked += OnAllGames;
-			toolbar.Insert (all_tbbutton, -1);
-
-			logic_tbbutton = new ToolButton ("logic-games");
-			logic_tbbutton.TooltipText = Catalog.GetString ("Play games that challenge your reasoning and thinking");
-			logic_tbbutton.Label = Catalog.GetString ("Logic");
-			logic_tbbutton.Clicked += OnLogicOnly;
-			toolbar.Insert (logic_tbbutton, -1);
-
-			calculation_tbbutton = new ToolButton ("math-games");
-			calculation_tbbutton.Label = Catalog.GetString ("Calculation");
-			calculation_tbbutton.TooltipText = Catalog.GetString ("Play games that challenge your mental calculation skills");
-			calculation_tbbutton.Clicked += OnMathOnly;
-			toolbar.Insert (calculation_tbbutton, -1);
-
-			memory_tbbutton = new ToolButton ("memory-games");
-			memory_tbbutton.Label = Catalog.GetString ("Memory");
-			memory_tbbutton.TooltipText = Catalog.GetString ("Play games that challenge your short term memory");
-			memory_tbbutton.Clicked += OnMemoryOnly;
-			toolbar.Insert (memory_tbbutton, -1);
-
-			verbal_tbbutton = new ToolButton ("verbal-games");
-			verbal_tbbutton.Label = Catalog.GetString ("Verbal");
-			verbal_tbbutton.TooltipText = Catalog.GetString ("Play games that challenge your verbal aptitude");
-			verbal_tbbutton.Clicked += OnVerbalOnly;
-			toolbar.Insert (verbal_tbbutton, -1);
-
-			pause_tbbutton = new ToolButton ("pause");
-			pause_tbbutton.Label = Catalog.GetString ("Pause");
-			pause_tbbutton.TooltipText = Catalog.GetString ("Pause or resume the game");
-			pause_tbbutton.Clicked += OnPauseGame;
-			toolbar.Insert (pause_tbbutton, -1);
-
-			finish_tbbutton = new ToolButton ("endgame");
-			finish_tbbutton.TooltipText = Catalog.GetString ("End the game and show score");
-			finish_tbbutton.Label = Catalog.GetString ("Finish");
-			finish_tbbutton.Clicked += OnEndGame;
-			toolbar.Insert (finish_tbbutton, -1);
-		}
-
 		// These are UI elements independent of the game status, set only when the game starts / ends
 		void GameSensitiveUI ()
 		{
@@ -444,34 +333,34 @@ namespace gbrainy.Clients.Classical
 			GameTypes available;
 
 			playing = (session.Status == GameSession.SessionStatus.Playing);
-			finish_tbbutton.Sensitive = playing;
+			toolbar.FinishButton.Sensitive = playing;
 
 			available = session.AvailableGames;
 
 			if (playing == false && ((available & GameTypes.LogicPuzzle) == GameTypes.LogicPuzzle))
-				logic_menuitem.Sensitive = logic_tbbutton.Sensitive = true;
+				logic_menuitem.Sensitive = toolbar.LogicButton.Sensitive = true;
 			else
-				logic_menuitem.Sensitive = logic_tbbutton.Sensitive = false;
+				logic_menuitem.Sensitive = toolbar.LogicButton.Sensitive = false;
 
 			if (playing == false && ((available & GameTypes.Calculation) == GameTypes.Calculation))
-				memory_menuitem.Sensitive = memory_tbbutton.Sensitive = true;
+				memory_menuitem.Sensitive = toolbar.MemoryButton.Sensitive = true;
 			else
-				memory_menuitem.Sensitive = memory_tbbutton.Sensitive = false;
+				memory_menuitem.Sensitive = toolbar.MemoryButton.Sensitive = false;
 
 			if (playing == false && ((available & GameTypes.Calculation) == GameTypes.Calculation))
-				calculation_menuitem.Sensitive = calculation_tbbutton.Sensitive = true;
+				calculation_menuitem.Sensitive = toolbar.CalculationButton.Sensitive = true;
 			else
-				calculation_menuitem.Sensitive = calculation_tbbutton.Sensitive = false;
+				calculation_menuitem.Sensitive = toolbar.CalculationButton.Sensitive = false;
 
 			if (playing == false && ((available & GameTypes.VerbalAnalogy) == GameTypes.VerbalAnalogy))
-				verbal_menuitem.Sensitive = verbal_tbbutton.Sensitive = true;
+				verbal_menuitem.Sensitive = toolbar.VerbalButton.Sensitive = true;
 			else
-				verbal_menuitem.Sensitive = verbal_tbbutton.Sensitive = false;
+				verbal_menuitem.Sensitive = toolbar.VerbalButton.Sensitive = false;
 
 			if (playing == false && (available != GameTypes.None))
-				allgames_menuitem.Sensitive = all_tbbutton.Sensitive = true;
+				allgames_menuitem.Sensitive = toolbar.AllButton.Sensitive = true;
 			else
-				allgames_menuitem.Sensitive = all_tbbutton.Sensitive = false;
+				allgames_menuitem.Sensitive = toolbar.AllButton.Sensitive = false;
 
 			finish_menuitem.Sensitive = playing;
 			newgame_menuitem.Sensitive = !playing;
@@ -672,18 +561,17 @@ namespace gbrainy.Clients.Classical
 		{
 			if (pause) {
 				drawing_area.Paused = false;
-				pause_tbbutton.StockId = "pause";
-				pause_tbbutton.Label = Catalog.GetString ("Pause");
+				toolbar.PauseButton.StockId = "pause";
+				toolbar.PauseButton.Label = Catalog.GetString ("Pause");
 				ActiveInputControls (true);
 			} else {
 				drawing_area.Paused = true;
-				pause_tbbutton.StockId = "resume";
-				pause_tbbutton.Label = Catalog.GetString ("Resume");
+				toolbar.PauseButton.StockId = "resume";
+				toolbar.PauseButton.Label = Catalog.GetString ("Resume");
 				ActiveInputControls (false);
 			}
 			UpdateStatusBar ();
 		}
-
 
 		void SetPauseResumeButton (bool pause)
 		{
@@ -721,22 +609,24 @@ namespace gbrainy.Clients.Classical
 
 		void OnVerticalToolbar (object sender, System.EventArgs args)
 		{
-			if (init_completed  == false)
+			if (toolbar.InitCompleted  == false)
 				return;
 
-			Preferences.SetIntValue (Preferences.ToolbarOrientationKey, (int) Gtk.Orientation.Vertical);
+			const Gtk.Orientation orientation = Gtk.Orientation.Vertical;
+			Preferences.SetIntValue (Preferences.ToolbarOrientationKey, (int) orientation);
 			Preferences.Save ();
-			AttachToolBar ();
+			toolbar.AttachToolBar (orientation);
 		}
 
 		void OnHorizontalToolbar (object sender, System.EventArgs args)
 		{
-			if (init_completed  == false)
+			if (toolbar.InitCompleted  == false)
 				return;
 
+			const Gtk.Orientation orientation = Gtk.Orientation.Horizontal;
 			Preferences.SetIntValue (Preferences.ToolbarOrientationKey, (int) Gtk.Orientation.Horizontal);
 			Preferences.Save ();
-			AttachToolBar ();
+			toolbar.AttachToolBar (orientation);
 		}
 
 		void OnHistory (object sender, EventArgs args)
@@ -746,21 +636,6 @@ namespace gbrainy.Clients.Classical
 			dialog = new PlayerHistoryDialog (session.PlayerHistory);
 			dialog.Run ();
 			dialog.Destroy ();
-		}
-
-		private void AddIcon (IconFactory stock, string stockid, string resource)
-		{
-			Gtk.IconSet iconset = stock.Lookup (stockid);
-
-			if (iconset != null)
-				return;
-
-			iconset = new Gtk.IconSet ();
-			Gdk.Pixbuf img = Gdk.Pixbuf.LoadFromResource (resource);
-			IconSource source = new IconSource ();
-			source.Pixbuf = img;
-			iconset.AddSource (source);
-			stock.Add (stockid, iconset);
 		}
 
 		void OnFullscreen (object sender, EventArgs args)
@@ -790,9 +665,9 @@ namespace gbrainy.Clients.Classical
 			ServiceLocator.Instance.GetService <IConfiguration> ().Set (ConfigurationKeys.GamesDefinitions, Defines.DATA_DIR);
 			ServiceLocator.Instance.GetService <IConfiguration> ().Set (ConfigurationKeys.GamesGraphics, Defines.DATA_DIR);
 			ServiceLocator.Instance.GetService <IConfiguration> ().Set (ConfigurationKeys.ThemesDir, Defines.DATA_DIR);
-			
+
 			string assemblies_dir;
-			assemblies_dir =  System.IO.Path.GetDirectoryName (Assembly.GetExecutingAssembly ().Location);				
+			assemblies_dir =  System.IO.Path.GetDirectoryName (Assembly.GetExecutingAssembly ().Location);
 			ServiceLocator.Instance.GetService <IConfiguration> ().Set (ConfigurationKeys.AssembliesDir, assemblies_dir);
 		}
 
