@@ -44,10 +44,9 @@ namespace gbrainy.Clients.Classical.Widgets
 			this.framework_vbox = framework_vbox;
 			ToolbarStyle = ToolbarStyle.Both;
 			BuildToolBar ();
-			AttachToolBar (Orientation);
 		}
 
-		public void AttachToolBar (Gtk.Orientation orientation_new)
+		public void Attach (Gtk.Orientation orientation_new)
 		{
 			Gtk.Box.BoxChild child = null;
 			Box box;

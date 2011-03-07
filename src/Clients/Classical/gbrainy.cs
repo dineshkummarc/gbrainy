@@ -132,6 +132,7 @@ namespace gbrainy.Clients.Classical
 
 			// Toolbar creation
 			toolbar = new Widgets.Toolbar (main_hbox, framework_vbox);
+			toolbar.Attach ((Gtk.Orientation) Preferences.GetIntValue (Preferences.ToolbarOrientationKey));
 			toolbar.AllButton.Clicked += OnAllGames;
 			toolbar.LogicButton.Clicked += OnLogicOnly;
 			toolbar.CalculationButton.Clicked += OnMathOnly;
@@ -165,16 +166,13 @@ namespace gbrainy.Clients.Classical
 			show_toolbar = Preferences.GetBoolValue (Preferences.ToolbarShowKey) == true && low_res == false;
 
 			// We only disable the Arrow if we are going to show the toolbar.
-			// It has an impact on the total window width size even if you we do not show it
+			// It has an impact on the total window width size even if we do not show it
 			if (show_toolbar)
 				toolbar.ShowArrow = false;
 
 			app_window.IconName = "gbrainy";
 
 			app_window.ShowAll ();
-
-			if (show_toolbar == false)
-				showtoolbar_menuitem.Active = false;
 
 			toolbar_orientation_menuitem.Sensitive = toolbar.Visible;
 
@@ -189,6 +187,11 @@ namespace gbrainy.Clients.Classical
 			default:
 				throw new InvalidOperationException ();
 			}
+
+			// The toolbar by default is enabled. By setting this menu entry to false
+			// triggers the OnActivateToolbar event that hides the toolbar
+			if (show_toolbar == false)
+				showtoolbar_menuitem.Active = false;
 
 		#if MONO_ADDINS
 			extensions_menuitem.Activated += delegate (object sender, EventArgs ar) { Mono.Addins.Gui.AddinManagerWindow.Run (app_window);};
@@ -602,8 +605,11 @@ namespace gbrainy.Clients.Classical
 
 			toolbar_orientation_menuitem.Sensitive = toolbar.Visible;
 
-			Preferences.SetBoolValue (Preferences.ToolbarShowKey, toolbar.Visible);
-			Preferences.Save ();
+			if (Preferences.GetBoolValue (Preferences.ToolbarShowKey) != toolbar.Visible)
+			{
+				Preferences.SetBoolValue (Preferences.ToolbarShowKey, toolbar.Visible);
+				Preferences.Save ();
+			}
 			app_window.Resize (width, height - requisition.Height);
 		}
 
@@ -615,7 +621,7 @@ namespace gbrainy.Clients.Classical
 			const Gtk.Orientation orientation = Gtk.Orientation.Vertical;
 			Preferences.SetIntValue (Preferences.ToolbarOrientationKey, (int) orientation);
 			Preferences.Save ();
-			toolbar.AttachToolBar (orientation);
+			toolbar.Attach (orientation);
 		}
 
 		void OnHorizontalToolbar (object sender, System.EventArgs args)
@@ -626,7 +632,7 @@ namespace gbrainy.Clients.Classical
 			const Gtk.Orientation orientation = Gtk.Orientation.Horizontal;
 			Preferences.SetIntValue (Preferences.ToolbarOrientationKey, (int) Gtk.Orientation.Horizontal);
 			Preferences.Save ();
-			toolbar.AttachToolBar (orientation);
+			toolbar.Attach (orientation);
 		}
 
 		void OnHistory (object sender, EventArgs args)
