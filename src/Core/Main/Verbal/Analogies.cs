@@ -47,29 +47,22 @@ namespace gbrainy.Core.Main.Verbal
 			}
 		}
 
-		public override string AnswerText {
-			get {
-				string str;
-				if (Current == null || Current.MultipleAnswers == false)
-					return base.AnswerText;
-
-				str = String.Format (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Possible correct answers are: {0}."), 
-				                     Answer.CorrectShow);
-
-				if (String.IsNullOrEmpty (Rationale))
-					return str;
-				
-				// Translators: answer + rationale of the answer
-				return  String.Format (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("{0} {1}"), str, Rationale);
-			}
-		}
-
 		public override string Rationale {
 			get {
 				if (Current == null)
 					return string.Empty;
-				
-				return Current.rationale;
+
+				if (Current.MultipleAnswers == false || String.IsNullOrEmpty (Current.rationale))
+					return Current.rationale;
+
+				string str;	
+				str = String.Format (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Possible correct answers are: {0}."), 
+					Answer.CorrectShow);
+
+				// For multiple answer build a rationale
+				// Translators: answer + rationale of the answer
+				return String.Format (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("{0} {1}"), str, 
+					Current.rationale);
 			}
 		}
 

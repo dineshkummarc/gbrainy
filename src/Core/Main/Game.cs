@@ -121,7 +121,7 @@ namespace gbrainy.Core.Main
 		}
 
 		// Builds a text answer for the puzzle
-		public virtual string AnswerText {
+		public string AnswerText {
 			get {
 				string str;
 
