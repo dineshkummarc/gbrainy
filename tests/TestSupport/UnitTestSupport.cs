@@ -34,7 +34,7 @@ namespace gbrainyTest
 			ServiceLocator.Instance.RegisterService <IConfiguration> (new MemoryConfiguration ());
 
 			// Configuration
-			ServiceLocator.Instance.GetService <IConfiguration> ().Set (ConfigurationKeys.AssembliesDir, "../src/");
+			ServiceLocator.Instance.GetService <IConfiguration> ().Set (ConfigurationKeys.AssembliesDir, ".");
 		}
 	}
 }

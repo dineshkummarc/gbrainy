@@ -36,7 +36,7 @@ namespace gbrainyTest
 		}
 
 		[Test]
-		public void MultipleOptionsWithIngore ()
+		public void MultipleOptionsWithIgnore ()
 		{
 			Dictionary <int, Analogy> analogies;
 
