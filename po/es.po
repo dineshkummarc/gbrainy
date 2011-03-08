@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: gbrainy.master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=gbrainy&component=general\n"
-"POT-Creation-Date: 2011-03-06 16:51+0000\n"
+"POT-Creation-Date: 2011-03-07 18:16+0000\n"
 "PO-Revision-Date: 2011-03-07 12:45+0100\n"
 "Last-Translator: Daniel Mustieles <daniel.mustieles@gmail.com>\n"
 "Language-Team: Español <gnome-es-list@gnome.org>\n"
@@ -1003,8 +1003,7 @@ msgid ""
 "It is the failure to take such care as may be rightfully or reasonably "
 "expected."
 msgstr ""
-"Es el defecto de ocuparse más de lo que corresponde o de lo que "
-"razonablemente se espera."
+"Es el defecto de no tener el cuidado legítimo o razonabl que se espera."
 
 #: ../data/verbal_analogies.xml.h:95
 msgid "It is the only one that does not use a ball in the game."
@@ -1103,7 +1102,6 @@ msgid "Money"
 msgstr "Dinero"
 
 #: ../data/verbal_analogies.xml.h:117
-#| msgid "Medium"
 msgid "Museum"
 msgstr "Museo"
 
@@ -1311,7 +1309,6 @@ msgid "The word 'taxidermist' is used to define a person that?"
 msgstr "¿La palabra «taxidermista» se usa para definir a una persona que?"
 
 #: ../data/verbal_analogies.xml.h:167
-#| msgid "theatre"
 msgid "Theater"
 msgstr "Teatro"
 
@@ -1814,24 +1811,24 @@ msgstr "Total"
 
 #: ../src/Core/Views/FinishView.cs:104 ../src/Core/Main/GameTypes.cs:45
 #: ../src/Clients/Classical/Dialogs/ui/PdfExportDialog.ui.h:8
-#: ../src/Clients/Classical/Widgets/Toolbar.cs:125
+#: ../src/Clients/Classical/Widgets/Toolbar.cs:124
 msgid "Logic"
 msgstr "Lógica"
 
 #: ../src/Core/Views/FinishView.cs:111 ../src/Core/Main/GameTypes.cs:49
 #: ../src/Clients/Classical/Dialogs/ui/PdfExportDialog.ui.h:6
-#: ../src/Clients/Classical/Widgets/Toolbar.cs:129
+#: ../src/Clients/Classical/Widgets/Toolbar.cs:128
 msgid "Calculation"
 msgstr "Cálculo"
 
 #: ../src/Core/Views/FinishView.cs:118 ../src/Core/Main/GameTypes.cs:47
-#: ../src/Clients/Classical/Widgets/Toolbar.cs:134
+#: ../src/Clients/Classical/Widgets/Toolbar.cs:133
 msgid "Memory"
 msgstr "Memoria"
 
 #: ../src/Core/Views/FinishView.cs:125 ../src/Core/Main/GameTypes.cs:51
 #: ../src/Clients/Classical/Dialogs/ui/PdfExportDialog.ui.h:18
-#: ../src/Clients/Classical/Widgets/Toolbar.cs:139
+#: ../src/Clients/Classical/Widgets/Toolbar.cs:138
 msgid "Verbal"
 msgstr "Verbal"
 
@@ -1988,9 +1985,11 @@ msgid "The correct answer is {0}."
 msgstr "La respuesta correcta es {0}."
 
 #. Translators: answer + rationale of the answer
+#. For multiple answer build a rationale
+#. Translators: answer + rationale of the answer
 #. Translators: "The graph below" +  "It is built using" sentences
 #. Translators: Concadenating two strings (rationale of answer + extra information).
-#: ../src/Core/Main/Game.cs:135 ../src/Core/Main/Verbal/Analogies.cs:63
+#: ../src/Core/Main/Game.cs:135 ../src/Core/Main/Verbal/Analogies.cs:64
 #: ../src/Clients/Classical/Dialogs/PlayerHistoryDialog.cs:60
 #: ../src/Games/Logic/PuzzleCountSeries.cs:93
 #, csharp-format
@@ -2218,7 +2217,7 @@ msgstr "Creado por gbrainy {0}"
 msgid "Solutions"
 msgstr "Soluciones"
 
-#: ../src/Core/Main/Verbal/Analogies.cs:56
+#: ../src/Core/Main/Verbal/Analogies.cs:59
 #, csharp-format
 msgid "Possible correct answers are: {0}."
 msgstr "Las posibles respuestas correctas son: {0}."
@@ -2227,7 +2226,7 @@ msgstr "Las posibles respuestas correctas son: {0}."
 #. For example: "Possible correct answers are: sleep, rest."
 #. Translators: this the separator used when concatenating possible options for answering verbal analogies
 #. For example: "Possible correct answers are: a, b, c, d."
-#: ../src/Core/Main/Verbal/Analogies.cs:94
+#: ../src/Core/Main/Verbal/Analogies.cs:87
 #: ../src/Core/Main/Verbal/AnalogiesMultipleOptions.cs:63
 #: ../src/Core/Main/Verbal/AnalogiesPairOfWordsOptions.cs:64
 msgid ", "
@@ -2308,16 +2307,16 @@ msgstr "Responde {0}"
 msgid "{0}) "
 msgstr "{0}) "
 
-#: ../src/Clients/Classical/gbrainy.cs:415
+#: ../src/Clients/Classical/gbrainy.cs:418
 msgid "Congratulations."
 msgstr "Enhorabuena."
 
-#: ../src/Clients/Classical/gbrainy.cs:417
+#: ../src/Clients/Classical/gbrainy.cs:420
 msgid "Incorrect answer."
 msgstr "Respuesta incorrecta."
 
 #
-#: ../src/Clients/Classical/gbrainy.cs:477
+#: ../src/Clients/Classical/gbrainy.cs:480
 msgid ""
 "Once you have an answer type it in the \"Answer:\" entry box and press the "
 "\"OK\" button."
@@ -2325,16 +2324,16 @@ msgstr ""
 "Una vez que tengas la respuesta escríbela en «Respuesta:» y pulsa el botón "
 "«Aceptar»."
 
-#: ../src/Clients/Classical/gbrainy.cs:565
-#: ../src/Clients/Classical/Widgets/Toolbar.cs:144
+#: ../src/Clients/Classical/gbrainy.cs:568
+#: ../src/Clients/Classical/Widgets/Toolbar.cs:143
 msgid "Pause"
 msgstr "Pausar"
 
-#: ../src/Clients/Classical/gbrainy.cs:570
+#: ../src/Clients/Classical/gbrainy.cs:573
 msgid "Resume"
 msgstr "Reanudar"
 
-#: ../src/Clients/Classical/gbrainy.cs:710
+#: ../src/Clients/Classical/gbrainy.cs:716
 #, csharp-format
 msgid "Startup time {0}"
 msgstr "Tiempo de inicio {0}"
@@ -2686,39 +2685,39 @@ msgstr "Examinar…"
 msgid "Open Location"
 msgstr "Abrir ubicación"
 
-#: ../src/Clients/Classical/Widgets/Toolbar.cs:119
+#: ../src/Clients/Classical/Widgets/Toolbar.cs:118
 msgid "Play all the games"
 msgstr "Jugar a todos los juegos"
 
-#: ../src/Clients/Classical/Widgets/Toolbar.cs:120
+#: ../src/Clients/Classical/Widgets/Toolbar.cs:119
 msgid "All"
 msgstr "Todo"
 
-#: ../src/Clients/Classical/Widgets/Toolbar.cs:124
+#: ../src/Clients/Classical/Widgets/Toolbar.cs:123
 msgid "Play games that challenge your reasoning and thinking"
 msgstr "Jugar a los juegos que desafíen mi razonamiento y pensamiento"
 
-#: ../src/Clients/Classical/Widgets/Toolbar.cs:130
+#: ../src/Clients/Classical/Widgets/Toolbar.cs:129
 msgid "Play games that challenge your mental calculation skills"
 msgstr "Jugar a los juegos que desafíen mis capacidades de cálculo mental"
 
-#: ../src/Clients/Classical/Widgets/Toolbar.cs:135
+#: ../src/Clients/Classical/Widgets/Toolbar.cs:134
 msgid "Play games that challenge your short term memory"
 msgstr "Jugar a los juegos que desafíen mi memoria a corto plazo"
 
-#: ../src/Clients/Classical/Widgets/Toolbar.cs:140
+#: ../src/Clients/Classical/Widgets/Toolbar.cs:139
 msgid "Play games that challenge your verbal aptitude"
 msgstr "Jugar a los juegos que desafíen mi aptitud verbal"
 
-#: ../src/Clients/Classical/Widgets/Toolbar.cs:145
+#: ../src/Clients/Classical/Widgets/Toolbar.cs:144
 msgid "Pause or resume the game"
 msgstr "Pausar o resumir el juego"
 
-#: ../src/Clients/Classical/Widgets/Toolbar.cs:149
+#: ../src/Clients/Classical/Widgets/Toolbar.cs:148
 msgid "End the game and show score"
 msgstr "Terminar el juego y mostrar la puntuación"
 
-#: ../src/Clients/Classical/Widgets/Toolbar.cs:150
+#: ../src/Clients/Classical/Widgets/Toolbar.cs:149
 msgid "Finish"
 msgstr "Terminar"
 
