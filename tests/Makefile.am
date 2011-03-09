@@ -14,7 +14,7 @@ CSFILES_CORE =					\
 	$(srcdir)/Core/PlayerPersonalRecordTest.cs \
 	$(srcdir)/Core/GameSessionTest.cs \
 	$(srcdir)/Core/GameManagerTest.cs \
-	$(srcdir)/Core/GameTest.cs \
+	$(srcdir)/Core/GameAnswerTest.cs \
 	$(srcdir)/Core/GameXmlFactoryTest.cs
 
 CSFILES_CLASSICAL =					\
