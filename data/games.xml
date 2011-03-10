@@ -251,7 +251,7 @@
 			<answer>[rslt_a] | [rslt_b]</answer>
 			<_answer_show>[rslt_a] and [rslt_b]</_answer_show>
 			<answer_expression>[0-9]+</answer_expression>
-			<answer_checkattributes>Trim | MatchAll </answer_checkattributes>
+			<answer_checkattributes>Trim | MatchAll</answer_checkattributes>
 			<_rationale>From year 1000 to year 10000, palindrome years occur at 110 year intervals except for the end of each millennium that occur at a 11 years interval.</_rationale>
 		</variant>
 	</game>
@@ -310,7 +310,7 @@
 			<answer_show>[answer_a], [answer_b], [answer_c], [answer_d], [answer_e]</answer_show>
 			<answer>[answer_a] | [answer_b] | [answer_c] | [answer_d] | [answer_e]</answer>
 			<answer_expression>[0-9]+</answer_expression>
-			<answer_checkattributes>Trim | MatchAll </answer_checkattributes>
+			<answer_checkattributes>Trim | MatchAll</answer_checkattributes>
 		</variant>
 	</game>
 
@@ -373,6 +373,7 @@
 		<_name>Multiple number</_name>
 		<type>Calculation</type>
 		<difficulty>All</difficulty>
+		<answer_checkattributes>MultiOption | IgnoreSpaces</answer_checkattributes>
 		<variant>
 			<variables>
 				int [] indexes_a = new int [] {2, 4, 8};
@@ -408,8 +409,8 @@
 				<string _text = "[option_prefix] [option_c] and [option_d]" x = "0.05" y = "0.02" size = "large"/>
 			</option>
 
+			<_answer>[option_a] and [option_b]</_answer>
 			<_rationale>[option_a] and [option_b] are both multiples of [product].</_rationale>
-
 		</variant>
 	</game>
 
@@ -417,6 +418,7 @@
 		<_name>Cars in town</_name>
 		<type>Logic</type>
 		<difficulty>All</difficulty>
+		<answer_checkattributes>MultiOption | IgnoreSpaces</answer_checkattributes>
 		<variant>
 			<variables>
 				double all_cars =  30 + random.Next (4) * 10;
@@ -447,6 +449,7 @@
 				<string _text = "[option_prefix] [option_d]%" x = "0.05" y = "0.02" size = "large"/>
 			</option>
 
+			<answer>[option_c]%</answer>
 			<_rationale>[female_cars]% ([all_cars] - [males_cars]) of the inhabitants are women and have a car.</_rationale>
 		</variant>
 	</game>
@@ -455,6 +458,7 @@
 		<_name>Compare variables</_name>
 		<type>Logic</type>
 		<difficulty>All</difficulty>
+		<answer_checkattributes>MultiOption | IgnoreSpaces</answer_checkattributes>
 
 		<variant>
 			<_question>If p &lt; x &lt; q and r &lt; y &lt; s. Which of the following options makes x &lt; y true? [option_answers]</_question>
@@ -478,6 +482,7 @@
 			</option>
 
 			<_rationale>The variable q is bigger than x and y bigger than r, if q is bigger than r then the condition x &lt; y is true.</_rationale>
+			<answer>q &lt; r</answer>
 		</variant>
 
 		<variant>
@@ -502,6 +507,7 @@
 			</option>
 
 			<_rationale>The variable q is bigger than x and s is bigger than y, if q is bigger than s then the condition x &gt; y is true.</_rationale>
+			<answer>q &gt; s</answer>
 		</variant>
 	</game>
 
@@ -509,6 +515,8 @@
 		<_name>Odd number</_name>
 		<type>Logic</type>
 		<difficulty>All</difficulty>
+		<answer_checkattributes>MultiOption | IgnoreSpaces</answer_checkattributes>
+
 		<variant>
 			<_question>Given two integer numbers x and y, if x is even and y odd, which of the following expressions gives always an odd result? [option_answers]</_question>
 
@@ -531,6 +539,7 @@
 			</option>
 
 			<_rationale>Since x is always an even number, multiplying it by 2 always produces an even number. Adding an even number to an odd number (y) always produces an odd number.</_rationale>
+			<answer>2x + y</answer>
 		</variant>
 
 	</game>

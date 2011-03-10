@@ -120,7 +120,6 @@ namespace gbrainy.Clients.Classical
 			gm.LoadPlugins ();
 		}
 
-
 		void BuildUI ()
 		{
 			bool show_toolbar;

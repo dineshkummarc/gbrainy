@@ -163,7 +163,7 @@ namespace gbrainy.Games.Memory
 			get { 
 				return String.Format (
 					ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Which of the following graphics represent the indications previously given? Answer {0}, {1}, {2} or {3}."),
-					GameAnswer.GetMultiOption (0), GameAnswer.GetMultiOption (1), GameAnswer.GetMultiOption (2), GameAnswer.GetMultiOption (3));}
+					Answer.GetMultiOption (0), Answer.GetMultiOption (1), Answer.GetMultiOption (2), Answer.GetMultiOption (3));}
 		}
 
 		protected override void Initialize ()
@@ -175,6 +175,8 @@ namespace gbrainy.Games.Memory
 			indications[1] = new Indication (Indication.Type.Turn, random.Next (2)); // right or left
 			indications[2] = new Indication (Indication.Type.Turn, second_turn); // up or down
 			indications[3] = new Indication (Indication.Type.Turn, random.Next (2)); // right or left
+
+			Answer.CheckAttributes |= GameAnswerCheckAttributes.MultiOption;
 
 			if (CurrentDifficulty==GameDifficulty.Easy) {
 				indications[4] = new Indication (Indication.Type.End, 1);		
@@ -229,7 +231,7 @@ namespace gbrainy.Games.Memory
 
 			for (int i = 0; i < answers.Count; i++) {
 				if (answers [i] == 0) {
-					Answer.Correct = GameAnswer.GetMultiOption (i);
+					Answer.SetMultiOptionAnswer (i, Answer.GetFigureName (i));
 					ans = i;
 					break;
 				}
@@ -245,14 +247,14 @@ namespace gbrainy.Games.Memory
 				container.AddChild (drawable_area);
 				drawable_area.SelectedArea = new Rectangle (0, 0, 0.45, 0.3);
 				drawable_area.Data = i;
-				drawable_area.DataEx = GameAnswer.GetMultiOption (i);
+				drawable_area.DataEx = Answer.GetMultiOption (i);
 				drawable_area.DrawEventHandler += delegate (object sender, DrawEventArgs e)
 				{
 					int n = (int) e.Data;
 
 					DrawPossibleAnswers (e.Context, 0.2, 0.1, WhichAnswer (answers[n]));
 					e.Context.MoveTo (0.2, 0.12 + 0.2);
-					e.Context.ShowPangoText (Answer.GetMultiOptionFigureName (n));
+					e.Context.ShowPangoText (Answer.GetFigureName (n));
 				};
 			}
 
@@ -266,14 +268,14 @@ namespace gbrainy.Games.Memory
 				container.AddChild (drawable_area);
 				drawable_area.SelectedArea = new Rectangle (0, 0, 0.45, 0.3);
 				drawable_area.Data = i;
-				drawable_area.DataEx = GameAnswer.GetMultiOption (i);
+				drawable_area.DataEx = Answer.GetMultiOption (i);
 				drawable_area.DrawEventHandler += delegate (object sender, DrawEventArgs e)
 				{
 					int n = (int) e.Data;
 
 					DrawPossibleAnswers (e.Context, 0.2, 0.1, WhichAnswer (answers[n]));
 					e.Context.MoveTo (0.2, 0.12 + 0.2);
-					e.Context.ShowPangoText (Answer.GetMultiOptionFigureName (n));
+					e.Context.ShowPangoText (Answer.GetFigureName (n));
 				};
 			}
 		}
@@ -330,7 +332,7 @@ namespace gbrainy.Games.Memory
 					}
 					DrawPossibleAnswers (gr, 0.7, 0.3, WhichAnswer (answers[ans]));
 					gr.MoveTo (0.7, 0.5);
-					gr.ShowPangoText (Answer.GetMultiOptionFigureName (ans));
+					gr.ShowPangoText (Answer.GetFigureName (ans));
 					gr.Stroke ();
 			}
 		}

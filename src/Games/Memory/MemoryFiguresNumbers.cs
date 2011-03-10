@@ -42,11 +42,13 @@ namespace gbrainy.Games.Memory
 		public override string MemoryQuestion {
 			get { return String.Format (
 				ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Which one of these squares was previously shown? Answer {0}, {1}, {2} or {3}."),
-				GameAnswer.GetMultiOption (0), GameAnswer.GetMultiOption (1), GameAnswer.GetMultiOption (2), GameAnswer.GetMultiOption (3));}
+				Answer.GetMultiOption (0), Answer.GetMultiOption (1), Answer.GetMultiOption (2), Answer.GetMultiOption (3));}
 		}
 
 		protected override void Initialize ()
 		{
+			Answer.CheckAttributes |= GameAnswerCheckAttributes.MultiOption;
+
 			switch (CurrentDifficulty) {
 			case GameDifficulty.Easy:
 				columns = rows = 2;
@@ -77,7 +79,7 @@ namespace gbrainy.Games.Memory
 
 			for (int i = 0; i < answers_order.Count; i++) {
 				if ((int) answers_order[i] == 0) {
-					Answer.Correct = GameAnswer.GetMultiOption (i);
+					Answer.SetMultiOptionAnswer (i, Answer.GetFigureName (i));
 					break;
 				}
 			}
@@ -98,7 +100,7 @@ namespace gbrainy.Games.Memory
 				container.AddChild (drawable_area);
 				drawable_area.SelectedArea = new Rectangle (0.05, 0, 0.3, 0.3);
 				drawable_area.Data = i;
-				drawable_area.DataEx = GameAnswer.GetMultiOption (i);
+				drawable_area.DataEx = Answer.GetMultiOption (i);
 
 				drawable_area.DrawEventHandler += delegate (object sender, DrawEventArgs e)
 				{
@@ -106,7 +108,7 @@ namespace gbrainy.Games.Memory
 
 					DrawSquare (e.Context, 0.05, 0, numbers, squares * answers_order[n]);
 					e.Context.MoveTo (0.05, block_space - 0.02);
-					e.Context.ShowPangoText (Answer.GetMultiOptionFigureName (n));
+					e.Context.ShowPangoText (Answer.GetFigureName (n));
 					e.Context.Stroke ();
 				};
 			}

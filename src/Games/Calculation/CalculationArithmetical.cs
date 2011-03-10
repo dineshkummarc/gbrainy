@@ -140,6 +140,5 @@ namespace gbrainy.Games.Calculation
 				gr.DrawTextAlignedRight (aligned_pos, operand_y + 0.03, Answer.Correct);
 			}
 		}
-
 	}
 }

@@ -207,11 +207,12 @@ namespace gbrainy.Games.Logic
 		public override string Question {
 			get {return (String.Format (
 				ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Which is the next logical figure in the sequence? Answer {0}, {1} or {2}."),
-				GameAnswer.GetMultiOption (0), GameAnswer.GetMultiOption (1), GameAnswer.GetMultiOption (2)));}
+				Answer.GetMultiOption (0), Answer.GetMultiOption (1), Answer.GetMultiOption (2)));}
 		}
 
 		protected override void Initialize ()
 		{
+			Answer.CheckAttributes |= GameAnswerCheckAttributes.MultiOption;
 			possible_answers = new ArrayListIndicesRandom (3);
 			possible_answers.Initialize ();
 
@@ -225,7 +226,7 @@ namespace gbrainy.Games.Logic
 
 				drawable_area = new DrawableArea (figure_size + space_figures, figure_size + 0.1);
 				drawable_area.Data = i;
-				drawable_area.DataEx = GameAnswer.GetMultiOption (i);
+				drawable_area.DataEx = Answer.GetMultiOption (i);
 				drawable_area.SelectedArea = new Rectangle (space_figures / 2, space_figures / 2, figure_size, figure_size);
 
 				container.AddChild (drawable_area);
@@ -234,13 +235,13 @@ namespace gbrainy.Games.Logic
 				{
 					DrawPossibleAnswer (e.Context, space_figures / 2, space_figures / 2, possible_answers [(int)e.Data]);
 					e.Context.DrawTextCentered (space_figures / 2 + figure_size / 2, space_figures + figure_size + 0.02,
-						Answer.GetMultiOptionFigureName ((int)e.Data));
+						Answer.GetFigureName ((int)e.Data));
 				};
 			}
 
 			for (int i = 0; i < possible_answers.Count; i++) {
 				if (possible_answers[i] == 0) {
-					Answer.Correct = GameAnswer.GetMultiOption (i);
+					Answer.SetMultiOptionAnswer (i, Answer.GetFigureName (i));
 					break;
 				}
 			}

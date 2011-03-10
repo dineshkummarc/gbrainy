@@ -69,14 +69,38 @@ namespace gbrainy.Core.Main
 			StringBuilder str = new StringBuilder ();
 			str.Append ("[");
 			for (int i = 0; i < MAX_POSSIBLE_ANSWER; i++)
-				str.Append (GetMultiOption (i));
+				str.Append (GetMultiOptionInternal (i));
 
 			str.Append ("]");
 			return str.ToString ();
 		}
-
-		static public string GetMultiOption (int answer)
+		
+		// Index of the option (A, B) and answer (dog, cat)
+		public void SetMultiOptionAnswer (int multioption, string answer)
 		{
+			if (String.IsNullOrEmpty (answer) == true)
+				throw new InvalidOperationException ("Both options should be defined");
+
+			string option = GetMultiOption (multioption);
+			
+			Correct = option + Separator + answer;
+			CorrectShow = option;
+		}
+
+		public string GetMultiOption (int answer)
+		{
+			bool multioption;
+			
+			multioption = (CheckAttributes & GameAnswerCheckAttributes.MultiOption) == GameAnswerCheckAttributes.MultiOption;
+			
+			if (multioption == false)
+				throw new InvalidOperationException ("Cannot call Multioption API if the game does not have the multioption attribute");	
+		
+			return GetMultiOptionInternal (answer);
+		}
+
+		string GetMultiOptionInternal (int answer)
+		{			
 			switch (answer) {
 				// Translators Note
 				// The following series of answers may need to be adapted
@@ -105,10 +129,10 @@ namespace gbrainy.Core.Main
 			}
 		}
 
-		public string GetMultiOptionFigureName (int answer)
+		public string GetFigureName (int answer)
 		{
 			return String.Format (ServiceLocator.Instance.GetService <ITranslations> ()
-				.GetString ("Figure {0}"), GetMultiOption (answer));
+				.GetString ("Figure {0}"), GetMultiOptionInternal (answer));
 		}
 
 		public bool CheckAnswer (string answer)

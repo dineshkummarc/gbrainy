@@ -43,7 +43,7 @@ namespace gbrainy.Games.Logic
 		public override string Question {
 			get {return String.Format (
 				ServiceLocator.Instance.GetService <ITranslations> ().GetString ("What figure should replace the question mark? Answer {0}, {1} or {2}."),
-				GameAnswer.GetMultiOption (0), GameAnswer.GetMultiOption (1), GameAnswer.GetMultiOption (2));}
+				Answer.GetMultiOption (0), Answer.GetMultiOption (1), Answer.GetMultiOption (2));}
 		}
 
 		public override string Tip {
@@ -58,13 +58,14 @@ namespace gbrainy.Games.Logic
 
 		protected override void Initialize ()
 		{
+			Answer.CheckAttributes |= GameAnswerCheckAttributes.MultiOption;
 			random_indices = new ArrayListIndicesRandom ((int) Figures.Last);
 			random_indices.Initialize ();
 
 			for (int i = 0; i < (int) Figures.Last; i++)
 			{
 				if (random_indices[i] == (int) Figures.Cross) {
-					Answer.Correct = GameAnswer.GetMultiOption (i);
+					Answer.SetMultiOptionAnswer (i, Answer.GetFigureName (i));
 					break;
 				}
 			}
@@ -101,7 +102,7 @@ namespace gbrainy.Games.Logic
 		{
 			double org_x = DrawAreaX + 0.1;
 			double x = org_x, y = 0.08;
-			const double figure_size = 0.13, space_x = 0.1, space_y = 0.2;
+			const double figure_size = 0.13, space_x = 0.1, space_y = 0.18;
 			double x45, y45, x135, y135, offset;
 
 			base.Draw (gr, area_width, area_height, rtl);
@@ -208,7 +209,7 @@ namespace gbrainy.Games.Logic
 				}
 			
 				gr.MoveTo (x, y + 0.18);
-				gr.ShowPangoText (Answer.GetMultiOptionFigureName (i));
+				gr.ShowPangoText (Answer.GetFigureName (i));
 
 				x += figure_size + space_x;			
 			}

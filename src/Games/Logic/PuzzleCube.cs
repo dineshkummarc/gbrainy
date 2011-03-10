@@ -53,7 +53,9 @@ namespace gbrainy.Games.Logic
 		{
 			int pair = random.Next (pairs);
 			question = (char) (48 + question_answer[pair * 2]);
-			Answer.Correct += (char) (48 + question_answer[(pair * 2) + 1]);
+			
+			char num = (char) (48 + question_answer[(pair * 2) + 1]);
+			Answer.Correct = num.ToString ();
 			
 			Container container;
 			DrawableArea drawable_area;

@@ -54,7 +54,7 @@ namespace gbrainy.Games.Logic
 		public override string Question {
 			get {return String.Format (
 				ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Which three pieces can you use together to build a triangle? Answer using the three figure names, e.g.: {0}{1}{2}."),
-					GameAnswer.GetMultiOption (0), GameAnswer.GetMultiOption (1), GameAnswer.GetMultiOption (2));}
+					Answer.GetMultiOption (0), Answer.GetMultiOption (1), Answer.GetMultiOption (2));}
 		}
 
 		public override string Tip {
@@ -63,6 +63,9 @@ namespace gbrainy.Games.Logic
 
 		protected override void Initialize ()
 		{
+			Answer.CheckAttributes = GameAnswerCheckAttributes.Trim | GameAnswerCheckAttributes.IgnoreCase 
+				| GameAnswerCheckAttributes.MatchAll | GameAnswerCheckAttributes.MultiOption;
+
 			switch (CurrentDifficulty) {
 			case GameDifficulty.Easy:
 				total_figures = 6;
@@ -83,20 +86,19 @@ namespace gbrainy.Games.Logic
 			{
 				switch ((Figures) random_indices_answers[i]) {
 				case Figures.TriangleB:
-					answers[0] =  GameAnswer.GetMultiOption (i);
+					answers[0] = Answer.GetMultiOption (i);
 					break;
 				case Figures.TriangleC:
-					answers[1] =  GameAnswer.GetMultiOption (i);
+					answers[1] = Answer.GetMultiOption (i);
 					break;
 				case Figures.Square:
-					answers[2] =  GameAnswer.GetMultiOption (i);
+					answers[2] = Answer.GetMultiOption (i);
 					break;
 				}
 			}
 
 			Answer.Correct = answers[0] + " | " + answers[1] + " | " + answers[2];
 			Answer.CheckExpression = Answer.GetMultiOptionsExpression ();
-			Answer.CheckAttributes = GameAnswerCheckAttributes.Trim | GameAnswerCheckAttributes.IgnoreCase | GameAnswerCheckAttributes.MatchAll;
 			Answer.CorrectShow = answers[0] + answers[1] + answers[2];
 		}
 
@@ -156,7 +158,7 @@ namespace gbrainy.Games.Logic
 			{
 				DrawFigure (gr, x, y, (Figures) random_indices_answers[i]);
 				gr.MoveTo (x, y + 0.13);
-				gr.ShowPangoText (Answer.GetMultiOptionFigureName (i));
+				gr.ShowPangoText (Answer.GetFigureName (i));
 
 				if (i  == (total_figures / 2) - 1) {
 					y+= 0.30;

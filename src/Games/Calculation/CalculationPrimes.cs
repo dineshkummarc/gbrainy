@@ -75,7 +75,7 @@ namespace gbrainy.Games.Calculation
 		public override string Question {
 			get { return String.Format (
 				ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Which of the following numbers is a prime? A prime number is a positive integer that has exactly two different positive divisors, 1 and itself. Answer {0}, {1}, {2} or {3}."),
-				GameAnswer.GetMultiOption (0), GameAnswer.GetMultiOption (1), GameAnswer.GetMultiOption (2), GameAnswer.GetMultiOption (3));}
+				Answer.GetMultiOption (0), Answer.GetMultiOption (1), Answer.GetMultiOption (2), Answer.GetMultiOption (3));}
 		}
 
 		public override string Tip {
@@ -90,6 +90,7 @@ namespace gbrainy.Games.Calculation
 
 		protected override void Initialize ()
 		{
+			Answer.CheckAttributes |= GameAnswerCheckAttributes.MultiOption;
 			switch (CurrentDifficulty) {
 			case GameDifficulty.Easy:
 				div3 = true;
@@ -114,7 +115,7 @@ namespace gbrainy.Games.Calculation
 			answer_idx = random.Next (numbers.Length);
 			answer = primes [random.Next (max_primeidx + 1)];
 			numbers [answer_idx] = answer;
-			Answer.Correct = answer.ToString ();
+			Answer.SetMultiOptionAnswer (answer_idx, answer.ToString ());
 
 			// Drawing objects
 			double x = DrawAreaX + 0.25, y = DrawAreaY + 0.16;
@@ -128,7 +129,7 @@ namespace gbrainy.Games.Calculation
 				drawable_area.Y = y + i * 0.15;
 				container.AddChild (drawable_area);
 				drawable_area.Data = i;
-				drawable_area.DataEx = GameAnswer.GetMultiOption (i);
+				drawable_area.DataEx = Answer.GetMultiOption (i);
 
 				drawable_area.DrawEventHandler += delegate (object sender, DrawEventArgs e)
 				{
@@ -136,7 +137,7 @@ namespace gbrainy.Games.Calculation
 
 					e.Context.SetPangoLargeFontSize ();
 					e.Context.MoveTo (0.02, 0.02);
-					e.Context.ShowPangoText (String.Format ("{0}) {1:##0.###}", GameAnswer.GetMultiOption (n) , numbers [n]));
+					e.Context.ShowPangoText (String.Format ("{0}) {1:##0.###}", Answer.GetMultiOption (n) , numbers [n]));
 				};
 			}
 		}
@@ -168,17 +169,6 @@ namespace gbrainy.Games.Calculation
 					break;
 			}
 			return num;
-		}
-
-		public override bool CheckAnswer (string answer)
-		{
-			if (base.CheckAnswer (answer) == true)
-				return true;
-
-			if (String.Compare (answer, GameAnswer.GetMultiOption (answer_idx), true) == 0)
-				return true;
-
-			return false;
 		}
 	}
 }

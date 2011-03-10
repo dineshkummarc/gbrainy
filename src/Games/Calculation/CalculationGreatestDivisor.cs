@@ -44,7 +44,7 @@ namespace gbrainy.Games.Calculation
 		public override string Question {
 			get { return String.Format (ServiceLocator.Instance.GetService <ITranslations> ().GetString (
 				"Which of the possible divisors is the greatest that divides all numbers? Answer {0}, {1}, {2} or {3}."),
-				GameAnswer.GetMultiOption (0), GameAnswer.GetMultiOption (1), GameAnswer.GetMultiOption (2), GameAnswer.GetMultiOption (3));
+				Answer.GetMultiOption (0), Answer.GetMultiOption (1), Answer.GetMultiOption (2), Answer.GetMultiOption (3));
 			}
 		}
 
@@ -54,6 +54,7 @@ namespace gbrainy.Games.Calculation
 			int n, m;
 			int []mult = new int [3];
 
+			Answer.CheckAttributes |= GameAnswerCheckAttributes.MultiOption;
 			switch (CurrentDifficulty) {
 			case GameDifficulty.Easy:
 				max_num = 999;
@@ -129,7 +130,7 @@ namespace gbrainy.Games.Calculation
 				}
 			}
 
-			Answer.Correct = answer.ToString ();
+			Answer.SetMultiOptionAnswer (answer_idx, answer.ToString ());
 
 			// Drawing objects
 			Container container = new Container (DrawAreaX + 0.2, DrawAreaY + 0.25, 0.4, answers.Length * 0.15);
@@ -142,14 +143,14 @@ namespace gbrainy.Games.Calculation
 				drawable_area.Y = DrawAreaY + 0.27 + i * 0.15;
 				container.AddChild (drawable_area);
 				drawable_area.Data = i;
-				drawable_area.DataEx = GameAnswer.GetMultiOption (i);
+				drawable_area.DataEx = Answer.GetMultiOption (i);
 
 				drawable_area.DrawEventHandler += delegate (object sender, DrawEventArgs e)
 				{
 					int d = (int) e.Data;
 					e.Context.SetPangoLargeFontSize ();
 					e.Context.MoveTo (0.07, 0.02);
-					e.Context.ShowPangoText (String.Format (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("{0}) {1}"), GameAnswer.GetMultiOption (d),
+					e.Context.ShowPangoText (String.Format (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("{0}) {1}"), Answer.GetMultiOption (d),
 						answers[d].ToString ()));
 				};
 			}
@@ -255,17 +256,6 @@ namespace gbrainy.Games.Calculation
 
 			gr.MoveTo (0.05, y);
 			gr.ShowPangoText (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Possible divisors"));
-		}
-
-		public override bool CheckAnswer (string answer)
-		{
-			if (base.CheckAnswer (answer) == true)
-				return true;
-
-			if (String.Compare (answer, GameAnswer.GetMultiOption (answer_idx), true) == 0)
-				return true;
-
-			return false;
 		}
 	}
 }

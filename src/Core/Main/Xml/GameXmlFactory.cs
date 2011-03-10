@@ -345,7 +345,7 @@ namespace gbrainy.Core.Main.Xml
 
 							option = null;
 							break;
-						default: // Do do any processing
+						default: // Do any processing
 							break;
 						}
 

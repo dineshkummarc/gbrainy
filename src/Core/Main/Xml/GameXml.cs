@@ -122,7 +122,7 @@ namespace gbrainy.Core.Main.Xml
 			if (game.Variants.Count > 0 && game.Variants[current.Variant].CheckAttributes != GameAnswerCheckAttributes.None)
 				attrib = game.Variants[current.Variant].CheckAttributes;
 			else
-				attrib =  game.CheckAttributes;
+				attrib = game.CheckAttributes;
 
 			if (attrib == GameAnswerCheckAttributes.None)
 				return;
@@ -137,6 +137,7 @@ namespace gbrainy.Core.Main.Xml
 			LocalizableString localizable_question, localizable_rationale;
 
 			variants = game.Variants.Count > 0;
+			SetCheckAttributes ();
 
 			if (variants && game.Variants[current.Variant].Variables != null)
 				variables = game.Variants[current.Variant].Variables;
@@ -204,19 +205,20 @@ namespace gbrainy.Core.Main.Xml
 			{
 				string answers = string.Empty;
 
-				foreach (OptionDrawingObject option in options)
+				for (int i = 0; i < options.Count; i++)
 				{
+					OptionDrawingObject option = options [i];
 					if (option.Correct == true)
 					{
-						Answer.Correct = option.AnswerText;
+						Answer.SetMultiOptionAnswer (i, answer);
 						break;
 					}
 				}
 	
 				for (int i = 0; i < options.Count - 1; i++)
-					answers += String.Format (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("{0}, "), GameAnswer.GetMultiOption (i));
+					answers += String.Format (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("{0}, "), Answer.GetMultiOption (i));
 
-				answers += String.Format (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("{0}."), GameAnswer.GetMultiOption (options.Count - 1));
+				answers += String.Format (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("{0}."), Answer.GetMultiOption (options.Count - 1));
 
 				// Translators {0}: list of options (A, B, C)
 				answers = String.Format (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Answer {0}"), answers);
@@ -228,7 +230,6 @@ namespace gbrainy.Core.Main.Xml
 			}
 
 			SetCheckExpression ();
-			SetCheckAttributes ();
 			SetAnswerCorrectShow ();
 		}
 
@@ -312,9 +313,6 @@ namespace gbrainy.Core.Main.Xml
 						continue;
 
 					option.CopyRandomizedProperties (originals [random_indices [index]]);
-
-					// For randomized options the answer is always the option letter
-					option.AnswerText = GameAnswer.GetMultiOption (index);
 					index++;
 				}
 			}
@@ -341,7 +339,7 @@ namespace gbrainy.Core.Main.Xml
 				container.AddChild (drawable_area);
 				
 				drawable_area.Data = idx;
-				drawable_area.DataEx = GameAnswer.GetMultiOption (idx);
+				drawable_area.DataEx = Answer.GetMultiOption (idx);
 				options.Add (option);
 
 				idx++;
@@ -381,6 +379,7 @@ namespace gbrainy.Core.Main.Xml
 				current.Game = locator.Game;
 				current.Variant = locator.Variant;
 				game = games [locator.Game];
+				SetCheckAttributes ();
 
 				CreateDrawingObjects (game); // Draw objects shared by all variants
 
@@ -388,7 +387,6 @@ namespace gbrainy.Core.Main.Xml
 					CreateDrawingObjects (game.Variants[current.Variant]); // Draw variant specific objects
 
 				SetCheckExpression ();
-				SetCheckAttributes ();
 				SetAnswerCorrectShow ();
 			}
 		}
@@ -403,7 +401,7 @@ namespace gbrainy.Core.Main.Xml
 				DrawObjects (gr, game.Variants[current.Variant].DrawingObjects, null); // Draw variant specific objects
 		}
 
-		static void DrawObjects (CairoContextEx gr, DrawingObject [] drawing_objects, int? option)
+		void DrawObjects (CairoContextEx gr, DrawingObject [] drawing_objects, int? option)
 		{
 			if (drawing_objects == null)
 				return;
@@ -472,11 +470,11 @@ namespace gbrainy.Core.Main.Xml
 			}
 		}
 
-		static string GetOptionPrefix (string str, int option)
+		string GetOptionPrefix (string str, int option)
 		{
 			string answer;
 			
-			answer = String.Format (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("{0}) "), GameAnswer.GetMultiOption (option));
+			answer = String.Format (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("{0}) "), Answer.GetMultiOption (option));
 			return str.Replace (option_prefix, answer);
 		}
 

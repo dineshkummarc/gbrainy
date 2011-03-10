@@ -108,6 +108,9 @@ namespace gbrainy.Core.Main
 			random = new Random ();
 			default_color = new Cairo.Color (0, 0, 0);
 			Initialize ();
+
+			if (String.IsNullOrEmpty (Answer.Correct))
+				throw new InvalidOperationException ("Answer cannot be empty");
 		}
 
 		public virtual int Variant {

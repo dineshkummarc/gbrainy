@@ -42,7 +42,7 @@ namespace gbrainy.Games.Logic
 			get {return (String.Format (
 				// Translators: {0} is replaced by 'Figure X'
 				ServiceLocator.Instance.GetService <ITranslations> ().GetString ("To what number should the large handle of the '{0}' clock point? Answer using numbers."),
-				Answer.GetMultiOptionFigureName (3)));}
+				Answer.GetFigureName (3)));}
 		}
 
 		public override string Rationale {
@@ -84,7 +84,7 @@ namespace gbrainy.Games.Logic
 				handles [i + 1] = position - ((position / 10) * 10);
 				position += addition;
 			}
-		
+
 			Answer.Correct = handles[7].ToString ();
 
 			// First row
@@ -99,7 +99,7 @@ namespace gbrainy.Games.Logic
 			drawable_area.DrawEventHandler += delegate (object sender, DrawEventArgs e)
 			{
 				DrawClock (e.Context, 0.2, 0.16, handles[0], handles[1], true);
-				e.Context.DrawTextCentered (drawable_area.Width / 2, 0.36, Answer.GetMultiOptionFigureName (0));
+				e.Context.DrawTextCentered (drawable_area.Width / 2, 0.36, Answer.GetFigureName (0));
 				e.Context.Stroke ();
 			};
 
@@ -111,7 +111,7 @@ namespace gbrainy.Games.Logic
 			{
 				DrawClock (e.Context, 0.2, 0.16, handles[2], handles[3], true);
 				e.Context.MoveTo (0.03, 0.29);
-				e.Context.DrawTextCentered (drawable_area.Width / 2, 0.36, Answer.GetMultiOptionFigureName (1));
+				e.Context.DrawTextCentered (drawable_area.Width / 2, 0.36, Answer.GetFigureName (1));
 				e.Context.Stroke ();
 			};
 
@@ -126,7 +126,7 @@ namespace gbrainy.Games.Logic
 			drawable_area.DrawEventHandler += delegate (object sender, DrawEventArgs e)
 			{
 				DrawClock (e.Context, 0.2, 0.16, handles[4], handles[5], true);
-				e.Context.DrawTextCentered (drawable_area.Width / 2, 0.36, Answer.GetMultiOptionFigureName (2));
+				e.Context.DrawTextCentered (drawable_area.Width / 2, 0.36, Answer.GetFigureName (2));
 				e.Context.Stroke ();
 			};
 
@@ -138,7 +138,7 @@ namespace gbrainy.Games.Logic
 			{
 				DrawClock (e.Context, 0.2, 0.16, handles[6], handles[7], Answer.Draw == true);
 				e.Context.MoveTo (0.03, 0.29);
-				e.Context.DrawTextCentered (drawable_area.Width / 2, 0.36, Answer.GetMultiOptionFigureName (3));
+				e.Context.DrawTextCentered (drawable_area.Width / 2, 0.36, Answer.GetFigureName (3));
 				e.Context.Stroke ();
 			};
 	

@@ -60,7 +60,7 @@ namespace gbrainy.Games.Logic
 		public override string Question {
 			get {return String.Format (
 				ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Which circle does not belong to the group? It is not a sequence of elements. Answer {0}, {1}, {2} or {3}."),
-					GameAnswer.GetMultiOption (0), GameAnswer.GetMultiOption (1), GameAnswer.GetMultiOption (2), GameAnswer.GetMultiOption (3));}
+					Answer.GetMultiOption (0), Answer.GetMultiOption (1), Answer.GetMultiOption (2), Answer.GetMultiOption (3));}
 		}
 
 		public override string Tip {
@@ -79,6 +79,8 @@ namespace gbrainy.Games.Logic
 			Color clr;
 
 			cp = new ColorPalette ();
+
+			Answer.CheckAttributes |= GameAnswerCheckAttributes.MultiOption;
 
 			cercle_colors = new Color [total_slices];
 			badcercle_colors =  new Color [total_slices];
@@ -99,7 +101,7 @@ namespace gbrainy.Games.Logic
 				start_indices[i] = (random_indices[i]);
 
 			ans_pos = random.Next (circles);
-			Answer.Correct = GameAnswer.GetMultiOption (ans_pos);
+			Answer.SetMultiOptionAnswer (ans_pos, Answer.GetFigureName (ans_pos));
 
 			const double text_offset = 0.04;
 			const double witdh_used = 0.9; // Total width used for drawing all the figures
@@ -127,7 +129,7 @@ namespace gbrainy.Games.Logic
 				drawable_area = new DrawableArea (box_size, box_size);
 				drawable_area.SelectedArea = new Rectangle ((box_size - box_size) / 2, 0, box_size, box_size);
 				drawable_area.Data = i;
-				drawable_area.DataEx = GameAnswer.GetMultiOption (i);
+				drawable_area.DataEx = Answer.GetMultiOption (i);
 
 				drawable_area.DrawEventHandler += delegate (object sender, DrawEventArgs e)
 				{
@@ -139,7 +141,7 @@ namespace gbrainy.Games.Logic
 
 					DrawCircle (e.Context, x1, y1, circle.Colors, start_indices [idx]);
 					e.Context.DrawTextCentered (e.Width / 2, box_size + text_offset,
-						Answer.GetMultiOptionFigureName (idx));
+						Answer.GetFigureName (idx));
 					e.Context.Stroke ();
 				};
 				container.AddChild (drawable_area);

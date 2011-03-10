@@ -53,7 +53,7 @@ namespace gbrainy.Games.Calculation
 
 				return String.Format (
 					ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Given the numbers: {0}. Which of the following numbers is the nearest to the average? Answer {1}, {2}, {3} or {4}."), nums,
-					GameAnswer.GetMultiOption (0), GameAnswer.GetMultiOption (1), GameAnswer.GetMultiOption (2), GameAnswer.GetMultiOption (3));}
+					Answer.GetMultiOption (0), Answer.GetMultiOption (1), Answer.GetMultiOption (2), Answer.GetMultiOption (3));}
 		}
 
 		public override string Tip {
@@ -72,6 +72,7 @@ namespace gbrainy.Games.Calculation
 			bool duplicated;
 			int nums, options_next, dist, num_size, which = 0;
 
+			Answer.CheckAttributes |= GameAnswerCheckAttributes.MultiOption;
 			switch (CurrentDifficulty) {
 			case GameDifficulty.Easy:
 				nums = 3;
@@ -146,7 +147,7 @@ namespace gbrainy.Games.Calculation
 				}
 			}
 
-			Answer.Correct += GameAnswer.GetMultiOption (which);
+			Answer.SetMultiOptionAnswer (which, options [correct_pos].ToString ());
 
 			// Options
 			double x = DrawAreaX + 0.25, y = DrawAreaY + 0.16;
@@ -160,7 +161,7 @@ namespace gbrainy.Games.Calculation
 				drawable_area.Y = y + i * 0.15;
 				container.AddChild (drawable_area);
 				drawable_area.Data = i;
-				drawable_area.DataEx = GameAnswer.GetMultiOption (i);
+				drawable_area.DataEx = Answer.GetMultiOption (i);
 
 				drawable_area.DrawEventHandler += delegate (object sender, DrawEventArgs e)
 				{
@@ -169,7 +170,7 @@ namespace gbrainy.Games.Calculation
 
 					e.Context.SetPangoLargeFontSize ();
 					e.Context.MoveTo (0.02, 0.02);
-					e.Context.ShowPangoText (String.Format ("{0}) {1:##0.###}", GameAnswer.GetMultiOption (n) , options [indx]));
+					e.Context.ShowPangoText (String.Format ("{0}) {1:##0.###}", Answer.GetMultiOption (n) , options [indx]));
 				};
 			}
 		}

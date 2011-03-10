@@ -30,6 +30,7 @@ namespace gbrainy.Core.Main
 		IgnoreSpaces		= 8,
 		MatchAll		= 16,
 		MatchAllInOrder		= 32,
+		MultiOption		= 64, // Allows calling GameAnswer.GetMultiOption
 	}
 	
 	// Since we cannot override ToString in an enum type we use a helper class
@@ -56,6 +57,9 @@ namespace gbrainy.Core.Main
 
 			if (type.IndexOf ("MatchAllInOrder", StringComparison.InvariantCultureIgnoreCase) != -1)
 				attributes |= GameAnswerCheckAttributes.MatchAllInOrder;
+
+			if (type.IndexOf ("MultiOption", StringComparison.InvariantCultureIgnoreCase) != -1)
+				attributes |= GameAnswerCheckAttributes.MultiOption;
 
 			return attributes;
 		}
