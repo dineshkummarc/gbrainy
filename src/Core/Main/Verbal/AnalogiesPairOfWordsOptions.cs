@@ -65,9 +65,13 @@ namespace gbrainy.Core.Main.Verbal
 					}
 				}
 
-				return String.Format (Catalog.GetString (
+				string ques = String.Format (Catalog.GetString (
 					"Given the relationship between the two words below, which word has the same relationship to '{0}'?"),
 					sample);
+
+				return String.Format (Catalog.GetString ("{0} Answer {1}."),
+					ques,
+					str);
 			}
 		}
 
