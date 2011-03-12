@@ -52,6 +52,10 @@ namespace gbrainy.Games.Logic
 			}
 		}
 
+		public override GameAnswerCheckAttributes CheckAttributes {
+			get { return GameAnswerCheckAttributes.IgnoreCase | GameAnswerCheckAttributes.IgnoreSpaces; }
+		}
+
 		protected override void Initialize ()
 		{
 			random_indices = new ArrayListIndicesRandom (6);
