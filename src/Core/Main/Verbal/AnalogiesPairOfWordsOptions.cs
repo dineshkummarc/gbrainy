@@ -59,15 +59,17 @@ namespace gbrainy.Core.Main.Verbal
 					str+= Answer.GetMultiOption (n);
 
 					if (n +1 < Current.answers.Length) {
-						// Translators: this the separator used when concatenating possible options for answering verbal analogies
-						// For example: "Possible correct answers are: a, b, c, d."						
 						str += ServiceLocator.Instance.GetService <ITranslations> ().GetString (", ");
 					}
 				}
 
-				return String.Format (ServiceLocator.Instance.GetService <ITranslations> ().GetString (
+				string ques = String.Format (ServiceLocator.Instance.GetService <ITranslations> ().GetString (
 					"Given the relationship between the two words below, which word has the same relationship to '{0}'?"),
 					sample);
+
+				return String.Format (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("{0} Answer {1}."),
+					ques,
+					str);
 			}
 		}
 
