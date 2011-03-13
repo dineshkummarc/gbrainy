@@ -76,6 +76,21 @@ namespace gbrainy.Core.Main.Verbal
 			get { return analogies; }
 		}
 
+		public override string Answer {
+			get {
+				if (current == null)
+					return base.Answer;
+
+				string tmp, rslt;
+
+				tmp = right_answer;
+				right_answer = GetPossibleAnswer (current.right);
+				rslt = base.Answer;
+				right_answer = tmp;
+				return rslt;
+			}	
+		}
+
 		protected override void Initialize ()
 		{
 			current = GetNext ();
@@ -83,7 +98,7 @@ namespace gbrainy.Core.Main.Verbal
 			if (current == null || current.answers == null)
 				return;
 
-			right_answer = GetPossibleAnswer (current.right);
+			right_answer = GetPossibleAnswer (current.right) + AnalogiesFactory.Separator  + current.answers[current.right];
 
 			Container container = new Container (DrawAreaX + 0.1, 0.50, 0.5, current.answers.Length * 0.15);
 			AddWidget (container);
