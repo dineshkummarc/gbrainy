@@ -12,8 +12,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gbrainy\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-01-30 22:24+0100\n"
-"PO-Revision-Date: 2011-01-30 22:35+0100\n"
+"POT-Creation-Date: 2011-03-13 11:25+0100\n"
+"PO-Revision-Date: 2011-03-13 11:35+0100\n"
 "Last-Translator: Jordi Mas <jmas@softcatala.org>\n"
 "Language-Team: Catalan\n"
 "Language: \n"
@@ -401,8 +401,8 @@ msgid "Password"
 msgstr "Contrasenya"
 
 #: ../data/games.xml.h:42
-#: ../src/Core/Main/Verbal/AnalogiesMultipleOptions.cs:119
-#: ../src/Core/Main/Verbal/AnalogiesPairOfWordsOptions.cs:129
+#: ../src/Core/Main/Verbal/AnalogiesMultipleOptions.cs:134
+#: ../src/Core/Main/Verbal/AnalogiesPairOfWordsOptions.cs:148
 #: ../src/Games/Logic/PuzzleFigurePattern.cs:190
 #: ../src/Games/Logic/PuzzleLargerShape.cs:302
 #: ../src/Games/Logic/PuzzleMissingPiece.cs:172
@@ -2158,13 +2158,14 @@ msgstr "Múltiples opcions #{0}"
 #. Translators: {0} is replaced by a question and {1} by the suggestions on how to answer
 #. E.g: What is the correct option? Answer A, B, C.
 #: ../src/Core/Main/Verbal/AnalogiesMultipleOptions.cs:69
+#: ../src/Core/Main/Verbal/AnalogiesPairOfWordsOptions.cs:72
 #, csharp-format
 msgid "{0} Answer {1}."
 msgstr "{0} Responeu {1}."
 
 #. Translators: this "option) answer" for example "a) "21 x 60 = 1260". This should not be changed for most of the languages
-#: ../src/Core/Main/Verbal/AnalogiesMultipleOptions.cs:105
-#: ../src/Core/Main/Verbal/AnalogiesPairOfWordsOptions.cs:112
+#: ../src/Core/Main/Verbal/AnalogiesMultipleOptions.cs:120
+#: ../src/Core/Main/Verbal/AnalogiesPairOfWordsOptions.cs:131
 #: ../src/Games/Logic/PuzzleOstracism.cs:159
 #: ../src/Games/Logic/PuzzlePredicateLogic.cs:176
 #: ../src/Games/Calculation/CalculationCloserFraction.cs:161
@@ -2189,7 +2190,7 @@ msgstr ""
 "mateixa relació a «{0}»?"
 
 #: ../src/Core/Main/Verbal/AnalogiesPairOfWordsCompare.cs:94
-#: ../src/Core/Main/Verbal/AnalogiesPairOfWordsOptions.cs:133
+#: ../src/Core/Main/Verbal/AnalogiesPairOfWordsOptions.cs:152
 #, csharp-format
 msgid "Words: {0}"
 msgstr "Paraules: {0}"
@@ -2399,14 +2400,14 @@ msgstr ""
 msgid "A brain teaser game for fun and to keep your brain trained."
 msgstr "Un joc per divertir-se i mantenir el vostre cervell entrenat"
 
-#: ../src/Clients/Classical/Dialogs/AboutDialog.cs:81
+#: ../src/Clients/Classical/Dialogs/AboutDialog.cs:80
+msgid "gbrainy project web site:http://live.gnome.org/gbrainy"
+msgstr "Lloc web del projecte gbrainy: http://live.gnome.org/gbrainy"
+
+#: ../src/Clients/Classical/Dialogs/AboutDialog.cs:82
 #, csharp-format
 msgid "You can also play on-line at {0}"
 msgstr "Podeu també jugar en línia a {0}"
-
-#: ../src/Clients/Classical/Dialogs/AboutDialog.cs:84
-msgid "gbrainy project web site"
-msgstr "Lloc web del projecte gbrainy"
 
 #. Column: Game Name
 #: ../src/Clients/Classical/Dialogs/CustomGameDialog.cs:68
@@ -3080,18 +3081,18 @@ msgstr ""
 "És l'única combinació que es pot construir amb els elements donats sense "
 "repetir-los."
 
-#: ../src/Games/Logic/PuzzleFigures.cs:78
-#: ../src/Games/Logic/PuzzleFigures.cs:90
-#: ../src/Games/Logic/PuzzleFigures.cs:103
+#: ../src/Games/Logic/PuzzleFigures.cs:82
+#: ../src/Games/Logic/PuzzleFigures.cs:94
+#: ../src/Games/Logic/PuzzleFigures.cs:107
 #, csharp-format
 msgid "{0} ->"
 msgstr "{0} ->"
 
-#: ../src/Games/Logic/PuzzleFigures.cs:159
+#: ../src/Games/Logic/PuzzleFigures.cs:163
 msgid "Convention when giving the answer is:"
 msgstr "Convenció per a donar la resposta:"
 
-#: ../src/Games/Logic/PuzzleFigures.cs:163
+#: ../src/Games/Logic/PuzzleFigures.cs:167
 #, csharp-format
 msgid "E.g: {0}{1}{2} (pentagon, triangle, circle)"
 msgstr "P. ex.: {0}{1}{2} (pentàgon, triangle, cercle)"
