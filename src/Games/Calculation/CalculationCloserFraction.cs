@@ -43,7 +43,8 @@ namespace gbrainy.Games.Calculation
 
 		public override string Question {
 			get {return String.Format (
-				ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Which of the following numbers is closer to {0:##0.###}? Answer {1}, {2}, {3} or {4}."), question_num,
+				ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Which of the following numbers is closer to {0}? Answer {1}, {2}, {3} or {4}."),
+				String.Format ("{0:##0.###}", question_num),
 				Answer.GetMultiOption (0), Answer.GetMultiOption (1), Answer.GetMultiOption (2), Answer.GetMultiOption (3));}
 		}
 
@@ -51,8 +52,8 @@ namespace gbrainy.Games.Calculation
 			get {
 				int ans_idx = random_indices[which];
 
-				return String.Format (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("The result of the operation {0} / {1} is {2:##0.###}"), 
-					options[ans_idx * 2], options[(ans_idx * 2) + 1], question_num);
+				return String.Format (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("The result of the operation {0} / {1} is {2}"),
+					options[ans_idx * 2], options[(ans_idx * 2) + 1], String.Format ("{0:##0.###}", question_num));
 			}
 		}
 
@@ -84,13 +85,13 @@ namespace gbrainy.Games.Calculation
 				duplicated = false;
 				options[0 + 0] = basenum + random.Next (randnum);
 				options[0 + 1] = basenum + random.Next (randnum);
-				
+
 				options[2 + 0] = options[0 + 0] + random.Next (2);
 				options[2 + 1] = options[0 + 1] + random.Next (2);
 
 				options[(2 * 2) + 0] = options[0 + 0] - random.Next (5);
 				options[(2 * 2) + 1] = options[0 + 1] - random.Next (5);
-		
+
 				options[(3 * 2) + 0] = options[0 + 0] +  random.Next (5);
 				options[(3 * 2) + 1] = options[0 + 1] +  random.Next (5);
 
@@ -111,7 +112,7 @@ namespace gbrainy.Games.Calculation
 
 				if (duplicated)
 					continue;
-			
+
 				// No numerator = denominator (1 value)
 				if (options [0 + 0] == options [0 + 1]) continue;
 				if (options [(1 * 2) + 0] == options [(1 * 2) + 1]) continue;
@@ -126,13 +127,13 @@ namespace gbrainy.Games.Calculation
 
 				if (i < options_cnt * 2)
 					continue;
-							
+
 				done = true;
 			}
 
 			random_indices = new ArrayListIndicesRandom (4);
 			random_indices.Initialize ();
-		
+
 			which = random.Next (options_cnt);
 			ans_idx = random_indices[which];
 			question_num = options[ans_idx * 2] / options[(ans_idx * 2) + 1];
@@ -143,7 +144,7 @@ namespace gbrainy.Games.Calculation
 			double x = DrawAreaX + 0.25, y = DrawAreaY + 0.16;
 			Container container = new Container (x, y,  1 - (x * 2), 0.6);
 			AddWidget (container);
-	
+
 			for (i = 0; i < options_cnt; i++)
 			{
 				DrawableArea drawable_area = new DrawableArea (0.3, 0.1);
@@ -160,7 +161,7 @@ namespace gbrainy.Games.Calculation
 
 					e.Context.SetPangoLargeFontSize ();
 					e.Context.MoveTo (0.02, 0.02);
-					e.Context.ShowPangoText (String.Format (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("{0}) {1}"), Answer.GetMultiOption (n) , 
+					e.Context.ShowPangoText (String.Format (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("{0}) {1}"), Answer.GetMultiOption (n) ,
 						options [indx * 2] +  " / " + options [(indx  * 2) +1]));
 				};
 			}

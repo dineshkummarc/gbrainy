@@ -45,7 +45,7 @@ namespace gbrainy.Games.Calculation
 		public override string Question {
 			get {
 				string nums = string.Empty;
-	
+
 				for (int i = 0; i < numbers.Length - 1; i++)
 					nums += numbers[i] + ", ";
 
@@ -61,9 +61,9 @@ namespace gbrainy.Games.Calculation
 		}
 
 		public override string Rationale {
-			get { 
-				return String.Format (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("The result of the operation is {0:##0.###}."), 
-					correct);				
+			get {
+				return String.Format (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("The result of the operation is {0}."),
+					correct);
 			}
 		}
 
@@ -117,12 +117,12 @@ namespace gbrainy.Games.Calculation
 				double ans;
 
 				ans = correct + random.Next (dist);
-				duplicated = false;	
+				duplicated = false;
 
 				// No repeated answers
 				for (int num = 0; num < options_next; num++)
 				{
-					// Due to decimal precission
+					// Due to decimal precision
 					if (options [num] == ans || options [num] == ans + 1 || options [num] == ans - 1) {
 						duplicated = true;
 						break;
@@ -131,14 +131,14 @@ namespace gbrainy.Games.Calculation
 
 				if (duplicated)
 					continue;
-			
+
 				options [options_next] = ans;
 				options_next++;
 			}
 
 			random_indices = new ArrayListIndicesRandom (options_cnt);
 			random_indices.Initialize ();
-		
+
 			for (int i = 0; i < options_cnt; i++)
 			{
 				if (random_indices [i] == correct_pos) {
@@ -153,7 +153,7 @@ namespace gbrainy.Games.Calculation
 			double x = DrawAreaX + 0.25, y = DrawAreaY + 0.16;
 			Container container = new Container (x, y,  1 - (x * 2), 0.6);
 			AddWidget (container);
-	
+
 			for (int i = 0; i < options_cnt; i++)
 			{
 				DrawableArea drawable_area = new DrawableArea (0.3, 0.1);
@@ -170,7 +170,7 @@ namespace gbrainy.Games.Calculation
 
 					e.Context.SetPangoLargeFontSize ();
 					e.Context.MoveTo (0.02, 0.02);
-					e.Context.ShowPangoText (String.Format ("{0}) {1:##0.###}", Answer.GetMultiOption (n) , options [indx]));
+					e.Context.ShowPangoText (String.Format ("{0}) {1}", Answer.GetMultiOption (n) , options [indx]));
 				};
 			}
 		}
