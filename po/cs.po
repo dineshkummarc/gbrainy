@@ -11,9 +11,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gbrainy\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
-"product=gbrainy&component=general\n"
-"POT-Creation-Date: 2011-03-10 20:20+0000\n"
-"PO-Revision-Date: 2011-03-12 21:29+0100\n"
+"product=gbrainy&keywords=I18N+L10N&component=general\n"
+"POT-Creation-Date: 2011-03-14 00:42+0000\n"
+"PO-Revision-Date: 2011-03-14 07:56+0100\n"
 "Last-Translator: Marek Černocký <marek@manet.cz>\n"
 "Language-Team: Czech <gnome-cs-list@gnome.org>\n"
 "MIME-Version: 1.0\n"
@@ -427,7 +427,7 @@ msgstr "Heslo"
 
 #: ../data/games.xml.h:42
 #: ../src/Core/Main/Verbal/AnalogiesMultipleOptions.cs:121
-#: ../src/Core/Main/Verbal/AnalogiesPairOfWordsOptions.cs:130
+#: ../src/Core/Main/Verbal/AnalogiesPairOfWordsOptions.cs:132
 #: ../src/Games/Logic/PuzzleFigurePattern.cs:191
 #: ../src/Games/Logic/PuzzleLargerShape.cs:303
 #: ../src/Games/Logic/PuzzleMissingPiece.cs:173
@@ -524,7 +524,6 @@ msgstr ""
 "mají auto."
 
 #: ../data/games.xml.h:59
-#| msgid "[option_prefix] [option_b]%"
 msgid "[option_a] and [option_b]"
 msgstr "[option_a] a [option_b]"
 
@@ -1126,7 +1125,6 @@ msgid "Money"
 msgstr "peníze"
 
 #: ../data/verbal_analogies.xml.h:117
-#| msgid "Medium"
 msgid "Museum"
 msgstr "muzeum"
 
@@ -1330,7 +1328,6 @@ msgid "The word 'taxidermist' is used to define a person that?"
 msgstr "Slovo „taxidermista“ se používá pro označení osoby, která?"
 
 #: ../data/verbal_analogies.xml.h:167
-#| msgid "Wheat"
 msgid "Theater"
 msgstr "divadlo"
 
@@ -2243,7 +2240,7 @@ msgstr "Možné správné odpovědi jsou: {0}."
 #. For example: "Possible correct answers are: a, b, c, d."
 #: ../src/Core/Main/Verbal/Analogies.cs:87
 #: ../src/Core/Main/Verbal/AnalogiesMultipleOptions.cs:63
-#: ../src/Core/Main/Verbal/AnalogiesPairOfWordsOptions.cs:64
+#: ../src/Core/Main/Verbal/AnalogiesPairOfWordsOptions.cs:62
 msgid ", "
 msgstr ", "
 
@@ -2255,16 +2252,17 @@ msgstr "Více možností č. {0}"
 #. Translators: {0} is replaced by a question and {1} by the suggestions on how to answer
 #. E.g: What is the correct option? Answer A, B, C.
 #: ../src/Core/Main/Verbal/AnalogiesMultipleOptions.cs:69
+#: ../src/Core/Main/Verbal/AnalogiesPairOfWordsOptions.cs:70
 #, csharp-format
 msgid "{0} Answer {1}."
 msgstr "{0} Odpovězte {1}."
 
 #. Translators: this "option) answer" for example "a) "21 x 60 = 1260". This should not be changed for most of the languages
 #: ../src/Core/Main/Verbal/AnalogiesMultipleOptions.cs:106
-#: ../src/Core/Main/Verbal/AnalogiesPairOfWordsOptions.cs:112
+#: ../src/Core/Main/Verbal/AnalogiesPairOfWordsOptions.cs:114
 #: ../src/Games/Logic/PuzzleOstracism.cs:159
 #: ../src/Games/Logic/PuzzlePredicateLogic.cs:182
-#: ../src/Games/Calculation/CalculationCloserFraction.cs:163
+#: ../src/Games/Calculation/CalculationCloserFraction.cs:164
 #: ../src/Games/Calculation/CalculationGreatestDivisor.cs:153
 #, csharp-format
 msgid "{0}) {1}"
@@ -2276,7 +2274,7 @@ msgid "Pair of words compare #{0}"
 msgstr "Srovnání páru slov č. {0}"
 
 #: ../src/Core/Main/Verbal/AnalogiesPairOfWordsCompare.cs:57
-#: ../src/Core/Main/Verbal/AnalogiesPairOfWordsOptions.cs:69
+#: ../src/Core/Main/Verbal/AnalogiesPairOfWordsOptions.cs:67
 #, csharp-format
 msgid ""
 "Given the relationship between the two words below, which word has the same "
@@ -2284,7 +2282,7 @@ msgid ""
 msgstr "Níže je dán vztah mezi párem slov. Jaké slovo má stejný vztah k „{0}“?"
 
 #: ../src/Core/Main/Verbal/AnalogiesPairOfWordsCompare.cs:94
-#: ../src/Core/Main/Verbal/AnalogiesPairOfWordsOptions.cs:134
+#: ../src/Core/Main/Verbal/AnalogiesPairOfWordsOptions.cs:136
 #, csharp-format
 msgid "Words: {0}"
 msgstr "Slova: {0}"
@@ -2456,8 +2454,9 @@ msgstr ""
 "Hra na lámání hlavy, při které se pobavíte a udržíte mozek v dobré kondici."
 
 #: ../src/Clients/Classical/Dialogs/AboutDialog.cs:80
-msgid "gbrainy project web site:http://live.gnome.org/gbrainy"
-msgstr "webové stránky projektu: http://live.gnome.org/gbrainy"
+#| msgid "gbrainy project web site:http://live.gnome.org/gbrainy"
+msgid "gbrainy project web site: http://live.gnome.org/gbrainy"
+msgstr "webové stránky projektu gbrainy: http://live.gnome.org/gbrainy"
 
 #: ../src/Clients/Classical/Dialogs/AboutDialog.cs:82
 #, csharp-format
@@ -4650,8 +4649,9 @@ msgstr ""
 
 #: ../src/Games/Calculation/CalculationAverage.cs:65
 #, csharp-format
-msgid "The result of the operation is {0:##0.###}."
-msgstr "Výsledek výpočtu je {0:##0.###}"
+#| msgid "The result of the operation is {0:##0.###}."
+msgid "The result of the operation is {0}."
+msgstr "Výsledek operace je {0}"
 
 #: ../src/Games/Calculation/CalculationCloserFraction.cs:37
 msgid "Closer fraction"
@@ -4659,17 +4659,20 @@ msgstr "Přesnější zlomek"
 
 #: ../src/Games/Calculation/CalculationCloserFraction.cs:46
 #, csharp-format
+#| msgid ""
+#| "Which of the following numbers is closer to {0:##0.###}? Answer {1}, {2}, "
+#| "{3} or {4}."
 msgid ""
-"Which of the following numbers is closer to {0:##0.###}? Answer {1}, {2}, "
-"{3} or {4}."
+"Which of the following numbers is closer to {0}? Answer {1}, {2}, {3} or {4}."
 msgstr ""
-"Který z těchto zlomků má nejblíže k {0:##0.###}? Odpovězte {1}, {2}, {3} "
-"nebo {4}."
+"Který z následujících čísel má nejblíže k {0}? Odpovězte {1}, {2}, {3} nebo "
+"{4}."
 
-#: ../src/Games/Calculation/CalculationCloserFraction.cs:54
+#: ../src/Games/Calculation/CalculationCloserFraction.cs:55
 #, csharp-format
-msgid "The result of the operation {0} / {1} is {2:##0.###}"
-msgstr "Když vydělíme {0} číslem {1}, vyjde nám {2:##0.###}"
+#| msgid "The result of the operation {0} / {1} is {2:##0.###}"
+msgid "The result of the operation {0} / {1} is {2}"
+msgstr "Výsledkem operace {0} : {1} je {2}"
 
 #: ../src/Games/Calculation/CalculationFractions.cs:60
 msgid "Fractions"
