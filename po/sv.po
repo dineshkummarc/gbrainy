@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gbrainy\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-01-30 23:15+0100\n"
-"PO-Revision-Date: 2011-01-30 23:26+0100\n"
+"POT-Creation-Date: 2011-03-14 10:05+0100\n"
+"PO-Revision-Date: 2011-03-14 10:06+0100\n"
 "Last-Translator: Daniel Nylander <po@danielnylander.se>\n"
 "Language-Team: Swedish <tp-sv@listor.tp-sv.se>\n"
 "Language: sv\n"
@@ -243,8 +243,8 @@ msgid "Password"
 msgstr "Lösenord"
 
 #: ../data/games.xml.h:42
-#: ../src/Core/Main/Verbal/AnalogiesMultipleOptions.cs:119
-#: ../src/Core/Main/Verbal/AnalogiesPairOfWordsOptions.cs:129
+#: ../src/Core/Main/Verbal/AnalogiesMultipleOptions.cs:134
+#: ../src/Core/Main/Verbal/AnalogiesPairOfWordsOptions.cs:148
 #: ../src/Games/Logic/PuzzleFigurePattern.cs:190
 #: ../src/Games/Logic/PuzzleLargerShape.cs:302
 #: ../src/Games/Logic/PuzzleMissingPiece.cs:172
@@ -1885,13 +1885,14 @@ msgstr "Multipla alternativ {0}"
 #. Translators: {0} is replaced by a question and {1} by the suggestions on how to answer
 #. E.g: What is the correct option? Answer A, B, C.
 #: ../src/Core/Main/Verbal/AnalogiesMultipleOptions.cs:69
+#: ../src/Core/Main/Verbal/AnalogiesPairOfWordsOptions.cs:72
 #, csharp-format
 msgid "{0} Answer {1}."
 msgstr "{0} Svara {1}."
 
 #. Translators: this "option) answer" for example "a) "21 x 60 = 1260". This should not be changed for most of the languages
-#: ../src/Core/Main/Verbal/AnalogiesMultipleOptions.cs:105
-#: ../src/Core/Main/Verbal/AnalogiesPairOfWordsOptions.cs:112
+#: ../src/Core/Main/Verbal/AnalogiesMultipleOptions.cs:120
+#: ../src/Core/Main/Verbal/AnalogiesPairOfWordsOptions.cs:131
 #: ../src/Games/Logic/PuzzleOstracism.cs:159
 #: ../src/Games/Logic/PuzzlePredicateLogic.cs:176
 #: ../src/Games/Calculation/CalculationCloserFraction.cs:161
@@ -1912,7 +1913,7 @@ msgid "Given the relationship between the two words below, which word has the sa
 msgstr "Vilket ord har den närmsta relationen till \"{0}\" enligt förhållandet mellan nedanstående ord?"
 
 #: ../src/Core/Main/Verbal/AnalogiesPairOfWordsCompare.cs:94
-#: ../src/Core/Main/Verbal/AnalogiesPairOfWordsOptions.cs:133
+#: ../src/Core/Main/Verbal/AnalogiesPairOfWordsOptions.cs:152
 #, csharp-format
 msgid "Words: {0}"
 msgstr "Ord: {0}"
@@ -2093,14 +2094,14 @@ msgstr "Du bör ha fått en kopia av GNU General Public License tillsammans med 
 msgid "A brain teaser game for fun and to keep your brain trained."
 msgstr "En hjärnretare att ha kul med och träna dina hjärnmuskler."
 
-#: ../src/Clients/Classical/Dialogs/AboutDialog.cs:81
+#: ../src/Clients/Classical/Dialogs/AboutDialog.cs:80
+msgid "gbrainy project web site:http://live.gnome.org/gbrainy"
+msgstr "Webbplats för gbrainy-projektet: http://live.gnome.org/gbrainy"
+
+#: ../src/Clients/Classical/Dialogs/AboutDialog.cs:82
 #, csharp-format
 msgid "You can also play on-line at {0}"
 msgstr "Du kan även spela på nätet på {0}"
-
-#: ../src/Clients/Classical/Dialogs/AboutDialog.cs:84
-msgid "gbrainy project web site"
-msgstr "Webbplats för gbrainy-projektet"
 
 #. Column: Game Name
 #: ../src/Clients/Classical/Dialogs/CustomGameDialog.cs:68
@@ -2623,18 +2624,18 @@ msgstr "Vad är den nästa logiska sekvensen av objekt i sista kolumnen? Se unde
 msgid "It is the only combination that you can build with the given elements without repeating them."
 msgstr "Det är den enda kombinationen som du kan bygga med givna element utan att upprepa dem."
 
-#: ../src/Games/Logic/PuzzleFigures.cs:78
-#: ../src/Games/Logic/PuzzleFigures.cs:90
-#: ../src/Games/Logic/PuzzleFigures.cs:103
+#: ../src/Games/Logic/PuzzleFigures.cs:82
+#: ../src/Games/Logic/PuzzleFigures.cs:94
+#: ../src/Games/Logic/PuzzleFigures.cs:107
 #, csharp-format
 msgid "{0} ->"
 msgstr "{0} ->"
 
-#: ../src/Games/Logic/PuzzleFigures.cs:159
+#: ../src/Games/Logic/PuzzleFigures.cs:163
 msgid "Convention when giving the answer is:"
 msgstr "Standarden för hur man anger svaret är:"
 
-#: ../src/Games/Logic/PuzzleFigures.cs:163
+#: ../src/Games/Logic/PuzzleFigures.cs:167
 #, csharp-format
 msgid "E.g: {0}{1}{2} (pentagon, triangle, circle)"
 msgstr "T.ex: {0}{1}{2} (femkant, triangel, cirkel)"
