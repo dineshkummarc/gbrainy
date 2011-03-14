@@ -88,8 +88,8 @@
 				int digits = 4 + random.Next (3);
 				int rslt = (int) Math.Pow (10, digits);
 			</variables>
-			<question>A file is protected by a password formed by a [digits] digit number (ranging from 0 to 9). How many different passwords can you have?</question>
-			<question plural="[digits]">A file is protected by a password formed by a [digits] digits number (ranging from 0 to 9). How many different passwords can you have?</question>
+			<question>A file is protected by a password formed by a [digits] digit number represented in base 10 (ranging from 0 to 9). How many different passwords can you have?</question>
+			<question plural="[digits]">A file is protected by a password formed by a [digits] digits number represented in base 10 (ranging from 0 to 9). How many different passwords can you have?</question>
 			<answer>[rslt]</answer>
 			<_rationale>Every digit has 10 possibilities. The total number of possibilities is 10 at the power of [digits].</_rationale>
 		</variant>
@@ -98,8 +98,8 @@
 				int digits = 2 + random.Next (2);
 				int rslt = (int) Math.Pow (8, digits);
 			</variables>
-			<question>A file is protected by a password formed by a [digits] digit octal number (ranging from 0 to 7). How many different passwords can you have?</question>
-			<question plural="[digits]">A file is protected by a password formed by a [digits] digits octal number (ranging from 0 to 7). How many different passwords can you have?</question>
+			<question>A file is protected by a password formed by a [digits] digit represented in base 8 (ranging from 0 to 7). How many different passwords can you have?</question>
+			<question plural="[digits]">A file is protected by a password formed by a [digits] digits represented in base 8 (ranging from 0 to 7). How many different passwords can you have?</question>
 			<answer>[rslt]</answer>
 			<_rationale>Every digit has 8 possibilities. The total number of possibilities is 8 at the power of [digits].</_rationale>
 		</variant>

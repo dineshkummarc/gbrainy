@@ -162,7 +162,7 @@ namespace gbrainy.Games.Memory
 		public override string MemoryQuestion {
 			get { 
 				return String.Format (
-					ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Which of the following graphics represent the indications previously given? Answer {0}, {1}, {2} or {3}."),
+					ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Which of the following graphics represents the indications previously given? Answer {0}, {1}, {2} or {3}."),
 					Answer.GetMultiOption (0), Answer.GetMultiOption (1), Answer.GetMultiOption (2), Answer.GetMultiOption (3));}
 		}
 
