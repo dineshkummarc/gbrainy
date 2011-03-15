@@ -5,10 +5,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gbrainy\n"
-"Report-Msgid-Bugs-To: "
-"http://bugzilla.gnome.org/enter_bug.cgi?product=gbrainy&component=general\n"
-"POT-Creation-Date: 2011-02-06 15:47+0200\n"
-"PO-Revision-Date: 2011-02-06 15:53+0200\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-03-15 22:33+0200\n"
+"PO-Revision-Date: 2011-03-15 22:48+0200\n"
 "Last-Translator: F Wolff <friedel@translate.org.za>\n"
 "Language-Team: translate-discuss-af@lists.sourceforge.net\n"
 "Language: af\n"
@@ -17,7 +16,6 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Virtaal 0.7.0-beta4\n"
-"X-Project-Style: gnome\n"
 
 #: ../tools/GameXmlGetString.cs:29
 msgid ""
@@ -427,8 +425,8 @@ msgstr ""
 "res. Byvoorbeeld: 10, 15 en 25 is veelvoude van 5."
 
 #: ../data/games.xml.h:51
-#: ../src/Core/Main/Verbal/AnalogiesMultipleOptions.cs:119
-#: ../src/Core/Main/Verbal/AnalogiesPairOfWordsOptions.cs:129
+#: ../src/Core/Main/Verbal/AnalogiesMultipleOptions.cs:134
+#: ../src/Core/Main/Verbal/AnalogiesPairOfWordsOptions.cs:148
 #: ../src/Games/Logic/PuzzleFigurePattern.cs:190
 #: ../src/Games/Logic/PuzzleLargerShape.cs:302
 #: ../src/Games/Logic/PuzzleMissingPiece.cs:172
@@ -2146,13 +2144,14 @@ msgstr "Veelvuldige keuses #{0}"
 #. Translators: {0} is replaced by a question and {1} by the suggestions on how to answer
 #. E.g: What is the correct option? Answer A, B, C.
 #: ../src/Core/Main/Verbal/AnalogiesMultipleOptions.cs:69
+#: ../src/Core/Main/Verbal/AnalogiesPairOfWordsOptions.cs:72
 #, csharp-format
 msgid "{0} Answer {1}."
 msgstr "{0} Antwoord {1}."
 
 #. Translators: this "option) answer" for example "a) "21 x 60 = 1260". This should not be changed for most of the languages
-#: ../src/Core/Main/Verbal/AnalogiesMultipleOptions.cs:105
-#: ../src/Core/Main/Verbal/AnalogiesPairOfWordsOptions.cs:112
+#: ../src/Core/Main/Verbal/AnalogiesMultipleOptions.cs:120
+#: ../src/Core/Main/Verbal/AnalogiesPairOfWordsOptions.cs:131
 #: ../src/Games/Logic/PuzzleOstracism.cs:159
 #: ../src/Games/Logic/PuzzlePredicateLogic.cs:176
 #: ../src/Games/Calculation/CalculationCloserFraction.cs:161
@@ -2177,7 +2176,7 @@ msgstr ""
 "verwant aan '{0}'?"
 
 #: ../src/Core/Main/Verbal/AnalogiesPairOfWordsCompare.cs:94
-#: ../src/Core/Main/Verbal/AnalogiesPairOfWordsOptions.cs:133
+#: ../src/Core/Main/Verbal/AnalogiesPairOfWordsOptions.cs:152
 #, csharp-format
 msgid "Words: {0}"
 msgstr "Woorde: {0}"
@@ -2385,14 +2384,14 @@ msgstr ""
 msgid "A brain teaser game for fun and to keep your brain trained."
 msgstr "'n Kopkrapspeletjie vir plesier en breinoefening."
 
-#: ../src/Clients/Classical/Dialogs/AboutDialog.cs:81
+#: ../src/Clients/Classical/Dialogs/AboutDialog.cs:80
+msgid "gbrainy project web site:http://live.gnome.org/gbrainy"
+msgstr "gbrainy-projek se webwerf: http://live.gnome.org/gbrainy"
+
+#: ../src/Clients/Classical/Dialogs/AboutDialog.cs:82
 #, csharp-format
 msgid "You can also play on-line at {0}"
 msgstr "U kan ook aanlyn speel by {0}"
-
-#: ../src/Clients/Classical/Dialogs/AboutDialog.cs:84
-msgid "gbrainy project web site"
-msgstr "gbrainy-projek se webwerf"
 
 #. Column: Game Name
 #: ../src/Clients/Classical/Dialogs/CustomGameDialog.cs:68
@@ -3065,18 +3064,18 @@ msgstr ""
 "Dit is die enigste kommbinasie wat gebou kan word met die gegewe elemente, "
 "sonder om enige element te herhaal."
 
-#: ../src/Games/Logic/PuzzleFigures.cs:78
-#: ../src/Games/Logic/PuzzleFigures.cs:90
-#: ../src/Games/Logic/PuzzleFigures.cs:103
+#: ../src/Games/Logic/PuzzleFigures.cs:82
+#: ../src/Games/Logic/PuzzleFigures.cs:94
+#: ../src/Games/Logic/PuzzleFigures.cs:107
 #, csharp-format
 msgid "{0} ->"
 msgstr "{0} ->"
 
-#: ../src/Games/Logic/PuzzleFigures.cs:159
+#: ../src/Games/Logic/PuzzleFigures.cs:163
 msgid "Convention when giving the answer is:"
 msgstr "Die konvensie vir die antwoord is:"
 
-#: ../src/Games/Logic/PuzzleFigures.cs:163
+#: ../src/Games/Logic/PuzzleFigures.cs:167
 #, csharp-format
 msgid "E.g: {0}{1}{2} (pentagon, triangle, circle)"
 msgstr "Bv.: {0}{1}{2} (vyfhoek, driehoek, sirkel)"
