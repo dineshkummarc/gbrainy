@@ -77,7 +77,7 @@ namespace gbrainy.Clients.Classical.Dialogs
 
 			Comments = Catalog.GetString ("A brain teaser game for fun and to keep your brain trained.");
 			Comments += "\n";
-			Comments += Catalog.GetString ("gbrainy project web site" + ": " + "http://live.gnome.org/gbrainy");
+			Comments += String.Format (Catalog.GetString ("gbrainy project web site: {0}"), "http://live.gnome.org/gbrainy");
 			Website = Defines.WEB_SITE;
 			WebsiteLabel = String.Format (Catalog.GetString ("You can also play on-line at {0}"), Defines.WEB_SITE);
 			TranslatorCredits = translators;
