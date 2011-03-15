@@ -10,9 +10,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gbrainy\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
-"product=gbrainy&component=general\n"
-"POT-Creation-Date: 2011-02-01 20:17+0000\n"
-"PO-Revision-Date: 2011-02-02 23:15+0100\n"
+"product=gbrainy&keywords=I18N+L10N&component=general\n"
+"POT-Creation-Date: 2011-03-14 18:31+0000\n"
+"PO-Revision-Date: 2011-03-15 00:13+0200\n"
 "Last-Translator: Daniel Șerbănescu <cyber19rider@gmail.com>\n"
 "Language-Team: Romanian Gnome Team <gnomero-list@lists.sourceforge.net>\n"
 "MIME-Version: 1.0\n"
@@ -434,8 +434,8 @@ msgid "Password"
 msgstr "Parola"
 
 #: ../data/games.xml.h:42
-#: ../src/Core/Main/Verbal/AnalogiesMultipleOptions.cs:119
-#: ../src/Core/Main/Verbal/AnalogiesPairOfWordsOptions.cs:129
+#: ../src/Core/Main/Verbal/AnalogiesMultipleOptions.cs:134
+#: ../src/Core/Main/Verbal/AnalogiesPairOfWordsOptions.cs:148
 #: ../src/Games/Logic/PuzzleFigurePattern.cs:190
 #: ../src/Games/Logic/PuzzleLargerShape.cs:302
 #: ../src/Games/Logic/PuzzleMissingPiece.cs:172
@@ -2197,13 +2197,14 @@ msgstr "Variante multiple nr.{0}"
 #. Translators: {0} is replaced by a question and {1} by the suggestions on how to answer
 #. E.g: What is the correct option? Answer A, B, C.
 #: ../src/Core/Main/Verbal/AnalogiesMultipleOptions.cs:69
+#: ../src/Core/Main/Verbal/AnalogiesPairOfWordsOptions.cs:72
 #, csharp-format
 msgid "{0} Answer {1}."
 msgstr "{0} Răspundeți folosind {1}."
 
 #. Translators: this "option) answer" for example "a) "21 x 60 = 1260". This should not be changed for most of the languages
-#: ../src/Core/Main/Verbal/AnalogiesMultipleOptions.cs:105
-#: ../src/Core/Main/Verbal/AnalogiesPairOfWordsOptions.cs:112
+#: ../src/Core/Main/Verbal/AnalogiesMultipleOptions.cs:120
+#: ../src/Core/Main/Verbal/AnalogiesPairOfWordsOptions.cs:131
 #: ../src/Games/Logic/PuzzleOstracism.cs:159
 #: ../src/Games/Logic/PuzzlePredicateLogic.cs:176
 #: ../src/Games/Calculation/CalculationCloserFraction.cs:161
@@ -2228,7 +2229,7 @@ msgstr ""
 "aceeași relație cu „{0}”?"
 
 #: ../src/Core/Main/Verbal/AnalogiesPairOfWordsCompare.cs:94
-#: ../src/Core/Main/Verbal/AnalogiesPairOfWordsOptions.cs:133
+#: ../src/Core/Main/Verbal/AnalogiesPairOfWordsOptions.cs:152
 #, csharp-format
 msgid "Words: {0}"
 msgstr "Cuvinte: {0}"
@@ -2434,14 +2435,14 @@ msgstr ""
 msgid "A brain teaser game for fun and to keep your brain trained."
 msgstr "Un joc de inteligență distractiv pentru antrenarea creierului."
 
-#: ../src/Clients/Classical/Dialogs/AboutDialog.cs:81
+#: ../src/Clients/Classical/Dialogs/AboutDialog.cs:80
+msgid "gbrainy project web site:http://live.gnome.org/gbrainy"
+msgstr "Pagina web a proiectului gbrainy: http://live.gnome.org/gbrainy"
+
+#: ../src/Clients/Classical/Dialogs/AboutDialog.cs:82
 #, csharp-format
 msgid "You can also play on-line at {0}"
 msgstr "Puteți juca și on-line la {0}"
-
-#: ../src/Clients/Classical/Dialogs/AboutDialog.cs:84
-msgid "gbrainy project web site"
-msgstr "Pagina web a proiectului gbrainy"
 
 #. Column: Game Name
 #: ../src/Clients/Classical/Dialogs/CustomGameDialog.cs:68
@@ -3123,18 +3124,18 @@ msgstr ""
 "Este singura combinație pe care o puteți construi cu elementele date, fără a "
 "le repeta."
 
-#: ../src/Games/Logic/PuzzleFigures.cs:78
-#: ../src/Games/Logic/PuzzleFigures.cs:90
-#: ../src/Games/Logic/PuzzleFigures.cs:103
+#: ../src/Games/Logic/PuzzleFigures.cs:82
+#: ../src/Games/Logic/PuzzleFigures.cs:94
+#: ../src/Games/Logic/PuzzleFigures.cs:107
 #, csharp-format
 msgid "{0} ->"
 msgstr "{0} ->"
 
-#: ../src/Games/Logic/PuzzleFigures.cs:159
+#: ../src/Games/Logic/PuzzleFigures.cs:163
 msgid "Convention when giving the answer is:"
 msgstr "Convenția când dați răspunsul este :"
 
-#: ../src/Games/Logic/PuzzleFigures.cs:163
+#: ../src/Games/Logic/PuzzleFigures.cs:167
 #, csharp-format
 msgid "E.g: {0}{1}{2} (pentagon, triangle, circle)"
 msgstr "Ex: {0}{1}{2} (pentagon, triunghi, cerc)"
@@ -4892,7 +4893,7 @@ msgstr "_Următoarea"
 
 #: ../src/Clients/Classical/gbrainy.ui.h:20
 msgid "_Pause Game"
-msgstr "_Pauză joc"
+msgstr "Întreru_pe jocul"
 
 #: ../src/Clients/Classical/gbrainy.ui.h:21
 msgid "_Settings"
