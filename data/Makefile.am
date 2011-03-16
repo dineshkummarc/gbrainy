@@ -2,7 +2,8 @@
 pixmapdir = $(datadir)/pixmaps
 pixmap_DATA = app-graphics/gbrainy.png \
 		app-graphics/gbrainy.svg \
-		app-graphics/gbrainy16.png
+		app-graphics/gbrainy16.png \
+		app-graphics/gbrainy48.png
 
 analogiesdir = $(datadir)/games/gbrainy
 
