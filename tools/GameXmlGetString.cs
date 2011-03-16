@@ -42,12 +42,12 @@ public class GameXmlSttringFactory
 			"[ago] years ago, John's age minus [ago] was equal to [proportion] times his son's age minus [ago].",
 			variable);
 
-		Catalog.GetPluralString ("A file is protected by a password formed by a [digits] digit number (ranging from 0 to 9). How many different passwords can you have?",
-			"A file is protected by a password formed by a [digits] digits number (ranging from 0 to 9). How many different passwords can you have?",
+		Catalog.GetPluralString ("A file is protected by a password formed by a [digits] digit number represented in base 10 (ranging from 0 to 9). How many different passwords can you have?",
+			"A file is protected by a password formed by a [digits] digits number represented in base 10 (ranging from 0 to 9). How many different passwords can you have?",
 			variable);
 
-		Catalog.GetPluralString ("A file is protected by a password formed by a [digits] digit octal number (ranging from 0 to 7). How many different passwords can you have?",
-			"A file is protected by a password formed by a [digits] digits octal number (ranging from 0 to 7). How many different passwords can you have?",
+		Catalog.GetPluralString ("A file is protected by a password formed by a [digits] digit represented in base 8 (ranging from 0 to 7). How many different passwords can you have?",
+			"A file is protected by a password formed by a [digits] digits represented in base 8 (ranging from 0 to 7). How many different passwords can you have?",
 			variable);
 
 		Catalog.GetPluralString ("There is [games] tennis game played simultaneously. How many different forecasts are possible?",
