@@ -67,7 +67,7 @@ install-data-local:
 	@-$(mkinstalldirs) $(DESTDIR)$(hicolordir)/32x32/apps
 	$(INSTALL_DATA) $(srcdir)/app-graphics/gbrainy.png $(DESTDIR)$(hicolordir)/32x32/apps/gbrainy.png
 	@-$(mkinstalldirs) $(DESTDIR)$(hicolordir)/48x48/apps
-	$(INSTALL_DATA) $(srcdir)/app-graphics/gbrainy.png $(DESTDIR)$(hicolordir)/48x48/apps/gbrainy.png
+	$(INSTALL_DATA) $(srcdir)/app-graphics/gbrainy48.png $(DESTDIR)$(hicolordir)/48x48/apps/gbrainy.png
 	@-$(mkinstalldirs) $(DESTDIR)$(images)
 	$(INSTALL_DATA) $(srcdir)/verbal_analogies.xml $(DESTDIR)$(images)/verbal_analogies.xml
 	$(INSTALL_DATA) $(srcdir)/games.xml $(DESTDIR)$(images)/games.xml
