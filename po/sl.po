@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gbrainy master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gbrainy&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2011-03-12 09:01+0000\n"
-"PO-Revision-Date: 2011-03-12 14:54+0100\n"
+"POT-Creation-Date: 2011-03-18 18:56+0000\n"
+"PO-Revision-Date: 2011-03-18 21:23+0100\n"
 "Last-Translator: Andrej Žnidaršič <andrej.znidarsic@gmail.com>\n"
 "Language-Team: Slovenian <gnome-si@googlegroups.com>\n"
 "Language: sl\n"
@@ -54,16 +54,16 @@ msgstr[2] "[ago] leti nazaj, je bil Janez star [proportion] krat več kot njegov
 msgstr[3] "[ago] leta nazaj, je bil Janez star [proportion] krat več kot njegov sin. "
 
 #: ../tools/GameXmlGetString.cs:45
-msgid "A file is protected by a password formed by a [digits] digit number (ranging from 0 to 9). How many different passwords can you have?"
-msgid_plural "A file is protected by a password formed by a [digits] digits number (ranging from 0 to 9). How many different passwords can you have?"
-msgstr[0] "Datoteka je zaščitena z geslom sestavljenim iz [digits] števil (vrednosti od 0 do 9). Koliko različnih gesel obstaja?"
-msgstr[1] "Datoteka je zaščitena z geslom sestavljenim iz [digits] števila (vrednosti od 0 do 9). Koliko različnih gesel obstaja?"
-msgstr[2] "Datoteka je zaščitena z geslom sestavljenim iz [digits] števil (vrednosti od 0 do 9). Koliko različnih gesel obstaja?"
-msgstr[3] "Datoteka je zaščitena z geslom sestavljenim iz [digits] števil (vrednosti od 0 do 9). Koliko različnih gesel obstaja?"
+msgid "A file is protected by a password formed by a [digits] digit number represented in base 10 (ranging from 0 to 9). How many different passwords can you have?"
+msgid_plural "A file is protected by a password formed by a [digits] digits number represented in base 10 (ranging from 0 to 9). How many different passwords can you have?"
+msgstr[0] "Datoteka je zaščitena z desetiškim geslom sestavljenim iz [digits] števil (vrednosti od 0 do 9). Koliko različnih gesel obstaja?"
+msgstr[1] "Datoteka je zaščitena z desetiškim geslom sestavljenim iz [digits] števila (vrednosti od 0 do 9). Koliko različnih gesel obstaja?"
+msgstr[2] "Datoteka je zaščitena z desetiškim geslom sestavljenim iz [digits] števil (vrednosti od 0 do 9). Koliko različnih gesel obstaja?"
+msgstr[3] "Datoteka je zaščitena z desetiškim geslom sestavljenim iz [digits] števil (vrednosti od 0 do 9). Koliko različnih gesel obstaja?"
 
 #: ../tools/GameXmlGetString.cs:49
-msgid "A file is protected by a password formed by a [digits] digit octal number (ranging from 0 to 7). How many different passwords can you have?"
-msgid_plural "A file is protected by a password formed by a [digits] digits octal number (ranging from 0 to 7). How many different passwords can you have?"
+msgid "A file is protected by a password formed by a [digits] digit represented in base 8 (ranging from 0 to 7). How many different passwords can you have?"
+msgid_plural "A file is protected by a password formed by a [digits] digits represented in base 8 (ranging from 0 to 7). How many different passwords can you have?"
 msgstr[0] "Datoteka je zaščitena z geslom v osmiškim zapisu (številke so med 0 in 7) dolžine [digits] številk. Koliko različnih gesel obstaja?"
 msgstr[1] "Datoteka je zaščitena z geslom v osmiškim zapisu (številke so med 0 in 7) dolžine [digits] številke. Koliko različnih gesel obstaja?"
 msgstr[2] "Datoteka je zaščitena z geslom v osmiškim zapisu (številke so med 0 in 7) dolžine [digits] številk. Koliko različnih gesel obstaja?"
@@ -270,7 +270,7 @@ msgstr "Geslo"
 
 #: ../data/games.xml.h:42
 #: ../src/Core/Main/Verbal/AnalogiesMultipleOptions.cs:121
-#: ../src/Core/Main/Verbal/AnalogiesPairOfWordsOptions.cs:130
+#: ../src/Core/Main/Verbal/AnalogiesPairOfWordsOptions.cs:132
 #: ../src/Games/Logic/PuzzleFigurePattern.cs:191
 #: ../src/Games/Logic/PuzzleLargerShape.cs:303
 #: ../src/Games/Logic/PuzzleMissingPiece.cs:173
@@ -1980,7 +1980,7 @@ msgstr "Mogoči pravilni odgovori so: {0}."
 #. For example: "Possible correct answers are: a, b, c, d."
 #: ../src/Core/Main/Verbal/Analogies.cs:87
 #: ../src/Core/Main/Verbal/AnalogiesMultipleOptions.cs:63
-#: ../src/Core/Main/Verbal/AnalogiesPairOfWordsOptions.cs:64
+#: ../src/Core/Main/Verbal/AnalogiesPairOfWordsOptions.cs:62
 msgid ", "
 msgstr ", "
 
@@ -1992,16 +1992,17 @@ msgstr "Izbirno vprašanje z več odgovori št.{0}"
 #. Translators: {0} is replaced by a question and {1} by the suggestions on how to answer
 #. E.g: What is the correct option? Answer A, B, C.
 #: ../src/Core/Main/Verbal/AnalogiesMultipleOptions.cs:69
+#: ../src/Core/Main/Verbal/AnalogiesPairOfWordsOptions.cs:70
 #, csharp-format
 msgid "{0} Answer {1}."
 msgstr "{0} Odgovorite z izbiro črke {1}."
 
 #. Translators: this "option) answer" for example "a) "21 x 60 = 1260". This should not be changed for most of the languages
 #: ../src/Core/Main/Verbal/AnalogiesMultipleOptions.cs:106
-#: ../src/Core/Main/Verbal/AnalogiesPairOfWordsOptions.cs:112
+#: ../src/Core/Main/Verbal/AnalogiesPairOfWordsOptions.cs:114
 #: ../src/Games/Logic/PuzzleOstracism.cs:159
 #: ../src/Games/Logic/PuzzlePredicateLogic.cs:182
-#: ../src/Games/Calculation/CalculationCloserFraction.cs:163
+#: ../src/Games/Calculation/CalculationCloserFraction.cs:164
 #: ../src/Games/Calculation/CalculationGreatestDivisor.cs:153
 #, csharp-format
 msgid "{0}) {1}"
@@ -2013,13 +2014,13 @@ msgid "Pair of words compare #{0}"
 msgstr "Primerjava para besed št.{0}"
 
 #: ../src/Core/Main/Verbal/AnalogiesPairOfWordsCompare.cs:57
-#: ../src/Core/Main/Verbal/AnalogiesPairOfWordsOptions.cs:69
+#: ../src/Core/Main/Verbal/AnalogiesPairOfWordsOptions.cs:67
 #, csharp-format
 msgid "Given the relationship between the two words below, which word has the same relationship to '{0}'?"
 msgstr "Katera beseda je z besedo '{0}' v enakem razmerju kot spodnji besedi?"
 
 #: ../src/Core/Main/Verbal/AnalogiesPairOfWordsCompare.cs:94
-#: ../src/Core/Main/Verbal/AnalogiesPairOfWordsOptions.cs:134
+#: ../src/Core/Main/Verbal/AnalogiesPairOfWordsOptions.cs:136
 #, csharp-format
 msgid "Words: {0}"
 msgstr "Besedi: {0}"
@@ -2161,8 +2162,9 @@ msgid "A brain teaser game for fun and to keep your brain trained."
 msgstr "Zabavna igra za spodbujanje razmišljanja in bistrenja misli."
 
 #: ../src/Clients/Classical/Dialogs/AboutDialog.cs:80
-msgid "gbrainy project web site:http://live.gnome.org/gbrainy"
-msgstr "Spletišče projekta gbrainy: http://live.gnome.org/gbrainy"
+#, csharp-format
+msgid "gbrainy project web site: {0}"
+msgstr "spletišče projekta gbrainy: {0}"
 
 #: ../src/Clients/Classical/Dialogs/AboutDialog.cs:82
 #, csharp-format
@@ -3663,7 +3665,7 @@ msgstr "Pomnjenje znamenj"
 
 #: ../src/Games/Memory/MemoryIndications.cs:165
 #, csharp-format
-msgid "Which of the following graphics represent the indications previously given? Answer {0}, {1}, {2} or {3}."
+msgid "Which of the following graphics represents the indications previously given? Answer {0}, {1}, {2} or {3}."
 msgstr "Katera od naslednjih slik predstavlja predhodno dana znamenja? Odgovorite {0}, {1}, {2} ali {3}."
 
 #: ../src/Games/Memory/MemoryNumbers.cs:56
@@ -3860,8 +3862,8 @@ msgstr "Povprečje seznama števil je vsota vseh števil deljena s številom št
 
 #: ../src/Games/Calculation/CalculationAverage.cs:65
 #, csharp-format
-msgid "The result of the operation is {0:##0.###}."
-msgstr "Rezultat izračuna je {0:##0.###}."
+msgid "The result of the operation is {0}."
+msgstr "Rezultat operacije je {0}."
 
 #: ../src/Games/Calculation/CalculationCloserFraction.cs:37
 msgid "Closer fraction"
@@ -3869,13 +3871,13 @@ msgstr "Bližji ulomek"
 
 #: ../src/Games/Calculation/CalculationCloserFraction.cs:46
 #, csharp-format
-msgid "Which of the following numbers is closer to {0:##0.###}? Answer {1}, {2}, {3} or {4}."
-msgstr "Katero od naslednjih števil je bližje {0:##0.###}? Odgovorite {1}, {2}, {3} ali {4}."
+msgid "Which of the following numbers is closer to {0}? Answer {1}, {2}, {3} or {4}."
+msgstr "Katero od naslednjih števil je bližje {0}? Odgovorite {1}, {2}, {3} ali {4}."
 
-#: ../src/Games/Calculation/CalculationCloserFraction.cs:54
+#: ../src/Games/Calculation/CalculationCloserFraction.cs:55
 #, csharp-format
-msgid "The result of the operation {0} / {1} is {2:##0.###}"
-msgstr "Številčni prikaz ulomka {0} / {1} je {2:##0.###}"
+msgid "The result of the operation {0} / {1} is {2}"
+msgstr "Rezultat operacije {0} / {1} je {2}"
 
 #: ../src/Games/Calculation/CalculationFractions.cs:60
 msgid "Fractions"
