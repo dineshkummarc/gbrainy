@@ -30,17 +30,12 @@ if ENABLE_TESTS
 ASSEMBLIES = \
 	$(NUNIT_LIBS)			\
 	$(MONO_ADDINS_LIBS)		\
-	-r:gbrainy.Core.dll	\
-	-r:gbrainy.exe
+	-r:$(top_builddir)/src/gbrainy.Core.dll	\
+	-r:$(top_builddir)/src/gbrainy.exe
 
-MONO_PATH = .:$(top_builddir)/src:
+MONO_PATH = $(top_builddir)/src
 
 RESSOURCES =
-
-COPY_FILES:
-	cp ../src/gbrainy.Core.dll .
-	cp ../src/gbrainy.exe .
-	cp ../src/gbrainy.Games.dll .
 
 $(CORE): $(CSFILES_CORE) $(top_builddir)/src/gbrainy.exe
 	$(CSC) -out:$@ $(CSFLAGS) $(CSFILES_CORE) $(ASSEMBLIES) $(RESSOURCES)
@@ -51,9 +46,9 @@ $(CLASSICAL): $(CSFILES_CLASSICAL) $(top_builddir)/src/gbrainy.exe
 $(GAMES): $(CSFILES_GAMES) $(top_builddir)/src/gbrainy.exe
 	$(CSC) -out:$@ $(CSFLAGS) $(CSFILES_GAMES) $(ASSEMBLIES) -r:../src/gbrainy.Games.dll $(RESSOURCES)
 
-all: COPY_FILES $(CORE) $(CLASSICAL) $(GAMES)
+all: $(CORE) $(CLASSICAL) $(GAMES)
 
-run: COPY_FILES $(CORE) $(CLASSICAL) $(GAMES)
+run: $(CORE) $(CLASSICAL) $(GAMES)
 	MONO_PATH=$(MONO_PATH) $(NUNIT) $(CLASSICAL) -nologo
 	MONO_PATH=$(MONO_PATH) $(NUNIT) $(CORE) -nologo
 	MONO_PATH=$(MONO_PATH) $(NUNIT) $(GAMES) -nologo

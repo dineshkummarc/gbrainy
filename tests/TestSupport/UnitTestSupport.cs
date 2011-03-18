@@ -33,8 +33,13 @@ namespace gbrainyTest
 			ServiceLocator.Instance.RegisterService <ITranslations> (new TranslationsCatalog ());
 			ServiceLocator.Instance.RegisterService <IConfiguration> (new MemoryConfiguration ());
 
+			string mono_path = Environment.GetEnvironmentVariable ("MONO_PATH");
+
+			if (String.IsNullOrEmpty (mono_path))
+				throw new InvalidOperationException ("Use MONO_PATH enviroment variable to specify the location of the assemblies");
+
 			// Configuration
-			ServiceLocator.Instance.GetService <IConfiguration> ().Set (ConfigurationKeys.AssembliesDir, ".");
+			ServiceLocator.Instance.GetService <IConfiguration> ().Set (ConfigurationKeys.AssembliesDir, mono_path);
 		}
 	}
 }

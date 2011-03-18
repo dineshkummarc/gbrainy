@@ -12,9 +12,11 @@ ASSEMBLIES = \
 	-r:../src/gbrainy.Core.dll	\
 	-r:Mono.Posix
 
+MONO_PATH = .:$(top_builddir)/src:
+
 GameXmlToGetString.exe: $(GAMESXMLSTRINGS_CSFILES) ../data/games.xml $(srcdir)/GameXmlGetStringTemplate.cs
 		   $(CSC) -target:winexe -out:$@ $(EXTRAFLAGS) $(GAMESXMLSTRINGS_CSFILES) $(ASSEMBLIES)
-		   export MONO_PATH=../src && $(MONO) $@ $(srcdir)
+		   export MONO_PATH=$(MONO_PATH) && $(MONO) $@ $(srcdir)
 
 TranslationsChecker.exe: $(TRANSLATIONSCHECKER_CSFILES)
 		   $(CSC) -target:winexe -out:$@ $(EXTRAFLAGS) $(TRANSLATIONSCHECKER_CSFILES) $(ASSEMBLIES)
