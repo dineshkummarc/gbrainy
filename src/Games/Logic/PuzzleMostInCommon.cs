@@ -102,7 +102,7 @@ namespace gbrainy.Games.Logic
 			array_good.AddRange (new Element [] {Element.SmallCircle, Element.SmallCircle, Element.SmallCircle,
 				Element.MediumCircle,Element.MediumCircle, Element.MediumCircleWithChild, Element.MediumCircleWithChild});
 
-			Answer.CheckAttributes |= GameAnswerCheckAttributes.MultiOption;
+			Answer.CheckAttributes |= GameAnswerCheckAttributes.MultiOption | GameAnswerCheckAttributes.IgnoreSpaces;
 
 			// Four random samples with equal elements
 			questions = new ArrayList ();

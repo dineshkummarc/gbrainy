@@ -70,8 +70,7 @@ namespace gbrainy.Games.Logic
 			// http://msdn.microsoft.com/en-us/library/system.globalization.datetimeformatinfo.aspx
 			// For 12-hour clock format use {0:%h} and for 24-hour clock format use {0:%H}. The date formats {0:h} and {0:H} are invalid.
 			Answer.Correct = String.Format (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("{0:h tt}"), ans);
-			
-			Answer.CheckAttributes = GameAnswerCheckAttributes.Trim | GameAnswerCheckAttributes.IgnoreCase | GameAnswerCheckAttributes.IgnoreSpaces;
+			Answer.CheckAttributes = GameAnswerCheckAttributes.IgnoreCase | GameAnswerCheckAttributes.IgnoreSpaces;
 		}
 
 		public override void Draw (CairoContextEx gr, int area_width, int area_height, bool rtl)

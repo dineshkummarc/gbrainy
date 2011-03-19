@@ -63,8 +63,7 @@ namespace gbrainy.Games.Logic
 
 		protected override void Initialize ()
 		{
-			Answer.CheckAttributes = GameAnswerCheckAttributes.Trim | GameAnswerCheckAttributes.IgnoreCase 
-				| GameAnswerCheckAttributes.MatchAll | GameAnswerCheckAttributes.MultiOption;
+			Answer.CheckAttributes |= GameAnswerCheckAttributes.MatchAll | GameAnswerCheckAttributes.MultiOption | GameAnswerCheckAttributes.IgnoreSpaces;
 
 			switch (CurrentDifficulty) {
 			case GameDifficulty.Easy:

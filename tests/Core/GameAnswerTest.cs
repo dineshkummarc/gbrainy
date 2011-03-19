@@ -25,7 +25,7 @@ using gbrainy.Core.Main;
 namespace gbrainyTest
 {
 	[TestFixture]
-	public class GameTest : UnitTestSupport
+	public class GameAnswerTest : UnitTestSupport
 	{
 		[TestFixtureSetUp]
 		public void Construct ()

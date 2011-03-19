@@ -251,7 +251,7 @@
 			<answer>[rslt_a] | [rslt_b]</answer>
 			<_answer_show>[rslt_a] and [rslt_b]</_answer_show>
 			<answer_expression>[0-9]+</answer_expression>
-			<answer_checkattributes>Trim | MatchAll</answer_checkattributes>
+			<answer_checkattributes>MatchAll</answer_checkattributes>
 			<_rationale>From year 1000 to year 10000, palindrome years occur at 110 year intervals except for the end of each millennium that occur at a 11 years interval.</_rationale>
 		</variant>
 	</game>
@@ -310,7 +310,7 @@
 			<answer_show>[answer_a], [answer_b], [answer_c], [answer_d], [answer_e]</answer_show>
 			<answer>[answer_a] | [answer_b] | [answer_c] | [answer_d] | [answer_e]</answer>
 			<answer_expression>[0-9]+</answer_expression>
-			<answer_checkattributes>Trim | MatchAll</answer_checkattributes>
+			<answer_checkattributes>MatchAll</answer_checkattributes>
 		</variant>
 	</game>
 
@@ -408,7 +408,7 @@
 			<option x = "0.3" y = "0.6" width ="0.45" height ="0.1" order ="randomized">
 				<string _text = "[option_prefix] [option_c] and [option_d]" x = "0.05" y = "0.02" size = "large"/>
 			</option>
-
+			<!-- Since this a multioption the answer string is set to option | this string, what makes answer_show is not useful here -->
 			<_answer>[option_a] and [option_b]</_answer>
 			<_rationale>[option_a] and [option_b] are both multiples of [product].</_rationale>
 		</variant>

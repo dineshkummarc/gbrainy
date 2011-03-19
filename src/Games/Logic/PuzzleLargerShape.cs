@@ -125,7 +125,7 @@ namespace gbrainy.Games.Logic
 
 		protected override void Initialize ()
 		{
-			Answer.CheckAttributes |= GameAnswerCheckAttributes.MultiOption;
+			Answer.CheckAttributes |= GameAnswerCheckAttributes.MultiOption | GameAnswerCheckAttributes.IgnoreSpaces;
 			palette = new ColorPalette ();
 
 			switch (random.Next (2)) {

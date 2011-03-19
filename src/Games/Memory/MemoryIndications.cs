@@ -176,7 +176,7 @@ namespace gbrainy.Games.Memory
 			indications[2] = new Indication (Indication.Type.Turn, second_turn); // up or down
 			indications[3] = new Indication (Indication.Type.Turn, random.Next (2)); // right or left
 
-			Answer.CheckAttributes |= GameAnswerCheckAttributes.MultiOption;
+			Answer.CheckAttributes |= GameAnswerCheckAttributes.MultiOption | GameAnswerCheckAttributes.IgnoreSpaces;
 
 			if (CurrentDifficulty==GameDifficulty.Easy) {
 				indications[4] = new Indication (Indication.Type.End, 1);		

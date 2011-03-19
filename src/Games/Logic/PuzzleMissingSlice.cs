@@ -85,7 +85,7 @@ namespace gbrainy.Games.Logic
 			random_indices.Initialize ();
 			ans_pos = random.Next (possible_answers);
 
-			Answer.CheckAttributes |= GameAnswerCheckAttributes.MultiOption;
+			Answer.CheckAttributes |= GameAnswerCheckAttributes.MultiOption | GameAnswerCheckAttributes.IgnoreSpaces;
 			Answer.SetMultiOptionAnswer (ans_pos, Answer.GetFigureName (ans_pos));
 
 			bad_answers = new int [possible_answers * items_per_slice];

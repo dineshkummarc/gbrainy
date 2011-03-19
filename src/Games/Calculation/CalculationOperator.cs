@@ -106,7 +106,7 @@ namespace gbrainy.Games.Calculation
 
 			Answer.Correct = String.Format ("{0} | {1}", oper1, oper2);
 			Answer.CheckExpression = "[+*-/]";
-			Answer.CheckAttributes = GameAnswerCheckAttributes.Trim | GameAnswerCheckAttributes.MatchAll;
+			Answer.CheckAttributes |= GameAnswerCheckAttributes.MatchAll;
 			Answer.CorrectShow = String.Format (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("{0} and {1}"), oper1, oper2);
 		}
 

@@ -49,7 +49,7 @@ namespace gbrainy.Games.Logic
 			random_indices = new ArrayListIndicesRandom (figures);
 			random_indices.Initialize ();
 
-			Answer.CheckAttributes |= GameAnswerCheckAttributes.MultiOption;
+			Answer.CheckAttributes |= GameAnswerCheckAttributes.MultiOption | GameAnswerCheckAttributes.IgnoreSpaces;
 
 			for (int i = 0; i < random_indices.Count; i++) {
 				if (random_indices[i] != answer_index)

@@ -60,7 +60,7 @@ namespace gbrainy.Games.Calculation
 
 		protected override void Initialize ()
 		{
-			Answer.CheckAttributes = GameAnswerCheckAttributes.Trim | GameAnswerCheckAttributes.MatchAll;
+			Answer.CheckAttributes |= GameAnswerCheckAttributes.MatchAll;
 			type = (SubGameTypes) random.Next ((int) SubGameTypes.Length);
 
 			switch (CurrentDifficulty) {
@@ -140,7 +140,8 @@ namespace gbrainy.Games.Calculation
 				number_b = -num_a;
 
 				Answer.Correct = String.Format ("{0} | {1}", number_a, number_b);
-				Answer.CheckAttributes = GameAnswerCheckAttributes.Trim | GameAnswerCheckAttributes.MatchAllInOrder;
+				Answer.CheckAttributes &= ~GameAnswerCheckAttributes.MatchAll;
+				Answer.CheckAttributes |= GameAnswerCheckAttributes.MatchAllInOrder;
 				if (base.CheckAnswer (answer) == true) 
 					return true;
 

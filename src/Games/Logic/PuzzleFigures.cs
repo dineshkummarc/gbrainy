@@ -57,7 +57,7 @@ namespace gbrainy.Games.Logic
 			random_indices = new ArrayListIndicesRandom (6);
 			random_indices.Initialize ();
 
-			Answer.CheckAttributes |= GameAnswerCheckAttributes.MultiOption;
+			Answer.CheckAttributes |= GameAnswerCheckAttributes.MultiOption | GameAnswerCheckAttributes.IgnoreSpaces;
 
 			StringBuilder sb = new StringBuilder (3);
 	

@@ -59,7 +59,7 @@ namespace gbrainy.Games.Calculation
 
 		protected override void Initialize ()
 		{
-			Answer.CheckAttributes |= GameAnswerCheckAttributes.MultiOption;
+			Answer.CheckAttributes |= GameAnswerCheckAttributes.MultiOption | GameAnswerCheckAttributes.IgnoreSpaces;
 			options = new double [options_cnt * 2];
 			bool duplicated;
 			bool done = false;

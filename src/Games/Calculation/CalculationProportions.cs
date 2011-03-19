@@ -93,7 +93,7 @@ namespace gbrainy.Games.Calculation
 				}
 			}
 
-			Answer.SetMultiOptionAnswer (which, options[correct_pos].ToString ());
+			Answer.SetMultiOptionAnswer (which, String.Format ("{0:##0.##}", options[which]));
 
 			// Options
 			double x = DrawAreaX + 0.25, y = DrawAreaY + 0.16;

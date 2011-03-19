@@ -80,7 +80,7 @@ namespace gbrainy.Games.Logic
 
 			cp = new ColorPalette ();
 
-			Answer.CheckAttributes |= GameAnswerCheckAttributes.MultiOption;
+			Answer.CheckAttributes |= GameAnswerCheckAttributes.MultiOption | GameAnswerCheckAttributes.IgnoreSpaces;
 
 			cercle_colors = new Color [total_slices];
 			badcercle_colors =  new Color [total_slices];

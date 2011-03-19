@@ -70,7 +70,7 @@ namespace gbrainy.Games.Logic
 		{
 			random_indices = new ArrayListIndicesRandom ((int) Figures.Last);
 			random_indices.Initialize ();
-			Answer.CheckAttributes |= GameAnswerCheckAttributes.MultiOption;
+			Answer.CheckAttributes |= GameAnswerCheckAttributes.MultiOption | GameAnswerCheckAttributes.IgnoreSpaces;
 
 			for (int i = 0; i < (int) Figures.Last; i++)
 			{

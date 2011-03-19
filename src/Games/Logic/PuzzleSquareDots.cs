@@ -212,7 +212,7 @@ namespace gbrainy.Games.Logic
 
 		protected override void Initialize ()
 		{
-			Answer.CheckAttributes |= GameAnswerCheckAttributes.MultiOption;
+			Answer.CheckAttributes |= GameAnswerCheckAttributes.MultiOption | GameAnswerCheckAttributes.IgnoreSpaces;
 			possible_answers = new ArrayListIndicesRandom (3);
 			possible_answers.Initialize ();
 

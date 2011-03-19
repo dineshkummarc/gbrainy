@@ -63,7 +63,7 @@ namespace gbrainy.Games.Memory
 
 		protected override void Initialize ()
 		{
-			Answer.CheckAttributes |= GameAnswerCheckAttributes.MultiOption;
+			Answer.CheckAttributes |= GameAnswerCheckAttributes.MultiOption | GameAnswerCheckAttributes.IgnoreSpaces;
 
 			switch (CurrentDifficulty) {
 			case GameDifficulty.Easy:

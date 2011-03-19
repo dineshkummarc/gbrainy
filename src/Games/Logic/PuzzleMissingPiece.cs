@@ -53,7 +53,7 @@ namespace gbrainy.Games.Logic
 
 		protected override void Initialize ()
 		{
-			Answer.CheckAttributes |= GameAnswerCheckAttributes.MultiOption;
+			Answer.CheckAttributes |= GameAnswerCheckAttributes.MultiOption| GameAnswerCheckAttributes.IgnoreSpaces;
 			random_indices = new ArrayListIndicesRandom (3);
 			random_indices.Initialize ();
 

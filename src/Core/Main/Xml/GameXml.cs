@@ -127,7 +127,7 @@ namespace gbrainy.Core.Main.Xml
 			if (attrib == GameAnswerCheckAttributes.None)
 				return;
 
-			Answer.CheckAttributes = attrib;
+			Answer.CheckAttributes |= attrib;
 		}
 
 		protected override void Initialize ()

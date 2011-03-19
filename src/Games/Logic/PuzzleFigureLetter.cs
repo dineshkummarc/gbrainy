@@ -76,7 +76,8 @@ namespace gbrainy.Games.Logic
 			}
 			
 			Answer.CheckExpression = Answer.GetMultiOptionsExpression ();
-			Answer.CheckAttributes = GameAnswerCheckAttributes.Trim | GameAnswerCheckAttributes.IgnoreCase | GameAnswerCheckAttributes.MatchAll;
+			Answer.CheckAttributes |= GameAnswerCheckAttributes.MatchAll;
+			Console.WriteLine (Answer.Correct);
 		}
 
 		public override void Draw (CairoContextEx gr, int area_width, int area_height, bool rtl)
