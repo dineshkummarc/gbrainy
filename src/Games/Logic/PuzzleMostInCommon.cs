@@ -143,8 +143,8 @@ namespace gbrainy.Games.Logic
 				array.AddRange (new Element [] {Element.SmallCircle, Element.SmallCircle, Element.MediumCircle, 
 				Element.MediumCircle,Element.MediumCircle, Element.MediumCircleWithChild, Element.MediumCircleWithChild});
 				answers.Add (BuildFigure (array, answers));
-				return;
-			}
+			} else
+			{
 
 			// Medium or Master
 
@@ -170,6 +170,7 @@ namespace gbrainy.Games.Logic
 			array.AddRange (new Element [] {Element.MediumCircle, Element.MediumCircleWithChild, Element.MediumCircleWithChild, 
 				Element.MediumCircle,Element.MediumCircle, Element.MediumCircleWithChild, Element.MediumCircleWithChild});
 			answers.Add (BuildFigure (array, answers));
+			}
 
 			double figure_size = 0.22;
 			double x = DrawAreaX - 0.05, y = DrawAreaY + 0.45;
