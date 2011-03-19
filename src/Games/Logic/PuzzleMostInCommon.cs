@@ -51,7 +51,7 @@ namespace gbrainy.Games.Logic
 				element = _element;
 			}
 		}
-	
+
 		private double small_size = 0.01;
 		private double medium_size = 0.02;
 	  	private ArrayList questions;
@@ -88,7 +88,7 @@ namespace gbrainy.Games.Logic
 
 		public override string Rationale {
 			get {
-				if (CurrentDifficulty ==  GameDifficulty.Easy) 
+				if (CurrentDifficulty ==  GameDifficulty.Easy)
 					return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("It has the same number of elements inside the figure as the given figures.");
 				else
 					return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("It is the figure with the most elements in common compared to the given figures.");
@@ -99,7 +99,7 @@ namespace gbrainy.Games.Logic
 		{
 			// Question
 			ArrayList array_good = new ArrayList ();
-			array_good.AddRange (new Element [] {Element.SmallCircle, Element.SmallCircle, Element.SmallCircle, 
+			array_good.AddRange (new Element [] {Element.SmallCircle, Element.SmallCircle, Element.SmallCircle,
 				Element.MediumCircle,Element.MediumCircle, Element.MediumCircleWithChild, Element.MediumCircleWithChild});
 
 			Answer.CheckAttributes |= GameAnswerCheckAttributes.MultiOption;
@@ -124,61 +124,61 @@ namespace gbrainy.Games.Logic
 
 			if (CurrentDifficulty ==  GameDifficulty.Easy) {
 				// Answer 1 (good)
-				array.AddRange (new Element [] {Element.SmallCircle, Element.SmallCircle, Element.SmallCircle, 
+				array.AddRange (new Element [] {Element.SmallCircle, Element.SmallCircle, Element.SmallCircle,
 				Element.MediumCircle,Element.MediumCircle, Element.MediumCircleWithChild, Element.MediumCircleWithChild});
 				answers.Add (BuildFigure (array, answers));
 
 				// Answer 2
 				array.Clear ();
-				array.AddRange (new Element [] {Element.SmallCircle, Element.SmallCircle, Element.MediumCircle, 
+				array.AddRange (new Element [] {Element.SmallCircle, Element.SmallCircle, Element.MediumCircle,
 				Element.MediumCircle,Element.MediumCircle, Element.MediumCircleWithChild, Element.MediumCircleWithChild});
 				answers.Add (BuildFigure (array, answers));
 
 				// Answer 3
 				array.Clear ();
-				array.AddRange (new Element [] {Element.SmallCircle, Element.SmallCircle, Element.MediumCircle, 
+				array.AddRange (new Element [] {Element.SmallCircle, Element.SmallCircle, Element.MediumCircle,
 				Element.MediumCircle,Element.MediumCircle, Element.MediumCircleWithChild, Element.MediumCircleWithChild});
 				answers.Add (BuildFigure (array, answers));
 
 				// Answer 4
 				array.Clear ();
-				array.AddRange (new Element [] {Element.SmallCircle, Element.SmallCircle, Element.MediumCircle, 
+				array.AddRange (new Element [] {Element.SmallCircle, Element.SmallCircle, Element.MediumCircle,
 				Element.MediumCircle,Element.MediumCircle, Element.MediumCircleWithChild, Element.MediumCircleWithChild});
 				answers.Add (BuildFigure (array, answers));
-				return;
 			}
+			else  // Medium or Master
+			{
 
-			// Medium or Master
+				// Answer 1 (good)
+				array.AddRange (new Element [] {Element.SmallCircle, Element.SmallCircle, Element.MediumCircleWithChild,
+					Element.MediumCircle,Element.MediumCircle, Element.MediumCircleWithChild, Element.MediumCircleWithChild});
+				answers.Add (BuildFigure (array, answers));
 
-			// Answer 1 (good)
-			array.AddRange (new Element [] {Element.SmallCircle, Element.SmallCircle, Element.MediumCircleWithChild, 
-				Element.MediumCircle,Element.MediumCircle, Element.MediumCircleWithChild, Element.MediumCircleWithChild});
-			answers.Add (BuildFigure (array, answers));
+				// Answer 2
+				array.Clear ();
+				array.AddRange (new Element [] {Element.SmallCircle, Element.MediumCircle, Element.MediumCircle,
+					Element.MediumCircle,Element.MediumCircle, Element.MediumCircleWithChild, Element.MediumCircleWithChild});
+				answers.Add (BuildFigure (array, answers));
 
-			// Answer 2
-			array.Clear ();
-			array.AddRange (new Element [] {Element.SmallCircle, Element.MediumCircle, Element.MediumCircle, 
-				Element.MediumCircle,Element.MediumCircle, Element.MediumCircleWithChild, Element.MediumCircleWithChild});
-			answers.Add (BuildFigure (array, answers));
+				// Answer 3
+				array.Clear ();
+				array.AddRange (new Element [] {Element.SmallCircle, Element.MediumCircleWithChild, Element.MediumCircleWithChild,
+					Element.MediumCircle,Element.MediumCircle, Element.MediumCircleWithChild, Element.MediumCircleWithChild});
+				answers.Add (BuildFigure (array, answers));
 
-			// Answer 3
-			array.Clear ();
-			array.AddRange (new Element [] {Element.SmallCircle, Element.MediumCircleWithChild, Element.MediumCircleWithChild, 
-				Element.MediumCircle,Element.MediumCircle, Element.MediumCircleWithChild, Element.MediumCircleWithChild});
-			answers.Add (BuildFigure (array, answers));
-
-			// Answer 4
-			array.Clear ();
-			array.AddRange (new Element [] {Element.MediumCircle, Element.MediumCircleWithChild, Element.MediumCircleWithChild, 
-				Element.MediumCircle,Element.MediumCircle, Element.MediumCircleWithChild, Element.MediumCircleWithChild});
-			answers.Add (BuildFigure (array, answers));
+				// Answer 4
+				array.Clear ();
+				array.AddRange (new Element [] {Element.MediumCircle, Element.MediumCircleWithChild, Element.MediumCircleWithChild,
+					Element.MediumCircle,Element.MediumCircle, Element.MediumCircleWithChild, Element.MediumCircleWithChild});
+				answers.Add (BuildFigure (array, answers));
+			}
 
 			double figure_size = 0.22;
 			double x = DrawAreaX - 0.05, y = DrawAreaY + 0.45;
 
 			HorizontalContainer container = new HorizontalContainer (x, y, random_indices_answers.Count * figure_size, 0.3);
 			DrawableArea drawable_area;
-		
+
 			AddWidget (container);
 
 			for (int i = 0; i < random_indices_answers.Count; i++)
@@ -196,13 +196,13 @@ namespace gbrainy.Games.Logic
 					e.Context.MoveTo (0.05, 0.22);
 					e.Context.ShowPangoText (Answer.GetFigureName (n));
 				};
-			
+
 				container.AddChild (drawable_area);
 			}
 		}
 
 		private ArrayListIndicesRandom RandomizeFromArray (ArrayList ar)
-		{		
+		{
 			int index;
 			object []array = (object []) ar.ToArray (typeof (object));
 			ArrayListIndicesRandom elements = new ArrayListIndicesRandom (ar.Count);
@@ -211,7 +211,7 @@ namespace gbrainy.Games.Logic
 
 			// Generate a random number that can be as big as the maximum -1
 			// Add the random element picked up element in the list
-			// The element just randomized gets out of pending list and replaced by the maximum -1 element 
+			// The element just randomized gets out of pending list and replaced by the maximum -1 element
 			for (int i = 0; i < ar.Count; i++, left--) {
 				index = random.Next (left);
 				elements.Add ((int) array[index]);
@@ -241,7 +241,7 @@ namespace gbrainy.Games.Logic
 					new FigureElement (pos6_x, pos6_y, (Element) elements[5]),
 					new FigureElement (pos7_x, pos7_y, (Element) elements[6]),
 				};
-	
+
 				for (int i = 0; i < figures.Count; i++) {
 					FigureElement [] element2 = (FigureElement []) figures[i];
 
@@ -292,7 +292,7 @@ namespace gbrainy.Games.Logic
 			gr.Stroke ();
 
 			for (int i = 0; i < figure.Length; i++)
-				DrawFigureElement (gr, x, y,  figure[i]);			
+				DrawFigureElement (gr, x, y,  figure[i]);
 
 			gr.Stroke ();
 		}
@@ -302,7 +302,7 @@ namespace gbrainy.Games.Logic
 			double x = DrawAreaX, y = DrawAreaY + 0.1;
 
 			base.Draw (gr, area_width, area_height, rtl);
-		
+
 			for (int i = 0; i < questions.Count; i++) {
 				DrawFigure (gr, x, y, (FigureElement []) questions[i]);
 				 x+= 0.22;
