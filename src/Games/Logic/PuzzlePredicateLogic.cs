@@ -53,7 +53,7 @@ namespace gbrainy.Games.Logic
 
 		Predicate [] predicates;
 
-		public PuzzlePredicateLogic ()
+		void LoadPredicates ()
 		{
 			Answer.CheckAttributes |= GameAnswerCheckAttributes.MultiOption;
 			predicates = new Predicate []
@@ -144,6 +144,9 @@ namespace gbrainy.Games.Logic
 		{
 			int answers;
 			int correct_answer;
+
+			if (predicates == null)
+				LoadPredicates ();
 
 			question = random.Next (predicates.Length);
 

@@ -618,8 +618,12 @@ namespace gbrainy.Clients.Classical
 				return;
 
 			const Gtk.Orientation orientation = Gtk.Orientation.Vertical;
-			Preferences.SetIntValue (Preferences.ToolbarOrientationKey, (int) orientation);
-			Preferences.Save ();
+
+			if ((Gtk.Orientation) Preferences.GetIntValue (Preferences.ToolbarOrientationKey) != orientation)
+			{
+				Preferences.SetIntValue (Preferences.ToolbarOrientationKey, (int) orientation);
+				Preferences.Save ();
+			}
 			toolbar.Attach (orientation);
 		}
 
@@ -629,8 +633,12 @@ namespace gbrainy.Clients.Classical
 				return;
 
 			const Gtk.Orientation orientation = Gtk.Orientation.Horizontal;
-			Preferences.SetIntValue (Preferences.ToolbarOrientationKey, (int) Gtk.Orientation.Horizontal);
-			Preferences.Save ();
+
+			if ((Gtk.Orientation) Preferences.GetIntValue (Preferences.ToolbarOrientationKey) != orientation)
+			{
+				Preferences.SetIntValue (Preferences.ToolbarOrientationKey, (int) Gtk.Orientation.Horizontal);
+				Preferences.Save ();
+			}
 			toolbar.Attach (orientation);
 		}
 
