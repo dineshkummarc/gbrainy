@@ -12,9 +12,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gbrainy\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
-"product=gbrainy&component=general\n"
-"POT-Creation-Date: 2011-01-15 20:24+0000\n"
-"PO-Revision-Date: 2010-11-25 11:16+0100\n"
+"product=gbrainy&keywords=I18N+L10N&component=general\n"
+"POT-Creation-Date: 2011-03-12 22:13+0000\n"
+"PO-Revision-Date: 2011-03-20 12:11+0100\n"
 "Last-Translator: Bruno Brouard <annoa.b@gmail.com>\n"
 "Language-Team: GNOME French Team <gnomefr@traduc.org>\n"
 "MIME-Version: 1.0\n"
@@ -2421,8 +2421,13 @@ msgid "A brain teaser game for fun and to keep your brain trained."
 msgstr "Un jeu pour faire travailler un peu vos méninges tout en s'amusant."
 
 #: ../src/Clients/Classical/Dialogs/AboutDialog.cs:80
-msgid "gbrainy web site"
-msgstr "Site Web de gbrainy"
+msgid "gbrainy project web site:http://live.gnome.org/gbrainy"
+msgstr "le site Web du projet gbrainy : http://live.gnome.org/gbrainy"
+
+#: ../src/Clients/Classical/Dialogs/AboutDialog.cs:82
+#, csharp-format
+msgid "You can also play on-line at {0}"
+msgstr "Vous pouvez également jouer en ligne sur {0}"
 
 #. Column: Game Name
 #: ../src/Clients/Classical/Dialogs/CustomGameDialog.cs:68
@@ -3103,18 +3108,18 @@ msgstr ""
 "C'est la seule combinaison possible avec les éléments donnés sans les "
 "répéter."
 
-#: ../src/Games/Logic/PuzzleFigures.cs:78
-#: ../src/Games/Logic/PuzzleFigures.cs:90
-#: ../src/Games/Logic/PuzzleFigures.cs:103
+#: ../src/Games/Logic/PuzzleFigures.cs:82
+#: ../src/Games/Logic/PuzzleFigures.cs:94
+#: ../src/Games/Logic/PuzzleFigures.cs:107
 #, csharp-format
 msgid "{0} ->"
 msgstr "{0} ->"
 
-#: ../src/Games/Logic/PuzzleFigures.cs:159
+#: ../src/Games/Logic/PuzzleFigures.cs:163
 msgid "Convention when giving the answer is:"
 msgstr "La convention pour donner votre réponse est :"
 
-#: ../src/Games/Logic/PuzzleFigures.cs:163
+#: ../src/Games/Logic/PuzzleFigures.cs:167
 #, csharp-format
 msgid "E.g: {0}{1}{2} (pentagon, triangle, circle)"
 msgstr "Ex. : {0}{1}{2} (pentagone, triangle, cercle)"
@@ -5021,3 +5026,4 @@ msgstr "_Désinstaller..."
 #: ../src/Clients/Classical/mono-addins-strings.xml.h:35
 msgid "_Unselect All"
 msgstr "To_ut désélectionner"
+
