@@ -388,7 +388,7 @@
 				int option_d = num_x * 4;
 				int product = num_x * num_y;
 			</variables>
-			<_question>The number X is multiple of [num_x] and the number Y of [num_y]. The product of both numbers (X * Y) is then multiple of? [option_answers]</_question>
+			<_question>Which pair of numbers of the list below are both multiple of [num_x] and [num_y]? [option_answers]</_question>
 			<_tip>A multiple is a number that may be divided by another number with no remainder. For example, 10, 15 and 25 are multiples of 5.</_tip>
 
 			<string _text = "Possible answers are:" x = "0.1" y = "0.15" size = "large"/>
@@ -410,7 +410,7 @@
 			</option>
 			<!-- Since this a multioption the answer string is set to option | this string, what makes answer_show is not useful here -->
 			<_answer>[option_a] and [option_b]</_answer>
-			<_rationale>[option_a] and [option_b] are both multiples of [product].</_rationale>
+			<_rationale>[option_a] and [option_b] are both multiples of [num_x] and [num_y].</_rationale>
 		</variant>
 	</game>
 
