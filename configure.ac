@@ -1,4 +1,4 @@
-AC_INIT(gbrainy, 1.63)
+AC_INIT(gbrainy, 1.64)
 AC_CONFIG_SRCDIR(src/Core/)
 
 AM_CONFIG_HEADER(config.h)
