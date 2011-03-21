@@ -47,7 +47,9 @@ namespace gbrainy.Games.Logic
 
 		public override string Rationale {
 			get {
-				return String.Format (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Starting from the first clock sum {0} to the value indicated by the hands."), addition);
+				return String.Format (ServiceLocator.Instance.GetService <ITranslations> ().GetString (
+					"Starting from the first clock, sum {0} to the number made by adding the values to which the hands point."), 
+					addition);
 			}
 		}
 
