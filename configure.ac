@@ -204,6 +204,7 @@ tests/Makefile
 data/Makefile
 data/gbrainy.pc
 help/Makefile
+tools/Defines.cs
 ])
 
 echo "GNOME enabled:		${enable_gnome}"
