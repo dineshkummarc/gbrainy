@@ -19,7 +19,9 @@
 
 using Mono.Unix;
 
-namespace gbrainy.Core.Services
+using gbrainy.Core.Services;
+
+namespace gbrainy.Core.Libraries
 {
 	public class TranslationsCatalog : ITranslations
 	{

@@ -9,14 +9,13 @@
     <OutputType>Library</OutputType>
     <RootNamespace>Core</RootNamespace>
     <AssemblyName>gbrainy.Core.dll</AssemblyName>
-    <BaseDirectory>.</BaseDirectory>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
     <OutputPath>..\bin\Debug</OutputPath>
-    <DefineConstants>DEBUG</DefineConstants>
+    <DefineConstants>DEBUG,CSHARP_STATIC</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <ConsolePause>false</ConsolePause>
@@ -93,7 +92,6 @@
     <Compile Include="Libraries\SVGImage.cs" />
     <Compile Include="Libraries\GetText.cs" />
     <Compile Include="Platform\Unix.cs" />
-    <Compile Include="Main\Xml\CodeEvaluation.cs" />
     <Compile Include="Main\GameAnswerCheckAttributes.cs" />
     <Compile Include="Main\GameDifficulty.cs" />
     <Compile Include="Main\Xml\OptionDrawingObject.cs" />
@@ -114,6 +112,11 @@
     <Compile Include="Main\GameAnswer.cs" />
     <Compile Include="Main\GameAnswerEventArgs.cs" />
     <Compile Include="AssemblyInfo.cs" />
+    <Compile Include="Libraries\CSharpCompilerStaticDomainProxy.cs" />
+    <Compile Include="Libraries\CSharpCompilerStatic.cs" />
+    <Compile Include="Libraries\CSharpCompiler.cs" />
+    <Compile Include="Services\DefaultServices.cs" />
+    <Compile Include="Services\ICSharpCompiler.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ProjectExtensions>

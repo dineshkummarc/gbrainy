@@ -24,13 +24,13 @@ namespace gbrainy.Core.Services
 {
 	public class ServiceLocator
 	{
-		Dictionary <Type, object> services;
+		Dictionary <Type, IService> services;
 		static ServiceLocator instance = new ServiceLocator ();
 		static readonly object sync = new object ();
 
 		public ServiceLocator ()
 		{
-			services = new Dictionary <Type, object> ();
+			services = new Dictionary <Type, IService> ();
 		}
 
 		public static ServiceLocator Instance {
@@ -39,9 +39,24 @@ namespace gbrainy.Core.Services
 			}
 		}
 
+		public void RegisterService (Type t, IService service)
+		{
+			lock (sync)
+			{
+				if (services.ContainsKey (t) == false)
+				{
+					services.Add (t, service);
+				}
+				else
+				{
+					services[t] = service;
+				}
+			}	
+		}		
+
 		public void RegisterService <T> (T service) where T : class, IService
 		{
-			Type  t = typeof (T);
+			Type t = typeof (T);
 
 			lock (sync)
 			{

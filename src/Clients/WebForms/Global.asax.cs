@@ -41,8 +41,11 @@ namespace gbrainy.Clients.WebForms
 			}
 			
 			// Register services
+			DefaultServices services = new DefaultServices ();
+			services.RemoveService <ITranslations> ();
+			services.RegisterServices ();
+			
 			ServiceLocator.Instance.RegisterService <ITranslations> (new TranslationsWeb ());
-			ServiceLocator.Instance.RegisterService <IConfiguration> (new MemoryConfiguration ());
 			ThemeManager.ConfigPath = Defines.THEMES_DIR;
 			
 			// Configuration

@@ -17,6 +17,8 @@
  * Boston, MA 02111-1307, USA.
  */
 
+#if CSHARP_STATIC
+
 using System;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -25,122 +27,94 @@ using Mono.CSharp;
 using System.Reflection;
 using gbrainy.Core.Services;
 
-namespace gbrainy.Core.Main.Xml
+namespace gbrainy.Core.Libraries
 {
-	// This class proxys data from one domain to another
-	public class CrossDomainProxy : MarshalByRefObject
-	{
-		string code;
-				
-		public void SetCode (string c)
-		{
-			code = c;
-		}
-		
-		public string GetVars ()
-		{
-			return Evaluator.GetVars ();
-		}
-		
-		public void EvaluateVariables ()
-		{
-			string eval;
-
-			try
-			{
-				// Using's for the variables section
-				// We need to evaluate either declarations (like using) or expression/statements separately
-				eval = "using System;\n";
-				Mono.CSharp.Evaluator.Run (eval);
-
-				// Infrastructure for the user available
-				eval = "Random random = new Random ();\n";
-
-				// As Mono 2.4.4 this call is killing in terms of memory leaking
-				Mono.CSharp.Evaluator.Run (eval + code);
-			}
-
-			catch (Exception e)
-			{
-				Console.WriteLine ("GameXml. Error in games.xml: {0} when evaluating variable definition [{1}]", e.Message, code);
-			}
-		}
-	}
-
-	// Code evaluation functions
-	public static class CodeEvaluation
+	// This encapsulates Mono.CSharp previous to Mono 2.10 when it was a static class
+	public class CSharpCompilerStatic : ICSharpCompiler
 	{
 		static bool? monofix_needed;
 		static string stored_vars;
 		static int unload_domain = 0;
 		static AppDomain tempDomain;
 		const int maximum_uses = 5;
-		
-		static public void EvaluateVariables (string c)
+
+		public void EvaluateCode (string c)
 		{
 			if (tempDomain == null)
 				tempDomain = AppDomain.CreateDomain ("MonoCSharpDomain");
-			
+
 			// Load the Mono Compiler service in a separate domain then
 			// we can recycle it to reduce memory consumption
 			//
 			// After Mono 2.12 this is no longer need
-			// http://tirania.org/blog/archive/2011/Feb-24.html			 			
-			IConfiguration config = ServiceLocator.Instance.GetService <IConfiguration> ();	
+			// http://tirania.org/blog/archive/2011/Feb-24.html
+			IConfiguration config = ServiceLocator.Instance.GetService <IConfiguration> ();
 			string asm_dir = config.Get <string> (ConfigurationKeys.AssembliesDir);
 			string full_name = System.IO.Path.Combine (asm_dir, "gbrainy.Core.dll");
 			AssemblyName aname = AssemblyName.GetAssemblyName (full_name);
 			Assembly asem = tempDomain.Load (aname);
-			
-  			CrossDomainProxy proxy = (CrossDomainProxy) tempDomain.CreateInstanceAndUnwrap(asem.FullName, 
-				typeof (CrossDomainProxy).FullName);
-   			
+
+  			CSharpCompilerStaticDomainProxy proxy = (CSharpCompilerStaticDomainProxy) tempDomain.CreateInstanceAndUnwrap (asem.FullName,
+				typeof (CSharpCompilerStaticDomainProxy).FullName);
+
 			proxy.SetCode (c);
 			tempDomain.DoCallBack (proxy.EvaluateVariables);
 			stored_vars = proxy.GetVars ();
-			
-					
+			stored_vars = FixGetVars (stored_vars);
+
 			if (unload_domain > maximum_uses)
-			{			
+			{
 				AppDomain.Unload (tempDomain);
 				unload_domain = 0;
 				tempDomain = null;
 			}
-			else 
+			else
 				unload_domain++;
 		}
-		
-		static public string ReplaceVariables (string str)
+		public string GetAllVariables ()
 		{
-			const string exp = "\\[[a-z_]+\\]+";
-			string var, vars, var_value;
-			Regex regex;
-			Match match;
-
-			if (String.IsNullOrEmpty (str) ||
-				String.IsNullOrEmpty (stored_vars))
-				return str;
-
-			regex = new Regex (exp, RegexOptions.IgnoreCase);
-			match = regex.Match (str);
-
-			vars = stored_vars;
-			vars = FixGetVars (vars);
-
-			while (String.IsNullOrEmpty (match.Value) == false)
-			{
-				var = match.Value.Substring (1, match.Value.Length - 2);
-				var_value = GetVarValue (vars, var);
-
-				if (String.IsNullOrEmpty (var_value) == false)
-					str = str.Replace (match.Value, var_value);
-
-				match = match.NextMatch ();
-			}
-			return str;
+			return stored_vars;
 		}
 
-		// Before Mono 2.6 (rev. 156533) there is no line separator between vars
+		public string GetVariableValue (string _var)
+		{
+			const string exp = "([a-z0-9._%+-]+) ([a-z0-9._%+-]+) (=) ([0-9]+)";
+			Match match;
+			int idx, cur, newline_len;
+			string line;
+			string vars;
+
+			vars = GetAllVariables ();
+			Regex regex = new Regex (exp, RegexOptions.IgnoreCase);
+
+			newline_len = System.Environment.NewLine.Length;
+			cur = 0;
+
+			do
+			{
+				// Process a line
+				idx = vars.IndexOf (System.Environment.NewLine, cur);
+				if (idx == -1) idx = vars.Length;
+
+				line = vars.Substring (cur, idx - cur);
+				cur = idx + newline_len;
+				match = regex.Match (line);
+
+				//  "int num = 2";
+				//   group 1 -> int,  group 2 -> num,  group 3 -> =, group 4 -> 2
+				if (match.Groups.Count == 5)
+				{
+					if (match.Groups[2].Value == _var)
+						return match.Groups[4].Value;
+				}
+
+			} while (cur < vars.Length);
+
+			return string.Empty;
+		}
+
+
+		// Before Mono 2.6 (rev. 156533) there is no line separator between variables
 		static string FixGetVars (string str)
 		{
 			if (monofix_needed == null)
@@ -190,40 +164,6 @@ namespace gbrainy.Core.Main.Xml
 			output.Append (str.Substring (cur, str.Length - cur));
 			return output.ToString ();
 		}
-
-		static string GetVarValue (string vars, string _var)
-		{
-			const string exp = "([a-z0-9._%+-]+) ([a-z0-9._%+-]+) (=) ([0-9]+)";
-			Match match;
-			int idx, cur, newline_len;
-			string line;
-
-			Regex regex = new Regex (exp, RegexOptions.IgnoreCase);
-
-			newline_len = System.Environment.NewLine.Length;
-			cur = 0;
-
-			do
-			{
-				// Process a line
-				idx = vars.IndexOf (System.Environment.NewLine, cur);
-				if (idx == -1) idx = vars.Length;
-
-				line = vars.Substring (cur, idx - cur);
-				cur = idx + newline_len;
-				match = regex.Match (line);
-
-				//  "int num = 2";
-				//   group 1 -> int,  group 2 -> num,  group 3 -> =, group 4 -> 2
-				if (match.Groups.Count == 5)
-				{
-					if (match.Groups[2].Value == _var)
-						return match.Groups[4].Value;
-				}
-
-			} while (cur < vars.Length);
-
-			return string.Empty;
-		}
 	}
 }
+#endif

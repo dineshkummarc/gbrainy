@@ -20,6 +20,7 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Text.RegularExpressions;
 
 using gbrainy.Core.Toolkit;
 using gbrainy.Core.Services;
@@ -54,17 +55,9 @@ namespace gbrainy.Core.Main.Xml
 		GameXmlDefinition game;
 		string question, answer, rationale, answer_show;
 		List <OptionDrawingObject> options;
+		ICSharpCompiler compiler;
 
 		
-		void SetAnswerCorrectShow ()
-		{
-		
-			if (String.IsNullOrEmpty (answer_show))
-				return;
-
-			Answer.CorrectShow = answer_show;
-		}
-
 		static public List <GameXmlDefinition> Definitions {
 			set {
 				games = value;
@@ -98,6 +91,14 @@ namespace gbrainy.Core.Main.Xml
 					else
 						return null;
 			}
+		}
+
+		void SetAnswerCorrectShow ()
+		{		
+			if (String.IsNullOrEmpty (answer_show))
+				return;
+
+			Answer.CorrectShow = answer_show;
 		}
 
 		void SetCheckExpression ()
@@ -136,6 +137,8 @@ namespace gbrainy.Core.Main.Xml
 			bool variants;
 			LocalizableString localizable_question, localizable_rationale;
 
+			compiler = ServiceLocator.Instance.GetService <ICSharpCompiler> ();
+
 			variants = game.Variants.Count > 0;
 			SetCheckAttributes ();
 
@@ -156,16 +159,15 @@ namespace gbrainy.Core.Main.Xml
 
 			if (String.IsNullOrEmpty (variables) == false)
 			{
-				// Evaluate code
-				CodeEvaluation.EvaluateVariables (variables);
+				compiler.EvaluateCode (variables);
 
 				try {
 
 					if (String.IsNullOrEmpty (localizable_question.Value) == false)
-						localizable_question.ValueComputed = Int32.Parse (CodeEvaluation.ReplaceVariables (localizable_question.Value));
+						localizable_question.ValueComputed = Int32.Parse (ReplaceVariables (localizable_question.Value));
 
 					if (localizable_rationale != null && String.IsNullOrEmpty (localizable_rationale.Value) == false)
-						localizable_rationale.ValueComputed = Int32.Parse (CodeEvaluation.ReplaceVariables (localizable_rationale.Value));
+						localizable_rationale.ValueComputed = Int32.Parse (ReplaceVariables (localizable_rationale.Value));
 				}
 				catch (Exception e)
 				{
@@ -195,10 +197,10 @@ namespace gbrainy.Core.Main.Xml
 
 			if (String.IsNullOrEmpty (variables) == false)
 			{
-				question = CodeEvaluation.ReplaceVariables (question);
-				rationale = CodeEvaluation.ReplaceVariables (rationale);
-				answer = CodeEvaluation.ReplaceVariables (answer);
-				answer_show = CodeEvaluation.ReplaceVariables (answer_show);
+				question = ReplaceVariables (question);
+				rationale = ReplaceVariables (rationale);
+				answer = ReplaceVariables (answer);
+				answer_show = ReplaceVariables (answer_show);
 			}
 
 			if (options != null && options.Count > 0)
@@ -417,7 +419,7 @@ namespace gbrainy.Core.Main.Xml
 					TextDrawingObject draw_string = draw_object as TextDrawingObject;
 
 					text = CatalogGetString (draw_string.Text);
-					text = CodeEvaluation.ReplaceVariables (text);
+					text = ReplaceVariables (text);
 
 					switch (draw_string.Size) {
 					case TextDrawingObject.Sizes.Small:
@@ -509,6 +511,35 @@ namespace gbrainy.Core.Main.Xml
 				return CatalogGetString (localizable.String);
 
 			return ServiceLocator.Instance.GetService <ITranslations> ().GetPluralString (localizable.String, localizable.PluralString, localizable.ValueComputed);
+		}
+
+		// Replace compiler service variables
+		string ReplaceVariables (string str)
+		{
+			const string exp = "\\[[a-z_]+\\]+";
+			string var, var_value, all_vars;
+			Regex regex;
+			Match match;
+
+			all_vars = compiler.GetAllVariables ();
+			if (String.IsNullOrEmpty (str) ||
+				String.IsNullOrEmpty (all_vars))
+				return str;
+
+			regex = new Regex (exp, RegexOptions.IgnoreCase);
+			match = regex.Match (str);
+
+			while (String.IsNullOrEmpty (match.Value) == false)
+			{
+				var = match.Value.Substring (1, match.Value.Length - 2);
+				var_value = compiler.GetVariableValue (var);
+
+				if (String.IsNullOrEmpty (var_value) == false)
+					str = str.Replace (match.Value, var_value);
+
+				match = match.NextMatch ();
+			}
+			return str;
 		}
 	}
 }

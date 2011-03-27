@@ -41,6 +41,14 @@ else
   AC_MSG_RESULT([found])
 fi
 
+if ! pkg-config --atleast-version=2.11 mono; then
+   CSC_DEFINES="$CSC_DEFINES -d:CSHARP_STATIC"
+   csharp_static="Yes"
+else
+   csharp_static="No"
+fi
+
+
 dnl -- check for various mono assemblies that we need.
 
 needed_assemblies="Mono.Posix Mono.Cairo Mono.CSharp"
@@ -211,3 +219,4 @@ echo "GNOME enabled:		${enable_gnome}"
 echo "Mono-addins:		${enable_addins_sharp}"
 echo "NUnit:			${enable_tests}"
 echo "Debug enabled:		${enable_debug}"
+echo "Mono.CSharp static:	${csharp_static}"

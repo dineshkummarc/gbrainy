@@ -28,6 +28,7 @@ using System.Reflection;
 using gbrainy.Core.Main;
 using gbrainy.Core.Platform;
 using gbrainy.Core.Services;
+using gbrainy.Core.Libraries;
 using gbrainy.Clients.Classical.Dialogs;
 using gbrainy.Clients.Classical.Widgets;
 
@@ -670,9 +671,7 @@ namespace gbrainy.Clients.Classical
 
 		static void InitCoreLibraries ()
 		{
-			// Register services
-			ServiceLocator.Instance.RegisterService <ITranslations> (new TranslationsCatalog ());
-			ServiceLocator.Instance.RegisterService <IConfiguration> (new MemoryConfiguration ());
+			new DefaultServices ().RegisterServices ();
 
 			// Configuration
 			ServiceLocator.Instance.GetService <IConfiguration> ().Set (ConfigurationKeys.GamesDefinitions, Defines.DATA_DIR);

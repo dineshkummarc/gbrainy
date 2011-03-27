@@ -22,7 +22,6 @@ CSDISTFILES =  \
 		$(srcdir)/Main/GameSessionHistoryExtended.cs \
 		$(srcdir)/Main/GameTypes.cs		\
 		$(srcdir)/Main/GameTips.cs		\
-		$(srcdir)/Main/Xml/CodeEvaluation.cs	\
 		$(srcdir)/Main/Xml/DrawingObject.cs	\
 		$(srcdir)/Main/Xml/ImageDrawingObject.cs \
 		$(srcdir)/Main/Xml/LocalizableString.cs	\
@@ -70,7 +69,12 @@ CSDISTFILES =  \
 		$(srcdir)/Services/ITranslations.cs	\
 		$(srcdir)/Libraries/TranslationsCatalog.cs \
 		$(srcdir)/Services/IConfiguration.cs	\
-		$(srcdir)/Services/MemoryConfiguration.cs
+		$(srcdir)/Services/MemoryConfiguration.cs \
+		$(srcdir)/Services/DefaultServices.cs	\
+		$(srcdir)/Services/ICSharpCompiler.cs	\
+		$(srcdir)/Libraries/CSharpCompilerStatic.cs	\
+		$(srcdir)/Libraries/CSharpCompilerStaticDomainProxy.cs	\
+		$(srcdir)/Libraries/CSharpCompiler.cs
 
 CSFILES = $(CSDISTFILES)	\
 	Main/Defines.cs	\

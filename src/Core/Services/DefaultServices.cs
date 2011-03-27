@@ -18,27 +18,43 @@
  */
 
 using System;
-using NUnit.Framework;
+using System.Collections.Generic;
 
-using gbrainy.Core.Main;
-using gbrainy.Core.Services;
 using gbrainy.Core.Libraries;
 
-namespace gbrainyTest
+namespace gbrainy.Core.Services
 {
-	public class UnitTestSupport
+	// This is a utility class to init default services
+	public class DefaultServices
 	{
-		public void RegisterDefaultServices ()
+		Dictionary <Type, IService> services;
+
+		public DefaultServices ()
 		{
-			new DefaultServices ().RegisterServices ();
+			services = new Dictionary <Type, IService> ();
 
-			string mono_path = Environment.GetEnvironmentVariable ("MONO_PATH");
+			// Default services
+			services.Add (typeof (ITranslations), new TranslationsCatalog ());
+			services.Add (typeof (IConfiguration), new MemoryConfiguration ());
 
-			if (String.IsNullOrEmpty (mono_path))
-				mono_path = ".";
+#if CSHARP_STATIC
+			services.Add (typeof (ICSharpCompiler), new CSharpCompilerStatic ());
+#else
+			services.Add (typeof (ICSharpCompiler), new CSharpCompiler ());
+#endif
+		}
 
-			// Configuration
-			ServiceLocator.Instance.GetService <IConfiguration> ().Set (ConfigurationKeys.AssembliesDir, mono_path);
+		public void RemoveService <T> () where T : class, IService
+		{
+			services.Remove (typeof (T));
+		}
+
+		public void RegisterServices ()
+		{
+			foreach (Type t in services.Keys)
+			{
+				ServiceLocator.Instance.RegisterService (t, services[t]);
+			}
 		}
 	}
 }
