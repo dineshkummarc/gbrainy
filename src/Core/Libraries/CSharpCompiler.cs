@@ -50,9 +50,28 @@ namespace gbrainy.Core.Libraries
 			evaluator = new Evaluator (settings, report);
 		}
 
-		public void EvaluateCode (string c)
+		public void EvaluateCode (string code)
 		{
-			evaluator.Evaluate (c);
+			string eval;
+
+			try
+			{
+				// Using's for the variables section
+				// We need to evaluate either declarations (like using) or expression/statements separately
+				eval = "using System;\n";
+				evaluator.Run (eval);
+
+				// Infrastructure for the user available
+				eval = "Random random = new Random ();\n";
+
+				// As Mono 2.4.4 this call is killing in terms of memory leaking
+				evaluator.Run (eval + code);
+			}
+
+			catch (Exception e)
+			{
+				Console.WriteLine ("CSharpCompiler. Error {0} when evaluating variable definition [{1}]", e.Message, code);
+			};
 		}
 
 		public string GetAllVariables ()

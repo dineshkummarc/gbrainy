@@ -61,7 +61,7 @@ namespace gbrainy.Core.Libraries
 
 			catch (Exception e)
 			{
-				Console.WriteLine ("GameXml. Error in games.xml: {0} when evaluating variable definition [{1}]", e.Message, code);
+				Console.WriteLine ("CSharpCompilerStaticDomainProxy. Error {0} when evaluating variable definition [{1}]", e.Message, code);
 			}
 		}
 	}
