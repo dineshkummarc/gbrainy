@@ -75,9 +75,6 @@ namespace gbrainy.Core.Main
 			play_list = new List <int> ();
 			cnt_logic = cnt_memory = cnt_calculation = cnt_verbal = 0;
 			RandomOrder = true;
-#if PDF_DUMP
-			GeneratePDF ();
-#endif
 		}
 
 		public GameTypes AvailableGameTypes {
