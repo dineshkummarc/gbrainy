@@ -13,8 +13,8 @@ msgstr ""
 "Project-Id-Version: gbrainy.master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=gbrainy&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2011-03-20 12:04+0000\n"
-"PO-Revision-Date: 2011-03-21 10:07+0100\n"
+"POT-Creation-Date: 2011-03-21 20:02+0000\n"
+"PO-Revision-Date: 2011-03-29 13:58+0200\n"
 "Last-Translator: Daniel Mustieles <daniel.mustieles@gmail.com>\n"
 "Language-Team: Español <gnome-es-list@gnome.org>\n"
 "MIME-Version: 1.0\n"
@@ -195,7 +195,7 @@ msgid ""
 "A palindromic number remains the same when its digits are reversed (e.g.: "
 "2112)."
 msgstr ""
-"Un número palíndromo es un número que permanece igual cuando se leen sus "
+"Un número capicúa es un número que permanece igual cuando se leen sus "
 "dígitos al revés (ej.: 2112)."
 
 #: ../data/games.xml.h:4
@@ -289,9 +289,9 @@ msgid ""
 "From year 1000 to year 10000, palindrome years occur at 110 year intervals "
 "except for the end of each millennium that occur at a 11 years interval."
 msgstr ""
-"Desde el año 1000 al año 10000, los años palíndromos suceden en intervalos "
-"de 110 años, excepto para el final de cada milenio que ocurre en intervalos "
-"de 11 años."
+"Desde el año 1000 al año 10000, los años capicúas suceden en intervalos de "
+"110 años, excepto para el final de cada milenio que ocurre en intervalos de "
+"11 años."
 
 #: ../data/games.xml.h:21
 msgid ""
@@ -404,7 +404,7 @@ msgstr ""
 
 #: ../data/games.xml.h:40
 msgid "Palindromic years"
-msgstr "Años palíndromo"
+msgstr "Años capicúa"
 
 #: ../data/games.xml.h:41
 msgid "Password"
@@ -419,7 +419,7 @@ msgstr "Contraseña"
 #: ../src/Games/Logic/PuzzleMissingSlice.cs:218
 #: ../src/Games/Logic/PuzzleMostInCommon.cs:314
 #: ../src/Games/Logic/PuzzleNextFigure.cs:166
-#: ../src/Games/Logic/PuzzlePredicateLogic.cs:195
+#: ../src/Games/Logic/PuzzlePredicateLogic.cs:198
 #: ../src/Games/Logic/PuzzleSquareDots.cs:321
 #: ../src/Games/Logic/PuzzleTetris.cs:172
 msgid "Possible answers are:"
@@ -514,7 +514,6 @@ msgid "[option_a] and [option_b]"
 msgstr "[option_a] y [option_b]"
 
 #: ../data/games.xml.h:61
-#| msgid "[option_a] and [option_b] are both multiples of [product]."
 msgid "[option_a] and [option_b] are both multiples of [num_x] and [num_y]."
 msgstr "[option_a] y [option_b] son los dos múltiplos de [num_x] y [num_y]."
 
@@ -2261,7 +2260,7 @@ msgstr "{0} Responde {1}."
 #: ../src/Core/Main/Verbal/AnalogiesMultipleOptions.cs:106
 #: ../src/Core/Main/Verbal/AnalogiesPairOfWordsOptions.cs:114
 #: ../src/Games/Logic/PuzzleOstracism.cs:159
-#: ../src/Games/Logic/PuzzlePredicateLogic.cs:182
+#: ../src/Games/Logic/PuzzlePredicateLogic.cs:185
 #: ../src/Games/Calculation/CalculationCloserFraction.cs:164
 #: ../src/Games/Calculation/CalculationGreatestDivisor.cs:153
 #, csharp-format
@@ -2346,7 +2345,7 @@ msgstr "Pausar"
 msgid "Resume"
 msgstr "Reanudar"
 
-#: ../src/Clients/Classical/gbrainy.cs:715
+#: ../src/Clients/Classical/gbrainy.cs:723
 #, csharp-format
 msgid "Startup time {0}"
 msgstr "Tiempo de inicio {0}"
@@ -2846,14 +2845,18 @@ msgstr ""
 "¿A qué número debe apuntar la aguja grande del reloj «{0}»? Responde usando "
 "números."
 
-#: ../src/Games/Logic/PuzzleClocks.cs:50
+#: ../src/Games/Logic/PuzzleClocks.cs:51
 #, csharp-format
+#| msgid ""
+#| "Starting from the first clock sum {0} to the value indicated by the hands."
 msgid ""
-"Starting from the first clock sum {0} to the value indicated by the hands."
+"Starting from the first clock, sum {0} to the number made by adding the "
+"values to which the hands point."
 msgstr ""
-"A partir de la primera suma de reloj {0} con el valor indicado por las manos."
+"A partir del primer reloj, suma {0} al número que sale al añadir los valores "
+"a los que apunta la aguja."
 
-#: ../src/Games/Logic/PuzzleClocks.cs:55
+#: ../src/Games/Logic/PuzzleClocks.cs:57
 msgid "The clocks do not follow the time logic."
 msgstr "Los relojes no siguen la lógica del tiempo."
 
@@ -2999,7 +3002,7 @@ msgstr ""
 "Al plegar la figura de abajo en un cubo, ¿qué cara es la opuesta a la cara "
 "con un {0} dibujado en ella? Responda con el número escrito en la cara."
 
-#: ../src/Games/Logic/PuzzleDice.cs:50
+#: ../src/Games/Logic/PuzzleDice.cs:54
 msgid ""
 "What is the probability of getting a '2' or a '6' in a single throw of a "
 "fair 6 sided die? Answer using a fraction (e.g.: 1/2)."
@@ -3007,11 +3010,11 @@ msgstr ""
 "¿Cuál es la probabilidad de obtener un «2» o un «6» en un solo lanzamiento de "
 "un dado no cargado de 6 caras? Responde usando una fracción (ej.: 1/2)."
 
-#: ../src/Games/Logic/PuzzleDice.cs:52
+#: ../src/Games/Logic/PuzzleDice.cs:56
 msgid "There are 2 of 6 possibilities."
 msgstr "Existen 2 de 6 probabilidades."
 
-#: ../src/Games/Logic/PuzzleDice.cs:54
+#: ../src/Games/Logic/PuzzleDice.cs:58
 msgid ""
 "What is the probability of not getting a '5' in a single throw of a fair 6 "
 "sided die? Answer using a fraction (e.g.: 1/2)."
@@ -3019,11 +3022,11 @@ msgstr ""
 "¿Cuál es la probabilidad de no obtener un «5» en un solo lanzamiento de un "
 "dado no cargado de 6 caras? Responde usando una fracción (ej.: 1/2)."
 
-#: ../src/Games/Logic/PuzzleDice.cs:56
+#: ../src/Games/Logic/PuzzleDice.cs:60
 msgid "There are 5 of 6 possibilities."
 msgstr "Existen 5 de 6 probabilidades."
 
-#: ../src/Games/Logic/PuzzleDice.cs:58
+#: ../src/Games/Logic/PuzzleDice.cs:62
 msgid ""
 "Two fair 6 sided dices are thrown simultaneously. What is the probability of "
 "getting two even numbers? Answer using a fraction (e.g.: 1/2)."
@@ -3032,11 +3035,11 @@ msgstr ""
 "probabilidad de obtener dos números pares? Responde usando una fracción "
 "(ej.: 1/2)."
 
-#: ../src/Games/Logic/PuzzleDice.cs:60
+#: ../src/Games/Logic/PuzzleDice.cs:64
 msgid "There are 9 of 36 possibilities of getting two even numbers."
 msgstr "Existen 9 de 36 probabilidades de obtener dos números pares."
 
-#: ../src/Games/Logic/PuzzleDice.cs:62
+#: ../src/Games/Logic/PuzzleDice.cs:66
 msgid ""
 "Two fair 6 sided dices are thrown simultaneously. What is the probability of "
 "getting two '6'? Answer using a fraction (e.g.: 1/2)."
@@ -3044,7 +3047,7 @@ msgstr ""
 "Dos dados no cargados de 6 caras se lanzan a la vez. ¿Cuál es la "
 "probabilidad de obtener dos «6»? Responde usando una fracción (ej.: 1/2)."
 
-#: ../src/Games/Logic/PuzzleDice.cs:64
+#: ../src/Games/Logic/PuzzleDice.cs:68
 msgid ""
 "There is 1 of 6 possibilities of getting a '6' on the first die and the same "
 "for the second die."
@@ -3052,7 +3055,7 @@ msgstr ""
 "Existe 1 de 6 probabilidades de obtener un «6» en el primer dado y las mismas "
 "para el segundo dado."
 
-#: ../src/Games/Logic/PuzzleDice.cs:68
+#: ../src/Games/Logic/PuzzleDice.cs:73
 msgid "Dice"
 msgstr "Dado"
 
