@@ -17,6 +17,7 @@
  * Boston, MA 02111-1307, USA.
  */
 
+using System;
 using Mono.Unix;
 
 using gbrainy.Core.Services;
@@ -25,6 +26,18 @@ namespace gbrainy.Core.Libraries
 {
 	public class TranslationsCatalog : ITranslations
 	{
+		double strings, translated;
+		const int max_sample = 250;
+
+		public int TranslationPercentage { 
+			get {
+				if (strings > 0)
+					return (int) (translated / strings * 100d);
+
+				return 100; // Cannot tell
+			}
+		}
+
 		public void Init (string package, string localedir)
 		{
 			Catalog.Init (package, localedir);
@@ -32,6 +45,14 @@ namespace gbrainy.Core.Libraries
 		
 		public string GetString (string s)
 		{
+			if (strings < max_sample)
+			{
+				if (GetText.StringExists (s))
+					translated++;
+
+				strings++;
+			}
+
 			return Catalog.GetString (s);
 		}
 

@@ -29,6 +29,10 @@ namespace gbrainy.Clients.WebForms
 	{
 		public delegate string GetLanguageFromSessionHandler ();
 		static readonly object sync = new object ();
+		
+		public int TranslationPercentage {
+			get { return 100;}
+		}
 
 		public GetLanguageFromSessionHandler OnGetLanguageFromSession;
 

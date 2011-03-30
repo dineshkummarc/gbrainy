@@ -36,6 +36,7 @@ namespace gbrainy.Clients.Classical.Dialogs
 		[GtkBeans.Builder.Object] Gtk.RadioButton rb_medium;
 		[GtkBeans.Builder.Object] Gtk.RadioButton rb_master;
 		[GtkBeans.Builder.Object] Gtk.ComboBox themes_combobox;
+		[GtkBeans.Builder.Object] Gtk.CheckButton english_checkbutton;
 
 		const int COLUMN_VALUE = 1;
 		PlayerHistory history;
@@ -48,6 +49,7 @@ namespace gbrainy.Clients.Classical.Dialogs
 			maxstoredspinbutton.Value = Preferences.GetIntValue (Preferences.MaxStoredGamesKey);
 			minplayedspinbutton.Value = Preferences.GetIntValue (Preferences.MinPlayedGamesKey);
 			colorblindcheckbutton.Active = Preferences.GetBoolValue (Preferences.ColorBlindKey);
+			english_checkbutton.Active = Preferences.GetBoolValue (Preferences.EnglishKey);
 
 			switch ((GameDifficulty) Preferences.GetIntValue (Preferences.DifficultyKey)) {
 			case GameDifficulty.Easy:
@@ -61,7 +63,7 @@ namespace gbrainy.Clients.Classical.Dialogs
 				break;
 			}
 
-			ListStore store = new ListStore (typeof (string), typeof (Theme)); // DisplayName, theme referenece
+			ListStore store = new ListStore (typeof (string), typeof (Theme)); // DisplayName, theme reference
 			CellRenderer layout_cell = new CellRendererText ();
 			themes_combobox.Model = store;
 			themes_combobox.PackStart (layout_cell, true);
@@ -120,6 +122,7 @@ namespace gbrainy.Clients.Classical.Dialogs
 			Preferences.SetIntValue (Preferences.MaxStoredGamesKey, (int) maxstoredspinbutton.Value);
 			Preferences.SetIntValue (Preferences.MinPlayedGamesKey, (int) minplayedspinbutton.Value);
 			Preferences.SetBoolValue (Preferences.ColorBlindKey, colorblindcheckbutton.Active);
+			Preferences.SetBoolValue (Preferences.EnglishKey, english_checkbutton.Active);
 
 			TreeIter iter;
 			themes_combobox.GetActiveIter (out iter);

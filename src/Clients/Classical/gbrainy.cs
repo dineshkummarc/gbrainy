@@ -80,12 +80,18 @@ namespace gbrainy.Clients.Classical
 		bool full_screen;
 		GameSession.Types initial_session;
 
+		public readonly int MIN_TRANSLATION = 80;
+
 		public GtkClient ()
 #if GNOME
 		: base ("gbrainy", Defines.VERSION, Modules.UI, new string [0])
 #endif
 		{
-			Catalog.Init ("gbrainy", Defines.GNOME_LOCALE_DIR);
+			if (Preferences.GetBoolValue (Preferences.EnglishKey) == false)
+			{
+				Catalog.Init ("gbrainy", Defines.GNOME_LOCALE_DIR);
+			}
+
 			Unix.FixLocaleInfo ();
 		}
 
@@ -473,6 +479,10 @@ namespace gbrainy.Clients.Classical
 
 		void OnNewGame (GameSession.Types type)
 		{
+			// If the translation is lower than MIN_TRANSLATION explain that running the English version is an option
+			if (ShowTranslationWarning ())
+				Translations ();
+
 			session.Type = type;
 			session.New ();
 			GetNextGame ();
@@ -480,6 +490,42 @@ namespace gbrainy.Clients.Classical
 			UpdateSolution (Catalog.GetString ("Once you have an answer type it in the \"Answer:\" entry box and press the \"OK\" button."),
 				GameDrawingArea.SolutionType.Tip);
 			UpdateStatusBar ();
+		}
+
+		public bool ShowTranslationWarning ()
+		{
+			// Notify the user once per version only
+			if (String.Compare (Preferences.GetStringValue (Preferences.EnglishVersionKey), Defines.VERSION, 0) == 0)
+				return false;
+
+			bool show;
+	
+			show = (ServiceLocator.Instance.GetService <ITranslations> ().TranslationPercentage < MIN_TRANSLATION);
+
+			if (show == true)
+			{
+				Preferences.SetStringValue (Preferences.EnglishVersionKey, Defines.VERSION);
+				Preferences.Save ();
+			}
+			return show;
+		}
+
+		void Translations ()
+		{		
+			HigMessageDialog dlg;
+	
+			dlg = new HigMessageDialog (app_window,
+				Gtk.DialogFlags.DestroyWithParent,
+				Gtk.MessageType.Warning,
+				Gtk.ButtonsType.Ok,
+				Catalog.GetString ("The level of translation of gbrainy for your language is low."),
+				Catalog.GetString ("You may be exposed to partially translated games making it more difficult to play. If you prefer to play in English you can do so in gbrainy's Preferences."));
+		
+			try {
+	 			dlg.Run ();
+	 		} finally {
+	 			dlg.Destroy ();
+	 		}
 		}
 
 		void OnMathOnly (object sender, EventArgs args)

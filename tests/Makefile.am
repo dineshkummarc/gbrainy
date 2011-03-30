@@ -19,7 +19,8 @@ CSFILES_CORE =					\
 
 CSFILES_CLASSICAL =					\
 	$(srcdir)/TestSupport/UnitTestSupport.cs \
-	$(srcdir)/Clients/Classical/CommandLineTest.cs
+	$(srcdir)/Clients/Classical/CommandLineTest.cs	\
+	$(srcdir)/Clients/Classical/gbrainyTest.cs
 
 CSFILES_GAMES =						\
 	$(srcdir)/TestSupport/UnitTestSupport.cs \

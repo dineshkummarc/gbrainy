@@ -40,6 +40,8 @@ namespace gbrainy.Core.Main
 		public const string ToolbarOrientationKey = "ToolbarOrientation";
 		public const string ColorBlindKey = "ColorBlind";
 		public const string ThemeKey = "Theme";
+		public const string EnglishKey = "English";
+		public const string EnglishVersionKey = "EnglishVersion";
 
 		const string element_item = "item";
 		const string element_key = "key";
@@ -179,6 +181,8 @@ namespace gbrainy.Core.Main
 			properties.Add (ToolbarOrientationKey, "0");
 			properties.Add (ColorBlindKey, false.ToString ());
 			properties.Add (ThemeKey, "classic");
+			properties.Add (EnglishVersionKey, string.Empty);
+			properties.Add (EnglishKey, false.ToString ());
 		}
 
 		static void Load ()
