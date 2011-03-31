@@ -12,8 +12,8 @@ msgstr ""
 "Project-Id-Version: gbrainy\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=gbrainy&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2011-03-26 19:37+0000\n"
-"PO-Revision-Date: 2011-03-26 22:38+0100\n"
+"POT-Creation-Date: 2011-03-30 22:04+0000\n"
+"PO-Revision-Date: 2011-03-31 10:22+0200\n"
 "Last-Translator: Marek Černocký <marek@manet.cz>\n"
 "Language-Team: Czech <gnome-cs-list@gnome.org>\n"
 "MIME-Version: 1.0\n"
@@ -86,12 +86,6 @@ msgstr[2] ""
 "jeho syna mínus [ago]."
 
 #: ../tools/GameXmlGetString.cs:45
-#| msgid ""
-#| "A file is protected by a password formed by a [digits] digit number "
-#| "(ranging from 0 to 9). How many different passwords can you have?"
-#| msgid_plural ""
-#| "A file is protected by a password formed by a [digits] digits number "
-#| "(ranging from 0 to 9). How many different passwords can you have?"
 msgid ""
 "A file is protected by a password formed by a [digits] digit number "
 "represented in base 10 (ranging from 0 to 9). How many different passwords "
@@ -111,12 +105,6 @@ msgstr[2] ""
 "rozsahu 0 až 9). Kolik rozdílných hesel můžeme mít?"
 
 #: ../tools/GameXmlGetString.cs:49
-#| msgid ""
-#| "A file is protected by a password formed by a [digits] digit octal number "
-#| "(ranging from 0 to 7). How many different passwords can you have?"
-#| msgid_plural ""
-#| "A file is protected by a password formed by a [digits] digits octal "
-#| "number (ranging from 0 to 7). How many different passwords can you have?"
 msgid ""
 "A file is protected by a password formed by a [digits] digit represented in "
 "base 8 (ranging from 0 to 7). How many different passwords can you have?"
@@ -543,7 +531,6 @@ msgid "[option_a] and [option_b]"
 msgstr "[option_a] a [option_b]"
 
 #: ../data/games.xml.h:61
-#| msgid "[option_a] and [option_b] are both multiples of [product]."
 msgid "[option_a] and [option_b] are both multiples of [num_x] and [num_y]."
 msgstr "[option_a] i [option_b] jsou násobky [num_x] a [num_y]."
 
@@ -815,7 +802,6 @@ msgid "Both relate to an action that breaks the related item."
 msgstr "U obojího se jedná o činnost, která danou věc zničí."
 
 #: ../data/verbal_analogies.xml.h:37
-#| msgid "Bunker"
 msgid "Bounce"
 msgstr "odrazit"
 
@@ -832,7 +818,6 @@ msgid "Bursts"
 msgstr "prasknout"
 
 #: ../data/verbal_analogies.xml.h:41
-#| msgid "camera"
 msgid "Camera"
 msgstr "fotoaparát"
 
@@ -861,7 +846,6 @@ msgid "Chord"
 msgstr "tětiva"
 
 #: ../data/verbal_analogies.xml.h:48
-#| msgid "Clocks"
 msgid "Close"
 msgstr "zavřít"
 
@@ -962,7 +946,6 @@ msgid "Fishes"
 msgstr "ryby"
 
 #: ../data/verbal_analogies.xml.h:73
-#| msgid "Coast"
 msgid "Float"
 msgstr "plavat"
 
@@ -1148,7 +1131,6 @@ msgid "Lentils"
 msgstr "čočka"
 
 #: ../data/verbal_analogies.xml.h:117
-#| msgid "Liter"
 msgid "Light"
 msgstr "světlo"
 
@@ -1157,7 +1139,6 @@ msgid "Liter"
 msgstr "litr"
 
 #: ../data/verbal_analogies.xml.h:119
-#| msgid "Logic"
 msgid "Lock"
 msgstr "zamknout"
 
@@ -1422,12 +1403,10 @@ msgstr "totalitarismus"
 
 #. Translators: tripod as used is photography
 #: ../data/verbal_analogies.xml.h:185
-#| msgid "_Tip"
 msgid "Tripod"
 msgstr "stativ"
 
 #: ../data/verbal_analogies.xml.h:186
-#| msgid "turn"
 msgid "Turn"
 msgstr "otočit"
 
@@ -2130,12 +2109,12 @@ msgstr "H"
 msgid "Figure {0}"
 msgstr "Obrázek {0}"
 
-#: ../src/Core/Main/GameManager.cs:327
+#: ../src/Core/Main/GameManager.cs:324
 msgid "Extensions database:"
 msgstr "Databáze rozšíření:"
 
 #. Translators: 'Games registered' is the games know to gbrainy (build-in and load from addins-in and external files)
-#: ../src/Core/Main/GameManager.cs:333
+#: ../src/Core/Main/GameManager.cs:330
 #, csharp-format
 msgid ""
 "Games registered: {0}: {1} logic puzzles, {2} calculation trainers, {3} "
@@ -2368,36 +2347,36 @@ msgstr "Pár slov č. {0}"
 msgid "Question and answer #{0}"
 msgstr "Otázka a odpověď č. {0}"
 
-#: ../src/Core/Main/Xml/GameXml.cs:219
+#: ../src/Core/Main/Xml/GameXml.cs:221
 #, csharp-format
 msgid "{0}, "
 msgstr "{0}, "
 
-#: ../src/Core/Main/Xml/GameXml.cs:221
+#: ../src/Core/Main/Xml/GameXml.cs:223
 #, csharp-format
 msgid "{0}."
 msgstr "{0}."
 
 #. Translators {0}: list of options (A, B, C)
-#: ../src/Core/Main/Xml/GameXml.cs:224
+#: ../src/Core/Main/Xml/GameXml.cs:226
 #, csharp-format
 msgid "Answer {0}"
 msgstr "Odpovězte {0}"
 
-#: ../src/Core/Main/Xml/GameXml.cs:477
+#: ../src/Core/Main/Xml/GameXml.cs:479
 #, csharp-format
 msgid "{0}) "
 msgstr "{0}) "
 
-#: ../src/Clients/Classical/gbrainy.cs:417
+#: ../src/Clients/Classical/gbrainy.cs:424
 msgid "Congratulations."
 msgstr "Blahopřejeme."
 
-#: ../src/Clients/Classical/gbrainy.cs:419
+#: ../src/Clients/Classical/gbrainy.cs:426
 msgid "Incorrect answer."
 msgstr "Nesprávná odpověď."
 
-#: ../src/Clients/Classical/gbrainy.cs:479
+#: ../src/Clients/Classical/gbrainy.cs:490
 msgid ""
 "Once you have an answer type it in the \"Answer:\" entry box and press the "
 "\"OK\" button."
@@ -2405,16 +2384,29 @@ msgstr ""
 "Pokud znáte odpověď, napište ji do políčka „Odpověď:“ a stiskněte tlačítko "
 "„OK“."
 
-#: ../src/Clients/Classical/gbrainy.cs:567
+#: ../src/Clients/Classical/gbrainy.cs:521
+msgid "The level of translation of gbrainy for your language is low."
+msgstr "Do vašeho jazyka je aplikace gbrainy přeložená jen z malé části."
+
+#: ../src/Clients/Classical/gbrainy.cs:522
+msgid ""
+"You may be exposed to partially translated games making it more difficult to "
+"play. If you prefer to play in English you can do so in gbrainy's "
+"Preferences."
+msgstr ""
+"Pouze částečný překlad hry může její hraní značně ztížit. Pokud chcete hrát "
+"raději v angličtině, můžete si tak nastavit v předvolbách aplikace gbrainy."
+
+#: ../src/Clients/Classical/gbrainy.cs:614
 #: ../src/Clients/Classical/Widgets/Toolbar.cs:143
 msgid "Pause"
 msgstr "Přestávka"
 
-#: ../src/Clients/Classical/gbrainy.cs:572
+#: ../src/Clients/Classical/gbrainy.cs:619
 msgid "Resume"
 msgstr "Pokračovat"
 
-#: ../src/Clients/Classical/gbrainy.cs:723
+#: ../src/Clients/Classical/gbrainy.cs:768
 #, csharp-format
 msgid "Startup time {0}"
 msgstr "Začněte v bodě {0}"
@@ -2526,7 +2518,6 @@ msgstr ""
 
 #: ../src/Clients/Classical/Dialogs/AboutDialog.cs:80
 #, csharp-format
-#| msgid "gbrainy project web site: http://live.gnome.org/gbrainy"
 msgid "gbrainy project web site: {0}"
 msgstr "webové stránky projektu gbrainy: {0}"
 
@@ -2591,11 +2582,11 @@ msgstr[0] "Je sestaven z výsledků {0} posledního zaznamenaného herního seze
 msgstr[1] "Je sestaven z výsledků {0} posledních zaznamenaných herních sezení."
 msgstr[2] "Je sestaven z výsledků {0} posledních zaznamenaných herních sezení."
 
-#: ../src/Clients/Classical/Dialogs/PreferencesDialog.cs:107
+#: ../src/Clients/Classical/Dialogs/PreferencesDialog.cs:109
 msgid "You are about to delete the player's game session history."
 msgstr "Chystáte se smazat historii herních sezení hráče."
 
-#: ../src/Clients/Classical/Dialogs/PreferencesDialog.cs:108
+#: ../src/Clients/Classical/Dialogs/PreferencesDialog.cs:110
 msgid ""
 "If you proceed, you will lose the history of the previous game sessions. Do "
 "you want to continue?"
@@ -2603,7 +2594,7 @@ msgstr ""
 "Pokud budete souhlasit, přijdete o historii předchozích herních sezení. "
 "Chcete pokračovat?"
 
-#: ../src/Clients/Classical/Dialogs/PreferencesDialog.cs:109
+#: ../src/Clients/Classical/Dialogs/PreferencesDialog.cs:111
 msgid "_Delete"
 msgstr "_Smazat"
 
@@ -2729,18 +2720,22 @@ msgid "Preferences"
 msgstr "Předvolby"
 
 #: ../src/Clients/Classical/Dialogs/ui/PreferencesDialog.ui.h:12
+msgid "Run gbrainy using English language (ignore translation)"
+msgstr "Spustit aplikaci gbrainy v anglickém jazyce (ignorovat překlad)"
+
+#: ../src/Clients/Classical/Dialogs/ui/PreferencesDialog.ui.h:13
 msgid "Show countdown message"
 msgstr "Před hrou zobrazit odpočítávání"
 
-#: ../src/Clients/Classical/Dialogs/ui/PreferencesDialog.ui.h:13
+#: ../src/Clients/Classical/Dialogs/ui/PreferencesDialog.ui.h:14
 msgid "Skip games that use colors (friendly to colorblind users)"
 msgstr "Přeskočit hry využívající barvy (vhodné pro barvoslepé uživatele)"
 
-#: ../src/Clients/Classical/Dialogs/ui/PreferencesDialog.ui.h:14
+#: ../src/Clients/Classical/Dialogs/ui/PreferencesDialog.ui.h:15
 msgid "Theme:"
 msgstr "Motiv:"
 
-#: ../src/Clients/Classical/Dialogs/ui/PreferencesDialog.ui.h:15
+#: ../src/Clients/Classical/Dialogs/ui/PreferencesDialog.ui.h:16
 msgid "Time in seconds to memorize the challenge:"
 msgstr "Čas v sekundách na zapamatování:"
 
@@ -2901,8 +2896,6 @@ msgstr ""
 
 #: ../src/Games/Logic/PuzzleClocks.cs:51
 #, csharp-format
-#| msgid ""
-#| "Starting from the first clock sum {0} to the value indicated by the hands."
 msgid ""
 "Starting from the first clock, sum {0} to the number made by adding the "
 "values to which the hands point."
@@ -4512,9 +4505,6 @@ msgstr "Pamatování si pokynů"
 
 #: ../src/Games/Memory/MemoryIndications.cs:165
 #, csharp-format
-#| msgid ""
-#| "Which of the following graphics represent the indications previously "
-#| "given? Answer {0}, {1}, {2} or {3}."
 msgid ""
 "Which of the following graphics represents the indications previously given? "
 "Answer {0}, {1}, {2} or {3}."
