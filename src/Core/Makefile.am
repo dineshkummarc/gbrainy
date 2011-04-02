@@ -36,6 +36,7 @@ CSDISTFILES =  \
 		$(srcdir)/Main/PlayerHistory.cs		\
 		$(srcdir)/Main/PlayerPersonalRecord.cs	\
 		$(srcdir)/Main/Preferences.cs		\
+		$(srcdir)/Main/PreferencesStorage.cs	\
 		$(srcdir)/Main/Score.cs			\
 		$(srcdir)/Main/Theme.cs			\
 		$(srcdir)/Main/ThemeManager.cs		\

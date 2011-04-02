@@ -50,7 +50,7 @@ namespace gbrainy.Clients.Classical.Dialogs
 			checkbox_logic.Active = checkbox_calculation.Active = checkbox_verbal.Active = true;
 
 			// Use defaults from Preferences
-		 	switch ((GameDifficulty) Preferences.GetIntValue (Preferences.DifficultyKey)) {
+		 	switch ((GameDifficulty) Preferences.Get <int> (Preferences.DifficultyKey)) {
 			case GameDifficulty.Easy:
 				rb_easy.Active = rb_easy.HasFocus = true;
 				break;

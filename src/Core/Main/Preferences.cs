@@ -23,13 +23,15 @@ using System.IO;
 using System.Xml;
 using System.Xml.Serialization;
 using System.Text;
+using System.ComponentModel;
 
 namespace gbrainy.Core.Main
 {
 	public static class Preferences
 	{
 		static string file, config_path;
-		static SerializableDictionary <string, string > properties;
+		static PreferencesStorage <string, string> storage;
+		static Dictionary <string, string> defaults;
 
 		public const string MemQuestionWarnKey = "MemQuestionWarn";
 		public const string MemQuestionTimeKey = "MemQuestionTime";
@@ -43,82 +45,22 @@ namespace gbrainy.Core.Main
 		public const string EnglishKey = "English";
 		public const string EnglishVersionKey = "EnglishVersion";
 
-		const string element_item = "item";
-		const string element_key = "key";
-		const string element_value = "value";
-		const string element_collection = "collection";
-
-	    	public class SerializableDictionary <TKey, TValue> : Dictionary<TKey, TValue>, IXmlSerializable
-		{
-			public System.Xml.Schema.XmlSchema GetSchema ()
-			{
-				return null;
-			}
-
-			public void ReadXml (System.Xml.XmlReader reader)
-			{
-				XmlSerializer key_serializer = new XmlSerializer (typeof (TKey));
-				XmlSerializer value_serializer = new XmlSerializer (typeof (TValue));
-		 		bool wasEmpty = reader.IsEmptyElement;
-
-			    	reader.Read ();
-
-				if (wasEmpty)
-					return;
-			
-				reader.ReadStartElement (element_collection);
-				while (reader.NodeType != System.Xml.XmlNodeType.EndElement)
-				{
-					reader.ReadStartElement (element_item);
-
-					reader.ReadStartElement (element_key);
-					TKey key = (TKey) key_serializer.Deserialize (reader);
-					reader.ReadEndElement ();
-
-					reader.ReadStartElement (element_value);
-					TValue value = (TValue) value_serializer.Deserialize (reader);
-					reader.ReadEndElement();
-
-					this[key] = value; // already created in DefaultValues
-					reader.ReadEndElement();
-
-					reader.MoveToContent();
-				}
-				reader.ReadEndElement();
-			}
-
-			public void WriteXml (System.Xml.XmlWriter writer)
-			{
-				XmlSerializer key_serializer = new XmlSerializer (typeof(TKey));
-				XmlSerializer value_serializer = new XmlSerializer (typeof(TValue));
-
-				writer.WriteStartElement (element_collection);
-				foreach (TKey key in this.Keys)
-				{
-					writer.WriteStartElement (element_item);
-					writer.WriteStartElement (element_key);
-
-					key_serializer.Serialize (writer, key);
-					writer.WriteEndElement ();
-					writer.WriteStartElement (element_value);
-
-					TValue value = this[key];
-					value_serializer.Serialize (writer, value);
-					writer.WriteEndElement ();
-					writer.WriteEndElement ();
-				}
-				writer.WriteEndElement ();
-			}
-
-	    	}
-
 		static Preferences ()
 		{
-			properties = new SerializableDictionary <string, string> ();
-			config_path = Environment.GetFolderPath (Environment.SpecialFolder.ApplicationData);
-			config_path = Path.Combine (config_path, Defines.CONFIG_DIR);
-			file = Path.Combine (config_path, "Preferences.xml");
+			storage = new PreferencesStorage <string, string> ();
+			defaults = new Dictionary <string, string> ();
+			ConfigPath = Path.Combine (Environment.GetFolderPath (Environment.SpecialFolder.ApplicationData),
+				 Defines.CONFIG_DIR);
+
+			LoadDefaultValues ();
 			Load ();
+		}
+
+		static public string ConfigPath {
+			set {
+				config_path = value;
+				file = Path.Combine (config_path, "Preferences.xml");
+			}
 		}
 
 		public static void Save ()
@@ -130,76 +72,96 @@ namespace gbrainy.Core.Main
 				XmlTextWriter writer = new XmlTextWriter (file, Encoding.UTF8);
 				writer.Formatting = Formatting.Indented;
 
-				properties.WriteXml (writer);
+				storage.WriteXml (writer);
 				writer.Close ();
-			}		
+			}
 			catch (Exception e)
 			{
 				Console.WriteLine ("Preferences.Save. Could not save file {0}. Error {1}", file, e);
 			}
 		}
-	
-		public static int GetIntValue (string key)
+
+
+		public static T Get<T> (string key)
 		{
-			return Int32.Parse (properties [key]);
+			string val;
+
+			if (storage.TryGetValue (key, out val) == true)
+			{
+				return storage.Convert <T> (val);
+			}
+			return storage.Convert <T> (defaults [key]);
 		}
 
-		public static bool GetBoolValue (string key)
+		public static void Set<T> (string key, object val)
 		{
-			return Boolean.Parse (properties [key]);
+			string v;
+			T current;
+			
+			if (val is string)
+				v = (string) val;
+			else
+				v = val.ToString ();
+
+			current = Get <T> (key);
+
+			// It is the same that the current stored
+			if (current.Equals (val))
+				return;
+
+			// The new setting is equal to default
+			if (v.Equals (defaults[key]) == true)
+			{
+				// Remove any previous value if existed
+				storage.Remove (key);
+				return;
+			}
+
+			storage [key] = v;
 		}
 
-		public static string GetStringValue (string key)
+		static public void Clear ()
 		{
-			return properties [key];
+			storage.Clear ();
 		}
 
-		public static void SetIntValue (string key, int value)
+		static void LoadDefaultValues ()
 		{
-			properties[key] = value.ToString ();
+			if (defaults.Count > 0)
+				throw new InvalidOperationException ("The defaults should only be loaded once");
+
+			defaults.Add (MemQuestionWarnKey, true.ToString ());
+			defaults.Add (MemQuestionTimeKey, "6");
+			defaults.Add (DifficultyKey, ((int)(GameDifficulty.Medium)).ToString ());
+			defaults.Add (MinPlayedGamesKey, "5");
+			defaults.Add (MaxStoredGamesKey, "20");
+			defaults.Add (ToolbarShowKey, true.ToString ());
+			defaults.Add (ToolbarOrientationKey, "0");
+			defaults.Add (ColorBlindKey, false.ToString ());
+			defaults.Add (ThemeKey, "classic");
+			defaults.Add (EnglishVersionKey, string.Empty);
+			defaults.Add (EnglishKey, false.ToString ());
 		}
 
-		public static void SetBoolValue (string key, bool value)
+		public static void Load ()
 		{
-			properties [key] = value.ToString ();
-		}
+			XmlTextReader reader = null;
 
-		public static void SetStringValue (string key, string value)
-		{
-			properties [key] = value;
-		}
-
-		public static void LoadDefaultValues ()
-		{
-			properties.Clear ();
-			properties.Add (MemQuestionWarnKey, true.ToString ());
-			properties.Add (MemQuestionTimeKey, "6");
-			properties.Add (DifficultyKey, ((int)(GameDifficulty.Medium)).ToString ());
-			properties.Add (MinPlayedGamesKey, "5");
-			properties.Add (MaxStoredGamesKey, "20");
-			properties.Add (ToolbarShowKey, true.ToString ());
-			properties.Add (ToolbarOrientationKey, "0");
-			properties.Add (ColorBlindKey, false.ToString ());
-			properties.Add (ThemeKey, "classic");
-			properties.Add (EnglishVersionKey, string.Empty);
-			properties.Add (EnglishKey, false.ToString ());
-		}
-
-		static void Load ()
-		{
 			try {
-				LoadDefaultValues ();
-				
 				if (File.Exists (file) == false)
 					return;
 
-				XmlTextReader reader = new XmlTextReader (file);
-				properties.ReadXml (reader);
-				reader.Close ();
+				reader = new XmlTextReader (file);
+				storage.ReadXml (reader);
 			}
 			catch (Exception e)
 			{
 				Console.WriteLine ("Preferences.Load. Could not load file {0}. Error {1}", file, e);
+			}
+			finally
+			{
+				if (reader != null)
+					reader.Close ();
 			}
 		}
 	}

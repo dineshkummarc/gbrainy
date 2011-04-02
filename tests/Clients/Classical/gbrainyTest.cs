@@ -50,17 +50,14 @@ namespace gbrainyTest
 			RegisterDefaultServices ();
 			translations =  new TranslationsTest ();
 			ServiceLocator.Instance.RegisterService (typeof (ITranslations), translations);
-
-
 		}
 
 		[Test]
 		public void ShowTranslationMessageHonorPercentage ()
 		{
 			GtkClient client = new GtkClient ();
-
-			// Ignore gbrainy instance preferences
-			Preferences.LoadDefaultValues ();
+			Preferences.ConfigPath = ".";
+			Preferences.Clear ();
 
 			translations.Percentage = client.MIN_TRANSLATION;
 			Assert.AreEqual (false, client.ShowTranslationWarning ());
@@ -70,9 +67,8 @@ namespace gbrainyTest
 		public void ShowTranslationMessageOnlyOnce ()
 		{
 			GtkClient client = new GtkClient ();
-
-			// Ignore gbrainy instance preferences
-			Preferences.LoadDefaultValues ();
+			Preferences.ConfigPath = ".";
+			Preferences.Clear ();
 
 			translations.Percentage = client.MIN_TRANSLATION - 1;
 			Assert.AreEqual (true, client.ShowTranslationWarning ());
@@ -83,13 +79,12 @@ namespace gbrainyTest
 		public void ShowTranslationMessageWhenChangingVersion ()
 		{
 			GtkClient client = new GtkClient ();
-
-			// Ignore gbrainy instance preferences
-			Preferences.LoadDefaultValues ();
+			Preferences.ConfigPath = ".";
+			Preferences.Clear ();
 
 			translations.Percentage = client.MIN_TRANSLATION - 1;
 			Assert.AreEqual (true, client.ShowTranslationWarning ());
-			Preferences.SetStringValue (Preferences.EnglishVersionKey, "n.n.n");
+			Preferences.Set <string> (Preferences.EnglishVersionKey, "n.n.n");
 			Assert.AreEqual (true, client.ShowTranslationWarning ());
 		}
 	}

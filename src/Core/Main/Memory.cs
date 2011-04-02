@@ -68,7 +68,7 @@ namespace gbrainy.Core.Main
 
 		protected override void Initialize ()
 		{
-			if (Preferences.GetBoolValue (Preferences.MemQuestionWarnKey) == false || 
+			if (Preferences.Get <bool> (Preferences.MemQuestionWarnKey) == false || 
 				IsPreviewMode == true) {
 				InitializeGame ();
 				return;
@@ -109,7 +109,7 @@ namespace gbrainy.Core.Main
 			alpha = 1;
 			draw_timer = false;
 
-			time_left = total_time = Preferences.GetIntValue (Preferences.MemQuestionTimeKey) * 10; // Seconds
+			time_left = total_time = Preferences.Get <int> (Preferences.MemQuestionTimeKey) * 10; // Seconds
 
 			StartTimer ();
 		}

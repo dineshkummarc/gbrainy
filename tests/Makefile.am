@@ -15,7 +15,8 @@ CSFILES_CORE =					\
 	$(srcdir)/Core/GameSessionTest.cs \
 	$(srcdir)/Core/GameManagerTest.cs \
 	$(srcdir)/Core/GameAnswerTest.cs \
-	$(srcdir)/Core/GameXmlFactoryTest.cs
+	$(srcdir)/Core/GameXmlFactoryTest.cs \
+	$(srcdir)/Core/PreferencesTest.cs
 
 CSFILES_CLASSICAL =					\
 	$(srcdir)/TestSupport/UnitTestSupport.cs \
@@ -71,6 +72,7 @@ CLEANFILES = 				\
 	gbrainy.exe			\
 	gbrainy.Games.dll		\
 	PlayerHistory.xml		\
+	Preferences.xml			\
 	TestResult.xml
 
 

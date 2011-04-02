@@ -87,7 +87,7 @@ namespace gbrainy.Clients.Classical
 		: base ("gbrainy", Defines.VERSION, Modules.UI, new string [0])
 #endif
 		{
-			if (Preferences.GetBoolValue (Preferences.EnglishKey) == false)
+			if (Preferences.Get <bool> (Preferences.EnglishKey) == false)
 			{
 				Catalog.Init ("gbrainy", Defines.GNOME_LOCALE_DIR);
 			}
@@ -110,11 +110,11 @@ namespace gbrainy.Clients.Classical
 			GameManagerPreload (session.GameManager);
 			Console.WriteLine (session.GameManager.GetGamesSummary ());
 
-			session.GameManager.ColorBlind = Preferences.GetBoolValue (Preferences.ColorBlindKey);
+			session.GameManager.ColorBlind = Preferences.Get <bool> (Preferences.ColorBlindKey);
 			session.DrawRequest += SessionDrawRequest;
 			session.UpdateUIElement += SessionUpdateUIElement;
 			session.SynchronizingObject = new GtkSynchronize ();
-			session.Difficulty = (GameDifficulty) Preferences.GetIntValue (Preferences.DifficultyKey);
+			session.Difficulty = (GameDifficulty) Preferences.Get <int> (Preferences.DifficultyKey);
 
 			BuildUI ();
 		}
@@ -134,11 +134,11 @@ namespace gbrainy.Clients.Classical
 			GtkBeans.Builder builder = new GtkBeans.Builder ("gbrainy.ui");
 			builder.Autoconnect (this);
 
-			show_toolbar = Preferences.GetBoolValue (Preferences.ToolbarShowKey) == true && low_res == false;
+			show_toolbar = Preferences.Get <bool> (Preferences.ToolbarShowKey) == true && low_res == false;
 
 			// Toolbar creation
 			toolbar = new Widgets.Toolbar (main_hbox, framework_vbox);
-			toolbar.Attach ((Gtk.Orientation) Preferences.GetIntValue (Preferences.ToolbarOrientationKey));
+			toolbar.Attach ((Gtk.Orientation) Preferences.Get <int> (Preferences.ToolbarOrientationKey));
 			toolbar.AllButton.Clicked += OnAllGames;
 			toolbar.LogicButton.Clicked += OnLogicOnly;
 			toolbar.CalculationButton.Clicked += OnMathOnly;
@@ -169,7 +169,7 @@ namespace gbrainy.Clients.Classical
 			eb.MotionNotifyEvent += OnMouseMotionEvent;
 			eb.ButtonPressEvent += OnHandleButtonPress;
 
-			show_toolbar = Preferences.GetBoolValue (Preferences.ToolbarShowKey) == true && low_res == false;
+			show_toolbar = Preferences.Get <bool> (Preferences.ToolbarShowKey) == true && low_res == false;
 
 			// We only disable the Arrow if we are going to show the toolbar.
 			// It has an impact on the total window width size even if we do not show it
@@ -495,7 +495,7 @@ namespace gbrainy.Clients.Classical
 		public bool ShowTranslationWarning ()
 		{
 			// Notify the user once per version only
-			if (String.Compare (Preferences.GetStringValue (Preferences.EnglishVersionKey), Defines.VERSION, 0) == 0)
+			if (String.Compare (Preferences.Get <string> (Preferences.EnglishVersionKey), Defines.VERSION, 0) == 0)
 				return false;
 
 			bool show;
@@ -504,7 +504,7 @@ namespace gbrainy.Clients.Classical
 
 			if (show == true)
 			{
-				Preferences.SetStringValue (Preferences.EnglishVersionKey, Defines.VERSION);
+				Preferences.Set <string> (Preferences.EnglishVersionKey, Defines.VERSION);
 				Preferences.Save ();
 			}
 			return show;
@@ -558,7 +558,7 @@ namespace gbrainy.Clients.Classical
 
 			dialog = new PreferencesDialog (session.PlayerHistory);
 			if ((Gtk.ResponseType) dialog.Run () == ResponseType.Ok) {
-				session.Difficulty = (GameDifficulty) Preferences.GetIntValue (Preferences.DifficultyKey);
+				session.Difficulty = (GameDifficulty) Preferences.Get <int> (Preferences.DifficultyKey);
 			}
 			dialog.Destroy ();
 		}
@@ -651,9 +651,9 @@ namespace gbrainy.Clients.Classical
 
 			toolbar_orientation_menuitem.Sensitive = toolbar.Visible;
 
-			if (Preferences.GetBoolValue (Preferences.ToolbarShowKey) != toolbar.Visible)
+			if (Preferences.Get <bool> (Preferences.ToolbarShowKey) != toolbar.Visible)
 			{
-				Preferences.SetBoolValue (Preferences.ToolbarShowKey, toolbar.Visible);
+				Preferences.Set <bool> (Preferences.ToolbarShowKey, toolbar.Visible);
 				Preferences.Save ();
 			}
 			app_window.Resize (width, height - requisition.Height);
@@ -666,9 +666,9 @@ namespace gbrainy.Clients.Classical
 
 			const Gtk.Orientation orientation = Gtk.Orientation.Vertical;
 
-			if ((Gtk.Orientation) Preferences.GetIntValue (Preferences.ToolbarOrientationKey) != orientation)
+			if ((Gtk.Orientation) Preferences.Get <int> (Preferences.ToolbarOrientationKey) != orientation)
 			{
-				Preferences.SetIntValue (Preferences.ToolbarOrientationKey, (int) orientation);
+				Preferences.Set <int> (Preferences.ToolbarOrientationKey, (int) orientation);
 				Preferences.Save ();
 			}
 			toolbar.Attach (orientation);
@@ -681,9 +681,9 @@ namespace gbrainy.Clients.Classical
 
 			const Gtk.Orientation orientation = Gtk.Orientation.Horizontal;
 
-			if ((Gtk.Orientation) Preferences.GetIntValue (Preferences.ToolbarOrientationKey) != orientation)
+			if ((Gtk.Orientation) Preferences.Get <int> (Preferences.ToolbarOrientationKey) != orientation)
 			{
-				Preferences.SetIntValue (Preferences.ToolbarOrientationKey, (int) Gtk.Orientation.Horizontal);
+				Preferences.Set <int>  (Preferences.ToolbarOrientationKey, (int) Gtk.Orientation.Horizontal);
 				Preferences.Save ();
 			}
 			toolbar.Attach (orientation);

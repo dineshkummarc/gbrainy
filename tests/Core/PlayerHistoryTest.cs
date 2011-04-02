@@ -34,15 +34,14 @@ namespace gbrainyTest
 		public void Construct ()
 		{
 			RegisterDefaultServices ();
-			// Ignore gbrainy instance preferences
-			Preferences.LoadDefaultValues ();
+			Preferences.Clear ();
 		}
 
 		[Test]
 		public void Clean ()
 		{
 			GameSessionHistory game = new GameSessionHistory ();
-			game.GamesPlayed = Preferences.GetIntValue (Preferences.MinPlayedGamesKey);
+			game.GamesPlayed = Preferences.Get <int> (Preferences.MinPlayedGamesKey);
 
 			history = new PlayerHistory ();
 			history.ConfigPath = ".";
@@ -58,7 +57,7 @@ namespace gbrainyTest
 		public void SaveLoad ()
 		{
 			GameSessionHistory game = new GameSessionHistory ();
-			game.GamesPlayed = Preferences.GetIntValue (Preferences.MinPlayedGamesKey);
+			game.GamesPlayed = Preferences.Get <int> (Preferences.MinPlayedGamesKey);
 			game.MemoryScore = 20;
 
 			history = new PlayerHistory ();

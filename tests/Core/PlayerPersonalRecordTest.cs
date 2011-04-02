@@ -32,8 +32,7 @@ namespace gbrainyTest
 		public void Construct ()
 		{
 			RegisterDefaultServices ();
-			// Ignore gbrainy instance preferences
-			Preferences.LoadDefaultValues ();
+			Preferences.Clear ();
 		}
 
 		[Test]
@@ -42,7 +41,7 @@ namespace gbrainyTest
 			PlayerHistory history;
 
 			GameSessionHistory game = new GameSessionHistory ();
-			game.GamesPlayed = Preferences.GetIntValue (Preferences.MinPlayedGamesKey);
+			game.GamesPlayed = Preferences.Get <int> (Preferences.MinPlayedGamesKey);
 
 			history = new PlayerHistory ();
 			history.ConfigPath = ".";

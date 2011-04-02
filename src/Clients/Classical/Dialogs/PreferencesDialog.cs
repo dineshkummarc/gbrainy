@@ -44,14 +44,14 @@ namespace gbrainy.Clients.Classical.Dialogs
 		public PreferencesDialog (PlayerHistory history) : base ("PreferencesDialog.ui", "preferences")
 		{
 			this.history = history;
-			prefspinbutton.Value = Preferences.GetIntValue (Preferences.MemQuestionTimeKey);
-			prefcheckbutton.Active = Preferences.GetBoolValue (Preferences.MemQuestionWarnKey);
-			maxstoredspinbutton.Value = Preferences.GetIntValue (Preferences.MaxStoredGamesKey);
-			minplayedspinbutton.Value = Preferences.GetIntValue (Preferences.MinPlayedGamesKey);
-			colorblindcheckbutton.Active = Preferences.GetBoolValue (Preferences.ColorBlindKey);
-			english_checkbutton.Active = Preferences.GetBoolValue (Preferences.EnglishKey);
+			prefspinbutton.Value = Preferences.Get <int> (Preferences.MemQuestionTimeKey);
+			prefcheckbutton.Active = Preferences.Get <bool> (Preferences.MemQuestionWarnKey);
+			maxstoredspinbutton.Value = Preferences.Get <int> (Preferences.MaxStoredGamesKey);
+			minplayedspinbutton.Value = Preferences.Get <int> (Preferences.MinPlayedGamesKey);
+			colorblindcheckbutton.Active = Preferences.Get <bool> (Preferences.ColorBlindKey);
+			english_checkbutton.Active = Preferences.Get <bool> (Preferences.EnglishKey);
 
-			switch ((GameDifficulty) Preferences.GetIntValue (Preferences.DifficultyKey)) {
+			switch ((GameDifficulty) Preferences.Get <int> (Preferences.DifficultyKey)) {
 			case GameDifficulty.Easy:
 				rb_easy.Active = rb_easy.HasFocus = true;
 				break;
@@ -79,7 +79,7 @@ namespace gbrainy.Clients.Classical.Dialogs
 			{
 				Theme theme = (Theme) store.GetValue (iter, COLUMN_VALUE);
 
-				if (String.Compare (theme.Name, Preferences.GetStringValue (Preferences.ThemeKey), true) == 0)
+				if (String.Compare (theme.Name, Preferences.Get <string> (Preferences.ThemeKey), true) == 0)
 				{
 					themes_combobox.SetActiveIter (iter);
 					break;
@@ -116,18 +116,18 @@ namespace gbrainy.Clients.Classical.Dialogs
 
 		private void OnOK (object sender, EventArgs args)
 		{
-			Preferences.SetIntValue (Preferences.MemQuestionTimeKey, (int) prefspinbutton.Value);
-			Preferences.SetBoolValue (Preferences.MemQuestionWarnKey, prefcheckbutton.Active);
-			Preferences.SetIntValue (Preferences.DifficultyKey, (int) Difficulty);
-			Preferences.SetIntValue (Preferences.MaxStoredGamesKey, (int) maxstoredspinbutton.Value);
-			Preferences.SetIntValue (Preferences.MinPlayedGamesKey, (int) minplayedspinbutton.Value);
-			Preferences.SetBoolValue (Preferences.ColorBlindKey, colorblindcheckbutton.Active);
-			Preferences.SetBoolValue (Preferences.EnglishKey, english_checkbutton.Active);
+			Preferences.Set <int>  (Preferences.MemQuestionTimeKey, (int) prefspinbutton.Value);
+			Preferences.Set <bool> (Preferences.MemQuestionWarnKey, prefcheckbutton.Active);
+			Preferences.Set <int>  (Preferences.DifficultyKey, (int) Difficulty);
+			Preferences.Set <int>  (Preferences.MaxStoredGamesKey, (int) maxstoredspinbutton.Value);
+			Preferences.Set <int>  (Preferences.MinPlayedGamesKey, (int) minplayedspinbutton.Value);
+			Preferences.Set <bool> (Preferences.ColorBlindKey, colorblindcheckbutton.Active);
+			Preferences.Set <bool> (Preferences.EnglishKey, english_checkbutton.Active);
 
 			TreeIter iter;
 			themes_combobox.GetActiveIter (out iter);
 			Theme theme = (Theme) themes_combobox.Model.GetValue (iter, COLUMN_VALUE);
-			Preferences.SetStringValue (Preferences.ThemeKey, theme.Name);
+			Preferences.Set <string> (Preferences.ThemeKey, theme.Name);
 
 			Preferences.Save ();
 		}

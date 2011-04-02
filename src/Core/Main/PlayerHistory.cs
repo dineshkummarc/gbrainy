@@ -65,12 +65,12 @@ namespace gbrainy.Core.Main
 
 		public void SaveGameSession (GameSessionHistory score)
 		{
-			if (score.GamesPlayed < Preferences.GetIntValue (Preferences.MinPlayedGamesKey)) {
+			if (score.GamesPlayed < Preferences.Get <int> (Preferences.MinPlayedGamesKey)) {
 				last_game = -1;
 				return;
 			}
 
-			if (Games.Count >= Preferences.GetIntValue (Preferences.MaxStoredGamesKey))
+			if (Games.Count >= Preferences.Get <int> (Preferences.MaxStoredGamesKey))
 				Games.RemoveAt (0);
 
 			// Storing a copy to allow the input object to be modified

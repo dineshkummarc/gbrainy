@@ -44,7 +44,7 @@ namespace gbrainy.Core.Main
 		{
 			Theme theme;
 	
-			theme = ThemeManager.FromName (Preferences.GetStringValue (Preferences.ThemeKey));
+			theme = ThemeManager.FromName (Preferences.Get <string> (Preferences.ThemeKey));
 			FontFace = theme.FontFace;
 
 			SetPangoNormalFontSize ();
@@ -57,7 +57,7 @@ namespace gbrainy.Core.Main
 				{
 					Theme theme;
 	
-					theme = ThemeManager.FromName (Preferences.GetStringValue (Preferences.ThemeKey));
+					theme = ThemeManager.FromName (Preferences.Get <string> (Preferences.ThemeKey));
 					image = new SVGImage (System.IO.Path.Combine (Defines.DATA_DIR, theme.BackgroundImage));
 				}
 
