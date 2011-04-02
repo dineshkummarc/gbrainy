@@ -22,7 +22,7 @@ using NUnit.Framework;
 
 using gbrainy.Games.Logic;
 
-namespace gbrainyTest.Games.Logic
+namespace gbrainy.Test.Games.Logic
 {
 	[TestFixture]
 	public class PuzzleNumericRelationTest : UnitTestSupport

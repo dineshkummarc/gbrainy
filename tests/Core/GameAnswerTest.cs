@@ -22,7 +22,7 @@ using NUnit.Framework;
 
 using gbrainy.Core.Main;
 
-namespace gbrainyTest
+namespace gbrainy.Test.Core
 {
 	[TestFixture]
 	public class GameAnswerTest : UnitTestSupport

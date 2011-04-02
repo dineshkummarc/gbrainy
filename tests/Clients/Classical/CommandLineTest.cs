@@ -24,7 +24,7 @@ using NUnit.Framework;
 using gbrainy.Clients.Classical;
 using gbrainy.Core.Main;
 
-namespace gbrainyTest
+namespace gbrainy.Test.Clients.Classical
 {
 	[TestFixture]
 	public class CommandLineTest : UnitTestSupport

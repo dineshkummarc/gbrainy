@@ -25,7 +25,7 @@ using gbrainy.Clients.Classical;
 using gbrainy.Core.Main;
 using gbrainy.Core.Services;
 
-namespace gbrainyTest
+namespace gbrainy.Test.Clients.Classical
 {
 	[TestFixture]
 	public class gbrainyTest : UnitTestSupport

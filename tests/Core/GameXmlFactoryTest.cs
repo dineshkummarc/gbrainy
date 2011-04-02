@@ -24,9 +24,8 @@ using NUnit.Framework;
 using gbrainy.Core.Main;
 using gbrainy.Core.Main.Xml;
 
-namespace gbrainyTest
+namespace gbrainy.Test.Core
 {
-
 	[TestFixture]
 	public class GameXmlFactoryTest : UnitTestSupport
 	{

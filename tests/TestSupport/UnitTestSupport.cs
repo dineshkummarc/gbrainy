@@ -24,7 +24,7 @@ using gbrainy.Core.Main;
 using gbrainy.Core.Services;
 using gbrainy.Core.Libraries;
 
-namespace gbrainyTest
+namespace gbrainy.Test
 {
 	public class UnitTestSupport
 	{
