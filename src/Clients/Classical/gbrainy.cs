@@ -498,16 +498,15 @@ namespace gbrainy.Clients.Classical
 			if (String.Compare (Preferences.Get <string> (Preferences.EnglishVersionKey), Defines.VERSION, 0) == 0)
 				return false;
 
-			bool show;
-	
-			show = (ServiceLocator.Instance.GetService <ITranslations> ().TranslationPercentage < MIN_TRANSLATION);
-
-			if (show == true)
+			int percentage = ServiceLocator.Instance.GetService <ITranslations> ().TranslationPercentage;
+			if (percentage > 0 && percentage < MIN_TRANSLATION)
 			{
 				Preferences.Set <string> (Preferences.EnglishVersionKey, Defines.VERSION);
 				Preferences.Save ();
+				return true;
 			}
-			return show;
+
+			return false;
 		}
 
 		void Translations ()
