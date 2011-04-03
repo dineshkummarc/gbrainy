@@ -79,12 +79,19 @@ namespace gbrainy.Games.Logic
 				total = 20 + random.Next (20);
 				ans = 4 * total - 4;
 				question = String.Format (
-					// Translators: {0} is always a number greater than 20
-					ServiceLocator.Instance.GetService <ITranslations> ().GetString ("A fence is built to enclose a square shaped region. {0} fence poles are used in each side of the square. How many fence poles are used in total?"),
+					// Translators: {0} is a number
+					ServiceLocator.Instance.GetService <ITranslations> ().GetPluralString (
+						"A fence is built to enclose a square shaped region. {0} fence pole is used in each side of the square. How many fence poles are used in total?",
+						"A fence is built to enclose a square shaped region. {0} fence poles are used in each side of the square. How many fence poles are used in total?",
+						total),
 					total);
-					// Translators: {0} is always a number greater than 20
+					// Translators: {0} is a number
 				answer = String.Format (
-					ServiceLocator.Instance.GetService <ITranslations> ().GetString ("There are {0} fence poles since the poles on the corners of the square are shared."), ans);
+					ServiceLocator.Instance.GetService <ITranslations> ().GetPluralString (
+						"There is {0} fence pole since the poles on the corners of the square are shared.",
+						"There are {0} fence poles since the poles on the corners of the square are shared.",
+						ans)
+					, ans);
 				break;
 
 			case GameType.Present:
@@ -92,10 +99,18 @@ namespace gbrainy.Games.Logic
 				total = present + 2;
 				ans = total;
 				question = String.Format (
-					// Translators: {0} is always a number greater than 5
-					ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Wrapping an anniversary present costs one euro. The anniversary present costs {0} euros more than the cost to wrap it. How much does it cost to both purchase and wrap the present?"),
+					// Translators: {0} is a number
+					ServiceLocator.Instance.GetService <ITranslations> ().GetPluralString (
+						"Wrapping an anniversary present costs one monetary unit. The anniversary present costs {0} monetary unit more than the cost to wrap it. How much does it cost to both purchase and wrap the present?",
+						"Wrapping an anniversary present costs one monetary unit. The anniversary present costs {0} monetary units more than the cost to wrap it. How much does it cost to both purchase and wrap the present?",
+						present),
 					present);
-				answer = ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Individually, the present costs one euro more to purchase than to wrap.");
+
+				answer = String.Format (
+					ServiceLocator.Instance.GetService <ITranslations> ().GetPluralString (
+					"It is the cost of the present, {0} monetary unit, plus one monetary unit of the wrapping.",
+					"It is the cost of the present, {0} monetary units, plus one monetary unit of the wrapping.",
+					present + 1), present + 1);
 				break;
 			default:
 				throw new Exception ("Unexpected value");

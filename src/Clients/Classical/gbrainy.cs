@@ -518,7 +518,7 @@ namespace gbrainy.Clients.Classical
 				Gtk.MessageType.Warning,
 				Gtk.ButtonsType.Ok,
 				Catalog.GetString ("The level of translation of gbrainy for your language is low."),
-				Catalog.GetString ("You may be exposed to partially translated games making it more difficult to play. If you prefer to play in English you can do so in gbrainy's Preferences."));
+				Catalog.GetString ("You may be exposed to partially translated games making it more difficult to play. If you prefer to play in English, there is an option for doing so in gbrainy's Preferences."));
 		
 			try {
 	 			dlg.Run ();
