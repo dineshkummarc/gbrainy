@@ -175,7 +175,7 @@ namespace gbrainy.Games.Logic
 			gr.Stroke ();
 		}
 
-		void DrawCircle (CairoContextEx gr, double x, double y, Color[] colors, int color_indice)
+		static void DrawCircle (CairoContextEx gr, double x, double y, Color[] colors, int color_indice)
 		{
 			double dg;
 			gr.Arc (x, y, radius, 0, 2 * Math.PI);

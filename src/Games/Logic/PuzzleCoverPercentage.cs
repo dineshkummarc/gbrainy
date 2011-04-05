@@ -107,7 +107,7 @@ namespace gbrainy.Games.Logic
 			gr.Restore ();
 		}
 
-		private void CoverZone (CairoContextEx gr, double x, double y)
+		static private void CoverZone (CairoContextEx gr, double x, double y)
 		{
 			Fill (gr, x + line_width, y + line_width , (width / 2) - (line_width * 2), (height / 2) - (line_width * 2));
 		}

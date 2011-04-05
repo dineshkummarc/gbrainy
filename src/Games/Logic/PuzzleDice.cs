@@ -111,7 +111,7 @@ namespace gbrainy.Games.Logic
 		}
 
 		// Takes a string with Fraction or Number and converts it to double
-		double FractionOrNumberToDouble (string answer)
+		static double FractionOrNumberToDouble (string answer)
 		{
 			string num_a = string.Empty;
 			string num_b = string.Empty;

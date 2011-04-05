@@ -174,7 +174,7 @@ namespace gbrainy.Games.Logic
 			DrawAndConnectPoints (gr, pos_x, pos_y, circles, Answer.Draw);
 		}
 		
-		string HasNRegionString (int regions)
+		static string HasNRegionString (int regions)
 		{
 			return String.Format (ServiceLocator.Instance.GetService <ITranslations> ().GetPluralString ("Has {0} region", 
 				"Has {0} regions", regions), regions);

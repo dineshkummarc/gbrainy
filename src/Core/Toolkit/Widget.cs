@@ -38,7 +38,7 @@ namespace gbrainy.Core.Toolkit
 		ISynchronizeInvoke synchronize;
 		bool sensitive;
 
-	    	public Widget (double width, double height)
+	    	protected Widget (double width, double height)
 		{
 			if (width < 0 || width > 1)
 				throw new ArgumentOutOfRangeException ("width");

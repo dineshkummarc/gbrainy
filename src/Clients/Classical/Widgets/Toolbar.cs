@@ -150,7 +150,7 @@ namespace gbrainy.Clients.Classical.Widgets
 			Insert (FinishButton, -1);
 		}
 
-		void AddIcon (IconFactory stock, string stockid, string resource)
+		static void AddIcon (IconFactory stock, string stockid, string resource)
 		{
 			Gtk.IconSet iconset = stock.Lookup (stockid);
 

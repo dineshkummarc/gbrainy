@@ -71,7 +71,7 @@ namespace gbrainy.Games.Logic
 			}
 		}
 
-		private void DrawRotatedCross (CairoContextEx gr, double x, double y, double size)
+		static private void DrawRotatedCross (CairoContextEx gr, double x, double y, double size)
 		{
 			gr.MoveTo (x, y);
 			gr.LineTo (x + size, y + size);

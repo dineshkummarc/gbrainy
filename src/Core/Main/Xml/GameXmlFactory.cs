@@ -87,7 +87,6 @@ namespace gbrainy.Core.Main.Xml
 							break;
 
 						str = reader.ReadElementString ();
-						str.Trim ();
 						game.Difficulty = GameDifficultyDescription.FromString (str);
 						break;
 					case "svg":

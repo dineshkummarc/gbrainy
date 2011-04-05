@@ -480,7 +480,7 @@ namespace gbrainy.Core.Main.Xml
 			return str.Replace (option_prefix, answer);
 		}
 
-		void BuildLocationList ()
+		static void BuildLocationList ()
 		{
 			locators.Clear ();
 

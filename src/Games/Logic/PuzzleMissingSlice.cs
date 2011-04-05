@@ -152,7 +152,7 @@ namespace gbrainy.Games.Logic
 			gr.Stroke ();
 		}
 
-		private void DrawSliceText (CairoContextEx gr, double x, double y, int slice, string str1, string str2, string str3)
+		static private void DrawSliceText (CairoContextEx gr, double x, double y, int slice, string str1, string str2, string str3)
 		{
 			double x0, y0, degrees;
 
