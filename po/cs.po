@@ -12,8 +12,8 @@ msgstr ""
 "Project-Id-Version: gbrainy\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=gbrainy&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2011-04-05 05:17+0000\n"
-"PO-Revision-Date: 2011-04-05 12:09+0200\n"
+"POT-Creation-Date: 2011-04-06 18:03+0000\n"
+"PO-Revision-Date: 2011-04-06 23:05+0200\n"
 "Last-Translator: Marek Černocký <marek@manet.cz>\n"
 "Language-Team: Czech <gnome-cs-list@gnome.org>\n"
 "MIME-Version: 1.0\n"
@@ -189,7 +189,7 @@ msgstr[2] ""
 "Jízdy na koni se účastní lidé a koně. Napočítali jste [eyes] očí a [legs] "
 "nohou. Kolik koní se účastní?"
 
-#: ../tools/GameXmlGetString.cs:69 ../data/games.xml.h:49
+#: ../tools/GameXmlGetString.cs:69 ../data/games.xml.h:50
 msgid "There is [men] person and [horses] horse."
 msgid_plural "There are [men] people and [horses] horses."
 msgstr[0] "Účastní se [men] člověk a [horses] kůň."
@@ -376,34 +376,47 @@ msgstr ""
 "méně jedna na to, abyste zjistili vítěze."
 
 #: ../data/games.xml.h:31
+#| msgid ""
+#| "[brothers_only] people have brothers only, [sisters_only] sisters only "
+#| "and [both] have sisters and brothers."
+msgid ""
+"It is calculated by taking the total number of people minus [brothers_only] "
+"people that have brothers only, minus [sisters_only] that have sisters only "
+"and minus [both] that have sisters and brothers."
+msgstr ""
+"Vypočítá se to tak, že se vezme celkový počet lidí mínus [brothers_only], "
+"kteří mají jen bratry, mínus [sisters_only], kteří mají jen sestry a mínus "
+"[both], kteří mají sestry i bratry."
+
+#: ../data/games.xml.h:32
 msgid "It is the result of the operation [num_a] * [num_b]."
 msgstr "Je to výsledek operace [num_a] . [num_b]."
 
-#: ../data/games.xml.h:32
+#: ../data/games.xml.h:33
 msgid "It is the result of the operation [num_a] + [num_b]."
 msgstr "Je to výsledek operace [num_a] + [num_b]."
 
-#: ../data/games.xml.h:33
+#: ../data/games.xml.h:34
 msgid "It is the result of the operation [num_b] - [num_a]."
 msgstr "Je to výsledek operace [num_b] - [num_a]."
 
-#: ../data/games.xml.h:34
+#: ../data/games.xml.h:35
 msgid "It is the result of the operation [num_b] / [num_a]."
 msgstr "Je to výsledek operace [num_b] : [num_a]."
 
-#: ../data/games.xml.h:35
+#: ../data/games.xml.h:36
 msgid "Lever"
 msgstr "Houpačka"
 
-#: ../data/games.xml.h:36
+#: ../data/games.xml.h:37
 msgid "Multiple number"
 msgstr "Násobky čísla"
 
-#: ../data/games.xml.h:37
+#: ../data/games.xml.h:38
 msgid "Odd number"
 msgstr "Liché číslo"
 
-#: ../data/games.xml.h:38
+#: ../data/games.xml.h:39
 msgid ""
 "On the dartboard below, where you have to hit the darts to add 120 points in "
 "5 throws? Answer using a list of numbers (e.g.: 4, 5, 6, 3, 2)"
@@ -411,7 +424,7 @@ msgstr ""
 "Kam musíte na terči ukázaném níže hodit šipky, abyste získali 120 bodů v 5 "
 "hodech. Odpovězte v podobě řady čísel (např. 4, 5, 6, 3, 2)"
 
-#: ../data/games.xml.h:39
+#: ../data/games.xml.h:40
 msgid ""
 "Out of [people] people, [brothers] have brothers, [sisters] have sisters and "
 "[both] have both. How many people have neither brothers nor sisters?"
@@ -419,15 +432,15 @@ msgstr ""
 "Z [people] lidí má [brothers] bratry, [sisters] má sestry a [both] má bratry "
 "i sestry. Kolik lidí nemá ani bratra ani sestru?"
 
-#: ../data/games.xml.h:40
+#: ../data/games.xml.h:41
 msgid "Palindromic years"
 msgstr "Palindromické roky"
 
-#: ../data/games.xml.h:41
+#: ../data/games.xml.h:42
 msgid "Password"
 msgstr "Heslo"
 
-#: ../data/games.xml.h:42
+#: ../data/games.xml.h:43
 #: ../src/Core/Main/Verbal/AnalogiesMultipleOptions.cs:121
 #: ../src/Core/Main/Verbal/AnalogiesPairOfWordsOptions.cs:132
 #: ../src/Games/Logic/PuzzleFigurePattern.cs:191
@@ -442,11 +455,11 @@ msgstr "Heslo"
 msgid "Possible answers are:"
 msgstr "Možné odpovědi jsou:"
 
-#: ../data/games.xml.h:43
+#: ../data/games.xml.h:44
 msgid "Simple equations"
 msgstr "Jednoduché porovnání"
 
-#: ../data/games.xml.h:44
+#: ../data/games.xml.h:45
 msgid ""
 "Since x is always an even number, multiplying it by 2 always produces an "
 "even number. Adding an even number to an odd number (y) always produces an "
@@ -456,50 +469,53 @@ msgstr ""
 "číslo. Přičtením lichého čísla (y) k tomuto sudému číslo získáme vždy liché "
 "číslo."
 
-#: ../data/games.xml.h:45
+#: ../data/games.xml.h:46
 msgid "Tennis game"
 msgstr "Tenisová hra"
 
-#: ../data/games.xml.h:46
+#: ../data/games.xml.h:47
+#| msgid ""
+#| "The variable q is bigger than x and s is bigger than y, if q is bigger "
+#| "than s then the condition x &gt; y is true."
 msgid ""
-"The variable q is bigger than x and s is bigger than y, if q is bigger than "
+"The variable p is smaller than x and s is bigger than y. If p is bigger than "
 "s then the condition x &gt; y is true."
 msgstr ""
-"Proměnná q je větší než x a s je větší než y, takže pokud je q větší než s, "
+"Proměnná p je menší než x a s je větší než y, takže pokud je p větší než s, "
 "je podmínka x &gt; y splněna."
 
-#: ../data/games.xml.h:47
+#: ../data/games.xml.h:48
+#| msgid ""
+#| "The variable q is bigger than x and y bigger than r, if q is bigger than "
+#| "r then the condition x &lt; y is true."
 msgid ""
-"The variable q is bigger than x and y bigger than r, if q is bigger than r "
+"The variable q is bigger than x and y bigger than r. If q is smaller than r "
 "then the condition x &lt; y is true."
 msgstr ""
-"Proměnná q je větší než x a y je větší než r, takže pokud je q větší než r, "
+"Proměnná q je větší než x a y je větší než r, takže pokud je q menší než r, "
 "je podmínka x &lt; y splněna."
 
-#: ../data/games.xml.h:48
+#: ../data/games.xml.h:49
 msgid "There are [men] people and [horses] horses."
 msgstr "Účastní se [men] lidí a [horses] koní."
 
-#: ../data/games.xml.h:50
+#: ../data/games.xml.h:51
 msgid "What number divided by [num_a] equals [num_b]?"
 msgstr "Které číslo podělené číslem [num_a] je rovno [num_b]?"
 
-#: ../data/games.xml.h:51
+#: ../data/games.xml.h:52
 msgid "What number minus [num_a] equals [num_b]?"
 msgstr "Které číslo mínus [num_a] je rovno [num_b]?"
 
-#: ../data/games.xml.h:52
+#: ../data/games.xml.h:53
 msgid "What number multiplied by [num_a] equals [num_b]?"
 msgstr "Které číslo vynásobené [num_a] je rovno [num_b]?"
 
-#: ../data/games.xml.h:53
+#: ../data/games.xml.h:54
 msgid "What number plus [num_a] equals [num_b]?"
 msgstr "Jaké číslo plus [num_a] se rovná [num_b]?"
 
-#: ../data/games.xml.h:54
-#| msgid ""
-#| "Which pair of numbers of the list below are both multiple of [num_x] and "
-#| "[num_y]? [option_answers]"
+#: ../data/games.xml.h:55
 msgid ""
 "Which two numbers of the list below are both multiple of [num_x] and "
 "[num_y]? [option_answers]"
@@ -507,17 +523,9 @@ msgstr ""
 "V kterém páru čísel z následujícího seznamu jsou obě čísla násobkem [num_x] "
 "a [num_y]? [option_answers]"
 
-#: ../data/games.xml.h:55
+#: ../data/games.xml.h:56
 msgid "You can fit 6 * 5 * [z] * 2 boxes."
 msgstr "Můžete zabalit 6 . 5 . [z] . 2 krabic."
-
-#: ../data/games.xml.h:56
-msgid ""
-"[brothers_only] people have brothers only, [sisters_only] sisters only and "
-"[both] have sisters and brothers."
-msgstr ""
-"[brothers_only] lidé mají jen bratry, [sisters_only] mají jen sestry a "
-"[both] jich má sestry i bratry."
 
 #: ../data/games.xml.h:58
 #, no-c-format
@@ -590,16 +598,17 @@ msgid "[option_prefix] p > r"
 msgstr "[option_prefix] p > r"
 
 #: ../data/games.xml.h:78
+#| msgid "[option_prefix] p > r"
+msgid "[option_prefix] p > s"
+msgstr "[option_prefix] p > s"
+
+#: ../data/games.xml.h:79
 msgid "[option_prefix] q < r"
 msgstr "[option_prefix] q < r"
 
-#: ../data/games.xml.h:79
+#: ../data/games.xml.h:80
 msgid "[option_prefix] q = s"
 msgstr "[option_prefix] q = s"
-
-#: ../data/games.xml.h:80
-msgid "[option_prefix] q > s"
-msgstr "[option_prefix] q > s"
 
 #: ../data/games.xml.h:81
 msgid "[option_prefix] x * y"
@@ -1397,8 +1406,6 @@ msgid "Titanium"
 msgstr "titan"
 
 #: ../data/verbal_analogies.xml.h:185
-#| msgid ""
-#| "A button needs to be pushed to make it work and a key needs to be turned."
 msgid ""
 "To make both objects work, a button needs to be pushed and a key needs to be "
 "turned."
@@ -2398,10 +2405,6 @@ msgid "The level of translation of gbrainy for your language is low."
 msgstr "Do vašeho jazyka je aplikace gbrainy přeložená jen z malé části."
 
 #: ../src/Clients/Classical/gbrainy.cs:521
-#| msgid ""
-#| "You may be exposed to partially translated games making it more difficult "
-#| "to play. If you prefer to play in English you can do so in gbrainy's "
-#| "Preferences."
 msgid ""
 "You may be exposed to partially translated games making it more difficult to "
 "play. If you prefer to play in English, there is an option for doing so in "
@@ -2973,9 +2976,6 @@ msgstr "{0}. střihem udělá stroj A celkem 2 kusy po jednom metru."
 # Translators: {0} is always a number greater than 20
 #: ../src/Games/Logic/PuzzleCounting.cs:84
 #, csharp-format
-#| msgid ""
-#| "A fence is built to enclose a square shaped region. {0} fence poles are "
-#| "used in each side of the square. How many fence poles are used in total?"
 msgid ""
 "A fence is built to enclose a square shaped region. {0} fence pole is used "
 "in each side of the square. How many fence poles are used in total?"
@@ -2994,9 +2994,6 @@ msgstr[2] ""
 
 #: ../src/Games/Logic/PuzzleCounting.cs:91
 #, csharp-format
-#| msgid ""
-#| "There are {0} fence poles since the poles on the corners of the square "
-#| "are shared."
 msgid ""
 "There is {0} fence pole since the poles on the corners of the square are "
 "shared."
@@ -3016,10 +3013,6 @@ msgstr[2] ""
 # Translators: {0} is always a number greater than 5
 #: ../src/Games/Logic/PuzzleCounting.cs:104
 #, csharp-format
-#| msgid ""
-#| "Wrapping an anniversary present costs one euro. The anniversary present "
-#| "costs {0} euros more than the cost to wrap it. How much does it cost to "
-#| "both purchase and wrap the present?"
 msgid ""
 "Wrapping an anniversary present costs one monetary unit. The anniversary "
 "present costs {0} monetary unit more than the cost to wrap it. How much does "
@@ -5199,6 +5192,9 @@ msgstr "_Odinstalovat…"
 #: ../src/Clients/Classical/mono-addins-strings.xml.h:35
 msgid "_Unselect All"
 msgstr "_Zrušit výběr"
+
+#~ msgid "[option_prefix] q > s"
+#~ msgstr "[option_prefix] q > s"
 
 #~ msgid ""
 #~ "Individually, the present costs one euro more to purchase than to wrap."
