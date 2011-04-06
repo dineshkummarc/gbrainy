@@ -13,8 +13,8 @@ msgstr ""
 "Project-Id-Version: gbrainy.master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=gbrainy&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2011-03-30 17:25+0000\n"
-"PO-Revision-Date: 2011-04-04 13:28+0200\n"
+"POT-Creation-Date: 2011-04-05 18:45+0000\n"
+"PO-Revision-Date: 2011-04-06 13:58+0200\n"
 "Last-Translator: Daniel Mustieles <daniel.mustieles@gmail.com>\n"
 "Language-Team: Español <gnome-es-list@gnome.org>\n"
 "MIME-Version: 1.0\n"
@@ -80,14 +80,6 @@ msgstr[1] ""
 "la edad de su hijo menos [ago]."
 
 #: ../tools/GameXmlGetString.cs:45
-#| msgid ""
-#| "A file is protected by a password formed by a [digits] digit number "
-#| "represented in base 10 (ranging from 0 to 9). How many different "
-#| "passwords can you have?"
-#| msgid_plural ""
-#| "A file is protected by a password formed by a [digits] digits number "
-#| "represented in base 10 (ranging from 0 to 9). How many different "
-#| "passwords can you have?"
 msgid ""
 "A file is protected by a password formed by a [digits] digit number (ranging "
 "from 0 to 9). How many different passwords can you have?"
@@ -102,14 +94,6 @@ msgstr[1] ""
 "[digits] números (de 0 a 9). ¿Cuántas contraseñas diferentes puede tener?"
 
 #: ../tools/GameXmlGetString.cs:49
-#| msgid ""
-#| "A file is protected by a password formed by a [digits] digit represented "
-#| "in base 8 (ranging from 0 to 7). How many different passwords can you "
-#| "have?"
-#| msgid_plural ""
-#| "A file is protected by a password formed by a [digits] digits represented "
-#| "in base 8 (ranging from 0 to 7). How many different passwords can you "
-#| "have?"
 msgid ""
 "A file is protected by a password formed by a [digits] digit octal number "
 "(ranging from 0 to 7). How many different passwords can you have?"
@@ -442,19 +426,25 @@ msgid "Tennis game"
 msgstr "Tenis"
 
 #: ../data/games.xml.h:44
+#| msgid ""
+#| "The variable q is bigger than x and s is bigger than y, if q is bigger "
+#| "than s then the condition x &gt; y is true."
 msgid ""
-"The variable q is bigger than x and s is bigger than y, if q is bigger than "
+"The variable p is smaller than x and s is bigger than y, if p is bigger than "
 "s then the condition x &gt; y is true."
 msgstr ""
-"La variable «q» es mayor que «x» y «s» es mayor que «y», si «q» es mayor que «s» "
+"La variable «p» es menor que «x» y «s» es mayor que «y», si «p» es mayor que «s» "
 "entonces la condición «x &gt; y» es cierta."
 
 #: ../data/games.xml.h:45
+#| msgid ""
+#| "The variable q is bigger than x and y bigger than r, if q is bigger than "
+#| "r then the condition x &lt; y is true."
 msgid ""
-"The variable q is bigger than x and y bigger than r, if q is bigger than r "
+"The variable q is bigger than x and y bigger than r, if q is smaller than r "
 "then the condition x &lt; y is true."
 msgstr ""
-"La variable «q» es mayor que «x» e «y» es mayor que «r», si «q» es mayor que «r» "
+"La variable «q» es mayor que «x» e «y» es mayor que «r», si «q» es menor que «r» "
 "entonces la condición «x &lt; y» es cierta."
 
 #: ../data/games.xml.h:46
@@ -535,16 +525,17 @@ msgid "[option_prefix] p > r"
 msgstr "[option_prefix] p > r"
 
 #: ../data/games.xml.h:68
+#| msgid "[option_prefix] p > r"
+msgid "[option_prefix] p > s"
+msgstr "[option_prefix] p > s"
+
+#: ../data/games.xml.h:69
 msgid "[option_prefix] q < r"
 msgstr "[option_prefix] q < r"
 
-#: ../data/games.xml.h:69
+#: ../data/games.xml.h:70
 msgid "[option_prefix] q = s"
 msgstr "[option_prefix] q = s"
-
-#: ../data/games.xml.h:70
-msgid "[option_prefix] q > s"
-msgstr "[option_prefix] q > s"
 
 #: ../data/games.xml.h:71
 msgid "[option_prefix] x * y"
@@ -1267,7 +1258,6 @@ msgstr "¿Cuál de las siguientes frases define mejor una persona «ostracista»
 #. Translators, please check these recommendations when translating gbrainy: http://live.gnome.org/gbrainy/Localizing
 #.
 #: ../data/verbal_analogies.xml.h:168
-#| msgid "Which of the following words means fear of people?"
 msgid "Which of the following sports is the odd one?"
 msgstr "¿Cuál de los siguientes deportes es el extraño?"
 
@@ -1295,7 +1285,6 @@ msgstr ""
 "¿Cuál de las siguientes palabras es la más cercana en significado a «censura»?"
 
 #: ../data/verbal_analogies.xml.h:173
-#| msgid "Which of the following words means fear of people?"
 msgid "Which of the following words is the odd one?"
 msgstr "¿Cuál de las siguientes palabras es la extraña?"
 
@@ -2384,7 +2373,6 @@ msgstr ""
 "entrenado."
 
 #: ../src/Clients/Classical/Dialogs/AboutDialog.cs:80
-#| msgid "gbrainy project web site: {0}"
 msgid "gbrainy project web site:http://live.gnome.org/gbrainy"
 msgstr "Página web del proyecto gbrainy: http://live.gnome.org/gbrainy"
 
@@ -2728,9 +2716,6 @@ msgstr ""
 
 #: ../src/Games/Logic/PuzzleClocks.cs:50
 #, csharp-format
-#| msgid ""
-#| "Starting from the first clock, sum {0} to the number made by adding the "
-#| "values to which the hands point."
 msgid ""
 "Starting from the first clock sum {0} to the value indicated by the hands."
 msgstr ""
@@ -4341,9 +4326,6 @@ msgstr "Memorizar indicaciones"
 
 #: ../src/Games/Memory/MemoryIndications.cs:165
 #, csharp-format
-#| msgid ""
-#| "Which of the following graphics represents the indications previously "
-#| "given? Answer {0}, {1}, {2} or {3}."
 msgid ""
 "Which of the following graphics represent the indications previously given? "
 "Answer {0}, {1}, {2} or {3}."
@@ -4562,7 +4544,6 @@ msgstr ""
 
 #: ../src/Games/Calculation/CalculationAverage.cs:65
 #, csharp-format
-#| msgid "The result of the operation is {0}."
 msgid "The result of the operation is {0:##0.###}."
 msgstr "El resultado de la operación es {0:##0.###}."
 
@@ -4572,9 +4553,6 @@ msgstr "Fracción más próxima"
 
 #: ../src/Games/Calculation/CalculationCloserFraction.cs:46
 #, csharp-format
-#| msgid ""
-#| "Which of the following numbers is closer to {0}? Answer {1}, {2}, {3} or "
-#| "{4}."
 msgid ""
 "Which of the following numbers is closer to {0:##0.###}? Answer {1}, {2}, "
 "{3} or {4}."
@@ -4584,7 +4562,6 @@ msgstr ""
 
 #: ../src/Games/Calculation/CalculationCloserFraction.cs:54
 #, csharp-format
-#| msgid "The result of the operation {0} / {1} is {2}"
 msgid "The result of the operation {0} / {1} is {2:##0.###}"
 msgstr "El resultado de la operación {0} / {1} es {2:##0.###}"
 
@@ -4976,6 +4953,9 @@ msgstr "_Desinstalar…"
 #: ../src/Clients/Classical/mono-addins-strings.xml.h:35
 msgid "_Unselect All"
 msgstr "_Deseleccionar todo"
+
+#~ msgid "[option_prefix] q > s"
+#~ msgstr "[option_prefix] q > s"
 
 #~ msgid ""
 #~ "A multiple is a number that may be divided by another number with no "
