@@ -1,22 +1,22 @@
 # Czech translation for gbrainy.
 # Copyright (C) 2009 gbrainy's COPYRIGHT HOLDER
 # This file is distributed under the same license as the gbrainy package.
+#
 # Marek Černocký <marek@manet.c>, 2009, 2010, 2011.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gbrainy master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-02-06 18:49+0000\n"
-"PO-Revision-Date: 2011-02-06 19:53+0100\n"
+"POT-Creation-Date: 2011-02-12 13:51+0000\n"
+"PO-Revision-Date: 2011-04-08 10:21+0200\n"
 "Last-Translator: Marek Černocký <marek@manet.cz\n"
 "Language-Team: Czech <gnome-cs-list@gnome.org>\n"
 "MIME-Version: 1.0\n"
+"Language: cs\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Poedit-Language: Czech\n"
-"X-Poedit-SourceCharset: utf-8\n"
 
 #: C/export.page:7(desc)
 msgid "Export the games for playing off-line."
@@ -76,9 +76,12 @@ msgstr ""
 "her do PDF na hraní off-line</gui></guiseq>."
 
 #: C/export.page:38(p)
+#| msgid ""
+#| "Select the type of games, the difficult level, and how many games to "
+#| "export. When done click <gui style=\"button\">Save</gui>."
 msgid ""
-"Select the type of games, the difficult level, and how many games to export. "
-"When done click <gui style=\"button\">Save</gui>."
+"Select the type of games, the difficulty level, and how many games to "
+"export. When done click <gui style=\"button\">Save</gui>."
 msgstr ""
 "Vyberte typy her, náročnost a počet her, které chcete vyexportovat. Po té "
 "klikněte na <gui style=\"button\">Uložit</gui>."
@@ -116,8 +119,9 @@ msgstr ""
 "počtu sekund, po které je úkol zobrazen."
 
 #: C/times.page:35(p)
-msgid "The default value is 4 seconds."
-msgstr "Výchozí hodnota je 4 sekundy."
+#| msgid "The default value is 4 seconds."
+msgid "The default value is 6 seconds."
+msgstr "Výchozí hodnota je 6 sekund."
 
 #. When image changes, this message will be marked fuzzy or untranslated for you.
 #. It doesn't matter what you translate it to: it's not used at all.
@@ -503,9 +507,6 @@ msgstr ""
 "skutečnosti potřeboval k vyřešení, se použije následující logika:"
 
 #: C/score.page:69(p)
-#| msgid ""
-#| "If you take less than the time expected to complete the game, you score "
-#| "100%."
 msgid ""
 "If you take less than the time expected to complete the game, you score 10 "
 "points."
@@ -514,9 +515,6 @@ msgstr ""
 "hodnocení 10 bodů."
 
 #: C/score.page:74(p)
-#| msgid ""
-#| "If you take more than the time expected to complete the game, you score "
-#| "80%."
 msgid ""
 "If you take more than the time expected to complete the game, you score 8 "
 "points."
@@ -525,9 +523,6 @@ msgstr ""
 "hodnocení 8."
 
 #: C/score.page:79(p)
-#| msgid ""
-#| "If you take more than 2x the time expected to complete the game, you "
-#| "score 70%."
 msgid ""
 "If you take more than 2x the time expected to complete the game, you score 7 "
 "points."
@@ -536,9 +531,6 @@ msgstr ""
 "hodnocení 7 bodů."
 
 #: C/score.page:85(p)
-#| msgid ""
-#| "If you take more than 3x the time expected to complete the game, you "
-#| "score 60%."
 msgid ""
 "If you take more than 3x the time expected to complete the game, you score 6 "
 "points."
@@ -573,10 +565,10 @@ msgstr ""
 #: C/score.page:106(p)
 #| msgid ""
 #| "This means that when playing at medium difficult level, to get a score of "
-#| "100% you need to score 100% on at least 20 games of every game type "
-#| "played."
+#| "100 points you need to score 10 points on at least 20 games of every game "
+#| "type played."
 msgid ""
-"This means that when playing at medium difficult level, to get a score of "
+"This means that when playing at medium difficulty level, to get a score of "
 "100 points you need to score 10 points on at least 20 games of every game "
 "type played."
 msgstr ""
@@ -1031,4 +1023,4 @@ msgstr ""
 #. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
 #: C/index.page:0(None)
 msgid "translator-credits"
-msgstr "Marek Černocký <marek@manet.cz>, 2009, 2010"
+msgstr "Marek Černocký <marek@manet.cz>, 2009 – 2011"
