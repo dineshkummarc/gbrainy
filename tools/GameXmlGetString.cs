@@ -70,6 +70,14 @@ public class GameXmlSttringFactory
 			"There are [men] people and [horses] horses.",
 			variable);
 
+		Catalog.GetPluralString ("John needs [john_time] hour to clean a warehouse and his friend half of the time. How many hours would take them to clean up the warehouse if they work together?",
+			"John needs [john_time] hours to clean a warehouse and his friend half of the time. How many hours would take them to clean up the warehouse if they work together?",
+			variable);
+
+		Catalog.GetPluralString ("John needs [john_time] hour to clean a warehouse and his friend two times John's time. How many hours would take them to clean up the warehouse if they work together?",
+			"John needs [john_time] hours to clean a warehouse and his friend two times John's time. How many hours would take them to clean up the warehouse if they work together?",
+			variable);
+
 
 	}
 }

@@ -544,4 +544,73 @@
 
 	</game>
 
+	<game>
+		<_name>Warehouse</_name>
+		<type>Logic</type>
+		<difficulty>All</difficulty>
+		<answer_checkattributes>MultiOption | IgnoreSpaces</answer_checkattributes>
+
+		<variant>
+			<variables>
+				// These numbers produce always an integer as result
+				int [] time = new int [] {30, 12, 42, 24, 36, 48, 18}; 
+				int index = random.Next (7);
+
+				double friend = time[index];
+				double john_time = time[index] * 2;
+
+				double john_speed = 1 / john_time;
+				double friend_speed = 1 / friend;
+				double answer_a = 1 / (john_speed + friend_speed);
+				double answer_b = 1 / (2 * john_speed + friend_speed);
+				double answer_c = 1 / (john_speed + friend_speed * 2);
+				double answer_d = (0.90 / (john_speed + friend_speed));
+			</variables>
+
+			<question>John needs [john_time] hour to clean a warehouse and his friend half of the time. How many hours would take them to clean up the warehouse if they work together?</question>
+			<question plural ="[john_time]">John needs [john_time] hours to clean a warehouse and his friend half of the time. How many hours would take them to clean up the warehouse if they work together?</question>
+		</variant>
+
+		<variant>
+			<variables>
+				// These numbers produce always an integer as result
+				int [] time = new int [] {30, 12, 42, 24, 36, 48, 18};
+				int index = random.Next (7);
+
+				double john_time = time[index];
+				double friend = time[index] * 2;
+				double john_speed = 1 / john_time;
+				double friend_speed = 1 / friend;
+				double answer_a = 1 / (john_speed + friend_speed);
+				double answer_b = 1 / (2 * john_speed + friend_speed);
+				double answer_c = 1 / (john_speed + friend_speed * 2);
+				double answer_d = (0.90 / (john_speed + friend_speed));
+			</variables>
+
+			<question>John needs [john_time] hour to clean a warehouse and his friend two times John's time. How many hours would take them to clean up the warehouse if they work together?</question>
+			<question plural ="[john_time]">John needs [john_time] hours to clean a warehouse and his friend two times John's time. How many hours would take them to clean up the warehouse if they work together?</question>
+		</variant>
+
+		<string _text = "Possible answers are:" x = "0.1" y = "0.15" size = "large"/>
+
+		<option x = "0.3" y = "0.3" width ="0.45" height ="0.1" order ="randomized" correct = "yes">
+			<string _text = "[option_prefix] [answer_a]" x = "0.05" y = "0.02" size = "large"/>
+		</option>
+
+		<option x = "0.3" y = "0.4" width ="0.45" height ="0.1" order ="randomized">
+			<string _text = "[option_prefix] [answer_b]" x = "0.05" y = "0.02" size = "large"/>
+		</option>
+
+		<option x = "0.3" y = "0.5" width ="0.45" height ="0.1" order ="randomized">
+			<string _text = "[option_prefix] [answer_c]" x = "0.05" y = "0.02" size = "large"/>
+		</option>
+
+		<option x = "0.3" y = "0.6" width ="0.45" height ="0.1" order ="randomized">
+			<string _text = "[option_prefix] [answer_d]" x = "0.05" y = "0.02" size = "large"/>
+		</option>
+
+		<_rationale>John cleans at speed of 1 / [john_time] per hour and his friend at 1 / [friend], both combined need [answer_a] hours.</_rationale>
+		<answer>[answer_a]</answer>
+	</game>
+
 </games>
