@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gbrainy master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gbrainy&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2011-03-25 19:03+0000\n"
-"PO-Revision-Date: 2011-03-28 08:31+0100\n"
+"POT-Creation-Date: 2011-04-09 06:53+0000\n"
+"PO-Revision-Date: 2011-04-10 08:44+0100\n"
 "Last-Translator: Andrej Žnidaršič <andrej.znidarsic@gmail.com>\n"
 "Language-Team: Slovenian <gnome-si@googlegroups.com>\n"
 "MIME-Version: 1.0\n"
@@ -103,7 +103,7 @@ msgstr[2] "Na konjski dirki so ljudje in konji. Prešteti je mogoče [eyes] oči
 msgstr[3] "Na konjski dirki so ljudje in konji. Prešteti je mogoče [eyes] oči in [legs] noge. Koliko je konj na dirki."
 
 #: ../tools/GameXmlGetString.cs:69
-#: ../data/games.xml.h:47
+#: ../data/games.xml.h:48
 msgid "There is [men] person and [horses] horse."
 msgid_plural "There are [men] people and [horses] horses."
 msgstr[0] "Na dirki je [men] ljudi in [horses] konj."
@@ -221,46 +221,53 @@ msgid "In every match you eliminate one player, you need the total number of gam
 msgstr "V vsaki tekmi je izločen en igralec. Za določitev zmagovalca potrebujete celotno število igralcev minus 1."
 
 #: ../data/games.xml.h:30
+#| msgid ""
+#| "[brothers_only] people have brothers only, [sisters_only] sisters only "
+#| "and [both] have sisters and brothers."
+msgid "It is calculated by taking the total number of people minus [brothers_only] people that have brothers only, minus [sisters_only] that have sisters only and minus [both] that have sisters and brothers."
+msgstr "To izračunate tako, da od celotnega števila ljudi odštejete [brothers_only] ljudji, ki imajo le brate, [sisters_only] ljudi, ki imajo le sestre in [both], ki imajo brate in sestre."
+
+#: ../data/games.xml.h:31
 msgid "It is the result of the operation [num_a] * [num_b]."
 msgstr "Je rezultat izračuna [num_a] * [num_b]."
 
-#: ../data/games.xml.h:31
+#: ../data/games.xml.h:32
 msgid "It is the result of the operation [num_a] + [num_b]."
 msgstr "Je rezultat izračuna [num_a] + [num_b]."
 
-#: ../data/games.xml.h:32
+#: ../data/games.xml.h:33
 msgid "It is the result of the operation [num_b] - [num_a]."
 msgstr "Je rezultat izračuna [num_b] - [num_a]."
 
-#: ../data/games.xml.h:33
+#: ../data/games.xml.h:34
 msgid "It is the result of the operation [num_b] / [num_a]."
 msgstr "Je rezultat izračuna [num_b] / [num_a]."
 
-#: ../data/games.xml.h:34
+#: ../data/games.xml.h:35
 msgid "Lever"
 msgstr "Ročica"
 
-#: ../data/games.xml.h:35
+#: ../data/games.xml.h:36
 msgid "Odd number"
 msgstr "Liho število"
 
-#: ../data/games.xml.h:36
+#: ../data/games.xml.h:37
 msgid "On the dartboard below, where you have to hit the darts to add 120 points in 5 throws? Answer using a list of numbers (e.g.: 4, 5, 6, 3, 2)"
 msgstr "Kam morate zadeti tarčo za pikado spodaj, da v 5 metih dobite 120 točk? Odgovorite z uporabo seznama številk (na primer 4, 5, 6, 3, 2)"
 
-#: ../data/games.xml.h:37
+#: ../data/games.xml.h:38
 msgid "Out of [people] people, [brothers] have brothers, [sisters] have sisters and [both] have both. How many people have neither brothers nor sisters?"
 msgstr "Od [people] ljudi, jih ima [brothers] brate, [sisters] ima sestre in [both] imajo oboje. Koliko ljudi nima niti bratov niti sester?"
 
-#: ../data/games.xml.h:38
+#: ../data/games.xml.h:39
 msgid "Palindromic years"
 msgstr "Palindromska leta"
 
-#: ../data/games.xml.h:39
+#: ../data/games.xml.h:40
 msgid "Password"
 msgstr "Geslo"
 
-#: ../data/games.xml.h:40
+#: ../data/games.xml.h:41
 #: ../src/Core/Main/Verbal/AnalogiesMultipleOptions.cs:134
 #: ../src/Core/Main/Verbal/AnalogiesPairOfWordsOptions.cs:148
 #: ../src/Games/Logic/PuzzleFigurePattern.cs:190
@@ -275,53 +282,55 @@ msgstr "Geslo"
 msgid "Possible answers are:"
 msgstr "Mogoči odgovori so:"
 
-#: ../data/games.xml.h:41
+#: ../data/games.xml.h:42
 msgid "Simple equations"
 msgstr "Enostavne enačbe"
 
-#: ../data/games.xml.h:42
+#: ../data/games.xml.h:43
 msgid "Since x is always an even number, multiplying it by 2 always produces an even number. Adding an even number to an odd number (y) always produces an odd number."
 msgstr "Ker je x vedno sodo število, množenje z 2 vedno proizvede sodo število. Dodajanje sodega števila lihemu številu (y) vedno proizvede liho število."
 
-#: ../data/games.xml.h:43
+#: ../data/games.xml.h:44
 msgid "Tennis game"
 msgstr "Igra tenisa"
 
-#: ../data/games.xml.h:44
-msgid "The variable q is bigger than x and s is bigger than y, if q is bigger than s then the condition x &gt; y is true."
-msgstr "Spremenljivka q je večja kot x in s je večji kot y. Če je q večji kot s, potem je pogoju  x &gt; y zadoščeno."
-
 #: ../data/games.xml.h:45
-msgid "The variable q is bigger than x and y bigger than r, if q is bigger than r then the condition x &lt; y is true."
-msgstr "Spremenljivka q je večja kot x in y je večja kot r. če je q večji od r potem je pogoju x  &lt; y zadoščeno."
+#| msgid ""
+#| "The variable q is bigger than x and s is bigger than y, if q is bigger "
+#| "than s then the condition x &gt; y is true."
+msgid "The variable p is smaller than x and s is bigger than y, if p is bigger than s then the condition x &gt; y is true."
+msgstr "Spremenljivka p je manjša kot x in spremenljivka s je večja kot y. Če je p večji kot s, potem je pogoju  x &gt; y zadoščeno."
 
 #: ../data/games.xml.h:46
+#| msgid ""
+#| "The variable q is bigger than x and y bigger than r, if q is bigger than "
+#| "r then the condition x &lt; y is true."
+msgid "The variable q is bigger than x and y bigger than r, if q is smaller than r then the condition x &lt; y is true."
+msgstr "Spremenljivka q je večja kot x in spremenljivka y je večja kot r. Če je q večji od r potem je pogoju x  &lt; y zadoščeno."
+
+#: ../data/games.xml.h:47
 msgid "There are [men] people and [horses] horses."
 msgstr "Na dirki je [men] ljudi in [horses] konj."
 
-#: ../data/games.xml.h:48
+#: ../data/games.xml.h:49
 msgid "What number divided by [num_a] equals [num_b]?"
 msgstr "Katero število je potrebno deliti z [num_a], da dobimo [num_b]?"
 
-#: ../data/games.xml.h:49
+#: ../data/games.xml.h:50
 msgid "What number minus [num_a] equals [num_b]?"
 msgstr "Kateremu številu je treba odšteti [num_a], da dobimo [num_b]?"
 
-#: ../data/games.xml.h:50
+#: ../data/games.xml.h:51
 msgid "What number multiplied by [num_a] equals [num_b]?"
 msgstr "Katero število je treba pomnožiti z [num_a], da dobimo [num_b]?"
 
-#: ../data/games.xml.h:51
+#: ../data/games.xml.h:52
 msgid "What number plus [num_a] equals [num_b]?"
 msgstr "Katero število je potrebno dodati [num_a] da dobimo [num_b]?"
 
-#: ../data/games.xml.h:52
+#: ../data/games.xml.h:53
 msgid "You can fit 6 * 5 * [z] * 2 boxes."
 msgstr "Spravite lahko 6 * 5 * [z] * 2 škatli."
-
-#: ../data/games.xml.h:53
-msgid "[brothers_only] people have brothers only, [sisters_only] sisters only and [both] have sisters and brothers."
-msgstr "[brothers_only] ljudje imajo le brate, [sisters_only] imajo le sestre in [both] imajo brate in sestre."
 
 #: ../data/games.xml.h:55
 #, no-c-format
@@ -365,16 +374,17 @@ msgid "[option_prefix] p > r"
 msgstr "[option_prefix] p > r"
 
 #: ../data/games.xml.h:68
+#| msgid "[option_prefix] p > r"
+msgid "[option_prefix] p > s"
+msgstr "[option_prefix] p > r"
+
+#: ../data/games.xml.h:69
 msgid "[option_prefix] q < r"
 msgstr "[option_prefix] q < r"
 
-#: ../data/games.xml.h:69
+#: ../data/games.xml.h:70
 msgid "[option_prefix] q = s"
 msgstr "[option_prefix] q = s"
-
-#: ../data/games.xml.h:70
-msgid "[option_prefix] q > s"
-msgstr "[option_prefix] q > s"
 
 #: ../data/games.xml.h:71
 msgid "[option_prefix] x * y"
@@ -2090,7 +2100,6 @@ msgid "A brain teaser game for fun and to keep your brain trained."
 msgstr "Zabavna igra za spodbujanje razmišljanja in bistrenja misli."
 
 #: ../src/Clients/Classical/Dialogs/AboutDialog.cs:80
-#| msgid "gbrainy project web site"
 msgid "gbrainy project web site:http://live.gnome.org/gbrainy"
 msgstr "Spletišče projekta gbrainy:http://live.gnome.org/gbrainy"
 
@@ -4114,6 +4123,8 @@ msgstr "_Odstrani ..."
 msgid "_Unselect All"
 msgstr "_Prekliči izbor vsega"
 
+#~ msgid "[option_prefix] q > s"
+#~ msgstr "[option_prefix] q > s"
 #~ msgid ""
 #~ "A multiple is a number that may be divided by another number with no "
 #~ "remainder. For example, 10, 15 and 25 are multiples of 5."
