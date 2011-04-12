@@ -13,8 +13,8 @@ msgstr ""
 "Project-Id-Version: gbrainy.master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=gbrainy&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2011-04-08 08:23+0000\n"
-"PO-Revision-Date: 2011-04-08 10:54+0200\n"
+"POT-Creation-Date: 2011-04-09 06:33+0000\n"
+"PO-Revision-Date: 2011-04-12 16:16+0200\n"
 "Last-Translator: Daniel Mustieles <daniel.mustieles@gmail.com>\n"
 "Language-Team: Español <gnome-es-list@gnome.org>\n"
 "MIME-Version: 1.0\n"
@@ -168,11 +168,47 @@ msgstr[1] ""
 "En una carrera de caballos hay personas y caballos. Puede contar [eyes] ojos "
 "y [legs] piernas. ¿Cuántos caballos hay?"
 
-#: ../tools/GameXmlGetString.cs:69 ../data/games.xml.h:50
+#: ../tools/GameXmlGetString.cs:69 ../data/games.xml.h:51
 msgid "There is [men] person and [horses] horse."
 msgid_plural "There are [men] people and [horses] horses."
 msgstr[0] "Hay [men] persona y [horses] caballo."
 msgstr[1] "Hay [men] personas y [horses] caballos."
+
+#: ../tools/GameXmlGetString.cs:73
+msgid ""
+"John needs [john_time] hour to clean a warehouse and his friend half of the "
+"time. How many hours would take them to clean up the warehouse if they work "
+"together?"
+msgid_plural ""
+"John needs [john_time] hours to clean a warehouse and his friend half of the "
+"time. How many hours would take them to clean up the warehouse if they work "
+"together?"
+msgstr[0] ""
+"Juan necesita [john_time] hora para limpiar un almacén y su amigo tarda la "
+"mitad del tiempo. ¿Cuántas horas tardarán en limpiar el almacén si trabajan "
+"juntos?"
+msgstr[1] ""
+"Juan necesita [john_time] horas para limpiar un almacén y su amigo tarda la "
+"mitad del tiempo. ¿Cuántas horas tardarán en limpiar el almacén si trabajan "
+"juntos?"
+
+#: ../tools/GameXmlGetString.cs:77
+msgid ""
+"John needs [john_time] hour to clean a warehouse and his friend two times "
+"John's time. How many hours would take them to clean up the warehouse if "
+"they work together?"
+msgid_plural ""
+"John needs [john_time] hours to clean a warehouse and his friend two times "
+"John's time. How many hours would take them to clean up the warehouse if "
+"they work together?"
+msgstr[0] ""
+"Juan necesita [john_time] hora para limpiar un almacén y su amigo tarda el "
+"doble de tiempo. ¿Cuántas horas tardarán en limpiar el almacén si trabajan "
+"juntos?"
+msgstr[1] ""
+"Juan necesita [john_time] horas para limpiar un almacén y su amigo tarda el "
+"doble de tiempo. ¿Cuántas horas tardarán en limpiar el almacén si trabajan "
+"juntos?"
 
 #: ../data/games.xml.h:1
 msgid ""
@@ -358,9 +394,6 @@ msgstr ""
 "partidas menos 1 para saber el ganador."
 
 #: ../data/games.xml.h:31
-#| msgid ""
-#| "[brothers_only] people have brothers only, [sisters_only] sisters only "
-#| "and [both] have sisters and brothers."
 msgid ""
 "It is calculated by taking the total number of people minus [brothers_only] "
 "people that have brothers only, minus [sisters_only] that have sisters only "
@@ -387,18 +420,26 @@ msgid "It is the result of the operation [num_b] / [num_a]."
 msgstr "Es el resultado de la operación [num_b] / [num_a]."
 
 #: ../data/games.xml.h:36
+msgid ""
+"John cleans at speed of 1 / [john_time] per hour and his friend at 1 / "
+"[friend], both combined need [answer_a] hours."
+msgstr ""
+"Juan limpia a una velocidad de 1 / [john_time] por hora, y su amigo a 1 / "
+"[friend], ambos juntos necesitan [answer_a] horas."
+
+#: ../data/games.xml.h:37
 msgid "Lever"
 msgstr "Palanca"
 
-#: ../data/games.xml.h:37
+#: ../data/games.xml.h:38
 msgid "Multiple number"
 msgstr "Múltiplo"
 
-#: ../data/games.xml.h:38
+#: ../data/games.xml.h:39
 msgid "Odd number"
 msgstr "Número impar"
 
-#: ../data/games.xml.h:39
+#: ../data/games.xml.h:40
 msgid ""
 "On the dartboard below, where you have to hit the darts to add 120 points in "
 "5 throws? Answer using a list of numbers (e.g.: 4, 5, 6, 3, 2)"
@@ -407,7 +448,7 @@ msgstr ""
 "puntos en 5 tiradas? Responde usando una lista de números (ej.: 4, 5, 6, 3, "
 "2)"
 
-#: ../data/games.xml.h:40
+#: ../data/games.xml.h:41
 msgid ""
 "Out of [people] people, [brothers] have brothers, [sisters] have sisters and "
 "[both] have both. How many people have neither brothers nor sisters?"
@@ -415,15 +456,15 @@ msgstr ""
 "De [people] personas, [brothers] tienen hermanos, [sisters] tienen hermanas "
 "y [both] tienen ambos. ¿Cuántas personas no tienen ni hermanos ni hermanas?"
 
-#: ../data/games.xml.h:41
+#: ../data/games.xml.h:42
 msgid "Palindromic years"
 msgstr "Años capicúa"
 
-#: ../data/games.xml.h:42
+#: ../data/games.xml.h:43
 msgid "Password"
 msgstr "Contraseña"
 
-#: ../data/games.xml.h:43
+#: ../data/games.xml.h:44
 #: ../src/Core/Main/Verbal/AnalogiesMultipleOptions.cs:121
 #: ../src/Core/Main/Verbal/AnalogiesPairOfWordsOptions.cs:132
 #: ../src/Games/Logic/PuzzleFigurePattern.cs:191
@@ -438,11 +479,11 @@ msgstr "Contraseña"
 msgid "Possible answers are:"
 msgstr "Respuestas posibles:"
 
-#: ../data/games.xml.h:44
+#: ../data/games.xml.h:45
 msgid "Simple equations"
 msgstr "Ecuaciones simples"
 
-#: ../data/games.xml.h:45
+#: ../data/games.xml.h:46
 msgid ""
 "Since x is always an even number, multiplying it by 2 always produces an "
 "even number. Adding an even number to an odd number (y) always produces an "
@@ -452,14 +493,11 @@ msgstr ""
 "número par. Sumar un número par a un número impar (y) siempre da un número "
 "impar."
 
-#: ../data/games.xml.h:46
+#: ../data/games.xml.h:47
 msgid "Tennis game"
 msgstr "Tenis"
 
-#: ../data/games.xml.h:47
-#| msgid ""
-#| "The variable q is bigger than x and s is bigger than y, if q is bigger "
-#| "than s then the condition x &gt; y is true."
+#: ../data/games.xml.h:48
 msgid ""
 "The variable p is smaller than x and s is bigger than y. If p is bigger than "
 "s then the condition x &gt; y is true."
@@ -467,10 +505,7 @@ msgstr ""
 "La variable «p» es menor que «x» y «s» es mayor que «y». Si «p» es mayor que «s» "
 "entonces la condición «x &gt; y» es cierta."
 
-#: ../data/games.xml.h:48
-#| msgid ""
-#| "The variable q is bigger than x and y bigger than r, if q is bigger than "
-#| "r then the condition x &lt; y is true."
+#: ../data/games.xml.h:49
 msgid ""
 "The variable q is bigger than x and y bigger than r. If q is smaller than r "
 "then the condition x &lt; y is true."
@@ -478,27 +513,31 @@ msgstr ""
 "La variable «q» es mayor que «x» e «y» es mayor que «r». Si «q» es menor que «r» "
 "entonces la condición «x &lt; y» es cierta."
 
-#: ../data/games.xml.h:49
+#: ../data/games.xml.h:50
 msgid "There are [men] people and [horses] horses."
 msgstr "Hay [men] persona y [horses] caballos."
 
-#: ../data/games.xml.h:51
+#: ../data/games.xml.h:52
+msgid "Warehouse"
+msgstr "Almacén"
+
+#: ../data/games.xml.h:53
 msgid "What number divided by [num_a] equals [num_b]?"
 msgstr "¿Qué número dividido por [num_a] es igual a [num_b]?"
 
-#: ../data/games.xml.h:52
+#: ../data/games.xml.h:54
 msgid "What number minus [num_a] equals [num_b]?"
 msgstr "¿Qué número menos [num_a] es igual a [num_b]?"
 
-#: ../data/games.xml.h:53
+#: ../data/games.xml.h:55
 msgid "What number multiplied by [num_a] equals [num_b]?"
 msgstr "¿Qué número multiplicado por [num_a] da [num_b]?"
 
-#: ../data/games.xml.h:54
+#: ../data/games.xml.h:56
 msgid "What number plus [num_a] equals [num_b]?"
 msgstr "¿Qué número sumado a [num_a] da [num_b]?"
 
-#: ../data/games.xml.h:55
+#: ../data/games.xml.h:57
 msgid ""
 "Which two numbers of the list below are both multiple of [num_x] and "
 "[num_y]? [option_answers]"
@@ -506,11 +545,11 @@ msgstr ""
 "¿Qué pareja de números de la siguiente lista son los dos múltiplos de "
 "[num_x] y [num_y]? [option_answers]"
 
-#: ../data/games.xml.h:56
+#: ../data/games.xml.h:58
 msgid "You can fit 6 * 5 * [z] * 2 boxes."
 msgstr "Puedes encajar 6 * 5 * [z] * 2 cajas."
 
-#: ../data/games.xml.h:58
+#: ../data/games.xml.h:60
 #, no-c-format
 msgid ""
 "[female_cars]% ([all_cars] - [males_cars]) of the inhabitants are women and "
@@ -520,92 +559,111 @@ msgstr ""
 "tienen un coche."
 
 #. Since this a multioption the answer string is set to option | this string, what makes answer_show is not useful here
-#: ../data/games.xml.h:60
+#: ../data/games.xml.h:62
 msgid "[option_a] and [option_b]"
 msgstr "[option_a] y [option_b]"
 
-#: ../data/games.xml.h:61
+#: ../data/games.xml.h:63
 msgid "[option_a] and [option_b] are both multiples of [num_x] and [num_y]."
 msgstr "[option_a] y [option_b] son los dos múltiplos de [num_x] y [num_y]."
 
-#: ../data/games.xml.h:62
+#: ../data/games.xml.h:64
 msgid "[option_prefix] (x - y) * 2"
 msgstr "[option_prefix] (x - y) * 2"
 
-#: ../data/games.xml.h:63
+#: ../data/games.xml.h:65
 msgid "[option_prefix] 2x + y"
 msgstr "[option_prefix] 2x + y"
 
-#: ../data/games.xml.h:64
+#: ../data/games.xml.h:66
+#| msgid "[option_prefix] [option_a]%"
+msgid "[option_prefix] [answer_a]"
+msgstr "[option_prefix] [answer_a]"
+
+#: ../data/games.xml.h:67
+#| msgid "[option_prefix] [option_b]%"
+msgid "[option_prefix] [answer_b]"
+msgstr "[option_prefix] [answer_b]"
+
+#: ../data/games.xml.h:68
+#| msgid "[option_prefix] [option_c]%"
+msgid "[option_prefix] [answer_c]"
+msgstr "[option_prefix] [answer_c]"
+
+#: ../data/games.xml.h:69
+#| msgid "[option_prefix] [option_d]%"
+msgid "[option_prefix] [answer_d]"
+msgstr "[option_prefix] [answer_d]"
+
+#: ../data/games.xml.h:70
 msgid "[option_prefix] [option_a] and [option_b]"
 msgstr "[option_prefix] [option_a] y [option_b]"
 
-#: ../data/games.xml.h:65
+#: ../data/games.xml.h:71
 msgid "[option_prefix] [option_a] and [option_c]"
 msgstr "[option_prefix] [option_a] y [option_c]"
 
-#: ../data/games.xml.h:67
+#: ../data/games.xml.h:73
 #, no-c-format
 msgid "[option_prefix] [option_a]%"
 msgstr "[option_prefix] [option_a]%"
 
-#: ../data/games.xml.h:68
+#: ../data/games.xml.h:74
 msgid "[option_prefix] [option_b] and [option_c]"
 msgstr "[option_prefix] [option_b] y [option_c]"
 
-#: ../data/games.xml.h:70
+#: ../data/games.xml.h:76
 #, no-c-format
 msgid "[option_prefix] [option_b]%"
 msgstr "[option_prefix] [option_b]%"
 
-#: ../data/games.xml.h:71
+#: ../data/games.xml.h:77
 msgid "[option_prefix] [option_c] and [option_d]"
 msgstr "[option_prefix] [option_c] y [option_d]"
 
-#: ../data/games.xml.h:73
+#: ../data/games.xml.h:79
 #, no-c-format
 msgid "[option_prefix] [option_c]%"
 msgstr "[option_prefix] [option_c]%"
 
-#: ../data/games.xml.h:75
+#: ../data/games.xml.h:81
 #, no-c-format
 msgid "[option_prefix] [option_d]%"
 msgstr "[option_prefix] [option_d]%"
 
-#: ../data/games.xml.h:76
+#: ../data/games.xml.h:82
 msgid "[option_prefix] p < r"
 msgstr "[option_prefix] p < r"
 
-#: ../data/games.xml.h:77
+#: ../data/games.xml.h:83
 msgid "[option_prefix] p > r"
 msgstr "[option_prefix] p > r"
 
-#: ../data/games.xml.h:78
-#| msgid "[option_prefix] p > r"
+#: ../data/games.xml.h:84
 msgid "[option_prefix] p > s"
 msgstr "[option_prefix] p > s"
 
-#: ../data/games.xml.h:79
+#: ../data/games.xml.h:85
 msgid "[option_prefix] q < r"
 msgstr "[option_prefix] q < r"
 
-#: ../data/games.xml.h:80
+#: ../data/games.xml.h:86
 msgid "[option_prefix] q = s"
 msgstr "[option_prefix] q = s"
 
-#: ../data/games.xml.h:81
+#: ../data/games.xml.h:87
 msgid "[option_prefix] x * y"
 msgstr "[option_prefix] x * y"
 
-#: ../data/games.xml.h:82
+#: ../data/games.xml.h:88
 msgid "[option_prefix] x * y * 2"
 msgstr "[option_prefix] x * y * 2"
 
-#: ../data/games.xml.h:83
+#: ../data/games.xml.h:89
 msgid "[rslt_a] and [rslt_b]"
 msgstr "[rslt_a] y [rslt_b]"
 
-#: ../data/games.xml.h:84
+#: ../data/games.xml.h:90
 msgid ""
 "[year_start] is a palindromic year as [year_end] is, a gap of 11 years. What "
 "are the next two consecutive palindromic years after [year_end] with the "
@@ -615,19 +673,19 @@ msgstr ""
 "de 11 años. ¿Cuáles son los dos siguientes años capicúa consecutivos después "
 "de [year_end] con el mismo intervalo?"
 
-#: ../data/games.xml.h:85
+#: ../data/games.xml.h:91
 msgid "x * [num_a] = [num_b]"
 msgstr "x * [num_a] = [num_b]"
 
-#: ../data/games.xml.h:86
+#: ../data/games.xml.h:92
 msgid "x + [num_a] = [num_b]"
 msgstr "x + [num_a] = [num_b]"
 
-#: ../data/games.xml.h:87
+#: ../data/games.xml.h:93
 msgid "x - [num_a] = [num_b]"
 msgstr "x - [num_a] = [num_b]"
 
-#: ../data/games.xml.h:88
+#: ../data/games.xml.h:94
 msgid "x / [num_a] = [num_b]"
 msgstr "x / [num_a] = [num_b]"
 
@@ -3014,10 +3072,6 @@ msgstr[1] ""
 
 #: ../src/Games/Logic/PuzzleCounting.cs:104
 #, csharp-format
-#| msgid ""
-#| "Wrapping an anniversary present costs one euro. The anniversary present "
-#| "costs {0} euros more than the cost to wrap it. How much does it cost to "
-#| "both purchase and wrap the present?"
 msgid ""
 "Wrapping an anniversary present costs one monetary unit. The anniversary "
 "present costs {0} monetary unit more than the cost to wrap it. How much does "
