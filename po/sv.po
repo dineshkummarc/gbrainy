@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gbrainy\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-04-06 19:16+0200\n"
-"PO-Revision-Date: 2011-04-06 19:30+0100\n"
+"POT-Creation-Date: 2011-04-18 07:54+0200\n"
+"PO-Revision-Date: 2011-04-18 08:02+0100\n"
 "Last-Translator: Daniel Nylander <po@danielnylander.se>\n"
 "Language-Team: Swedish <tp-sv@listor.tp-sv.se>\n"
 "Language: sv\n"
@@ -79,11 +79,23 @@ msgstr[0] "I en hästtävling finns det personer och hästar. Du kan räkna dig 
 msgstr[1] "I en hästtävling finns det personer och hästar. Du kan räkna dig till [eyes] ögon och [legs] ben. Hur många hästar finns det?"
 
 #: ../tools/GameXmlGetString.cs:69
-#: ../data/games.xml.h:49
+#: ../data/games.xml.h:51
 msgid "There is [men] person and [horses] horse."
 msgid_plural "There are [men] people and [horses] horses."
 msgstr[0] "Det finns [men] person och [horses] häst."
 msgstr[1] "Det finns [men] personer och [horses] hästar."
+
+#: ../tools/GameXmlGetString.cs:73
+msgid "John needs [john_time] hour to clean a warehouse and his friend half of the time. How many hours would take them to clean up the warehouse if they work together?"
+msgid_plural "John needs [john_time] hours to clean a warehouse and his friend half of the time. How many hours would take them to clean up the warehouse if they work together?"
+msgstr[0] "Johan behöver [john_time] timme för att städa en butik och hans vän behöver halva den tiden. Hur många timmar skulle det ta för dem att städa butiken om de arbetade tillsammans?"
+msgstr[1] "Johan behöver [john_time] timmar för att städa en butik och hans vän behöver halva den tiden. Hur många timmar skulle det ta för dem att städa butiken om de arbetade tillsammans?"
+
+#: ../tools/GameXmlGetString.cs:77
+msgid "John needs [john_time] hour to clean a warehouse and his friend two times John's time. How many hours would take them to clean up the warehouse if they work together?"
+msgid_plural "John needs [john_time] hours to clean a warehouse and his friend two times John's time. How many hours would take them to clean up the warehouse if they work together?"
+msgstr[0] "Johan behöver [john_time] timme för att städa en butik och hans vän behöver dubbelt så lång tid som Johan. Hur många timmar skulle det ta för dem att städa butiken om de arbetade tillsammans?"
+msgstr[1] "Johan behöver [john_time] timmar för att städa en butik och hans vän behöver dubbelt så lång tid som Johan. Hur många timmar skulle det ta för dem att städa butiken om de arbetade tillsammans?"
 
 #: ../data/games.xml.h:1
 msgid "A lever is in equilibrium at distances reciprocally proportional to their weights."
@@ -199,50 +211,58 @@ msgid "In every match you eliminate one player, you need the total number of gam
 msgstr "I varje match slår du ut en spelare. Du behöver veta det totala antalet matcher minus 1 för att få reda på vinnaren."
 
 #: ../data/games.xml.h:31
+msgid "It is calculated by taking the total number of people minus [brothers_only] people that have brothers only, minus [sisters_only] that have sisters only and minus [both] that have sisters and brothers."
+msgstr "Den beräknas genom att ta det totala antalet personer minus [brothers_only] personer som har endast bröder, minus [sisters_only] som har endast systrar och minus [both] som har systrar och bröder."
+
+#: ../data/games.xml.h:32
 msgid "It is the result of the operation [num_a] * [num_b]."
 msgstr "Det är resultatet av operationen [num_a] * [num_b]."
 
-#: ../data/games.xml.h:32
+#: ../data/games.xml.h:33
 msgid "It is the result of the operation [num_a] + [num_b]."
 msgstr "Det är resultatet av operationen [num_a] + [num_b]."
 
-#: ../data/games.xml.h:33
+#: ../data/games.xml.h:34
 msgid "It is the result of the operation [num_b] - [num_a]."
 msgstr "Det är resultatet av operationen [num_b] - [num_a]."
 
-#: ../data/games.xml.h:34
+#: ../data/games.xml.h:35
 msgid "It is the result of the operation [num_b] / [num_a]."
 msgstr "Det är resultatet av operationen [num_b] / [num_a]."
 
-#: ../data/games.xml.h:35
+#: ../data/games.xml.h:36
+msgid "John cleans at speed of 1 / [john_time] per hour and his friend at 1 / [friend], both combined need [answer_a] hours."
+msgstr "Johan städar med en hastighet av 1 / [john_time] per timme och hans vän med 1 / [friend], båda kombinerade behöver [answer_a] timmar."
+
+#: ../data/games.xml.h:37
 msgid "Lever"
 msgstr "Hävstång"
 
-#: ../data/games.xml.h:36
+#: ../data/games.xml.h:38
 msgid "Multiple number"
 msgstr "Multipeltal"
 
-#: ../data/games.xml.h:37
+#: ../data/games.xml.h:39
 msgid "Odd number"
 msgstr "Udda tal"
 
-#: ../data/games.xml.h:38
+#: ../data/games.xml.h:40
 msgid "On the dartboard below, where you have to hit the darts to add 120 points in 5 throws? Answer using a list of numbers (e.g.: 4, 5, 6, 3, 2)"
 msgstr "Var har du, på darttavlan nedan, träffat med pilarna för att lägga till 120 poäng i 5 kast? Svara med en lista över tal (t.ex.: 4, 5, 6, 3, 2)"
 
-#: ../data/games.xml.h:39
+#: ../data/games.xml.h:41
 msgid "Out of [people] people, [brothers] have brothers, [sisters] have sisters and [both] have both. How many people have neither brothers nor sisters?"
 msgstr "Utav [people] personer har [brothers] bröder, [sisters] har systrar och [both] har båda. Hur många personer har varken bröder eller systrar?"
 
-#: ../data/games.xml.h:40
+#: ../data/games.xml.h:42
 msgid "Palindromic years"
 msgstr "Palindromiska årtal"
 
-#: ../data/games.xml.h:41
+#: ../data/games.xml.h:43
 msgid "Password"
 msgstr "Lösenord"
 
-#: ../data/games.xml.h:42
+#: ../data/games.xml.h:44
 #: ../src/Core/Main/Verbal/AnalogiesMultipleOptions.cs:121
 #: ../src/Core/Main/Verbal/AnalogiesPairOfWordsOptions.cs:132
 #: ../src/Games/Logic/PuzzleFigurePattern.cs:191
@@ -257,165 +277,181 @@ msgstr "Lösenord"
 msgid "Possible answers are:"
 msgstr "Möjliga svar är:"
 
-#: ../data/games.xml.h:43
+#: ../data/games.xml.h:45
 msgid "Simple equations"
 msgstr "Enkla ekvationer"
 
-#: ../data/games.xml.h:44
+#: ../data/games.xml.h:46
 msgid "Since x is always an even number, multiplying it by 2 always produces an even number. Adding an even number to an odd number (y) always produces an odd number."
 msgstr "Eftersom x alltid är ett jämnt tal och om det multipliceras med 2 ger det alltid ett jämnt tal. Lägger man till ett jämnt tal till ett udda tal (y) ger det alltid ett udda tal."
 
-#: ../data/games.xml.h:45
+#: ../data/games.xml.h:47
 msgid "Tennis game"
 msgstr "Tennismatch"
 
-#: ../data/games.xml.h:46
+#: ../data/games.xml.h:48
 msgid "The variable p is smaller than x and s is bigger than y. If p is bigger than s then the condition x &gt; y is true."
 msgstr "Variabeln p är mindre än x och s är större än y. Om p är större än s så är villkoret x &gt; y sant."
 
-#: ../data/games.xml.h:47
+#: ../data/games.xml.h:49
 msgid "The variable q is bigger than x and y bigger than r. If q is smaller than r then the condition x &lt; y is true."
 msgstr "Variabeln q är större än x och y är större än r. Om q är mindre än r så är villkoret x &lt; y sant."
 
-#: ../data/games.xml.h:48
+#: ../data/games.xml.h:50
 msgid "There are [men] people and [horses] horses."
 msgstr "Det finns [men] personer och [horses] hästar."
 
-#: ../data/games.xml.h:50
+#: ../data/games.xml.h:52
+msgid "Warehouse"
+msgstr "Butik"
+
+#: ../data/games.xml.h:53
 msgid "What number divided by [num_a] equals [num_b]?"
 msgstr "Vilket tal dividerat med [num_a] är lika med [num_b]?"
 
-#: ../data/games.xml.h:51
+#: ../data/games.xml.h:54
 msgid "What number minus [num_a] equals [num_b]?"
 msgstr "Vilket tal minus [num_a] är lika med [num_b]?"
 
-#: ../data/games.xml.h:52
+#: ../data/games.xml.h:55
 msgid "What number multiplied by [num_a] equals [num_b]?"
 msgstr "Vilket tal multiplicerat med [num_a] är lika med [num_b]?"
 
-#: ../data/games.xml.h:53
+#: ../data/games.xml.h:56
 msgid "What number plus [num_a] equals [num_b]?"
 msgstr "Vilket tal plus [num_a] är lika med [num_b]?"
 
-#: ../data/games.xml.h:54
+#: ../data/games.xml.h:57
 msgid "Which two numbers of the list below are both multiple of [num_x] and [num_y]? [option_answers]"
 msgstr "Vilka två tal i listan nedan är båda multiplar för [num_x] och [num_y]? [option_answers]"
 
-#: ../data/games.xml.h:55
+#: ../data/games.xml.h:58
 msgid "You can fit 6 * 5 * [z] * 2 boxes."
 msgstr "Du kan få in 6 * 5 * [z] * 2 lådor."
 
-#: ../data/games.xml.h:56
-msgid "[brothers_only] people have brothers only, [sisters_only] sisters only and [both] have sisters and brothers."
-msgstr "[brothers_only] personer har endast bröder, [sisters_only] har endast systrar och [both] har systrar och bröder."
-
-#: ../data/games.xml.h:58
+#: ../data/games.xml.h:60
 #, no-c-format
 msgid "[female_cars]% ([all_cars] - [males_cars]) of the inhabitants are women and have a car."
 msgstr "[female_cars]% ([all_cars] - [males_cars]) av invånarna är kvinnor och har en bil."
 
 #. Since this a multioption the answer string is set to option | this string, what makes answer_show is not useful here
-#: ../data/games.xml.h:60
+#: ../data/games.xml.h:62
 msgid "[option_a] and [option_b]"
 msgstr "[option_a] och [option_b]"
 
-#: ../data/games.xml.h:61
+#: ../data/games.xml.h:63
 msgid "[option_a] and [option_b] are both multiples of [num_x] and [num_y]."
 msgstr "[option_a] och [option_b] är båda multipler av [num_x] och [num_y]."
 
-#: ../data/games.xml.h:62
+#: ../data/games.xml.h:64
 msgid "[option_prefix] (x - y) * 2"
 msgstr "[option_prefix] (x - y) * 2"
 
-#: ../data/games.xml.h:63
+#: ../data/games.xml.h:65
 msgid "[option_prefix] 2x + y"
 msgstr "[option_prefix] 2x + y"
 
-#: ../data/games.xml.h:64
+#: ../data/games.xml.h:66
+msgid "[option_prefix] [answer_a]"
+msgstr "[option_prefix] [answer_a]"
+
+#: ../data/games.xml.h:67
+msgid "[option_prefix] [answer_b]"
+msgstr "[option_prefix] [answer_b]"
+
+#: ../data/games.xml.h:68
+msgid "[option_prefix] [answer_c]"
+msgstr "[option_prefix] [answer_c]"
+
+#: ../data/games.xml.h:69
+msgid "[option_prefix] [answer_d]"
+msgstr "[option_prefix] [answer_d]"
+
+#: ../data/games.xml.h:70
 msgid "[option_prefix] [option_a] and [option_b]"
 msgstr "[option_prefix] [option_a] och [option_b]"
 
-#: ../data/games.xml.h:65
+#: ../data/games.xml.h:71
 msgid "[option_prefix] [option_a] and [option_c]"
 msgstr "[option_prefix] [option_a] och [option_c]"
 
-#: ../data/games.xml.h:67
+#: ../data/games.xml.h:73
 #, no-c-format
 msgid "[option_prefix] [option_a]%"
 msgstr "[option_prefix] [option_a]%"
 
-#: ../data/games.xml.h:68
+#: ../data/games.xml.h:74
 msgid "[option_prefix] [option_b] and [option_c]"
 msgstr "[option_prefix] [option_b] och [option_c]"
 
-#: ../data/games.xml.h:70
+#: ../data/games.xml.h:76
 #, no-c-format
 msgid "[option_prefix] [option_b]%"
 msgstr "[option_prefix] [option_b]%"
 
-#: ../data/games.xml.h:71
+#: ../data/games.xml.h:77
 msgid "[option_prefix] [option_c] and [option_d]"
 msgstr "[option_prefix] [option_c] och [option_d]"
 
-#: ../data/games.xml.h:73
+#: ../data/games.xml.h:79
 #, no-c-format
 msgid "[option_prefix] [option_c]%"
 msgstr "[option_prefix] [option_c]%"
 
-#: ../data/games.xml.h:75
+#: ../data/games.xml.h:81
 #, no-c-format
 msgid "[option_prefix] [option_d]%"
 msgstr "[option_prefix] [option_d]%"
 
-#: ../data/games.xml.h:76
+#: ../data/games.xml.h:82
 msgid "[option_prefix] p < r"
 msgstr "[option_prefix] p < r"
 
-#: ../data/games.xml.h:77
+#: ../data/games.xml.h:83
 msgid "[option_prefix] p > r"
 msgstr "[option_prefix] p > r"
 
-#: ../data/games.xml.h:78
+#: ../data/games.xml.h:84
 msgid "[option_prefix] p > s"
 msgstr "[option_prefix] p > s"
 
-#: ../data/games.xml.h:79
+#: ../data/games.xml.h:85
 msgid "[option_prefix] q < r"
 msgstr "[option_prefix] q < r"
 
-#: ../data/games.xml.h:80
+#: ../data/games.xml.h:86
 msgid "[option_prefix] q = s"
 msgstr "[option_prefix] q = s"
 
-#: ../data/games.xml.h:81
+#: ../data/games.xml.h:87
 msgid "[option_prefix] x * y"
 msgstr "[option_prefix] x * y"
 
-#: ../data/games.xml.h:82
+#: ../data/games.xml.h:88
 msgid "[option_prefix] x * y * 2"
 msgstr "[option_prefix] x * y * 2"
 
-#: ../data/games.xml.h:83
+#: ../data/games.xml.h:89
 msgid "[rslt_a] and [rslt_b]"
 msgstr "[rslt_a] och [rslt_b]"
 
-#: ../data/games.xml.h:84
+#: ../data/games.xml.h:90
 msgid "[year_start] is a palindromic year as [year_end] is, a gap of 11 years. What are the next two consecutive palindromic years after [year_end] with the same gap?"
 msgstr "[year_start] är ett palindromiskt årtal precis som [year_end]. Alltså ett hopp på 11 år. Vilka är de två nästkommande, efterföljande palindromiska årtal efter år [year_end] med samma hopp?"
 
-#: ../data/games.xml.h:85
+#: ../data/games.xml.h:91
 msgid "x * [num_a] = [num_b]"
 msgstr "x * [num_a] = [num_b]"
 
-#: ../data/games.xml.h:86
+#: ../data/games.xml.h:92
 msgid "x + [num_a] = [num_b]"
 msgstr "x + [num_a] = [num_b]"
 
-#: ../data/games.xml.h:87
+#: ../data/games.xml.h:93
 msgid "x - [num_a] = [num_b]"
 msgstr "x - [num_a] = [num_b]"
 
-#: ../data/games.xml.h:88
+#: ../data/games.xml.h:94
 msgid "x / [num_a] = [num_b]"
 msgstr "x / [num_a] = [num_b]"
 
@@ -2453,7 +2489,7 @@ msgstr "Hur många små kuber går det åt att bygga den större kuben nedan? Sv
 
 #: ../src/Games/Logic/Puzzle3DCube.cs:40
 msgid "A cube is a regular solid object having six congruent square faces."
-msgstr "En kub är ett vanligt, solitt objekt som har sex kongruenta fyrkantiga ytor."
+msgstr "En kub är ett vanligt, solitt objekt som har sex kongruenta kvadratiska ytor."
 
 #: ../src/Games/Logic/PuzzleBalance.cs:49
 msgid "Balance"
@@ -2465,7 +2501,7 @@ msgstr "Hur många trianglar behövs på högra sidan av den sista figuren för 
 
 #: ../src/Games/Logic/PuzzleBalance.cs:58
 msgid "Every circle is equivalent to two triangles and every square to three triangles."
-msgstr "Varje cirkel motsvarar två trianglar och varje fyrkant motsvarar tre trianglar."
+msgstr "Varje cirkel motsvarar två trianglar och varje kvadrat motsvarar tre trianglar."
 
 #: ../src/Games/Logic/PuzzleBalance.cs:63
 msgid "Every circle is equivalent two triangles."
@@ -2495,7 +2531,7 @@ msgstr "Cirklar i en rektangel"
 #
 #: ../src/Games/Logic/PuzzleCirclesSquare.cs:34
 msgid "What is the maximum number of circles (as shown) that fit in the square below?"
-msgstr "Vad är det maximala antalet cirklar (som visat) som kan passas in i nedanstående fyrkant?"
+msgstr "Vad är det maximala antalet cirklar (som visat) som kan passas in i nedanstående kvadrat?"
 
 #: ../src/Games/Logic/PuzzleCirclesSquare.cs:38
 msgid "You can fit more than 64 circles."
@@ -2575,15 +2611,15 @@ msgstr "Maskin A skapar två stycken 1 meter långa delar med klipp nummer {0}."
 #, csharp-format
 msgid "A fence is built to enclose a square shaped region. {0} fence pole is used in each side of the square. How many fence poles are used in total?"
 msgid_plural "A fence is built to enclose a square shaped region. {0} fence poles are used in each side of the square. How many fence poles are used in total?"
-msgstr[0] "Ett staket byggs för att inhägna ett fyrkantigt område. {0} staketpåle används på varje sida av fyrkanten. Hur många staketpålar används totalt?"
-msgstr[1] "Ett staket byggs för att inhägna ett fyrkantigt område. {0} staketpålar används på varje sida av fyrkanten. Hur många staketpålar används totalt?"
+msgstr[0] "Ett staket byggs för att inhägna ett kvadratiskt område. {0} staketpåle används på varje sida av kvadraten. Hur många staketpålar används totalt?"
+msgstr[1] "Ett staket byggs för att inhägna ett kvadratiskt område. {0} staketpålar används på varje sida av kvadraten. Hur många staketpålar används totalt?"
 
 #: ../src/Games/Logic/PuzzleCounting.cs:91
 #, csharp-format
 msgid "There is {0} fence pole since the poles on the corners of the square are shared."
 msgid_plural "There are {0} fence poles since the poles on the corners of the square are shared."
-msgstr[0] "Det finns {0} staketpåle eftersom pålarna i hörnen av fyrkanten är gemensamma."
-msgstr[1] "Det finns {0} staketpålar eftersom pålarna i hörnen av fyrkanten är gemensamma."
+msgstr[0] "Det finns {0} staketpåle eftersom pålarna i hörnen av kvadraten är gemensamma."
+msgstr[1] "Det finns {0} staketpålar eftersom pålarna i hörnen av kvadraten är gemensamma."
 
 #: ../src/Games/Logic/PuzzleCounting.cs:104
 #, csharp-format
@@ -2741,7 +2777,7 @@ msgstr "Varje tecken av texten representerar en egenskap hos figuren."
 
 #: ../src/Games/Logic/PuzzleFigureLetter.cs:53
 msgid "'A' indicates that the figures overlap, 'B' that are squares, 'C' that are circles, 'D' that the figures are separated, 'E' that there are three figures and 'F' that there are two figures."
-msgstr "\"A\" indikerar att figurerna överlappas, \"B\" att de är fyrkanter, \"C\" att de är cirklar, \"D\" att figurerna är separerade, \"E\" att det finns tre figurer och \"F\" att det finns två figurer."
+msgstr "\"A\" indikerar att figurerna överlappas, \"B\" att de är kvadrater, \"C\" att de är cirklar, \"D\" att figurerna är separerade, \"E\" att det finns tre figurer och \"F\" att det finns två figurer."
 
 #: ../src/Games/Logic/PuzzleFigurePattern.cs:40
 msgid "Figure pattern"
@@ -2910,7 +2946,7 @@ msgstr "Saknad del"
 #: ../src/Games/Logic/PuzzleMissingPiece.cs:40
 #, csharp-format
 msgid "Which square completes the figure below? Answer {0}, {1} or {2}."
-msgstr "Vilken fyrkant färdigställer figuren nedan? Svara {0}, {1} eller {2}."
+msgstr "Vilken kvadrat färdigställer figuren nedan? Svara {0}, {1} eller {2}."
 
 #: ../src/Games/Logic/PuzzleMissingPiece.cs:45
 msgid "The logic works at row level."
@@ -2919,7 +2955,7 @@ msgstr "Logiken fungerar på radnivå."
 # Linje eller rad?
 #: ../src/Games/Logic/PuzzleMissingPiece.cs:50
 msgid "In every row the third square is made by flipping the first square and superimposing it on the second square, followed by removing the matching lines."
-msgstr "I varje rad skapas den tredje fyrkanten av att vända den första fyrkanten och klippa in den i andra fyrkanten, följt av att ta bort de matchande linjerna."
+msgstr "I varje rad skapas den tredje kvadraten av att vända den första kvadraten och klippa in den i andra kvadraten, följt av att ta bort de matchande linjerna."
 
 #: ../src/Games/Logic/PuzzleMissingSlice.cs:62
 msgid "Missing slice"
@@ -3358,15 +3394,15 @@ msgstr "Talet i mitten på varje rad är lika med dubbla summan av de andra tale
 
 #: ../src/Games/Logic/PuzzleSquareDots.cs:204
 msgid "Square with dots"
-msgstr "Fyrkant med punkter"
+msgstr "Kvadrat med punkter"
 
 #: ../src/Games/Logic/PuzzleSquaresAndLetters.cs:35
 msgid "Squares and letters"
-msgstr "Fyrkanter och bokstäver"
+msgstr "Kvadrater och bokstäver"
 
 #: ../src/Games/Logic/PuzzleSquaresAndLetters.cs:39
 msgid "The letters around the squares follow a pattern. Which letter should replace the question mark in the last square?"
-msgstr "Bokstäverna runt fyrkanterna följer ett mönster. Vilken bokstav ska ersätta frågetecknet i sista fyrkanten?"
+msgstr "Bokstäverna runt kvadraterna följer ett mönster. Vilken bokstav ska ersätta frågetecknet i sista kvadraten?"
 
 #: ../src/Games/Logic/PuzzleSquaresAndLetters.cs:44
 #, csharp-format
@@ -3375,33 +3411,33 @@ msgstr "Varje bokstav beräknas genom att ta positionen i alfabetet för den fö
 
 #: ../src/Games/Logic/PuzzleSquares.cs:31
 msgid "Squares"
-msgstr "Fyrkanter"
+msgstr "Kvadrater"
 
 #
 #: ../src/Games/Logic/PuzzleSquares.cs:35
 msgid "How many squares of any size do you count in the figure below?"
-msgstr "Hur många fyrkanter av valfri storlek kan du räkna dig till i nedanstående figur?"
+msgstr "Hur många kvadrater av valfri storlek kan du räkna dig till i nedanstående figur?"
 
 #: ../src/Games/Logic/PuzzleSquares.cs:39
 msgid "A square is a rectangle with sides of equal length. A square can also be built from other squares."
-msgstr "En fyrkant är en rektangel med lika långa sidor. En fyrkant kan även byggas från andra fyrkanter."
+msgstr "En kvadrat är en rektangel med lika långa sidor. En kvadrat kan även byggas från andra kvadrater."
 
 #: ../src/Games/Logic/PuzzleSquares.cs:46
 msgid "There are 16 single squares, 9 squares made by 4 single squares, 4 squares made by 9 single squares and 1 square made by 16 single squares."
-msgstr "Det finns 16 fristående fyrkanter, 9 fyrkanter skapade av fyra fristående fyrkanter, 4 fyrkanter skapade av nio fyrkanter och en fyrkant skapad av sexton fristående fyrkanter."
+msgstr "Det finns 16 fristående kvadrater, 9 kvadrater skapade av fyra fristående kvadrater, 4 kvadrater skapade av nio kvadrater och en kvadrat skapad av sexton fristående kvadrater."
 
 #: ../src/Games/Logic/PuzzleSquares.cs:48
 msgid "There are 9 single squares, 4 squares made by 4 single squares and 1 square made by 9 single squares."
-msgstr "Det finns 9 fristående fyrkanter, 4 fyrkanter skapade av fyra fristående fyrkanter samt en fyrkant skapad av 9 fristående fyrkanter."
+msgstr "Det finns 9 fristående kvadrater, 4 kvadrater skapade av fyra fristående kvadrater samt en kvadrat skapad av 9 fristående kvadrater."
 
 #: ../src/Games/Logic/PuzzleSquareSheets.cs:28
 msgid "Square sheets"
-msgstr "Fyrkantsark"
+msgstr "Kvadratiska ark"
 
 #
 #: ../src/Games/Logic/PuzzleSquareSheets.cs:32
 msgid "What is the minimum number of square sheets of paper of any size required to create the figure? Lines indicate frontiers between different sheets."
-msgstr "Vad är minsta antalet fyrkantiga pappersark som krävs för att skapa figuren? Linjer indikerar gränser mellan olika ark."
+msgstr "Vad är minsta antalet kvadratiska pappersark som krävs för att skapa figuren? Linjer indikerar gränser mellan olika ark."
 
 #: ../src/Games/Logic/PuzzleSquareSheets.cs:36
 msgid "The sheets should overlap."
@@ -3410,7 +3446,7 @@ msgstr "Arken ska överlappa."
 #. Translators: the translated version should not take more characters that the English original
 #: ../src/Games/Logic/PuzzleSquareSheets.cs:42
 msgid "A full sized square of paper, a 3/4 of the whole size square of paper in the bottom right corner, another 3/4 square of paper in the top left corner and a 1/4 square of paper in the top left corner."
-msgstr "Ett helt fyrkantigt papper, ett 3/4 stort papper av hela storleken i nedre högra hörnet, ett annat 3/4 fyrkantigt papper i övre vänstra hörnet och ett 1/4 fyrkantigt papper i övre vänstra hörnet."
+msgstr "Ett helt kvadratiskt papper, ett 3/4 stort papper av hela storleken i nedre högra hörnet, ett annat 3/4 kvadratiskt papper i övre vänstra hörnet och ett 1/4 kvadratiskt papper i övre vänstra hörnet."
 
 #: ../src/Games/Logic/PuzzleTetris.cs:35
 msgid "Tetris"
@@ -3637,7 +3673,7 @@ msgstr "Triangel"
 
 #: ../src/Games/Memory/MemoryFiguresAndText.cs:53
 msgid "Square"
-msgstr "Fyrkant"
+msgstr "Kvadrat"
 
 #: ../src/Games/Memory/MemoryFiguresAndText.cs:55
 msgid "Pentagon"
@@ -3653,7 +3689,7 @@ msgstr "Memorera figurer och text"
 
 #: ../src/Games/Memory/MemoryFiguresAndText.cs:69
 msgid "The list below enumerates the figures shown in the previous image except for one. Which is the missing figure? Possible answers are triangle, square, pentagon and circle."
-msgstr "Listan nedan räknar upp figurerna som visades i föregående bild, förutom en. Vilken figur saknas? Möjliga svar är triangel, fyrkant, femkant och cirkel."
+msgstr "Listan nedan räknar upp figurerna som visades i föregående bild, förutom en. Vilken figur saknas? Möjliga svar är triangel, kvadrat, femkant och cirkel."
 
 #: ../src/Games/Memory/MemoryFiguresNumbers.cs:39
 msgid "Figures with numbers"
@@ -3662,7 +3698,7 @@ msgstr "Figurer med tal"
 #: ../src/Games/Memory/MemoryFiguresNumbers.cs:44
 #, csharp-format
 msgid "Which one of these squares was previously shown? Answer {0}, {1}, {2} or {3}."
-msgstr "Vilken av dessa fyrkanter var den som visades tidigare? Svara {0}, {1}, {2} eller {3}."
+msgstr "Vilken av dessa kvadrater var den som visades tidigare? Svara {0}, {1}, {2} eller {3}."
 
 #: ../src/Games/Memory/MemoryIndications.cs:130
 #, csharp-format
