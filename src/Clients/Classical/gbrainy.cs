@@ -55,6 +55,7 @@ namespace gbrainy.Clients.Classical
 		[GtkBeans.Builder.Object] Gtk.VBox framework_vbox;
 		[GtkBeans.Builder.Object] Gtk.Entry answer_entry;
 		[GtkBeans.Builder.Object] Gtk.Button answer_button;
+		[GtkBeans.Builder.Object] Gtk.Label answer_label;
 		[GtkBeans.Builder.Object] Gtk.Button tip_button;
 		[GtkBeans.Builder.Object] Gtk.Button next_button;
 		[GtkBeans.Builder.Object] Gtk.Statusbar statusbar;
@@ -273,9 +274,9 @@ namespace gbrainy.Clients.Classical
 		// These are UI elements dependent of the game status
 		public void ActiveInputControls (bool active)
 		{
-			bool answer, entry, next, tip, can_pause;
+			bool answer, next, tip, can_pause;
 
-			can_pause = answer = entry = next = tip = active;
+			can_pause = answer = next = tip = active;
 
 			if (active == true && session.CurrentGame != null && session.CurrentGame.ButtonsActive == true && String.IsNullOrEmpty (session.CurrentGame.Tip ) == false)
 				tip = true;
@@ -286,7 +287,6 @@ namespace gbrainy.Clients.Classical
 			case GameSession.SessionStatus.NotPlaying:
 			case GameSession.SessionStatus.Finished:
 				answer = false;
-				entry = false;
 				next = false;
 				tip = false;
 				can_pause = false;
@@ -301,19 +301,19 @@ namespace gbrainy.Clients.Classical
 				break;
 			case GameSession.SessionStatus.Answered:
 				answer = false;
-				entry = false;
 				tip = false;
 				can_pause = false;
 				break;
 			}
 
 			answer_button.Sensitive = answer;
-			answer_entry.Sensitive = entry;
+			answer_entry.Sensitive = answer;
+			answer_label.Sensitive = answer;
 			next_button.Sensitive = next;
 			tip_button.Sensitive = tip;
 			pause_menuitem.Sensitive = toolbar.PauseButton.Sensitive = can_pause;
 
-			if (entry == true)
+			if (answer == true)
 				answer_entry.GrabFocus ();
 		}
 
