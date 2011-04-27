@@ -33,7 +33,7 @@ namespace gbrainy.Games.Logic
 			Numbers,
 			Last = Numbers,
 		};
-		
+
 		ArrayListIndicesRandom random_indices;
 		GameType gametype;
 		const int max_equations = 5;
@@ -69,7 +69,7 @@ namespace gbrainy.Games.Logic
 				default:
 					throw new InvalidOperationException ();
 				}
-			}	
+			}
 		}
 
 		public override string Rationale {
@@ -87,11 +87,14 @@ namespace gbrainy.Games.Logic
 
 		protected override void Initialize ()
 		{
+			double pos_x = 0, sel_width;
 			Answer.CheckAttributes |= GameAnswerCheckAttributes.MultiOption;
 			gametype = (GameType) random.Next ((int) GameType.Last + 1);
 
 			switch (gametype) {
 			case GameType.Equations:
+				pos_x = 0.1;
+				sel_width = 0.5;
 				equations = equations_a;
 				break;
 			case GameType.Numbers:
@@ -100,6 +103,8 @@ namespace gbrainy.Games.Logic
 				int [] seeds = {25, 26, 28, 30, 18, 21, 22};
 				ArrayListIndicesRandom random_seeds = new ArrayListIndicesRandom (seeds.Length);
 
+				pos_x = 0.2;
+				sel_width = 0.32;
 				// Make sure that one of the numbers only is not even or odd to avoid
 				// this rationale as valid answer too
 				do
@@ -137,13 +142,13 @@ namespace gbrainy.Games.Logic
 				}
 			}
 
-			Container container = new Container (DrawAreaX + 0.1, DrawAreaY + 0.2, 0.5, random_indices.Count * 0.1);
+			Container container = new Container (DrawAreaX + pos_x, DrawAreaY + 0.2, 0.5, random_indices.Count * 0.1);
 			AddWidget (container);
 
 			for (int i = 0; i < random_indices.Count; i++)
 			{
-				DrawableArea drawable_area = new DrawableArea (0.5, 0.1);
-				drawable_area.X = DrawAreaX + 0.1;
+				DrawableArea drawable_area = new DrawableArea (sel_width, 0.1);
+				drawable_area.X = DrawAreaX + pos_x;
 				drawable_area.Y = DrawAreaY + 0.2 + i * 0.1;
 				container.AddChild (drawable_area);
 				drawable_area.Data = i;
