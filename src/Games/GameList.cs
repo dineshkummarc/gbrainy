@@ -29,7 +29,7 @@ namespace gbrainy.Games
 	{
 		static Type[] LogicPuzzlesInternal = new Type[] 
 		{
-			typeof (PuzzleMatrixNumbers),
+			typeof (PuzzleGridNumbers),
 			typeof (PuzzleSquares),
 			typeof (PuzzleFigures),
 			typeof (PuzzleMoveFigure),
@@ -46,7 +46,7 @@ namespace gbrainy.Games
 			typeof (PuzzleCube),
 			typeof (PuzzleFigureLetter),
 			typeof (PuzzleDivideCircle),
-			typeof (PuzzleMatrixGroups),
+			typeof (PuzzleGridCircles),
 			typeof (PuzzleBalance),
 			typeof (PuzzleTrianglesWithNumbers),
 			typeof (PuzzleOstracism),

@@ -25,8 +25,8 @@ CSDISTFILES =  \
 		$(srcdir)/Logic/PuzzleHandshakes.cs			\
 		$(srcdir)/Logic/PuzzleLargerShape.cs			\
 		$(srcdir)/Logic/PuzzleLines.cs				\
-		$(srcdir)/Logic/PuzzleMatrixGroups.cs			\
-		$(srcdir)/Logic/PuzzleMatrixNumbers.cs			\
+		$(srcdir)/Logic/PuzzleGridCircles.cs			\
+		$(srcdir)/Logic/PuzzleGridNumbers.cs			\
 		$(srcdir)/Logic/PuzzleMissingPiece.cs			\
 		$(srcdir)/Logic/PuzzleMissingSlice.cs			\
 		$(srcdir)/Logic/PuzzleMostInCommon.cs			\

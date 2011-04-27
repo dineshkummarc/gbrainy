@@ -160,7 +160,7 @@ namespace gbrainy.Games.Logic
 		}
 
 		public override string Question {
-			get {return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("In the matrix below, which number should replace the question mark?");}
+			get {return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("In the grid below, which number should replace the question mark?");}
 		}
 
 		public override string Tip {

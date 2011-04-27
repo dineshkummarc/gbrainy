@@ -24,7 +24,7 @@ using gbrainy.Core.Services;
 
 namespace gbrainy.Games.Logic
 {
-	public class PuzzleMatrixGroups : Game
+	public class PuzzleGridCircles : Game
 	{
 		private int [] numbers;
 		private int good_pos;
@@ -32,11 +32,11 @@ namespace gbrainy.Games.Logic
 		private int divisor;
 
 		public override string Name {
-			get {return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Matrix groups");}
+			get {return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Circles in a grid");}
 		}
 
 		public override string Question {
-			get {return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("One of the numbers in the matrix must be circled. Which one?");}
+			get {return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("One of the numbers in the grid must be circled. Which one?");}
 		}
 
 		public override string Tip {

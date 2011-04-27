@@ -25,7 +25,7 @@ using gbrainy.Core.Services;
 
 namespace gbrainy.Games.Logic
 {
-	public class PuzzleMatrixNumbers : Game
+	public class PuzzleGridNumbers : Game
 	{
 		public enum Operation
 		{
@@ -41,11 +41,11 @@ namespace gbrainy.Games.Logic
 		private const int rows = 4, columns = 4;
 
 		public override string Name {
-			get {return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Matrix numbers");}
+			get {return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Numbers in a grid");}
 		}
 
 		public override string Question {
-			get {return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("The numbers in the matrix follow a pattern. Which number should replace the question mark?");}
+			get {return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("The numbers in the grid below follow a pattern. Which number should replace the question mark?");}
 		}
 
 		public override string Tip {
