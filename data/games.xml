@@ -323,14 +323,13 @@
 			<variables>
 				int men = 10 + random.Next (40);
 				int horses = 10 + random.Next (40);
-				int legs = 2 *  men + horses * 4;
+				int legs = 2 * men + horses * 4;
 				int eyes = (men + horses) * 2;
 			</variables>
-			<_question>In a horse race there are people and horses. You can count [eyes] eye and [legs] leg. How many horses are present?</_question>
-			<question plural ="[eyes]">In a horse race there are people and horses. You can count [eyes] eyes and [legs] legs. How many horses are present?</question>
+			<_question>In a horse race there are people and horses. You count [eyes] eye and [legs] leg. How many horses are present?</_question>
+			<question plural ="[eyes]">In a horse race there are people and horses. You count [eyes] eyes and [legs] legs. How many horses are present?</question>
 			<answer>[horses]</answer>
-			<_rationale>There is [men] person and [horses] horse.</_rationale>
-			<_rationale plural ="[eyes]">There are [men] people and [horses] horses.</_rationale>
+			<_rationale>Every person has two legs and every horse four (2 * [men] + [horses] * 4). Every person and every horse have also two eyes (2 * [men] + 2 * [horses]).</_rationale>
 		</variant>
 	</game>
 
@@ -566,8 +565,8 @@
 				double answer_d = (0.90 / (john_speed + friend_speed));
 			</variables>
 
-			<question>John needs [john_time] hour to clean a warehouse and his friend half of the time. How many hours would take them to clean up the warehouse if they work together? [option_answers]</question>
-			<question plural ="[john_time]">John needs [john_time] hours to clean a warehouse and his friend half of the time. How many hours would take them to clean up the warehouse if they work together? [option_answers]</question>
+			<question>John needs [john_time] hour to clean a warehouse and his friend half of John's time. How many hours would take them to clean up the warehouse if they work together? [option_answers]</question>
+			<question plural ="[john_time]">John needs [john_time] hours to clean a warehouse and his friend half of John's time. How many hours would take them to clean up the warehouse if they work together? [option_answers]</question>
 		</variant>
 
 		<variant>
@@ -608,7 +607,8 @@
 			<string _text = "[option_prefix] [answer_d]" x = "0.05" y = "0.02" size = "large"/>
 		</option>
 
-		<_rationale>John cleans at speed of 1 / [john_time] per hour and his friend at 1 / [friend], both combined need [answer_a] hours.</_rationale>
+		<rationale>John cleans at speed of 1 / [john_time] per hour and his friend at 1 / [friend], both together need [answer_a] hour.</rationale>
+		<rationale plural ="[answer_a]">John cleans at speed of 1 / [john_time] per hour and his friend at 1 / [friend], both together need [answer_a] hours.</rationale>
 		<answer>[answer_a]</answer>
 	</game>
 
