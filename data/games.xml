@@ -541,7 +541,6 @@
 			<_rationale>Since x is always an even number, multiplying it by 2 always produces an even number. Adding an even number to an odd number (y) always produces an odd number.</_rationale>
 			<answer>2x + y</answer>
 		</variant>
-
 	</game>
 
 	<game>
@@ -567,8 +566,8 @@
 				double answer_d = (0.90 / (john_speed + friend_speed));
 			</variables>
 
-			<question>John needs [john_time] hour to clean a warehouse and his friend half of the time. How many hours would take them to clean up the warehouse if they work together?</question>
-			<question plural ="[john_time]">John needs [john_time] hours to clean a warehouse and his friend half of the time. How many hours would take them to clean up the warehouse if they work together?</question>
+			<question>John needs [john_time] hour to clean a warehouse and his friend half of the time. How many hours would take them to clean up the warehouse if they work together? [option_answers]</question>
+			<question plural ="[john_time]">John needs [john_time] hours to clean a warehouse and his friend half of the time. How many hours would take them to clean up the warehouse if they work together? [option_answers]</question>
 		</variant>
 
 		<variant>
@@ -587,8 +586,8 @@
 				double answer_d = (0.90 / (john_speed + friend_speed));
 			</variables>
 
-			<question>John needs [john_time] hour to clean a warehouse and his friend two times John's time. How many hours would take them to clean up the warehouse if they work together?</question>
-			<question plural ="[john_time]">John needs [john_time] hours to clean a warehouse and his friend two times John's time. How many hours would take them to clean up the warehouse if they work together?</question>
+			<question>John needs [john_time] hour to clean a warehouse and his friend two times John's time. How many hours would take them to clean up the warehouse if they work together? [option_answers]</question>
+			<question plural ="[john_time]">John needs [john_time] hours to clean a warehouse and his friend two times John's time. How many hours would take them to clean up the warehouse if they work together? [option_answers]</question>
 		</variant>
 
 		<string _text = "Possible answers are:" x = "0.1" y = "0.15" size = "large"/>
@@ -613,4 +612,45 @@
 		<answer>[answer_a]</answer>
 	</game>
 
+	<game>
+		<_name>Two trucks</_name>
+		<type>Logic</type>
+		<difficulty>All</difficulty>
+		<answer_checkattributes>MultiOption | IgnoreSpaces</answer_checkattributes>
+		<variables>
+				// num + (num / 2) - 15 = add
+				int [] nums = new int [] {50, 70, 110, 130, 150, 210, 290, 310};
+				int [] adds = new int [] {60, 90, 150, 180, 210, 330, 420, 450};
+				int index = random.Next (nums.Length);
+				int add = adds [index];
+				int heavier = nums [index];
+				int lighter = (nums [index] / 2) - 15;
+				int answer_a = lighter;
+				int answer_b = lighter + 2 * (2 + random.Next (20));
+				int answer_c = lighter + 2 * (2 + random.Next (10));
+				int answer_d = lighter - 2 * (2 + random.Next (3));
+		</variables>
+		<_question>You have two trucks that have a total weight of [add] unit. If the lighter truck weights 15 units less that half of the weight of the heavier truck, what is the weight of the lighter truck? [option_answers]</_question>
+		<question plural ="[add]">You have two trucks that have a total weight of [add] units. If the lighter truck weights 15 units less that half of the weight of the heavier truck, what is the weight of the lighter truck? [option_answers]</question>
+
+		<string _text = "Possible answers are:" x = "0.1" y = "0.15" size = "large"/>
+
+		<option x = "0.3" y = "0.3" width ="0.45" height ="0.1" order ="randomized" correct = "yes">
+			<string _text = "[option_prefix] [answer_a]" x = "0.05" y = "0.02" size = "large"/>
+		</option>
+
+		<option x = "0.3" y = "0.4" width ="0.45" height ="0.1" order ="randomized">
+			<string _text = "[option_prefix] [answer_b]" x = "0.05" y = "0.02" size = "large"/>
+		</option>
+
+		<option x = "0.3" y = "0.5" width ="0.45" height ="0.1" order ="randomized">
+			<string _text = "[option_prefix] [answer_c]" x = "0.05" y = "0.02" size = "large"/>
+		</option>
+
+		<option x = "0.3" y = "0.6" width ="0.45" height ="0.1" order ="randomized">
+			<string _text = "[option_prefix] [answer_d]" x = "0.05" y = "0.02" size = "large"/>
+		</option>
+		<_rationale>The heavier truck weights [heavier] and the lighter [lighter].</_rationale>
+		<answer>[answer_a]</answer>
+	</game>
 </games>

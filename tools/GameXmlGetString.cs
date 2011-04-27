@@ -70,12 +70,16 @@ public class GameXmlSttringFactory
 			"There are [men] people and [horses] horses.",
 			variable);
 
-		Catalog.GetPluralString ("John needs [john_time] hour to clean a warehouse and his friend half of the time. How many hours would take them to clean up the warehouse if they work together?",
-			"John needs [john_time] hours to clean a warehouse and his friend half of the time. How many hours would take them to clean up the warehouse if they work together?",
+		Catalog.GetPluralString ("John needs [john_time] hour to clean a warehouse and his friend half of the time. How many hours would take them to clean up the warehouse if they work together? [option_answers]",
+			"John needs [john_time] hours to clean a warehouse and his friend half of the time. How many hours would take them to clean up the warehouse if they work together? [option_answers]",
 			variable);
 
-		Catalog.GetPluralString ("John needs [john_time] hour to clean a warehouse and his friend two times John's time. How many hours would take them to clean up the warehouse if they work together?",
-			"John needs [john_time] hours to clean a warehouse and his friend two times John's time. How many hours would take them to clean up the warehouse if they work together?",
+		Catalog.GetPluralString ("John needs [john_time] hour to clean a warehouse and his friend two times John's time. How many hours would take them to clean up the warehouse if they work together? [option_answers]",
+			"John needs [john_time] hours to clean a warehouse and his friend two times John's time. How many hours would take them to clean up the warehouse if they work together? [option_answers]",
+			variable);
+
+		Catalog.GetPluralString ("You have two trucks that have a total weight of [add] unit. If the lighter truck weights 15 units less that half of the weight of the heavier truck, what is the weight of the lighter truck? [option_answers]",
+			"You have two trucks that have a total weight of [add] units. If the lighter truck weights 15 units less that half of the weight of the heavier truck, what is the weight of the lighter truck? [option_answers]",
 			variable);
 
 
