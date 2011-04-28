@@ -13,8 +13,8 @@ msgstr ""
 "Project-Id-Version: gbrainy.master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=gbrainy&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2011-04-09 06:33+0000\n"
-"PO-Revision-Date: 2011-04-12 16:16+0200\n"
+"POT-Creation-Date: 2011-04-27 18:29+0000\n"
+"PO-Revision-Date: 2011-04-28 18:04+0200\n"
 "Last-Translator: Daniel Mustieles <daniel.mustieles@gmail.com>\n"
 "Language-Team: Español <gnome-es-list@gnome.org>\n"
 "MIME-Version: 1.0\n"
@@ -168,47 +168,81 @@ msgstr[1] ""
 "En una carrera de caballos hay personas y caballos. Puede contar [eyes] ojos "
 "y [legs] piernas. ¿Cuántos caballos hay?"
 
-#: ../tools/GameXmlGetString.cs:69 ../data/games.xml.h:51
+#: ../tools/GameXmlGetString.cs:69 ../data/games.xml.h:52
 msgid "There is [men] person and [horses] horse."
 msgid_plural "There are [men] people and [horses] horses."
 msgstr[0] "Hay [men] persona y [horses] caballo."
 msgstr[1] "Hay [men] personas y [horses] caballos."
 
 #: ../tools/GameXmlGetString.cs:73
+#| msgid ""
+#| "John needs [john_time] hour to clean a warehouse and his friend half of "
+#| "the time. How many hours would take them to clean up the warehouse if "
+#| "they work together?"
+#| msgid_plural ""
+#| "John needs [john_time] hours to clean a warehouse and his friend half of "
+#| "the time. How many hours would take them to clean up the warehouse if "
+#| "they work together?"
 msgid ""
 "John needs [john_time] hour to clean a warehouse and his friend half of the "
 "time. How many hours would take them to clean up the warehouse if they work "
-"together?"
+"together? [option_answers]"
 msgid_plural ""
 "John needs [john_time] hours to clean a warehouse and his friend half of the "
 "time. How many hours would take them to clean up the warehouse if they work "
-"together?"
+"together? [option_answers]"
 msgstr[0] ""
 "Juan necesita [john_time] hora para limpiar un almacén y su amigo tarda la "
 "mitad del tiempo. ¿Cuántas horas tardarán en limpiar el almacén si trabajan "
-"juntos?"
+"juntos? [option_answers]"
 msgstr[1] ""
 "Juan necesita [john_time] horas para limpiar un almacén y su amigo tarda la "
 "mitad del tiempo. ¿Cuántas horas tardarán en limpiar el almacén si trabajan "
-"juntos?"
+"juntos? [option_answers]"
 
 #: ../tools/GameXmlGetString.cs:77
+#| msgid ""
+#| "John needs [john_time] hour to clean a warehouse and his friend two times "
+#| "John's time. How many hours would take them to clean up the warehouse if "
+#| "they work together?"
+#| msgid_plural ""
+#| "John needs [john_time] hours to clean a warehouse and his friend two "
+#| "times John's time. How many hours would take them to clean up the "
+#| "warehouse if they work together?"
 msgid ""
 "John needs [john_time] hour to clean a warehouse and his friend two times "
 "John's time. How many hours would take them to clean up the warehouse if "
-"they work together?"
+"they work together? [option_answers]"
 msgid_plural ""
 "John needs [john_time] hours to clean a warehouse and his friend two times "
 "John's time. How many hours would take them to clean up the warehouse if "
-"they work together?"
+"they work together? [option_answers]"
 msgstr[0] ""
 "Juan necesita [john_time] hora para limpiar un almacén y su amigo tarda el "
 "doble de tiempo. ¿Cuántas horas tardarán en limpiar el almacén si trabajan "
-"juntos?"
+"juntos? [option_answers]"
 msgstr[1] ""
 "Juan necesita [john_time] horas para limpiar un almacén y su amigo tarda el "
 "doble de tiempo. ¿Cuántas horas tardarán en limpiar el almacén si trabajan "
-"juntos?"
+"juntos? [option_answers]"
+
+#: ../tools/GameXmlGetString.cs:81 ../data/games.xml.h:61
+msgid ""
+"You have two trucks that have a total weight of [add] unit. If the lighter "
+"truck weights 15 units less that half of the weight of the heavier truck, "
+"what is the weight of the lighter truck? [option_answers]"
+msgid_plural ""
+"You have two trucks that have a total weight of [add] units. If the lighter "
+"truck weights 15 units less that half of the weight of the heavier truck, "
+"what is the weight of the lighter truck? [option_answers]"
+msgstr[0] ""
+"Tienes dos camiones cuyo peso total es de [add] unidad. Si el camión mas "
+"ligero pesa 15 unidades menos que la mitad del peso del camión más pesado, "
+"¿cuánto pesa el camión más ligero? [option_answers]"
+msgstr[1] ""
+"Tienes dos camiones cuyo peso total es de [add] unidades. Si el camión mas "
+"ligero pesa 15 unidades menos que la mitad del peso del camión más pesado, "
+"¿cuánto pesa el camión más ligero? [option_answers]"
 
 #: ../data/games.xml.h:1
 msgid ""
@@ -468,6 +502,7 @@ msgstr "Contraseña"
 #: ../src/Core/Main/Verbal/AnalogiesMultipleOptions.cs:121
 #: ../src/Core/Main/Verbal/AnalogiesPairOfWordsOptions.cs:132
 #: ../src/Games/Logic/PuzzleFigurePattern.cs:191
+#: ../src/Games/Logic/PuzzleFigures.cs:194
 #: ../src/Games/Logic/PuzzleLargerShape.cs:303
 #: ../src/Games/Logic/PuzzleMissingPiece.cs:173
 #: ../src/Games/Logic/PuzzleMissingSlice.cs:218
@@ -498,6 +533,10 @@ msgid "Tennis game"
 msgstr "Tenis"
 
 #: ../data/games.xml.h:48
+msgid "The heavier truck weights [heavier] and the lighter [lighter]."
+msgstr "El camión más pesado pesa [heavier] y el más ligero pesa [lighter]."
+
+#: ../data/games.xml.h:49
 msgid ""
 "The variable p is smaller than x and s is bigger than y. If p is bigger than "
 "s then the condition x &gt; y is true."
@@ -505,7 +544,7 @@ msgstr ""
 "La variable «p» es menor que «x» y «s» es mayor que «y». Si «p» es mayor que «s» "
 "entonces la condición «x &gt; y» es cierta."
 
-#: ../data/games.xml.h:49
+#: ../data/games.xml.h:50
 msgid ""
 "The variable q is bigger than x and y bigger than r. If q is smaller than r "
 "then the condition x &lt; y is true."
@@ -513,31 +552,35 @@ msgstr ""
 "La variable «q» es mayor que «x» e «y» es mayor que «r». Si «q» es menor que «r» "
 "entonces la condición «x &lt; y» es cierta."
 
-#: ../data/games.xml.h:50
+#: ../data/games.xml.h:51
 msgid "There are [men] people and [horses] horses."
 msgstr "Hay [men] persona y [horses] caballos."
 
-#: ../data/games.xml.h:52
+#: ../data/games.xml.h:53
+msgid "Two trucks"
+msgstr "Dos camiones"
+
+#: ../data/games.xml.h:54
 msgid "Warehouse"
 msgstr "Almacén"
 
-#: ../data/games.xml.h:53
+#: ../data/games.xml.h:55
 msgid "What number divided by [num_a] equals [num_b]?"
 msgstr "¿Qué número dividido por [num_a] es igual a [num_b]?"
 
-#: ../data/games.xml.h:54
+#: ../data/games.xml.h:56
 msgid "What number minus [num_a] equals [num_b]?"
 msgstr "¿Qué número menos [num_a] es igual a [num_b]?"
 
-#: ../data/games.xml.h:55
+#: ../data/games.xml.h:57
 msgid "What number multiplied by [num_a] equals [num_b]?"
 msgstr "¿Qué número multiplicado por [num_a] da [num_b]?"
 
-#: ../data/games.xml.h:56
+#: ../data/games.xml.h:58
 msgid "What number plus [num_a] equals [num_b]?"
 msgstr "¿Qué número sumado a [num_a] da [num_b]?"
 
-#: ../data/games.xml.h:57
+#: ../data/games.xml.h:59
 msgid ""
 "Which two numbers of the list below are both multiple of [num_x] and "
 "[num_y]? [option_answers]"
@@ -545,11 +588,11 @@ msgstr ""
 "¿Qué pareja de números de la siguiente lista son los dos múltiplos de "
 "[num_x] y [num_y]? [option_answers]"
 
-#: ../data/games.xml.h:58
+#: ../data/games.xml.h:60
 msgid "You can fit 6 * 5 * [z] * 2 boxes."
 msgstr "Puedes encajar 6 * 5 * [z] * 2 cajas."
 
-#: ../data/games.xml.h:60
+#: ../data/games.xml.h:63
 #, no-c-format
 msgid ""
 "[female_cars]% ([all_cars] - [males_cars]) of the inhabitants are women and "
@@ -559,111 +602,107 @@ msgstr ""
 "tienen un coche."
 
 #. Since this a multioption the answer string is set to option | this string, what makes answer_show is not useful here
-#: ../data/games.xml.h:62
+#: ../data/games.xml.h:65
 msgid "[option_a] and [option_b]"
 msgstr "[option_a] y [option_b]"
 
-#: ../data/games.xml.h:63
+#: ../data/games.xml.h:66
 msgid "[option_a] and [option_b] are both multiples of [num_x] and [num_y]."
 msgstr "[option_a] y [option_b] son los dos múltiplos de [num_x] y [num_y]."
 
-#: ../data/games.xml.h:64
+#: ../data/games.xml.h:67
 msgid "[option_prefix] (x - y) * 2"
 msgstr "[option_prefix] (x - y) * 2"
 
-#: ../data/games.xml.h:65
+#: ../data/games.xml.h:68
 msgid "[option_prefix] 2x + y"
 msgstr "[option_prefix] 2x + y"
 
-#: ../data/games.xml.h:66
-#| msgid "[option_prefix] [option_a]%"
+#: ../data/games.xml.h:69
 msgid "[option_prefix] [answer_a]"
 msgstr "[option_prefix] [answer_a]"
 
-#: ../data/games.xml.h:67
-#| msgid "[option_prefix] [option_b]%"
+#: ../data/games.xml.h:70
 msgid "[option_prefix] [answer_b]"
 msgstr "[option_prefix] [answer_b]"
 
-#: ../data/games.xml.h:68
-#| msgid "[option_prefix] [option_c]%"
+#: ../data/games.xml.h:71
 msgid "[option_prefix] [answer_c]"
 msgstr "[option_prefix] [answer_c]"
 
-#: ../data/games.xml.h:69
-#| msgid "[option_prefix] [option_d]%"
+#: ../data/games.xml.h:72
 msgid "[option_prefix] [answer_d]"
 msgstr "[option_prefix] [answer_d]"
 
-#: ../data/games.xml.h:70
+#: ../data/games.xml.h:73
 msgid "[option_prefix] [option_a] and [option_b]"
 msgstr "[option_prefix] [option_a] y [option_b]"
 
-#: ../data/games.xml.h:71
+#: ../data/games.xml.h:74
 msgid "[option_prefix] [option_a] and [option_c]"
 msgstr "[option_prefix] [option_a] y [option_c]"
 
-#: ../data/games.xml.h:73
+#: ../data/games.xml.h:76
 #, no-c-format
 msgid "[option_prefix] [option_a]%"
 msgstr "[option_prefix] [option_a]%"
 
-#: ../data/games.xml.h:74
+#: ../data/games.xml.h:77
 msgid "[option_prefix] [option_b] and [option_c]"
 msgstr "[option_prefix] [option_b] y [option_c]"
 
-#: ../data/games.xml.h:76
+#: ../data/games.xml.h:79
 #, no-c-format
 msgid "[option_prefix] [option_b]%"
 msgstr "[option_prefix] [option_b]%"
 
-#: ../data/games.xml.h:77
+#: ../data/games.xml.h:80
 msgid "[option_prefix] [option_c] and [option_d]"
 msgstr "[option_prefix] [option_c] y [option_d]"
 
-#: ../data/games.xml.h:79
+#: ../data/games.xml.h:82
 #, no-c-format
 msgid "[option_prefix] [option_c]%"
 msgstr "[option_prefix] [option_c]%"
 
-#: ../data/games.xml.h:81
+#: ../data/games.xml.h:84
 #, no-c-format
 msgid "[option_prefix] [option_d]%"
 msgstr "[option_prefix] [option_d]%"
 
-#: ../data/games.xml.h:82
+#: ../data/games.xml.h:85
 msgid "[option_prefix] p < r"
 msgstr "[option_prefix] p < r"
 
-#: ../data/games.xml.h:83
+#: ../data/games.xml.h:86
 msgid "[option_prefix] p > r"
 msgstr "[option_prefix] p > r"
 
-#: ../data/games.xml.h:84
+#: ../data/games.xml.h:87
 msgid "[option_prefix] p > s"
 msgstr "[option_prefix] p > s"
 
-#: ../data/games.xml.h:85
+#: ../data/games.xml.h:88
 msgid "[option_prefix] q < r"
 msgstr "[option_prefix] q < r"
 
-#: ../data/games.xml.h:86
+#: ../data/games.xml.h:89
 msgid "[option_prefix] q = s"
 msgstr "[option_prefix] q = s"
 
-#: ../data/games.xml.h:87
+#: ../data/games.xml.h:90
 msgid "[option_prefix] x * y"
 msgstr "[option_prefix] x * y"
 
-#: ../data/games.xml.h:88
+#: ../data/games.xml.h:91
 msgid "[option_prefix] x * y * 2"
 msgstr "[option_prefix] x * y * 2"
 
-#: ../data/games.xml.h:89
+#: ../data/games.xml.h:92
 msgid "[rslt_a] and [rslt_b]"
 msgstr "[rslt_a] y [rslt_b]"
 
-#: ../data/games.xml.h:90
+#: ../data/games.xml.h:93
 msgid ""
 "[year_start] is a palindromic year as [year_end] is, a gap of 11 years. What "
 "are the next two consecutive palindromic years after [year_end] with the "
@@ -673,19 +712,19 @@ msgstr ""
 "de 11 años. ¿Cuáles son los dos siguientes años capicúa consecutivos después "
 "de [year_end] con el mismo intervalo?"
 
-#: ../data/games.xml.h:91
+#: ../data/games.xml.h:94
 msgid "x * [num_a] = [num_b]"
 msgstr "x * [num_a] = [num_b]"
 
-#: ../data/games.xml.h:92
+#: ../data/games.xml.h:95
 msgid "x + [num_a] = [num_b]"
 msgstr "x + [num_a] = [num_b]"
 
-#: ../data/games.xml.h:93
+#: ../data/games.xml.h:96
 msgid "x - [num_a] = [num_b]"
 msgstr "x - [num_a] = [num_b]"
 
-#: ../data/games.xml.h:94
+#: ../data/games.xml.h:97
 msgid "x / [num_a] = [num_b]"
 msgstr "x / [num_a] = [num_b]"
 
@@ -2380,7 +2419,7 @@ msgstr "{0} Responde {1}."
 #. Translators: this "option) answer" for example "a) "21 x 60 = 1260". This should not be changed for most of the languages
 #: ../src/Core/Main/Verbal/AnalogiesMultipleOptions.cs:106
 #: ../src/Core/Main/Verbal/AnalogiesPairOfWordsOptions.cs:114
-#: ../src/Games/Logic/PuzzleOstracism.cs:159
+#: ../src/Games/Logic/PuzzleOstracism.cs:164
 #: ../src/Games/Logic/PuzzlePredicateLogic.cs:185
 #: ../src/Games/Calculation/CalculationCloserFraction.cs:164
 #: ../src/Games/Calculation/CalculationGreatestDivisor.cs:153
@@ -3330,11 +3369,11 @@ msgstr ""
 "Coloca la primera y la segunda figuras y quita las líneas que tienen en "
 "común, después rota la figura resultante 45 grados."
 
-#: ../src/Games/Logic/PuzzleFigures.cs:42
+#: ../src/Games/Logic/PuzzleFigures.cs:58
 msgid "Figures"
 msgstr "Figuras"
 
-#: ../src/Games/Logic/PuzzleFigures.cs:46
+#: ../src/Games/Logic/PuzzleFigures.cs:62
 msgid ""
 "What is the next logical sequence of objects in the last column? See below "
 "the convention when giving the answer."
@@ -3342,29 +3381,13 @@ msgstr ""
 "¿Cuál es la siguiente secuencia lógica de objetos en la última columna? Mira "
 "debajo la convención para dar la respuesta."
 
-#: ../src/Games/Logic/PuzzleFigures.cs:51
+#: ../src/Games/Logic/PuzzleFigures.cs:67
 msgid ""
 "It is the only combination that you can build with the given elements "
 "without repeating them."
 msgstr ""
 "Es la única combinación que puedes construir con los elementos dados sin "
 "repetirlos."
-
-#: ../src/Games/Logic/PuzzleFigures.cs:80
-#: ../src/Games/Logic/PuzzleFigures.cs:92
-#: ../src/Games/Logic/PuzzleFigures.cs:105
-#, csharp-format
-msgid "{0} ->"
-msgstr "{0} ->"
-
-#: ../src/Games/Logic/PuzzleFigures.cs:161
-msgid "Convention when giving the answer is:"
-msgstr "Convención para dar la respuesta es:"
-
-#: ../src/Games/Logic/PuzzleFigures.cs:165
-#, csharp-format
-msgid "E.g: {0}{1}{2} (pentagon, triangle, circle)"
-msgstr "Ej.: {0}{1}{2} (pentágono, triángulo, círculo)"
 
 #: ../src/Games/Logic/PuzzleFourSided.cs:32
 msgid "Four sided"
@@ -3443,45 +3466,50 @@ msgid "It is an easy exercise if you systematically count the lines."
 msgstr ""
 "Es un ejercicio fácil si usas una forma sistemática de contar las líneas."
 
-#: ../src/Games/Logic/PuzzleMatrixGroups.cs:35
-msgid "Matrix groups"
-msgstr "Grupos de matriz"
+#: ../src/Games/Logic/PuzzleGridCircles.cs:35
+#| msgid "Circles in a square"
+msgid "Circles in a grid"
+msgstr "Círculos en una matriz"
 
-#: ../src/Games/Logic/PuzzleMatrixGroups.cs:39
-msgid "One of the numbers in the matrix must be circled. Which one?"
+#: ../src/Games/Logic/PuzzleGridCircles.cs:39
+#| msgid "One of the numbers in the matrix must be circled. Which one?"
+msgid "One of the numbers in the grid must be circled. Which one?"
 msgstr "Uno de los números de la matriz se debe rodear. ¿Cuál?"
 
-#: ../src/Games/Logic/PuzzleMatrixGroups.cs:43
+#: ../src/Games/Logic/PuzzleGridCircles.cs:43
 msgid "All circled numbers share an arithmetical property."
 msgstr "Todos los números rodeados comparten una propiedad aritmética."
 
-#: ../src/Games/Logic/PuzzleMatrixGroups.cs:48
+#: ../src/Games/Logic/PuzzleGridCircles.cs:48
 #, csharp-format
 msgid "Every circled number can be divided by {0}."
 msgstr "Cada numerado rodeado se puede dividir por {0}."
 
-#: ../src/Games/Logic/PuzzleMatrixNumbers.cs:44
-msgid "Matrix numbers"
-msgstr "Números máximos"
+#: ../src/Games/Logic/PuzzleGridNumbers.cs:44
+msgid "Numbers in a grid"
+msgstr "Números en una matriz"
 
-#: ../src/Games/Logic/PuzzleMatrixNumbers.cs:48
+#: ../src/Games/Logic/PuzzleGridNumbers.cs:48
+#| msgid ""
+#| "The numbers in the matrix follow a pattern. Which number should replace "
+#| "the question mark?"
 msgid ""
-"The numbers in the matrix follow a pattern. Which number should replace the "
-"question mark?"
+"The numbers in the grid below follow a pattern. Which number should replace "
+"the question mark?"
 msgstr ""
-"Los números de la matriz siguen un patrón. ¿Cuál es el número que ha de "
-"sustituir el interrogante?"
+"Los números de la siguiente matriz siguen un patrón. ¿Qué número debe "
+"sustituir al interrogante?"
 
-#: ../src/Games/Logic/PuzzleMatrixNumbers.cs:54
+#: ../src/Games/Logic/PuzzleGridNumbers.cs:54
 msgid "The pattern is arithmetical and works vertically."
 msgstr "El patrón es aritmético y funciona verticalmente."
 
-#: ../src/Games/Logic/PuzzleMatrixNumbers.cs:56
+#: ../src/Games/Logic/PuzzleGridNumbers.cs:56
 #: ../src/Games/Logic/PuzzleRelatedNumbers.cs:167
 msgid "The pattern is arithmetical and works horizontally."
 msgstr "El patrón es aritmético y funciona horizontalmente."
 
-#: ../src/Games/Logic/PuzzleMatrixNumbers.cs:65
+#: ../src/Games/Logic/PuzzleGridNumbers.cs:65
 msgid ""
 "The fourth row is calculated by multiplying the first two rows and adding "
 "the third."
@@ -3489,7 +3517,7 @@ msgstr ""
 "La cuarta fila se calcula multiplicando las dos primeras filas y sumando la "
 "tercera."
 
-#: ../src/Games/Logic/PuzzleMatrixNumbers.cs:67
+#: ../src/Games/Logic/PuzzleGridNumbers.cs:67
 msgid ""
 "The fourth column is calculated by multiplying the first two columns and "
 "adding the third."
@@ -3497,7 +3525,7 @@ msgstr ""
 "La cuarta columna se calcula multiplicando las dos primeras columnas y "
 "sumando la tercera."
 
-#: ../src/Games/Logic/PuzzleMatrixNumbers.cs:71
+#: ../src/Games/Logic/PuzzleGridNumbers.cs:71
 msgid ""
 "The fourth row is calculated by multiplying the first two rows and "
 "subtracting the third."
@@ -3505,7 +3533,7 @@ msgstr ""
 "La cuarta fila se calcula multiplicando las dos primeras filas y restando la "
 "tercera."
 
-#: ../src/Games/Logic/PuzzleMatrixNumbers.cs:73
+#: ../src/Games/Logic/PuzzleGridNumbers.cs:73
 msgid ""
 "The fourth column is calculated by multiplying the first two columns and "
 "subtracting the third."
@@ -3513,7 +3541,7 @@ msgstr ""
 "La cuarta columna se calcula multiplicando las dos primeras y restando la "
 "tercera."
 
-#: ../src/Games/Logic/PuzzleMatrixNumbers.cs:77
+#: ../src/Games/Logic/PuzzleGridNumbers.cs:77
 msgid ""
 "The fourth row is calculated by adding the first two rows and subtracting "
 "the third."
@@ -3521,7 +3549,7 @@ msgstr ""
 "La cuarta fila se calcula sumando las dos primeras filas y restando la "
 "tercera."
 
-#: ../src/Games/Logic/PuzzleMatrixNumbers.cs:79
+#: ../src/Games/Logic/PuzzleGridNumbers.cs:79
 msgid ""
 "The fourth column is calculated by adding the first two columns and "
 "subtracting the third."
@@ -4119,10 +4147,9 @@ msgid "Related numbers"
 msgstr "Números relacionados"
 
 #: ../src/Games/Logic/PuzzleRelatedNumbers.cs:163
-msgid "In the matrix below, which number should replace the question mark?"
-msgstr ""
-"En la matriz de abajo, ¿cuál es el número que ha de sustituir el "
-"interrogante?"
+#| msgid "In the matrix below, which number should replace the question mark?"
+msgid "In the grid below, which number should replace the question mark?"
+msgstr "En la siguiente matriz, ¿qué número debe sustituir al interrogante?"
 
 #: ../src/Games/Logic/PuzzleRelatedNumbers.cs:174
 msgid ""
@@ -5263,6 +5290,21 @@ msgstr "_Desinstalar…"
 #: ../src/Clients/Classical/mono-addins-strings.xml.h:35
 msgid "_Unselect All"
 msgstr "_Deseleccionar todo"
+
+#~ msgid "{0} ->"
+#~ msgstr "{0} ->"
+
+#~ msgid "Convention when giving the answer is:"
+#~ msgstr "Convención para dar la respuesta es:"
+
+#~ msgid "E.g: {0}{1}{2} (pentagon, triangle, circle)"
+#~ msgstr "Ej.: {0}{1}{2} (pentágono, triángulo, círculo)"
+
+#~ msgid "Matrix groups"
+#~ msgstr "Grupos de matriz"
+
+#~ msgid "Matrix numbers"
+#~ msgstr "Números máximos"
 
 #~ msgid "[option_prefix] q > s"
 #~ msgstr "[option_prefix] q > s"
