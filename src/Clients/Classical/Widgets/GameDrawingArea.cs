@@ -184,12 +184,28 @@ namespace gbrainy.Clients.Classical.Widgets
 				double width_str, height_str;
 				cr.MeasureString (Solution, max_width - icon_size, true, out width_str, out height_str);
 				cr.Color = new Color (1, 1, 1);
-				cr.DrawStringWithWrapping (scaled_margin + icon_size + text_margin,
+
+				double x_text, x_icon;
+
+				if (Direction == Gtk.TextDirection.Rtl)
+				{
+					x_text = 0;
+					x_icon = max_width - icon_size;
+
+				}
+				else
+				{
+					x_text = scaled_margin + icon_size + text_margin;
+					x_icon = 0;
+				}
+				
+
+				cr.DrawStringWithWrapping (x_text,
 					(1 - box_height - scaled_margin - text_margin) + ((box_height - height_str) / 2),
 					Solution, max_width - icon_size);
 				cr.Stroke ();
 
-				DrawSolutionIcon (cr, 0, 1 - box_height);
+				DrawSolutionIcon (cr, x_icon, 1 - box_height);
 				cr.Restore ();
 			}
 			cr.UseMarkup = false;
