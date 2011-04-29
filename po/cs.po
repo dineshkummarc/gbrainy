@@ -12,8 +12,8 @@ msgstr ""
 "Project-Id-Version: gbrainy\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=gbrainy&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2011-04-12 19:06+0000\n"
-"PO-Revision-Date: 2011-04-17 11:39+0200\n"
+"POT-Creation-Date: 2011-04-27 21:59+0000\n"
+"PO-Revision-Date: 2011-04-29 07:12+0200\n"
 "Last-Translator: Marek Černocký <marek@manet.cz>\n"
 "Language-Team: Czech <gnome-cs-list@gnome.org>\n"
 "MIME-Version: 1.0\n"
@@ -172,16 +172,22 @@ msgstr[2] ""
 "Máte ve své bance uloženo [money] korun na účtě s 10% složeným úrokem ročně. "
 "Kolik peněz budete mít po uplynutí 2 let?"
 
-#: ../tools/GameXmlGetString.cs:65 ../data/games.xml.h:27
+#: ../tools/GameXmlGetString.cs:65 ../data/games.xml.h:28
+#| msgid ""
+#| "In a horse race there are people and horses. You can count [eyes] eye and "
+#| "[legs] leg. How many horses are present?"
+#| msgid_plural ""
+#| "In a horse race there are people and horses. You can count [eyes] eyes "
+#| "and [legs] legs. How many horses are present?"
 msgid ""
-"In a horse race there are people and horses. You can count [eyes] eye and "
-"[legs] leg. How many horses are present?"
+"In a horse race there are people and horses. You count [eyes] eye and [legs] "
+"leg. How many horses are present?"
 msgid_plural ""
-"In a horse race there are people and horses. You can count [eyes] eyes and "
+"In a horse race there are people and horses. You count [eyes] eyes and "
 "[legs] legs. How many horses are present?"
 msgstr[0] ""
 "Jízdy na koni se účastní lidé a koně. Napočítali jste [eyes] oko a [legs] "
-"nohu. Kolik koní se účastní?"
+"nohy. Kolik koní se účastní?"
 msgstr[1] ""
 "Jízdy na koni se účastní lidé a koně. Napočítali jste [eyes] oči a [legs] "
 "nohou. Kolik koní se účastní?"
@@ -189,50 +195,107 @@ msgstr[2] ""
 "Jízdy na koni se účastní lidé a koně. Napočítali jste [eyes] očí a [legs] "
 "nohou. Kolik koní se účastní?"
 
-#: ../tools/GameXmlGetString.cs:69 ../data/games.xml.h:51
-msgid "There is [men] person and [horses] horse."
-msgid_plural "There are [men] people and [horses] horses."
-msgstr[0] "Účastní se [men] člověk a [horses] kůň."
-msgstr[1] "Účastní se [men] lidé a [horses] koně."
-msgstr[2] "Účastní se [men] lidí a [horses] koní."
+#: ../tools/GameXmlGetString.cs:69
+#| msgid ""
+#| "John cleans at speed of 1 / [john_time] per hour and his friend at 1 / "
+#| "[friend], both combined need [answer_a] hours."
+msgid ""
+"John cleans at speed of 1 / [john_time] per hour and his friend at 1 / "
+"[friend], both together need [answer_a] hour."
+msgid_plural ""
+"John cleans at speed of 1 / [john_time] per hour and his friend at 1 / "
+"[friend], both together need [answer_a] hours."
+msgstr[0] ""
+"Honza uklízí rychlostí 1 : [john_time] za hodinu a jeho přítel 1 : [friend], "
+"oba dohromady potřebují [answer_a] hodinu."
+msgstr[1] ""
+"Honza uklízí rychlostí 1 : [john_time] za hodinu a jeho přítel 1 : [friend], "
+"oba dohromady potřebují [answer_a] hodiny."
+msgstr[2] ""
+"Honza uklízí rychlostí 1 : [john_time] za hodinu a jeho přítel 1 : [friend], "
+"oba dohromady potřebují [answer_a] hodin."
 
 #: ../tools/GameXmlGetString.cs:73
+#| msgid ""
+#| "John needs [john_time] hour to clean a warehouse and his friend half of "
+#| "the time. How many hours would take them to clean up the warehouse if "
+#| "they work together?"
+#| msgid_plural ""
+#| "John needs [john_time] hours to clean a warehouse and his friend half of "
+#| "the time. How many hours would take them to clean up the warehouse if "
+#| "they work together?"
 msgid ""
-"John needs [john_time] hour to clean a warehouse and his friend half of the "
-"time. How many hours would take them to clean up the warehouse if they work "
-"together?"
+"John needs [john_time] hour to clean a warehouse and his friend half of "
+"John's time. How many hours would take them to clean up the warehouse if "
+"they work together? [option_answers]"
 msgid_plural ""
-"John needs [john_time] hours to clean a warehouse and his friend half of the "
-"time. How many hours would take them to clean up the warehouse if they work "
-"together?"
+"John needs [john_time] hours to clean a warehouse and his friend half of "
+"John's time. How many hours would take them to clean up the warehouse if "
+"they work together? [option_answers]"
 msgstr[0] ""
 "Honza potřebuje k úklidu skladu [john_time] hodinu a jeho přítel jen "
-"polovinu času. Kolik hodin zabere úklid skladu, když budou uklízet dohromady?"
+"polovinu času. Kolik hodin zabere úklid skladu, když budou uklízet "
+"dohromady? [option_answers]"
 msgstr[1] ""
 "Honza potřebuje k úklidu skladu [john_time] hodiny a jeho přítel jen "
-"polovinu času. Kolik hodin zabere úklid skladu, když budou uklízet dohromady?"
+"polovinu času. Kolik hodin zabere úklid skladu, když budou uklízet "
+"dohromady? [option_answers]"
 msgstr[2] ""
 "Honza potřebuje k úklidu skladu [john_time] hodin a jeho přítel jen polovinu "
-"času. Kolik hodin zabere úklid skladu, když budou uklízet dohromady?"
+"času. Kolik hodin zabere úklid skladu, když budou uklízet dohromady? "
+"[option_answers]"
 
 #: ../tools/GameXmlGetString.cs:77
+#| msgid ""
+#| "John needs [john_time] hour to clean a warehouse and his friend two times "
+#| "John's time. How many hours would take them to clean up the warehouse if "
+#| "they work together?"
+#| msgid_plural ""
+#| "John needs [john_time] hours to clean a warehouse and his friend two "
+#| "times John's time. How many hours would take them to clean up the "
+#| "warehouse if they work together?"
 msgid ""
 "John needs [john_time] hour to clean a warehouse and his friend two times "
 "John's time. How many hours would take them to clean up the warehouse if "
-"they work together?"
+"they work together? [option_answers]"
 msgid_plural ""
 "John needs [john_time] hours to clean a warehouse and his friend two times "
 "John's time. How many hours would take them to clean up the warehouse if "
-"they work together?"
+"they work together? [option_answers]"
 msgstr[0] ""
 "Honza potřebuje k úklidu skladu [john_time] hodinu a jeho přítel dvakrát "
-"tolik času. Kolik hodin zabere úklid skladu, když budou uklízet dohromady?"
+"tolik času. Kolik hodin zabere úklid skladu, když budou uklízet dohromady? "
+"[option_answers]"
 msgstr[1] ""
 "Honza potřebuje k úklidu skladu [john_time] hodiny a jeho přítel dvakrát "
-"tolik času. Kolik hodin zabere úklid skladu, když budou uklízet dohromady?"
+"tolik času. Kolik hodin zabere úklid skladu, když budou uklízet dohromady? "
+"[option_answers]"
 msgstr[2] ""
 "Honza potřebuje k úklidu skladu [john_time] hodin a jeho přítel dvakrát "
-"tolik času. Kolik hodin zabere úklid skladu, když budou uklízet dohromady?"
+"tolik času. Kolik hodin zabere úklid skladu, když budou uklízet dohromady? "
+"[option_answers]"
+
+#: ../tools/GameXmlGetString.cs:81 ../data/games.xml.h:59
+msgid ""
+"You have two trucks that have a total weight of [add] unit. If the lighter "
+"truck weights 15 units less that half of the weight of the heavier truck, "
+"what is the weight of the lighter truck? [option_answers]"
+msgid_plural ""
+"You have two trucks that have a total weight of [add] units. If the lighter "
+"truck weights 15 units less that half of the weight of the heavier truck, "
+"what is the weight of the lighter truck? [option_answers]"
+msgstr[0] ""
+"Máte dva kamióny, které dohromady váží [add] tunu. Jestliže má lehčí kamión "
+"o 15 tun méně než je polovina váhy těžšího kamiónu, kolik ten lehčí kamión "
+"váží? [option_answers]"
+msgstr[1] ""
+"Máte dva kamióny, které dohromady váží [add] tuny. Jestliže má lehčí kamión "
+"o 15 tun méně než je polovina váhy těžšího kamiónu, kolik ten lehčí kamión "
+"váží? [option_answers]"
+msgstr[2] ""
+"Máte dva kamióny, které dohromady váží [add] tun. Jestliže má lehčí kamión o "
+"15 tun méně než je polovina váhy těžšího kamiónu, kolik ten lehčí kamión "
+"váží? [option_answers]"
 
 #: ../data/games.xml.h:1
 msgid ""
@@ -344,13 +407,21 @@ msgstr "Za každou hodinu se otočí o 360 stupňů."
 
 #: ../data/games.xml.h:20
 msgid ""
+"Every person has two legs and every horse four (2 * [men] + [horses] * 4). "
+"Every person and every horse have also two eyes (2 * [men] + 2 * [horses])."
+msgstr ""
+"Každý člověk má dvě nohy a každý kůň čtyři (2.[men] + 4.[horses]). Každý "
+"člověk i každý kůň mají také dvě oči (2.[men] + 2.[horses])."
+
+#: ../data/games.xml.h:21
+msgid ""
 "From year 1000 to year 10000, palindrome years occur at 110 year intervals "
 "except for the end of each millennium that occur at a 11 years interval."
 msgstr ""
 "Mezi letopočty 1000 a 10000 se palindromické roky normálně objevují každých "
 "110 let vyjma konců tisíciletí, kdy se vyskytují po 11 letech."
 
-#: ../data/games.xml.h:21
+#: ../data/games.xml.h:22
 msgid ""
 "Given two integer numbers x and y, if x is even and y odd, which of the "
 "following expressions gives always an odd result? [option_answers]"
@@ -358,11 +429,11 @@ msgstr ""
 "Jsou dána dvě celá čísla x a y, kdy x je sudé a y je liché. Který z "
 "následujících výrazů dá vždy jako výsledek liché číslo? [option_answers]"
 
-#: ../data/games.xml.h:22
+#: ../data/games.xml.h:23
 msgid "Horse race"
 msgstr "Jízda na koni"
 
-#: ../data/games.xml.h:23
+#: ../data/games.xml.h:24
 msgid ""
 "How many boxes measuring 1 x 1 x 0.5 can be packed into a container "
 "measuring 6 x 5 x [z]?"
@@ -370,7 +441,7 @@ msgstr ""
 "Kolik krabic o rozměrech 1 × 1 × 0,5 je možné zabalit do bedny o rozměrech 6 "
 "× 5 × [z]?"
 
-#: ../data/games.xml.h:24
+#: ../data/games.xml.h:25
 msgid ""
 "How much weight is needed at the point indicated by the question mark to "
 "balance the lever?"
@@ -378,7 +449,7 @@ msgstr ""
 "Jakou vahou musíte rameno houpačky v místě otazníku zatížit, aby byla "
 "houpačka vyvážená?"
 
-#: ../data/games.xml.h:25
+#: ../data/games.xml.h:26
 msgid ""
 "If p &lt; x &lt; q and r &lt; y &lt; s. Which of the following options makes "
 "x &gt; y true? [option_answers]"
@@ -386,7 +457,7 @@ msgstr ""
 "Jestliže je p &lt; x &lt; q a r &lt; y &lt; s, pro kterou z následujících "
 "možností je splněna podmínka x &gt; y? [option_answers]"
 
-#: ../data/games.xml.h:26
+#: ../data/games.xml.h:27
 msgid ""
 "If p &lt; x &lt; q and r &lt; y &lt; s. Which of the following options makes "
 "x &lt; y true? [option_answers]"
@@ -394,7 +465,7 @@ msgstr ""
 "Jestliže je p &lt; x &lt; q and r &lt; y &lt; s, pro kterou z následujících "
 "možností je splněna podmínka x &lt; y? [option_answers]"
 
-#: ../data/games.xml.h:29
+#: ../data/games.xml.h:30
 #, no-c-format
 msgid ""
 "In a small town, [all_cars]% of the inhabitants have a car and [males_cars]% "
@@ -405,7 +476,7 @@ msgstr ""
 "auto a zároveň jsou muži. Kolik procent obyvatel tvoří ženy vlastnící auto? "
 "[option_answers]"
 
-#: ../data/games.xml.h:30
+#: ../data/games.xml.h:31
 msgid ""
 "In every match you eliminate one player, you need the total number of games "
 "minus 1 to find out the winner."
@@ -413,7 +484,7 @@ msgstr ""
 "V každém zápase vyřadíte jednoho hráče, takže potřebujete celkový počet her "
 "méně jedna na to, abyste zjistili vítěze."
 
-#: ../data/games.xml.h:31
+#: ../data/games.xml.h:32
 msgid ""
 "It is calculated by taking the total number of people minus [brothers_only] "
 "people that have brothers only, minus [sisters_only] that have sisters only "
@@ -423,29 +494,21 @@ msgstr ""
 "kteří mají jen bratry, mínus [sisters_only], kteří mají jen sestry a mínus "
 "[both], kteří mají sestry i bratry."
 
-#: ../data/games.xml.h:32
+#: ../data/games.xml.h:33
 msgid "It is the result of the operation [num_a] * [num_b]."
 msgstr "Je to výsledek operace [num_a] . [num_b]."
 
-#: ../data/games.xml.h:33
+#: ../data/games.xml.h:34
 msgid "It is the result of the operation [num_a] + [num_b]."
 msgstr "Je to výsledek operace [num_a] + [num_b]."
 
-#: ../data/games.xml.h:34
+#: ../data/games.xml.h:35
 msgid "It is the result of the operation [num_b] - [num_a]."
 msgstr "Je to výsledek operace [num_b] - [num_a]."
 
-#: ../data/games.xml.h:35
+#: ../data/games.xml.h:36
 msgid "It is the result of the operation [num_b] / [num_a]."
 msgstr "Je to výsledek operace [num_b] : [num_a]."
-
-#: ../data/games.xml.h:36
-msgid ""
-"John cleans at speed of 1 / [john_time] per hour and his friend at 1 / "
-"[friend], both combined need [answer_a] hours."
-msgstr ""
-"Honza uklízí rychlostí 1 : [john_time] za hodinu a jeho přítel 1 : [friend], "
-"což po zkombinování dá [answer_a] hod."
 
 #: ../data/games.xml.h:37
 msgid "Lever"
@@ -487,6 +550,7 @@ msgstr "Heslo"
 #: ../src/Core/Main/Verbal/AnalogiesMultipleOptions.cs:121
 #: ../src/Core/Main/Verbal/AnalogiesPairOfWordsOptions.cs:132
 #: ../src/Games/Logic/PuzzleFigurePattern.cs:191
+#: ../src/Games/Logic/PuzzleFigures.cs:194
 #: ../src/Games/Logic/PuzzleLargerShape.cs:303
 #: ../src/Games/Logic/PuzzleMissingPiece.cs:173
 #: ../src/Games/Logic/PuzzleMissingSlice.cs:218
@@ -517,6 +581,10 @@ msgid "Tennis game"
 msgstr "Tenisová hra"
 
 #: ../data/games.xml.h:48
+msgid "The heavier truck weights [heavier] and the lighter [lighter]."
+msgstr "Těžší kamión váží [heavier] t a lehčí [lighter] t."
+
+#: ../data/games.xml.h:49
 msgid ""
 "The variable p is smaller than x and s is bigger than y. If p is bigger than "
 "s then the condition x &gt; y is true."
@@ -524,7 +592,7 @@ msgstr ""
 "Proměnná p je menší než x a s je větší než y, takže pokud je p větší než s, "
 "je podmínka x &gt; y splněna."
 
-#: ../data/games.xml.h:49
+#: ../data/games.xml.h:50
 msgid ""
 "The variable q is bigger than x and y bigger than r. If q is smaller than r "
 "then the condition x &lt; y is true."
@@ -532,9 +600,9 @@ msgstr ""
 "Proměnná q je větší než x a y je větší než r, takže pokud je q menší než r, "
 "je podmínka x &lt; y splněna."
 
-#: ../data/games.xml.h:50
-msgid "There are [men] people and [horses] horses."
-msgstr "Účastní se [men] lidí a [horses] koní."
+#: ../data/games.xml.h:51
+msgid "Two trucks"
+msgstr "Dva kamióny"
 
 #: ../data/games.xml.h:52
 msgid "Warehouse"
@@ -568,7 +636,7 @@ msgstr ""
 msgid "You can fit 6 * 5 * [z] * 2 boxes."
 msgstr "Můžete zabalit 6 . 5 . [z] . 2 krabic."
 
-#: ../data/games.xml.h:60
+#: ../data/games.xml.h:61
 #, no-c-format
 msgid ""
 "[female_cars]% ([all_cars] - [males_cars]) of the inhabitants are women and "
@@ -578,111 +646,107 @@ msgstr ""
 "mají auto."
 
 #. Since this a multioption the answer string is set to option | this string, what makes answer_show is not useful here
-#: ../data/games.xml.h:62
+#: ../data/games.xml.h:63
 msgid "[option_a] and [option_b]"
 msgstr "[option_a] a [option_b]"
 
-#: ../data/games.xml.h:63
+#: ../data/games.xml.h:64
 msgid "[option_a] and [option_b] are both multiples of [num_x] and [num_y]."
 msgstr "[option_a] i [option_b] jsou násobky [num_x] a [num_y]."
 
-#: ../data/games.xml.h:64
+#: ../data/games.xml.h:65
 msgid "[option_prefix] (x - y) * 2"
 msgstr "[option_prefix] (x - y) . 2"
 
-#: ../data/games.xml.h:65
+#: ../data/games.xml.h:66
 msgid "[option_prefix] 2x + y"
 msgstr "[option_prefix] 2x + y"
 
-#: ../data/games.xml.h:66
-#| msgid "[option_prefix] [option_a]%"
+#: ../data/games.xml.h:67
 msgid "[option_prefix] [answer_a]"
 msgstr "[option_prefix] [answer_a]"
 
-#: ../data/games.xml.h:67
-#| msgid "[option_prefix] [option_b]%"
+#: ../data/games.xml.h:68
 msgid "[option_prefix] [answer_b]"
 msgstr "[option_prefix] [answer_b]"
 
-#: ../data/games.xml.h:68
-#| msgid "[option_prefix] [option_c]%"
+#: ../data/games.xml.h:69
 msgid "[option_prefix] [answer_c]"
 msgstr "[option_prefix] [answer_c]"
 
-#: ../data/games.xml.h:69
-#| msgid "[option_prefix] [option_d]%"
+#: ../data/games.xml.h:70
 msgid "[option_prefix] [answer_d]"
 msgstr "[option_prefix] [answer_d]"
 
-#: ../data/games.xml.h:70
+#: ../data/games.xml.h:71
 msgid "[option_prefix] [option_a] and [option_b]"
 msgstr "[option_prefix] [option_a] a [option_b]"
 
-#: ../data/games.xml.h:71
+#: ../data/games.xml.h:72
 msgid "[option_prefix] [option_a] and [option_c]"
 msgstr "[option_prefix] [option_a] a [option_c]"
 
-#: ../data/games.xml.h:73
+#: ../data/games.xml.h:74
 #, no-c-format
 msgid "[option_prefix] [option_a]%"
 msgstr "[option_prefix] [option_a]%"
 
-#: ../data/games.xml.h:74
+#: ../data/games.xml.h:75
 msgid "[option_prefix] [option_b] and [option_c]"
 msgstr "[option_prefix] [option_b] a [option_c]"
 
-#: ../data/games.xml.h:76
+#: ../data/games.xml.h:77
 #, no-c-format
 msgid "[option_prefix] [option_b]%"
 msgstr "[option_prefix] [option_b]%"
 
-#: ../data/games.xml.h:77
+#: ../data/games.xml.h:78
 msgid "[option_prefix] [option_c] and [option_d]"
 msgstr "[option_prefix] [option_c] a [option_d]"
 
-#: ../data/games.xml.h:79
+#: ../data/games.xml.h:80
 #, no-c-format
 msgid "[option_prefix] [option_c]%"
 msgstr "[option_prefix] [option_c]%"
 
-#: ../data/games.xml.h:81
+#: ../data/games.xml.h:82
 #, no-c-format
 msgid "[option_prefix] [option_d]%"
 msgstr "[option_prefix] [option_d]%"
 
-#: ../data/games.xml.h:82
+#: ../data/games.xml.h:83
 msgid "[option_prefix] p < r"
 msgstr "[option_prefix] p < r"
 
-#: ../data/games.xml.h:83
+#: ../data/games.xml.h:84
 msgid "[option_prefix] p > r"
 msgstr "[option_prefix] p > r"
 
-#: ../data/games.xml.h:84
+#: ../data/games.xml.h:85
 msgid "[option_prefix] p > s"
 msgstr "[option_prefix] p > s"
 
-#: ../data/games.xml.h:85
+#: ../data/games.xml.h:86
 msgid "[option_prefix] q < r"
 msgstr "[option_prefix] q < r"
 
-#: ../data/games.xml.h:86
+#: ../data/games.xml.h:87
 msgid "[option_prefix] q = s"
 msgstr "[option_prefix] q = s"
 
-#: ../data/games.xml.h:87
+#: ../data/games.xml.h:88
 msgid "[option_prefix] x * y"
 msgstr "[option_prefix] x . y"
 
-#: ../data/games.xml.h:88
+#: ../data/games.xml.h:89
 msgid "[option_prefix] x * y * 2"
 msgstr "[option_prefix] x . y . 2"
 
-#: ../data/games.xml.h:89
+#: ../data/games.xml.h:90
 msgid "[rslt_a] and [rslt_b]"
 msgstr "[rslt_a] a [rslt_b]"
 
-#: ../data/games.xml.h:90
+#: ../data/games.xml.h:91
 msgid ""
 "[year_start] is a palindromic year as [year_end] is, a gap of 11 years. What "
 "are the next two consecutive palindromic years after [year_end] with the "
@@ -692,19 +756,19 @@ msgstr ""
 "11 let mezi sebou. Které dva palindromické roky se stejnou prodlevou mezi "
 "sebou budou následovat po roce [year_end]?"
 
-#: ../data/games.xml.h:91
+#: ../data/games.xml.h:92
 msgid "x * [num_a] = [num_b]"
 msgstr "x . [num_a] = [num_b]"
 
-#: ../data/games.xml.h:92
+#: ../data/games.xml.h:93
 msgid "x + [num_a] = [num_b]"
 msgstr "x + [num_a] = [num_b]"
 
-#: ../data/games.xml.h:93
+#: ../data/games.xml.h:94
 msgid "x - [num_a] = [num_b]"
 msgstr "x - [num_a] = [num_b]"
 
-#: ../data/games.xml.h:94
+#: ../data/games.xml.h:95
 msgid "x / [num_a] = [num_b]"
 msgstr "x : [num_a] = [num_b]"
 
@@ -2386,7 +2450,7 @@ msgstr "{0} Odpovězte {1}."
 #. Translators: this "option) answer" for example "a) "21 x 60 = 1260". This should not be changed for most of the languages
 #: ../src/Core/Main/Verbal/AnalogiesMultipleOptions.cs:106
 #: ../src/Core/Main/Verbal/AnalogiesPairOfWordsOptions.cs:114
-#: ../src/Games/Logic/PuzzleOstracism.cs:159
+#: ../src/Games/Logic/PuzzleOstracism.cs:164
 #: ../src/Games/Logic/PuzzlePredicateLogic.cs:185
 #: ../src/Games/Calculation/CalculationCloserFraction.cs:164
 #: ../src/Games/Calculation/CalculationGreatestDivisor.cs:153
@@ -3329,11 +3393,11 @@ msgstr ""
 "Podívejte se na první a druhé obrazce v pořadí, vymažte čáry, které jsou u "
 "obou stejné a obrazec, který vznikne, otočte o 45 stupňů."
 
-#: ../src/Games/Logic/PuzzleFigures.cs:42
+#: ../src/Games/Logic/PuzzleFigures.cs:58
 msgid "Figures"
 msgstr "Geom. útvary"
 
-#: ../src/Games/Logic/PuzzleFigures.cs:46
+#: ../src/Games/Logic/PuzzleFigures.cs:62
 msgid ""
 "What is the next logical sequence of objects in the last column? See below "
 "the convention when giving the answer."
@@ -3341,29 +3405,13 @@ msgstr ""
 "Jak budou geometrické útvary zobrazeny v posledním sloupci? Při psaní "
 "odpovědi se podívejte na kód zápisu odpovědi pod obrázkem."
 
-#: ../src/Games/Logic/PuzzleFigures.cs:51
+#: ../src/Games/Logic/PuzzleFigures.cs:67
 msgid ""
 "It is the only combination that you can build with the given elements "
 "without repeating them."
 msgstr ""
 "Tohle je jediná kombinace, kterou můžete vytvořit z daných prvků bez toho, "
 "aby se kombinace opakovaly."
-
-#: ../src/Games/Logic/PuzzleFigures.cs:80
-#: ../src/Games/Logic/PuzzleFigures.cs:92
-#: ../src/Games/Logic/PuzzleFigures.cs:105
-#, csharp-format
-msgid "{0} ->"
-msgstr "{0} ->"
-
-#: ../src/Games/Logic/PuzzleFigures.cs:161
-msgid "Convention when giving the answer is:"
-msgstr "Kód pro zápis odpovědi je:"
-
-#: ../src/Games/Logic/PuzzleFigures.cs:165
-#, csharp-format
-msgid "E.g: {0}{1}{2} (pentagon, triangle, circle)"
-msgstr "Například: {0}{1}{2} (pětiúhelník, trojúhelník, kruh)"
 
 #: ../src/Games/Logic/PuzzleFourSided.cs:32
 msgid "Four sided"
@@ -3437,53 +3485,58 @@ msgstr "Na obrázku vlevo je {0} čar a na obrázku vpravo jich je {1}."
 msgid "It is an easy exercise if you systematically count the lines."
 msgstr "Tato hra je lehká, pokud čáry počítáte systematicky."
 
-#: ../src/Games/Logic/PuzzleMatrixGroups.cs:35
-msgid "Matrix groups"
-msgstr "Skupiny v matici"
+#: ../src/Games/Logic/PuzzleGridCircles.cs:35
+#| msgid "Circles in a square"
+msgid "Circles in a grid"
+msgstr "Kruhy v mřížce"
 
-#: ../src/Games/Logic/PuzzleMatrixGroups.cs:39
-msgid "One of the numbers in the matrix must be circled. Which one?"
-msgstr "V matici je potřeba zakroužkovat ještě jedno z čísel. Které?"
+#: ../src/Games/Logic/PuzzleGridCircles.cs:39
+#| msgid "One of the numbers in the matrix must be circled. Which one?"
+msgid "One of the numbers in the grid must be circled. Which one?"
+msgstr "Jedno z čísel v mřížce je potřeba zakroužkovat. Které?"
 
-#: ../src/Games/Logic/PuzzleMatrixGroups.cs:43
+#: ../src/Games/Logic/PuzzleGridCircles.cs:43
 msgid "All circled numbers share an arithmetical property."
 msgstr ""
 "Všechna zakroužkovaná čísla mají společnou jednu matematickou vlastnost."
 
-#: ../src/Games/Logic/PuzzleMatrixGroups.cs:48
+#: ../src/Games/Logic/PuzzleGridCircles.cs:48
 #, csharp-format
 msgid "Every circled number can be divided by {0}."
 msgstr "Každé zakroužkované číslo je dělitelné číslem {0}."
 
-#: ../src/Games/Logic/PuzzleMatrixNumbers.cs:44
-msgid "Matrix numbers"
-msgstr "Čísla v matici"
+#: ../src/Games/Logic/PuzzleGridNumbers.cs:44
+msgid "Numbers in a grid"
+msgstr "Čísla v mřížce"
 
-#: ../src/Games/Logic/PuzzleMatrixNumbers.cs:48
+#: ../src/Games/Logic/PuzzleGridNumbers.cs:48
+#| msgid ""
+#| "The numbers in the matrix follow a pattern. Which number should replace "
+#| "the question mark?"
 msgid ""
-"The numbers in the matrix follow a pattern. Which number should replace the "
-"question mark?"
+"The numbers in the grid below follow a pattern. Which number should replace "
+"the question mark?"
 msgstr ""
-"Čísla jsou v mřížce uspořádána podle určité logiky. Jaké číslo by se mělo "
+"Čísla jsou v mřížce uspořádána podle určitého vzoru. Jaké číslo by se mělo "
 "doplnit místo otazníku?"
 
-#: ../src/Games/Logic/PuzzleMatrixNumbers.cs:54
+#: ../src/Games/Logic/PuzzleGridNumbers.cs:54
 msgid "The pattern is arithmetical and works vertically."
 msgstr "Logika je založená na aritmetice a funguje svisle."
 
-#: ../src/Games/Logic/PuzzleMatrixNumbers.cs:56
+#: ../src/Games/Logic/PuzzleGridNumbers.cs:56
 #: ../src/Games/Logic/PuzzleRelatedNumbers.cs:167
 msgid "The pattern is arithmetical and works horizontally."
 msgstr "Logika je založená na aritmetice a funguje vodorovně."
 
-#: ../src/Games/Logic/PuzzleMatrixNumbers.cs:65
+#: ../src/Games/Logic/PuzzleGridNumbers.cs:65
 msgid ""
 "The fourth row is calculated by multiplying the first two rows and adding "
 "the third."
 msgstr ""
 "Čtvrtý řádek vypočtete tak, že vynásobíte první dva řádky a připočtete třetí."
 
-#: ../src/Games/Logic/PuzzleMatrixNumbers.cs:67
+#: ../src/Games/Logic/PuzzleGridNumbers.cs:67
 msgid ""
 "The fourth column is calculated by multiplying the first two columns and "
 "adding the third."
@@ -3491,14 +3544,14 @@ msgstr ""
 "Čtvrtý sloupec vypočtete tak, že vynásobíte první dva sloupce a připočtete "
 "třetí."
 
-#: ../src/Games/Logic/PuzzleMatrixNumbers.cs:71
+#: ../src/Games/Logic/PuzzleGridNumbers.cs:71
 msgid ""
 "The fourth row is calculated by multiplying the first two rows and "
 "subtracting the third."
 msgstr ""
 "Čtvrtý řádek vypočtete tak, že vynásobíte první dva řádky a odečtete třetí."
 
-#: ../src/Games/Logic/PuzzleMatrixNumbers.cs:73
+#: ../src/Games/Logic/PuzzleGridNumbers.cs:73
 msgid ""
 "The fourth column is calculated by multiplying the first two columns and "
 "subtracting the third."
@@ -3506,14 +3559,14 @@ msgstr ""
 "Čtvrtý sloupec vypočtete tak, že vynásobíte první dva sloupce a odečtete "
 "třetí."
 
-#: ../src/Games/Logic/PuzzleMatrixNumbers.cs:77
+#: ../src/Games/Logic/PuzzleGridNumbers.cs:77
 msgid ""
 "The fourth row is calculated by adding the first two rows and subtracting "
 "the third."
 msgstr ""
 "Čtvrtý řádek vypočtete tak, že sečtete první dva řádky a odečtete třetí."
 
-#: ../src/Games/Logic/PuzzleMatrixNumbers.cs:79
+#: ../src/Games/Logic/PuzzleGridNumbers.cs:79
 msgid ""
 "The fourth column is calculated by adding the first two columns and "
 "subtracting the third."
@@ -4108,7 +4161,8 @@ msgid "Related numbers"
 msgstr "Odpovídající čísla"
 
 #: ../src/Games/Logic/PuzzleRelatedNumbers.cs:163
-msgid "In the matrix below, which number should replace the question mark?"
+#| msgid "In the matrix below, which number should replace the question mark?"
+msgid "In the grid below, which number should replace the question mark?"
 msgstr "Které číslo v mřížce níže by mělo nahradit otazník?"
 
 #: ../src/Games/Logic/PuzzleRelatedNumbers.cs:174
@@ -5252,6 +5306,30 @@ msgstr "_Odinstalovat…"
 #: ../src/Clients/Classical/mono-addins-strings.xml.h:35
 msgid "_Unselect All"
 msgstr "_Zrušit výběr"
+
+#~ msgid "There is [men] person and [horses] horse."
+#~ msgid_plural "There are [men] people and [horses] horses."
+#~ msgstr[0] "Účastní se [men] člověk a [horses] kůň."
+#~ msgstr[1] "Účastní se [men] lidé a [horses] koně."
+#~ msgstr[2] "Účastní se [men] lidí a [horses] koní."
+
+#~ msgid "There are [men] people and [horses] horses."
+#~ msgstr "Účastní se [men] lidí a [horses] koní."
+
+#~ msgid "{0} ->"
+#~ msgstr "{0} ->"
+
+#~ msgid "Convention when giving the answer is:"
+#~ msgstr "Kód pro zápis odpovědi je:"
+
+#~ msgid "E.g: {0}{1}{2} (pentagon, triangle, circle)"
+#~ msgstr "Například: {0}{1}{2} (pětiúhelník, trojúhelník, kruh)"
+
+#~ msgid "Matrix groups"
+#~ msgstr "Skupiny v matici"
+
+#~ msgid "Matrix numbers"
+#~ msgstr "Čísla v matici"
 
 #~ msgid "[option_prefix] q > s"
 #~ msgstr "[option_prefix] q > s"
