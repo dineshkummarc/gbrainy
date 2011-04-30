@@ -169,7 +169,7 @@ namespace gbrainy.Core.Main
 
 		public string StatusText {
 			get {
-				if (Status == SessionStatus.NotPlaying)
+				if (Status == SessionStatus.NotPlaying || Status == SessionStatus.Finished)
 					return string.Empty;
 
 				string played, time, game;
