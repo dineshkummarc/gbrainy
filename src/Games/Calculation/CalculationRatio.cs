@@ -46,8 +46,8 @@ namespace gbrainy.Games.Calculation
 
 		public override string Rationale {
 			get {
-				return String.Format (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("The second number is calculated by multiplying the first by {0} and dividing it by {1}."),
-					ratio_a, ratio_b);
+				return String.Format (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("The second number can be calculated by multiplying the first number by {0} and dividing it by {1}."),
+					ratio_b, ratio_a);
 			}
 		}
 

@@ -125,8 +125,8 @@
 				int players = 32 + (random.Next (16) * 2);
 				int rslt = players -1;
 			</variables>
-			<question>How many matches does it take to determine the winner of a tennis tournament that starts with [players] player?</question>
-			<question plural ="[players]">How many matches does it take to determine the winner of a tennis tournament that starts with [players] players?</question>
+			<question>In a tennis tournament, in every match a player is eliminated after losing to a single opponent. How many matches does it take to determine the winner of a tennis tournament that starts with [players] player?</question>
+			<question plural ="[players]">In a tennis tournament, in every match a player is eliminated after losing to a single opponent. How many matches does it take to determine the winner of a tennis tournament that starts with [players] players?</question>
 			<_rationale>In every match you eliminate one player, you need the total number of games minus 1 to find out the winner.</_rationale>
 			<answer>[rslt]</answer>
 		</variant>
@@ -226,7 +226,7 @@
 				double small_box = 1 * 1 * 0.5;
 				double rslt = big_box / small_box;
 			</variables>
-			<_question>How many boxes measuring 1 x 1 x 0.5 can be packed into a container measuring 6 x 5 x [z]?</_question>
+			<_question>How many boxes measuring 1 x 1 x 0.5 can be fit into a container measuring 6 x 5 x [z]?</_question>
 			<answer>[rslt]</answer>
 			<_rationale>You can fit 6 * 5 * [z] * 2 boxes.</_rationale>
 		</variant>
@@ -246,7 +246,7 @@
 				int rslt_a = years_start [idx + 1];
 				int rslt_b = years_end [idx + 1];
 			</variables>
-			<_question>[year_start] is a palindromic year as [year_end] is, a gap of 11 years. What are the next two consecutive palindromic years after [year_end] with the same gap?</_question>
+			<_question>[year_start] is a palindromic year as [year_end] is, a gap of 11 years. What are the next two consecutive palindromic years after [year_end] with the same gap? Answer using two numbers (e.g.: [year_start] and [year_end]).</_question>
 			<_tip>A palindromic number remains the same when its digits are reversed (e.g.: 2112).</_tip>
 			<answer>[rslt_a] | [rslt_b]</answer>
 			<_answer_show>[rslt_a] and [rslt_b]</_answer_show>

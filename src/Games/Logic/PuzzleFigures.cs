@@ -59,7 +59,8 @@ namespace gbrainy.Games.Logic
 		}
 
 		public override string Question {
-			get {return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("What is the next logical sequence of objects in the last column? See below the convention when giving the answer.");}
+			get {return String.Format (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("What is the next logical sequence of objects in the last column? Answer {0}, {1} or {2}."),
+				Answer.GetMultiOption (0), Answer.GetMultiOption (1), Answer.GetMultiOption (2));}
 		}
 
 		public override string Rationale {
