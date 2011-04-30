@@ -11,8 +11,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gbrainy\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-04-27 22:56+0200\n"
-"PO-Revision-Date: 2011-04-27 23:12+0100\n"
+"POT-Creation-Date: 2011-04-30 17:39+0200\n"
+"PO-Revision-Date: 2011-04-30 17:50+0100\n"
 "Last-Translator: Jordi Mas <jmas@softcatala.org>\n"
 "Language-Team: Catalan\n"
 "Language: \n"
@@ -227,11 +227,11 @@ msgid_plural ""
 "what is the weight of the lighter truck? [option_answers]"
 msgstr[0] ""
 "Teniu dos camions que tenen un pes total de [add] unitat. Si el camió més "
-"lleuger pesa  15 unitats menys que la meitat del pes del camió més pesat, "
+"lleuger pesa 15 unitats menys que la meitat del pes del camió més pesat, "
 "quin és el més del camió més lleuger? [option_answers]"
 msgstr[1] ""
 "Teniu dos camions que tenen un pes total de [add] unitats. Si el camió més "
-"lleuger pesa  15 unitats menys que la meitat del pes del camió més pesat, "
+"lleuger pesa 15 unitats menys que la meitat del pes del camió més pesat, "
 "quin és el més del camió més lleuger? [option_answers]"
 
 #: ../data/games.xml.h:1
@@ -374,8 +374,8 @@ msgstr "Cursa de cavalls"
 
 #: ../data/games.xml.h:24
 msgid ""
-"How many boxes measuring 1 x 1 x 0.5 can be packed into a container "
-"measuring 6 x 5 x [z]?"
+"How many boxes measuring 1 x 1 x 0.5 can be fit into a container measuring 6 "
+"x 5 x [z]?"
 msgstr ""
 "Quantes caixes de mida 1 x 1 x 0.5 poden encabir-se en un contenidor de mida "
 "6 x 5 x [z]?"
@@ -490,7 +490,7 @@ msgstr "Contrasenya"
 #: ../src/Core/Main/Verbal/AnalogiesMultipleOptions.cs:121
 #: ../src/Core/Main/Verbal/AnalogiesPairOfWordsOptions.cs:132
 #: ../src/Games/Logic/PuzzleFigurePattern.cs:191
-#: ../src/Games/Logic/PuzzleFigures.cs:194
+#: ../src/Games/Logic/PuzzleFigures.cs:195
 #: ../src/Games/Logic/PuzzleLargerShape.cs:303
 #: ../src/Games/Logic/PuzzleMissingPiece.cs:173
 #: ../src/Games/Logic/PuzzleMissingSlice.cs:218
@@ -616,7 +616,7 @@ msgstr "[option_prefix] [answer_c]"
 
 #: ../data/games.xml.h:70
 msgid "[option_prefix] [answer_d]"
-msgstr "[option_prefix]  [answer_d]"
+msgstr "[option_prefix] [answer_d]"
 
 #: ../data/games.xml.h:71
 msgid "[option_prefix] [option_a] and [option_b]"
@@ -690,11 +690,12 @@ msgstr "[rslt_a] i [rslt_b]"
 msgid ""
 "[year_start] is a palindromic year as [year_end] is, a gap of 11 years. What "
 "are the next two consecutive palindromic years after [year_end] with the "
-"same gap?"
+"same gap? Answer using two numbers (e.g.: [year_start] and [year_end])."
 msgstr ""
 "Els anys [year_start] i [year_end] són capicua, amb una diferència d'11 "
 "anys. Quins són els propers dos anys capicua consecutius després de "
-"[year_end] amb la mateix diferència?"
+"[year_end] amb la mateix diferència? Responeu usant dos nombres (p. ex.: "
+"[year_start] i [year_end])"
 
 #: ../data/games.xml.h:92
 msgid "x * [num_a] = [num_b]"
@@ -790,10 +791,9 @@ msgid "Amphibians"
 msgstr "Amfibis"
 
 #: ../data/verbal_analogies.xml.h:15
-msgid "An artist whose work has become the defining style of that genre is?"
+msgid "An artist whose work has become the defining style of a genre is?"
 msgstr ""
-"Un artista l'obra del qual ha esdevingut l'estil que defineix aquest gènere "
-"és?"
+"Un artista l'obra del qual ha esdevingut l'estil que defineix un gènere és?"
 
 #: ../data/verbal_analogies.xml.h:16
 msgid ""
@@ -1166,7 +1166,7 @@ msgstr "És l'únic que no és un instrument de vent i fusta."
 
 #: ../data/verbal_analogies.xml.h:110
 msgid "It is the only one that is not related to architecture."
-msgstr "És l'únic que no està relacionat amb l'arquitectura."
+msgstr "És l'única que no està relacionada amb l'arquitectura."
 
 #: ../data/verbal_analogies.xml.h:111
 msgid "It is the only unit that does not belong to the metric system."
@@ -3356,14 +3356,15 @@ msgid "Figures"
 msgstr "Figures"
 
 #: ../src/Games/Logic/PuzzleFigures.cs:62
+#, csharp-format
 msgid ""
-"What is the next logical sequence of objects in the last column? See below "
-"the convention when giving the answer."
+"What is the next logical sequence of objects in the last column? Answer {0}, "
+"{1} or {2}."
 msgstr ""
-"Quina és la seqüència lògica d'objectes següent? Vegeu a baix la convenció "
-"per a donar la resposta."
+"Quina és la següent seqüència lògica d'objectes a l'última columna? Responeu "
+"{0}, {1} o {2}."
 
-#: ../src/Games/Logic/PuzzleFigures.cs:67
+#: ../src/Games/Logic/PuzzleFigures.cs:68
 msgid ""
 "It is the only combination that you can build with the given elements "
 "without repeating them."
@@ -4976,11 +4977,11 @@ msgstr ""
 #: ../src/Games/Calculation/CalculationRatio.cs:49
 #, csharp-format
 msgid ""
-"The second number is calculated by multiplying the first by {0} and dividing "
-"it by {1}."
+"The second number can be calculated by multiplying the first number by {0} "
+"and dividing it by {1}."
 msgstr ""
-"El segon número es calcula multiplicant el primer per {0} i dividint-lo per "
-"{1}."
+"El segon número es pot calcular multiplicant el primer per {0} i dividint-lo "
+"per {1}."
 
 #: ../src/Games/Calculation/CalculationRatio.cs:55
 msgid ""
@@ -5269,3 +5270,10 @@ msgstr "_Desinstal·la..."
 #: ../src/Clients/Classical/mono-addins-strings.xml.h:35
 msgid "_Unselect All"
 msgstr "_Desselecciona-ho"
+
+#~ msgid ""
+#~ "What is the next logical sequence of objects in the last column? See "
+#~ "below the convention when giving the answer."
+#~ msgstr ""
+#~ "Quina és la seqüència lògica d'objectes següent? Vegeu a baix la "
+#~ "convenció per a donar la resposta."
