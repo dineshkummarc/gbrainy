@@ -45,30 +45,16 @@ namespace gbrainy.Core.Main.Verbal
 
 		public override string Question {
 			get {
-				string str = string.Empty;
-
 				if (Current == null)
 					return string.Empty;
 
 				if (Current.answers == null)
 					return Current.question;
 
-				for (int n = 0; n < Current.answers.Length; n++)
-				{
-					str+= Answer.GetMultiOption (n);
-
-					if (n +1 < Current.answers.Length) {
-						// Translators: this the separator used when concatenating possible options for answering verbal analogies
-						// For example: "Possible correct answers are: a, b, c, d."						
-						str += ServiceLocator.Instance.GetService <ITranslations> ().GetString (", ");
-					}
-				}
-
-				// Translators: {0} is replaced by a question and {1} by the suggestions on how to answer
-				// E.g: What is the correct option? Answer A, B, C.
+				// Translators: {0} is replaced by a question and {1} by the possible valid answers
+				// E.g.: What is the correct option? Answer A, B, C or D.
 				return String.Format (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("{0} Answer {1}."),
-					Current.question,
-					str);
+					Current.question, GetMultiOptionsPossibleAnswers ());
 			}
 		}
 

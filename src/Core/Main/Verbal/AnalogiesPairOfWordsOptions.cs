@@ -46,30 +46,20 @@ namespace gbrainy.Core.Main.Verbal
 
 		public override string Question {
 			get {
-				string str = string.Empty;
-	
 				if (Current == null)
 					return string.Empty;
 
 				if (Current.answers == null)
 					return Current.question;
 
-				for (int n = 0; n < Current.answers.Length; n++)
-				{
-					str+= Answer.GetMultiOption (n);
-
-					if (n +1 < Current.answers.Length) {
-						str += ServiceLocator.Instance.GetService <ITranslations> ().GetString (", ");
-					}
-				}
-
 				string ques = String.Format (ServiceLocator.Instance.GetService <ITranslations> ().GetString (
 					"Given the relationship between the two words below, which word has the same relationship to '{0}'?"),
 					sample);
 
+				// Translators: {0} is replaced by a question and {1} by the possible valid answers
+				// E.g.: What is the correct option? Answer A, B, C or D.
 				return String.Format (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("{0} Answer {1}."),
-					ques,
-					str);
+					ques, GetMultiOptionsPossibleAnswers ());
 			}
 		}
 

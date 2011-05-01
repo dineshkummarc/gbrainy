@@ -66,6 +66,29 @@ namespace gbrainy.Core.Main.Verbal
 			}
 		}
 
+		protected string GetMultiOptionsPossibleAnswers ()
+		{
+			switch (Current.answers.Length) {
+			case 0:
+			case 1:
+				throw new InvalidOperationException ("You need more than 1 answer to select from");
+			case 2:
+				// Translators. This is the list of valid answers, like A or B.
+				return String.Format (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("{0} or {1}"),
+					Answer.GetMultiOption (0), Answer.GetMultiOption (1));
+			case 3:
+				// Translators. This is the list of valid answers, like A, B or C.
+				return String.Format (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("{0}, {1} or {2}"),
+					Answer.GetMultiOption (0), Answer.GetMultiOption (1), Answer.GetMultiOption (2));
+			case 4:
+				// Translators. This is the list of valid answers, like A, B, C or D.
+				return String.Format (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("{0}, {1}, {2} or {3}"),
+					Answer.GetMultiOption (0), Answer.GetMultiOption (1), Answer.GetMultiOption (2), Answer.GetMultiOption (3));
+			default:
+				throw new InvalidOperationException ("Number of multiple options not supported");
+			}
+		}
+
 		protected void SetAnswerCorrectShow ()
 		{
 			if (Current == null || 

@@ -46,7 +46,7 @@ namespace gbrainy.Games.Logic
 		}
 
 		public override string Question {
-			get {return String.Format (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("When you fold the figure below as a cube, which face on the figure is opposite the face with a {0} drawn on it? Answer the number written on face."), question);} 
+			get {return String.Format (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("When you fold the figure below as a cube, which face on the figure is opposite the face with a {0} drawn on it? Answer the number written the on face."), question);} 
 		}
 
 		protected override void Initialize ()
