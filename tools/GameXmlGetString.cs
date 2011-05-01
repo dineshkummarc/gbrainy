@@ -38,8 +38,8 @@ public class GameXmlSttringFactory
 			"John's age is nowadays 2 times his son's age. [ago] years ago, John was [proportion] times older than his son. How old is John's son nowadays?",
 			variable);
 
-		Catalog.GetPluralString ("[ago] year ago, John's age minus [ago] was equal to [proportion] times his son's age minus [ago].",
-			"[ago] years ago, John's age minus [ago] was equal to [proportion] times his son's age minus [ago].",
+		Catalog.GetPluralString ("John's age (variable x) is nowadays 2 times his son's age (variable y), that is x = 2y, and [ago] year ago, John was [proportion] times older than his son: x - [ago] = (y - [ago]) * [proportion].",
+			"John's age (variable x) is nowadays 2 times his son's age (variable y), that is x = 2y, and [ago] years ago, John was [proportion] times older than his son: x - [ago] = (y - [ago]) * [proportion].",
 			variable);
 
 		Catalog.GetPluralString ("A file is protected by a password formed by a [digits] digit number represented in base 10 (ranging from 0 to 9). How many different passwords can you have?",
@@ -54,8 +54,8 @@ public class GameXmlSttringFactory
 			"There are [games] tennis games played simultaneously. How many different forecasts are possible?",
 			variable);
 
-		Catalog.GetPluralString ("How many matches does it take to determine the winner of a tennis tournament that starts with [players] player?",
-			"How many matches does it take to determine the winner of a tennis tournament that starts with [players] players?",
+		Catalog.GetPluralString ("In a tennis tournament, in every match a player is eliminated after losing to a single opponent. How many matches does it take to determine the winner of a tennis tournament that starts with [players] player?",
+			"In a tennis tournament, in every match a player is eliminated after losing to a single opponent. How many matches does it take to determine the winner of a tennis tournament that starts with [players] players?",
 			variable);
 
 		Catalog.GetPluralString ("You have [money] monetary unit in your bank account at 10% compound interest annually. How much money will you have at end of 2 years?",
