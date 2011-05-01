@@ -13,8 +13,8 @@ msgstr ""
 "Project-Id-Version: gbrainy.master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=gbrainy&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2011-04-28 19:05+0000\n"
-"PO-Revision-Date: 2011-04-28 21:07+0200\n"
+"POT-Creation-Date: 2011-05-01 09:20+0000\n"
+"PO-Revision-Date: 2011-05-01 13:00+0200\n"
 "Last-Translator: Daniel Mustieles <daniel.mustieles@gmail.com>\n"
 "Language-Team: Español <gnome-es-list@gnome.org>\n"
 "MIME-Version: 1.0\n"
@@ -66,18 +66,28 @@ msgstr[1] ""
 "Juan ahora?"
 
 #: ../tools/GameXmlGetString.cs:41
+#| msgid ""
+#| "John's age is nowadays 2 times his son's age. [ago] year ago, John was "
+#| "[proportion] times older than his son. How old is John's son nowadays?"
+#| msgid_plural ""
+#| "John's age is nowadays 2 times his son's age. [ago] years ago, John was "
+#| "[proportion] times older than his son. How old is John's son nowadays?"
 msgid ""
-"[ago] year ago, John's age minus [ago] was equal to [proportion] times his "
-"son's age minus [ago]."
+"John's age (variable x) is nowadays 2 times his son's age (variable y), that "
+"is x = 2y, and [ago] year ago, John was [proportion] times older than his "
+"son: x - [ago] = (y - [ago]) * [proportion]."
 msgid_plural ""
-"[ago] years ago, John's age minus [ago] was equal to [proportion] times his "
-"son's age minus [ago]."
+"John's age (variable x) is nowadays 2 times his son's age (variable y), that "
+"is x = 2y, and [ago] years ago, John was [proportion] times older than his "
+"son: x - [ago] = (y - [ago]) * [proportion]."
 msgstr[0] ""
-"Hace [ago] año, la edad de Juan menos [ago] era igual a [proportion] veces "
-"la edad de su hijo menos [ago]."
+"Ahora la edad de Juan es 2 veces la edad de su hijo (variable y), esto es x "
+"= 2y,  y hace [ago] año, Juan era [proportion] veces mayor que su hijo. x - "
+"[ago] = (y - [ago]) * [proportion]."
 msgstr[1] ""
-"Hace [ago] años, la edad de Juan menos [ago] era igual a [proportion] veces "
-"la edad de su hijo menos [ago]."
+"Ahora la edad de Juan es 2 veces la edad de su hijo (variable y), esto es x "
+"= 2y,  y hace [ago] años, Juan era [proportion] veces mayor que su hijo. x - "
+"[ago] = (y - [ago]) * [proportion]."
 
 #: ../tools/GameXmlGetString.cs:45
 msgid ""
@@ -127,18 +137,30 @@ msgstr[1] ""
 "resultados posibles hay?"
 
 #: ../tools/GameXmlGetString.cs:57
+#| msgid ""
+#| "How many matches does it take to determine the winner of a tennis "
+#| "tournament that starts with [players] player?"
+#| msgid_plural ""
+#| "How many matches does it take to determine the winner of a tennis "
+#| "tournament that starts with [players] players?"
 msgid ""
-"How many matches does it take to determine the winner of a tennis tournament "
-"that starts with [players] player?"
+"In a tennis tournament, in every match a player is eliminated after losing "
+"to a single opponent. How many matches does it take to determine the winner "
+"of a tennis tournament that starts with [players] player?"
 msgid_plural ""
-"How many matches does it take to determine the winner of a tennis tournament "
-"that starts with [players] players?"
+"In a tennis tournament, in every match a player is eliminated after losing "
+"to a single opponent. How many matches does it take to determine the winner "
+"of a tennis tournament that starts with [players] players?"
 msgstr[0] ""
-"¿Cuántos partidos lleva determinar el ganador de un torneo de tenis que "
-"comienza con [players] jugador?"
+"En un torneo de tenis, se elimina un jugador en cada partido después de "
+"perder contra un único oponente. ¿Cuántos partidos son necesarios para "
+"determinar el ganador de un torneo de tenis que comienza con [players] "
+"jugador?"
 msgstr[1] ""
-"¿Cuántos partidos lleva determinar el ganador de un torneo de tenis que "
-"comienza con [players] jugadores?"
+"En un torneo de tenis, se elimina un jugador en cada partido después de "
+"perder contra un único oponente. ¿Cuántos partidos son necesarios para "
+"determinar el ganador de un torneo de tenis que comienza con [players] "
+"jugadores?"
 
 #: ../tools/GameXmlGetString.cs:61
 msgid ""
@@ -155,12 +177,6 @@ msgstr[1] ""
 "compuesto del 10% anual. ¿Cuánto dinero tendrás después de 2 años?"
 
 #: ../tools/GameXmlGetString.cs:65 ../data/games.xml.h:28
-#| msgid ""
-#| "In a horse race there are people and horses. You can count [eyes] eye and "
-#| "[legs] leg. How many horses are present?"
-#| msgid_plural ""
-#| "In a horse race there are people and horses. You can count [eyes] eyes "
-#| "and [legs] legs. How many horses are present?"
 msgid ""
 "In a horse race there are people and horses. You count [eyes] eye and [legs] "
 "leg. How many horses are present?"
@@ -175,9 +191,6 @@ msgstr[1] ""
 "ojos y [legs] piernas. ¿Cuántos caballos hay?"
 
 #: ../tools/GameXmlGetString.cs:69
-#| msgid ""
-#| "John cleans at speed of 1 / [john_time] per hour and his friend at 1 / "
-#| "[friend], both combined need [answer_a] hours."
 msgid ""
 "John cleans at speed of 1 / [john_time] per hour and his friend at 1 / "
 "[friend], both together need [answer_a] hour."
@@ -192,14 +205,6 @@ msgstr[1] ""
 "[friend], ambos juntos necesitan [answer_a] horas."
 
 #: ../tools/GameXmlGetString.cs:73
-#| msgid ""
-#| "John needs [john_time] hour to clean a warehouse and his friend half of "
-#| "the time. How many hours would take them to clean up the warehouse if "
-#| "they work together? [option_answers]"
-#| msgid_plural ""
-#| "John needs [john_time] hours to clean a warehouse and his friend half of "
-#| "the time. How many hours would take them to clean up the warehouse if "
-#| "they work together? [option_answers]"
 msgid ""
 "John needs [john_time] hour to clean a warehouse and his friend half of "
 "John's time. How many hours would take them to clean up the warehouse if "
@@ -393,9 +398,12 @@ msgid "Horse race"
 msgstr "Carrera de caballos"
 
 #: ../data/games.xml.h:24
+#| msgid ""
+#| "How many boxes measuring 1 x 1 x 0.5 can be packed into a container "
+#| "measuring 6 x 5 x [z]?"
 msgid ""
-"How many boxes measuring 1 x 1 x 0.5 can be packed into a container "
-"measuring 6 x 5 x [z]?"
+"How many boxes measuring 1 x 1 x 0.5 can be fit into a container measuring 6 "
+"x 5 x [z]?"
 msgstr ""
 "¿Cuántas cajas de 1 x 1 x 0.5 se pueden empaquetar en un contenedor de 6 x 5 "
 "x [z]?"
@@ -508,10 +516,10 @@ msgid "Password"
 msgstr "Contraseña"
 
 #: ../data/games.xml.h:44
-#: ../src/Core/Main/Verbal/AnalogiesMultipleOptions.cs:121
-#: ../src/Core/Main/Verbal/AnalogiesPairOfWordsOptions.cs:132
+#: ../src/Core/Main/Verbal/AnalogiesMultipleOptions.cs:107
+#: ../src/Core/Main/Verbal/AnalogiesPairOfWordsOptions.cs:122
 #: ../src/Games/Logic/PuzzleFigurePattern.cs:191
-#: ../src/Games/Logic/PuzzleFigures.cs:194
+#: ../src/Games/Logic/PuzzleFigures.cs:195
 #: ../src/Games/Logic/PuzzleLargerShape.cs:303
 #: ../src/Games/Logic/PuzzleMissingPiece.cs:173
 #: ../src/Games/Logic/PuzzleMissingSlice.cs:218
@@ -708,14 +716,19 @@ msgid "[rslt_a] and [rslt_b]"
 msgstr "[rslt_a] y [rslt_b]"
 
 #: ../data/games.xml.h:91
+#| msgid ""
+#| "[year_start] is a palindromic year as [year_end] is, a gap of 11 years. "
+#| "What are the next two consecutive palindromic years after [year_end] with "
+#| "the same gap?"
 msgid ""
 "[year_start] is a palindromic year as [year_end] is, a gap of 11 years. What "
 "are the next two consecutive palindromic years after [year_end] with the "
-"same gap?"
+"same gap? Answer using two numbers (e.g.: [year_start] and [year_end])."
 msgstr ""
 "[year_start] fue un año capicúa al igual que el año [year_end], un intervalo "
 "de 11 años. ¿Cuáles son los dos siguientes años capicúa consecutivos después "
-"de [year_end] con el mismo intervalo?"
+"de [year_end] con el mismo intervalo? Responde usando dos números (ej. "
+"[year_start] y [year_end])."
 
 #: ../data/games.xml.h:92
 msgid "x * [num_a] = [num_b]"
@@ -814,9 +827,10 @@ msgid "Amphibians"
 msgstr "Anfibios"
 
 #: ../data/verbal_analogies.xml.h:15
-msgid "An artist whose work has become the defining style of that genre is?"
+#| msgid "An artist whose work has become the defining style of that genre is?"
+msgid "An artist whose work has become the defining style of a genre is?"
 msgstr ""
-"¿Un artista cuyo trabajo se ha convertido en la definición de estilo de ese "
+"¿Un artista cuyo trabajo se ha convertido en la definición de estilo de un "
 "género es un?"
 
 #: ../data/verbal_analogies.xml.h:16
@@ -1049,7 +1063,7 @@ msgstr "Flor"
 
 #: ../data/verbal_analogies.xml.h:75
 msgid "Flute"
-msgstr "Faluta"
+msgstr "Flauta"
 
 #: ../data/verbal_analogies.xml.h:76
 msgid "Fork"
@@ -2081,7 +2095,7 @@ msgstr ""
 
 #: ../src/Core/Views/PlayerHistoryView.cs:274
 msgid "Time"
-msgstr "Hora"
+msgstr "Tiempo"
 
 #: ../src/Core/Views/WelcomeView.cs:61
 msgid "Logic puzzles. Challenge your reasoning and thinking skills."
@@ -2354,7 +2368,7 @@ msgstr ""
 #: ../src/Core/Main/GameTips.cs:74
 msgid "Build acronyms using the first letter of each fact to be remembered."
 msgstr ""
-"Construir acrónimos usando la primera letra de cada hecho para recordar."
+"Construye acrónimos usando la primera letra de cada hecho que recordar."
 
 #: ../src/Core/Main/GameTips.cs:76
 msgid ""
@@ -2399,13 +2413,30 @@ msgstr "Soluciones"
 msgid "Possible correct answers are: {0}."
 msgstr "Las posibles respuestas correctas son: {0}."
 
+#. Translators. This is the list of valid answers, like A or B.
+#: ../src/Core/Main/Verbal/Analogies.cs:77
+#, csharp-format
+#| msgid "{0} - {1}"
+msgid "{0} or {1}"
+msgstr "{0} o {1}"
+
+#. Translators. This is the list of valid answers, like A, B or C.
+#: ../src/Core/Main/Verbal/Analogies.cs:81
+#, csharp-format
+#| msgid "{0} - {1} - {2}"
+msgid "{0}, {1} or {2}"
+msgstr "{0}, {1} o {2}"
+
+#. Translators. This is the list of valid answers, like A, B, C or D.
+#: ../src/Core/Main/Verbal/Analogies.cs:85
+#, csharp-format
+#| msgid "{0} - {1} - {2}"
+msgid "{0}, {1}, {2} or {3}"
+msgstr "{0}, {1}, {2} o {3}"
+
 #. Translators: this the separator used when concatenating multiple possible answers for verbal analogies
 #. For example: "Possible correct answers are: sleep, rest."
-#. Translators: this the separator used when concatenating possible options for answering verbal analogies
-#. For example: "Possible correct answers are: a, b, c, d."
-#: ../src/Core/Main/Verbal/Analogies.cs:87
-#: ../src/Core/Main/Verbal/AnalogiesMultipleOptions.cs:63
-#: ../src/Core/Main/Verbal/AnalogiesPairOfWordsOptions.cs:62
+#: ../src/Core/Main/Verbal/Analogies.cs:110
 msgid ", "
 msgstr ", "
 
@@ -2414,17 +2445,17 @@ msgstr ", "
 msgid "Multiple options #{0}"
 msgstr "Múltiples opciones nº {0}"
 
-#. Translators: {0} is replaced by a question and {1} by the suggestions on how to answer
-#. E.g: What is the correct option? Answer A, B, C.
-#: ../src/Core/Main/Verbal/AnalogiesMultipleOptions.cs:69
-#: ../src/Core/Main/Verbal/AnalogiesPairOfWordsOptions.cs:70
+#. Translators: {0} is replaced by a question and {1} by the possible valid answers
+#. E.g.: What is the correct option? Answer A, B, C or D.
+#: ../src/Core/Main/Verbal/AnalogiesMultipleOptions.cs:56
+#: ../src/Core/Main/Verbal/AnalogiesPairOfWordsOptions.cs:61
 #, csharp-format
 msgid "{0} Answer {1}."
 msgstr "{0} Responde {1}."
 
 #. Translators: this "option) answer" for example "a) "21 x 60 = 1260". This should not be changed for most of the languages
-#: ../src/Core/Main/Verbal/AnalogiesMultipleOptions.cs:106
-#: ../src/Core/Main/Verbal/AnalogiesPairOfWordsOptions.cs:114
+#: ../src/Core/Main/Verbal/AnalogiesMultipleOptions.cs:92
+#: ../src/Core/Main/Verbal/AnalogiesPairOfWordsOptions.cs:104
 #: ../src/Games/Logic/PuzzleOstracism.cs:164
 #: ../src/Games/Logic/PuzzlePredicateLogic.cs:185
 #: ../src/Games/Calculation/CalculationCloserFraction.cs:164
@@ -2439,7 +2470,7 @@ msgid "Pair of words compare #{0}"
 msgstr "Par de palabras que comparar nº {0}"
 
 #: ../src/Core/Main/Verbal/AnalogiesPairOfWordsCompare.cs:57
-#: ../src/Core/Main/Verbal/AnalogiesPairOfWordsOptions.cs:67
+#: ../src/Core/Main/Verbal/AnalogiesPairOfWordsOptions.cs:56
 #, csharp-format
 msgid ""
 "Given the relationship between the two words below, which word has the same "
@@ -2449,7 +2480,7 @@ msgstr ""
 "misma relación con «{0}»?"
 
 #: ../src/Core/Main/Verbal/AnalogiesPairOfWordsCompare.cs:94
-#: ../src/Core/Main/Verbal/AnalogiesPairOfWordsOptions.cs:136
+#: ../src/Core/Main/Verbal/AnalogiesPairOfWordsOptions.cs:126
 #, csharp-format
 msgid "Words: {0}"
 msgstr "Palabras: {0}"
@@ -2927,7 +2958,7 @@ msgid ""
 "How many small cubes does it take to build the large cube below? Answer "
 "using a number."
 msgstr ""
-"¿Cuántos cubos pequeños se necesitan para construir el cubo grande de abajo. "
+"¿Cuántos cubos pequeños se necesitan para construir el cubo grande de abajo? "
 "Responde usando un número."
 
 #: ../src/Games/Logic/Puzzle3DCube.cs:40
@@ -2969,7 +3000,7 @@ msgid ""
 "Which three pieces can you use together to build a triangle? Answer using "
 "the three figure names, e.g.: {0}{1}{2}."
 msgstr ""
-"¿Qué tres piezas puedes usar en conjunto para construir un triángulo? "
+"¿Qué tres piezas puedes usar conjuntamente para construir un triángulo? "
 "Responde usando los nombres de las tres figuras, ej.: {0}{1}{2}."
 
 #: ../src/Games/Logic/PuzzleBuildTriangle.cs:61
@@ -3201,12 +3232,17 @@ msgstr "Cubo"
 
 #: ../src/Games/Logic/PuzzleCube.cs:49
 #, csharp-format
+#| msgid ""
+#| "When you fold the figure below as a cube, which face on the figure is "
+#| "opposite the face with a {0} drawn on it? Answer the number written on "
+#| "face."
 msgid ""
 "When you fold the figure below as a cube, which face on the figure is "
-"opposite the face with a {0} drawn on it? Answer the number written on face."
+"opposite the face with a {0} drawn on it? Answer the number written on the "
+"face."
 msgstr ""
 "Al plegar la figura de abajo en un cubo, ¿qué cara es la opuesta a la cara "
-"con un {0} dibujado en ella? Responda con el número escrito en la cara."
+"con un {0} dibujado en ella? Responde con el número escrito en la cara."
 
 #: ../src/Games/Logic/PuzzleDice.cs:54
 msgid ""
@@ -3321,8 +3357,8 @@ msgstr "Todos los círculos comparten una propiedad común excepto uno."
 msgid ""
 "In all circles the color slices follow the same order except for this one."
 msgstr ""
-"En todos los círculos el color de las piezas siguen el mismo orden excepto "
-"ésta."
+"En todos los círculos el color de las piezas sigue el mismo orden excepto "
+"éste."
 
 #: ../src/Games/Logic/PuzzleFigureLetter.cs:40
 msgid "Figures and text"
@@ -3380,14 +3416,16 @@ msgid "Figures"
 msgstr "Figuras"
 
 #: ../src/Games/Logic/PuzzleFigures.cs:62
+#, csharp-format
+#| msgid ""
+#| "Which is the next logical figure in the sequence? Answer {0}, {1} or {2}."
 msgid ""
-"What is the next logical sequence of objects in the last column? See below "
-"the convention when giving the answer."
+"What is the next logical sequence of objects in the last column? Answer {0}, "
+"{1} or {2}."
 msgstr ""
-"¿Cuál es la siguiente secuencia lógica de objetos en la última columna? Mira "
-"debajo la convención para dar la respuesta."
+"¿Cuál es la siguiente figura lógica en la secuencia? Responde {0}, {1} o {2}."
 
-#: ../src/Games/Logic/PuzzleFigures.cs:67
+#: ../src/Games/Logic/PuzzleFigures.cs:68
 msgid ""
 "It is the only combination that you can build with the given elements "
 "without repeating them."
@@ -4909,7 +4947,7 @@ msgid ""
 "Answer {0}, {1}, {2} or {3}."
 msgstr ""
 "¿Cuál de los divisores posibles es el mayor que divide a todos los números? "
-"Respuesta: {0}, {1}, {2} o {3}."
+"Responde: {0}, {1}, {2} o {3}."
 
 #: ../src/Games/Calculation/CalculationGreatestDivisor.cs:244
 #: ../src/Games/Calculation/CalculationPrimes.cs:152
@@ -4996,12 +5034,15 @@ msgstr ""
 
 #: ../src/Games/Calculation/CalculationRatio.cs:49
 #, csharp-format
+#| msgid ""
+#| "The second number is calculated by multiplying the first by {0} and "
+#| "dividing it by {1}."
 msgid ""
-"The second number is calculated by multiplying the first by {0} and dividing "
-"it by {1}."
+"The second number can be calculated by multiplying the first number by {0} "
+"and dividing it by {1}."
 msgstr ""
-"El segundo número se calcula multiplicando el primero por {0} y dividiéndolo "
-"por {1}."
+"El segundo número se puede calcular multiplicando el primer número por {0} y "
+"dividiéndolo por {1}."
 
 #: ../src/Games/Calculation/CalculationRatio.cs:55
 msgid ""
@@ -5081,19 +5122,19 @@ msgstr "Horizontal"
 
 #: ../src/Clients/Classical/gbrainy.ui.h:7
 msgid "How to Extend gbrainy's Functionality"
-msgstr "Cómo extender las funcionalidades de Gbrainy"
+msgstr "Cómo extender las funcionalidades de gbrainy"
 
 #: ../src/Clients/Classical/gbrainy.ui.h:8
 msgid "Logic Puzzles Only"
-msgstr "Solo rompecabezas lógicos"
+msgstr "Sólo rompecabezas lógicos"
 
 #: ../src/Clients/Classical/gbrainy.ui.h:9
 msgid "Memory Trainers Only"
-msgstr "Solo entrenadores de memoria"
+msgstr "Sólo entrenadores de memoria"
 
 #: ../src/Clients/Classical/gbrainy.ui.h:10
 msgid "Mental Calculation Trainers Only"
-msgstr "Solo entrenadores de cálculo mental"
+msgstr "Sólo entrenadores de cálculo mental"
 
 #: ../src/Clients/Classical/gbrainy.ui.h:11
 msgid "Orientation"
@@ -5290,6 +5331,26 @@ msgstr "_Desinstalar…"
 #: ../src/Clients/Classical/mono-addins-strings.xml.h:35
 msgid "_Unselect All"
 msgstr "_Deseleccionar todo"
+
+#~ msgid ""
+#~ "[ago] year ago, John's age minus [ago] was equal to [proportion] times "
+#~ "his son's age minus [ago]."
+#~ msgid_plural ""
+#~ "[ago] years ago, John's age minus [ago] was equal to [proportion] times "
+#~ "his son's age minus [ago]."
+#~ msgstr[0] ""
+#~ "Hace [ago] año, la edad de Juan menos [ago] era igual a [proportion] "
+#~ "veces la edad de su hijo menos [ago]."
+#~ msgstr[1] ""
+#~ "Hace [ago] años, la edad de Juan menos [ago] era igual a [proportion] "
+#~ "veces la edad de su hijo menos [ago]."
+
+#~ msgid ""
+#~ "What is the next logical sequence of objects in the last column? See "
+#~ "below the convention when giving the answer."
+#~ msgstr ""
+#~ "¿Cuál es la siguiente secuencia lógica de objetos en la última columna? "
+#~ "Mira debajo la convención para dar la respuesta."
 
 #~ msgid "There is [men] person and [horses] horse."
 #~ msgid_plural "There are [men] people and [horses] horses."
