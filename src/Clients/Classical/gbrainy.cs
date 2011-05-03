@@ -755,11 +755,12 @@ namespace gbrainy.Clients.Classical
 #endif
 
 			app.Initialize ();
+			// Set RandomOrder before setting the custom list then it has effect of custom games
+			app.Session.GameManager.RandomOrder = line.RandomOrder;
 			if (line.PlayList.Length > 0) {
 				app.Session.GameManager.PlayList = line.PlayList;
 				app.InitialSessionType = GameSession.Types.Custom;
 			}
-			app.Session.GameManager.RandomOrder = line.RandomOrder;
 			app.ProcessDefaults ();
 			ThemeManager.Load ();
 
