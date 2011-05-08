@@ -234,8 +234,11 @@ namespace gbrainy.Core.Main
 			// Making a deep copy of GameSessionHistory type (base class) for serialization
 			player_history.SaveGameSession (history.Copy ());
 
-			if (CurrentGame != null)
+			if (CurrentGame != null) {
+				CurrentGame.DrawRequest -= GameDrawRequest;
+				CurrentGame.UpdateUIElement -= GameUpdateUIElement;
 				CurrentGame.Finish ();
+			}
 
 			EnableTimer = false;
 			timer.SynchronizingObject = null;
@@ -249,8 +252,11 @@ namespace gbrainy.Core.Main
 		{
 			try
 			{
-				if (CurrentGame != null)
+				if (CurrentGame != null) {
+					CurrentGame.DrawRequest -= GameDrawRequest;
+					CurrentGame.UpdateUIElement -= GameUpdateUIElement;
 					CurrentGame.Finish ();
+				}
 
 				history.GamesPlayed++;
 				CurrentGame = game_manager.GetPuzzle ();

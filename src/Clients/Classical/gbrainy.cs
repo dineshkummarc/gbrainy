@@ -379,6 +379,11 @@ namespace gbrainy.Clients.Classical
 		{
 			UpdateSolution (String.Empty, GameDrawingArea.SolutionType.None);
 			UpdateQuestion (String.Empty);
+
+			if (session.CurrentGame != null) {
+				session.CurrentGame.AnswerEvent -= OnAnswerFromGame;
+			}
+
 			session.NextGame ();
 			session.CurrentGame.AnswerEvent += OnAnswerFromGame;
 
