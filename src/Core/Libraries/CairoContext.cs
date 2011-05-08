@@ -32,6 +32,7 @@ namespace gbrainy.Core.Libraries
 	public class CairoContext : Cairo.Context
 	{
 		Pango.Layout layout;
+		FontDescription font_description;
 		double font_size;
 		const double def_linespace = 0.018;
 		const double width_margin = 0.04;
@@ -42,7 +43,7 @@ namespace gbrainy.Core.Libraries
 
 			// We do not honor DPI settings or font sizes (just font name)
 			// User should resize the window
-			layout.FontDescription = widget.PangoContext.FontDescription.Copy ();
+			font_description = layout.FontDescription = widget.PangoContext.FontDescription.Copy ();
 			FontLineSpace = def_linespace;
 		}
 
@@ -50,7 +51,7 @@ namespace gbrainy.Core.Libraries
 		public CairoContext (Cairo.Surface s, string font, int dpis) : base (s)
 		{
 			layout = Pango.CairoHelper.CreateLayout (this);
-			layout.FontDescription = FontDescription.FromString (font);
+			font_description = layout.FontDescription = FontDescription.FromString (font);
 
 			if (dpis > 0)  {
 				Pango.Context c = layout.Context;
@@ -65,7 +66,10 @@ namespace gbrainy.Core.Libraries
 				if (String.IsNullOrEmpty (value) == true)
 					return;
 
-				layout.FontDescription = Pango.FontDescription.FromString (value);
+				if (font_description != null)
+					font_description.Dispose ();
+
+				font_description = layout.FontDescription = Pango.FontDescription.FromString (value);
 			}
 		}
 
@@ -78,6 +82,9 @@ namespace gbrainy.Core.Libraries
 		protected override void Dispose (bool disposing)
 		{
 			layout.Dispose ();
+
+			if (font_description != null)
+				font_description.Dispose ();
 		}
 
 		private void UpdateFontSize ()
