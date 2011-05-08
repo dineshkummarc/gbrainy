@@ -54,7 +54,7 @@ namespace gbrainy.Core.Main.Verbal
 				// Translators: {0} is replaced by a question and {1} by the possible valid answers
 				// E.g.: What is the correct option? Answer A, B, C or D.
 				return String.Format (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("{0} Answer {1}."),
-					Current.question, GetMultiOptionsPossibleAnswers ());
+					Current.question, Answer.GetMultiOptionsPossibleAnswers (Current.answers.Length));
 			}
 		}
 

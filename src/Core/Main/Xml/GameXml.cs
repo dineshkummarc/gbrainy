@@ -205,8 +205,6 @@ namespace gbrainy.Core.Main.Xml
 
 			if (options != null && options.Count > 0)
 			{
-				string answers = string.Empty;
-
 				for (int i = 0; i < options.Count; i++)
 				{
 					OptionDrawingObject option = options [i];
@@ -216,14 +214,10 @@ namespace gbrainy.Core.Main.Xml
 						break;
 					}
 				}
-	
-				for (int i = 0; i < options.Count - 1; i++)
-					answers += String.Format (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("{0}, "), Answer.GetMultiOption (i));
-
-				answers += String.Format (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("{0}."), Answer.GetMultiOption (options.Count - 1));
 
 				// Translators {0}: list of options (A, B, C)
-				answers = String.Format (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Answer {0}"), answers);
+				string answers = String.Format (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Answer {0}."), 
+					Answer.GetMultiOptionsPossibleAnswers (options.Count));
 				question = question.Replace (option_answers, answers);					
 			}
 			else

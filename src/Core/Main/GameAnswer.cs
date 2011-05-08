@@ -129,6 +129,30 @@ namespace gbrainy.Core.Main
 			}
 		}
 
+		// A string of for format "A, B or C
+		public string GetMultiOptionsPossibleAnswers (int num_answers)
+		{
+			switch (num_answers) {
+			case 0:
+			case 1:
+				throw new InvalidOperationException ("You need more than 1 answer to select from");
+			case 2:
+				// Translators. This is the list of valid answers, like A or B.
+				return String.Format (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("{0} or {1}"),
+					GetMultiOption (0), GetMultiOption (1));
+			case 3:
+				// Translators. This is the list of valid answers, like A, B or C.
+				return String.Format (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("{0}, {1} or {2}"),
+					GetMultiOption (0), GetMultiOption (1), GetMultiOption (2));
+			case 4:
+				// Translators. This is the list of valid answers, like A, B, C or D.
+				return String.Format (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("{0}, {1}, {2} or {3}"),
+					GetMultiOption (0), GetMultiOption (1), GetMultiOption (2), GetMultiOption (3));
+			default:
+				throw new InvalidOperationException ("Number of multiple options not supported");
+			}
+		}
+
 		public string GetFigureName (int answer)
 		{
 			return String.Format (ServiceLocator.Instance.GetService <ITranslations> ()
