@@ -53,75 +53,80 @@
     <Reference Include="Mono.Cairo, Version=2.0.0.0, Culture=neutral, PublicKeyToken=0738eb9f132ed756" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="src\Clients\Classical\gbrainy.cs" />
-    <Compile Include="src\Clients\Classical\GtkSynchronize.cs" />
-    <Compile Include="src\Clients\Classical\Dialogs\CustomGameDialog.cs" />
-    <Compile Include="src\Clients\Classical\Dialogs\PlayerHistoryDialog.cs" />
-    <Compile Include="src\Clients\Classical\Dialogs\AboutDialog.cs" />
-    <Compile Include="src\Clients\Classical\Dialogs\PreferencesDialog.cs" />
-    <Compile Include="src\Clients\Classical\Dialogs\BuilderDialog.cs" />
-    <Compile Include="src\Clients\Classical\Builder\Builder.cs" />
-    <Compile Include="src\Clients\Classical\Builder\ObjectManager.cs" />
-    <Compile Include="src\Clients\Classical\Builder\GtkBeansSharp.BuilderConnectFuncNative.cs" />
-    <Compile Include="src\Clients\Classical\Builder\BuilderConnectFunc.cs" />
-    <Compile Include="src\Clients\Classical\Defines.cs" />
-    <Compile Include="src\Clients\Classical\Dialogs\HigMessageDialog.cs" />
-    <Compile Include="src\Clients\Classical\CommandLine.cs" />
-    <Compile Include="src\Clients\Classical\Widgets\BrowseFile.cs" />
-    <Compile Include="src\Clients\Classical\Dialogs\PdfExportDialog.cs" />
-    <Compile Include="src\Clients\Classical\Widgets\GameDrawingArea.cs" />
-    <Compile Include="src\Clients\Classical\Widgets\Toolbar.cs" />
-    <Compile Include="src\Clients\Classical\AssemblyInfo.cs" />
+    <Compile Include="gbrainy.cs" />
+    <Compile Include="GtkSynchronize.cs" />
+    <Compile Include="Dialogs\CustomGameDialog.cs" />
+    <Compile Include="Dialogs\PlayerHistoryDialog.cs" />
+    <Compile Include="Dialogs\AboutDialog.cs" />
+    <Compile Include="Dialogs\PreferencesDialog.cs" />
+    <Compile Include="Dialogs\BuilderDialog.cs" />
+    <Compile Include="Builder\Builder.cs" />
+    <Compile Include="Builder\ObjectManager.cs" />
+    <Compile Include="Builder\GtkBeansSharp.BuilderConnectFuncNative.cs" />
+    <Compile Include="Builder\BuilderConnectFunc.cs" />
+    <Compile Include="Defines.cs" />
+    <Compile Include="Dialogs\HigMessageDialog.cs" />
+    <Compile Include="CommandLine.cs" />
+    <Compile Include="Widgets\BrowseFile.cs" />
+    <Compile Include="Dialogs\PdfExportDialog.cs" />
+    <Compile Include="Widgets\GameDrawingArea.cs" />
+    <Compile Include="Widgets\Toolbar.cs" />
+    <Compile Include="AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
-    <None Include="data\game-graphics\handshake.svg" />
-    <None Include="data\game-graphics\present.svg" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="src\Clients\Classical\gbrainy.ui">
+    <EmbeddedResource Include="gbrainy.ui">
       <LogicalName>gbrainy.ui</LogicalName>
     </EmbeddedResource>
-    <EmbeddedResource Include="src\Clients\Classical\Dialogs\ui\PreferencesDialog.ui">
+    <EmbeddedResource Include="Dialogs\ui\PreferencesDialog.ui">
       <LogicalName>PreferencesDialog.ui</LogicalName>
     </EmbeddedResource>
-    <EmbeddedResource Include="src\Clients\Classical\Dialogs\ui\PlayerHistoryDialog.ui">
+    <EmbeddedResource Include="Dialogs\ui\PlayerHistoryDialog.ui">
       <LogicalName>PlayerHistoryDialog.ui</LogicalName>
     </EmbeddedResource>
-    <EmbeddedResource Include="src\Clients\Classical\Dialogs\ui\CustomGameDialog.ui">
+    <EmbeddedResource Include="Dialogs\ui\CustomGameDialog.ui">
       <LogicalName>CustomGameDialog.ui</LogicalName>
     </EmbeddedResource>
-    <EmbeddedResource Include="data\app-graphics\allgames-32.png">
+    <EmbeddedResource Include="..\..\..\data\app-graphics\allgames-32.png">
+      <Link>Resources\allgames-32.png</Link>
       <LogicalName>allgames-32.png</LogicalName>
     </EmbeddedResource>
-    <EmbeddedResource Include="data\app-graphics\endgame-32.png">
+    <EmbeddedResource Include="..\..\..\data\app-graphics\endgame-32.png">
+      <Link>Resources\endgame-32.png</Link>
       <LogicalName>endgame-32.png</LogicalName>
     </EmbeddedResource>
-    <EmbeddedResource Include="data\app-graphics\gbrainy.png">
+    <EmbeddedResource Include="..\..\..\data\app-graphics\gbrainy.png">
       <LogicalName>gbrainy.png</LogicalName>
     </EmbeddedResource>
-    <EmbeddedResource Include="data\app-graphics\logic-games-32.png">
+    <EmbeddedResource Include="..\..\..\data\app-graphics\logic-games-32.png">
+      <Link>Resources\logic-games-32.png</Link>
       <LogicalName>logic-games-32.png</LogicalName>
     </EmbeddedResource>
-    <EmbeddedResource Include="data\app-graphics\math-games-32.png">
+    <EmbeddedResource Include="..\..\..\data\app-graphics\math-games-32.png">
+      <Link>Resources\math-games-32.png</Link>
       <LogicalName>math-games-32.png</LogicalName>
     </EmbeddedResource>
-    <EmbeddedResource Include="data\app-graphics\memory-games-32.png">
+    <EmbeddedResource Include="..\..\..\data\app-graphics\memory-games-32.png">
+      <Link>Resources\memory-games-32.png</Link>
       <LogicalName>memory-games-32.png</LogicalName>
     </EmbeddedResource>
-    <EmbeddedResource Include="data\app-graphics\pause-32.png">
+    <EmbeddedResource Include="..\..\..\data\app-graphics\pause-32.png">
+      <Link>Resources\pause-32.png</Link>
       <LogicalName>pause-32.png</LogicalName>
     </EmbeddedResource>
-    <EmbeddedResource Include="data\app-graphics\resume-32.png">
+    <EmbeddedResource Include="..\..\..\data\app-graphics\resume-32.png">
+      <Link>Resources\resume-32.png</Link>
       <LogicalName>resume-32.png</LogicalName>
     </EmbeddedResource>
-    <EmbeddedResource Include="data\app-graphics\verbal-games-32.png">
+    <EmbeddedResource Include="..\..\..\data\app-graphics\verbal-games-32.png">
+      <Link>Resources\verbal-games-32.png</Link>
       <LogicalName>verbal-games-32.png</LogicalName>
     </EmbeddedResource>
-    <EmbeddedResource Include="data\app-graphics\gbrainy.svg">
+    <EmbeddedResource Include="..\..\..\data\app-graphics\gbrainy.svg">
+      <Link>Resources\gbrainy.svg</Link>
       <LogicalName>gbrainy.svg</LogicalName>
     </EmbeddedResource>
-    <EmbeddedResource Include="src\Clients\Classical\Dialogs\ui\PdfExportDialog.ui">
+    <EmbeddedResource Include="Dialogs\ui\PdfExportDialog.ui">
       <LogicalName>PdfExportDialog.ui</LogicalName>
     </EmbeddedResource>
   </ItemGroup>
@@ -141,16 +146,17 @@
     </MonoDevelop>
   </ProjectExtensions>
   <ItemGroup>
-    <ProjectReference Include="src\Core\Core.csproj">
+    <ProjectReference Include="..\..\Core\Core.csproj">
       <Project>{9F2F1F0C-DF7E-4054-B6BA-94F3DD9FF3D9}</Project>
       <Name>Core</Name>
     </ProjectReference>
-    <ProjectReference Include="src\Games\Games.csproj">
+    <ProjectReference Include="..\..\Games\Games.csproj">
       <Project>{84A80D6F-DB4D-4989-B441-D410D2260775}</Project>
       <Name>Games</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="data\app-graphics\" />
+    <Folder Include="..\..\..\data\app-graphics\" />
+    <Folder Include="Resources\" />
   </ItemGroup>
 </Project>
