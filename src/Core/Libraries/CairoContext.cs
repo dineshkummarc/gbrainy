@@ -75,7 +75,7 @@ namespace gbrainy.Core.Libraries
 
 		public double FontLineSpace { get; set; }
 
-		// True if we want Pango to process XML entites and formatting attributes
+		// True if we want Pango to process XML entities and formatting attributes
 		public bool UseMarkup  { get; set; }
 
 		// No dispose of resources on this class
@@ -89,7 +89,9 @@ namespace gbrainy.Core.Libraries
 
 		private void UpdateFontSize ()
 		{
-			layout.FontDescription.Size = (int) (font_size * Pango.Scale.PangoScale * Matrix.Xx);
+			// For questions and answers area the size is not necessary proportional
+			double m = Matrix.Yy < Matrix.Xx ? Matrix.Yy : Matrix.Xx;
+			layout.FontDescription.Size = (int) (font_size * Pango.Scale.PangoScale * m);
 		}
 
 		/*

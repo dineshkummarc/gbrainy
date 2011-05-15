@@ -61,10 +61,9 @@ namespace gbrainy.Clients.Classical.Widgets
 		const int question_high = 55;
 		const int solution_high = 55;
 		const int total_margin = 0; // Margin applied as in-box for themes
-		const double text_margin = 0.015;
+		const double text_margin = 0.010;
 		const double icon_size = 0.08;
 		const double icon_margin = 0.01;
-
 
 		public GameDrawingArea ()
 		{
@@ -106,9 +105,8 @@ namespace gbrainy.Clients.Classical.Widgets
 
 			OffsetY += question_high + total_margin;
 
-			cr.Save ();
-
 			// Draw a background taking all the window area
+			cr.Save ();
 			cr.Scale (total_w, total_h);
 			cr.DrawBackground ();
 
@@ -143,76 +141,84 @@ namespace gbrainy.Clients.Classical.Widgets
 
 			line_space = cr.FontLineSpace;
 			cr.FontLineSpace = 0;
-			cr.SetPangoFontSize (0.016);
+			cr.SetPangoFontSize (0.020);
 
 			scaled_margin = (double) total_margin / (double) width;
 			max_width = 1 - (scaled_margin * 2) - (text_margin * 2);
 			cr.UseMarkup = true;
 
-			if (String.IsNullOrEmpty (Question) == false)
-			{
-				// Question drawing
-				cr.DrawStringWithWrapping (scaled_margin + text_margin, scaled_margin + text_margin, Question, max_width);
-				cr.Stroke ();
+			DrawQuestion (cr, width, height, scaled_margin, max_width);
+			DrawSolution (cr, width, height, scaled_margin, max_width);
 
-				cr.LineWidth = 0.002;
-				double question_high_scaled = question_high / (double) height;
-				cr.MoveTo (0.01, question_high_scaled + 0.02);
-				cr.LineTo (0.98, question_high_scaled + 0.02);
-				cr.Stroke ();
-			}
-
-			// Solution drawing
-			if (UseSolutionArea && String.IsNullOrEmpty (Solution) == false)
-			{
-				const double box_margin = 0.005;
-				const double box_height = 0.12;
-
-				cr.Save ();
-				cr.LineWidth = 0.001;
-
-				// Draw black box
-				cr.Color = new Color (0.1, 0.1, 0.1);
-				cr.Rectangle (scaled_margin + text_margin - box_margin,
-					1 - box_height - scaled_margin - text_margin - box_margin,
-					max_width + (box_margin * 2),
-					box_height + box_margin * box_margin);
-				cr.Fill ();
-				cr.Stroke ();
-
-				// Measure string to be able to centered vertically within the box
-				double width_str, height_str;
-				cr.MeasureString (Solution, max_width - icon_size, true, out width_str, out height_str);
-				cr.Color = new Color (1, 1, 1);
-
-				double x_text, x_icon;
-
-				if (Direction == Gtk.TextDirection.Rtl)
-				{
-					x_text = 0;
-					x_icon = max_width - icon_size;
-
-				}
-				else
-				{
-					x_text = scaled_margin + icon_size + text_margin;
-					x_icon = 0;
-				}
-				
-
-				cr.DrawStringWithWrapping (x_text,
-					(1 - box_height - scaled_margin - text_margin) + ((box_height - height_str) / 2),
-					Solution, max_width - icon_size);
-				cr.Stroke ();
-
-				DrawSolutionIcon (cr, x_icon, 1 - box_height);
-				cr.Restore ();
-			}
 			cr.UseMarkup = false;
 			cr.FontLineSpace = line_space;
 		}
 
-		void DrawSolutionIcon (CairoContextEx cr, double x, double y)
+		void DrawQuestion (CairoContextEx cr, int width, int height, double scaled_margin, double max_width)
+		{
+			if (String.IsNullOrEmpty (Question) == true)
+				return;
+
+			cr.DrawStringWithWrapping (scaled_margin + text_margin, scaled_margin + text_margin, Question, max_width);
+			cr.Stroke ();
+
+			cr.LineWidth = 0.002;
+			double question_high_scaled = question_high / (double) height;
+			cr.MoveTo (0.01, question_high_scaled + 0.01);
+			cr.LineTo (0.98, question_high_scaled + 0.01);
+			cr.Stroke ();
+		}
+
+		void DrawSolution (CairoContextEx cr, int width, int height, double scaled_margin, double max_width)
+		{
+			if (UseSolutionArea == false || String.IsNullOrEmpty (Solution) == true)
+				return;
+
+			const double box_margin = 0.005;
+			double box_height_scaled = solution_high / (double) height;
+
+			cr.Save ();
+			cr.LineWidth = 0.001;
+
+			// Draw black box
+			cr.Color = new Color (0.1, 0.1, 0.1);
+			cr.Rectangle (scaled_margin + text_margin - box_margin,
+				1 - box_height_scaled - scaled_margin - text_margin,
+				max_width + (box_margin * 2),
+				box_height_scaled + scaled_margin + text_margin);
+			cr.Fill ();
+			cr.Stroke ();
+
+			double width_str, height_str, x_text, icon_x, icon_w, icon_h;
+
+			// Measure string to be able to centered vertically within the box
+			cr.MeasureString (Solution, max_width - icon_size, true, out width_str, out height_str);
+			cr.Color = new Color (1, 1, 1);
+
+			icon_w = icon_size * (cr.Matrix.Xx > cr.Matrix.Yy ? cr.Matrix.Yy / cr.Matrix.Xx : 1);
+			icon_h = icon_size * (cr.Matrix.Yy > cr.Matrix.Xx ? cr.Matrix.Xx / cr.Matrix.Yy : 1);
+
+			if (Direction == Gtk.TextDirection.Rtl)
+			{
+				x_text = 0;
+				icon_x = max_width - icon_w;
+			}
+			else
+			{
+				x_text = scaled_margin + icon_w + text_margin;
+				icon_x = 0;
+			}
+
+			cr.DrawStringWithWrapping (x_text,
+				(1 - box_height_scaled - scaled_margin - text_margin) + ((box_height_scaled - height_str) / 2),
+				Solution, max_width - icon_w);
+			cr.Stroke ();
+
+			DrawSolutionIcon (cr, icon_x, 1 - box_height_scaled, icon_w, icon_h);
+			cr.Restore ();
+		}
+
+		void DrawSolutionIcon (CairoContextEx cr, double x, double y, double width, double height)
 		{
 			string image;
 
@@ -227,15 +233,10 @@ namespace gbrainy.Clients.Classical.Widgets
 				image = "gtk-info.svg";
 				break;
 			default:
-				image = null;
-				break;
+				return;
 			}
 
-			if (image == null)
-				return;
-			
-			cr.DrawImageFromAssembly (image,
-				x + icon_margin, y, icon_size, icon_size);
+			cr.DrawImageFromAssembly (image, x + icon_margin, y, width, height);
 		}
 	}
 }
