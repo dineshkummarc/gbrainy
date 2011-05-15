@@ -71,7 +71,7 @@ namespace gbrainy.Games.Logic
 				answer = String.Format (
 					// Translators: {0} is always a number greater than 1
 					ServiceLocator.Instance.GetService <ITranslations> ().GetString ("With the {0} cut, Machine A creates two 1 meter pieces."), (total - 1));
-	
+
 				ans = (total - 1) * var;
 				break;
 
@@ -128,12 +128,14 @@ namespace gbrainy.Games.Logic
 			} else {
 				if (gametype == GameType.Fence)
 				{
-					double x105, y105;
-					const double x = 0.35, y = 0.2;
+					double x105, y105, y;
+					const double x = 0.35;
 					const double figure_size = 0.4;
 
 					x105 = figure_size * Math.Cos (105 * Math.PI / 180);
 					y105 = figure_size * Math.Sin (105 * Math.PI / 180);
+
+					y = (1 - y105) / 2;
 					gr.MoveTo (x, y);
 					gr.LineTo (x + x105, y + y105);
 					gr.LineTo (x + x105 + figure_size, y + y105);
