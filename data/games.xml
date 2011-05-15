@@ -684,4 +684,52 @@
 		</variant>
 	</game>
 
+	<game>
+		<_name>Third number</_name>
+		<type>Logic</type>
+		<difficulty>All</difficulty>
+		<answer_checkattributes>MultiOption | IgnoreSpaces</answer_checkattributes>
+
+		<variables>
+				int [] x = new int [] {32, 51, 59, 35, 24};
+				int [] y = new int [] {18, 27, 21, 23, 28};
+				int [] z = new int [] {37, 27, 55, 38, 11};
+
+				int index = random.Next (x.Length);
+				int three = (x [index] + y [index] + z [index]) / 3;
+				int two = (x [index] + y [index]) / 2;
+				int good_z = z [index];
+
+				int answer_a = good_z;
+				int answer_b = good_z + 2 + random.Next (10);
+				int answer_c = answer_b + 2 + random.Next (5); // Based on answer_b to avoid duplicated answers
+				int answer_d = good_z - 2 - random.Next (10);
+		</variables>
+
+		<variant>
+			<_question>The average of three numbers is [three]. The average of two of these numbers is [two]. What is the third number? [option_answers]</_question>
+
+			<string _text = "Possible answers are:" x = "0.1" y = "0.15" size = "large"/>
+
+			<option x = "0.3" y = "0.3" width ="0.45" height ="0.1" order ="randomized" correct = "yes">
+				<string _text = "[option_prefix] [answer_a]"  x = "0.05"  y = "0.02" size = "large"/>
+			</option>
+
+			<option x = "0.3" y = "0.4" width ="0.45" height ="0.1" order ="randomized">
+				<string _text = "[option_prefix] [answer_b]" x = "0.05" y = "0.02" size = "large"/>
+			</option>
+
+			<option x = "0.3" y = "0.5" width ="0.45" height ="0.1" order ="randomized">
+				<string _text = "[option_prefix] [answer_c]" x = "0.05" y = "0.02" size = "large"/>
+			</option>
+
+			<option x = "0.3" y = "0.6" width ="0.45" height ="0.1" order ="randomized">
+				<string _text = "[option_prefix] [answer_d]" x = "0.05" y = "0.02" size = "large"/>
+			</option>
+
+			<_rationale>It is the result of the operation: ([three] * 3) - ([two] * 2).</_rationale>
+			<answer>[answer_a]</answer>
+		</variant>
+	</game>
+
 </games>
