@@ -682,6 +682,30 @@
 			<_answer>His mother</_answer>
 			<_rationale>The sister's sister-in-law is John's father's wife, that is, John's mother.</_rationale>
 		</variant>
+
+		<variant>
+			<_question>John's mother's brother's brother-in-law is also? Do not assume that John has any relative that has not been mentioned. [option_answers]</_question>
+
+			<string _text = "Possible answers are:" x = "0.1" y = "0.15" size = "large"/>
+
+			<option x = "0.25" y = "0.3" width ="0.6" height ="0.1" order ="randomized" correct = "yes">
+				<string _text = "[option_prefix] His father" x = "0.05" y = "0.02" size = "large"/>
+			</option>
+
+			<option x = "0.25" y = "0.4" width ="0.6" height ="0.1" order ="randomized">
+				<string _text = "[option_prefix] Has no relation" x = "0.05" y = "0.02" size = "large"/>
+			</option>
+
+			<option x = "0.25" y = "0.5" width ="0.6" height ="0.1" order ="randomized">
+				<string _text = "[option_prefix] Cousin" x = "0.05" y = "0.02" size = "large"/>
+			</option>
+
+			<option x = "0.25" y = "0.6" width ="0.6" height ="0.1" order ="randomized">
+				<string _text = "[option_prefix] Son-in-law" x = "0.05" y = "0.02" size = "large"/>
+			</option>
+			<_answer>His father</_answer>
+		</variant>
+
 	</game>
 
 	<game>
