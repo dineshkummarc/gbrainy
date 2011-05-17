@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gbrainy\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-04-30 17:39+0200\n"
+"POT-Creation-Date: 2011-05-17 21:06+0200\n"
 "PO-Revision-Date: 2011-04-30 17:50+0100\n"
 "Last-Translator: Jordi Mas <jmas@softcatala.org>\n"
 "Language-Team: Catalan\n"
@@ -65,17 +65,21 @@ msgstr[1] ""
 
 #: ../tools/GameXmlGetString.cs:41
 msgid ""
-"[ago] year ago, John's age minus [ago] was equal to [proportion] times his "
-"son's age minus [ago]."
+"John's age (variable x) is nowadays 2 times his son's age (variable y), that "
+"is x = 2y, and [ago] year ago, John was [proportion] times older than his "
+"son: x - [ago] = (y - [ago]) * [proportion]."
 msgid_plural ""
-"[ago] years ago, John's age minus [ago] was equal to [proportion] times his "
-"son's age minus [ago]."
+"John's age (variable x) is nowadays 2 times his son's age (variable y), that "
+"is x = 2y, and [ago] years ago, John was [proportion] times older than his "
+"son: x - [ago] = (y - [ago]) * [proportion]."
 msgstr[0] ""
-"Fa [ago] any, l'edat del Joan menys [ago] era igual a [proportion] cops a "
-"l'edat del seu fill menys [ago]."
+"L'edat d'en Joan (variable x) és avui en dia dos cops la del seu fill "
+"(variable y), és a dir x = 2y, i fa [ago] any, en Joan era [proportion] cops "
+"més gran que el seu fill: x - [ago] = (y - [ago]) * [proportion]."
 msgstr[1] ""
-"Fa [ago] anys, l'edat del Joan menys [ago] era igual a [proportion] cops a "
-"l'edat del seu fill menys [ago]."
+"L'edat d'en Joan (variable x) és avui en dia dos cops la del seu fill "
+"(variable y), és a dir x = 2y, i fa [ago] anys, en Joan era [proportion] "
+"cops més gran que el seu fill: x - [ago] = (y - [ago]) * [proportion]."
 
 #: ../tools/GameXmlGetString.cs:45
 msgid ""
@@ -126,17 +130,21 @@ msgstr[1] ""
 
 #: ../tools/GameXmlGetString.cs:57
 msgid ""
-"How many matches does it take to determine the winner of a tennis tournament "
-"that starts with [players] player?"
+"In a tennis tournament, in every match a player is eliminated after losing "
+"to a single opponent. How many matches does it take to determine the winner "
+"of a tennis tournament that starts with [players] player?"
 msgid_plural ""
-"How many matches does it take to determine the winner of a tennis tournament "
-"that starts with [players] players?"
+"In a tennis tournament, in every match a player is eliminated after losing "
+"to a single opponent. How many matches does it take to determine the winner "
+"of a tennis tournament that starts with [players] players?"
 msgstr[0] ""
-"Quants partits calen per determinar el guanyador a un torneig de tennis que "
-"comença amb [players] jugador?"
+"En un torneig de tennis, en cada partit un jugador és eliminat després de "
+"perdre contra un únic oponent.Quants partits calen per determinar el "
+"guanyador a un torneig de tennis que comença amb [players] jugador?"
 msgstr[1] ""
-"Quants partits calen per determinar el guanyador a un torneig de tennis que "
-"comença amb [players] jugadors?"
+"En un torneig de tennis, en cada partit un jugador és eliminat després de "
+"perdre contra un únic oponent.Quants partits calen per determinar el "
+"guanyador a un torneig de tennis que comença amb [players] jugadors?"
 
 #: ../tools/GameXmlGetString.cs:61
 msgid ""
@@ -152,7 +160,7 @@ msgstr[1] ""
 "Teniu [money] unitats monetàries en un compte bancari al 10% d'interès "
 "compost anual. Quants diners tindreu al final de 2 anys?"
 
-#: ../tools/GameXmlGetString.cs:65 ../data/games.xml.h:28
+#: ../tools/GameXmlGetString.cs:65 ../data/games.xml.h:31
 msgid ""
 "In a horse race there are people and horses. You count [eyes] eye and [legs] "
 "leg. How many horses are present?"
@@ -216,7 +224,7 @@ msgstr[1] ""
 "dos cops el temps d'en Joan. Quantes hores els hi calen per netejar el "
 "magatzem si treballen junts? [option_answers]"
 
-#: ../tools/GameXmlGetString.cs:81 ../data/games.xml.h:59
+#: ../tools/GameXmlGetString.cs:81 ../data/games.xml.h:68
 msgid ""
 "You have two trucks that have a total weight of [add] unit. If the lighter "
 "truck weights 15 units less that half of the weight of the heavier truck, "
@@ -351,6 +359,10 @@ msgstr ""
 "[horses])."
 
 #: ../data/games.xml.h:21
+msgid "Family relations"
+msgstr "Relacions familiars"
+
+#: ../data/games.xml.h:22
 msgid ""
 "From year 1000 to year 10000, palindrome years occur at 110 year intervals "
 "except for the end of each millennium that occur at a 11 years interval."
@@ -359,7 +371,7 @@ msgstr ""
 "intervals de 110 anys, excepte al final de cada mil·lenni, que es produeixen "
 "en un interval d'11 anys."
 
-#: ../data/games.xml.h:22
+#: ../data/games.xml.h:23
 msgid ""
 "Given two integer numbers x and y, if x is even and y odd, which of the "
 "following expressions gives always an odd result? [option_answers]"
@@ -368,11 +380,19 @@ msgstr ""
 "de les expressions següents sempre té com a resultat un nombre senar? "
 "[option_answers]"
 
-#: ../data/games.xml.h:23
+#: ../data/games.xml.h:24
+msgid "His father"
+msgstr "El seu pare"
+
+#: ../data/games.xml.h:25
+msgid "His mother"
+msgstr "La seva mare"
+
+#: ../data/games.xml.h:26
 msgid "Horse race"
 msgstr "Cursa de cavalls"
 
-#: ../data/games.xml.h:24
+#: ../data/games.xml.h:27
 msgid ""
 "How many boxes measuring 1 x 1 x 0.5 can be fit into a container measuring 6 "
 "x 5 x [z]?"
@@ -380,7 +400,7 @@ msgstr ""
 "Quantes caixes de mida 1 x 1 x 0.5 poden encabir-se en un contenidor de mida "
 "6 x 5 x [z]?"
 
-#: ../data/games.xml.h:25
+#: ../data/games.xml.h:28
 msgid ""
 "How much weight is needed at the point indicated by the question mark to "
 "balance the lever?"
@@ -388,7 +408,7 @@ msgstr ""
 "Quant pes cal en el punt indicat pel signe d'interrogació per equilibrar la "
 "palanca?"
 
-#: ../data/games.xml.h:26
+#: ../data/games.xml.h:29
 msgid ""
 "If p &lt; x &lt; q and r &lt; y &lt; s. Which of the following options makes "
 "x &gt; y true? [option_answers]"
@@ -396,7 +416,7 @@ msgstr ""
 "Si «p &lt; x &lt; q» i «r &lt; y &lt; s». Quina de les següents opcions fa "
 "que «x &gt; y» sigui cert? [option_answers]"
 
-#: ../data/games.xml.h:27
+#: ../data/games.xml.h:30
 msgid ""
 "If p &lt; x &lt; q and r &lt; y &lt; s. Which of the following options makes "
 "x &lt; y true? [option_answers]"
@@ -404,7 +424,7 @@ msgstr ""
 "Si «p &lt; x &lt; q» i «r &lt; y &lt; s». Quina de les següents opcions fa "
 "que «x &lt; y» sigui cert? [option_answers]"
 
-#: ../data/games.xml.h:30
+#: ../data/games.xml.h:33
 #, no-c-format
 msgid ""
 "In a small town, [all_cars]% of the inhabitants have a car and [males_cars]% "
@@ -415,7 +435,7 @@ msgstr ""
 "[males_cars]% tenen un cotxe i són homes. Quin percentatge de la població "
 "són dones i tenen un cotxe? [option_answers]"
 
-#: ../data/games.xml.h:31
+#: ../data/games.xml.h:34
 msgid ""
 "In every match you eliminate one player, you need the total number of games "
 "minus 1 to find out the winner."
@@ -423,7 +443,7 @@ msgstr ""
 "En tots els partits s'elimina un dels jugadors, per trobar el guanyador cal "
 "restar 1 al nombre total de partits."
 
-#: ../data/games.xml.h:32
+#: ../data/games.xml.h:35
 msgid ""
 "It is calculated by taking the total number of people minus [brothers_only] "
 "people that have brothers only, minus [sisters_only] that have sisters only "
@@ -433,35 +453,55 @@ msgstr ""
 "persones que tenen només germans, menys [sisters_only] que tenen només "
 "germanes i menys [both] que tenen germanes i germans."
 
-#: ../data/games.xml.h:33
+#: ../data/games.xml.h:36
 msgid "It is the result of the operation [num_a] * [num_b]."
 msgstr "És el resultat de l'operació [num_a] * [num_b]."
 
-#: ../data/games.xml.h:34
+#: ../data/games.xml.h:37
 msgid "It is the result of the operation [num_a] + [num_b]."
 msgstr "És el resultat de l'operació [num_a] + [num_b]."
 
-#: ../data/games.xml.h:35
+#: ../data/games.xml.h:38
 msgid "It is the result of the operation [num_b] - [num_a]."
 msgstr "És el resultat de l'operació [num_b] - [num_a]."
 
-#: ../data/games.xml.h:36
+#: ../data/games.xml.h:39
 msgid "It is the result of the operation [num_b] / [num_a]."
 msgstr "És el resultat de l'operació [num_b] / [num_a]."
 
-#: ../data/games.xml.h:37
+#: ../data/games.xml.h:40
+msgid "It is the result of the operation: ([three] * 3) - ([two] * 2)."
+msgstr "És el resultat de l'operació: ([three] * 3) - ([two] * 2)."
+
+#: ../data/games.xml.h:41
+msgid ""
+"John's father's sister's sister-in-law is also? Do not assume that John has "
+"any relative that has not been mentioned. [option_answers]"
+msgstr ""
+"La cunyada de la germana del pare del Joan és també? No assumiu que en Joan "
+"té cap parent que no s'hagi mencionat. [option_answers]"
+
+#: ../data/games.xml.h:42
+msgid ""
+"John's mother's brother's brother-in-law is also? Do not assume that John "
+"has any relative that has not been mentioned. [option_answers]"
+msgstr ""
+"El cunyat del germà de la mare d'en Joan és també? No assumiu que en Joan té "
+"cap parent que no s'hagi mencionat. [option_answers]"
+
+#: ../data/games.xml.h:43
 msgid "Lever"
 msgstr "Palanca"
 
-#: ../data/games.xml.h:38
+#: ../data/games.xml.h:44
 msgid "Multiple number"
 msgstr "Nombre múltiple"
 
-#: ../data/games.xml.h:39
+#: ../data/games.xml.h:45
 msgid "Odd number"
 msgstr "Nombre senar"
 
-#: ../data/games.xml.h:40
+#: ../data/games.xml.h:46
 msgid ""
 "On the dartboard below, where you have to hit the darts to add 120 points in "
 "5 throws? Answer using a list of numbers (e.g.: 4, 5, 6, 3, 2)"
@@ -469,7 +509,7 @@ msgstr ""
 "A la diana d'abaix, on heu de clavar els dards per aconseguir 120 punts en 5 "
 "tirades? Responeu usant una llista de nombres (p. ex. 4, 5, 6, 3, 2)"
 
-#: ../data/games.xml.h:41
+#: ../data/games.xml.h:47
 msgid ""
 "Out of [people] people, [brothers] have brothers, [sisters] have sisters and "
 "[both] have both. How many people have neither brothers nor sisters?"
@@ -478,17 +518,17 @@ msgstr ""
 "germanes i [both] tenen germanes i germanes. Quantes persones no tenen ni "
 "germans ni germanes?"
 
-#: ../data/games.xml.h:42
+#: ../data/games.xml.h:48
 msgid "Palindromic years"
 msgstr "Anys capicua"
 
-#: ../data/games.xml.h:43
+#: ../data/games.xml.h:49
 msgid "Password"
 msgstr "Contrasenya"
 
-#: ../data/games.xml.h:44
-#: ../src/Core/Main/Verbal/AnalogiesMultipleOptions.cs:121
-#: ../src/Core/Main/Verbal/AnalogiesPairOfWordsOptions.cs:132
+#: ../data/games.xml.h:50
+#: ../src/Core/Main/Verbal/AnalogiesMultipleOptions.cs:107
+#: ../src/Core/Main/Verbal/AnalogiesPairOfWordsOptions.cs:122
 #: ../src/Games/Logic/PuzzleFigurePattern.cs:191
 #: ../src/Games/Logic/PuzzleFigures.cs:195
 #: ../src/Games/Logic/PuzzleLargerShape.cs:303
@@ -502,11 +542,11 @@ msgstr "Contrasenya"
 msgid "Possible answers are:"
 msgstr "Les respostes possibles són:"
 
-#: ../data/games.xml.h:45
+#: ../data/games.xml.h:51
 msgid "Simple equations"
 msgstr "Equacions simples"
 
-#: ../data/games.xml.h:46
+#: ../data/games.xml.h:52
 msgid ""
 "Since x is always an even number, multiplying it by 2 always produces an "
 "even number. Adding an even number to an odd number (y) always produces an "
@@ -516,15 +556,30 @@ msgstr ""
 "resulta en un nombre parell. Sumar un nombre parell a un nombre senar («y») "
 "sempre produeix un nombre senar."
 
-#: ../data/games.xml.h:47
+#: ../data/games.xml.h:53
 msgid "Tennis game"
 msgstr "Partida de tennis"
 
-#: ../data/games.xml.h:48
+#: ../data/games.xml.h:54
+msgid ""
+"The average of three numbers is [three]. The average of two of these numbers "
+"is [two]. What is the third number? [option_answers]"
+msgstr ""
+"La mitjana de tres nombres és [three]. La mitjana de dos d'aquests nombres "
+"és [two]. Quin és el tercer nombre? [option_answers]"
+
+#: ../data/games.xml.h:55
 msgid "The heavier truck weights [heavier] and the lighter [lighter]."
 msgstr "El camió més pesat pesa [heavier] i el més lleuger [lighter]."
 
-#: ../data/games.xml.h:49
+#: ../data/games.xml.h:56
+msgid ""
+"The sister's sister-in-law is John's father's wife, that is, John's mother."
+msgstr ""
+"La cunyada de la germana és la dona del pare del Joan, és a dir, la seva "
+"mare."
+
+#: ../data/games.xml.h:57
 msgid ""
 "The variable p is smaller than x and s is bigger than y. If p is bigger than "
 "s then the condition x &gt; y is true."
@@ -532,7 +587,7 @@ msgstr ""
 "La variable q és més petita que x i s és més gran que y. Si p és més gran "
 "que s llavors la condició x &gt; y és certa."
 
-#: ../data/games.xml.h:50
+#: ../data/games.xml.h:58
 msgid ""
 "The variable q is bigger than x and y bigger than r. If q is smaller than r "
 "then the condition x &lt; y is true."
@@ -540,31 +595,35 @@ msgstr ""
 "La variable q és més gran que x i y és més gran que r. Si q és més petita "
 "que r llavors la condició x &lt; y és certa."
 
-#: ../data/games.xml.h:51
+#: ../data/games.xml.h:59
+msgid "Third number"
+msgstr "El tercer nombre"
+
+#: ../data/games.xml.h:60
 msgid "Two trucks"
 msgstr "Dos camions"
 
-#: ../data/games.xml.h:52
+#: ../data/games.xml.h:61
 msgid "Warehouse"
 msgstr "Magatzem"
 
-#: ../data/games.xml.h:53
+#: ../data/games.xml.h:62
 msgid "What number divided by [num_a] equals [num_b]?"
 msgstr "Quin número dividit per [num_a] és igual a [num_b]?"
 
-#: ../data/games.xml.h:54
+#: ../data/games.xml.h:63
 msgid "What number minus [num_a] equals [num_b]?"
 msgstr "Quin número restat a [num_a] és igual a [num_b]?"
 
-#: ../data/games.xml.h:55
+#: ../data/games.xml.h:64
 msgid "What number multiplied by [num_a] equals [num_b]?"
 msgstr "Quin número multiplicat per [num_a] és igual a [num_b]?"
 
-#: ../data/games.xml.h:56
+#: ../data/games.xml.h:65
 msgid "What number plus [num_a] equals [num_b]?"
 msgstr "Quin número sumat a [num_a] és igual a [num_b]?"
 
-#: ../data/games.xml.h:57
+#: ../data/games.xml.h:66
 msgid ""
 "Which two numbers of the list below are both multiple of [num_x] and "
 "[num_y]? [option_answers]"
@@ -572,11 +631,11 @@ msgstr ""
 "Quin parell de nombres de la llista d'abaix són els dos múltiples de [num_x] "
 "i [num_y]? [option_answers]"
 
-#: ../data/games.xml.h:58
+#: ../data/games.xml.h:67
 msgid "You can fit 6 * 5 * [z] * 2 boxes."
 msgstr "Podeu encabir 6 * 5 * [z] * 2 caixes."
 
-#: ../data/games.xml.h:61
+#: ../data/games.xml.h:70
 #, no-c-format
 msgid ""
 "[female_cars]% ([all_cars] - [males_cars]) of the inhabitants are women and "
@@ -586,107 +645,127 @@ msgstr ""
 "tenen un cotxe."
 
 #. Since this a multioption the answer string is set to option | this string, what makes answer_show is not useful here
-#: ../data/games.xml.h:63
+#: ../data/games.xml.h:72
 msgid "[option_a] and [option_b]"
 msgstr "[option_a] i [option_b]"
 
-#: ../data/games.xml.h:64
+#: ../data/games.xml.h:73
 msgid "[option_a] and [option_b] are both multiples of [num_x] and [num_y]."
 msgstr "[option_a] i [option_b] són ambdós múltiples de [num_x] i [num_y]."
 
-#: ../data/games.xml.h:65
+#: ../data/games.xml.h:74
 msgid "[option_prefix] (x - y) * 2"
 msgstr "[option_prefix] (x - y) * 2"
 
-#: ../data/games.xml.h:66
+#: ../data/games.xml.h:75
 msgid "[option_prefix] 2x + y"
 msgstr "[option_prefix] 2x + y"
 
-#: ../data/games.xml.h:67
+#: ../data/games.xml.h:76
+msgid "[option_prefix] Cousin"
+msgstr "[option_prefix] El cosí"
+
+#: ../data/games.xml.h:77
+msgid "[option_prefix] Has no relation"
+msgstr "[option_prefix] No té cap relació"
+
+#: ../data/games.xml.h:78
+msgid "[option_prefix] His father"
+msgstr "[option_prefix] El seu pare"
+
+#: ../data/games.xml.h:79
+msgid "[option_prefix] His mother"
+msgstr "[option_prefix] La seva mare"
+
+#: ../data/games.xml.h:80
+msgid "[option_prefix] Son-in-law"
+msgstr "[option_prefix] El gendre"
+
+#: ../data/games.xml.h:81
 msgid "[option_prefix] [answer_a]"
 msgstr "[option_prefix] [answer_a]"
 
-#: ../data/games.xml.h:68
+#: ../data/games.xml.h:82
 msgid "[option_prefix] [answer_b]"
 msgstr "[option_prefix] [answer_b]"
 
-#: ../data/games.xml.h:69
+#: ../data/games.xml.h:83
 msgid "[option_prefix] [answer_c]"
 msgstr "[option_prefix] [answer_c]"
 
-#: ../data/games.xml.h:70
+#: ../data/games.xml.h:84
 msgid "[option_prefix] [answer_d]"
 msgstr "[option_prefix] [answer_d]"
 
-#: ../data/games.xml.h:71
+#: ../data/games.xml.h:85
 msgid "[option_prefix] [option_a] and [option_b]"
 msgstr "[option_prefix] [option_a] i [option_b]"
 
-#: ../data/games.xml.h:72
+#: ../data/games.xml.h:86
 msgid "[option_prefix] [option_a] and [option_c]"
 msgstr "[option_prefix] [option_a] i [option_c]"
 
-#: ../data/games.xml.h:74
+#: ../data/games.xml.h:88
 #, no-c-format
 msgid "[option_prefix] [option_a]%"
 msgstr "[option_prefix] [option_a]%"
 
-#: ../data/games.xml.h:75
+#: ../data/games.xml.h:89
 msgid "[option_prefix] [option_b] and [option_c]"
 msgstr "[option_prefix] [option_b] i [option_c]"
 
-#: ../data/games.xml.h:77
+#: ../data/games.xml.h:91
 #, no-c-format
 msgid "[option_prefix] [option_b]%"
 msgstr "[option_prefix] [option_b]%"
 
-#: ../data/games.xml.h:78
+#: ../data/games.xml.h:92
 msgid "[option_prefix] [option_c] and [option_d]"
 msgstr "[option_prefix] [option_c] i [option_d]"
 
-#: ../data/games.xml.h:80
+#: ../data/games.xml.h:94
 #, no-c-format
 msgid "[option_prefix] [option_c]%"
 msgstr "[option_prefix] [option_c]%"
 
-#: ../data/games.xml.h:82
+#: ../data/games.xml.h:96
 #, no-c-format
 msgid "[option_prefix] [option_d]%"
 msgstr "[option_prefix] [option_d]%"
 
-#: ../data/games.xml.h:83
+#: ../data/games.xml.h:97
 msgid "[option_prefix] p < r"
 msgstr "[option_prefix] p < r"
 
-#: ../data/games.xml.h:84
+#: ../data/games.xml.h:98
 msgid "[option_prefix] p > r"
 msgstr "[option_prefix] p > r"
 
-#: ../data/games.xml.h:85
+#: ../data/games.xml.h:99
 msgid "[option_prefix] p > s"
 msgstr "[option_prefix] p > s"
 
-#: ../data/games.xml.h:86
+#: ../data/games.xml.h:100
 msgid "[option_prefix] q < r"
 msgstr "[option_prefix] q < r"
 
-#: ../data/games.xml.h:87
+#: ../data/games.xml.h:101
 msgid "[option_prefix] q = s"
 msgstr "[option_prefix] q = s"
 
-#: ../data/games.xml.h:88
+#: ../data/games.xml.h:102
 msgid "[option_prefix] x * y"
 msgstr "[option_prefix] x * y"
 
-#: ../data/games.xml.h:89
+#: ../data/games.xml.h:103
 msgid "[option_prefix] x * y * 2"
 msgstr "[option_prefix] x * y * 2"
 
-#: ../data/games.xml.h:90
+#: ../data/games.xml.h:104
 msgid "[rslt_a] and [rslt_b]"
 msgstr "[rslt_a] i [rslt_b]"
 
-#: ../data/games.xml.h:91
+#: ../data/games.xml.h:105
 msgid ""
 "[year_start] is a palindromic year as [year_end] is, a gap of 11 years. What "
 "are the next two consecutive palindromic years after [year_end] with the "
@@ -697,19 +776,19 @@ msgstr ""
 "[year_end] amb la mateix diferència? Responeu usant dos nombres (p. ex.: "
 "[year_start] i [year_end])"
 
-#: ../data/games.xml.h:92
+#: ../data/games.xml.h:106
 msgid "x * [num_a] = [num_b]"
 msgstr "x * [num_a] = [num_b]"
 
-#: ../data/games.xml.h:93
+#: ../data/games.xml.h:107
 msgid "x + [num_a] = [num_b]"
 msgstr "x + [num_a] = [num_b]"
 
-#: ../data/games.xml.h:94
+#: ../data/games.xml.h:108
 msgid "x - [num_a] = [num_b]"
 msgstr "x - [num_a] = [num_b]"
 
-#: ../data/games.xml.h:95
+#: ../data/games.xml.h:109
 msgid "x / [num_a] = [num_b]"
 msgstr "x / [num_a] = [num_b]"
 
@@ -769,33 +848,45 @@ msgstr "Una tortuga està dins d'una closca i una carta està dins d'un sobre."
 msgid "Abstinence"
 msgstr "Abstinència"
 
+#: ../data/verbal_analogies.xml.h:9
+msgid "Acclaimed"
+msgstr "Aclamat"
+
 #. Translators: Acrophobia of having a panic attack
-#: ../data/verbal_analogies.xml.h:10
+#: ../data/verbal_analogies.xml.h:11
 msgid "Acrophobia"
 msgstr "Acrofòbia"
 
-#: ../data/verbal_analogies.xml.h:11
+#: ../data/verbal_analogies.xml.h:12
 msgid "Agoraphobia"
 msgstr "Agorafòbia"
 
-#: ../data/verbal_analogies.xml.h:12
+#: ../data/verbal_analogies.xml.h:13
 msgid "Aircraft"
 msgstr "Aeronau"
 
-#: ../data/verbal_analogies.xml.h:13
+#: ../data/verbal_analogies.xml.h:14
 msgid "Airline"
 msgstr "Aerolínia"
 
-#: ../data/verbal_analogies.xml.h:14
+#: ../data/verbal_analogies.xml.h:15
+msgid "All the other words have the connotation of not occurring frequently."
+msgstr "La resta de paraules tenen la connotació de no ocórrer freqüentment."
+
+#: ../data/verbal_analogies.xml.h:16
+msgid "All the other words have the meaning of distinguished."
+msgstr "La resta de paraules tenen el significat de distingit."
+
+#: ../data/verbal_analogies.xml.h:17
 msgid "Amphibians"
 msgstr "Amfibis"
 
-#: ../data/verbal_analogies.xml.h:15
+#: ../data/verbal_analogies.xml.h:18
 msgid "An artist whose work has become the defining style of a genre is?"
 msgstr ""
 "Un artista l'obra del qual ha esdevingut l'estil que defineix un gènere és?"
 
-#: ../data/verbal_analogies.xml.h:16
+#: ../data/verbal_analogies.xml.h:19
 msgid ""
 "An oasis is an isolated area of vegetation in a desert and an island is a "
 "piece of isolated land that is surrounded by water."
@@ -803,491 +894,517 @@ msgstr ""
 "Un oasi és una àrea aïllada de vegetació en un desert i una illa és un tros "
 "de terra que es troba aïllada per l'aigua."
 
-#: ../data/verbal_analogies.xml.h:17
+#: ../data/verbal_analogies.xml.h:20
 msgid "Angle"
 msgstr "Angle"
 
-#: ../data/verbal_analogies.xml.h:18
+#: ../data/verbal_analogies.xml.h:21
 msgid "Angry"
 msgstr "Enfadat"
 
-#: ../data/verbal_analogies.xml.h:19
+#: ../data/verbal_analogies.xml.h:22
 msgid "Ant / Vertebrate"
 msgstr "Formiga / Vertebrat"
 
 #. Translators: Anthophobia is fear of flowers that poses little or no danger
-#: ../data/verbal_analogies.xml.h:21
+#: ../data/verbal_analogies.xml.h:24
 msgid "Anthophobia"
 msgstr "Antrofòbia"
 
 #. Translators: Anthropophobia is fear of people
-#: ../data/verbal_analogies.xml.h:23
+#: ../data/verbal_analogies.xml.h:26
 msgid "Anthropophobia"
 msgstr "Antropofòbia"
 
-#: ../data/verbal_analogies.xml.h:24
+#: ../data/verbal_analogies.xml.h:27
 msgid "Apple"
 msgstr "Poma"
 
-#: ../data/verbal_analogies.xml.h:25
+#: ../data/verbal_analogies.xml.h:28
 msgid "Attention"
 msgstr "Atenció"
 
-#: ../data/verbal_analogies.xml.h:26
+#: ../data/verbal_analogies.xml.h:29
 msgid "Attic"
 msgstr "Golfa"
 
-#: ../data/verbal_analogies.xml.h:27
+#: ../data/verbal_analogies.xml.h:30
 msgid "Authority"
 msgstr "Autoritat"
 
-#: ../data/verbal_analogies.xml.h:28
+#: ../data/verbal_analogies.xml.h:31
 msgid "Azimuth"
 msgstr "Azimut"
 
-#: ../data/verbal_analogies.xml.h:29
+#: ../data/verbal_analogies.xml.h:32
 msgid "Basketball"
 msgstr "Bàsquet"
 
-#: ../data/verbal_analogies.xml.h:30
+#: ../data/verbal_analogies.xml.h:33
 msgid "Bassoon"
 msgstr "Fagot"
 
-#: ../data/verbal_analogies.xml.h:31
+#: ../data/verbal_analogies.xml.h:34
 msgid "Beach"
 msgstr "Platja"
 
-#: ../data/verbal_analogies.xml.h:32
+#: ../data/verbal_analogies.xml.h:35
 msgid "Birds"
 msgstr "Ocells"
 
 #. Translators: referred to the life style
-#: ../data/verbal_analogies.xml.h:34
+#: ../data/verbal_analogies.xml.h:37
 msgid "Bohemian"
 msgstr "Bohemi"
 
-#: ../data/verbal_analogies.xml.h:35
+#: ../data/verbal_analogies.xml.h:38
 msgid "Both relate to an action that breaks the related item."
 msgstr ""
 "Les dues estan relacionades a una acció que trenca l'element al que es "
 "refereixen."
 
-#: ../data/verbal_analogies.xml.h:36
+#: ../data/verbal_analogies.xml.h:39
 msgid "Bounce"
-msgstr "Bota"
+msgstr "Botar"
 
-#: ../data/verbal_analogies.xml.h:37
+#: ../data/verbal_analogies.xml.h:40
 msgid "Broken"
-msgstr "Que no funciona"
+msgstr "Espatllada"
 
-#: ../data/verbal_analogies.xml.h:38
+#: ../data/verbal_analogies.xml.h:41
 msgid "Bunker"
 msgstr "Búnquer"
 
-#: ../data/verbal_analogies.xml.h:39
+#: ../data/verbal_analogies.xml.h:42
 msgid "Bursts"
-msgstr "Punxat"
+msgstr "Punxar"
 
-#: ../data/verbal_analogies.xml.h:40
+#: ../data/verbal_analogies.xml.h:43
 msgid "Camera"
 msgstr "Càmera"
 
-#: ../data/verbal_analogies.xml.h:41
+#: ../data/verbal_analogies.xml.h:44
 msgid "Carbon"
 msgstr "Carboni"
 
-#: ../data/verbal_analogies.xml.h:42
+#: ../data/verbal_analogies.xml.h:45
 msgid "Cardiology"
 msgstr "Cardiologia"
 
-#: ../data/verbal_analogies.xml.h:43
+#: ../data/verbal_analogies.xml.h:46
 msgid "Careless"
 msgstr "Descuidat"
 
-#: ../data/verbal_analogies.xml.h:44
+#: ../data/verbal_analogies.xml.h:47
+msgid "Celebrated"
+msgstr "Celebrada"
+
+#: ../data/verbal_analogies.xml.h:48
 msgid "Cellulose"
 msgstr "Cel·lulosa"
 
-#: ../data/verbal_analogies.xml.h:45
+#: ../data/verbal_analogies.xml.h:49
 msgid "Chicken / Parrot"
 msgstr "Pollastre / Lloro"
 
-#: ../data/verbal_analogies.xml.h:46
+#: ../data/verbal_analogies.xml.h:50
 msgid "Chord"
 msgstr "Corda"
 
 #. Translator: 'Close' as verb, like closed with a key
-#: ../data/verbal_analogies.xml.h:48
+#: ../data/verbal_analogies.xml.h:52
 msgid "Close"
 msgstr "Tancar"
 
-#: ../data/verbal_analogies.xml.h:49
+#: ../data/verbal_analogies.xml.h:53
 msgid "Coast"
 msgstr "Costa"
 
-#: ../data/verbal_analogies.xml.h:50
+#: ../data/verbal_analogies.xml.h:54
 msgid "Collectivism"
 msgstr "Col·lectivisme"
 
-#: ../data/verbal_analogies.xml.h:51
+#: ../data/verbal_analogies.xml.h:55
 msgid "Column"
 msgstr "Columna"
 
-#: ../data/verbal_analogies.xml.h:52
+#: ../data/verbal_analogies.xml.h:56
 msgid "Concert hall"
 msgstr "Sala de concerts"
 
-#: ../data/verbal_analogies.xml.h:53
+#: ../data/verbal_analogies.xml.h:57
 msgid "Condemn"
 msgstr "Condemnar"
 
-#: ../data/verbal_analogies.xml.h:54
+#. Translator: As synonymous of 'perplexing'
+#: ../data/verbal_analogies.xml.h:59
+msgid "Confusing"
+msgstr "Confús"
+
+#: ../data/verbal_analogies.xml.h:60
 msgid "Connoisseur"
 msgstr "Expert"
 
-#: ../data/verbal_analogies.xml.h:55
+#: ../data/verbal_analogies.xml.h:61
 msgid "Conspirator"
 msgstr "Conspirador"
 
-#: ../data/verbal_analogies.xml.h:56
+#: ../data/verbal_analogies.xml.h:62
 msgid "Contradictory"
 msgstr "Contradictori"
 
-#: ../data/verbal_analogies.xml.h:57
+#: ../data/verbal_analogies.xml.h:63
 msgid "Corn"
 msgstr "Blat de moro"
 
-#: ../data/verbal_analogies.xml.h:58
+#: ../data/verbal_analogies.xml.h:64
 msgid "Courtesy"
 msgstr "Cortesia"
 
-#: ../data/verbal_analogies.xml.h:59
-msgid "Cousin"
-msgstr "El cosí"
-
-#: ../data/verbal_analogies.xml.h:60
+#: ../data/verbal_analogies.xml.h:65
 msgid "Crocodile"
 msgstr "Cocodril"
 
-#: ../data/verbal_analogies.xml.h:61
+#: ../data/verbal_analogies.xml.h:66
 msgid "Cycling"
 msgstr "Ciclisme"
 
-#: ../data/verbal_analogies.xml.h:62
+#: ../data/verbal_analogies.xml.h:67
 msgid "Decagon"
 msgstr "Decàgon"
 
-#: ../data/verbal_analogies.xml.h:63
+#: ../data/verbal_analogies.xml.h:68
 msgid "Decimal"
 msgstr "Decimal"
 
-#: ../data/verbal_analogies.xml.h:64
+#: ../data/verbal_analogies.xml.h:69
 msgid "Deer"
 msgstr "Cérvol"
 
-#: ../data/verbal_analogies.xml.h:65
+#: ../data/verbal_analogies.xml.h:70
 msgid "Democracy"
 msgstr "Democràcia"
 
-#: ../data/verbal_analogies.xml.h:66
+#: ../data/verbal_analogies.xml.h:71
+msgid "Disinterest"
+msgstr "Desinterès"
+
+#: ../data/verbal_analogies.xml.h:72
 msgid "Dog / Cat"
 msgstr "Gos / Gat"
 
-#: ../data/verbal_analogies.xml.h:67
+#: ../data/verbal_analogies.xml.h:73
 msgid "Dog and horse are species and terrier and pony are breeds."
 msgstr "Gos i cavall són especies i terrier i poni són races."
 
-#: ../data/verbal_analogies.xml.h:68
+#: ../data/verbal_analogies.xml.h:74
 msgid "Enneagram"
 msgstr "Enneagrama"
 
-#: ../data/verbal_analogies.xml.h:69
+#: ../data/verbal_analogies.xml.h:75
 msgid "Envelope"
 msgstr "Sobre"
 
-#: ../data/verbal_analogies.xml.h:70
+#: ../data/verbal_analogies.xml.h:76
 msgid "Erroneous"
 msgstr "Erroni"
 
-#: ../data/verbal_analogies.xml.h:71
+#: ../data/verbal_analogies.xml.h:77
+msgid "Exceptional"
+msgstr "Excepcional"
+
+#: ../data/verbal_analogies.xml.h:78
+msgid "Famous"
+msgstr "Famós"
+
+#: ../data/verbal_analogies.xml.h:79
 msgid "Fish"
 msgstr "Peix"
 
-#: ../data/verbal_analogies.xml.h:72
+#: ../data/verbal_analogies.xml.h:80
 msgid "Fishes"
 msgstr "Peixos"
 
-#: ../data/verbal_analogies.xml.h:73
-msgid "Float"
-msgstr "Flota"
+#. As a synonym of obsession
+#: ../data/verbal_analogies.xml.h:82
+msgid "Fixation"
+msgstr "Fixació"
 
-#: ../data/verbal_analogies.xml.h:74
+#: ../data/verbal_analogies.xml.h:83
+msgid "Float"
+msgstr "Flotar"
+
+#: ../data/verbal_analogies.xml.h:84
 msgid "Flower"
 msgstr "Flor"
 
-#: ../data/verbal_analogies.xml.h:75
+#: ../data/verbal_analogies.xml.h:85
 msgid "Flute"
 msgstr "Flauta"
 
-#: ../data/verbal_analogies.xml.h:76
+#: ../data/verbal_analogies.xml.h:86
 msgid "Fork"
 msgstr "Forquilla"
 
-#: ../data/verbal_analogies.xml.h:77
+#: ../data/verbal_analogies.xml.h:87
 msgid "Fossil"
 msgstr "Fòssil"
 
-#: ../data/verbal_analogies.xml.h:78
+#: ../data/verbal_analogies.xml.h:88
 msgid "Frog"
 msgstr "Granota"
 
-#: ../data/verbal_analogies.xml.h:79
+#: ../data/verbal_analogies.xml.h:89
 msgid "Gallon"
 msgstr "Galó"
 
-#: ../data/verbal_analogies.xml.h:80
+#: ../data/verbal_analogies.xml.h:90
+msgid "Generic"
+msgstr "Genèric"
+
+#: ../data/verbal_analogies.xml.h:91
 msgid "Golf"
 msgstr "Golf"
 
-#: ../data/verbal_analogies.xml.h:81
+#: ../data/verbal_analogies.xml.h:92
 msgid "Grain"
 msgstr "Gra"
 
-#: ../data/verbal_analogies.xml.h:82
+#: ../data/verbal_analogies.xml.h:93
 msgid "Grape"
 msgstr "Raïm"
 
-#: ../data/verbal_analogies.xml.h:83
+#: ../data/verbal_analogies.xml.h:94
 msgid "Gym"
 msgstr "Gimnàs"
 
-#: ../data/verbal_analogies.xml.h:84
+#: ../data/verbal_analogies.xml.h:95
 msgid "Hangar"
 msgstr "Hangar"
 
-#: ../data/verbal_analogies.xml.h:85
-msgid "Has no relation"
-msgstr "No té cap relació"
-
-#: ../data/verbal_analogies.xml.h:86
+#: ../data/verbal_analogies.xml.h:96
 msgid "Hectogram"
 msgstr "Hectogram"
 
-#: ../data/verbal_analogies.xml.h:87
+#: ../data/verbal_analogies.xml.h:97
 msgid "Hematology"
 msgstr "Hematologia"
 
-#: ../data/verbal_analogies.xml.h:88
+#: ../data/verbal_analogies.xml.h:98
 msgid "Hide"
 msgstr "Amagar"
 
-#: ../data/verbal_analogies.xml.h:89
-msgid "His father"
-msgstr "El seu pare"
-
-#: ../data/verbal_analogies.xml.h:90
-msgid "His mother"
-msgstr "La seva mare"
-
-#: ../data/verbal_analogies.xml.h:91
+#: ../data/verbal_analogies.xml.h:99
 msgid "Homeless"
 msgstr "Sense sostre"
 
-#: ../data/verbal_analogies.xml.h:92
+#: ../data/verbal_analogies.xml.h:100
 msgid "Hyena"
 msgstr "Hiena"
 
-#: ../data/verbal_analogies.xml.h:93
+#: ../data/verbal_analogies.xml.h:101
 msgid "Hypochondria"
 msgstr "Hipocondria"
 
-#: ../data/verbal_analogies.xml.h:94
+#: ../data/verbal_analogies.xml.h:102
 msgid "Icosagon"
 msgstr "Icosàgon"
 
-#: ../data/verbal_analogies.xml.h:95
+#: ../data/verbal_analogies.xml.h:103
 msgid "Ignore"
 msgstr "Ignorar"
 
-#: ../data/verbal_analogies.xml.h:96
+#: ../data/verbal_analogies.xml.h:104
+msgid "Incredible"
+msgstr "Increïble"
+
+#: ../data/verbal_analogies.xml.h:105
+msgid "Indifference"
+msgstr "Indiferència"
+
+#: ../data/verbal_analogies.xml.h:106
 msgid "Ink"
 msgstr "Tinta"
 
-#: ../data/verbal_analogies.xml.h:97
+#: ../data/verbal_analogies.xml.h:107
 msgid "Insects"
 msgstr "Insectes"
 
-#: ../data/verbal_analogies.xml.h:98
+#: ../data/verbal_analogies.xml.h:108
+msgid "Interesting"
+msgstr "Interessant"
+
+#: ../data/verbal_analogies.xml.h:109
+msgid "Intuition"
+msgstr "Intuïció"
+
+#: ../data/verbal_analogies.xml.h:110
 msgid "Ironic"
 msgstr "Irònic"
 
-#: ../data/verbal_analogies.xml.h:99
+#: ../data/verbal_analogies.xml.h:111
 msgid "Island"
 msgstr "Illa"
 
 #. Translator: definition of negligent
-#: ../data/verbal_analogies.xml.h:101
+#: ../data/verbal_analogies.xml.h:113
 msgid ""
 "It is the failure to take such care as may be rightfully or reasonably "
 "expected."
 msgstr "No tenir la suficient diligència o cura en un afer."
 
-#: ../data/verbal_analogies.xml.h:102
+#: ../data/verbal_analogies.xml.h:114
 msgid "It is the only one that does not use a ball in the game."
 msgstr "És l'únic que no utilitza una pilota en el joc."
 
-#: ../data/verbal_analogies.xml.h:103
+#: ../data/verbal_analogies.xml.h:115
 msgid "It is the only one that is not a carnivore."
 msgstr "És l'únic que no és un carnívor."
 
-#: ../data/verbal_analogies.xml.h:104
+#: ../data/verbal_analogies.xml.h:116
 msgid "It is the only one that is not a cereal."
 msgstr "És l'únic que no és un cereal."
 
-#: ../data/verbal_analogies.xml.h:105
+#: ../data/verbal_analogies.xml.h:117
 msgid "It is the only one that is not a fruit."
 msgstr "És l'única que no és una fruita."
 
-#: ../data/verbal_analogies.xml.h:106
+#: ../data/verbal_analogies.xml.h:118
 msgid "It is the only one that is not a medical specialty."
 msgstr "És l'única que no és una especialitat mèdica."
 
-#: ../data/verbal_analogies.xml.h:107
+#: ../data/verbal_analogies.xml.h:119
 msgid "It is the only one that is not a metal."
 msgstr "És l'únic que no és un metall."
 
-#: ../data/verbal_analogies.xml.h:108
+#: ../data/verbal_analogies.xml.h:120
 msgid "It is the only one that is not a reptile."
 msgstr "És l'únic que no és un rèptil."
 
-#: ../data/verbal_analogies.xml.h:109
+#: ../data/verbal_analogies.xml.h:121
 msgid "It is the only one that is not a woodwind instrument."
 msgstr "És l'únic que no és un instrument de vent i fusta."
 
-#: ../data/verbal_analogies.xml.h:110
+#: ../data/verbal_analogies.xml.h:122
 msgid "It is the only one that is not related to architecture."
 msgstr "És l'única que no està relacionada amb l'arquitectura."
 
-#: ../data/verbal_analogies.xml.h:111
+#: ../data/verbal_analogies.xml.h:123
 msgid "It is the only unit that does not belong to the metric system."
 msgstr "És l'única unitat que no pertany al sistema mètric."
 
-#: ../data/verbal_analogies.xml.h:112
-msgid ""
-"John's father's sister's sister-in-law is also? Do not assume that John has "
-"any relative that has not been mentioned."
-msgstr ""
-"La cunyada de la germana del pare del Joan és també? No assumiu que en Joan "
-"té cap parent que no s'hagi mencionat."
-
-#: ../data/verbal_analogies.xml.h:113
-msgid ""
-"John's mother's brother's brother-in-law is also? Do not assume that John "
-"has any relative that has not been mentioned."
-msgstr ""
-"El cunyat del germà de la mare d'en Joan és també? No assumiu que en Joan té "
-"cap parent que no s'hagi mencionat."
-
-#: ../data/verbal_analogies.xml.h:114
+#: ../data/verbal_analogies.xml.h:124
 msgid "Kilometer"
 msgstr "Kilòmetre"
 
-#: ../data/verbal_analogies.xml.h:115
+#: ../data/verbal_analogies.xml.h:125
 msgid "Latitude"
 msgstr "Latitud"
 
-#: ../data/verbal_analogies.xml.h:116
+#: ../data/verbal_analogies.xml.h:126
 msgid "Lentils"
 msgstr "Llenties"
 
-#: ../data/verbal_analogies.xml.h:117
+#: ../data/verbal_analogies.xml.h:127
 msgid "Light"
 msgstr "Llum"
 
-#: ../data/verbal_analogies.xml.h:118
+#: ../data/verbal_analogies.xml.h:128
 msgid "Liter"
 msgstr "Litre"
 
 #. Translator: 'Lock' as verb, like locked with a key
-#: ../data/verbal_analogies.xml.h:120
+#: ../data/verbal_analogies.xml.h:130
 msgid "Lock"
-msgstr "Tancar"
+msgstr "Bloquejar"
 
-#: ../data/verbal_analogies.xml.h:121
+#: ../data/verbal_analogies.xml.h:131
 msgid "Loner"
 msgstr "Solitari"
 
-#: ../data/verbal_analogies.xml.h:122
+#: ../data/verbal_analogies.xml.h:132
 msgid "Lychee"
 msgstr "Litxi"
 
-#: ../data/verbal_analogies.xml.h:123
+#: ../data/verbal_analogies.xml.h:133
 msgid "Mango"
 msgstr "Mango"
 
-#: ../data/verbal_analogies.xml.h:124
+#: ../data/verbal_analogies.xml.h:134
 msgid "Martyr"
 msgstr "Màrtir"
 
-#: ../data/verbal_analogies.xml.h:125
+#: ../data/verbal_analogies.xml.h:135
 msgid "Misunderstood"
 msgstr "Incomprès"
 
-#: ../data/verbal_analogies.xml.h:126
+#: ../data/verbal_analogies.xml.h:136
 msgid "Money"
 msgstr "Diners"
 
-#: ../data/verbal_analogies.xml.h:127
+#: ../data/verbal_analogies.xml.h:137
 msgid "Museum"
 msgstr "Museu"
 
-#: ../data/verbal_analogies.xml.h:128
+#: ../data/verbal_analogies.xml.h:138
 msgid "Oboe"
 msgstr "Oboè"
 
-#: ../data/verbal_analogies.xml.h:129
+#: ../data/verbal_analogies.xml.h:139
 msgid "Obscure"
 msgstr "Obscur"
 
-#: ../data/verbal_analogies.xml.h:130
+#: ../data/verbal_analogies.xml.h:140
+msgid "Obvious"
+msgstr "Obvi"
+
+#: ../data/verbal_analogies.xml.h:141
+msgid "Occasional"
+msgstr "Ocasional"
+
+#: ../data/verbal_analogies.xml.h:142
 msgid "Offensive"
 msgstr "Ofensiu"
 
-#: ../data/verbal_analogies.xml.h:131
+#: ../data/verbal_analogies.xml.h:143
 msgid "Oligarchy"
 msgstr "Oligarquia"
 
-#: ../data/verbal_analogies.xml.h:132
+#: ../data/verbal_analogies.xml.h:144
 msgid "Olive"
 msgstr "Oliva"
 
-#: ../data/verbal_analogies.xml.h:133
+#: ../data/verbal_analogies.xml.h:145
 msgid "Onion"
 msgstr "Ceba"
 
 #. Translator: 'Open' as verb, like open with a key
-#: ../data/verbal_analogies.xml.h:135
+#: ../data/verbal_analogies.xml.h:147
 msgid "Open"
 msgstr "Obrir"
 
 #. Translators: refers to the fruit
-#: ../data/verbal_analogies.xml.h:137
+#: ../data/verbal_analogies.xml.h:149
 msgid "Orange"
 msgstr "Taronja"
 
-#: ../data/verbal_analogies.xml.h:138
+#: ../data/verbal_analogies.xml.h:150
+msgid "Ordinary"
+msgstr "Ordinari"
+
+#: ../data/verbal_analogies.xml.h:151
 msgid "Ostentation"
 msgstr "Ostentació"
 
-#: ../data/verbal_analogies.xml.h:139
+#: ../data/verbal_analogies.xml.h:152
 msgid "Pain"
 msgstr "Dolor"
 
-#: ../data/verbal_analogies.xml.h:140
+#: ../data/verbal_analogies.xml.h:153
 msgid "Paleontology"
 msgstr "Paleontologia"
 
-#: ../data/verbal_analogies.xml.h:141
+#: ../data/verbal_analogies.xml.h:154
 msgid ""
 "Parallel and longitude go from east-west position and meridian and latitude "
 "go from north-south position."
@@ -1295,154 +1412,171 @@ msgstr ""
 "El paral·lel i la longitud van d'est a oest i el meridià i la latitud van de "
 "nord a sud."
 
-#: ../data/verbal_analogies.xml.h:142
+#. Translator: Pertaining to a single or specific person or thing
+#: ../data/verbal_analogies.xml.h:156
+msgid "Particular"
+msgstr "Particular"
+
+#: ../data/verbal_analogies.xml.h:157
 msgid "Person expelled from society"
 msgstr "Persona rebutjada per la societat"
 
-#: ../data/verbal_analogies.xml.h:143
+#: ../data/verbal_analogies.xml.h:158
 msgid "Photography"
 msgstr "Fotografia"
 
-#: ../data/verbal_analogies.xml.h:144
+#: ../data/verbal_analogies.xml.h:159
 msgid "Pioneer"
 msgstr "Pioner"
 
-#: ../data/verbal_analogies.xml.h:145
+#: ../data/verbal_analogies.xml.h:160
 msgid "Pleasure"
 msgstr "Plaer"
 
-#: ../data/verbal_analogies.xml.h:146
+#: ../data/verbal_analogies.xml.h:161
 msgid "Pole"
 msgstr "Pol"
 
-#: ../data/verbal_analogies.xml.h:147
+#: ../data/verbal_analogies.xml.h:162
 msgid "Pony / Horse"
 msgstr "Poni / Cavall"
 
-#: ../data/verbal_analogies.xml.h:148
+#: ../data/verbal_analogies.xml.h:163
 msgid "Portico"
 msgstr "Pòrtic"
 
-#: ../data/verbal_analogies.xml.h:149
+#: ../data/verbal_analogies.xml.h:164
 msgid "Positivism"
 msgstr "Positivisme"
 
-#: ../data/verbal_analogies.xml.h:150
+#: ../data/verbal_analogies.xml.h:165
 msgid "Potato"
 msgstr "Patata"
 
-#: ../data/verbal_analogies.xml.h:151
+#: ../data/verbal_analogies.xml.h:166
 msgid "Printer"
 msgstr "Impressora"
 
-#: ../data/verbal_analogies.xml.h:152
+#: ../data/verbal_analogies.xml.h:167
 msgid "Property"
 msgstr "Propietat"
 
-#: ../data/verbal_analogies.xml.h:153
+#: ../data/verbal_analogies.xml.h:168
 msgid "Psychiatry"
 msgstr "Psiquiatria"
 
-#: ../data/verbal_analogies.xml.h:154
+#: ../data/verbal_analogies.xml.h:169
 msgid "Radius"
 msgstr "Radi"
 
-#: ../data/verbal_analogies.xml.h:155
+#: ../data/verbal_analogies.xml.h:170
+msgid "Rare"
+msgstr "Rar"
+
+#: ../data/verbal_analogies.xml.h:171
+msgid "Regular"
+msgstr "Regular"
+
+#: ../data/verbal_analogies.xml.h:172
 msgid "Related"
 msgstr "Relacionat"
 
-#: ../data/verbal_analogies.xml.h:156
+#: ../data/verbal_analogies.xml.h:173
 msgid "Repugnance"
 msgstr "Repugnància"
 
-#: ../data/verbal_analogies.xml.h:157
+#: ../data/verbal_analogies.xml.h:174
 msgid "Restaurant"
 msgstr "Restaurant"
 
-#: ../data/verbal_analogies.xml.h:158
+#: ../data/verbal_analogies.xml.h:175
 msgid "Rice"
 msgstr "Arròs"
 
-#: ../data/verbal_analogies.xml.h:159
+#: ../data/verbal_analogies.xml.h:176
 msgid "River"
 msgstr "Riu"
 
-#: ../data/verbal_analogies.xml.h:160
+#: ../data/verbal_analogies.xml.h:177
 msgid "Roll"
 msgstr "Rodar"
 
-#: ../data/verbal_analogies.xml.h:161
+#: ../data/verbal_analogies.xml.h:178
+msgid "Sad"
+msgstr "Trist"
+
+#: ../data/verbal_analogies.xml.h:179
 msgid "Shame"
 msgstr "Vergonya"
 
-#: ../data/verbal_analogies.xml.h:162
+#: ../data/verbal_analogies.xml.h:180
 msgid "Simplistic"
 msgstr "Simplista"
 
-#: ../data/verbal_analogies.xml.h:163
+#: ../data/verbal_analogies.xml.h:181
 msgid "Snake"
 msgstr "Serp"
 
-#: ../data/verbal_analogies.xml.h:164
+#: ../data/verbal_analogies.xml.h:182
 msgid "Sodium"
 msgstr "Sodi"
 
-#: ../data/verbal_analogies.xml.h:165
+#: ../data/verbal_analogies.xml.h:183
 msgid "Solstice"
 msgstr "Solstici"
 
-#: ../data/verbal_analogies.xml.h:166
-msgid "Son-in-law"
-msgstr "El gendre"
-
-#: ../data/verbal_analogies.xml.h:167
+#: ../data/verbal_analogies.xml.h:184
 msgid "Specializes in skin diseases"
 msgstr "S'especialitza en malalties de la pell"
 
-#: ../data/verbal_analogies.xml.h:168
+#: ../data/verbal_analogies.xml.h:185
 msgid "Sport"
 msgstr "Esport"
 
-#: ../data/verbal_analogies.xml.h:169
+#: ../data/verbal_analogies.xml.h:186
 msgid "Suffers a skin disease"
 msgstr "Pateix una malaltia de la pell"
 
-#: ../data/verbal_analogies.xml.h:170
+#: ../data/verbal_analogies.xml.h:187
 msgid "Sugarcane"
 msgstr "Canya de sucre"
 
-#: ../data/verbal_analogies.xml.h:171
+#: ../data/verbal_analogies.xml.h:188
 msgid "Sweet corn"
 msgstr "Blat de moro dolç"
 
-#: ../data/verbal_analogies.xml.h:172
+#: ../data/verbal_analogies.xml.h:189
 msgid "Synonym"
 msgstr "Sinònim"
 
-#: ../data/verbal_analogies.xml.h:173
+#: ../data/verbal_analogies.xml.h:190
 msgid "Table"
 msgstr "Taula"
 
-#: ../data/verbal_analogies.xml.h:174
+#: ../data/verbal_analogies.xml.h:191
 msgid "Tangent"
 msgstr "Tangent"
 
-#: ../data/verbal_analogies.xml.h:175
+#: ../data/verbal_analogies.xml.h:192
+msgid "Tears"
+msgstr "Llàgrimes"
+
+#: ../data/verbal_analogies.xml.h:193
 msgid "Tennis"
 msgstr "Tennis"
 
-#: ../data/verbal_analogies.xml.h:176
+#: ../data/verbal_analogies.xml.h:194
 msgid ""
 "The ethical doctrine holding that only what is pleasant is an intrinsic good."
 msgstr ""
 "La doctrina ètica que considerà que només el que dóna plaer és un bé "
 "intrínsec."
 
-#: ../data/verbal_analogies.xml.h:177
+#: ../data/verbal_analogies.xml.h:195
 msgid "The first word is the instrument and the second what it measures."
 msgstr "La primera paraula és un instrument i la segona allò que mesura."
 
-#: ../data/verbal_analogies.xml.h:178
+#: ../data/verbal_analogies.xml.h:196
 msgid ""
 "The practice of austere self-discipline in order to achieve a higher or "
 "spiritual idea."
@@ -1450,78 +1584,90 @@ msgstr ""
 "La pràctica d'una autodisciplina austera a fi d'aconseguir una idea "
 "espiritual o superior."
 
-#: ../data/verbal_analogies.xml.h:179
+#: ../data/verbal_analogies.xml.h:197
 msgid "The radius of a circle is half the diameter."
 msgstr "El radi d'un cercle és la meitat del diàmetre."
 
-#: ../data/verbal_analogies.xml.h:180
+#: ../data/verbal_analogies.xml.h:198
+msgid "The relation between the two words is that they are synonymous."
+msgstr "La relació entre ambdues paraules és que són sinònims."
+
+#: ../data/verbal_analogies.xml.h:199
 msgid "The word 'taxidermist' is used to define a person that?"
 msgstr "La paraula «taxidermista» s'usa per a definir una persona que?"
 
-#: ../data/verbal_analogies.xml.h:181
+#: ../data/verbal_analogies.xml.h:200
 msgid "Theater"
 msgstr "Teatre"
 
-#: ../data/verbal_analogies.xml.h:182
+#: ../data/verbal_analogies.xml.h:201
 msgid "Think of the items used in the game."
 msgstr "Penseu en els ítems utilitzats durant el joc."
 
-#: ../data/verbal_analogies.xml.h:183
+#: ../data/verbal_analogies.xml.h:202
 msgid "Tiger"
 msgstr "Tigre"
 
-#: ../data/verbal_analogies.xml.h:184
+#: ../data/verbal_analogies.xml.h:203
 msgid "Titanium"
 msgstr "Titani"
 
-#: ../data/verbal_analogies.xml.h:185
+#: ../data/verbal_analogies.xml.h:204
 msgid ""
 "To make both objects work, a button needs to be pushed and a key needs to be "
 "turned."
 msgstr "Per fer funcionar els objectes, cal prémer el botó i girar la clau."
 
-#: ../data/verbal_analogies.xml.h:186
+#: ../data/verbal_analogies.xml.h:205
 msgid "Totalitarianism"
 msgstr "Totalitarisme"
 
 #. Translators: tripod as used is photography
-#: ../data/verbal_analogies.xml.h:188
+#: ../data/verbal_analogies.xml.h:207
 msgid "Tripod"
 msgstr "Trípode"
 
-#: ../data/verbal_analogies.xml.h:189
+#: ../data/verbal_analogies.xml.h:208
+msgid "Trivial"
+msgstr "Trivial"
+
+#: ../data/verbal_analogies.xml.h:209
 msgid "Turn"
 msgstr "Girar"
 
-#: ../data/verbal_analogies.xml.h:190
+#: ../data/verbal_analogies.xml.h:210
 msgid "Turtle"
 msgstr "Tortuga"
 
-#: ../data/verbal_analogies.xml.h:191
+#: ../data/verbal_analogies.xml.h:211
 msgid "Unorthodox"
 msgstr "No ortodox"
 
-#: ../data/verbal_analogies.xml.h:192
+#: ../data/verbal_analogies.xml.h:212
+msgid "Unpleasant"
+msgstr "Desagradable"
+
+#: ../data/verbal_analogies.xml.h:213
 msgid "Violin"
 msgstr "Violí"
 
-#: ../data/verbal_analogies.xml.h:193
+#: ../data/verbal_analogies.xml.h:214
 msgid "Wealthy"
 msgstr "Ric"
 
-#: ../data/verbal_analogies.xml.h:194
+#: ../data/verbal_analogies.xml.h:215
 msgid "Weapon"
 msgstr "Arma"
 
-#: ../data/verbal_analogies.xml.h:195
+#: ../data/verbal_analogies.xml.h:216
 msgid "What is a 'halberd'?"
 msgstr "Què és una «alabarda»?"
 
-#: ../data/verbal_analogies.xml.h:196
+#: ../data/verbal_analogies.xml.h:217
 msgid "Wheat"
 msgstr "Blat"
 
-#: ../data/verbal_analogies.xml.h:197
+#: ../data/verbal_analogies.xml.h:218
 msgid "Which of the following sentences defines better an 'ostracized' person?"
 msgstr ""
 "Quina de les següents frases defineix millor una persona que viu en "
@@ -1530,422 +1676,441 @@ msgstr ""
 #.
 #. Translators, please check these recommendations when translating gbrainy: http://live.gnome.org/gbrainy/Localizing
 #.
-#: ../data/verbal_analogies.xml.h:201
+#: ../data/verbal_analogies.xml.h:222
 msgid "Which of the following sports does not belong to the group?"
 msgstr "Quin dels següents esports no pertany al grup?"
 
-#: ../data/verbal_analogies.xml.h:202
+#: ../data/verbal_analogies.xml.h:223
 msgid "Which of the following words does not belong to the group?"
 msgstr "Quina de les següents paraules no pertany al grup?"
 
-#: ../data/verbal_analogies.xml.h:203
+#: ../data/verbal_analogies.xml.h:224
 msgid "Which of the following words is closer to the meaning of 'asceticism'?"
 msgstr ""
 "Quina de les següents paraules té el significat més proper a «ascetisme»?"
 
-#: ../data/verbal_analogies.xml.h:204
+#: ../data/verbal_analogies.xml.h:225
 msgid "Which of the following words is closer to the meaning of 'hedonism'?"
 msgstr ""
 "Quina de les següents paraules té el significat més proper a «hedonisme»?"
 
-#: ../data/verbal_analogies.xml.h:205
+#: ../data/verbal_analogies.xml.h:226
 msgid "Which of the following words is closer to the meaning of 'negligent'?"
 msgstr ""
 "Quina de les següents paraules té el significat més proper a «negligent»?"
 
-#: ../data/verbal_analogies.xml.h:206
+#: ../data/verbal_analogies.xml.h:227
 msgid "Which of the following words is closer to the meaning of 'oxymoron'?"
 msgstr ""
 "Quina de les següents paraules té el significat més proper a «oxímoron»?"
 
-#: ../data/verbal_analogies.xml.h:207
+#: ../data/verbal_analogies.xml.h:228
+msgid "Which of the following words is closer to the meaning of 'perplexing'?"
+msgstr ""
+"Quina de les següents paraules té el significat més proper a «perplex»?"
+
+#: ../data/verbal_analogies.xml.h:229
+msgid "Which of the following words is closer to the meaning of 'specific'?"
+msgstr ""
+"Quina de les següents paraules té el significat més proper a «específic»?"
+
+#: ../data/verbal_analogies.xml.h:230
+msgid "Which of the following words is closer to the meaning of 'unhappy'?"
+msgstr ""
+"Quina de les següents paraules té el significat més proper a «infeliç»?"
+
+#: ../data/verbal_analogies.xml.h:231
 msgid "Which of the following words is the closest in meaning to 'censure'?"
 msgstr ""
 "Quina de les següents paraules té el significat més proper a «censura»?"
 
-#: ../data/verbal_analogies.xml.h:208
+#: ../data/verbal_analogies.xml.h:232
 msgid "Which of the following words means fear of people?"
 msgstr "Quina de les següents paraules significa «por a la gent»?"
 
-#: ../data/verbal_analogies.xml.h:209
+#: ../data/verbal_analogies.xml.h:233
 msgid "Winery"
 msgstr "Celler"
 
-#: ../data/verbal_analogies.xml.h:210
+#: ../data/verbal_analogies.xml.h:234
 msgid "Wolf"
 msgstr "Llop"
 
-#: ../data/verbal_analogies.xml.h:211
+#: ../data/verbal_analogies.xml.h:235
 msgid "Works with dead animals"
 msgstr "Treballa amb animals morts"
 
-#: ../data/verbal_analogies.xml.h:212
+#: ../data/verbal_analogies.xml.h:236
 msgid "Works with leather"
 msgstr "Treballa amb pell"
 
-#: ../data/verbal_analogies.xml.h:213
+#: ../data/verbal_analogies.xml.h:237
 msgid "Zinc"
 msgstr "Zinc"
 
-#: ../data/verbal_analogies.xml.h:214
+#: ../data/verbal_analogies.xml.h:238
 msgid "airplane | aeroplane | plane"
 msgstr "avió | aeroplà | aeronau"
 
-#: ../data/verbal_analogies.xml.h:215
+#: ../data/verbal_analogies.xml.h:239
 msgid "ankle"
 msgstr "turmell"
 
-#: ../data/verbal_analogies.xml.h:216
+#: ../data/verbal_analogies.xml.h:240
 msgid "art / gallery | drama"
 msgstr "art / galeria | drama"
 
-#: ../data/verbal_analogies.xml.h:217
+#: ../data/verbal_analogies.xml.h:241
 msgid "atlas"
 msgstr "atles"
 
-#: ../data/verbal_analogies.xml.h:218
+#: ../data/verbal_analogies.xml.h:242
 msgid "bite"
 msgstr "mossegar"
 
-#: ../data/verbal_analogies.xml.h:219
+#: ../data/verbal_analogies.xml.h:243
 msgid "body | skin"
 msgstr "cos | pell"
 
-#: ../data/verbal_analogies.xml.h:220
+#: ../data/verbal_analogies.xml.h:244
 msgid "book | magazine | document"
 msgstr "llibre | revista | document"
 
 #. Translators: 'open' is used as a verb (open a box)
-#: ../data/verbal_analogies.xml.h:222
+#: ../data/verbal_analogies.xml.h:246
 msgid "box / open | banana"
 msgstr "caixa / obrir | plàtan"
 
-#: ../data/verbal_analogies.xml.h:223
+#: ../data/verbal_analogies.xml.h:247
 msgid "bridge / over | tunnel"
 msgstr "pont / sobre | túnel"
 
-#: ../data/verbal_analogies.xml.h:224
+#: ../data/verbal_analogies.xml.h:248
 msgid "button / push | key (used in a lock)"
 msgstr "botó / prémer | una clau (d'un pany)"
 
-#: ../data/verbal_analogies.xml.h:225
+#: ../data/verbal_analogies.xml.h:249
 msgid "cage | zoo | zoological garden"
 msgstr "gàbia | zoo | zoològic"
 
-#: ../data/verbal_analogies.xml.h:226
+#: ../data/verbal_analogies.xml.h:250
 msgid "car / garage | plane"
 msgstr "cotxe / garatge | avió"
 
-#: ../data/verbal_analogies.xml.h:227
+#: ../data/verbal_analogies.xml.h:251
 msgid "car / road | train"
 msgstr "cotxe / carretera | tren"
 
-#: ../data/verbal_analogies.xml.h:228
+#: ../data/verbal_analogies.xml.h:252
 msgid "chop"
 msgstr "tallar | talar"
 
-#: ../data/verbal_analogies.xml.h:229
+#: ../data/verbal_analogies.xml.h:253
 msgid "circle / semicircle | diameter"
 msgstr "cercle / semicercle | diàmetre"
 
-#: ../data/verbal_analogies.xml.h:230
+#: ../data/verbal_analogies.xml.h:254
 msgid "coins"
 msgstr "monedes"
 
-#: ../data/verbal_analogies.xml.h:231
+#: ../data/verbal_analogies.xml.h:255
 msgid "composer | songwriter | lyricist"
 msgstr "compositor | cantautor"
 
-#: ../data/verbal_analogies.xml.h:232
+#: ../data/verbal_analogies.xml.h:256
+msgid "concept / idea | obsession"
+msgstr "concepte / idea | obsessió"
+
+#: ../data/verbal_analogies.xml.h:257
 msgid "constellation / stars | archipelago"
 msgstr "constel·lació / estrelles | arxipèlag"
 
 #. Translators: 'dance' is used as a noun
-#: ../data/verbal_analogies.xml.h:234
+#: ../data/verbal_analogies.xml.h:259
 msgid "dance"
 msgstr "dansa"
 
-#: ../data/verbal_analogies.xml.h:235
+#: ../data/verbal_analogies.xml.h:260
 msgid "desert / oasis | sea"
 msgstr "desert / oasis | mar"
 
-#: ../data/verbal_analogies.xml.h:236
+#: ../data/verbal_analogies.xml.h:261
 msgid "dish / break | balloon"
 msgstr "plat / trencar | globus"
 
-#: ../data/verbal_analogies.xml.h:237
+#: ../data/verbal_analogies.xml.h:262
 msgid "dog / tame | wolf"
 msgstr "gos / domèstic | llop"
 
-#: ../data/verbal_analogies.xml.h:238
+#: ../data/verbal_analogies.xml.h:263
 msgid "elbow / knee | wrist"
 msgstr "colze / genoll | canell"
 
-#: ../data/verbal_analogies.xml.h:239
+#: ../data/verbal_analogies.xml.h:264
 msgid "error / correct | damage"
 msgstr "error / corregir | dany"
 
-#: ../data/verbal_analogies.xml.h:240
+#: ../data/verbal_analogies.xml.h:265
 msgid "eyebrow / eye | mustache"
 msgstr "cella / ull | bigoti"
 
 #. Translators: the concept 'toe' (http://en.wikipedia.org/wiki/Toe) does not exist in all languages. Feel free to change it to 'fingers' and adapt the answer accordingly
-#: ../data/verbal_analogies.xml.h:242
+#: ../data/verbal_analogies.xml.h:267
 msgid "feet / two | toes"
 msgstr "peus / dos | dits"
 
-#: ../data/verbal_analogies.xml.h:243
+#: ../data/verbal_analogies.xml.h:268
 msgid "fish / aquarium | monkey"
 msgstr "peix / aquari | mico"
 
-#: ../data/verbal_analogies.xml.h:244
+#: ../data/verbal_analogies.xml.h:269
 msgid "fish / submarine | bird"
 msgstr "peix / submarí | ocell"
 
-#: ../data/verbal_analogies.xml.h:245
+#: ../data/verbal_analogies.xml.h:270
 msgid "five / pentagon | ten"
 msgstr "cinc / pentàgon | deu"
 
-#: ../data/verbal_analogies.xml.h:246
+#: ../data/verbal_analogies.xml.h:271
 msgid "fox / den | bird"
 msgstr "guineu / cova | ocell"
 
-#: ../data/verbal_analogies.xml.h:247
+#: ../data/verbal_analogies.xml.h:272
 msgid "glass / break | paper"
 msgstr "vidre / trencar | paper"
 
-#: ../data/verbal_analogies.xml.h:248
+#: ../data/verbal_analogies.xml.h:273
 msgid "hands / grab | teeth"
 msgstr "mans / agafar | dents"
 
-#: ../data/verbal_analogies.xml.h:249
+#: ../data/verbal_analogies.xml.h:274
 msgid "herbivorous | herbivore"
 msgstr "herbívor | herbivoria"
 
-#: ../data/verbal_analogies.xml.h:250
+#: ../data/verbal_analogies.xml.h:275
 msgid "horticulture / plants | ornithology"
 msgstr "horticultura / plantes | ornitologia"
 
-#: ../data/verbal_analogies.xml.h:251
+#: ../data/verbal_analogies.xml.h:276
 msgid "hour / minute | minute"
 msgstr "hora / minut | minut"
 
-#: ../data/verbal_analogies.xml.h:252
+#: ../data/verbal_analogies.xml.h:277
 msgid "hungry / eat | tired"
 msgstr "afamat / menjar | cansat"
 
-#: ../data/verbal_analogies.xml.h:253
+#: ../data/verbal_analogies.xml.h:278
 msgid "hunter / rifle | photographer"
 msgstr "caçador / rifle | fotògraf"
 
-#: ../data/verbal_analogies.xml.h:254
+#: ../data/verbal_analogies.xml.h:279
 msgid "ice / slippery | glue"
 msgstr "gel / lliscós | pegament"
 
-#: ../data/verbal_analogies.xml.h:255
+#: ../data/verbal_analogies.xml.h:280
 msgid "in | under | through"
 msgstr "dins | sota | través"
 
-#: ../data/verbal_analogies.xml.h:256
+#: ../data/verbal_analogies.xml.h:281
 msgid "islands"
 msgstr "illes"
 
-#: ../data/verbal_analogies.xml.h:257
+#: ../data/verbal_analogies.xml.h:282
 msgid "leopard / spots | tiger"
 msgstr "lleopard / taques | tigre"
 
-#: ../data/verbal_analogies.xml.h:258
+#: ../data/verbal_analogies.xml.h:283
 msgid "letter / word | page"
 msgstr "lletra / paraula | pàgina"
 
-#: ../data/verbal_analogies.xml.h:259
+#: ../data/verbal_analogies.xml.h:284
 msgid "lip | upper lip | mouth"
 msgstr "llavi | llavi superior | boca"
 
-#: ../data/verbal_analogies.xml.h:260
+#: ../data/verbal_analogies.xml.h:285
 msgid "nest"
 msgstr "niu"
 
-#: ../data/verbal_analogies.xml.h:261
+#: ../data/verbal_analogies.xml.h:286
 msgid "nose"
 msgstr "nas"
 
-#: ../data/verbal_analogies.xml.h:262
+#: ../data/verbal_analogies.xml.h:287
 msgid "novel / author | song"
 msgstr "novel·la / autor | cançó"
 
-#: ../data/verbal_analogies.xml.h:263
+#: ../data/verbal_analogies.xml.h:288
 msgid "orange / fruit | spinach"
 msgstr "taronja / fruita | espinac"
 
-#: ../data/verbal_analogies.xml.h:264
+#: ../data/verbal_analogies.xml.h:289
 msgid "parallel / meridian | longitude"
 msgstr "paral·lel / meridià | longitud"
 
-#: ../data/verbal_analogies.xml.h:265
+#: ../data/verbal_analogies.xml.h:290
 msgid "pediatrics / children | numismatics"
 msgstr "pediatria / infants | numismàtica"
 
-#: ../data/verbal_analogies.xml.h:266
+#: ../data/verbal_analogies.xml.h:291
 msgid "peel"
 msgstr "pelar"
 
-#: ../data/verbal_analogies.xml.h:267
+#: ../data/verbal_analogies.xml.h:292
 msgid "pessimist / optimist | poor"
 msgstr "pessimista / optimista | pobre"
 
-#: ../data/verbal_analogies.xml.h:268
+#: ../data/verbal_analogies.xml.h:293
 msgid "poems / anthology | maps"
 msgstr "poemes / antologia | mapes"
 
-#: ../data/verbal_analogies.xml.h:269
+#: ../data/verbal_analogies.xml.h:294
 msgid "puzzle / solve | game"
 msgstr "trencaclosques / solucionar | joc"
 
-#: ../data/verbal_analogies.xml.h:270
+#: ../data/verbal_analogies.xml.h:295
 msgid "repair | fix"
 msgstr "reparar | arreglar"
 
-#: ../data/verbal_analogies.xml.h:271
+#: ../data/verbal_analogies.xml.h:296
 msgid "ring / finger | bracelet"
 msgstr "anell / dit | braçalet"
 
-#: ../data/verbal_analogies.xml.h:272
+#: ../data/verbal_analogies.xml.h:297
 msgid "seal / flippers | bird"
 msgstr "foca / aletes | ocells"
 
 #. Translators: refers to the unit of time
-#: ../data/verbal_analogies.xml.h:274
+#: ../data/verbal_analogies.xml.h:299
 msgid "second"
 msgstr "segon"
 
-#: ../data/verbal_analogies.xml.h:275
+#: ../data/verbal_analogies.xml.h:300
 msgid "shovel / dig | axe"
 msgstr "pala / cavar | destral"
 
-#: ../data/verbal_analogies.xml.h:276
+#: ../data/verbal_analogies.xml.h:301
 msgid "sink"
 msgstr "enfonsar | submergir"
 
-#: ../data/verbal_analogies.xml.h:277
+#: ../data/verbal_analogies.xml.h:302
 msgid "sleep | rest"
 msgstr "dormir | descansar"
 
-#: ../data/verbal_analogies.xml.h:278
+#: ../data/verbal_analogies.xml.h:303
 msgid "slurp / tongue | snort"
 msgstr "xuclar / llengua | roncar"
 
-#: ../data/verbal_analogies.xml.h:279
+#: ../data/verbal_analogies.xml.h:304
 msgid "sour"
 msgstr "agre"
 
 #. Translators: stick refers to a piece of wood
-#: ../data/verbal_analogies.xml.h:281
+#: ../data/verbal_analogies.xml.h:306
 msgid "stick / float | stone"
 msgstr "pal / flotar | pedra"
 
-#: ../data/verbal_analogies.xml.h:282
+#: ../data/verbal_analogies.xml.h:307
 msgid "sticky"
 msgstr "enganxós | enganxifós | apegalós | pegallós"
 
-#: ../data/verbal_analogies.xml.h:283
+#: ../data/verbal_analogies.xml.h:308
 msgid "stripes"
 msgstr "ratlles"
 
-#: ../data/verbal_analogies.xml.h:284
+#: ../data/verbal_analogies.xml.h:309
 msgid "sugar / sweet | vinegar"
 msgstr "sucre / dolç | vinagre"
 
-#: ../data/verbal_analogies.xml.h:285
+#: ../data/verbal_analogies.xml.h:310
 msgid "talk / yell | dislike"
 msgstr "parlar / cridar | desagradar"
 
-#: ../data/verbal_analogies.xml.h:286
+#: ../data/verbal_analogies.xml.h:311
 msgid "tear | rip"
 msgstr "estripar | trossejar"
 
-#: ../data/verbal_analogies.xml.h:287
+#: ../data/verbal_analogies.xml.h:312
 msgid "tears / eyes | sweat"
 msgstr "llàgrimes / ulls | suor"
 
 # N.T: en català són vint dits ja que no tenim el concepte 'toes'
 #. Translators: referred to 'feet / two | toes'
-#: ../data/verbal_analogies.xml.h:289
+#: ../data/verbal_analogies.xml.h:314
 msgid "ten | 10"
 msgstr "vint | 20"
 
-#: ../data/verbal_analogies.xml.h:290
+#: ../data/verbal_analogies.xml.h:315
 msgid "tennis / sport | ballet"
 msgstr "tennis / esport | ballet"
 
-#: ../data/verbal_analogies.xml.h:291
+#: ../data/verbal_analogies.xml.h:316
 msgid "thankful / ingratitude | despotism"
 msgstr "agraït / desagraït | despotisme"
 
-#: ../data/verbal_analogies.xml.h:292
+#: ../data/verbal_analogies.xml.h:317
 msgid "thermometer / temperature | clock"
 msgstr "termòmetre / temperatura | rellotge"
 
-#: ../data/verbal_analogies.xml.h:293
+#: ../data/verbal_analogies.xml.h:318
 msgid "tiger / carnivore | cow"
 msgstr "tigre / carnívor | vaca"
 
 #. Translators: time as duration of an event. What a clock measures
-#: ../data/verbal_analogies.xml.h:295
+#: ../data/verbal_analogies.xml.h:320
 msgid "time"
 msgstr "temps"
 
-#: ../data/verbal_analogies.xml.h:296
+#: ../data/verbal_analogies.xml.h:321
 msgid "toy / play | tool"
 msgstr "joguina / jugar | eina"
 
-#: ../data/verbal_analogies.xml.h:297
+#: ../data/verbal_analogies.xml.h:322
 msgid "track | railway | rails"
 msgstr "via | ferrovia | rail"
 
 #. Translators: letter refers to letter (in paper form)
-#: ../data/verbal_analogies.xml.h:299
+#: ../data/verbal_analogies.xml.h:324
 msgid "turtle / shell | letter"
 msgstr "tortuga / closca | carta"
 
-#: ../data/verbal_analogies.xml.h:300
+#: ../data/verbal_analogies.xml.h:325
 msgid "vegetable"
 msgstr "vegetal | verdura | hortalissa"
 
-#: ../data/verbal_analogies.xml.h:301
+#: ../data/verbal_analogies.xml.h:326
 msgid "whirlpool / water | tornado"
 msgstr "remolí / aigua | tornado"
 
-#: ../data/verbal_analogies.xml.h:302
+#: ../data/verbal_analogies.xml.h:327
 msgid "wild | savage"
 msgstr "salvatge | feréstec"
 
-#: ../data/verbal_analogies.xml.h:303
+#: ../data/verbal_analogies.xml.h:328
 msgid "win | play"
 msgstr "guanyar | jugar"
 
-#: ../data/verbal_analogies.xml.h:304
+#: ../data/verbal_analogies.xml.h:329
 msgid "wind | air"
 msgstr "vent | aire"
 
-#: ../data/verbal_analogies.xml.h:305
+#: ../data/verbal_analogies.xml.h:330
 msgid "wine / grape | rum"
 msgstr "vi / raïm | rom"
 
-#: ../data/verbal_analogies.xml.h:306
+#: ../data/verbal_analogies.xml.h:331
 msgid "wings"
 msgstr "ales"
 
 #. Translators: 'work' is used as a verb (to work)
-#: ../data/verbal_analogies.xml.h:308
+#: ../data/verbal_analogies.xml.h:333
 msgid "work"
 msgstr "treballar"
 
-#: ../data/verbal_analogies.xml.h:309
+#: ../data/verbal_analogies.xml.h:334
 msgid "wrist | arm"
 msgstr "canell | braç"
 
-#: ../data/verbal_analogies.xml.h:310
+#: ../data/verbal_analogies.xml.h:335
 msgid "write / pen | eat"
 msgstr "escriure / bolígraf | menjar"
 
@@ -2197,7 +2362,25 @@ msgstr "G"
 msgid "H"
 msgstr "H"
 
-#: ../src/Core/Main/GameAnswer.cs:135
+#. Translators. This is the list of valid answers, like A or B.
+#: ../src/Core/Main/GameAnswer.cs:141
+#, csharp-format
+msgid "{0} or {1}"
+msgstr "{0} o {1}"
+
+#. Translators. This is the list of valid answers, like A, B or C.
+#: ../src/Core/Main/GameAnswer.cs:145
+#, csharp-format
+msgid "{0}, {1} or {2}"
+msgstr "{0}, {1} o {2}"
+
+#. Translators. This is the list of valid answers, like A, B, C or D.
+#: ../src/Core/Main/GameAnswer.cs:149
+#, csharp-format
+msgid "{0}, {1}, {2} or {3}"
+msgstr "{0}, {1}, {2} o {3}"
+
+#: ../src/Core/Main/GameAnswer.cs:159
 #, csharp-format
 msgid "Figure {0}"
 msgstr "Figura {0}"
@@ -2264,8 +2447,8 @@ msgstr "Resultats pobres"
 msgid "Disappointing results"
 msgstr "Resultats decebedors"
 
-#: ../src/Core/Main/GameSession.cs:276
-#: ../src/Clients/Classical/Widgets/GameDrawingArea.cs:119
+#: ../src/Core/Main/GameSession.cs:282
+#: ../src/Clients/Classical/Widgets/GameDrawingArea.cs:117
 msgid "Paused"
 msgstr "En pausa"
 
@@ -2380,11 +2563,7 @@ msgstr "Les respostes correctes possibles són: {0}."
 
 #. Translators: this the separator used when concatenating multiple possible answers for verbal analogies
 #. For example: "Possible correct answers are: sleep, rest."
-#. Translators: this the separator used when concatenating possible options for answering verbal analogies
-#. For example: "Possible correct answers are: a, b, c, d."
 #: ../src/Core/Main/Verbal/Analogies.cs:87
-#: ../src/Core/Main/Verbal/AnalogiesMultipleOptions.cs:63
-#: ../src/Core/Main/Verbal/AnalogiesPairOfWordsOptions.cs:62
 msgid ", "
 msgstr ", "
 
@@ -2393,17 +2572,17 @@ msgstr ", "
 msgid "Multiple options #{0}"
 msgstr "Múltiples opcions #{0}"
 
-#. Translators: {0} is replaced by a question and {1} by the suggestions on how to answer
-#. E.g: What is the correct option? Answer A, B, C.
-#: ../src/Core/Main/Verbal/AnalogiesMultipleOptions.cs:69
-#: ../src/Core/Main/Verbal/AnalogiesPairOfWordsOptions.cs:70
+#. Translators: {0} is replaced by a question and {1} by the possible valid answers
+#. E.g.: What is the correct option? Answer A, B, C or D.
+#: ../src/Core/Main/Verbal/AnalogiesMultipleOptions.cs:56
+#: ../src/Core/Main/Verbal/AnalogiesPairOfWordsOptions.cs:61
 #, csharp-format
 msgid "{0} Answer {1}."
 msgstr "{0} Responeu {1}."
 
 #. Translators: this "option) answer" for example "a) "21 x 60 = 1260". This should not be changed for most of the languages
-#: ../src/Core/Main/Verbal/AnalogiesMultipleOptions.cs:106
-#: ../src/Core/Main/Verbal/AnalogiesPairOfWordsOptions.cs:114
+#: ../src/Core/Main/Verbal/AnalogiesMultipleOptions.cs:92
+#: ../src/Core/Main/Verbal/AnalogiesPairOfWordsOptions.cs:104
 #: ../src/Games/Logic/PuzzleOstracism.cs:164
 #: ../src/Games/Logic/PuzzlePredicateLogic.cs:185
 #: ../src/Games/Calculation/CalculationCloserFraction.cs:164
@@ -2418,7 +2597,7 @@ msgid "Pair of words compare #{0}"
 msgstr "Compara dues paraules #{0}"
 
 #: ../src/Core/Main/Verbal/AnalogiesPairOfWordsCompare.cs:57
-#: ../src/Core/Main/Verbal/AnalogiesPairOfWordsOptions.cs:67
+#: ../src/Core/Main/Verbal/AnalogiesPairOfWordsOptions.cs:56
 #, csharp-format
 msgid ""
 "Given the relationship between the two words below, which word has the same "
@@ -2428,7 +2607,7 @@ msgstr ""
 "mateixa relació a «{0}»?"
 
 #: ../src/Core/Main/Verbal/AnalogiesPairOfWordsCompare.cs:94
-#: ../src/Core/Main/Verbal/AnalogiesPairOfWordsOptions.cs:136
+#: ../src/Core/Main/Verbal/AnalogiesPairOfWordsOptions.cs:126
 #, csharp-format
 msgid "Words: {0}"
 msgstr "Paraules: {0}"
@@ -2443,36 +2622,26 @@ msgstr "Parell de paraules #{0}"
 msgid "Question and answer #{0}"
 msgstr "Pregunta i resposta #{0}"
 
-#: ../src/Core/Main/Xml/GameXml.cs:221
-#, csharp-format
-msgid "{0}, "
-msgstr "{0}, "
-
-#: ../src/Core/Main/Xml/GameXml.cs:223
-#, csharp-format
-msgid "{0}."
-msgstr "{0}."
-
 #. Translators {0}: list of options (A, B, C)
-#: ../src/Core/Main/Xml/GameXml.cs:226
+#: ../src/Core/Main/Xml/GameXml.cs:219
 #, csharp-format
-msgid "Answer {0}"
-msgstr "Responeu {0}"
+msgid "Answer {0}."
+msgstr "Responeu {0}."
 
-#: ../src/Core/Main/Xml/GameXml.cs:479
+#: ../src/Core/Main/Xml/GameXml.cs:473
 #, csharp-format
 msgid "{0}) "
 msgstr "{0}) "
 
-#: ../src/Clients/Classical/gbrainy.cs:424
+#: ../src/Clients/Classical/gbrainy.cs:429
 msgid "Congratulations."
 msgstr "Enhorabona."
 
-#: ../src/Clients/Classical/gbrainy.cs:426
+#: ../src/Clients/Classical/gbrainy.cs:431
 msgid "Incorrect answer."
 msgstr "Resposta incorrecta."
 
-#: ../src/Clients/Classical/gbrainy.cs:490
+#: ../src/Clients/Classical/gbrainy.cs:495
 msgid ""
 "Once you have an answer type it in the \"Answer:\" entry box and press the "
 "\"OK\" button."
@@ -2480,11 +2649,11 @@ msgstr ""
 "Un cop tingueu la resposta introduïu-la al quadre «Resposta:» i premeu el "
 "botó «D'acord»."
 
-#: ../src/Clients/Classical/gbrainy.cs:520
+#: ../src/Clients/Classical/gbrainy.cs:525
 msgid "The level of translation of gbrainy for your language is low."
 msgstr "El nivell de traducció del gbrainy al vostre idioma és baix."
 
-#: ../src/Clients/Classical/gbrainy.cs:521
+#: ../src/Clients/Classical/gbrainy.cs:526
 msgid ""
 "You may be exposed to partially translated games making it more difficult to "
 "play. If you prefer to play in English, there is an option for doing so in "
@@ -2494,17 +2663,17 @@ msgstr ""
 "sigui més difícil. Si preferiu jugar en en anglès, hi ha una opció a les "
 "Preferències del gbrainy per fer-ho."
 
-#: ../src/Clients/Classical/gbrainy.cs:613
+#: ../src/Clients/Classical/gbrainy.cs:618
 #: ../src/Clients/Classical/Widgets/Toolbar.cs:143
 msgid "Pause"
 msgstr "Pausa"
 
-#: ../src/Clients/Classical/gbrainy.cs:618
+#: ../src/Clients/Classical/gbrainy.cs:623
 msgid "Resume"
 msgstr "Reprèn"
 
 # csharp-format
-#: ../src/Clients/Classical/gbrainy.cs:767
+#: ../src/Clients/Classical/gbrainy.cs:773
 #, csharp-format
 msgid "Startup time {0}"
 msgstr "Temps d'iniciació {0}"
@@ -3175,7 +3344,8 @@ msgstr "Cub"
 #, csharp-format
 msgid ""
 "When you fold the figure below as a cube, which face on the figure is "
-"opposite the face with a {0} drawn on it? Answer the number written on face."
+"opposite the face with a {0} drawn on it? Answer the number written on the "
+"face."
 msgstr ""
 "Quan doblegueu figura de baix com un cub, quina és la cara de la figura "
 "contrària a la que té un {0} dibuixat? Responeu amb el número escrit a la "
@@ -4318,19 +4488,21 @@ msgstr "La fórmula de la distància és «distància = rati x temps»."
 msgid ""
 "A train leaves the station traveling at {0} mph. {1} hour later a second "
 "train leaves the station traveling in the same direction at {2} mph. How "
-"many hours does it take the second train to overtake the first train?"
+"many hours since the action started does it take the second train to "
+"overtake the first train?"
 msgid_plural ""
 "A train leaves the station traveling at {0} mph. {1} hours later a second "
 "train leaves the station traveling in the same direction at {2} mph. How "
-"many hours does it take the second train to overtake the first train?"
+"many hours since the action started does it take the second train to "
+"overtake the first train?"
 msgstr[0] ""
 "Un tren marxa de l'estació viatjant a {0} km/h. {1} hora després un segon "
 "tren marxa de l'estació viatjant en la mateixa direcció a {2} km/h. Quantes "
-"hores necessita el segon tren per atrapar al primer tren?"
+"hores des de que s'inicia l'acció necessita el segon tren per atrapar al primer tren?"
 msgstr[1] ""
 "Un tren marxa de l'estació viatjant a {0} km/h. {1} hores després un segon "
 "tren marxa de l'estació viatjant en la mateixa direcció a {2} km/h. Quantes "
-"hores necessita el segon tren per atrapar al primer tren?"
+"hores des de que s'inicia l'acció necessita el segon tren per atrapar al primer tren?"
 
 #: ../src/Games/Logic/PuzzleTrains.cs:86
 msgid ""
@@ -5271,9 +5443,3 @@ msgstr "_Desinstal·la..."
 msgid "_Unselect All"
 msgstr "_Desselecciona-ho"
 
-#~ msgid ""
-#~ "What is the next logical sequence of objects in the last column? See "
-#~ "below the convention when giving the answer."
-#~ msgstr ""
-#~ "Quina és la seqüència lògica d'objectes següent? Vegeu a baix la "
-#~ "convenció per a donar la resposta."
