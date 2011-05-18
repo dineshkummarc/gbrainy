@@ -12,6 +12,10 @@ GAMESSTATISTICS_CSFILES = \
 	$(srcdir)/Defines.cs	\
 	$(srcdir)/GamesStatistics.cs
 
+GAMEXMLTOASSEMBLY_CSFILES = \
+	$(srcdir)/GameXmlToAssembly.cs
+
+
 ASSEMBLIES = \
 	-r:../src/gbrainy.Core.dll	\
 	-r:Mono.Posix
@@ -27,7 +31,11 @@ TranslationsChecker.exe: $(TRANSLATIONSCHECKER_CSFILES)
 
 GamesStatistics.exe: $(GAMESSTATISTICS_CSFILES)
 		$(CSC) -target:winexe -out:$@ $(EXTRAFLAGS) $(GAMESSTATISTICS_CSFILES) $(ASSEMBLIES)
-		
+
+GameXmlToAssembly.exe: $(GAMEXMLTOASSEMBLY_CSFILES) ../data/games.xml GameTemplate.cs
+		   $(CSC) -target:winexe -out:$@ $(EXTRAFLAGS) $(GAMEXMLTOASSEMBLY_CSFILES) $(ASSEMBLIES)
+		   export MONO_PATH=../src && $(MONO) $@
+
 
 all: GameXmlToGetString.exe
 
@@ -38,7 +46,8 @@ EXTRA_DIST = $(GAMESXMLSTRINGS_CSFILES) $(srcdir)/GameXmlGetStringTemplate.cs  $
 
 CLEANFILES = GameXmlToGetString.exe \
 		GameXmlGetString.cs \
-	     	GamesStatistics.exe
+	     	GamesStatistics.exe \
+		GameXmlToAssembly.exe
 
 DISTCLEANFILES = 				\
 	Makefile
