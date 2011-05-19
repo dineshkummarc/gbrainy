@@ -49,6 +49,15 @@ namespace gbrainy.Core.Main
 
 			SetPangoNormalFontSize ();
 		}
+		
+		public static void ResetDrawBackgroundCache ()
+		{
+			if (image == null)
+				return;
+
+			image.Dispose ();
+			image = null;
+		}
 
 		virtual public void DrawBackground ()
 		{

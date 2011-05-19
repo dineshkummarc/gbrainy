@@ -563,6 +563,9 @@ namespace gbrainy.Clients.Classical
 			dialog = new PreferencesDialog (session.PlayerHistory);
 			if ((Gtk.ResponseType) dialog.Run () == ResponseType.Ok) {
 				session.Difficulty = (GameDifficulty) Preferences.Get <int> (Preferences.DifficultyKey);
+
+				if (dialog.NewThemeSet == true)
+					drawing_area.ReloadBackground ();
 			}
 			dialog.Destroy ();
 		}

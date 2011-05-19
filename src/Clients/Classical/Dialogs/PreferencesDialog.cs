@@ -100,6 +100,8 @@ namespace gbrainy.Clients.Classical.Dialogs
 			}
 		}
 
+		public bool NewThemeSet {set; get; }
+
 		private void OnCleanHistory (object sender, EventArgs args)
 		{
 			if (ResponseType.Ok == HigMessageDialog.RunHigConfirmation (
@@ -127,6 +129,8 @@ namespace gbrainy.Clients.Classical.Dialogs
 			TreeIter iter;
 			themes_combobox.GetActiveIter (out iter);
 			Theme theme = (Theme) themes_combobox.Model.GetValue (iter, COLUMN_VALUE);
+
+			NewThemeSet = String.Compare (theme.Name, Preferences.Get <string> (Preferences.ThemeKey), true) != 0;
 			Preferences.Set <string> (Preferences.ThemeKey, theme.Name);
 
 			Preferences.Save ();
