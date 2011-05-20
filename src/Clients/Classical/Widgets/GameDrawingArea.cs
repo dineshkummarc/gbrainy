@@ -71,6 +71,12 @@ namespace gbrainy.Clients.Classical.Widgets
 			SolutionIcon = SolutionType.None;
 		}
 
+		public void ReloadBackground ()
+		{
+			CairoContextEx.ResetDrawBackgroundCache ();
+			QueueDraw ();
+		}
+
 		protected override bool OnExposeEvent (Gdk.EventExpose args)
 		{
 			if (!IsRealized)
