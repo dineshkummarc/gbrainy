@@ -60,7 +60,6 @@ namespace gbrainy.Clients.Classical.Widgets
 		// Constants
 		const int question_high = 55;
 		const int solution_high = 55;
-		const int total_margin = 0; // Margin applied as in-box for themes
 		const double text_margin = 0.010;
 		const double icon_size = 0.08;
 		const double icon_margin = 0.01;
@@ -89,11 +88,11 @@ namespace gbrainy.Clients.Classical.Widgets
 
 			args.Window.GetSize (out total_w, out total_h);
 
-			h = total_h - question_high - total_margin * 2;
+			h = total_h - question_high;
 			if (UseSolutionArea)
 				h -= solution_high;
 
-			w = total_w - total_margin * 2;
+			w = total_w;
 
 			// We want a square drawing area for the puzzles then the figures are shown as designed.
 			// For example, squares are squares. This also makes sure that proportions are kept when resizing
@@ -109,7 +108,7 @@ namespace gbrainy.Clients.Classical.Widgets
 			else
 				OffsetY = 0;
 
-			OffsetY += question_high + total_margin;
+			OffsetY += question_high;
 
 			// Draw a background taking all the window area
 			cr.Save ();
@@ -141,7 +140,6 @@ namespace gbrainy.Clients.Classical.Widgets
 
 		void DrawQuestionAndAnswer (CairoContextEx cr, int width, int height)
 		{
-			double scaled_margin;
 			double max_width;
 			double line_space;
 
@@ -149,38 +147,37 @@ namespace gbrainy.Clients.Classical.Widgets
 			cr.FontLineSpace = 0;
 			cr.SetPangoFontSize (0.020);
 
-			scaled_margin = (double) total_margin / (double) width;
-			max_width = 1 - (scaled_margin * 2) - (text_margin * 2);
+			max_width = 1 - (text_margin * 2);
 			cr.UseMarkup = true;
 
-			DrawQuestion (cr, width, height, scaled_margin, max_width);
-			DrawSolution (cr, width, height, scaled_margin, max_width);
+			DrawQuestion (cr, width, height, max_width);
+			DrawSolution (cr, width, height, max_width);
 
 			cr.UseMarkup = false;
 			cr.FontLineSpace = line_space;
 		}
 
-		void DrawQuestion (CairoContextEx cr, int width, int height, double scaled_margin, double max_width)
+		void DrawQuestion (CairoContextEx cr, int width, int height, double max_width)
 		{
 			if (String.IsNullOrEmpty (Question) == true)
 				return;
 
-			cr.DrawStringWithWrapping (scaled_margin + text_margin, scaled_margin + text_margin, Question, max_width);
+			cr.DrawStringWithWrapping (text_margin, text_margin, Question, max_width);
 			cr.Stroke ();
 
 			cr.LineWidth = 0.002;
 			double question_high_scaled = question_high / (double) height;
 			cr.MoveTo (0.01, question_high_scaled + 0.01);
-			cr.LineTo (0.98, question_high_scaled + 0.01);
+			cr.LineTo (0.99, question_high_scaled + 0.01);
 			cr.Stroke ();
 		}
 
-		void DrawSolution (CairoContextEx cr, int width, int height, double scaled_margin, double max_width)
+		void DrawSolution (CairoContextEx cr, int width, int height, double max_width)
 		{
 			if (UseSolutionArea == false || String.IsNullOrEmpty (Solution) == true)
 				return;
 
-			const double box_margin = 0.005;
+			const double box_margin = 0.00;
 			double box_height_scaled = solution_high / (double) height;
 
 			cr.Save ();
@@ -188,10 +185,11 @@ namespace gbrainy.Clients.Classical.Widgets
 
 			// Draw black box
 			cr.Color = new Color (0.1, 0.1, 0.1);
-			cr.Rectangle (scaled_margin + text_margin - box_margin,
-				1 - box_height_scaled - scaled_margin - text_margin,
-				max_width + (box_margin * 2),
-				box_height_scaled + scaled_margin + text_margin);
+
+			cr.Rectangle (text_margin,
+				1 - box_height_scaled - text_margin,
+				max_width,
+				box_height_scaled);
 			cr.Fill ();
 			cr.Stroke ();
 
@@ -211,12 +209,12 @@ namespace gbrainy.Clients.Classical.Widgets
 			}
 			else
 			{
-				x_text = scaled_margin + icon_w + text_margin;
+				x_text =  icon_w + text_margin;
 				icon_x = 0;
 			}
 
 			cr.DrawStringWithWrapping (x_text,
-				(1 - box_height_scaled - scaled_margin - text_margin) + ((box_height_scaled - height_str) / 2),
+				(1 - box_height_scaled - text_margin) + ((box_height_scaled - height_str) / 2),
 				Solution, max_width - icon_w);
 			cr.Stroke ();
 
