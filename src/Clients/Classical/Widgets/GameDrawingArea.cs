@@ -116,7 +116,7 @@ namespace gbrainy.Clients.Classical.Widgets
 			cr.DrawBackground ();
 
 			if (Paused == false) {
-				DrawQuestionAndAnswer (cr, total_w, total_h);
+				DrawQuestionAndAnswer (cr, total_h);
 			} else {
 				cr.SetPangoFontSize (0.08);
 				cr.DrawTextCentered (0.5, 0.5, Catalog.GetString ("Paused"));
@@ -138,7 +138,7 @@ namespace gbrainy.Clients.Classical.Widgets
 			return true;
 		}
 
-		void DrawQuestionAndAnswer (CairoContextEx cr, int width, int height)
+		void DrawQuestionAndAnswer (CairoContextEx cr, int height)
 		{
 			double max_width;
 			double line_space;
@@ -150,14 +150,14 @@ namespace gbrainy.Clients.Classical.Widgets
 			max_width = 1 - (text_margin * 2);
 			cr.UseMarkup = true;
 
-			DrawQuestion (cr, width, height, max_width);
-			DrawSolution (cr, width, height, max_width);
+			DrawQuestion (cr, height, max_width);
+			DrawSolution (cr, height, max_width);
 
 			cr.UseMarkup = false;
 			cr.FontLineSpace = line_space;
 		}
 
-		void DrawQuestion (CairoContextEx cr, int width, int height, double max_width)
+		void DrawQuestion (CairoContextEx cr, int height, double max_width)
 		{
 			if (String.IsNullOrEmpty (Question) == true)
 				return;
@@ -172,7 +172,7 @@ namespace gbrainy.Clients.Classical.Widgets
 			cr.Stroke ();
 		}
 
-		void DrawSolution (CairoContextEx cr, int width, int height, double max_width)
+		void DrawSolution (CairoContextEx cr, int height, double max_width)
 		{
 			if (UseSolutionArea == false || String.IsNullOrEmpty (Solution) == true)
 				return;
