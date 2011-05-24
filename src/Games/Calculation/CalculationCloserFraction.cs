@@ -166,5 +166,15 @@ namespace gbrainy.Games.Calculation
 				};
 			}
 		}
+
+		public override void Draw (CairoContextEx gr, int area_width, int area_height, bool rtl)
+		{
+			base.Draw (gr, area_width, area_height, rtl);
+
+			gr.SetPangoLargeFontSize ();
+
+			gr.MoveTo (0.1, 0.15);
+			gr.ShowPangoText (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Possible answers are:"));
+		}
 	}
 }

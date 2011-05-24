@@ -148,8 +148,8 @@ namespace gbrainy.Games.Calculation
 
 			gr.SetPangoLargeFontSize ();
 
-			gr.MoveTo (0.05, DrawAreaY + 0.1);
-			gr.ShowPangoText (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Numbers"));
+			gr.MoveTo (0.1, 0.15);
+			gr.ShowPangoText (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Possible answers are:"));
 		}
 
 		short GenerateNonPrime ()
