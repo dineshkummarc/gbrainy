@@ -101,7 +101,7 @@ namespace gbrainy.Core.Main
 
 				// Translators: {0} is the game number and {1} the game question or answer
 				// The number is used as reference when looking for the game solution in the PDF
-				str = String.Format (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Game {0}. {1}"), i + 1, puzzle.Question);
+				str = String.Format (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Game #{0}. {1}"), i + 1, puzzle.Question);
 
 				// Draw question
 				cr.SetPangoFontSize (12);
@@ -162,7 +162,7 @@ namespace gbrainy.Core.Main
 			cr.UseMarkup = true;
 			for (int i = 0; i < games.Length; i++)
 			{
-				str = String.Format (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Game {0}. {1}"), i + 1, games[i].AnswerText);
+				str = String.Format (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Game #{0}. {1}"), i + 1, games[i].AnswerText);
 
 				// Draw Solution
 				cr.DrawStringWithWrapping (x + margin, y + margin, str, width - margin);
