@@ -12,8 +12,8 @@ msgstr ""
 "Project-Id-Version: gbrainy\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=gbrainy&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2011-05-17 19:07+0000\n"
-"PO-Revision-Date: 2011-05-19 17:47+0200\n"
+"POT-Creation-Date: 2011-05-26 07:55+0000\n"
+"PO-Revision-Date: 2011-05-27 10:37+0200\n"
 "Last-Translator: Marek Černocký <marek@manet.cz>\n"
 "Language-Team: Czech <gnome-cs-list@gnome.org>\n"
 "MIME-Version: 1.0\n"
@@ -182,7 +182,7 @@ msgstr[2] ""
 "Máte ve své bance uloženo [money] korun na účtě s 10% složeným úrokem ročně. "
 "Kolik peněz budete mít po uplynutí 2 let?"
 
-#: ../tools/GameXmlGetString.cs:65 ../data/games.xml.h:31
+#: ../tools/GameXmlGetString.cs:65 ../data/games.xml.h:33
 msgid ""
 "In a horse race there are people and horses. You count [eyes] eye and [legs] "
 "leg. How many horses are present?"
@@ -260,7 +260,7 @@ msgstr[2] ""
 "tolik času. Kolik hodin zabere úklid skladu, když budou uklízet dohromady? "
 "[option_answers]"
 
-#: ../tools/GameXmlGetString.cs:81 ../data/games.xml.h:68
+#: ../tools/GameXmlGetString.cs:81 ../data/games.xml.h:69
 msgid ""
 "You have two trucks that have a total weight of [add] unit. If the lighter "
 "truck weights 15 units less that half of the weight of the heavier truck, "
@@ -399,7 +399,6 @@ msgstr ""
 "člověk i každý kůň mají také dvě oči (2.[men] + 2.[horses])."
 
 #: ../data/games.xml.h:21
-#| msgid "Numeric relation"
 msgid "Family relations"
 msgstr "Rodinné vztahy"
 
@@ -463,7 +462,25 @@ msgstr ""
 "Jestliže je p &lt; x &lt; q and r &lt; y &lt; s, pro kterou z následujících "
 "možností je splněna podmínka x &lt; y? [option_answers]"
 
-#: ../data/games.xml.h:33
+#: ../data/games.xml.h:31
+#| msgid ""
+#| "The variable q is bigger than x and y bigger than r. If q is smaller than "
+#| "r then the condition x &lt; y is true."
+msgid ""
+"If the variable r is smaller than q then the condition x &gt; y is always "
+"true."
+msgstr "Pokud je proměnná r menší než q, je podmínka x &gt; y vždy splněna."
+
+#: ../data/games.xml.h:32
+#| msgid ""
+#| "The variable q is bigger than x and y bigger than r. If q is smaller than "
+#| "r then the condition x &lt; y is true."
+msgid ""
+"If the variable s is bigger than p then the condition x &lt; y is always "
+"true."
+msgstr "Pokud je proměnná s větší než p, je podmínka x &lt; y vždy splněna."
+
+#: ../data/games.xml.h:35
 #, no-c-format
 msgid ""
 "In a small town, [all_cars]% of the inhabitants have a car and [males_cars]% "
@@ -474,7 +491,7 @@ msgstr ""
 "auto a zároveň jsou muži. Kolik procent obyvatel tvoří ženy vlastnící auto? "
 "[option_answers]"
 
-#: ../data/games.xml.h:34
+#: ../data/games.xml.h:36
 msgid ""
 "In every match you eliminate one player, you need the total number of games "
 "minus 1 to find out the winner."
@@ -482,7 +499,7 @@ msgstr ""
 "V každém zápase vyřadíte jednoho hráče, takže potřebujete celkový počet her "
 "méně jedna na to, abyste zjistili vítěze."
 
-#: ../data/games.xml.h:35
+#: ../data/games.xml.h:37
 msgid ""
 "It is calculated by taking the total number of people minus [brothers_only] "
 "people that have brothers only, minus [sisters_only] that have sisters only "
@@ -492,31 +509,27 @@ msgstr ""
 "kteří mají jen bratry, mínus [sisters_only], kteří mají jen sestry a mínus "
 "[both], kteří mají sestry i bratry."
 
-#: ../data/games.xml.h:36
+#: ../data/games.xml.h:38
 msgid "It is the result of the operation [num_a] * [num_b]."
 msgstr "Je to výsledek operace [num_a] . [num_b]."
 
-#: ../data/games.xml.h:37
+#: ../data/games.xml.h:39
 msgid "It is the result of the operation [num_a] + [num_b]."
 msgstr "Je to výsledek operace [num_a] + [num_b]."
 
-#: ../data/games.xml.h:38
+#: ../data/games.xml.h:40
 msgid "It is the result of the operation [num_b] - [num_a]."
 msgstr "Je to výsledek operace [num_b] - [num_a]."
 
-#: ../data/games.xml.h:39
+#: ../data/games.xml.h:41
 msgid "It is the result of the operation [num_b] / [num_a]."
 msgstr "Je to výsledek operace [num_b] : [num_a]."
 
-#: ../data/games.xml.h:40
-#| msgid "It is the result of the operation [num_a] * [num_b]."
+#: ../data/games.xml.h:42
 msgid "It is the result of the operation: ([three] * 3) - ([two] * 2)."
 msgstr "Je to výsledek operace  ([three] . 3) - ([two] . 2)."
 
-#: ../data/games.xml.h:41
-#| msgid ""
-#| "John's father's sister's sister-in-law is also? Do not assume that John "
-#| "has any relative that has not been mentioned."
+#: ../data/games.xml.h:43
 msgid ""
 "John's father's sister's sister-in-law is also? Do not assume that John has "
 "any relative that has not been mentioned. [option_answers]"
@@ -524,10 +537,7 @@ msgstr ""
 "Švagrová sestry Honzova otce je také? Nepředpokládejte, že Honza má nějakého "
 "příbuzného, který nebyl zmíněn. [option_answers]"
 
-#: ../data/games.xml.h:42
-#| msgid ""
-#| "John's mother's brother's brother-in-law is also? Do not assume that John "
-#| "has any relative that has not been mentioned."
+#: ../data/games.xml.h:44
 msgid ""
 "John's mother's brother's brother-in-law is also? Do not assume that John "
 "has any relative that has not been mentioned. [option_answers]"
@@ -535,19 +545,19 @@ msgstr ""
 "Švagr bratra Honzovy matky je také? Nepředpokládejte, že Honza má nějakého "
 "příbuzného, který nebyl zmíněn. [option_answers]"
 
-#: ../data/games.xml.h:43
+#: ../data/games.xml.h:45
 msgid "Lever"
 msgstr "Houpačka"
 
-#: ../data/games.xml.h:44
+#: ../data/games.xml.h:46
 msgid "Multiple number"
 msgstr "Násobky čísla"
 
-#: ../data/games.xml.h:45
+#: ../data/games.xml.h:47
 msgid "Odd number"
 msgstr "Liché číslo"
 
-#: ../data/games.xml.h:46
+#: ../data/games.xml.h:48
 msgid ""
 "On the dartboard below, where you have to hit the darts to add 120 points in "
 "5 throws? Answer using a list of numbers (e.g.: 4, 5, 6, 3, 2)"
@@ -555,7 +565,7 @@ msgstr ""
 "Kam musíte na terči ukázaném níže hodit šipky, abyste získali 120 bodů v 5 "
 "hodech. Odpovězte v podobě řady čísel (např. 4, 5, 6, 3, 2)"
 
-#: ../data/games.xml.h:47
+#: ../data/games.xml.h:49
 msgid ""
 "Out of [people] people, [brothers] have brothers, [sisters] have sisters and "
 "[both] have both. How many people have neither brothers nor sisters?"
@@ -563,15 +573,15 @@ msgstr ""
 "Z [people] lidí má [brothers] bratry, [sisters] má sestry a [both] má bratry "
 "i sestry. Kolik lidí nemá ani bratra ani sestru?"
 
-#: ../data/games.xml.h:48
+#: ../data/games.xml.h:50
 msgid "Palindromic years"
 msgstr "Palindromické roky"
 
-#: ../data/games.xml.h:49
+#: ../data/games.xml.h:51
 msgid "Password"
 msgstr "Heslo"
 
-#: ../data/games.xml.h:50
+#: ../data/games.xml.h:52
 #: ../src/Core/Main/Verbal/AnalogiesMultipleOptions.cs:107
 #: ../src/Core/Main/Verbal/AnalogiesPairOfWordsOptions.cs:122
 #: ../src/Games/Logic/PuzzleFigurePattern.cs:191
@@ -581,17 +591,22 @@ msgstr "Heslo"
 #: ../src/Games/Logic/PuzzleMissingSlice.cs:218
 #: ../src/Games/Logic/PuzzleMostInCommon.cs:314
 #: ../src/Games/Logic/PuzzleNextFigure.cs:166
+#: ../src/Games/Logic/PuzzleOstracism.cs:176
 #: ../src/Games/Logic/PuzzlePredicateLogic.cs:198
 #: ../src/Games/Logic/PuzzleSquareDots.cs:321
 #: ../src/Games/Logic/PuzzleTetris.cs:172
+#: ../src/Games/Calculation/CalculationAverage.cs:185
+#: ../src/Games/Calculation/CalculationCloserFraction.cs:177
+#: ../src/Games/Calculation/CalculationPrimes.cs:152
+#: ../src/Games/Calculation/CalculationProportions.cs:131
 msgid "Possible answers are:"
 msgstr "Možné odpovědi jsou:"
 
-#: ../data/games.xml.h:51
+#: ../data/games.xml.h:53
 msgid "Simple equations"
 msgstr "Jednoduché porovnání"
 
-#: ../data/games.xml.h:52
+#: ../data/games.xml.h:54
 msgid ""
 "Since x is always an even number, multiplying it by 2 always produces an "
 "even number. Adding an even number to an odd number (y) always produces an "
@@ -601,14 +616,11 @@ msgstr ""
 "číslo. Přičtením lichého čísla (y) k tomuto sudému číslo získáme vždy liché "
 "číslo."
 
-#: ../data/games.xml.h:53
+#: ../data/games.xml.h:55
 msgid "Tennis game"
 msgstr "Tenisová hra"
 
-#: ../data/games.xml.h:54
-#| msgid ""
-#| "The average of a list of numbers is the sum of all of the numbers divided "
-#| "by the number of items in the list."
+#: ../data/games.xml.h:56
 msgid ""
 "The average of three numbers is [three]. The average of two of these numbers "
 "is [two]. What is the third number? [option_answers]"
@@ -616,61 +628,53 @@ msgstr ""
 "Průměrná hodnota ze tří čísel je  [three]. Průměrná hodnota ze dvou z těchto "
 "čísel je [two]. Jaké je třetí číslo? [option_answers]"
 
-#: ../data/games.xml.h:55
+#: ../data/games.xml.h:57
+#| msgid ""
+#| "The sister's sister-in-law is John's father's wife, that is, John's "
+#| "mother."
+msgid ""
+"The brother's brother-in-law is John's mother's husband, that is, John's "
+"father."
+msgstr "Bratrův švagr je manželem Honzovy matky, takže je Honzův otec."
+
+#: ../data/games.xml.h:58
 msgid "The heavier truck weights [heavier] and the lighter [lighter]."
 msgstr "Těžší kamión váží [heavier] t a lehčí [lighter] t."
 
-#: ../data/games.xml.h:56
+#: ../data/games.xml.h:59
 msgid ""
 "The sister's sister-in-law is John's father's wife, that is, John's mother."
 msgstr "Sestřina švagrová je ženou Honzova otce, takže je Honzova matka."
 
-#: ../data/games.xml.h:57
-msgid ""
-"The variable p is smaller than x and s is bigger than y. If p is bigger than "
-"s then the condition x &gt; y is true."
-msgstr ""
-"Proměnná p je menší než x a s je větší než y, takže pokud je p větší než s, "
-"je podmínka x &gt; y splněna."
-
-#: ../data/games.xml.h:58
-msgid ""
-"The variable q is bigger than x and y bigger than r. If q is smaller than r "
-"then the condition x &lt; y is true."
-msgstr ""
-"Proměnná q je větší než x a y je větší než r, takže pokud je q menší než r, "
-"je podmínka x &lt; y splněna."
-
-#: ../data/games.xml.h:59
-#| msgid "Odd number"
+#: ../data/games.xml.h:60
 msgid "Third number"
 msgstr "Třetí číslo"
 
-#: ../data/games.xml.h:60
+#: ../data/games.xml.h:61
 msgid "Two trucks"
 msgstr "Dva kamióny"
 
-#: ../data/games.xml.h:61
+#: ../data/games.xml.h:62
 msgid "Warehouse"
 msgstr "Sklad"
 
-#: ../data/games.xml.h:62
+#: ../data/games.xml.h:63
 msgid "What number divided by [num_a] equals [num_b]?"
 msgstr "Které číslo podělené číslem [num_a] je rovno [num_b]?"
 
-#: ../data/games.xml.h:63
+#: ../data/games.xml.h:64
 msgid "What number minus [num_a] equals [num_b]?"
 msgstr "Které číslo mínus [num_a] je rovno [num_b]?"
 
-#: ../data/games.xml.h:64
+#: ../data/games.xml.h:65
 msgid "What number multiplied by [num_a] equals [num_b]?"
 msgstr "Které číslo vynásobené [num_a] je rovno [num_b]?"
 
-#: ../data/games.xml.h:65
+#: ../data/games.xml.h:66
 msgid "What number plus [num_a] equals [num_b]?"
 msgstr "Jaké číslo plus [num_a] se rovná [num_b]?"
 
-#: ../data/games.xml.h:66
+#: ../data/games.xml.h:67
 msgid ""
 "Which two numbers of the list below are both multiple of [num_x] and "
 "[num_y]? [option_answers]"
@@ -678,11 +682,11 @@ msgstr ""
 "V kterém páru čísel z následujícího seznamu jsou obě čísla násobkem [num_x] "
 "a [num_y]? [option_answers]"
 
-#: ../data/games.xml.h:67
+#: ../data/games.xml.h:68
 msgid "You can fit 6 * 5 * [z] * 2 boxes."
 msgstr "Můžete zabalit 6 . 5 . [z] . 2 krabic."
 
-#: ../data/games.xml.h:70
+#: ../data/games.xml.h:71
 #, no-c-format
 msgid ""
 "[female_cars]% ([all_cars] - [males_cars]) of the inhabitants are women and "
@@ -692,132 +696,131 @@ msgstr ""
 "mají auto."
 
 #. Since this a multioption the answer string is set to option | this string, what makes answer_show is not useful here
-#: ../data/games.xml.h:72
+#: ../data/games.xml.h:73
 msgid "[option_a] and [option_b]"
 msgstr "[option_a] a [option_b]"
 
-#: ../data/games.xml.h:73
+#: ../data/games.xml.h:74
 msgid "[option_a] and [option_b] are both multiples of [num_x] and [num_y]."
 msgstr "[option_a] i [option_b] jsou násobky [num_x] a [num_y]."
 
-#: ../data/games.xml.h:74
+#: ../data/games.xml.h:75
 msgid "[option_prefix] (x - y) * 2"
 msgstr "[option_prefix] (x - y) . 2"
 
-#: ../data/games.xml.h:75
+#: ../data/games.xml.h:76
 msgid "[option_prefix] 2x + y"
 msgstr "[option_prefix] 2x + y"
 
-#: ../data/games.xml.h:76
-#| msgid "[option_prefix] p > s"
-msgid "[option_prefix] Cousin"
-msgstr "[option_prefix] sestřenice"
-
 #: ../data/games.xml.h:77
-#| msgid "[option_prefix] p < r"
 msgid "[option_prefix] Has no relation"
 msgstr "[option_prefix] nemají příbuzenský vztah"
 
 #: ../data/games.xml.h:78
-#| msgid "[option_prefix] p < r"
+#| msgid "[option_prefix] Cousin"
+msgid "[option_prefix] His cousin"
+msgstr "[option_prefix] jeho sestřenice"
+
+#: ../data/games.xml.h:79
 msgid "[option_prefix] His father"
 msgstr "[option_prefix] jeho otec"
 
-#: ../data/games.xml.h:79
-#| msgid "[option_prefix] p < r"
+#: ../data/games.xml.h:80
 msgid "[option_prefix] His mother"
 msgstr "[option_prefix] jeho matka"
 
-#: ../data/games.xml.h:80
-#| msgid "[option_prefix] [option_a]%"
-msgid "[option_prefix] Son-in-law"
-msgstr "[option_prefix] zeť"
-
 #: ../data/games.xml.h:81
+#| msgid "[option_prefix] Son-in-law"
+msgid "[option_prefix] His son-in-law"
+msgstr "[option_prefix] jeho zeť"
+
+#: ../data/games.xml.h:82
 msgid "[option_prefix] [answer_a]"
 msgstr "[option_prefix] [answer_a]"
 
-#: ../data/games.xml.h:82
+#: ../data/games.xml.h:83
 msgid "[option_prefix] [answer_b]"
 msgstr "[option_prefix] [answer_b]"
 
-#: ../data/games.xml.h:83
+#: ../data/games.xml.h:84
 msgid "[option_prefix] [answer_c]"
 msgstr "[option_prefix] [answer_c]"
 
-#: ../data/games.xml.h:84
+#: ../data/games.xml.h:85
 msgid "[option_prefix] [answer_d]"
 msgstr "[option_prefix] [answer_d]"
 
-#: ../data/games.xml.h:85
+#: ../data/games.xml.h:86
 msgid "[option_prefix] [option_a] and [option_b]"
 msgstr "[option_prefix] [option_a] a [option_b]"
 
-#: ../data/games.xml.h:86
+#: ../data/games.xml.h:87
 msgid "[option_prefix] [option_a] and [option_c]"
 msgstr "[option_prefix] [option_a] a [option_c]"
 
-#: ../data/games.xml.h:88
+#: ../data/games.xml.h:89
 #, no-c-format
 msgid "[option_prefix] [option_a]%"
 msgstr "[option_prefix] [option_a]%"
 
-#: ../data/games.xml.h:89
+#: ../data/games.xml.h:90
 msgid "[option_prefix] [option_b] and [option_c]"
 msgstr "[option_prefix] [option_b] a [option_c]"
 
-#: ../data/games.xml.h:91
+#: ../data/games.xml.h:92
 #, no-c-format
 msgid "[option_prefix] [option_b]%"
 msgstr "[option_prefix] [option_b]%"
 
-#: ../data/games.xml.h:92
+#: ../data/games.xml.h:93
 msgid "[option_prefix] [option_c] and [option_d]"
 msgstr "[option_prefix] [option_c] a [option_d]"
 
-#: ../data/games.xml.h:94
+#: ../data/games.xml.h:95
 #, no-c-format
 msgid "[option_prefix] [option_c]%"
 msgstr "[option_prefix] [option_c]%"
 
-#: ../data/games.xml.h:96
+#: ../data/games.xml.h:97
 #, no-c-format
 msgid "[option_prefix] [option_d]%"
 msgstr "[option_prefix] [option_d]%"
 
-#: ../data/games.xml.h:97
+#: ../data/games.xml.h:98
 msgid "[option_prefix] p < r"
 msgstr "[option_prefix] p < r"
 
-#: ../data/games.xml.h:98
+#: ../data/games.xml.h:99
 msgid "[option_prefix] p > r"
 msgstr "[option_prefix] p > r"
 
-#: ../data/games.xml.h:99
-msgid "[option_prefix] p > s"
-msgstr "[option_prefix] p > s"
-
 #: ../data/games.xml.h:100
-msgid "[option_prefix] q < r"
-msgstr "[option_prefix] q < r"
-
-#: ../data/games.xml.h:101
 msgid "[option_prefix] q = s"
 msgstr "[option_prefix] q = s"
 
+#: ../data/games.xml.h:101
+#| msgid "[option_prefix] p < r"
+msgid "[option_prefix] r < q"
+msgstr "[option_prefix] r < q"
+
 #: ../data/games.xml.h:102
+#| msgid "[option_prefix] p > r"
+msgid "[option_prefix] s > p"
+msgstr "[option_prefix] s > p"
+
+#: ../data/games.xml.h:103
 msgid "[option_prefix] x * y"
 msgstr "[option_prefix] x . y"
 
-#: ../data/games.xml.h:103
+#: ../data/games.xml.h:104
 msgid "[option_prefix] x * y * 2"
 msgstr "[option_prefix] x . y . 2"
 
-#: ../data/games.xml.h:104
+#: ../data/games.xml.h:105
 msgid "[rslt_a] and [rslt_b]"
 msgstr "[rslt_a] a [rslt_b]"
 
-#: ../data/games.xml.h:105
+#: ../data/games.xml.h:106
 msgid ""
 "[year_start] is a palindromic year as [year_end] is, a gap of 11 years. What "
 "are the next two consecutive palindromic years after [year_end] with the "
@@ -828,19 +831,19 @@ msgstr ""
 "sebou budou následovat po roce [year_end]? Odpovězte pomocí dvou čísel "
 "(např.: [year_start] a [year_end])."
 
-#: ../data/games.xml.h:106
+#: ../data/games.xml.h:107
 msgid "x * [num_a] = [num_b]"
 msgstr "x . [num_a] = [num_b]"
 
-#: ../data/games.xml.h:107
+#: ../data/games.xml.h:108
 msgid "x + [num_a] = [num_b]"
 msgstr "x + [num_a] = [num_b]"
 
-#: ../data/games.xml.h:108
+#: ../data/games.xml.h:109
 msgid "x - [num_a] = [num_b]"
 msgstr "x - [num_a] = [num_b]"
 
-#: ../data/games.xml.h:109
+#: ../data/games.xml.h:110
 msgid "x / [num_a] = [num_b]"
 msgstr "x : [num_a] = [num_b]"
 
@@ -867,6 +870,10 @@ msgstr "Černá plocha"
 #: ../data/themes/themes.xml.h:2
 msgid "Classic"
 msgstr "Klasický"
+
+#: ../data/themes/themes.xml.h:3
+msgid "Notebook"
+msgstr "Poznámkový blok"
 
 #: ../data/verbal_analogies.xml.h:1
 msgid "A car engine that is poorly designed and lacking of sophistication is?"
@@ -924,14 +931,10 @@ msgid "Airline"
 msgstr "aerolinka"
 
 #: ../data/verbal_analogies.xml.h:15
-#| msgid ""
-#| "All the other words have the connotation of occurring far apart in time."
 msgid "All the other words have the connotation of not occurring frequently."
 msgstr "Všechna ostatní slova mají význam nepříliš častého výskytu."
 
 #: ../data/verbal_analogies.xml.h:16
-#| msgid ""
-#| "All the other words have the connotation of occurring far apart in time."
 msgid "All the other words have the meaning of distinguished."
 msgstr "Všechna ostatní slova významově představují něco význačného."
 
@@ -1051,7 +1054,6 @@ msgid "Careless"
 msgstr "lhostejný"
 
 #: ../data/verbal_analogies.xml.h:47
-#| msgid "Related"
 msgid "Celebrated"
 msgstr "renomovaný"
 
@@ -1094,7 +1096,6 @@ msgstr "odsoudit"
 
 #. Translator: As synonymous of 'perplexing'
 #: ../data/verbal_analogies.xml.h:59
-#| msgid "Cousin"
 msgid "Confusing"
 msgstr "zmatený"
 
@@ -1171,7 +1172,6 @@ msgid "Exceptional"
 msgstr "mimořádný"
 
 #: ../data/verbal_analogies.xml.h:78
-#| msgid "mouse"
 msgid "Famous"
 msgstr "famózní"
 
@@ -1289,7 +1289,6 @@ msgid "Insects"
 msgstr "hmyz"
 
 #: ../data/verbal_analogies.xml.h:108
-#| msgid "Disinterest"
 msgid "Interesting"
 msgstr "zajímavý"
 
@@ -1374,207 +1373,207 @@ msgstr "světlo"
 msgid "Liter"
 msgstr "litr"
 
+#: ../data/verbal_analogies.xml.h:129
+msgid "Lizard"
+msgstr "ještěrka"
+
 #. Translator: 'Lock' as verb, like locked with a key
-#: ../data/verbal_analogies.xml.h:130
+#: ../data/verbal_analogies.xml.h:131
 msgid "Lock"
 msgstr "zamknout"
 
-#: ../data/verbal_analogies.xml.h:131
+#: ../data/verbal_analogies.xml.h:132
 msgid "Loner"
 msgstr "samotář"
 
-#: ../data/verbal_analogies.xml.h:132
+#: ../data/verbal_analogies.xml.h:133
 msgid "Lychee"
 msgstr "liči"
 
-#: ../data/verbal_analogies.xml.h:133
+#: ../data/verbal_analogies.xml.h:134
 msgid "Mango"
 msgstr "mango"
 
-#: ../data/verbal_analogies.xml.h:134
+#: ../data/verbal_analogies.xml.h:135
 msgid "Martyr"
 msgstr "mučedník"
 
-#: ../data/verbal_analogies.xml.h:135
+#: ../data/verbal_analogies.xml.h:136
 msgid "Misunderstood"
 msgstr "neuznaný"
 
-#: ../data/verbal_analogies.xml.h:136
+#: ../data/verbal_analogies.xml.h:137
 msgid "Money"
 msgstr "peníze"
 
-#: ../data/verbal_analogies.xml.h:137
+#: ../data/verbal_analogies.xml.h:138
 msgid "Museum"
 msgstr "muzeum"
 
-#: ../data/verbal_analogies.xml.h:138
+#: ../data/verbal_analogies.xml.h:139
 msgid "Oboe"
 msgstr "hoboj"
 
-#: ../data/verbal_analogies.xml.h:139
+#: ../data/verbal_analogies.xml.h:140
 msgid "Obscure"
 msgstr "zamlžit"
 
-#: ../data/verbal_analogies.xml.h:140
+#: ../data/verbal_analogies.xml.h:141
 msgid "Obvious"
 msgstr "očividný"
 
-#: ../data/verbal_analogies.xml.h:141
+#: ../data/verbal_analogies.xml.h:142
 msgid "Occasional"
 msgstr "sporadický"
 
-#: ../data/verbal_analogies.xml.h:142
+#: ../data/verbal_analogies.xml.h:143
 msgid "Offensive"
 msgstr "útočit"
 
-#: ../data/verbal_analogies.xml.h:143
+#: ../data/verbal_analogies.xml.h:144
 msgid "Oligarchy"
 msgstr "oligarchie"
 
-#: ../data/verbal_analogies.xml.h:144
+#: ../data/verbal_analogies.xml.h:145
 msgid "Olive"
 msgstr "oliva"
 
-#: ../data/verbal_analogies.xml.h:145
+#: ../data/verbal_analogies.xml.h:146
 msgid "Onion"
 msgstr "cibule"
 
 #. Translator: 'Open' as verb, like open with a key
-#: ../data/verbal_analogies.xml.h:147
+#: ../data/verbal_analogies.xml.h:148
 msgid "Open"
 msgstr "otevřít"
 
 #. Translators: refers to the fruit
-#: ../data/verbal_analogies.xml.h:149
+#: ../data/verbal_analogies.xml.h:150
 msgid "Orange"
 msgstr "pomeranč"
 
-#: ../data/verbal_analogies.xml.h:150
+#: ../data/verbal_analogies.xml.h:151
 msgid "Ordinary"
 msgstr "ordinérní"
 
-#: ../data/verbal_analogies.xml.h:151
+#: ../data/verbal_analogies.xml.h:152
 msgid "Ostentation"
 msgstr "ignorovat"
 
-#: ../data/verbal_analogies.xml.h:152
+#: ../data/verbal_analogies.xml.h:153
 msgid "Pain"
 msgstr "bolest"
 
-#: ../data/verbal_analogies.xml.h:153
+#: ../data/verbal_analogies.xml.h:154
 msgid "Paleontology"
 msgstr "paleontologie"
 
-#: ../data/verbal_analogies.xml.h:154
+#: ../data/verbal_analogies.xml.h:155
 msgid ""
 "Parallel and longitude go from east-west position and meridian and latitude "
 "go from north-south position."
 msgstr "Rovnoběžky a zeměpisná délka jdou směrem východ-západ a "
 
 #. Translator: Pertaining to a single or specific person or thing
-#: ../data/verbal_analogies.xml.h:156
+#: ../data/verbal_analogies.xml.h:157
 msgid "Particular"
 msgstr "partikulární"
 
-#: ../data/verbal_analogies.xml.h:157
+#: ../data/verbal_analogies.xml.h:158
 msgid "Person expelled from society"
 msgstr "osoba vyloučená ze společnosti"
 
-#: ../data/verbal_analogies.xml.h:158
+#: ../data/verbal_analogies.xml.h:159
 msgid "Photography"
 msgstr "fotografie"
 
-#: ../data/verbal_analogies.xml.h:159
+#: ../data/verbal_analogies.xml.h:160
 msgid "Pioneer"
 msgstr "průkopník"
 
-#: ../data/verbal_analogies.xml.h:160
+#: ../data/verbal_analogies.xml.h:161
 msgid "Pleasure"
 msgstr "potěšení"
 
-#: ../data/verbal_analogies.xml.h:161
+#: ../data/verbal_analogies.xml.h:162
 msgid "Pole"
 msgstr "pól"
 
-#: ../data/verbal_analogies.xml.h:162
+#: ../data/verbal_analogies.xml.h:163
 msgid "Pony / Horse"
 msgstr "poník / kůň"
 
-#: ../data/verbal_analogies.xml.h:163
+#: ../data/verbal_analogies.xml.h:164
 msgid "Portico"
 msgstr "arkáda"
 
-#: ../data/verbal_analogies.xml.h:164
+#: ../data/verbal_analogies.xml.h:165
 msgid "Positivism"
 msgstr "pozitivizmus"
 
-#: ../data/verbal_analogies.xml.h:165
+#: ../data/verbal_analogies.xml.h:166
 msgid "Potato"
 msgstr "brambora"
 
-#: ../data/verbal_analogies.xml.h:166
+#: ../data/verbal_analogies.xml.h:167
 msgid "Printer"
 msgstr "tiskárna"
 
-#: ../data/verbal_analogies.xml.h:167
+#: ../data/verbal_analogies.xml.h:168
 msgid "Property"
 msgstr "vlastnictví"
 
-#: ../data/verbal_analogies.xml.h:168
+#: ../data/verbal_analogies.xml.h:169
 msgid "Psychiatry"
 msgstr "psychiatrie"
 
-#: ../data/verbal_analogies.xml.h:169
+#: ../data/verbal_analogies.xml.h:170
 msgid "Radius"
 msgstr "průměr"
 
-#: ../data/verbal_analogies.xml.h:170
+#: ../data/verbal_analogies.xml.h:171
 msgid "Rare"
 msgstr "unikátní"
 
-#: ../data/verbal_analogies.xml.h:171
+#: ../data/verbal_analogies.xml.h:172
 msgid "Regular"
 msgstr "regulární"
 
-#: ../data/verbal_analogies.xml.h:172
+#: ../data/verbal_analogies.xml.h:173
 msgid "Related"
 msgstr "příbuznost"
 
-#: ../data/verbal_analogies.xml.h:173
+#: ../data/verbal_analogies.xml.h:174
 msgid "Repugnance"
 msgstr "nenávidět"
 
-#: ../data/verbal_analogies.xml.h:174
+#: ../data/verbal_analogies.xml.h:175
 msgid "Restaurant"
 msgstr "restaurace"
 
-#: ../data/verbal_analogies.xml.h:175
+#: ../data/verbal_analogies.xml.h:176
 msgid "Rice"
 msgstr "rýže"
 
-#: ../data/verbal_analogies.xml.h:176
+#: ../data/verbal_analogies.xml.h:177
 msgid "River"
 msgstr "řeka"
 
-#: ../data/verbal_analogies.xml.h:177
+#: ../data/verbal_analogies.xml.h:178
 msgid "Roll"
 msgstr "koulet"
 
-#: ../data/verbal_analogies.xml.h:178
+#: ../data/verbal_analogies.xml.h:179
 msgid "Sad"
 msgstr "truchlivý"
 
-#: ../data/verbal_analogies.xml.h:179
+#: ../data/verbal_analogies.xml.h:180
 msgid "Shame"
 msgstr "zahambit"
 
-#: ../data/verbal_analogies.xml.h:180
+#: ../data/verbal_analogies.xml.h:181
 msgid "Simplistic"
 msgstr "minimalistický"
-
-#: ../data/verbal_analogies.xml.h:181
-msgid "Snake"
-msgstr "had"
 
 #: ../data/verbal_analogies.xml.h:182
 msgid "Sodium"
@@ -1617,7 +1616,6 @@ msgid "Tangent"
 msgstr "tečna"
 
 #: ../data/verbal_analogies.xml.h:192
-#| msgid "Tetris"
 msgid "Tears"
 msgstr "naříkající"
 
@@ -1687,7 +1685,6 @@ msgid "Tripod"
 msgstr "stativ"
 
 #: ../data/verbal_analogies.xml.h:208
-#| msgid "Triangle"
 msgid "Trivial"
 msgstr "triviální"
 
@@ -1761,20 +1758,15 @@ msgid "Which of the following words is closer to the meaning of 'oxymoron'?"
 msgstr "Které z následujících slov je nejbližší významem ke slovu „oxymoron“?"
 
 #: ../data/verbal_analogies.xml.h:228
-#| msgid ""
-#| "Which of the following words is closer to the meaning of 'negligent'?"
 msgid "Which of the following words is closer to the meaning of 'perplexing'?"
 msgstr "Které z následujících slov je nejbližší významem ke slovu „perplex“?"
 
 #: ../data/verbal_analogies.xml.h:229
-#| msgid ""
-#| "Which of the following words is closer to the meaning of 'asceticism'?"
 msgid "Which of the following words is closer to the meaning of 'specific'?"
 msgstr ""
 "Které z následujících slov je nejbližší významem ke slovu „specifický“?"
 
 #: ../data/verbal_analogies.xml.h:230
-#| msgid "Which of the following words is closer to the meaning of 'hedonism'?"
 msgid "Which of the following words is closer to the meaning of 'unhappy'?"
 msgstr "Které z následujících slov je nejbližší významem ke slovu „nešťastný“?"
 
@@ -2501,7 +2493,7 @@ msgid "Disappointing results"
 msgstr "Zklamání"
 
 #: ../src/Core/Main/GameSession.cs:282
-#: ../src/Clients/Classical/Widgets/GameDrawingArea.cs:117
+#: ../src/Clients/Classical/Widgets/GameDrawingArea.cs:122
 msgid "Paused"
 msgstr "Přestávka"
 
@@ -2596,8 +2588,9 @@ msgstr "Zbývající čas"
 #. The number is used as reference when looking for the game solution in the PDF
 #: ../src/Core/Main/PdfExporter.cs:104 ../src/Core/Main/PdfExporter.cs:165
 #, csharp-format
-msgid "Game {0}. {1}"
-msgstr "Hra č. {0}: {1}"
+#| msgid "Game {0}. {1}"
+msgid "Game #{0}. {1}"
+msgstr "Hra č. {0}. {1}"
 
 #: ../src/Core/Main/PdfExporter.cs:121
 #, csharp-format
@@ -2675,7 +2668,6 @@ msgstr "Otázka a odpověď č. {0}"
 #. Translators {0}: list of options (A, B, C)
 #: ../src/Core/Main/Xml/GameXml.cs:219
 #, csharp-format
-#| msgid "Answer {0}"
 msgid "Answer {0}."
 msgstr "Odpovězte {0}."
 
@@ -2713,16 +2705,16 @@ msgstr ""
 "Pouze částečný překlad hry může její hraní značně ztížit. Pokud chcete hrát "
 "raději v angličtině, můžete si tak nastavit v předvolbách aplikace gbrainy."
 
-#: ../src/Clients/Classical/gbrainy.cs:618
+#: ../src/Clients/Classical/gbrainy.cs:621
 #: ../src/Clients/Classical/Widgets/Toolbar.cs:143
 msgid "Pause"
 msgstr "Přestávka"
 
-#: ../src/Clients/Classical/gbrainy.cs:623
+#: ../src/Clients/Classical/gbrainy.cs:626
 msgid "Resume"
 msgstr "Pokračovat"
 
-#: ../src/Clients/Classical/gbrainy.cs:773
+#: ../src/Clients/Classical/gbrainy.cs:776
 #, csharp-format
 msgid "Startup time {0}"
 msgstr "Začněte v bodě {0}"
@@ -2898,11 +2890,11 @@ msgstr[0] "Je sestaven z výsledků {0} posledního zaznamenaného herního seze
 msgstr[1] "Je sestaven z výsledků {0} posledních zaznamenaných herních sezení."
 msgstr[2] "Je sestaven z výsledků {0} posledních zaznamenaných herních sezení."
 
-#: ../src/Clients/Classical/Dialogs/PreferencesDialog.cs:109
+#: ../src/Clients/Classical/Dialogs/PreferencesDialog.cs:111
 msgid "You are about to delete the player's game session history."
 msgstr "Chystáte se smazat historii herních sezení hráče."
 
-#: ../src/Clients/Classical/Dialogs/PreferencesDialog.cs:110
+#: ../src/Clients/Classical/Dialogs/PreferencesDialog.cs:112
 msgid ""
 "If you proceed, you will lose the history of the previous game sessions. Do "
 "you want to continue?"
@@ -2910,7 +2902,7 @@ msgstr ""
 "Pokud budete souhlasit, přijdete o historii předchozích herních sezení. "
 "Chcete pokračovat?"
 
-#: ../src/Clients/Classical/Dialogs/PreferencesDialog.cs:111
+#: ../src/Clients/Classical/Dialogs/PreferencesDialog.cs:113
 msgid "_Delete"
 msgstr "_Smazat"
 
@@ -4519,14 +4511,6 @@ msgstr "Vzorec pro vzdálenost je „vzdálenost = rychlost . čas“."
 #. / - The translated string should not use more characters than the original sentence
 #: ../src/Games/Logic/PuzzleTrains.cs:82
 #, csharp-format
-#| msgid ""
-#| "A train leaves the station traveling at {0} mph. {1} hour later a second "
-#| "train leaves the station traveling in the same direction at {2} mph. How "
-#| "many hours does it take the second train to overtake the first train?"
-#| msgid_plural ""
-#| "A train leaves the station traveling at {0} mph. {1} hours later a second "
-#| "train leaves the station traveling in the same direction at {2} mph. How "
-#| "many hours does it take the second train to overtake the first train?"
 msgid ""
 "A train leaves the station traveling at {0} mph. {1} hour later a second "
 "train leaves the station traveling in the same direction at {2} mph. How "
@@ -5109,7 +5093,6 @@ msgstr ""
 "čísla? Odpovězte {0}, {1}, {2} nebo {3}."
 
 #: ../src/Games/Calculation/CalculationGreatestDivisor.cs:244
-#: ../src/Games/Calculation/CalculationPrimes.cs:152
 msgid "Numbers"
 msgstr "Čísla"
 
@@ -5490,6 +5473,22 @@ msgstr "_Odinstalovat…"
 #: ../src/Clients/Classical/mono-addins-strings.xml.h:35
 msgid "_Unselect All"
 msgstr "_Zrušit výběr"
+
+#~ msgid ""
+#~ "The variable p is smaller than x and s is bigger than y. If p is bigger "
+#~ "than s then the condition x &gt; y is true."
+#~ msgstr ""
+#~ "Proměnná p je menší než x a s je větší než y, takže pokud je p větší než "
+#~ "s, je podmínka x &gt; y splněna."
+
+#~ msgid "[option_prefix] p > s"
+#~ msgstr "[option_prefix] p > s"
+
+#~ msgid "[option_prefix] q < r"
+#~ msgstr "[option_prefix] q < r"
+
+#~ msgid "Snake"
+#~ msgstr "had"
 
 #~ msgid "Has no relation"
 #~ msgstr "nejsou příbuzní"
