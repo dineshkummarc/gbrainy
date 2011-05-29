@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gbrainy master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gbrainy&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2011-05-21 07:32+0000\n"
-"PO-Revision-Date: 2011-05-22 10:21+0100\n"
+"POT-Creation-Date: 2011-05-27 08:38+0000\n"
+"PO-Revision-Date: 2011-05-28 10:46+0100\n"
 "Last-Translator: Andrej Žnidaršič <andrej.znidarsic@gmail.com>\n"
 "Language-Team: Slovenian <gnome-si@googlegroups.com>\n"
 "Language: sl\n"
@@ -94,7 +94,7 @@ msgstr[2] "V svoji banki imate shranjeni [money] denarni enoti z 10% letno obres
 msgstr[3] "V svoji banki imate shranjene [money] denarne enote z 10% letno obrestno mero. Koliko denarja boste imeli po 2 letih?"
 
 #: ../tools/GameXmlGetString.cs:65
-#: ../data/games.xml.h:31
+#: ../data/games.xml.h:33
 msgid "In a horse race there are people and horses. You count [eyes] eye and [legs] leg. How many horses are present?"
 msgid_plural "In a horse race there are people and horses. You count [eyes] eyes and [legs] legs. How many horses are present?"
 msgstr[0] "Na konjski dirki so ljudje in konji. Našteti je mogoče [eyes] oči in [legs] nog. Koliko je konj na dirki?"
@@ -127,7 +127,7 @@ msgstr[2] "Janez za čiščenje skladišča potrebuje [john_time] uri, njegov pr
 msgstr[3] "Janez za čiščenje skladišča potrebuje [john_time] ure, njegov prijatelj pa porabi dvakrat več časa. Koliko časa bi trajalo čiščenje skladišča, če bi delala skupaj? [option_answers]"
 
 #: ../tools/GameXmlGetString.cs:81
-#: ../data/games.xml.h:68
+#: ../data/games.xml.h:69
 msgid "You have two trucks that have a total weight of [add] unit. If the lighter truck weights 15 units less that half of the weight of the heavier truck, what is the weight of the lighter truck? [option_answers]"
 msgid_plural "You have two trucks that have a total weight of [add] units. If the lighter truck weights 15 units less that half of the weight of the heavier truck, what is the weight of the lighter truck? [option_answers]"
 msgstr[0] "Imate dva tovornjaka, ki imata skupno maso [add] enot. Koliko tehta lažji tovornjak, če tehta 15 enot manj kot polovica težjega tovornjaka? [option_answers]"
@@ -255,76 +255,84 @@ msgstr "p &lt; x &lt; q in r &lt; y &lt; s. Katera od naslednjih možnosti ustre
 msgid "If p &lt; x &lt; q and r &lt; y &lt; s. Which of the following options makes x &lt; y true? [option_answers]"
 msgstr "p &lt; x &lt; q in r &lt; y &lt; s. Katera od naslednjih možnosti ustreza x &lt; y? [option_answers]"
 
-#: ../data/games.xml.h:33
+#: ../data/games.xml.h:31
+msgid "If the variable r is smaller than q then the condition x &gt; y is always true."
+msgstr "Če je spremenljivka r manjša kot q, potem je pogoju  x &gt; y vedno zadoščeno."
+
+#: ../data/games.xml.h:32
+msgid "If the variable s is bigger than p then the condition x &lt; y is always true."
+msgstr "Če je spremenljivka s večja kot p potem je pogoju x  &lt; y vedno zadoščeno."
+
+#: ../data/games.xml.h:35
 #, no-c-format
 msgid "In a small town, [all_cars]% of the inhabitants have a car and [males_cars]% have a car and are males. What percentage of the population are females and have a car? [option_answers]"
 msgstr "V majhnem mestu ima [all_cars]% prebivalcev avto od tega je [males_cars]% moških. Kolikšen odstotek od skupnih prebivalcev so ženske z avtomobili? [option_answers]"
 
-#: ../data/games.xml.h:34
+#: ../data/games.xml.h:36
 msgid "In every match you eliminate one player, you need the total number of games minus 1 to find out the winner."
 msgstr "V vsaki tekmi je izločen en igralec. Za določitev zmagovalca potrebujete celotno število igralcev minus 1."
 
-#: ../data/games.xml.h:35
+#: ../data/games.xml.h:37
 msgid "It is calculated by taking the total number of people minus [brothers_only] people that have brothers only, minus [sisters_only] that have sisters only and minus [both] that have sisters and brothers."
 msgstr "Izračunate ga tako da od števila vseh ljudi odštejete [brothers_only] ljudji, ki imajo le brate, [sisters_only], ki imajo le sestre in [both], ki imajo brate in sestre."
 
-#: ../data/games.xml.h:36
+#: ../data/games.xml.h:38
 msgid "It is the result of the operation [num_a] * [num_b]."
 msgstr "Je rezultat izračuna [num_a] * [num_b]."
 
-#: ../data/games.xml.h:37
+#: ../data/games.xml.h:39
 msgid "It is the result of the operation [num_a] + [num_b]."
 msgstr "Je rezultat izračuna [num_a] + [num_b]."
 
-#: ../data/games.xml.h:38
+#: ../data/games.xml.h:40
 msgid "It is the result of the operation [num_b] - [num_a]."
 msgstr "Je rezultat izračuna [num_b] - [num_a]."
 
-#: ../data/games.xml.h:39
+#: ../data/games.xml.h:41
 msgid "It is the result of the operation [num_b] / [num_a]."
 msgstr "Je rezultat izračuna [num_b] / [num_a]."
 
-#: ../data/games.xml.h:40
+#: ../data/games.xml.h:42
 msgid "It is the result of the operation: ([three] * 3) - ([two] * 2)."
 msgstr "Je rezultat izračuna ([three] * 3) - ([two] * 2)."
 
-#: ../data/games.xml.h:41
+#: ../data/games.xml.h:43
 msgid "John's father's sister's sister-in-law is also? Do not assume that John has any relative that has not been mentioned. [option_answers]"
 msgstr "Svakinja sestre Janezovega očeta je tudi? Predpostavljajte da ima Janez samo omenjene sorodnike. [option_answers]"
 
-#: ../data/games.xml.h:42
+#: ../data/games.xml.h:44
 msgid "John's mother's brother's brother-in-law is also? Do not assume that John has any relative that has not been mentioned. [option_answers]"
 msgstr "Zet brata Janezove matere je tudi? Predpostavljajte, da ima Janez samo omenjene sorodnike. [option_answers]"
 
-#: ../data/games.xml.h:43
+#: ../data/games.xml.h:45
 msgid "Lever"
 msgstr "Ročica"
 
-#: ../data/games.xml.h:44
+#: ../data/games.xml.h:46
 msgid "Multiple number"
 msgstr "Večkratna števila"
 
-#: ../data/games.xml.h:45
+#: ../data/games.xml.h:47
 msgid "Odd number"
 msgstr "Liho število"
 
-#: ../data/games.xml.h:46
+#: ../data/games.xml.h:48
 msgid "On the dartboard below, where you have to hit the darts to add 120 points in 5 throws? Answer using a list of numbers (e.g.: 4, 5, 6, 3, 2)"
 msgstr "Kam morate zadeti tarčo za pikado spodaj, da v 5 metih dobite 120 točk? Odgovorite z uporabo seznama številk (na primer 4, 5, 6, 3, 2)"
 
-#: ../data/games.xml.h:47
+#: ../data/games.xml.h:49
 msgid "Out of [people] people, [brothers] have brothers, [sisters] have sisters and [both] have both. How many people have neither brothers nor sisters?"
 msgstr "Od [people] ljudi, jih ima [brothers] brate, [sisters] ima sestre in [both] imajo oboje. Koliko ljudi nima niti bratov niti sester?"
 
-#: ../data/games.xml.h:48
+#: ../data/games.xml.h:50
 msgid "Palindromic years"
 msgstr "Palindromska leta"
 
-#: ../data/games.xml.h:49
+#: ../data/games.xml.h:51
 msgid "Password"
 msgstr "Geslo"
 
-#: ../data/games.xml.h:50
+#: ../data/games.xml.h:52
 #: ../src/Core/Main/Verbal/AnalogiesMultipleOptions.cs:107
 #: ../src/Core/Main/Verbal/AnalogiesPairOfWordsOptions.cs:122
 #: ../src/Games/Logic/PuzzleFigurePattern.cs:191
@@ -334,223 +342,224 @@ msgstr "Geslo"
 #: ../src/Games/Logic/PuzzleMissingSlice.cs:218
 #: ../src/Games/Logic/PuzzleMostInCommon.cs:314
 #: ../src/Games/Logic/PuzzleNextFigure.cs:166
+#: ../src/Games/Logic/PuzzleOstracism.cs:176
 #: ../src/Games/Logic/PuzzlePredicateLogic.cs:198
 #: ../src/Games/Logic/PuzzleSquareDots.cs:321
 #: ../src/Games/Logic/PuzzleTetris.cs:172
+#: ../src/Games/Calculation/CalculationAverage.cs:185
+#: ../src/Games/Calculation/CalculationCloserFraction.cs:177
+#: ../src/Games/Calculation/CalculationPrimes.cs:152
+#: ../src/Games/Calculation/CalculationProportions.cs:131
 msgid "Possible answers are:"
 msgstr "Mogoči odgovori so:"
 
-#: ../data/games.xml.h:51
+#: ../data/games.xml.h:53
 msgid "Simple equations"
 msgstr "Enostavne enačbe"
 
-#: ../data/games.xml.h:52
+#: ../data/games.xml.h:54
 msgid "Since x is always an even number, multiplying it by 2 always produces an even number. Adding an even number to an odd number (y) always produces an odd number."
 msgstr "Ker je x vedno sodo število, množenje z 2 vedno proizvede sodo število. Dodajanje sodega števila lihemu številu (y) vedno proizvede liho število."
 
-#: ../data/games.xml.h:53
+#: ../data/games.xml.h:55
 msgid "Tennis game"
 msgstr "Igra tenisa"
 
-#: ../data/games.xml.h:54
+#: ../data/games.xml.h:56
 msgid "The average of three numbers is [three]. The average of two of these numbers is [two]. What is the third number? [option_answers]"
 msgstr "Povprečje treh števil je [three]. Povprečje dveh od teh števil je [two]. Katero je tretje število? [option_answers]"
 
-#: ../data/games.xml.h:55
+#: ../data/games.xml.h:57
+msgid "The brother's brother-in-law is John's mother's husband, that is, John's father."
+msgstr "Bratov svak je mož Janezove matere, to je Janezov oče."
+
+#: ../data/games.xml.h:58
 msgid "The heavier truck weights [heavier] and the lighter [lighter]."
 msgstr "Težji tovornjak ima maso [heavier], lažji pa [lighter]."
 
-#: ../data/games.xml.h:56
+#: ../data/games.xml.h:59
 msgid "The sister's sister-in-law is John's father's wife, that is, John's mother."
 msgstr "Sestrina svakinja je mati Janezovega očeta, torej Janezova mati."
 
-#: ../data/games.xml.h:57
-msgid "The variable p is smaller than x and s is bigger than y. If p is bigger than s then the condition x &gt; y is true."
-msgstr "Spremenljivka p je manjša kot x in spremenljivka s je večja kot y. Če je p večji kot s, potem je pogoju  x &gt; y zadoščeno."
-
-#: ../data/games.xml.h:58
-msgid "The variable q is bigger than x and y bigger than r. If q is smaller than r then the condition x &lt; y is true."
-msgstr "Spremenljivka q je večja kot x in spremenljivka y je večja kot r. Če je q večji od r potem je pogoju x  &lt; y zadoščeno."
-
-#: ../data/games.xml.h:59
+#: ../data/games.xml.h:60
 msgid "Third number"
 msgstr "Tretje število"
 
-#: ../data/games.xml.h:60
+#: ../data/games.xml.h:61
 msgid "Two trucks"
 msgstr "Dva tovornjaka"
 
-#: ../data/games.xml.h:61
+#: ../data/games.xml.h:62
 msgid "Warehouse"
 msgstr "Skladišče"
 
-#: ../data/games.xml.h:62
+#: ../data/games.xml.h:63
 msgid "What number divided by [num_a] equals [num_b]?"
 msgstr "Katero število je potrebno deliti z [num_a], da dobimo [num_b]?"
 
-#: ../data/games.xml.h:63
+#: ../data/games.xml.h:64
 msgid "What number minus [num_a] equals [num_b]?"
 msgstr "Kateremu številu je treba odšteti [num_a], da dobimo [num_b]?"
 
-#: ../data/games.xml.h:64
+#: ../data/games.xml.h:65
 msgid "What number multiplied by [num_a] equals [num_b]?"
 msgstr "Katero število je treba pomnožiti z [num_a], da dobimo [num_b]?"
 
-#: ../data/games.xml.h:65
+#: ../data/games.xml.h:66
 msgid "What number plus [num_a] equals [num_b]?"
 msgstr "Katero število je potrebno dodati [num_a] da dobimo [num_b]?"
 
-#: ../data/games.xml.h:66
+#: ../data/games.xml.h:67
 msgid "Which two numbers of the list below are both multiple of [num_x] and [num_y]? [option_answers]"
 msgstr "Kateri par števil na seznamu spodaj je večkratnik tako [num_x] in [num_y]? [option_answers]"
 
-#: ../data/games.xml.h:67
+#: ../data/games.xml.h:68
 msgid "You can fit 6 * 5 * [z] * 2 boxes."
 msgstr "Spravite lahko 6 * 5 * [z] * 2 škatli."
 
-#: ../data/games.xml.h:70
+#: ../data/games.xml.h:71
 #, no-c-format
 msgid "[female_cars]% ([all_cars] - [males_cars]) of the inhabitants are women and have a car."
 msgstr "[female_cars]% ([all_cars] - [males_cars]) prebivalcev so ženske, ki imajo avtomobile."
 
 #. Since this a multioption the answer string is set to option | this string, what makes answer_show is not useful here
-#: ../data/games.xml.h:72
+#: ../data/games.xml.h:73
 msgid "[option_a] and [option_b]"
 msgstr "[option_a] in [option_b]"
 
-#: ../data/games.xml.h:73
+#: ../data/games.xml.h:74
 msgid "[option_a] and [option_b] are both multiples of [num_x] and [num_y]."
 msgstr "[option_a] in [option_b] sta oba večkratnika [num_x] in [num_y]."
 
-#: ../data/games.xml.h:74
+#: ../data/games.xml.h:75
 msgid "[option_prefix] (x - y) * 2"
 msgstr "[option_prefix] (x - y) * 2"
 
-#: ../data/games.xml.h:75
+#: ../data/games.xml.h:76
 msgid "[option_prefix] 2x + y"
 msgstr "[option_prefix] 2x + y"
-
-#: ../data/games.xml.h:76
-msgid "[option_prefix] Cousin"
-msgstr "[option_prefix] bratranec"
 
 #: ../data/games.xml.h:77
 msgid "[option_prefix] Has no relation"
 msgstr "[option_prefix] nima razmerja"
 
 #: ../data/games.xml.h:78
+msgid "[option_prefix] His cousin"
+msgstr "[option_prefix] njegov bratranec"
+
+#: ../data/games.xml.h:79
 msgid "[option_prefix] His father"
 msgstr "[option_prefix] njegov oče"
 
-#: ../data/games.xml.h:79
+#: ../data/games.xml.h:80
 msgid "[option_prefix] His mother"
 msgstr "[option_prefix] njegova mati"
 
-#: ../data/games.xml.h:80
-msgid "[option_prefix] Son-in-law"
-msgstr "[option_prefix] zet"
-
 #: ../data/games.xml.h:81
+msgid "[option_prefix] His son-in-law"
+msgstr "[option_prefix] njegov zet"
+
+#: ../data/games.xml.h:82
 msgid "[option_prefix] [answer_a]"
 msgstr "[option_prefix] [answer_a]"
 
-#: ../data/games.xml.h:82
+#: ../data/games.xml.h:83
 msgid "[option_prefix] [answer_b]"
 msgstr "[option_prefix] [answer_b]"
 
-#: ../data/games.xml.h:83
+#: ../data/games.xml.h:84
 msgid "[option_prefix] [answer_c]"
 msgstr "[option_prefix] [answer_c]"
 
-#: ../data/games.xml.h:84
+#: ../data/games.xml.h:85
 msgid "[option_prefix] [answer_d]"
 msgstr "[option_prefix] [answer_d]"
 
-#: ../data/games.xml.h:85
+#: ../data/games.xml.h:86
 msgid "[option_prefix] [option_a] and [option_b]"
 msgstr "[option_prefix] [option_a] in [option_b]"
 
-#: ../data/games.xml.h:86
+#: ../data/games.xml.h:87
 msgid "[option_prefix] [option_a] and [option_c]"
 msgstr "[option_prefix] [option_a] in [option_c]"
 
-#: ../data/games.xml.h:88
+#: ../data/games.xml.h:89
 #, no-c-format
 msgid "[option_prefix] [option_a]%"
 msgstr "[option_prefix] [option_a]%"
 
-#: ../data/games.xml.h:89
+#: ../data/games.xml.h:90
 msgid "[option_prefix] [option_b] and [option_c]"
 msgstr "[option_prefix] [option_b] in [option_c]"
 
-#: ../data/games.xml.h:91
+#: ../data/games.xml.h:92
 #, no-c-format
 msgid "[option_prefix] [option_b]%"
 msgstr "[option_prefix] [option_b]%"
 
-#: ../data/games.xml.h:92
+#: ../data/games.xml.h:93
 msgid "[option_prefix] [option_c] and [option_d]"
 msgstr "[option_prefix] [option_c] in [option_d]"
 
-#: ../data/games.xml.h:94
+#: ../data/games.xml.h:95
 #, no-c-format
 msgid "[option_prefix] [option_c]%"
 msgstr "[option_prefix] [option_c]%"
 
-#: ../data/games.xml.h:96
+#: ../data/games.xml.h:97
 #, no-c-format
 msgid "[option_prefix] [option_d]%"
 msgstr "[option_prefix] [option_d]%"
 
-#: ../data/games.xml.h:97
+#: ../data/games.xml.h:98
 msgid "[option_prefix] p < r"
 msgstr "[option_prefix] p < r"
 
-#: ../data/games.xml.h:98
+#: ../data/games.xml.h:99
 msgid "[option_prefix] p > r"
 msgstr "[option_prefix] p > r"
 
-#: ../data/games.xml.h:99
-msgid "[option_prefix] p > s"
-msgstr "[option_prefix] p > s"
-
 #: ../data/games.xml.h:100
-msgid "[option_prefix] q < r"
-msgstr "[option_prefix] q < r"
-
-#: ../data/games.xml.h:101
 msgid "[option_prefix] q = s"
 msgstr "[option_prefix] q = s"
 
+#: ../data/games.xml.h:101
+msgid "[option_prefix] r < q"
+msgstr "[option_prefix] r < q"
+
 #: ../data/games.xml.h:102
+msgid "[option_prefix] s > p"
+msgstr "[option_prefix] s > p"
+
+#: ../data/games.xml.h:103
 msgid "[option_prefix] x * y"
 msgstr "[option_prefix] x * y"
 
-#: ../data/games.xml.h:103
+#: ../data/games.xml.h:104
 msgid "[option_prefix] x * y * 2"
 msgstr "[option_prefix] x * y * 2"
 
-#: ../data/games.xml.h:104
+#: ../data/games.xml.h:105
 msgid "[rslt_a] and [rslt_b]"
 msgstr "[rslt_a] in [rslt_b]"
 
-#: ../data/games.xml.h:105
+#: ../data/games.xml.h:106
 msgid "[year_start] is a palindromic year as [year_end] is, a gap of 11 years. What are the next two consecutive palindromic years after [year_end] with the same gap? Answer using two numbers (e.g.: [year_start] and [year_end])."
 msgstr "[year_start] je bilo palindromsko leto, tako kot je bilo [year_end] 11 let kasneje. Kateri dve leti sta naslednji zaporedni palindromski leti po letu [year_end] z enako razliko med njima kot prejšnji dve leti? Odgovorite z dvema številoma (na primer: [year_start] in [year_end])."
 
-#: ../data/games.xml.h:106
+#: ../data/games.xml.h:107
 msgid "x * [num_a] = [num_b]"
 msgstr "x * [num_a] = [num_b]"
 
-#: ../data/games.xml.h:107
+#: ../data/games.xml.h:108
 msgid "x + [num_a] = [num_b]"
 msgstr "x + [num_a] = [num_b]"
 
-#: ../data/games.xml.h:108
+#: ../data/games.xml.h:109
 msgid "x - [num_a] = [num_b]"
 msgstr "x - [num_a] = [num_b]"
 
-#: ../data/games.xml.h:109
+#: ../data/games.xml.h:110
 msgid "x / [num_a] = [num_b]"
 msgstr "x / [num_a] = [num_b]"
 
@@ -574,6 +583,10 @@ msgstr "Tabla"
 #: ../data/themes/themes.xml.h:2
 msgid "Classic"
 msgstr "Običajno"
+
+#: ../data/themes/themes.xml.h:3
+msgid "Notebook"
+msgstr "Beležnica"
 
 #: ../data/verbal_analogies.xml.h:1
 msgid "A car engine that is poorly designed and lacking of sophistication is?"
@@ -2149,7 +2162,7 @@ msgid "Disappointing results"
 msgstr "Obupni rezultati"
 
 #: ../src/Core/Main/GameSession.cs:282
-#: ../src/Clients/Classical/Widgets/GameDrawingArea.cs:123
+#: ../src/Clients/Classical/Widgets/GameDrawingArea.cs:122
 msgid "Paused"
 msgstr "V premoru"
 
@@ -2223,8 +2236,8 @@ msgstr "Preostali čas"
 #: ../src/Core/Main/PdfExporter.cs:104
 #: ../src/Core/Main/PdfExporter.cs:165
 #, csharp-format
-msgid "Game {0}. {1}"
-msgstr "Igra {0}. {1}"
+msgid "Game #{0}. {1}"
+msgstr "Igra št. {0}. {1}"
 
 #: ../src/Core/Main/PdfExporter.cs:121
 #, csharp-format
@@ -4161,7 +4174,6 @@ msgid "Which of the possible divisors is the greatest that divides all numbers? 
 msgstr "Kateri od mogočih deliteljev je največji, ki deli vsa števila? Odgovorite {0}, {1}, {2} ali {3}."
 
 #: ../src/Games/Calculation/CalculationGreatestDivisor.cs:244
-#: ../src/Games/Calculation/CalculationPrimes.cs:152
 msgid "Numbers"
 msgstr "Števila"
 
@@ -4506,25 +4518,29 @@ msgstr "_Odstrani ..."
 msgid "_Unselect All"
 msgstr "_Prekliči izbor vsega"
 
+#~ msgid ""
+#~ "The variable p is smaller than x and s is bigger than y. If p is bigger "
+#~ "than s then the condition x &gt; y is true."
+#~ msgstr ""
+#~ "Spremenljivka p je manjša kot x in spremenljivka s je večja kot y. Če je "
+#~ "p večji kot s, potem je pogoju  x &gt; y zadoščeno."
+#~ msgid "[option_prefix] p > s"
+#~ msgstr "[option_prefix] p > s"
+#~ msgid "[option_prefix] q < r"
+#~ msgstr "[option_prefix] q < r"
 #~ msgid "Has no relation"
 #~ msgstr "Nima razmerja"
-
 #~ msgid "Snake"
 #~ msgstr "Kača"
-
 #~ msgid "Son-in-law"
 #~ msgstr "Zet"
-
 #~ msgid "{0}, "
 #~ msgstr "{0}, "
-
 #~ msgid "{0}."
 #~ msgstr "{0}."
-
 #~ msgid ""
 #~ "[ago] year ago, John's age minus [ago] was equal to [proportion] times "
 #~ "his son's age minus [ago]."
-
 #~ msgid_plural ""
 #~ "[ago] years ago, John's age minus [ago] was equal to [proportion] times "
 #~ "his son's age minus [ago]."
@@ -4536,120 +4552,86 @@ msgstr "_Prekliči izbor vsega"
 #~ "[ago] leti nazaj, je bil Janez star [proportion] krat več kot njegov sin. "
 #~ msgstr[3] ""
 #~ "[ago] leta nazaj, je bil Janez star [proportion] krat več kot njegov sin. "
-
 #~ msgid "There is [men] person and [horses] horse."
-
 #~ msgid_plural "There are [men] people and [horses] horses."
 #~ msgstr[0] "Na dirki je [men] ljudi in [horses] konj."
 #~ msgstr[1] "Na dirki je [men] človek in [horses] konj."
 #~ msgstr[2] "Na dirki je [men] človeka in [horses] konj."
 #~ msgstr[3] "Na dirki so [men] ljudje in [horses] konji."
-
 #~ msgid "There are [men] people and [horses] horses."
 #~ msgstr "Na dirki je [men] ljudi in [horses] konj."
-
 #~ msgid ""
 #~ "What is the next logical sequence of objects in the last column? See "
 #~ "below the convention when giving the answer."
 #~ msgstr ""
 #~ "Kaj je naslednje logično zaporedje predmetov v zadnjem stolpcu? Oglejte "
 #~ "si dogovor za podajanje odgovora spodaj."
-
 #~ msgid "{0} ->"
 #~ msgstr "{0} ->"
-
 #~ msgid "Convention when giving the answer is:"
 #~ msgstr "Dogovor pri podajanju odgovorov je:"
-
 #~ msgid "E.g: {0}{1}{2} (pentagon, triangle, circle)"
 #~ msgstr "Na primer: {0}{1}{2} (petkotnik, trikotnik, krog)"
-
 #~ msgid "Matrix groups"
 #~ msgstr "Matrične skupine"
-
 #~ msgid "Matrix numbers"
 #~ msgstr "Matrična števila"
-
 #~ msgid "[option_prefix] q > s"
 #~ msgstr "[option_prefix] q > s"
-
 #~ msgid ""
 #~ "Individually, the present costs one euro more to purchase than to wrap."
 #~ msgstr "Nakup posameznega darila stane en evro več kot zavijanje."
-
 #~ msgid ""
 #~ "The number X is multiple of [num_x] and the number Y of [num_y]. The "
 #~ "product of both numbers (X * Y) is then multiple of? [option_answers]"
 #~ msgstr ""
 #~ "Število X je večkratnik [num_x] in število Y večkratnik [num_y]. Produkt "
 #~ "obeh števil  (X * Y) je nato večkratnik števila? [option_answers]"
-
 #~ msgid "burst | pop"
 #~ msgstr "počiti | razpočiti"
-
 #~ msgid "turn"
 #~ msgstr "zavrteti"
-
 #~ msgid "theatre | theater"
 #~ msgstr "gledališče | teater"
-
 #~ msgid "Enabled"
 #~ msgstr "Omogočeno"
-
 #~ msgid "Bagpipes"
 #~ msgstr "Dude"
-
 #~ msgid "Every triangle counts as 1, each circle as 2 and each square as 3."
 #~ msgstr "Vsak trikotnik šteje kot 1, krog kot 2 in vsak kvadrat kot 3."
-
 #~ msgid "Horse / Pony"
 #~ msgstr "Konj / Poni"
-
 #~ msgid ""
 #~ "The numbers in the figure reflect the different areas covered by each one "
 #~ "of the sheets."
 #~ msgstr "Števila v sliki kažejo različna področja, ki jih pokriva vsak list."
-
 #~ msgid "Icon"
 #~ msgstr "Ikona"
-
 #~ msgid "Innovator"
 #~ msgstr "Izmulitelj"
-
 #~ msgid "Number of games per page:"
 #~ msgstr "Število iger na stran:"
-
 #~ msgid ""
 #~ "What is the letter of the figure that represents the next logical figure "
 #~ "in the sequence? Answer {0}, {1} or {2}."
 #~ msgstr ""
 #~ "Katera slika predstavlja naslednjo logično sliko v zaporedju? Odgovorite "
 #~ "{0}, {1} ali {2}."
-
 #~ msgid "[answer_a], [answer_b], [answer_c], [answer_d], [answer_e]"
 #~ msgstr "[answer_a], [answer_b], [answer_c], [answer_d], [answer_e]"
-
 #~ msgid "Meter"
 #~ msgstr "Meter"
-
-#~ msgid "book"
-#~ msgstr "knjiga"
-
 #~ msgid "win"
 #~ msgstr "zmaga"
-
 #~ msgid ""
 #~ "Given the relationship between the words '{0}', which of the possible "
 #~ "answers has the closest in relationship to the given pair? Answer {1}."
 #~ msgstr ""
 #~ "Kateri odgovor je najbolj povezan s parom besed '{0}'? Odgovorite {1}."
-
 #~ msgid "Based on ideas by Terry Stickels, MENSA books and Jordi Mas."
 #~ msgstr "Osnovana na idejah Terry-a Stickels-a, knjigah MENSA in Jordi Mas."
-
 #~ msgid "wild"
 #~ msgstr "divji"
-
 #~ msgid ""
 #~ "Usage: gbrainy [options]\n"
 #~ "  --version\t\t\tPrint version information.\n"
@@ -4668,3 +4650,4 @@ msgstr "_Prekliči izbor vsega"
 #~ "meri\n"
 #~ " --norandom \t\t\tSeznam iger po meri ne bo naključen.\n"
 #~ " --versions \t\tPokaže odvisnosti\n"
+
