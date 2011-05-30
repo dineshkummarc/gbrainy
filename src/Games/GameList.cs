@@ -39,7 +39,7 @@ namespace gbrainy.Games
 			typeof (PuzzleCoverPercentage),
 			typeof (PuzzleNumericSequence),
 			typeof (PuzzleSquaresAndLetters),
-			typeof (PuzzleSquareDots),
+			typeof (PuzzleGridDots),
 			typeof (PuzzleNumericRelation),
 			typeof (PuzzleNextFigure),
 			typeof (PuzzleSquareSheets),

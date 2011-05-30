@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2007 Jordi Mas i Hernàndez <jmas@softcatala.org>
+ * Copyright (C) 2007-2011 Jordi Mas i Hernàndez <jmas@softcatala.org>
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License as
@@ -26,7 +26,7 @@ using gbrainy.Core.Services;
 
 namespace gbrainy.Games.Logic
 {
-	public class PuzzleSquareDots : Game
+	public class PuzzleGridDots : Game
 	{
 		const double figure_size = 0.25;
 		const int lines = 6;
@@ -36,6 +36,7 @@ namespace gbrainy.Games.Logic
 		static bool O = false;
 		const double space_figures = 0.05;
 		ArrayListIndicesRandom possible_answers;
+		int puzzle_index;
 
 		bool [] [] puzzles = new bool [] []
 		{
@@ -210,13 +211,31 @@ namespace gbrainy.Games.Logic
 				Answer.GetMultiOption (0), Answer.GetMultiOption (1), Answer.GetMultiOption (2)));}
 		}
 
+
+		public override string Rationale {
+			get {
+				switch (puzzle_index) {
+				case 0:
+					return ServiceLocator.Instance.GetService <ITranslations> ().GetString
+					("From the top-left figure, the top-left circle moves down, the bottom-left circle moves up, the bottom-right moves diagonally up-right and the top-right moves diagonally down-right.");
+				case 2:
+					return ServiceLocator.Instance.GetService <ITranslations> ().GetString
+					("From the top-left figure, the circles move two positions in the direction of the first element and turn counterclockwise 90\u00b0 degrees left and move one position.");
+				case 1: // TODO
+				default:
+					return string.Empty;
+				}
+			}
+		}
+
 		protected override void Initialize ()
 		{
 			Answer.CheckAttributes |= GameAnswerCheckAttributes.MultiOption | GameAnswerCheckAttributes.IgnoreSpaces;
 			possible_answers = new ArrayListIndicesRandom (3);
 			possible_answers.Initialize ();
 
-			puzzle = puzzles [random.Next (puzzles.Length)];
+			puzzle_index = random.Next (puzzles.Length);
+			puzzle = puzzles [puzzle_index];
 
 			DrawableArea drawable_area;
 			HorizontalContainer container = new HorizontalContainer (0.05, 0.5, 0.9, figure_size + 0.1);
@@ -285,6 +304,7 @@ namespace gbrainy.Games.Logic
 						continue;
 
 					gr.Arc (pos_x + (square_size * column), pos_y, radius_square, 0, 2 * Math.PI);
+					gr.Fill ();
 					gr.Stroke ();
 				}
 				pos_y += square_size;

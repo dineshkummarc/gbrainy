@@ -39,7 +39,7 @@ CSDISTFILES =  \
 		$(srcdir)/Logic/PuzzlePeopleTable.cs			\
 		$(srcdir)/Logic/PuzzlePercentage.cs			\
 		$(srcdir)/Logic/PuzzleQuadrilaterals.cs			\
-		$(srcdir)/Logic/PuzzleSquareDots.cs			\
+		$(srcdir)/Logic/PuzzleGridDots.cs			\
 		$(srcdir)/Logic/PuzzleSquaresAndLetters.cs		\
 		$(srcdir)/Logic/PuzzleSquares.cs				\
 		$(srcdir)/Logic/PuzzleSquareSheets.cs			\
