@@ -177,7 +177,6 @@ namespace gbrainy.Clients.Classical.Widgets
 			if (UseSolutionArea == false || String.IsNullOrEmpty (Solution) == true)
 				return;
 
-			const double box_margin = 0.00;
 			double box_height_scaled = solution_high / (double) height;
 
 			cr.Save ();
