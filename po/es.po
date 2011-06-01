@@ -13,8 +13,8 @@ msgstr ""
 "Project-Id-Version: gbrainy.master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=gbrainy&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2011-05-26 07:55+0000\n"
-"PO-Revision-Date: 2011-05-26 16:03+0200\n"
+"POT-Creation-Date: 2011-05-30 18:41+0000\n"
+"PO-Revision-Date: 2011-06-01 11:35+0200\n"
 "Last-Translator: Daniel Mustieles <daniel.mustieles@gmail.com>\n"
 "Language-Team: Español <gnome-es-list@gnome.org>\n"
 "MIME-Version: 1.0\n"
@@ -430,9 +430,6 @@ msgstr ""
 "hace que «x &lt; y» sea cierto? [option_answers]"
 
 #: ../data/games.xml.h:31
-#| msgid ""
-#| "The variable q is bigger than x and y bigger than r. If q is smaller than "
-#| "r then the condition x &lt; y is true."
 msgid ""
 "If the variable r is smaller than q then the condition x &gt; y is always "
 "true."
@@ -441,9 +438,6 @@ msgstr ""
 "cierta."
 
 #: ../data/games.xml.h:32
-#| msgid ""
-#| "The variable q is bigger than x and y bigger than r. If q is smaller than "
-#| "r then the condition x &lt; y is true."
 msgid ""
 "If the variable s is bigger than p then the condition x &lt; y is always "
 "true."
@@ -566,7 +560,7 @@ msgstr "Contraseña"
 #: ../src/Games/Logic/PuzzleNextFigure.cs:166
 #: ../src/Games/Logic/PuzzleOstracism.cs:176
 #: ../src/Games/Logic/PuzzlePredicateLogic.cs:198
-#: ../src/Games/Logic/PuzzleSquareDots.cs:321
+#: ../src/Games/Logic/PuzzleGridDots.cs:341
 #: ../src/Games/Logic/PuzzleTetris.cs:172
 #: ../src/Games/Calculation/CalculationAverage.cs:185
 #: ../src/Games/Calculation/CalculationCloserFraction.cs:177
@@ -602,9 +596,6 @@ msgstr ""
 "[two]. ¿Cuál es el tercer número? [option_answers]"
 
 #: ../data/games.xml.h:57
-#| msgid ""
-#| "The sister's sister-in-law is John's father's wife, that is, John's "
-#| "mother."
 msgid ""
 "The brother's brother-in-law is John's mother's husband, that is, John's "
 "father."
@@ -692,7 +683,6 @@ msgid "[option_prefix] Has no relation"
 msgstr "[option_prefix] No tiene relación"
 
 #: ../data/games.xml.h:78
-#| msgid "[option_prefix] Cousin"
 msgid "[option_prefix] His cousin"
 msgstr "[option_prefix] Su primo"
 
@@ -705,7 +695,6 @@ msgid "[option_prefix] His mother"
 msgstr "[option_prefix] Su madre"
 
 #: ../data/games.xml.h:81
-#| msgid "[option_prefix] Son-in-law"
 msgid "[option_prefix] His son-in-law"
 msgstr "[option_prefix] Su yerno"
 
@@ -774,12 +763,10 @@ msgid "[option_prefix] q = s"
 msgstr "[option_prefix] q = s"
 
 #: ../data/games.xml.h:101
-#| msgid "[option_prefix] p < r"
 msgid "[option_prefix] r < q"
 msgstr "[option_prefix] r < q"
 
 #: ../data/games.xml.h:102
-#| msgid "[option_prefix] p > r"
 msgid "[option_prefix] s > p"
 msgstr "[option_prefix] s > p"
 
@@ -895,37 +882,41 @@ msgid "Acrophobia"
 msgstr "Acrofobia"
 
 #: ../data/verbal_analogies.xml.h:12
+msgid "Affluent"
+msgstr "Afluente"
+
+#: ../data/verbal_analogies.xml.h:13
 msgid "Agoraphobia"
 msgstr "Agorafobia"
 
-#: ../data/verbal_analogies.xml.h:13
+#: ../data/verbal_analogies.xml.h:14
 msgid "Aircraft"
 msgstr "Avión"
 
-#: ../data/verbal_analogies.xml.h:14
+#: ../data/verbal_analogies.xml.h:15
 msgid "Airline"
 msgstr "Compañía aérea"
 
-#: ../data/verbal_analogies.xml.h:15
+#: ../data/verbal_analogies.xml.h:16
 msgid "All the other words have the connotation of not occurring frequently."
 msgstr ""
 "El resto de palabras tienen la connotación de que no ocurren frecuentemente."
 
-#: ../data/verbal_analogies.xml.h:16
+#: ../data/verbal_analogies.xml.h:17
 msgid "All the other words have the meaning of distinguished."
 msgstr "El resto de palabras tienen la connotación de distinguidas."
 
-#: ../data/verbal_analogies.xml.h:17
+#: ../data/verbal_analogies.xml.h:18
 msgid "Amphibians"
 msgstr "Anfibios"
 
-#: ../data/verbal_analogies.xml.h:18
+#: ../data/verbal_analogies.xml.h:19
 msgid "An artist whose work has become the defining style of a genre is?"
 msgstr ""
 "¿Un artista cuyo trabajo se ha convertido en la definición de estilo de un "
 "género es un?"
 
-#: ../data/verbal_analogies.xml.h:19
+#: ../data/verbal_analogies.xml.h:20
 msgid ""
 "An oasis is an isolated area of vegetation in a desert and an island is a "
 "piece of isolated land that is surrounded by water."
@@ -933,520 +924,521 @@ msgstr ""
 "Un oasis es un área de vegeración aislada en un desierto y una isla es un "
 "trozo de tierra aislada rodeada por agua."
 
-#: ../data/verbal_analogies.xml.h:20
+#: ../data/verbal_analogies.xml.h:21
 msgid "Angle"
 msgstr "Ángulo"
 
-#: ../data/verbal_analogies.xml.h:21
+#: ../data/verbal_analogies.xml.h:22
 msgid "Angry"
 msgstr "Enfadado"
 
-#: ../data/verbal_analogies.xml.h:22
+#: ../data/verbal_analogies.xml.h:23
 msgid "Ant / Vertebrate"
 msgstr "Hormiga / Vertebrado"
 
 #. Translators: Anthophobia is fear of flowers that poses little or no danger
-#: ../data/verbal_analogies.xml.h:24
+#: ../data/verbal_analogies.xml.h:25
 msgid "Anthophobia"
 msgstr "Antrofobia"
 
 #. Translators: Anthropophobia is fear of people
-#: ../data/verbal_analogies.xml.h:26
+#: ../data/verbal_analogies.xml.h:27
 msgid "Anthropophobia"
 msgstr "Antropofobia"
 
-#: ../data/verbal_analogies.xml.h:27
+#: ../data/verbal_analogies.xml.h:28
 msgid "Apple"
 msgstr "Manzana"
 
-#: ../data/verbal_analogies.xml.h:28
+#: ../data/verbal_analogies.xml.h:29
 msgid "Attention"
 msgstr "Atención"
 
-#: ../data/verbal_analogies.xml.h:29
+#: ../data/verbal_analogies.xml.h:30
 msgid "Attic"
 msgstr "Ático"
 
-#: ../data/verbal_analogies.xml.h:30
+#: ../data/verbal_analogies.xml.h:31
 msgid "Authority"
 msgstr "Autoridad"
 
-#: ../data/verbal_analogies.xml.h:31
+#: ../data/verbal_analogies.xml.h:32
 msgid "Azimuth"
 msgstr "Acimut"
 
-#: ../data/verbal_analogies.xml.h:32
+#: ../data/verbal_analogies.xml.h:33
 msgid "Basketball"
 msgstr "Baloncesto"
 
-#: ../data/verbal_analogies.xml.h:33
+#: ../data/verbal_analogies.xml.h:34
 msgid "Bassoon"
 msgstr "Fagot"
 
-#: ../data/verbal_analogies.xml.h:34
+#: ../data/verbal_analogies.xml.h:35
 msgid "Beach"
 msgstr "Playa"
 
-#: ../data/verbal_analogies.xml.h:35
+#: ../data/verbal_analogies.xml.h:36
 msgid "Birds"
 msgstr "Pájaros"
 
 #. Translators: referred to the life style
-#: ../data/verbal_analogies.xml.h:37
+#: ../data/verbal_analogies.xml.h:38
 msgid "Bohemian"
 msgstr "Bohemio"
 
-#: ../data/verbal_analogies.xml.h:38
+#: ../data/verbal_analogies.xml.h:39
 msgid "Both relate to an action that breaks the related item."
 msgstr "Ambos se refieren a una acción que rompe el elemento relacionado."
 
-#: ../data/verbal_analogies.xml.h:39
+#: ../data/verbal_analogies.xml.h:40
 msgid "Bounce"
 msgstr "Botar"
 
-#: ../data/verbal_analogies.xml.h:40
+#: ../data/verbal_analogies.xml.h:41
 msgid "Broken"
 msgstr "Roto"
 
-#: ../data/verbal_analogies.xml.h:41
+#: ../data/verbal_analogies.xml.h:42
 msgid "Bunker"
 msgstr "Búnker"
 
-#: ../data/verbal_analogies.xml.h:42
+#: ../data/verbal_analogies.xml.h:43
 msgid "Bursts"
 msgstr "Ráfagas"
 
-#: ../data/verbal_analogies.xml.h:43
+#: ../data/verbal_analogies.xml.h:44
 msgid "Camera"
 msgstr "Cámara"
 
-#: ../data/verbal_analogies.xml.h:44
+#: ../data/verbal_analogies.xml.h:45
 msgid "Carbon"
 msgstr "Carbono"
 
-#: ../data/verbal_analogies.xml.h:45
+#: ../data/verbal_analogies.xml.h:46
 msgid "Cardiology"
 msgstr "Cardiología"
 
-#: ../data/verbal_analogies.xml.h:46
+#: ../data/verbal_analogies.xml.h:47
 msgid "Careless"
 msgstr "Descuidado"
 
-#: ../data/verbal_analogies.xml.h:47
+#: ../data/verbal_analogies.xml.h:48
 msgid "Celebrated"
 msgstr "Celebrado"
 
-#: ../data/verbal_analogies.xml.h:48
+#: ../data/verbal_analogies.xml.h:49
 msgid "Cellulose"
 msgstr "Celulosa"
 
-#: ../data/verbal_analogies.xml.h:49
+#: ../data/verbal_analogies.xml.h:50
 msgid "Chicken / Parrot"
 msgstr "Pollo / Loro"
 
-#: ../data/verbal_analogies.xml.h:50
+#: ../data/verbal_analogies.xml.h:51
 msgid "Chord"
 msgstr "Acorde"
 
 #. Translator: 'Close' as verb, like closed with a key
-#: ../data/verbal_analogies.xml.h:52
+#: ../data/verbal_analogies.xml.h:53
 msgid "Close"
 msgstr "Cerrar"
 
-#: ../data/verbal_analogies.xml.h:53
+#: ../data/verbal_analogies.xml.h:54
 msgid "Coast"
 msgstr "Costa"
 
-#: ../data/verbal_analogies.xml.h:54
+#: ../data/verbal_analogies.xml.h:55
 msgid "Collectivism"
 msgstr "Colectivismo"
 
-#: ../data/verbal_analogies.xml.h:55
+#: ../data/verbal_analogies.xml.h:56
 msgid "Column"
 msgstr "Columna"
 
-#: ../data/verbal_analogies.xml.h:56
+#: ../data/verbal_analogies.xml.h:57
 msgid "Concert hall"
 msgstr "Sala de conciertos"
 
-#: ../data/verbal_analogies.xml.h:57
+#: ../data/verbal_analogies.xml.h:58
 msgid "Condemn"
 msgstr "Condenar"
 
 #. Translator: As synonymous of 'perplexing'
-#: ../data/verbal_analogies.xml.h:59
+#: ../data/verbal_analogies.xml.h:60
 msgid "Confusing"
 msgstr "Confundido"
 
-#: ../data/verbal_analogies.xml.h:60
+#: ../data/verbal_analogies.xml.h:61
 msgid "Connoisseur"
 msgstr "Experto"
 
-#: ../data/verbal_analogies.xml.h:61
+#: ../data/verbal_analogies.xml.h:62
 msgid "Conspirator"
 msgstr "Conspirador"
 
-#: ../data/verbal_analogies.xml.h:62
+#: ../data/verbal_analogies.xml.h:63
 msgid "Contradictory"
 msgstr "Contradictorio"
 
-#: ../data/verbal_analogies.xml.h:63
+#: ../data/verbal_analogies.xml.h:64
 msgid "Corn"
 msgstr "Maíz"
 
-#: ../data/verbal_analogies.xml.h:64
+#: ../data/verbal_analogies.xml.h:65
 msgid "Courtesy"
 msgstr "Cortesía"
 
-#: ../data/verbal_analogies.xml.h:65
+#: ../data/verbal_analogies.xml.h:66
 msgid "Crocodile"
 msgstr "Cocodrilo"
 
-#: ../data/verbal_analogies.xml.h:66
+#: ../data/verbal_analogies.xml.h:67
 msgid "Cycling"
 msgstr "Ciclismo"
 
-#: ../data/verbal_analogies.xml.h:67
+#: ../data/verbal_analogies.xml.h:68
 msgid "Decagon"
 msgstr "Decágono"
 
-#: ../data/verbal_analogies.xml.h:68
+#: ../data/verbal_analogies.xml.h:69
 msgid "Decimal"
 msgstr "Decimal"
 
-#: ../data/verbal_analogies.xml.h:69
+#: ../data/verbal_analogies.xml.h:70
 msgid "Deer"
 msgstr "Ciervo"
 
-#: ../data/verbal_analogies.xml.h:70
+#: ../data/verbal_analogies.xml.h:71
 msgid "Democracy"
 msgstr "Democracia"
 
-#: ../data/verbal_analogies.xml.h:71
+#: ../data/verbal_analogies.xml.h:72
 msgid "Disinterest"
 msgstr "Desinterés"
 
-#: ../data/verbal_analogies.xml.h:72
+#: ../data/verbal_analogies.xml.h:73
 msgid "Dog / Cat"
 msgstr "Perro / Gato"
 
-#: ../data/verbal_analogies.xml.h:73
+#: ../data/verbal_analogies.xml.h:74
 msgid "Dog and horse are species and terrier and pony are breeds."
 msgstr "Perro y caballo son especies y terrier y poni son razas."
 
-#: ../data/verbal_analogies.xml.h:74
+#: ../data/verbal_analogies.xml.h:75
 msgid "Enneagram"
 msgstr "Eneagrama"
 
-#: ../data/verbal_analogies.xml.h:75
+#: ../data/verbal_analogies.xml.h:76
 msgid "Envelope"
 msgstr "Sobre"
 
-#: ../data/verbal_analogies.xml.h:76
+#: ../data/verbal_analogies.xml.h:77
 msgid "Erroneous"
 msgstr "Erróneo"
 
-#: ../data/verbal_analogies.xml.h:77
+#: ../data/verbal_analogies.xml.h:78
 msgid "Exceptional"
 msgstr "Excepcional"
 
-#: ../data/verbal_analogies.xml.h:78
+#: ../data/verbal_analogies.xml.h:79
 msgid "Famous"
 msgstr "Famoso"
 
-#: ../data/verbal_analogies.xml.h:79
+#: ../data/verbal_analogies.xml.h:80
 msgid "Fish"
 msgstr "Pescado"
 
-#: ../data/verbal_analogies.xml.h:80
+#: ../data/verbal_analogies.xml.h:81
 msgid "Fishes"
 msgstr "Peces"
 
 #. As a synonym of obsession
-#: ../data/verbal_analogies.xml.h:82
+#: ../data/verbal_analogies.xml.h:83
 msgid "Fixation"
 msgstr "Fijación"
 
-#: ../data/verbal_analogies.xml.h:83
+#: ../data/verbal_analogies.xml.h:84
 msgid "Float"
 msgstr "Flotar"
 
-#: ../data/verbal_analogies.xml.h:84
+#: ../data/verbal_analogies.xml.h:85
 msgid "Flower"
 msgstr "Flor"
 
-#: ../data/verbal_analogies.xml.h:85
+#: ../data/verbal_analogies.xml.h:86
 msgid "Flute"
 msgstr "Flauta"
 
-#: ../data/verbal_analogies.xml.h:86
+#: ../data/verbal_analogies.xml.h:87
 msgid "Fork"
 msgstr "Tenedor"
 
-#: ../data/verbal_analogies.xml.h:87
+#: ../data/verbal_analogies.xml.h:88
 msgid "Fossil"
 msgstr "Fósil"
 
-#: ../data/verbal_analogies.xml.h:88
+#: ../data/verbal_analogies.xml.h:89
 msgid "Frog"
 msgstr "Rana"
 
-#: ../data/verbal_analogies.xml.h:89
+#: ../data/verbal_analogies.xml.h:90
 msgid "Gallon"
 msgstr "Galón"
 
-#: ../data/verbal_analogies.xml.h:90
+#: ../data/verbal_analogies.xml.h:91
 msgid "Generic"
 msgstr "Genérico"
 
-#: ../data/verbal_analogies.xml.h:91
+#: ../data/verbal_analogies.xml.h:92
 msgid "Golf"
 msgstr "Golf"
 
-#: ../data/verbal_analogies.xml.h:92
+#: ../data/verbal_analogies.xml.h:93
 msgid "Grain"
 msgstr "Grano"
 
-#: ../data/verbal_analogies.xml.h:93
+#: ../data/verbal_analogies.xml.h:94
 msgid "Grape"
 msgstr "Uva"
 
-#: ../data/verbal_analogies.xml.h:94
+#: ../data/verbal_analogies.xml.h:95
 msgid "Gym"
 msgstr "Gimnasio"
 
-#: ../data/verbal_analogies.xml.h:95
+#: ../data/verbal_analogies.xml.h:96
 msgid "Hangar"
 msgstr "Hangar"
 
-#: ../data/verbal_analogies.xml.h:96
+#: ../data/verbal_analogies.xml.h:97
 msgid "Hectogram"
 msgstr "Hectogramo"
 
-#: ../data/verbal_analogies.xml.h:97
+#: ../data/verbal_analogies.xml.h:98
 msgid "Hematology"
 msgstr "Hematología"
 
-#: ../data/verbal_analogies.xml.h:98
+#: ../data/verbal_analogies.xml.h:99
 msgid "Hide"
 msgstr "Ocultar"
 
-#: ../data/verbal_analogies.xml.h:99
+#: ../data/verbal_analogies.xml.h:100
 msgid "Homeless"
 msgstr "Sin techo"
 
-#: ../data/verbal_analogies.xml.h:100
+#: ../data/verbal_analogies.xml.h:101
 msgid "Hyena"
 msgstr "Hiena"
 
-#: ../data/verbal_analogies.xml.h:101
+#: ../data/verbal_analogies.xml.h:102
 msgid "Hypochondria"
 msgstr "Hipocondría"
 
-#: ../data/verbal_analogies.xml.h:102
+#: ../data/verbal_analogies.xml.h:103
 msgid "Icosagon"
 msgstr "Isodecágono"
 
-#: ../data/verbal_analogies.xml.h:103
+#: ../data/verbal_analogies.xml.h:104
 msgid "Ignore"
 msgstr "Ignorar"
 
-#: ../data/verbal_analogies.xml.h:104
+#: ../data/verbal_analogies.xml.h:105
 msgid "Incredible"
 msgstr "Increíble"
 
-#: ../data/verbal_analogies.xml.h:105
+#: ../data/verbal_analogies.xml.h:106
 msgid "Indifference"
 msgstr "Indiferencia"
 
-#: ../data/verbal_analogies.xml.h:106
+#: ../data/verbal_analogies.xml.h:107
 msgid "Ink"
 msgstr "Tinta"
 
-#: ../data/verbal_analogies.xml.h:107
+#: ../data/verbal_analogies.xml.h:108
 msgid "Insects"
 msgstr "Insectos"
 
-#: ../data/verbal_analogies.xml.h:108
+#: ../data/verbal_analogies.xml.h:109
 msgid "Interesting"
 msgstr "Interesante"
 
-#: ../data/verbal_analogies.xml.h:109
+#: ../data/verbal_analogies.xml.h:110
 msgid "Intuition"
 msgstr "Intuición"
 
-#: ../data/verbal_analogies.xml.h:110
+#: ../data/verbal_analogies.xml.h:111
 msgid "Ironic"
 msgstr "Irónico"
 
-#: ../data/verbal_analogies.xml.h:111
+#: ../data/verbal_analogies.xml.h:112
 msgid "Island"
 msgstr "Isla"
 
 #. Translator: definition of negligent
-#: ../data/verbal_analogies.xml.h:113
+#: ../data/verbal_analogies.xml.h:114
 msgid ""
 "It is the failure to take such care as may be rightfully or reasonably "
 "expected."
 msgstr ""
 "Es el defecto de no tener el cuidado legítimo o razonabl que se espera."
 
-#: ../data/verbal_analogies.xml.h:114
+#: ../data/verbal_analogies.xml.h:115
 msgid "It is the only one that does not use a ball in the game."
 msgstr "Es la única que no usa pelota en el juego."
 
-#: ../data/verbal_analogies.xml.h:115
+#: ../data/verbal_analogies.xml.h:116
 msgid "It is the only one that is not a carnivore."
 msgstr "Es el único que no es carnívoro."
 
-#: ../data/verbal_analogies.xml.h:116
+#: ../data/verbal_analogies.xml.h:117
 msgid "It is the only one that is not a cereal."
 msgstr "Es el único que no es un cereal."
 
-#: ../data/verbal_analogies.xml.h:117
+#: ../data/verbal_analogies.xml.h:118
 msgid "It is the only one that is not a fruit."
 msgstr "Es el único que no es una fruta."
 
-#: ../data/verbal_analogies.xml.h:118
+#: ../data/verbal_analogies.xml.h:119
 msgid "It is the only one that is not a medical specialty."
 msgstr "Es el único que no es una especialidad médica."
 
-#: ../data/verbal_analogies.xml.h:119
+#: ../data/verbal_analogies.xml.h:120
 msgid "It is the only one that is not a metal."
 msgstr "Es el único que no es un metal."
 
-#: ../data/verbal_analogies.xml.h:120
-msgid "It is the only one that is not a reptile."
-msgstr "Es el único que no es un reptil."
-
 #: ../data/verbal_analogies.xml.h:121
+#| msgid "It is the only one that is not a reptile."
+msgid "It is the only one that is not a reptile and also does not have a tail."
+msgstr "Es el único que no es un reptil y que no tiene cola."
+
+#: ../data/verbal_analogies.xml.h:122
 msgid "It is the only one that is not a woodwind instrument."
 msgstr "Es el único que no es un instrumento de viento."
 
-#: ../data/verbal_analogies.xml.h:122
+#: ../data/verbal_analogies.xml.h:123
 msgid "It is the only one that is not related to architecture."
 msgstr "Es el único que no está relacionado con arquitectura."
 
-#: ../data/verbal_analogies.xml.h:123
+#: ../data/verbal_analogies.xml.h:124
 msgid "It is the only unit that does not belong to the metric system."
 msgstr "Es la única unidad que no pertenece al sistema métrico."
 
-#: ../data/verbal_analogies.xml.h:124
+#: ../data/verbal_analogies.xml.h:125
 msgid "Kilometer"
 msgstr "Kilómetro"
 
-#: ../data/verbal_analogies.xml.h:125
+#: ../data/verbal_analogies.xml.h:126
 msgid "Latitude"
 msgstr "Latitud"
 
-#: ../data/verbal_analogies.xml.h:126
+#: ../data/verbal_analogies.xml.h:127
 msgid "Lentils"
 msgstr "Lentejas"
 
-#: ../data/verbal_analogies.xml.h:127
+#: ../data/verbal_analogies.xml.h:128
 msgid "Light"
 msgstr "Luz"
 
-#: ../data/verbal_analogies.xml.h:128
+#: ../data/verbal_analogies.xml.h:129
 msgid "Liter"
 msgstr "Litro"
 
-#: ../data/verbal_analogies.xml.h:129
+#: ../data/verbal_analogies.xml.h:130
 msgid "Lizard"
 msgstr "Lagarto"
 
 #. Translator: 'Lock' as verb, like locked with a key
-#: ../data/verbal_analogies.xml.h:131
+#: ../data/verbal_analogies.xml.h:132
 msgid "Lock"
 msgstr "Bloquear"
 
-#: ../data/verbal_analogies.xml.h:132
+#: ../data/verbal_analogies.xml.h:133
 msgid "Loner"
 msgstr "Solitario"
 
-#: ../data/verbal_analogies.xml.h:133
+#: ../data/verbal_analogies.xml.h:134
 msgid "Lychee"
 msgstr "Lichi"
 
-#: ../data/verbal_analogies.xml.h:134
+#: ../data/verbal_analogies.xml.h:135
 msgid "Mango"
 msgstr "Mango"
 
-#: ../data/verbal_analogies.xml.h:135
+#: ../data/verbal_analogies.xml.h:136
 msgid "Martyr"
 msgstr "Mártir"
 
-#: ../data/verbal_analogies.xml.h:136
+#: ../data/verbal_analogies.xml.h:137
 msgid "Misunderstood"
 msgstr "Malentendido"
 
-#: ../data/verbal_analogies.xml.h:137
+#: ../data/verbal_analogies.xml.h:138
 msgid "Money"
 msgstr "Dinero"
 
-#: ../data/verbal_analogies.xml.h:138
+#: ../data/verbal_analogies.xml.h:139
 msgid "Museum"
 msgstr "Museo"
 
-#: ../data/verbal_analogies.xml.h:139
+#: ../data/verbal_analogies.xml.h:140
 msgid "Oboe"
 msgstr "Oboe"
 
-#: ../data/verbal_analogies.xml.h:140
+#: ../data/verbal_analogies.xml.h:141
 msgid "Obscure"
 msgstr "Oscuro"
 
-#: ../data/verbal_analogies.xml.h:141
+#: ../data/verbal_analogies.xml.h:142
 msgid "Obvious"
 msgstr "Obvio"
 
-#: ../data/verbal_analogies.xml.h:142
+#: ../data/verbal_analogies.xml.h:143
 msgid "Occasional"
 msgstr "Ocasional"
 
-#: ../data/verbal_analogies.xml.h:143
+#: ../data/verbal_analogies.xml.h:144
 msgid "Offensive"
 msgstr "Ofensivo"
 
-#: ../data/verbal_analogies.xml.h:144
+#: ../data/verbal_analogies.xml.h:145
 msgid "Oligarchy"
 msgstr "Oligarquía"
 
-#: ../data/verbal_analogies.xml.h:145
+#: ../data/verbal_analogies.xml.h:146
 msgid "Olive"
 msgstr "Aceituna"
 
-#: ../data/verbal_analogies.xml.h:146
+#: ../data/verbal_analogies.xml.h:147
 msgid "Onion"
 msgstr "Cebolla"
 
 #. Translator: 'Open' as verb, like open with a key
-#: ../data/verbal_analogies.xml.h:148
+#: ../data/verbal_analogies.xml.h:149
 msgid "Open"
 msgstr "Abrir"
 
 #. Translators: refers to the fruit
-#: ../data/verbal_analogies.xml.h:150
+#: ../data/verbal_analogies.xml.h:151
 msgid "Orange"
 msgstr "Naranja"
 
-#: ../data/verbal_analogies.xml.h:151
+#: ../data/verbal_analogies.xml.h:152
 msgid "Ordinary"
 msgstr "Ordinario"
 
-#: ../data/verbal_analogies.xml.h:152
+#: ../data/verbal_analogies.xml.h:153
 msgid "Ostentation"
 msgstr "Ostentación"
 
-#: ../data/verbal_analogies.xml.h:153
+#: ../data/verbal_analogies.xml.h:154
 msgid "Pain"
 msgstr "Dolor"
 
-#: ../data/verbal_analogies.xml.h:154
+#: ../data/verbal_analogies.xml.h:155
 msgid "Paleontology"
 msgstr "Paleontología"
 
-#: ../data/verbal_analogies.xml.h:155
+#: ../data/verbal_analogies.xml.h:156
 msgid ""
 "Parallel and longitude go from east-west position and meridian and latitude "
 "go from north-south position."
@@ -1455,165 +1447,165 @@ msgstr ""
 "la latitud van de norte a sur."
 
 #. Translator: Pertaining to a single or specific person or thing
-#: ../data/verbal_analogies.xml.h:157
+#: ../data/verbal_analogies.xml.h:158
 msgid "Particular"
 msgstr "Particular"
 
-#: ../data/verbal_analogies.xml.h:158
+#: ../data/verbal_analogies.xml.h:159
 msgid "Person expelled from society"
 msgstr "Persona rechazada por la sociedad"
 
-#: ../data/verbal_analogies.xml.h:159
+#: ../data/verbal_analogies.xml.h:160
 msgid "Photography"
 msgstr "Fotografía"
 
-#: ../data/verbal_analogies.xml.h:160
+#: ../data/verbal_analogies.xml.h:161
 msgid "Pioneer"
 msgstr "Pionero"
 
-#: ../data/verbal_analogies.xml.h:161
+#: ../data/verbal_analogies.xml.h:162
 msgid "Pleasure"
 msgstr "Placer"
 
-#: ../data/verbal_analogies.xml.h:162
+#: ../data/verbal_analogies.xml.h:163
 msgid "Pole"
 msgstr "Polo"
 
-#: ../data/verbal_analogies.xml.h:163
+#: ../data/verbal_analogies.xml.h:164
 msgid "Pony / Horse"
 msgstr "Poni / Caballo"
 
-#: ../data/verbal_analogies.xml.h:164
+#: ../data/verbal_analogies.xml.h:165
 msgid "Portico"
 msgstr "Pórtico"
 
-#: ../data/verbal_analogies.xml.h:165
+#: ../data/verbal_analogies.xml.h:166
 msgid "Positivism"
 msgstr "Positivismo"
 
-#: ../data/verbal_analogies.xml.h:166
+#: ../data/verbal_analogies.xml.h:167
 msgid "Potato"
 msgstr "Patata"
 
-#: ../data/verbal_analogies.xml.h:167
+#: ../data/verbal_analogies.xml.h:168
 msgid "Printer"
 msgstr "Impresora"
 
-#: ../data/verbal_analogies.xml.h:168
+#: ../data/verbal_analogies.xml.h:169
 msgid "Property"
 msgstr "Propiedad"
 
-#: ../data/verbal_analogies.xml.h:169
+#: ../data/verbal_analogies.xml.h:170
 msgid "Psychiatry"
 msgstr "Psiquiatría"
 
-#: ../data/verbal_analogies.xml.h:170
+#: ../data/verbal_analogies.xml.h:171
 msgid "Radius"
 msgstr "Radio"
 
-#: ../data/verbal_analogies.xml.h:171
+#: ../data/verbal_analogies.xml.h:172
 msgid "Rare"
 msgstr "Raro"
 
-#: ../data/verbal_analogies.xml.h:172
+#: ../data/verbal_analogies.xml.h:173
 msgid "Regular"
 msgstr "Habitual"
 
-#: ../data/verbal_analogies.xml.h:173
+#: ../data/verbal_analogies.xml.h:174
 msgid "Related"
 msgstr "Relacionado"
 
-#: ../data/verbal_analogies.xml.h:174
+#: ../data/verbal_analogies.xml.h:175
 msgid "Repugnance"
 msgstr "Repugnancia"
 
-#: ../data/verbal_analogies.xml.h:175
+#: ../data/verbal_analogies.xml.h:176
 msgid "Restaurant"
 msgstr "Restaurante"
 
-#: ../data/verbal_analogies.xml.h:176
+#: ../data/verbal_analogies.xml.h:177
 msgid "Rice"
 msgstr "Arroz"
 
-#: ../data/verbal_analogies.xml.h:177
+#: ../data/verbal_analogies.xml.h:178
 msgid "River"
 msgstr "Río"
 
-#: ../data/verbal_analogies.xml.h:178
+#: ../data/verbal_analogies.xml.h:179
 msgid "Roll"
 msgstr "Enrollar"
 
-#: ../data/verbal_analogies.xml.h:179
+#: ../data/verbal_analogies.xml.h:180
 msgid "Sad"
 msgstr "Triste"
 
-#: ../data/verbal_analogies.xml.h:180
+#: ../data/verbal_analogies.xml.h:181
 msgid "Shame"
 msgstr "Vergüenza"
 
-#: ../data/verbal_analogies.xml.h:181
+#: ../data/verbal_analogies.xml.h:182
 msgid "Simplistic"
 msgstr "Simplista"
 
-#: ../data/verbal_analogies.xml.h:182
+#: ../data/verbal_analogies.xml.h:183
 msgid "Sodium"
 msgstr "Sodio"
 
-#: ../data/verbal_analogies.xml.h:183
+#: ../data/verbal_analogies.xml.h:184
 msgid "Solstice"
 msgstr "Solsticio"
 
-#: ../data/verbal_analogies.xml.h:184
+#: ../data/verbal_analogies.xml.h:185
 msgid "Specializes in skin diseases"
 msgstr "Especialista en enfermedades de la piel"
 
-#: ../data/verbal_analogies.xml.h:185
+#: ../data/verbal_analogies.xml.h:186
 msgid "Sport"
 msgstr "Deporte"
 
-#: ../data/verbal_analogies.xml.h:186
+#: ../data/verbal_analogies.xml.h:187
 msgid "Suffers a skin disease"
 msgstr "Sufre una enfermedad de la piel"
 
-#: ../data/verbal_analogies.xml.h:187
+#: ../data/verbal_analogies.xml.h:188
 msgid "Sugarcane"
 msgstr "Caña de azúcar"
 
-#: ../data/verbal_analogies.xml.h:188
+#: ../data/verbal_analogies.xml.h:189
 msgid "Sweet corn"
 msgstr "Maíz dulce"
 
-#: ../data/verbal_analogies.xml.h:189
+#: ../data/verbal_analogies.xml.h:190
 msgid "Synonym"
 msgstr "Sinónimo"
 
-#: ../data/verbal_analogies.xml.h:190
+#: ../data/verbal_analogies.xml.h:191
 msgid "Table"
 msgstr "Tabla"
 
-#: ../data/verbal_analogies.xml.h:191
+#: ../data/verbal_analogies.xml.h:192
 msgid "Tangent"
 msgstr "Tangente"
 
-#: ../data/verbal_analogies.xml.h:192
+#: ../data/verbal_analogies.xml.h:193
 msgid "Tears"
 msgstr "Lágrimas"
 
-#: ../data/verbal_analogies.xml.h:193
+#: ../data/verbal_analogies.xml.h:194
 msgid "Tennis"
 msgstr "Tenis"
 
-#: ../data/verbal_analogies.xml.h:194
+#: ../data/verbal_analogies.xml.h:195
 msgid ""
 "The ethical doctrine holding that only what is pleasant is an intrinsic good."
 msgstr ""
 "La doctrina ética que mantiene que sólo lo placentero es un bien intrínseco."
 
-#: ../data/verbal_analogies.xml.h:195
+#: ../data/verbal_analogies.xml.h:196
 msgid "The first word is the instrument and the second what it measures."
 msgstr "La primera palabra es el instrumento y la segunda es lo que mide."
 
-#: ../data/verbal_analogies.xml.h:196
+#: ../data/verbal_analogies.xml.h:197
 msgid ""
 "The practice of austere self-discipline in order to achieve a higher or "
 "spiritual idea."
@@ -1621,35 +1613,35 @@ msgstr ""
 "La práctica de una autodisciplina austera para lograr conseguir una idea o "
 "un estado espiritual mayor."
 
-#: ../data/verbal_analogies.xml.h:197
+#: ../data/verbal_analogies.xml.h:198
 msgid "The radius of a circle is half the diameter."
 msgstr "El radio de un círculo es la mitad del diámetro."
 
-#: ../data/verbal_analogies.xml.h:198
+#: ../data/verbal_analogies.xml.h:199
 msgid "The relation between the two words is that they are synonymous."
 msgstr "La relación entre las dos palabras es que son sinónimas."
 
-#: ../data/verbal_analogies.xml.h:199
+#: ../data/verbal_analogies.xml.h:200
 msgid "The word 'taxidermist' is used to define a person that?"
 msgstr "¿La palabra «taxidermista» se usa para definir a una persona que?"
 
-#: ../data/verbal_analogies.xml.h:200
+#: ../data/verbal_analogies.xml.h:201
 msgid "Theater"
 msgstr "Teatro"
 
-#: ../data/verbal_analogies.xml.h:201
+#: ../data/verbal_analogies.xml.h:202
 msgid "Think of the items used in the game."
 msgstr "Piensa en los elementos usados en el juego."
 
-#: ../data/verbal_analogies.xml.h:202
+#: ../data/verbal_analogies.xml.h:203
 msgid "Tiger"
 msgstr "Tigre"
 
-#: ../data/verbal_analogies.xml.h:203
+#: ../data/verbal_analogies.xml.h:204
 msgid "Titanium"
 msgstr "Titanio"
 
-#: ../data/verbal_analogies.xml.h:204
+#: ../data/verbal_analogies.xml.h:205
 msgid ""
 "To make both objects work, a button needs to be pushed and a key needs to be "
 "turned."
@@ -1657,42 +1649,38 @@ msgstr ""
 "Para hacer que ambos objetos funcionen, se necesita pulsar un botón y una "
 "tecla."
 
-#: ../data/verbal_analogies.xml.h:205
+#: ../data/verbal_analogies.xml.h:206
 msgid "Totalitarianism"
 msgstr "Totalitarismo"
 
 #. Translators: tripod as used is photography
-#: ../data/verbal_analogies.xml.h:207
+#: ../data/verbal_analogies.xml.h:208
 msgid "Tripod"
 msgstr "Trípode"
 
-#: ../data/verbal_analogies.xml.h:208
+#: ../data/verbal_analogies.xml.h:209
 msgid "Trivial"
 msgstr "Trivial"
 
-#: ../data/verbal_analogies.xml.h:209
+#: ../data/verbal_analogies.xml.h:210
 msgid "Turn"
 msgstr "Girar"
 
-#: ../data/verbal_analogies.xml.h:210
+#: ../data/verbal_analogies.xml.h:211
 msgid "Turtle"
 msgstr "Tortuga"
 
-#: ../data/verbal_analogies.xml.h:211
+#: ../data/verbal_analogies.xml.h:212
 msgid "Unorthodox"
 msgstr "Poco ortodoxo"
 
-#: ../data/verbal_analogies.xml.h:212
+#: ../data/verbal_analogies.xml.h:213
 msgid "Unpleasant"
 msgstr "Desagradable"
 
-#: ../data/verbal_analogies.xml.h:213
+#: ../data/verbal_analogies.xml.h:214
 msgid "Violin"
 msgstr "Violín"
-
-#: ../data/verbal_analogies.xml.h:214
-msgid "Wealthy"
-msgstr "Riqueza"
 
 #: ../data/verbal_analogies.xml.h:215
 msgid "Weapon"
@@ -1717,442 +1705,443 @@ msgstr "¿Cuál de las siguientes frases define mejor una persona «ostracista»
 msgid "Which of the following sports does not belong to the group?"
 msgstr "¿Cuál de los siguientes deportes no pertenece al grupo?"
 
-#: ../data/verbal_analogies.xml.h:223
+#. Selected to avoid physical characteristics like: has shield, legs or tail
+#: ../data/verbal_analogies.xml.h:224
 msgid "Which of the following words does not belong to the group?"
 msgstr "¿Cuál de las siguientes palabras no pertenece al grupo?"
 
-#: ../data/verbal_analogies.xml.h:224
+#: ../data/verbal_analogies.xml.h:225
 msgid "Which of the following words is closer to the meaning of 'asceticism'?"
 msgstr ""
 "¿Cuál de las siguientes palabras es la más cercana en significado a "
 "«ascetismo»?"
 
-#: ../data/verbal_analogies.xml.h:225
+#: ../data/verbal_analogies.xml.h:226
 msgid "Which of the following words is closer to the meaning of 'hedonism'?"
 msgstr ""
 "¿Cuál de las siguientes palabras es la más cercana en significado a "
 "«hedonismo»?"
 
-#: ../data/verbal_analogies.xml.h:226
+#: ../data/verbal_analogies.xml.h:227
 msgid "Which of the following words is closer to the meaning of 'negligent'?"
 msgstr ""
 "¿Cuál de las siguientes palabras es la más cercana en significado a "
 "«negligente»?"
 
-#: ../data/verbal_analogies.xml.h:227
+#: ../data/verbal_analogies.xml.h:228
 msgid "Which of the following words is closer to the meaning of 'oxymoron'?"
 msgstr ""
 "¿Cuál de las siguientes palabras es la más cercana en significado a "
 "«oxímoron»?"
 
-#: ../data/verbal_analogies.xml.h:228
+#: ../data/verbal_analogies.xml.h:229
 msgid "Which of the following words is closer to the meaning of 'perplexing'?"
 msgstr ""
 "¿Cuál de las siguientes palabras es la más cercana en significado a «confuso»?"
 
-#: ../data/verbal_analogies.xml.h:229
+#: ../data/verbal_analogies.xml.h:230
 msgid "Which of the following words is closer to the meaning of 'specific'?"
 msgstr ""
 "¿Cuál de las siguientes palabras es la más cercana en significado a "
 "«específico»?"
 
-#: ../data/verbal_analogies.xml.h:230
+#: ../data/verbal_analogies.xml.h:231
 msgid "Which of the following words is closer to the meaning of 'unhappy'?"
 msgstr ""
 "¿Cuál de las siguientes palabras es la más cercana en significado a «infeliz»?"
 
-#: ../data/verbal_analogies.xml.h:231
+#: ../data/verbal_analogies.xml.h:232
 msgid "Which of the following words is the closest in meaning to 'censure'?"
 msgstr ""
 "¿Cuál de las siguientes palabras es la más cercana en significado a «censura»?"
 
-#: ../data/verbal_analogies.xml.h:232
+#: ../data/verbal_analogies.xml.h:233
 msgid "Which of the following words means fear of people?"
 msgstr "¿Cuál de las siguientes palabras significa miedo a las personas?"
 
-#: ../data/verbal_analogies.xml.h:233
+#: ../data/verbal_analogies.xml.h:234
 msgid "Winery"
 msgstr "Bodega"
 
-#: ../data/verbal_analogies.xml.h:234
+#: ../data/verbal_analogies.xml.h:235
 msgid "Wolf"
 msgstr "Zorro"
 
-#: ../data/verbal_analogies.xml.h:235
+#: ../data/verbal_analogies.xml.h:236
 msgid "Works with dead animals"
 msgstr "Trabaja con animales muertos"
 
-#: ../data/verbal_analogies.xml.h:236
+#: ../data/verbal_analogies.xml.h:237
 msgid "Works with leather"
 msgstr "Trabaja con cuero"
 
-#: ../data/verbal_analogies.xml.h:237
+#: ../data/verbal_analogies.xml.h:238
 msgid "Zinc"
 msgstr "Zinc"
 
-#: ../data/verbal_analogies.xml.h:238
+#: ../data/verbal_analogies.xml.h:239
 msgid "airplane | aeroplane | plane"
 msgstr "avión | aeroplano | aeronave"
 
-#: ../data/verbal_analogies.xml.h:239
+#: ../data/verbal_analogies.xml.h:240
 msgid "ankle"
 msgstr "tobillo"
 
-#: ../data/verbal_analogies.xml.h:240
+#: ../data/verbal_analogies.xml.h:241
 msgid "art / gallery | drama"
 msgstr "arte / galería | drama"
 
-#: ../data/verbal_analogies.xml.h:241
+#: ../data/verbal_analogies.xml.h:242
 msgid "atlas"
 msgstr "atlas"
 
-#: ../data/verbal_analogies.xml.h:242
+#: ../data/verbal_analogies.xml.h:243
 msgid "bite"
 msgstr "morder"
 
-#: ../data/verbal_analogies.xml.h:243
+#: ../data/verbal_analogies.xml.h:244
 msgid "body | skin"
 msgstr "cuerpo | piel"
 
-#: ../data/verbal_analogies.xml.h:244
+#: ../data/verbal_analogies.xml.h:245
 msgid "book | magazine | document"
 msgstr "libro | revista | documento"
 
 #. Translators: 'open' is used as a verb (open a box)
-#: ../data/verbal_analogies.xml.h:246
+#: ../data/verbal_analogies.xml.h:247
 msgid "box / open | banana"
 msgstr "caja / abrir | plátano"
 
-#: ../data/verbal_analogies.xml.h:247
+#: ../data/verbal_analogies.xml.h:248
 msgid "bridge / over | tunnel"
 msgstr "puente / sobre | túnel"
 
-#: ../data/verbal_analogies.xml.h:248
+#: ../data/verbal_analogies.xml.h:249
 msgid "button / push | key (used in a lock)"
 msgstr "botón / pulsar | llave (usado en un candado)"
 
-#: ../data/verbal_analogies.xml.h:249
+#: ../data/verbal_analogies.xml.h:250
 msgid "cage | zoo | zoological garden"
 msgstr "jaula | zoo | zoológico"
 
-#: ../data/verbal_analogies.xml.h:250
+#: ../data/verbal_analogies.xml.h:251
 msgid "car / garage | plane"
 msgstr "coche / garaje | avión"
 
-#: ../data/verbal_analogies.xml.h:251
+#: ../data/verbal_analogies.xml.h:252
 msgid "car / road | train"
 msgstr "coche / carretera | tren"
 
-#: ../data/verbal_analogies.xml.h:252
+#: ../data/verbal_analogies.xml.h:253
 msgid "chop"
 msgstr "cortar | talar"
 
-#: ../data/verbal_analogies.xml.h:253
+#: ../data/verbal_analogies.xml.h:254
 msgid "circle / semicircle | diameter"
 msgstr "círculo / semicírculo | diámetro"
 
-#: ../data/verbal_analogies.xml.h:254
+#: ../data/verbal_analogies.xml.h:255
 msgid "coins"
 msgstr "monedas"
 
-#: ../data/verbal_analogies.xml.h:255
+#: ../data/verbal_analogies.xml.h:256
 msgid "composer | songwriter | lyricist"
 msgstr "compositor | escritor | letrista"
 
-#: ../data/verbal_analogies.xml.h:256
+#: ../data/verbal_analogies.xml.h:257
 msgid "concept / idea | obsession"
 msgstr "concepto / idea | obsesión"
 
-#: ../data/verbal_analogies.xml.h:257
+#: ../data/verbal_analogies.xml.h:258
 msgid "constellation / stars | archipelago"
 msgstr "constelación / estrellas | archipiélago"
 
 #. Translators: 'dance' is used as a noun
-#: ../data/verbal_analogies.xml.h:259
+#: ../data/verbal_analogies.xml.h:260
 msgid "dance"
 msgstr "bailar"
 
-#: ../data/verbal_analogies.xml.h:260
+#: ../data/verbal_analogies.xml.h:261
 msgid "desert / oasis | sea"
 msgstr "desierto / oasis | mar"
 
-#: ../data/verbal_analogies.xml.h:261
+#: ../data/verbal_analogies.xml.h:262
 msgid "dish / break | balloon"
 msgstr "plato / romper | globo"
 
-#: ../data/verbal_analogies.xml.h:262
+#: ../data/verbal_analogies.xml.h:263
 msgid "dog / tame | wolf"
 msgstr "perro / dócil | lobo"
 
-#: ../data/verbal_analogies.xml.h:263
+#: ../data/verbal_analogies.xml.h:264
 msgid "elbow / knee | wrist"
 msgstr "codo / rodilla | muñeca"
 
-#: ../data/verbal_analogies.xml.h:264
+#: ../data/verbal_analogies.xml.h:265
 msgid "error / correct | damage"
 msgstr "error / corregir | daño"
 
-#: ../data/verbal_analogies.xml.h:265
+#: ../data/verbal_analogies.xml.h:266
 msgid "eyebrow / eye | mustache"
 msgstr "ceja / ojo | bigote"
 
 #. Translators: the concept 'toe' (http://en.wikipedia.org/wiki/Toe) does not exist in all languages. Feel free to change it to 'fingers' and adapt the answer accordingly
-#: ../data/verbal_analogies.xml.h:267
+#: ../data/verbal_analogies.xml.h:268
 msgid "feet / two | toes"
 msgstr "pies / dos | dedos"
 
-#: ../data/verbal_analogies.xml.h:268
+#: ../data/verbal_analogies.xml.h:269
 msgid "fish / aquarium | monkey"
 msgstr "pez / acuario | mono"
 
-#: ../data/verbal_analogies.xml.h:269
+#: ../data/verbal_analogies.xml.h:270
 msgid "fish / submarine | bird"
 msgstr "pez / submarino | pájaro"
 
-#: ../data/verbal_analogies.xml.h:270
+#: ../data/verbal_analogies.xml.h:271
 msgid "five / pentagon | ten"
 msgstr "cinco / pentágono | diez"
 
-#: ../data/verbal_analogies.xml.h:271
+#: ../data/verbal_analogies.xml.h:272
 msgid "fox / den | bird"
 msgstr "zorro / guarida | pájaro"
 
-#: ../data/verbal_analogies.xml.h:272
+#: ../data/verbal_analogies.xml.h:273
 msgid "glass / break | paper"
 msgstr "cristal / romper | papel"
 
-#: ../data/verbal_analogies.xml.h:273
+#: ../data/verbal_analogies.xml.h:274
 msgid "hands / grab | teeth"
 msgstr "manos / coger | dientes"
 
-#: ../data/verbal_analogies.xml.h:274
+#: ../data/verbal_analogies.xml.h:275
 msgid "herbivorous | herbivore"
 msgstr "herbívoros | herbívoro"
 
-#: ../data/verbal_analogies.xml.h:275
+#: ../data/verbal_analogies.xml.h:276
 msgid "horticulture / plants | ornithology"
 msgstr "horticultura / plantas | ornitología"
 
-#: ../data/verbal_analogies.xml.h:276
+#: ../data/verbal_analogies.xml.h:277
 msgid "hour / minute | minute"
 msgstr "hora / minuto | minuto"
 
-#: ../data/verbal_analogies.xml.h:277
+#: ../data/verbal_analogies.xml.h:278
 msgid "hungry / eat | tired"
 msgstr "hambriento / comer | cansado"
 
-#: ../data/verbal_analogies.xml.h:278
+#: ../data/verbal_analogies.xml.h:279
 msgid "hunter / rifle | photographer"
 msgstr "cazador / rifle | fotógrafo"
 
-#: ../data/verbal_analogies.xml.h:279
+#: ../data/verbal_analogies.xml.h:280
 msgid "ice / slippery | glue"
 msgstr "hielo / deslizante | pegamento"
 
-#: ../data/verbal_analogies.xml.h:280
+#: ../data/verbal_analogies.xml.h:281
 msgid "in | under | through"
 msgstr "dentro | debajo | a través de"
 
-#: ../data/verbal_analogies.xml.h:281
+#: ../data/verbal_analogies.xml.h:282
 msgid "islands"
 msgstr "islas"
 
-#: ../data/verbal_analogies.xml.h:282
+#: ../data/verbal_analogies.xml.h:283
 msgid "leopard / spots | tiger"
 msgstr "leopardo / manchas | tigre"
 
-#: ../data/verbal_analogies.xml.h:283
+#: ../data/verbal_analogies.xml.h:284
 msgid "letter / word | page"
 msgstr "letra / palabra | página"
 
-#: ../data/verbal_analogies.xml.h:284
+#: ../data/verbal_analogies.xml.h:285
 msgid "lip | upper lip | mouth"
 msgstr "labio | labio superior | boca"
 
-#: ../data/verbal_analogies.xml.h:285
+#: ../data/verbal_analogies.xml.h:286
 msgid "nest"
 msgstr "nido"
 
-#: ../data/verbal_analogies.xml.h:286
+#: ../data/verbal_analogies.xml.h:287
 msgid "nose"
 msgstr "nariz"
 
-#: ../data/verbal_analogies.xml.h:287
+#: ../data/verbal_analogies.xml.h:288
 msgid "novel / author | song"
 msgstr "novela / autor | canción"
 
-#: ../data/verbal_analogies.xml.h:288
+#: ../data/verbal_analogies.xml.h:289
 msgid "orange / fruit | spinach"
 msgstr "naranja / fruta | espinacas"
 
-#: ../data/verbal_analogies.xml.h:289
+#: ../data/verbal_analogies.xml.h:290
 msgid "parallel / meridian | longitude"
 msgstr "paralelo / meridiano | longitud"
 
-#: ../data/verbal_analogies.xml.h:290
+#: ../data/verbal_analogies.xml.h:291
 msgid "pediatrics / children | numismatics"
 msgstr "pediatra / niños | numismática"
 
-#: ../data/verbal_analogies.xml.h:291
+#: ../data/verbal_analogies.xml.h:292
 msgid "peel"
 msgstr "pelar"
 
-#: ../data/verbal_analogies.xml.h:292
+#: ../data/verbal_analogies.xml.h:293
 msgid "pessimist / optimist | poor"
 msgstr "pesimista / optimista | pobre"
 
-#: ../data/verbal_analogies.xml.h:293
+#: ../data/verbal_analogies.xml.h:294
 msgid "poems / anthology | maps"
 msgstr "poemas / antología | mapas"
 
-#: ../data/verbal_analogies.xml.h:294
+#: ../data/verbal_analogies.xml.h:295
 msgid "puzzle / solve | game"
 msgstr "puzle / resolver | juego"
 
-#: ../data/verbal_analogies.xml.h:295
+#: ../data/verbal_analogies.xml.h:296
 msgid "repair | fix"
 msgstr "reparar | arreglar"
 
-#: ../data/verbal_analogies.xml.h:296
+#: ../data/verbal_analogies.xml.h:297
 msgid "ring / finger | bracelet"
 msgstr "anillo / dedo | brazalete"
 
-#: ../data/verbal_analogies.xml.h:297
+#: ../data/verbal_analogies.xml.h:298
 msgid "seal / flippers | bird"
 msgstr "foca / aletas | pájaro"
 
 #. Translators: refers to the unit of time
-#: ../data/verbal_analogies.xml.h:299
+#: ../data/verbal_analogies.xml.h:300
 msgid "second"
 msgstr "segundo"
 
-#: ../data/verbal_analogies.xml.h:300
+#: ../data/verbal_analogies.xml.h:301
 msgid "shovel / dig | axe"
 msgstr "pala / cavar | hacha"
 
-#: ../data/verbal_analogies.xml.h:301
+#: ../data/verbal_analogies.xml.h:302
 msgid "sink"
 msgstr "hundir"
 
-#: ../data/verbal_analogies.xml.h:302
+#: ../data/verbal_analogies.xml.h:303
 msgid "sleep | rest"
 msgstr "dormir | descansar"
 
-#: ../data/verbal_analogies.xml.h:303
+#: ../data/verbal_analogies.xml.h:304
 msgid "slurp / tongue | snort"
 msgstr "sorbo / lengua | bufido"
 
-#: ../data/verbal_analogies.xml.h:304
+#: ../data/verbal_analogies.xml.h:305
 msgid "sour"
 msgstr "agrio"
 
 #. Translators: stick refers to a piece of wood
-#: ../data/verbal_analogies.xml.h:306
+#: ../data/verbal_analogies.xml.h:307
 msgid "stick / float | stone"
 msgstr "palo / flotar | piedra"
 
-#: ../data/verbal_analogies.xml.h:307
+#: ../data/verbal_analogies.xml.h:308
 msgid "sticky"
 msgstr "pegajoso"
 
-#: ../data/verbal_analogies.xml.h:308
+#: ../data/verbal_analogies.xml.h:309
 msgid "stripes"
 msgstr "rayas"
 
-#: ../data/verbal_analogies.xml.h:309
+#: ../data/verbal_analogies.xml.h:310
 msgid "sugar / sweet | vinegar"
 msgstr "azúcar / dulce | vinagre"
 
-#: ../data/verbal_analogies.xml.h:310
+#: ../data/verbal_analogies.xml.h:311
 msgid "talk / yell | dislike"
 msgstr "hablar / gritar | disgustar"
 
-#: ../data/verbal_analogies.xml.h:311
+#: ../data/verbal_analogies.xml.h:312
 msgid "tear | rip"
 msgstr "desgarro | rotura"
 
-#: ../data/verbal_analogies.xml.h:312
+#: ../data/verbal_analogies.xml.h:313
 msgid "tears / eyes | sweat"
 msgstr "lágrimas / ojos | sudor"
 
 # N.T.: En inglés hace referencia a 'toes' que son 10 pero en español a dedos que son 20
 #. Translators: referred to 'feet / two | toes'
-#: ../data/verbal_analogies.xml.h:314
+#: ../data/verbal_analogies.xml.h:315
 msgid "ten | 10"
 msgstr "veinte | 20"
 
-#: ../data/verbal_analogies.xml.h:315
+#: ../data/verbal_analogies.xml.h:316
 msgid "tennis / sport | ballet"
 msgstr "tenis / deporte | ballet"
 
-#: ../data/verbal_analogies.xml.h:316
+#: ../data/verbal_analogies.xml.h:317
 msgid "thankful / ingratitude | despotism"
 msgstr "agradecido / ingratitud | despotismo"
 
-#: ../data/verbal_analogies.xml.h:317
+#: ../data/verbal_analogies.xml.h:318
 msgid "thermometer / temperature | clock"
 msgstr "termómetro / temperatura | reloj"
 
-#: ../data/verbal_analogies.xml.h:318
+#: ../data/verbal_analogies.xml.h:319
 msgid "tiger / carnivore | cow"
 msgstr "tigre / carnívoro | vaca"
 
 #. Translators: time as duration of an event. What a clock measures
-#: ../data/verbal_analogies.xml.h:320
+#: ../data/verbal_analogies.xml.h:321
 msgid "time"
 msgstr "tiempo"
 
-#: ../data/verbal_analogies.xml.h:321
+#: ../data/verbal_analogies.xml.h:322
 msgid "toy / play | tool"
 msgstr "juguete / jugar | herramienta"
 
-#: ../data/verbal_analogies.xml.h:322
+#: ../data/verbal_analogies.xml.h:323
 msgid "track | railway | rails"
 msgstr "vía | vía férrea"
 
 #. Translators: letter refers to letter (in paper form)
-#: ../data/verbal_analogies.xml.h:324
+#: ../data/verbal_analogies.xml.h:325
 msgid "turtle / shell | letter"
 msgstr "tortuga / caparazón | carta"
 
-#: ../data/verbal_analogies.xml.h:325
+#: ../data/verbal_analogies.xml.h:326
 msgid "vegetable"
 msgstr "vegetal | verdura | hortaliza"
 
-#: ../data/verbal_analogies.xml.h:326
+#: ../data/verbal_analogies.xml.h:327
 msgid "whirlpool / water | tornado"
 msgstr "remolino / agua | tornado"
 
-#: ../data/verbal_analogies.xml.h:327
+#: ../data/verbal_analogies.xml.h:328
 msgid "wild | savage"
 msgstr "salvaje | feroz"
 
-#: ../data/verbal_analogies.xml.h:328
+#: ../data/verbal_analogies.xml.h:329
 msgid "win | play"
 msgstr "ganar | jugar"
 
-#: ../data/verbal_analogies.xml.h:329
+#: ../data/verbal_analogies.xml.h:330
 msgid "wind | air"
 msgstr "viento | aire"
 
-#: ../data/verbal_analogies.xml.h:330
+#: ../data/verbal_analogies.xml.h:331
 msgid "wine / grape | rum"
 msgstr "vino / uva | ron"
 
-#: ../data/verbal_analogies.xml.h:331
+#: ../data/verbal_analogies.xml.h:332
 msgid "wings"
 msgstr "alas"
 
 #. Translators: 'work' is used as a verb (to work)
-#: ../data/verbal_analogies.xml.h:333
+#: ../data/verbal_analogies.xml.h:334
 msgid "work"
 msgstr "trabajar"
 
-#: ../data/verbal_analogies.xml.h:334
+#: ../data/verbal_analogies.xml.h:335
 msgid "wrist | arm"
 msgstr "muñeca | brazo"
 
-#: ../data/verbal_analogies.xml.h:335
+#: ../data/verbal_analogies.xml.h:336
 msgid "write / pen | eat"
 msgstr "escribir / bolígrafo | comer"
 
@@ -2580,7 +2569,6 @@ msgstr "Tiempo restante"
 #. The number is used as reference when looking for the game solution in the PDF
 #: ../src/Core/Main/PdfExporter.cs:104 ../src/Core/Main/PdfExporter.cs:165
 #, csharp-format
-#| msgid "Game {0}. {1}"
 msgid "Game #{0}. {1}"
 msgstr "Juego #{0}. {1}"
 
@@ -3858,7 +3846,7 @@ msgid "Next figure"
 msgstr "Siguiente figura"
 
 #: ../src/Games/Logic/PuzzleNextFigure.cs:58
-#: ../src/Games/Logic/PuzzleSquareDots.cs:209
+#: ../src/Games/Logic/PuzzleGridDots.cs:210
 #, csharp-format
 msgid ""
 "Which is the next logical figure in the sequence? Answer {0}, {1} or {2}."
@@ -4361,9 +4349,30 @@ msgstr ""
 "El número en el medio de cada fila es igual al doble de la suma de los otros "
 "números de la fila."
 
-#: ../src/Games/Logic/PuzzleSquareDots.cs:204
+#: ../src/Games/Logic/PuzzleGridDots.cs:205
 msgid "Square with dots"
 msgstr "Cuadrado con puntos"
+
+#: ../src/Games/Logic/PuzzleGridDots.cs:220
+msgid ""
+"From the top-left figure, the top-left circle moves down, the bottom-left "
+"circle moves up, the bottom-right moves diagonally up-right and the top-"
+"right moves diagonally down-right."
+msgstr ""
+"Desde la figura superior izquierda, el círculo superior izquierdo se mueve "
+"hacia abajo, el círculo inferior izquierdo se mueve hacia arriba, el de "
+"abajo a la derecha se mueve en diagonal hacia arriba y a la derecha y el "
+"superior derecho se mueven en diagonal hacia abajo y a la derecha."
+
+#: ../src/Games/Logic/PuzzleGridDots.cs:223
+msgid ""
+"From the top-left figure, the circles move two positions in the direction of "
+"the first element and turn counterclockwise 90° degrees left and move one "
+"position."
+msgstr ""
+"Desde la figura superior izquierda, el círculo se mueve dos posiciones en la "
+"dirección del primer elemento y gira 90º en sentido antihorario a la "
+"izquierda y se mueve una posición."
 
 #: ../src/Games/Logic/PuzzleSquaresAndLetters.cs:35
 msgid "Squares and letters"
@@ -5477,6 +5486,9 @@ msgstr "_Desinstalar…"
 #: ../src/Clients/Classical/mono-addins-strings.xml.h:35
 msgid "_Unselect All"
 msgstr "_Deseleccionar todo"
+
+#~ msgid "Wealthy"
+#~ msgstr "Riqueza"
 
 #~ msgid ""
 #~ "The variable p is smaller than x and s is bigger than y. If p is bigger "
