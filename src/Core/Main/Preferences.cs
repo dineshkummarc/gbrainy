@@ -138,7 +138,7 @@ namespace gbrainy.Core.Main
 			defaults.Add (ToolbarShowKey, true.ToString ());
 			defaults.Add (ToolbarOrientationKey, "0");
 			defaults.Add (ColorBlindKey, false.ToString ());
-			defaults.Add (ThemeKey, "classic");
+			defaults.Add (ThemeKey, "notebook");
 			defaults.Add (EnglishVersionKey, string.Empty);
 			defaults.Add (EnglishKey, false.ToString ());
 		}
