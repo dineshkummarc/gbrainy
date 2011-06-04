@@ -217,10 +217,10 @@ namespace gbrainy.Games.Logic
 				switch (puzzle_index) {
 				case 0:
 					return ServiceLocator.Instance.GetService <ITranslations> ().GetString
-					("From the top-left figure, the top-left circle moves down, the bottom-left circle moves up, the bottom-right moves diagonally up-right and the top-right moves diagonally down-right.");
+					("From the top-left figure, the top-left circle moves down, the bottom-left circle moves up, the bottom-right moves diagonally up-left and the top-right moves diagonally down-left.");
 				case 2:
 					return ServiceLocator.Instance.GetService <ITranslations> ().GetString
-					("From the top-left figure, the circles move two positions in the direction of the first element and turn counterclockwise 90\u00b0 degrees left and move one position.");
+					("From the top-left figure, the figure is rotated counterclockwise 90 degrees.");
 				case 1: // TODO
 				default:
 					return string.Empty;
