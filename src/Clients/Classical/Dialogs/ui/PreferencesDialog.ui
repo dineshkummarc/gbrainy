@@ -29,7 +29,7 @@
             </child>
             <child>
               <object class="GtkCheckButton" id="colorblindcheckbutton">
-                <property name="label" translatable="yes">Skip games that use colors (friendly to colorblind users)</property>
+                <property name="label" translatable="yes">Skip games that use colors (for colorblind users)</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="receives_default">False</property>
@@ -44,7 +44,7 @@
             </child>
             <child>
               <object class="GtkCheckButton" id="english_checkbutton">
-                <property name="label" translatable="yes">Run gbrainy using English language (ignore translation)</property>
+                <property name="label" translatable="yes">Force gbrainy to always use English language (ignore translations)</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="receives_default">False</property>
@@ -221,7 +221,7 @@
             </child>
             <child>
               <object class="GtkCheckButton" id="prefcheckbutton">
-                <property name="label" translatable="yes">Show countdown message</property>
+                <property name="label" translatable="yes">Show a countdown message</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="receives_default">False</property>
