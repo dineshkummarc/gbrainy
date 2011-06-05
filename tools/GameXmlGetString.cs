@@ -58,24 +58,24 @@ public class GameXmlSttringFactory
 			"In a tennis tournament, in every match a player is eliminated after losing to a single opponent. How many matches does it take to determine the winner of a tennis tournament that starts with [players] players?",
 			variable);
 
-		Catalog.GetPluralString ("You have [money] monetary unit in your bank account at 10% compound interest annually. How much money will you have at end of 2 years?",
-			"You have [money] monetary units in your bank account at 10% compound interest annually. How much money will you have at end of 2 years?",
+		Catalog.GetPluralString ("You have [money] monetary unit in your bank account at 10% interest compounded annually. How much money will you have at the end of 2 years?",
+			"You have [money] monetary units in your bank account at 10% interest compounded annually. How much money will you have at the end of 2 years?",
 			variable);
 
 		Catalog.GetPluralString ("In a horse race there are people and horses. You count [eyes] eye and [legs] leg. How many horses are present?",
 			"In a horse race there are people and horses. You count [eyes] eyes and [legs] legs. How many horses are present?",
 			variable);
 
-		Catalog.GetPluralString ("John cleans at speed of 1 / [john_time] per hour and his friend at 1 / [friend], both together need [answer_a] hour.",
-			"John cleans at speed of 1 / [john_time] per hour and his friend at 1 / [friend], both together need [answer_a] hours.",
+		Catalog.GetPluralString ("John cleans at the speed of 1 / [john_time] per hour and his friend at 1 / [friend]. Together they will need [answer_a] hour.",
+			"John cleans at the speed of 1 / [john_time] per hour and his friend at 1 / [friend]. Together they will need [answer_a] hours.",
 			variable);
 
-		Catalog.GetPluralString ("John needs [john_time] hour to clean a warehouse and his friend half of John's time. How many hours would take them to clean up the warehouse if they work together? [option_answers]",
-			"John needs [john_time] hours to clean a warehouse and his friend half of John's time. How many hours would take them to clean up the warehouse if they work together? [option_answers]",
+		Catalog.GetPluralString ("John needs [john_time] hour to clean a warehouse and his friend needs half as many. How many hours would it take them to clean up the warehouse if they worked together? [option_answers]",
+			"John needs [john_time] hours to clean a warehouse and his friend needs half as many. How many hours would it take them to clean up the warehouse if they worked together? [option_answers]",
 			variable);
 
-		Catalog.GetPluralString ("John needs [john_time] hour to clean a warehouse and his friend two times John's time. How many hours would take them to clean up the warehouse if they work together? [option_answers]",
-			"John needs [john_time] hours to clean a warehouse and his friend two times John's time. How many hours would take them to clean up the warehouse if they work together? [option_answers]",
+		Catalog.GetPluralString ("John needs [john_time] hour to clean a warehouse and his friend needs twice as many. How many hours would it take them to clean up the warehouse if they worked together? [option_answers]",
+			"John needs [john_time] hours to clean a warehouse and his friend needs twice as many. How many hours would it take them to clean up the warehouse if they worked together? [option_answers]",
 			variable);
 
 		Catalog.GetPluralString ("You have two trucks that have a total weight of [add] unit. If the lighter truck weights 15 units less that half of the weight of the heavier truck, what is the weight of the lighter truck? [option_answers]",

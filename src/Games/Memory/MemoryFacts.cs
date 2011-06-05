@@ -103,11 +103,12 @@ namespace gbrainy.Games.Memory
 				fact.answers [1] = 1914 + random.Next (50);
 				fact.fact = String.Format (
 					// Translators: {0} is replaced by a number, {1} by a year (like 1940)
-					ServiceLocator.Instance.GetService <ITranslations> ().GetPluralString ("Shiny Cars had already announced a {0} day production halt next month, but before that it had not cut production since {1}.",
-					"Shiny Cars had already announced a {0} days production halt next month, but before that it had not cut production since {1}.",
+					// Day in English does not need to be plural
+					ServiceLocator.Instance.GetService <ITranslations> ().GetPluralString ("Shiny Cars had already announced a {0} day production halt next month, but before then it had not halted production since {1}.",
+					"Shiny Cars had already announced a {0} day production halt next month, but before then it had not halted production since {1}.",
 					fact.answers [0]),
 					fact.answers [0], fact.answers [1]);
-				fact.questions [0] = ServiceLocator.Instance.GetService <ITranslations> ().GetString ("For how many days did Shiny Cars halt its production?");
+				fact.questions [0] = ServiceLocator.Instance.GetService <ITranslations> ().GetString ("How many days did Shiny Cars halt its production for?");
 				fact.questions [1] = ServiceLocator.Instance.GetService <ITranslations> ().GetString ("In what year did Shiny Cars last halt its production?");
 				break;
 			case 1:
@@ -116,10 +117,10 @@ namespace gbrainy.Games.Memory
 				fact.answers [1] = 1914 + random.Next (50);
 				fact.fact = String.Format (
 					// Translators: {0} is replaced by a number, {1} by a year (like 1940)
-					ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Shiny Cars sales fell {0}% this past December, the worse decline since {1}."),
+					ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Shiny Cars sales fell {0}% this past December, the worst decline since {1}."),
 					fact.answers [0], fact.answers [1]);
 				fact.questions [0] = ServiceLocator.Instance.GetService <ITranslations> ().GetString ("By how much did company sales fall last December?");
-				fact.questions [1] = ServiceLocator.Instance.GetService <ITranslations> ().GetString ("In what year did Shiny Cars record a sales total lower than that of last December?");
+				fact.questions [1] = ServiceLocator.Instance.GetService <ITranslations> ().GetString ("In what year was Shiny Cars sales total lower than that of last December?");
 				break;
 			case 2:
 				fact.Initialize (1);
@@ -132,7 +133,7 @@ namespace gbrainy.Games.Memory
 				fact.Initialize (2);
 				fact.answers [0] = 10 + random.Next (30);
 				fact.answers [1] = 100 - (1 + random.Next (10)) - fact.answers [0];
-				fact.fact = String.Format (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("About {0}% of Shiny Cars use diesel, {1}% use gasoline and the remainder use electric."),
+				fact.fact = String.Format (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("About {0}% of Shiny Cars use diesel, {1}% use gasoline and the remainder use electricity."),
 					fact.answers [0], fact.answers [1]);
 				fact.questions [0] = ServiceLocator.Instance.GetService <ITranslations> ().GetString ("What percentage of Shiny Cars use diesel?");
 				fact.questions [1] = ServiceLocator.Instance.GetService <ITranslations> ().GetString ("What percentage of Shiny Cars use gasoline?");

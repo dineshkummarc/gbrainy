@@ -55,7 +55,7 @@ namespace gbrainy.Games.Logic
 
 		public override string Question {
 			get {return String.Format (
-				ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Which element does not belong to the group? It is not related to divisibility of the numbers. Answer {0}, {1}, {2}, {3} or {4}."),
+				ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Which element does not belong to the group? It is not related to any arithmetical of the numbers. Answer {0}, {1}, {2}, {3} or {4}."),
 				Answer.GetMultiOption (0), Answer.GetMultiOption (1), Answer.GetMultiOption (2), Answer.GetMultiOption (3), Answer.GetMultiOption (4));}
 		}
 
@@ -76,7 +76,7 @@ namespace gbrainy.Games.Logic
 			get {
 				switch (gametype) {
 				case GameType.Equations:
-					return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("In all the other equations the digits from the left side appear also in the right side.");
+					return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("In all the other equations the digits from the left side also appear on the right side.");
 				case GameType.Numbers:
 					return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("In all the other numbers the last three digits are the square of the first two digits.");
 				default:

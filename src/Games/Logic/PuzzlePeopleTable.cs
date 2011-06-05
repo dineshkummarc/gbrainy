@@ -46,7 +46,7 @@ namespace gbrainy.Games.Logic
 		}
 
 		public override string Question {
-			get {return String.Format (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("A group of people are sitting at round table, evenly spaced out. How many people are there if the {0} person is across from the {1}?"), ques1, ques2);} 
+			get {return String.Format (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("A group of people are sitting at a round table spaced out evenly. How many people are there if the {0} person is across from the {1}?"), ques1, ques2);} 
 		}
 
 		public override string Rationale {

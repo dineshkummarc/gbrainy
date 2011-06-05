@@ -171,11 +171,11 @@ namespace gbrainy.Games.Logic
 			get {
 				switch (operation) {
 				case Operation.AddHalf:
-					return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("The number on the middle in every row is equal to half of the sum of the other numbers of the row.");
+					return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("The number in the middle of every row is half of the sum of the other numbers in the row.");
 				case Operation.Add:
-					return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("The number on the middle in every row is equal the sum of the other numbers of the row.");
+					return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("The number in the middle of every row is the sum of the other numbers in the row.");
 				case Operation.AddDouble:
-					return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("The number on the middle in every row is equal to the double of the sum of the other numbers of the row.");
+					return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("The number in the middle of every row is the double of the sum of the other numbers in the row.");
 				default:
 					throw new InvalidOperationException ("Invalid value");
 				}

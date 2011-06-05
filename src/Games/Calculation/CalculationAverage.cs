@@ -52,12 +52,12 @@ namespace gbrainy.Games.Calculation
 				nums += numbers [numbers.Length - 1];
 
 				return String.Format (
-					ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Given the numbers: {0}. Which of the following numbers is the nearest to the average? Answer {1}, {2}, {3} or {4}."), nums,
+					ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Given the numbers: {0}. Which of the following numbers is closest to the average? Answer {1}, {2}, {3} or {4}."), nums,
 					Answer.GetMultiOption (0), Answer.GetMultiOption (1), Answer.GetMultiOption (2), Answer.GetMultiOption (3));}
 		}
 
 		public override string Tip {
-			get { return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("The average of a list of numbers is the sum of all of the numbers divided by the number of items in the list.");}
+			get { return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("The average of a list of numbers is their sum divided by the number of numbers in the list.");}
 		}
 
 		public override string Rationale {

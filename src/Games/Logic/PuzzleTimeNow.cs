@@ -41,13 +41,13 @@ namespace gbrainy.Games.Logic
 				// http://msdn.microsoft.com/en-us/library/system.globalization.datetimeformatinfo.aspx
 				// For 12-hour clock format use {0:%h} and for 24-hour clock format use {0:%H}. The date formats {0:h} and {0:H} are invalid.
 				//
-				ServiceLocator.Instance.GetService <ITranslations> ().GetString ("{0} hours ago it was as long after {1:h tt} as it was before {2:h tt} on the same day. What is the time now? Answer using the hour (e.g.: {3:h tt})"),
+				ServiceLocator.Instance.GetService <ITranslations> ().GetString ("{0} hours ago it was as long after {1:h tt} as it was before {2:h tt} on the same day. What is the time now? Answer using the hour (e.g. {3:h tt})"),
 				after, position_a, position_b, position_b));}
 		}
 
 		public override string Rationale {
 			get {
-				return String.Format (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("You have to calculate the hour from which the distance is the same for the given times, and then add the {0} hours to convert it to present time."), after);
+				return String.Format (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Determine the hour half way between the given times, and then add {0} hours to convert it to the present time."), after);
 			}
 		}
 		

@@ -147,10 +147,10 @@
 
 				double rslt =  money * (Math.Pow (1 + interest, years));
 			</variables>
-			<question>You have [money] monetary unit in your bank account at 10% compound interest annually. How much money will you have at end of 2 years?</question>
-			<question plural = "[money]">You have [money] monetary units in your bank account at 10% compound interest annually. How much money will you have at end of 2 years?</question>
+			<question>You have [money] monetary unit in your bank account at 10% interest compounded annually. How much money will you have at the end of 2 years?</question>
+			<question plural = "[money]">You have [money] monetary units in your bank account at 10% interest compounded annually. How much money will you have at the end of 2 years?</question>
 			<answer>[rslt]</answer>
-			<_rationale>Compound interest is paid on the original amount and on the accumulated past interest.</_rationale>
+			<_rationale>Compound interest is paid on the principal plus any past interest accumulated.</_rationale>
 		</variant>
 	</game>
 
@@ -301,7 +301,7 @@
 			int answer_d = ans [5 * idx + 3];
 			int answer_e = ans [5 * idx + 4];
 			</variables>
-			<_question>On the dartboard below, where you have to hit the darts to add 120 points in 5 throws? Answer using a list of numbers (e.g.: 4, 5, 6, 3, 2)</_question>
+			<_question>On the dartboard below, where would you need to throw the darts to add 120 points in 5 throws? Answer using a list of numbers (e.g. 4, 5, 6, 3, 2)</_question>
 			<svg file = "dartboard.svg" x = "0.1" y = "0.1" width = "0.8" height = "0.8"/>
 
 			<string text = "[value_a]" x = "0.35" y = "0.35" size = "x-large"/>
@@ -341,7 +341,7 @@
 		<difficulty>All</difficulty>
 		<_question>How much weight is needed at the point indicated by the question mark to balance the lever?</_question>
 		<_tip>Consider the sentence attributed to Archimedes: give me a lever long enough and a place to stand, and I can move the Earth.</_tip>
-		<_rationale>A lever is in equilibrium at distances reciprocally proportional to their weights.</_rationale>
+		<_rationale>A lever is in equilibrium when the objects place on it are at a distances reciprocally proportional to their weights.</_rationale>
 		<svg file = "lever.svg" x = "0.1" y = "0.1" width = "0.8" height = "0.8"/>
 		<variant>
 			<variables>
@@ -567,8 +567,8 @@
 				double answer_d = (0.90 / (john_speed + friend_speed));
 			</variables>
 
-			<question>John needs [john_time] hour to clean a warehouse and his friend half of John's time. How many hours would take them to clean up the warehouse if they work together? [option_answers]</question>
-			<question plural ="[john_time]">John needs [john_time] hours to clean a warehouse and his friend half of John's time. How many hours would take them to clean up the warehouse if they work together? [option_answers]</question>
+			<question>John needs [john_time] hour to clean a warehouse and his friend needs half as many. How many hours would it take them to clean up the warehouse if they worked together? [option_answers]</question>
+			<question plural ="[john_time]">John needs [john_time] hours to clean a warehouse and his friend needs half as many. How many hours would it take them to clean up the warehouse if they worked together? [option_answers]</question>
 		</variant>
 
 		<variant>
@@ -587,8 +587,8 @@
 				double answer_d = (0.90 / (john_speed + friend_speed));
 			</variables>
 
-			<question>John needs [john_time] hour to clean a warehouse and his friend two times John's time. How many hours would take them to clean up the warehouse if they work together? [option_answers]</question>
-			<question plural ="[john_time]">John needs [john_time] hours to clean a warehouse and his friend two times John's time. How many hours would take them to clean up the warehouse if they work together? [option_answers]</question>
+			<question>John needs [john_time] hour to clean a warehouse and his friend needs twice as many. How many hours would it take them to clean up the warehouse if they worked together? [option_answers]</question>
+			<question plural ="[john_time]">John needs [john_time] hours to clean a warehouse and his friend needs twice as many. How many hours would it take them to clean up the warehouse if they worked together? [option_answers]</question>
 		</variant>
 
 		<string _text = "Possible answers are:" x = "0.1" y = "0.15" size = "large"/>
@@ -609,8 +609,8 @@
 			<string _text = "[option_prefix] [answer_d]" x = "0.05" y = "0.02" size = "large"/>
 		</option>
 
-		<rationale>John cleans at speed of 1 / [john_time] per hour and his friend at 1 / [friend], both together need [answer_a] hour.</rationale>
-		<rationale plural ="[answer_a]">John cleans at speed of 1 / [john_time] per hour and his friend at 1 / [friend], both together need [answer_a] hours.</rationale>
+		<rationale>John cleans at the speed of 1 / [john_time] per hour and his friend at 1 / [friend]. Together they will need [answer_a] hour.</rationale>
+		<rationale plural ="[answer_a]">John cleans at the speed of 1 / [john_time] per hour and his friend at 1 / [friend]. Together they will need [answer_a] hours.</rationale>
 		<answer>[answer_a]</answer>
 	</game>
 

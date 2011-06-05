@@ -38,7 +38,7 @@ namespace gbrainy.Games.Calculation
 		private int max_operations;
 
 		public override string Name {
-			get {return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Arithmetical");}
+			get {return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Arithmetical operations");}
 		}
 
 		public override GameTypes Type {
@@ -46,7 +46,7 @@ namespace gbrainy.Games.Calculation
 		}
 
 		public override string Question {
-			get {return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("What is the result of the arithmetical operation?");} 
+			get {return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("What is the result of the following operation?");} 
 		}
 
 		protected override void Initialize ()

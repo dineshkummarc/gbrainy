@@ -55,11 +55,11 @@ namespace gbrainy.Core.Main
 			case 2:
 				return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("In logic games, elements that may seem irrelevant can be very important.");
 			case 3:
-				return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Break the mental blocks and look into the boundaries of problems.");
+				return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Try to approach a problem from different angles.");
 			case 4:
-				return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Enjoy making mistakes, they are part of the learning process.");
+				return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Do not be afraid of making mistakes, they are part of the learning process.");
 			case 5:
-				return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Do all the problems, even the difficult ones. Improvement comes from practicing.");
+				return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Do all the problems, even the difficult ones. Improvement comes from challeging yourself.");
 			case 6:
 				return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Play on a daily basis, you will notice progress soon.");
 			case 7: // Translators: Custom Game Selection is a menu option

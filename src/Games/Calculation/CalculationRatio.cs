@@ -39,7 +39,7 @@ namespace gbrainy.Games.Calculation
 		public override string Question {
 			get {
 				return String.Format (
-					ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Two numbers sum {0} and have a ratio of {1} to {2}. Which are these numbers? Answer using two numbers (e.g.: 1 and 2)."), 
+					ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Which two numbers have a sum of {0} and have a ratio of {1} to {2}. Answer using two numbers (e.g.: 1 and 2)."), 
 					number_a + number_b, ratio_a, ratio_b);
 			}
 		}
@@ -52,7 +52,7 @@ namespace gbrainy.Games.Calculation
 		}
 
 		public override string Tip {
-			get { return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("A ratio specifies a proportion between two numbers. A ratio a:b means that for every 'a' parts you have 'b' parts.");}
+			get { return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("A ratio specifies a proportion between two numbers. A ratio of a:b means that for every 'a' parts you have 'b' parts.");}
 		}
 
 		protected override void Initialize ()

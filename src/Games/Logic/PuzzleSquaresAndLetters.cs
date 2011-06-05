@@ -41,7 +41,7 @@ namespace gbrainy.Games.Logic
 
 		public override string Rationale {
 			get {
-				return String.Format (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Every letter is calculated by taking the alphabetical position of the previous character and adding {0} to it in order to get the position of the new letter."), step);
+				return String.Format (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Every letter is calculated by taking the alphabetical position of the previous character and adding {0} to it in order to get the position of the next letter."), step);
 			}
 		}
 
