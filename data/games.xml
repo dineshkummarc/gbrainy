@@ -392,7 +392,7 @@
 			<_question>Which two numbers of the list below are both multiple of [num_x] and [num_y]? [option_answers]</_question>
 			<_tip>A multiple is a number that may be divided by another number with no remainder. For example, 10, 15 and 25 are multiples of 5.</_tip>
 
-			<string _text = "Possible answers are:" x = "0.1" y = "0.15" size = "large"/>
+			<string _text = "Choose one of the following:" x = "0.1" y = "0.15" size = "large"/>
 
 			<option x = "0.3" y = "0.3" width ="0.45" height ="0.1" order ="randomized">
 				<string _text = "[option_prefix] [option_a] and [option_c]" x = "0.05" y = "0.02"  size = "large"/>
@@ -432,7 +432,7 @@
 			</variables>
 			<_question>In a small town, [all_cars]% of the inhabitants have a car and [males_cars]% have a car and are males. What percentage of the population are females and have a car? [option_answers]</_question>
 
-			<string _text = "Possible answers are:" x = "0.1" y = "0.15" size = "large"/>
+			<string _text = "Choose one of the following:" x = "0.1" y = "0.15" size = "large"/>
 
 			<option x = "0.3" y = "0.3" width ="0.45" height ="0.1" order ="randomized">
 				<string _text = "[option_prefix] [option_a]%" x = "0.05" y = "0.02" size = "large"/>
@@ -464,7 +464,7 @@
 		<variant>
 			<_question>If p &lt; x &lt; q and r &lt; y &lt; s. Which of the following options makes x &lt; y true? [option_answers]</_question>
 
-			<string _text = "Possible answers are:" x = "0.1" y = "0.15" size = "large"/>
+			<string _text = "Choose one of the following:" x = "0.1" y = "0.15" size = "large"/>
 
 			<option x = "0.3" y = "0.3" width ="0.45" height ="0.1" order ="randomized" correct = "yes">
 				<string _text = "[option_prefix] s &gt; p" x = "0.05" y = "0.02" size = "large"/>
@@ -489,7 +489,7 @@
 		<variant>
 			<_question>If p &lt; x &lt; q and r &lt; y &lt; s. Which of the following options makes x &gt; y true? [option_answers]</_question>
 
-			<string _text = "Possible answers are:" x = "0.1" y = "0.15" size = "large"/>
+			<string _text = "Choose one of the following:" x = "0.1" y = "0.15" size = "large"/>
 
 			<option x = "0.3" y = "0.3" width ="0.45" height ="0.1" order ="randomized" correct = "yes">
 				<string _text = "[option_prefix] r &lt; q" x = "0.05" y = "0.02" size = "large"/>
@@ -521,7 +521,7 @@
 		<variant>
 			<_question>Given two integer numbers x and y, if x is even and y odd, which of the following expressions gives always an odd result? [option_answers]</_question>
 
-			<string _text = "Possible answers are:" x = "0.1" y = "0.15" size = "large"/>
+			<string _text = "Choose one of the following:" x = "0.1" y = "0.15" size = "large"/>
 
 			<option x = "0.3" y = "0.3" width ="0.45" height ="0.1" order ="randomized" correct = "yes">
 				<string _text = "[option_prefix] 2x + y" x = "0.05" y = "0.02" size = "large"/>
@@ -591,7 +591,7 @@
 			<question plural ="[john_time]">John needs [john_time] hours to clean a warehouse and his friend needs twice as many. How many hours would it take them to clean up the warehouse if they worked together? [option_answers]</question>
 		</variant>
 
-		<string _text = "Possible answers are:" x = "0.1" y = "0.15" size = "large"/>
+		<string _text = "Choose one of the following:" x = "0.1" y = "0.15" size = "large"/>
 
 		<option x = "0.3" y = "0.3" width ="0.45" height ="0.1" order ="randomized" correct = "yes">
 			<string _text = "[option_prefix] [answer_a]" x = "0.05" y = "0.02" size = "large"/>
@@ -635,7 +635,7 @@
 		<_question>You have two trucks that have a total weight of [add] unit. If the lighter truck weights 15 units less that half of the weight of the heavier truck, what is the weight of the lighter truck? [option_answers]</_question>
 		<question plural ="[add]">You have two trucks that have a total weight of [add] units. If the lighter truck weights 15 units less that half of the weight of the heavier truck, what is the weight of the lighter truck? [option_answers]</question>
 
-		<string _text = "Possible answers are:" x = "0.1" y = "0.15" size = "large"/>
+		<string _text = "Choose one of the following:" x = "0.1" y = "0.15" size = "large"/>
 
 		<option x = "0.3" y = "0.3" width ="0.45" height ="0.1" order ="randomized" correct = "yes">
 			<string _text = "[option_prefix] [answer_a]" x = "0.05" y = "0.02" size = "large"/>
@@ -664,7 +664,7 @@
 		<variant>
 			<_question>John's father's sister's sister-in-law is also? Do not assume that John has any relative that has not been mentioned. [option_answers]</_question>
 
-			<string _text = "Possible answers are:" x = "0.1" y = "0.15" size = "large"/>
+			<string _text = "Choose one of the following:" x = "0.1" y = "0.15" size = "large"/>
 
 			<option x = "0.25" y = "0.3" width ="0.6" height ="0.1" order ="randomized" correct = "yes">
 				<string _text = "[option_prefix] His mother" x = "0.05" y = "0.02" size = "large"/>
@@ -688,7 +688,7 @@
 		<variant>
 			<_question>John's mother's brother's brother-in-law is also? Do not assume that John has any relative that has not been mentioned. [option_answers]</_question>
 
-			<string _text = "Possible answers are:" x = "0.1" y = "0.15" size = "large"/>
+			<string _text = "Choose one of the following:" x = "0.1" y = "0.15" size = "large"/>
 
 			<option x = "0.25" y = "0.3" width ="0.6" height ="0.1" order ="randomized" correct = "yes">
 				<string _text = "[option_prefix] His father" x = "0.05" y = "0.02" size = "large"/>
@@ -736,7 +736,7 @@
 		<variant>
 			<_question>The average of three numbers is [three]. The average of two of these numbers is [two]. What is the third number? [option_answers]</_question>
 
-			<string _text = "Possible answers are:" x = "0.1" y = "0.15" size = "large"/>
+			<string _text = "Choose one of the following:" x = "0.1" y = "0.15" size = "large"/>
 
 			<option x = "0.3" y = "0.3" width ="0.45" height ="0.1" order ="randomized" correct = "yes">
 				<string _text = "[option_prefix] [answer_a]"  x = "0.05"  y = "0.02" size = "large"/>

@@ -300,7 +300,7 @@ namespace gbrainy.Games.Logic
 			base.Draw (gr, area_width, area_height, rtl);
 
 			gr.MoveTo (0.1, 0.3);
-			gr.ShowPangoText (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Possible answers are:"));
+			gr.ShowPangoText (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Choose one of the following:"));
 			gr.Stroke ();
 		}
 	}

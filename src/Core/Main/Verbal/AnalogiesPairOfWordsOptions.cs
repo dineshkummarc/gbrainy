@@ -119,7 +119,7 @@ namespace gbrainy.Core.Main.Verbal
 			gr.SetPangoLargeFontSize ();
 
 			gr.MoveTo (0.1, y + 0.12);
-			gr.ShowPangoText (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Possible answers are:"));
+			gr.ShowPangoText (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Choose one of the following:"));
 			gr.Stroke ();
 
 			gr.DrawTextCentered (0.5, y,

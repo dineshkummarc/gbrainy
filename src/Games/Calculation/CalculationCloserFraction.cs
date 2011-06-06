@@ -174,7 +174,7 @@ namespace gbrainy.Games.Calculation
 			gr.SetPangoLargeFontSize ();
 
 			gr.MoveTo (0.1, 0.15);
-			gr.ShowPangoText (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Possible answers are:"));
+			gr.ShowPangoText (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Choose one of the following:"));
 		}
 	}
 }

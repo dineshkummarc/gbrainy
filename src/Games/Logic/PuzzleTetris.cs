@@ -169,7 +169,7 @@ namespace gbrainy.Games.Logic
 			}
 
 			gr.MoveTo (0.1, 0.4 - 0.02);
-			gr.ShowPangoText (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Possible answers are:"));
+			gr.ShowPangoText (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Choose one of the following:"));
 		}
 	}
 }

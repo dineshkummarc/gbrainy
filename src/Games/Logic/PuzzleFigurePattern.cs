@@ -188,7 +188,7 @@ namespace gbrainy.Games.Logic
 			gr.Stroke ();
 	
 			gr.MoveTo (0.05, y - 0.01 + space_y);
-			gr.ShowPangoText (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Possible answers are:"));
+			gr.ShowPangoText (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Choose one of the following:"));
 
 			// Answers
 			x = org_x;
