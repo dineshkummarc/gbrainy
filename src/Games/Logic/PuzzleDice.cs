@@ -51,11 +51,11 @@ namespace gbrainy.Games.Logic
 		{
 			problems = new Problem []
 			{
-				new Problem (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("What is the probability of getting a '2' or a '6' in a single throw of an unmodified 6 sided die? Answer using a fraction (e.g. 1/2)."),
+				new Problem (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("What is the probability of getting a '2' or a '6' in a single throw of an unmodified 6 sided die? Answer using a fraction (e.g.: 1/2)."),
 					"1/3",
 					ServiceLocator.Instance.GetService <ITranslations> ().GetString ("There are 2 of 6 possibilities."), true),
 
-				new Problem (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("What is the probability of not getting a '5' in a single throw of an unmodified 6 sided die? Answer using a fraction (e.g. 1/2)."),
+				new Problem (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("What is the probability of not getting a '5' in a single throw of an unmodified 6 sided die? Answer using a fraction (e.g.: 1/2)."),
 					"5/6",
 					ServiceLocator.Instance.GetService <ITranslations> ().GetString ("There are 5 of 6 possibilities."), true),
 
