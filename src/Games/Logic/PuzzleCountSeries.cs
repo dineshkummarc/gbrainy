@@ -89,7 +89,7 @@ namespace gbrainy.Games.Logic
 			rationale = string.Format (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("The numbers are: {0}."), rationale);
 
 			if (game_type == GameType.HowManyNines) {
-				// Translators: Concadenating two strings (rationale of answer + extra information).
+				// Translators: Concatenating two strings (rationale of answer + extra information).
 				rationale = string.Format (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("{0} {1}"), rationale,
 					ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Notice that 99 contains two numbers '9'."));
 			}				

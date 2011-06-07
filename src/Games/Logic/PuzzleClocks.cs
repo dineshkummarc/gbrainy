@@ -47,9 +47,10 @@ namespace gbrainy.Games.Logic
 
 		public override string Rationale {
 			get {
+				// Translators: {0} is replaced by 'Figure X'
 				return String.Format (ServiceLocator.Instance.GetService <ITranslations> ().GetString (
-					"Starting from the first clock, sum {0} to the number made by adding the values to which the hands point."), 
-					addition);
+					"Starting from the first clock, add {1} to the number obtained by appending the values to which the hands point, for '{0}' is {2} + {1} = {3}."), 
+					Answer.GetFigureName (3), addition, handles [4].ToString () + handles [5].ToString (), handles [6].ToString () + handles [7].ToString ());
 			}
 		}
 
