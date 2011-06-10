@@ -40,6 +40,7 @@ namespace gbrainy.Games.Logic
 
 		public override string Rationale {
 			get {
+				// Translators: {0} is replaced always by 0.1340
 				return String.Format (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Using the above layout {0} units of height are gained per row leaving enough space for an additional row."), 0.1340);
 			}
 		}
