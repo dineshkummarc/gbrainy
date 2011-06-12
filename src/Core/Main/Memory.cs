@@ -122,6 +122,10 @@ namespace gbrainy.Core.Main
 
 		private void TimerUpdater (object source, ElapsedEventArgs e)
 		{
+			// In slow systems you can get pending events after the timer is disabled
+			if (timer.Enabled == false)
+				return;
+
 			if (shade == false && time_left == 0) {
 				lock (this) {
 					time_left = shading_time;
