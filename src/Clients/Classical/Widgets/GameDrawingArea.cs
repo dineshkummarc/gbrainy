@@ -21,6 +21,7 @@ using System;
 using Gtk;
 using Cairo;
 using Mono.Unix;
+using gbrainy.Core.Libraries;
 
 using gbrainy.Core.Main;
 
@@ -64,10 +65,13 @@ namespace gbrainy.Clients.Classical.Widgets
 		const double icon_size = 0.08;
 		const double icon_margin = 0.01;
 
+		SVGImage [] images;
+
 		public GameDrawingArea ()
 		{
 			UseSolutionArea = true;
 			SolutionIcon = SolutionType.None;
+			images = new SVGImage [Enum.GetValues (typeof (SolutionType)).Length];
 		}
 
 		public void ReloadBackground ()
@@ -224,6 +228,7 @@ namespace gbrainy.Clients.Classical.Widgets
 		void DrawSolutionIcon (CairoContextEx cr, double x, double y, double width, double height)
 		{
 			string image;
+			int img_index = (int) SolutionIcon;
 
 			switch (SolutionIcon) {
 			case SolutionType.CorrectAnswer:
@@ -239,7 +244,12 @@ namespace gbrainy.Clients.Classical.Widgets
 				return;
 			}
 
-			cr.DrawImageFromAssembly (image, x + icon_margin, y, width, height);
+			// In memory games, the image gets painted several dozen times
+			if (images [img_index] == null) {
+				images [img_index] = new SVGImage (System.Reflection.Assembly.GetExecutingAssembly (), image);
+			}
+
+			cr.DrawImage (images [img_index], x + icon_margin, y, width, height);
 		}
 	}
 }

@@ -295,7 +295,7 @@ namespace gbrainy.Core.Libraries
 			}
 		}
 
-		void DrawImage (SVGImage image, double x, double y, double width, double height)
+		public void DrawImage (SVGImage image, double x, double y, double width, double height)
 		{
 			Save ();
 			Translate (x, y);
