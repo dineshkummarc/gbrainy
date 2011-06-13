@@ -136,7 +136,7 @@ namespace gbrainy.Core.Main
 			defaults.Add (MinPlayedGamesKey, "5");
 			defaults.Add (MaxStoredGamesKey, "20");
 			defaults.Add (ToolbarShowKey, true.ToString ());
-			defaults.Add (ToolbarOrientationKey, "0");
+			defaults.Add (ToolbarOrientationKey, "1");
 			defaults.Add (ColorBlindKey, false.ToString ());
 			defaults.Add (ThemeKey, "notebook");
 			defaults.Add (EnglishVersionKey, string.Empty);
