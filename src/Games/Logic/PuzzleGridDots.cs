@@ -216,8 +216,8 @@ namespace gbrainy.Games.Logic
 			get {
 				switch (puzzle_index) {
 				case 0:
-					return ServiceLocator.Instance.GetService <ITranslations> ().GetString
-					("From the top-left figure, the top-left circle moves down, the bottom-left circle moves up, the bottom-right moves diagonally up-left and the top-right moves diagonally down-left.");
+					// Translators: Please, do not make the translated string longer than the original English one. It will not fit in screen.
+					return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("From the top-left figure, the top-left circle moves down, the bottom-left circle moves up, the bottom-right moves diagonally up-left and the top-right moves diagonally down-left.");
 				case 2:
 					return ServiceLocator.Instance.GetService <ITranslations> ().GetString
 					("From the top-left figure, the figure is rotated counterclockwise 90 degrees.");
