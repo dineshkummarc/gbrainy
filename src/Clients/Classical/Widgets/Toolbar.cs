@@ -146,7 +146,7 @@ namespace gbrainy.Clients.Classical.Widgets
 
 			FinishButton = new ToolButton ("endgame");
 			FinishButton.TooltipText = Catalog.GetString ("End the game and show score");
-			FinishButton.Label = Catalog.GetString ("Finish");
+			FinishButton.Label = Catalog.GetString ("End");
 			Insert (FinishButton, -1);
 		}
 
