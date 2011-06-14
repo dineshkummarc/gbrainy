@@ -169,8 +169,12 @@ namespace gbrainy.Clients.Classical.Widgets
 			cr.DrawStringWithWrapping (text_margin, text_margin, Question, max_width);
 			cr.Stroke ();
 
+			double w, h, question_high_scaled;
+			cr.MeasureString (Question, max_width, true, out w, out h);
+
+			// We use a minimum hight, but if the text is longer (L10 versions) move the line as needed
+			question_high_scaled = Math.Max (question_high / (double) height, h);
 			cr.LineWidth = 0.002;
-			double question_high_scaled = question_high / (double) height;
 			cr.MoveTo (0.01, question_high_scaled + 0.01);
 			cr.LineTo (0.99, question_high_scaled + 0.01);
 			cr.Stroke ();
