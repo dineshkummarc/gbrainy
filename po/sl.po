@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gbrainy master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gbrainy&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2011-06-07 18:23+0000\n"
-"PO-Revision-Date: 2011-06-09 15:40+0100\n"
+"POT-Creation-Date: 2011-06-17 13:34+0000\n"
+"PO-Revision-Date: 2011-06-18 08:23+0100\n"
 "Last-Translator: Andrej Žnidaršič <andrej.znidarsic@gmail.com>\n"
 "Language-Team: Slovenian <gnome-si@googlegroups.com>\n"
 "Language: sl\n"
@@ -136,8 +136,8 @@ msgstr[2] "Imate dva tovornjaka, ki imata skupno maso [add] enoti. Koliko tehta 
 msgstr[3] "Imate dva tovornjaka, ki imata skupno maso [add] enote. Koliko tehta lažji tovornjak, če tehta 15 enot manj kot polovica težjega tovornjaka? [option_answers]"
 
 #: ../data/games.xml.h:1
-msgid "A lever is in equilibrium when the objects place on it are at a distances reciprocally proportional to their weights."
-msgstr "Konca vzvoda sta si v ravnotežju takrat, ko sta razdalji medsebojno sorazmerni s težo uteži."
+msgid "A lever is in equilibrium when the objects placed on it are at a distances reciprocally proportional to their weights."
+msgstr "Vzvod je v ravnotežju takrat, ko so razdalji predmetov na njem medsebojno sorazmerni z njihovo težo."
 
 #: ../data/games.xml.h:2
 msgid "A multiple is a number that may be divided by another number with no remainder. For example, 10, 15 and 25 are multiples of 5."
@@ -205,8 +205,8 @@ msgid "Compound interest is paid on the principal plus any past interest accumul
 msgstr "Obresti so pri obrestno obrestnemu računu izplačane na glavnico in na pretekle obresti."
 
 #: ../data/games.xml.h:14
-msgid "Consider the sentence attributed to Archimedes: give me a lever long enough and a place to stand, and I can move the Earth."
-msgstr "Premislite stavek, ki ga je izrekel Arhimed: dajte mi vzvod in oporno točko, in premaknil bom Svet."
+msgid "Consider the sentence attributed to Archimedes: 'Give me a lever long enough and a place to stand and I can move the Earth'."
+msgstr "Razmislite o stavku, ki ga pripisujejo Arhimedu: 'Dajte mi vzvod in oporno točko, in premaknil bom Zemljo'."
 
 #: ../data/games.xml.h:15
 msgid "Container"
@@ -2169,7 +2169,7 @@ msgid "Disappointing results"
 msgstr "Obupni rezultati"
 
 #: ../src/Core/Main/GameSession.cs:282
-#: ../src/Clients/Classical/Widgets/GameDrawingArea.cs:122
+#: ../src/Clients/Classical/Widgets/GameDrawingArea.cs:126
 msgid "Paused"
 msgstr "V premoru"
 
@@ -2234,7 +2234,7 @@ msgstr "Pri odgovarjanju na besedne analogije pazite na čas glagola."
 msgid "Memorize the objects below in the given time"
 msgstr "Zapomnite si spodnje predmete v danemu času"
 
-#: ../src/Core/Main/Memory.cs:216
+#: ../src/Core/Main/Memory.cs:220
 msgid "Time left"
 msgstr "Preostali čas"
 
@@ -2690,8 +2690,8 @@ msgid "End the game and show score"
 msgstr "Končaj igro in pokaži rezultat"
 
 #: ../src/Clients/Classical/Widgets/Toolbar.cs:149
-msgid "Finish"
-msgstr "Končaj"
+msgid "End"
+msgstr "Konec"
 
 #: ../src/Games/Logic/Puzzle3DCube.cs:32
 msgid "3D Cube"
@@ -2750,18 +2750,19 @@ msgstr "Kolikšno je največje število krogov (kot je prikazano na sliki), ki j
 msgid "You can fit more than 64 circles."
 msgstr "Spraviti je mogoče več kot 64 krogov."
 
-#: ../src/Games/Logic/PuzzleCirclesSquare.cs:43
+#. Translators: {0} is replaced always by 0.1340
+#: ../src/Games/Logic/PuzzleCirclesSquare.cs:44
 #, csharp-format
 msgid "Using the above layout {0} units of height are gained per row leaving enough space for an additional row."
 msgstr "V prikazani razporeditvi je v vsaki vrstici pridobljenih {0} višinskih enot. To omogoča uporabo dodatne vrstice."
 
-#: ../src/Games/Logic/PuzzleCirclesSquare.cs:77
-#: ../src/Games/Logic/PuzzleCirclesSquare.cs:98
+#: ../src/Games/Logic/PuzzleCirclesSquare.cs:78
+#: ../src/Games/Logic/PuzzleCirclesSquare.cs:99
 msgid "8 units"
 msgstr "8 enot"
 
-#: ../src/Games/Logic/PuzzleCirclesSquare.cs:117
-#: ../src/Games/Logic/PuzzleCirclesSquare.cs:136
+#: ../src/Games/Logic/PuzzleCirclesSquare.cs:118
+#: ../src/Games/Logic/PuzzleCirclesSquare.cs:137
 msgid "1 unit"
 msgstr "1 enota"
 
@@ -3604,6 +3605,7 @@ msgstr "Število na sredini vsake vrstice je dvakratnik vsote vseh ostalih štev
 msgid "Square with dots"
 msgstr "Kvadrat s pikami"
 
+#. Translators: Please, do not make the translated string longer than the original English one. It will not fit in screen.
 #: ../src/Games/Logic/PuzzleGridDots.cs:220
 msgid "From the top-left figure, the top-left circle moves down, the bottom-left circle moves up, the bottom-right moves diagonally up-left and the top-right moves diagonally down-left."
 msgstr "Iz zgornje leve slike se zgornji levi krog premakne navzdol, spodnji levi krog se premakne navzgor, spodnji desni krog se premakne diagonalno levo navzgor in spodnji desni krog se premakne desno navzdol."
@@ -4530,6 +4532,9 @@ msgstr "_Odstrani ..."
 msgid "_Unselect All"
 msgstr "_Prekliči izbor vsega"
 
+#~ msgid "Finish"
+#~ msgstr "Končaj"
+
 #~ msgid "Possible answers are:"
 #~ msgstr "Mogoči odgovori so:"
 
@@ -4645,9 +4650,6 @@ msgstr "_Prekliči izbor vsega"
 
 #~ msgid "theatre | theater"
 #~ msgstr "gledališče | teater"
-
-#~ msgid "Enabled"
-#~ msgstr "Omogočeno"
 
 #~ msgid "Bagpipes"
 #~ msgstr "Dude"
