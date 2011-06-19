@@ -113,9 +113,8 @@ namespace gbrainy.Core.Main
 			set {game_manager.Difficulty = value; }
 		}
 	
-		public TimeSpan GameTime {
-			get {return game_time; }
-			set {game_time = value; }
+		public string GameTime {
+			get { return TimeSpanToStr (game_time);}
 		}
 
 		public bool Paused {
@@ -327,12 +326,12 @@ namespace gbrainy.Core.Main
 
 		static private string TimeSpanToStr (TimeSpan time)
 		{
-			string fmt = time.ToString ();
-			int i = fmt.IndexOf ('.');
-			if (i > 0 && fmt.Length - i > 2)
-				fmt = fmt.Substring (0, i);
+			DateTime dtime;
 
-			return fmt;
+			// Convert it to DateTime to be able to use CultureSensitive formatting
+			dtime = new DateTime (1970, 1, 1, time.Hours, time.Minutes, time.Seconds);
+			
+			return dtime.Hour > 0 ? dtime.ToString ("hh:mm:ss") : dtime.ToString ("mm:ss");
 		}
 
 		public void GameUpdateUIElement (object obj, UpdateUIStateEventArgs args)
