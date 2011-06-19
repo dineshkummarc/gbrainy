@@ -142,8 +142,6 @@ namespace gbrainy.Core.Views
 
 			y += 0.08;
 			gr.MoveTo (x, y);
-
-			gr.MoveTo (x, y);
 	
 			s = session.Result;
 			if (s == string.Empty)
