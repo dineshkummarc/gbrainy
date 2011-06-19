@@ -61,7 +61,8 @@ namespace gbrainy.Core.Main
 
 		GameSession.Types game_type;
 		IEnumerator <int> enumerator;
-		GameDifficulty difficulty;		
+		GameDifficulty difficulty;
+		bool color_blind;
 
 		List <GameLocator> available_games; 	// List of all available games in the system
 		List <int> play_list;  		// Play list for the Selected difficulty, game types
@@ -143,7 +144,18 @@ namespace gbrainy.Core.Main
 		// Indicates if the PlayList for CustomGames is delivered in RandomOrder
  		public bool RandomOrder { get; set; }
 
-		public bool ColorBlind { get; set; }
+		public bool ColorBlind { 
+			get { return color_blind;} 
+			set {
+				if (color_blind == value)
+					return;
+
+				color_blind = value;
+
+				if ((game_type & GameSession.Types.Custom) != GameSession.Types.Custom)
+					BuildPlayList (available_games);	
+			}
+		}
 
 		// Returns all the games available for playing
 		public GameLocator [] AvailableGames {
