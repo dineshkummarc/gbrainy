@@ -225,7 +225,9 @@ namespace gbrainy.Clients.Classical.Widgets
 				Solution, max_width - icon_w);
 			cr.Stroke ();
 
-			DrawSolutionIcon (cr, icon_x, 1 - box_height_scaled, icon_w, icon_h);
+			DrawSolutionIcon (cr, icon_x,
+				(1 - box_height_scaled - text_margin) + ((box_height_scaled - icon_h) / 2),
+				icon_w, icon_h);
 			cr.Restore ();
 		}
 
