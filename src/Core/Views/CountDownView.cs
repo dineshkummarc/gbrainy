@@ -45,7 +45,7 @@ namespace gbrainy.Core.Views
 			finish = OnFinish;
 		}
 
-		public ISynchronizeInvoke SynchronizingObject { 
+		public ISynchronizeInvoke SynchronizingObject {
 			set { synchronize = value; }
 			get { return synchronize; }
 		}
@@ -71,9 +71,6 @@ namespace gbrainy.Core.Views
 		{
 			gr.Scale (area_width, area_height);
 
-			gr.Color = new Cairo.Color (0.8, 0.8, 0.8);
-			gr.Paint ();
-
 			gr.LineWidth = 0.01;
 			gr.Color = new Cairo.Color (0, 0, 0, 1);
 
@@ -83,7 +80,7 @@ namespace gbrainy.Core.Views
 
 			gr.SetPangoFontSize (0.35);
 			gr.MoveTo (0.37, 0.22);
-			gr.ShowPangoText (countdown_time.ToString ());
+			gr.DrawTextCentered (0.5, 0.5, countdown_time.ToString ());
 			gr.Stroke ();
 
 			gr.Arc (0.5, 0.5, 0.25, 0, 2 * Math.PI);
