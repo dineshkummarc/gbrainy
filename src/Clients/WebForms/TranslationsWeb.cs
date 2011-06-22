@@ -19,7 +19,6 @@
 
 using System;
 using Mono.Unix;
-using System.IO;
 
 using gbrainy.Core.Services;
 

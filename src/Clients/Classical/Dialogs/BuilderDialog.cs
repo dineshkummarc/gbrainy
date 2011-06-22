@@ -17,9 +17,6 @@
  * Boston, MA 02111-1307, USA.
  */
 
-using Gtk;
-using GtkBeans;
-
 namespace gbrainy.Clients.Classical.Dialogs
 {
 	public class BuilderDialog : Gtk.Dialog

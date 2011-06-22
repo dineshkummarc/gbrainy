@@ -18,7 +18,6 @@
  */
 
 using System;
-using Cairo;
 using Gtk;
 using Mono.Unix;
 using System.Diagnostics;
@@ -28,7 +27,6 @@ using System.Reflection;
 using gbrainy.Core.Main;
 using gbrainy.Core.Platform;
 using gbrainy.Core.Services;
-using gbrainy.Core.Libraries;
 using gbrainy.Clients.Classical.Dialogs;
 using gbrainy.Clients.Classical.Widgets;
 

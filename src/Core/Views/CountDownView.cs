@@ -19,7 +19,6 @@
 
 
 using System;
-using Cairo;
 using System.Timers;
 using System.ComponentModel;
 
@@ -79,7 +78,6 @@ namespace gbrainy.Core.Views
 			gr.Stroke ();
 
 			gr.SetPangoFontSize (0.35);
-			gr.MoveTo (0.37, 0.22);
 			gr.DrawTextCentered (0.5, 0.5, countdown_time.ToString ());
 			gr.Stroke ();
 
