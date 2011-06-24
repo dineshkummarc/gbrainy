@@ -17,14 +17,16 @@ AM_PROG_LIBTOOL
 GNOME_COMPILE_WARNINGS
 AM_PATH_GLIB_2_0
 
-dnl --- Check for mono and gmcs
+dnl --- Check for mono and dmcs or gmcs
 
 AC_PATH_PROG(MONO, mono)
-AC_PATH_PROG(MCS, gmcs)
+
+AC_PATH_PROG(DMCS, dmcs, "")
+AC_PATH_PROG(CSC, gmcs, $DMCS)
 
 CSC_DEFINES=""
 CS="C#"
-if test ! -x "$MCS"; then
+if test ! -x "$CSC"; then
 	AC_MSG_ERROR([No $CS compiler found])
 fi
 
@@ -185,7 +187,6 @@ AC_SUBST(CFLAGS)
 AC_SUBST(CPPFLAGS)
 AC_SUBST(LDFLAGS)
 
-AC_PATH_PROG(CSC, gmcs)
 AC_SUBST(CSC)
 AC_SUBST(CSC_DEFINES)
 
