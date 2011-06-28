@@ -58,7 +58,6 @@ analogies_DATA = \
 themes_DATA = \
 	themes/themes.xml \
 	themes/classic_background.svg \
-	themes/blackboard_background.svg \
 	themes/notebook_background.svg
 
 install-data-local:
