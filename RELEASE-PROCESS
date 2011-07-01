@@ -1,26 +1,32 @@
+gbrainy release process
+
 Here are the steps to create a new gbrainy release:
 
-1) Send a message two weeks before the release to the gnome localization list asking translators to update gbrainy's translations
+* Send a message two weeks before the release to the gnome localization list asking translators to update gbrainy's translations
 
-2) Run all the unit tests and verify that they pass
+* Run src/tools/TranslationsChecker.exe and make sure that no translation strings have problems
+
+* Run all the unit tests and verify that they pass
+
+* Go to the sample_extensions directory and verify that the extensions are built correctly
 
 See tests/README
 
-3) Update the file NEWS with the most rellevant changes
+* Update the file NEWS with the most rellevant changes
 
-4) Make sure that the configure.ac contains the right version number for the release
+* Make sure that the configure.ac contains the right version number for the release
 
-5) Execute make 'make distcheck' and make sure that completes correctly
+* Execute make 'make distcheck' and make sure that completes correctly
 
-6) Do a smoke test to verify that gbrainy has been built properly
+* Do a smoke test to verify that gbrainy has been built properly
 
-7) Tag the gbrainy git repository naming the tag label GBRAINY_X_Y_Z, where X and Y are the major versions and Z the revision number.
+* Tag the gbrainy git repository naming the tag label GBRAINY_X_Y_Z, where X and Y are the major versions and Z the revision number.
 
-8) Upload the final tar.gz to a public location
+* Upload the final tar.gz to a public location
 
-9) Send a message to the gnome announce list
+* Send a message to the gnome announce list
 
-10) Update gbrainy releases page
+* Update gbrainy releases page
 
-11) Review developer's documentation http://live.gnome.org/gbrainy/Extending
+* Review developer's documentation http://live.gnome.org/gbrainy/Extending
 
