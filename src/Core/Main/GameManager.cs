@@ -162,7 +162,7 @@ namespace gbrainy.Core.Main
 			get { return available_games.ToArray (); }
 		}
 		
-		// Gives the Assembly.Load used in GamaManager the right path to load the application assemblies
+		// Gives the Assembly.Load used in GameManager the right path to load the application assemblies
 		static Assembly ResolveAssemblyLoad (object sender, ResolveEventArgs args)
 		{
 			IConfiguration config = ServiceLocator.Instance.GetService <IConfiguration> ();	
@@ -482,7 +482,6 @@ namespace gbrainy.Core.Main
 				}
 
 				puzzle =  (Game) Activator.CreateInstance ((Type) available_games [enumerator.Current].TypeOf, true);
-				//puzzle =  (Game) Activator.CreateInstance (LogicPuzzles [37], true);
 
 				puzzle.Variant = available_games [enumerator.Current].Variant;
 

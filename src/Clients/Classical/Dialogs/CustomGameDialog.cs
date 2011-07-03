@@ -29,6 +29,7 @@ namespace gbrainy.Clients.Classical.Dialogs
 {
 	public class CustomGameDialog : BuilderDialog
 	{
+		// This is static to allow to preserve the selection in different instances
 		static ListStore games_store;
 		[GtkBeans.Builder.Object] Gtk.TreeView treeview;
 		[GtkBeans.Builder.Object] Box preview_vbox;
@@ -141,6 +142,14 @@ namespace gbrainy.Clients.Classical.Dialogs
 
 		public bool SelectionDone {
 			get { return selection_done;}
+		}
+
+		public static void Clear ()
+		{
+			if (games_store != null)
+				games_store.Dispose ();
+
+			games_store = null;
 		}
 
 		int GameSort (Gtk.TreeModel model, Gtk.TreeIter a, Gtk.TreeIter b)

@@ -199,7 +199,12 @@ namespace gbrainy.Clients.Classical
 				showtoolbar_menuitem.Active = false;
 
 		#if MONO_ADDINS
-			extensions_menuitem.Activated += delegate (object sender, EventArgs ar) { Mono.Addins.Gui.AddinManagerWindow.Run (app_window);};
+			extensions_menuitem.Activated += delegate (object sender, EventArgs ar) 
+			{ 
+				Mono.Addins.Gui.AddinManagerWindow.Run (app_window);
+				GameManagerPreload (session.GameManager);
+				CustomGameDialog.Clear ();
+			};
 		#else
 			extensions_menuitem.Visible = false;
 		#endif
