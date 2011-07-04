@@ -13,8 +13,8 @@ msgstr ""
 "Project-Id-Version: gbrainy.master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=gbrainy&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2011-06-28 21:36+0000\n"
-"PO-Revision-Date: 2011-06-30 16:35+0200\n"
+"POT-Creation-Date: 2011-07-03 09:43+0000\n"
+"PO-Revision-Date: 2011-07-04 17:50+0200\n"
 "Last-Translator: Daniel Mustieles <daniel.mustieles@gmail.com>\n"
 "Language-Team: Español <gnome-es-list@gnome.org>\n"
 "MIME-Version: 1.0\n"
@@ -3047,7 +3047,7 @@ msgid "Time in seconds to memorize the challenge:"
 msgstr "Tiempo en segundos para memorizar el desafío:"
 
 #: ../src/Clients/Classical/Widgets/BrowseFile.cs:43
-#: ../src/Clients/Classical/mono-addins-strings.xml.h:10
+#: ../src/Clients/Classical/mono-addins-strings.xml.h:13
 msgid "Browse..."
 msgstr "Examinar…"
 
@@ -4478,26 +4478,39 @@ msgstr ""
 msgid "Time now"
 msgstr "Hora actual"
 
-#. TimeNow Puzzle. Translators: {1}, {2} {3} are replaced by hours. Use the right time format specification for your culture
-#. Explanation of the date and time format specifications can be found here:
-#. http://msdn.microsoft.com/en-us/library/system.globalization.datetimeformatinfo.aspx
-#. For 12-hour clock format use {0:%h} and for 24-hour clock format use {0:%H}. The date formats {0:h} and {0:H} are invalid.
-#.
-#: ../src/Games/Logic/PuzzleTimeNow.cs:44
-#, csharp-format
+#: ../src/Games/Logic/PuzzleTimeNow.cs:45
+#, fuzzy, csharp-format
+#| msgid ""
+#| "{0} hours ago it was as long after {1:h tt} as it was before {2:h tt} on "
+#| "the same day. What is the time now? Answer using the hour (e.g.: {3:h tt})"
 msgid ""
+"{0} hour ago it was as long after {1:h tt} as it was before {2:h tt} on the "
+"same day. What is the time now? Answer using the hour (e.g.: {3:h tt})"
+msgid_plural ""
 "{0} hours ago it was as long after {1:h tt} as it was before {2:h tt} on the "
 "same day. What is the time now? Answer using the hour (e.g.: {3:h tt})"
-msgstr ""
+msgstr[0] ""
+"Hace {0} horas faltaba tanto para las {1:%H} que para las {2:%H} del mismo "
+"día. ¿Qué hora es ahora? Responde usando la hora (ej.: {3:%H})"
+msgstr[1] ""
 "Hace {0} horas faltaba tanto para las {1:%H} que para las {2:%H} del mismo "
 "día. ¿Qué hora es ahora? Responde usando la hora (ej.: {3:%H})"
 
-#: ../src/Games/Logic/PuzzleTimeNow.cs:50
-#, csharp-format
+#: ../src/Games/Logic/PuzzleTimeNow.cs:54
+#, fuzzy, csharp-format
+#| msgid ""
+#| "Determine the hour half way between the given times, and then add {0} "
+#| "hours to convert it to the present time."
 msgid ""
+"Determine the hour half way between the given times, and then add {0} hour "
+"to convert it to the present time."
+msgid_plural ""
 "Determine the hour half way between the given times, and then add {0} hours "
 "to convert it to the present time."
-msgstr ""
+msgstr[0] ""
+"Calcula la hora en la que el tiempo es el mismo para las horas dadas, y "
+"después añade las {0} horas para convertirlo a la hora actual."
+msgstr[1] ""
 "Calcula la hora en la que el tiempo es el mismo para las horas dadas, y "
 "después añade las {0} horas para convertirlo a la hora actual."
 
@@ -4506,13 +4519,13 @@ msgstr ""
 #. Explanation of the date and time format specifications can be found here:
 #. http://msdn.microsoft.com/en-us/library/system.globalization.datetimeformatinfo.aspx
 #. For 12-hour clock format use {0:%h} and for 24-hour clock format use {0:%H}. The date formats {0:h} and {0:H} are invalid.
-#: ../src/Games/Logic/PuzzleTimeNow.cs:72
+#: ../src/Games/Logic/PuzzleTimeNow.cs:79
 #, csharp-format
 msgid "{0:h tt}"
 msgstr "{0:%H}"
 
 #. No hands
-#: ../src/Games/Logic/PuzzleTimeNow.cs:82
+#: ../src/Games/Logic/PuzzleTimeNow.cs:89
 msgid "Sample clock"
 msgstr "Reloj de ejemplo"
 
@@ -5376,116 +5389,183 @@ msgid "Add-in Manager"
 msgstr "Gestor de complementos"
 
 #: ../src/Clients/Classical/mono-addins-strings.xml.h:7
+#, fuzzy
+#| msgid "Add-in Manager"
+msgid "Add-in Repository Management"
+msgstr "Gestor de complementos"
+
+#: ../src/Clients/Classical/mono-addins-strings.xml.h:8
+#| msgid "Add-in Manager"
+msgid "Add-in packages"
+msgstr "Paquetedes de complementos"
+
+#: ../src/Clients/Classical/mono-addins-strings.xml.h:9
 msgid "Additional extensions are required to perform this operation."
 msgstr "Se necesitan extensiones adicionales para realizar esta operación."
 
-#: ../src/Clients/Classical/mono-addins-strings.xml.h:8
+#: ../src/Clients/Classical/mono-addins-strings.xml.h:10
 msgid "All registered repositories"
 msgstr "Todos los repositorios registrados"
 
-#: ../src/Clients/Classical/mono-addins-strings.xml.h:9
+#: ../src/Clients/Classical/mono-addins-strings.xml.h:11
+#| msgid "All registered repositories"
+msgid "All repositories"
+msgstr "Todos los repositorios"
+
+#: ../src/Clients/Classical/mono-addins-strings.xml.h:12
 msgid "Author:"
 msgstr "Autor:"
 
-#: ../src/Clients/Classical/mono-addins-strings.xml.h:11
+#: ../src/Clients/Classical/mono-addins-strings.xml.h:14
 msgid "Copyright:"
 msgstr "Copyright:"
 
-#: ../src/Clients/Classical/mono-addins-strings.xml.h:12
+#: ../src/Clients/Classical/mono-addins-strings.xml.h:15
 msgid "Disable"
 msgstr "Deshabilitar"
 
-#: ../src/Clients/Classical/mono-addins-strings.xml.h:13
+#: ../src/Clients/Classical/mono-addins-strings.xml.h:16
 msgid "Enable"
 msgstr "Activar"
 
-#: ../src/Clients/Classical/mono-addins-strings.xml.h:14
+#: ../src/Clients/Classical/mono-addins-strings.xml.h:17
+#| msgid "Gallon"
+msgid "Gallery"
+msgstr "Galería"
+
+#: ../src/Clients/Classical/mono-addins-strings.xml.h:18
+#| msgid "_Install Add-ins..."
+msgid "Install Add-in Package"
+msgstr "Instalar paquete de complementos"
+
+#: ../src/Clients/Classical/mono-addins-strings.xml.h:19
+#| msgid "Install from:"
+msgid "Install from file..."
+msgstr "Instalar desde archivo…"
+
+#: ../src/Clients/Classical/mono-addins-strings.xml.h:20
 msgid "Install from:"
 msgstr "Instalar desde:"
 
-#: ../src/Clients/Classical/mono-addins-strings.xml.h:15
+#. Mono Addins 0.6
+#: ../src/Clients/Classical/mono-addins-strings.xml.h:22
+#| msgid "Install from:"
+msgid "Installed"
+msgstr "Instalado"
+
+#: ../src/Clients/Classical/mono-addins-strings.xml.h:23
+#| msgid "_Repositories..."
+msgid "Manage Repositories..."
+msgstr "Gestionar repositorios…"
+
+#: ../src/Clients/Classical/mono-addins-strings.xml.h:24
 msgid "Name"
 msgstr "Nombre"
 
-#: ../src/Clients/Classical/mono-addins-strings.xml.h:16
+#: ../src/Clients/Classical/mono-addins-strings.xml.h:25
+msgid "No add-ins found"
+msgstr "No se han encontrado complementos"
+
+#: ../src/Clients/Classical/mono-addins-strings.xml.h:26
+msgid "No selection"
+msgstr ""
+
+#: ../src/Clients/Classical/mono-addins-strings.xml.h:27
 msgid "Other"
 msgstr "Otro"
 
-#: ../src/Clients/Classical/mono-addins-strings.xml.h:17
+#: ../src/Clients/Classical/mono-addins-strings.xml.h:28
 msgid "Path:"
 msgstr "Ruta:"
 
-#: ../src/Clients/Classical/mono-addins-strings.xml.h:18
+#: ../src/Clients/Classical/mono-addins-strings.xml.h:29
+msgid "Refresh"
+msgstr "Actualizar"
+
+#: ../src/Clients/Classical/mono-addins-strings.xml.h:30
 msgid "Register a local repository"
 msgstr "Registrar un repositorio local"
 
-#: ../src/Clients/Classical/mono-addins-strings.xml.h:19
+#: ../src/Clients/Classical/mono-addins-strings.xml.h:31
 msgid "Register an on-line repository"
 msgstr "Registrar un repositorio en línea"
 
-#: ../src/Clients/Classical/mono-addins-strings.xml.h:20
+#: ../src/Clients/Classical/mono-addins-strings.xml.h:32
 msgid "Repository"
 msgstr "Repositorio"
 
-#: ../src/Clients/Classical/mono-addins-strings.xml.h:21
+#: ../src/Clients/Classical/mono-addins-strings.xml.h:33
+#| msgid "Repository"
+msgid "Repository:"
+msgstr "Repositorio:"
+
+#: ../src/Clients/Classical/mono-addins-strings.xml.h:34
 msgid "Select _All"
 msgstr "Seleccionar _todo"
 
-#: ../src/Clients/Classical/mono-addins-strings.xml.h:22
+#: ../src/Clients/Classical/mono-addins-strings.xml.h:35
 msgid "Select the location of the repository you want to register:"
 msgstr "Seleccionar la ubicación del repositorio que quiere registrar:"
 
-#: ../src/Clients/Classical/mono-addins-strings.xml.h:23
+#: ../src/Clients/Classical/mono-addins-strings.xml.h:36
 msgid "Show all packages"
 msgstr "Mostrar todos los paquetes"
 
-#: ../src/Clients/Classical/mono-addins-strings.xml.h:24
+#: ../src/Clients/Classical/mono-addins-strings.xml.h:37
 msgid "Show new versions only"
 msgstr "Mostrar sólo las nuevas versiones"
 
-#: ../src/Clients/Classical/mono-addins-strings.xml.h:25
+#: ../src/Clients/Classical/mono-addins-strings.xml.h:38
 msgid "Show updates only"
 msgstr "Mostrar sólo las actualizaciones"
 
-#: ../src/Clients/Classical/mono-addins-strings.xml.h:26
+#: ../src/Clients/Classical/mono-addins-strings.xml.h:39
 msgid "The following add-ins are currently installed:"
 msgstr "Los siguientes complementos están instalados actualmente:"
 
-#: ../src/Clients/Classical/mono-addins-strings.xml.h:27
+#: ../src/Clients/Classical/mono-addins-strings.xml.h:40
 msgid "The following add-ins will be installed:"
 msgstr "Se instalarán los siguientes complementos:"
 
-#: ../src/Clients/Classical/mono-addins-strings.xml.h:28
+#: ../src/Clients/Classical/mono-addins-strings.xml.h:41
+msgid "Updates"
+msgstr "Actualizaciones"
+
+#: ../src/Clients/Classical/mono-addins-strings.xml.h:42
 msgid "Url"
 msgstr "URL"
 
-#: ../src/Clients/Classical/mono-addins-strings.xml.h:29
+#: ../src/Clients/Classical/mono-addins-strings.xml.h:43
 msgid "Url:"
 msgstr "URL:"
 
-#: ../src/Clients/Classical/mono-addins-strings.xml.h:30
+#: ../src/Clients/Classical/mono-addins-strings.xml.h:44
 msgid "Version"
 msgstr "Versión"
 
-#: ../src/Clients/Classical/mono-addins-strings.xml.h:31
+#: ../src/Clients/Classical/mono-addins-strings.xml.h:45
 msgid "Version:"
 msgstr "Versión:"
 
-#: ../src/Clients/Classical/mono-addins-strings.xml.h:32
+#: ../src/Clients/Classical/mono-addins-strings.xml.h:46
 msgid "_Install Add-ins..."
 msgstr "_Instalar complementos…"
 
-#: ../src/Clients/Classical/mono-addins-strings.xml.h:33
+#: ../src/Clients/Classical/mono-addins-strings.xml.h:47
 msgid "_Repositories..."
 msgstr "_Repositorios…"
 
-#: ../src/Clients/Classical/mono-addins-strings.xml.h:34
+#: ../src/Clients/Classical/mono-addins-strings.xml.h:48
 msgid "_Uninstall..."
 msgstr "_Desinstalar…"
 
-#: ../src/Clients/Classical/mono-addins-strings.xml.h:35
+#: ../src/Clients/Classical/mono-addins-strings.xml.h:49
 msgid "_Unselect All"
 msgstr "_Deseleccionar todo"
+
+#: ../src/Clients/Classical/mono-addins-strings.xml.h:50
+msgid "{0} update available"
+msgstr "{0} actualización disponible"
 
 # Se refiere a un tiro al blanco?
 #~ msgid "Blackboard"
