@@ -12,8 +12,8 @@ msgstr ""
 "Project-Id-Version: gbrainy\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=gbrainy&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2011-06-13 14:00+0000\n"
-"PO-Revision-Date: 2011-06-14 07:58+0200\n"
+"POT-Creation-Date: 2011-07-03 09:43+0000\n"
+"PO-Revision-Date: 2011-07-10 14:22+0200\n"
 "Last-Translator: Marek Černocký <marek@manet.cz>\n"
 "Language-Team: Czech <gnome-cs-list@gnome.org>\n"
 "MIME-Version: 1.0\n"
@@ -852,14 +852,10 @@ msgid "gbrainy"
 msgstr "gbrainy"
 
 #: ../data/themes/themes.xml.h:1
-msgid "Blackboard"
-msgstr "Černá plocha"
-
-#: ../data/themes/themes.xml.h:2
 msgid "Classic"
 msgstr "Klasický"
 
-#: ../data/themes/themes.xml.h:3
+#: ../data/themes/themes.xml.h:2
 msgid "Notebook"
 msgstr "Poznámkový blok"
 
@@ -2160,7 +2156,7 @@ msgstr "zápěstí"
 msgid "write / pen | eat"
 msgstr "psát / pero | jíst"
 
-#: ../src/Core/Views/CountDownView.cs:81
+#: ../src/Core/Views/CountDownView.cs:77
 msgid "Get ready to memorize the next objects..."
 msgstr "Připravte se na zapamatování si několika věcí…"
 
@@ -2199,37 +2195,37 @@ msgid "Score"
 msgstr "Hodnocení"
 
 # Plural forms should be here
-#: ../src/Core/Views/FinishView.cs:150
+#: ../src/Core/Views/FinishView.cs:148
 #, csharp-format
 msgid "Games won: {0} ({1} played)"
 msgstr "Počet vyhraných her: {0} (z {1} hraných)"
 
-#: ../src/Core/Views/FinishView.cs:152
+#: ../src/Core/Views/FinishView.cs:150
 #, csharp-format
 msgid "{0}. Games won: {1} ({2} played)"
 msgstr "{0}. Počet vyhraných her: {1} (z {2} odehraných)"
 
-#: ../src/Core/Views/FinishView.cs:156
+#: ../src/Core/Views/FinishView.cs:154
 #, csharp-format
 msgid "Time played {0} (average per game {1})"
 msgstr "Strávený čas {0} ({1} průměrně na hru)"
 
 #. Translators: translated string should not be longer that the English original (space restriction on the UI)
-#: ../src/Core/Views/FinishView.cs:165
+#: ../src/Core/Views/FinishView.cs:163
 msgid "For details on how gbrainy's scoring works refer to the help."
 msgstr ""
 "Podrobnosti o tom, jak funguje hodnocení v aplikaci gbrainy, najdete v "
 "nápovědě."
 
-#: ../src/Core/Views/FinishView.cs:175
+#: ../src/Core/Views/FinishView.cs:173
 msgid "Tips for your next games"
 msgstr "Rady do dalších her"
 
-#: ../src/Core/Views/FinishView.cs:203
+#: ../src/Core/Views/FinishView.cs:201
 msgid "Congratulations! New personal record"
 msgstr "Gratulujeme! Nový osobní rekord"
 
-#: ../src/Core/Views/FinishView.cs:213
+#: ../src/Core/Views/FinishView.cs:211
 #, csharp-format
 msgid ""
 "By scoring {0} in logic puzzle games you have established a new personal "
@@ -2238,7 +2234,7 @@ msgstr ""
 "Hodnocením {0} v logických hlavolamech jste vytvořili nový osobní rekord. "
 "Váš předchozí rekord byl {1}."
 
-#: ../src/Core/Views/FinishView.cs:219
+#: ../src/Core/Views/FinishView.cs:217
 #, csharp-format
 msgid ""
 "By scoring {0} in calculation games you have established a new personal "
@@ -2247,7 +2243,7 @@ msgstr ""
 "Hodnocením {0} v početních hrách jste vytvořili nový osobní rekord. Váš "
 "předchozí rekord byl {1}."
 
-#: ../src/Core/Views/FinishView.cs:225
+#: ../src/Core/Views/FinishView.cs:223
 #, csharp-format
 msgid ""
 "By scoring {0} in memory games you have established a new personal record. "
@@ -2256,7 +2252,7 @@ msgstr ""
 "Hodnocením {0} v paměťových hrách jste vytvořili nový osobní rekord. Váš "
 "předchozí rekord byl {1}."
 
-#: ../src/Core/Views/FinishView.cs:231
+#: ../src/Core/Views/FinishView.cs:229
 #, csharp-format
 msgid ""
 "By scoring {0} in verbal analogies you have established a new personal "
@@ -2340,7 +2336,7 @@ msgstr "černá"
 msgid "white"
 msgstr "bílá"
 
-#: ../src/Core/Main/Game.cs:131
+#: ../src/Core/Main/Game.cs:128
 #, csharp-format
 msgid "The correct answer is {0}."
 msgstr "Správná odpověď je {0}."
@@ -2350,7 +2346,7 @@ msgstr "Správná odpověď je {0}."
 #. Translators: answer + rationale of the answer
 #. Translators: "The graph below" +  "It is built using" sentences
 #. Translators: Concatenating two strings (rationale of answer + extra information).
-#: ../src/Core/Main/Game.cs:138 ../src/Core/Main/Verbal/Analogies.cs:64
+#: ../src/Core/Main/Game.cs:135 ../src/Core/Main/Verbal/Analogies.cs:64
 #: ../src/Clients/Classical/Dialogs/PlayerHistoryDialog.cs:60
 #: ../src/Games/Logic/PuzzleCountSeries.cs:93
 #, csharp-format
@@ -2364,74 +2360,74 @@ msgstr "{0} {1}"
 #. For languages represented with the Latin alphabet use
 #. the same than English
 #. First possible answer for a series (e.g.: Figure A)
-#: ../src/Core/Main/GameAnswer.cs:112
+#: ../src/Core/Main/GameAnswer.cs:108
 msgid "A"
 msgstr "A"
 
 #. Second possible answer for a series
-#: ../src/Core/Main/GameAnswer.cs:114
+#: ../src/Core/Main/GameAnswer.cs:110
 msgid "B"
 msgstr "B"
 
 #. Third possible answer for a series
-#: ../src/Core/Main/GameAnswer.cs:116
+#: ../src/Core/Main/GameAnswer.cs:112
 msgid "C"
 msgstr "C"
 
 #. Fourth possible answer for a series
-#: ../src/Core/Main/GameAnswer.cs:118
+#: ../src/Core/Main/GameAnswer.cs:114
 msgid "D"
 msgstr "D"
 
 #. Fifth possible answer for a series
-#: ../src/Core/Main/GameAnswer.cs:120
+#: ../src/Core/Main/GameAnswer.cs:116
 msgid "E"
 msgstr "E"
 
 #. Sixth possible answer for a series
-#: ../src/Core/Main/GameAnswer.cs:122
+#: ../src/Core/Main/GameAnswer.cs:118
 msgid "F"
 msgstr "F"
 
 #. Seventh possible answer for a series
-#: ../src/Core/Main/GameAnswer.cs:124
+#: ../src/Core/Main/GameAnswer.cs:120
 msgid "G"
 msgstr "G"
 
 #. Eighth possible answer for a series
-#: ../src/Core/Main/GameAnswer.cs:126
+#: ../src/Core/Main/GameAnswer.cs:122
 msgid "H"
 msgstr "H"
 
 #. Translators. This is the list of valid answers, like A or B.
-#: ../src/Core/Main/GameAnswer.cs:141
+#: ../src/Core/Main/GameAnswer.cs:137
 #, csharp-format
 msgid "{0} or {1}"
 msgstr "{0} nebo {1}"
 
 #. Translators. This is the list of valid answers, like A, B or C.
-#: ../src/Core/Main/GameAnswer.cs:145
+#: ../src/Core/Main/GameAnswer.cs:141
 #, csharp-format
 msgid "{0}, {1} or {2}"
 msgstr "{0}, {1} nebo {2}"
 
 #. Translators. This is the list of valid answers, like A, B, C or D.
-#: ../src/Core/Main/GameAnswer.cs:149
+#: ../src/Core/Main/GameAnswer.cs:145
 #, csharp-format
 msgid "{0}, {1}, {2} or {3}"
 msgstr "{0}, {1}, {2} nebo {3}"
 
-#: ../src/Core/Main/GameAnswer.cs:159
+#: ../src/Core/Main/GameAnswer.cs:155
 #, csharp-format
 msgid "Figure {0}"
 msgstr "Obrázek {0}"
 
-#: ../src/Core/Main/GameManager.cs:324
+#: ../src/Core/Main/GameManager.cs:336
 msgid "Extensions database:"
 msgstr "Databáze rozšíření:"
 
 #. Translators: 'Games registered' is the games know to gbrainy (build-in and load from addins-in and external files)
-#: ../src/Core/Main/GameManager.cs:330
+#: ../src/Core/Main/GameManager.cs:342
 #, csharp-format
 msgid ""
 "Games registered: {0}: {1} logic puzzles, {2} calculation trainers, {3} "
@@ -2440,55 +2436,55 @@ msgstr ""
 "Registrované hry: {0}: {1} logické hlavolamy, {2} početní úlohy, {3} trénink "
 "paměti, {4} slovní analogie"
 
-#: ../src/Core/Main/GameSession.cs:177
+#: ../src/Core/Main/GameSession.cs:176
 #, csharp-format
 msgid "Games played: {0} (Score: {1})"
 msgstr "Počet odehraných her: {0} (hodnocení: {1})"
 
-#: ../src/Core/Main/GameSession.cs:178
+#: ../src/Core/Main/GameSession.cs:177
 #, csharp-format
 msgid "Time: {0}"
 msgstr "Čas: {0}"
 
 #. Translators: {0} is the name of the game
-#: ../src/Core/Main/GameSession.cs:182
+#: ../src/Core/Main/GameSession.cs:181
 #, csharp-format
 msgid "Game: {0}"
 msgstr "Hra: {0}"
 
 #. Translators: text in the status bar: games played - time - game name
-#: ../src/Core/Main/GameSession.cs:184
+#: ../src/Core/Main/GameSession.cs:183
 #, csharp-format
 msgid "{0} - {1} - {2}"
 msgstr "{0} - {1} - {2}"
 
 #. Translators: text in the status bar: games played - time
-#: ../src/Core/Main/GameSession.cs:187
+#: ../src/Core/Main/GameSession.cs:186
 #, csharp-format
 msgid "{0} - {1}"
 msgstr "{0} - {1}"
 
-#: ../src/Core/Main/GameSession.cs:200
+#: ../src/Core/Main/GameSession.cs:199
 msgid "Outstanding results"
 msgstr "Vynikající"
 
-#: ../src/Core/Main/GameSession.cs:202
+#: ../src/Core/Main/GameSession.cs:201
 msgid "Excellent results"
 msgstr "Výborné"
 
-#: ../src/Core/Main/GameSession.cs:204
+#: ../src/Core/Main/GameSession.cs:203
 msgid "Good results"
 msgstr "Dobré"
 
-#: ../src/Core/Main/GameSession.cs:206
+#: ../src/Core/Main/GameSession.cs:205
 msgid "Poor results"
 msgstr "Slabé"
 
-#: ../src/Core/Main/GameSession.cs:207
+#: ../src/Core/Main/GameSession.cs:206
 msgid "Disappointing results"
 msgstr "Zklamání"
 
-#: ../src/Core/Main/GameSession.cs:282
+#: ../src/Core/Main/GameSession.cs:281
 #: ../src/Clients/Classical/Widgets/GameDrawingArea.cs:126
 msgid "Paused"
 msgstr "Přestávka"
@@ -2672,15 +2668,15 @@ msgstr "Odpovězte {0}."
 msgid "{0}) "
 msgstr "{0}) "
 
-#: ../src/Clients/Classical/gbrainy.cs:429
+#: ../src/Clients/Classical/gbrainy.cs:427
 msgid "Congratulations."
 msgstr "Blahopřejeme."
 
-#: ../src/Clients/Classical/gbrainy.cs:431
+#: ../src/Clients/Classical/gbrainy.cs:429
 msgid "Incorrect answer."
 msgstr "Nesprávná odpověď."
 
-#: ../src/Clients/Classical/gbrainy.cs:495
+#: ../src/Clients/Classical/gbrainy.cs:493
 msgid ""
 "Once you have an answer type it in the \"Answer:\" entry box and press the "
 "\"OK\" button."
@@ -2688,11 +2684,11 @@ msgstr ""
 "Pokud znáte odpověď, napište ji do políčka „Odpověď:“ a stiskněte tlačítko "
 "„OK“."
 
-#: ../src/Clients/Classical/gbrainy.cs:525
+#: ../src/Clients/Classical/gbrainy.cs:523
 msgid "The level of translation of gbrainy for your language is low."
 msgstr "Do vašeho jazyka je aplikace gbrainy přeložená jen z malé části."
 
-#: ../src/Clients/Classical/gbrainy.cs:526
+#: ../src/Clients/Classical/gbrainy.cs:524
 msgid ""
 "You may be exposed to partially translated games making it more difficult to "
 "play. If you prefer to play in English, there is an option for doing so in "
@@ -2701,16 +2697,16 @@ msgstr ""
 "Pouze částečný překlad hry může její hraní značně ztížit. Pokud chcete hrát "
 "raději v angličtině, můžete si tak nastavit v předvolbách aplikace gbrainy."
 
-#: ../src/Clients/Classical/gbrainy.cs:621
+#: ../src/Clients/Classical/gbrainy.cs:620
 #: ../src/Clients/Classical/Widgets/Toolbar.cs:143
 msgid "Pause"
 msgstr "Přestávka"
 
-#: ../src/Clients/Classical/gbrainy.cs:626
+#: ../src/Clients/Classical/gbrainy.cs:625
 msgid "Resume"
 msgstr "Pokračovat"
 
-#: ../src/Clients/Classical/gbrainy.cs:776
+#: ../src/Clients/Classical/gbrainy.cs:775
 #, csharp-format
 msgid "Startup time {0}"
 msgstr "Začněte v bodě {0}"
@@ -3040,7 +3036,7 @@ msgid "Time in seconds to memorize the challenge:"
 msgstr "Čas v sekundách na zapamatování:"
 
 #: ../src/Clients/Classical/Widgets/BrowseFile.cs:43
-#: ../src/Clients/Classical/mono-addins-strings.xml.h:10
+#: ../src/Clients/Classical/mono-addins-strings.xml.h:13
 msgid "Browse..."
 msgstr "Procházet…"
 
@@ -4350,6 +4346,7 @@ msgstr ""
 msgid "Square with dots"
 msgstr "Čtverce s tečkami"
 
+#. Translators: Please, do not make the translated string longer than the original English one. It will not fit in screen.
 #: ../src/Games/Logic/PuzzleGridDots.cs:220
 msgid ""
 "From the top-left figure, the top-left circle moves down, the bottom-left "
@@ -4471,42 +4468,63 @@ msgstr ""
 msgid "Time now"
 msgstr "Kolik je hodin"
 
-#. TimeNow Puzzle. Translators: {1}, {2} {3} are replaced by hours. Use the right time format specification for your culture
-#. Explanation of the date and time format specifications can be found here:
-#. http://msdn.microsoft.com/en-us/library/system.globalization.datetimeformatinfo.aspx
-#. For 12-hour clock format use {0:%h} and for 24-hour clock format use {0:%H}. The date formats {0:h} and {0:H} are invalid.
-#.
-#: ../src/Games/Logic/PuzzleTimeNow.cs:44
+#: ../src/Games/Logic/PuzzleTimeNow.cs:45
 #, csharp-format
+#| msgid ""
+#| "{0} hours ago it was as long after {1:h tt} as it was before {2:h tt} on "
+#| "the same day. What is the time now? Answer using the hour (e.g.: {3:h tt})"
 msgid ""
+"{0} hour ago it was as long after {1:h tt} as it was before {2:h tt} on the "
+"same day. What is the time now? Answer using the hour (e.g.: {3:h tt})"
+msgid_plural ""
 "{0} hours ago it was as long after {1:h tt} as it was before {2:h tt} on the "
 "same day. What is the time now? Answer using the hour (e.g.: {3:h tt})"
-msgstr ""
+msgstr[0] ""
+"Před {0} hodinou to bylo tak dlouho po {1:h tt} jako bylo před {2:h tt} ten "
+"stejný den. Kolik je teď hodin? Odpověď napište v podobě času (např. "
+"{3:h tt})"
+msgstr[1] ""
 "Před {0} hodinami to bylo tak dlouho po {1:h tt} jako bylo před {2:h tt} ten "
-"stejný den. Kolik je teď hodin? Odpověď napište ve formě času (např. "
+"stejný den. Kolik je teď hodin? Odpověď napište v podobě času (např. "
+"{3:h tt})"
+msgstr[2] ""
+"Před {0} hodinami to bylo tak dlouho po {1:h tt} jako bylo před {2:h tt} ten "
+"stejný den. Kolik je teď hodin? Odpověď napište v podobě času (např. "
 "{3:h tt})"
 
-#: ../src/Games/Logic/PuzzleTimeNow.cs:50
+#: ../src/Games/Logic/PuzzleTimeNow.cs:54
 #, csharp-format
+#| msgid ""
+#| "Determine the hour half way between the given times, and then add {0} "
+#| "hours to convert it to the present time."
 msgid ""
+"Determine the hour half way between the given times, and then add {0} hour "
+"to convert it to the present time."
+msgid_plural ""
 "Determine the hour half way between the given times, and then add {0} hours "
 "to convert it to the present time."
-msgstr ""
-"Musíte vypočítat hodinu, která je v polovině mezi danými časy, a po té "
-"připočíst {0} hodin kvůli převodu na přítomný čas."
+msgstr[0] ""
+"Musíte určit hodinu, která je v polovině mezi danými časy, a po té přičíst "
+"{0} hodinu kvůli převodu na přítomný čas."
+msgstr[1] ""
+"Musíte určit hodinu, která je v polovině mezi danými časy, a po té přičíst "
+"{0} hodiny kvůli převodu na přítomný čas."
+msgstr[2] ""
+"Musíte určit hodinu, která je v polovině mezi danými časy, a po té přičíst "
+"{0} hodin kvůli převodu na přítomný čas."
 
 #. TimeNow Puzzle. Translators: {0} is used to check the hour answered by the user.
 #. Use the right time format specification for your culture
 #. Explanation of the date and time format specifications can be found here:
 #. http://msdn.microsoft.com/en-us/library/system.globalization.datetimeformatinfo.aspx
 #. For 12-hour clock format use {0:%h} and for 24-hour clock format use {0:%H}. The date formats {0:h} and {0:H} are invalid.
-#: ../src/Games/Logic/PuzzleTimeNow.cs:72
+#: ../src/Games/Logic/PuzzleTimeNow.cs:79
 #, csharp-format
 msgid "{0:h tt}"
 msgstr "{0:h tt}"
 
 #. No hands
-#: ../src/Games/Logic/PuzzleTimeNow.cs:82
+#: ../src/Games/Logic/PuzzleTimeNow.cs:89
 msgid "Sample clock"
 msgstr "Ukázkové hodiny"
 
@@ -5374,118 +5392,181 @@ msgid "Add-in Manager"
 msgstr "Správce doplňků"
 
 #: ../src/Clients/Classical/mono-addins-strings.xml.h:7
+#| msgid "Add-in Manager"
+msgid "Add-in Repository Management"
+msgstr "Správa repozitářů s doplňky"
+
+#: ../src/Clients/Classical/mono-addins-strings.xml.h:8
+#| msgid "Add-in Manager"
+msgid "Add-in packages"
+msgstr "Balíčky s doplňky"
+
+#: ../src/Clients/Classical/mono-addins-strings.xml.h:9
 msgid "Additional extensions are required to perform this operation."
 msgstr ""
 "Aby mohla být požadovaná operace provedena, je nutno nainstalovat některé "
 "doplňky."
 
-#: ../src/Clients/Classical/mono-addins-strings.xml.h:8
+#: ../src/Clients/Classical/mono-addins-strings.xml.h:10
 msgid "All registered repositories"
 msgstr "Všechny registrované repozitáře"
 
-#: ../src/Clients/Classical/mono-addins-strings.xml.h:9
+#: ../src/Clients/Classical/mono-addins-strings.xml.h:11
+#| msgid "All registered repositories"
+msgid "All repositories"
+msgstr "Všechny repozitáře"
+
+#: ../src/Clients/Classical/mono-addins-strings.xml.h:12
 msgid "Author:"
 msgstr "Autor:"
 
-#: ../src/Clients/Classical/mono-addins-strings.xml.h:11
+#: ../src/Clients/Classical/mono-addins-strings.xml.h:14
 msgid "Copyright:"
 msgstr "Autorská práva:"
 
-#: ../src/Clients/Classical/mono-addins-strings.xml.h:12
+#: ../src/Clients/Classical/mono-addins-strings.xml.h:15
 msgid "Disable"
 msgstr "Vypnout"
 
-#: ../src/Clients/Classical/mono-addins-strings.xml.h:13
+#: ../src/Clients/Classical/mono-addins-strings.xml.h:16
 msgid "Enable"
 msgstr "Vybrat"
 
-#: ../src/Clients/Classical/mono-addins-strings.xml.h:14
+#: ../src/Clients/Classical/mono-addins-strings.xml.h:17
+#| msgid "Gallon"
+msgid "Gallery"
+msgstr "Galerie"
+
+#: ../src/Clients/Classical/mono-addins-strings.xml.h:18
+#| msgid "_Install Add-ins..."
+msgid "Install Add-in Package"
+msgstr "Instalovat balíček s doplňkem"
+
+#: ../src/Clients/Classical/mono-addins-strings.xml.h:19
+#| msgid "Install from:"
+msgid "Install from file..."
+msgstr "Nainstalovat ze souboru…"
+
+#: ../src/Clients/Classical/mono-addins-strings.xml.h:20
 msgid "Install from:"
 msgstr "Nainstalovat z:"
 
-#: ../src/Clients/Classical/mono-addins-strings.xml.h:15
+#. Mono Addins 0.6
+#: ../src/Clients/Classical/mono-addins-strings.xml.h:22
+#| msgid "Install from:"
+msgid "Installed"
+msgstr "Nainstalováno"
+
+#: ../src/Clients/Classical/mono-addins-strings.xml.h:23
+#| msgid "_Repositories..."
+msgid "Manage Repositories..."
+msgstr "Správa repozitářů…"
+
+#: ../src/Clients/Classical/mono-addins-strings.xml.h:24
 msgid "Name"
 msgstr "Název"
 
-#: ../src/Clients/Classical/mono-addins-strings.xml.h:16
+#: ../src/Clients/Classical/mono-addins-strings.xml.h:25
+msgid "No add-ins found"
+msgstr "Žádný doplněk nenalezen"
+
+#: ../src/Clients/Classical/mono-addins-strings.xml.h:26
+msgid "No selection"
+msgstr "Nic nevybráno"
+
+#: ../src/Clients/Classical/mono-addins-strings.xml.h:27
 msgid "Other"
 msgstr "Ostatní"
 
-#: ../src/Clients/Classical/mono-addins-strings.xml.h:17
+#: ../src/Clients/Classical/mono-addins-strings.xml.h:28
 msgid "Path:"
 msgstr "Cesta:"
 
-#: ../src/Clients/Classical/mono-addins-strings.xml.h:18
+#: ../src/Clients/Classical/mono-addins-strings.xml.h:29
+msgid "Refresh"
+msgstr "Občerstvit"
+
+#: ../src/Clients/Classical/mono-addins-strings.xml.h:30
 msgid "Register a local repository"
 msgstr "Zaregistrovat místní repozitář"
 
-#: ../src/Clients/Classical/mono-addins-strings.xml.h:19
+#: ../src/Clients/Classical/mono-addins-strings.xml.h:31
 msgid "Register an on-line repository"
 msgstr "Zaregistrovat internetový repozitář"
 
-#: ../src/Clients/Classical/mono-addins-strings.xml.h:20
+#: ../src/Clients/Classical/mono-addins-strings.xml.h:32
 msgid "Repository"
 msgstr "Repozitář"
 
-#: ../src/Clients/Classical/mono-addins-strings.xml.h:21
+#: ../src/Clients/Classical/mono-addins-strings.xml.h:33
+#| msgid "Repository"
+msgid "Repository:"
+msgstr "Repozitář:"
+
+#: ../src/Clients/Classical/mono-addins-strings.xml.h:34
 msgid "Select _All"
 msgstr "Vybrat _vše"
 
-#: ../src/Clients/Classical/mono-addins-strings.xml.h:22
+#: ../src/Clients/Classical/mono-addins-strings.xml.h:35
 msgid "Select the location of the repository you want to register:"
 msgstr "Zvolte umístění repozitáře, který chcete zaregistrovat:"
 
-#: ../src/Clients/Classical/mono-addins-strings.xml.h:23
+#: ../src/Clients/Classical/mono-addins-strings.xml.h:36
 msgid "Show all packages"
 msgstr "Zobrazit všechny balíky"
 
-#: ../src/Clients/Classical/mono-addins-strings.xml.h:24
+#: ../src/Clients/Classical/mono-addins-strings.xml.h:37
 msgid "Show new versions only"
 msgstr "Zobrazit jen nové verze"
 
-#: ../src/Clients/Classical/mono-addins-strings.xml.h:25
+#: ../src/Clients/Classical/mono-addins-strings.xml.h:38
 msgid "Show updates only"
 msgstr "Zobrazit jen aktualizace"
 
-#: ../src/Clients/Classical/mono-addins-strings.xml.h:26
+#: ../src/Clients/Classical/mono-addins-strings.xml.h:39
 msgid "The following add-ins are currently installed:"
 msgstr "Tyto doplňky máte již nainstalovány:"
 
-#: ../src/Clients/Classical/mono-addins-strings.xml.h:27
+#: ../src/Clients/Classical/mono-addins-strings.xml.h:40
 msgid "The following add-ins will be installed:"
 msgstr "Následující doplňky budou nainstalovány:"
 
-#: ../src/Clients/Classical/mono-addins-strings.xml.h:28
+#: ../src/Clients/Classical/mono-addins-strings.xml.h:41
+msgid "Updates"
+msgstr "Aktualizace"
+
+#: ../src/Clients/Classical/mono-addins-strings.xml.h:42
 msgid "Url"
 msgstr "Adresa URL"
 
-#: ../src/Clients/Classical/mono-addins-strings.xml.h:29
+#: ../src/Clients/Classical/mono-addins-strings.xml.h:43
 msgid "Url:"
 msgstr "URL:"
 
-#: ../src/Clients/Classical/mono-addins-strings.xml.h:30
+#: ../src/Clients/Classical/mono-addins-strings.xml.h:44
 msgid "Version"
 msgstr "Verze"
 
-#: ../src/Clients/Classical/mono-addins-strings.xml.h:31
+#: ../src/Clients/Classical/mono-addins-strings.xml.h:45
 msgid "Version:"
 msgstr "Verze:"
 
-#: ../src/Clients/Classical/mono-addins-strings.xml.h:32
+#: ../src/Clients/Classical/mono-addins-strings.xml.h:46
 msgid "_Install Add-ins..."
 msgstr "_Instalace doplňků…"
 
-#: ../src/Clients/Classical/mono-addins-strings.xml.h:33
+#: ../src/Clients/Classical/mono-addins-strings.xml.h:47
 msgid "_Repositories..."
 msgstr "_Repozitáře…"
 
-#: ../src/Clients/Classical/mono-addins-strings.xml.h:34
+#: ../src/Clients/Classical/mono-addins-strings.xml.h:48
 msgid "_Uninstall..."
 msgstr "_Odinstalovat…"
 
-#: ../src/Clients/Classical/mono-addins-strings.xml.h:35
+#: ../src/Clients/Classical/mono-addins-strings.xml.h:49
 msgid "_Unselect All"
 msgstr "_Zrušit výběr"
 
-#~ msgid "Finish"
-#~ msgstr "Skončit"
+#: ../src/Clients/Classical/mono-addins-strings.xml.h:50
+msgid "{0} update available"
+msgstr "Dostupných aktualizací: {0}"
