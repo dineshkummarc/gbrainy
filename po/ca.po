@@ -3,14 +3,12 @@
 # Correccions per Gil Forcada, Sílvia Miranda, David Planella, Albert Juhé, Siegfried-Angel Gevatter i Pau Iranzo.
 # N.T.:
 # - Segons el context traduïm "Game" com a joc o partida.
-# Pau Iranzo <paugnu@gmail.com>, 2011.
 msgid ""
 msgstr ""
 "Project-Id-Version: gbrainy\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gbrain"
-"y&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2011-06-13 15:52+0000\n"
-"PO-Revision-Date: 2011-06-13 19:29+0200\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-07-11 15:19+0200\n"
+"PO-Revision-Date: 2011-07-11 16:20+0200\n"
 "Last-Translator: jmas <jmas@softcatala.org>\n"
 "Language-Team: Softcatalà\n"
 "Language: ca\n"
@@ -397,8 +395,8 @@ msgid ""
 "Given two integer numbers x and y, if x is even and y odd, which of the "
 "following expressions gives always an odd result? [option_answers]"
 msgstr ""
-"Donats dos nombres enters «x» i «y», si «x» és parell i «y» és senar, quina de "
-"les expressions següents sempre té com a resultat un nombre senar? "
+"Donats dos nombres enters «x» i «y», si «x» és parell i «y» és senar, quina "
+"de les expressions següents sempre té com a resultat un nombre senar? "
 "[option_answers]"
 
 #: ../data/games.xml.h:25
@@ -435,16 +433,16 @@ msgid ""
 "If p &lt; x &lt; q and r &lt; y &lt; s. Which of the following options makes "
 "x &gt; y true? [option_answers]"
 msgstr ""
-"Si «p &lt; x &lt; q» i «r &lt; y &lt; s». Quina de les opcions següents fa que "
-"«x &gt; y» sigui cert? [option_answers]"
+"Si «p &lt; x &lt; q» i «r &lt; y &lt; s». Quina de les opcions següents fa "
+"que «x &gt; y» sigui cert? [option_answers]"
 
 #: ../data/games.xml.h:32
 msgid ""
 "If p &lt; x &lt; q and r &lt; y &lt; s. Which of the following options makes "
 "x &lt; y true? [option_answers]"
 msgstr ""
-"Si «p &lt; x &lt; q» i «r &lt; y &lt; s». Quina de les opcions següents fa que "
-"«x &lt; y» sigui cert? [option_answers]"
+"Si «p &lt; x &lt; q» i «r &lt; y &lt; s». Quina de les opcions següents fa "
+"que «x &lt; y» sigui cert? [option_answers]"
 
 #: ../data/games.xml.h:33
 msgid ""
@@ -574,9 +572,9 @@ msgid ""
 "even number. Adding an even number to an odd number (y) always produces an "
 "odd number."
 msgstr ""
-"Atès que «x» és sempre un nombre parell, multiplicant-lo per 2 sempre resulta "
-"en un nombre parell. Sumar un nombre parell a un nombre senar («y») sempre "
-"produeix un nombre senar."
+"Atès que «x» és sempre un nombre parell, multiplicant-lo per 2 sempre "
+"resulta en un nombre parell. Sumar un nombre parell a un nombre senar («y») "
+"sempre produeix un nombre senar."
 
 #: ../data/games.xml.h:56
 msgid "Tennis game"
@@ -823,14 +821,10 @@ msgid "gbrainy"
 msgstr "gbrainy"
 
 #: ../data/themes/themes.xml.h:1
-msgid "Blackboard"
-msgstr "Pissarra"
-
-#: ../data/themes/themes.xml.h:2
 msgid "Classic"
 msgstr "Clàssic"
 
-#: ../data/themes/themes.xml.h:3
+#: ../data/themes/themes.xml.h:2
 msgid "Notebook"
 msgstr "Llibreta"
 
@@ -1730,7 +1724,8 @@ msgstr ""
 
 #: ../data/verbal_analogies.xml.h:231
 msgid "Which of the following words is closest to the meaning of 'perplexing'?"
-msgstr "Quina de les paraules següents té el significat més proper a «perplex»?"
+msgstr ""
+"Quina de les paraules següents té el significat més proper a «perplex»?"
 
 #: ../data/verbal_analogies.xml.h:232
 msgid "Which of the following words is closest to the meaning of 'specific'?"
@@ -1739,11 +1734,13 @@ msgstr ""
 
 #: ../data/verbal_analogies.xml.h:233
 msgid "Which of the following words is closest to the meaning of 'unhappy'?"
-msgstr "Quina de les paraules següents té el significat més proper a «infeliç»?"
+msgstr ""
+"Quina de les paraules següents té el significat més proper a «infeliç»?"
 
 #: ../data/verbal_analogies.xml.h:234
 msgid "Which of the following words is the closest in meaning to 'censure'?"
-msgstr "Quina de les paraules següents té el significat més proper a «censura»?"
+msgstr ""
+"Quina de les paraules següents té el significat més proper a «censura»?"
 
 #: ../data/verbal_analogies.xml.h:235
 msgid "Which of the following words means fear of people?"
@@ -1930,7 +1927,7 @@ msgstr "gel / lliscós | pegament"
 
 #: ../data/verbal_analogies.xml.h:283
 msgid "in | under | through"
-msgstr "dins | sota | través"
+msgstr "dins | sota | a través"
 
 #: ../data/verbal_analogies.xml.h:284
 msgid "islands"
@@ -2104,7 +2101,7 @@ msgstr "remolí / aigua | tornado"
 
 #: ../data/verbal_analogies.xml.h:330
 msgid "wild | savage"
-msgstr "salvatge | feréstec"
+msgstr "salvatge | feréstec | ferotge | feroç"
 
 #: ../data/verbal_analogies.xml.h:331
 msgid "win | play"
@@ -2135,7 +2132,7 @@ msgstr "canell | braç"
 msgid "write / pen | eat"
 msgstr "escriure / bolígraf | menjar"
 
-#: ../src/Core/Views/CountDownView.cs:81
+#: ../src/Core/Views/CountDownView.cs:77
 msgid "Get ready to memorize the next objects..."
 msgstr "Prepareu-vos per a memoritzar els objectes següents..."
 
@@ -2173,36 +2170,36 @@ msgstr "Verbal"
 msgid "Score"
 msgstr "Puntuació"
 
-#: ../src/Core/Views/FinishView.cs:150
+#: ../src/Core/Views/FinishView.cs:148
 #, csharp-format
 msgid "Games won: {0} ({1} played)"
 msgstr "Jocs guanyats: {0} ({1} jugats)"
 
-#: ../src/Core/Views/FinishView.cs:152
+#: ../src/Core/Views/FinishView.cs:150
 #, csharp-format
 msgid "{0}. Games won: {1} ({2} played)"
 msgstr "{0}. Jocs guanyats: {1} ({2} jugats)"
 
-#: ../src/Core/Views/FinishView.cs:156
+#: ../src/Core/Views/FinishView.cs:154
 #, csharp-format
 msgid "Time played {0} (average per game {1})"
 msgstr "Temps de joc: {0} (mitjana per joc {1})"
 
 #. Translators: translated string should not be longer that the English original (space restriction on the UI)
-#: ../src/Core/Views/FinishView.cs:165
+#: ../src/Core/Views/FinishView.cs:163
 msgid "For details on how gbrainy's scoring works refer to the help."
 msgstr ""
 "Per detalls de com funciona la puntuació del gbrainy consulteu l'ajuda."
 
-#: ../src/Core/Views/FinishView.cs:175
+#: ../src/Core/Views/FinishView.cs:173
 msgid "Tips for your next games"
 msgstr "Consells per les vostres properes partides"
 
-#: ../src/Core/Views/FinishView.cs:203
+#: ../src/Core/Views/FinishView.cs:201
 msgid "Congratulations! New personal record"
 msgstr "Enhorabona! Nou record personal"
 
-#: ../src/Core/Views/FinishView.cs:213
+#: ../src/Core/Views/FinishView.cs:211
 #, csharp-format
 msgid ""
 "By scoring {0} in logic puzzle games you have established a new personal "
@@ -2211,7 +2208,7 @@ msgstr ""
 "En puntuar {0} als trencaclosques lògics heu assolit un nou record personal. "
 "El vostre record anterior era {1}."
 
-#: ../src/Core/Views/FinishView.cs:219
+#: ../src/Core/Views/FinishView.cs:217
 #, csharp-format
 msgid ""
 "By scoring {0} in calculation games you have established a new personal "
@@ -2220,7 +2217,7 @@ msgstr ""
 "En puntuar {0} als jocs de càlcul mental heu assolit un nou record personal. "
 "El vostre record anterior era {1}."
 
-#: ../src/Core/Views/FinishView.cs:225
+#: ../src/Core/Views/FinishView.cs:223
 #, csharp-format
 msgid ""
 "By scoring {0} in memory games you have established a new personal record. "
@@ -2229,7 +2226,7 @@ msgstr ""
 "En puntuar {0} als jocs de memòria heu assolit un nou record personal. El "
 "vostre record anterior era {1}."
 
-#: ../src/Core/Views/FinishView.cs:231
+#: ../src/Core/Views/FinishView.cs:229
 #, csharp-format
 msgid ""
 "By scoring {0} in verbal analogies you have established a new personal "
@@ -2320,7 +2317,7 @@ msgid "white"
 msgstr "blanc"
 
 #
-#: ../src/Core/Main/Game.cs:131
+#: ../src/Core/Main/Game.cs:128
 #, csharp-format
 msgid "The correct answer is {0}."
 msgstr "La resposta correcta és {0}."
@@ -2330,7 +2327,7 @@ msgstr "La resposta correcta és {0}."
 #. Translators: answer + rationale of the answer
 #. Translators: "The graph below" +  "It is built using" sentences
 #. Translators: Concatenating two strings (rationale of answer + extra information).
-#: ../src/Core/Main/Game.cs:138 ../src/Core/Main/Verbal/Analogies.cs:64
+#: ../src/Core/Main/Game.cs:135 ../src/Core/Main/Verbal/Analogies.cs:64
 #: ../src/Clients/Classical/Dialogs/PlayerHistoryDialog.cs:60
 #: ../src/Games/Logic/PuzzleCountSeries.cs:93
 #, csharp-format
@@ -2344,74 +2341,74 @@ msgstr "{0} {1}"
 #. For languages represented with the Latin alphabet use
 #. the same than English
 #. First possible answer for a series (e.g.: Figure A)
-#: ../src/Core/Main/GameAnswer.cs:112
+#: ../src/Core/Main/GameAnswer.cs:108
 msgid "A"
 msgstr "A"
 
 #. Second possible answer for a series
-#: ../src/Core/Main/GameAnswer.cs:114
+#: ../src/Core/Main/GameAnswer.cs:110
 msgid "B"
 msgstr "B"
 
 #. Third possible answer for a series
-#: ../src/Core/Main/GameAnswer.cs:116
+#: ../src/Core/Main/GameAnswer.cs:112
 msgid "C"
 msgstr "C"
 
 #. Fourth possible answer for a series
-#: ../src/Core/Main/GameAnswer.cs:118
+#: ../src/Core/Main/GameAnswer.cs:114
 msgid "D"
 msgstr "D"
 
 #. Fifth possible answer for a series
-#: ../src/Core/Main/GameAnswer.cs:120
+#: ../src/Core/Main/GameAnswer.cs:116
 msgid "E"
 msgstr "E"
 
 #. Sixth possible answer for a series
-#: ../src/Core/Main/GameAnswer.cs:122
+#: ../src/Core/Main/GameAnswer.cs:118
 msgid "F"
 msgstr "F"
 
 #. Seventh possible answer for a series
-#: ../src/Core/Main/GameAnswer.cs:124
+#: ../src/Core/Main/GameAnswer.cs:120
 msgid "G"
 msgstr "G"
 
 #. Eighth possible answer for a series
-#: ../src/Core/Main/GameAnswer.cs:126
+#: ../src/Core/Main/GameAnswer.cs:122
 msgid "H"
 msgstr "H"
 
 #. Translators. This is the list of valid answers, like A or B.
-#: ../src/Core/Main/GameAnswer.cs:141
+#: ../src/Core/Main/GameAnswer.cs:137
 #, csharp-format
 msgid "{0} or {1}"
 msgstr "{0} o {1}"
 
 #. Translators. This is the list of valid answers, like A, B or C.
-#: ../src/Core/Main/GameAnswer.cs:145
+#: ../src/Core/Main/GameAnswer.cs:141
 #, csharp-format
 msgid "{0}, {1} or {2}"
 msgstr "{0}, {1} o {2}"
 
 #. Translators. This is the list of valid answers, like A, B, C or D.
-#: ../src/Core/Main/GameAnswer.cs:149
+#: ../src/Core/Main/GameAnswer.cs:145
 #, csharp-format
 msgid "{0}, {1}, {2} or {3}"
 msgstr "{0}, {1}, {2} o {3}"
 
-#: ../src/Core/Main/GameAnswer.cs:159
+#: ../src/Core/Main/GameAnswer.cs:155
 #, csharp-format
 msgid "Figure {0}"
 msgstr "Figura {0}"
 
-#: ../src/Core/Main/GameManager.cs:324
+#: ../src/Core/Main/GameManager.cs:336
 msgid "Extensions database:"
 msgstr "Base de dades d'extensions:"
 
 #. Translators: 'Games registered' is the games know to gbrainy (build-in and load from addins-in and external files)
-#: ../src/Core/Main/GameManager.cs:330
+#: ../src/Core/Main/GameManager.cs:342
 #, csharp-format
 msgid ""
 "Games registered: {0}: {1} logic puzzles, {2} calculation trainers, {3} "
@@ -2420,55 +2417,55 @@ msgstr ""
 "Jocs registrats: {0}: {1} trencaclosques lògics, {2} entrenadors de càlcul "
 "mental, {3} entrenadors de memòria, {4} analogies verbals"
 
-#: ../src/Core/Main/GameSession.cs:177
+#: ../src/Core/Main/GameSession.cs:176
 #, csharp-format
 msgid "Games played: {0} (Score: {1})"
 msgstr "Jocs: {0} (puntuació: {1})"
 
-#: ../src/Core/Main/GameSession.cs:178
+#: ../src/Core/Main/GameSession.cs:177
 #, csharp-format
 msgid "Time: {0}"
 msgstr "Temps: {0}"
 
 #. Translators: {0} is the name of the game
-#: ../src/Core/Main/GameSession.cs:182
+#: ../src/Core/Main/GameSession.cs:181
 #, csharp-format
 msgid "Game: {0}"
 msgstr "Joc: {0}"
 
 #. Translators: text in the status bar: games played - time - game name
-#: ../src/Core/Main/GameSession.cs:184
+#: ../src/Core/Main/GameSession.cs:183
 #, csharp-format
 msgid "{0} - {1} - {2}"
 msgstr "{0} - {1} - {2}"
 
 #. Translators: text in the status bar: games played - time
-#: ../src/Core/Main/GameSession.cs:187
+#: ../src/Core/Main/GameSession.cs:186
 #, csharp-format
 msgid "{0} - {1}"
 msgstr "{0} - {1}"
 
-#: ../src/Core/Main/GameSession.cs:200
+#: ../src/Core/Main/GameSession.cs:199
 msgid "Outstanding results"
 msgstr "Resultats extraordinaris"
 
-#: ../src/Core/Main/GameSession.cs:202
+#: ../src/Core/Main/GameSession.cs:201
 msgid "Excellent results"
 msgstr "Excel·lents resultats"
 
-#: ../src/Core/Main/GameSession.cs:204
+#: ../src/Core/Main/GameSession.cs:203
 msgid "Good results"
 msgstr "Bons resultats"
 
-#: ../src/Core/Main/GameSession.cs:206
+#: ../src/Core/Main/GameSession.cs:205
 msgid "Poor results"
 msgstr "Resultats pobres"
 
-#: ../src/Core/Main/GameSession.cs:207
+#: ../src/Core/Main/GameSession.cs:206
 msgid "Disappointing results"
 msgstr "Resultats decebedors"
 
-#: ../src/Core/Main/GameSession.cs:282
+#: ../src/Core/Main/GameSession.cs:281
 #: ../src/Clients/Classical/Widgets/GameDrawingArea.cs:126
 msgid "Paused"
 msgstr "En pausa"
@@ -2654,15 +2651,15 @@ msgstr "Responeu {0}."
 msgid "{0}) "
 msgstr "{0}) "
 
-#: ../src/Clients/Classical/gbrainy.cs:429
+#: ../src/Clients/Classical/gbrainy.cs:432
 msgid "Congratulations."
 msgstr "Enhorabona."
 
-#: ../src/Clients/Classical/gbrainy.cs:431
+#: ../src/Clients/Classical/gbrainy.cs:434
 msgid "Incorrect answer."
 msgstr "Resposta incorrecta."
 
-#: ../src/Clients/Classical/gbrainy.cs:495
+#: ../src/Clients/Classical/gbrainy.cs:498
 msgid ""
 "Once you have an answer type it in the \"Answer:\" entry box and press the "
 "\"OK\" button."
@@ -2670,11 +2667,11 @@ msgstr ""
 "Un cop tingueu la resposta introduïu-la al quadre «Resposta:» i premeu el "
 "botó «D'acord»."
 
-#: ../src/Clients/Classical/gbrainy.cs:525
+#: ../src/Clients/Classical/gbrainy.cs:528
 msgid "The level of translation of gbrainy for your language is low."
 msgstr "El nivell de traducció del gbrainy al vostre idioma és baix."
 
-#: ../src/Clients/Classical/gbrainy.cs:526
+#: ../src/Clients/Classical/gbrainy.cs:529
 msgid ""
 "You may be exposed to partially translated games making it more difficult to "
 "play. If you prefer to play in English, there is an option for doing so in "
@@ -2684,17 +2681,17 @@ msgstr ""
 "sigui més difícil. Si preferiu jugar en anglès, hi ha una opció a les "
 "Preferències del gbrainy per fer-ho."
 
-#: ../src/Clients/Classical/gbrainy.cs:621
+#: ../src/Clients/Classical/gbrainy.cs:625
 #: ../src/Clients/Classical/Widgets/Toolbar.cs:143
 msgid "Pause"
 msgstr "Pausa"
 
-#: ../src/Clients/Classical/gbrainy.cs:626
+#: ../src/Clients/Classical/gbrainy.cs:630
 msgid "Resume"
 msgstr "Reprèn"
 
 # csharp-format
-#: ../src/Clients/Classical/gbrainy.cs:776
+#: ../src/Clients/Classical/gbrainy.cs:780
 #, csharp-format
 msgid "Startup time {0}"
 msgstr "Temps d'iniciació {0}"
@@ -2814,16 +2811,16 @@ msgid "You can also play on-line at {0}"
 msgstr "Podeu també jugar en línia a {0}"
 
 #. Column: Game Name
-#: ../src/Clients/Classical/Dialogs/CustomGameDialog.cs:61
+#: ../src/Clients/Classical/Dialogs/CustomGameDialog.cs:62
 msgid "Game Name"
 msgstr "Nom del joc"
 
 #. Column: Type
-#: ../src/Clients/Classical/Dialogs/CustomGameDialog.cs:83
+#: ../src/Clients/Classical/Dialogs/CustomGameDialog.cs:84
 msgid "Type"
 msgstr "Tipus"
 
-#: ../src/Clients/Classical/Dialogs/CustomGameDialog.cs:105
+#: ../src/Clients/Classical/Dialogs/CustomGameDialog.cs:106
 msgid "Selected"
 msgstr "Seleccionat"
 
@@ -3024,7 +3021,7 @@ msgid "Time in seconds to memorize the challenge:"
 msgstr "Temps en segons per a memoritzar el repte:"
 
 #: ../src/Clients/Classical/Widgets/BrowseFile.cs:43
-#: ../src/Clients/Classical/mono-addins-strings.xml.h:10
+#: ../src/Clients/Classical/mono-addins-strings.xml.h:13
 msgid "Browse..."
 msgstr "Navega..."
 
@@ -3374,8 +3371,8 @@ msgid ""
 "What is the probability of getting a '2' or a '6' in a single throw of an "
 "unmodified 6 sided die? Answer using a fraction (e.g.: 1/2)."
 msgstr ""
-"Quina és la probabilitat d'obtenir un «2» o un «6» en un únic llançament d'un "
-"dau no trucat de 6 cares? Responeu utilitzant una fracció (p. ex.: 1/2)."
+"Quina és la probabilitat d'obtenir un «2» o un «6» en un únic llançament "
+"d'un dau no trucat de 6 cares? Responeu utilitzant una fracció (p. ex.: 1/2)."
 
 #: ../src/Games/Logic/PuzzleDice.cs:56
 msgid "There are 2 of 6 possibilities."
@@ -3412,7 +3409,8 @@ msgid ""
 "probability of getting two '6'? Answer using a fraction (e.g.: 1/2)."
 msgstr ""
 "Dos daus no trucats de 6 cares són llançats simultàniament. Quina és la "
-"probabilitat d'obtenir dos «6»? Responeu utilitzant una fracció (p. ex.: 1/2)."
+"probabilitat d'obtenir dos «6»? Responeu utilitzant una fracció (p. ex.: "
+"1/2)."
 
 #: ../src/Games/Logic/PuzzleDice.cs:68
 msgid ""
@@ -3509,8 +3507,8 @@ msgid ""
 "figures and 'F' that there are two figures."
 msgstr ""
 "«A» indica que les figures es solapen, «B» que són quadrats, «C» que són "
-"cercles, «D» que són figures separades, «E» que hi ha tres figures i «F» que hi "
-"ha dues figures."
+"cercles, «D» que són figures separades, «E» que hi ha tres figures i «F» que "
+"hi ha dues figures."
 
 #: ../src/Games/Logic/PuzzleFigurePattern.cs:40
 msgid "Figure pattern"
@@ -4469,26 +4467,33 @@ msgstr ""
 msgid "Time now"
 msgstr "L'hora actual"
 
-#. TimeNow Puzzle. Translators: {1}, {2} {3} are replaced by hours. Use the right time format specification for your culture
-#. Explanation of the date and time format specifications can be found here:
-#. http://msdn.microsoft.com/en-us/library/system.globalization.datetimeformatinfo.aspx
-#. For 12-hour clock format use {0:%h} and for 24-hour clock format use {0:%H}. The date formats {0:h} and {0:H} are invalid.
-#.
-#: ../src/Games/Logic/PuzzleTimeNow.cs:44
+#: ../src/Games/Logic/PuzzleTimeNow.cs:45
 #, csharp-format
 msgid ""
+"{0} hour ago it was as long after {1:h tt} as it was before {2:h tt} on the "
+"same day. What is the time now? Answer using the hour (e.g.: {3:h tt})"
+msgid_plural ""
 "{0} hours ago it was as long after {1:h tt} as it was before {2:h tt} on the "
 "same day. What is the time now? Answer using the hour (e.g.: {3:h tt})"
-msgstr ""
+msgstr[0] ""
+"Fa {0} hora estàvem tant lluny de les {1:%H} com de les {2:%H} al mateix "
+"dia. Quina hora és ara? Responeu usant l'hora (p. ex.: {3:%H})"
+msgstr[1] ""
 "Fa {0} hores estàvem tant lluny de les {1:%H} com de les {2:%H} al mateix "
 "dia. Quina hora és ara? Responeu usant l'hora (p. ex.: {3:%H})"
 
-#: ../src/Games/Logic/PuzzleTimeNow.cs:50
+#: ../src/Games/Logic/PuzzleTimeNow.cs:54
 #, csharp-format
 msgid ""
+"Determine the hour half way between the given times, and then add {0} hour "
+"to convert it to the present time."
+msgid_plural ""
 "Determine the hour half way between the given times, and then add {0} hours "
 "to convert it to the present time."
-msgstr ""
+msgstr[0] ""
+"Heu de calcular l'hora que està a mig camí entre les hores donades, i "
+"llavors afegir {0} hora per convertir-ho al temps present."
+msgstr[1] ""
 "Heu de calcular l'hora que està a mig camí entre les hores donades, i "
 "llavors afegir {0} hores per convertir-ho al temps present."
 
@@ -4497,13 +4502,13 @@ msgstr ""
 #. Explanation of the date and time format specifications can be found here:
 #. http://msdn.microsoft.com/en-us/library/system.globalization.datetimeformatinfo.aspx
 #. For 12-hour clock format use {0:%h} and for 24-hour clock format use {0:%H}. The date formats {0:h} and {0:H} are invalid.
-#: ../src/Games/Logic/PuzzleTimeNow.cs:72
+#: ../src/Games/Logic/PuzzleTimeNow.cs:79
 #, csharp-format
 msgid "{0:h tt}"
 msgstr "{0:%H}"
 
 #. No hands
-#: ../src/Games/Logic/PuzzleTimeNow.cs:82
+#: ../src/Games/Logic/PuzzleTimeNow.cs:89
 msgid "Sample clock"
 msgstr "Rellotge d'exemple"
 
@@ -5346,8 +5351,7 @@ msgstr "_Visualitza"
 #: ../src/Clients/Classical/mono-addins-strings.xml.h:1
 msgid "<b>Select the add-ins to install and click on Next</b>"
 msgstr ""
-"<b>Seleccioneu les extensions que s'han d'instal·lar i feu clic a "
-"Següent</b>"
+"<b>Seleccioneu les extensions que s'han d'instal·lar i feu clic a Següent</b>"
 
 #: ../src/Clients/Classical/mono-addins-strings.xml.h:2
 msgid "<big><b>Add-in Manager</b></big>"
@@ -5370,114 +5374,171 @@ msgid "Add-in Manager"
 msgstr "Gestor d'extensions"
 
 #: ../src/Clients/Classical/mono-addins-strings.xml.h:7
+msgid "Add-in Repository Management"
+msgstr "Gestor de dipòsits d'extensions"
+
+#: ../src/Clients/Classical/mono-addins-strings.xml.h:8
+msgid "Add-in packages"
+msgstr "Paquets d'extensions"
+
+#: ../src/Clients/Classical/mono-addins-strings.xml.h:9
 msgid "Additional extensions are required to perform this operation."
 msgstr ""
 "Són necessàries extensions addicionals per a efectuar aquesta operació."
 
-#: ../src/Clients/Classical/mono-addins-strings.xml.h:8
+#: ../src/Clients/Classical/mono-addins-strings.xml.h:10
 msgid "All registered repositories"
 msgstr "Tots els dipòsits registrats"
 
-#: ../src/Clients/Classical/mono-addins-strings.xml.h:9
+#: ../src/Clients/Classical/mono-addins-strings.xml.h:11
+msgid "All repositories"
+msgstr "Tots els dipòsits"
+
+#: ../src/Clients/Classical/mono-addins-strings.xml.h:12
 msgid "Author:"
 msgstr "Autor:"
 
-#: ../src/Clients/Classical/mono-addins-strings.xml.h:11
+#: ../src/Clients/Classical/mono-addins-strings.xml.h:14
 msgid "Copyright:"
 msgstr "Copyright:"
 
-#: ../src/Clients/Classical/mono-addins-strings.xml.h:12
+#: ../src/Clients/Classical/mono-addins-strings.xml.h:15
 msgid "Disable"
 msgstr "Inhabilita"
 
-#: ../src/Clients/Classical/mono-addins-strings.xml.h:13
+#: ../src/Clients/Classical/mono-addins-strings.xml.h:16
 msgid "Enable"
 msgstr "Habilita"
 
-#: ../src/Clients/Classical/mono-addins-strings.xml.h:14
+#: ../src/Clients/Classical/mono-addins-strings.xml.h:17
+msgid "Gallery"
+msgstr "Galeria"
+
+#: ../src/Clients/Classical/mono-addins-strings.xml.h:18
+msgid "Install Add-in Package"
+msgstr "Instal·la un paquet d'extensió"
+
+#: ../src/Clients/Classical/mono-addins-strings.xml.h:19
+msgid "Install from file..."
+msgstr "Instal·la des d'un fitxer..."
+
+#: ../src/Clients/Classical/mono-addins-strings.xml.h:20
 msgid "Install from:"
 msgstr "Instal·la des de:"
 
-#: ../src/Clients/Classical/mono-addins-strings.xml.h:15
+#. Mono Addins 0.6
+#: ../src/Clients/Classical/mono-addins-strings.xml.h:22
+msgid "Installed"
+msgstr "Instal·lat"
+
+#: ../src/Clients/Classical/mono-addins-strings.xml.h:23
+msgid "Manage Repositories..."
+msgstr "Gestiona els dipòsits..."
+
+#: ../src/Clients/Classical/mono-addins-strings.xml.h:24
 msgid "Name"
 msgstr "Nom"
 
-#: ../src/Clients/Classical/mono-addins-strings.xml.h:16
+#: ../src/Clients/Classical/mono-addins-strings.xml.h:25
+msgid "No add-ins found"
+msgstr "No s'ha trobat cap extensió"
+
+#: ../src/Clients/Classical/mono-addins-strings.xml.h:26
+msgid "No selection"
+msgstr "Sense selecció"
+
+#: ../src/Clients/Classical/mono-addins-strings.xml.h:27
 msgid "Other"
 msgstr "Altres"
 
-#: ../src/Clients/Classical/mono-addins-strings.xml.h:17
+#: ../src/Clients/Classical/mono-addins-strings.xml.h:28
 msgid "Path:"
 msgstr "Camí:"
 
-#: ../src/Clients/Classical/mono-addins-strings.xml.h:18
+#: ../src/Clients/Classical/mono-addins-strings.xml.h:29
+msgid "Refresh"
+msgstr "Refresca"
+
+#: ../src/Clients/Classical/mono-addins-strings.xml.h:30
 msgid "Register a local repository"
 msgstr "Registra un dipòsit local"
 
-#: ../src/Clients/Classical/mono-addins-strings.xml.h:19
+#: ../src/Clients/Classical/mono-addins-strings.xml.h:31
 msgid "Register an on-line repository"
 msgstr "Registra un dipòsit en línia"
 
-#: ../src/Clients/Classical/mono-addins-strings.xml.h:20
+#: ../src/Clients/Classical/mono-addins-strings.xml.h:32
 msgid "Repository"
 msgstr "Dipòsit"
 
-#: ../src/Clients/Classical/mono-addins-strings.xml.h:21
+#: ../src/Clients/Classical/mono-addins-strings.xml.h:33
+msgid "Repository:"
+msgstr "Dipòsit:"
+
+#: ../src/Clients/Classical/mono-addins-strings.xml.h:34
 msgid "Select _All"
 msgstr "_Selecciona-ho tot"
 
-#: ../src/Clients/Classical/mono-addins-strings.xml.h:22
+#: ../src/Clients/Classical/mono-addins-strings.xml.h:35
 msgid "Select the location of the repository you want to register:"
 msgstr "Seleccioneu la ubicació del dipòsit que voleu registrar:"
 
-#: ../src/Clients/Classical/mono-addins-strings.xml.h:23
+#: ../src/Clients/Classical/mono-addins-strings.xml.h:36
 msgid "Show all packages"
 msgstr "Mostra tots els paquets"
 
-#: ../src/Clients/Classical/mono-addins-strings.xml.h:24
+#: ../src/Clients/Classical/mono-addins-strings.xml.h:37
 msgid "Show new versions only"
 msgstr "Mostra només les versions noves"
 
-#: ../src/Clients/Classical/mono-addins-strings.xml.h:25
+#: ../src/Clients/Classical/mono-addins-strings.xml.h:38
 msgid "Show updates only"
 msgstr "Mostra només les actualitzacions"
 
-#: ../src/Clients/Classical/mono-addins-strings.xml.h:26
+#: ../src/Clients/Classical/mono-addins-strings.xml.h:39
 msgid "The following add-ins are currently installed:"
 msgstr "Les extensions següents es troben ja instal·lades:"
 
-#: ../src/Clients/Classical/mono-addins-strings.xml.h:27
+#: ../src/Clients/Classical/mono-addins-strings.xml.h:40
 msgid "The following add-ins will be installed:"
 msgstr "S'instal·laran les extensions següents:"
 
-#: ../src/Clients/Classical/mono-addins-strings.xml.h:28
+#: ../src/Clients/Classical/mono-addins-strings.xml.h:41
+msgid "Updates"
+msgstr "Actualitzacions"
+
+#: ../src/Clients/Classical/mono-addins-strings.xml.h:42
 msgid "Url"
 msgstr "URL"
 
-#: ../src/Clients/Classical/mono-addins-strings.xml.h:29
+#: ../src/Clients/Classical/mono-addins-strings.xml.h:43
 msgid "Url:"
 msgstr "URL:"
 
-#: ../src/Clients/Classical/mono-addins-strings.xml.h:30
+#: ../src/Clients/Classical/mono-addins-strings.xml.h:44
 msgid "Version"
 msgstr "Versió"
 
-#: ../src/Clients/Classical/mono-addins-strings.xml.h:31
+#: ../src/Clients/Classical/mono-addins-strings.xml.h:45
 msgid "Version:"
 msgstr "Versió:"
 
-#: ../src/Clients/Classical/mono-addins-strings.xml.h:32
+#: ../src/Clients/Classical/mono-addins-strings.xml.h:46
 msgid "_Install Add-ins..."
 msgstr "_Instal·la les extensions..."
 
-#: ../src/Clients/Classical/mono-addins-strings.xml.h:33
+#: ../src/Clients/Classical/mono-addins-strings.xml.h:47
 msgid "_Repositories..."
 msgstr "_Dipòsits..."
 
-#: ../src/Clients/Classical/mono-addins-strings.xml.h:34
+#: ../src/Clients/Classical/mono-addins-strings.xml.h:48
 msgid "_Uninstall..."
 msgstr "_Desinstal·la..."
 
-#: ../src/Clients/Classical/mono-addins-strings.xml.h:35
+#: ../src/Clients/Classical/mono-addins-strings.xml.h:49
 msgid "_Unselect All"
 msgstr "_Desselecciona-ho"
+
+#: ../src/Clients/Classical/mono-addins-strings.xml.h:50
+msgid "{0} update available"
+msgstr "{0} actualitzacions disponibles"
