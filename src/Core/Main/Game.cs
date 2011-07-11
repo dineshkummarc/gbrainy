@@ -206,7 +206,7 @@ namespace gbrainy.Core.Main
 			get { return Main.Score.GameExpectedTime (Type, CurrentDifficulty); }
 		}
 
-		protected Widget [] Widgets {
+		public Widget [] Widgets {
 			get { return containers.ToArray (); }
 		}
 

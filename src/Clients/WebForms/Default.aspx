@@ -8,7 +8,7 @@
 
 	<br/>
 	<br/>
-		gbrainy is a brain teaser game and trainer to have fun and to keep your brain trained. gbrainy includes the following games:
+		gbrainy is a brain teaser game and trainer to have fun and to keep your brain trained. It is enjoyable for kids, adults or senior citizens. gbrainy includes the following games:
 	<br/>
 	<br/>
 
@@ -50,9 +50,4 @@
 	<asp:DropDownList id = "languages_drop" ViewStateMode="Enabled" runat="server">
 	</asp:DropDownList>
 	language
-	<p>
-		<small>
-		This web site is based on in the open source project called <a href="http://live.gnome.org/gbrainy">gbrainy</a>. Contact e-mail address: jmas at softcatala dot org
-		</small>
-	</p>
 </asp:content>

@@ -32,7 +32,7 @@
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Extensions" />
     <Reference Include="Mono.Posix" />
-    <Reference Include="Mono.Cairo, Version=2.0.0.0, Culture=neutral, PublicKeyToken=0738eb9f132ed756" />
+    <Reference Include="Mono.Cairo" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="web.config" />
@@ -46,6 +46,9 @@
     <Content Include="..\..\..\data\verbal_analogies.xml">
       <Link>data\verbal_analogies.xml</Link>
     </Content>
+    <Content Include="Help.aspx" />
+    <Content Include="AllGames.aspx" />
+    <Content Include="jscripts.js" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Download.aspx.cs">
@@ -86,6 +89,20 @@
     <Compile Include="WebSession.cs" />
     <Compile Include="TranslationsWeb.cs" />
     <Compile Include="Defines.cs" />
+    <Compile Include="Help.aspx.cs">
+      <DependentUpon>Help.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Help.aspx.designer.cs">
+      <DependentUpon>Help.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AllGames.aspx.cs">
+      <DependentUpon>AllGames.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AllGames.aspx.designer.cs">
+      <DependentUpon>AllGames.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GameImage.cs" />
+    <Compile Include="GameImageAreaShape.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v8.0\WebApplications\Microsoft.WebApplication.targets" />

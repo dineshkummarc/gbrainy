@@ -25,6 +25,8 @@ namespace gbrainy.Clients.WebForms {
 		
 		protected System.Web.UI.WebControls.Image game_image;
 		
+		protected System.Web.UI.WebControls.Repeater areas_repeater;
+		
 		protected System.Web.UI.WebControls.TextBox answer_textbox;
 		
 		protected System.Web.UI.WebControls.Button answer_button;

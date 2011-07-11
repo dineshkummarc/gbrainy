@@ -1,4 +1,5 @@
 <%@ Page Language="C#" MasterPageFile = "MasterPage.master" Inherits="gbrainy.Clients.WebForms.Game" %>
+<%@ Import Namespace="gbrainy.Clients.WebForms" %>
 
 <asp:content id="main_content" ContentPlaceHolderID ="main_placeholder" runat="server">
 
@@ -14,25 +15,7 @@
 			</div>
 		</td>
 	</tr>
-<!--	
-	<tr>
-		<td align = "center">
-			<asp:ImageButton ImageUrl = "images/logic-games-32.png" runat="server"></asp:ImageButton>
-		</td>
-	</tr>
 
-	<tr>
-		<td align = "center">
-			<asp:ImageButton ImageUrl = "images/math-games-32.png" runat="server"></asp:ImageButton>
-		</td>
-	</tr>
-
-	<tr>
-		<td align = "center">
-			<asp:ImageButton ImageUrl = "images/memory-games-32.png" runat="server"></asp:ImageButton>
-		</td>
-	</tr>
--->
 	<tr>
 		<td align = "center">
 			<asp:ImageButton ImageUrl = "images/endgame-32.png" id = "endgames_button" OnClick="OnClickEndGame" runat="server"></asp:ImageButton>
@@ -49,12 +32,21 @@
 	<table border="0px"  width = "500px" >	
 		<tr>
 			<td>
-				<asp:Label id="question" runat="server"></asp:Label>
+				<asp:Label id="question" runat="server"/>
 			</td>
 		</tr>
 		<tr>
 			<td>
-				 <asp:Image id="game_image" runat="server" />
+				<asp:Image id="game_image" runat="server" usemap="#mapname"/>
+				 
+				<map name="mapname">
+				<asp:Repeater id="areas_repeater" runat="server" EnableViewState = false>
+					<asp:ItemTemplate>					
+  					<area shape="rect" coords="<%#  ((GameImageAreaShape) Container.DataItem).Coords %>" 
+  					href="<%#  ((GameImageAreaShape) Container.DataItem).Url %>"/>
+					</asp:ItemTemplate>
+				</asp:Repeater>
+				</map>
 			</td>
 		</tr>
 		<tr>

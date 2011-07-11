@@ -16,6 +16,7 @@ mkdir themes
 cp ../*.aspx .
 cp ../*.master .
 cp ../*.css .
+cp ../*.js .
 cp ../*.asax .
 cp ../web.config .
 

@@ -20,21 +20,22 @@
 using System;
 using System.IO;
 using System.Web.UI.HtmlControls;
+using System.Collections.Generic;
 
 using gbrainy.Core.Main;
 using gbrainy.Core.Services;
+using gbrainy.Core.Toolkit;
 
 namespace gbrainy.Clients.WebForms
 {
 	public partial class Game : System.Web.UI.Page
 	{
-		static GameManager manager;
-		const int image_width = 400;
-		const int image_height = 400;
+		static GameManager manager;	
 
 		gbrainy.Core.Main.Game _game;
 		gbrainy.Core.Main.GameSession session;
 		WebSession web_session;
+		GameImage image;
 
 		static public GameManager CreateManager ()
 		{
@@ -63,7 +64,7 @@ namespace gbrainy.Clients.WebForms
 		}
 
 		string GetLanguageFromSessionHandler ()
-		{
+		{			
 			return WebSession.LanguageCode;
 		}
 
@@ -88,6 +89,14 @@ namespace gbrainy.Clients.WebForms
 
 		private void Page_Load (Object sender, EventArgs e)
 		{
+			// If the Language has not been set the user has a expired
+			// session or does not come from the main page
+			if (String.IsNullOrEmpty (WebSession.LanguageCode))
+			{
+				Response.Redirect ("/");
+				return;
+			}			
+			
 			if (IsPostBack == false)
 				InitPage ();
 
@@ -96,6 +105,12 @@ namespace gbrainy.Clients.WebForms
 
 			HtmlForm form = (HtmlForm) Master.FindControl ("main_form");
 			form.DefaultButton = answer_button.UniqueID;
+			
+			string answer = Request.QueryString ["answer"];			
+			if (IsPostBack == false && string.IsNullOrEmpty (answer) == false)
+			{
+				ProcessAnswer (answer);
+			}
 
 			if (WebSession.GameState == null)
 			{
@@ -116,7 +131,8 @@ namespace gbrainy.Clients.WebForms
 			} else if (WebSession.GameState != null && WebSession.GameState.Status == GameSession.SessionStatus.Finished)
 			{
 				// Finished game
-				game_image.ImageUrl = Game.CreateImage (WebSession);
+				image = new GameImage (null);
+				game_image.ImageUrl = CreateImage (WebSession);
 				answer_button.Enabled = false;
 				answer_textbox.Text = string.Empty;
 				answer_textbox.Enabled = false;
@@ -126,8 +142,13 @@ namespace gbrainy.Clients.WebForms
 			}
 			else {
 				session = WebSession.GameState;
+				
+				if (_game == null)
+					_game = WebSession.GameState.CurrentGame;
+				
 				UpdateGame ();
-			}
+			}	
+			
 
 			if (IsPostBack == true) {
 				Logger.Debug ("Game.Page_Load. Ignoring postback");
@@ -142,55 +163,16 @@ namespace gbrainy.Clients.WebForms
 			TranslationsWeb service = (TranslationsWeb) ServiceLocator.Instance.GetService <ITranslations> ();
 			service.OnGetLanguageFromSession = GetLanguageFromSessionHandler;
 
-			game_image.Width = image_width;
-			game_image.Height = image_height;
+			game_image.Width = GameImage.IMAGE_WIDTH;
+			game_image.Height = GameImage.IMAGE_HEIGHT;
 
 			nextgame_link.Text = "Next Game";
 
 			// Toolbar
 			allgames_label.Text = ServiceLocator.Instance.GetService <ITranslations> ().GetString ("All");
-			endgames_label.Text = ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Finish");
-		}
-#if _IMAGEMAP_
+			endgames_label.Text = ServiceLocator.Instance.GetService <ITranslations> ().GetString ("End");
+		}		
 
-		string ProcessWidget (Widget widget)
-		{
-			string str;
-
-			str = String.Format ("<area shape=\"rect\" coords=\"{0},{1},{2},{3}\" href=http://en.wikipedia.org/ />",
-			                     widget.X, widget.Y, widget.Width, widget.Height);
-
-			return str;
-		}
-
-		public string ImageMap
-		{
-			get {
-				string str;
-
-				if (_game == null)
-					return "Nothing";
-
-				str = String.Format ("<img src={0}  usemap=\"#mapname\" />",
-					image.ImageUrl);
-
-				foreach (Widget widget in _game.Widgets)
-				{
-					if (widget is Container)
-					{
-						foreach (Widget child in _game.Widgets)
-						{
-							str += ProcessWidget (child);
-						}
-					}
-					else {
-						str += ProcessWidget (widget);
-					}
-				}
-				return str;
-			}
-		}
-#endif
 		void UpdateGame ()
 		{
 			if (_game == null)
@@ -198,7 +180,12 @@ namespace gbrainy.Clients.WebForms
 
 			status.Text = session.StatusText;
 			question.Text = _game.Question;
-		 	game_image.ImageUrl = CreateImage (WebSession);
+		 	
+			image = new GameImage (_game);
+			game_image.ImageUrl = CreateImage (WebSession);
+			
+			areas_repeater.DataSource = image.GetShapeAreas ();
+			areas_repeater.DataBind ();
 		}
 
 		public gbrainy.Core.Main.Game GetNextGame ()
@@ -212,50 +199,14 @@ namespace gbrainy.Clients.WebForms
 			}
 			return g;
 		}
-
-		//
-		static public string GetImageFileName (string sessionid)
+		
+		public string CreateImage (WebSession _session)
 		{
-			string file;
-
-			file = "tmp/" + sessionid + ".png";
-			return file;
-		}
-
-		static public string CreateImage (WebSession _session)
-		{
-			Cairo.ImageSurface cairo_image = null;
-			gbrainy.Core.Main.CairoContextEx cr = null;
-			string file = string.Empty;
-
-			try
-			{
-				cairo_image = new Cairo.ImageSurface (Cairo.Format.ARGB32, image_width, image_height);
-				cr = new gbrainy.Core.Main.CairoContextEx (cairo_image, "sans 12", 96);
-				file = GetImageFileName (_session.Session.SessionID);
-
-				// Draw Image
-				_session.GameState.Draw (cr, image_width, image_height, false);
-				cairo_image.WriteToPng (file);
-
-				if (File.Exists (file) == false)
-					Logger.Error ("Game.CreateImage. Error writting {0}", file);
-				else
-					Logger.Debug ("Game.CreateImage. Wrote image {0}", file);
-
-				// Prevent IE from caching the image
-				file += "?" + DateTime.Now.Ticks;
-			}
-
-			finally
-			{
-				if (cr != null)
-					((IDisposable) cr).Dispose ();
-
-				if (cairo_image != null)
-					((IDisposable) cairo_image).Dispose ();
-			}
-
+			string file = GameImage.GetImageFileName (_session.Session.SessionID);
+			image.CreateImage (_session.GameState, file);
+				
+			// Prevent IE from caching the image
+			file += "?" + DateTime.Now.Ticks;			
 		    	return file;
 		}
 
@@ -275,22 +226,26 @@ namespace gbrainy.Clients.WebForms
 		{
 			Logger.Debug ("Game.OnClickAnswer");
 
-			string answer = answer_textbox.Text;
-
-			if (String.IsNullOrEmpty (answer) == false)
-			{
-				if (web_session.GameState.ScoreGame (answer) == true) {
-					result_label.Text = ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Congratulations.");
-					result_label.CssClass = "CorrectAnswer";
-				}
-				else {
-					result_label.Text = ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Incorrect answer.");
-					result_label.CssClass = null;
-				}
-
-				rationale_label.Text = WebSession.GameState.CurrentGame.AnswerText;
-				answer_button.Enabled = false;
+			ProcessAnswer (answer_textbox.Text);		
+		}
+		
+		void ProcessAnswer (string answer)
+		{
+			if (String.IsNullOrEmpty (answer) == true)
+				return;
+		
+			if (web_session.GameState.ScoreGame (answer) == true) {
+				result_label.Text = ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Congratulations.");
+				result_label.CssClass = "CorrectAnswer";
 			}
+			else {
+				result_label.Text = ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Incorrect answer.");
+				result_label.CssClass = null;
+			}
+
+			rationale_label.Text = WebSession.GameState.CurrentGame.AnswerText;
+			answer_button.Enabled = false;
+			areas_repeater.Visible = false;
 		}
 
 		protected void OnClickEndGame (Object sender, EventArgs e)
@@ -302,8 +257,6 @@ namespace gbrainy.Clients.WebForms
 			
 			Global.TotalEndedSessions++;			
 			Global.TotalGames += session.History.GamesPlayed;
-			Global.TotalTimeSeconds += session.GameTime.Seconds;
-
 			Response.Redirect ("Game.aspx");
 		}
 

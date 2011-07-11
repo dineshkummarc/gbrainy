@@ -107,12 +107,12 @@ namespace gbrainy.Clients.WebForms
 
 				try
 				{
-					File.Delete (Game.GetImageFileName (Session.SessionID));
+					File.Delete (GameImage.GetImageFileName (Session.SessionID));
 				}
 				catch (Exception ex)
 				{
 					Logger.Error ("Global.Session_End. Could not delete {0}, exception: {1}",
-							Game.GetImageFileName (Session.SessionID), ex);
+							GameImage.GetImageFileName (Session.SessionID), ex);
 				}
 			}
 			else

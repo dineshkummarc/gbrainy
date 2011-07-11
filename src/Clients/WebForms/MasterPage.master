@@ -2,10 +2,10 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html>
 <head>
-	<title>Welcome to gbrainy.com main page</title>
+	<title>Welcome to gbrainy.com - A brain teaser game for fun and to keep your brain trained</title>
 	<link href="styles.css" rel="stylesheet" type="text/css"/>
 	<link rel="shortcut icon" href="images/gbrainy.ico" />
-	
+	<script type="text/javascript" src="jscripts.js"></script>
 	<asp:ContentPlaceHolder Id="analytics" runat="server" Visible = "false">
 		<script type="text/javascript">
 	
@@ -21,7 +21,7 @@
 		     var s = document.getElementsByTagName('script')[0]; 
 		s.parentNode.insertBefore(ga, s);
 		   })();
-		</script>
+		</script>		
 	</asp:ContentPlaceHolder>
 	
 </head>
@@ -30,7 +30,8 @@
 <div class="Header">
 			<asp:HyperLink class="HeaderText" text ="Home" NavigateUrl ="Default.aspx" runat="server"/>
 			<asp:HyperLink class="HeaderText" text ="Download" NavigateUrl ="Download.aspx" runat="server"/>
-			<span class="HeaderText">Help</span>
+			<asp:HyperLink class="HeaderText" text ="Games" NavigateUrl ="AllGames.aspx" runat="server"/>
+			<asp:HyperLink class="HeaderText" text ="Help" NavigateUrl ="Help.aspx" runat="server"/>
 			<span class="HeaderText">About</span>
 			<span class="HeaderText">
 			</span>
@@ -39,6 +40,9 @@
 <div class="MainContent">
     <asp:contentplaceholder id="main_placeholder" runat="server" />
 </div>
+<p class="Footer">
+	This web site is based on in the open source project called <a href="http://live.gnome.org/gbrainy">gbrainy</a>. Contact e-mail address: jmas at softcatala dot org
+</p>
 </form>
 </body>
 </html>
