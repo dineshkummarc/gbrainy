@@ -28,7 +28,7 @@ namespace gbrainy.Games.Logic
 	{
 		const double figure_size = 0.3;
 		int after;
-		DateTime position_a, position_b, ans;
+		DateTime position_a, position_b, ans, sample;
 
 		public override string Name {
 			get {return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Time now");}
@@ -45,7 +45,7 @@ namespace gbrainy.Games.Logic
 					"{0} hour ago it was as long after {1:h tt} as it was before {2:h tt} on the same day. What is the time now? Answer using the hour (e.g.: {3:h tt})",
 					"{0} hours ago it was as long after {1:h tt} as it was before {2:h tt} on the same day. What is the time now? Answer using the hour (e.g.: {3:h tt})",
 					after),
-				after, position_a, position_b, position_b));}
+				after, position_a, position_b, sample));}
 		}
 
 		public override string Rationale {
@@ -57,7 +57,7 @@ namespace gbrainy.Games.Logic
 					after);
 			}
 		}
-		
+
 		protected override void Initialize ()
 		{
 			int hour;
@@ -70,6 +70,12 @@ namespace gbrainy.Games.Logic
 			position_a = new DateTime (now.Year, now.Month, now.Day, hour, 0, 0);
 			position_b = new DateTime (now.Year, now.Month, now.Day, hour + 12, 0, 0);
 			ans = new DateTime (now.Year, now.Month, now.Day, ((hour + hour + 12) / 2) + after, 0, 0);
+
+			if (position_b != ans)
+				sample = position_b;
+			else {
+				sample = position_a;
+			}
 
 			// TimeNow Puzzle. Translators: {0} is used to check the hour answered by the user.
 			// Use the right time format specification for your culture
