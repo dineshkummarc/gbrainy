@@ -157,19 +157,6 @@ if test "x$enable_debug" != "xno" ; then
 	CSC_DEFINES="$CSC_DEFINES -debug -d:DEBUG"
 fi
 
-dnl --- Gnome support
-
-AC_ARG_ENABLE(gnome,
-	AC_HELP_STRING([--enable-gnome],
-		[Compile with GNOME support [default=yes]]),
-		enable_gnome=$enableval, enable_gnome=yes)
-
-if test "x$enable_gnome" != "xno" ; then
-	PKG_CHECK_MODULES(GNOME,gnome-sharp-2.0 >= $GTKSHARP_REQUIRED)
-	AC_SUBST(GNOME_LIBS)
-	CSC_DEFINES="$CSC_DEFINES -d:GNOME"
-fi
-
 dnl --- Assembly information
 
 BUILD_TIME=`date +"%F %T %Z"`
@@ -220,7 +207,6 @@ help/Makefile
 tools/Defines.cs
 ])
 
-echo "GNOME enabled:		${enable_gnome}"
 echo "Mono-addins:		${enable_addins_sharp}"
 echo "NUnit:			${enable_tests}"
 echo "Debug enabled:		${enable_debug}"

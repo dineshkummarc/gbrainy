@@ -35,16 +35,9 @@ using Mono.Addins;
 using Mono.Addins.Setup;
 #endif
 
-#if GNOME
-using Gnome;
-#endif
-
 namespace gbrainy.Clients.Classical
 {
 	public class GtkClient
-#if GNOME
-		: Program
-#endif
 	{
 		[GtkBeans.Builder.Object("gbrainy")] Gtk.Window app_window;
 		[GtkBeans.Builder.Object] Gtk.CheckMenuItem showtoolbar_menuitem;
@@ -82,9 +75,6 @@ namespace gbrainy.Clients.Classical
 		public readonly int MIN_TRANSLATION = 80;
 
 		public GtkClient ()
-#if GNOME
-		: base ("gbrainy", Defines.VERSION, Modules.UI, new string [0])
-#endif
 		{
 			if (Preferences.Get <bool> (Preferences.EnglishKey) == false)
 			{
@@ -448,21 +438,12 @@ namespace gbrainy.Clients.Classical
 
 		void OnQuit (object sender, EventArgs args)
 		{
-#if GNOME
-			Quit ();
-#else
 			Gtk.Application.Quit ();
-#endif
-
 		}
 
 		void OnDeleteWindow (object sender, DeleteEventArgs args)
 		{
-#if GNOME
-			Quit ();
-#else
 			Gtk.Application.Quit ();
-#endif
 		}
 
 		void OnNextButtonClicked (object sender, EventArgs args)
@@ -762,9 +743,8 @@ namespace gbrainy.Clients.Classical
 
 			if (line.Continue == false)
 				return;
-#if !GNOME
+
 			Gtk.Application.Init ();
-#endif
 
 			app.Initialize ();
 			// Set RandomOrder before setting the custom list then it has effect of custom games
@@ -778,11 +758,7 @@ namespace gbrainy.Clients.Classical
 
 			TimeSpan span = DateTime.Now - start_time;
 			Console.WriteLine (Catalog.GetString ("Startup time {0}"), span);
-#if GNOME
-			app.Run ();
-#else
 			Gtk.Application.Run ();
-#endif
 		}
 	}
 }
