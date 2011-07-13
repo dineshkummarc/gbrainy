@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2008 Jordi Mas i Hernàndez <jmas@softcatala.org>
+ * Copyright (C) 2008-2011 Jordi Mas i Hernàndez <jmas@softcatala.org>
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License as
@@ -18,6 +18,7 @@
  */
 
 using System;
+using System.Linq;
 
 using gbrainy.Core.Main;
 using gbrainy.Core.Services;
@@ -28,33 +29,34 @@ namespace gbrainy.Games.Calculation
 	{
 		public enum Operation
 		{
-			Addition,	
+			Addition,
 			Subtraction,
 			LastOperation
 		}
 
 		class FormulaFraction
 		{
-			public int numerator, denominator;
-			public Operation operation;
+			public Operation Operation { get; set;}
+			public int Numerator { get; private set;}
+			public int Denominator { get; private set;}
 
 			public FormulaFraction (int numerator, int denominator, Operation operation)
 			{
-				this.numerator = numerator;
-				this.denominator = denominator;
-				this.operation = operation;
+				Numerator = numerator;
+				Denominator = denominator;
+				Operation = operation;
 			}
-		
+
 			public double Result {
 				get {
-					return (double) numerator / (double) denominator; 
-				}	
+					return (double) Numerator / (double) Denominator;
+				}
 			}
 		}
 
-		private int fractions_num, demominator_max, factor_max;
-		private FormulaFraction[] fractions;
-		private const string format_string = "{0:##0.###}";
+		int fractions_num, demominator_max, factor_max;
+		FormulaFraction[] fractions;
+		const string format_string = "{0:##0.###}";
 
 		public override string Name {
 			get {return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Fractions");}
@@ -65,7 +67,7 @@ namespace gbrainy.Games.Calculation
 		}
 
 		public override string Question {
-			get {return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("What is the result of the given operation? Answer using either a fraction or a number.");} 
+			get {return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("What is the result of the given operation? Answer using either a fraction or a number.");}
 		}
 
 		private int Factor {
@@ -78,7 +80,7 @@ namespace gbrainy.Games.Calculation
 					return 3;
 				case 2:
 					return 5;
-				case 3: 
+				case 3:
 					return 7;
 				}
 			}
@@ -92,7 +94,7 @@ namespace gbrainy.Games.Calculation
 			switch (CurrentDifficulty) {
 			case GameDifficulty.Easy:
 				fractions_num = 2;
-				demominator_max = 5;
+				demominator_max = 3;
 				factor_max = 2;
 				break;
 			default:
@@ -109,14 +111,15 @@ namespace gbrainy.Games.Calculation
 			}
 
 			fractions = new FormulaFraction [fractions_num];
-			for (int i = 0; i < fractions_num; i++) {
+			for (int i = 0; i < fractions_num; i++)
+			{
 				fractions[i] = new FormulaFraction (1 + random.Next (10), (1 + random.Next (demominator_max)) * factor,
 					(Operation) random.Next ((int) Operation.LastOperation));
 
 				if (i == 0)
-					fractions[0].operation = Operation.LastOperation; // No operation
+					fractions[0].Operation = Operation.LastOperation; // No operation
 
-				switch (fractions[i].operation) {
+				switch (fractions[i].Operation) {
 				case Operation.Addition:
 					rslt += fractions[i].Result;
 					break;
@@ -126,14 +129,58 @@ namespace gbrainy.Games.Calculation
 				default:
 					rslt = fractions[i].Result;
 					break;
-				}			
+				}
 			}
 
 			Answer.Correct = String.Format (format_string, rslt);
+			Answer.CorrectShow = AnswerAsFraction ();
+		}
+
+		string AnswerAsFraction ()
+		{
+			int []den = new int [fractions.Length];
+			int rslt, lcm;
+
+			for (int i =0; i < fractions.Length; i++)
+				den [i] = fractions[i].Denominator;
+
+			lcm = LCM (den);
+			rslt = 0;
+			for (int i =0; i < fractions.Length; i++)
+			{
+				switch (fractions[i].Operation) {
+				case Operation.Addition:
+					rslt +=  lcm / fractions[i].Denominator * fractions[i].Numerator;
+					break;
+				case Operation.Subtraction:
+					rslt -= lcm / fractions[i].Denominator * fractions[i].Numerator;
+					break;
+				default:
+					rslt = lcm / fractions[i].Denominator * fractions[i].Numerator;
+					break;
+				}
+			}
+
+			return String.Format ("{0} / {1}", rslt, lcm);
+		}
+
+		static int LCM (int[] integerSet)
+		{
+			return integerSet.Aggregate (LCM);
+		}
+
+		static int LCM (int a, int b)
+		{
+			for (int n=1; ;n++)
+			{
+				if (n%a == 0 && n%b == 0)
+					return n;
+
+			}
 		}
 
 		public override void Draw (CairoContextEx gr, int area_width, int area_height, bool rtl)
-		{	
+		{
 			const double fraction_size = 0.17;
 			double x =  0.5  - (fractions_num * fraction_size / 2), y = DrawAreaY + 0.3;
 			const double offset_x = 0.12;
@@ -142,17 +189,17 @@ namespace gbrainy.Games.Calculation
 
 			gr.SetPangoLargeFontSize ();
 
-			for (int i = 0; i < fractions_num; i++) 
+			for (int i = 0; i < fractions_num; i++)
 			{
 				// Numerator
-				gr.DrawTextAlignedRight (x + offset_x, y, fractions[i].numerator.ToString ());
+				gr.DrawTextAlignedRight (x + offset_x, y, fractions[i].Numerator.ToString ());
 
 				// Sign
 				gr.MoveTo (x, y + 0.04);
-				switch (fractions[i].operation) {
+				switch (fractions[i].Operation) {
 				case Operation.Addition:
 					gr.ShowPangoText ("+");
-					break;	
+					break;
 				case Operation.Subtraction:
 					gr.ShowPangoText ("-");
 					break;
@@ -165,19 +212,19 @@ namespace gbrainy.Games.Calculation
 				gr.Stroke ();
 
 				// Denominator
-				gr.DrawTextAlignedRight (x + offset_x, y + 0.1, fractions[i].denominator.ToString ());
+				gr.DrawTextAlignedRight (x + offset_x, y + 0.1, fractions[i].Denominator.ToString ());
 
 				x += fraction_size;
-			}	
+			}
 		}
 
 		public override bool CheckAnswer (string answer)
-		{	
+		{
 			string num_a = string.Empty;
 			string num_b = string.Empty;
 			double a, b;
 			double rslt;
-			bool first = true;		
+			bool first = true;
 
 			for (int c = 0; c < answer.Length; c++)
 			{
@@ -187,7 +234,7 @@ namespace gbrainy.Games.Calculation
 						continue;
 					}
 				}
-			
+
 				if (first == true)
 					num_a += answer[c];
 				else
