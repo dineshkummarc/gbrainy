@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gbrainy master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gbrainy&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2011-06-17 13:34+0000\n"
-"PO-Revision-Date: 2011-06-18 08:23+0100\n"
+"POT-Creation-Date: 2011-07-10 12:25+0000\n"
+"PO-Revision-Date: 2011-07-11 11:10+0100\n"
 "Last-Translator: Andrej Žnidaršič <andrej.znidarsic@gmail.com>\n"
 "Language-Team: Slovenian <gnome-si@googlegroups.com>\n"
 "Language: sl\n"
@@ -578,14 +578,10 @@ msgid "gbrainy"
 msgstr "gbrainy"
 
 #: ../data/themes/themes.xml.h:1
-msgid "Blackboard"
-msgstr "Tabla"
-
-#: ../data/themes/themes.xml.h:2
 msgid "Classic"
 msgstr "Običajno"
 
-#: ../data/themes/themes.xml.h:3
+#: ../data/themes/themes.xml.h:2
 msgid "Notebook"
 msgstr "Beležnica"
 
@@ -1866,7 +1862,7 @@ msgstr "zapestje | roka"
 msgid "write / pen | eat"
 msgstr "pisati / pero | jesti"
 
-#: ../src/Core/Views/CountDownView.cs:81
+#: ../src/Core/Views/CountDownView.cs:77
 msgid "Get ready to memorize the next objects..."
 msgstr "Pripravite se na pomnjenje naslednjih predmetov ..."
 
@@ -1908,50 +1904,50 @@ msgstr "Besede"
 msgid "Score"
 msgstr "Rezultat"
 
-#: ../src/Core/Views/FinishView.cs:150
+#: ../src/Core/Views/FinishView.cs:148
 #, csharp-format
 msgid "Games won: {0} ({1} played)"
 msgstr "Zmage: {0} ({1} odigranih)"
 
-#: ../src/Core/Views/FinishView.cs:152
+#: ../src/Core/Views/FinishView.cs:150
 #, csharp-format
 msgid "{0}. Games won: {1} ({2} played)"
 msgstr "{0}. Dobljene igre: {1} ({2} odigranih iger)"
 
-#: ../src/Core/Views/FinishView.cs:156
+#: ../src/Core/Views/FinishView.cs:154
 #, csharp-format
 msgid "Time played {0} (average per game {1})"
 msgstr "Čas igranja {0} ({1} povprečno na igro)"
 
 #. Translators: translated string should not be longer that the English original (space restriction on the UI)
-#: ../src/Core/Views/FinishView.cs:165
+#: ../src/Core/Views/FinishView.cs:163
 msgid "For details on how gbrainy's scoring works refer to the help."
 msgstr "Za podrobnosti o načinu izračuna rezultata v gbrainy si oglejte pomoč."
 
-#: ../src/Core/Views/FinishView.cs:175
+#: ../src/Core/Views/FinishView.cs:173
 msgid "Tips for your next games"
 msgstr "Namigi za vaše naslednje igre"
 
-#: ../src/Core/Views/FinishView.cs:203
+#: ../src/Core/Views/FinishView.cs:201
 msgid "Congratulations! New personal record"
 msgstr "Čestitke! Dosegli ste nov osebni rekord"
 
-#: ../src/Core/Views/FinishView.cs:213
+#: ../src/Core/Views/FinishView.cs:211
 #, csharp-format
 msgid "By scoring {0} in logic puzzle games you have established a new personal record. Your previous record was {1}."
 msgstr "Z rezultatom {0} v logičnih ugankah ste dosegli nov osebni rekord. Vaš prejšnji rekord je bil {1}."
 
-#: ../src/Core/Views/FinishView.cs:219
+#: ../src/Core/Views/FinishView.cs:217
 #, csharp-format
 msgid "By scoring {0} in calculation games you have established a new personal record. Your previous record was {1}."
 msgstr "Z rezultatom {0} v računskih igrah ste dosegli nov osebni rekord. Vaš prejšnji rekord je bil {1}."
 
-#: ../src/Core/Views/FinishView.cs:225
+#: ../src/Core/Views/FinishView.cs:223
 #, csharp-format
 msgid "By scoring {0} in memory games you have established a new personal record. Your previous record was {1}."
 msgstr "Z rezultatom {0} v spominskih igrah ste dosegli nov osebni rekord. Vaš prejšnji rekord je bil {1}."
 
-#: ../src/Core/Views/FinishView.cs:231
+#: ../src/Core/Views/FinishView.cs:229
 #, csharp-format
 msgid "By scoring {0} in verbal analogies you have established a new personal record. Your previous record was {1}."
 msgstr "Z rezultatom {0} v besednih analogijah ste dosegli nov osebni rekord. Vaš prejšnji rekord je bil {1}."
@@ -2023,7 +2019,7 @@ msgstr "črna"
 msgid "white"
 msgstr "bela"
 
-#: ../src/Core/Main/Game.cs:131
+#: ../src/Core/Main/Game.cs:128
 #, csharp-format
 msgid "The correct answer is {0}."
 msgstr "Pravilen odgovor je {0}."
@@ -2033,7 +2029,7 @@ msgstr "Pravilen odgovor je {0}."
 #. Translators: answer + rationale of the answer
 #. Translators: "The graph below" +  "It is built using" sentences
 #. Translators: Concatenating two strings (rationale of answer + extra information).
-#: ../src/Core/Main/Game.cs:138
+#: ../src/Core/Main/Game.cs:135
 #: ../src/Core/Main/Verbal/Analogies.cs:64
 #: ../src/Clients/Classical/Dialogs/PlayerHistoryDialog.cs:60
 #: ../src/Games/Logic/PuzzleCountSeries.cs:93
@@ -2048,127 +2044,127 @@ msgstr "{0} {1}"
 #. For languages represented with the Latin alphabet use
 #. the same than English
 #. First possible answer for a series (e.g.: Figure A)
-#: ../src/Core/Main/GameAnswer.cs:112
+#: ../src/Core/Main/GameAnswer.cs:108
 msgid "A"
 msgstr "A"
 
 #. Second possible answer for a series
-#: ../src/Core/Main/GameAnswer.cs:114
+#: ../src/Core/Main/GameAnswer.cs:110
 msgid "B"
 msgstr "B"
 
 #. Third possible answer for a series
-#: ../src/Core/Main/GameAnswer.cs:116
+#: ../src/Core/Main/GameAnswer.cs:112
 msgid "C"
 msgstr "C"
 
 #. Fourth possible answer for a series
-#: ../src/Core/Main/GameAnswer.cs:118
+#: ../src/Core/Main/GameAnswer.cs:114
 msgid "D"
 msgstr "D"
 
 #. Fifth possible answer for a series
-#: ../src/Core/Main/GameAnswer.cs:120
+#: ../src/Core/Main/GameAnswer.cs:116
 msgid "E"
 msgstr "E"
 
 #. Sixth possible answer for a series
-#: ../src/Core/Main/GameAnswer.cs:122
+#: ../src/Core/Main/GameAnswer.cs:118
 msgid "F"
 msgstr "F"
 
 #. Seventh possible answer for a series
-#: ../src/Core/Main/GameAnswer.cs:124
+#: ../src/Core/Main/GameAnswer.cs:120
 msgid "G"
 msgstr "G"
 
 #. Eighth possible answer for a series
-#: ../src/Core/Main/GameAnswer.cs:126
+#: ../src/Core/Main/GameAnswer.cs:122
 msgid "H"
 msgstr "H"
 
 #. Translators. This is the list of valid answers, like A or B.
-#: ../src/Core/Main/GameAnswer.cs:141
+#: ../src/Core/Main/GameAnswer.cs:137
 #, csharp-format
 msgid "{0} or {1}"
 msgstr "{0} ali {1}"
 
 #. Translators. This is the list of valid answers, like A, B or C.
-#: ../src/Core/Main/GameAnswer.cs:145
+#: ../src/Core/Main/GameAnswer.cs:141
 #, csharp-format
 msgid "{0}, {1} or {2}"
 msgstr "{0}, {1} ali {2}"
 
 #. Translators. This is the list of valid answers, like A, B, C or D.
-#: ../src/Core/Main/GameAnswer.cs:149
+#: ../src/Core/Main/GameAnswer.cs:145
 #, csharp-format
 msgid "{0}, {1}, {2} or {3}"
 msgstr "{0}, {1}, {2} ali {3}"
 
-#: ../src/Core/Main/GameAnswer.cs:159
+#: ../src/Core/Main/GameAnswer.cs:155
 #, csharp-format
 msgid "Figure {0}"
 msgstr "Slika {0}"
 
-#: ../src/Core/Main/GameManager.cs:324
+#: ../src/Core/Main/GameManager.cs:336
 msgid "Extensions database:"
 msgstr "Podatkovna zbirka razširitev:"
 
 #. Translators: 'Games registered' is the games know to gbrainy (build-in and load from addins-in and external files)
-#: ../src/Core/Main/GameManager.cs:330
+#: ../src/Core/Main/GameManager.cs:342
 #, csharp-format
 msgid "Games registered: {0}: {1} logic puzzles, {2} calculation trainers, {3} memory trainers, {4} verbal analogies"
 msgstr "Vpisane igre: {0}: {1} logičnih iger, {2} računskih nalog, {3} urjenj pomnjenja, {4} besednih analogij"
 
-#: ../src/Core/Main/GameSession.cs:177
+#: ../src/Core/Main/GameSession.cs:176
 #, csharp-format
 msgid "Games played: {0} (Score: {1})"
 msgstr "Odigrane igre: {0} (Rezultat: {1})"
 
-#: ../src/Core/Main/GameSession.cs:178
+#: ../src/Core/Main/GameSession.cs:177
 #, csharp-format
 msgid "Time: {0}"
 msgstr "Čas: {0}"
 
 #. Translators: {0} is the name of the game
-#: ../src/Core/Main/GameSession.cs:182
+#: ../src/Core/Main/GameSession.cs:181
 #, csharp-format
 msgid "Game: {0}"
 msgstr "Igra: {0}"
 
 #. Translators: text in the status bar: games played - time - game name
-#: ../src/Core/Main/GameSession.cs:184
+#: ../src/Core/Main/GameSession.cs:183
 #, csharp-format
 msgid "{0} - {1} - {2}"
 msgstr "{0} - {1} - {2}"
 
 #. Translators: text in the status bar: games played - time
-#: ../src/Core/Main/GameSession.cs:187
+#: ../src/Core/Main/GameSession.cs:186
 #, csharp-format
 msgid "{0} - {1}"
 msgstr "{0} - {1}"
 
-#: ../src/Core/Main/GameSession.cs:200
+#: ../src/Core/Main/GameSession.cs:199
 msgid "Outstanding results"
 msgstr "Izjemni rezultati"
 
-#: ../src/Core/Main/GameSession.cs:202
+#: ../src/Core/Main/GameSession.cs:201
 msgid "Excellent results"
 msgstr "Odlični rezultati"
 
-#: ../src/Core/Main/GameSession.cs:204
+#: ../src/Core/Main/GameSession.cs:203
 msgid "Good results"
 msgstr "Dobri rezultati"
 
-#: ../src/Core/Main/GameSession.cs:206
+#: ../src/Core/Main/GameSession.cs:205
 msgid "Poor results"
 msgstr "Slabi rezultati"
 
-#: ../src/Core/Main/GameSession.cs:207
+#: ../src/Core/Main/GameSession.cs:206
 msgid "Disappointing results"
 msgstr "Obupni rezultati"
 
-#: ../src/Core/Main/GameSession.cs:282
+#: ../src/Core/Main/GameSession.cs:281
 #: ../src/Clients/Classical/Widgets/GameDrawingArea.cs:126
 msgid "Paused"
 msgstr "V premoru"
@@ -2328,36 +2324,36 @@ msgstr "Odgovor {0}."
 msgid "{0}) "
 msgstr "{0}) "
 
-#: ../src/Clients/Classical/gbrainy.cs:429
+#: ../src/Clients/Classical/gbrainy.cs:432
 msgid "Congratulations."
 msgstr "Čestitke."
 
-#: ../src/Clients/Classical/gbrainy.cs:431
+#: ../src/Clients/Classical/gbrainy.cs:434
 msgid "Incorrect answer."
 msgstr "Napačen odgovor."
 
-#: ../src/Clients/Classical/gbrainy.cs:495
+#: ../src/Clients/Classical/gbrainy.cs:498
 msgid "Once you have an answer type it in the \"Answer:\" entry box and press the \"OK\" button."
 msgstr "Ko ste prepričani v odgovor, ga vnesite v vnosno polje \"Odgovor:\" in pritisnite gumb \"V redu\"."
 
-#: ../src/Clients/Classical/gbrainy.cs:525
+#: ../src/Clients/Classical/gbrainy.cs:528
 msgid "The level of translation of gbrainy for your language is low."
 msgstr "Raven prevodov gbrainy za vaš jezik je nizka."
 
-#: ../src/Clients/Classical/gbrainy.cs:526
+#: ../src/Clients/Classical/gbrainy.cs:529
 msgid "You may be exposed to partially translated games making it more difficult to play. If you prefer to play in English, there is an option for doing so in gbrainy's Preferences."
 msgstr "Morda boste videli delno prevedene igre, kar jih lahko naredi težje za igranje. Če želite igrati v angleščini, je ta možnost na voljo v možnostih gbrainy."
 
-#: ../src/Clients/Classical/gbrainy.cs:621
+#: ../src/Clients/Classical/gbrainy.cs:625
 #: ../src/Clients/Classical/Widgets/Toolbar.cs:143
 msgid "Pause"
 msgstr "Premor"
 
-#: ../src/Clients/Classical/gbrainy.cs:626
+#: ../src/Clients/Classical/gbrainy.cs:630
 msgid "Resume"
 msgstr "Nadaljuj"
 
-#: ../src/Clients/Classical/gbrainy.cs:776
+#: ../src/Clients/Classical/gbrainy.cs:780
 #, csharp-format
 msgid "Startup time {0}"
 msgstr "Čas zaganjanja {0}"
@@ -2452,16 +2448,16 @@ msgid "You can also play on-line at {0}"
 msgstr "Igrate lahko tudi na spletu na {0}"
 
 #. Column: Game Name
-#: ../src/Clients/Classical/Dialogs/CustomGameDialog.cs:61
+#: ../src/Clients/Classical/Dialogs/CustomGameDialog.cs:62
 msgid "Game Name"
 msgstr "Ime igre"
 
 #. Column: Type
-#: ../src/Clients/Classical/Dialogs/CustomGameDialog.cs:83
+#: ../src/Clients/Classical/Dialogs/CustomGameDialog.cs:84
 msgid "Type"
 msgstr "Vrsta"
 
-#: ../src/Clients/Classical/Dialogs/CustomGameDialog.cs:105
+#: ../src/Clients/Classical/Dialogs/CustomGameDialog.cs:106
 msgid "Selected"
 msgstr "Izbrano"
 
@@ -2649,7 +2645,7 @@ msgid "Time in seconds to memorize the challenge:"
 msgstr "Čas za pomnjenje izziva v sekundah:"
 
 #: ../src/Clients/Classical/Widgets/BrowseFile.cs:43
-#: ../src/Clients/Classical/mono-addins-strings.xml.h:10
+#: ../src/Clients/Classical/mono-addins-strings.xml.h:13
 msgid "Browse..."
 msgstr "Prebrskaj ..."
 
@@ -3681,33 +3677,36 @@ msgstr "To je slika, ki konča vse mogoče kombinacije s štirimi bloki brez upo
 msgid "Time now"
 msgstr "Trenutni čas"
 
-#. TimeNow Puzzle. Translators: {1}, {2} {3} are replaced by hours. Use the right time format specification for your culture
-#. Explanation of the date and time format specifications can be found here:
-#. http://msdn.microsoft.com/en-us/library/system.globalization.datetimeformatinfo.aspx
-#. For 12-hour clock format use {0:%h} and for 24-hour clock format use {0:%H}. The date formats {0:h} and {0:H} are invalid.
-#.
-#: ../src/Games/Logic/PuzzleTimeNow.cs:44
+#: ../src/Games/Logic/PuzzleTimeNow.cs:45
 #, csharp-format
-msgid "{0} hours ago it was as long after {1:h tt} as it was before {2:h tt} on the same day. What is the time now? Answer using the hour (e.g.: {3:h tt})"
-msgstr "{0} ur nazaj je bilo enako dolgo za {1:%H tt}, kot je bilo pred {2:%H tt} na isti dan. Koliko je ura sedaj? Odgovorite z uporabo ure (na primer: {3:%H tt})"
+msgid "{0} hour ago it was as long after {1:h tt} as it was before {2:h tt} on the same day. What is the time now? Answer using the hour (e.g.: {3:h tt})"
+msgid_plural "{0} hours ago it was as long after {1:h tt} as it was before {2:h tt} on the same day. What is the time now? Answer using the hour (e.g.: {3:h tt})"
+msgstr[0] "{0} ur nazaj je bilo enako dolgo za {1:h tt}, kot je bilo pred {2:h tt} na isti dan. Koliko je ura sedaj? Odgovorite z uporabo ure (na primer: {3:h tt})"
+msgstr[1] "{0} uro nazaj je bilo enako dolgo za {1:h tt}, kot je bilo pred {2:h tt} na isti dan. Koliko je ura sedaj? Odgovorite z uporabo ure (na primer: {3:h tt})"
+msgstr[2] "{0} uri nazaj je bilo enako dolgo za {1:h tt}, kot je bilo pred {2:h tt} na isti dan. Koliko je ura sedaj? Odgovorite z uporabo ure (na primer: {3:h tt})"
+msgstr[3] "{0} ure nazaj je bilo enako dolgo za {1:h tt}, kot je bilo pred {2:h tt} na isti dan. Koliko je ura sedaj? Odgovorite z uporabo ure (na primer: {3:h tt})"
 
-#: ../src/Games/Logic/PuzzleTimeNow.cs:50
+#: ../src/Games/Logic/PuzzleTimeNow.cs:54
 #, csharp-format
-msgid "Determine the hour half way between the given times, and then add {0} hours to convert it to the present time."
-msgstr "Izračunate morate čas na polovici med danima časoma in nato dodati {0} ur za pretvorbo v sedanji čas."
+msgid "Determine the hour half way between the given times, and then add {0} hour to convert it to the present time."
+msgid_plural "Determine the hour half way between the given times, and then add {0} hours to convert it to the present time."
+msgstr[0] "Izračunate morate čas na polovici med danima časoma in nato dodati {0} ur za pretvorbo v sedanji čas."
+msgstr[1] "Izračunate morate čas na polovici med danima časoma in nato dodati {0} uro za pretvorbo v sedanji čas."
+msgstr[2] "Izračunate morate čas na polovici med danima časoma in nato dodati {0} uri za pretvorbo v sedanji čas."
+msgstr[3] "Izračunate morate čas na polovici med danima časoma in nato dodati {0} ure za pretvorbo v sedanji čas."
 
 #. TimeNow Puzzle. Translators: {0} is used to check the hour answered by the user.
 #. Use the right time format specification for your culture
 #. Explanation of the date and time format specifications can be found here:
 #. http://msdn.microsoft.com/en-us/library/system.globalization.datetimeformatinfo.aspx
 #. For 12-hour clock format use {0:%h} and for 24-hour clock format use {0:%H}. The date formats {0:h} and {0:H} are invalid.
-#: ../src/Games/Logic/PuzzleTimeNow.cs:72
+#: ../src/Games/Logic/PuzzleTimeNow.cs:79
 #, csharp-format
 msgid "{0:h tt}"
 msgstr "{0:%H tt}"
 
 #. No hands
-#: ../src/Games/Logic/PuzzleTimeNow.cs:82
+#: ../src/Games/Logic/PuzzleTimeNow.cs:89
 msgid "Sample clock"
 msgstr "Vzorčna ura"
 
@@ -4421,116 +4420,176 @@ msgid "Add-in Manager"
 msgstr "Upravljalnik vstavkov"
 
 #: ../src/Clients/Classical/mono-addins-strings.xml.h:7
+msgid "Add-in Repository Management"
+msgstr "Upravljanje skladišč dodatkov"
+
+#: ../src/Clients/Classical/mono-addins-strings.xml.h:8
+msgid "Add-in packages"
+msgstr "Paketi dodatkov"
+
+#: ../src/Clients/Classical/mono-addins-strings.xml.h:9
 msgid "Additional extensions are required to perform this operation."
 msgstr "Za izvajanje dejanja so zahtevane dodatne razširitve."
 
-#: ../src/Clients/Classical/mono-addins-strings.xml.h:8
+#: ../src/Clients/Classical/mono-addins-strings.xml.h:10
 msgid "All registered repositories"
 msgstr "Vsa vpisana skladišča"
 
-#: ../src/Clients/Classical/mono-addins-strings.xml.h:9
+#: ../src/Clients/Classical/mono-addins-strings.xml.h:11
+msgid "All repositories"
+msgstr "Vsa skladišča"
+
+#: ../src/Clients/Classical/mono-addins-strings.xml.h:12
 msgid "Author:"
 msgstr "Avtor:"
 
-#: ../src/Clients/Classical/mono-addins-strings.xml.h:11
+#: ../src/Clients/Classical/mono-addins-strings.xml.h:14
 msgid "Copyright:"
 msgstr "Avtorske pravice:"
 
-#: ../src/Clients/Classical/mono-addins-strings.xml.h:12
+#: ../src/Clients/Classical/mono-addins-strings.xml.h:15
 msgid "Disable"
 msgstr "Onemogoči"
 
-#: ../src/Clients/Classical/mono-addins-strings.xml.h:13
+#: ../src/Clients/Classical/mono-addins-strings.xml.h:16
 msgid "Enable"
 msgstr "Omogoči"
 
-#: ../src/Clients/Classical/mono-addins-strings.xml.h:14
+#: ../src/Clients/Classical/mono-addins-strings.xml.h:17
+msgid "Gallery"
+msgstr "Galerija"
+
+#: ../src/Clients/Classical/mono-addins-strings.xml.h:18
+msgid "Install Add-in Package"
+msgstr "Namesti pakt dodatkov"
+
+#: ../src/Clients/Classical/mono-addins-strings.xml.h:19
+msgid "Install from file..."
+msgstr "Namesti iz datoteke ..."
+
+#: ../src/Clients/Classical/mono-addins-strings.xml.h:20
 msgid "Install from:"
 msgstr "Namesti iz: "
 
-#: ../src/Clients/Classical/mono-addins-strings.xml.h:15
+#. Mono Addins 0.6
+#: ../src/Clients/Classical/mono-addins-strings.xml.h:22
+msgid "Installed"
+msgstr "Nameščeno"
+
+#: ../src/Clients/Classical/mono-addins-strings.xml.h:23
+msgid "Manage Repositories..."
+msgstr "Upravljanje skladišč ..."
+
+#: ../src/Clients/Classical/mono-addins-strings.xml.h:24
 msgid "Name"
 msgstr "Ime"
 
-#: ../src/Clients/Classical/mono-addins-strings.xml.h:16
+#: ../src/Clients/Classical/mono-addins-strings.xml.h:25
+msgid "No add-ins found"
+msgstr "Vstavkov ni bilo mogoče najti"
+
+#: ../src/Clients/Classical/mono-addins-strings.xml.h:26
+msgid "No selection"
+msgstr "Brez izbire"
+
+#: ../src/Clients/Classical/mono-addins-strings.xml.h:27
 msgid "Other"
 msgstr "Drugo"
 
-#: ../src/Clients/Classical/mono-addins-strings.xml.h:17
+#: ../src/Clients/Classical/mono-addins-strings.xml.h:28
 msgid "Path:"
 msgstr "Pot:"
 
-#: ../src/Clients/Classical/mono-addins-strings.xml.h:18
+#: ../src/Clients/Classical/mono-addins-strings.xml.h:29
+msgid "Refresh"
+msgstr "Osveži"
+
+#: ../src/Clients/Classical/mono-addins-strings.xml.h:30
 msgid "Register a local repository"
 msgstr "Vpis krajevnega skladišča"
 
-#: ../src/Clients/Classical/mono-addins-strings.xml.h:19
+#: ../src/Clients/Classical/mono-addins-strings.xml.h:31
 msgid "Register an on-line repository"
 msgstr "Vpis spletnega skladišča"
 
-#: ../src/Clients/Classical/mono-addins-strings.xml.h:20
+#: ../src/Clients/Classical/mono-addins-strings.xml.h:32
 msgid "Repository"
 msgstr "Odlagališče"
 
-#: ../src/Clients/Classical/mono-addins-strings.xml.h:21
+#: ../src/Clients/Classical/mono-addins-strings.xml.h:33
+msgid "Repository:"
+msgstr "Skladišče:"
+
+#: ../src/Clients/Classical/mono-addins-strings.xml.h:34
 msgid "Select _All"
 msgstr "Izberi _vse"
 
-#: ../src/Clients/Classical/mono-addins-strings.xml.h:22
+#: ../src/Clients/Classical/mono-addins-strings.xml.h:35
 msgid "Select the location of the repository you want to register:"
 msgstr "Izberite mesto skladišča za vpis:"
 
-#: ../src/Clients/Classical/mono-addins-strings.xml.h:23
+#: ../src/Clients/Classical/mono-addins-strings.xml.h:36
 msgid "Show all packages"
 msgstr "Pokaži vse pakete"
 
-#: ../src/Clients/Classical/mono-addins-strings.xml.h:24
+#: ../src/Clients/Classical/mono-addins-strings.xml.h:37
 msgid "Show new versions only"
 msgstr "Pokaži le nove različice"
 
-#: ../src/Clients/Classical/mono-addins-strings.xml.h:25
+#: ../src/Clients/Classical/mono-addins-strings.xml.h:38
 msgid "Show updates only"
 msgstr "Pokaži le posodobitve"
 
-#: ../src/Clients/Classical/mono-addins-strings.xml.h:26
+#: ../src/Clients/Classical/mono-addins-strings.xml.h:39
 msgid "The following add-ins are currently installed:"
 msgstr "Trenutno so nameščeni naslednji vstavki:"
 
-#: ../src/Clients/Classical/mono-addins-strings.xml.h:27
+#: ../src/Clients/Classical/mono-addins-strings.xml.h:40
 msgid "The following add-ins will be installed:"
 msgstr "Nameščeni bodo naslednji vstavki:"
 
-#: ../src/Clients/Classical/mono-addins-strings.xml.h:28
+#: ../src/Clients/Classical/mono-addins-strings.xml.h:41
+msgid "Updates"
+msgstr "Posodobitve"
+
+#: ../src/Clients/Classical/mono-addins-strings.xml.h:42
 msgid "Url"
 msgstr "Url"
 
-#: ../src/Clients/Classical/mono-addins-strings.xml.h:29
+#: ../src/Clients/Classical/mono-addins-strings.xml.h:43
 msgid "Url:"
 msgstr "Url:"
 
-#: ../src/Clients/Classical/mono-addins-strings.xml.h:30
+#: ../src/Clients/Classical/mono-addins-strings.xml.h:44
 msgid "Version"
 msgstr "Različica"
 
-#: ../src/Clients/Classical/mono-addins-strings.xml.h:31
+#: ../src/Clients/Classical/mono-addins-strings.xml.h:45
 msgid "Version:"
 msgstr "Različica:"
 
-#: ../src/Clients/Classical/mono-addins-strings.xml.h:32
+#: ../src/Clients/Classical/mono-addins-strings.xml.h:46
 msgid "_Install Add-ins..."
 msgstr "_Namesti vstavke ..."
 
-#: ../src/Clients/Classical/mono-addins-strings.xml.h:33
+#: ../src/Clients/Classical/mono-addins-strings.xml.h:47
 msgid "_Repositories..."
 msgstr "_Skladišča ..."
 
-#: ../src/Clients/Classical/mono-addins-strings.xml.h:34
+#: ../src/Clients/Classical/mono-addins-strings.xml.h:48
 msgid "_Uninstall..."
 msgstr "_Odstrani ..."
 
-#: ../src/Clients/Classical/mono-addins-strings.xml.h:35
+#: ../src/Clients/Classical/mono-addins-strings.xml.h:49
 msgid "_Unselect All"
 msgstr "_Prekliči izbor vsega"
+
+#: ../src/Clients/Classical/mono-addins-strings.xml.h:50
+msgid "{0} update available"
+msgstr "Na voljo je {0} posodobitev"
+
+#~ msgid "Blackboard"
+#~ msgstr "Tabla"
 
 #~ msgid "Finish"
 #~ msgstr "Končaj"
