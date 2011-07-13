@@ -68,9 +68,6 @@ namespace gbrainy.Core.Main
 		static public void Load ()
 		{
 			try {
-				if (File.Exists (file) == false)
-					return;
-
 				using (FileStream str = File.OpenRead (file))
 				{
 					XmlSerializer bf = new XmlSerializer (typeof (List <Theme>));
