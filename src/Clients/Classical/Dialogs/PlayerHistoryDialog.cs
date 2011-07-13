@@ -130,11 +130,11 @@ namespace gbrainy.Clients.Classical.Dialogs
 				nh = nw = Math.Min (w, h);
 
 				if (nw < w) {
-					x = (w - nw) / 2;
+					x = (w - nw) / 2d;
 				}
 
 				if (nh < h) {
-					y = (h - nh) / 2;
+					y = (h - nh) / 2d;
 				}
 
 				cr.Translate (x, y);

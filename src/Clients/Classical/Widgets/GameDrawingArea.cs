@@ -44,8 +44,8 @@ namespace gbrainy.Clients.Classical.Widgets
 		public string Question { get; set; }
 		public string Solution { get; set; }
 		public int DrawingSquare { get; private set; }
-		public int OffsetX { get; private set; }
-		public int OffsetY { get; private set; }
+		public double OffsetX { get; private set; }
+		public double OffsetY { get; private set; }
 		public bool UseSolutionArea { get; set; }
 		public SolutionType SolutionIcon { get; set; }
 
@@ -103,12 +103,12 @@ namespace gbrainy.Clients.Classical.Widgets
 			DrawingSquare = Math.Min (w, h);
 
 			if (DrawingSquare < w)
-				OffsetX = (w - DrawingSquare) / 2;
+				OffsetX = (w - DrawingSquare) / 2d;
 			else
 				OffsetX = 0;
 
 			if (DrawingSquare < h)
-				OffsetY = (h - DrawingSquare) / 2;
+				OffsetY = (h - DrawingSquare) / 2d;
 			else
 				OffsetY = 0;
 
