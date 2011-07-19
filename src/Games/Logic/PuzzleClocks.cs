@@ -49,7 +49,7 @@ namespace gbrainy.Games.Logic
 			get {
 				// Translators: {0} is replaced by 'Figure X'
 				return String.Format (ServiceLocator.Instance.GetService <ITranslations> ().GetString (
-					"Starting from the first clock, add {1} to the number obtained by appending the values to which the hands point, for '{0}' is {2} + {1} = {3}."), 
+					"Starting from the first clock, add {1} to the number obtained by appending the values to which the hands point. For example, the values of the hands for '{0}' are {3} ({2} + {1})."),
 					Answer.GetFigureName (3), addition, handles [4].ToString () + handles [5].ToString (), handles [6].ToString () + handles [7].ToString ());
 			}
 		}
@@ -94,7 +94,7 @@ namespace gbrainy.Games.Logic
 			HorizontalContainer container = new HorizontalContainer (DrawAreaX, 0.05, 0.8, 0.45);
 			DrawableArea drawable_area;
 			AddWidget (container);
-			
+
 			drawable_area = new DrawableArea (0.8 / 2, 0.4);
 			drawable_area.Sensitive = false;
 			container.AddChild (drawable_area);
@@ -121,7 +121,7 @@ namespace gbrainy.Games.Logic
 			// Second row
 			container = new HorizontalContainer (DrawAreaX, 0.05 + 0.45, 0.8, 0.45);
 			AddWidget (container);
-			
+
 			drawable_area = new DrawableArea (0.8 / 2, 0.4);
 			drawable_area.Sensitive = false;
 			container.AddChild (drawable_area);
@@ -144,7 +144,7 @@ namespace gbrainy.Games.Logic
 				e.Context.DrawTextCentered (drawable_area.Width / 2, 0.36, Answer.GetFigureName (3));
 				e.Context.Stroke ();
 			};
-	
+
 			/*DateTime dt1 = new DateTime (2008, 2, 20, handles[0], handles[1] * 5, 0);
 			DateTime dt2 = new DateTime (2008, 2, 20, handles[2], handles[3] * 5, 0);
 			Console.WriteLine ("t1 {0}", dt1);
@@ -163,7 +163,7 @@ namespace gbrainy.Games.Logic
 			Console.WriteLine ("t2 {0}", dt2);
 			Console.WriteLine ("Time diff {0} from 1st to 2nd", dt2-dt1);*/
 
-		}	
+		}
 
 		static void DrawClock (CairoContextEx gr, double x, double y, int hand_short, int hand_large, bool draw_large)
 		{
@@ -190,7 +190,7 @@ namespace gbrainy.Games.Logic
 
 			if (draw_large) {
 				// Hand Large
-				degrees = (hand_large - 3) * 30; 
+				degrees = (hand_large - 3) * 30;
 				x0 = radius * Math.Cos (degrees * radian);
 				y0 = radius * Math.Sin (degrees * radian);
 				gr.MoveTo (x, y);
@@ -198,7 +198,7 @@ namespace gbrainy.Games.Logic
 				gr.Stroke ();
 			}
 			// Hand Short
-			degrees = (hand_short - 3) * 30; 
+			degrees = (hand_short - 3) * 30;
 			x0 = radius * Math.Cos (degrees * radian);
 			y0 = radius * Math.Sin (degrees * radian);
 			gr.MoveTo (x, y);
