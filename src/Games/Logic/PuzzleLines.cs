@@ -40,7 +40,11 @@ namespace gbrainy.Games.Logic
 
 		public override string Rationale {
 			get {
-				return String.Format (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("There are {0} lines in the figure to the left and {1} in the figure to the right."), fig1, fig2);
+				return String.Format (ServiceLocator.Instance.GetService <ITranslations> ().GetPluralString (
+					"There is {0} line in the figure to the left and {1} in the figure to the right.",
+					"There are {0} lines in the figure to the left and {1} in the figure to the right.",
+					fig1),
+					fig1, fig2);
 			}
 		}
 
@@ -53,7 +57,7 @@ namespace gbrainy.Games.Logic
 			if (CurrentDifficulty==GameDifficulty.Easy)
 				type = 0;
 			else
-				type = random.Next (max_types);		
+				type = random.Next (max_types);
 
 			switch (type) {
 			case 0:
@@ -83,14 +87,14 @@ namespace gbrainy.Games.Logic
 		public override void Draw (CairoContextEx gr, int area_width, int area_height, bool rtl)
 		{
 			base.Draw (gr, area_width, area_height, rtl);
-	
+
 			DrawLine (gr, 0.1, 0.2, 0.4, 0.38);
 			DrawLine (gr, 0.1, 0.3, 0.4, 0.3);
 			DrawLine (gr, 0.1, 0.4, 0.4, 0.25);
 
 			if (type == 1)  {
 				DrawLine (gr, 0.6, 0.3, -0.2, 0.35);
-				DrawLine (gr, 0.5, 0.25, -0.2, 0.35);		
+				DrawLine (gr, 0.5, 0.25, -0.2, 0.35);
 			}
 
 			DrawLine (gr, 0.1, 0.25, 0.6, 0.1);
