@@ -463,7 +463,7 @@
 		<answer_checkattributes>MultiOption | IgnoreSpaces</answer_checkattributes>
 
 		<variant>
-			<_question>If p &lt; x &lt; q and r &lt; y &lt; s. Which of the following options makes x &lt; y true? [option_answers]</_question>
+			<_question>If p &lt; x &lt; q and r &lt; y &lt; s and you know that x &lt; y is true, which of the following options is correct? [option_answers]</_question>
 
 			<string _text = "Choose one of the following:" x = "0.1" y = "0.15" size = "large"/>
 
@@ -483,12 +483,12 @@
 				<string _text = "[option_prefix] q = s" x = "0.05" y = "0.02" size = "large"/>
 			</option>
 
-			<_rationale>If the variable s is bigger than p then the condition x &lt; y is always true.</_rationale>
+			<_rationale>If x &lt; y, then p &lt; x &lt; y &lt; s so s &gt; p is true.</_rationale>
 			<answer>s &gt; p</answer>
 		</variant>
 
 		<variant>
-			<_question>If p &lt; x &lt; q and r &lt; y &lt; s. Which of the following options makes x &gt; y true? [option_answers]</_question>
+			<_question>If p &lt; x &lt; q and r &lt; y &lt; s and you know that x &gt; y is true, which of the following options is correct? [option_answers]</_question>
 
 			<string _text = "Choose one of the following:" x = "0.1" y = "0.15" size = "large"/>
 
@@ -508,7 +508,7 @@
 				<string _text = "[option_prefix] q = s" x = "0.05" y = "0.02" size = "large"/>
 			</option>
 
-			<_rationale>If the variable r is smaller than q then the condition x &gt; y is always true.</_rationale>
+			<_rationale>If x &gt; y, then x &gt; q &lt; and y &gt; r so r &lt; q is true.</_rationale>
 			<answer>r &lt; q</answer>
 		</variant>
 	</game>
