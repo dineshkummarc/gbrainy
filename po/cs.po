@@ -12,8 +12,8 @@ msgstr ""
 "Project-Id-Version: gbrainy\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=gbrainy&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2011-07-11 14:37+0000\n"
-"PO-Revision-Date: 2011-07-14 14:31+0200\n"
+"POT-Creation-Date: 2011-07-19 18:06+0000\n"
+"PO-Revision-Date: 2011-07-21 09:44+0200\n"
 "Last-Translator: Marek Černocký <marek@manet.cz>\n"
 "Language-Team: Czech <gnome-cs-list@gnome.org>\n"
 "MIME-Version: 1.0\n"
@@ -2672,15 +2672,15 @@ msgstr "Odpovězte {0}."
 msgid "{0}) "
 msgstr "{0}) "
 
-#: ../src/Clients/Classical/gbrainy.cs:432
+#: ../src/Clients/Classical/gbrainy.cs:422
 msgid "Congratulations."
 msgstr "Blahopřejeme."
 
-#: ../src/Clients/Classical/gbrainy.cs:434
+#: ../src/Clients/Classical/gbrainy.cs:424
 msgid "Incorrect answer."
 msgstr "Nesprávná odpověď."
 
-#: ../src/Clients/Classical/gbrainy.cs:498
+#: ../src/Clients/Classical/gbrainy.cs:479
 msgid ""
 "Once you have an answer type it in the \"Answer:\" entry box and press the "
 "\"OK\" button."
@@ -2688,11 +2688,11 @@ msgstr ""
 "Pokud znáte odpověď, napište ji do políčka „Odpověď:“ a stiskněte tlačítko "
 "„OK“."
 
-#: ../src/Clients/Classical/gbrainy.cs:528
+#: ../src/Clients/Classical/gbrainy.cs:509
 msgid "The level of translation of gbrainy for your language is low."
 msgstr "Do vašeho jazyka je aplikace gbrainy přeložená jen z malé části."
 
-#: ../src/Clients/Classical/gbrainy.cs:529
+#: ../src/Clients/Classical/gbrainy.cs:510
 msgid ""
 "You may be exposed to partially translated games making it more difficult to "
 "play. If you prefer to play in English, there is an option for doing so in "
@@ -2701,16 +2701,16 @@ msgstr ""
 "Pouze částečný překlad hry může její hraní značně ztížit. Pokud chcete hrát "
 "raději v angličtině, můžete si tak nastavit v předvolbách aplikace gbrainy."
 
-#: ../src/Clients/Classical/gbrainy.cs:625
+#: ../src/Clients/Classical/gbrainy.cs:606
 #: ../src/Clients/Classical/Widgets/Toolbar.cs:143
 msgid "Pause"
 msgstr "Přestávka"
 
-#: ../src/Clients/Classical/gbrainy.cs:630
+#: ../src/Clients/Classical/gbrainy.cs:611
 msgid "Resume"
 msgstr "Pokračovat"
 
-#: ../src/Clients/Classical/gbrainy.cs:780
+#: ../src/Clients/Classical/gbrainy.cs:760
 #, csharp-format
 msgid "Startup time {0}"
 msgstr "Začněte v bodě {0}"
@@ -3197,12 +3197,17 @@ msgstr ""
 
 #: ../src/Games/Logic/PuzzleClocks.cs:52
 #, csharp-format
+#| msgid ""
+#| "Starting from the first clock, add {1} to the number obtained by "
+#| "appending the values to which the hands point, for '{0}' is {2} + {1} = "
+#| "{3}."
 msgid ""
 "Starting from the first clock, add {1} to the number obtained by appending "
-"the values to which the hands point, for '{0}' is {2} + {1} = {3}."
+"the values to which the hands point. For example, the values of the hands "
+"for '{0}' are {3} ({2} + {1})."
 msgstr ""
-"V pořadí od prvních hodin, přičtěte {0} k číslu vzniklému sečtením hodnot, "
-"na které ukazují ručičky. Pro „{0}“ je to {2} + {1} = {3}."
+"V pořadí od prvních hodin, přičtěte {1} k číslu vzniklému sečtením hodnot, "
+"na které ukazují ručičky. Například pro „{0}“ je to {3} ({2} + {3})."
 
 #: ../src/Games/Logic/PuzzleClocks.cs:58
 msgid "The clocks do not follow the time logic."
@@ -3638,14 +3643,22 @@ msgstr ""
 "která má dva krajní body a neprotíná ji žádná jiná čára."
 
 # Same problem with plurals
-#: ../src/Games/Logic/PuzzleLines.cs:43
+#: ../src/Games/Logic/PuzzleLines.cs:44
 #, csharp-format
+#| msgid ""
+#| "There are {0} lines in the figure to the left and {1} in the figure to "
+#| "the right."
 msgid ""
+"There is {0} line in the figure to the left and {1} in the figure to the "
+"right."
+msgid_plural ""
 "There are {0} lines in the figure to the left and {1} in the figure to the "
 "right."
-msgstr "Na obrázku vlevo je {0} čar a na obrázku vpravo jich je {1}."
+msgstr[0] "Na obrázku vlevo je {0} čara a na obrázku vpravo {1}."
+msgstr[1] "Na obrázku vlevo jsou {0} čáry a na obrázku vpravo {1}."
+msgstr[2] "Na obrázku vlevo je {0} čar a na obrázku vpravo {1}."
 
-#: ../src/Games/Logic/PuzzleLines.cs:48
+#: ../src/Games/Logic/PuzzleLines.cs:52
 msgid "It is an easy exercise if you systematically count the lines."
 msgstr "Tato hra je lehká, pokud čáry počítáte systematicky."
 
@@ -4516,13 +4529,13 @@ msgstr[2] ""
 #. Explanation of the date and time format specifications can be found here:
 #. http://msdn.microsoft.com/en-us/library/system.globalization.datetimeformatinfo.aspx
 #. For 12-hour clock format use {0:%h} and for 24-hour clock format use {0:%H}. The date formats {0:h} and {0:H} are invalid.
-#: ../src/Games/Logic/PuzzleTimeNow.cs:79
+#: ../src/Games/Logic/PuzzleTimeNow.cs:85
 #, csharp-format
 msgid "{0:h tt}"
 msgstr "{0:h tt}"
 
 #. No hands
-#: ../src/Games/Logic/PuzzleTimeNow.cs:89
+#: ../src/Games/Logic/PuzzleTimeNow.cs:95
 msgid "Sample clock"
 msgstr "Ukázkové hodiny"
 
@@ -5097,11 +5110,11 @@ msgstr ""
 msgid "The result of the operation {0} / {1} is {2}"
 msgstr "Výsledkem operace {0} : {1} je {2}"
 
-#: ../src/Games/Calculation/CalculationFractions.cs:60
+#: ../src/Games/Calculation/CalculationFractions.cs:62
 msgid "Fractions"
 msgstr "Zlomky"
 
-#: ../src/Games/Calculation/CalculationFractions.cs:68
+#: ../src/Games/Calculation/CalculationFractions.cs:70
 msgid ""
 "What is the result of the given operation? Answer using either a fraction or "
 "a number."
