@@ -27,7 +27,7 @@ namespace gbrainy.Clients.WebForms
 		public string Coords {set; get; }
 		public int ID {set; get; }
 		
-		public GameImageAreaShape (string coords, string url, int id)
+		public GameImageAreaShape (string coords, string url, int id) : this ()
 		{
 			Coords = coords;
 			Url = url;

@@ -175,7 +175,6 @@ namespace gbrainy.Games.Calculation
 			{
 				if (n%a == 0 && n%b == 0)
 					return n;
-
 			}
 		}
 
