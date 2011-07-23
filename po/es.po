@@ -13,8 +13,8 @@ msgstr ""
 "Project-Id-Version: gbrainy.master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=gbrainy&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2011-07-19 18:06+0000\n"
-"PO-Revision-Date: 2011-07-20 12:54+0200\n"
+"POT-Creation-Date: 2011-07-23 07:37+0000\n"
+"PO-Revision-Date: 2011-07-23 09:53+0200\n"
 "Last-Translator: Daniel Mustieles <daniel.mustieles@gmail.com>\n"
 "Language-Team: Español <gnome-es-list@gnome.org>\n"
 "MIME-Version: 1.0\n"
@@ -436,36 +436,37 @@ msgstr ""
 "para equilibrar la palanca?"
 
 #: ../data/games.xml.h:31
+#| msgid ""
+#| "If p &lt; x &lt; q and r &lt; y &lt; s. Which of the following options "
+#| "makes x &gt; y true? [option_answers]"
 msgid ""
-"If p &lt; x &lt; q and r &lt; y &lt; s. Which of the following options makes "
-"x &gt; y true? [option_answers]"
+"If p &lt; x &lt; q and r &lt; y &lt; s and you know that x &gt; y is true, "
+"which of the following options is correct? [option_answers]"
 msgstr ""
-"Si «p &lt; x &lt; q» y «r &lt; y &lt; s». ¿Cuál de las siguientes opciones "
-"hace que «x &gt; y» sea cierto? [option_answers]"
+"Si p &lt; x &lt; q and r &lt; y &lt; s y sabes que x &gt; y es cierto, ¿cuál "
+"de las siguientes opciones es correcta? [option_answers]"
 
 #: ../data/games.xml.h:32
+#| msgid ""
+#| "If p &lt; x &lt; q and r &lt; y &lt; s. Which of the following options "
+#| "makes x &gt; y true? [option_answers]"
 msgid ""
-"If p &lt; x &lt; q and r &lt; y &lt; s. Which of the following options makes "
-"x &lt; y true? [option_answers]"
+"If p &lt; x &lt; q and r &lt; y &lt; s and you know that x &lt; y is true, "
+"which of the following options is correct? [option_answers]"
 msgstr ""
-"Si «p &lt; x &lt; q» y «r &lt; y &lt; s». ¿Cuál de las siguientes opciones "
-"hace que «x &lt; y» sea cierto? [option_answers]"
+"Si p &lt; x &lt; q and r &lt; y &lt; s y sabes que x &lt; y es cierto, ¿cuál "
+"de las siguientes opciones es correcta? [option_answers]"
 
 #: ../data/games.xml.h:33
-msgid ""
-"If the variable r is smaller than q then the condition x &gt; y is always "
-"true."
+msgid "If x &gt; y, then x &gt; q &lt; and y &gt; r so r &lt; q is true."
 msgstr ""
-"La variable «r» es menor que «q», entonces la condición «x &lt; y» siempre es "
-"cierta."
+"Si x &gt; y, entonces x &gt; q &lt; e y &gt; r, por lo que r &lt; q es "
+"cierto."
 
 #: ../data/games.xml.h:34
-msgid ""
-"If the variable s is bigger than p then the condition x &lt; y is always "
-"true."
+msgid "If x &lt; y, then p &lt; x &lt; y &lt; s so s &gt; p is true."
 msgstr ""
-"La variable «r» es mayor que «p», entonces la condición «x &lt; y» siempre es "
-"cierta."
+"Si x &lt; y, entonces p &lt; x &lt; y &lt; s, por lo que s &gt; p es cierto."
 
 #: ../data/games.xml.h:37
 #, no-c-format
@@ -1753,12 +1754,14 @@ msgstr ""
 #: ../data/verbal_analogies.xml.h:233
 msgid "Which of the following words is closest to the meaning of 'unhappy'?"
 msgstr ""
-"¿Cuál de las siguientes palabras es la más cercana en significado a «infeliz»?"
+"¿Cuál de las siguientes palabras es la más cercana en significado a "
+"«infeliz»?"
 
 #: ../data/verbal_analogies.xml.h:234
 msgid "Which of the following words is the closest in meaning to 'censure'?"
 msgstr ""
-"¿Cuál de las siguientes palabras es la más cercana en significado a «censura»?"
+"¿Cuál de las siguientes palabras es la más cercana en significado a "
+"«censura»?"
 
 #: ../data/verbal_analogies.xml.h:235
 msgid "Which of the following words means fear of people?"
@@ -1882,271 +1885,273 @@ msgstr "perro / dócil | lobo"
 msgid "elbow / knee | wrist"
 msgstr "codo / rodilla | muñeca"
 
-#: ../data/verbal_analogies.xml.h:267
-msgid "error / correct | damage"
+#. 'correct' can be used as verb or adjective
+#: ../data/verbal_analogies.xml.h:268
+#| msgid "error / correct | damage"
+msgid "error / (to) correct | damage"
 msgstr "error / corregir | daño"
 
-#: ../data/verbal_analogies.xml.h:268
+#: ../data/verbal_analogies.xml.h:269
 msgid "eyebrow / eye | mustache"
 msgstr "ceja / ojo | bigote"
 
 #. Translators: the concept 'toe' (http://en.wikipedia.org/wiki/Toe) does not exist in all languages. Feel free to change it to 'fingers' and adapt the answer accordingly
-#: ../data/verbal_analogies.xml.h:270
+#: ../data/verbal_analogies.xml.h:271
 msgid "feet / two | toes"
 msgstr "pies / dos | dedos"
 
-#: ../data/verbal_analogies.xml.h:271
+#: ../data/verbal_analogies.xml.h:272
 msgid "fish / aquarium | monkey"
 msgstr "pez / acuario | mono"
 
-#: ../data/verbal_analogies.xml.h:272
+#: ../data/verbal_analogies.xml.h:273
 msgid "fish / submarine | bird"
 msgstr "pez / submarino | pájaro"
 
-#: ../data/verbal_analogies.xml.h:273
+#: ../data/verbal_analogies.xml.h:274
 msgid "five / pentagon | ten"
 msgstr "cinco / pentágono | diez"
 
-#: ../data/verbal_analogies.xml.h:274
+#: ../data/verbal_analogies.xml.h:275
 msgid "fox / den | bird"
 msgstr "zorro / guarida | pájaro"
 
-#: ../data/verbal_analogies.xml.h:275
+#: ../data/verbal_analogies.xml.h:276
 msgid "glass / break | paper"
 msgstr "cristal / romper | papel"
 
-#: ../data/verbal_analogies.xml.h:276
+#: ../data/verbal_analogies.xml.h:277
 msgid "hands / grab | teeth"
 msgstr "manos / coger | dientes"
 
-#: ../data/verbal_analogies.xml.h:277
+#: ../data/verbal_analogies.xml.h:278
 msgid "herbivorous | herbivore"
 msgstr "herbívoros | herbívoro"
 
-#: ../data/verbal_analogies.xml.h:278
+#: ../data/verbal_analogies.xml.h:279
 msgid "horticulture / plants | ornithology"
 msgstr "horticultura / plantas | ornitología"
 
-#: ../data/verbal_analogies.xml.h:279
+#: ../data/verbal_analogies.xml.h:280
 msgid "hour / minute | minute"
 msgstr "hora / minuto | minuto"
 
-#: ../data/verbal_analogies.xml.h:280
+#: ../data/verbal_analogies.xml.h:281
 msgid "hungry / eat | tired"
 msgstr "hambriento / comer | cansado"
 
-#: ../data/verbal_analogies.xml.h:281
+#: ../data/verbal_analogies.xml.h:282
 msgid "hunter / rifle | photographer"
 msgstr "cazador / rifle | fotógrafo"
 
-#: ../data/verbal_analogies.xml.h:282
+#: ../data/verbal_analogies.xml.h:283
 msgid "ice / slippery | glue"
 msgstr "hielo / deslizante | pegamento"
 
-#: ../data/verbal_analogies.xml.h:283
+#: ../data/verbal_analogies.xml.h:284
 msgid "in | under | through"
 msgstr "dentro | debajo | a través de"
 
-#: ../data/verbal_analogies.xml.h:284
+#: ../data/verbal_analogies.xml.h:285
 msgid "islands"
 msgstr "islas"
 
-#: ../data/verbal_analogies.xml.h:285
+#: ../data/verbal_analogies.xml.h:286
 msgid "leopard / spots | tiger"
 msgstr "leopardo / manchas | tigre"
 
-#: ../data/verbal_analogies.xml.h:286
+#: ../data/verbal_analogies.xml.h:287
 msgid "letter / word | page"
 msgstr "letra / palabra | página"
 
-#: ../data/verbal_analogies.xml.h:287
+#: ../data/verbal_analogies.xml.h:288
 msgid "lip | upper lip | mouth"
 msgstr "labio | labio superior | boca"
 
-#: ../data/verbal_analogies.xml.h:288
+#: ../data/verbal_analogies.xml.h:289
 msgid "nest"
 msgstr "nido"
 
-#: ../data/verbal_analogies.xml.h:289
+#: ../data/verbal_analogies.xml.h:290
 msgid "nose"
 msgstr "nariz"
 
-#: ../data/verbal_analogies.xml.h:290
+#: ../data/verbal_analogies.xml.h:291
 msgid "novel / author | song"
 msgstr "novela / autor | canción"
 
-#: ../data/verbal_analogies.xml.h:291
+#: ../data/verbal_analogies.xml.h:292
 msgid "orange / fruit | spinach"
 msgstr "naranja / fruta | espinacas"
 
-#: ../data/verbal_analogies.xml.h:292
+#: ../data/verbal_analogies.xml.h:293
 msgid "parallel / meridian | longitude"
 msgstr "paralelo / meridiano | longitud"
 
-#: ../data/verbal_analogies.xml.h:293
+#: ../data/verbal_analogies.xml.h:294
 msgid "pediatrics / children | numismatics"
 msgstr "pediatra / niños | numismática"
 
-#: ../data/verbal_analogies.xml.h:294
+#: ../data/verbal_analogies.xml.h:295
 msgid "peel"
 msgstr "pelar"
 
-#: ../data/verbal_analogies.xml.h:295
+#: ../data/verbal_analogies.xml.h:296
 msgid "pessimist / optimist | poor"
 msgstr "pesimista / optimista | pobre"
 
-#: ../data/verbal_analogies.xml.h:296
+#: ../data/verbal_analogies.xml.h:297
 msgid "poems / anthology | maps"
 msgstr "poemas / antología | mapas"
 
-#: ../data/verbal_analogies.xml.h:297
+#: ../data/verbal_analogies.xml.h:298
 msgid "puzzle / solve | game"
 msgstr "puzle / resolver | juego"
 
-#: ../data/verbal_analogies.xml.h:298
+#: ../data/verbal_analogies.xml.h:299
 msgid "repair | fix"
 msgstr "reparar | arreglar"
 
-#: ../data/verbal_analogies.xml.h:299
+#: ../data/verbal_analogies.xml.h:300
 msgid "ring / finger | bracelet"
 msgstr "anillo / dedo | brazalete"
 
-#: ../data/verbal_analogies.xml.h:300
+#: ../data/verbal_analogies.xml.h:301
 msgid "seal / flippers | bird"
 msgstr "foca / aletas | pájaro"
 
 #. Translators: refers to the unit of time
-#: ../data/verbal_analogies.xml.h:302
+#: ../data/verbal_analogies.xml.h:303
 msgid "second"
 msgstr "segundo"
 
-#: ../data/verbal_analogies.xml.h:303
+#: ../data/verbal_analogies.xml.h:304
 msgid "shovel / dig | axe"
 msgstr "pala / cavar | hacha"
 
-#: ../data/verbal_analogies.xml.h:304
+#: ../data/verbal_analogies.xml.h:305
 msgid "sink"
 msgstr "hundir"
 
-#: ../data/verbal_analogies.xml.h:305
+#: ../data/verbal_analogies.xml.h:306
 msgid "sleep | rest"
 msgstr "dormir | descansar"
 
-#: ../data/verbal_analogies.xml.h:306
+#: ../data/verbal_analogies.xml.h:307
 msgid "slurp / tongue | snort"
 msgstr "sorbo / lengua | bufido"
 
-#: ../data/verbal_analogies.xml.h:307
+#: ../data/verbal_analogies.xml.h:308
 msgid "sour"
 msgstr "agrio"
 
 #. Translators: stick refers to a piece of wood
-#: ../data/verbal_analogies.xml.h:309
+#: ../data/verbal_analogies.xml.h:310
 msgid "stick / float | stone"
 msgstr "palo / flotar | piedra"
 
-#: ../data/verbal_analogies.xml.h:310
+#: ../data/verbal_analogies.xml.h:311
 msgid "sticky"
 msgstr "pegajoso"
 
-#: ../data/verbal_analogies.xml.h:311
+#: ../data/verbal_analogies.xml.h:312
 msgid "stripes"
 msgstr "rayas"
 
-#: ../data/verbal_analogies.xml.h:312
+#: ../data/verbal_analogies.xml.h:313
 msgid "sugar / sweet | vinegar"
 msgstr "azúcar / dulce | vinagre"
 
-#: ../data/verbal_analogies.xml.h:313
+#: ../data/verbal_analogies.xml.h:314
 msgid "talk / yell | dislike"
 msgstr "hablar / gritar | disgustar"
 
-#: ../data/verbal_analogies.xml.h:314
+#: ../data/verbal_analogies.xml.h:315
 msgid "tear | rip"
 msgstr "desgarro | rotura"
 
-#: ../data/verbal_analogies.xml.h:315
+#: ../data/verbal_analogies.xml.h:316
 msgid "tears / eyes | sweat"
 msgstr "lágrimas / ojos | sudor"
 
 # N.T.: En inglés hace referencia a 'toes' que son 10 pero en español a dedos que son 20
 #. Translators: referred to 'feet / two | toes'
-#: ../data/verbal_analogies.xml.h:317
+#: ../data/verbal_analogies.xml.h:318
 msgid "ten | 10"
 msgstr "veinte | 20"
 
-#: ../data/verbal_analogies.xml.h:318
+#: ../data/verbal_analogies.xml.h:319
 msgid "tennis / sport | ballet"
 msgstr "tenis / deporte | ballet"
 
-#: ../data/verbal_analogies.xml.h:319
+#: ../data/verbal_analogies.xml.h:320
 msgid "thankful / ingratitude | despotism"
 msgstr "agradecido / ingratitud | despotismo"
 
-#: ../data/verbal_analogies.xml.h:320
+#: ../data/verbal_analogies.xml.h:321
 msgid "thermometer / temperature | clock"
 msgstr "termómetro / temperatura | reloj"
 
-#: ../data/verbal_analogies.xml.h:321
+#: ../data/verbal_analogies.xml.h:322
 msgid "tiger / carnivore | cow"
 msgstr "tigre / carnívoro | vaca"
 
 #. Translators: time as duration of an event. What a clock measures
-#: ../data/verbal_analogies.xml.h:323
+#: ../data/verbal_analogies.xml.h:324
 msgid "time"
 msgstr "tiempo"
 
-#: ../data/verbal_analogies.xml.h:324
+#: ../data/verbal_analogies.xml.h:325
 msgid "toy / play | tool"
 msgstr "juguete / jugar | herramienta"
 
-#: ../data/verbal_analogies.xml.h:325
+#: ../data/verbal_analogies.xml.h:326
 msgid "track | railway | rails"
 msgstr "vía | vía férrea"
 
 #. Translators: letter refers to letter (in paper form)
-#: ../data/verbal_analogies.xml.h:327
+#: ../data/verbal_analogies.xml.h:328
 msgid "turtle / shell | letter"
 msgstr "tortuga / caparazón | carta"
 
-#: ../data/verbal_analogies.xml.h:328
+#: ../data/verbal_analogies.xml.h:329
 msgid "vegetable"
 msgstr "vegetal | verdura | hortaliza"
 
-#: ../data/verbal_analogies.xml.h:329
+#: ../data/verbal_analogies.xml.h:330
 msgid "whirlpool / water | tornado"
 msgstr "remolino / agua | tornado"
 
-#: ../data/verbal_analogies.xml.h:330
+#: ../data/verbal_analogies.xml.h:331
 msgid "wild | savage"
 msgstr "salvaje | feroz"
 
-#: ../data/verbal_analogies.xml.h:331
+#: ../data/verbal_analogies.xml.h:332
 msgid "win | play"
 msgstr "ganar | jugar"
 
-#: ../data/verbal_analogies.xml.h:332
+#: ../data/verbal_analogies.xml.h:333
 msgid "wind | air"
 msgstr "viento | aire"
 
-#: ../data/verbal_analogies.xml.h:333
+#: ../data/verbal_analogies.xml.h:334
 msgid "wine / grape | rum"
 msgstr "vino / uva | ron"
 
-#: ../data/verbal_analogies.xml.h:334
+#: ../data/verbal_analogies.xml.h:335
 msgid "wings"
 msgstr "alas"
 
 #. Translators: 'work' is used as a verb (to work)
-#: ../data/verbal_analogies.xml.h:336
+#: ../data/verbal_analogies.xml.h:337
 msgid "work"
 msgstr "trabajar"
 
-#: ../data/verbal_analogies.xml.h:337
+#: ../data/verbal_analogies.xml.h:338
 msgid "wrist | arm"
 msgstr "muñeca | brazo"
 
-#: ../data/verbal_analogies.xml.h:338
+#: ../data/verbal_analogies.xml.h:339
 msgid "write / pen | eat"
 msgstr "escribir / bolígrafo | comer"
 
@@ -3209,10 +3214,6 @@ msgstr ""
 
 #: ../src/Games/Logic/PuzzleClocks.cs:52
 #, csharp-format
-#| msgid ""
-#| "Starting from the first clock, add {1} to the number obtained by "
-#| "appending the values to which the hands point, for '{0}' is {2} + {1} = "
-#| "{3}."
 msgid ""
 "Starting from the first clock, add {1} to the number obtained by appending "
 "the values to which the hands point. For example, the values of the hands "
@@ -3398,8 +3399,8 @@ msgid ""
 "What is the probability of getting a '2' or a '6' in a single throw of an "
 "unmodified 6 sided die? Answer using a fraction (e.g.: 1/2)."
 msgstr ""
-"¿Cuál es la probabilidad de obtener un «2» o un «6» en un solo lanzamiento de "
-"un dado no cargado de 6 caras? Responde usando una fracción (ej.: 1/2)."
+"¿Cuál es la probabilidad de obtener un «2» o un «6» en un solo lanzamiento "
+"de un dado no cargado de 6 caras? Responde usando una fracción (ej.: 1/2)."
 
 #: ../src/Games/Logic/PuzzleDice.cs:56
 msgid "There are 2 of 6 possibilities."
@@ -3443,8 +3444,8 @@ msgid ""
 "There is 1 of 6 possibilities of getting a '6' on the first die and the same "
 "for the second die."
 msgstr ""
-"Existe 1 de 6 probabilidades de obtener un «6» en el primer dado y las mismas "
-"para el segundo dado."
+"Existe 1 de 6 probabilidades de obtener un «6» en el primer dado y las "
+"mismas para el segundo dado."
 
 #: ../src/Games/Logic/PuzzleDice.cs:73
 msgid "Dice"
@@ -3532,8 +3533,8 @@ msgid ""
 "figures and 'F' that there are two figures."
 msgstr ""
 "«A» indica que las figuras se superponen, «B» que son cuadrados, «C» que son "
-"círculos, «D» que las figuras están separadas, «E» que hay tres figuras y «F» "
-"que hay dos figuras."
+"círculos, «D» que las figuras están separadas, «E» que hay tres figuras y "
+"«F» que hay dos figuras."
 
 #: ../src/Games/Logic/PuzzleFigurePattern.cs:40
 msgid "Figure pattern"
@@ -3646,9 +3647,6 @@ msgstr ""
 
 #: ../src/Games/Logic/PuzzleLines.cs:44
 #, csharp-format
-#| msgid ""
-#| "There are {0} lines in the figure to the left and {1} in the figure to "
-#| "the right."
 msgid ""
 "There is {0} line in the figure to the left and {1} in the figure to the "
 "right."
@@ -5569,6 +5567,27 @@ msgstr "_Deseleccionar todo"
 msgid "{0} update available"
 msgstr "{0} actualización disponible"
 
+#~ msgid ""
+#~ "If p &lt; x &lt; q and r &lt; y &lt; s. Which of the following options "
+#~ "makes x &lt; y true? [option_answers]"
+#~ msgstr ""
+#~ "Si «p &lt; x &lt; q» y «r &lt; y &lt; s». ¿Cuál de las siguientes "
+#~ "opciones hace que «x &lt; y» sea cierto? [option_answers]"
+
+#~ msgid ""
+#~ "If the variable r is smaller than q then the condition x &gt; y is always "
+#~ "true."
+#~ msgstr ""
+#~ "La variable «r» es menor que «q», entonces la condición «x &lt; y» "
+#~ "siempre es cierta."
+
+#~ msgid ""
+#~ "If the variable s is bigger than p then the condition x &lt; y is always "
+#~ "true."
+#~ msgstr ""
+#~ "La variable «r» es mayor que «p», entonces la condición «x &lt; y» "
+#~ "siempre es cierta."
+
 # Se refiere a un tiro al blanco?
 #~ msgid "Blackboard"
 #~ msgstr "Pizarra"
@@ -5596,8 +5615,8 @@ msgstr "{0} actualización disponible"
 #~ "The variable p is smaller than x and s is bigger than y. If p is bigger "
 #~ "than s then the condition x &gt; y is true."
 #~ msgstr ""
-#~ "La variable «p» es menor que «x» y «s» es mayor que «y». Si «p» es mayor que "
-#~ "«s» entonces la condición «x &gt; y» es cierta."
+#~ "La variable «p» es menor que «x» y «s» es mayor que «y». Si «p» es mayor "
+#~ "que «s» entonces la condición «x &gt; y» es cierta."
 
 #~ msgid "[option_prefix] p > s"
 #~ msgstr "[option_prefix] p > s"
