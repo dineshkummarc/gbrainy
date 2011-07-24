@@ -31,6 +31,7 @@ namespace gbrainy.Clients.WebForms
 		public const int IMAGE_WIDTH = 400;
 		public const int IMAGE_HEIGHT = 400;
 		static public string IMAGES_DIR = "tmp/";
+		static public string EXTENSION = ".png";
 		
 		gbrainy.Core.Main.Game game;	
 		
@@ -53,6 +54,7 @@ namespace gbrainy.Clients.WebForms
 
 			try
 			{
+				file = Path.GetFullPath (file);
 				cairo_image = new Cairo.ImageSurface (Cairo.Format.ARGB32, IMAGE_WIDTH, IMAGE_HEIGHT);
 				cr = new gbrainy.Core.Main.CairoContextEx (cairo_image, "sans 12", 96);
 
@@ -66,9 +68,9 @@ namespace gbrainy.Clients.WebForms
 					Logger.Debug ("Game.CreateImage. Wrote image {0}", file);
 			}
 			
-			catch (Exception)
+			catch (Exception e)
 			{
-				Logger.Error ("Game.CreateImage. Error writting {0}", file);
+				Logger.Error ("Game.CreateImage. Error writting {0} {1}", file, e);
 				return false;
 			}
 
@@ -88,7 +90,7 @@ namespace gbrainy.Clients.WebForms
 		{
 			string file;
 
-			file = IMAGES_DIR + sessionid + ".png";
+			file = IMAGES_DIR + sessionid + EXTENSION;
 			return file;
 		}		
 	
@@ -112,18 +114,18 @@ namespace gbrainy.Clients.WebForms
 			{
 				Container container = widget as Container;
 				
-				if (container != null)
-				{					
-					foreach (Widget child in container.Children)
-					{
-						area_shapes.Add (new GameImageAreaShape (ProcessWidget (child),
-							"?answer=" + child.DataEx.ToString (),
-							area_shapes.Count));
-					}
-				}
-				else {
-					/*area_shapes.Add (new AreaShape (ProcessWidget (widget),
-							"?answer=" + child.DataEx.ToString ()));*/
+				if (container == null)
+					continue;
+			
+				foreach (Widget child in container.Children)
+				{
+					// Some puzzles use Widgets to layout elements but are not clickable
+					if (child.DataEx == null)
+						continue;
+					
+					area_shapes.Add (new GameImageAreaShape (ProcessWidget (child),
+						"?answer=" + child.DataEx.ToString (),
+						area_shapes.Count));
 				}
 			}
 			

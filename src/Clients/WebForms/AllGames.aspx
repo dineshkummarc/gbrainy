@@ -12,15 +12,17 @@
 	     <br/>
 	     
 	     <asp:Panel Visible = "<%#  ((GameContainer) Container.DataItem).TipVisible %>" runat="server">
-	     <a onclick="toggleVisibleById('<%#  ((GameContainer) Container.DataItem).ID%>_tip');return false;" href="">See Tip</a>
-	     <div id = "<%#  ((GameContainer) Container.DataItem).ID%>_tip" style = "display:none">
+	     
+	     <a onclick="toggleVisibleById('tip_<%#  ((GameContainer) Container.DataItem).ID%>');return false;" href="">See Tip</a>
+	     
+	     <div id = "tip_<%#  ((GameContainer) Container.DataItem).ID%>" style = "display:none">
 	     	<br/>
 	     	<%#  ((GameContainer) Container.DataItem).Tip %>
 	     </div>
 	     </asp:Panel>
-	     
-	     <a onclick="toggleVisibleById('<%#  ((GameContainer) Container.DataItem).ID%>_solution');return false;" href="">See Solution</a>
-	     <div id = "<%#  ((GameContainer) Container.DataItem).ID%>_solution" style = "display:none">
+
+	     <a onclick="toggleVisibleById('solution_<%#  ((GameContainer) Container.DataItem).ID%>');return false;" href="">See Solution</a>
+	     <div id = "solution_<%#  ((GameContainer) Container.DataItem).ID%>" style = "display:none">
 	     	<br/>
 	     	<%#  ((GameContainer) Container.DataItem).Solution %>
 	     </div>

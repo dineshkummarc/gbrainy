@@ -3,6 +3,6 @@ toggleVisibleById = function (elementId) {
 };
 
 toggleVisible = function (element) {
-    element.style.display == 'none' ? 'block' : 'none';
+    element.style.display = 'none' ? 'block' : 'none';
 };
 
