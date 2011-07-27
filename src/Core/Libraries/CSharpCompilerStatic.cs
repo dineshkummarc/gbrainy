@@ -36,7 +36,7 @@ namespace gbrainy.Core.Libraries
 		static string stored_vars;
 		static int unload_domain = 0;
 		static AppDomain tempDomain;
-		const int maximum_uses = 5;
+		const int maximum_uses = 50;
 
 		public void EvaluateCode (string c)
 		{
