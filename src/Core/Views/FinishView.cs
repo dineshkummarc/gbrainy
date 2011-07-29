@@ -143,7 +143,7 @@ namespace gbrainy.Core.Views
 			y += 0.08;
 			gr.MoveTo (x, y);
 	
-			s = session.Result;
+			s = session.History.Result;
 			if (s == string.Empty)
 				gr.ShowPangoText (String.Format (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Games won: {0} ({1} played)"), session.History.GamesWon, session.History.GamesPlayed));
 			else

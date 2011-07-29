@@ -53,7 +53,6 @@ namespace gbrainy.Core.Main
 		private GameManager game_manager;
 		private System.Timers.Timer timer;
 		private bool paused;
-		private string current_time;
 		private TimeSpan one_sec = TimeSpan.FromSeconds (1);
 		private SessionStatus status;
 		private ViewsControler controler;
@@ -151,12 +150,6 @@ namespace gbrainy.Core.Main
 			set { game_manager = value;}
 		}
 
-		public string TimePlayed {
-			get {
-				return (current_time == null) ? TimeSpanToStr (TimeSpan.FromSeconds (0)) : current_time;
-			}
-		}
-
 		public string TimePerGame {
 			get {
 				TimeSpan average;
@@ -174,7 +167,8 @@ namespace gbrainy.Core.Main
 				string played, time, game;
 
 				played = String.Format (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Games played: {0} (Score: {1})"), history.GamesPlayed, history.TotalScore);
-				time = String.Format (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Time: {0}"), current_time);
+				time = String.Format (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Time: {0}"),
+					paused == false ? GameTime : ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Paused"));
 
 				if (CurrentGame != null) {
 					// Translators: {0} is the name of the game
@@ -188,28 +182,6 @@ namespace gbrainy.Core.Main
 			}
 		}
 
-		// Summarizes how the game did go
-		public string Result {
-			get {
-				string s;
-
-				if (history.GamesPlayed >= 10) {
-					int percentage_won = (int) (100 * history.GamesWon / history.GamesPlayed);
-					if (percentage_won >= 90)
-						s = ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Outstanding results");
-					else if (percentage_won >= 70)
-						s = ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Excellent results");
-					else if (percentage_won >= 50)
-						s = ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Good results");
-					else if (percentage_won >= 30)
-						s = ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Poor results");
-					else s = ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Disappointing results");
-				} else
-					s = string.Empty;
-	
-				return s;
-			}
-		}
 	
 		public void New ()
 		{
@@ -222,7 +194,6 @@ namespace gbrainy.Core.Main
 
 			history.Clear ();
 			game_time = TimeSpan.Zero;
-			current_time = TimeSpanToStr (game_time);
 			timer.SynchronizingObject = SynchronizingObject;
 			EnableTimer = true;
 		}
@@ -277,7 +248,6 @@ namespace gbrainy.Core.Main
 		{
 			EnableTimer = false;
 			paused = true;
-			current_time = ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Paused");
 
 			if (CurrentGame != null)
 				CurrentGame.EnableMouseEvents (false);
@@ -314,7 +284,6 @@ namespace gbrainy.Core.Main
 
 				game_time = game_time.Add (one_sec);
 				CurrentGame.GameTime = CurrentGame.GameTime + one_sec;
-				current_time = TimeSpanToStr (game_time);
 			}
 
 			if (UpdateUIElement == null)

@@ -20,6 +20,8 @@
 using System;
 using System.Xml.Serialization;
 
+using gbrainy.Core.Services;
+
 namespace gbrainy.Core.Main
 {
 	[Serializable]
@@ -66,6 +68,28 @@ namespace gbrainy.Core.Main
 			history.MemoryScore = MemoryScore;
 			history.VerbalScore = VerbalScore;
 			return history;
+		}
+
+		public string Result {
+			get {
+				string s;
+
+				if (GamesPlayed >= 10) {
+					int percentage_won = (int) (100 * GamesWon / GamesPlayed);
+					if (percentage_won >= 90)
+						s = ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Outstanding results");
+					else if (percentage_won >= 70)
+						s = ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Excellent results");
+					else if (percentage_won >= 50)
+						s = ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Good results");
+					else if (percentage_won >= 30)
+						s = ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Poor results");
+					else s = ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Disappointing results");
+				} else
+					s = string.Empty;
+	
+				return s;
+			}
 		}
 	}
 }
