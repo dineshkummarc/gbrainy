@@ -220,10 +220,9 @@ namespace gbrainy.Core.Main
 			if (Status != SessionStatus.NotPlaying)
 				End ();
 
-			current_time = TimeSpanToStr (game_time);
-
 			history.Clear ();
 			game_time = TimeSpan.Zero;
+			current_time = TimeSpanToStr (game_time);
 			timer.SynchronizingObject = SynchronizingObject;
 			EnableTimer = true;
 		}
