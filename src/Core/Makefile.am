@@ -16,10 +16,12 @@ CSDISTFILES =  \
 		$(srcdir)/Main/GameAnswerCheckAttributes.cs \
 		$(srcdir)/Main/GameAnswerEventArgs.cs	\
 		$(srcdir)/Main/GameDifficulty.cs 	\
+		$(srcdir)/Main/GameLocator.cs		\
 		$(srcdir)/Main/GameManager.cs		\
 		$(srcdir)/Main/GameSession.cs		\
 		$(srcdir)/Main/GameSessionHistory.cs	\
 		$(srcdir)/Main/GameSessionHistoryExtended.cs \
+		$(srcdir)/Main/GameSessionPlayList.cs	\
 		$(srcdir)/Main/GameTypes.cs		\
 		$(srcdir)/Main/GameTips.cs		\
 		$(srcdir)/Main/Xml/DrawingObject.cs	\

@@ -60,6 +60,7 @@ namespace gbrainy.Core.Main
 		private PlayerHistory player_history;
 		private int id;
 		private GameSessionHistoryExtended history;
+		private GameSessionPlayList play_list;
 
 		public event EventHandler DrawRequest;
 		public event EventHandler <UpdateUIStateEventArgs> UpdateUIElement;
@@ -68,6 +69,7 @@ namespace gbrainy.Core.Main
 		{
 			id = 0;
 			game_manager = new GameManager ();
+			play_list = new GameSessionPlayList (game_manager);
 			game_time = TimeSpan.Zero;
 
 			timer = new System.Timers.Timer ();
@@ -103,13 +105,13 @@ namespace gbrainy.Core.Main
 		}
 	
 		public Types Type {
-			get {return game_manager.GameType; }
-			set {game_manager.GameType = value; }
+			get { return play_list.GameType; }
+			set { play_list.GameType = value; }
 		}
 
 		public GameDifficulty Difficulty {
-			get {return game_manager.Difficulty; }
-			set {game_manager.Difficulty = value; }
+			get { return play_list.Difficulty; }
+			set { play_list.Difficulty = value; }
 		}
 	
 		public string GameTime {
@@ -119,6 +121,11 @@ namespace gbrainy.Core.Main
 		public bool Paused {
 			get {return paused; }
 			set {paused = value; }
+		}
+
+		public GameSessionPlayList PlayList {
+			get { return play_list; }
+			set { play_list = value; }
 		}
 
 		public Game CurrentGame {
@@ -147,7 +154,10 @@ namespace gbrainy.Core.Main
 
 		public GameManager GameManager {
 			get { return game_manager;}
-			set { game_manager = value;}
+			set {
+				game_manager = value;
+				play_list.GameManager = value;
+			}
 		}
 
 		public string TimePerGame {
@@ -181,7 +191,6 @@ namespace gbrainy.Core.Main
 				}	
 			}
 		}
-
 	
 		public void New ()
 		{
@@ -228,7 +237,7 @@ namespace gbrainy.Core.Main
 				}
 
 				history.GamesPlayed++;
-				CurrentGame = game_manager.GetPuzzle ();
+				CurrentGame = play_list.GetPuzzle ();
 				CurrentGame.SynchronizingObject = SynchronizingObject;
 				CurrentGame.DrawRequest += GameDrawRequest;
 				CurrentGame.UpdateUIElement += GameUpdateUIElement;

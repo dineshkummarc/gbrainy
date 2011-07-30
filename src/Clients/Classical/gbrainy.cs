@@ -99,7 +99,7 @@ namespace gbrainy.Clients.Classical
 			GameManagerPreload (session.GameManager);
 			Console.WriteLine (session.GameManager.GetGamesSummary ());
 
-			session.GameManager.ColorBlind = Preferences.Get <bool> (Preferences.ColorBlindKey);
+			session.PlayList.ColorBlind = Preferences.Get <bool> (Preferences.ColorBlindKey);
 			session.DrawRequest += SessionDrawRequest;
 			session.UpdateUIElement += SessionUpdateUIElement;
 			session.SynchronizingObject = new GtkSynchronize ();
@@ -535,7 +535,7 @@ namespace gbrainy.Clients.Classical
 		{
 			PdfExportDialog pdf;
 
-			pdf = new PdfExportDialog ();
+			pdf = new PdfExportDialog (session.GameManager);
 			pdf.Run ();
 			pdf.Destroy ();
 		}
@@ -547,7 +547,7 @@ namespace gbrainy.Clients.Classical
 			dialog = new PreferencesDialog (session.PlayerHistory);
 			if ((Gtk.ResponseType) dialog.Run () == ResponseType.Ok) {
 				session.Difficulty = (GameDifficulty) Preferences.Get <int> (Preferences.DifficultyKey);
-				session.GameManager.ColorBlind = Preferences.Get <bool> (Preferences.ColorBlindKey);
+				session.PlayList.ColorBlind = Preferences.Get <bool> (Preferences.ColorBlindKey);
 
 				if (dialog.NewThemeSet == true)
 					drawing_area.ReloadBackground ();
@@ -559,7 +559,7 @@ namespace gbrainy.Clients.Classical
 		{
 			CustomGameDialog dialog;
 
-			dialog = new CustomGameDialog (session.GameManager);
+			dialog = new CustomGameDialog (session);
 			dialog.Run ();
 			dialog.Destroy ();
 
@@ -748,9 +748,9 @@ namespace gbrainy.Clients.Classical
 
 			app.Initialize ();
 			// Set RandomOrder before setting the custom list then it has effect of custom games
-			app.Session.GameManager.RandomOrder = line.RandomOrder;
+			app.Session.PlayList.RandomOrder = line.RandomOrder;
 			if (line.PlayList.Length > 0) {
-				app.Session.GameManager.PlayList = line.PlayList;
+				app.Session.PlayList.PlayList = line.PlayList;
 				app.InitialSessionType = GameSession.Types.Custom;
 			}
 			app.ProcessDefaults ();

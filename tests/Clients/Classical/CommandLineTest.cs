@@ -57,7 +57,7 @@ namespace gbrainy.Test.Clients.Classical
 			const int game_cnt = 5; // number of games to pass as parameters
 			CommandLine line;
 			string [] args;
-			GameManager.GameLocator [] games;
+			GameLocator [] games;
 			GameManager gm = new GameManager ();
 			StringBuilder game_list = new StringBuilder ();
 			int [] candidates; // Stores the indexes of the games passed as parameters

@@ -35,16 +35,14 @@
     <Reference Include="Mono.Posix" />
     <Reference Include="System.Xml" />
     <Reference Include="pango-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f">
-      <Package>gtk-sharp-2.0</Package>
     </Reference>
     <Reference Include="gtk-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f">
-      <Package>gtk-sharp-2.0</Package>
     </Reference>
     <Reference Include="gdk-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f">
-      <Package>gtk-sharp-2.0</Package>
     </Reference>
     <Reference Include="Mono.CSharp" />
-    <Reference Include="Mono.Cairo, Version=2.0.0.0, Culture=neutral, PublicKeyToken=0738eb9f132ed756" />
+    <Reference Include="Mono.Cairo" />
+    <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Main\ArrayListIndicesRandom.cs" />
@@ -118,6 +116,8 @@
     <Compile Include="Services\DefaultServices.cs" />
     <Compile Include="Services\ICSharpCompiler.cs" />
     <Compile Include="Main\PreferencesStorage.cs" />
+    <Compile Include="Main\GameSessionPlayList.cs" />
+    <Compile Include="Main\GameLocator.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ProjectExtensions>

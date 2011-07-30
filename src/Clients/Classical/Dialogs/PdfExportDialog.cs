@@ -41,11 +41,13 @@ namespace gbrainy.Clients.Classical.Dialogs
 		[GtkBeans.Builder.Object] Gtk.ComboBox layout_combo;
 
 		BrowseFile file;
+		GameManager manager;
 		const int COLUMN_VALUE = 1;
 		const int DEF_SIDEVALUE = 4;
 
-		public PdfExportDialog () : base ("PdfExportDialog.ui", "pdfexportbox")
+		public PdfExportDialog (GameManager manager) : base ("PdfExportDialog.ui", "pdfexportbox")
 		{
+			this.manager = manager;
 			games_spinbutton.Value = 10;
 			checkbox_logic.Active = checkbox_calculation.Active = checkbox_verbal.Active = true;
 
@@ -147,20 +149,20 @@ namespace gbrainy.Clients.Classical.Dialogs
 		void GeneratePdf (GameSession.Types types, int num_games, int gamespage, GameDifficulty difficulty, bool colorblind, string filename)
 		{
 			Game [] games;
-			GameManager gm;
+			GameSession session;
 			string msg;
 			MessageType msg_type;
 
 			games = new Game [num_games];
-			gm = new GameManager ();
-			gm.ColorBlind = colorblind;
-			gm.Difficulty = difficulty;
-			GtkClient.GameManagerPreload (gm);
-			gm.GameType = types;
+			session = new GameSession ();
+			session.GameManager = manager;
+			session.PlayList.ColorBlind = colorblind;
+			session.PlayList.Difficulty = difficulty;
+			session.PlayList.GameType = types;
 
 			for (int n = 0; n < num_games; n++)
 			{
-				 games [n] = gm.GetPuzzle ();
+				 games [n] = session.PlayList.GetPuzzle ();
 			}
 
 			if (PdfExporter.GeneratePdf (games, gamespage, filename) == true) {

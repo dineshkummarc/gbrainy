@@ -108,11 +108,10 @@ namespace gbrainy.Clients.Classical
 
 		static void GameList ()
 		{
-			GameManager.GameLocator [] games;
+			GameLocator [] games;
 			GameManager gm = new GameManager ();
 
 			GtkClient.GameManagerPreload (gm);
-			gm.GameType = GameSession.Types.AllGames;
 			games = gm.AvailableGames;
 
 			Console.WriteLine (Catalog.GetString ("List of available games"));
@@ -131,7 +130,7 @@ namespace gbrainy.Clients.Classical
 		void BuildPlayList (string [] names)
 		{
 			Dictionary <string, int> dictionary;
-			GameManager.GameLocator [] games;
+			GameLocator [] games;
 			GameManager gm = new GameManager ();
 			GtkClient.GameManagerPreload (gm);
 			games = gm.AvailableGames;
@@ -152,7 +151,7 @@ namespace gbrainy.Clients.Classical
 				}
 				catch (Exception e)
 				{
-					Console.WriteLine ("gbrainy. Error adding {0} {1}", game.Name, e.Message);
+					Console.WriteLine ("CommandLine.BuildPlayList. Error adding {0} {1}", game.Name, e.Message);
 				}
 			}
 
@@ -166,7 +165,7 @@ namespace gbrainy.Clients.Classical
 				}
 				catch (KeyNotFoundException)
 				{
-					Console.WriteLine ("gbrainy. Game [{0}] not found", names [i]);
+					Console.WriteLine ("CommandLine.BuildPlayList. Game [{0}] not found", names [i]);
 				}
 			}
 

@@ -34,8 +34,8 @@ namespace gbrainy.Clients.Classical.Dialogs
 		[GtkBeans.Builder.Object] Gtk.TreeView treeview;
 		[GtkBeans.Builder.Object] Box preview_vbox;
 		GameDrawingArea drawing_area;
-		GameManager manager;
-		GameManager.GameLocator [] games;
+		GameSession session;
+		GameLocator [] games;
 		bool selection_done;
 
 		const int COL_NAME = 0;
@@ -44,13 +44,13 @@ namespace gbrainy.Clients.Classical.Dialogs
 		const int COL_OBJECT = 3;
 		const int COL_INDEX = 4;
 
-		public CustomGameDialog (GameManager manager) : base ("CustomGameDialog.ui", "customgame")
+		public CustomGameDialog (GameSession session) : base ("CustomGameDialog.ui", "customgame")
 		{
 			Game game;
 
 			selection_done = false;
-			this.manager = manager;
-			games = manager.AvailableGames;
+			this.session = session;
+			games = session.GameManager.AvailableGames;
 
 			drawing_area = new GameDrawingArea ();
 			drawing_area.UseSolutionArea = false;
@@ -233,7 +233,7 @@ namespace gbrainy.Clients.Classical.Dialogs
 			});
 
 			if (selection_done == true)
-				manager.PlayList = play_list.ToArray ();
+				session.PlayList.PlayList = play_list.ToArray ();
 		}
 	}
 }

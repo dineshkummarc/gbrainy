@@ -47,10 +47,6 @@ namespace gbrainy.Clients.WebForms
 			manager.LoadVerbalAnalogies (System.IO.Path.Combine ("data/", Defines.VERBAL_ANALOGIES));
 			manager.LoadGamesFromXml (System.IO.Path.Combine ("data/", "games.xml"));
 
-			manager.Difficulty = gbrainy.Core.Main.GameDifficulty.Medium;
-			manager.GameType = gbrainy.Core.Main.GameSession.Types.LogicPuzzles |
-				 gbrainy.Core.Main.GameSession.Types.Calculation |
-				gbrainy.Core.Main.GameSession.Types.VerbalAnalogies;
 			return manager;
 		}
 
@@ -117,6 +113,11 @@ namespace gbrainy.Clients.WebForms
 				Logger.Debug ("Game.Page_Load creating new session");
 				session = new gbrainy.Core.Main.GameSession ();
 				session.GameManager = CreateManager ();
+			 	session.PlayList.Difficulty = gbrainy.Core.Main.GameDifficulty.Medium;
+				session.PlayList.GameType = gbrainy.Core.Main.GameSession.Types.LogicPuzzles |
+					gbrainy.Core.Main.GameSession.Types.Calculation |
+					gbrainy.Core.Main.GameSession.Types.VerbalAnalogies;
+
 				session.New ();
 				WebSession.GameState = session;
 				Global.TotalGamesSessions++;

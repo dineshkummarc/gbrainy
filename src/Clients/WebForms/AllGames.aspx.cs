@@ -110,7 +110,7 @@ namespace gbrainy.Clients.WebForms
 			manager = Game.CreateManager ();
 			GameImage.CreateDirectory (images_dir);	
 			
-			GameManager.GameLocator [] games;
+			GameLocator [] games;
 			gbrainy.Core.Main.Game game;
 			
 			games = manager.AvailableGames;
