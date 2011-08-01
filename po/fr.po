@@ -14,8 +14,8 @@ msgstr ""
 "Project-Id-Version: gbrainy\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=gbrainy&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2011-06-13 18:52+0000\n"
-"PO-Revision-Date: 2011-06-22 10:25+0200\n"
+"POT-Creation-Date: 2011-07-23 08:47+0000\n"
+"PO-Revision-Date: 2011-08-01 16:44+0200\n"
 "Last-Translator: Bruno Brouard <annoa.b@gmail.com>\n"
 "Language-Team: GNOME French Team <gnomefr@traduc.org>\n"
 "MIME-Version: 1.0\n"
@@ -227,7 +227,7 @@ msgstr[1] ""
 "moitié plus de temps. En combien d'heures nettoieront-ils l'entrepôt s'ils "
 "travaillent ensemble ? [option_answers]"
 
-#: ../tools/GameXmlGetString.cs:81 ../data/games.xml.h:70
+#: ../tools/GameXmlGetString.cs:81 ../data/games.xml.h:71
 msgid ""
 "You have two trucks that have a total weight of [add] unit. If the lighter "
 "truck weights 15 units less that half of the weight of the heavier truck, "
@@ -436,35 +436,30 @@ msgstr ""
 
 #: ../data/games.xml.h:31
 msgid ""
-"If p &lt; x &lt; q and r &lt; y &lt; s. Which of the following options makes "
-"x &gt; y true? [option_answers]"
+"If p &lt; x &lt; q and r &lt; y &lt; s and you know that x &gt; y is true, "
+"which of the following options is correct? [option_answers]"
 msgstr ""
-"Si p &lt; x &lt; q et r &lt; y &lt; s. Quelle option permet de vérifier x "
-"&gt; y ? [option_answers]"
+"Si p &lt; x &lt; q et r &lt; y &lt; s et si vous savez que x &gt; y est vrai, "
+"parmi les options suivantes, laquelle est exacte ? [option_answers]"
 
 #: ../data/games.xml.h:32
 msgid ""
-"If p &lt; x &lt; q and r &lt; y &lt; s. Which of the following options makes "
-"x &lt; y true? [option_answers]"
+"If p &lt; x &lt; q and r &lt; y &lt; s and you know that x &lt; y is true, "
+"which of the following options is correct? [option_answers]"
 msgstr ""
-"Si p &lt; x &lt; q et r &lt; y &lt; s. Quelle option permet de vérifier x "
-"&lt; y ? [option_answers]"
+"Si p &lt; x &lt; q et r &lt; y &lt; s et si vous savez que x &lt; y est vrai, "
+"parmi les options suivantes, laquelle est exacte ? [option_answers]"
 
+# Bruno : typo ? a variable is missing ? "then x &gt; q &lt; "
 #: ../data/games.xml.h:33
-msgid ""
-"If the variable r is smaller than q then the condition x &gt; y is always "
-"true."
+msgid "If x &gt; y, then x &gt; q &lt; and y &gt; r so r &lt; q is true."
 msgstr ""
-"Si la variable r est inférieure à q alors la condition x &lt; y est toujours "
-"vraie."
+"Si x &gt; y alors x &gt; q &lt; et y &gt; r donc r &lt; q est vrai."
 
 #: ../data/games.xml.h:34
-msgid ""
-"If the variable s is bigger than p then the condition x &lt; y is always "
-"true."
+msgid "If x &lt; y, then p &lt; x &lt; y &lt; s so s &gt; p is true."
 msgstr ""
-"Si la variable s est supérieur à p alors la condition x &lt; y est toujours "
-"vraie."
+"Si x &lt; y alors p &lt; x &lt; y &lt; s donc s &gt; p est vrai."
 
 #: ../data/games.xml.h:37
 #, no-c-format
@@ -474,9 +469,8 @@ msgid ""
 "have a car? [option_answers]"
 msgstr ""
 "Dans une petite ville, [all_cars]% des habitants ont une voiture et "
-"[males_cars]% ont une voiture et sont des hommes. Dans la "
-"population, quel est le pourcentage de femmes qui possèdent une voiture ? "
-"[option_answers]"
+"[males_cars]% ont une voiture et sont des hommes. Dans la population, quel "
+"est le pourcentage de femmes qui possèdent une voiture ? [option_answers]"
 
 #: ../data/games.xml.h:38
 msgid ""
@@ -554,6 +548,10 @@ msgstr ""
 "ex. : 4, 5, 6, 3, 2)"
 
 #: ../data/games.xml.h:51
+msgid "Only 3 of the 4 numbers in the dartboard are used to add 120 points."
+msgstr "Seulement 3 des 4 nombres de la cible sont utiles pour obtenir 120 points."
+
+#: ../data/games.xml.h:52
 msgid ""
 "Out of [people] people, [brothers] have brothers, [sisters] have sisters and "
 "[both] have both. How many people have neither brothers nor sisters?"
@@ -561,19 +559,19 @@ msgstr ""
 "Parmi [people] personnes, [brothers] ont des frères, [sisters] ont des sœurs "
 "et [both] ont les deux. Combien de personnes n'ont ni frères ni sœurs ?"
 
-#: ../data/games.xml.h:52
+#: ../data/games.xml.h:53
 msgid "Palindromic years"
 msgstr "Années palindromiques"
 
-#: ../data/games.xml.h:53
+#: ../data/games.xml.h:54
 msgid "Password"
 msgstr "Mot de passe"
 
-#: ../data/games.xml.h:54
+#: ../data/games.xml.h:55
 msgid "Simple equations"
 msgstr "Équations simples"
 
-#: ../data/games.xml.h:55
+#: ../data/games.xml.h:56
 msgid ""
 "Since x is always an even number, multiplying it by 2 always produces an "
 "even number. Adding an even number to an odd number (y) always produces an "
@@ -583,11 +581,11 @@ msgstr ""
 "nombre pair. Ajouter un nombre pair à un nombre impair (y) donne toujours un "
 "nombre impair."
 
-#: ../data/games.xml.h:56
+#: ../data/games.xml.h:57
 msgid "Tennis game"
 msgstr "Partie de tennis"
 
-#: ../data/games.xml.h:57
+#: ../data/games.xml.h:58
 msgid ""
 "The average of three numbers is [three]. The average of two of these numbers "
 "is [two]. What is the third number? [option_answers]"
@@ -595,7 +593,7 @@ msgstr ""
 "La moyenne de trois nombres est [three]. La moyenne de deux de ces nombres "
 "est [two]. Quel est le troisième nombre ? [option_answers]"
 
-#: ../data/games.xml.h:58
+#: ../data/games.xml.h:59
 msgid ""
 "The brother's brother-in-law is John's mother's husband, that is, John's "
 "father."
@@ -603,46 +601,46 @@ msgstr ""
 "Le beau frère du frère est le mari de la mère de Jean, c'est-à-dire le père "
 "de Jean."
 
-#: ../data/games.xml.h:59
+#: ../data/games.xml.h:60
 msgid "The heavier truck weights [heavier] and the lighter [lighter]."
 msgstr "Le camion le plus lourd pèse [heavier] et le plus léger [lighter]."
 
-#: ../data/games.xml.h:60
+#: ../data/games.xml.h:61
 msgid ""
 "The sister's sister-in-law is John's father's wife, that is, John's mother."
 msgstr ""
 "La belle-sœur de la sœur est la femme du père de Jean, c'est-à-dire la mère "
 "de Jean."
 
-#: ../data/games.xml.h:61
+#: ../data/games.xml.h:62
 msgid "Third number"
 msgstr "Troisième nombre"
 
-#: ../data/games.xml.h:62
+#: ../data/games.xml.h:63
 msgid "Two trucks"
 msgstr "Deux camions"
 
-#: ../data/games.xml.h:63
+#: ../data/games.xml.h:64
 msgid "Warehouse"
 msgstr "Entrepôt"
 
-#: ../data/games.xml.h:64
+#: ../data/games.xml.h:65
 msgid "What number divided by [num_a] equals [num_b]?"
 msgstr "Quel nombre divisé par [num_a] donne [num_b] ?"
 
-#: ../data/games.xml.h:65
+#: ../data/games.xml.h:66
 msgid "What number minus [num_a] equals [num_b]?"
 msgstr "Quel nombre moins [num_a] donne [num_b] ?"
 
-#: ../data/games.xml.h:66
+#: ../data/games.xml.h:67
 msgid "What number multiplied by [num_a] equals [num_b]?"
 msgstr "Quel nombre multiplié par [num_a] donne [num_b] ?"
 
-#: ../data/games.xml.h:67
+#: ../data/games.xml.h:68
 msgid "What number plus [num_a] equals [num_b]?"
 msgstr "Quel nombre additionné à [num_a] donne [num_b] ?"
 
-#: ../data/games.xml.h:68
+#: ../data/games.xml.h:69
 msgid ""
 "Which two numbers of the list below are both multiple of [num_x] and "
 "[num_y]? [option_answers]"
@@ -650,142 +648,142 @@ msgstr ""
 "Dans la liste ci-dessous, quels nombres sont tous les deux multiples de "
 "[num_x] et [num_y] ? [option_answers]"
 
-#: ../data/games.xml.h:69
+#: ../data/games.xml.h:70
 msgid "You can fit 6 * 5 * [z] * 2 boxes."
 msgstr "Vous pouvez placer 6 * 5 * [z] * 2 boîtes."
 
-#: ../data/games.xml.h:72
+#: ../data/games.xml.h:73
 #, no-c-format
 msgid ""
 "[females_cars]% ([all_cars] - [males_cars]) of the inhabitants are women and "
 "have a car."
 msgstr ""
-"[females_cars]% ([all_cars] - [males_cars]) des habitants sont des femmes qui "
-"possèdent une voiture."
+"[females_cars]% ([all_cars] - [males_cars]) des habitants sont des femmes "
+"qui possèdent une voiture."
 
 #. Since this a multioption the answer string is set to option | this string, what makes answer_show is not useful here
-#: ../data/games.xml.h:74
+#: ../data/games.xml.h:75
 msgid "[option_a] and [option_b]"
 msgstr "[option_a] et [option_b]"
 
-#: ../data/games.xml.h:75
+#: ../data/games.xml.h:76
 msgid "[option_a] and [option_b] are both multiples of [num_x] and [num_y]."
 msgstr ""
 "[option_a] et [option_b] sont tous deux des multiples de [num_x] et [num_y]."
 
-#: ../data/games.xml.h:76
+#: ../data/games.xml.h:77
 msgid "[option_prefix] (x - y) * 2"
 msgstr "[option_prefix] (x - y) * 2"
 
-#: ../data/games.xml.h:77
+#: ../data/games.xml.h:78
 msgid "[option_prefix] 2x + y"
 msgstr "[option_prefix] 2x + y"
 
-#: ../data/games.xml.h:78
+#: ../data/games.xml.h:79
 msgid "[option_prefix] Has no relation"
 msgstr "[option_prefix] Aucun lien de parenté"
 
-#: ../data/games.xml.h:79
+#: ../data/games.xml.h:80
 msgid "[option_prefix] His cousin"
 msgstr "[option_prefix] Son cousin"
 
-#: ../data/games.xml.h:80
+#: ../data/games.xml.h:81
 msgid "[option_prefix] His father"
 msgstr "[option_prefix] Son père"
 
-#: ../data/games.xml.h:81
+#: ../data/games.xml.h:82
 msgid "[option_prefix] His mother"
 msgstr "[option_prefix] Sa mère"
 
-#: ../data/games.xml.h:82
+#: ../data/games.xml.h:83
 msgid "[option_prefix] His son-in-law"
 msgstr "[option_prefix] Son beau fils, gendre"
 
-#: ../data/games.xml.h:83
+#: ../data/games.xml.h:84
 msgid "[option_prefix] [answer_a]"
 msgstr "[option_prefix] [answer_a]"
 
-#: ../data/games.xml.h:84
+#: ../data/games.xml.h:85
 msgid "[option_prefix] [answer_b]"
 msgstr "[option_prefix] [answer_b]"
 
-#: ../data/games.xml.h:85
+#: ../data/games.xml.h:86
 msgid "[option_prefix] [answer_c]"
 msgstr "[option_prefix] [answer_c]"
 
-#: ../data/games.xml.h:86
+#: ../data/games.xml.h:87
 msgid "[option_prefix] [answer_d]"
 msgstr "[option_prefix] [answer_d]"
 
-#: ../data/games.xml.h:87
+#: ../data/games.xml.h:88
 msgid "[option_prefix] [option_a] and [option_b]"
 msgstr "[option_prefix] [option_a] et [option_b]"
 
-#: ../data/games.xml.h:88
+#: ../data/games.xml.h:89
 msgid "[option_prefix] [option_a] and [option_c]"
 msgstr "[option_prefix] [option_a] et [option_c]"
 
-#: ../data/games.xml.h:90
+#: ../data/games.xml.h:91
 #, no-c-format
 msgid "[option_prefix] [option_a]%"
 msgstr "[option_prefix] [option_a]%"
 
-#: ../data/games.xml.h:91
+#: ../data/games.xml.h:92
 msgid "[option_prefix] [option_b] and [option_c]"
 msgstr "[option_prefix] [option_b] et [option_c]"
 
-#: ../data/games.xml.h:93
+#: ../data/games.xml.h:94
 #, no-c-format
 msgid "[option_prefix] [option_b]%"
 msgstr "[option_prefix] [option_b]%"
 
-#: ../data/games.xml.h:94
+#: ../data/games.xml.h:95
 msgid "[option_prefix] [option_c] and [option_d]"
 msgstr "[option_prefix] [option_c] et [option_d]"
 
-#: ../data/games.xml.h:96
+#: ../data/games.xml.h:97
 #, no-c-format
 msgid "[option_prefix] [option_c]%"
 msgstr "[option_prefix] [option_c]%"
 
-#: ../data/games.xml.h:98
+#: ../data/games.xml.h:99
 #, no-c-format
 msgid "[option_prefix] [option_d]%"
 msgstr "[option_prefix] [option_d]%"
 
-#: ../data/games.xml.h:99
+#: ../data/games.xml.h:100
 msgid "[option_prefix] p < r"
 msgstr "[option_prefix] p < r"
 
-#: ../data/games.xml.h:100
+#: ../data/games.xml.h:101
 msgid "[option_prefix] p > r"
 msgstr "[option_prefix] p > r"
 
-#: ../data/games.xml.h:101
+#: ../data/games.xml.h:102
 msgid "[option_prefix] q = s"
 msgstr "[option_prefix] q = s"
 
-#: ../data/games.xml.h:102
+#: ../data/games.xml.h:103
 msgid "[option_prefix] r < q"
 msgstr "[option_prefix] r < q"
 
-#: ../data/games.xml.h:103
+#: ../data/games.xml.h:104
 msgid "[option_prefix] s > p"
 msgstr "[option_prefix] s > p"
 
-#: ../data/games.xml.h:104
+#: ../data/games.xml.h:105
 msgid "[option_prefix] x * y"
 msgstr "[option_prefix] x * y"
 
-#: ../data/games.xml.h:105
+#: ../data/games.xml.h:106
 msgid "[option_prefix] x * y * 2"
 msgstr "[option_prefix] x * y * 2"
 
-#: ../data/games.xml.h:106
+#: ../data/games.xml.h:107
 msgid "[rslt_a] and [rslt_b]"
 msgstr "[rslt_a] et [rslt_b]"
 
-#: ../data/games.xml.h:107
+#: ../data/games.xml.h:108
 msgid ""
 "[year_start] is a palindromic year as [year_end] is, a gap of 11 years. What "
 "are the next two consecutive palindromic years after [year_end] with the "
@@ -797,19 +795,19 @@ msgstr ""
 "différence ? Répondez en utilisant deux nombres (par ex. : [year_start] et "
 "[year_end])."
 
-#: ../data/games.xml.h:108
+#: ../data/games.xml.h:109
 msgid "x * [num_a] = [num_b]"
 msgstr "x * [num_a] = [num_b]"
 
-#: ../data/games.xml.h:109
+#: ../data/games.xml.h:110
 msgid "x + [num_a] = [num_b]"
 msgstr "x + [num_a] = [num_b]"
 
-#: ../data/games.xml.h:110
+#: ../data/games.xml.h:111
 msgid "x - [num_a] = [num_b]"
 msgstr "x - [num_a] = [num_b]"
 
-#: ../data/games.xml.h:111
+#: ../data/games.xml.h:112
 msgid "x / [num_a] = [num_b]"
 msgstr "x / [num_a] = [num_b]"
 
@@ -830,14 +828,10 @@ msgid "gbrainy"
 msgstr "gbrainy"
 
 #: ../data/themes/themes.xml.h:1
-msgid "Blackboard"
-msgstr "Tableau noir"
-
-#: ../data/themes/themes.xml.h:2
 msgid "Classic"
 msgstr "Classique"
 
-#: ../data/themes/themes.xml.h:3
+#: ../data/themes/themes.xml.h:2
 msgid "Notebook"
 msgstr "Papier"
 
@@ -1895,276 +1889,277 @@ msgstr "chien / apprivoisé | loup"
 msgid "elbow / knee | wrist"
 msgstr "coude / genou | poignet"
 
-#: ../data/verbal_analogies.xml.h:267
-msgid "error / correct | damage"
+#. 'correct' can be used as verb or adjective
+#: ../data/verbal_analogies.xml.h:268
+msgid "error / (to) correct | damage"
 msgstr "erreur / corriger | dégâts"
 
-#: ../data/verbal_analogies.xml.h:268
+#: ../data/verbal_analogies.xml.h:269
 msgid "eyebrow / eye | mustache"
 msgstr "sourcil / œil | moustache"
 
 #. Translators: the concept 'toe' (http://en.wikipedia.org/wiki/Toe) does not exist in all languages. Feel free to change it to 'fingers' and adapt the answer accordingly
-#: ../data/verbal_analogies.xml.h:270
+#: ../data/verbal_analogies.xml.h:271
 msgid "feet / two | toes"
 msgstr "pieds / deux | orteils"
 
-#: ../data/verbal_analogies.xml.h:271
+#: ../data/verbal_analogies.xml.h:272
 msgid "fish / aquarium | monkey"
 msgstr "poisson / aquarium | singe"
 
-#: ../data/verbal_analogies.xml.h:272
+#: ../data/verbal_analogies.xml.h:273
 msgid "fish / submarine | bird"
 msgstr "poisson / sous-marin | oiseau"
 
-#: ../data/verbal_analogies.xml.h:273
+#: ../data/verbal_analogies.xml.h:274
 msgid "five / pentagon | ten"
 msgstr "cinq / pentagone | dix"
 
-#: ../data/verbal_analogies.xml.h:274
+#: ../data/verbal_analogies.xml.h:275
 msgid "fox / den | bird"
 msgstr "renard / terrier | oiseau"
 
-#: ../data/verbal_analogies.xml.h:275
+#: ../data/verbal_analogies.xml.h:276
 msgid "glass / break | paper"
 msgstr "verre / casser | papier"
 
-#: ../data/verbal_analogies.xml.h:276
+#: ../data/verbal_analogies.xml.h:277
 msgid "hands / grab | teeth"
 msgstr "mains / attraper | dents"
 
-#: ../data/verbal_analogies.xml.h:277
+#: ../data/verbal_analogies.xml.h:278
 msgid "herbivorous | herbivore"
 msgstr "herbivore"
 
-#: ../data/verbal_analogies.xml.h:278
+#: ../data/verbal_analogies.xml.h:279
 msgid "horticulture / plants | ornithology"
 msgstr "horticulture / plantes | ornithologie"
 
-#: ../data/verbal_analogies.xml.h:279
+#: ../data/verbal_analogies.xml.h:280
 msgid "hour / minute | minute"
 msgstr "heure / minute | minute"
 
-#: ../data/verbal_analogies.xml.h:280
+#: ../data/verbal_analogies.xml.h:281
 msgid "hungry / eat | tired"
 msgstr "affamé / manger | fatigué"
 
-#: ../data/verbal_analogies.xml.h:281
+#: ../data/verbal_analogies.xml.h:282
 msgid "hunter / rifle | photographer"
 msgstr "chasseur / fusil | photographe"
 
-#: ../data/verbal_analogies.xml.h:282
+#: ../data/verbal_analogies.xml.h:283
 msgid "ice / slippery | glue"
 msgstr "glace / glissant | colle"
 
-#: ../data/verbal_analogies.xml.h:283
+#: ../data/verbal_analogies.xml.h:284
 msgid "in | under | through"
 msgstr "en dessous | sous"
 
-#: ../data/verbal_analogies.xml.h:284
+#: ../data/verbal_analogies.xml.h:285
 msgid "islands"
 msgstr "îles"
 
-#: ../data/verbal_analogies.xml.h:285
+#: ../data/verbal_analogies.xml.h:286
 msgid "leopard / spots | tiger"
 msgstr "léopard / taches | tigre"
 
-#: ../data/verbal_analogies.xml.h:286
+#: ../data/verbal_analogies.xml.h:287
 msgid "letter / word | page"
 msgstr "lettre / mot | page"
 
-#: ../data/verbal_analogies.xml.h:287
+#: ../data/verbal_analogies.xml.h:288
 msgid "lip | upper lip | mouth"
 msgstr "lèvre | lèvre supérieure | bouche"
 
-#: ../data/verbal_analogies.xml.h:288
+#: ../data/verbal_analogies.xml.h:289
 msgid "nest"
 msgstr "nid"
 
-#: ../data/verbal_analogies.xml.h:289
+#: ../data/verbal_analogies.xml.h:290
 msgid "nose"
 msgstr "nez"
 
-#: ../data/verbal_analogies.xml.h:290
+#: ../data/verbal_analogies.xml.h:291
 msgid "novel / author | song"
 msgstr "roman / auteur | chanson"
 
-#: ../data/verbal_analogies.xml.h:291
+#: ../data/verbal_analogies.xml.h:292
 msgid "orange / fruit | spinach"
 msgstr "orange / fruit | épinard"
 
-#: ../data/verbal_analogies.xml.h:292
+#: ../data/verbal_analogies.xml.h:293
 msgid "parallel / meridian | longitude"
 msgstr "parallèle / méridien | longitude"
 
-#: ../data/verbal_analogies.xml.h:293
+#: ../data/verbal_analogies.xml.h:294
 msgid "pediatrics / children | numismatics"
 msgstr "pédiatres / enfants | numismates"
 
-#: ../data/verbal_analogies.xml.h:294
+#: ../data/verbal_analogies.xml.h:295
 msgid "peel"
 msgstr "peler | éplucher"
 
-#: ../data/verbal_analogies.xml.h:295
+#: ../data/verbal_analogies.xml.h:296
 msgid "pessimist / optimist | poor"
 msgstr "pessimiste / optimiste | pauvre"
 
-#: ../data/verbal_analogies.xml.h:296
+#: ../data/verbal_analogies.xml.h:297
 msgid "poems / anthology | maps"
 msgstr "poèmes / recueil | cartes"
 
-#: ../data/verbal_analogies.xml.h:297
+#: ../data/verbal_analogies.xml.h:298
 msgid "puzzle / solve | game"
 msgstr "énigme / résoudre | jeu"
 
 # Ne pas mettre Corriger !
-#: ../data/verbal_analogies.xml.h:298
+#: ../data/verbal_analogies.xml.h:299
 msgid "repair | fix"
 msgstr "réparer | dépanner"
 
-#: ../data/verbal_analogies.xml.h:299
+#: ../data/verbal_analogies.xml.h:300
 msgid "ring / finger | bracelet"
 msgstr "anneau / doigt | bracelet"
 
-#: ../data/verbal_analogies.xml.h:300
+#: ../data/verbal_analogies.xml.h:301
 msgid "seal / flippers | bird"
 msgstr "phoque / nageoires | oiseau"
 
 #. Translators: refers to the unit of time
-#: ../data/verbal_analogies.xml.h:302
+#: ../data/verbal_analogies.xml.h:303
 msgid "second"
 msgstr "seconde"
 
-#: ../data/verbal_analogies.xml.h:303
+#: ../data/verbal_analogies.xml.h:304
 msgid "shovel / dig | axe"
 msgstr "pelle / creuser | hache"
 
-#: ../data/verbal_analogies.xml.h:304
+#: ../data/verbal_analogies.xml.h:305
 msgid "sink"
 msgstr "couler"
 
-#: ../data/verbal_analogies.xml.h:305
+#: ../data/verbal_analogies.xml.h:306
 msgid "sleep | rest"
 msgstr "dormir | se reposer"
 
-#: ../data/verbal_analogies.xml.h:306
+#: ../data/verbal_analogies.xml.h:307
 msgid "slurp / tongue | snort"
 msgstr "lécher / langue | renifler"
 
-#: ../data/verbal_analogies.xml.h:307
+#: ../data/verbal_analogies.xml.h:308
 msgid "sour"
 msgstr "aigre"
 
 #. Translators: stick refers to a piece of wood
-#: ../data/verbal_analogies.xml.h:309
+#: ../data/verbal_analogies.xml.h:310
 msgid "stick / float | stone"
 msgstr "branche / flotter | pierre"
 
-#: ../data/verbal_analogies.xml.h:310
+#: ../data/verbal_analogies.xml.h:311
 msgid "sticky"
 msgstr "collant | gluant | adhésif"
 
-#: ../data/verbal_analogies.xml.h:311
+#: ../data/verbal_analogies.xml.h:312
 msgid "stripes"
 msgstr "rayures"
 
-#: ../data/verbal_analogies.xml.h:312
+#: ../data/verbal_analogies.xml.h:313
 msgid "sugar / sweet | vinegar"
 msgstr "sucre / doux | vinaigre"
 
-#: ../data/verbal_analogies.xml.h:313
+#: ../data/verbal_analogies.xml.h:314
 msgid "talk / yell | dislike"
 msgstr "parler / cri | détester"
 
-#: ../data/verbal_analogies.xml.h:314
+#: ../data/verbal_analogies.xml.h:315
 msgid "tear | rip"
 msgstr "déchirer | découper | arracher"
 
-#: ../data/verbal_analogies.xml.h:315
+#: ../data/verbal_analogies.xml.h:316
 msgid "tears / eyes | sweat"
 msgstr "larmes / yeux | transpiration"
 
 #. Translators: referred to 'feet / two | toes'
-#: ../data/verbal_analogies.xml.h:317
+#: ../data/verbal_analogies.xml.h:318
 msgid "ten | 10"
 msgstr "dix | 10"
 
 # le "tango" est une "danse"
-#: ../data/verbal_analogies.xml.h:318
+#: ../data/verbal_analogies.xml.h:319
 msgid "tennis / sport | ballet"
 msgstr "tennis / sport | tango"
 
-#: ../data/verbal_analogies.xml.h:319
+#: ../data/verbal_analogies.xml.h:320
 msgid "thankful / ingratitude | despotism"
 msgstr "reconnaissance / ingratitude | despotisme "
 
-#: ../data/verbal_analogies.xml.h:320
+#: ../data/verbal_analogies.xml.h:321
 msgid "thermometer / temperature | clock"
 msgstr "thermomètre / température | horloge"
 
-#: ../data/verbal_analogies.xml.h:321
+#: ../data/verbal_analogies.xml.h:322
 msgid "tiger / carnivore | cow"
 msgstr "tigre / carnivore | vache"
 
 #. Translators: time as duration of an event. What a clock measures
-#: ../data/verbal_analogies.xml.h:323
+#: ../data/verbal_analogies.xml.h:324
 msgid "time"
 msgstr "temps | heure"
 
-#: ../data/verbal_analogies.xml.h:324
+#: ../data/verbal_analogies.xml.h:325
 msgid "toy / play | tool"
 msgstr "jouet / s'amuser | outil"
 
-#: ../data/verbal_analogies.xml.h:325
+#: ../data/verbal_analogies.xml.h:326
 msgid "track | railway | rails"
 msgstr "rails | voie | chemin de fer"
 
 #. Translators: letter refers to letter (in paper form)
-#: ../data/verbal_analogies.xml.h:327
+#: ../data/verbal_analogies.xml.h:328
 msgid "turtle / shell | letter"
 msgstr "tortue / carapace | lettre"
 
-#: ../data/verbal_analogies.xml.h:328
+#: ../data/verbal_analogies.xml.h:329
 msgid "vegetable"
 msgstr "légume"
 
-#: ../data/verbal_analogies.xml.h:329
+#: ../data/verbal_analogies.xml.h:330
 msgid "whirlpool / water | tornado"
 msgstr "tourbillon / eau | tornade"
 
-#: ../data/verbal_analogies.xml.h:330
+#: ../data/verbal_analogies.xml.h:331
 msgid "wild | savage"
 msgstr "sauvage"
 
-#: ../data/verbal_analogies.xml.h:331
+#: ../data/verbal_analogies.xml.h:332
 msgid "win | play"
 msgstr "gagner | jouer"
 
-#: ../data/verbal_analogies.xml.h:332
+#: ../data/verbal_analogies.xml.h:333
 msgid "wind | air"
 msgstr "air | vent"
 
-#: ../data/verbal_analogies.xml.h:333
+#: ../data/verbal_analogies.xml.h:334
 msgid "wine / grape | rum"
 msgstr "vin / raisin | rhum"
 
-#: ../data/verbal_analogies.xml.h:334
+#: ../data/verbal_analogies.xml.h:335
 msgid "wings"
 msgstr "ailes"
 
 #. Translators: 'work' is used as a verb (to work)
-#: ../data/verbal_analogies.xml.h:336
+#: ../data/verbal_analogies.xml.h:337
 msgid "work"
 msgstr "travailler"
 
-#: ../data/verbal_analogies.xml.h:337
+#: ../data/verbal_analogies.xml.h:338
 msgid "wrist | arm"
 msgstr "poignet | bras"
 
-#: ../data/verbal_analogies.xml.h:338
+#: ../data/verbal_analogies.xml.h:339
 msgid "write / pen | eat"
 msgstr "écrire / crayon | manger"
 
-#: ../src/Core/Views/CountDownView.cs:81
+#: ../src/Core/Views/CountDownView.cs:77
 msgid "Get ready to memorize the next objects..."
 msgstr "Préparez-vous à mémoriser les objets suivants..."
 
@@ -2202,37 +2197,37 @@ msgstr "Expression"
 msgid "Score"
 msgstr "Score"
 
-#: ../src/Core/Views/FinishView.cs:150
+#: ../src/Core/Views/FinishView.cs:148
 #, csharp-format
 msgid "Games won: {0} ({1} played)"
 msgstr "Jeux gagnés : {0} ({1} réalisés)"
 
-#: ../src/Core/Views/FinishView.cs:152
+#: ../src/Core/Views/FinishView.cs:150
 #, csharp-format
 msgid "{0}. Games won: {1} ({2} played)"
 msgstr "{0}. Jeux gagnés : {1} ({2} réalisés)"
 
-#: ../src/Core/Views/FinishView.cs:156
+#: ../src/Core/Views/FinishView.cs:154
 #, csharp-format
 msgid "Time played {0} (average per game {1})"
 msgstr "Durée de la partie {0} (moyenne de {1} par jeu)"
 
 #. Translators: translated string should not be longer that the English original (space restriction on the UI)
-#: ../src/Core/Views/FinishView.cs:165
+#: ../src/Core/Views/FinishView.cs:163
 msgid "For details on how gbrainy's scoring works refer to the help."
 msgstr ""
 "Pour des détails sur la façon dont gbrainy compte les points, consultez "
 "l'aide."
 
-#: ../src/Core/Views/FinishView.cs:175
+#: ../src/Core/Views/FinishView.cs:173
 msgid "Tips for your next games"
 msgstr "Astuces pour vos prochains jeux"
 
-#: ../src/Core/Views/FinishView.cs:203
+#: ../src/Core/Views/FinishView.cs:201
 msgid "Congratulations! New personal record"
 msgstr "Félicitations ! Nouveau record personnel"
 
-#: ../src/Core/Views/FinishView.cs:213
+#: ../src/Core/Views/FinishView.cs:211
 #, csharp-format
 msgid ""
 "By scoring {0} in logic puzzle games you have established a new personal "
@@ -2241,7 +2236,7 @@ msgstr ""
 "Votre score dans les énigmes de logique est de {0}, vous avez établi un "
 "nouveau record personnel. Votre précédent record était de {1}."
 
-#: ../src/Core/Views/FinishView.cs:219
+#: ../src/Core/Views/FinishView.cs:217
 #, csharp-format
 msgid ""
 "By scoring {0} in calculation games you have established a new personal "
@@ -2250,7 +2245,7 @@ msgstr ""
 "Votre score dans les jeux de calcul est de {0}, vous avez établi un nouveau "
 "record personnel. Votre précédent record était de {1}."
 
-#: ../src/Core/Views/FinishView.cs:225
+#: ../src/Core/Views/FinishView.cs:223
 #, csharp-format
 msgid ""
 "By scoring {0} in memory games you have established a new personal record. "
@@ -2259,7 +2254,7 @@ msgstr ""
 "Votre score dans les jeux de mémorisation est de {0} vous avez établi un "
 "nouveau record personnel. Votre précédent record était de {1}."
 
-#: ../src/Core/Views/FinishView.cs:231
+#: ../src/Core/Views/FinishView.cs:229
 #, csharp-format
 msgid ""
 "By scoring {0} in verbal analogies you have established a new personal "
@@ -2343,7 +2338,7 @@ msgstr "noir"
 msgid "white"
 msgstr "blanc"
 
-#: ../src/Core/Main/Game.cs:131
+#: ../src/Core/Main/Game.cs:128
 #, csharp-format
 msgid "The correct answer is {0}."
 msgstr "La réponse correcte est {0}."
@@ -2353,7 +2348,7 @@ msgstr "La réponse correcte est {0}."
 #. Translators: answer + rationale of the answer
 #. Translators: "The graph below" +  "It is built using" sentences
 #. Translators: Concatenating two strings (rationale of answer + extra information).
-#: ../src/Core/Main/Game.cs:138 ../src/Core/Main/Verbal/Analogies.cs:64
+#: ../src/Core/Main/Game.cs:135 ../src/Core/Main/Verbal/Analogies.cs:64
 #: ../src/Clients/Classical/Dialogs/PlayerHistoryDialog.cs:60
 #: ../src/Games/Logic/PuzzleCountSeries.cs:93
 #, csharp-format
@@ -2367,131 +2362,131 @@ msgstr "{0} {1}"
 #. For languages represented with the Latin alphabet use
 #. the same than English
 #. First possible answer for a series (e.g.: Figure A)
-#: ../src/Core/Main/GameAnswer.cs:112
+#: ../src/Core/Main/GameAnswer.cs:108
 msgid "A"
 msgstr "A"
 
 #. Second possible answer for a series
-#: ../src/Core/Main/GameAnswer.cs:114
+#: ../src/Core/Main/GameAnswer.cs:110
 msgid "B"
 msgstr "B"
 
 #. Third possible answer for a series
-#: ../src/Core/Main/GameAnswer.cs:116
+#: ../src/Core/Main/GameAnswer.cs:112
 msgid "C"
 msgstr "C"
 
 #. Fourth possible answer for a series
-#: ../src/Core/Main/GameAnswer.cs:118
+#: ../src/Core/Main/GameAnswer.cs:114
 msgid "D"
 msgstr "D"
 
 #. Fifth possible answer for a series
-#: ../src/Core/Main/GameAnswer.cs:120
+#: ../src/Core/Main/GameAnswer.cs:116
 msgid "E"
 msgstr "E"
 
 #. Sixth possible answer for a series
-#: ../src/Core/Main/GameAnswer.cs:122
+#: ../src/Core/Main/GameAnswer.cs:118
 msgid "F"
 msgstr "F"
 
 #. Seventh possible answer for a series
-#: ../src/Core/Main/GameAnswer.cs:124
+#: ../src/Core/Main/GameAnswer.cs:120
 msgid "G"
 msgstr "G"
 
 #. Eighth possible answer for a series
-#: ../src/Core/Main/GameAnswer.cs:126
+#: ../src/Core/Main/GameAnswer.cs:122
 msgid "H"
 msgstr "H"
 
 #. Translators. This is the list of valid answers, like A or B.
-#: ../src/Core/Main/GameAnswer.cs:141
+#: ../src/Core/Main/GameAnswer.cs:137
 #, csharp-format
 msgid "{0} or {1}"
 msgstr "{0} ou {1}"
 
 #. Translators. This is the list of valid answers, like A, B or C.
-#: ../src/Core/Main/GameAnswer.cs:145
+#: ../src/Core/Main/GameAnswer.cs:141
 #, csharp-format
 msgid "{0}, {1} or {2}"
 msgstr "{0}, {1} ou {2}"
 
 #. Translators. This is the list of valid answers, like A, B, C or D.
-#: ../src/Core/Main/GameAnswer.cs:149
+#: ../src/Core/Main/GameAnswer.cs:145
 #, csharp-format
 msgid "{0}, {1}, {2} or {3}"
 msgstr "{0}, {1}, {2} ou {3}"
 
-#: ../src/Core/Main/GameAnswer.cs:159
+#: ../src/Core/Main/GameAnswer.cs:155
 #, csharp-format
 msgid "Figure {0}"
 msgstr "Dessin {0}"
 
-#: ../src/Core/Main/GameManager.cs:324
+#: ../src/Core/Main/GameManager.cs:336
 msgid "Extensions database:"
 msgstr "Base de données des extensions :"
 
 #. Translators: 'Games registered' is the games know to gbrainy (build-in and load from addins-in and external files)
-#: ../src/Core/Main/GameManager.cs:330
+#: ../src/Core/Main/GameManager.cs:342
 #, csharp-format
 msgid ""
-"Games registered: {0}: {1} logic puzzles, {2} calculation trainers, {3} "
+"{0} games registered: {1} logic puzzles, {2} calculation trainers, {3} "
 "memory trainers, {4} verbal analogies"
 msgstr ""
-"Jeux enregistrés : {0} : {1} énigmes de logiques, {2} calculs mentaux, {3} "
+"{0} jeux connus : {1} énigmes de logiques, {2} calculs mentaux, {3} "
 "jeux de mémorisation, {4} analogies verbales"
 
-#: ../src/Core/Main/GameSession.cs:177
+#: ../src/Core/Main/GameSession.cs:176
 #, csharp-format
 msgid "Games played: {0} (Score: {1})"
 msgstr "Jeux terminés : {0} (score : {1})"
 
-#: ../src/Core/Main/GameSession.cs:178
+#: ../src/Core/Main/GameSession.cs:177
 #, csharp-format
 msgid "Time: {0}"
 msgstr "Durée : {0}"
 
 #. Translators: {0} is the name of the game
-#: ../src/Core/Main/GameSession.cs:182
+#: ../src/Core/Main/GameSession.cs:181
 #, csharp-format
 msgid "Game: {0}"
 msgstr "Jeu : {0}"
 
 #. Translators: text in the status bar: games played - time - game name
-#: ../src/Core/Main/GameSession.cs:184
+#: ../src/Core/Main/GameSession.cs:183
 #, csharp-format
 msgid "{0} - {1} - {2}"
 msgstr "{0} - {1} - {2}"
 
 #. Translators: text in the status bar: games played - time
-#: ../src/Core/Main/GameSession.cs:187
+#: ../src/Core/Main/GameSession.cs:186
 #, csharp-format
 msgid "{0} - {1}"
 msgstr "{0} - {1}"
 
-#: ../src/Core/Main/GameSession.cs:200
+#: ../src/Core/Main/GameSession.cs:199
 msgid "Outstanding results"
 msgstr "Résultats impressionnants"
 
-#: ../src/Core/Main/GameSession.cs:202
+#: ../src/Core/Main/GameSession.cs:201
 msgid "Excellent results"
 msgstr "Résultats excellents"
 
-#: ../src/Core/Main/GameSession.cs:204
+#: ../src/Core/Main/GameSession.cs:203
 msgid "Good results"
 msgstr "Bons résultats"
 
-#: ../src/Core/Main/GameSession.cs:206
+#: ../src/Core/Main/GameSession.cs:205
 msgid "Poor results"
 msgstr "Résultats mauvais"
 
-#: ../src/Core/Main/GameSession.cs:207
+#: ../src/Core/Main/GameSession.cs:206
 msgid "Disappointing results"
 msgstr "Résultats décevants"
 
-#: ../src/Core/Main/GameSession.cs:282
+#: ../src/Core/Main/GameSession.cs:281
 #: ../src/Clients/Classical/Widgets/GameDrawingArea.cs:126
 msgid "Paused"
 msgstr "En pause"
@@ -2685,15 +2680,15 @@ msgstr "Réponse {0}."
 msgid "{0}) "
 msgstr "{0}) "
 
-#: ../src/Clients/Classical/gbrainy.cs:429
+#: ../src/Clients/Classical/gbrainy.cs:422
 msgid "Congratulations."
 msgstr "Félicitations."
 
-#: ../src/Clients/Classical/gbrainy.cs:431
+#: ../src/Clients/Classical/gbrainy.cs:424
 msgid "Incorrect answer."
 msgstr "Réponse incorrecte."
 
-#: ../src/Clients/Classical/gbrainy.cs:495
+#: ../src/Clients/Classical/gbrainy.cs:479
 msgid ""
 "Once you have an answer type it in the \"Answer:\" entry box and press the "
 "\"OK\" button."
@@ -2701,11 +2696,11 @@ msgstr ""
 "Une fois que vous avez une réponse, saisissez-la dans le champ « Réponse : » "
 "et appuyez sur le bouton « Valider »."
 
-#: ../src/Clients/Classical/gbrainy.cs:525
+#: ../src/Clients/Classical/gbrainy.cs:509
 msgid "The level of translation of gbrainy for your language is low."
 msgstr "Le niveau de traduction de gbrainy pour votre langue est faible."
 
-#: ../src/Clients/Classical/gbrainy.cs:526
+#: ../src/Clients/Classical/gbrainy.cs:510
 msgid ""
 "You may be exposed to partially translated games making it more difficult to "
 "play. If you prefer to play in English, there is an option for doing so in "
@@ -2715,16 +2710,16 @@ msgstr ""
 "difficiles à jouer. Si vous préférez jouer en anglais, choisissez cette "
 "option dans les préférences de gbrainy."
 
-#: ../src/Clients/Classical/gbrainy.cs:621
+#: ../src/Clients/Classical/gbrainy.cs:606
 #: ../src/Clients/Classical/Widgets/Toolbar.cs:143
 msgid "Pause"
 msgstr "Pause"
 
-#: ../src/Clients/Classical/gbrainy.cs:626
+#: ../src/Clients/Classical/gbrainy.cs:611
 msgid "Resume"
 msgstr "Reprendre"
 
-#: ../src/Clients/Classical/gbrainy.cs:776
+#: ../src/Clients/Classical/gbrainy.cs:760
 #, csharp-format
 msgid "Startup time {0}"
 msgstr "Date du lancement {0}"
@@ -2849,16 +2844,16 @@ msgid "You can also play on-line at {0}"
 msgstr "Vous pouvez également jouer en ligne sur {0}"
 
 #. Column: Game Name
-#: ../src/Clients/Classical/Dialogs/CustomGameDialog.cs:61
+#: ../src/Clients/Classical/Dialogs/CustomGameDialog.cs:62
 msgid "Game Name"
 msgstr "Nom du jeu"
 
 #. Column: Type
-#: ../src/Clients/Classical/Dialogs/CustomGameDialog.cs:83
+#: ../src/Clients/Classical/Dialogs/CustomGameDialog.cs:84
 msgid "Type"
 msgstr "Type"
 
-#: ../src/Clients/Classical/Dialogs/CustomGameDialog.cs:105
+#: ../src/Clients/Classical/Dialogs/CustomGameDialog.cs:106
 msgid "Selected"
 msgstr "Sélectionné"
 
@@ -3065,7 +3060,7 @@ msgid "Time in seconds to memorize the challenge:"
 msgstr "Temps de mémorisation du défi (en secondes) :"
 
 #: ../src/Clients/Classical/Widgets/BrowseFile.cs:43
-#: ../src/Clients/Classical/mono-addins-strings.xml.h:10
+#: ../src/Clients/Classical/mono-addins-strings.xml.h:13
 msgid "Browse..."
 msgstr "Parcourir..."
 
@@ -3224,10 +3219,12 @@ msgstr ""
 #, csharp-format
 msgid ""
 "Starting from the first clock, add {1} to the number obtained by appending "
-"the values to which the hands point, for '{0}' is {2} + {1} = {3}."
+"the values to which the hands point. For example, the values of the hands "
+"for '{0}' are {3} ({2} + {1})."
 msgstr ""
-"À partir de la première horloge, additionnez {0} au nombre créé à l'aide des "
-"valeurs pointées par les aiguilles, par exemple '{0}' est {2} + {1} = {3}."
+"À partir de la première horloge, additionnez {1} au nombre créé à l'aide des "
+"valeurs pointées par les aiguilles. Par exemple, les valeurs des aiguilles "
+"pour le « {0} » sont {3} ({2} + {1})."
 
 #: ../src/Games/Logic/PuzzleClocks.cs:58
 msgid "The clocks do not follow the time logic."
@@ -3662,14 +3659,20 @@ msgstr ""
 "Considérez qu’un segment est une ligne entre deux points qui ne soit pas "
 "coupé par une autre ligne."
 
-#: ../src/Games/Logic/PuzzleLines.cs:43
+#: ../src/Games/Logic/PuzzleLines.cs:44
 #, csharp-format
 msgid ""
+"There is {0} line in the figure to the left and {1} in the figure to the "
+"right."
+msgid_plural ""
 "There are {0} lines in the figure to the left and {1} in the figure to the "
 "right."
-msgstr "Le dessin de gauche contient {0} lignes et celui de droite {1} lignes."
+msgstr[0] ""
+"Le dessin de gauche contient {0} ligne et celui de droite {1}."
+msgstr[1] ""
+"Le dessin de gauche contient {0} lignes et celui de droite {1}."
 
-#: ../src/Games/Logic/PuzzleLines.cs:48
+#: ../src/Games/Logic/PuzzleLines.cs:52
 msgid "It is an easy exercise if you systematically count the lines."
 msgstr "C'est un exercice facile si vous comptez systématiquement les lignes."
 
@@ -4521,27 +4524,35 @@ msgstr ""
 msgid "Time now"
 msgstr "L'heure actuelle"
 
-#. TimeNow Puzzle. Translators: {1}, {2} {3} are replaced by hours. Use the right time format specification for your culture
-#. Explanation of the date and time format specifications can be found here:
-#. http://msdn.microsoft.com/en-us/library/system.globalization.datetimeformatinfo.aspx
-#. For 12-hour clock format use {0:%h} and for 24-hour clock format use {0:%H}. The date formats {0:h} and {0:H} are invalid.
-#.
-#: ../src/Games/Logic/PuzzleTimeNow.cs:44
+#: ../src/Games/Logic/PuzzleTimeNow.cs:45
 #, csharp-format
 msgid ""
+"{0} hour ago it was as long after {1:h tt} as it was before {2:h tt} on the "
+"same day. What is the time now? Answer using the hour (e.g.: {3:h tt})"
+msgid_plural ""
 "{0} hours ago it was as long after {1:h tt} as it was before {2:h tt} on the "
 "same day. What is the time now? Answer using the hour (e.g.: {3:h tt})"
-msgstr ""
+msgstr[0] ""
+"Il y a {0} heure, il y avait autant d'heures après {1:%H} heures qu'avant "
+"{2:%H} heures le même jour. Quel heure est-il maintenant ? Répondez en "
+"indiquant une heure (par ex. : {3:%H})"
+msgstr[1] ""
 "Il y a {0} heures, il y avait autant d'heures après {1:%H} heures qu'avant "
 "{2:%H} heures le même jour. Quel heure est-il maintenant ? Répondez en "
 "indiquant une heure (par ex. : {3:%H})"
 
-#: ../src/Games/Logic/PuzzleTimeNow.cs:50
+#: ../src/Games/Logic/PuzzleTimeNow.cs:54
 #, csharp-format
 msgid ""
+"Determine the hour half way between the given times, and then add {0} hour "
+"to convert it to the present time."
+msgid_plural ""
 "Determine the hour half way between the given times, and then add {0} hours "
 "to convert it to the present time."
-msgstr ""
+msgstr[0] ""
+"Calculez l'heure à égale distance des instants donnés, puis ajoutez "
+"{0} heure pour la convertir à l'instant présent."
+msgstr[1] ""
 "Calculez l'heure à égale distance des instants donnés, puis ajoutez les "
 "{0} heures pour la convertir à l'instant présent."
 
@@ -4550,13 +4561,13 @@ msgstr ""
 #. Explanation of the date and time format specifications can be found here:
 #. http://msdn.microsoft.com/en-us/library/system.globalization.datetimeformatinfo.aspx
 #. For 12-hour clock format use {0:%h} and for 24-hour clock format use {0:%H}. The date formats {0:h} and {0:H} are invalid.
-#: ../src/Games/Logic/PuzzleTimeNow.cs:72
+#: ../src/Games/Logic/PuzzleTimeNow.cs:85
 #, csharp-format
 msgid "{0:h tt}"
 msgstr "{0:%H}"
 
 #. No hands
-#: ../src/Games/Logic/PuzzleTimeNow.cs:82
+#: ../src/Games/Logic/PuzzleTimeNow.cs:95
 msgid "Sample clock"
 msgstr "Exemple d'horloge"
 
@@ -5135,11 +5146,11 @@ msgstr ""
 msgid "The result of the operation {0} / {1} is {2}"
 msgstr "Le résultat de l'opération {0} / {1} est {2}"
 
-#: ../src/Games/Calculation/CalculationFractions.cs:60
+#: ../src/Games/Calculation/CalculationFractions.cs:62
 msgid "Fractions"
 msgstr "Fractions"
 
-#: ../src/Games/Calculation/CalculationFractions.cs:68
+#: ../src/Games/Calculation/CalculationFractions.cs:70
 msgid ""
 "What is the result of the given operation? Answer using either a fraction or "
 "a number."
@@ -5428,114 +5439,172 @@ msgid "Add-in Manager"
 msgstr "Gestionnaire d'extensions"
 
 #: ../src/Clients/Classical/mono-addins-strings.xml.h:7
+msgid "Add-in Repository Management"
+msgstr "Gestionnaire de dépôts d'extensions"
+
+#: ../src/Clients/Classical/mono-addins-strings.xml.h:8
+msgid "Add-in packages"
+msgstr "Paquets d'extensions"
+
+#: ../src/Clients/Classical/mono-addins-strings.xml.h:9
 msgid "Additional extensions are required to perform this operation."
 msgstr ""
 "Des extensions supplémentaires sont requises pour effectuer cette opération."
 
-#: ../src/Clients/Classical/mono-addins-strings.xml.h:8
+#: ../src/Clients/Classical/mono-addins-strings.xml.h:10
 msgid "All registered repositories"
 msgstr "Tous les dépôts enregistrés"
 
-#: ../src/Clients/Classical/mono-addins-strings.xml.h:9
+#: ../src/Clients/Classical/mono-addins-strings.xml.h:11
+msgid "All repositories"
+msgstr "Tous les dépôts"
+
+#: ../src/Clients/Classical/mono-addins-strings.xml.h:12
 msgid "Author:"
 msgstr "Auteur :"
 
-#: ../src/Clients/Classical/mono-addins-strings.xml.h:11
+#: ../src/Clients/Classical/mono-addins-strings.xml.h:14
 msgid "Copyright:"
 msgstr "Copyright :"
 
-#: ../src/Clients/Classical/mono-addins-strings.xml.h:12
+#: ../src/Clients/Classical/mono-addins-strings.xml.h:15
 msgid "Disable"
 msgstr "Désactiver"
 
-#: ../src/Clients/Classical/mono-addins-strings.xml.h:13
+#: ../src/Clients/Classical/mono-addins-strings.xml.h:16
 msgid "Enable"
 msgstr "Activer"
 
-#: ../src/Clients/Classical/mono-addins-strings.xml.h:14
+#: ../src/Clients/Classical/mono-addins-strings.xml.h:17
+msgid "Gallery"
+msgstr "Galerie"
+
+#: ../src/Clients/Classical/mono-addins-strings.xml.h:18
+msgid "Install Add-in Package"
+msgstr "Installer le paquet d'extensions"
+
+#: ../src/Clients/Classical/mono-addins-strings.xml.h:19
+msgid "Install from file..."
+msgstr "Installer à partir d'un fichier..."
+
+#: ../src/Clients/Classical/mono-addins-strings.xml.h:20
 msgid "Install from:"
 msgstr "Installer à partir de :"
 
-#: ../src/Clients/Classical/mono-addins-strings.xml.h:15
+#. Mono Addins 0.6
+#: ../src/Clients/Classical/mono-addins-strings.xml.h:22
+msgid "Installed"
+msgstr "Installé"
+
+#: ../src/Clients/Classical/mono-addins-strings.xml.h:23
+msgid "Manage Repositories..."
+msgstr "Gérer les dépôts..."
+
+#: ../src/Clients/Classical/mono-addins-strings.xml.h:24
 msgid "Name"
 msgstr "Nom"
 
-#: ../src/Clients/Classical/mono-addins-strings.xml.h:16
+#: ../src/Clients/Classical/mono-addins-strings.xml.h:25
+msgid "No add-ins found"
+msgstr "Aucune extension trouvée"
+
+#: ../src/Clients/Classical/mono-addins-strings.xml.h:26
+msgid "No selection"
+msgstr "Aucune sélection"
+
+#: ../src/Clients/Classical/mono-addins-strings.xml.h:27
 msgid "Other"
 msgstr "Autre"
 
-#: ../src/Clients/Classical/mono-addins-strings.xml.h:17
+#: ../src/Clients/Classical/mono-addins-strings.xml.h:28
 msgid "Path:"
 msgstr "Chemin :"
 
-#: ../src/Clients/Classical/mono-addins-strings.xml.h:18
+#: ../src/Clients/Classical/mono-addins-strings.xml.h:29
+msgid "Refresh"
+msgstr "Rafraîchir"
+
+#: ../src/Clients/Classical/mono-addins-strings.xml.h:30
 msgid "Register a local repository"
 msgstr "Enregistrer un dépôt local"
 
-#: ../src/Clients/Classical/mono-addins-strings.xml.h:19
+#: ../src/Clients/Classical/mono-addins-strings.xml.h:31
 msgid "Register an on-line repository"
 msgstr "Enregistrer un dépôt distant"
 
-#: ../src/Clients/Classical/mono-addins-strings.xml.h:20
+#: ../src/Clients/Classical/mono-addins-strings.xml.h:32
 msgid "Repository"
 msgstr "Dépôt"
 
-#: ../src/Clients/Classical/mono-addins-strings.xml.h:21
+#: ../src/Clients/Classical/mono-addins-strings.xml.h:33
+msgid "Repository:"
+msgstr "Dépôt :"
+
+#: ../src/Clients/Classical/mono-addins-strings.xml.h:34
 msgid "Select _All"
 msgstr "_Tout sélectionner"
 
-#: ../src/Clients/Classical/mono-addins-strings.xml.h:22
+#: ../src/Clients/Classical/mono-addins-strings.xml.h:35
 msgid "Select the location of the repository you want to register:"
 msgstr "Choisissez l'emplacement du dépôt que vous souhaitez enregistrer :"
 
-#: ../src/Clients/Classical/mono-addins-strings.xml.h:23
+#: ../src/Clients/Classical/mono-addins-strings.xml.h:36
 msgid "Show all packages"
 msgstr "Afficher tous les paquets"
 
-#: ../src/Clients/Classical/mono-addins-strings.xml.h:24
+#: ../src/Clients/Classical/mono-addins-strings.xml.h:37
 msgid "Show new versions only"
 msgstr "Afficher uniquement les nouvelles versions"
 
-#: ../src/Clients/Classical/mono-addins-strings.xml.h:25
+#: ../src/Clients/Classical/mono-addins-strings.xml.h:38
 msgid "Show updates only"
 msgstr "Afficher uniquement les mises à jour"
 
-#: ../src/Clients/Classical/mono-addins-strings.xml.h:26
+#: ../src/Clients/Classical/mono-addins-strings.xml.h:39
 msgid "The following add-ins are currently installed:"
 msgstr "Les extensions suivantes sont actuellement installées :"
 
-#: ../src/Clients/Classical/mono-addins-strings.xml.h:27
+#: ../src/Clients/Classical/mono-addins-strings.xml.h:40
 msgid "The following add-ins will be installed:"
 msgstr "Les extensions suivantes seront installées :"
 
-#: ../src/Clients/Classical/mono-addins-strings.xml.h:28
+#: ../src/Clients/Classical/mono-addins-strings.xml.h:41
+msgid "Updates"
+msgstr "Mises à jour"
+
+#: ../src/Clients/Classical/mono-addins-strings.xml.h:42
 msgid "Url"
 msgstr "URL"
 
-#: ../src/Clients/Classical/mono-addins-strings.xml.h:29
+#: ../src/Clients/Classical/mono-addins-strings.xml.h:43
 msgid "Url:"
 msgstr "URL :"
 
-#: ../src/Clients/Classical/mono-addins-strings.xml.h:30
+#: ../src/Clients/Classical/mono-addins-strings.xml.h:44
 msgid "Version"
 msgstr "Version"
 
-#: ../src/Clients/Classical/mono-addins-strings.xml.h:31
+#: ../src/Clients/Classical/mono-addins-strings.xml.h:45
 msgid "Version:"
 msgstr "Version :"
 
-#: ../src/Clients/Classical/mono-addins-strings.xml.h:32
+#: ../src/Clients/Classical/mono-addins-strings.xml.h:46
 msgid "_Install Add-ins..."
 msgstr "_Ajouter des extensions..."
 
-#: ../src/Clients/Classical/mono-addins-strings.xml.h:33
+#: ../src/Clients/Classical/mono-addins-strings.xml.h:47
 msgid "_Repositories..."
 msgstr "Dé_pôts..."
 
-#: ../src/Clients/Classical/mono-addins-strings.xml.h:34
+#: ../src/Clients/Classical/mono-addins-strings.xml.h:48
 msgid "_Uninstall..."
 msgstr "_Désinstaller..."
 
-#: ../src/Clients/Classical/mono-addins-strings.xml.h:35
+#: ../src/Clients/Classical/mono-addins-strings.xml.h:49
 msgid "_Unselect All"
 msgstr "To_ut désélectionner"
+
+#: ../src/Clients/Classical/mono-addins-strings.xml.h:50
+msgid "{0} update available"
+msgstr "{0} mises à jour disponible"
+
