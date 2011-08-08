@@ -28,6 +28,7 @@ CSDISTFILES =  \
 		$(srcdir)/Main/Xml/ImageDrawingObject.cs \
 		$(srcdir)/Main/Xml/LocalizableString.cs	\
 		$(srcdir)/Main/Xml/GameXml.cs		\
+		$(srcdir)/Main/Xml/GameXmlDrawing.cs	\
 		$(srcdir)/Main/Xml/GameXmlFactory.cs	\
 		$(srcdir)/Main/Xml/GameXmlDefinition.cs	\
 		$(srcdir)/Main/Xml/GameXmlDefinitionVariant.cs	\

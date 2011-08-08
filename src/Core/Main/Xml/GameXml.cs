@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2010 Jordi Mas i Hernàndez <jmas@softcatala.org>
+ * Copyright (C) 2010-2011 Jordi Mas i Hernàndez <jmas@softcatala.org>
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License as
@@ -47,17 +47,19 @@ namespace gbrainy.Core.Main.Xml
 		// Shared with all instances
 		static List <GameXmlDefinition> games;
 		static List <DefinitionLocator> locators;
-
-		static string option_prefix = "[option_prefix]";
 		static string option_answers = "[option_answers]";
 
 		DefinitionLocator current;
 		GameXmlDefinition game;
 		string question, answer, rationale, answer_show;
-		List <OptionDrawingObject> options;
 		ICSharpCompiler compiler;
+		GameXmlDrawing xml_drawing;
 
-		
+		public GameXml ()
+		{
+			xml_drawing = new GameXmlDrawing (this);
+		}
+
 		static public List <GameXmlDefinition> Definitions {
 			set {
 				games = value;
@@ -94,7 +96,7 @@ namespace gbrainy.Core.Main.Xml
 		}
 
 		void SetAnswerCorrectShow ()
-		{		
+		{
 			if (String.IsNullOrEmpty (answer_show))
 				return;
 
@@ -115,7 +117,7 @@ namespace gbrainy.Core.Main.Xml
 
 			Answer.CheckExpression = expression;
 		}
-		
+
 		void SetCheckAttributes ()
 		{
 			GameAnswerCheckAttributes attrib;
@@ -162,7 +164,6 @@ namespace gbrainy.Core.Main.Xml
 				compiler.EvaluateCode (variables);
 
 				try {
-
 					if (String.IsNullOrEmpty (localizable_question.Value) == false)
 						localizable_question.ValueComputed = Int32.Parse (ReplaceVariables (localizable_question.Value));
 
@@ -203,22 +204,16 @@ namespace gbrainy.Core.Main.Xml
 				answer_show = ReplaceVariables (answer_show);
 			}
 
-			if (options != null && options.Count > 0)
+			int option_answer = xml_drawing.GetOptionCorrectAnswerIndex ();
+
+			if (option_answer != -1)
 			{
-				for (int i = 0; i < options.Count; i++)
-				{
-					OptionDrawingObject option = options [i];
-					if (option.Correct == true)
-					{
-						Answer.SetMultiOptionAnswer (i, answer);
-						break;
-					}
-				}
+				Answer.SetMultiOptionAnswer (option_answer, answer);
 
 				// Translators {0}: list of options (A, B, C)
-				string answers = String.Format (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Answer {0}."), 
-					Answer.GetMultiOptionsPossibleAnswers (options.Count));
-				question = question.Replace (option_answers, answers);					
+				string answers = String.Format (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Answer {0}."),
+					Answer.GetMultiOptionsPossibleAnswers (xml_drawing.Options.Count));
+				question = question.Replace (option_answers, answers);
 			}
 			else
 			{
@@ -227,133 +222,6 @@ namespace gbrainy.Core.Main.Xml
 
 			SetCheckExpression ();
 			SetAnswerCorrectShow ();
-		}
-
-		void CreateDrawingObjects (GameXmlDefinitionVariant game)
-		{
-			OptionDrawingObject option;
-			double x = 0, y = 0, width = 0, height = 0;
-			bool first = true;
-			int randomized_options = 0;
-
-			if (game.DrawingObjects == null)
-				return;
-
-			// Calculate the size of container from the options and count the number of random options
-			foreach (DrawingObject draw_object in game.DrawingObjects)
-			{
-				option = draw_object as OptionDrawingObject;
-
-				if (option == null)
-					continue;
-
-				if (option.RandomizedOrder)
-					randomized_options++;
-
-				if (first == true)
-				{
-					x = option.X;
-					y = option.Y;
-					width = option.Width;
-					height = option.Height;
-					first = false;
-					continue;
-				}
-
-				if (option.X < x) 
-					x = option.X;
-
-				if (option.Y < y) 
-					y = option.Y;
-
-				if (option.X + option.Width > width)
-					width = option.X + option.Width;
-
-				if (option.Y + option.Height > height) 
-					height = option.Y + option.Height;
-			}
-
-			if (first == true)
-				return;
-
-			// Randomize the order of the options
-			if (randomized_options > 0)
-			{
-				OptionDrawingObject [] originals;
-				ArrayListIndicesRandom random_indices;
-				int index = 0;
-
-				random_indices = new ArrayListIndicesRandom (randomized_options);
-				originals = new OptionDrawingObject [randomized_options];
-				random_indices.Initialize ();
-
-				// Backup originals
-				for (int i = 0; i < game.DrawingObjects.Length; i++)
-				{
-					option = game.DrawingObjects[i] as OptionDrawingObject;
-
-					if (option == null)
-						continue;
-
-					originals[index] = option.Copy ();
-					index++;
-				}
-
-				// Swap
-				index = 0;
-				for (int i = 0; i < game.DrawingObjects.Length; i++)
-				{
-					option = game.DrawingObjects[i] as OptionDrawingObject;
-
-					if (option == null)
-						continue;
-
-					option.CopyRandomizedProperties (originals [random_indices [index]]);
-					index++;
-				}
-			}
-
-			Container container = new Container (x, y, width - x, height - y);
-			AddWidget (container);
-
-			if (options == null)
-				options = new List <OptionDrawingObject> ();
-
-			int idx = 0;
-
-			// Create drawing widgets objects
-			foreach (DrawingObject draw_object in game.DrawingObjects)
-			{
-				option = draw_object as OptionDrawingObject;
-
-				if (option == null)
-					continue;
-
-				DrawableArea drawable_area = new DrawableArea (option.Width, option.Height);
-				drawable_area.X = option.X;
-				drawable_area.Y = option.Y; // + i * 0.15;
-				container.AddChild (drawable_area);
-				
-				drawable_area.Data = idx;
-				drawable_area.DataEx = Answer.GetMultiOption (idx);
-				options.Add (option);
-
-				idx++;
-				drawable_area.DrawEventHandler += DrawOption;
-			}
-		}
-
-		void DrawOption (object sender, DrawEventArgs e)
-		{
-			int idx = (int) e.Data;
-
-			if (options.Count == 0)
-				return;
-
-			OptionDrawingObject _option = options [idx];
-			e.Context.SetPangoLargeFontSize ();
-
-			DrawObjects (e.Context, _option.DrawingObjects, idx);
 		}
 
 		public override int Variants {
@@ -377,10 +245,10 @@ namespace gbrainy.Core.Main.Xml
 				game = games [locator.Game];
 				SetCheckAttributes ();
 
-				CreateDrawingObjects (game); // Draw objects shared by all variants
+				xml_drawing.CreateDrawingObjects (game.DrawingObjects); // Draw objects shared by all variants
 
 				if (game.Variants.Count > 0)
-					CreateDrawingObjects (game.Variants[current.Variant]); // Draw variant specific objects
+					xml_drawing.CreateDrawingObjects (game.Variants[current.Variant].DrawingObjects); // Draw variant specific objects
 
 				SetCheckExpression ();
 				SetAnswerCorrectShow ();
@@ -391,87 +259,10 @@ namespace gbrainy.Core.Main.Xml
 		{
 			base.Draw (gr, area_width, area_height, rtl);
 
-			DrawObjects (gr, game.DrawingObjects, null); // Draw objects shared by all variants
+			xml_drawing.DrawObjects (gr, game.DrawingObjects, null); // Draw objects shared by all variants
 
 			if (game.Variants.Count > 0)
-				DrawObjects (gr, game.Variants[current.Variant].DrawingObjects, null); // Draw variant specific objects
-		}
-
-		void DrawObjects (CairoContextEx gr, DrawingObject [] drawing_objects, int? option)
-		{
-			if (drawing_objects == null)
-				return;
-
-			foreach (DrawingObject draw_object in drawing_objects)
-			{
-				if (draw_object is OptionDrawingObject)
-					continue;
-
-				if (draw_object is TextDrawingObject)
-				{
-					string text;
-					TextDrawingObject draw_string = draw_object as TextDrawingObject;
-
-					text = CatalogGetString (draw_string.Text);
-					text = ReplaceVariables (text);
-
-					switch (draw_string.Size) {
-					case TextDrawingObject.Sizes.Small:
-						gr.SetPangoFontSize (0.018);
-						break;
-					case TextDrawingObject.Sizes.Medium:
-						gr.SetPangoNormalFontSize (); // 0.022
-						break;
-					case TextDrawingObject.Sizes.Large:
-						gr.SetPangoLargeFontSize (); // 0.0325
-						break;
-					case TextDrawingObject.Sizes.XLarge:
-						gr.SetPangoFontSize (0.06);
-						break;
-					case TextDrawingObject.Sizes.XXLarge:
-						gr.SetPangoFontSize (0.08);
-						break;
-					default:
-						throw new InvalidOperationException ("Invalid value");
-					}
-
-					if (draw_string.Centered) {
-						gr.DrawTextCentered (draw_string.X, draw_string.Y, text);
-					} else {
-						gr.MoveTo (draw_string.X, draw_string.Y);
-						if (option == null)
-							gr.ShowPangoText (text);
-						else
-							gr.ShowPangoText (GetOptionPrefix (text, (int) option));
-
-						gr.Stroke ();
-					}
-				}
-				else if (draw_object is ImageDrawingObject)
-				{
-					ImageDrawingObject image = draw_object as ImageDrawingObject;
-
-					if (String.IsNullOrEmpty (image.Filename) == false)
-					{
-						string dir;
-						IConfiguration config;
-
-						config = ServiceLocator.Instance.GetService <IConfiguration> ();
-						dir = config.Get <string> (ConfigurationKeys.GamesGraphics);
-
-						gr.DrawImageFromFile (Path.Combine (dir, image.Filename),
-							image.X, image.Y, image.Width, image.Height);
-					}
-				}
-			}
-		}
-
-		string GetOptionPrefix (string str, int option)
-		{
-			string answer;
-			
-			answer = String.Format (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("{0}) "), Answer.GetMultiOption (option));
-			return str.Replace (option_prefix, answer);
+				xml_drawing.DrawObjects (gr, game.Variants[current.Variant].DrawingObjects, null); // Draw variant specific objects
 		}
 
 		static void BuildLocationList ()
@@ -487,7 +278,7 @@ namespace gbrainy.Core.Main.Xml
 		}
 
 		// Protect from calling with null (exception)
-		static string CatalogGetString (string str)
+		internal static string CatalogGetString (string str)
 		{
 			if (String.IsNullOrEmpty (str))
 				return str;
@@ -496,7 +287,7 @@ namespace gbrainy.Core.Main.Xml
 		}
 
 		// Protect from calling with null + resolve plurals
-		static string CatalogGetString (LocalizableString localizable)
+		internal static string CatalogGetString (LocalizableString localizable)
 		{
 			if (localizable == null)
 				return string.Empty;
@@ -508,7 +299,7 @@ namespace gbrainy.Core.Main.Xml
 		}
 
 		// Replace compiler service variables
-		string ReplaceVariables (string str)
+		internal string ReplaceVariables (string str)
 		{
 			const string exp = "\\[[a-z_]+\\]+";
 			string var, var_value, all_vars;
