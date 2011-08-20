@@ -58,6 +58,7 @@ namespace gbrainy.Games.Logic
 			get {
 				switch (formula) {
 				case Formula.AllAdding:
+					// Translators: {0} is always replaced by the number 3
 					return String.Format (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Every group of {0} numbers sums exactly {1}."), group_size, sum_value);
 				case Formula.ThirdMultiply:
 					return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Divide the sequence in groups of three numbers. Every third number is calculated by multiplying by the two previous ones.");
