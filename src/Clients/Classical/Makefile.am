@@ -73,7 +73,7 @@ all: ../../gbrainy.exe $(TARGET_CFG)
 EXTRA_DIST =					\
 	gbrainy.ui 				\
 	$(srcdir)/gbrainy.exe.config.in 	\
-	$(srcdir)/mono-addins-strings.xml 	\
+	$(srcdir)/MonoAddinsStrings.cs	 	\
 	$(srcdir)/gbrainy.ui 			\
 	$(srcdir)/Dialogs/ui/PreferencesDialog.ui \
 	$(srcdir)/Dialogs/ui/PlayerHistoryDialog.ui \
