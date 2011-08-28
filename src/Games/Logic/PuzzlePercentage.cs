@@ -71,7 +71,10 @@ namespace gbrainy.Games.Logic
 				}  while (paid != Math.Truncate (paid));
 
 				question = String.Format (
-					translations.GetString ("After getting {0}% discount you have paid {1} monetary units for a TV set. What was the original price of the TV set?"),
+					translations.GetPluralString (
+						"After getting {0}% discount you have paid {1} monetary unit for a TV set. What was the original price of the TV set?",
+						"After getting {0}% discount you have paid {1} monetary units for a TV set. What was the original price of the TV set?",
+						(int) paid),
 					discount, paid);
 				ans = (int)price;
 				svg_image = "tv_set.svg";
@@ -89,7 +92,10 @@ namespace gbrainy.Games.Logic
 
 			
 				question = String.Format (
-					translations.GetString ("John's shop had sales of {0} monetary units. This was an increase of {1}% over last month. What were last month sales?"),
+					translations.GetPluralString (
+						"John's shop had sales of {0} monetary unit. This was an increase of {1}% over last month. What were last month sales?",
+						"John's shop had sales of {0} monetary units. This was an increase of {1}% over last month. What were last month sales?",	
+						(int) sales),
 					sales, increase);
 				ans = (int) previous;
 				svg_image = "shop.svg";

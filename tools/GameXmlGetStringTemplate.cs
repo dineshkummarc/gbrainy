@@ -21,7 +21,7 @@ using System;
 using Mono.Unix;
 
 // This is an auto-generated file GameXmlToGetString tool. Do not edit manually
-public class GameXmlSttringFactory
+public class GameXmlStringFactory
 {
 	void LoadStrings ()
 	{

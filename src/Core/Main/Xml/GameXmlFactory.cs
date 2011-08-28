@@ -46,7 +46,9 @@ namespace gbrainy.Core.Main.Xml
 			string name, str, plural;
 			bool processing_variant = false;
 			int variant = 0;
-			OptionDrawingObject option = null;			
+			OptionDrawingObject option = null;
+			DrawingObject last_drawing_object = null;
+			string last_context = null;
 
 			if (read == true)
 				return;
@@ -56,10 +58,24 @@ namespace gbrainy.Core.Main.Xml
 				StreamReader stream = new StreamReader (file);
 				XmlTextReaderLiteral reader = new XmlTextReaderLiteral (stream);
 				game = null;
-
+		
 				while (reader.Read ())
 				{
-					name = reader.Name.ToLower ();					
+					// Strings are only used because msgctxt requirement
+					if (reader.NodeType == XmlNodeType.Text)
+					{
+						const string CONTEXT_GLUE = "\u0004";
+						string text;
+						
+						text = reader.ReadString ();
+
+						TextDrawingObject drawing_object = (TextDrawingObject) last_drawing_object;
+						// GetText processes msgctxt as msgctxt + context_glue + text to retrieve them
+						drawing_object.Text = last_context + CONTEXT_GLUE + text;
+						continue;
+					}
+
+					name = reader.Name.ToLower ();
 					switch (name) {
 					case "games":
 						break;
@@ -128,10 +144,12 @@ namespace gbrainy.Core.Main.Xml
 
 						break;
 					case "string":
+					case "_string":
 						if (reader.NodeType != XmlNodeType.Element)
 							break;
 
 						TextDrawingObject draw_string = new TextDrawingObject ();
+						last_drawing_object = draw_string;
 
 						if (option != null)
 						{
@@ -145,11 +163,13 @@ namespace gbrainy.Core.Main.Xml
 								game.AddDrawingObject (draw_string);
 						}
 
+						last_context = reader.GetAttribute ("msgctxt");
+
 						draw_string.Text = reader.GetAttribute ("text");
 	
 						if (String.IsNullOrEmpty (draw_string.Text))
 							draw_string.Text = reader.GetAttribute ("_text");
-
+						
 						str = reader.GetAttribute ("x");
 						if (String.IsNullOrEmpty (str) == false)
 							draw_string.X = Double.Parse (str, CultureInfo.InvariantCulture);
