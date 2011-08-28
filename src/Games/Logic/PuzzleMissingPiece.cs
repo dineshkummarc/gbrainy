@@ -32,22 +32,22 @@ namespace gbrainy.Games.Logic
 		private const double sub_figure = 0.15;
 
 		public override string Name {
-			get {return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Missing piece");}
+			get {return translations.GetString ("Missing piece");}
 		}
 
 		public override string Question {
 			get {return String.Format (
-				ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Which square completes the figure below? Answer {0}, {1} or {2}."),
+				translations.GetString ("Which square completes the figure below? Answer {0}, {1} or {2}."),
 				Answer.GetMultiOption (0), Answer.GetMultiOption (1), Answer.GetMultiOption (2));}
 		}
 
 		public override string Tip {
-			get { return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("The logic works at row level.");}
+			get { return translations.GetString ("The logic works at row level.");}
 		}
 
 		public override string Rationale {
 			get {
-				return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("In every row the third square is made by flipping the first square and superimposing it on the second square, followed by removing the matching lines.");
+				return translations.GetString ("In every row the third square is made by flipping the first square and superimposing it on the second square, followed by removing the matching lines.");
 			}
 		}
 
@@ -170,7 +170,7 @@ namespace gbrainy.Games.Logic
 			DrawFigureSequence (gr, x, DrawAreaY + sub_figure * 2 , 2, false);
 
 			gr.MoveTo (0.1, 0.62);
-			gr.ShowPangoText (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Choose one of the following:"));
+			gr.ShowPangoText (translations.GetString ("Choose one of the following:"));
 		}
 	}
 }

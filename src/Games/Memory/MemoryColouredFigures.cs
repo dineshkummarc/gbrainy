@@ -48,7 +48,7 @@ namespace gbrainy.Games.Memory
 		private const double block_space = 0.35;
 
 		public override string Name {
-			get {return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Colored figures");}
+			get {return translations.GetString ("Colored figures");}
 		}
 
 		public override bool UsesColors {
@@ -57,7 +57,7 @@ namespace gbrainy.Games.Memory
 
 		public override string MemoryQuestion {
 			get { return String.Format (
-				ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Which of these figures was previously shown? Answer {0}, {1}, {2} or {3}."),
+				translations.GetString ("Which of these figures was previously shown? Answer {0}, {1}, {2} or {3}."),
 				Answer.GetMultiOption (0), Answer.GetMultiOption (1), Answer.GetMultiOption (2), Answer.GetMultiOption (3));}
 		}
 
@@ -82,7 +82,7 @@ namespace gbrainy.Games.Memory
 			rect_h = 0.3 / columns;
 			squares_colours = new SquareColor [squares * answers];
 			color_sheme = random.Next (2);
-			palette = new ColorPalette ();
+			palette = new ColorPalette (translations);
 
 			for (int i = 0; i < squares; i++)
 				squares_colours[i] = (SquareColor) random.Next ((int) SquareColor.Length);

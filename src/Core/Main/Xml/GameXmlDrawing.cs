@@ -46,7 +46,7 @@ namespace gbrainy.Core.Main.Xml
 
 		public int GetOptionCorrectAnswerIndex ()
 		{
-			if (options == null || options.Count > 0)
+			if (options == null || options.Count < 0)
 				return -1;
 
 			for (int i = 0; i < options.Count; i++)
@@ -195,7 +195,7 @@ namespace gbrainy.Core.Main.Xml
 					string text;
 					TextDrawingObject draw_string = draw_object as TextDrawingObject;
 
-					text = GameXml.CatalogGetString (draw_string.Text);
+					text = game_xml.CatalogGetString (draw_string.Text);
 					text = game_xml.ReplaceVariables (text);
 
 					switch (draw_string.Size) {
@@ -266,7 +266,7 @@ namespace gbrainy.Core.Main.Xml
 		{
 			string answer;
 
-			answer = String.Format (GameXml.CatalogGetString ("{0}) "), game_xml.Answer.GetMultiOption (option));
+			answer = String.Format (game_xml.CatalogGetString ("{0}) "), game_xml.Answer.GetMultiOption (option));
 			return str.Replace (option_prefix, answer);
 		}
 	}

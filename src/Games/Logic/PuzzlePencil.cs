@@ -35,11 +35,11 @@ namespace gbrainy.Games.Logic
 		private const int answer_index = 4;
 
 		public override string Name {
-			get {return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Pencil");}
+			get {return translations.GetString ("Pencil");}
 		}
 
 		public override string Question {
-			get {return String.Format ( ServiceLocator.Instance.GetService <ITranslations> ().GetString 
+			get {return String.Format ( translations.GetString 
 				("Which of the following figures cannot be drawn without crossing any previous lines nor lifting the pencil? Answer {0}, {1}, {2}, {3} or {4}."),
 				Answer.GetMultiOption (0), Answer.GetMultiOption (1), Answer.GetMultiOption (2), Answer.GetMultiOption (3), Answer.GetMultiOption (4));} 
 		}

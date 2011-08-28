@@ -51,26 +51,26 @@ namespace gbrainy.Games.Logic
 		{
 			problems = new Problem []
 			{
-				new Problem (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("What is the probability of getting a '2' or a '6' in a single throw of an unmodified 6 sided die? Answer using a fraction (e.g.: 1/2)."),
+				new Problem (translations.GetString ("What is the probability of getting a '2' or a '6' in a single throw of an unmodified 6 sided die? Answer using a fraction (e.g.: 1/2)."),
 					"1/3",
-					ServiceLocator.Instance.GetService <ITranslations> ().GetString ("There are 2 of 6 possibilities."), true),
+					translations.GetString ("There are 2 of 6 possibilities."), true),
 
-				new Problem (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("What is the probability of not getting a '5' in a single throw of an unmodified 6 sided die? Answer using a fraction (e.g.: 1/2)."),
+				new Problem (translations.GetString ("What is the probability of not getting a '5' in a single throw of an unmodified 6 sided die? Answer using a fraction (e.g.: 1/2)."),
 					"5/6",
-					ServiceLocator.Instance.GetService <ITranslations> ().GetString ("There are 5 of 6 possibilities."), true),
+					translations.GetString ("There are 5 of 6 possibilities."), true),
 
-				new Problem (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Two unmodified 6 sided dice are thrown simultaneously. What is the probability of getting two even numbers? Answer using a fraction (e.g.: 1/2)."),
+				new Problem (translations.GetString ("Two unmodified 6 sided dice are thrown simultaneously. What is the probability of getting two even numbers? Answer using a fraction (e.g.: 1/2)."),
 					"9/36",
-					ServiceLocator.Instance.GetService <ITranslations> ().GetString ("There are 9 of 36 possibilities of getting two even numbers."), false),
+					translations.GetString ("There are 9 of 36 possibilities of getting two even numbers."), false),
 
-				new Problem (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Two unmodified 6 sided dice are thrown simultaneously. What is the probability of getting two '6'? Answer using a fraction (e.g.: 1/2)."),
+				new Problem (translations.GetString ("Two unmodified 6 sided dice are thrown simultaneously. What is the probability of getting two '6'? Answer using a fraction (e.g.: 1/2)."),
 					"1/36",
-					ServiceLocator.Instance.GetService <ITranslations> ().GetString ("There is 1 of 6 possibilities of getting a '6' on the first die and the same for the second die."), false),
+					translations.GetString ("There is 1 of 6 possibilities of getting a '6' on the first die and the same for the second die."), false),
 			};
 		}
 
 		public override string Name {
-			get {return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Dice");}
+			get {return translations.GetString ("Dice");}
 		}
 
 		public override string Question {

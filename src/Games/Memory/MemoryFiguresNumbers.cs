@@ -36,12 +36,12 @@ namespace gbrainy.Games.Memory
 		private const double block_space = 0.35;
 
 		public override string Name {
-			get {return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Figures with numbers");}
+			get {return translations.GetString ("Figures with numbers");}
 		}
 
 		public override string MemoryQuestion {
 			get { return String.Format (
-				ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Which one of these squares was previously shown? Answer {0}, {1}, {2} or {3}."),
+				translations.GetString ("Which one of these squares was previously shown? Answer {0}, {1}, {2} or {3}."),
 				Answer.GetMultiOption (0), Answer.GetMultiOption (1), Answer.GetMultiOption (2), Answer.GetMultiOption (3));}
 		}
 

@@ -55,17 +55,17 @@ namespace gbrainy.Games.Logic
 		Figure [] figure_answers;
 
 		public override string Name {
-			get {return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Figures");}
+			get {return translations.GetString ("Figures");}
 		}
 
 		public override string Question {
-			get {return String.Format (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("What is the next logical sequence of objects in the last column? Answer {0}, {1} or {2}."),
+			get {return String.Format (translations.GetString ("What is the next logical sequence of objects in the last column? Answer {0}, {1} or {2}."),
 				Answer.GetMultiOption (0), Answer.GetMultiOption (1), Answer.GetMultiOption (2));}
 		}
 
 		public override string Rationale {
 			get {
-				return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("It is the only combination that you can build with the given elements without repeating them.");
+				return translations.GetString ("It is the only combination that you can build with the given elements without repeating them.");
 			}
 		}
 
@@ -192,7 +192,7 @@ namespace gbrainy.Games.Logic
 			}
 
 			gr.MoveTo (0.08, 0.45);
-			gr.ShowPangoText (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Choose one of the following:"));
+			gr.ShowPangoText (translations.GetString ("Choose one of the following:"));
 			gr.Stroke ();
 		}
 	}

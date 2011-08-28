@@ -24,6 +24,7 @@ using System.Collections.Generic;
 using System.Reflection;
 
 using gbrainy.Core.Main;
+using gbrainy.Core.Services;
 
 namespace gbrainy.Clients.Classical
 {
@@ -32,11 +33,13 @@ namespace gbrainy.Clients.Classical
 		string [] args;
 		int [] play_list;
 		bool cont_execution;
+		ITranslations translations;
 
 		public static readonly char GAME_SEPARATOR = ',';
 
-		public CommandLine (string [] args)
+		public CommandLine (ITranslations translations, string [] args)
 		{
+			this.translations = translations;
 			this.args = args;
 			RandomOrder = true;
 			play_list = new int [0];
@@ -106,7 +109,7 @@ namespace gbrainy.Clients.Classical
 				String.Format (Catalog.GetString ("(built on {0})"), Defines.BUILD_TIME));
 		}
 
-		static void GameList ()
+		void GameList ()
 		{
 			GameLocator [] games;
 			GameManager gm = new GameManager ();
@@ -122,6 +125,7 @@ namespace gbrainy.Clients.Classical
 					continue;
 
 				Game game = (Game) Activator.CreateInstance (games[i].TypeOf, true);
+				game.translations = translations;
 				game.Variant = games[i].Variant;
 				Console.WriteLine (" {0}", game.Name);
 			}
@@ -143,6 +147,7 @@ namespace gbrainy.Clients.Classical
 					continue;
 
 				Game game = (Game) Activator.CreateInstance (games[i].TypeOf, true);
+				game.translations = translations;
 				game.Variant = games[i].Variant;
 
 				try

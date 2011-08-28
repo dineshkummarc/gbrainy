@@ -34,6 +34,7 @@ namespace gbrainy.Test.Clients.Classical
 
 		public class TranslationsTest : ITranslations
 		{
+			public string Language { set; get; }
 			public int Percentage { set; get; }
 			public int TranslationPercentage {
 				get { return Percentage; }
@@ -55,7 +56,7 @@ namespace gbrainy.Test.Clients.Classical
 		[Test]
 		public void ShowTranslationMessageHonorPercentage ()
 		{
-			GtkClient client = new GtkClient ();
+			GtkClient client = new GtkClient (translations);
 			Preferences.ConfigPath = ".";
 			Preferences.Clear ();
 
@@ -66,7 +67,7 @@ namespace gbrainy.Test.Clients.Classical
 		[Test]
 		public void ShowTranslationMessageOnlyOnce ()
 		{
-			GtkClient client = new GtkClient ();
+			GtkClient client = new GtkClient (translations);
 			Preferences.ConfigPath = ".";
 			Preferences.Clear ();
 
@@ -78,7 +79,7 @@ namespace gbrainy.Test.Clients.Classical
 		[Test]
 		public void ShowTranslationMessageWhenChangingVersion ()
 		{
-			GtkClient client = new GtkClient ();
+			GtkClient client = new GtkClient (translations);
 			Preferences.ConfigPath = ".";
 			Preferences.Clear ();
 

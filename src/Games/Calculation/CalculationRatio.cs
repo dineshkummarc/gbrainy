@@ -29,7 +29,7 @@ namespace gbrainy.Games.Calculation
 		int number_a, number_b, ratio_a, ratio_b;
 
 		public override string Name {
-			get {return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Ratio");}
+			get {return translations.GetString ("Ratio");}
 		}
 
 		public override GameTypes Type {
@@ -39,20 +39,20 @@ namespace gbrainy.Games.Calculation
 		public override string Question {
 			get {
 				return String.Format (
-					ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Which two numbers have a sum of {0} and have a ratio of {1} to {2}. Answer using two numbers (e.g.: 1 and 2)."), 
+					translations.GetString ("Which two numbers have a sum of {0} and have a ratio of {1} to {2}. Answer using two numbers (e.g.: 1 and 2)."), 
 					number_a + number_b, ratio_a, ratio_b);
 			}
 		}
 
 		public override string Rationale {
 			get {
-				return String.Format (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("The second number can be calculated by multiplying the first number by {0} and dividing it by {1}."),
+				return String.Format (translations.GetString ("The second number can be calculated by multiplying the first number by {0} and dividing it by {1}."),
 					ratio_b, ratio_a);
 			}
 		}
 
 		public override string Tip {
-			get { return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("A ratio specifies a proportion between two numbers. A ratio of a:b means that for every 'a' parts you have 'b' parts.");}
+			get { return translations.GetString ("A ratio specifies a proportion between two numbers. A ratio of a:b means that for every 'a' parts you have 'b' parts.");}
 		}
 
 		protected override void Initialize ()
@@ -84,7 +84,7 @@ namespace gbrainy.Games.Calculation
 			Answer.Correct = String.Format ("{0} | {1}", number_a, number_b);
 			Answer.CheckExpression = "[0-9]+";
 			Answer.CheckAttributes |= GameAnswerCheckAttributes.MatchAll;
-			Answer.CorrectShow = String.Format (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("{0} and {1}"), number_a, number_b);
+			Answer.CorrectShow = String.Format (translations.GetString ("{0} and {1}"), number_a, number_b);
 		}
 
 		public override void Draw (CairoContextEx gr, int area_width, int area_height, bool rtl)
@@ -96,10 +96,10 @@ namespace gbrainy.Games.Calculation
 			gr.SetPangoLargeFontSize ();
 
 			gr.MoveTo (x, DrawAreaY + 0.22);
-			gr.ShowPangoText (String.Format (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("x + y = {0}"), number_a + number_b));
+			gr.ShowPangoText (String.Format (translations.GetString ("x + y = {0}"), number_a + number_b));
 		
 			gr.MoveTo (x, DrawAreaY + 0.44);
-			gr.ShowPangoText (String.Format (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("have a ratio of {0}:{1}"), ratio_a, ratio_b));
+			gr.ShowPangoText (String.Format (translations.GetString ("have a ratio of {0}:{1}"), ratio_a, ratio_b));
 		}
 	}
 }

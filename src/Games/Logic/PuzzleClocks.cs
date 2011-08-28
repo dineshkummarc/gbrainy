@@ -35,27 +35,27 @@ namespace gbrainy.Games.Logic
 		private const int handle_num = 2;
 
 		public override string Name {
-			get {return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Clocks");}
+			get {return translations.GetString ("Clocks");}
 		}
 
 		public override string Question {
 			get {return (String.Format (
 				// Translators: {0} is replaced by 'Figure X'
-				ServiceLocator.Instance.GetService <ITranslations> ().GetString ("To what number should the large handle of the '{0}' clock point? Answer using numbers."),
+				translations.GetString ("To what number should the large handle of the '{0}' clock point? Answer using numbers."),
 				Answer.GetFigureName (3)));}
 		}
 
 		public override string Rationale {
 			get {
 				// Translators: {0} is replaced by 'Figure X'
-				return String.Format (ServiceLocator.Instance.GetService <ITranslations> ().GetString (
+				return String.Format (translations.GetString (
 					"Starting from the first clock, add {1} to the number obtained by appending the values to which the hands point. For example, the values of the hands for '{0}' are {3} ({2} + {1})."),
 					Answer.GetFigureName (3), addition, handles [4].ToString () + handles [5].ToString (), handles [6].ToString () + handles [7].ToString ());
 			}
 		}
 
 		public override string Tip {
-			get { return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("The clocks do not follow the time logic.");}
+			get { return translations.GetString ("The clocks do not follow the time logic.");}
 		}
 
 		protected override void Initialize ()

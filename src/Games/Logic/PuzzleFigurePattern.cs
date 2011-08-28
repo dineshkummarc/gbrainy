@@ -37,22 +37,22 @@ namespace gbrainy.Games.Logic
 		};
 
 		public override string Name {
-			get {return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Figure pattern");}
+			get {return translations.GetString ("Figure pattern");}
 		}
 
 		public override string Question {
 			get {return String.Format (
-				ServiceLocator.Instance.GetService <ITranslations> ().GetString ("What figure should replace the question mark? Answer {0}, {1} or {2}."),
+				translations.GetString ("What figure should replace the question mark? Answer {0}, {1} or {2}."),
 				Answer.GetMultiOption (0), Answer.GetMultiOption (1), Answer.GetMultiOption (2));}
 		}
 
 		public override string Tip {
-			get { return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("The third figure of every row involves somehow combining the first two figures.");}
+			get { return translations.GetString ("The third figure of every row involves somehow combining the first two figures.");}
 		}
 
 		public override string Rationale {
 			get {
-				return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Superpose the first and second figures and remove the lines that they have in common, then rotate the resulting figure 45 degrees.");
+				return translations.GetString ("Superpose the first and second figures and remove the lines that they have in common, then rotate the resulting figure 45 degrees.");
 			}
 		}
 
@@ -188,7 +188,7 @@ namespace gbrainy.Games.Logic
 			gr.Stroke ();
 	
 			gr.MoveTo (0.05, y - 0.01 + space_y);
-			gr.ShowPangoText (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Choose one of the following:"));
+			gr.ShowPangoText (translations.GetString ("Choose one of the following:"));
 
 			// Answers
 			x = org_x;

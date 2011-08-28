@@ -156,26 +156,26 @@ namespace gbrainy.Games.Logic
 		}
 
 		public override string Name {
-			get {return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Related numbers");}
+			get {return translations.GetString ("Related numbers");}
 		}
 
 		public override string Question {
-			get {return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("In the grid below, which number should replace the question mark?");}
+			get {return translations.GetString ("In the grid below, which number should replace the question mark?");}
 		}
 
 		public override string Tip {
-			get { return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("The pattern is arithmetical and works horizontally."); }
+			get { return translations.GetString ("The pattern is arithmetical and works horizontally."); }
 		}
 
 		public override string Rationale {
 			get {
 				switch (operation) {
 				case Operation.AddHalf:
-					return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("The number in the middle of every row is half of the sum of the other numbers in the row.");
+					return translations.GetString ("The number in the middle of every row is half of the sum of the other numbers in the row.");
 				case Operation.Add:
-					return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("The number in the middle of every row is the sum of the other numbers in the row.");
+					return translations.GetString ("The number in the middle of every row is the sum of the other numbers in the row.");
 				case Operation.AddDouble:
-					return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("The number in the middle of every row is the double of the sum of the other numbers in the row.");
+					return translations.GetString ("The number in the middle of every row is the double of the sum of the other numbers in the row.");
 				default:
 					throw new InvalidOperationException ("Invalid value");
 				}

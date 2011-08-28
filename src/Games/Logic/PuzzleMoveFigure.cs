@@ -30,20 +30,20 @@ namespace gbrainy.Games.Logic
 		private int type;
 
 		public override string Name {
-			get {return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Move figure");}
+			get {return translations.GetString ("Move figure");}
 		}
 
 		public override string Question {
-			get {return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("What is the minimum number of circles to be moved in order to convert the left figure into the right figure?");} 
+			get {return translations.GetString ("What is the minimum number of circles to be moved in order to convert the left figure into the right figure?");} 
 		}
 	
 		public override string Rationale {
 			get {
 				switch (type) {
 				case 0:
-					return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Move the circle from the first line to the second and move two circles from the fourth line to the second and the fifth lines.");
+					return translations.GetString ("Move the circle from the first line to the second and move two circles from the fourth line to the second and the fifth lines.");
 				case 1:
-					return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Move the first line to the seventh; move the two circles of the second line to third; and move first and last circles of the fifth line to the sixth.");
+					return translations.GetString ("Move the first line to the seventh; move the two circles of the second line to third; and move first and last circles of the fifth line to the sixth.");
 				default:	
 					return string.Empty;
 				}

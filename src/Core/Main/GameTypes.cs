@@ -37,18 +37,18 @@ namespace gbrainy.Core.Main
 	public static class GameTypesDescription
 	{
 		// Type enum to string representation (locale sensitive)
-		static public string GetLocalized (GameTypes type)
+		static public string GetLocalized (ITranslations translations, GameTypes type)
 		{
 			switch (type) 
 			{
 				case GameTypes.LogicPuzzle:
-					return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Logic");
+					return translations.GetString ("Logic");
 				case GameTypes.Memory:
-					return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Memory");
+					return translations.GetString ("Memory");
 				case GameTypes.Calculation:
-					return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Calculation");
+					return translations.GetString ("Calculation");
 				case GameTypes.VerbalAnalogy:
-					return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Verbal");
+					return translations.GetString ("Verbal");
 				default:
 					throw new InvalidOperationException ("Unknown game type");
 			}

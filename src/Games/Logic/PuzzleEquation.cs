@@ -30,16 +30,16 @@ namespace gbrainy.Games.Logic
 		private string formula;
 
 		public override string Name {
-			get {return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Equation");}
+			get {return translations.GetString ("Equation");}
 		}
 
 		public override string Question {
-			get {return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("What is the result of the equation below?");} 
+			get {return translations.GetString ("What is the result of the equation below?");} 
 		}
 
 		public override string Rationale {
 			get {
-				return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("The order of arithmetical operations is always as follows: exponents and roots, multiplication and division, addition and subtraction.");
+				return translations.GetString ("The order of arithmetical operations is always as follows: exponents and roots, multiplication and division, addition and subtraction.");
 			}
 		}
 

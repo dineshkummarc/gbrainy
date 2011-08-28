@@ -32,8 +32,12 @@ namespace gbrainy.Games.Memory
 		class Challenge
 		{
 			protected static int [] numbers;
+			protected ITranslations translations;
 
-			public Challenge () {}
+			public Challenge (ITranslations translations)
+			{
+				this.translations = translations;
+			}
 
 			public static int[] Numbers {
 				set { numbers = value;}
@@ -51,9 +55,14 @@ namespace gbrainy.Games.Memory
 
 		class ChallengeOdds : Challenge
 		{
+			public ChallengeOdds (ITranslations translations) : base (translations)
+			{
+
+			}
+
 			public override string Question {
 				get {
-					return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("How many odd numbers were in the previous image? Answer using numbers.");
+					return translations.GetString ("How many odd numbers were in the previous image? Answer using numbers.");
 				}
 			}
 
@@ -71,9 +80,14 @@ namespace gbrainy.Games.Memory
 
 		class ChallengeEvens : Challenge
 		{
+			public ChallengeEvens (ITranslations translations) : base (translations)
+			{
+
+			}
+
 			public override string Question {
 				get {
-					return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("How many even numbers were in the previous image? Answer using numbers.");
+					return translations.GetString ("How many even numbers were in the previous image? Answer using numbers.");
 				}
 			}
 
@@ -91,9 +105,14 @@ namespace gbrainy.Games.Memory
 
 		class ChallengeTwoDigits : Challenge
 		{
+			public ChallengeTwoDigits (ITranslations translations) : base (translations)
+			{
+
+			}
+
 			public override string Question {
 				get {
-					return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("How many numbers with more than one digit were in the previous image? Answer using numbers.");
+					return translations.GetString ("How many numbers with more than one digit were in the previous image? Answer using numbers.");
 				}
 			}
 
@@ -110,7 +129,7 @@ namespace gbrainy.Games.Memory
 		}
 
 		public override string Name {
-			get {return ServiceLocator.Instance.GetService <ITranslations> ().GetString  ("Memorize numbers");}
+			get {return translations.GetString  ("Memorize numbers");}
 		}
 
 		public override string MemoryQuestion {
@@ -144,13 +163,13 @@ namespace gbrainy.Games.Memory
 
 			switch (random.Next (num_games)) {
 			case 0:
-				current_game = new ChallengeOdds ();
+				current_game = new ChallengeOdds (translations);
 				break;
 			case 1:
-				current_game = new ChallengeEvens ();
+				current_game = new ChallengeEvens (translations);
 				break;
 			case 2:
-				current_game = new ChallengeTwoDigits ();
+				current_game = new ChallengeTwoDigits (translations);
 				break;
 			}
 

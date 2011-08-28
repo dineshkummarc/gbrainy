@@ -244,17 +244,17 @@ namespace gbrainy.Core.Main
 			available_games.Clear ();
 		}
 
-		public string GetGamesSummary ()
+		public string GetGamesSummary (ITranslations translations)
 		{
 			String s = string.Empty;
 	#if MONO_ADDINS
-			s += ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Extensions database:") + " " +
+			s += translations.GetString ("Extensions database:") + " " +
 					System.IO.Path.Combine (Environment.GetFolderPath (Environment.SpecialFolder.ApplicationData), "gbrainy");
 
 			s += Environment.NewLine;
 	#endif
 			// Translators: 'Games registered' is the games know to gbrainy (build-in and load from addins-in and external files)
-			s += String.Format (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("{0} games registered: {1} logic puzzles, {2} calculation trainers, {3} memory trainers, {4} verbal analogies"),
+			s += String.Format (translations.GetString ("{0} games registered: {1} logic puzzles, {2} calculation trainers, {3} memory trainers, {4} verbal analogies"),
 					cnt_logic + cnt_memory + cnt_calculation + cnt_verbal,
 					cnt_logic, cnt_calculation, cnt_memory, cnt_verbal);
 

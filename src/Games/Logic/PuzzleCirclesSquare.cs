@@ -27,21 +27,21 @@ namespace gbrainy.Games.Logic
 	public class PuzzleCirclesSquare : Game
 	{
 		public override string Name {
-			get {return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Circles in a square");}
+			get {return translations.GetString ("Circles in a square");}
 		}
 
 		public override string Question {
-			get {return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("What is the maximum number of circles (as shown) that fit in the square below?");} 
+			get {return translations.GetString ("What is the maximum number of circles (as shown) that fit in the square below?");} 
 		}
 
 		public override string Tip {
-			get { return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("You can fit more than 64 circles.");}
+			get { return translations.GetString ("You can fit more than 64 circles.");}
 		}
 
 		public override string Rationale {
 			get {
 				// Translators: {0} is replaced always by 0.1340
-				return String.Format (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Using the above layout {0} units of height are gained per row leaving enough space for an additional row."), 0.1340);
+				return String.Format (translations.GetString ("Using the above layout {0} units of height are gained per row leaving enough space for an additional row."), 0.1340);
 			}
 		}
 
@@ -75,7 +75,7 @@ namespace gbrainy.Games.Logic
 			gr.Stroke ();
 
 			gr.MoveTo (first_x + 0.2, first_y - 0.06 - space_fromrect);
-			gr.ShowPangoText (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("8 units"));
+			gr.ShowPangoText (translations.GetString ("8 units"));
 			gr.Stroke ();
 
 
@@ -96,7 +96,7 @@ namespace gbrainy.Games.Logic
 			gr.Stroke ();
 
 			gr.MoveTo (first_x - space_fromrect - 0.07, first_y + 0.3);
-			gr.ShowPangoText (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("8 units"), false, -1, 270 * Math.PI/180);
+			gr.ShowPangoText (translations.GetString ("8 units"), false, -1, 270 * Math.PI/180);
 			gr.Stroke ();
 
 			// Sample circle
@@ -115,7 +115,7 @@ namespace gbrainy.Games.Logic
 			gr.Stroke ();
 
 			gr.MoveTo (first_x + 0.65, first_y - 0.04 - space_fromcircle);
-			gr.ShowPangoText (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("1 unit"));
+			gr.ShowPangoText (translations.GetString ("1 unit"));
 			gr.Stroke ();
 
 			//  ---
@@ -134,7 +134,7 @@ namespace gbrainy.Games.Logic
 			gr.Stroke ();
 
 			gr.MoveTo (first_x + 0.65 - space_fromcircle - 0.08, first_y + 0.15);
-			gr.ShowPangoText (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("1 unit"), false, -1, 270 * Math.PI/180);
+			gr.ShowPangoText (translations.GetString ("1 unit"), false, -1, 270 * Math.PI/180);
 			gr.Stroke ();
 
 			if (Answer.Draw == false)

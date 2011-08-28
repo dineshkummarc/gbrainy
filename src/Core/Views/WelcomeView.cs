@@ -31,15 +31,17 @@ namespace gbrainy.Core.Views
 	public class WelcomeView : IDrawable
 	{
 		List <Toolkit.Container> containers;
+		ITranslations translations;
 		const double space = 0.17;
 		const double image_size = 0.14;
 
-		public WelcomeView ()
+		public WelcomeView (ITranslations translations)
 		{
 			Container container;
 			DrawableArea drawable_area;
 			double y = 0.22;
 
+			this.translations = translations;
 			containers = new List <Toolkit.Container> ();
 	
 			/* Logic */
@@ -58,7 +60,7 @@ namespace gbrainy.Core.Views
 			drawable_area.DrawEventHandler += delegate (object sender, DrawEventArgs e)
 			{
 				e.Context.DrawStringWithWrapping (0, 0,
-					ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Logic puzzles. Challenge your reasoning and thinking skills."), 
+					translations.GetString ("Logic puzzles. Challenge your reasoning and thinking skills."), 
 					e.Width);
 			};
 
@@ -79,7 +81,7 @@ namespace gbrainy.Core.Views
 			drawable_area.DrawEventHandler += delegate (object sender, DrawEventArgs e)
 			{
 				e.Context.DrawStringWithWrapping (0, 0,
-					ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Mental calculation. Arithmetical operations that test your mental calculation abilities."),
+					translations.GetString ("Mental calculation. Arithmetical operations that test your mental calculation abilities."),
 					e.Width);
 			};
 
@@ -100,7 +102,7 @@ namespace gbrainy.Core.Views
 			drawable_area.DrawEventHandler += delegate (object sender, DrawEventArgs e)
 			{
 				e.Context.DrawStringWithWrapping (0, 0,
-					ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Memory trainers. To prove your short term memory."),
+					translations.GetString ("Memory trainers. To prove your short term memory."),
 					e.Width);
 			};
 
@@ -121,7 +123,7 @@ namespace gbrainy.Core.Views
 			drawable_area.DrawEventHandler += delegate (object sender, DrawEventArgs e)
 			{
 				e.Context.DrawStringWithWrapping (0, 0,
-					ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Verbal analogies. Challenge your verbal aptitude."),
+					translations.GetString ("Verbal analogies. Challenge your verbal aptitude."),
 					e.Width);
 			};
 		}
@@ -137,15 +139,15 @@ namespace gbrainy.Core.Views
 
 			gr.MoveTo (0.05, y);
 			// Translators: {0} is the version number of the program
-			gr.ShowPangoText (String.Format (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Welcome to gbrainy {0}"), Defines.VERSION), true, -1, 0);
+			gr.ShowPangoText (String.Format (translations.GetString ("Welcome to gbrainy {0}"), Defines.VERSION), true, -1, 0);
 			gr.Stroke ();
 
 			gr.DrawStringWithWrapping (0.05, y + 0.07, 
-				ServiceLocator.Instance.GetService <ITranslations> ().GetString ("gbrainy is a brain teaser game and trainer to have fun and to keep your brain trained. It includes:"),
+				translations.GetString ("gbrainy is a brain teaser game and trainer to have fun and to keep your brain trained. It includes:"),
 				1 - 0.05);
 
 			y = 0.22 + space * 3;
-			gr.DrawStringWithWrapping (0.05, y + 0.17,  ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Use the Settings to adjust the difficulty level of the game."),
+			gr.DrawStringWithWrapping (0.05, y + 0.17,  translations.GetString ("Use the Settings to adjust the difficulty level of the game."),
 				1 - 0.05);
 			gr.Stroke ();
 

@@ -87,6 +87,9 @@ namespace gbrainy.Clients.WebForms
 
 		static public Language GetFromCode (string code)
 		{
+			if (String.IsNullOrEmpty (code))
+				return languages [0];
+				
 			if (langmap.ContainsKey (code) == false)
 				return languages [0];
 			

@@ -42,16 +42,16 @@ namespace gbrainy.Games.Logic
 		}
 
 		public override string Name {
-			get {return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("People at a table");}
+			get {return translations.GetString ("People at a table");}
 		}
 
 		public override string Question {
-			get {return String.Format (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("A group of people are sitting at a round table spaced out evenly. How many people are there if the {0} person is across from the {1}?"), ques1, ques2);} 
+			get {return String.Format (translations.GetString ("A group of people are sitting at a round table spaced out evenly. How many people are there if the {0} person is across from the {1}?"), ques1, ques2);} 
 		}
 
 		public override string Rationale {
 			get {
-				return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Subtracting the two positions you find out how many people are seated half way around the table. Doubling this number leaves you with the total amount of people.");
+				return translations.GetString ("Subtracting the two positions you find out how many people are seated half way around the table. Doubling this number leaves you with the total amount of people.");
 			}
 		}
 
@@ -59,18 +59,18 @@ namespace gbrainy.Games.Logic
 		{
 			switch (random.Next (3)) {
 			case 0:
-				ques1 = ServiceLocator.Instance.GetService <ITranslations> ().GetString ("5th");
-				ques2 = ServiceLocator.Instance.GetService <ITranslations> ().GetString ("19th");
+				ques1 = translations.GetString ("5th");
+				ques2 = translations.GetString ("19th");
 				Answer.Correct = "28";
 				break;
 			case 1:
-				ques1 = ServiceLocator.Instance.GetService <ITranslations> ().GetString ("4th");
-				ques2 = ServiceLocator.Instance.GetService <ITranslations> ().GetString ("12th");
+				ques1 = translations.GetString ("4th");
+				ques2 = translations.GetString ("12th");
 				Answer.Correct = "16";
 				break;
 			case 2:
-				ques1 = ServiceLocator.Instance.GetService <ITranslations> ().GetString ("9th");
-				ques2 = ServiceLocator.Instance.GetService <ITranslations> ().GetString ("22nd");
+				ques1 = translations.GetString ("9th");
+				ques2 = translations.GetString ("22nd");
 				Answer.Correct = "26";
 				break;
 			}			
@@ -110,7 +110,7 @@ namespace gbrainy.Games.Logic
 			gr.Stroke ();
 
 			gr.DrawTextCentered (pos_x + figure_size, pos_y + 0.08 + figure_size * 2, 
-				ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Two people in the table sitting across each other"));
+				translations.GetString ("Two people in the table sitting across each other"));
 		}
 	}
 }

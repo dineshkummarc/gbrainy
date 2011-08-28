@@ -17,12 +17,18 @@
  * Boston, MA 02111-1307, USA.
  */
 
+using gbrainy.Core.Services;
+
 namespace gbrainy.Clients.Classical.Dialogs
 {
 	public class BuilderDialog : Gtk.Dialog
 	{
-		public BuilderDialog (string resourceName, string dialogName) : this (null, resourceName, dialogName)
+		ITranslations translations;
+
+		public BuilderDialog (ITranslations translations, string resourceName, string dialogName) : 
+			this ((System.Reflection.Assembly) null, resourceName, dialogName)
 		{
+			this.translations = translations;
 		}
 
 		public BuilderDialog (System.Reflection.Assembly assembly, string resourceName, string dialogName) : 

@@ -40,7 +40,7 @@ namespace gbrainy.Core.Main.Verbal
 		}
 
 		public override string Name {
-			get { return String.Format (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Multiple options #{0}"), Variant);}
+			get { return String.Format (translations.GetString ("Multiple options #{0}"), Variant);}
 		}
 
 		public override string Question {
@@ -53,7 +53,7 @@ namespace gbrainy.Core.Main.Verbal
 
 				// Translators: {0} is replaced by a question and {1} by the possible valid answers
 				// E.g.: What is the correct option? Answer A, B, C or D.
-				return String.Format (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("{0} Answer {1}."),
+				return String.Format (translations.GetString ("{0} Answer {1}."),
 					Current.question, Answer.GetMultiOptionsPossibleAnswers (Current.answers.Length));
 			}
 		}
@@ -89,7 +89,7 @@ namespace gbrainy.Core.Main.Verbal
 					int n = (int) e.Data;
 
 					e.Context.MoveTo (0.05, 0.02);
-					e.Context.ShowPangoText (String.Format (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("{0}) {1}"), Answer.GetMultiOption (n), Current.answers[n].ToString ()));
+					e.Context.ShowPangoText (String.Format (translations.GetString ("{0}) {1}"), Answer.GetMultiOption (n), Current.answers[n].ToString ()));
 				};
 			}
 			SetAnswerCorrectShow ();
@@ -104,7 +104,7 @@ namespace gbrainy.Core.Main.Verbal
 
 			gr.SetPangoLargeFontSize ();
 			gr.MoveTo (0.1, DrawAreaY + 0.05);
-			gr.ShowPangoText (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Choose one of the following:"));
+			gr.ShowPangoText (translations.GetString ("Choose one of the following:"));
 		}
 	}
 }

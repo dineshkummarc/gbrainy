@@ -41,19 +41,19 @@ namespace gbrainy.Games.Logic
 		private const int rows = 4, columns = 4;
 
 		public override string Name {
-			get {return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Numbers in a grid");}
+			get {return translations.GetString ("Numbers in a grid");}
 		}
 
 		public override string Question {
-			get {return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("The numbers in the grid below follow a pattern. Which number should replace the question mark?");}
+			get {return translations.GetString ("The numbers in the grid below follow a pattern. Which number should replace the question mark?");}
 		}
 
 		public override string Tip {
 			get { 
 				if (orientation) 
-					return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("The pattern is arithmetical and works vertically.");
+					return translations.GetString ("The pattern is arithmetical and works vertically.");
 				else 
-					return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("The pattern is arithmetical and works horizontally.");
+					return translations.GetString ("The pattern is arithmetical and works horizontally.");
 			}
 		}
 
@@ -62,21 +62,21 @@ namespace gbrainy.Games.Logic
 				switch (operation) {
 				case Operation.MultiplyAndAdd:
 					if (orientation) {
-						return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("The fourth row is calculated by multiplying the first two rows and adding the third.");
+						return translations.GetString ("The fourth row is calculated by multiplying the first two rows and adding the third.");
 					} else {
-						return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("The fourth column is calculated by multiplying the first two columns and adding the third.");
+						return translations.GetString ("The fourth column is calculated by multiplying the first two columns and adding the third.");
 					}
 				case Operation.MutilplyAndSubs:
 					if (orientation) {
-						return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("The fourth row is calculated by multiplying the first two rows and subtracting the third.");
+						return translations.GetString ("The fourth row is calculated by multiplying the first two rows and subtracting the third.");
 					} else {
-						return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("The fourth column is calculated by multiplying the first two columns and subtracting the third.");
+						return translations.GetString ("The fourth column is calculated by multiplying the first two columns and subtracting the third.");
 					}
 				case Operation.AddAndSubs:
 					if (orientation) {
-						return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("The fourth row is calculated by adding the first two rows and subtracting the third.");
+						return translations.GetString ("The fourth row is calculated by adding the first two rows and subtracting the third.");
 					} else {
-						return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("The fourth column is calculated by adding the first two columns and subtracting the third.");
+						return translations.GetString ("The fourth column is calculated by adding the first two columns and subtracting the third.");
 					}
 				default:
 					return string.Empty;

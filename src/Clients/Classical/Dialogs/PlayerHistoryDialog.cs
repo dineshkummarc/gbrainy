@@ -23,6 +23,7 @@ using Mono.Unix;
 
 using gbrainy.Core.Main;
 using gbrainy.Core.Views;
+using gbrainy.Core.Services;
 
 namespace gbrainy.Clients.Classical.Dialogs
 {
@@ -38,7 +39,7 @@ namespace gbrainy.Clients.Classical.Dialogs
 
 		CairoPreview drawing_area;
 
-		public PlayerHistoryDialog (PlayerHistory history) : base ("PlayerHistoryDialog.ui", "playerhistory")
+		public PlayerHistoryDialog (ITranslations translations, PlayerHistory history) : base (translations, "PlayerHistoryDialog.ui", "playerhistory")
 		{
 			string intro, built;
 
@@ -59,15 +60,15 @@ namespace gbrainy.Clients.Classical.Dialogs
 			// Translators: "The graph below" +  "It is built using" sentences
 			label_playerhistory.Text = String.Format (Catalog.GetString ("{0} {1}"), intro, built);
 
-			drawing_area = new CairoPreview (history);
+			drawing_area = new CairoPreview (translations, history);
 			history_preview.Add (drawing_area);
 			drawing_area.Visible = true;
 
 	 		checkbutton_total.Label = Catalog.GetString ("Total");
-	 		checkbutton_logic.Label = GameTypesDescription.GetLocalized (GameTypes.LogicPuzzle);
-	 		checkbutton_calculation.Label = GameTypesDescription.GetLocalized (GameTypes.Calculation);
-	 		checkbutton_memory.Label = GameTypesDescription.GetLocalized (GameTypes.Memory);
-	 		checkbutton_verbal.Label = GameTypesDescription.GetLocalized (GameTypes.VerbalAnalogy);
+	 		checkbutton_logic.Label = GameTypesDescription.GetLocalized (translations, GameTypes.LogicPuzzle);
+	 		checkbutton_calculation.Label = GameTypesDescription.GetLocalized (translations, GameTypes.Calculation);
+	 		checkbutton_memory.Label = GameTypesDescription.GetLocalized (translations, GameTypes.Memory);
+	 		checkbutton_verbal.Label = GameTypesDescription.GetLocalized (translations, GameTypes.VerbalAnalogy);
 
 	 		checkbutton_total.Active = checkbutton_memory.Active = checkbutton_logic.Active = checkbutton_calculation.Active = checkbutton_verbal.Active = true;
 		}
@@ -106,9 +107,9 @@ namespace gbrainy.Clients.Classical.Dialogs
 		{
 			PlayerHistoryView view;
 
-			public CairoPreview (PlayerHistory history)
+			public CairoPreview (ITranslations translations, PlayerHistory history)
 			{
-				view = new PlayerHistoryView (history);
+				view = new PlayerHistoryView (translations, history);
 			}
 
 			public PlayerHistoryView View {

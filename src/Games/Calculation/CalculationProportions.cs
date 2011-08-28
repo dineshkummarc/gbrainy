@@ -34,7 +34,7 @@ namespace gbrainy.Games.Calculation
 		double num, den, percentage, correct;
 
 		public override string Name {
-			get {return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Proportions");}
+			get {return translations.GetString ("Proportions");}
 		}
 
 		public override GameTypes Type {
@@ -44,7 +44,7 @@ namespace gbrainy.Games.Calculation
 		public override string Question {
 			get {
 				return String.Format (
-					ServiceLocator.Instance.GetService <ITranslations> ().GetString ("What is {0}% of {1}/{2}? Answer {3}, {4}, {5} or {6}."), 
+					translations.GetString ("What is {0}% of {1}/{2}? Answer {3}, {4}, {5} or {6}."), 
 					percentage, num, den, Answer.GetMultiOption (0), Answer.GetMultiOption (1), Answer.GetMultiOption (2), Answer.GetMultiOption (3));}
 		}
 
@@ -128,7 +128,7 @@ namespace gbrainy.Games.Calculation
 			gr.SetPangoLargeFontSize ();
 
 			gr.MoveTo (0.1, 0.15);
-			gr.ShowPangoText (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Choose one of the following:"));
+			gr.ShowPangoText (translations.GetString ("Choose one of the following:"));
 		}
 	}
 }

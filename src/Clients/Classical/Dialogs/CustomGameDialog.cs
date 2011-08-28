@@ -23,6 +23,7 @@ using Mono.Unix;
 using System.Collections.Generic;
 
 using gbrainy.Core.Main;
+using gbrainy.Core.Services;
 using gbrainy.Clients.Classical.Widgets;
 
 namespace gbrainy.Clients.Classical.Dialogs
@@ -44,7 +45,7 @@ namespace gbrainy.Clients.Classical.Dialogs
 		const int COL_OBJECT = 3;
 		const int COL_INDEX = 4;
 
-		public CustomGameDialog (GameSession session) : base ("CustomGameDialog.ui", "customgame")
+		public CustomGameDialog (ITranslations translations, GameSession session) : base (translations, "CustomGameDialog.ui", "customgame")
 		{
 			Game game;
 
@@ -126,7 +127,7 @@ namespace gbrainy.Clients.Classical.Dialogs
 
 					game = (Game) Activator.CreateInstance (games [i].TypeOf, true);
 					game.Variant = games [i].Variant;
-					type = GameTypesDescription.GetLocalized (game.Type);
+					type = GameTypesDescription.GetLocalized (translations, game.Type);
 					games_store.AppendValues (game.Name, type, true, game, i);
 				}
 			}

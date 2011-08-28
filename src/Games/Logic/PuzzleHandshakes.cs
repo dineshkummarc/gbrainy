@@ -29,17 +29,17 @@ namespace gbrainy.Games.Logic
 		int people, handshakes;
 
 		public override string Name {
-			get {return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Handshakes");}
+			get {return translations.GetString ("Handshakes");}
 		}
 
 		public override string Question {
 			get {return String.Format (
-				ServiceLocator.Instance.GetService <ITranslations> ().GetString ("All attendees to a party are introduced to one another. {0} handshakes are made in total. How many people are attending the party?"), 				handshakes);
+				translations.GetString ("All attendees to a party are introduced to one another. {0} handshakes are made in total. How many people are attending the party?"), 				handshakes);
 			}
 		}
 
 		public override string Tip {
-			get { return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Try to imagine a situation in which you are meeting a small number of people.");}
+			get { return translations.GetString ("Try to imagine a situation in which you are meeting a small number of people.");}
 		}
 
 		protected override void Initialize ()

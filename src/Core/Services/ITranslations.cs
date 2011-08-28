@@ -22,6 +22,7 @@ namespace gbrainy.Core.Services
 	public interface ITranslations : IService
 	{
 		int TranslationPercentage { get;}
+		string Language { get; set; }
 
 		void Init (string package, string localedir);
 		string GetString (string s);

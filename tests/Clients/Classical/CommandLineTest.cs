@@ -23,16 +23,21 @@ using NUnit.Framework;
 
 using gbrainy.Clients.Classical;
 using gbrainy.Core.Main;
+using gbrainy.Core.Services;
+using gbrainy.Core.Libraries;
 
 namespace gbrainy.Test.Clients.Classical
 {
 	[TestFixture]
 	public class CommandLineTest : UnitTestSupport
 	{
+		ITranslations translations;
+
 		[TestFixtureSetUp]
 		public void Construct ()
 		{
 			RegisterDefaultServices ();
+			translations = new TranslationsCatalog ();
 		}
 
 		[Test]
@@ -44,7 +49,7 @@ namespace gbrainy.Test.Clients.Classical
 			args = new string [1];
 			args [0] = "--norandom";
 
-			line = new CommandLine (args);
+			line = new CommandLine (translations, args);
 			Assert.AreEqual (true, line.RandomOrder);
 			line.Parse ();
 
@@ -72,6 +77,7 @@ namespace gbrainy.Test.Clients.Classical
 					continue;
 
 				Game game = (Game) Activator.CreateInstance (games[i].TypeOf, true);
+				game.translations = translations;
 				game.Variant = games[i].Variant;
 
 				if (cand_idx > 0)
@@ -88,7 +94,7 @@ namespace gbrainy.Test.Clients.Classical
 			args [0] = "--customgame";
 			args [1] = game_list.ToString ();
 
-			line = new CommandLine (args);
+			line = new CommandLine (translations, args);
 			line.Parse ();
 
 			Assert.AreEqual (cand_idx, line.PlayList.Length);

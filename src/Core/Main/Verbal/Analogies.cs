@@ -56,12 +56,12 @@ namespace gbrainy.Core.Main.Verbal
 					return Current.rationale;
 
 				string str;	
-				str = String.Format (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Possible correct answers are: {0}."), 
+				str = String.Format (translations.GetString ("Possible correct answers are: {0}."), 
 					Answer.CorrectShow);
 
 				// For multiple answer build a rationale
 				// Translators: answer + rationale of the answer
-				return String.Format (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("{0} {1}"), str, 
+				return String.Format (translations.GetString ("{0} {1}"), str, 
 					Current.rationale);
 			}
 		}
@@ -84,7 +84,7 @@ namespace gbrainy.Core.Main.Verbal
 				if (i + 1 < items.Length) {
 					// Translators: this the separator used when concatenating multiple possible answers for verbal analogies
 					// For example: "Possible correct answers are: sleep, rest."
-					str += ServiceLocator.Instance.GetService <ITranslations> ().GetString (", ");
+					str += translations.GetString (", ");
 				}
 			}
 			Answer.CorrectShow = str;
@@ -126,7 +126,7 @@ namespace gbrainy.Core.Main.Verbal
 					if (GetText.StringExists (analogy.answers [indices[i]]) == false)
 						localized = false;
 
-					answers [i] = ServiceLocator.Instance.GetService <ITranslations> ().GetString (analogy.answers [indices[i]]);
+					answers [i] = translations.GetString (analogy.answers [indices[i]]);
 					if (indices[i] == analogy.right)
 						new_right = i;
 				}
@@ -140,13 +140,13 @@ namespace gbrainy.Core.Main.Verbal
 				localized = false;
 
 			if (localized == true) {
-				analogy.question = ServiceLocator.Instance.GetService <ITranslations> ().GetString (analogy.question);
+				analogy.question = translations.GetString (analogy.question);
 
 				if (String.IsNullOrEmpty (analogy.tip) == false)
-					analogy.tip = ServiceLocator.Instance.GetService <ITranslations> ().GetString (analogy.tip);
+					analogy.tip = translations.GetString (analogy.tip);
 
 				if (String.IsNullOrEmpty (analogy.rationale) == false)
-					analogy.rationale = ServiceLocator.Instance.GetService <ITranslations> ().GetString (analogy.rationale);
+					analogy.rationale = translations.GetString (analogy.rationale);
 			} else {
 
 				// Get analogy again

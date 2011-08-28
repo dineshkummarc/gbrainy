@@ -30,9 +30,11 @@ namespace gbrainy.Core.Main
 		static char separator = '|';
 		const int MAX_POSSIBLE_ANSWER = 7;
 		string correct;
+		ITranslations translations;
 
-		public GameAnswer ()
+		public GameAnswer (ITranslations translations)
 		{
+			this.translations = translations;
 			CheckAttributes = GameAnswerCheckAttributes.Trim | GameAnswerCheckAttributes.IgnoreCase;
 			CheckExpression = ".+";
 		}
@@ -105,21 +107,21 @@ namespace gbrainy.Core.Main
 				// For languages represented with the Latin alphabet use
 				// the same than English
 			case 0: // First possible answer for a series (e.g.: Figure A)
-				return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("A");
+				return translations.GetString ("A");
 			case 1: // Second possible answer for a series
-				return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("B");
+				return translations.GetString ("B");
 			case 2: // Third possible answer for a series
-				return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("C");
+				return translations.GetString ("C");
 			case 3: // Fourth possible answer for a series
-				return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("D");
+				return translations.GetString ("D");
 			case 4: // Fifth possible answer for a series
-				return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("E");
+				return translations.GetString ("E");
 			case 5: // Sixth possible answer for a series
-				return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("F");
+				return translations.GetString ("F");
 			case 6: // Seventh possible answer for a series
-				return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("G");
+				return translations.GetString ("G");
 			case 7: // Eighth possible answer for a series
-				return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("H");
+				return translations.GetString ("H");
 			default:
 				throw new ArgumentOutOfRangeException ("Do not have an option for this answer");
 			}
@@ -134,15 +136,15 @@ namespace gbrainy.Core.Main
 				throw new InvalidOperationException ("You need more than 1 answer to select from");
 			case 2:
 				// Translators. This is the list of valid answers, like A or B.
-				return String.Format (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("{0} or {1}"),
+				return String.Format (translations.GetString ("{0} or {1}"),
 					GetMultiOption (0), GetMultiOption (1));
 			case 3:
 				// Translators. This is the list of valid answers, like A, B or C.
-				return String.Format (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("{0}, {1} or {2}"),
+				return String.Format (translations.GetString ("{0}, {1} or {2}"),
 					GetMultiOption (0), GetMultiOption (1), GetMultiOption (2));
 			case 4:
 				// Translators. This is the list of valid answers, like A, B, C or D.
-				return String.Format (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("{0}, {1}, {2} or {3}"),
+				return String.Format (translations.GetString ("{0}, {1}, {2} or {3}"),
 					GetMultiOption (0), GetMultiOption (1), GetMultiOption (2), GetMultiOption (3));
 			default:
 				throw new InvalidOperationException ("Number of multiple options not supported");
@@ -151,8 +153,7 @@ namespace gbrainy.Core.Main
 
 		public string GetFigureName (int answer)
 		{
-			return String.Format (ServiceLocator.Instance.GetService <ITranslations> ()
-				.GetString ("Figure {0}"), GetMultiOptionInternal (answer));
+			return String.Format (translations.GetString ("Figure {0}"), GetMultiOptionInternal (answer));
 		}
 
 		public bool CheckAnswer (string answer)

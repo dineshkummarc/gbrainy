@@ -45,15 +45,15 @@ namespace gbrainy.Games.Logic
 		ItemCircle[] circles;
 
 		public override string Name {
-			get {return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Count circles");}
+			get {return translations.GetString ("Count circles");}
 		}
 
 		public override string Question {
-			get {return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("How many circles do you count?");} 
+			get {return translations.GetString ("How many circles do you count?");} 
 		}
 
 		public override string Tip {
-			get { return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("It is an easy exercise if you systematically count the circles.");}
+			get { return translations.GetString ("It is an easy exercise if you systematically count the circles.");}
 		}
 
 		protected override void Initialize ()

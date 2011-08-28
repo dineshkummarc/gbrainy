@@ -73,25 +73,25 @@ namespace gbrainy.Games.Logic
 		private const double pos7_y = 0.11;
 
 		public override string Name {
-			get {return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Most in common");}
+			get {return translations.GetString ("Most in common");}
 		}
 
 		public override string Question {
 			get {return String.Format (
-				ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Which of the possible answers have the most in common with the four given figures? Answer {0}, {1}, {2} or {3}."),
+				translations.GetString ("Which of the possible answers have the most in common with the four given figures? Answer {0}, {1}, {2} or {3}."),
 					Answer.GetMultiOption (0), Answer.GetMultiOption (1), Answer.GetMultiOption (2), Answer.GetMultiOption (3));}
 		}
 
 		public override string Tip {
-			get { return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Think of the common elements that the given figures have inside them.");}
+			get { return translations.GetString ("Think of the common elements that the given figures have inside them.");}
 		}
 
 		public override string Rationale {
 			get {
 				if (CurrentDifficulty ==  GameDifficulty.Easy)
-					return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("It has the same number of elements inside the figure as the given figures.");
+					return translations.GetString ("It has the same number of elements inside the figure as the given figures.");
 				else
-					return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("It is the figure with the most elements in common compared to the given figures.");
+					return translations.GetString ("It is the figure with the most elements in common compared to the given figures.");
 			}
 		}
 
@@ -311,7 +311,7 @@ namespace gbrainy.Games.Logic
 			y += 0.28;
 			x = DrawAreaX;
 			gr.MoveTo (x - 0.06, y);
-			gr.ShowPangoText (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Choose one of the following:"));
+			gr.ShowPangoText (translations.GetString ("Choose one of the following:"));
 			gr.Stroke ();
 		}
 	}

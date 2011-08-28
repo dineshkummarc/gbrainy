@@ -38,7 +38,7 @@ namespace gbrainy.Games.Memory
 		private int [] dotsPerColor;
 
 		public override string Name {
-			get {return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Counting dots");}
+			get {return translations.GetString ("Counting dots");}
 		}
 
 		public override bool UsesColors {
@@ -49,7 +49,7 @@ namespace gbrainy.Games.Memory
 			get { 
 				return String.Format (
 					// Translators: {0} is the name of the color. The color name is always singular
-					ServiceLocator.Instance.GetService <ITranslations> ().GetString ("How many dots of {0} color were in the previous image? Answer using numbers."),
+					translations.GetString ("How many dots of {0} color were in the previous image? Answer using numbers."),
 					palette.Name (0));
 			}
 		}
@@ -71,7 +71,7 @@ namespace gbrainy.Games.Memory
 			location_order = new ArrayListIndicesRandom (NUMCOLUMNS*NUMCOLUMNS);
 			location_order.Initialize();
 
-			palette = new ColorPalette ();
+			palette = new ColorPalette (translations);
 
 			// dotsPerColor is compared with iterator of dots. (this iterator is 0 based, so I
 			// have to substract 1 to make dotsPerColor contents 0 based.

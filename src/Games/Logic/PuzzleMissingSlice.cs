@@ -59,22 +59,22 @@ namespace gbrainy.Games.Logic
 		};
 
 		public override string Name {
-			get {return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Missing slice");}
+			get {return translations.GetString ("Missing slice");}
 		}
 
 		public override string Question {
 			get {return String.Format (
-				ServiceLocator.Instance.GetService <ITranslations> ().GetString ("The slices below have some kind of relation. Which is the missing slice in the circle below? Answer {0}, {1} or {2}."),
+				translations.GetString ("The slices below have some kind of relation. Which is the missing slice in the circle below? Answer {0}, {1} or {2}."),
 				Answer.GetMultiOption (0), Answer.GetMultiOption (1), Answer.GetMultiOption (2));}
 		}
 
 		public override string Tip {
-			get { return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Each slice is related to the opposite one.");}
+			get { return translations.GetString ("Each slice is related to the opposite one.");}
 		}
 
 		public override string Rationale {
 			get {
-				return String.Format (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("All numbers of each slice, when added to the ones of the opposite slice, add always {0}."), sum_offset + 8);
+				return String.Format (translations.GetString ("All numbers of each slice, when added to the ones of the opposite slice, add always {0}."), sum_offset + 8);
 			}
 		}
 
@@ -215,7 +215,7 @@ namespace gbrainy.Games.Logic
 			}
 
 			gr.MoveTo (0.1, 0.55);
-			gr.ShowPangoText (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Choose one of the following:"));
+			gr.ShowPangoText (translations.GetString ("Choose one of the following:"));
 			gr.Stroke ();
 		}
 	}

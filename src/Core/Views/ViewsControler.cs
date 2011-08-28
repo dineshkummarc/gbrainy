@@ -20,6 +20,7 @@
 using System;
 
 using gbrainy.Core.Main;
+using gbrainy.Core.Services;
 
 namespace gbrainy.Core.Views
 {
@@ -30,10 +31,10 @@ namespace gbrainy.Core.Views
 		FinishView finish;
 		Game game;
 
-		public ViewsControler (GameSession session)
+		public ViewsControler (ITranslations translations, GameSession session)
 		{
-			welcome = new WelcomeView ();
-			finish = new FinishView (session);
+			welcome = new WelcomeView (translations);
+			finish = new FinishView (translations, session);
 		}
 
 		public GameSession.SessionStatus Status {

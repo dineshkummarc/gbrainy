@@ -34,7 +34,7 @@ namespace gbrainy.Games.Calculation
 		private int answer_idx;
 
 		public override string Name {
-			get {return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Greatest divisor");}
+			get {return translations.GetString ("Greatest divisor");}
 		}
 
 		public override GameTypes Type {
@@ -42,7 +42,7 @@ namespace gbrainy.Games.Calculation
 		}
 
 		public override string Question {
-			get { return String.Format (ServiceLocator.Instance.GetService <ITranslations> ().GetString (
+			get { return String.Format (translations.GetString (
 				"Which of the possible divisors is the greatest that divides all numbers? Answer {0}, {1}, {2} or {3}."),
 				Answer.GetMultiOption (0), Answer.GetMultiOption (1), Answer.GetMultiOption (2), Answer.GetMultiOption (3));
 			}
@@ -150,7 +150,7 @@ namespace gbrainy.Games.Calculation
 					int d = (int) e.Data;
 					e.Context.SetPangoLargeFontSize ();
 					e.Context.MoveTo (0.07, 0.02);
-					e.Context.ShowPangoText (String.Format (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("{0}) {1}"), Answer.GetMultiOption (d),
+					e.Context.ShowPangoText (String.Format (translations.GetString ("{0}) {1}"), Answer.GetMultiOption (d),
 						answers[d].ToString ()));
 				};
 			}
@@ -241,7 +241,7 @@ namespace gbrainy.Games.Calculation
 
 			gr.MoveTo (0.05, y);
 			gr.SetPangoLargeFontSize ();
-			gr.ShowPangoText (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Numbers"));
+			gr.ShowPangoText (translations.GetString ("Numbers"));
 			y += 0.08;
 
 			for (int n = 0; n < numbers.Length; n++)
@@ -255,7 +255,7 @@ namespace gbrainy.Games.Calculation
 			y += 0.16;
 
 			gr.MoveTo (0.05, y);
-			gr.ShowPangoText (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Possible divisors"));
+			gr.ShowPangoText (translations.GetString ("Possible divisors"));
 		}
 	}
 }

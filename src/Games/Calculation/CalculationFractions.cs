@@ -59,7 +59,7 @@ namespace gbrainy.Games.Calculation
 		const string format_string = "{0:##0.###}";
 
 		public override string Name {
-			get {return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Fractions");}
+			get {return translations.GetString ("Fractions");}
 		}
 
 		public override GameTypes Type {
@@ -67,7 +67,7 @@ namespace gbrainy.Games.Calculation
 		}
 
 		public override string Question {
-			get {return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("What is the result of the given operation? Answer using either a fraction or a number.");}
+			get {return translations.GetString ("What is the result of the given operation? Answer using either a fraction or a number.");}
 		}
 
 		private int Factor {

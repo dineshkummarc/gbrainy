@@ -202,12 +202,12 @@ namespace gbrainy.Games.Logic
 		};
 
 		public override string Name {
-			get {return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Square with dots");}
+			get {return translations.GetString ("Square with dots");}
 		}
 
 		public override string Question {
 			get {return (String.Format (
-				ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Which is the next logical figure in the sequence? Answer {0}, {1} or {2}."),
+				translations.GetString ("Which is the next logical figure in the sequence? Answer {0}, {1} or {2}."),
 				Answer.GetMultiOption (0), Answer.GetMultiOption (1), Answer.GetMultiOption (2)));}
 		}
 
@@ -217,9 +217,9 @@ namespace gbrainy.Games.Logic
 				switch (puzzle_index) {
 				case 0:
 					// Translators: Please, do not make the translated string longer than the original English one. It will not fit in screen.
-					return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("From the top-left figure, the top-left circle moves down, the bottom-left circle moves up, the bottom-right moves diagonally up-left and the top-right moves diagonally down-left.");
+					return translations.GetString ("From the top-left figure, the top-left circle moves down, the bottom-left circle moves up, the bottom-right moves diagonally up-left and the top-right moves diagonally down-left.");
 				case 2:
-					return ServiceLocator.Instance.GetService <ITranslations> ().GetString
+					return translations.GetString
 					("From the top-left figure, the figure is rotated counterclockwise 90 degrees.");
 				case 1: // TODO
 				default:
@@ -338,7 +338,7 @@ namespace gbrainy.Games.Logic
 
 			y += figure_size + 0.10;
 			gr.MoveTo (x, y - 0.02);
-			gr.ShowPangoText (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Choose one of the following:"));
+			gr.ShowPangoText (translations.GetString ("Choose one of the following:"));
 		}
 	}
 }

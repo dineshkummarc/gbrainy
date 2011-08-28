@@ -28,6 +28,8 @@ namespace gbrainy.Core.Libraries
 	{
 		double strings, translated;
 		const int max_sample = 250;
+		
+		public string Language { set; get; }
 
 		public int TranslationPercentage { 
 			get {

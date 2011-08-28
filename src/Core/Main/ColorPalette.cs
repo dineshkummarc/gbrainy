@@ -27,6 +27,7 @@ namespace gbrainy.Core.Main
 	public class ColorPalette
 	{
 		double alpha;
+		ITranslations translations;
 
 		public enum Id
 		{
@@ -44,31 +45,38 @@ namespace gbrainy.Core.Main
 			White=Last
 		};
 
-		private static readonly string[] ColorName= new string[] {
-			ServiceLocator.Instance.GetService <ITranslations> ().GetString ("red"),
-			ServiceLocator.Instance.GetService <ITranslations> ().GetString ("green"),
-			ServiceLocator.Instance.GetService <ITranslations> ().GetString ("blue"),
-			ServiceLocator.Instance.GetService <ITranslations> ().GetString ("yellow"),
-			ServiceLocator.Instance.GetService <ITranslations> ().GetString ("magenta"),
-			ServiceLocator.Instance.GetService <ITranslations> ().GetString ("orange"),
-			ServiceLocator.Instance.GetService <ITranslations> ().GetString ("black"),
-			ServiceLocator.Instance.GetService <ITranslations> ().GetString ("white")
-		};
+		private string[] ColorName;
+		private Cairo.Color[] CairoColor;
 
-		private static Cairo.Color[] CairoColor = new Cairo.Color[] {
-			new Cairo.Color (0.81, 0.1, 0.13),
-			new Cairo.Color (0.54, 0.71, 0.24),
-			new Cairo.Color (0.17, 0.23 ,0.56),
-			new Cairo.Color (0.86, 0.85, 0.25),
-			new Cairo.Color (0.82, 0.25, 0.59),
-			new Cairo.Color (1, 0.54, 0),
-			new Cairo.Color (0, 0, 0),
-			new Cairo.Color (.9, .9, .9)
-		};
-
-		public ColorPalette ()
+		public ColorPalette (ITranslations translations)
 		{
+			this.translations = translations;
 			alpha = 1;
+		}
+
+		void LoadColorArrays ()
+		{
+			CairoColor = new Cairo.Color[] {
+				new Cairo.Color (0.81, 0.1, 0.13),
+				new Cairo.Color (0.54, 0.71, 0.24),
+				new Cairo.Color (0.17, 0.23 ,0.56),
+				new Cairo.Color (0.86, 0.85, 0.25),
+				new Cairo.Color (0.82, 0.25, 0.59),
+				new Cairo.Color (1, 0.54, 0),
+				new Cairo.Color (0, 0, 0),
+				new Cairo.Color (.9, .9, .9)
+			};
+
+			ColorName = new string[] {
+				translations.GetString ("red"),
+				translations.GetString ("green"),
+				translations.GetString ("blue"),
+				translations.GetString ("yellow"),
+				translations.GetString ("magenta"),
+				translations.GetString ("orange"),
+				translations.GetString ("black"),
+				translations.GetString ("white")
+			};
 		}
 
 		public double Alpha {

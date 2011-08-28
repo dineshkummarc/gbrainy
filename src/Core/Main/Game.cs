@@ -47,12 +47,21 @@ namespace gbrainy.Core.Main
 		{
 			containers = new List <Toolkit.Container> ();
 			difficulty = GameDifficulty.Medium;
-			answer = new GameAnswer ();
 		}
 
 		public GameAnswer Answer {
 			get {return answer; }
 			set {answer = value; }
+		}
+
+		// At some point, we may move this to constructor injection
+		ITranslations _translations;
+		public ITranslations translations { 
+			set {  
+				_translations = value;
+				answer = new GameAnswer (translations);
+			}
+			get { return _translations; }
 		}
 
 #region Methods to override in your own games
@@ -125,14 +134,14 @@ namespace gbrainy.Core.Main
 			get {
 				string str;
 
-				str = String.Format (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("The correct answer is {0}."),
+				str = String.Format (translations.GetString ("The correct answer is {0}."),
 				                     Answer.CorrectShow);
 
 				if (String.IsNullOrEmpty (Rationale))
 					return str;
 
 				// Translators: answer + rationale of the answer
-				return String.Format (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("{0} {1}"), str, Rationale);
+				return String.Format (translations.GetString ("{0} {1}"), str, Rationale);
 			}
 		}
 

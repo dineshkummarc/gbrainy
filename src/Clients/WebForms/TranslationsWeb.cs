@@ -26,26 +26,23 @@ namespace gbrainy.Clients.WebForms
 {
 	public class TranslationsWeb : ITranslations
 	{
-		public delegate string GetLanguageFromSessionHandler ();
 		static readonly object sync = new object ();
 		
 		public int TranslationPercentage {
 			get { return 100;}
 		}
-
-		public GetLanguageFromSessionHandler OnGetLanguageFromSession;
+		
+		string language;
+		public string Language {
+			get { return language;}
+			set {
+				language = value;
+			}
+		}
 
 		public void Init (string package, string localedir)
 		{
 			Catalog.Init (package, localedir);
-		}
-		
-		string GetLanguageFromSession ()
-		{
-			if (OnGetLanguageFromSession == null)
-				return LanguageSupport.Languages [0].LangCode;
-			
-			return OnGetLanguageFromSession ();
 		}
 
 		public string GetString (string s)
@@ -54,7 +51,7 @@ namespace gbrainy.Clients.WebForms
 
 			lock (sync)
 			{
-				string code = GetLanguageFromSession ();
+				string code = Language;
 				SetContext (code);
 				str = Catalog.GetString (s);
 			}
@@ -67,7 +64,7 @@ namespace gbrainy.Clients.WebForms
 
 			lock (sync)
 			{
-				string code = GetLanguageFromSession ();
+				string code = Language;
 				SetContext (code);
 				str = Catalog.GetPluralString (s, p, n);
 			}

@@ -29,20 +29,20 @@ namespace gbrainy.Games.Logic
 	{
 		int type;
 		public override string Name {
-			get {return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Four sided");}
+			get {return translations.GetString ("Four sided");}
 		}
 
 		public override string Question {
-			get {return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("How many four sided figures do you count in the figure below?");} 
+			get {return translations.GetString ("How many four sided figures do you count in the figure below?");} 
 		}
 
 		public override string Tip {
-			get { return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("A four sided figure can be embedded inside another figure.");}
+			get { return translations.GetString ("A four sided figure can be embedded inside another figure.");}
 		}
 
 		public override string Rationale {
 			get { 
-				return String.Format (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("The four sided figures are made by connecting the following points: {0}"),
+				return String.Format (translations.GetString ("The four sided figures are made by connecting the following points: {0}"),
 					(type == 0) ? "abde, degh, bcef, efhi, acdf, dfgi, abhg, bcih, acig, aghe, aefc, deig, bcie." : 
 					"abde, degh, bcef, efhi, acdf, dfgi, abhg, bcih, acig, aghe, aefc, deig, bcie, acde, cehi, abeg, egif.");
 			}

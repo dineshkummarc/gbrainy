@@ -33,11 +33,13 @@ namespace gbrainy.Core.Views
 		System.Timers.Timer timer;
 		EventHandler finish;
 		ISynchronizeInvoke synchronize;
+		ITranslations translations;
 
 		public event EventHandler DrawRequest; // Not used in this view
 
-		public CountDownView (EventHandler OnFinish)
+		public CountDownView (ITranslations translations, EventHandler OnFinish)
 		{
+			this.translations = translations;
 			timer = new System.Timers.Timer ();
 			timer.Elapsed += TimerUpdater;
 			timer.Interval = (1 * 1000); // 1 second
@@ -74,7 +76,7 @@ namespace gbrainy.Core.Views
 			gr.Color = new Cairo.Color (0, 0, 0, 1);
 
 			gr.SetPangoLargeFontSize ();
-			gr.DrawTextCentered (0.5, 0.1, ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Get ready to memorize the next objects..."));
+			gr.DrawTextCentered (0.5, 0.1, translations.GetString ("Get ready to memorize the next objects..."));
 			gr.Stroke ();
 
 			gr.SetPangoFontSize (0.35);

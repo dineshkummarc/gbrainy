@@ -28,24 +28,24 @@ namespace gbrainy.Games.Logic
 		private int type;
 
 		public override string Name {
-			get {return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Squares");}
+			get {return translations.GetString ("Squares");}
 		}
 
 		public override string Question {
-			get {return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("How many squares of any size do you count in the figure below?");} 
+			get {return translations.GetString ("How many squares of any size do you count in the figure below?");} 
 		}
 
 		public override string Tip {
-			get { return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("A square is a rectangle with sides of equal length. A square can also be built from other squares.");}
+			get { return translations.GetString ("A square is a rectangle with sides of equal length. A square can also be built from other squares.");}
 		}
 
 		public override string Rationale {
 			get {
 				switch (type) {
 				case 0:
-					return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("There are 16 single squares, 9 squares made by 4 single squares, 4 squares made by 9 single squares and 1 square made by 16 single squares.");
+					return translations.GetString ("There are 16 single squares, 9 squares made by 4 single squares, 4 squares made by 9 single squares and 1 square made by 16 single squares.");
 				case 1:
-					return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("There are 9 single squares, 4 squares made by 4 single squares and 1 square made by 9 single squares.");
+					return translations.GetString ("There are 9 single squares, 4 squares made by 4 single squares and 1 square made by 9 single squares.");
 				default:
 					return string.Empty;
 				}

@@ -32,20 +32,20 @@ namespace gbrainy.Games.Logic
 		private int divisor;
 
 		public override string Name {
-			get {return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Circles in a grid");}
+			get {return translations.GetString ("Circles in a grid");}
 		}
 
 		public override string Question {
-			get {return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("One of the numbers in the grid must be circled. Which one?");}
+			get {return translations.GetString ("One of the numbers in the grid must be circled. Which one?");}
 		}
 
 		public override string Tip {
-			get { return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("All circled numbers share an arithmetical property.");}
+			get { return translations.GetString ("All circled numbers share an arithmetical property.");}
 		}
 
 		public override string Rationale {
 			get {
-				return String.Format (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Every circled number can be divided by {0}."), divisor);
+				return String.Format (translations.GetString ("Every circled number can be divided by {0}."), divisor);
 			}
 		}
 

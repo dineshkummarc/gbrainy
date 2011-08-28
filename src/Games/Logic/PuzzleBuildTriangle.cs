@@ -48,17 +48,17 @@ namespace gbrainy.Games.Logic
 		private double radian = Math.PI / 180;
 
 		public override string Name {
-			get {return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Build a triangle");}
+			get {return translations.GetString ("Build a triangle");}
 		}
 
 		public override string Question {
 			get {return String.Format (
-				ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Which three pieces can you use together to build a triangle? Answer using the three figure names, e.g.: {0}{1}{2}."),
+				translations.GetString ("Which three pieces can you use together to build a triangle? Answer using the three figure names, e.g.: {0}{1}{2}."),
 					Answer.GetMultiOption (0), Answer.GetMultiOption (1), Answer.GetMultiOption (2));}
 		}
 
 		public override string Tip {
-			get { return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("The resulting triangle is isosceles.");}
+			get { return translations.GetString ("The resulting triangle is isosceles.");}
 		}
 
 		protected override void Initialize ()
@@ -171,7 +171,7 @@ namespace gbrainy.Games.Logic
 				return;
 
 			gr.MoveTo (DrawAreaX, y + 0.28);
-			gr.ShowPangoText (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("The triangle is:"));
+			gr.ShowPangoText (translations.GetString ("The triangle is:"));
 			gr.Stroke ();
 		
 			x = DrawAreaX + 0.35;

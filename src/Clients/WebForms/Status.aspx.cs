@@ -116,9 +116,9 @@ namespace gbrainy.Clients.WebForms
             	total_label.Text = "Total active sessions: " + Global.Sessions.Count;
 
 		// Games
-		string text = Game.CreateManager ().GetGamesSummary ();
-		text = text.Replace (Environment.NewLine, "<br/>");
-		games_label.Text = text;
+		//string text = Game.CreateManager ().GetGamesSummary ();
+		//text = text.Replace (Environment.NewLine, "<br/>");
+		//games_label.Text = text;
 
 		// Assemblies
 		foreach (Assembly asm in AppDomain.CurrentDomain.GetAssemblies())

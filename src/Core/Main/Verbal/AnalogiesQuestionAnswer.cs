@@ -35,7 +35,7 @@ namespace gbrainy.Core.Main.Verbal
 		}
 
 		public override string Name {
-			get { return String.Format (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Question and answer #{0}"), Variant);}
+			get { return String.Format (translations.GetString ("Question and answer #{0}"), Variant);}
 		}
 
 		public override Dictionary <int, Analogy> List {

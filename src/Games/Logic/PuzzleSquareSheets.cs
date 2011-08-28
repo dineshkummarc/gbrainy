@@ -25,21 +25,21 @@ namespace gbrainy.Games.Logic
 	public class PuzzleSquareSheets : Game
 	{
 		public override string Name {
-			get {return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Square sheets");}
+			get {return translations.GetString ("Square sheets");}
 		}
 
 		public override string Question {
-			get {return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("What is the minimum number of square sheets of paper of any size required to create the figure? Lines indicate frontiers between different sheets.");}
+			get {return translations.GetString ("What is the minimum number of square sheets of paper of any size required to create the figure? Lines indicate frontiers between different sheets.");}
 		}
 
 		public override string Tip {
-			get { return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("The sheets should overlap.");}
+			get { return translations.GetString ("The sheets should overlap.");}
 		}
 
 		public override string Rationale {
 			get {
 				// Translators: the translated version should not take more characters that the English original
-				return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("A full sized square of paper, a 3/4 of the whole size square of paper in the bottom right corner, another 3/4 square of paper in the top left corner and a 1/4 square of paper in the top left corner.");
+				return translations.GetString ("A full sized square of paper, a 3/4 of the whole size square of paper in the bottom right corner, another 3/4 square of paper in the top left corner and a 1/4 square of paper in the top left corner.");
 			}
 		}
 

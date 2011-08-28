@@ -38,7 +38,7 @@ namespace gbrainy.Core.Main.Verbal
 		}
 
 		public override string Name {
-			get { return String.Format (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Pair of words compare #{0}"), Variant);}
+			get { return String.Format (translations.GetString ("Pair of words compare #{0}"), Variant);}
 		}
 
 		public override Dictionary <int, Analogy> List {
@@ -53,7 +53,7 @@ namespace gbrainy.Core.Main.Verbal
 				if (Current.answers == null)
 					return Current.question;
 
-				return String.Format (ServiceLocator.Instance.GetService <ITranslations> ().GetString (
+				return String.Format (translations.GetString (
 					"Given the relationship between the two words below, which word has the same relationship to '{0}'?"),
 					sample);
 			}
@@ -91,7 +91,7 @@ namespace gbrainy.Core.Main.Verbal
 
 			gr.SetPangoLargeFontSize ();
 			gr.DrawTextCentered (0.5, y + 0.25,
-				String.Format (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Words: {0}"), samples));
+				String.Format (translations.GetString ("Words: {0}"), samples));
 		}
 	}
 }

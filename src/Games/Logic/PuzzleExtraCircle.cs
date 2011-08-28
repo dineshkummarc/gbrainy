@@ -50,7 +50,7 @@ namespace gbrainy.Games.Logic
 		};
 
 		public override string Name {
-			get {return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Extra circle");}
+			get {return translations.GetString ("Extra circle");}
 		}
 
 		public override bool UsesColors {
@@ -59,17 +59,17 @@ namespace gbrainy.Games.Logic
 
 		public override string Question {
 			get {return String.Format (
-				ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Which circle does not belong to the group? It is not a sequence of elements. Answer {0}, {1}, {2} or {3}."),
+				translations.GetString ("Which circle does not belong to the group? It is not a sequence of elements. Answer {0}, {1}, {2} or {3}."),
 					Answer.GetMultiOption (0), Answer.GetMultiOption (1), Answer.GetMultiOption (2), Answer.GetMultiOption (3));}
 		}
 
 		public override string Tip {
-			get { return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("All circles share a common property except for one.");}
+			get { return translations.GetString ("All circles share a common property except for one.");}
 		}
 
 		public override string Rationale {
 			get {
-				return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("In all circles the color slices follow the same order except for this one.");
+				return translations.GetString ("In all circles the color slices follow the same order except for this one.");
 			}
 		}
 
@@ -78,7 +78,7 @@ namespace gbrainy.Games.Logic
 			ArrayListIndicesRandom random_indices = new ArrayListIndicesRandom (total_slices);
 			Color clr;
 
-			cp = new ColorPalette ();
+			cp = new ColorPalette (translations);
 
 			Answer.CheckAttributes |= GameAnswerCheckAttributes.MultiOption | GameAnswerCheckAttributes.IgnoreSpaces;
 

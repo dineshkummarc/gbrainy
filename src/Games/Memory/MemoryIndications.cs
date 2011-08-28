@@ -32,11 +32,13 @@ namespace gbrainy.Games.Memory
 		{
 			public Type type;
 			public object obj;
+			ITranslations translations;
 
-			public Indication (Type type, object obj)
+			public Indication (ITranslations translations, Type type, object obj)
 			{
 				this.type = type;
 				this.obj = obj;
+				this.translations = translations;
 			}
 
 			public enum Type
@@ -127,22 +129,22 @@ namespace gbrainy.Games.Memory
 			{
 				switch (type) {
 				case Indication.Type.Start:
-					return String.Format (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Start at point number {0}"), (int) obj);
+					return String.Format (translations.GetString ("Start at point number {0}"), (int) obj);
 				case Indication.Type.Turn: {
 					switch ((TurnDirection) obj) {
 					case TurnDirection.Right:
-						return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Move right");
+						return translations.GetString ("Move right");
 					case TurnDirection.Left:
-						return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Move left");
+						return translations.GetString ("Move left");
 					case TurnDirection.Up:
-						return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Move up");
+						return translations.GetString ("Move up");
 					case TurnDirection.Down:
-						return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Move down");
+						return translations.GetString ("Move down");
 					}
 					break;
 				}
 				case Indication.Type.End:
-					return String.Format (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("End at point {0}"), obj);
+					return String.Format (translations.GetString ("End at point {0}"), obj);
 				}
 				return null;
 			}
@@ -156,13 +158,13 @@ namespace gbrainy.Games.Memory
 		private int ans;
 
 		public override string Name {
-			get {return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Memorize indications");}
+			get {return translations.GetString ("Memorize indications");}
 		}
 
 		public override string MemoryQuestion {
 			get { 
 				return String.Format (
-					ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Which of the following graphics represents the indications previously given? Answer {0}, {1}, {2} or {3}."),
+					translations.GetString ("Which of the following graphics represents the indications previously given? Answer {0}, {1}, {2} or {3}."),
 					Answer.GetMultiOption (0), Answer.GetMultiOption (1), Answer.GetMultiOption (2), Answer.GetMultiOption (3));}
 		}
 
@@ -171,23 +173,23 @@ namespace gbrainy.Games.Memory
 			indications = new Indication [CurrentDifficulty == GameDifficulty.Easy ? 5 : 7];
 			Indication.TurnDirection second_turn = (Indication.TurnDirection) 2 +  random.Next (2);
 		
-			indications[0] = new Indication (Indication.Type.Start, 0);
-			indications[1] = new Indication (Indication.Type.Turn, random.Next (2)); // right or left
-			indications[2] = new Indication (Indication.Type.Turn, second_turn); // up or down
-			indications[3] = new Indication (Indication.Type.Turn, random.Next (2)); // right or left
+			indications[0] = new Indication (translations, Indication.Type.Start, 0);
+			indications[1] = new Indication (translations, Indication.Type.Turn, random.Next (2)); // right or left
+			indications[2] = new Indication (translations, Indication.Type.Turn, second_turn); // up or down
+			indications[3] = new Indication (translations, Indication.Type.Turn, random.Next (2)); // right or left
 
 			Answer.CheckAttributes |= GameAnswerCheckAttributes.MultiOption | GameAnswerCheckAttributes.IgnoreSpaces;
 
 			if (CurrentDifficulty==GameDifficulty.Easy) {
-				indications[4] = new Indication (Indication.Type.End, 1);		
+				indications[4] = new Indication (translations, Indication.Type.End, 1);		
 			} else {
 				if (second_turn == Indication.TurnDirection.Up)
-					indications[4] = new Indication (Indication.Type.Turn, Indication.TurnDirection.Up);
+					indications[4] = new Indication (translations, Indication.Type.Turn, Indication.TurnDirection.Up);
 				else
-					indications[4] = new Indication (Indication.Type.Turn, Indication.TurnDirection.Down);
+					indications[4] = new Indication (translations, Indication.Type.Turn, Indication.TurnDirection.Down);
 
-				indications[5] = new Indication (Indication.Type.Turn, random.Next (2)); // right or left
-				indications[6] = new Indication (Indication.Type.End, 1);
+				indications[5] = new Indication (translations, Indication.Type.Turn, random.Next (2)); // right or left
+				indications[6] = new Indication (translations, Indication.Type.End, 1);
 			}
 		
 			indications_wrongA = CopyAnswer ();
@@ -195,33 +197,33 @@ namespace gbrainy.Games.Memory
 			indications_wrongC = CopyAnswer ();
 
 			if ((Indication.TurnDirection) indications[3].obj == Indication.TurnDirection.Right) {
-				indications_wrongA[3] = new Indication (Indication.Type.Turn, Indication.TurnDirection.Left);
+				indications_wrongA[3] = new Indication (translations, Indication.Type.Turn, Indication.TurnDirection.Left);
 			}
 			else {
-				indications_wrongA[3] = new Indication (Indication.Type.Turn, Indication.TurnDirection.Right);
+				indications_wrongA[3] = new Indication (translations, Indication.Type.Turn, Indication.TurnDirection.Right);
 			}
 
 			if (CurrentDifficulty == GameDifficulty.Easy) {
 				if ((Indication.TurnDirection) indications[2].obj == Indication.TurnDirection.Up) {
-					indications_wrongB[2] = new Indication (Indication.Type.Turn, Indication.TurnDirection.Down);
+					indications_wrongB[2] = new Indication (translations, Indication.Type.Turn, Indication.TurnDirection.Down);
 				}
 				else {
-					indications_wrongB[2] = new Indication (Indication.Type.Turn, Indication.TurnDirection.Up);
+					indications_wrongB[2] = new Indication (translations, Indication.Type.Turn, Indication.TurnDirection.Up);
 				}
 			} else {
 				if ((Indication.TurnDirection) indications[5].obj == Indication.TurnDirection.Right) {
-					indications_wrongB[5] = new Indication (Indication.Type.Turn, Indication.TurnDirection.Left);
+					indications_wrongB[5] = new Indication (translations, Indication.Type.Turn, Indication.TurnDirection.Left);
 				}
 				else {
-					indications_wrongB[5] = new Indication (Indication.Type.Turn, Indication.TurnDirection.Right);
+					indications_wrongB[5] = new Indication (translations, Indication.Type.Turn, Indication.TurnDirection.Right);
 				}
 			}
 
 			if ((Indication.TurnDirection) indications[1].obj == Indication.TurnDirection.Right) {
-				indications_wrongC[1] = new Indication (Indication.Type.Turn, Indication.TurnDirection.Left);
+				indications_wrongC[1] = new Indication (translations, Indication.Type.Turn, Indication.TurnDirection.Left);
 			}
 			else {
-				indications_wrongC[1] = new Indication (Indication.Type.Turn, Indication.TurnDirection.Right);
+				indications_wrongC[1] = new Indication (translations, Indication.Type.Turn, Indication.TurnDirection.Right);
 			}
 		
 			base.Initialize ();
@@ -284,7 +286,7 @@ namespace gbrainy.Games.Memory
 		{
 			Indication[] answer = new Indication [indications.Length];
 			for (int i = 0; i < indications.Length; i++)
-				answer[i] = new Indication (indications[i].type, indications[i].obj);
+				answer[i] = new Indication (translations, indications[i].type, indications[i].obj);
 
 			return answer;
 		}

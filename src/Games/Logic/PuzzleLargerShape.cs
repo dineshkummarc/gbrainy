@@ -110,7 +110,7 @@ namespace gbrainy.Games.Logic
 		};
 
 		public override string Name {
-			get {return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Larger shape");}
+			get {return translations.GetString ("Larger shape");}
 		}
 
 		public override bool UsesColors {
@@ -119,14 +119,14 @@ namespace gbrainy.Games.Logic
 
 		public override string Question {
 			get {return String.Format (
-				ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Which larger shape can you make combining the first two figures? Answer {0}, {1}, {2} or {3}."),
+				translations.GetString ("Which larger shape can you make combining the first two figures? Answer {0}, {1}, {2} or {3}."),
 				Answer.GetMultiOption (0), Answer.GetMultiOption (1), Answer.GetMultiOption (2), Answer.GetMultiOption (3));}
 		}
 
 		protected override void Initialize ()
 		{
 			Answer.CheckAttributes |= GameAnswerCheckAttributes.MultiOption | GameAnswerCheckAttributes.IgnoreSpaces;
-			palette = new ColorPalette ();
+			palette = new ColorPalette (translations);
 
 			switch (random.Next (2)) {
 			case 0:
@@ -300,7 +300,7 @@ namespace gbrainy.Games.Logic
 			base.Draw (gr, area_width, area_height, rtl);
 
 			gr.MoveTo (0.1, 0.3);
-			gr.ShowPangoText (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Choose one of the following:"));
+			gr.ShowPangoText (translations.GetString ("Choose one of the following:"));
 			gr.Stroke ();
 		}
 	}

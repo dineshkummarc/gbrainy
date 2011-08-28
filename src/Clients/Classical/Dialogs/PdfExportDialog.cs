@@ -23,6 +23,7 @@ using Gtk;
 using Mono.Unix;
 
 using gbrainy.Core.Main;
+using gbrainy.Core.Services;
 using gbrainy.Clients.Classical.Widgets;
 
 namespace gbrainy.Clients.Classical.Dialogs
@@ -42,12 +43,14 @@ namespace gbrainy.Clients.Classical.Dialogs
 
 		BrowseFile file;
 		GameManager manager;
+		ITranslations translations;
 		const int COLUMN_VALUE = 1;
 		const int DEF_SIDEVALUE = 4;
 
-		public PdfExportDialog (GameManager manager) : base ("PdfExportDialog.ui", "pdfexportbox")
+		public PdfExportDialog (GameManager manager, ITranslations translations) : base (translations, "PdfExportDialog.ui", "pdfexportbox")
 		{
 			this.manager = manager;
+			this.translations = translations;
 			games_spinbutton.Value = 10;
 			checkbox_logic.Active = checkbox_calculation.Active = checkbox_verbal.Active = true;
 
@@ -154,7 +157,7 @@ namespace gbrainy.Clients.Classical.Dialogs
 			MessageType msg_type;
 
 			games = new Game [num_games];
-			session = new GameSession ();
+			session = new GameSession (translations);
 			session.GameManager = manager;
 			session.PlayList.ColorBlind = colorblind;
 			session.PlayList.Difficulty = difficulty;

@@ -72,7 +72,7 @@ namespace gbrainy.Core.Main.Xml
 		}
 
 		public override string Name {
-			get { return ServiceLocator.Instance.GetService <ITranslations> ().GetString (game.Name); }
+			get { return translations.GetString (game.Name); }
 		}
 
 		public override string Question {
@@ -86,10 +86,10 @@ namespace gbrainy.Core.Main.Xml
 		public override string Tip {
 			get {
 				if (game.Variants.Count > 0 && game.Variants[current.Variant].Tip != null)
-					return ServiceLocator.Instance.GetService <ITranslations> ().GetString (game.Variants[current.Variant].Tip);
+					return translations.GetString (game.Variants[current.Variant].Tip);
 				else
 					if (String.IsNullOrEmpty (game.Tip) == false)
-						return ServiceLocator.Instance.GetService <ITranslations> ().GetString (game.Tip);
+						return translations.GetString (game.Tip);
 					else
 						return null;
 			}
@@ -211,7 +211,7 @@ namespace gbrainy.Core.Main.Xml
 				Answer.SetMultiOptionAnswer (option_answer, answer);
 
 				// Translators {0}: list of options (A, B, C)
-				string answers = String.Format (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Answer {0}."),
+				string answers = String.Format (translations.GetString ("Answer {0}."),
 					Answer.GetMultiOptionsPossibleAnswers (xml_drawing.Options.Count));
 				question = question.Replace (option_answers, answers);
 			}
@@ -278,16 +278,16 @@ namespace gbrainy.Core.Main.Xml
 		}
 
 		// Protect from calling with null (exception)
-		internal static string CatalogGetString (string str)
+		internal string CatalogGetString (string str)
 		{
 			if (String.IsNullOrEmpty (str))
 				return str;
 
-			return ServiceLocator.Instance.GetService <ITranslations> ().GetString (str);
+			return translations.GetString (str);
 		}
 
 		// Protect from calling with null + resolve plurals
-		internal static string CatalogGetString (LocalizableString localizable)
+		internal string CatalogGetString (LocalizableString localizable)
 		{
 			if (localizable == null)
 				return string.Empty;
@@ -295,7 +295,7 @@ namespace gbrainy.Core.Main.Xml
 			if (localizable.IsPlural () == false)
 				return CatalogGetString (localizable.String);
 
-			return ServiceLocator.Instance.GetService <ITranslations> ().GetPluralString (localizable.String, localizable.PluralString, localizable.ValueComputed);
+			return translations.GetPluralString (localizable.String, localizable.PluralString, localizable.ValueComputed);
 		}
 
 		// Replace compiler service variables

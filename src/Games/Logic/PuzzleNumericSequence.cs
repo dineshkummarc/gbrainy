@@ -39,26 +39,26 @@ namespace gbrainy.Games.Logic
 		private Formula formula;
 
 		public override string Name {
-			get {return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Numeric sequence");}
+			get {return translations.GetString ("Numeric sequence");}
 		}
 
 		public override string Question {
-			get {return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("The next sequence follows a logic. What number should replace the question mark?");}
+			get {return translations.GetString ("The next sequence follows a logic. What number should replace the question mark?");}
 		}
 
 		public override string Tip {
-			get { return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Every number in the sequence is related to the previous one.");}
+			get { return translations.GetString ("Every number in the sequence is related to the previous one.");}
 		}
 
 		public override string Rationale {
 			get {
 				switch (formula) {
 				case Formula.SubstractingOne:
-					return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Every number in the sequence is the result of subtracting 1 from the previous number and multiplying it by 2.");
+					return translations.GetString ("Every number in the sequence is the result of subtracting 1 from the previous number and multiplying it by 2.");
 				case Formula.Adding:
-					return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Every number in the sequence is the result of adding 1 to the previous number and multiplying it by 3.");
+					return translations.GetString ("Every number in the sequence is the result of adding 1 to the previous number and multiplying it by 3.");
 				case Formula.SubstractingTwo:
-					return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Every number in the sequence is the result of subtracting 2 from the previous number and multiplying it by -2.");
+					return translations.GetString ("Every number in the sequence is the result of subtracting 2 from the previous number and multiplying it by -2.");
 				default:
 					return string.Empty;
 				}

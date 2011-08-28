@@ -31,16 +31,16 @@ namespace gbrainy.Games.Logic
 		private int fig1, fig2;
 
 		public override string Name {
-			get {return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Lines");}
+			get {return translations.GetString ("Lines");}
 		}
 
 		public override string Question {
-			get {return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("How many line segments in total are in the figures below? A line segment is a line between two points with no crossing lines.");}
+			get {return translations.GetString ("How many line segments in total are in the figures below? A line segment is a line between two points with no crossing lines.");}
 		}
 
 		public override string Rationale {
 			get {
-				return String.Format (ServiceLocator.Instance.GetService <ITranslations> ().GetPluralString (
+				return String.Format (translations.GetPluralString (
 					"There is {0} line in the figure to the left and {1} in the figure to the right.",
 					"There are {0} lines in the figure to the left and {1} in the figure to the right.",
 					fig1),
@@ -49,7 +49,7 @@ namespace gbrainy.Games.Logic
 		}
 
 		public override string Tip {
-			get { return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("It is an easy exercise if you systematically count the lines.");}
+			get { return translations.GetString ("It is an easy exercise if you systematically count the lines.");}
 		}
 
 		protected override void Initialize ()

@@ -45,28 +45,30 @@ namespace gbrainy.Games.Memory
 			internal const int Total = Circle + 1;
 
 			static internal string ToString (int type)
-			{
+			{/*
 				switch (type) {
 				case Triangle:
-					return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Triangle");
+					return translations.GetString ("Triangle");
 				case Square:
-					return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Square");
+					return translations.GetString ("Square");
 				case Pentagon:
-					return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Pentagon");
+					return translations.GetString ("Pentagon");
 				case Circle:
-					return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Circle");
+					return translations.GetString ("Circle");
 				default:
 					throw new InvalidOperationException ();
 				}
+				*/
+				return string.Empty;
 			}
 		}
 
 		public override string Name {
-			get {return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Memorize figures and text");}
+			get {return translations.GetString ("Memorize figures and text");}
 		}
 
 		public override string MemoryQuestion {
-			get {return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("The list below enumerates the figures shown in the previous image except for one. Which is the missing figure? Possible answers are triangle, square, pentagon and circle." );}
+			get {return translations.GetString ("The list below enumerates the figures shown in the previous image except for one. Which is the missing figure? Possible answers are triangle, square, pentagon and circle." );}
 		}
 
 		protected override void Initialize ()

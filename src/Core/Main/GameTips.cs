@@ -24,17 +24,23 @@ using gbrainy.Core.Services;
 
 namespace gbrainy.Core.Main
 {
-	static public class GameTips
+	public class GameTips
 	{
-		static ArrayListIndicesRandom random_indices;
-		static int idx = 0;
+		ITranslations translations;
+		ArrayListIndicesRandom random_indices;
+		int idx = 0;
+
+		public GameTips (ITranslations translations)
+		{
+			this.translations = translations;
+		}
 	
-		static public int Count {
+		public int Count {
 			get { return 15; }
 		}
 
 		// Gets a random tip from the list
-		static public string Tip {
+		public string Tip {
 			get {
 				if (idx + 1 >= Count || random_indices == null) {
 					random_indices = new ArrayListIndicesRandom (Count);
@@ -45,39 +51,39 @@ namespace gbrainy.Core.Main
 			}
 		}
 
-		static public string GetTip (int tip)
+		public string GetTip (int tip)
 		{
 			switch (tip) {
 			case 0:
-				return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Read the instructions carefully and identify the data and given clues.");
+				return translations.GetString ("Read the instructions carefully and identify the data and given clues.");
 			case 1:
-				return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("To score the player gbrainy uses the time and tips needed to complete each game.");
+				return translations.GetString ("To score the player gbrainy uses the time and tips needed to complete each game.");
 			case 2:
-				return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("In logic games, elements that may seem irrelevant can be very important.");
+				return translations.GetString ("In logic games, elements that may seem irrelevant can be very important.");
 			case 3:
-				return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Try to approach a problem from different angles.");
+				return translations.GetString ("Try to approach a problem from different angles.");
 			case 4:
-				return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Do not be afraid of making mistakes, they are part of the learning process.");
+				return translations.GetString ("Do not be afraid of making mistakes, they are part of the learning process.");
 			case 5:
-				return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Do all the problems, even the difficult ones. Improvement comes from challeging yourself.");
+				return translations.GetString ("Do all the problems, even the difficult ones. Improvement comes from challeging yourself.");
 			case 6:
-				return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Play on a daily basis, you will notice progress soon.");
+				return translations.GetString ("Play on a daily basis, you will notice progress soon.");
 			case 7: // Translators: Custom Game Selection is a menu option
-				return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Use the 'Custom Game Selection' to choose exactly which games you want to play.");
+				return translations.GetString ("Use the 'Custom Game Selection' to choose exactly which games you want to play.");
 			case 8:
-				return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Use the Settings to adjust the difficulty level of the game.");
+				return translations.GetString ("Use the Settings to adjust the difficulty level of the game.");
 			case 9:
-				return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Association of elements is a common technique for remembering things.");
+				return translations.GetString ("Association of elements is a common technique for remembering things.");
 			case 10:
-				return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Grouping elements into categories is a common technique for remembering things.");
+				return translations.GetString ("Grouping elements into categories is a common technique for remembering things.");
 			case 11:
-				return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Build acronyms using the first letter of each fact to be remembered.");
+				return translations.GetString ("Build acronyms using the first letter of each fact to be remembered.");
 			case 12:
-				return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("The enjoyment obtained from a puzzle is proportional to the time spent on it.");
+				return translations.GetString ("The enjoyment obtained from a puzzle is proportional to the time spent on it.");
 			case 13:
-				return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Think of breaking down every problem into simpler components.");
+				return translations.GetString ("Think of breaking down every problem into simpler components.");
 			case 14:
-				return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("When answering verbal analogies pay attention to the verb tense.");
+				return translations.GetString ("When answering verbal analogies pay attention to the verb tense.");
 			default:
 				throw new InvalidOperationException ();
 			}

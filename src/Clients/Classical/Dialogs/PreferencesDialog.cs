@@ -22,6 +22,7 @@ using Gtk;
 using Mono.Unix;
 
 using gbrainy.Core.Main;
+using gbrainy.Core.Services;
 
 namespace gbrainy.Clients.Classical.Dialogs
 {
@@ -41,7 +42,7 @@ namespace gbrainy.Clients.Classical.Dialogs
 		const int COLUMN_VALUE = 1;
 		PlayerHistory history;
 
-		public PreferencesDialog (PlayerHistory history) : base ("PreferencesDialog.ui", "preferences")
+		public PreferencesDialog (ITranslations translations, PlayerHistory history) : base (translations, "PreferencesDialog.ui", "preferences")
 		{
 			this.history = history;
 			prefspinbutton.Value = Preferences.Get <int> (Preferences.MemQuestionTimeKey);

@@ -32,11 +32,11 @@ namespace gbrainy.Games.Logic
 		private const double line_width = 0.001;
 
 		public override string Name {
-			get {return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Cover percentage");}
+			get {return translations.GetString ("Cover percentage");}
 		}
 
 		public override string Question {
-			get {return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("What percentage of the figure is colored?");} 
+			get {return translations.GetString ("What percentage of the figure is colored?");} 
 		}
 
 		protected override void Initialize ()

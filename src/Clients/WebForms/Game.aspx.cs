@@ -36,6 +36,7 @@ namespace gbrainy.Clients.WebForms
 		gbrainy.Core.Main.GameSession session;
 		WebSession web_session;
 		GameImage image;
+		TranslationsWeb translations;
 
 		static public GameManager CreateManager ()
 		{
@@ -57,11 +58,6 @@ namespace gbrainy.Clients.WebForms
 
 				return web_session;
 			}
-		}
-
-		string GetLanguageFromSessionHandler ()
-		{			
-			return WebSession.LanguageCode;
 		}
 
 		// Page Life-Cycle Events
@@ -102,6 +98,9 @@ namespace gbrainy.Clients.WebForms
 			HtmlForm form = (HtmlForm) Master.FindControl ("main_form");
 			form.DefaultButton = answer_button.UniqueID;
 			
+			translations = new TranslationsWeb ();
+			translations.Language = WebSession.LanguageCode;
+			
 			string answer = Request.QueryString ["answer"];			
 			if (IsPostBack == false && string.IsNullOrEmpty (answer) == false)
 			{
@@ -109,9 +108,9 @@ namespace gbrainy.Clients.WebForms
 			}
 
 			if (WebSession.GameState == null)
-			{
+			{				
 				Logger.Debug ("Game.Page_Load creating new session");
-				session = new gbrainy.Core.Main.GameSession ();
+				session = new gbrainy.Core.Main.GameSession (translations);
 				session.GameManager = CreateManager ();
 			 	session.PlayList.Difficulty = gbrainy.Core.Main.GameDifficulty.Medium;
 				session.PlayList.GameType = gbrainy.Core.Main.GameSession.Types.LogicPuzzles |
@@ -150,6 +149,9 @@ namespace gbrainy.Clients.WebForms
 				UpdateGame ();
 			}	
 			
+			
+			if (IsPostBack == false)
+				SetText ();
 
 			if (IsPostBack == true) {
 				Logger.Debug ("Game.Page_Load. Ignoring postback");
@@ -161,24 +163,27 @@ namespace gbrainy.Clients.WebForms
 
 		void InitPage ()
 		{
-			TranslationsWeb service = (TranslationsWeb) ServiceLocator.Instance.GetService <ITranslations> ();
-			service.OnGetLanguageFromSession = GetLanguageFromSessionHandler;
-
 			game_image.Width = GameImage.IMAGE_WIDTH;
 			game_image.Height = GameImage.IMAGE_HEIGHT;
-
+		}
+		
+		void SetText ()
+		{
 			nextgame_link.Text = "Next Game";
+			
+			if (translations == null)
+				return;
 
 			// Toolbar
-			allgames_label.Text = ServiceLocator.Instance.GetService <ITranslations> ().GetString ("All");
-			endgames_label.Text = ServiceLocator.Instance.GetService <ITranslations> ().GetString ("End");
-		}		
+			allgames_label.Text = translations.GetString ("All");
+			endgames_label.Text = translations.GetString ("End");
+		}
 
 		void UpdateGame ()
 		{
 			if (_game == null)
 				return;
-
+			
 			status.Text = session.StatusText;
 			question.Text = _game.Question;
 		 	
@@ -236,11 +241,11 @@ namespace gbrainy.Clients.WebForms
 				return;
 		
 			if (web_session.GameState.ScoreGame (answer) == true) {
-				result_label.Text = ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Congratulations.");
+				result_label.Text = translations.GetString ("Congratulations.");
 				result_label.CssClass = "CorrectAnswer";
 			}
 			else {
-				result_label.Text = ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Incorrect answer.");
+				result_label.Text = translations.GetString ("Incorrect answer.");
 				result_label.CssClass = null;
 			}
 

@@ -31,7 +31,7 @@ namespace gbrainy.Games.Logic
 		DateTime position_a, position_b, ans, sample;
 
 		public override string Name {
-			get {return ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Time now");}
+			get {return translations.GetString ("Time now");}
 		}
 
 		public override string Question {
@@ -41,7 +41,7 @@ namespace gbrainy.Games.Logic
 				// http://msdn.microsoft.com/en-us/library/system.globalization.datetimeformatinfo.aspx
 				// For 12-hour clock format use {0:%h} and for 24-hour clock format use {0:%H}. The date formats {0:h} and {0:H} are invalid.
 				//
-				ServiceLocator.Instance.GetService <ITranslations> ().GetPluralString (
+				translations.GetPluralString (
 					"{0} hour ago it was as long after {1:h tt} as it was before {2:h tt} on the same day. What is the time now? Answer using the hour (e.g.: {3:h tt})",
 					"{0} hours ago it was as long after {1:h tt} as it was before {2:h tt} on the same day. What is the time now? Answer using the hour (e.g.: {3:h tt})",
 					after),
@@ -50,7 +50,7 @@ namespace gbrainy.Games.Logic
 
 		public override string Rationale {
 			get {
-				return String.Format (ServiceLocator.Instance.GetService <ITranslations> ().GetPluralString (
+				return String.Format (translations.GetPluralString (
 					"Determine the hour half way between the given times, and then add {0} hour to convert it to the present time.",
 					"Determine the hour half way between the given times, and then add {0} hours to convert it to the present time.",
 					after),
@@ -82,7 +82,7 @@ namespace gbrainy.Games.Logic
  			// Explanation of the date and time format specifications can be found here:
 			// http://msdn.microsoft.com/en-us/library/system.globalization.datetimeformatinfo.aspx
 			// For 12-hour clock format use {0:%h} and for 24-hour clock format use {0:%H}. The date formats {0:h} and {0:H} are invalid.
-			Answer.Correct = String.Format (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("{0:h tt}"), ans);
+			Answer.Correct = String.Format (translations.GetString ("{0:h tt}"), ans);
 			Answer.CheckAttributes = GameAnswerCheckAttributes.IgnoreCase | GameAnswerCheckAttributes.IgnoreSpaces;
 		}
 
@@ -92,7 +92,7 @@ namespace gbrainy.Games.Logic
 			gr.DrawClock (DrawAreaX + 0.4, DrawAreaY + 0.4, figure_size,
 				0, 0 /* No hands */);
 
-			gr.DrawTextCentered (0.5, DrawAreaY + 0.3 + figure_size, ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Sample clock"));
+			gr.DrawTextCentered (0.5, DrawAreaY + 0.3 + figure_size, translations.GetString ("Sample clock"));
 		}
 	}
 }

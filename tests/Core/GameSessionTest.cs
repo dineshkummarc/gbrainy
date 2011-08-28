@@ -36,7 +36,7 @@ namespace gbrainy.Test.Core
 		
 		GameSession PrepareSession ()
 		{
-			GameSession session = new GameSession ();
+			GameSession session = new GameSession (null);
 			session.GameManager.LoadAssemblyGames ("gbrainy.Games.dll");
 			session.GameManager.LoadPlugins ();
 			session.GameManager.LoadGamesFromXml (System.IO.Path.Combine (gbrainy.Core.Main.Defines.DATA_DIR, "games.xml"));
