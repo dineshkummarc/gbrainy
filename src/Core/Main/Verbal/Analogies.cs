@@ -52,17 +52,7 @@ namespace gbrainy.Core.Main.Verbal
 				if (Current == null)
 					return string.Empty;
 
-				if (Current.MultipleAnswers == false || String.IsNullOrEmpty (Current.rationale))
-					return Current.rationale;
-
-				string str;	
-				str = String.Format (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Possible correct answers are: {0}."), 
-					Answer.CorrectShow);
-
-				// For multiple answer build a rationale
-				// Translators: answer + rationale of the answer
-				return String.Format (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("{0} {1}"), str, 
-					Current.rationale);
+				return Current.rationale;
 			}
 		}
 
