@@ -9,8 +9,8 @@ msgstr ""
 "Project-Id-Version: gbrainy\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=gbrainy&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2011-09-04 10:59+0000\n"
-"PO-Revision-Date: 2011-09-06 09:10+0200\n"
+"POT-Creation-Date: 2011-09-11 00:41+0000\n"
+"PO-Revision-Date: 2011-09-11 08:07+0200\n"
 "Last-Translator: Miroslav Nikolić <miroslavnikolic@rocketmail.com>\n"
 "Language-Team: Serbian <gnom@prevod.org>\n"
 "MIME-Version: 1.0\n"
@@ -80,7 +80,7 @@ msgstr "Automobili u gradu"
 #: ../src/Games/Calculation/CalculationProportions.cs:131
 #: ../src/Games/Logic/PuzzleFigurePattern.cs:191
 #: ../src/Games/Logic/PuzzleFigures.cs:195
-#: ../src/Games/Logic/PuzzleGridDots.cs:341
+#: ../src/Games/Logic/PuzzleGridDots.cs:340
 #: ../src/Games/Logic/PuzzleLargerShape.cs:303
 #: ../src/Games/Logic/PuzzleMissingPiece.cs:173
 #: ../src/Games/Logic/PuzzleMissingSlice.cs:218
@@ -302,19 +302,11 @@ msgid "It is the result of the operation: ([three] * 3) - ([two] * 2)."
 msgstr "To je rezultat matematičke operacije: ([three] * 3) - ([two] * 2)."
 
 #: ../data/games.xml.h:45
-msgid ""
-"John's age is nowadays half of John's son age, that is, ([father] / 2) - "
-"[difference]."
-msgstr ""
-"Broj Markovih godina je danas dva puta manji od broja godina Markovog sina, "
-"upravo tako, ([father] / 2) - [difference]."
-
-#: ../data/games.xml.h:46
 msgctxt "John's father's sister's sister-in-law is also?"
 msgid "[option_prefix] His cousin"
 msgstr "[option_prefix] Njegova rođaka"
 
-#: ../data/games.xml.h:47
+#: ../data/games.xml.h:46
 msgid ""
 "John's father's sister's sister-in-law is also? Do not assume that John has "
 "any relative that has not been mentioned. [option_answers]"
@@ -322,18 +314,26 @@ msgstr ""
 "Snaja sestre Jovanovog oca je? Nemojte pretpostavljati da Jovan ima rođake "
 "koji nisu spomenuti. [option_answers]"
 
-#: ../data/games.xml.h:48
+#: ../data/games.xml.h:47
 msgctxt "John's mother's brother's brother-in-law is also?"
 msgid "[option_prefix] His cousin"
 msgstr "[option_prefix] Njegov rođak"
 
-#: ../data/games.xml.h:49
+#: ../data/games.xml.h:48
 msgid ""
 "John's mother's brother's brother-in-law is also? Do not assume that John "
 "has any relative that has not been mentioned. [option_answers]"
 msgstr ""
 "Zet brata Jovanove majke je? Nemojte pretpostavljati da Jovan ima rođake koji "
 "nisu spomenuti. [option_answers]"
+
+#: ../data/games.xml.h:49
+msgid ""
+"John's son age is nowadays half of John's age minus [difference], that is, "
+"([father] / 2) - [difference]."
+msgstr ""
+"Godine Markovog sina su danas polovina Markovih godina minus [difference], "
+"upravo tako, ([father] / 2) - [difference]."
 
 #: ../data/games.xml.h:50
 msgid "Lever"
@@ -1873,7 +1873,7 @@ msgid "talk / yell | dislike"
 msgstr "naklonost / odobravanje | nenaklonost"
 
 # Papir
-#. Translators: 'tear' and 'rip' are used as verbs (to tear / to rip)
+#. Translators: 'tear' and 'rip' are used as verbs (to tear / to rip). Tear as in "To pull apart or into pieces by force" (not lacrimation)
 #: ../data/verbal_analogies.xml.h:323
 msgid "tear | rip"
 msgstr "pocepati | pokidati"
@@ -2139,12 +2139,9 @@ msgstr[2] "Zasniva se na korišćenju rezultata {0} zabeleženih sesija igara."
 
 #. Translators: "The graph below" +  "It is built using" sentences
 #. Translators: answer + rationale of the answer
-#. For multiple answer build a rationale
-#. Translators: answer + rationale of the answer
 #. Translators: Concatenating two strings (rationale of answer + extra information).
 #: ../src/Clients/Classical/Dialogs/PlayerHistoryDialog.cs:60
-#: ../src/Core/Main/Game.cs:135 ../src/Core/Main/Verbal/Analogies.cs:64
-#: ../src/Games/Logic/PuzzleCountSeries.cs:93
+#: ../src/Core/Main/Game.cs:135 ../src/Games/Logic/PuzzleCountSeries.cs:93
 #, csharp-format
 msgid "{0} {1}"
 msgstr "{0} {1}"
@@ -2762,14 +2759,9 @@ msgstr "Priredio g-kefalo {0}"
 msgid "Solutions"
 msgstr "Rešenja"
 
-#: ../src/Core/Main/Verbal/Analogies.cs:59
-#, csharp-format
-msgid "Possible correct answers are: {0}."
-msgstr "Mogući tačni odgovori su: {0}."
-
 #. Translators: this the separator used when concatenating multiple possible answers for verbal analogies
 #. For example: "Possible correct answers are: sleep, rest."
-#: ../src/Core/Main/Verbal/Analogies.cs:87
+#: ../src/Core/Main/Verbal/Analogies.cs:77
 msgid ", "
 msgstr ", "
 
@@ -3699,8 +3691,7 @@ msgid ""
 "Which is the next logical figure in the sequence? Answer {0}, {1} or {2}."
 msgstr "Koja je sledeća logička figura u nizu? Odgovorite {0}, {1} ili {2}."
 
-#. Translators: Please, do not make the translated string longer than the original English one. It will not fit in screen.
-#: ../src/Games/Logic/PuzzleGridDots.cs:220
+#: ../src/Games/Logic/PuzzleGridDots.cs:219
 msgid ""
 "From the top-left figure, the top-left circle moves down, the bottom-left "
 "circle moves up, the bottom-right moves diagonally up-left and the top-right "
@@ -3710,7 +3701,7 @@ msgstr ""
 "gore, donji desni ide po dijagonali gore levo i gornji desni ide po dijagonali "
 "dole levo."
 
-#: ../src/Games/Logic/PuzzleGridDots.cs:223
+#: ../src/Games/Logic/PuzzleGridDots.cs:222
 msgid ""
 "From the top-left figure, the figure is rotated counterclockwise 90 degrees."
 msgstr ""
@@ -5598,6 +5589,9 @@ msgstr "_Savet"
 #: ../src/Clients/Classical/gbrainy.ui.h:27
 msgid "_View"
 msgstr "P_rikaz"
+
+#~ msgid "Possible correct answers are: {0}."
+#~ msgstr "Mogući tačni odgovori su: {0}."
 
 #~ msgid "Attention"
 #~ msgstr "Pažnja"
