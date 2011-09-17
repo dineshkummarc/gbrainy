@@ -9,13 +9,13 @@ msgstr ""
 "Project-Id-Version: gbrainy master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gbrainy&keywords=I18N+L10N&component=general\n"
 "POT-Creation-Date: 2011-09-10 10:05+0000\n"
-"PO-Revision-Date: 2011-09-13 23:05+0100\n"
-"Last-Translator: Martin Srebotnjak  <miles@filmsi.net>\n"
+"PO-Revision-Date: 2011-09-17 10:06+0100\n"
+"Last-Translator: Matej Urbančič <mateju@svn.gnome.org>\n"
 "Language-Team: Slovenian <gnome-si@googlegroups.com>\n"
+"Language: sl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: sl\n"
 "Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n%100==4 ? 3 : 0);\n"
 "X-Poedit-Language: Slovenian\n"
 "X-Poedit-Country: SLOVENIA\n"
@@ -191,7 +191,7 @@ msgstr "V vsaki tekmi je izločen en igralec. Za določitev zmagovalca potrebuje
 
 #: ../data/games.xml.h:39
 msgid "It is calculated by taking the total number of people minus [brothers_only] people that have brothers only, minus [sisters_only] that have sisters only and minus [both] that have sisters and brothers."
-msgstr "Izračunate ga tako da od števila vseh ljudi odštejete [brothers_only] ljudji, ki imajo le brate, [sisters_only], ki imajo le sestre in [both], ki imajo brate in sestre."
+msgstr "Izračunate ga tako, da od števila vseh ljudi odštejete [brothers_only] ljudi, ki imajo le brate, [sisters_only], ki imajo le sestre in [both], ki imajo brate in sestre."
 
 #: ../data/games.xml.h:40
 msgid "It is the result of the operation [num_a] * [num_b]."
@@ -214,7 +214,6 @@ msgid "It is the result of the operation: ([three] * 3) - ([two] * 2)."
 msgstr "Je rezultat izračuna ([three] * 3) - ([two] * 2)."
 
 #: ../data/games.xml.h:45
-#, fuzzy
 #| msgid "[option_prefix] His cousin"
 msgctxt "John's father's sister's sister-in-law is also?"
 msgid "[option_prefix] His cousin"
@@ -225,7 +224,6 @@ msgid "John's father's sister's sister-in-law is also? Do not assume that John h
 msgstr "Svakinja sestre Janezovega očeta je tudi? Predpostavljajte da ima Janez samo omenjene sorodnike. [option_answers]"
 
 #: ../data/games.xml.h:47
-#, fuzzy
 #| msgid "[option_prefix] His cousin"
 msgctxt "John's mother's brother's brother-in-law is also?"
 msgid "[option_prefix] His cousin"
@@ -236,12 +234,11 @@ msgid "John's mother's brother's brother-in-law is also? Do not assume that John
 msgstr "Zet brata Janezove matere je tudi? Predpostavljajte, da ima Janez samo omenjene sorodnike. [option_answers]"
 
 #: ../data/games.xml.h:49
-#, fuzzy
 #| msgid ""
 #| "John's age is nowadays half of John's son age, that is, ([father] / 2) - "
 #| "[difference]."
 msgid "John's son age is nowadays half of John's age minus [difference], that is, ([father] / 2) - [difference]."
-msgstr "Janezov sin je danes pol mlajši od svojega očeta manj [razlika], to je ([oče] /2 ) - [razlika]."
+msgstr "Janezov sin je danes pol mlajši od svojega očeta minus [razlika], to je ([oče] /2 ) - [razlika]."
 
 #: ../data/games.xml.h:50
 msgid "Lever"
@@ -832,9 +829,8 @@ msgstr "Fosil"
 
 #. Translator: Used as an adjective in English. Possible answer to: Which of the following words is closest to the meaning of 'negligent'
 #: ../data/verbal_analogies.xml.h:89
-#, fuzzy
 msgid "Friendly"
-msgstr "Prijateljsko/Prijazno"
+msgstr "Prijazno"
 
 #: ../data/verbal_analogies.xml.h:90
 msgid "Frog"
@@ -1127,7 +1123,6 @@ msgstr "Pol"
 
 #. Translator: Used as an adjective in English. Possible answer to: Which of the following words is closest to the meaning of 'negligent'
 #: ../data/verbal_analogies.xml.h:167
-#, fuzzy
 #| msgid "Pole"
 msgid "Polite"
 msgstr "Vljudno"
@@ -4633,4 +4628,3 @@ msgstr "N_amig"
 #: ../src/Clients/Classical/gbrainy.ui.h:27
 msgid "_View"
 msgstr "_Pogled"
-
