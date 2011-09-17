@@ -1,6 +1,10 @@
 AC_INIT(gbrainy, 2.02)
 AC_CONFIG_SRCDIR(src/Core/)
 
+# Version for assemblies: Major.Minor.Build.Revision
+ASSEMBLY_VERSION="2.0.2.0"
+AC_SUBST(ASSEMBLY_VERSION)
+
 AM_CONFIG_HEADER(config.h)
 
 AM_INIT_AUTOMAKE([tar-ustar])
