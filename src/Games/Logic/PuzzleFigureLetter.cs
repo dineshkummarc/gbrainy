@@ -31,8 +31,8 @@ namespace gbrainy.Games.Logic
 		enum QuestionType
 		{
 			TwoSquares	= 0,
-			TwoCercles,
-			ThreeCercles,
+			TwoCircles,
+			ThreeCircles,
 			Length		
 		}
 
@@ -63,11 +63,11 @@ namespace gbrainy.Games.Logic
 				Answer.Correct = "A | B | F";
 				Answer.CorrectShow = "ABF";
 				break;
-			case QuestionType.TwoCercles:
+			case QuestionType.TwoCircles:
 				Answer.Correct = "C | D | F";
 				Answer.CorrectShow = "CDF";
 				break;
-			case QuestionType.ThreeCercles:
+			case QuestionType.ThreeCircles:
 				Answer.Correct = "A | C | E";
 				Answer.CorrectShow = "ACE";
 				break;
@@ -133,14 +133,14 @@ namespace gbrainy.Games.Logic
 				gr.Stroke ();
 				gr.MoveTo (x + 0.05, y + 0.18);
 				break;
-			case QuestionType.TwoCercles:
+			case QuestionType.TwoCircles:
 				gr.Arc (x + 0.05, y + 0.05, 0.05, 0, 2 * Math.PI);
 				gr.Stroke ();
 				gr.Arc (x + 0.12 + 0.05, y + 0.05, 0.05, 0, 2 * Math.PI);
 				gr.Stroke ();
 				gr.MoveTo (x + 0.1, y + 0.18);
 				break;
-			case QuestionType.ThreeCercles:
+			case QuestionType.ThreeCircles:
 				gr.Arc (x + 0.05 + 0.06, y + 0.04, 0.05, 0, 2 * Math.PI);
 				gr.Stroke ();
 				gr.Arc (x + 0.05, y + 0.06 + 0.04, 0.05, 0, 2 * Math.PI);

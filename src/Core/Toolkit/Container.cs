@@ -66,7 +66,7 @@ namespace gbrainy.Core.Toolkit
 				OnDrawRequest ();
 			};
 
-			widget.SelectedEvent += delegate (object sender, SeletectedEventArgs e)
+			widget.SelectedEvent += delegate (object sender, SelectedEventArgs e)
 			{
 				OnSelected (e);
 			};

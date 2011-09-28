@@ -21,9 +21,9 @@ using System;
 
 namespace gbrainy.Core.Toolkit
 {
-	public class SeletectedEventArgs: EventArgs
+	public class SelectedEventArgs: EventArgs
 	{
-		public SeletectedEventArgs (object data, object data_ex)
+		public SelectedEventArgs (object data, object data_ex)
 		{
 			Data = data;
 			DataEx = data_ex;

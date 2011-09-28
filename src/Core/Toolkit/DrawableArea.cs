@@ -98,7 +98,7 @@ namespace gbrainy.Core.Toolkit
 			} else {
 
 				if (args.EventType == MouseEventType.ButtonPress) {
-					OnSelected (new SeletectedEventArgs (Data, DataEx));
+					OnSelected (new SelectedEventArgs (Data, DataEx));
 				} else {
 					if (hoover == false) {
 						hoover = true;

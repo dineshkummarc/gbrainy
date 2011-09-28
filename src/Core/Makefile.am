@@ -59,7 +59,7 @@ CSDISTFILES =  \
 		$(srcdir)/Toolkit/DrawableArea.cs		\
 		$(srcdir)/Toolkit/DrawEventArgs.cs	\
 		$(srcdir)/Toolkit/HorizontalContainer.cs	\
-		$(srcdir)/Toolkit/SeletectedEventArgs.cs	\
+		$(srcdir)/Toolkit/SelectedEventArgs.cs	\
 		$(srcdir)/Toolkit/Widget.cs		\
 		$(srcdir)/Views/PlayerHistoryView.cs	\
 		$(srcdir)/Views/ViewsControler.cs		\

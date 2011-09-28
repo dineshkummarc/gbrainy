@@ -118,7 +118,7 @@ namespace gbrainy.Games.Logic
 			}
 		}
 
-		static private void DrawDiamon (CairoContextEx gr, double x, double y, CerclePosition cercles)
+		static private void DrawDiamon (CairoContextEx gr, double x, double y, CerclePosition circles)
 		{	
 			double distance = 0.04;
 
@@ -129,22 +129,22 @@ namespace gbrainy.Games.Logic
 			gr.LineTo (x + figure_size / 2, y);
 			gr.Stroke ();
 
-			if ((cercles & CerclePosition.Top) == CerclePosition.Top) {
+			if ((circles & CerclePosition.Top) == CerclePosition.Top) {
 				gr.Arc (x + figure_size / 2, y + distance, 0.01, 0, 2 * Math.PI);	
 				gr.Stroke ();
 			}
 
-			if ((cercles & CerclePosition.Right) == CerclePosition.Right) {
+			if ((circles & CerclePosition.Right) == CerclePosition.Right) {
 				gr.Arc (x + figure_size - distance, y + figure_size / 2, 0.01, 0, 2 * Math.PI);	
 				gr.Stroke ();
 			}
 
-			if ((cercles & CerclePosition.Bottom) == CerclePosition.Bottom) {
+			if ((circles & CerclePosition.Bottom) == CerclePosition.Bottom) {
 				gr.Arc (x + figure_size / 2, y + figure_size - distance, 0.01, 0, 2 * Math.PI);	
 				gr.Stroke ();
 			}
 
-			if ((cercles & CerclePosition.Left) == CerclePosition.Left) {
+			if ((circles & CerclePosition.Left) == CerclePosition.Left) {
 				gr.Arc (x + distance, y + figure_size / 2, 0.01, 0, 2 * Math.PI);
 				gr.Stroke ();
 			}

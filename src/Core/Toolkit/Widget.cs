@@ -34,7 +34,7 @@ namespace gbrainy.Core.Toolkit
 		public delegate void WidgetDrawEventHandler (object sender, DrawEventArgs e);
 
 		public event EventHandler DrawRequest;
-		public event EventHandler <SeletectedEventArgs> SelectedEvent;
+		public event EventHandler <SelectedEventArgs> SelectedEvent;
 		ISynchronizeInvoke synchronize;
 		bool sensitive;
 
@@ -79,7 +79,7 @@ namespace gbrainy.Core.Toolkit
 			DrawRequest (this, EventArgs.Empty);
 		}
 
-		protected void OnSelected (SeletectedEventArgs e)
+		protected void OnSelected (SelectedEventArgs e)
 		{
 			if (SelectedEvent == null)
 				return;

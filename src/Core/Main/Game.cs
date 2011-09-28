@@ -264,7 +264,7 @@ namespace gbrainy.Core.Main
 			};
 
 			// If the user has selected an item we should propagate an answer
-			container.SelectedEvent += delegate (object sender, SeletectedEventArgs e)
+			container.SelectedEvent += delegate (object sender, SelectedEventArgs e)
 			{
 				if (AnswerEvent != null)
 					AnswerEvent (this, new GameAnswerEventArgs ((string) e.DataEx));
