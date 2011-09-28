@@ -1,8 +1,21 @@
-AC_INIT(gbrainy, 2.03)
+# Define gbrainy version
+m4_define([gbrainy_version_major], [2])
+m4_define([gbrainy_version_minor], [0])
+m4_define([gbrainy_version_revision], [90])
+
+m4_define([concat], $1$2$3$4)
+
+m4_define([gbrainy_version], concat(gbrainy_version_major.gbrainy_version_minor.gbrainy_version_revision))
+
+m4_define([gbrainy_asm_version], [gbrainy_version_major.gbrainy_version_minor.gbrainy_version_revision.0])
+
+AC_INIT(gbrainy, [gbrainy_version],
+	[http://bugzilla.gnome.org/enter_bug.cgi?product=gbrainy])
+
 AC_CONFIG_SRCDIR(src/Core/)
 
 # Version for assemblies: Major.Minor.Build.Revision
-ASSEMBLY_VERSION="2.0.3.0"
+ASSEMBLY_VERSION=gbrainy_asm_version
 AC_SUBST(ASSEMBLY_VERSION)
 
 AM_CONFIG_HEADER(config.h)
