@@ -1,5 +1,9 @@
-AC_INIT(gbrainy, 2.01)
+AC_INIT(gbrainy, 2.03)
 AC_CONFIG_SRCDIR(src/Core/)
+
+# Version for assemblies: Major.Minor.Build.Revision
+ASSEMBLY_VERSION="2.0.3.0"
+AC_SUBST(ASSEMBLY_VERSION)
 
 AM_CONFIG_HEADER(config.h)
 

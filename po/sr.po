@@ -9,16 +9,17 @@ msgstr ""
 "Project-Id-Version: gbrainy\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=gbrainy&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2011-08-22 21:46+0000\n"
-"PO-Revision-Date: 2011-07-21 01:23+0200\n"
+"POT-Creation-Date: 2011-09-11 00:41+0000\n"
+"PO-Revision-Date: 2011-09-11 08:07+0200\n"
 "Last-Translator: Мирослав Николић <miroslavnikolic@rocketmail.com>\n"
 "Language-Team: Serbian <gnom@prevod.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: Serbian (sr)\n"
+"Language: sr\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%"
 "10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Generator: Virtaal 0.7.0\n"
 "X-Launchpad-Export-Date: 2010-05-20 05:56+0000\n"
 "X-Project-Style: gnome\n"
 
@@ -79,7 +80,7 @@ msgstr "Аутомобили у граду"
 #: ../src/Games/Calculation/CalculationProportions.cs:131
 #: ../src/Games/Logic/PuzzleFigurePattern.cs:191
 #: ../src/Games/Logic/PuzzleFigures.cs:195
-#: ../src/Games/Logic/PuzzleGridDots.cs:341
+#: ../src/Games/Logic/PuzzleGridDots.cs:340
 #: ../src/Games/Logic/PuzzleLargerShape.cs:303
 #: ../src/Games/Logic/PuzzleMissingPiece.cs:173
 #: ../src/Games/Logic/PuzzleMissingSlice.cs:218
@@ -209,36 +210,30 @@ msgstr ""
 "била у равнотежи?"
 
 #: ../data/games.xml.h:31
-#, fuzzy
-#| msgid ""
-#| "If p &lt; x &lt; q and r &lt; y &lt; s. Which of the following options "
-#| "makes x &gt; y true? [option_answers]"
 msgid ""
 "If p &lt; x &lt; q and r &lt; y &lt; s and you know that x &gt; y is true, "
 "which of the following options is correct? [option_answers]"
 msgstr ""
-"Ако је p&lt;x&lt;q и r&lt;y&lt;s. Која од следећих опција чини исказ x&gt;y "
-"тачним? [option_answers]"
+"Ако је p&lt;x&lt;q и r&lt;y&lt;s, а ви знате да је x&gt;y тачно, која од "
+"следећих опција је тачна? [option_answers]"
 
 #: ../data/games.xml.h:32
-#, fuzzy
-#| msgid ""
-#| "If p &lt; x &lt; q and r &lt; y &lt; s. Which of the following options "
-#| "makes x &gt; y true? [option_answers]"
 msgid ""
 "If p &lt; x &lt; q and r &lt; y &lt; s and you know that x &lt; y is true, "
 "which of the following options is correct? [option_answers]"
 msgstr ""
-"Ако је p&lt;x&lt;q и r&lt;y&lt;s. Која од следећих опција чини исказ x&gt;y "
-"тачним? [option_answers]"
+"Ако је p&lt;x&lt;q и r&lt;y&lt;s, а ви знате да је x&lt;y тачно, која од "
+"следећих опција је тачна? [option_answers]"
 
 #: ../data/games.xml.h:33
 msgid "If x &gt; y, then x &gt; q &lt; and y &gt; r so r &lt; q is true."
 msgstr ""
+"Ако је x&gt;y, онда је x&gt;q&lt; и y&gt;r из чега следи да је r&lt;q тачно."
 
 #: ../data/games.xml.h:34
 msgid "If x &lt; y, then p &lt; x &lt; y &lt; s so s &gt; p is true."
 msgstr ""
+"Ако је x&lt;y, онда је p&lt;x&lt;y&lt;s из чега следи да је s&gt;p тачно."
 
 #: ../data/games.xml.h:35 ../tools/GameXmlGetString.cs:65
 msgid ""
@@ -307,10 +302,9 @@ msgid "It is the result of the operation: ([three] * 3) - ([two] * 2)."
 msgstr "То је резултат математичке операције: ([three] * 3) - ([two] * 2)."
 
 #: ../data/games.xml.h:45
-msgid ""
-"John's age is nowadays half of John's son age, that is, ([father] / 2) - "
-"[difference]."
-msgstr ""
+msgctxt "John's father's sister's sister-in-law is also?"
+msgid "[option_prefix] His cousin"
+msgstr "[option_prefix] Његова рођака"
 
 #: ../data/games.xml.h:46
 msgid ""
@@ -321,6 +315,11 @@ msgstr ""
 "који нису споменути. [option_answers]"
 
 #: ../data/games.xml.h:47
+msgctxt "John's mother's brother's brother-in-law is also?"
+msgid "[option_prefix] His cousin"
+msgstr "[option_prefix] Његов рођак"
+
+#: ../data/games.xml.h:48
 msgid ""
 "John's mother's brother's brother-in-law is also? Do not assume that John "
 "has any relative that has not been mentioned. [option_answers]"
@@ -328,19 +327,27 @@ msgstr ""
 "Зет брата Јованове мајке је? Немојте претпостављати да Јован има рођаке који "
 "нису споменути. [option_answers]"
 
-#: ../data/games.xml.h:48
+#: ../data/games.xml.h:49
+msgid ""
+"John's son age is nowadays half of John's age minus [difference], that is, "
+"([father] / 2) - [difference]."
+msgstr ""
+"Године Марковог сина су данас половина Маркових година минус [difference], "
+"управо тако, ([father] / 2) - [difference]."
+
+#: ../data/games.xml.h:50
 msgid "Lever"
 msgstr "Полуга"
 
-#: ../data/games.xml.h:49
+#: ../data/games.xml.h:51
 msgid "Multiple number"
 msgstr "Производ бројева"
 
-#: ../data/games.xml.h:50
+#: ../data/games.xml.h:52
 msgid "Odd number"
 msgstr "Непаран број"
 
-#: ../data/games.xml.h:51
+#: ../data/games.xml.h:53
 msgid ""
 "On the dartboard below, where would you need to throw the darts to add 120 "
 "points in 5 throws? Answer using a list of numbers (e.g.: 4, 5, 6, 3, 2)"
@@ -348,11 +355,11 @@ msgstr ""
 "На доле приказаном пикаду, где треба да погодите стрелицама да добијете 120 "
 "поена из 5 покушаја? Одговорите користећи низ бројева (нпр.: 4, 5, 6, 3, 2)"
 
-#: ../data/games.xml.h:52
+#: ../data/games.xml.h:54
 msgid "Only 3 of the 4 numbers in the dartboard are used to add 120 points."
 msgstr "Само 3 од 4 броја на пикаду се користе за освајање 120 бодова."
 
-#: ../data/games.xml.h:53
+#: ../data/games.xml.h:55
 msgid ""
 "Out of [people] people, [brothers] have brothers, [sisters] have sisters and "
 "[both] have both. How many people have neither brothers nor sisters?"
@@ -360,19 +367,19 @@ msgstr ""
 "Од [people] особа, [brothers] имају браће, [sisters] имају сестре и [both] "
 "имају обоје. Колико особа нема ни браће ни сестре?"
 
-#: ../data/games.xml.h:54
+#: ../data/games.xml.h:56
 msgid "Palindromic years"
 msgstr "Палиндромске године"
 
-#: ../data/games.xml.h:55
+#: ../data/games.xml.h:57
 msgid "Password"
 msgstr "Лозинка"
 
-#: ../data/games.xml.h:56
+#: ../data/games.xml.h:58
 msgid "Simple equations"
 msgstr "Просте једначине"
 
-#: ../data/games.xml.h:57
+#: ../data/games.xml.h:59
 msgid ""
 "Since x is always an even number, multiplying it by 2 always produces an "
 "even number. Adding an even number to an odd number (y) always produces an "
@@ -381,11 +388,11 @@ msgstr ""
 "Пошто је „x“ увек паран број и када га помножите са 2 увек добијете паран "
 "број. Додавање парног броја непараном броју (y) увек даје непаран број."
 
-#: ../data/games.xml.h:58
+#: ../data/games.xml.h:60
 msgid "Tennis game"
 msgstr "Тениски меч"
 
-#: ../data/games.xml.h:59
+#: ../data/games.xml.h:61
 msgid ""
 "The average of three numbers is [three]. The average of two of these numbers "
 "is [two]. What is the third number? [option_answers]"
@@ -393,50 +400,50 @@ msgstr ""
 "Просек три броја је [three]. Просек два од ових бројева је [two]. Који је "
 "трећи број? [option_answers]"
 
-#: ../data/games.xml.h:60
+#: ../data/games.xml.h:62
 msgid ""
 "The brother's brother-in-law is John's mother's husband, that is, John's "
 "father."
 msgstr "Братов зет је Јованове мајке супруг, заправо, Јованов отац."
 
-#: ../data/games.xml.h:61
+#: ../data/games.xml.h:63
 msgid "The heavier truck weights [heavier] and the lighter [lighter]."
 msgstr "Тежи камион тежи [heavier] а лакши [lighter] тона."
 
-#: ../data/games.xml.h:62
+#: ../data/games.xml.h:64
 msgid ""
 "The sister's sister-in-law is John's father's wife, that is, John's mother."
 msgstr "Сестрина снаја је Јовановог оца жена, заправо, Јованова мајка."
 
-#: ../data/games.xml.h:63
+#: ../data/games.xml.h:65
 msgid "Third number"
 msgstr "Трећи број"
 
-#: ../data/games.xml.h:64
+#: ../data/games.xml.h:66
 msgid "Two trucks"
 msgstr "Два камиона"
 
-#: ../data/games.xml.h:65
+#: ../data/games.xml.h:67
 msgid "Warehouse"
 msgstr "Магацин"
 
-#: ../data/games.xml.h:66
+#: ../data/games.xml.h:68
 msgid "What number divided by [num_a] equals [num_b]?"
 msgstr "Који број подељен са [num_a] даје резултат [num_b]?"
 
-#: ../data/games.xml.h:67
+#: ../data/games.xml.h:69
 msgid "What number minus [num_a] equals [num_b]?"
 msgstr "Који број минус [num_a] даје резултат [num_b]?"
 
-#: ../data/games.xml.h:68
+#: ../data/games.xml.h:70
 msgid "What number multiplied by [num_a] equals [num_b]?"
 msgstr "Који број помножен са [num_a] даје резултат [num_b]?"
 
-#: ../data/games.xml.h:69
+#: ../data/games.xml.h:71
 msgid "What number plus [num_a] equals [num_b]?"
 msgstr "Који број плус [num_a] даје резултат [num_b]?"
 
-#: ../data/games.xml.h:70
+#: ../data/games.xml.h:72
 msgid ""
 "Which two numbers of the list below are both multiple of [num_x] and "
 "[num_y]? [option_answers]"
@@ -444,11 +451,11 @@ msgstr ""
 "Која два броја са списка су умношци бројева [num_x] и [num_y]? "
 "[option_answers]"
 
-#: ../data/games.xml.h:71
+#: ../data/games.xml.h:73
 msgid "You can fit 6 * 5 * [z] * 2 boxes."
 msgstr "Можете да упакујете 6 * 5 * [z] * 2 кутија."
 
-#: ../data/games.xml.h:72 ../tools/GameXmlGetString.cs:81
+#: ../data/games.xml.h:74 ../tools/GameXmlGetString.cs:81
 msgid ""
 "You have two trucks that have a total weight of [add] unit. If the lighter "
 "truck weights 15 units less that half of the weight of the heavier truck, "
@@ -470,7 +477,7 @@ msgstr[2] ""
 "тона мање него половина тежине тежег камиона, колико је онда тежак лакши "
 "камион? [option_answers]"
 
-#: ../data/games.xml.h:74
+#: ../data/games.xml.h:76
 #, no-c-format
 msgid ""
 "[females_cars]% ([all_cars] - [males_cars]) of the inhabitants are women and "
@@ -480,127 +487,123 @@ msgstr ""
 "аутомобил."
 
 #. Since this a multioption the answer string is set to option | this string, what makes answer_show is not useful here
-#: ../data/games.xml.h:76
+#: ../data/games.xml.h:78
 msgid "[option_a] and [option_b]"
 msgstr "[option_a] и [option_b]"
 
-#: ../data/games.xml.h:77
+#: ../data/games.xml.h:79
 msgid "[option_a] and [option_b] are both multiples of [num_x] and [num_y]."
 msgstr "[option_a] и [option_b] јесу производи бројева [num_x] и [num_y]."
 
-#: ../data/games.xml.h:78
+#: ../data/games.xml.h:80
 msgid "[option_prefix] (x - y) * 2"
 msgstr "[option_prefix] (x - y) * 2"
 
-#: ../data/games.xml.h:79
+#: ../data/games.xml.h:81
 msgid "[option_prefix] 2x + y"
 msgstr "[option_prefix] 2x + y"
 
-#: ../data/games.xml.h:80
+#: ../data/games.xml.h:82
 msgid "[option_prefix] Has no relation"
 msgstr "[option_prefix] Нису у сродству"
 
-#: ../data/games.xml.h:81
-msgid "[option_prefix] His cousin"
-msgstr "[option_prefix] Његов/а рођак/а"
-
-#: ../data/games.xml.h:82
+#: ../data/games.xml.h:83
 msgid "[option_prefix] His father"
 msgstr "[option_prefix] Његов отац"
 
-#: ../data/games.xml.h:83
+#: ../data/games.xml.h:84
 msgid "[option_prefix] His mother"
 msgstr "[option_prefix] Његова мајка"
 
-#: ../data/games.xml.h:84
+#: ../data/games.xml.h:85
 msgid "[option_prefix] His son-in-law"
 msgstr "[option_prefix] Његов зет"
 
-#: ../data/games.xml.h:85
+#: ../data/games.xml.h:86
 msgid "[option_prefix] [answer_a]"
 msgstr "[option_prefix] [answer_a]"
 
-#: ../data/games.xml.h:86
+#: ../data/games.xml.h:87
 msgid "[option_prefix] [answer_b]"
 msgstr "[option_prefix] [answer_b]"
 
-#: ../data/games.xml.h:87
+#: ../data/games.xml.h:88
 msgid "[option_prefix] [answer_c]"
 msgstr "[option_prefix] [answer_c]"
 
-#: ../data/games.xml.h:88
+#: ../data/games.xml.h:89
 msgid "[option_prefix] [answer_d]"
 msgstr "[option_prefix] [answer_d]"
 
-#: ../data/games.xml.h:89
+#: ../data/games.xml.h:90
 msgid "[option_prefix] [option_a] and [option_b]"
 msgstr "[option_prefix] [option_a] и [option_b]"
 
-#: ../data/games.xml.h:90
+#: ../data/games.xml.h:91
 msgid "[option_prefix] [option_a] and [option_c]"
 msgstr "[option_prefix] [option_a] и [option_c]"
 
-#: ../data/games.xml.h:92
+#: ../data/games.xml.h:93
 #, no-c-format
 msgid "[option_prefix] [option_a]%"
 msgstr "[option_prefix] [option_a]%"
 
-#: ../data/games.xml.h:93
+#: ../data/games.xml.h:94
 msgid "[option_prefix] [option_b] and [option_c]"
 msgstr "[option_prefix] [option_b] и [option_c]"
 
-#: ../data/games.xml.h:95
+#: ../data/games.xml.h:96
 #, no-c-format
 msgid "[option_prefix] [option_b]%"
 msgstr "[option_prefix] [option_b]%"
 
-#: ../data/games.xml.h:96
+#: ../data/games.xml.h:97
 msgid "[option_prefix] [option_c] and [option_d]"
 msgstr "[option_prefix] [option_c] и [option_d]"
 
-#: ../data/games.xml.h:98
+#: ../data/games.xml.h:99
 #, no-c-format
 msgid "[option_prefix] [option_c]%"
 msgstr "[option_prefix] [option_c]%"
 
-#: ../data/games.xml.h:100
+#: ../data/games.xml.h:101
 #, no-c-format
 msgid "[option_prefix] [option_d]%"
 msgstr "[option_prefix] [option_d]%"
 
-#: ../data/games.xml.h:101
+#: ../data/games.xml.h:102
 msgid "[option_prefix] p < r"
 msgstr "[option_prefix] p < r"
 
-#: ../data/games.xml.h:102
+#: ../data/games.xml.h:103
 msgid "[option_prefix] p > r"
 msgstr "[option_prefix] p > r"
 
-#: ../data/games.xml.h:103
+#: ../data/games.xml.h:104
 msgid "[option_prefix] q = s"
 msgstr "[option_prefix] q = s"
 
-#: ../data/games.xml.h:104
+#: ../data/games.xml.h:105
 msgid "[option_prefix] r < q"
 msgstr "[option_prefix] r < q"
 
-#: ../data/games.xml.h:105
+#: ../data/games.xml.h:106
 msgid "[option_prefix] s > p"
 msgstr "[option_prefix] s > p"
 
-#: ../data/games.xml.h:106
+#: ../data/games.xml.h:107
 msgid "[option_prefix] x * y"
 msgstr "[option_prefix] x * y"
 
-#: ../data/games.xml.h:107
+#: ../data/games.xml.h:108
 msgid "[option_prefix] x * y * 2"
 msgstr "[option_prefix] x * y * 2"
 
-#: ../data/games.xml.h:108
+#: ../data/games.xml.h:109
 msgid "[rslt_a] and [rslt_b]"
 msgstr "[rslt_a] и [rslt_b]"
 
-#: ../data/games.xml.h:109
+#: ../data/games.xml.h:110
 msgid ""
 "[year_start] is a palindromic year as [year_end] is, a gap of 11 years. What "
 "are the next two consecutive palindromic years after [year_end] with the "
@@ -611,19 +614,19 @@ msgstr ""
 "истим размаком? Одговорите користећи два броја (нпр.: [year_start] и "
 "[year_end])."
 
-#: ../data/games.xml.h:110
+#: ../data/games.xml.h:111
 msgid "x * [num_a] = [num_b]"
 msgstr "x * [num_a] = [num_b]"
 
-#: ../data/games.xml.h:111
+#: ../data/games.xml.h:112
 msgid "x + [num_a] = [num_b]"
 msgstr "x + [num_a] = [num_b]"
 
-#: ../data/games.xml.h:112
+#: ../data/games.xml.h:113
 msgid "x - [num_a] = [num_b]"
 msgstr "x - [num_a] = [num_b]"
 
-#: ../data/games.xml.h:113
+#: ../data/games.xml.h:114
 msgid "x / [num_a] = [num_b]"
 msgstr "x / [num_a] = [num_b]"
 
@@ -731,31 +734,28 @@ msgstr ""
 msgid "Angle"
 msgstr "Угао"
 
-#: ../data/verbal_analogies.xml.h:21
+#. Translator: Used as an adjective in English. Possible answer to: Which of the following words is closest to the meaning of 'negligent'
+#: ../data/verbal_analogies.xml.h:22
 msgid "Angry"
 msgstr "Љутитост"
 
-#: ../data/verbal_analogies.xml.h:22
+#: ../data/verbal_analogies.xml.h:23
 msgid "Ant / Vertebrate"
 msgstr "мрав / кичмењак"
 
 #. Translators: Anthophobia is fear of flowers that poses little or no danger
-#: ../data/verbal_analogies.xml.h:24
+#: ../data/verbal_analogies.xml.h:25
 msgid "Anthophobia"
 msgstr "Антофобија"
 
 #. Translators: Anthropophobia is fear of people
-#: ../data/verbal_analogies.xml.h:26
+#: ../data/verbal_analogies.xml.h:27
 msgid "Anthropophobia"
 msgstr "Антропофобија"
 
-#: ../data/verbal_analogies.xml.h:27
+#: ../data/verbal_analogies.xml.h:28
 msgid "Apple"
 msgstr "Јабука"
-
-#: ../data/verbal_analogies.xml.h:28
-msgid "Attention"
-msgstr "Пажња"
 
 #: ../data/verbal_analogies.xml.h:29
 msgid "Attic"
@@ -822,75 +822,72 @@ msgstr "Угљеник"
 msgid "Cardiology"
 msgstr "Кардиологија"
 
-#: ../data/verbal_analogies.xml.h:46
+#. Translator: Used as an adjective in English. Possible answer to: Which of the following words is closest to the meaning of 'negligent'
+#: ../data/verbal_analogies.xml.h:47
 msgid "Careless"
 msgstr "Немарност"
 
-#: ../data/verbal_analogies.xml.h:47
+#: ../data/verbal_analogies.xml.h:48
 msgid "Celebrated"
 msgstr "Прослављен"
 
-#: ../data/verbal_analogies.xml.h:48
+#: ../data/verbal_analogies.xml.h:49
 msgid "Cellulose"
 msgstr "Целулоза"
 
-#: ../data/verbal_analogies.xml.h:49
+#: ../data/verbal_analogies.xml.h:50
 msgid "Chicken / Parrot"
 msgstr "пиле / папагај"
 
-#: ../data/verbal_analogies.xml.h:50
+#: ../data/verbal_analogies.xml.h:51
 msgid "Chord"
 msgstr "Тетива"
 
 #. Translator: 'Close' as verb, like closed with a key
-#: ../data/verbal_analogies.xml.h:52
+#: ../data/verbal_analogies.xml.h:53
 msgid "Close"
 msgstr "Затвори"
 
-#: ../data/verbal_analogies.xml.h:53
+#: ../data/verbal_analogies.xml.h:54
 msgid "Coast"
 msgstr "Обала"
 
-#: ../data/verbal_analogies.xml.h:54
+#: ../data/verbal_analogies.xml.h:55
 msgid "Collectivism"
 msgstr "Колективизам"
 
-#: ../data/verbal_analogies.xml.h:55
+#: ../data/verbal_analogies.xml.h:56
 msgid "Column"
 msgstr "Стуб"
 
-#: ../data/verbal_analogies.xml.h:56
+#: ../data/verbal_analogies.xml.h:57
 msgid "Concert hall"
 msgstr "Концертна дворана"
 
-#: ../data/verbal_analogies.xml.h:57
+#: ../data/verbal_analogies.xml.h:58
 msgid "Condemn"
 msgstr "Осудити"
 
 #. Translator: As synonymous of 'perplexing'
-#: ../data/verbal_analogies.xml.h:59
+#: ../data/verbal_analogies.xml.h:60
 msgid "Confusing"
 msgstr "Збуњујуће"
 
-#: ../data/verbal_analogies.xml.h:60
+#: ../data/verbal_analogies.xml.h:61
 msgid "Connoisseur"
 msgstr "Познавалац"
 
-#: ../data/verbal_analogies.xml.h:61
+#: ../data/verbal_analogies.xml.h:62
 msgid "Conspirator"
 msgstr "Завереник"
 
-#: ../data/verbal_analogies.xml.h:62
+#: ../data/verbal_analogies.xml.h:63
 msgid "Contradictory"
 msgstr "Противречност"
 
-#: ../data/verbal_analogies.xml.h:63
+#: ../data/verbal_analogies.xml.h:64
 msgid "Corn"
 msgstr "Кукуруз"
-
-#: ../data/verbal_analogies.xml.h:64
-msgid "Courtesy"
-msgstr "Љубазност"
 
 #: ../data/verbal_analogies.xml.h:65
 msgid "Crocodile"
@@ -981,108 +978,113 @@ msgstr "Виљушка"
 msgid "Fossil"
 msgstr "Фосил"
 
-#: ../data/verbal_analogies.xml.h:88
+#. Translator: Used as an adjective in English. Possible answer to: Which of the following words is closest to the meaning of 'negligent'
+#: ../data/verbal_analogies.xml.h:89
+msgid "Friendly"
+msgstr "Пријатељски"
+
+#: ../data/verbal_analogies.xml.h:90
 msgid "Frog"
 msgstr "Жаба"
 
-#: ../data/verbal_analogies.xml.h:89
+#: ../data/verbal_analogies.xml.h:91
 msgid "Gallon"
 msgstr "Галон"
 
-#: ../data/verbal_analogies.xml.h:90
+#: ../data/verbal_analogies.xml.h:92
 msgid "Generic"
 msgstr "Општи"
 
-#: ../data/verbal_analogies.xml.h:91
+#: ../data/verbal_analogies.xml.h:93
 msgid "Golf"
 msgstr "Голф"
 
-#: ../data/verbal_analogies.xml.h:92
+#: ../data/verbal_analogies.xml.h:94
 msgid "Grab and bite are finite actions."
 msgstr "Зграбити и загристи су завршне радње."
 
-#: ../data/verbal_analogies.xml.h:93
+#: ../data/verbal_analogies.xml.h:95
 msgid "Grain"
 msgstr "Јечам"
 
-#: ../data/verbal_analogies.xml.h:94
+#: ../data/verbal_analogies.xml.h:96
 msgid "Grape"
 msgstr "Грожђе"
 
-#: ../data/verbal_analogies.xml.h:95
+#: ../data/verbal_analogies.xml.h:97
 msgid "Gym"
 msgstr "Теретана"
 
-#: ../data/verbal_analogies.xml.h:96
+#: ../data/verbal_analogies.xml.h:98
 msgid "Hangar"
 msgstr "Хангар"
 
-#: ../data/verbal_analogies.xml.h:97
+#: ../data/verbal_analogies.xml.h:99
 msgid "Hectogram"
 msgstr "Хектограм"
 
-#: ../data/verbal_analogies.xml.h:98
+#: ../data/verbal_analogies.xml.h:100
 msgid "Hematology"
 msgstr "Хематологија"
 
-#: ../data/verbal_analogies.xml.h:99
+#: ../data/verbal_analogies.xml.h:101
 msgid "Hide"
 msgstr "Сакрити"
 
-#: ../data/verbal_analogies.xml.h:100
+#: ../data/verbal_analogies.xml.h:102
 msgid "Homeless"
 msgstr "Бескућник"
 
-#: ../data/verbal_analogies.xml.h:101
+#: ../data/verbal_analogies.xml.h:103
 msgid "Hyena"
 msgstr "Хијена"
 
-#: ../data/verbal_analogies.xml.h:102
+#: ../data/verbal_analogies.xml.h:104
 msgid "Hypochondria"
 msgstr "Хипохондрија"
 
-#: ../data/verbal_analogies.xml.h:103
+#: ../data/verbal_analogies.xml.h:105
 msgid "Icosagon"
 msgstr "Икозагон"
 
-#: ../data/verbal_analogies.xml.h:104
+#: ../data/verbal_analogies.xml.h:106
 msgid "Ignore"
 msgstr "Игнорисати"
 
-#: ../data/verbal_analogies.xml.h:105
+#: ../data/verbal_analogies.xml.h:107
 msgid "Incredible"
 msgstr "Невероватан"
 
-#: ../data/verbal_analogies.xml.h:106
+#: ../data/verbal_analogies.xml.h:108
 msgid "Indifference"
 msgstr "Равнодушност"
 
-#: ../data/verbal_analogies.xml.h:107
+#: ../data/verbal_analogies.xml.h:109
 msgid "Ink"
 msgstr "Мастило"
 
-#: ../data/verbal_analogies.xml.h:108
+#: ../data/verbal_analogies.xml.h:110
 msgid "Insects"
 msgstr "Инсекти"
 
-#: ../data/verbal_analogies.xml.h:109
+#: ../data/verbal_analogies.xml.h:111
 msgid "Interesting"
 msgstr "Занимљив"
 
-#: ../data/verbal_analogies.xml.h:110
+#: ../data/verbal_analogies.xml.h:112
 msgid "Intuition"
 msgstr "Интуиција"
 
-#: ../data/verbal_analogies.xml.h:111
+#: ../data/verbal_analogies.xml.h:113
 msgid "Ironic"
 msgstr "Иронија"
 
-#: ../data/verbal_analogies.xml.h:112
+#: ../data/verbal_analogies.xml.h:114
 msgid "Island"
 msgstr "Острво"
 
 #. Translator: definition of negligent
-#: ../data/verbal_analogies.xml.h:114
+#: ../data/verbal_analogies.xml.h:116
 msgid ""
 "It is the failure to take such care as may be rightfully or reasonably "
 "expected."
@@ -1090,164 +1092,164 @@ msgstr ""
 "То је недостатак бриге или пажње јер је разумно и може се с правом очекивати "
 "какав след догађаја."
 
-#: ../data/verbal_analogies.xml.h:115
+#: ../data/verbal_analogies.xml.h:117
 msgid "It is the only one that does not use a ball in the game."
 msgstr "То је једини спорт у коме се не користи лопта у игри."
 
-#: ../data/verbal_analogies.xml.h:116
+#: ../data/verbal_analogies.xml.h:118
 msgid "It is the only one that is not a carnivore."
 msgstr "То је једина животиња која није месождер."
 
-#: ../data/verbal_analogies.xml.h:117
+#: ../data/verbal_analogies.xml.h:119
 msgid "It is the only one that is not a cereal."
 msgstr "То је једина биљка која није житарица."
 
-#: ../data/verbal_analogies.xml.h:118
+#: ../data/verbal_analogies.xml.h:120
 msgid "It is the only one that is not a fruit."
 msgstr "То је једина биљка која није воће."
 
-#: ../data/verbal_analogies.xml.h:119
+#: ../data/verbal_analogies.xml.h:121
 msgid "It is the only one that is not a medical specialty."
 msgstr "То је једино занимање које није медицинска специјалност."
 
-#: ../data/verbal_analogies.xml.h:120
+#: ../data/verbal_analogies.xml.h:122
 msgid "It is the only one that is not a metal."
 msgstr "То је једини елемент који није метал."
 
-#: ../data/verbal_analogies.xml.h:121
+#: ../data/verbal_analogies.xml.h:123
 msgid "It is the only one that is not a reptile and also does not have a tail."
 msgstr "То је једина животиња која није гмизавац и уједно нема реп."
 
-#: ../data/verbal_analogies.xml.h:122
+#: ../data/verbal_analogies.xml.h:124
 msgid "It is the only one that is not a woodwind instrument."
 msgstr "То је једини музички инструмент који није дувачки музички инструмент."
 
-#: ../data/verbal_analogies.xml.h:123
+#: ../data/verbal_analogies.xml.h:125
 msgid "It is the only one that is not related to architecture."
 msgstr "То је једина реч која није у вези са архитектуром."
 
-#: ../data/verbal_analogies.xml.h:124
+#: ../data/verbal_analogies.xml.h:126
 msgid "It is the only unit that does not belong to the metric system."
 msgstr "То је једина мерна јединица која не припада метричком систему."
 
-#: ../data/verbal_analogies.xml.h:125
+#: ../data/verbal_analogies.xml.h:127
 msgid "Kilometer"
 msgstr "Километар"
 
-#: ../data/verbal_analogies.xml.h:126
+#: ../data/verbal_analogies.xml.h:128
 msgid "Latitude"
 msgstr "Географска ширина | латитуда"
 
 # Право значење је лентикија (или тако нешто), али како код нас није много распрострањена нека то буде боранија или грашак.
-#: ../data/verbal_analogies.xml.h:127
+#: ../data/verbal_analogies.xml.h:129
 msgid "Lentils"
 msgstr "Боранија"
 
-#: ../data/verbal_analogies.xml.h:128
+#: ../data/verbal_analogies.xml.h:130
 msgid "Light"
 msgstr "Светлост"
 
-#: ../data/verbal_analogies.xml.h:129
+#: ../data/verbal_analogies.xml.h:131
 msgid "Liter"
 msgstr "Литар"
 
-#: ../data/verbal_analogies.xml.h:130
+#: ../data/verbal_analogies.xml.h:132
 msgid "Lizard"
 msgstr "Гуштер"
 
 #. Translator: 'Lock' as verb, like locked with a key
-#: ../data/verbal_analogies.xml.h:132
+#: ../data/verbal_analogies.xml.h:134
 msgid "Lock"
 msgstr "Закључај"
 
-#: ../data/verbal_analogies.xml.h:133
+#: ../data/verbal_analogies.xml.h:135
 msgid "Loner"
 msgstr "Усамљеник"
 
 # Није, ал' нека буде.
-#: ../data/verbal_analogies.xml.h:134
+#: ../data/verbal_analogies.xml.h:136
 msgid "Lychee"
 msgstr "Авокадо"
 
-#: ../data/verbal_analogies.xml.h:135
+#: ../data/verbal_analogies.xml.h:137
 msgid "Mango"
 msgstr "Манго"
 
-#: ../data/verbal_analogies.xml.h:136
+#: ../data/verbal_analogies.xml.h:138
 msgid "Martyr"
 msgstr "Мученик"
 
-#: ../data/verbal_analogies.xml.h:137
+#: ../data/verbal_analogies.xml.h:139
 msgid "Misunderstood"
 msgstr "Погрешно схваћен"
 
-#: ../data/verbal_analogies.xml.h:138
+#: ../data/verbal_analogies.xml.h:140
 msgid "Money"
 msgstr "Новац"
 
-#: ../data/verbal_analogies.xml.h:139
+#: ../data/verbal_analogies.xml.h:141
 msgid "Museum"
 msgstr "Музеј"
 
-#: ../data/verbal_analogies.xml.h:140
+#: ../data/verbal_analogies.xml.h:142
 msgid "Oboe"
 msgstr "Обоа"
 
-#: ../data/verbal_analogies.xml.h:141
+#: ../data/verbal_analogies.xml.h:143
 msgid "Obscure"
 msgstr "Замрачити"
 
-#: ../data/verbal_analogies.xml.h:142
+#: ../data/verbal_analogies.xml.h:144
 msgid "Obvious"
 msgstr "Очигледан"
 
-#: ../data/verbal_analogies.xml.h:143
+#: ../data/verbal_analogies.xml.h:145
 msgid "Occasional"
 msgstr "Повремен"
 
-#: ../data/verbal_analogies.xml.h:144
+#: ../data/verbal_analogies.xml.h:146
 msgid "Offensive"
 msgstr "Нападање"
 
-#: ../data/verbal_analogies.xml.h:145
+#: ../data/verbal_analogies.xml.h:147
 msgid "Oligarchy"
 msgstr "Олигархија"
 
-#: ../data/verbal_analogies.xml.h:146
+#: ../data/verbal_analogies.xml.h:148
 msgid "Olive"
 msgstr "Маслина"
 
-#: ../data/verbal_analogies.xml.h:147
+#: ../data/verbal_analogies.xml.h:149
 msgid "Onion"
 msgstr "Црни лук"
 
 #. Translator: 'Open' as verb, like open with a key
-#: ../data/verbal_analogies.xml.h:149
+#: ../data/verbal_analogies.xml.h:151
 msgid "Open"
 msgstr "Отвори"
 
 #. Translators: refers to the fruit
-#: ../data/verbal_analogies.xml.h:151
+#: ../data/verbal_analogies.xml.h:153
 msgid "Orange"
 msgstr "Поморанџа"
 
-#: ../data/verbal_analogies.xml.h:152
+#: ../data/verbal_analogies.xml.h:154
 msgid "Ordinary"
 msgstr "уобичајен"
 
-#: ../data/verbal_analogies.xml.h:153
+#: ../data/verbal_analogies.xml.h:155
 msgid "Ostentation"
 msgstr "Шепурење"
 
-#: ../data/verbal_analogies.xml.h:154
+#: ../data/verbal_analogies.xml.h:156
 msgid "Pain"
 msgstr "Бол"
 
-#: ../data/verbal_analogies.xml.h:155
+#: ../data/verbal_analogies.xml.h:157
 msgid "Paleontology"
 msgstr "Палеонтологија"
 
-#: ../data/verbal_analogies.xml.h:156
+#: ../data/verbal_analogies.xml.h:158
 msgid ""
 "Parallel and longitude traverse from east to west while meridian and "
 "latitude traverse from north to south."
@@ -1256,172 +1258,177 @@ msgstr ""
 "меридијани и географска дужина (лонгитуда) у правцу исток-запад."
 
 #. Translator: Pertaining to a single or specific person or thing
-#: ../data/verbal_analogies.xml.h:158
+#: ../data/verbal_analogies.xml.h:160
 msgid "Particular"
 msgstr "Посебан"
 
-#: ../data/verbal_analogies.xml.h:159
+#: ../data/verbal_analogies.xml.h:161
 msgid "Person expelled from society"
 msgstr "Особа избачена из друштва"
 
-#: ../data/verbal_analogies.xml.h:160
+#: ../data/verbal_analogies.xml.h:162
 msgid "Photography"
 msgstr "Фотографија"
 
-#: ../data/verbal_analogies.xml.h:161
+#: ../data/verbal_analogies.xml.h:163
 msgid "Pioneer"
 msgstr "Пионир"
 
-#: ../data/verbal_analogies.xml.h:162
+#: ../data/verbal_analogies.xml.h:164
 msgid "Pleasure"
 msgstr "Задовољство"
 
-#: ../data/verbal_analogies.xml.h:163
+#: ../data/verbal_analogies.xml.h:165
 msgid "Pole"
 msgstr "Пол"
 
-#: ../data/verbal_analogies.xml.h:164
+#. Translator: Used as an adjective in English. Possible answer to: Which of the following words is closest to the meaning of 'negligent'
+#: ../data/verbal_analogies.xml.h:167
+msgid "Polite"
+msgstr "Учтив"
+
+#: ../data/verbal_analogies.xml.h:168
 msgid "Pony / Horse"
 msgstr "пони / коњ"
 
-#: ../data/verbal_analogies.xml.h:165
+#: ../data/verbal_analogies.xml.h:169
 msgid "Portico"
 msgstr "Портикус"
 
-#: ../data/verbal_analogies.xml.h:166
+#: ../data/verbal_analogies.xml.h:170
 msgid "Positivism"
 msgstr "Позитивизам"
 
-#: ../data/verbal_analogies.xml.h:167
+#: ../data/verbal_analogies.xml.h:171
 msgid "Potato"
 msgstr "Кромпир"
 
-#: ../data/verbal_analogies.xml.h:168
+#: ../data/verbal_analogies.xml.h:172
 msgid "Printer"
 msgstr "Штампач"
 
-#: ../data/verbal_analogies.xml.h:169
+#: ../data/verbal_analogies.xml.h:173
 msgid "Property"
 msgstr "Имовина"
 
-#: ../data/verbal_analogies.xml.h:170
+#: ../data/verbal_analogies.xml.h:174
 msgid "Psychiatry"
 msgstr "Психијатрија"
 
-#: ../data/verbal_analogies.xml.h:171
+#: ../data/verbal_analogies.xml.h:175
 msgid "Radius"
 msgstr "Полупречник"
 
-#: ../data/verbal_analogies.xml.h:172
+#: ../data/verbal_analogies.xml.h:176
 msgid "Rare"
 msgstr "Редак"
 
-#: ../data/verbal_analogies.xml.h:173
+#: ../data/verbal_analogies.xml.h:177
 msgid "Regular"
 msgstr "Редован"
 
-#: ../data/verbal_analogies.xml.h:174
+#: ../data/verbal_analogies.xml.h:178
 msgid "Related"
 msgstr "Повезаност"
 
-#: ../data/verbal_analogies.xml.h:175
+#: ../data/verbal_analogies.xml.h:179
 msgid "Repugnance"
 msgstr "Одбијање | неодобравање"
 
-#: ../data/verbal_analogies.xml.h:176
+#: ../data/verbal_analogies.xml.h:180
 msgid "Restaurant"
 msgstr "Ресторан"
 
-#: ../data/verbal_analogies.xml.h:177
+#: ../data/verbal_analogies.xml.h:181
 msgid "Rice"
 msgstr "Пиринач"
 
-#: ../data/verbal_analogies.xml.h:178
+#: ../data/verbal_analogies.xml.h:182
 msgid "River"
 msgstr "Река"
 
-#: ../data/verbal_analogies.xml.h:179
+#: ../data/verbal_analogies.xml.h:183
 msgid "Roll"
 msgstr "Ролна"
 
-#: ../data/verbal_analogies.xml.h:180
+#: ../data/verbal_analogies.xml.h:184
 msgid "Sad"
 msgstr "Тужан"
 
-#: ../data/verbal_analogies.xml.h:181
+#: ../data/verbal_analogies.xml.h:185
 msgid "Shame"
 msgstr "Срамота"
 
-#: ../data/verbal_analogies.xml.h:182
+#: ../data/verbal_analogies.xml.h:186
 msgid "Simplistic"
 msgstr "Поједностављен"
 
-#: ../data/verbal_analogies.xml.h:183
+#: ../data/verbal_analogies.xml.h:187
 msgid "Sodium"
 msgstr "Натријум"
 
-#: ../data/verbal_analogies.xml.h:184
+#: ../data/verbal_analogies.xml.h:188
 msgid "Solstice"
 msgstr "Солстициј"
 
-#: ../data/verbal_analogies.xml.h:185
+#: ../data/verbal_analogies.xml.h:189
 msgid "Specializes in skin diseases"
 msgstr "Специјалиста за кожне болести"
 
-#: ../data/verbal_analogies.xml.h:186
+#: ../data/verbal_analogies.xml.h:190
 msgid "Sport"
 msgstr "Спорт"
 
-#: ../data/verbal_analogies.xml.h:187
+#: ../data/verbal_analogies.xml.h:191
 msgid "Suffers a skin disease"
 msgstr "Особа која болује од кожне болести"
 
-#: ../data/verbal_analogies.xml.h:188
+#: ../data/verbal_analogies.xml.h:192
 msgid "Sugarcane"
 msgstr "Шећерна трска"
 
-#: ../data/verbal_analogies.xml.h:189
+#: ../data/verbal_analogies.xml.h:193
 msgid "Sweet corn"
 msgstr "Кукуруз шећерац"
 
-#: ../data/verbal_analogies.xml.h:190
+#: ../data/verbal_analogies.xml.h:194
 msgid "Synonym"
 msgstr "Синоним"
 
-#: ../data/verbal_analogies.xml.h:191
+#: ../data/verbal_analogies.xml.h:195
 msgid "Table"
 msgstr "Сто"
 
-#: ../data/verbal_analogies.xml.h:192
+#: ../data/verbal_analogies.xml.h:196
 msgid "Tangent"
 msgstr "Тангента"
 
-#: ../data/verbal_analogies.xml.h:193
+#: ../data/verbal_analogies.xml.h:197
 msgid "Tears"
 msgstr "Суза"
 
-#: ../data/verbal_analogies.xml.h:194
+#: ../data/verbal_analogies.xml.h:198
 msgid "Tennis"
 msgstr "Тенис"
 
-#: ../data/verbal_analogies.xml.h:195
+#: ../data/verbal_analogies.xml.h:199
 msgid ""
 "The ethical doctrine holding that only what is pleasant is an intrinsic good."
 msgstr "Етичка доктрина која сматра да је ужитак врховно добро."
 
-#: ../data/verbal_analogies.xml.h:196
+#: ../data/verbal_analogies.xml.h:200
 msgid "The first word is the instrument and the second what it measures."
 msgstr "Прва реч је мерни инструмент, а друга шта мери."
 
-#: ../data/verbal_analogies.xml.h:197
+#: ../data/verbal_analogies.xml.h:201
 msgid "The other words have the connotation of not occurring frequently."
 msgstr "Све остале речи указују на то да се не дешавају често."
 
-#: ../data/verbal_analogies.xml.h:198
+#: ../data/verbal_analogies.xml.h:202
 msgid "The other words have the meaning of distinguished."
 msgstr "Све остале речи имају значење разликовања."
 
-#: ../data/verbal_analogies.xml.h:199
+#: ../data/verbal_analogies.xml.h:203
 msgid ""
 "The practice of austere self-discipline in order to achieve a higher or "
 "spiritual idea."
@@ -1429,35 +1436,35 @@ msgstr ""
 "Начин живота који се састоји у самоодрицању да би се постигло духовно "
 "прочишћење."
 
-#: ../data/verbal_analogies.xml.h:200
+#: ../data/verbal_analogies.xml.h:204
 msgid "The radius of a circle is half the diameter."
 msgstr "Полупречник круга је половина пречника."
 
-#: ../data/verbal_analogies.xml.h:201
+#: ../data/verbal_analogies.xml.h:205
 msgid "The relation between the two words is that they are synonymous."
 msgstr "Однос између две речи је такав да су то синоними."
 
-#: ../data/verbal_analogies.xml.h:202
+#: ../data/verbal_analogies.xml.h:206
 msgid "The word 'taxidermist' is used to define a person that?"
 msgstr "Шта значи реч „таксидермист“?"
 
-#: ../data/verbal_analogies.xml.h:203
+#: ../data/verbal_analogies.xml.h:207
 msgid "Theater"
 msgstr "Позориште"
 
-#: ../data/verbal_analogies.xml.h:204
+#: ../data/verbal_analogies.xml.h:208
 msgid "Think of the items used in the game."
 msgstr "Размишљајте о предметима који се користе у игри."
 
-#: ../data/verbal_analogies.xml.h:205
+#: ../data/verbal_analogies.xml.h:209
 msgid "Tiger"
 msgstr "Тигар"
 
-#: ../data/verbal_analogies.xml.h:206
+#: ../data/verbal_analogies.xml.h:210
 msgid "Titanium"
 msgstr "Титан"
 
-#: ../data/verbal_analogies.xml.h:207
+#: ../data/verbal_analogies.xml.h:211
 msgid ""
 "To make both objects work, a button needs to be pushed and a key needs to be "
 "turned."
@@ -1465,491 +1472,494 @@ msgstr ""
 "Да би оба предмета радила, дугме мора бити притиснуто а кључ мора бити "
 "окренут."
 
-#: ../data/verbal_analogies.xml.h:208
+#: ../data/verbal_analogies.xml.h:212
 msgid "Totalitarianism"
 msgstr "Тоталитаризам"
 
 #. Translators: tripod as used is photography
-#: ../data/verbal_analogies.xml.h:210
+#: ../data/verbal_analogies.xml.h:214
 msgid "Tripod"
 msgstr "Троножац"
 
-#: ../data/verbal_analogies.xml.h:211
+#: ../data/verbal_analogies.xml.h:215
 msgid "Trivial"
 msgstr "Безначајан"
 
 # Ово је одговор за кључ.
-#: ../data/verbal_analogies.xml.h:212
+#: ../data/verbal_analogies.xml.h:216
 msgid "Turn"
 msgstr "Окренути"
 
-#: ../data/verbal_analogies.xml.h:213
+#: ../data/verbal_analogies.xml.h:217
 msgid "Turtle"
 msgstr "Корњача"
 
-#: ../data/verbal_analogies.xml.h:214
+#: ../data/verbal_analogies.xml.h:218
 msgid "Unorthodox"
 msgstr "Неконвенционалан"
 
-#: ../data/verbal_analogies.xml.h:215
+#: ../data/verbal_analogies.xml.h:219
 msgid "Unpleasant"
 msgstr "Непријатан"
 
-#: ../data/verbal_analogies.xml.h:216
+#: ../data/verbal_analogies.xml.h:220
 msgid "Violin"
 msgstr "Виолина"
 
-#: ../data/verbal_analogies.xml.h:217
+#: ../data/verbal_analogies.xml.h:221
 msgid "Weapon"
 msgstr "Оружје"
 
-#: ../data/verbal_analogies.xml.h:218
+#: ../data/verbal_analogies.xml.h:222
 msgid "What is a 'halberd'?"
 msgstr "Шта је „Хелебарда“?"
 
-#: ../data/verbal_analogies.xml.h:219
+#: ../data/verbal_analogies.xml.h:223
 msgid "Wheat"
 msgstr "Пшеница"
 
-#: ../data/verbal_analogies.xml.h:220
+#: ../data/verbal_analogies.xml.h:224
 msgid "Which of the following sentences defines better an 'ostracized' person?"
 msgstr "Која од следећих реченица боље дефинише „остракизирану“ особу?"
 
 #.
 #. Translators, please check these recommendations when translating gbrainy: http://live.gnome.org/gbrainy/Localizing
 #.
-#: ../data/verbal_analogies.xml.h:224
+#: ../data/verbal_analogies.xml.h:228
 msgid "Which of the following sports does not belong in this group?"
 msgstr "Који од следећих спортова не припада групи?"
 
 #. Selected to avoid physical characteristics like: has shield, legs or tail
-#: ../data/verbal_analogies.xml.h:226
+#: ../data/verbal_analogies.xml.h:230
 msgid "Which of the following words does not belong in this group?"
 msgstr "Која од следећих речи не припада групи?"
 
-#: ../data/verbal_analogies.xml.h:227
+#: ../data/verbal_analogies.xml.h:231
 msgid "Which of the following words is closest to the meaning of 'asceticism'?"
 msgstr "Која од наведених речи је по значењу најближа речи „аскетизам“?"
 
-#: ../data/verbal_analogies.xml.h:228
+#: ../data/verbal_analogies.xml.h:232
 msgid "Which of the following words is closest to the meaning of 'hedonism'?"
 msgstr "Која од наведених речи је по значењу најближа речи „хедонизам“?"
 
-#: ../data/verbal_analogies.xml.h:229
+#: ../data/verbal_analogies.xml.h:233
 msgid "Which of the following words is closest to the meaning of 'negligent'?"
 msgstr "Која од наведених речи је по значењу најближа речи „немарност“?"
 
-#: ../data/verbal_analogies.xml.h:230
+#: ../data/verbal_analogies.xml.h:234
 msgid "Which of the following words is closest to the meaning of 'oxymoron'?"
 msgstr "Која од наведених речи је по значењу најближа речи „оксиморон“?"
 
-#: ../data/verbal_analogies.xml.h:231
+#: ../data/verbal_analogies.xml.h:235
 msgid "Which of the following words is closest to the meaning of 'perplexing'?"
 msgstr "Која од наведених речи је по значењу најближа речи „збуњујући“?"
 
-#: ../data/verbal_analogies.xml.h:232
+#: ../data/verbal_analogies.xml.h:236
 msgid "Which of the following words is closest to the meaning of 'specific'?"
 msgstr "Која од наведених речи је по значењу најближа речи „посебан“?"
 
-#: ../data/verbal_analogies.xml.h:233
+#: ../data/verbal_analogies.xml.h:237
 msgid "Which of the following words is closest to the meaning of 'unhappy'?"
 msgstr "Која од наведених речи је по значењу најближа речи „несрећан“?"
 
-#: ../data/verbal_analogies.xml.h:234
+#: ../data/verbal_analogies.xml.h:238
 msgid "Which of the following words is the closest in meaning to 'censure'?"
 msgstr "Која од наведених речи је по значењу најближа речи „цензура“?"
 
-#: ../data/verbal_analogies.xml.h:235
+#: ../data/verbal_analogies.xml.h:239
 msgid "Which of the following words means fear of people?"
 msgstr "Која од следећих речи значи страх од људи?"
 
-#: ../data/verbal_analogies.xml.h:236
+#: ../data/verbal_analogies.xml.h:240
 msgid "Winery"
 msgstr "Вински подрум"
 
-#: ../data/verbal_analogies.xml.h:237
+#: ../data/verbal_analogies.xml.h:241
 msgid "Wolf"
 msgstr "Вук"
 
-#: ../data/verbal_analogies.xml.h:238
+#: ../data/verbal_analogies.xml.h:242
 msgid "Works with dead animals"
 msgstr "Особа која ради са мртвим животињама"
 
-#: ../data/verbal_analogies.xml.h:239
+#: ../data/verbal_analogies.xml.h:243
 msgid "Works with leather"
 msgstr "Особа која ради са кожом"
 
-#: ../data/verbal_analogies.xml.h:240
+#: ../data/verbal_analogies.xml.h:244
 msgid "Zinc"
 msgstr "Цинк"
 
-#: ../data/verbal_analogies.xml.h:241
+#: ../data/verbal_analogies.xml.h:245
 msgid "airplane | aeroplane | plane"
 msgstr "авион | ваздухоплов"
 
-#: ../data/verbal_analogies.xml.h:242
+#: ../data/verbal_analogies.xml.h:246
 msgid "ankle"
 msgstr "глежањ | ножни зглоб"
 
-#: ../data/verbal_analogies.xml.h:243
+#: ../data/verbal_analogies.xml.h:247
 msgid "art / gallery | drama"
 msgstr "уметност / галерија | драма"
 
-#: ../data/verbal_analogies.xml.h:244
+#: ../data/verbal_analogies.xml.h:248
 msgid "atlas"
 msgstr "атлас | географски атлас"
 
-#: ../data/verbal_analogies.xml.h:245
+#: ../data/verbal_analogies.xml.h:249
 msgid "bite"
 msgstr "загристи"
 
-#: ../data/verbal_analogies.xml.h:246
+#: ../data/verbal_analogies.xml.h:250
 msgid "body | skin"
 msgstr "тело | кожа | чело"
 
-#: ../data/verbal_analogies.xml.h:247
+#: ../data/verbal_analogies.xml.h:251
 msgid "book | magazine | document"
 msgstr "књига | часопис | документ"
 
 #. Translators: 'open' is used as a verb (open a box)
-#: ../data/verbal_analogies.xml.h:249
+#: ../data/verbal_analogies.xml.h:253
 msgid "box / open | banana"
 msgstr "кутија / отворити | банана"
 
-#: ../data/verbal_analogies.xml.h:250
+#: ../data/verbal_analogies.xml.h:254
 msgid "bridge / over | tunnel"
 msgstr "мост / преко | тунел"
 
-#: ../data/verbal_analogies.xml.h:251
+#: ../data/verbal_analogies.xml.h:255
 msgid "button / push | key (used in a lock)"
 msgstr "тастер / притиснути | кључ (за врата)"
 
-#: ../data/verbal_analogies.xml.h:252
+#: ../data/verbal_analogies.xml.h:256
 msgid "cage | zoo | zoological garden"
 msgstr "кавез | зоо | зоолошки врт"
 
-#: ../data/verbal_analogies.xml.h:253
+#: ../data/verbal_analogies.xml.h:257
 msgid "car / garage | plane"
 msgstr "ауто / гаража | авион"
 
-#: ../data/verbal_analogies.xml.h:254
+#: ../data/verbal_analogies.xml.h:258
 msgid "car / road | train"
 msgstr "аутомобил / пут | воз"
 
-#: ../data/verbal_analogies.xml.h:255
+#. Translators: 'chop' is used as a verb (to chop)
+#: ../data/verbal_analogies.xml.h:260
 msgid "chop"
 msgstr "сећи | кратити"
 
-#: ../data/verbal_analogies.xml.h:256
+#: ../data/verbal_analogies.xml.h:261
 msgid "circle / semicircle | diameter"
 msgstr "круг / полукруг | пречник"
 
-#: ../data/verbal_analogies.xml.h:257
+#: ../data/verbal_analogies.xml.h:262
 msgid "coins"
 msgstr "новчићи | метални новац"
 
-#: ../data/verbal_analogies.xml.h:258
+#: ../data/verbal_analogies.xml.h:263
 msgid "composer | songwriter | lyricist"
 msgstr "композитор | музички песник | лиричар"
 
-#: ../data/verbal_analogies.xml.h:259
+#: ../data/verbal_analogies.xml.h:264
 msgid "concept / idea | obsession"
 msgstr "концепт / идеја | опсесија"
 
-#: ../data/verbal_analogies.xml.h:260
+#: ../data/verbal_analogies.xml.h:265
 msgid "constellation / stars | archipelago"
 msgstr "сазвежђе / звезде | архипелаг"
 
 #. Translators: 'dance' is used as a noun
-#: ../data/verbal_analogies.xml.h:262
+#: ../data/verbal_analogies.xml.h:267
 msgid "dance"
 msgstr "игра | плес"
 
-#: ../data/verbal_analogies.xml.h:263
+#: ../data/verbal_analogies.xml.h:268
 msgid "desert / oasis | sea"
 msgstr "пустиња / оаза | море"
 
-#: ../data/verbal_analogies.xml.h:264
+#: ../data/verbal_analogies.xml.h:269
 msgid "dish / break | balloon"
 msgstr "тањир / разбити | балон"
 
-#: ../data/verbal_analogies.xml.h:265
+#: ../data/verbal_analogies.xml.h:270
 msgid "dog / tame | wolf"
 msgstr "пас / питом | вук"
 
-#: ../data/verbal_analogies.xml.h:266
+#: ../data/verbal_analogies.xml.h:271
 msgid "elbow / knee | wrist"
 msgstr "лакат / колено | ручни зглоб"
 
 #. 'correct' can be used as verb or adjective
-#: ../data/verbal_analogies.xml.h:268
-#, fuzzy
-#| msgid "error / correct | damage"
+#: ../data/verbal_analogies.xml.h:273
 msgid "error / (to) correct | damage"
 msgstr "погрешно / исправити | оштећено"
 
-#: ../data/verbal_analogies.xml.h:269
+#: ../data/verbal_analogies.xml.h:274
 msgid "eyebrow / eye | mustache"
 msgstr "обрва / око | бркови"
 
 #. Translators: the concept 'toe' (http://en.wikipedia.org/wiki/Toe) does not exist in all languages. Feel free to change it to 'fingers' and adapt the answer accordingly
-#: ../data/verbal_analogies.xml.h:271
+#: ../data/verbal_analogies.xml.h:276
 msgid "feet / two | toes"
 msgstr "стопа / два | ножни прсти"
 
-#: ../data/verbal_analogies.xml.h:272
+#: ../data/verbal_analogies.xml.h:277
 msgid "fish / aquarium | monkey"
 msgstr "риба / акваријум | мајмун"
 
-#: ../data/verbal_analogies.xml.h:273
+#: ../data/verbal_analogies.xml.h:278
 msgid "fish / submarine | bird"
 msgstr "риба / подморница | птица"
 
-#: ../data/verbal_analogies.xml.h:274
+#: ../data/verbal_analogies.xml.h:279
 msgid "five / pentagon | ten"
 msgstr "пет / пентагон | десет"
 
-#: ../data/verbal_analogies.xml.h:275
+#: ../data/verbal_analogies.xml.h:280
 msgid "fox / den | bird"
 msgstr "лисица / јазбина | птица"
 
-#: ../data/verbal_analogies.xml.h:276
+#. Translators: 'break' is used as a verb (to break)
+#: ../data/verbal_analogies.xml.h:282
 msgid "glass / break | paper"
 msgstr "стакло / сломити | папир"
 
-#: ../data/verbal_analogies.xml.h:277
+#: ../data/verbal_analogies.xml.h:283
 msgid "hands / grab | teeth"
 msgstr "руке / зграбити | зуби"
 
-#: ../data/verbal_analogies.xml.h:278
+#: ../data/verbal_analogies.xml.h:284
 msgid "herbivorous | herbivore"
 msgstr "биљојед | преживар"
 
-#: ../data/verbal_analogies.xml.h:279
+#: ../data/verbal_analogies.xml.h:285
 msgid "horticulture / plants | ornithology"
 msgstr "хортикултура / биљке | орнитологија"
 
-#: ../data/verbal_analogies.xml.h:280
+#: ../data/verbal_analogies.xml.h:286
 msgid "hour / minute | minute"
 msgstr "сат / минут | минут"
 
-#: ../data/verbal_analogies.xml.h:281
+#: ../data/verbal_analogies.xml.h:287
 msgid "hungry / eat | tired"
 msgstr "гладан / јести | уморан"
 
-#: ../data/verbal_analogies.xml.h:282
+#: ../data/verbal_analogies.xml.h:288
 msgid "hunter / rifle | photographer"
 msgstr "ловац / пушка | фотограф"
 
-#: ../data/verbal_analogies.xml.h:283
+#: ../data/verbal_analogies.xml.h:289
 msgid "ice / slippery | glue"
 msgstr "лед / клизав | лепак"
 
-#: ../data/verbal_analogies.xml.h:284
+#: ../data/verbal_analogies.xml.h:290
 msgid "in | under | through"
 msgstr "у | испод | кроз"
 
-#: ../data/verbal_analogies.xml.h:285
+#: ../data/verbal_analogies.xml.h:291
 msgid "islands"
 msgstr "острва"
 
-#: ../data/verbal_analogies.xml.h:286
+#: ../data/verbal_analogies.xml.h:292
 msgid "leopard / spots | tiger"
 msgstr "леопард / кружне шаре | тигар"
 
-#: ../data/verbal_analogies.xml.h:287
+#: ../data/verbal_analogies.xml.h:293
 msgid "letter / word | page"
 msgstr "слово / реч | страница"
 
-#: ../data/verbal_analogies.xml.h:288
+#: ../data/verbal_analogies.xml.h:294
 msgid "lip | upper lip | mouth"
 msgstr "усна | горња усна | уста"
 
-#: ../data/verbal_analogies.xml.h:289
+#: ../data/verbal_analogies.xml.h:295
 msgid "nest"
 msgstr "гнездо"
 
-#: ../data/verbal_analogies.xml.h:290
+#: ../data/verbal_analogies.xml.h:296
 msgid "nose"
 msgstr "нос"
 
-#: ../data/verbal_analogies.xml.h:291
+#: ../data/verbal_analogies.xml.h:297
 msgid "novel / author | song"
 msgstr "роман / аутор | песма"
 
-#: ../data/verbal_analogies.xml.h:292
+#: ../data/verbal_analogies.xml.h:298
 msgid "orange / fruit | spinach"
 msgstr "поморанџа / воће | спанаћ"
 
-#: ../data/verbal_analogies.xml.h:293
+#: ../data/verbal_analogies.xml.h:299
 msgid "parallel / meridian | longitude"
 msgstr "меридијан / паралела | географска дужина"
 
-#: ../data/verbal_analogies.xml.h:294
+#: ../data/verbal_analogies.xml.h:300
 msgid "pediatrics / children | numismatics"
 msgstr "педијатрија / деца | нумизматика"
 
-#: ../data/verbal_analogies.xml.h:295
+#: ../data/verbal_analogies.xml.h:301
 msgid "peel"
 msgstr "ољуштити | љуштити"
 
-#: ../data/verbal_analogies.xml.h:296
+#: ../data/verbal_analogies.xml.h:302
 msgid "pessimist / optimist | poor"
 msgstr "песимиста / оптимиста | сиромашан"
 
-#: ../data/verbal_analogies.xml.h:297
+#: ../data/verbal_analogies.xml.h:303
 msgid "poems / anthology | maps"
 msgstr "поезије / збирка | мапе"
 
-#: ../data/verbal_analogies.xml.h:298
+#: ../data/verbal_analogies.xml.h:304
 msgid "puzzle / solve | game"
 msgstr "загонетка / решити | игра"
 
-#: ../data/verbal_analogies.xml.h:299
+#: ../data/verbal_analogies.xml.h:305
 msgid "repair | fix"
 msgstr "поправити | фиксирати"
 
-#: ../data/verbal_analogies.xml.h:300
+#: ../data/verbal_analogies.xml.h:306
 msgid "ring / finger | bracelet"
 msgstr "прстен / прст | наруквица"
 
-#: ../data/verbal_analogies.xml.h:301
+#: ../data/verbal_analogies.xml.h:307
 msgid "seal / flippers | bird"
 msgstr "фока / пераја | птица"
 
 #. Translators: refers to the unit of time
-#: ../data/verbal_analogies.xml.h:303
+#: ../data/verbal_analogies.xml.h:309
 msgid "second"
 msgstr "секунда | секунд"
 
-#: ../data/verbal_analogies.xml.h:304
+#. Translators: 'dig' is used as a verb (to dig)
+#: ../data/verbal_analogies.xml.h:311
 msgid "shovel / dig | axe"
 msgstr "ашов / копати | секира"
 
 # Камен у води тоне.
-#: ../data/verbal_analogies.xml.h:305
+#: ../data/verbal_analogies.xml.h:312
 msgid "sink"
 msgstr "тонути"
 
-#: ../data/verbal_analogies.xml.h:306
+#: ../data/verbal_analogies.xml.h:313
 msgid "sleep | rest"
 msgstr "спавати | одмарати"
 
-#: ../data/verbal_analogies.xml.h:307
+#: ../data/verbal_analogies.xml.h:314
 msgid "slurp / tongue | snort"
 msgstr "лизати / језик | мирисати"
 
-#: ../data/verbal_analogies.xml.h:308
+#: ../data/verbal_analogies.xml.h:315
 msgid "sour"
 msgstr "кисело"
 
 #. Translators: stick refers to a piece of wood
-#: ../data/verbal_analogies.xml.h:310
+#: ../data/verbal_analogies.xml.h:317
 msgid "stick / float | stone"
 msgstr "штап / плута | камен"
 
-#: ../data/verbal_analogies.xml.h:311
+#: ../data/verbal_analogies.xml.h:318
 msgid "sticky"
 msgstr "лепљив"
 
-#: ../data/verbal_analogies.xml.h:312
+#: ../data/verbal_analogies.xml.h:319
 msgid "stripes"
 msgstr "пругасте шаре"
 
-#: ../data/verbal_analogies.xml.h:313
+#: ../data/verbal_analogies.xml.h:320
 msgid "sugar / sweet | vinegar"
 msgstr "шећер / слатко | сирће"
 
-#: ../data/verbal_analogies.xml.h:314
+#: ../data/verbal_analogies.xml.h:321
 msgid "talk / yell | dislike"
 msgstr "наклоност / одобравање | ненаклоност"
 
 # Папир
-#: ../data/verbal_analogies.xml.h:315
+#. Translators: 'tear' and 'rip' are used as verbs (to tear / to rip). Tear as in "To pull apart or into pieces by force" (not lacrimation)
+#: ../data/verbal_analogies.xml.h:323
 msgid "tear | rip"
 msgstr "поцепати | покидати"
 
-#: ../data/verbal_analogies.xml.h:316
+#: ../data/verbal_analogies.xml.h:324
 msgid "tears / eyes | sweat"
 msgstr "сузе / очи | зној"
 
 #. Translators: referred to 'feet / two | toes'
-#: ../data/verbal_analogies.xml.h:318
+#: ../data/verbal_analogies.xml.h:326
 msgid "ten | 10"
 msgstr "десет | 10"
 
-#: ../data/verbal_analogies.xml.h:319
+#: ../data/verbal_analogies.xml.h:327
 msgid "tennis / sport | ballet"
 msgstr "тенис / спорт | балет"
 
-#: ../data/verbal_analogies.xml.h:320
+#: ../data/verbal_analogies.xml.h:328
 msgid "thankful / ingratitude | despotism"
 msgstr "захвалан / незахвалан | деспотизам"
 
-#: ../data/verbal_analogies.xml.h:321
+#: ../data/verbal_analogies.xml.h:329
 msgid "thermometer / temperature | clock"
 msgstr "термометар / температура | сат"
 
-#: ../data/verbal_analogies.xml.h:322
+#: ../data/verbal_analogies.xml.h:330
 msgid "tiger / carnivore | cow"
 msgstr "тигар / месождер | крава"
 
 #. Translators: time as duration of an event. What a clock measures
-#: ../data/verbal_analogies.xml.h:324
+#: ../data/verbal_analogies.xml.h:332
 msgid "time"
 msgstr "време"
 
-#: ../data/verbal_analogies.xml.h:325
+#. Translators: 'play' is used as a verb (to play)
+#: ../data/verbal_analogies.xml.h:334
 msgid "toy / play | tool"
 msgstr "играчка / играти | алат"
 
-#: ../data/verbal_analogies.xml.h:326
+#: ../data/verbal_analogies.xml.h:335
 msgid "track | railway | rails"
 msgstr "колосек | пруга | шине | железница"
 
 #. Translators: letter refers to letter (in paper form)
-#: ../data/verbal_analogies.xml.h:328
+#: ../data/verbal_analogies.xml.h:337
 msgid "turtle / shell | letter"
 msgstr "корњача / оклоп | писмо"
 
-#: ../data/verbal_analogies.xml.h:329
+#: ../data/verbal_analogies.xml.h:338
 msgid "vegetable"
 msgstr "поврће"
 
-#: ../data/verbal_analogies.xml.h:330
+#: ../data/verbal_analogies.xml.h:339
 msgid "whirlpool / water | tornado"
 msgstr "вртлог / вода | торнадо"
 
-#: ../data/verbal_analogies.xml.h:331
+#: ../data/verbal_analogies.xml.h:340
 msgid "wild | savage"
 msgstr "дивљи | крволочан"
 
-#: ../data/verbal_analogies.xml.h:332
+#: ../data/verbal_analogies.xml.h:341
 msgid "win | play"
 msgstr "победити | играти"
 
-#: ../data/verbal_analogies.xml.h:333
+#: ../data/verbal_analogies.xml.h:342
 msgid "wind | air"
 msgstr "ветар | ваздух"
 
-#: ../data/verbal_analogies.xml.h:334
+#: ../data/verbal_analogies.xml.h:343
 msgid "wine / grape | rum"
 msgstr "вино / грожђе | рум"
 
-#: ../data/verbal_analogies.xml.h:335
+#: ../data/verbal_analogies.xml.h:344
 msgid "wings"
 msgstr "крила"
 
 #. Translators: 'work' is used as a verb (to work)
-#: ../data/verbal_analogies.xml.h:337
+#: ../data/verbal_analogies.xml.h:346
 msgid "work"
 msgstr "радити | делати"
 
-#: ../data/verbal_analogies.xml.h:338
+#: ../data/verbal_analogies.xml.h:347
 msgid "wrist | arm"
 msgstr "ручни зглоб | рука"
 
-#: ../data/verbal_analogies.xml.h:339
+#: ../data/verbal_analogies.xml.h:348
 msgid "write / pen | eat"
 msgstr "писати / оловка | јести"
 
@@ -2129,12 +2139,9 @@ msgstr[2] "Заснива се на коришћењу резултата {0} з
 
 #. Translators: "The graph below" +  "It is built using" sentences
 #. Translators: answer + rationale of the answer
-#. For multiple answer build a rationale
-#. Translators: answer + rationale of the answer
 #. Translators: Concatenating two strings (rationale of answer + extra information).
 #: ../src/Clients/Classical/Dialogs/PlayerHistoryDialog.cs:60
-#: ../src/Core/Main/Game.cs:135 ../src/Core/Main/Verbal/Analogies.cs:64
-#: ../src/Games/Logic/PuzzleCountSeries.cs:93
+#: ../src/Core/Main/Game.cs:135 ../src/Games/Logic/PuzzleCountSeries.cs:93
 #, csharp-format
 msgid "{0} {1}"
 msgstr "{0} {1}"
@@ -2401,13 +2408,12 @@ msgstr "Управљање складиштима додатака"
 
 #. Translators: {0} is a number indicating the Addins available for update
 #: ../src/Clients/Classical/MonoAddinsStrings.cs:87
-#, fuzzy, csharp-format
-#| msgid "{0} update available"
+#, csharp-format
 msgid "{0} update available"
 msgid_plural "{0} updates available"
-msgstr[0] "Доступних ажурирања: {0}"
-msgstr[1] "Доступних ажурирања: {0}"
-msgstr[2] "Доступних ажурирања: {0}"
+msgstr[0] "Доступно је {0} освежење"
+msgstr[1] "Доступна су {0} освежења"
+msgstr[2] "Доступно је {0} освежења"
 
 #: ../src/Clients/Classical/Widgets/BrowseFile.cs:84
 msgid "Open Location"
@@ -2589,15 +2595,12 @@ msgstr "База података екстензија:"
 
 #. Translators: 'Games registered' is the games know to gbrainy (build-in and load from addins-in and external files)
 #: ../src/Core/Main/GameManager.cs:342
-#, fuzzy, csharp-format
-#| msgid ""
-#| "Games registered: {0}: {1} logic puzzles, {2} calculation trainers, {3} "
-#| "memory trainers, {4} verbal analogies"
+#, csharp-format
 msgid ""
 "{0} games registered: {1} logic puzzles, {2} calculation trainers, {3} "
 "memory trainers, {4} verbal analogies"
 msgstr ""
-"Регистрованих игара: {0}: логичких загонетки — {1}, рачунских вежби — {2}, "
+"Регистрованих игара — {0}: логичких загонетки — {1}, рачунских вежби — {2}, "
 "меморијских вежби — {3}, вербалних аналогија — {4}"
 
 #: ../src/Core/Main/GameSession.cs:176
@@ -2756,14 +2759,9 @@ msgstr "Приредио г-кефало {0}"
 msgid "Solutions"
 msgstr "Решења"
 
-#: ../src/Core/Main/Verbal/Analogies.cs:59
-#, csharp-format
-msgid "Possible correct answers are: {0}."
-msgstr "Могући тачни одговори су: {0}."
-
 #. Translators: this the separator used when concatenating multiple possible answers for verbal analogies
 #. For example: "Possible correct answers are: sleep, rest."
-#: ../src/Core/Main/Verbal/Analogies.cs:87
+#: ../src/Core/Main/Verbal/Analogies.cs:77
 msgid ", "
 msgstr ", "
 
@@ -3268,18 +3266,15 @@ msgstr ""
 "користећи бројеве."
 
 #: ../src/Games/Logic/PuzzleClocks.cs:52
-#, fuzzy, csharp-format
-#| msgid ""
-#| "Starting from the first clock, add {1} to the number obtained by "
-#| "appending the values to which the hands point, for '{0}' is {2} + {1} = "
-#| "{3}."
+#, csharp-format
 msgid ""
 "Starting from the first clock, add {1} to the number obtained by appending "
 "the values to which the hands point. For example, the values of the hands "
 "for '{0}' are {3} ({2} + {1})."
 msgstr ""
-"Почевши од првог сата, сумирајте {0} са бројем који настаје када додате "
-"вредност на коју показују сказаљке, за „{0}“ је {2} + {1} = {3}."
+"Почевши од првог сата, додајте {1} броју добијеном додавањем вредности на "
+"коју указују казаљке. На пример, вредност казаљки за „{0}“ је {3} ({2} + "
+"{1})."
 
 #: ../src/Games/Logic/PuzzleClocks.cs:58
 msgid "The clocks do not follow the time logic."
@@ -3696,8 +3691,7 @@ msgid ""
 "Which is the next logical figure in the sequence? Answer {0}, {1} or {2}."
 msgstr "Која је следећа логичка фигура у низу? Одговорите {0}, {1} или {2}."
 
-#. Translators: Please, do not make the translated string longer than the original English one. It will not fit in screen.
-#: ../src/Games/Logic/PuzzleGridDots.cs:220
+#: ../src/Games/Logic/PuzzleGridDots.cs:219
 msgid ""
 "From the top-left figure, the top-left circle moves down, the bottom-left "
 "circle moves up, the bottom-right moves diagonally up-left and the top-right "
@@ -3707,7 +3701,7 @@ msgstr ""
 "горе, доњи десни иде по дијагонали горе лево и горњи десни иде по дијагонали "
 "доле лево."
 
-#: ../src/Games/Logic/PuzzleGridDots.cs:223
+#: ../src/Games/Logic/PuzzleGridDots.cs:222
 msgid ""
 "From the top-left figure, the figure is rotated counterclockwise 90 degrees."
 msgstr ""
@@ -3817,19 +3811,16 @@ msgstr ""
 "линија између две тачке, без пресецања линија."
 
 #: ../src/Games/Logic/PuzzleLines.cs:44
-#, fuzzy, csharp-format
-#| msgid ""
-#| "There are {0} lines in the figure to the left and {1} in the figure to "
-#| "the right."
+#, csharp-format
 msgid ""
 "There is {0} line in the figure to the left and {1} in the figure to the "
 "right."
 msgid_plural ""
 "There are {0} lines in the figure to the left and {1} in the figure to the "
 "right."
-msgstr[0] "Има {0} линија на фигури лево и {1} на фигури десно."
-msgstr[1] "Има {0} линија на фигури лево и {1} на фигури десно."
-msgstr[2] "Има {0} линија на фигури лево и {1} на фигури десно."
+msgstr[0] "Постоји {0} линија на фигури лево и {1} на фигури десно."
+msgstr[1] "Постоје {0} линије на фигури лево и {1} на фигури десно."
+msgstr[2] "Постоји {0} линија на фигури лево и {1} на фигури десно."
 
 #: ../src/Games/Logic/PuzzleLines.cs:52
 msgid "It is an easy exercise if you systematically count the lines."
@@ -4139,10 +4130,7 @@ msgid "Percentage"
 msgstr "Проценат"
 
 #: ../src/Games/Logic/PuzzlePercentage.cs:75
-#, fuzzy, csharp-format
-#| msgid ""
-#| "After getting {0}% discount you have paid {1} monetary units for a TV "
-#| "set. What was the original price of the TV set?"
+#, csharp-format
 msgid ""
 "After getting {0}% discount you have paid {1} monetary unit for a TV set. "
 "What was the original price of the TV set?"
@@ -4150,20 +4138,17 @@ msgid_plural ""
 "After getting {0}% discount you have paid {1} monetary units for a TV set. "
 "What was the original price of the TV set?"
 msgstr[0] ""
-"Након добијања {0}% попуста, телевизор сте платили {1} динар/а. Која је "
+"Након добијања {0}% попуста, телевизор сте платили {1} динар. Која је "
 "оригинална цена телевизора?"
 msgstr[1] ""
-"Након добијања {0}% попуста, телевизор сте платили {1} динар/а. Која је "
+"Након добијања {0}% попуста, телевизор сте платили {1} динара. Која је "
 "оригинална цена телевизора?"
 msgstr[2] ""
-"Након добијања {0}% попуста, телевизор сте платили {1} динар/а. Која је "
+"Након добијања {0}% попуста, телевизор сте платили {1} динара. Која је "
 "оригинална цена телевизора?"
 
 #: ../src/Games/Logic/PuzzlePercentage.cs:96
-#, fuzzy, csharp-format
-#| msgid ""
-#| "John's shop had sales of {0} monetary units. This was an increase of {1}% "
-#| "over last month. What were last month sales?"
+#, csharp-format
 msgid ""
 "John's shop had sales of {0} monetary unit. This was an increase of {1}% "
 "over last month. What were last month sales?"
@@ -4171,7 +4156,7 @@ msgid_plural ""
 "John's shop had sales of {0} monetary units. This was an increase of {1}% "
 "over last month. What were last month sales?"
 msgstr[0] ""
-"Перина продавница је забележила продају од {0} динара. Ово је повећање од "
+"Перина продавница је забележила продају од {0} динар. Ово је повећање од "
 "{1}% у односу на прошли месец. Колике су биле продаје прошлог месеца?"
 msgstr[1] ""
 "Перина продавница је забележила продају од {0} динара. Ово је повећање од "
@@ -5604,6 +5589,15 @@ msgstr "_Савет"
 #: ../src/Clients/Classical/gbrainy.ui.h:27
 msgid "_View"
 msgstr "П_риказ"
+
+#~ msgid "Possible correct answers are: {0}."
+#~ msgstr "Могући тачни одговори су: {0}."
+
+#~ msgid "Attention"
+#~ msgstr "Пажња"
+
+#~ msgid "Courtesy"
+#~ msgstr "Љубазност"
 
 #~ msgid ""
 #~ "If p &lt; x &lt; q and r &lt; y &lt; s. Which of the following options "

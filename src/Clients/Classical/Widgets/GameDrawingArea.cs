@@ -185,10 +185,19 @@ namespace gbrainy.Clients.Classical.Widgets
 			if (UseSolutionArea == false || String.IsNullOrEmpty (Solution) == true)
 				return;
 
-			double box_height_scaled = solution_high / (double) height;
+			double width_str, height_str, x_text, icon_x, icon_w, icon_h, box_height_scaled;
 
 			cr.Save ();
 			cr.LineWidth = 0.001;
+
+			icon_w = icon_size * (cr.Matrix.Xx > cr.Matrix.Yy ? cr.Matrix.Yy / cr.Matrix.Xx : 1);
+			icon_h = icon_size * (cr.Matrix.Yy > cr.Matrix.Xx ? cr.Matrix.Xx / cr.Matrix.Yy : 1);
+
+			cr.MeasureString (Solution, max_width - icon_w, true, out width_str, out height_str);
+
+			// In case that the string to show is longer than the space reserved (long translations for example)
+			// allow the box to grow taking part of the lower part of the graphic
+			box_height_scaled = Math.Max (height_str, (double) solution_high / (double) height);
 
 			// Draw black box
 			cr.Color = new Color (0.1, 0.1, 0.1);
@@ -200,14 +209,8 @@ namespace gbrainy.Clients.Classical.Widgets
 			cr.Fill ();
 			cr.Stroke ();
 
-			double width_str, height_str, x_text, icon_x, icon_w, icon_h;
-
-			// Measure string to be able to centered vertically within the box
-			cr.MeasureString (Solution, max_width - icon_size, true, out width_str, out height_str);
+			// Draw text and icon
 			cr.Color = new Color (1, 1, 1);
-
-			icon_w = icon_size * (cr.Matrix.Xx > cr.Matrix.Yy ? cr.Matrix.Yy / cr.Matrix.Xx : 1);
-			icon_h = icon_size * (cr.Matrix.Yy > cr.Matrix.Xx ? cr.Matrix.Xx / cr.Matrix.Yy : 1);
 
 			if (Direction == Gtk.TextDirection.Rtl)
 			{
