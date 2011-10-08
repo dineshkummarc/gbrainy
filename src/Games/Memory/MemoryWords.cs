@@ -17,11 +17,9 @@
  * Boston, MA 02111-1307, USA.
  */
 
-using System;
 using System.Collections.Generic;
 
 using gbrainy.Core.Main;
-using gbrainy.Core.Services;
 
 namespace gbrainy.Games.Memory
 {

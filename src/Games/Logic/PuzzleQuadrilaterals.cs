@@ -20,7 +20,6 @@
 using System;
 
 using gbrainy.Core.Main;
-using gbrainy.Core.Services;
 
 namespace gbrainy.Games.Logic
 {
@@ -129,7 +128,6 @@ namespace gbrainy.Games.Logic
 			}
 
 			gr.Stroke ();
-
 		}
 
 		public override void Draw (CairoContextEx gr, int area_width, int area_height, bool rtl)

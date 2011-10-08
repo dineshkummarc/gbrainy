@@ -18,7 +18,6 @@
  */
 
 using gbrainy.Core.Main;
-using gbrainy.Core.Services;
 
 namespace gbrainy.Games.Logic
 {
@@ -50,7 +49,8 @@ namespace gbrainy.Games.Logic
 
 		public override void Draw (CairoContextEx gr, int area_width, int area_height, bool rtl)
 		{
-			double x = DrawAreaX + 0.2, y = DrawAreaY + 0.2, width = 0.4, height = 0.4;
+			double x = DrawAreaX + 0.2, y = DrawAreaY + 0.2;
+			const double width = 0.4, height = 0.4;
 
 			base.Draw (gr, area_width, area_height, rtl);
 

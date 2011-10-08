@@ -52,6 +52,7 @@ namespace gbrainy.Core.Main
 		{
 			this.translations = translations;
 			alpha = 1;
+			LoadColorArrays ();
 		}
 
 		void LoadColorArrays ()

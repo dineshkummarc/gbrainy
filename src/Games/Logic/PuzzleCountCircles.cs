@@ -20,14 +20,11 @@
 using System;
 
 using gbrainy.Core.Main;
-using gbrainy.Core.Services;
 
 namespace gbrainy.Games.Logic
 {
 	public class PuzzleCountCircles : Game
 	{
-		private const double figure_size = 0.3;
-		private const double radian = Math.PI / 180;
 		private int n_circles;
 
 		class ItemCircle

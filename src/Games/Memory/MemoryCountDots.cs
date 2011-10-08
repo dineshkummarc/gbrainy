@@ -21,7 +21,6 @@ using System;
 using Cairo;
 
 using gbrainy.Core.Main;
-using gbrainy.Core.Services;
 
 namespace gbrainy.Games.Memory
 {

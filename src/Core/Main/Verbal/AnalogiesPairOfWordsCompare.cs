@@ -20,8 +20,6 @@
 using System;
 using System.Collections.Generic;
 
-using gbrainy.Core.Services;
-
 namespace gbrainy.Core.Main.Verbal
 {
 	public class AnalogiesPairOfWordsCompare : Analogies

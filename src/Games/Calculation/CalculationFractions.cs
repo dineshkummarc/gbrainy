@@ -21,7 +21,6 @@ using System;
 using System.Linq;
 
 using gbrainy.Core.Main;
-using gbrainy.Core.Services;
 
 namespace gbrainy.Games.Calculation
 {

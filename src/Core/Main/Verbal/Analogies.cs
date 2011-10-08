@@ -21,7 +21,6 @@ using System;
 using System.Collections.Generic;
 
 using gbrainy.Core.Libraries;
-using gbrainy.Core.Services;
 
 namespace gbrainy.Core.Main.Verbal
 {

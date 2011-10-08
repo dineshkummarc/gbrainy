@@ -35,7 +35,7 @@ namespace gbrainy.Core.Main
 		private bool preview;
 		private GameDifficulty difficulty;
 		private ISynchronizeInvoke synchronize;
-		private List <Toolkit.Container> containers;
+		private readonly List <Toolkit.Container> containers;
 		private int variant;
 		private GameAnswer answer;
 

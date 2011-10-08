@@ -20,7 +20,6 @@
 using System;
 
 using gbrainy.Core.Main;
-using gbrainy.Core.Services;
 
 namespace gbrainy.Games.Logic
 {
@@ -77,8 +76,6 @@ namespace gbrainy.Games.Logic
 			gr.MoveTo (first_x + 0.2, first_y - 0.06 - space_fromrect);
 			gr.ShowPangoText (translations.GetString ("8 units"));
 			gr.Stroke ();
-
-
 
 			//  ---
 			//	 |

@@ -17,7 +17,6 @@
  * Boston, MA 02111-1307, USA.
  */
 
-using System;
 using System.Text;
 using System.Collections.Generic;
 

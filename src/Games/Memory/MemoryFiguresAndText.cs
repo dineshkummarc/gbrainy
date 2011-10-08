@@ -21,7 +21,6 @@ using System;
 using Cairo;
 
 using gbrainy.Core.Main;
-using gbrainy.Core.Services;
 
 namespace gbrainy.Games.Memory
 {
@@ -119,7 +118,7 @@ namespace gbrainy.Games.Memory
 			gr.Color = new Color (DefaultDrawingColor.R, DefaultDrawingColor.G, DefaultDrawingColor.B, 1);
 
 			if (Answer.Draw ==  true) {
-				DrawAllFigures (gr, start_x_ans, start_y, area_width, area_height);
+				DrawAllFigures (gr, start_x_ans, start_y);
 				return;
 			}
 
@@ -145,19 +144,19 @@ namespace gbrainy.Games.Memory
 		public override void DrawObjectToMemorize (CairoContextEx gr, int area_width, int area_height, bool rtl)
 		{
 			base.DrawObjectToMemorize (gr, area_width, area_height, rtl);
-			DrawAllFigures (gr, start_x_ques, start_y, area_width, area_height);
+			DrawAllFigures (gr, start_x_ques, start_y);
 		}
 
-		void DrawAllFigures (CairoContextEx gr, double x, double y, int area_width, int area_height)
+		void DrawAllFigures (CairoContextEx gr, double x, double y)
 		{
 			int col = 1, fig;
 			double org_x = x;
 
-			DrawGrid (gr, x, y, area_width, area_height);
+			DrawGrid (gr, x, y);
 			gr.Color = new Color (DefaultDrawingColor.R, DefaultDrawingColor.G, DefaultDrawingColor.B, alpha);
 			for (int figure = 0; figure < figures.Length; figure++, col++)
 			{
-				fig = (int)figures[figure];
+				fig = figures[figure];
 				if (fig >= FigureType.Total)
 					fig -= FigureType.Total;
 
@@ -200,7 +199,7 @@ namespace gbrainy.Games.Memory
 			}
 		}
 
-		void DrawGrid (CairoContextEx gr, double x, double y, int area_width, int area_height)
+		void DrawGrid (CairoContextEx gr, double x, double y)
 		{
 			gr.Color = new Color (DefaultDrawingColor.R, DefaultDrawingColor.G, DefaultDrawingColor.B, alpha);
 			for (int column = 0; column < columns; column++) {

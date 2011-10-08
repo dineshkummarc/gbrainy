@@ -17,8 +17,6 @@
  * Boston, MA 02111-1307, USA.
  */
 
-using System;
-
 namespace gbrainy.Core.Main.Xml
 {
 	public class DrawingObject

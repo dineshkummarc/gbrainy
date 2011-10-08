@@ -18,14 +18,9 @@
  */
 
 using System;
-using System.IO;
 using System.Collections.Generic;
 
-using Cairo;
-
-using gbrainy.Core.Libraries;
 using gbrainy.Core.Toolkit;
-using gbrainy.Core.Services;
 
 namespace gbrainy.Core.Main.Verbal
 {

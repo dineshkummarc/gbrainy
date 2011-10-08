@@ -22,7 +22,6 @@ using Cairo;
 
 using gbrainy.Core.Main;
 using gbrainy.Core.Toolkit;
-using gbrainy.Core.Services;
 
 namespace gbrainy.Games.Memory
 {
@@ -156,26 +155,26 @@ namespace gbrainy.Games.Memory
 			gr.Color = new Color (DefaultDrawingColor.R, DefaultDrawingColor.G, DefaultDrawingColor.B, 1);
 
 			if (Answer.Draw ==  true) {
-				DrawAllFigures (gr, start_x_ans, start_y, area_width, area_height);
+				DrawAllFigures (gr, start_x_ans, start_y);
 				return;
 			}
 
-			DrawGrid (gr, start_x_ans, start_y, area_width, area_height);
+			DrawGrid (gr, start_x_ans, start_y);
 			base.DrawPossibleAnswers (gr, area_width, area_height, rtl);
 		}
 
 		public override void DrawObjectToMemorize (CairoContextEx gr, int area_width, int area_height, bool rtl)
 		{
 			base.DrawObjectToMemorize (gr, area_width, area_height, rtl);
-			DrawAllFigures (gr, start_x_ques, start_y, area_width, area_height);
+			DrawAllFigures (gr, start_x_ques, start_y);
 		}
 
-		private void DrawAllFigures (CairoContextEx gr, double x, double y, int area_width, int area_height)
+		private void DrawAllFigures (CairoContextEx gr, double x, double y)
 		{
 			int col = 1, fig;
 			double org_x = x;
 
-			DrawGrid (gr, x, y, area_width, area_height);
+			DrawGrid (gr, x, y);
 			gr.Color = new Color (DefaultDrawingColor.R, DefaultDrawingColor.G, DefaultDrawingColor.B, alpha);
 			for (int figure = 0; figure < figures.Count; figure++, col++)
 			{
@@ -247,7 +246,7 @@ namespace gbrainy.Games.Memory
 			}
 		}
 
-		private void DrawGrid (CairoContextEx gr, double x, double y, int area_width, int area_height)
+		private void DrawGrid (CairoContextEx gr, double x, double y)
 		{
 			gr.Color = new Color (DefaultDrawingColor.R, DefaultDrawingColor.G, DefaultDrawingColor.B, alpha);
 			for (int column = 0; column < columns; column++) {

@@ -21,7 +21,6 @@ using System;
 
 using gbrainy.Core.Main;
 using gbrainy.Core.Toolkit;
-using gbrainy.Core.Services;
 
 namespace gbrainy.Games.Logic
 {

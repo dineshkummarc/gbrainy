@@ -19,10 +19,8 @@
 
 using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Text.RegularExpressions;
 
-using gbrainy.Core.Toolkit;
 using gbrainy.Core.Services;
 
 namespace gbrainy.Core.Main.Xml

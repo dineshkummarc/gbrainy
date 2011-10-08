@@ -21,7 +21,6 @@ using System;
 
 using gbrainy.Core.Main;
 using gbrainy.Core.Toolkit;
-using gbrainy.Core.Services;
 
 namespace gbrainy.Games.Logic
 {
@@ -57,7 +56,7 @@ namespace gbrainy.Games.Logic
 			random_indices_answers.Initialize ();
 
 			for (int i = 0; i < random_indices_answers.Count; i++) {
-				if ((int) random_indices_answers [i] == 0) {
+				if (random_indices_answers [i] == 0) {
 					Answer.SetMultiOptionAnswer (i, Answer.GetFigureName (i));
 					break;
 				}
