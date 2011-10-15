@@ -28,7 +28,7 @@ namespace gbrainy.Core.Main
 	public class GameAnswer
 	{
 		static char separator = '|';
-		const int MAX_POSSIBLE_ANSWER = 7;
+		const int MAX_POSSIBLE_ANSWER = 8;
 		string correct;
 		ITranslations translations;
 
@@ -122,6 +122,7 @@ namespace gbrainy.Core.Main
 				return translations.GetString ("G");
 			case 7: // Eighth possible answer for a series
 				return translations.GetString ("H");
+				// When adding new items update MAX_POSSIBLE_ANSWER accordingly
 			default:
 				throw new ArgumentOutOfRangeException ("Do not have an option for this answer");
 			}
