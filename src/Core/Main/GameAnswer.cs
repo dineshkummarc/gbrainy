@@ -28,7 +28,7 @@ namespace gbrainy.Core.Main
 	public class GameAnswer
 	{
 		static char separator = '|';
-		const int MAX_POSSIBLE_ANSWER = 7;
+		const int MAX_POSSIBLE_ANSWER = 8;
 		string correct;
 
 		public GameAnswer ()
