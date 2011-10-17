@@ -98,8 +98,6 @@ namespace gbrainy.Games.Logic
 			Answer.Correct = answers[0] + " | " + answers[1] + " | " + answers[2];
 			Answer.CheckExpression = Answer.GetMultiOptionsExpression ();
 			Answer.CorrectShow = answers[0] + answers[1] + answers[2];
-			Console.WriteLine ("Answer.Correct  {0}", Answer.Correct);
-			Console.WriteLine ("Answer.CheckExpression  {0}", Answer.CheckExpression);
 		}
 
 		private static void DrawFigure (CairoContextEx gr, double x, double y, Figures figure)
