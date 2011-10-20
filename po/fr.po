@@ -14,8 +14,8 @@ msgstr ""
 "Project-Id-Version: gbrainy\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=gbrainy&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2011-09-03 18:00+0000\n"
-"PO-Revision-Date: 2011-09-04 12:50+0200\n"
+"POT-Creation-Date: 2011-10-17 21:10+0000\n"
+"PO-Revision-Date: 2011-10-19 16:13+0200\n"
 "Last-Translator: Bruno Brouard <annoa.b@gmail.com>\n"
 "Language-Team: GNOME French Team <gnomefr@traduc.org>\n"
 "MIME-Version: 1.0\n"
@@ -80,7 +80,7 @@ msgstr "Voitures dans la ville"
 #: ../src/Games/Calculation/CalculationProportions.cs:131
 #: ../src/Games/Logic/PuzzleFigurePattern.cs:191
 #: ../src/Games/Logic/PuzzleFigures.cs:195
-#: ../src/Games/Logic/PuzzleGridDots.cs:341
+#: ../src/Games/Logic/PuzzleGridDots.cs:340
 #: ../src/Games/Logic/PuzzleLargerShape.cs:303
 #: ../src/Games/Logic/PuzzleMissingPiece.cs:173
 #: ../src/Games/Logic/PuzzleMissingSlice.cs:218
@@ -301,19 +301,11 @@ msgid "It is the result of the operation: ([three] * 3) - ([two] * 2)."
 msgstr "C'est le résultat de l'opération : ([three] * 3) - ([two] * 2)."
 
 #: ../data/games.xml.h:45
-msgid ""
-"John's age is nowadays half of John's son age, that is, ([father] / 2) - "
-"[difference]."
-msgstr ""
-"L'âge de Jean est actuellement la moitié de l'âge du fils de Jean, c'est-à-dire "
-"([father] / 2) - [difference]."
-
-#: ../data/games.xml.h:46
 msgctxt "John's father's sister's sister-in-law is also?"
 msgid "[option_prefix] His cousin"
 msgstr "[option_prefix] Sa cousine"
 
-#: ../data/games.xml.h:47
+#: ../data/games.xml.h:46
 msgid ""
 "John's father's sister's sister-in-law is also? Do not assume that John has "
 "any relative that has not been mentioned. [option_answers]"
@@ -321,18 +313,26 @@ msgstr ""
 "La belle-sœur de la sœur du père de Jean est également sa (n'imaginez pas "
 "que Jean a d'autres relations non indiquées) ? [option_answers]"
 
-#: ../data/games.xml.h:48
+#: ../data/games.xml.h:47
 msgctxt "John's mother's brother's brother-in-law is also?"
 msgid "[option_prefix] His cousin"
 msgstr "[option_prefix] Son cousin"
 
-#: ../data/games.xml.h:49
+#: ../data/games.xml.h:48
 msgid ""
 "John's mother's brother's brother-in-law is also? Do not assume that John "
 "has any relative that has not been mentioned. [option_answers]"
 msgstr ""
 "Le beau-frère du frère de la mère de Jean est également son (n'imaginez pas "
 "que Jean a d'autres relations non indiquées) ? [option_answers]"
+
+#: ../data/games.xml.h:49
+msgid ""
+"John's son age is nowadays half of John's age minus [difference], that is, "
+"([father] / 2) - [difference]."
+msgstr ""
+"L'âge du fils de Jean est actuellement la moitié de l'âge de Jean moins "
+"[difference], c'est-à-dire ([father] / 2) - [difference]."
 
 #: ../data/games.xml.h:50
 msgid "Lever"
@@ -1900,7 +1900,7 @@ msgstr "sucre / doux | vinaigre"
 msgid "talk / yell | dislike"
 msgstr "parler / cri | détester"
 
-#. Translators: 'tear' and 'rip' are used as verbs (to tear / to rip)
+#. Translators: 'tear' and 'rip' are used as verbs (to tear / to rip). Tear as in "To pull apart or into pieces by force" (not lacrimation)
 #: ../data/verbal_analogies.xml.h:323
 msgid "tear | rip"
 msgstr "déchirer | découper | arracher"
@@ -2172,12 +2172,9 @@ msgstr[1] ""
 
 #. Translators: "The graph below" +  "It is built using" sentences
 #. Translators: answer + rationale of the answer
-#. For multiple answer build a rationale
-#. Translators: answer + rationale of the answer
 #. Translators: Concatenating two strings (rationale of answer + extra information).
 #: ../src/Clients/Classical/Dialogs/PlayerHistoryDialog.cs:60
-#: ../src/Core/Main/Game.cs:135 ../src/Core/Main/Verbal/Analogies.cs:64
-#: ../src/Games/Logic/PuzzleCountSeries.cs:93
+#: ../src/Core/Main/Game.cs:135 ../src/Games/Logic/PuzzleCountSeries.cs:93
 #, csharp-format
 msgid "{0} {1}"
 msgstr "{0} {1}"
@@ -2803,14 +2800,9 @@ msgstr "Créé par gbrainy {0}"
 msgid "Solutions"
 msgstr "Solutions"
 
-#: ../src/Core/Main/Verbal/Analogies.cs:59
-#, csharp-format
-msgid "Possible correct answers are: {0}."
-msgstr "Les réponses possibles sont : {0}."
-
 #. Translators: this the separator used when concatenating multiple possible answers for verbal analogies
 #. For example: "Possible correct answers are: sleep, rest."
-#: ../src/Core/Main/Verbal/Analogies.cs:87
+#: ../src/Core/Main/Verbal/Analogies.cs:77
 msgid ", "
 msgstr ", "
 
@@ -3751,8 +3743,7 @@ msgstr ""
 "Quel dessin complète logiquement la suite ci-dessous ? Répondez par {0}, {1} "
 "ou {2}."
 
-#. Translators: Please, do not make the translated string longer than the original English one. It will not fit in screen.
-#: ../src/Games/Logic/PuzzleGridDots.cs:220
+#: ../src/Games/Logic/PuzzleGridDots.cs:219
 msgid ""
 "From the top-left figure, the top-left circle moves down, the bottom-left "
 "circle moves up, the bottom-right moves diagonally up-left and the top-right "
@@ -3763,7 +3754,7 @@ msgstr ""
 "diagonale vers le haut et la gauche et le cercle en haut à droite se déplace "
 "en diagonale vers le bas et la gauche."
 
-#: ../src/Games/Logic/PuzzleGridDots.cs:223
+#: ../src/Games/Logic/PuzzleGridDots.cs:222
 msgid ""
 "From the top-left figure, the figure is rotated counterclockwise 90 degrees."
 msgstr ""
