@@ -25,6 +25,8 @@ namespace gbrainy.Clients.Classical.Dialogs
 	{
 		ITranslations translations;
 
+		protected ITranslations Translations { get {return translations; }}
+
 		public BuilderDialog (ITranslations translations, string resourceName, string dialogName) : 
 			this ((System.Reflection.Assembly) null, resourceName, dialogName)
 		{

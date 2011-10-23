@@ -59,6 +59,48 @@ namespace gbrainy.Clients.Classical.Dialogs
 			drawing_area.Visible = true;
 			treeview.HeadersClickable = true;
 
+			CreateColumnName ();
+			CreateColumnType ();
+			CreateColumnSelected ();
+			LoadGames ();
+
+			treeview.Model = games_store;
+			game = (Game) Activator.CreateInstance (games [0].TypeOf, true);
+			game.translations = Translations;
+			game.Variant = 0;
+			game.Begin ();
+			drawing_area.Drawable = game;
+			drawing_area.Question = game.Question;
+			treeview.ColumnsAutosize ();
+		}
+
+		void LoadGames ()
+		{
+			if (games_store != null)
+				return;
+
+			games_store = new ListStore (typeof(string), typeof (string), typeof(bool), typeof (Game), typeof (int));
+			games_store.SetSortFunc (0, new Gtk.TreeIterCompareFunc (GameSort));
+			games_store.SetSortColumnId (COL_TYPE, SortType.Ascending);
+				 
+			// Data
+			string type;
+			Game game;
+			for (int i = 0; i < games.Length; i++)
+			{
+				if (games [i].IsGame == false)
+					continue;
+
+				game = (Game) Activator.CreateInstance (games [i].TypeOf, true);
+				game.translations = Translations;
+				game.Variant = games [i].Variant;
+				type = GameTypesDescription.GetLocalized (Translations, game.Type);
+				games_store.AppendValues (game.Name, type, true, game, i);
+			}
+		}
+
+		void CreateColumnName ()
+		{
 			// Column: Game Name
 			TreeViewColumn name_column = new TreeViewColumn (Catalog.GetString("Game Name"), 
 				new CellRendererText(), "text", 0);
@@ -81,6 +123,10 @@ namespace gbrainy.Clients.Classical.Dialogs
 
 			treeview.AppendColumn (name_column);
 
+		}
+
+		void CreateColumnType ()
+		{
 			// Column: Type
 			TreeViewColumn type_column = new TreeViewColumn (Catalog.GetString("Type"), 
 				new CellRendererText(), "text", 1);
@@ -101,7 +147,11 @@ namespace gbrainy.Clients.Classical.Dialogs
 				column.SortOrder = order;
 				games_store.SetSortColumnId (COL_TYPE, order);
 			};
+		}
 
+
+		void CreateColumnSelected ()
+		{
 			// Column: Selected
 			CellRendererToggle toggle_cell = new CellRendererToggle();
 			TreeViewColumn toggle_column = new TreeViewColumn(Catalog.GetString("Selected"),
@@ -111,34 +161,6 @@ namespace gbrainy.Clients.Classical.Dialogs
 			toggle_column.Expand = false;
 			treeview.CursorChanged += OnCursorChanged;
 			treeview.AppendColumn (toggle_column);
-
-			if (games_store == null) {
-				games_store = new ListStore (typeof(string), typeof (string), typeof(bool), typeof (Game), typeof (int));
-
-				games_store.SetSortFunc (0, new Gtk.TreeIterCompareFunc (GameSort));
-				games_store.SetSortColumnId (COL_TYPE, SortType.Ascending);
-					 
-				// Data
-				string type;
-				for (int i = 0; i < games.Length; i++)
-				{
-					if (games [i].IsGame == false)
-						continue;
-
-					game = (Game) Activator.CreateInstance (games [i].TypeOf, true);
-					game.Variant = games [i].Variant;
-					type = GameTypesDescription.GetLocalized (translations, game.Type);
-					games_store.AppendValues (game.Name, type, true, game, i);
-				}
-			}
-
-			treeview.Model = games_store;
-			game = (Game) Activator.CreateInstance (games [0].TypeOf, true);
-			game.Variant = 0;
-			game.Begin ();
-			drawing_area.Drawable = game;
-			drawing_area.Question = game.Question;
-			treeview.ColumnsAutosize ();
 		}
 
 		public bool SelectionDone {
