@@ -52,7 +52,7 @@ namespace gbrainy.Games.Calculation
 			get {
 				int ans_idx = random_indices[which];
 
-				return String.Format (translations.GetString ("The result of the operation {0} / {1} is {2}"),
+				return String.Format (translations.GetString ("The result of the operation {0} / {1} is '{2}'."),
 					options[ans_idx * 2], options[(ans_idx * 2) + 1], String.Format ("{0:##0.###}", question_num));
 			}
 		}

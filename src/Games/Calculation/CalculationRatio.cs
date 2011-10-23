@@ -38,7 +38,7 @@ namespace gbrainy.Games.Calculation
 		public override string Question {
 			get {
 				return String.Format (
-					translations.GetString ("Which two numbers have a sum of {0} and have a ratio of {1} to {2}. Answer using two numbers (e.g.: 1 and 2)."), 
+					translations.GetString ("Which two numbers have a sum of {0} and have a ratio of {1} to {2}? Answer using two numbers (e.g.: 1 and 2)."), 
 					number_a + number_b, ratio_a, ratio_b);
 			}
 		}
