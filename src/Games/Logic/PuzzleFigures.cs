@@ -117,10 +117,6 @@ namespace gbrainy.Games.Logic
 				drawable_area.DataEx = Answer.GetMultiOption (ans);
 				container.AddChild (drawable_area);
 
-				if (answer_indices[ans] == good_answer) {
-					Answer.SetMultiOptionAnswer (ans, Answer.GetFigureName (ans));
-				}
-
 				drawable_area.DrawEventHandler += delegate (object sender, DrawEventArgs e)
 				{
 					double width = total_width / possible_answers;
@@ -137,6 +133,7 @@ namespace gbrainy.Games.Logic
 					e.Context.Stroke ();
 				};
 			}
+			Answer.SetMultiOptionAnswer (answer_indices[good_answer], Answer.GetFigureName (answer_indices[good_answer]));
 		}
 
 		static void DrawFigure (CairoContextEx gr, double x, double y, Figure figure)
