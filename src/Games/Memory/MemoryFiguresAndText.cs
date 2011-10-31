@@ -21,12 +21,14 @@ using System;
 using Cairo;
 
 using gbrainy.Core.Main;
+using gbrainy.Core.Services;
+using gbrainy.Core.Toolkit;
 
 namespace gbrainy.Games.Memory
 {
 	public class MemoryFiguresAndText : Core.Main.Memory
 	{
-		int [] figures;
+		FigureType [] figures;
 		int rows, columns;
 		const double start_x_ques = 0.25;
 		const double start_x_ans = 0.25;
@@ -34,31 +36,42 @@ namespace gbrainy.Games.Memory
 		const double figure_size = 0.08;
 		double rect_w, rect_h;
 		int question_pos, figures_active;
+		FigureTypeConverter converter;
+		FigureType [] answers;
+		int answer_idx;
 
-		static class FigureType
+		internal enum FigureType
 		{
-			internal const int Triangle = 0;
-			internal const int Square = 1;
-			internal const int Pentagon = 2;
-			internal const int Circle = 3;
-			internal const int Total = Circle + 1;
+			Triangle,
+			Square,
+			Pentagon,
+			Circle,
+			Total
+		};
 
-			static internal string ToString (int type)
-			{/*
+		internal class FigureTypeConverter
+		{
+			ITranslations translations;
+
+			internal FigureTypeConverter (ITranslations translations)
+			{
+				this.translations = translations;
+			}
+
+			internal string ToString (FigureType type)
+			{
 				switch (type) {
-				case Triangle:
+				case FigureType.Triangle:
 					return translations.GetString ("Triangle");
-				case Square:
+				case FigureType.Square:
 					return translations.GetString ("Square");
-				case Pentagon:
+				case FigureType.Pentagon:
 					return translations.GetString ("Pentagon");
-				case Circle:
+				case FigureType.Circle:
 					return translations.GetString ("Circle");
 				default:
 					throw new InvalidOperationException ();
 				}
-				*/
-				return string.Empty;
 			}
 		}
 
@@ -67,13 +80,15 @@ namespace gbrainy.Games.Memory
 		}
 
 		public override string MemoryQuestion {
-			get {return translations.GetString ("The list below enumerates the figures shown in the previous image except for one. Which is the missing figure? Possible answers are triangle, square, pentagon and circle." );}
+			get { return String.Format (translations.GetString 
+				("The list below enumerates the figures shown in the previous image except for one. Which is the missing figure? Answer {0}, {1}, {2} or {3}."),
+				Answer.GetMultiOption (0), Answer.GetMultiOption (1), Answer.GetMultiOption (2), Answer.GetMultiOption (3));
+			}
 		}
 
 		protected override void Initialize ()
 		{
-			ArrayListIndicesRandom figures_random;
-			int pos = 0;
+			converter = new FigureTypeConverter (translations);
 
 			switch (CurrentDifficulty) {
 			case GameDifficulty.Easy:
@@ -92,28 +107,87 @@ namespace gbrainy.Games.Memory
 
 			rect_w = 0.65 / columns;
 			rect_h = 0.65 / rows;
-			figures = new int [figures_active];
-			figures_random = new ArrayListIndicesRandom (FigureType.Total);
+			question_pos = random.Next (figures_active);
+			
+			RandomizeFigures ();
+			RandomizePossibleAnswers ();
+
+			Answer.CheckAttributes |= GameAnswerCheckAttributes.MultiOption;
+			Answer.SetMultiOptionAnswer (answer_idx, converter.ToString (figures[question_pos]));
+			Answer.CorrectShow = converter.ToString (figures[question_pos]);
+			base.Initialize ();
+
+			DrawingAnswerObjects ();
+		}
+
+		void DrawingAnswerObjects ()
+		{
+			Container container = new Container (DrawAreaX + 0.2, DrawAreaY + 0.4, 0.5, answers.Length * 0.10);
+			AddWidget (container);
+
+			for (int i = 0; i < answers.Length; i++)
+			{
+				DrawableArea drawable_area = new DrawableArea (0.4, 0.1);
+				drawable_area.X = DrawAreaX + 0.23;
+				drawable_area.Y = DrawAreaY + 0.4 + i * 0.1;
+				container.AddChild (drawable_area);
+				drawable_area.Data = i;
+				drawable_area.DataEx = Answer.GetMultiOption (i);
+
+				drawable_area.DrawEventHandler += delegate (object sender, DrawEventArgs e)
+				{
+					int d = (int) e.Data;
+					e.Context.SetPangoLargeFontSize ();
+					e.Context.MoveTo (0.07, 0.02);
+					e.Context.ShowPangoText (String.Format (translations.GetString ("{0}) {1}"), Answer.GetMultiOption (d),
+						converter.ToString (answers[d])));
+				};
+			}
+		}
+		void RandomizeFigures ()
+		{
+			ArrayListIndicesRandom figures_random;
+			int pos = 0;
+			
+			figures = new FigureType [figures_active];
+			figures_random = new ArrayListIndicesRandom ((int) FigureType.Total);
 			figures_random.Initialize ();
 
 			for (int n = 0; n < figures_active; n++)
 			{
-				figures[n] = figures_random [pos++];
+				figures[n] = (FigureType) figures_random [pos++];
 
 				if (pos >= figures_random.Count) {
 					pos = 0;
 					figures_random.Initialize ();
 				}
 			}
+		}
 
-			question_pos = random.Next (figures_active);
-			Answer.Correct = FigureType.ToString (figures[question_pos]);
-			base.Initialize ();
+		void RandomizePossibleAnswers ()
+		{
+			ArrayListIndicesRandom answers_random;
+
+			answers_random = new ArrayListIndicesRandom (4);
+			answers_random.Initialize ();
+
+			answers	= new FigureType [answers_random.Count];
+
+			for (int i = 0; i < answers.Length; i++)
+			{
+				answers [i] = (FigureType) answers_random [i];
+				if (figures[question_pos] == answers [i])
+				{
+					answer_idx = i;
+					Console.WriteLine ("Question pos {0}", figures[question_pos]);
+					Console.WriteLine ("Index {0}", answer_idx);
+				}
+			}
 		}
 
 		public override void DrawPossibleAnswers (CairoContextEx gr, int area_width, int area_height, bool rtl)
 		{
-			double x= DrawAreaX, y = DrawAreaY + 0.1;
+			double x= DrawAreaX, y = DrawAreaY + 0.085;
 			int pos = 0;
 			gr.Color = new Color (DefaultDrawingColor.R, DefaultDrawingColor.G, DefaultDrawingColor.B, 1);
 
@@ -129,16 +203,25 @@ namespace gbrainy.Games.Memory
 					continue;
 
 				gr.MoveTo (x, y);
-				gr.ShowPangoText (FigureType.ToString (figures[i]));
+				gr.ShowPangoText (converter.ToString (figures[i]));
 
-				if ((pos + 1) % 3 == 0) {
-					y += 0.2;
+				if ((pos + 1) % 4 == 0) {
+					y += 0.1;
 					x = DrawAreaX;
 				} else {
-					x+= 0.30;
+					x+= 0.25;
 				}
 				pos++;
 			}
+
+			base.DrawPossibleAnswers (gr,  area_width, area_height, rtl);
+
+			gr.SetPangoLargeFontSize ();
+			gr.MoveTo (0, 0.4);
+			gr.ShowPangoText (translations.GetString ("Choose one of the following:"));
+
+			gr.MoveTo (0, 0.08);
+			gr.ShowPangoText (translations.GetString ("List of images shown before"));
 		}
 
 		public override void DrawObjectToMemorize (CairoContextEx gr, int area_width, int area_height, bool rtl)
@@ -149,7 +232,8 @@ namespace gbrainy.Games.Memory
 
 		void DrawAllFigures (CairoContextEx gr, double x, double y)
 		{
-			int col = 1, fig;
+			int col = 1;
+			FigureType fig;
 			double org_x = x;
 
 			DrawGrid (gr, x, y);
@@ -157,8 +241,8 @@ namespace gbrainy.Games.Memory
 			for (int figure = 0; figure < figures.Length; figure++, col++)
 			{
 				fig = figures[figure];
-				if (fig >= FigureType.Total)
-					fig -= FigureType.Total;
+				if (fig == FigureType.Total)
+					fig = FigureType.Triangle;
 
 				DrawFigure (gr, x, y, fig);
 
@@ -172,7 +256,7 @@ namespace gbrainy.Games.Memory
 			}
 		}
 
-		void DrawFigure (CairoContextEx gr, double x, double y, int type)
+		void DrawFigure (CairoContextEx gr, double x, double y, FigureType type)
 		{
 			double space_x, space_y;
 
