@@ -13,8 +13,8 @@ msgstr ""
 "Project-Id-Version: gbrainy.master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=gbrainy&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2011-10-23 10:13+0000\n"
-"PO-Revision-Date: 2011-10-24 17:00+0200\n"
+"POT-Creation-Date: 2011-10-31 13:08+0000\n"
+"PO-Revision-Date: 2011-10-31 16:09+0100\n"
 "Last-Translator: Daniel Mustieles <daniel.mustieles@gmail.com>\n"
 "Language-Team: Español <gnome-es-list@gnome.org>\n"
 "MIME-Version: 1.0\n"
@@ -79,7 +79,7 @@ msgstr "Coches en la ciudad"
 #: ../src/Games/Calculation/CalculationPrimes.cs:151
 #: ../src/Games/Calculation/CalculationProportions.cs:130
 #: ../src/Games/Logic/PuzzleFigurePattern.cs:191
-#: ../src/Games/Logic/PuzzleFigures.cs:195
+#: ../src/Games/Logic/PuzzleFigures.cs:192
 #: ../src/Games/Logic/PuzzleGridDots.cs:340
 #: ../src/Games/Logic/PuzzleLargerShape.cs:303
 #: ../src/Games/Logic/PuzzleMissingPiece.cs:173
@@ -89,6 +89,7 @@ msgstr "Coches en la ciudad"
 #: ../src/Games/Logic/PuzzleOstracism.cs:176
 #: ../src/Games/Logic/PuzzlePredicateLogic.cs:196
 #: ../src/Games/Logic/PuzzleTetris.cs:171
+#: ../src/Games/Memory/MemoryFiguresAndText.cs:221
 msgid "Choose one of the following:"
 msgstr "Elije uno de los siguientes:"
 
@@ -709,7 +710,6 @@ msgid "Agoraphobia"
 msgstr "Agorafobia"
 
 #: ../data/verbal_analogies.xml.h:15
-#| msgid "Airline"
 msgid "Air"
 msgstr "Aire"
 
@@ -820,7 +820,6 @@ msgid "Bursts"
 msgstr "Ráfagas"
 
 #: ../data/verbal_analogies.xml.h:44
-#| msgid "Camera"
 msgid "Cage"
 msgstr "Jaula"
 
@@ -1605,7 +1604,6 @@ msgid "Winery"
 msgstr "Bodega"
 
 #: ../data/verbal_analogies.xml.h:244
-#| msgid "wings"
 msgid "Wings"
 msgstr "Alas"
 
@@ -1747,7 +1745,6 @@ msgid "fish / submarine | bird"
 msgstr "pez / submarino | pájaro"
 
 #: ../data/verbal_analogies.xml.h:283
-#| msgid "fish / submarine | bird"
 msgid "fish / water | bird"
 msgstr "pez / agua | pájaro"
 
@@ -2125,16 +2122,16 @@ msgid "You can also play on-line at {0}"
 msgstr "También puede jugar en línea en {0}"
 
 #. Column: Game Name
-#: ../src/Clients/Classical/Dialogs/CustomGameDialog.cs:63
+#: ../src/Clients/Classical/Dialogs/CustomGameDialog.cs:105
 msgid "Game Name"
 msgstr "Nombre del juego"
 
 #. Column: Type
-#: ../src/Clients/Classical/Dialogs/CustomGameDialog.cs:85
+#: ../src/Clients/Classical/Dialogs/CustomGameDialog.cs:131
 msgid "Type"
 msgstr "Tipo"
 
-#: ../src/Clients/Classical/Dialogs/CustomGameDialog.cs:107
+#: ../src/Clients/Classical/Dialogs/CustomGameDialog.cs:157
 msgid "Selected"
 msgstr "Seleccionado"
 
@@ -2840,6 +2837,7 @@ msgstr "{0} Responde {1}."
 #: ../src/Games/Calculation/CalculationGreatestDivisor.cs:152
 #: ../src/Games/Logic/PuzzleOstracism.cs:164
 #: ../src/Games/Logic/PuzzlePredicateLogic.cs:183
+#: ../src/Games/Memory/MemoryFiguresAndText.cs:142
 #, csharp-format
 msgid "{0}) {1}"
 msgstr "{0}) {1}"
@@ -3044,7 +3042,6 @@ msgstr ""
 
 #: ../src/Games/Calculation/CalculationCloserFraction.cs:55
 #, csharp-format
-#| msgid "The result of the operation {0} / {1} is {2}"
 msgid "The result of the operation {0} / {1} is '{2}'."
 msgstr "El resultado de la operación {0} / {1} es «{2}»."
 
@@ -3148,9 +3145,6 @@ msgstr "Proporción"
 
 #: ../src/Games/Calculation/CalculationRatio.cs:41
 #, csharp-format
-#| msgid ""
-#| "Which two numbers have a sum of {0} and have a ratio of {1} to {2}. "
-#| "Answer using two numbers (e.g.: 1 and 2)."
 msgid ""
 "Which two numbers have a sum of {0} and have a ratio of {1} to {2}? Answer "
 "using two numbers (e.g.: 1 and 2)."
@@ -4915,19 +4909,42 @@ msgstr "¿Qué porcentaje de Coches Brillantes usa diesel?"
 msgid "What percentage of Shiny Cars use gasoline?"
 msgstr "¿Qué porcentaje de Coches Brillantes usa gasolina?"
 
-#: ../src/Games/Memory/MemoryFiguresAndText.cs:66
+#: ../src/Games/Memory/MemoryFiguresAndText.cs:65
+msgid "Triangle"
+msgstr "Triángulo"
+
+#: ../src/Games/Memory/MemoryFiguresAndText.cs:67
+msgid "Square"
+msgstr "Cuadrado"
+
+#: ../src/Games/Memory/MemoryFiguresAndText.cs:69
+msgid "Pentagon"
+msgstr "Pentágono"
+
+#: ../src/Games/Memory/MemoryFiguresAndText.cs:71
+msgid "Circle"
+msgstr "Círculo"
+
+#: ../src/Games/Memory/MemoryFiguresAndText.cs:79
 msgid "Memorize figures and text"
 msgstr "Memorizar figuras y texto"
 
-#: ../src/Games/Memory/MemoryFiguresAndText.cs:70
+#: ../src/Games/Memory/MemoryFiguresAndText.cs:84
+#, csharp-format
+#| msgid ""
+#| "The list below enumerates the figures shown in the previous image except "
+#| "for one. Which is the missing figure? Possible answers are triangle, "
+#| "square, pentagon and circle."
 msgid ""
 "The list below enumerates the figures shown in the previous image except for "
-"one. Which is the missing figure? Possible answers are triangle, square, "
-"pentagon and circle."
+"one. Which is the missing figure? Answer {0}, {1}, {2} or {3}."
 msgstr ""
 "La lista de abajo enumera las figuras mostradas en la imagen anterior "
-"excepto una. ¿Cuál es la figura que falta? Las posibles respuestas son "
-"«triángulo», «cuadrado», «pentágono» y «círculo»."
+"excepto una. ¿Cuál es la figura que falta? Responde {0}, {1}, {2} o {3}."
+
+#: ../src/Games/Memory/MemoryFiguresAndText.cs:224
+msgid "List of images shown before"
+msgstr "Lista de las imágenes mostradas anteriormente"
 
 #: ../src/Games/Memory/MemoryFigures.cs:54
 msgid "Memorize figures"
@@ -5606,18 +5623,6 @@ msgstr "_Ver"
 
 #~ msgid "{0}) "
 #~ msgstr "{0}) "
-
-#~ msgid "Triangle"
-#~ msgstr "Triángulo"
-
-#~ msgid "Square"
-#~ msgstr "Cuadrado"
-
-#~ msgid "Pentagon"
-#~ msgstr "Pentágono"
-
-#~ msgid "Circle"
-#~ msgstr "Círculo"
 
 #~ msgid "Possible correct answers are: {0}."
 #~ msgstr "Las posibles respuestas correctas son: {0}."
