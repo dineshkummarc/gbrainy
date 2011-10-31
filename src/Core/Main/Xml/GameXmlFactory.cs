@@ -24,6 +24,8 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.Text;
 
+using gbrainy.Core.Libraries;
+
 namespace gbrainy.Core.Main.Xml
 {
 	public class GamesXmlFactory
@@ -72,6 +74,11 @@ namespace gbrainy.Core.Main.Xml
 						TextDrawingObject drawing_object = (TextDrawingObject) last_drawing_object;
 						// GetText processes msgctxt as msgctxt + context_glue + text to retrieve them
 						drawing_object.Text = last_context + CONTEXT_GLUE + text;
+
+						// If the string does not exits, return regular English string without context
+						if (GetText.StringExists (drawing_object.Text) == false)
+							drawing_object.Text = text;
+
 						continue;
 					}
 
