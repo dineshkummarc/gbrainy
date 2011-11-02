@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gbrainy\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-10-31 11:59+0100\n"
-"PO-Revision-Date: 2011-10-31 11:59+0100\n"
+"POT-Creation-Date: 2011-11-02 09:02+0100\n"
+"PO-Revision-Date: 2011-11-02 09:07+0100\n"
 "Last-Translator: Daniel Nylander <po@danielnylander.se>\n"
 "Language-Team: Swedish <tp-sv@listor.tp-sv.se>\n"
 "Language: sv\n"
@@ -71,6 +71,7 @@ msgstr "Bilar i stad"
 #: ../src/Games/Logic/PuzzleOstracism.cs:176
 #: ../src/Games/Logic/PuzzlePredicateLogic.cs:196
 #: ../src/Games/Logic/PuzzleTetris.cs:171
+#: ../src/Games/Memory/MemoryFiguresAndText.cs:221
 msgid "Choose one of the following:"
 msgstr "Välj en av följande:"
 
@@ -2245,7 +2246,7 @@ msgstr "Beräkning"
 
 #: ../src/Clients/Classical/Widgets/Toolbar.cs:129
 msgid "Play games that challenge your mental calculation skills"
-msgstr "Spela spel som utmanar dina mentala beräkningsfärdigheter"
+msgstr "Spela spel som utmanar dina färdigheter inom huvudberäkning"
 
 #: ../src/Clients/Classical/Widgets/Toolbar.cs:133
 #: ../src/Core/Main/GameTypes.cs:47
@@ -2558,6 +2559,7 @@ msgstr "{0} Svara {1}."
 #: ../src/Games/Calculation/CalculationGreatestDivisor.cs:152
 #: ../src/Games/Logic/PuzzleOstracism.cs:164
 #: ../src/Games/Logic/PuzzlePredicateLogic.cs:183
+#: ../src/Games/Memory/MemoryFiguresAndText.cs:142
 #, csharp-format
 msgid "{0}) {1}"
 msgstr "{0}) {1}"
@@ -2662,7 +2664,7 @@ msgstr "Logiska pussel. Utmana ditt resonemang och tänkande."
 
 #: ../src/Core/Views/WelcomeView.cs:84
 msgid "Mental calculation. Arithmetical operations that test your mental calculation abilities."
-msgstr "Mental beräkning. Aritmetiska operationer som testar dina mentala beräkningsförmågor."
+msgstr "Huvudberäkning. Aritmetiska operationer som testar dina mentala beräkningsförmågor."
 
 #: ../src/Core/Views/WelcomeView.cs:105
 msgid "Memory trainers. To prove your short term memory."
@@ -4029,13 +4031,34 @@ msgstr "Vilken procentandel av Blänkande Bilar använder diesel?"
 msgid "What percentage of Shiny Cars use gasoline?"
 msgstr "Vilken procentandel av Blänkande Bilar använder bensin?"
 
-#: ../src/Games/Memory/MemoryFiguresAndText.cs:66
+#: ../src/Games/Memory/MemoryFiguresAndText.cs:65
+msgid "Triangle"
+msgstr "Triangel"
+
+#: ../src/Games/Memory/MemoryFiguresAndText.cs:67
+msgid "Square"
+msgstr "Kvadrat"
+
+#: ../src/Games/Memory/MemoryFiguresAndText.cs:69
+msgid "Pentagon"
+msgstr "Femkant"
+
+#: ../src/Games/Memory/MemoryFiguresAndText.cs:71
+msgid "Circle"
+msgstr "Cirkel"
+
+#: ../src/Games/Memory/MemoryFiguresAndText.cs:79
 msgid "Memorize figures and text"
 msgstr "Memorera figurer och text"
 
-#: ../src/Games/Memory/MemoryFiguresAndText.cs:70
-msgid "The list below enumerates the figures shown in the previous image except for one. Which is the missing figure? Possible answers are triangle, square, pentagon and circle."
-msgstr "Listan nedan räknar upp figurerna som visades i föregående bild, förutom en. Vilken figur saknas? Möjliga svar är triangel, kvadrat, femkant och cirkel."
+#: ../src/Games/Memory/MemoryFiguresAndText.cs:84
+#, csharp-format
+msgid "The list below enumerates the figures shown in the previous image except for one. Which is the missing figure? Answer {0}, {1}, {2} or {3}."
+msgstr "Listan nedan räknar upp figurerna som visades i föregående bild, förutom en. Vilken figur saknas? Svara {0}, {1}, {2} eller {3}."
+
+#: ../src/Games/Memory/MemoryFiguresAndText.cs:224
+msgid "List of images shown before"
+msgstr "Lista över bilder som visats tidigare"
 
 #: ../src/Games/Memory/MemoryFigures.cs:54
 msgid "Memorize figures"
@@ -4468,7 +4491,7 @@ msgstr "Tid i sekunder att memorera utmaningen:"
 
 #: ../src/Clients/Classical/gbrainy.ui.h:1
 msgid "All Games (Logic, Mental Calculation, Memory and Verbal Analogies)"
-msgstr "Alla spel (logiska, mental beräkning, minne och verbala analogier)"
+msgstr "Alla spel (logiska, huvudberäkning, minne och verbala analogier)"
 
 #: ../src/Clients/Classical/gbrainy.ui.h:2
 msgid "Answer:"
@@ -4504,7 +4527,7 @@ msgstr "Endast minnesträning"
 
 #: ../src/Clients/Classical/gbrainy.ui.h:10
 msgid "Mental Calculation Trainers Only"
-msgstr "Endast träning av mental beräkning"
+msgstr "Endast träning av huvudberäkning"
 
 #: ../src/Clients/Classical/gbrainy.ui.h:11
 msgid "Orientation"
@@ -4568,18 +4591,6 @@ msgstr "_Visa"
 
 #~ msgid "{0}) "
 #~ msgstr "{0}) "
-
-#~ msgid "Triangle"
-#~ msgstr "Triangel"
-
-#~ msgid "Square"
-#~ msgstr "Kvadrat"
-
-#~ msgid "Pentagon"
-#~ msgstr "Femkant"
-
-#~ msgid "Circle"
-#~ msgstr "Cirkel"
 
 #~ msgid "Attention"
 #~ msgstr "Uppmärksam"
