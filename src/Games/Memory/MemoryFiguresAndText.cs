@@ -179,8 +179,6 @@ namespace gbrainy.Games.Memory
 				if (figures[question_pos] == answers [i])
 				{
 					answer_idx = i;
-					Console.WriteLine ("Question pos {0}", figures[question_pos]);
-					Console.WriteLine ("Index {0}", answer_idx);
 				}
 			}
 		}
