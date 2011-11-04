@@ -65,12 +65,13 @@ namespace gbrainy.Games.Logic
 					total);
 				question += " ";
 				question += String.Format (
-					translations.GetPluralString ("Machine A takes {0} second to cut 1 meter of this fabric. How many seconds does Machine A take to cut the entire piece of fabric into 1 meter pieces?",
-						"Machine A takes {0} seconds to cut 1 meter of this fabric. How many seconds does Machine A take to cut the entire piece of fabric into 1 meter pieces?"
+					translations.GetPluralString ("A machine takes {0} second to cut 1 meter of this fabric. How many seconds does the machine take to cut the entire piece of fabric into 1 meter pieces?",
+						"A machine takes {0} seconds to cut 1 meter of this fabric. How many seconds does the machine take to cut the entire piece of fabric into 1 meter pieces?"
 						, var), var);
 				answer = String.Format (
-					// Translators: {0} is always a number greater than 1
-					translations.GetString ("With the {0} cut, Machine A creates two 1 meter pieces."), (total - 1));
+					translations.GetPluralString ("With the cut number {0}, the machine creates two 1 meter pieces.",
+						"With the cut number {0}, the machine creates two 1 meter pieces.", total - 1),
+						total - 1);
 
 				ans = (total - 1) * var;
 				break;
