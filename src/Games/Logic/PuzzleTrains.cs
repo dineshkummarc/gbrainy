@@ -78,10 +78,10 @@ namespace gbrainy.Games.Logic
 					// Translators:
 					//  - mph (miles per hour). You must localize this using the right unit of speed for your locale
 					// - The translated string should not use more characters than the original sentence
-					translations.GetPluralString ("A train leaves the station traveling at {0} mph. {1} hour later a second train leaves the station traveling in the same direction at {2} mph. How many hours since the first train left does it take the second train to overtake the first train?",
-						"A train leaves the station traveling at {0} mph. {1} hours later a second train leaves the station traveling in the same direction at {2} mph. How many hours since the first train left does it take the second train to overtake the first train?", (int) hours),
+					translations.GetPluralString ("A train leaves the station traveling at {0} mph. {1} hour later a second train leaves the station traveling in the same direction at {2} mph. How many hours does it take the second train, since it starts moving, to overtake the first train?",
+						"A train leaves the station traveling at {0} mph. {1} hours later a second train leaves the station traveling in the same direction at {2} mph. How many hours does it take the second train, since it starts moving, to overtake the first train?", (int) hours),
 						speed_a, hours, speed_b);
-			
+
 				answer = translations.GetString ("You can calculate the answer by multiplying the speed of the first train by the time and dividing it by the difference of speeds.");
 				break;
 			}
