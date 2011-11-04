@@ -1,5 +1,7 @@
 This is an experimental gbrainy web client using Mono's ASP.NET 3.5
 
+== Background ==
+
 * User preferences
 
 To avoid deal with database access:
@@ -11,5 +13,15 @@ To avoid deal with database access:
 
 Based on GNU GetText to reuse current translations
 
+== Runing it ==
 
+From command line:
 
+* Call ./package.sh and generate and self-containing package to run gbrainy
+* Unpackage it
+* You can run it then using by just typing xps2
+
+From Monodevelop:
+
+* Call ./package.sh and generate and self-containing package. Unpackage it in the Webforms directory
+* Run Monodevelop in Debug Mode
