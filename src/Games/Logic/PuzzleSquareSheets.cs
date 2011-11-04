@@ -23,6 +23,8 @@ namespace gbrainy.Games.Logic
 {
 	public class PuzzleSquareSheets : Game
 	{
+		const double width = 0.4, height = 0.4; 
+
 		public override string Name {
 			get {return translations.GetString ("Square sheets");}
 		}
@@ -38,8 +40,12 @@ namespace gbrainy.Games.Logic
 		public override string Rationale {
 			get {
 				// Translators: the translated version should not take more characters that the English original
-				return translations.GetString ("A full sized square of paper, a 3/4 of the whole size square of paper in the bottom right corner, another 3/4 square of paper in the top left corner and a 1/4 square of paper in the top left corner.");
+				return translations.GetString ("A full sized square of paper (yellow), a 3/4 of the whole size square of paper in the bottom right corner (blue), another 3/4 square of paper (green) in the top left corner and a 1/4 square of paper (red) in the top left corner.");
 			}
+		}
+
+		public override bool UsesColors {
+			get { return true;}
 		}
 
 		protected override void Initialize ()
@@ -47,18 +53,13 @@ namespace gbrainy.Games.Logic
 			Answer.Correct = "4";
 		}
 
-		public override void Draw (CairoContextEx gr, int area_width, int area_height, bool rtl)
+		void DrawQuestion (CairoContextEx gr, double x, double y)
 		{
-			double x = DrawAreaX + 0.2, y = DrawAreaY + 0.2;
-			const double width = 0.4, height = 0.4;
-
-			base.Draw (gr, area_width, area_height, rtl);
-
 			gr.Rectangle (x, y, width, height);
 			gr.Stroke ();
 
 			gr.MoveTo (x, y + 0.1);
-			gr.LineTo (x + width, y + 0.1);  // First horizontal
+			gr.LineTo (x + width, y + 0.1);  // Container square
 			gr.Stroke ();
 
 			gr.MoveTo (x, y + 0.3);
@@ -72,6 +73,52 @@ namespace gbrainy.Games.Logic
 			gr.MoveTo (x + 0.3, y);
 			gr.LineTo (x + 0.3, y + height - 0.1);  // Second vertical
 			gr.Stroke ();
+		}
+
+		void DrawAnswer (CairoContextEx gr, double x, double y)
+		{
+			ColorPalette palette = new ColorPalette (translations);
+			gr.Save ();
+
+			// A full sized square of paper
+			gr.Color = palette.Cairo (ColorPalette.Id.Yellow);
+			gr.Rectangle (x, y, width, height);
+			gr.Fill ();
+			gr.Stroke ();
+
+			// 3/4 of the whole size square of paper in the bottom right corner
+			gr.Color = palette.Cairo (ColorPalette.Id.Blue);
+			double w = 3d/4d * width;
+			double h = 3d/4d * height;
+			gr.Rectangle (x + (width - w), y + (height - h), w, h);
+			gr.Fill ();
+			gr.Stroke ();
+
+			// 3/4 square of paper in the top left corner
+			gr.Color = palette.Cairo (ColorPalette.Id.Green);
+			gr.Rectangle (x, y, 3d/4d * width, 3d/4d * height);
+			gr.Fill ();
+			gr.Stroke ();
+			
+			// 1/4 square of paper in the top left corner
+			gr.Color = palette.Cairo (ColorPalette.Id.Red);
+			gr.Rectangle (x, y, 1d/4d * width, 1d/4d * height);
+			gr.Fill ();
+			gr.Stroke ();
+
+			gr.Restore ();
+		}
+
+		public override void Draw (CairoContextEx gr, int area_width, int area_height, bool rtl)
+		{
+			double x = DrawAreaX + 0.2, y = DrawAreaY + 0.2;
+
+			base.Draw (gr, area_width, area_height, rtl);
+
+			if (Answer.Draw)
+				DrawAnswer (gr, x, y);
+
+			DrawQuestion (gr, x, y);
 		}
 	}
 }
