@@ -36,7 +36,7 @@ namespace gbrainy.Test.Core
 		[Test]
 		public void Trim ()
 		{
-			GameAnswer answer = new GameAnswer (null);
+			GameAnswer answer = new GameAnswer ();
 
 			answer.CheckAttributes = GameAnswerCheckAttributes.None;
 			answer.Correct = "icon";
@@ -59,7 +59,7 @@ namespace gbrainy.Test.Core
 		[Test]
 		public void IgnoreCase ()
 		{
-			GameAnswer answer = new GameAnswer (null);
+			GameAnswer answer = new GameAnswer ();
 
 			answer.CheckAttributes = GameAnswerCheckAttributes.None;
 			answer.Correct = "icon";
@@ -82,7 +82,7 @@ namespace gbrainy.Test.Core
 		[Test]
 		public void IgnoreSpaces ()
 		{
-			GameAnswer answer = new GameAnswer (null);
+			GameAnswer answer = new GameAnswer ();
 
 			answer.CheckAttributes = GameAnswerCheckAttributes.None;
 			answer.Correct = "10 pm";
@@ -105,7 +105,7 @@ namespace gbrainy.Test.Core
 		[Test]
 		public void MatchAllInOder ()
 		{
-			GameAnswer answer = new GameAnswer (null);
+			GameAnswer answer = new GameAnswer ();
 
 			answer.CheckAttributes = GameAnswerCheckAttributes.MatchAllInOrder;
 			answer.CheckExpression = "[0-9]+";
@@ -118,7 +118,7 @@ namespace gbrainy.Test.Core
 		[Test]
 		public void MatchAll ()
 		{
-			GameAnswer answer = new GameAnswer (null);
+			GameAnswer answer = new GameAnswer ();
 
 			answer.CheckAttributes = GameAnswerCheckAttributes.MatchAll;
 			answer.CheckExpression = "[0-9]+";
@@ -132,7 +132,7 @@ namespace gbrainy.Test.Core
 		[Test]
 		public void DefaultAnswer ()
 		{
-			GameAnswer answer = new GameAnswer (null);
+			GameAnswer answer = new GameAnswer ();
 
 			answer.Correct = "icon";
 			Assert.AreEqual (true, answer.CheckAnswer ("icon"));
@@ -144,7 +144,7 @@ namespace gbrainy.Test.Core
 		[Test]
 		public void DefaultAnswerOptions ()
 		{
-			GameAnswer answer = new GameAnswer (null);
+			GameAnswer answer = new GameAnswer ();
 
 			answer.Correct = "option1 | option2";
 			Assert.AreEqual (true, answer.CheckAnswer ("option1"));
@@ -157,7 +157,7 @@ namespace gbrainy.Test.Core
 		[Test]
 		public void CheckPuzzleTimeNowAnswer ()
 		{
-			GameAnswer answer = new GameAnswer (null);
+			GameAnswer answer = new GameAnswer ();
 			answer.Correct = "10 PM";
 			answer.CheckAttributes = GameAnswerCheckAttributes.Trim | GameAnswerCheckAttributes.IgnoreCase | GameAnswerCheckAttributes.IgnoreSpaces;
 
@@ -174,7 +174,7 @@ namespace gbrainy.Test.Core
 		[Test]
 		public void CheckCalculationOperator ()
 		{
-			GameAnswer answer = new GameAnswer (null);
+			GameAnswer answer = new GameAnswer ();
 			answer.Correct = "+ | -";
 			answer.CheckExpression = "[+*-/]";
 			answer.CheckAttributes = GameAnswerCheckAttributes.Trim | GameAnswerCheckAttributes.MatchAllInOrder;
@@ -190,7 +190,7 @@ namespace gbrainy.Test.Core
 		[Test]
 		public void CheckPuzzleBuildTriangle ()
 		{
-			GameAnswer answer = new GameAnswer (null);
+			GameAnswer answer = new GameAnswer ();
 
 			answer.Correct = "A | B | C";
 			answer.CheckExpression = "[ABCDF]";
@@ -212,7 +212,7 @@ namespace gbrainy.Test.Core
 		[Test]
 		public void CheckPuzzlePercentage ()
 		{
-			GameAnswer answer = new GameAnswer (null);
+			GameAnswer answer = new GameAnswer ();
 
 			answer.Correct = "10";
 			answer.CheckExpression = "[0-9]+";
@@ -230,7 +230,7 @@ namespace gbrainy.Test.Core
 		[Test]
 		public void TwoNumbersAnswer ()
 		{
-			GameAnswer answer = new GameAnswer (null);
+			GameAnswer answer = new GameAnswer ();
 			answer.Correct = "10 | 20";
 			answer.CheckExpression = "[0-9]+";
 			answer.CheckAttributes = GameAnswerCheckAttributes.Trim | GameAnswerCheckAttributes.MatchAll;
