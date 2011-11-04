@@ -42,6 +42,9 @@ namespace gbrainy.Games.Logic
 			get { return translations.GetString ("Try to imagine a situation in which you are meeting a small number of people.");}
 		}
 
+		public override string Rationale {
+			get { return translations.GetString ("Using n as the total number of people, the first person handshakes n-1 people, the second n-2 people, etc. The result is the sum of the first n-1 consecutive numbers: 1+2+3+...+(n-1).");}
+		}
 		protected override void Initialize ()
 		{
 			handshakes = 0;
