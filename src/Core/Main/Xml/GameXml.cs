@@ -119,7 +119,6 @@ namespace gbrainy.Core.Main.Xml
 		void SetCheckAttributes ()
 		{
 			GameAnswerCheckAttributes attrib;
-
 			if (game.Variants.Count > 0 && game.Variants[current.Variant].CheckAttributes != GameAnswerCheckAttributes.None)
 				attrib = game.Variants[current.Variant].CheckAttributes;
 			else
@@ -136,6 +135,11 @@ namespace gbrainy.Core.Main.Xml
 			string variables;
 			bool variants;
 			LocalizableString localizable_question, localizable_rationale;
+
+			xml_drawing.CreateDrawingObjects (game.DrawingObjects); // Draw objects shared by all variants
+
+			if (game.Variants.Count > 0)
+				xml_drawing.CreateDrawingObjects (game.Variants[current.Variant].DrawingObjects); // Draw variant specific objects
 
 			compiler = ServiceLocator.Instance.GetService <ICSharpCompiler> ();
 
@@ -242,12 +246,6 @@ namespace gbrainy.Core.Main.Xml
 				current.Variant = locator.Variant;
 				game = games [locator.Game];
 				SetCheckAttributes ();
-
-				xml_drawing.CreateDrawingObjects (game.DrawingObjects); // Draw objects shared by all variants
-
-				if (game.Variants.Count > 0)
-					xml_drawing.CreateDrawingObjects (game.Variants[current.Variant].DrawingObjects); // Draw variant specific objects
-
 				SetCheckExpression ();
 				SetAnswerCorrectShow ();
 			}

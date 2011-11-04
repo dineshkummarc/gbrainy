@@ -45,6 +45,7 @@ namespace gbrainy.Core.Main
 
 		protected Game ()
 		{
+			answer = new GameAnswer ();
 			containers = new List <Toolkit.Container> ();
 			difficulty = GameDifficulty.Medium;
 		}
@@ -59,7 +60,7 @@ namespace gbrainy.Core.Main
 		public ITranslations translations { 
 			set {  
 				_translations = value;
-				answer = new GameAnswer (translations);
+				answer.Translations = value;
 			}
 			get { return _translations; }
 		}

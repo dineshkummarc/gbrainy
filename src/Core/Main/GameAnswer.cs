@@ -32,11 +32,17 @@ namespace gbrainy.Core.Main
 		string correct;
 		ITranslations translations;
 
-		public GameAnswer (ITranslations translations)
+		public GameAnswer ()
 		{
-			this.translations = translations;
 			CheckAttributes = GameAnswerCheckAttributes.Trim | GameAnswerCheckAttributes.IgnoreCase;
 			CheckExpression = ".+";
+		}
+
+		// This is a property because the object can be constructed and use it
+		// Only text related functions needed. Perhaps, a possible to do extract class pattern
+		public ITranslations Translations { 
+			set { translations = value; }
+			get { return translations; }
 		}
 
 		public char Separator {
