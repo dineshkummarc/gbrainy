@@ -70,11 +70,15 @@ namespace gbrainy.Core.Libraries
 			
 				handle = rsvg_handle_new_from_data (array, array.Length, out error);
 				rsvg_handle_get_dimensions (handle, ref dimension);
-			} 
+			}
+			catch (Exception e)
+			{
+				Console.WriteLine ("SVGImage. SVGImage (assembly). Exception: {0}", e);
+			}
 			finally
 			{
 				if (handle == IntPtr.Zero)
-					throw new System.IO.IOException ("Resource not found: " + resource);
+					throw new System.IO.IOException ("SVGImage. SVGImage (assembly). Could not load resource: " + resource);
 			}
 		}
 	
@@ -90,11 +94,14 @@ namespace gbrainy.Core.Libraries
 					rsvg_handle_get_dimensions (handle, ref dimension);
 
 			}
-
+			catch (Exception e)
+			{
+				Console.WriteLine ("SVGImage. SVGImage (file). Exception: {0}", e);
+			}
 			finally
 			{
 				if (handle == IntPtr.Zero)
-					throw new System.IO.IOException ("File not found: " + file);
+					throw new System.IO.IOException ("SVGImage. SVGImage (file). Could not load file: " + file);
 
 			}
 		}
