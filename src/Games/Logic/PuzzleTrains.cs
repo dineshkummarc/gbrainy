@@ -28,7 +28,9 @@ namespace gbrainy.Games.Logic
 	{
 		enum GameType
 		{
-			Overtake,
+#if _DISABLED___FOR_663259
+			//Overtake - Temporary removed as part of fixing #663259 in stable
+#endif
 			Meet,
 			Apart,
 			Total
@@ -62,6 +64,7 @@ namespace gbrainy.Games.Logic
 
 			switch (gametype)
 			{
+#if _DISABLED___FOR_663259
 			case GameType.Overtake:
 			{
 				double hours;
@@ -86,6 +89,7 @@ namespace gbrainy.Games.Logic
 				answer = ServiceLocator.Instance.GetService <ITranslations> ().GetString ("You can calculate the answer by multiplying the speed of the first train by the time and dividing it by the difference of speeds.");
 				break;
 			}
+#endif
 			case GameType.Meet:
 			{
 				double distance, hours;
@@ -146,6 +150,7 @@ namespace gbrainy.Games.Logic
 
 			switch (gametype)
 			{
+#if _DISABLED___FOR_663259
 			case GameType.Overtake:
 				gr.DrawImageFromAssembly (train_right, 0, 0.1, 0.5, 0.55);
 				gr.MoveTo (0.1, 0.45);
@@ -154,7 +159,7 @@ namespace gbrainy.Games.Logic
 
 				gr.DrawImageFromAssembly (train_right, 0.5, 0.1, 0.5, 0.55);
 				break;
-
+#endif
 			case GameType.Meet:
 				gr.DrawImageFromAssembly (train_right, 0, 0.1, 0.5, 0.55);
 				gr.MoveTo (0.1, 0.45);
