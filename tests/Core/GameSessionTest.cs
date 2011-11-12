@@ -22,6 +22,8 @@ using System.Collections.Generic;
 using NUnit.Framework;
 
 using gbrainy.Core.Main;
+using gbrainy.Core.Services;
+using gbrainy.Core.Libraries;
 
 namespace gbrainy.Test.Core
 {
@@ -36,10 +38,9 @@ namespace gbrainy.Test.Core
 		
 		GameSession PrepareSession ()
 		{
-			GameSession session = new GameSession (null);
+			ITranslations translations = new TranslationsCatalog ();
+			GameSession session = new GameSession (translations);
 			session.GameManager.LoadAssemblyGames ("gbrainy.Games.dll");
-			session.GameManager.LoadPlugins ();
-			session.GameManager.LoadGamesFromXml (System.IO.Path.Combine (gbrainy.Core.Main.Defines.DATA_DIR, "games.xml"));
 			return session;
 		}
 
