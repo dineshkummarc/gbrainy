@@ -75,8 +75,9 @@ namespace gbrainy.Core.Main
 				((IDisposable)cr).Dispose();
 				return true;
 			}
-			catch (Exception)
+			catch (Exception e)
 			{
+				Console.WriteLine ("PdfExporter.GeneratePdf. Exception: {0}", e);
 				return false;
 			}
 		}
