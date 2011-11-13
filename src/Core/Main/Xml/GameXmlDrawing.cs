@@ -265,7 +265,8 @@ namespace gbrainy.Core.Main.Xml
 		{
 			string answer;
 
-			answer = String.Format (game_xml.CatalogGetString ("{0}) "), game_xml.Answer.GetMultiOption (option));
+			// Translators: This the option to select in a multioption answer. For example "A) Mother"
+			answer = String.Format (game_xml.CatalogGetString ("{0})"), game_xml.Answer.GetMultiOption (option));
 			return str.Replace (option_prefix, answer);
 		}
 	}
