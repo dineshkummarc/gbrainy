@@ -127,6 +127,28 @@ namespace gbrainy.Test.Core
 			Assert.AreEqual (true, answer.CheckAnswer ("30 20 10"));
 		}
 
+		[Test]
+		public void MatchAllCheatNumbers ()
+		{
+			GameAnswer answer = new GameAnswer ();
+
+			answer.CheckAttributes = GameAnswerCheckAttributes.MatchAll;
+			answer.CheckExpression = "[0-9]+";
+			answer.Correct = "10 | 20 | 30";
+			Assert.AreEqual (false, answer.CheckAnswer ("10 20 30 40 50"));
+		}
+
+		[Test]
+		public void MatchAllCheatMultiOption ()
+		{
+			GameAnswer answer = new GameAnswer ();
+
+			answer.CheckAttributes |= GameAnswerCheckAttributes.MatchAll | GameAnswerCheckAttributes.MultiOption | GameAnswerCheckAttributes.IgnoreSpaces;
+			answer.CheckExpression = "[ABCDEFGH]";
+			answer.Correct = "A | B | C";
+			Assert.AreEqual (false, answer.CheckAnswer ("A B C D"));
+		}			
+
 		// Test attributes as used in real games
 
 		[Test]
