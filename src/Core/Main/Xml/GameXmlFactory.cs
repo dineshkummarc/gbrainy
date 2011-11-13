@@ -420,6 +420,9 @@ namespace gbrainy.Core.Main.Xml
 						if (String.Compare (str, "yes", true) == 0)
 							option.Correct = true;
 
+						if (option.X + option.Width > 1 || option.Y + option.Height > 1)
+							Console.WriteLine ("GameXmlFactory. Wrong option size. x+width and y+height cannot be larger than 1");
+
 						break;
 					default:
 						if (String.IsNullOrEmpty (name) == false)
