@@ -204,6 +204,7 @@ namespace gbrainy.Core.Main
 				match = regex.Match (answer);
 				while (String.IsNullOrEmpty (match.Value) == false)
 				{
+					bool matched = false;
 					if ((CheckAttributes & GameAnswerCheckAttributes.MatchAll) == GameAnswerCheckAttributes.MatchAll)
 					{
 						for (int i = 0; i < right_answers.Length; i++)
@@ -211,9 +212,12 @@ namespace gbrainy.Core.Main
 							if (String.Compare (match.Value, right_answers[i], ignore_case) == 0)
 							{
 								right_answers[i] = null;
+								matched = true;
 								break;
 							}
 						}
+						if (matched == false)
+							return false;
 					}
 					else //MatchAllInOrder
 					{
