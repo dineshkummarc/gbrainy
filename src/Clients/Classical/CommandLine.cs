@@ -96,7 +96,7 @@ namespace gbrainy.Clients.Classical
 					cont_execution = false;
 					break;
 				default:
-					Console.WriteLine ("Unknown parameter {0}", args [idx]);
+					Console.WriteLine (Catalog.GetString ("Unknown command line parameter {0}"), args [idx]);
 					break;
 				}
 			}
@@ -133,44 +133,30 @@ namespace gbrainy.Clients.Classical
 
 		void BuildPlayList (string [] names)
 		{
-			Dictionary <string, int> dictionary;
+			List <int> list = new List <int> ();
 			GameLocator [] games;
 			GameManager gm = new GameManager ();
 			GtkClient.GameManagerPreload (gm);
 			games = gm.AvailableGames;
 
-			// Create a hash to map from game name to locator
-			dictionary = new Dictionary <string, int> (games.Length);
 			for (int i = 0; i < games.Length; i++)
 			{
-				if (games[i].IsGame == false)
-					continue;
-
 				Game game = (Game) Activator.CreateInstance (games[i].TypeOf, true);
 				game.translations = translations;
 				game.Variant = games[i].Variant;
 
 				try
 				{
-					dictionary.Add (game.Name.ToLower (), i);
+					for (int n = 0; n < names.Length; n++)
+					{
+						if (String.Compare (game.Name, names [n], StringComparison.OrdinalIgnoreCase) == 0)
+							list.Add (i);
+					}
+
 				}
 				catch (Exception e)
 				{
 					Console.WriteLine ("CommandLine.BuildPlayList. Error adding {0} {1}", game.Name, e.Message);
-				}
-			}
-
-			List <int> list = new List <int> (names.Length);
-
-			for (int i = 0; i < names.Length; i++)
-			{
-				try
-				{
-					list.Add (dictionary [names [i].ToLower ()]);
-				}
-				catch (KeyNotFoundException)
-				{
-					Console.WriteLine ("CommandLine.BuildPlayList. Game [{0}] not found", names [i]);
 				}
 			}
 
