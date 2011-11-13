@@ -52,6 +52,7 @@ namespace gbrainy.Games.Logic
 			}
 		}
 
+		private const double cercle_size = 0.15;
 		private double small_size = 0.01;
 		private double medium_size = 0.02;
 	  	private ArrayList questions;
@@ -184,7 +185,7 @@ namespace gbrainy.Games.Logic
 			for (int i = 0; i < random_indices_answers.Count; i++)
 			{
 				drawable_area = new DrawableArea (figure_size, figure_size + 0.05);
-				drawable_area.SelectedArea = new Rectangle (0.05, 0.05, 0.15, 0.15);
+				drawable_area.SelectedArea = new Rectangle (0.05, 0.05, cercle_size, cercle_size);
 				drawable_area.Data = i;
 				drawable_area.DataEx = Answer.GetMultiOption (i);
 
@@ -193,8 +194,7 @@ namespace gbrainy.Games.Logic
 					int n = (int) e.Data;
 
 					DrawFigure (e.Context, 0.05, 0.05, (FigureElement []) answers[random_indices_answers[n]]);
-					e.Context.MoveTo (0.05, 0.22);
-					e.Context.ShowPangoText (Answer.GetFigureName (n));
+					e.Context.DrawTextCentered (x + (cercle_size / 2), 0.25, Answer.GetFigureName (n));
 				};
 
 				container.AddChild (drawable_area);
@@ -286,7 +286,6 @@ namespace gbrainy.Games.Logic
 
 		private void DrawFigure (CairoContextEx gr, double x, double y, FigureElement[] figure)
 		{
-			const double cercle_size = 0.15;
 			gr.Stroke ();
 			gr.Arc (x + cercle_size / 2, y + cercle_size / 2, cercle_size / 2, 0, 2 * Math.PI);
 			gr.Stroke ();
