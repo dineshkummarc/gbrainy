@@ -13,8 +13,8 @@ msgstr ""
 "Project-Id-Version: gbrainy.master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=gbrainy&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2011-11-04 20:37+0000\n"
-"PO-Revision-Date: 2011-11-06 14:18+0100\n"
+"POT-Creation-Date: 2011-11-13 18:38+0000\n"
+"PO-Revision-Date: 2011-11-14 13:16+0100\n"
 "Last-Translator: Daniel Mustieles <daniel.mustieles@gmail.com>\n"
 "Language-Team: Español <gnome-es-list@gnome.org>\n"
 "MIME-Version: 1.0\n"
@@ -84,7 +84,7 @@ msgstr "Coches en la ciudad"
 #: ../src/Games/Logic/PuzzleLargerShape.cs:303
 #: ../src/Games/Logic/PuzzleMissingPiece.cs:173
 #: ../src/Games/Logic/PuzzleMissingSlice.cs:218
-#: ../src/Games/Logic/PuzzleMostInCommon.cs:314
+#: ../src/Games/Logic/PuzzleMostInCommon.cs:313
 #: ../src/Games/Logic/PuzzleNextFigure.cs:166
 #: ../src/Games/Logic/PuzzleOstracism.cs:176
 #: ../src/Games/Logic/PuzzlePredicateLogic.cs:196
@@ -1588,14 +1588,12 @@ msgstr ""
 #: ../data/verbal_analogies.xml.h:240
 msgid "Which of the following words is closest to the meaning of 'unhappy'?"
 msgstr ""
-"¿Cuál de las siguientes palabras es la más cercana en significado a "
-"«infeliz»?"
+"¿Cuál de las siguientes palabras es la más cercana en significado a «infeliz»?"
 
 #: ../data/verbal_analogies.xml.h:241
 msgid "Which of the following words is the closest in meaning to 'censure'?"
 msgstr ""
-"¿Cuál de las siguientes palabras es la más cercana en significado a "
-"«censura»?"
+"¿Cuál de las siguientes palabras es la más cercana en significado a «censura»?"
 
 #: ../data/verbal_analogies.xml.h:242
 msgid "Which of the following words means fear of people?"
@@ -2001,6 +1999,11 @@ msgstr "muñeca | brazo"
 msgid "write / pen | eat"
 msgstr "escribir / bolígrafo | comer"
 
+#: ../src/Clients/Classical/CommandLine.cs:99
+#, csharp-format
+msgid "Unknown command line parameter {0}"
+msgstr "Parámetro de la línea de comandos desconocido {0}"
+
 #. Translators: {0} is a date
 #: ../src/Clients/Classical/CommandLine.cs:109
 #, csharp-format
@@ -2011,23 +2014,23 @@ msgstr "(construido en {0})"
 msgid "List of available games"
 msgstr "Lista de los juegos disponibles"
 
-#: ../src/Clients/Classical/CommandLine.cs:185
+#: ../src/Clients/Classical/CommandLine.cs:171
 msgid "Usage: gbrainy [options]"
 msgstr "Uso: gbrainy [opciones]"
 
-#: ../src/Clients/Classical/CommandLine.cs:186
+#: ../src/Clients/Classical/CommandLine.cs:172
 msgid "  --version\t\t\tPrint version information."
 msgstr "  --version\t\t\tMostrar información de la versión."
 
-#: ../src/Clients/Classical/CommandLine.cs:187
+#: ../src/Clients/Classical/CommandLine.cs:173
 msgid "  --help\t\t\tPrint this usage message."
 msgstr "  --help\t\t\tMostrar este mensaje de uso y salir."
 
-#: ../src/Clients/Classical/CommandLine.cs:188
+#: ../src/Clients/Classical/CommandLine.cs:174
 msgid "  --gamelist\t\t\tShows the list of available games."
 msgstr "  --gamelist\t\t\tLista de los juegos disponibles."
 
-#: ../src/Clients/Classical/CommandLine.cs:189
+#: ../src/Clients/Classical/CommandLine.cs:175
 msgid ""
 "  --customgame [game1, gameN]\tSpecifies a list of games to play during a "
 "custom game."
@@ -2035,14 +2038,14 @@ msgstr ""
 "  --customgame [game1, gameN]\tEspecifica una lista de juegos a la que jugar "
 "durante una partida personalizada."
 
-#: ../src/Clients/Classical/CommandLine.cs:190
+#: ../src/Clients/Classical/CommandLine.cs:176
 msgid ""
 "  --norandom \t\t\tThe custom game list provided will not be randomized."
 msgstr ""
 "  --norandom \t\t\tLa lista personalizada de juegos proporcionados no será "
 "aleatoria."
 
-#: ../src/Clients/Classical/CommandLine.cs:191
+#: ../src/Clients/Classical/CommandLine.cs:177
 msgid "  --versions \t\t\tShow dependencies."
 msgstr "  --versions \t\t\tMostrar dependencias."
 
@@ -2150,11 +2153,11 @@ msgstr "Archivos PDF"
 msgid "All files"
 msgstr "Todos los archivos"
 
-#: ../src/Clients/Classical/Dialogs/PdfExportDialog.cs:171
+#: ../src/Clients/Classical/Dialogs/PdfExportDialog.cs:172
 msgid "The PDF file has been exported correctly."
 msgstr "El archivo PDF se ha exportado correctamente."
 
-#: ../src/Clients/Classical/Dialogs/PdfExportDialog.cs:174
+#: ../src/Clients/Classical/Dialogs/PdfExportDialog.cs:175
 msgid ""
 "There was a problem generating the PDF file. The file has not been created."
 msgstr ""
@@ -2799,17 +2802,17 @@ msgstr "Tiempo restante"
 
 #. Translators: {0} is the game number and {1} the game question or answer
 #. The number is used as reference when looking for the game solution in the PDF
-#: ../src/Core/Main/PdfExporter.cs:104 ../src/Core/Main/PdfExporter.cs:165
+#: ../src/Core/Main/PdfExporter.cs:105 ../src/Core/Main/PdfExporter.cs:166
 #, csharp-format
 msgid "Game #{0}. {1}"
 msgstr "Juego #{0}. {1}"
 
-#: ../src/Core/Main/PdfExporter.cs:121
+#: ../src/Core/Main/PdfExporter.cs:122
 #, csharp-format
 msgid "Created by gbrainy {0}"
 msgstr "Creado por gbrainy {0}"
 
-#: ../src/Core/Main/PdfExporter.cs:157
+#: ../src/Core/Main/PdfExporter.cs:158
 msgid "Solutions"
 msgstr "Soluciones"
 
@@ -3367,14 +3370,6 @@ msgstr[1] "Tenemos {0} metros de tela."
 
 #: ../src/Games/Logic/PuzzleCounting.cs:68
 #, csharp-format
-#| msgid ""
-#| "Machine A takes {0} second to cut 1 meter of this fabric. How many "
-#| "seconds does Machine A take to cut the entire piece of fabric into 1 "
-#| "meter pieces?"
-#| msgid_plural ""
-#| "Machine A takes {0} seconds to cut 1 meter of this fabric. How many "
-#| "seconds does Machine A take to cut the entire piece of fabric into 1 "
-#| "meter pieces?"
 msgid ""
 "A machine takes {0} second to cut 1 meter of this fabric. How many seconds "
 "does the machine take to cut the entire piece of fabric into 1 meter pieces?"
@@ -3390,7 +3385,6 @@ msgstr[1] ""
 
 #: ../src/Games/Logic/PuzzleCounting.cs:72
 #, csharp-format
-#| msgid "With the {0} cut, Machine A creates two 1 meter pieces."
 msgid "With the cut number {0}, the machine creates two 1 meter pieces."
 msgid_plural "With the cut number {0}, the machine creates two 1 meter pieces."
 msgstr[0] "Con el corte {0} la máquina crea dos trozos de 1 metro."
@@ -3523,8 +3517,8 @@ msgid ""
 "What is the probability of getting a '2' or a '6' in a single throw of an "
 "unmodified 6 sided die? Answer using a fraction (e.g.: 1/2)."
 msgstr ""
-"¿Cuál es la probabilidad de obtener un «2» o un «6» en un solo lanzamiento "
-"de un dado no cargado de 6 caras? Responde usando una fracción (ej.: 1/2)."
+"¿Cuál es la probabilidad de obtener un «2» o un «6» en un solo lanzamiento de "
+"un dado no cargado de 6 caras? Responde usando una fracción (ej.: 1/2)."
 
 #: ../src/Games/Logic/PuzzleDice.cs:56
 msgid "There are 2 of 6 possibilities."
@@ -3568,8 +3562,8 @@ msgid ""
 "There is 1 of 6 possibilities of getting a '6' on the first die and the same "
 "for the second die."
 msgstr ""
-"Existe 1 de 6 probabilidades de obtener un «6» en el primer dado y las "
-"mismas para el segundo dado."
+"Existe 1 de 6 probabilidades de obtener un «6» en el primer dado y las mismas "
+"para el segundo dado."
 
 #: ../src/Games/Logic/PuzzleDice.cs:73
 msgid "Dice"
@@ -3657,8 +3651,8 @@ msgid ""
 "figures and 'F' that there are two figures."
 msgstr ""
 "«A» indica que las figuras se superponen, «B» que son cuadrados, «C» que son "
-"círculos, «D» que las figuras están separadas, «E» que hay tres figuras y "
-"«F» que hay dos figuras."
+"círculos, «D» que las figuras están separadas, «E» que hay tres figuras y «F» "
+"que hay dos figuras."
 
 #: ../src/Games/Logic/PuzzleFigurePattern.cs:40
 msgid "Figure pattern"
@@ -3961,11 +3955,11 @@ msgstr ""
 "Todos los números de cada pieza, cuando se suman a los de enfrente de la "
 "pieza suman siempre {0}."
 
-#: ../src/Games/Logic/PuzzleMostInCommon.cs:76
+#: ../src/Games/Logic/PuzzleMostInCommon.cs:77
 msgid "Most in common"
 msgstr "Más en común"
 
-#: ../src/Games/Logic/PuzzleMostInCommon.cs:81
+#: ../src/Games/Logic/PuzzleMostInCommon.cs:82
 #, csharp-format
 msgid ""
 "Which of the possible answers have the most in common with the four given "
@@ -3974,19 +3968,19 @@ msgstr ""
 "¿Cuál de las posibles respuestas tiene más en común con las cuatro figuras "
 "dadas? Responde {0}, {1}, {2} o {3}."
 
-#: ../src/Games/Logic/PuzzleMostInCommon.cs:86
+#: ../src/Games/Logic/PuzzleMostInCommon.cs:87
 msgid "Think of the common elements that the given figures have inside them."
 msgstr ""
 "Piensa en los elementos comunes que las figuras dadas tienen dentro de ellas."
 
-#: ../src/Games/Logic/PuzzleMostInCommon.cs:92
+#: ../src/Games/Logic/PuzzleMostInCommon.cs:93
 msgid ""
 "It has the same number of elements inside the figure as the given figures."
 msgstr ""
 "Tiene el mismo número de elementos dentro de la figura como las figuras "
 "dadas."
 
-#: ../src/Games/Logic/PuzzleMostInCommon.cs:94
+#: ../src/Games/Logic/PuzzleMostInCommon.cs:95
 msgid ""
 "It is the figure with the most elements in common compared to the given "
 "figures."
@@ -4613,10 +4607,6 @@ msgstr "Las hojas no se deben superponer."
 
 #. Translators: the translated version should not take more characters that the English original
 #: ../src/Games/Logic/PuzzleSquareSheets.cs:43
-#| msgid ""
-#| "A full sized square of paper, a 3/4 of the whole size square of paper in "
-#| "the bottom right corner, another 3/4 square of paper in the top left "
-#| "corner and a 1/4 square of paper in the top left corner."
 msgid ""
 "A full sized square of paper (yellow), a 3/4 of the whole size square of "
 "paper in the bottom right corner (blue), another 3/4 square of paper (green) "
@@ -4706,16 +4696,6 @@ msgstr "La fórmula de la distancia es «distancia = espacio x tiempo»."
 #. - The translated string should not use more characters than the original sentence
 #: ../src/Games/Logic/PuzzleTrains.cs:81
 #, csharp-format
-#| msgid ""
-#| "A train leaves the station traveling at {0} mph. {1} hour later a second "
-#| "train leaves the station traveling in the same direction at {2} mph. How "
-#| "many hours since the first train left does it take the second train to "
-#| "overtake the first train?"
-#| msgid_plural ""
-#| "A train leaves the station traveling at {0} mph. {1} hours later a second "
-#| "train leaves the station traveling in the same direction at {2} mph. How "
-#| "many hours since the first train left does it take the second train to "
-#| "overtake the first train?"
 msgid ""
 "A train leaves the station traveling at {0} mph. {1} hour later a second "
 "train leaves the station traveling in the same direction at {2} mph. How "
@@ -5670,22 +5650,22 @@ msgstr "_Ver"
 #~ "If p &lt; x &lt; q and r &lt; y &lt; s. Which of the following options "
 #~ "makes x &lt; y true? [option_answers]"
 #~ msgstr ""
-#~ "Si «p &lt; x &lt; q» y «r &lt; y &lt; s». ¿Cuál de las siguientes "
-#~ "opciones hace que «x &lt; y» sea cierto? [option_answers]"
+#~ "Si «p &lt; x &lt; q» y «r &lt; y &lt; s». ¿Cuál de las siguientes opciones "
+#~ "hace que «x &lt; y» sea cierto? [option_answers]"
 
 #~ msgid ""
 #~ "If the variable r is smaller than q then the condition x &gt; y is always "
 #~ "true."
 #~ msgstr ""
-#~ "La variable «r» es menor que «q», entonces la condición «x &lt; y» "
-#~ "siempre es cierta."
+#~ "La variable «r» es menor que «q», entonces la condición «x &lt; y» siempre "
+#~ "es cierta."
 
 #~ msgid ""
 #~ "If the variable s is bigger than p then the condition x &lt; y is always "
 #~ "true."
 #~ msgstr ""
-#~ "La variable «r» es mayor que «p», entonces la condición «x &lt; y» "
-#~ "siempre es cierta."
+#~ "La variable «r» es mayor que «p», entonces la condición «x &lt; y» siempre "
+#~ "es cierta."
 
 # Se refiere a un tiro al blanco?
 #~ msgid "Blackboard"
@@ -5714,8 +5694,8 @@ msgstr "_Ver"
 #~ "The variable p is smaller than x and s is bigger than y. If p is bigger "
 #~ "than s then the condition x &gt; y is true."
 #~ msgstr ""
-#~ "La variable «p» es menor que «x» y «s» es mayor que «y». Si «p» es mayor "
-#~ "que «s» entonces la condición «x &gt; y» es cierta."
+#~ "La variable «p» es menor que «x» y «s» es mayor que «y». Si «p» es mayor que "
+#~ "«s» entonces la condición «x &gt; y» es cierta."
 
 #~ msgid "[option_prefix] p > s"
 #~ msgstr "[option_prefix] p > s"
