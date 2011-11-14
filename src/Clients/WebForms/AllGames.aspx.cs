@@ -107,6 +107,7 @@ namespace gbrainy.Clients.WebForms
 			if (created_games == true)
 				return;
 			
+			TranslationsWeb translations = new TranslationsWeb ();
 			manager = Game.CreateManager ();
 			GameImage.CreateDirectory (images_dir);	
 			
@@ -124,11 +125,12 @@ namespace gbrainy.Clients.WebForms
 					continue;
 		
 				game = (gbrainy.Core.Main.Game) Activator.CreateInstance (games [i].TypeOf, true);
+				game.translations = translations;
 				game.Variant = games [i].Variant;
 				game.Begin ();								
 				string file = CreateImage (game, i);
 				
-				game_container.Add (new  GameContainer (game.Question, game.AnswerText, file, game.TipString,
+				game_container.Add (new GameContainer (game.Question, game.AnswerText, file, game.TipString,
 				                                        game_container.Count));
 			}
 			
