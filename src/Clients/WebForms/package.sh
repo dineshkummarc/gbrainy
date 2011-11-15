@@ -42,3 +42,6 @@ done
 tar -cvf gbrainy_web.tar *
 cp gbrainy_web.tar ../
 ls -l ../gbrainy_web.tar
+if (grep 'Production' web.config > null && grep 'value="0"' web.config > null); then
+	echo WARNING: Production setting is set to 0 - not production ready
+fi
