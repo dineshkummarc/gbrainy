@@ -148,10 +148,16 @@ namespace gbrainy.Core.Views
 			gr.MoveTo (x, y);
 	
 			s = session.History.GetResult (translations);
-			if (s == string.Empty)
-				gr.ShowPangoText (String.Format (translations.GetString ("Games won: {0} ({1} played)"), session.History.GamesWon, session.History.GamesPlayed));
-			else
-				gr.ShowPangoText (String.Format (translations.GetString ("{0}. Games won: {1} ({2} played)"), s, session.History.GamesWon, session.History.GamesPlayed));
+			if (s == string.Empty) {
+				gr.ShowPangoText (String.Format (translations.GetPluralString ("Games won: {0} ({1} played)",
+					"Games won: {0} ({1} played)", session.History.GamesPlayed),
+					session.History.GamesWon, session.History.GamesPlayed));
+			}
+			else {
+				gr.ShowPangoText (String.Format (translations.GetPluralString ("{0}. Games won: {1} ({2} played)",
+					"{0}. Games won: {1} ({2} played)", session.History.GamesPlayed),
+					s, session.History.GamesWon, session.History.GamesPlayed));
+			}
 
 			y += 0.06;
 			gr.MoveTo (x, y);
