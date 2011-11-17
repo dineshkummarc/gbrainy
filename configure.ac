@@ -62,9 +62,9 @@ fi
 
 if ! pkg-config --atleast-version=2.11 mono; then
    CSC_DEFINES="$CSC_DEFINES -d:CSHARP_STATIC"
-   csharp_static="Yes"
+   csharp_static="yes"
 else
-   csharp_static="No"
+   csharp_static="no"
 fi
 
 
@@ -174,6 +174,12 @@ if test "x$enable_debug" != "xno" ; then
 	CSC_DEFINES="$CSC_DEFINES -debug -d:DEBUG"
 fi
 
+dnl -- Enable web client build
+
+AC_ARG_ENABLE(enable_webclient, AC_HELP_STRING([--enable-webclient], [Enable Web client build]),,enable_webclient=yes)
+
+AM_CONDITIONAL(ENABLE_WEBCLIENT, test "x$enable_webclient" != "xno")
+
 dnl --- Assembly information
 
 BUILD_TIME=`date +"%F %T %Z"`
@@ -208,6 +214,7 @@ AC_OUTPUT([
 src/Core/Main/Defines.cs
 src/Clients/Classical/Defines.cs
 src/Clients/Classical/AssemblyInfo.cs
+src/Clients/WebForms/AssemblyInfo.cs
 src/Core/AssemblyInfo.cs
 src/Games/AssemblyInfo.cs
 Makefile
@@ -217,6 +224,7 @@ tools/Makefile
 src/Core/Makefile
 src/Games/Makefile
 src/Clients/Classical/Makefile
+src/Clients/WebForms/Makefile
 tests/Makefile
 data/Makefile
 data/gbrainy.pc
@@ -228,3 +236,5 @@ echo "Mono-addins:		${enable_addins_sharp}"
 echo "NUnit:			${enable_tests}"
 echo "Debug enabled:		${enable_debug}"
 echo "Mono.CSharp static:	${csharp_static}"
+echo "Enable Webclient:	${enable_webclient}"
+

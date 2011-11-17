@@ -169,7 +169,8 @@ namespace gbrainy.Clients.WebForms
 		
 		void SetText ()
 		{
-			nextgame_link.Text = "Next Game";
+			nextgame_link.Text = translations.GetString ("Next Game");
+			answer_button.Text = translations.GetString ("Answer");
 			
 			if (translations == null)
 				return;

@@ -1,5 +1,6 @@
 SUBDIRS = 		\
 	Core		\
 	Games		\
-	Clients/Classical
+	Clients/Classical \
+	Clients/WebForms
 

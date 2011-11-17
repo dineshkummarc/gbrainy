@@ -52,10 +52,12 @@
 		<tr>
 			<td>
 				<asp:TextBox id = "answer_textbox" AutoCompleteType="Disabled" EnableViewState="true" runat="server"></asp:TextBox>
-				<asp:Button id = "answer_button" Text = "Answer" OnClick ="OnClickAnswer" runat="server"></asp:Button>
-				<asp:Button id = "nextgame_link" OnClick ="OnClickNextGame" runat="server" />				
+				<asp:Button id = "answer_button" OnClick ="OnClickAnswer" runat="server"></asp:Button>
+				<asp:Button id = "nextgame_link" OnClick ="OnClickNextGame" runat="server" />
+				<br/><br/>
 				<asp:Label id="result_label" runat="server"></asp:Label>
 				<asp:Label id="rationale_label" runat="server"></asp:Label>
+				<hr/>
 			</td>
 		</tr>
 

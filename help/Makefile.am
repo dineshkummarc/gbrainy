@@ -13,7 +13,7 @@ DOC_FIGURES = \
 
 
 DOC_PAGES = \
-	customgame.page	\ 
+	customgame.page	\
 	gametypes.page	\
 	license.page	\
 	pause.page	\
@@ -22,7 +22,7 @@ DOC_PAGES = \
 	history.page	\
 	multiplayer.page \
 	score.page	\
-	gameplay.page	\	
+	gameplay.page	\
 	index.page	\
 	newgame.page	\
 	times.page	\
