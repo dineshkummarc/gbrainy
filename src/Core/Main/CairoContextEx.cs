@@ -29,7 +29,7 @@ namespace gbrainy.Core.Main
 	{
 		static SVGImage image;
 
-		public CairoContextEx (IntPtr state, Gtk.Widget widget) : base (state, widget)
+		public CairoContextEx (IntPtr handle) : base (handle)
 		{
 			CommonConstructor ();		
 		}

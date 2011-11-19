@@ -88,7 +88,8 @@ namespace gbrainy.Clients.Classical.Widgets
 			int w, h, total_w, total_h;
 
 			Cairo.Context cc = Gdk.CairoHelper.Create (args.Window);
-			CairoContextEx cr = new CairoContextEx (cc.Handle, this);
+			CairoContextEx cr = new CairoContextEx (cc.Handle);
+			cr.PangoFontDescription = PangoContext.FontDescription;
 
 			args.Window.GetSize (out total_w, out total_h);
 

@@ -125,7 +125,8 @@ namespace gbrainy.Clients.Classical.Dialogs
 				double x = 0, y = 0;
 
 				Cairo.Context cc = Gdk.CairoHelper.Create (args.Window);
-				CairoContextEx cr = new CairoContextEx (cc.Handle, this);
+				CairoContextEx cr = new CairoContextEx (cc.Handle);
+				cr.PangoFontDescription = PangoContext.FontDescription;
 				args.Window.GetSize (out w, out h);
 
 				nh = nw = Math.Min (w, h);

@@ -37,13 +37,9 @@ namespace gbrainy.Core.Libraries
 		const double def_linespace = 0.018;
 		const double width_margin = 0.04;
 
-		public CairoContext (IntPtr state, Gtk.Widget widget) : base (state)
+		public CairoContext (IntPtr handle) : base (handle)
 		{
 			layout = Pango.CairoHelper.CreateLayout (this);
-
-			// We do not honor DPI settings or font sizes (just font name)
-			// User should resize the window
-			font_description = layout.FontDescription = widget.PangoContext.FontDescription.Copy ();
 			FontLineSpace = def_linespace;
 		}
 
@@ -74,6 +70,15 @@ namespace gbrainy.Core.Libraries
 		}
 
 		public double FontLineSpace { get; set; }
+
+		// We do not honor DPI settings or font sizes (just font name)
+		// User should resize the window
+		public FontDescription PangoFontDescription {
+			set {
+				font_description = layout.FontDescription = value.Copy ();
+			}
+		}
+
 
 		// True if we want Pango to process XML entities and formatting attributes
 		public bool UseMarkup  { get; set; }
