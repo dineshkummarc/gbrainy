@@ -38,8 +38,8 @@ dnl --- Check for mono and dmcs or gmcs
 
 AC_PATH_PROG(MONO, mono)
 
-AC_PATH_PROG(DMCS, dmcs, "")
-AC_PATH_PROG(CSC, gmcs, $DMCS)
+AC_PATH_PROG(GMCS, gmcs)
+AC_PATH_PROG(CSC, dmcs, $GMCS)
 
 CSC_DEFINES=""
 CS="C#"
