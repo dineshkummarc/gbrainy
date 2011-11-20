@@ -1,3 +1,21 @@
+/*
+ * Copyright (C) 2011 Jordi Mas i Hernàndez <jmas@softcatala.org>
+ *
+ * This program is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU General Public License as
+ * published by the Free Software Foundation; either version 2 of the
+ * License, or (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ * General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public
+ * License along with this program; if not, write to the
+ * Free Software Foundation, Inc., 59 Temple Place - Suite 330,
+ * Boston, MA 02111-1307, USA.
+ */
 
 using System;
 using System.IO;
@@ -60,15 +78,18 @@ namespace gbrainy.Clients.WebForms
 			Logger.Debug ("Global.Session_Start. Session {0}", Session.SessionID);
 
 			WebSession details = new WebSession (HttpContext.Current.Session);
-
-			if (Sessions.ContainsKey (Session.SessionID))
+			
+			lock (Sessions)
 			{
-				Sessions [Session.SessionID] = details;
-			}
-			else
-			{
-				TotalSessions++;
-				Sessions.Add (Session.SessionID, details);
+				if (Sessions.ContainsKey (Session.SessionID))
+				{
+					Sessions [Session.SessionID] = details;
+				}
+				else
+				{
+					TotalSessions++;
+					Sessions.Add (Session.SessionID, details);
+				}
 			}
 		}
 
@@ -101,22 +122,25 @@ namespace gbrainy.Clients.WebForms
 				sessionid = Session.SessionID;
 
 			Logger.Debug ("Global.Session_End. Session {0}", sessionid);
-
-			if (Sessions.ContainsKey (sessionid)) {
-				Sessions.Remove (sessionid);
-
-				try
-				{
-					File.Delete (GameImage.GetImageFileName (Session.SessionID));
+			
+			lock (Sessions)
+			{
+				if (Sessions.ContainsKey (sessionid)) {
+					Sessions.Remove (sessionid);
+	
+					try
+					{
+						File.Delete (GameImage.GetImageFileName (Session.SessionID));
+					}
+					catch (Exception ex)
+					{
+						Logger.Error ("Global.Session_End. Could not delete {0}, exception: {1}",
+								GameImage.GetImageFileName (Session.SessionID), ex);
+					}
 				}
-				catch (Exception ex)
-				{
-					Logger.Error ("Global.Session_End. Could not delete {0}, exception: {1}",
-							GameImage.GetImageFileName (Session.SessionID), ex);
-				}
+				else
+					Logger.Error ("Global.Session_End. Could not find session " + Session.SessionID);
 			}
-			else
-				Logger.Error ("Global.Session_End. Could not find session " + Session.SessionID);
 		}
 
 		protected virtual void Application_End (Object sender, EventArgs e)

@@ -56,8 +56,16 @@ namespace gbrainy.Clients.WebForms
 	{
 		updated_label.Text = "Updated: " + DateTime.Now;
 
+		WebSession[] sessions;
+
+		lock (Global.Sessions)
+		{
+			sessions = new WebSession [Global.Sessions.Count];
+			Global.Sessions.Values.CopyTo (sessions, 0);
+		}
+
 		// Sessions
-		foreach (WebSession session in Global.Sessions.Values)
+		foreach (WebSession session in sessions)
 		{
 			TableRow r = new TableRow ();
 
