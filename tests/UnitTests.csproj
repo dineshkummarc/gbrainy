@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
@@ -30,15 +30,9 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
-    <Reference Include="nunit.core, Version=2.4.7.0, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77">
-      <Package>mono-nunit</Package>
-    </Reference>
-    <Reference Include="nunit.core.interfaces, Version=2.4.7.0, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77">
-      <Package>mono-nunit</Package>
-    </Reference>
-    <Reference Include="nunit.framework, Version=2.4.7.0, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77">
-      <Package>mono-nunit</Package>
-    </Reference>
+    <Reference Include="nunit.core, Version=2.4.7.0, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77" />
+    <Reference Include="nunit.core.interfaces, Version=2.4.7.0, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77" />
+    <Reference Include="nunit.framework, Version=2.4.7.0, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Core\AnalogiesFactoryTest.cs" />
@@ -55,23 +49,18 @@
     <Compile Include="Core\PreferencesTest.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
-  <ProjectExtensions>
-    <MonoDevelop>
-      <Properties InternalTargetFrameworkVersion="3.5" />
-    </MonoDevelop>
-  </ProjectExtensions>
   <ItemGroup>
     <ProjectReference Include="..\src\Core\Core.csproj">
       <Project>{9F2F1F0C-DF7E-4054-B6BA-94F3DD9FF3D9}</Project>
       <Name>Core</Name>
     </ProjectReference>
-    <ProjectReference Include="..\gbrainy.csproj">
-      <Project>{A5DF4079-EF3D-43F8-A36E-EB47058631A7}</Project>
-      <Name>gbrainy</Name>
-    </ProjectReference>
     <ProjectReference Include="..\src\Games\Games.csproj">
       <Project>{84A80D6F-DB4D-4989-B441-D410D2260775}</Project>
       <Name>Games</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\src\Clients\Classical\gbrainy.csproj">
+      <Project>{A5DF4079-EF3D-43F8-A36E-EB47058631A7}</Project>
+      <Name>gbrainy</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
