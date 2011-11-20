@@ -134,7 +134,7 @@ namespace gbrainy.Core.Views
 			double y = 0.04, x = 0.05;
 			const double space_small = 0.02;
 			List <PlayerPersonalRecord> records;
-			string s, tip;
+			string s, tip, played;
 			double width, height;
 
 			gr.Scale (area_width, area_height);
@@ -148,15 +148,17 @@ namespace gbrainy.Core.Views
 			gr.MoveTo (x, y);
 	
 			s = session.History.GetResult (translations);
+
+			played = String.Format (translations.GetPluralString ("{0} played", "{0} played", session.History.GamesPlayed), 
+				session.History.GamesPlayed);
+
 			if (s == string.Empty) {
-				gr.ShowPangoText (String.Format (translations.GetPluralString ("Games won: {0} ({1} played)",
-					"Games won: {0} ({1} played)", session.History.GamesPlayed),
-					session.History.GamesWon, session.History.GamesPlayed));
+				gr.ShowPangoText (String.Format (translations.GetPluralString ("Games won: {0} ({1})",
+					"Games won: {0} ({1})", session.History.GamesWon), session.History.GamesWon, played));
 			}
 			else {
-				gr.ShowPangoText (String.Format (translations.GetPluralString ("{0}. Games won: {1} ({2} played)",
-					"{0}. Games won: {1} ({2} played)", session.History.GamesPlayed),
-					s, session.History.GamesWon, session.History.GamesPlayed));
+				gr.ShowPangoText (String.Format (translations.GetPluralString ("{0}. Games won: {1} ({2})",
+					"{0}. Games won: {1} ({2})", session.History.GamesWon),	s, session.History.GamesWon, played));
 			}
 
 			y += 0.06;
