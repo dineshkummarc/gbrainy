@@ -78,39 +78,12 @@ namespace gbrainy.Games.Logic
 
 		public override void Draw (CairoContextEx gr, int area_width, int area_height, bool rtl)
 		{
-			double x = DrawAreaX + 0.22, y = DrawAreaY + 0.2;
-			double pos_x = x;
-			double pos_y = y;
-			Circle[] circles = null;
-
 			base.Draw (gr, area_width, area_height, rtl);
+			gr.DrawImageFromAssembly ("people_table.svg", 0.2, 0.2, 0.6, 0.6);
 
-			circles =  new Circle [] {
-				new Circle (0.01, 0.06),
-				new Circle (0.27, 0.06),
-				new Circle (0.01, 0.21),
-				new Circle (0.27, 0.21),
-				new Circle (0.14, 0),
-				new Circle (0.14, 0.29)
-			};
-
-			// Circle
-			gr.Arc (pos_x + figure_size, pos_y + figure_size, figure_size, 0, 2 * Math.PI);
-			gr.Stroke ();		
-
-			const double point_size = 0.01;
-			for (int i = 0; i < circles.Length; i++) {
-				gr.Arc (x + point_size + circles[i].x, y + point_size + circles[i].y, point_size, 0, 2 * Math.PI);
-				gr.Fill ();
-				gr.Stroke ();
-			}
-
-			gr.MoveTo (x + circles[2].x + 0.01, y + circles[2].y + 0.01);
-			gr.LineTo (x + circles[1].x + 0.01, y + circles[1].y + 0.01);
-			gr.Stroke ();
-
-			gr.DrawTextCentered (pos_x + figure_size, pos_y + 0.08 + figure_size * 2, 
+			gr.DrawTextCentered (0.5, 0.85,
 				translations.GetString ("Two people in the table sitting across each other"));
+
 		}
 	}
 }
