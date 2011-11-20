@@ -40,7 +40,7 @@ namespace gbrainy.Games.Logic
 		public override string Rationale {
 			get {
 				// Translators: the translated version should not take more characters that the English original
-				return translations.GetString ("A full sized square of paper (yellow), a 3/4 of the whole size square of paper in the bottom right corner (blue), another 3/4 square of paper (green) in the top left corner and a 1/4 square of paper (red) in the top left corner.");
+				return translations.GetString ("A full sized square of paper (yellow), a 3/4 of the whole size square of paper (blue) in the bottom right corner, another 3/4 square of paper (green) in the top left corner and a 1/4 square of paper (red) in the top left corner.");
 			}
 		}
 
