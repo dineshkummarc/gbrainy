@@ -12,8 +12,8 @@ msgstr ""
 "Project-Id-Version: gbrainy\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=gbrainy&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2011-11-04 20:37+0000\n"
-"PO-Revision-Date: 2011-11-08 09:21+0100\n"
+"POT-Creation-Date: 2011-11-20 15:48+0000\n"
+"PO-Revision-Date: 2011-11-22 10:53+0100\n"
 "Last-Translator: Marek Černocký <marek@manet.cz>\n"
 "Language-Team: Czech <gnome-cs-list@gnome.org>\n"
 "MIME-Version: 1.0\n"
@@ -83,7 +83,7 @@ msgstr "Auta ve městě"
 #: ../src/Games/Logic/PuzzleLargerShape.cs:303
 #: ../src/Games/Logic/PuzzleMissingPiece.cs:173
 #: ../src/Games/Logic/PuzzleMissingSlice.cs:218
-#: ../src/Games/Logic/PuzzleMostInCommon.cs:314
+#: ../src/Games/Logic/PuzzleMostInCommon.cs:313
 #: ../src/Games/Logic/PuzzleNextFigure.cs:166
 #: ../src/Games/Logic/PuzzleOstracism.cs:176
 #: ../src/Games/Logic/PuzzlePredicateLogic.cs:196
@@ -1984,6 +1984,11 @@ msgstr "zápěstí"
 msgid "write / pen | eat"
 msgstr "psát / pero | jíst"
 
+#: ../src/Clients/Classical/CommandLine.cs:99
+#, csharp-format
+msgid "Unknown command line parameter {0}"
+msgstr "Neznámý přepínač {0} v příkazové řádce"
+
 #. Translators: {0} is a date
 #: ../src/Clients/Classical/CommandLine.cs:109
 #, csharp-format
@@ -1994,36 +1999,36 @@ msgstr "(sestaveno {0})"
 msgid "List of available games"
 msgstr "Seznam dostupných her"
 
-#: ../src/Clients/Classical/CommandLine.cs:185
+#: ../src/Clients/Classical/CommandLine.cs:171
 msgid "Usage: gbrainy [options]"
 msgstr "Použití: gbrainy [přepínače]"
 
-#: ../src/Clients/Classical/CommandLine.cs:186
+#: ../src/Clients/Classical/CommandLine.cs:172
 msgid "  --version\t\t\tPrint version information."
 msgstr "  --version\t\t\tVypsat informace o verzi."
 
-#: ../src/Clients/Classical/CommandLine.cs:187
+#: ../src/Clients/Classical/CommandLine.cs:173
 msgid "  --help\t\t\tPrint this usage message."
 msgstr "  --help\t\t\tVypsat tento návod k použití."
 
-#: ../src/Clients/Classical/CommandLine.cs:188
+#: ../src/Clients/Classical/CommandLine.cs:174
 msgid "  --gamelist\t\t\tShows the list of available games."
 msgstr "  --gamelist\t\t\tZobrazit seznam dostupných her."
 
-#: ../src/Clients/Classical/CommandLine.cs:189
+#: ../src/Clients/Classical/CommandLine.cs:175
 msgid ""
 "  --customgame [game1, gameN]\tSpecifies a list of games to play during a "
 "custom game."
 msgstr ""
 "  --customgame [hra1, hraN]\tDefinuje seznam her pro hraní vlastní hry."
 
-#: ../src/Clients/Classical/CommandLine.cs:190
+#: ../src/Clients/Classical/CommandLine.cs:176
 msgid ""
 "  --norandom \t\t\tThe custom game list provided will not be randomized."
 msgstr ""
 "  --norandom \t\t\tU zadaného vlastního seznamu her nebude náhodné pořadí."
 
-#: ../src/Clients/Classical/CommandLine.cs:191
+#: ../src/Clients/Classical/CommandLine.cs:177
 msgid "  --versions \t\t\tShow dependencies."
 msgstr "  --versions \t\t\tZobrazit závislosti."
 
@@ -2126,11 +2131,11 @@ msgstr "Soubory PDF"
 msgid "All files"
 msgstr "Všechny soubory"
 
-#: ../src/Clients/Classical/Dialogs/PdfExportDialog.cs:171
+#: ../src/Clients/Classical/Dialogs/PdfExportDialog.cs:172
 msgid "The PDF file has been exported correctly."
 msgstr "Soubor PDF byl vpořádku vyexportován."
 
-#: ../src/Clients/Classical/Dialogs/PdfExportDialog.cs:174
+#: ../src/Clients/Classical/Dialogs/PdfExportDialog.cs:175
 msgid ""
 "There was a problem generating the PDF file. The file has not been created."
 msgstr "Nastal problém při generování souboru PDF. Soubor nebyl vytvořen."
@@ -2187,12 +2192,12 @@ msgid "_Delete"
 msgstr "_Smazat"
 
 #: ../src/Clients/Classical/gbrainy.cs:426
-#: ../src/Clients/WebForms/Game.aspx.cs:244
+#: ../src/Clients/WebForms/Game.aspx.cs:245
 msgid "Congratulations."
 msgstr "Blahopřejeme."
 
 #: ../src/Clients/Classical/gbrainy.cs:428
-#: ../src/Clients/WebForms/Game.aspx.cs:248
+#: ../src/Clients/WebForms/Game.aspx.cs:249
 msgid "Incorrect answer."
 msgstr "Nesprávná odpověď."
 
@@ -2442,7 +2447,7 @@ msgstr[2] "Dostupných {0} aktualizací"
 msgid "Open Location"
 msgstr "Otevření umístění"
 
-#: ../src/Clients/Classical/Widgets/GameDrawingArea.cs:126
+#: ../src/Clients/Classical/Widgets/GameDrawingArea.cs:127
 #: ../src/Core/Main/GameSession.cs:184
 msgid "Paused"
 msgstr "Přestávka"
@@ -2453,7 +2458,7 @@ msgstr "Zahrajte si všechny typy her"
 
 #. Toolbar
 #: ../src/Clients/Classical/Widgets/Toolbar.cs:119
-#: ../src/Clients/WebForms/Game.aspx.cs:178
+#: ../src/Clients/WebForms/Game.aspx.cs:179
 msgid "All"
 msgstr "Všechny"
 
@@ -2505,9 +2510,17 @@ msgid "End the game and show score"
 msgstr "Ukončit hru a zobrazit hodnocení"
 
 #: ../src/Clients/Classical/Widgets/Toolbar.cs:149
-#: ../src/Clients/WebForms/Game.aspx.cs:179
+#: ../src/Clients/WebForms/Game.aspx.cs:180
 msgid "End"
 msgstr "Konec"
+
+#: ../src/Clients/WebForms/Game.aspx.cs:172
+msgid "Next Game"
+msgstr "Následující hra"
+
+#: ../src/Clients/WebForms/Game.aspx.cs:173
+msgid "Answer"
+msgstr "Odpověď"
 
 #: ../src/Core/Main/ColorPalette.cs:72
 msgid "red"
@@ -2771,17 +2784,17 @@ msgstr "Zbývající čas"
 
 #. Translators: {0} is the game number and {1} the game question or answer
 #. The number is used as reference when looking for the game solution in the PDF
-#: ../src/Core/Main/PdfExporter.cs:104 ../src/Core/Main/PdfExporter.cs:165
+#: ../src/Core/Main/PdfExporter.cs:105 ../src/Core/Main/PdfExporter.cs:166
 #, csharp-format
 msgid "Game #{0}. {1}"
 msgstr "Hra č. {0}. {1}"
 
-#: ../src/Core/Main/PdfExporter.cs:121
+#: ../src/Core/Main/PdfExporter.cs:122
 #, csharp-format
 msgid "Created by gbrainy {0}"
 msgstr "Vytvořeno aplikací gbrainy {0}"
 
-#: ../src/Core/Main/PdfExporter.cs:157
+#: ../src/Core/Main/PdfExporter.cs:158
 msgid "Solutions"
 msgstr "Řešení"
 
@@ -2860,38 +2873,52 @@ msgstr "Připravte se na zapamatování si několika věcí…"
 msgid "Score"
 msgstr "Hodnocení"
 
-# Plural forms should be here
 #: ../src/Core/Views/FinishView.cs:152
 #, csharp-format
-msgid "Games won: {0} ({1} played)"
-msgstr "Počet vyhraných her: {0} (z {1} hraných)"
+msgid "{0} played"
+msgid_plural "{0} played"
+msgstr[0] "{0} odehraná"
+msgstr[1] "{0} odehrané"
+msgstr[2] "{0} odehraných"
 
-#: ../src/Core/Views/FinishView.cs:154
+# Plural forms should be here
+#: ../src/Core/Views/FinishView.cs:156
 #, csharp-format
-msgid "{0}. Games won: {1} ({2} played)"
-msgstr "{0}. Počet vyhraných her: {1} (z {2} odehraných)"
+msgid "Games won: {0} ({1})"
+msgid_plural "Games won: {0} ({1})"
+msgstr[0] "Vítězných her: {0} ({1})"
+msgstr[1] "Vítězných her: {0} ({1})"
+msgstr[2] "Vítězných her: {0} ({1})"
 
-#: ../src/Core/Views/FinishView.cs:158
+#: ../src/Core/Views/FinishView.cs:160
+#, csharp-format
+msgid "{0}. Games won: {1} ({2})"
+msgid_plural "{0}. Games won: {1} ({2})"
+msgstr[0] "{0}. Vítězných her: {1} ({2})"
+msgstr[1] "{0}. Vítězných her: {1} ({2})"
+msgstr[2] "{0}. Vítězných her: {1} ({2})"
+
+#: ../src/Core/Views/FinishView.cs:166
 #, csharp-format
 msgid "Time played {0} (average per game {1})"
 msgstr "Strávený čas {0} ({1} průměrně na hru)"
 
 #. Translators: translated string should not be longer that the English original (space restriction on the UI)
-#: ../src/Core/Views/FinishView.cs:167
+#: ../src/Core/Views/FinishView.cs:175
 msgid "For details on how gbrainy's scoring works refer to the help."
 msgstr ""
 "Podrobnosti o tom, jak funguje hodnocení v aplikaci gbrainy, najdete v "
 "nápovědě."
 
-#: ../src/Core/Views/FinishView.cs:179
+#: ../src/Core/Views/FinishView.cs:187
 msgid "Tips for your next games"
 msgstr "Rady do dalších her"
 
-#: ../src/Core/Views/FinishView.cs:207
+#: ../src/Core/Views/FinishView.cs:215
 msgid "Congratulations! New personal record"
 msgstr "Gratulujeme! Nový osobní rekord"
 
-#: ../src/Core/Views/FinishView.cs:217
+#: ../src/Core/Views/FinishView.cs:225
 #, csharp-format
 msgid ""
 "By scoring {0} in logic puzzle games you have established a new personal "
@@ -2900,7 +2927,7 @@ msgstr ""
 "Hodnocením {0} v logických hlavolamech jste vytvořili nový osobní rekord. "
 "Váš předchozí rekord byl {1}."
 
-#: ../src/Core/Views/FinishView.cs:223
+#: ../src/Core/Views/FinishView.cs:231
 #, csharp-format
 msgid ""
 "By scoring {0} in calculation games you have established a new personal "
@@ -2909,7 +2936,7 @@ msgstr ""
 "Hodnocením {0} v početních hrách jste vytvořili nový osobní rekord. Váš "
 "předchozí rekord byl {1}."
 
-#: ../src/Core/Views/FinishView.cs:229
+#: ../src/Core/Views/FinishView.cs:237
 #, csharp-format
 msgid ""
 "By scoring {0} in memory games you have established a new personal record. "
@@ -2918,7 +2945,7 @@ msgstr ""
 "Hodnocením {0} v paměťových hrách jste vytvořili nový osobní rekord. Váš "
 "předchozí rekord byl {1}."
 
-#: ../src/Core/Views/FinishView.cs:235
+#: ../src/Core/Views/FinishView.cs:243
 #, csharp-format
 msgid ""
 "By scoring {0} in verbal analogies you have established a new personal "
@@ -3925,11 +3952,11 @@ msgstr ""
 "Když sečteme číslo v nějaké části kruhu s číslem v její protější části, vždy "
 "dostaneme {0}."
 
-#: ../src/Games/Logic/PuzzleMostInCommon.cs:76
+#: ../src/Games/Logic/PuzzleMostInCommon.cs:77
 msgid "Most in common"
 msgstr "Nejvíc společných prvků"
 
-#: ../src/Games/Logic/PuzzleMostInCommon.cs:81
+#: ../src/Games/Logic/PuzzleMostInCommon.cs:82
 #, csharp-format
 msgid ""
 "Which of the possible answers have the most in common with the four given "
@@ -3938,16 +3965,16 @@ msgstr ""
 "Která z odpovědí má nejvíc společných vlastností se čtyřmi obrázky v zadání? "
 "Odpovězte {0}, {1}, {2} nebo {3}."
 
-#: ../src/Games/Logic/PuzzleMostInCommon.cs:86
+#: ../src/Games/Logic/PuzzleMostInCommon.cs:87
 msgid "Think of the common elements that the given figures have inside them."
 msgstr "Hledejte společné prvky, které se nacházejí uvnitř obrázků."
 
-#: ../src/Games/Logic/PuzzleMostInCommon.cs:92
+#: ../src/Games/Logic/PuzzleMostInCommon.cs:93
 msgid ""
 "It has the same number of elements inside the figure as the given figures."
 msgstr "Má stejný počet prvků uvnitř jako zadané obrazce."
 
-#: ../src/Games/Logic/PuzzleMostInCommon.cs:94
+#: ../src/Games/Logic/PuzzleMostInCommon.cs:95
 msgid ""
 "It is the figure with the most elements in common compared to the given "
 "figures."
@@ -4579,7 +4606,7 @@ msgstr "Listy papíru by se měly překrývat."
 #: ../src/Games/Logic/PuzzleSquareSheets.cs:43
 msgid ""
 "A full sized square of paper (yellow), a 3/4 of the whole size square of "
-"paper in the bottom right corner (blue), another 3/4 square of paper (green) "
+"paper (blue) in the bottom right corner, another 3/4 square of paper (green) "
 "in the top left corner and a 1/4 square of paper (red) in the top left "
 "corner."
 msgstr ""
@@ -4618,15 +4645,13 @@ msgid_plural ""
 "same day. What is the time now? Answer using the hour (e.g.: {3:h tt})"
 msgstr[0] ""
 "Před {0} hodinou to bylo tak dlouho po {1:%H} jako bylo před {2:%H} ten "
-"stejný den. Kolik je teď hodin? Odpověď napište v podobě času (např. "
-"{3:%H})"
+"stejný den. Kolik je teď hodin? Odpověď napište v podobě času (např. {3:%H})"
 msgstr[1] ""
 "Před {0} hodinami to bylo tak dlouho po {1:%H} jako bylo před {2:%H} ten "
 "stejný den. Kolik je teď hodin? Odpověď napište v podobě času (např. {3:%H})"
 msgstr[2] ""
 "Před {0} hodinami to bylo tak dlouho po {1:%H} jako bylo před {2:%H} ten "
-"stejný den. Kolik je teď hodin? Odpověď napište v podobě času (např. "
-"{3:%H})"
+"stejný den. Kolik je teď hodin? Odpověď napište v podobě času (např. {3:%H})"
 
 #: ../src/Games/Logic/PuzzleTimeNow.cs:53
 #, csharp-format
