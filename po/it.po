@@ -12,14 +12,14 @@ msgstr ""
 "Project-Id-Version: gbrainy.HEAD\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=gbrainy&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2011-11-20 17:50+0000\n"
-"PO-Revision-Date: 2011-11-02 23:20+0100\n"
+"POT-Creation-Date: 2011-11-22 09:55+0000\n"
+"PO-Revision-Date: 2011-11-22 17:15+0100\n"
 "Last-Translator: Sergio Zanchetta <primes2h@ubuntu.com>\n"
 "Language-Team: Italian <tp@lists.linux.it>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n!=1);\n"
+"Plural-Forms: nplurals=2; plural= (n != 1)\n"
 "X-Launchpad-Export-Date: 2010-09-30 17:24+0000\n"
 "X-Generator: Launchpad (build Unknown)\n"
 
@@ -2003,7 +2003,7 @@ msgstr "Scrivere / Penna | Mangiare"
 #: ../src/Clients/Classical/CommandLine.cs:99
 #, csharp-format
 msgid "Unknown command line parameter {0}"
-msgstr ""
+msgstr "Parametro {0} della riga di comando sconosciuto"
 
 #. Translators: {0} is a date
 #: ../src/Clients/Classical/CommandLine.cs:109
@@ -2252,7 +2252,7 @@ msgstr ""
 #: ../src/Clients/Classical/gbrainy.cs:610
 #: ../src/Clients/Classical/Widgets/Toolbar.cs:143
 msgid "Pause"
-msgstr "Pausa"
+msgstr "Sospendi"
 
 #: ../src/Clients/Classical/gbrainy.cs:615
 msgid "Resume"
@@ -2385,7 +2385,7 @@ msgstr "Registra un repository in rete"
 
 #: ../src/Clients/Classical/MonoAddinsStrings.cs:61
 msgid "Select the location of the repository you want to register:"
-msgstr "Scegli la posizione del repository che vuoi registrare:"
+msgstr "Seleziona la posizione del repository che vuoi registrare:"
 
 #: ../src/Clients/Classical/MonoAddinsStrings.cs:62
 msgid "Register a local repository"
@@ -2537,17 +2537,13 @@ msgid "End"
 msgstr "Fine"
 
 #: ../src/Clients/WebForms/Game.aspx.cs:172
-#, fuzzy
-#| msgid "_New Game"
 msgid "Next Game"
-msgstr "_Nuova partita"
+msgstr "Gioco successivo"
 
 #
 #: ../src/Clients/WebForms/Game.aspx.cs:173
-#, fuzzy
-#| msgid "Answer:"
 msgid "Answer"
-msgstr "Risposta:"
+msgstr "Risposta"
 
 #: ../src/Core/Main/ColorPalette.cs:72
 msgid "red"
@@ -2913,24 +2909,22 @@ msgstr "Punteggio"
 #, csharp-format
 msgid "{0} played"
 msgid_plural "{0} played"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "{0} giocata"
+msgstr[1] "{0} giocate"
 
 #: ../src/Core/Views/FinishView.cs:156
-#, fuzzy, csharp-format
-#| msgid "Games won: {0} ({1} played)"
+#, csharp-format
 msgid "Games won: {0} ({1})"
 msgid_plural "Games won: {0} ({1})"
-msgstr[0] "Partite vinte: {0} ({1} giocate)"
-msgstr[1] "Partite vinte: {0} ({1} giocate)"
+msgstr[0] "Partite vinte: {0} ({1})"
+msgstr[1] "Partite vinte: {0} ({1})"
 
 #: ../src/Core/Views/FinishView.cs:160
-#, fuzzy, csharp-format
-#| msgid "{0}. Games won: {1} ({2} played)"
+#, csharp-format
 msgid "{0}. Games won: {1} ({2})"
 msgid_plural "{0}. Games won: {1} ({2})"
-msgstr[0] "{0}. Partite vinte: {1} ({2} giocate)"
-msgstr[1] "{0}. Partite vinte: {1} ({2} giocate)"
+msgstr[0] "{0}. Partite vinte: {1} ({2})"
+msgstr[1] "{0}. Partite vinte: {1} ({2})"
 
 #: ../src/Core/Views/FinishView.cs:166
 #, csharp-format
@@ -3358,8 +3352,8 @@ msgid ""
 "To what number should the large handle of the '{0}' clock point? Answer "
 "using numbers."
 msgstr ""
-"A quale numero dovrebbe puntare la lancetta grande dell'orologio nella «{0}»? "
-"Rispondi usando un numero."
+"A quale numero dovrebbe puntare la lancetta grande dell'orologio nella "
+"«{0}»? Rispondi usando un numero."
 
 #: ../src/Games/Logic/PuzzleClocks.cs:51
 #, csharp-format
@@ -3400,15 +3394,7 @@ msgstr[0] "Abbiamo {0} metro di stoffa."
 msgstr[1] "Abbiamo {0} metri di stoffa."
 
 #: ../src/Games/Logic/PuzzleCounting.cs:68
-#, fuzzy, csharp-format
-#| msgid ""
-#| "Machine A takes {0} second to cut 1 meter of this fabric. How many "
-#| "seconds does Machine A take to cut the entire piece of fabric into 1 "
-#| "meter pieces?"
-#| msgid_plural ""
-#| "Machine A takes {0} seconds to cut 1 meter of this fabric. How many "
-#| "seconds does Machine A take to cut the entire piece of fabric into 1 "
-#| "meter pieces?"
+#, csharp-format
 msgid ""
 "A machine takes {0} second to cut 1 meter of this fabric. How many seconds "
 "does the machine take to cut the entire piece of fabric into 1 meter pieces?"
@@ -3416,19 +3402,18 @@ msgid_plural ""
 "A machine takes {0} seconds to cut 1 meter of this fabric. How many seconds "
 "does the machine take to cut the entire piece of fabric into 1 meter pieces?"
 msgstr[0] ""
-"La macchina A impiega {0} secondo per tagliare 1 metro di questa stoffa. "
+"Una macchina impiega {0} secondo per tagliare 1 metro di questa stoffa. "
 "Quanti secondi impiegherà per tagliare l'intera stoffa in pezzi da 1 metro?"
 msgstr[1] ""
-"La macchina A impiega {0} secondi per tagliare 1 metro di questa stoffa. "
+"Una macchina impiega {0} secondi per tagliare 1 metro di questa stoffa. "
 "Quanti secondi impiegherà per tagliare l'intera stoffa in pezzi da 1 metro?"
 
 #: ../src/Games/Logic/PuzzleCounting.cs:72
-#, fuzzy, csharp-format
-#| msgid "With the {0} cut, Machine A creates two 1 meter pieces."
+#, csharp-format
 msgid "With the cut number {0}, the machine creates two 1 meter pieces."
 msgid_plural "With the cut number {0}, the machine creates two 1 meter pieces."
-msgstr[0] "Con {0} tagli, la macchina A crea due pezzi da 1 metro."
-msgstr[1] "Con {0} tagli, la macchina A crea due pezzi da 1 metro."
+msgstr[0] "Con {0} tagli, la macchina crea due pezzi da 1 metro."
+msgstr[1] "Con {0} tagli, la macchina crea due pezzi da 1 metro."
 
 #: ../src/Games/Logic/PuzzleCounting.cs:85
 #, csharp-format
@@ -3697,9 +3682,9 @@ msgid ""
 "circles, 'D' that the figures are separated, 'E' that there are three "
 "figures and 'F' that there are two figures."
 msgstr ""
-"«A» indica che le figure si sovrappongono, «B» che sono quadrati, «C» che sono "
-"cerchi, «D» che le figure sono separate, «E» che ci sono tre figure ed «F» che "
-"ci sono due figure."
+"«A» indica che le figure si sovrappongono, «B» che sono quadrati, «C» che "
+"sono cerchi, «D» che le figure sono separate, «E» che ci sono tre figure ed "
+"«F» che ci sono due figure."
 
 #: ../src/Games/Logic/PuzzleFigurePattern.cs:40
 msgid "Figure pattern"
@@ -3911,6 +3896,9 @@ msgid ""
 "people, the second n-2 people, etc. The result is the sum of the first n-1 "
 "consecutive numbers: 1+2+3+...+(n-1)."
 msgstr ""
+"Considerando n il numero totale di persone, la prima stringe la mano a n-1 "
+"persone, la seconda a n-2, ecc. Il risultato è pari alla somma dei primi n-1 "
+"numeri consecutivi: 1+2+3+...+(n-1)."
 
 #: ../src/Games/Logic/PuzzleLargerShape.cs:113
 msgid "Larger shape"
@@ -4683,20 +4671,15 @@ msgstr "I fogli possono sovrapporsi."
 
 #. Translators: the translated version should not take more characters that the English original
 #: ../src/Games/Logic/PuzzleSquareSheets.cs:43
-#, fuzzy
-#| msgid ""
-#| "A full sized square of paper, a 3/4 of the whole size square of paper in "
-#| "the bottom right corner, another 3/4 square of paper in the top left "
-#| "corner and a 1/4 square of paper in the top left corner."
 msgid ""
 "A full sized square of paper (yellow), a 3/4 of the whole size square of "
 "paper (blue) in the bottom right corner, another 3/4 square of paper (green) "
 "in the top left corner and a 1/4 square of paper (red) in the top left "
 "corner."
 msgstr ""
-"Un foglio quadrato pari all'intera dimensione, uno pari a 3/4 dell'intera "
-"dimensione nell'angolo in basso a destra, un altro sempre pari a 3/4 in alto "
-"a sinistra e uno pari a 1/4 in alto a sinistra."
+"Un foglio quadrato pari all'intera dimensione (giallo), uno pari a 3/4 "
+"dell'intera dimensione (blu) nell'angolo in basso a destra, un altro pari a "
+"3/4 (verde) in alto a sinistra e uno pari a 1/4 (rosso)in alto a sinistra."
 
 #: ../src/Games/Logic/PuzzleTetris.cs:34
 msgid "Tetris"
@@ -4779,17 +4762,7 @@ msgstr "La formula della distanza è «distanza = velocità × tempo»."
 #. - mph (miles per hour). You must localize this using the right unit of speed for your locale
 #. - The translated string should not use more characters than the original sentence
 #: ../src/Games/Logic/PuzzleTrains.cs:81
-#, fuzzy, csharp-format
-#| msgid ""
-#| "A train leaves the station traveling at {0} mph. {1} hour later a second "
-#| "train leaves the station traveling in the same direction at {2} mph. How "
-#| "many hours since the first train left does it take the second train to "
-#| "overtake the first train?"
-#| msgid_plural ""
-#| "A train leaves the station traveling at {0} mph. {1} hours later a second "
-#| "train leaves the station traveling in the same direction at {2} mph. How "
-#| "many hours since the first train left does it take the second train to "
-#| "overtake the first train?"
+#, csharp-format
 msgid ""
 "A train leaves the station traveling at {0} mph. {1} hour later a second "
 "train leaves the station traveling in the same direction at {2} mph. How "
@@ -4803,13 +4776,13 @@ msgid_plural ""
 msgstr[0] ""
 "Un treno parte dalla stazione alla velocità di {0} km/h. {1} ora dopo un "
 "secondo treno parte dalla stazione viaggiando nella stessa direzione a {2} "
-"km/h. Quante ore impiega il secondo treno, dopo la partenza del primo, a "
-"sorpassarlo?"
+"km/h. Quante ore impiega il secondo treno, dopo la partenza, a sorpassare il "
+"primo?"
 msgstr[1] ""
 "Un treno parte dalla stazione alla velocità di {0} km/h. {1} ore dopo un "
 "secondo treno parte dalla stazione viaggiando nella stessa direzione a {2} "
-"km/h. Quante ore impiega il secondo treno, dopo la partenza del primo, a "
-"sorpassarlo?"
+"km/h. Quante ore impiega il secondo treno, dopo la partenza, a sorpassare il "
+"primo?"
 
 #: ../src/Games/Logic/PuzzleTrains.cs:85
 msgid ""
@@ -5010,8 +4983,8 @@ msgstr ""
 msgid ""
 "What percentage of all Shiny Cars produced worldwide are sold in Europe?"
 msgstr ""
-"Che percentuale di «Auto splendenti» prodotte in tutto il mondo viene venduta "
-"in Europa?"
+"Che percentuale di «Auto splendenti» prodotte in tutto il mondo viene "
+"venduta in Europa?"
 
 #: ../src/Games/Memory/MemoryFacts.cs:135
 #, csharp-format
@@ -5033,52 +5006,40 @@ msgid "What percentage of Shiny Cars use gasoline?"
 msgstr "Qual'è la percentuale di «Auto splendenti» a benzina?"
 
 #: ../src/Games/Memory/MemoryFiguresAndText.cs:65
-#, fuzzy
-#| msgid "Triangles"
 msgid "Triangle"
-msgstr "Triangoli"
+msgstr "Triangolo"
 
 #
 #
 #: ../src/Games/Memory/MemoryFiguresAndText.cs:67
-#, fuzzy
-#| msgid "Squares"
 msgid "Square"
-msgstr "Quadrati"
+msgstr "Quadrato"
 
 #: ../src/Games/Memory/MemoryFiguresAndText.cs:69
-#, fuzzy
-#| msgid "Decagon"
 msgid "Pentagon"
-msgstr "Decagono"
+msgstr "Pentagono"
 
 #: ../src/Games/Memory/MemoryFiguresAndText.cs:71
-#, fuzzy
-#| msgid "Crocodile"
 msgid "Circle"
-msgstr "Coccodrillo"
+msgstr "Cerchio"
 
 #: ../src/Games/Memory/MemoryFiguresAndText.cs:79
 msgid "Memorize figures and text"
 msgstr "Memorizza le figure e i testi"
 
 #: ../src/Games/Memory/MemoryFiguresAndText.cs:84
-#, fuzzy, csharp-format
-#| msgid ""
-#| "The list below enumerates the figures shown in the previous image except "
-#| "for one. Which is the missing figure? Possible answers are triangle, "
-#| "square, pentagon and circle."
+#, csharp-format
 msgid ""
 "The list below enumerates the figures shown in the previous image except for "
 "one. Which is the missing figure? Answer {0}, {1}, {2} or {3}."
 msgstr ""
 "Nell'elenco sottostante sono presenti tutte le figure dell'immagine "
-"precedente tranne una. Qual'è quella mancante? Le risposte possibili sono "
-"triangolo, quadrato, pentagono e cerchio."
+"precedente tranne una. Qual'è quella mancante? Rispondi con {0}, {1}, {2} o "
+"{3}."
 
 #: ../src/Games/Memory/MemoryFiguresAndText.cs:222
 msgid "List of images shown before"
-msgstr ""
+msgstr "Elenco delle immagini mostrate precedentemente"
 
 #: ../src/Games/Memory/MemoryFigures.cs:54
 msgid "Memorize figures"
@@ -5739,7 +5700,7 @@ msgstr "_Successivo"
 
 #: ../src/Clients/Classical/gbrainy.ui.h:24
 msgid "_Pause Game"
-msgstr "Metti in _pausa"
+msgstr "Sos_pendi partita"
 
 #: ../src/Clients/Classical/gbrainy.ui.h:25
 msgid "_Settings"
