@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gbrainy master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gbrainy&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2011-10-24 15:06+0000\n"
-"PO-Revision-Date: 2011-10-25 20:25+0100\n"
+"POT-Creation-Date: 2011-11-23 19:42+0000\n"
+"PO-Revision-Date: 2011-11-25 17:40+0100\n"
 "Last-Translator: Matej Urbančič <mateju@svn.gnome.org>\n"
 "Language-Team: Slovenian <gnome-si@googlegroups.com>\n"
 "Language: sl\n"
@@ -65,16 +65,17 @@ msgstr "Avtomobili v mestu"
 #: ../src/Games/Calculation/CalculationPrimes.cs:151
 #: ../src/Games/Calculation/CalculationProportions.cs:130
 #: ../src/Games/Logic/PuzzleFigurePattern.cs:191
-#: ../src/Games/Logic/PuzzleFigures.cs:195
+#: ../src/Games/Logic/PuzzleFigures.cs:192
 #: ../src/Games/Logic/PuzzleGridDots.cs:340
 #: ../src/Games/Logic/PuzzleLargerShape.cs:303
 #: ../src/Games/Logic/PuzzleMissingPiece.cs:173
 #: ../src/Games/Logic/PuzzleMissingSlice.cs:218
-#: ../src/Games/Logic/PuzzleMostInCommon.cs:314
+#: ../src/Games/Logic/PuzzleMostInCommon.cs:313
 #: ../src/Games/Logic/PuzzleNextFigure.cs:166
 #: ../src/Games/Logic/PuzzleOstracism.cs:176
 #: ../src/Games/Logic/PuzzlePredicateLogic.cs:196
 #: ../src/Games/Logic/PuzzleTetris.cs:171
+#: ../src/Games/Memory/MemoryFiguresAndText.cs:219
 msgid "Choose one of the following:"
 msgstr "Izberite eno od naslednjega:"
 
@@ -1810,6 +1811,11 @@ msgstr "zapestje | roka"
 msgid "write / pen | eat"
 msgstr "pisati / pero | jesti"
 
+#: ../src/Clients/Classical/CommandLine.cs:99
+#, csharp-format
+msgid "Unknown command line parameter {0}"
+msgstr "Neznan parameter v ukazni vrstici {0}"
+
 #. Translators: {0} is a date
 #: ../src/Clients/Classical/CommandLine.cs:109
 #, csharp-format
@@ -1820,31 +1826,31 @@ msgstr "(izgrajeno z {0})"
 msgid "List of available games"
 msgstr "Seznam razpoložljivih iger"
 
-#: ../src/Clients/Classical/CommandLine.cs:185
+#: ../src/Clients/Classical/CommandLine.cs:171
 msgid "Usage: gbrainy [options]"
 msgstr "Uporaba: gbrainy [možnosti ...]"
 
-#: ../src/Clients/Classical/CommandLine.cs:186
+#: ../src/Clients/Classical/CommandLine.cs:172
 msgid "  --version\t\t\tPrint version information."
 msgstr " --version\t\t\tNatisne podatke o različici."
 
-#: ../src/Clients/Classical/CommandLine.cs:187
+#: ../src/Clients/Classical/CommandLine.cs:173
 msgid "  --help\t\t\tPrint this usage message."
 msgstr " --help\t\t\tNatisne to sporočilo uporabe."
 
-#: ../src/Clients/Classical/CommandLine.cs:188
+#: ../src/Clients/Classical/CommandLine.cs:174
 msgid "  --gamelist\t\t\tShows the list of available games."
 msgstr " --gamelist\t\t\tPokaže seznam razpoložljivih iger."
 
-#: ../src/Clients/Classical/CommandLine.cs:189
+#: ../src/Clients/Classical/CommandLine.cs:175
 msgid "  --customgame [game1, gameN]\tSpecifies a list of games to play during a custom game."
 msgstr " --customgame [game1, gameN]\tDoloči seznam iger za igranje med igro po meri."
 
-#: ../src/Clients/Classical/CommandLine.cs:190
+#: ../src/Clients/Classical/CommandLine.cs:176
 msgid "  --norandom \t\t\tThe custom game list provided will not be randomized."
 msgstr " --norandom \t\t\tSeznam iger po meri ne bo naključen."
 
-#: ../src/Clients/Classical/CommandLine.cs:191
+#: ../src/Clients/Classical/CommandLine.cs:177
 msgid "  --versions \t\t\tShow dependencies."
 msgstr " --versions \t\t\tPokaže odvisnosti."
 
@@ -1926,11 +1932,11 @@ msgstr "Datoteke PDF"
 msgid "All files"
 msgstr "Vse datoteke"
 
-#: ../src/Clients/Classical/Dialogs/PdfExportDialog.cs:171
+#: ../src/Clients/Classical/Dialogs/PdfExportDialog.cs:172
 msgid "The PDF file has been exported correctly."
 msgstr "Datoteka PDF ni bila uspešno izvožena."
 
-#: ../src/Clients/Classical/Dialogs/PdfExportDialog.cs:174
+#: ../src/Clients/Classical/Dialogs/PdfExportDialog.cs:175
 msgid "There was a problem generating the PDF file. The file has not been created."
 msgstr "Prišlo je do težave med ustvarjanjem datoteke PDF. Datoteka ni bila ustvarjena."
 
@@ -1956,7 +1962,7 @@ msgstr[3] "Prikazuje rezultate zadnjih {0} shranjenih sej iger."
 #. Translators: answer + rationale of the answer
 #. Translators: Concatenating two strings (rationale of answer + extra information).
 #: ../src/Clients/Classical/Dialogs/PlayerHistoryDialog.cs:61
-#: ../src/Core/Main/Game.cs:144
+#: ../src/Core/Main/Game.cs:145
 #: ../src/Games/Logic/PuzzleCountSeries.cs:93
 #, csharp-format
 msgid "{0} {1}"
@@ -1981,12 +1987,12 @@ msgid "_Delete"
 msgstr "_Izbriši"
 
 #: ../src/Clients/Classical/gbrainy.cs:426
-#: ../src/Clients/WebForms/Game.aspx.cs:244
+#: ../src/Clients/WebForms/Game.aspx.cs:245
 msgid "Congratulations."
 msgstr "Čestitke."
 
 #: ../src/Clients/Classical/gbrainy.cs:428
-#: ../src/Clients/WebForms/Game.aspx.cs:248
+#: ../src/Clients/WebForms/Game.aspx.cs:249
 msgid "Incorrect answer."
 msgstr "Napačen odgovor."
 
@@ -2224,7 +2230,7 @@ msgstr[3] "{0} posodobitve so na voljo"
 msgid "Open Location"
 msgstr "Odpri mesto"
 
-#: ../src/Clients/Classical/Widgets/GameDrawingArea.cs:126
+#: ../src/Clients/Classical/Widgets/GameDrawingArea.cs:127
 #: ../src/Core/Main/GameSession.cs:184
 msgid "Paused"
 msgstr "V premoru"
@@ -2235,7 +2241,7 @@ msgstr "Igranje vseh iger"
 
 #. Toolbar
 #: ../src/Clients/Classical/Widgets/Toolbar.cs:119
-#: ../src/Clients/WebForms/Game.aspx.cs:178
+#: ../src/Clients/WebForms/Game.aspx.cs:179
 msgid "All"
 msgstr "Vse"
 
@@ -2291,9 +2297,17 @@ msgid "End the game and show score"
 msgstr "Končaj igro in pokaži rezultat"
 
 #: ../src/Clients/Classical/Widgets/Toolbar.cs:149
-#: ../src/Clients/WebForms/Game.aspx.cs:179
+#: ../src/Clients/WebForms/Game.aspx.cs:180
 msgid "End"
 msgstr "Konec"
+
+#: ../src/Clients/WebForms/Game.aspx.cs:172
+msgid "Next Game"
+msgstr "Nova igra"
+
+#: ../src/Clients/WebForms/Game.aspx.cs:173
+msgid "Answer"
+msgstr "Odgovori"
 
 #: ../src/Core/Main/ColorPalette.cs:72
 msgid "red"
@@ -2334,69 +2348,69 @@ msgstr "bela"
 #. For languages represented with the Latin alphabet use
 #. the same than English
 #. First possible answer for a series (e.g.: Figure A)
-#: ../src/Core/Main/GameAnswer.cs:110
+#: ../src/Core/Main/GameAnswer.cs:116
 msgid "A"
 msgstr "A"
 
 #. Second possible answer for a series
-#: ../src/Core/Main/GameAnswer.cs:112
+#: ../src/Core/Main/GameAnswer.cs:118
 msgid "B"
 msgstr "B"
 
 #. Third possible answer for a series
-#: ../src/Core/Main/GameAnswer.cs:114
+#: ../src/Core/Main/GameAnswer.cs:120
 msgid "C"
 msgstr "C"
 
 #. Fourth possible answer for a series
-#: ../src/Core/Main/GameAnswer.cs:116
+#: ../src/Core/Main/GameAnswer.cs:122
 msgid "D"
 msgstr "D"
 
 #. Fifth possible answer for a series
-#: ../src/Core/Main/GameAnswer.cs:118
+#: ../src/Core/Main/GameAnswer.cs:124
 msgid "E"
 msgstr "E"
 
 #. Sixth possible answer for a series
-#: ../src/Core/Main/GameAnswer.cs:120
+#: ../src/Core/Main/GameAnswer.cs:126
 msgid "F"
 msgstr "F"
 
 #. Seventh possible answer for a series
-#: ../src/Core/Main/GameAnswer.cs:122
+#: ../src/Core/Main/GameAnswer.cs:128
 msgid "G"
 msgstr "G"
 
 #. Eighth possible answer for a series
-#: ../src/Core/Main/GameAnswer.cs:124
+#: ../src/Core/Main/GameAnswer.cs:130
 msgid "H"
 msgstr "H"
 
 #. Translators. This is the list of valid answers, like A or B.
-#: ../src/Core/Main/GameAnswer.cs:140
+#: ../src/Core/Main/GameAnswer.cs:146
 #, csharp-format
 msgid "{0} or {1}"
 msgstr "{0} ali {1}"
 
 #. Translators. This is the list of valid answers, like A, B or C.
-#: ../src/Core/Main/GameAnswer.cs:144
+#: ../src/Core/Main/GameAnswer.cs:150
 #, csharp-format
 msgid "{0}, {1} or {2}"
 msgstr "{0}, {1} ali {2}"
 
 #. Translators. This is the list of valid answers, like A, B, C or D.
-#: ../src/Core/Main/GameAnswer.cs:148
+#: ../src/Core/Main/GameAnswer.cs:154
 #, csharp-format
 msgid "{0}, {1}, {2} or {3}"
 msgstr "{0}, {1}, {2} ali {3}"
 
-#: ../src/Core/Main/GameAnswer.cs:157
+#: ../src/Core/Main/GameAnswer.cs:163
 #, csharp-format
 msgid "Figure {0}"
 msgstr "Slika {0}"
 
-#: ../src/Core/Main/Game.cs:137
+#: ../src/Core/Main/Game.cs:138
 #, csharp-format
 msgid "The correct answer is {0}."
 msgstr "Pravilen odgovor je {0}."
@@ -2531,18 +2545,18 @@ msgstr "Preostali čas"
 
 #. Translators: {0} is the game number and {1} the game question or answer
 #. The number is used as reference when looking for the game solution in the PDF
-#: ../src/Core/Main/PdfExporter.cs:104
-#: ../src/Core/Main/PdfExporter.cs:165
+#: ../src/Core/Main/PdfExporter.cs:105
+#: ../src/Core/Main/PdfExporter.cs:166
 #, csharp-format
 msgid "Game #{0}. {1}"
 msgstr "Igra št. {0}. {1}"
 
-#: ../src/Core/Main/PdfExporter.cs:121
+#: ../src/Core/Main/PdfExporter.cs:122
 #, csharp-format
 msgid "Created by gbrainy {0}"
 msgstr "Ustvarjeno z gbrainy {0}"
 
-#: ../src/Core/Main/PdfExporter.cs:157
+#: ../src/Core/Main/PdfExporter.cs:158
 msgid "Solutions"
 msgstr "Rešitve"
 
@@ -2572,6 +2586,7 @@ msgstr "{0} Odgovorite z izbiro črke {1}."
 #: ../src/Games/Calculation/CalculationGreatestDivisor.cs:152
 #: ../src/Games/Logic/PuzzleOstracism.cs:164
 #: ../src/Games/Logic/PuzzlePredicateLogic.cs:183
+#: ../src/Games/Memory/MemoryFiguresAndText.cs:142
 #, csharp-format
 msgid "{0}) {1}"
 msgstr "{0}) {1}"
@@ -2604,7 +2619,7 @@ msgid "Question and answer #{0}"
 msgstr "Vprašanje in odgovor št.{0}"
 
 #. Translators {0}: list of options (A, B, C)
-#: ../src/Core/Main/Xml/GameXml.cs:212
+#: ../src/Core/Main/Xml/GameXml.cs:216
 #, csharp-format
 msgid "Answer {0}."
 msgstr "Odgovor {0}."
@@ -2620,48 +2635,65 @@ msgstr "Rezultat"
 
 #: ../src/Core/Views/FinishView.cs:152
 #, csharp-format
-msgid "Games won: {0} ({1} played)"
-msgstr "Zmage: {0} ({1} odigranih)"
+msgid "{0} played"
+msgid_plural "{0} played"
+msgstr[0] "{0} odigranih"
+msgstr[1] "{0} odigrana"
+msgstr[2] "{0} odigrani"
+msgstr[3] "{0} odigrane"
 
-#: ../src/Core/Views/FinishView.cs:154
+#: ../src/Core/Views/FinishView.cs:156
 #, csharp-format
-msgid "{0}. Games won: {1} ({2} played)"
-msgstr "{0}. Dobljene igre: {1} ({2} odigranih iger)"
+msgid "Games won: {0} ({1})"
+msgid_plural "Games won: {0} ({1})"
+msgstr[0] "Dobljene igre: {0} ({1})"
+msgstr[1] "Dobljene igre: {0} ({1})"
+msgstr[2] "Dobljene igre: {0} ({1})"
+msgstr[3] "Dobljene igre: {0} ({1})"
 
-#: ../src/Core/Views/FinishView.cs:158
+#: ../src/Core/Views/FinishView.cs:160
+#, csharp-format
+msgid "{0}. Games won: {1} ({2})"
+msgid_plural "{0}. Games won: {1} ({2})"
+msgstr[0] "{0}. Dobljene igre: {1} ({2})"
+msgstr[1] "{0}. Dobljene igre: {1} ({2})"
+msgstr[2] "{0}. Dobljene igre: {1} ({2})"
+msgstr[3] "{0}. Dobljene igre: {1} ({2})"
+
+#: ../src/Core/Views/FinishView.cs:166
 #, csharp-format
 msgid "Time played {0} (average per game {1})"
 msgstr "Čas igranja {0} ({1} povprečno na igro)"
 
 #. Translators: translated string should not be longer that the English original (space restriction on the UI)
-#: ../src/Core/Views/FinishView.cs:167
+#: ../src/Core/Views/FinishView.cs:175
 msgid "For details on how gbrainy's scoring works refer to the help."
 msgstr "Za podrobnosti o načinu izračuna rezultata v gbrainy si oglejte pomoč."
 
-#: ../src/Core/Views/FinishView.cs:179
+#: ../src/Core/Views/FinishView.cs:187
 msgid "Tips for your next games"
 msgstr "Namigi za vaše naslednje igre"
 
-#: ../src/Core/Views/FinishView.cs:207
+#: ../src/Core/Views/FinishView.cs:215
 msgid "Congratulations! New personal record"
 msgstr "Čestitke! Dosegli ste nov osebni rekord"
 
-#: ../src/Core/Views/FinishView.cs:217
+#: ../src/Core/Views/FinishView.cs:225
 #, csharp-format
 msgid "By scoring {0} in logic puzzle games you have established a new personal record. Your previous record was {1}."
 msgstr "Z rezultatom {0} v logičnih ugankah ste dosegli nov osebni rekord. Vaš prejšnji rekord je bil {1}."
 
-#: ../src/Core/Views/FinishView.cs:223
+#: ../src/Core/Views/FinishView.cs:231
 #, csharp-format
 msgid "By scoring {0} in calculation games you have established a new personal record. Your previous record was {1}."
 msgstr "Z rezultatom {0} v računskih igrah ste dosegli nov osebni rekord. Vaš prejšnji rekord je bil {1}."
 
-#: ../src/Core/Views/FinishView.cs:229
+#: ../src/Core/Views/FinishView.cs:237
 #, csharp-format
 msgid "By scoring {0} in memory games you have established a new personal record. Your previous record was {1}."
 msgstr "Z rezultatom {0} v spominskih igrah ste dosegli nov osebni rekord. Vaš prejšnji rekord je bil {1}."
 
-#: ../src/Core/Views/FinishView.cs:235
+#: ../src/Core/Views/FinishView.cs:243
 #, csharp-format
 msgid "By scoring {0} in verbal analogies you have established a new personal record. Your previous record was {1}."
 msgstr "Z rezultatom {0} v besednih analogijah ste dosegli nov osebni rekord. Vaš prejšnji rekord je bil {1}."
@@ -2980,21 +3012,24 @@ msgstr[2] "Imamo {0} metrski kos blaga."
 msgstr[3] "Imamo {0} metrski kos blaga."
 
 #: ../src/Games/Logic/PuzzleCounting.cs:68
-#, csharp-format
-msgid "Machine A takes {0} second to cut 1 meter of this fabric. How many seconds does Machine A take to cut the entire piece of fabric into 1 meter pieces?"
-msgid_plural "Machine A takes {0} seconds to cut 1 meter of this fabric. How many seconds does Machine A take to cut the entire piece of fabric into 1 meter pieces?"
+#, fuzzy, csharp-format
+msgid "A machine takes {0} second to cut 1 meter of this fabric. How many seconds does the machine take to cut the entire piece of fabric into 1 meter pieces?"
+msgid_plural "A machine takes {0} seconds to cut 1 meter of this fabric. How many seconds does the machine take to cut the entire piece of fabric into 1 meter pieces?"
 msgstr[0] "Naprava A za rez metrskega kosa blaga potrebuje {0} sekund. Koliko sekund potrebuje naprava A za razrez celotnega blaga na metrske kose?"
 msgstr[1] "Naprava A za rez metrskega kosa blaga potrebuje {0} sekundo. Koliko sekund potrebuje naprava A za razrez celotnega blaga na metrske kose?"
 msgstr[2] "Naprava A za rez metrskega kosa blaga potrebuje {0} sekundi. Koliko sekund potrebuje naprava A za razrez celotnega blaga na metrske kose?"
 msgstr[3] "Naprava A za rez metrskega kosa blaga potrebuje {0} sekunde. Koliko sekund potrebuje naprava A za razrez celotnega blaga na metrske kose?"
 
-#. Translators: {0} is always a number greater than 1
-#: ../src/Games/Logic/PuzzleCounting.cs:73
-#, csharp-format
-msgid "With the {0} cut, Machine A creates two 1 meter pieces."
-msgstr "Z {0} rezi, naprava A ustvari dva metrska kosa."
+#: ../src/Games/Logic/PuzzleCounting.cs:72
+#, fuzzy, csharp-format
+msgid "With the cut number {0}, the machine creates two 1 meter pieces."
+msgid_plural "With the cut number {0}, the machine creates two 1 meter pieces."
+msgstr[0] "Z {0} rezi, naprava A ustvari dva metrska kosa."
+msgstr[1] "Z {0} rezi, naprava A ustvari dva metrska kosa."
+msgstr[2] "Z {0} rezi, naprava A ustvari dva metrska kosa."
+msgstr[3] "Z {0} rezi, naprava A ustvari dva metrska kosa."
 
-#: ../src/Games/Logic/PuzzleCounting.cs:84
+#: ../src/Games/Logic/PuzzleCounting.cs:85
 #, csharp-format
 msgid "A fence is built to enclose a square shaped region. {0} fence pole is used in each side of the square. How many fence poles are used in total?"
 msgid_plural "A fence is built to enclose a square shaped region. {0} fence poles are used in each side of the square. How many fence poles are used in total?"
@@ -3003,7 +3038,7 @@ msgstr[1] "Ograja je zgrajena za ogrado kvadratnega območja. Na vsaki strani kv
 msgstr[2] "Ograja je zgrajena za ogrado kvadratnega območja. Na vsaki strani kvadrata sta uporabljena {0} kola. Koliko je vseh uporabljenih kolov?"
 msgstr[3] "Ograja je zgrajena za ogrado kvadratnega območja. Na vsaki strani kvadrata je uporabljenih {0} kolov. Koliko je vseh uporabljenih kolov?"
 
-#: ../src/Games/Logic/PuzzleCounting.cs:91
+#: ../src/Games/Logic/PuzzleCounting.cs:92
 #, csharp-format
 msgid "There is {0} fence pole since the poles on the corners of the square are shared."
 msgid_plural "There are {0} fence poles since the poles on the corners of the square are shared."
@@ -3012,7 +3047,7 @@ msgstr[1] "Skupaj je uporabljen {0} kol, saj so koli v kotih kvadrata deljeni."
 msgstr[2] "Skupaj sta uporabljena {0} kola, saj so koli v kotih kvadrata deljeni."
 msgstr[3] "Skupaj so uporabljeni {0} koli, saj so koli v kotih kvadrata deljeni."
 
-#: ../src/Games/Logic/PuzzleCounting.cs:104
+#: ../src/Games/Logic/PuzzleCounting.cs:105
 #, csharp-format
 msgid "Wrapping an anniversary present costs one monetary unit. The anniversary present costs {0} monetary unit more than the cost to wrap it. How much does it cost to both purchase and wrap the present?"
 msgid_plural "Wrapping an anniversary present costs one monetary unit. The anniversary present costs {0} monetary units more than the cost to wrap it. How much does it cost to both purchase and wrap the present?"
@@ -3021,7 +3056,7 @@ msgstr[1] "Zavijanje darila za obletnico stane en evro. Darilo za obletnico stan
 msgstr[2] "Zavijanje darila za obletnico stane en evro. Darilo za obletnico stane {0} evra več kot stroški zavijanja. Koliko staneta nakup in zavijanje darila?"
 msgstr[3] "Zavijanje darila za obletnico stane en evro. Darilo za obletnico stane {0} evre več kot stroški zavijanja. Koliko staneta nakup in zavijanje darila?"
 
-#: ../src/Games/Logic/PuzzleCounting.cs:111
+#: ../src/Games/Logic/PuzzleCounting.cs:112
 #, csharp-format
 msgid "It is the cost of the present, {0} monetary unit, plus one monetary unit of the wrapping."
 msgid_plural "It is the cost of the present, {0} monetary units, plus one monetary unit of the wrapping."
@@ -3312,6 +3347,10 @@ msgstr "Vsi udeleženci zabave se predstavijo drug drugemu. Pri tem se {0} krat 
 msgid "Try to imagine a situation in which you are meeting a small number of people."
 msgstr "Predstavljajte si, da srečate majhno število ljudi."
 
+#: ../src/Games/Logic/PuzzleHandshakes.cs:46
+msgid "Using n as the total number of people, the first person handshakes n-1 people, the second n-2 people, etc. The result is the sum of the first n-1 consecutive numbers: 1+2+3+...+(n-1)."
+msgstr ""
+
 #: ../src/Games/Logic/PuzzleLargerShape.cs:113
 msgid "Larger shape"
 msgstr "Večja oblika"
@@ -3377,24 +3416,24 @@ msgstr "Vsaka rezina je povezana z nasprotno."
 msgid "All numbers of each slice, when added to the ones of the opposite slice, add always {0}."
 msgstr "Vsota števil na rezini s števili na nasprotni rezini je vedno {0}."
 
-#: ../src/Games/Logic/PuzzleMostInCommon.cs:76
+#: ../src/Games/Logic/PuzzleMostInCommon.cs:77
 msgid "Most in common"
 msgstr "Največ skupnega"
 
-#: ../src/Games/Logic/PuzzleMostInCommon.cs:81
+#: ../src/Games/Logic/PuzzleMostInCommon.cs:82
 #, csharp-format
 msgid "Which of the possible answers have the most in common with the four given figures? Answer {0}, {1}, {2} or {3}."
 msgstr "Kateri od mogočih odgovorov ima največ skupnega s štirimi danimi slikami? Odgovorite {0}, {1}, {2} ali {3}."
 
-#: ../src/Games/Logic/PuzzleMostInCommon.cs:86
+#: ../src/Games/Logic/PuzzleMostInCommon.cs:87
 msgid "Think of the common elements that the given figures have inside them."
 msgstr "Pomislite na skupne elemente, ki jih imajo dane slike."
 
-#: ../src/Games/Logic/PuzzleMostInCommon.cs:92
+#: ../src/Games/Logic/PuzzleMostInCommon.cs:93
 msgid "It has the same number of elements inside the figure as the given figures."
 msgstr "Slika ima enako število elementov kot dane slike."
 
-#: ../src/Games/Logic/PuzzleMostInCommon.cs:94
+#: ../src/Games/Logic/PuzzleMostInCommon.cs:95
 msgid "It is the figure with the most elements in common compared to the given figures."
 msgstr "Je slika z največ skupnimi elementi z danimi slikami."
 
@@ -3543,7 +3582,7 @@ msgstr "9."
 msgid "22nd"
 msgstr "22."
 
-#: ../src/Games/Logic/PuzzlePeopleTable.cs:113
+#: ../src/Games/Logic/PuzzlePeopleTable.cs:85
 msgid "Two people in the table sitting across each other"
 msgstr "Dve osebi si sedita nasproti za mizo"
 
@@ -3828,21 +3867,22 @@ msgstr "Obstaja 16 samostojnih kvadratov, 9 kvadratov narejenih iz 4 samostojnih
 msgid "There are 9 single squares, 4 squares made by 4 single squares and 1 square made by 9 single squares."
 msgstr "Obstaja 9 samostojnih kvadratov, 4 kvadrati narejeni iz 4 samostojnih kvadratov in 1 kvadrat narejen iz 9 samostojnih kvadratov."
 
-#: ../src/Games/Logic/PuzzleSquareSheets.cs:27
+#: ../src/Games/Logic/PuzzleSquareSheets.cs:29
 msgid "Square sheets"
 msgstr "Kvadratni listi"
 
-#: ../src/Games/Logic/PuzzleSquareSheets.cs:31
+#: ../src/Games/Logic/PuzzleSquareSheets.cs:33
 msgid "What is the minimum number of square sheets of paper of any size required to create the figure? Lines indicate frontiers between different sheets."
 msgstr "Kolikšno je najmanjše število kvadratnih listov papirja katerekoli velikosti zahtevanih za ustvarjanje slike? Črte nakazujejo meje med različnimi listi."
 
-#: ../src/Games/Logic/PuzzleSquareSheets.cs:35
+#: ../src/Games/Logic/PuzzleSquareSheets.cs:37
 msgid "The sheets should overlap."
 msgstr "Listi naj se prekrivajo."
 
 #. Translators: the translated version should not take more characters that the English original
-#: ../src/Games/Logic/PuzzleSquareSheets.cs:41
-msgid "A full sized square of paper, a 3/4 of the whole size square of paper in the bottom right corner, another 3/4 square of paper in the top left corner and a 1/4 square of paper in the top left corner."
+#: ../src/Games/Logic/PuzzleSquareSheets.cs:43
+#, fuzzy
+msgid "A full sized square of paper (yellow), a 3/4 of the whole size square of paper (blue) in the bottom right corner, another 3/4 square of paper (green) in the top left corner and a 1/4 square of paper (red) in the top left corner."
 msgstr "Kvadrat polne velikosti papirja, 3/4 celega kvadrata papirja v spodnjem desnem kotu, 3/4 kvadrata papirja v zgornjem levem kotu in 1/4 kvadrata papirja v zgornjem levem kotu."
 
 #: ../src/Games/Logic/PuzzleTetris.cs:34
@@ -3907,9 +3947,9 @@ msgstr "Formula za razdaljo je 'razdalja = hitrost x čas'."
 #. - mph (miles per hour). You must localize this using the right unit of speed for your locale
 #. - The translated string should not use more characters than the original sentence
 #: ../src/Games/Logic/PuzzleTrains.cs:81
-#, csharp-format
-msgid "A train leaves the station traveling at {0} mph. {1} hour later a second train leaves the station traveling in the same direction at {2} mph. How many hours since the first train left does it take the second train to overtake the first train?"
-msgid_plural "A train leaves the station traveling at {0} mph. {1} hours later a second train leaves the station traveling in the same direction at {2} mph. How many hours since the first train left does it take the second train to overtake the first train?"
+#, fuzzy, csharp-format
+msgid "A train leaves the station traveling at {0} mph. {1} hour later a second train leaves the station traveling in the same direction at {2} mph. How many hours does it take the second train, since it starts moving, to overtake the first train?"
+msgid_plural "A train leaves the station traveling at {0} mph. {1} hours later a second train leaves the station traveling in the same direction at {2} mph. How many hours does it take the second train, since it starts moving, to overtake the first train?"
 msgstr[0] "Vlak zapusti postajo s hitrostjo {0} kilometrov na uro. {1} ur kasneje železniško postajo zapusti drugi vlak, ki potuje v isti smeri s hitrostjo {2} kilometrov na uro. Koliko ur po odhodu prvega vlaka drugi vlak dohiti prvi vlak?"
 msgstr[1] "Vlak zapusti postajo s hitrostjo {0} kilometrov na uro. {1} uro kasneje železniško postajo zapusti drugi vlak, ki potuje v isti smeri s hitrostjo {2} kilometrov na uro. Koliko ur po odhodu prvega vlaka drugi vlak dohiti prvi vlak?"
 msgstr[2] "Vlak zapusti postajo s hitrostjo {0} kilometrov na uro. {1} uri kasneje železniško postajo zapusti drugi vlak, ki potuje v isti smeri s hitrostjo {2} kilometrov na uro. Koliko ur po odhodu prvega vlaka drugi vlak dohiti prvi vlak?"
@@ -4067,13 +4107,34 @@ msgstr "Koliko odstotkov bleščečih avtomobilov uporablja dizel?"
 msgid "What percentage of Shiny Cars use gasoline?"
 msgstr "Koliko odstotkov bleščečih avtomobilov uporablja bencin?"
 
-#: ../src/Games/Memory/MemoryFiguresAndText.cs:66
+#: ../src/Games/Memory/MemoryFiguresAndText.cs:65
+msgid "Triangle"
+msgstr "Trikotnik"
+
+#: ../src/Games/Memory/MemoryFiguresAndText.cs:67
+msgid "Square"
+msgstr "Kvadrat"
+
+#: ../src/Games/Memory/MemoryFiguresAndText.cs:69
+msgid "Pentagon"
+msgstr "Petkotnik"
+
+#: ../src/Games/Memory/MemoryFiguresAndText.cs:71
+msgid "Circle"
+msgstr "Krog"
+
+#: ../src/Games/Memory/MemoryFiguresAndText.cs:79
 msgid "Memorize figures and text"
 msgstr "Zapomnite si slike in besedilo"
 
-#: ../src/Games/Memory/MemoryFiguresAndText.cs:70
-msgid "The list below enumerates the figures shown in the previous image except for one. Which is the missing figure? Possible answers are triangle, square, pentagon and circle."
+#: ../src/Games/Memory/MemoryFiguresAndText.cs:84
+#, fuzzy, csharp-format
+msgid "The list below enumerates the figures shown in the previous image except for one. Which is the missing figure? Answer {0}, {1}, {2} or {3}."
 msgstr "Na spodnjem seznamu so vse prej prikazane slike razen ene. Katera slika manjka? Mogoči odgovori so trikotnik, kvadrat, petkotnik in krog."
+
+#: ../src/Games/Memory/MemoryFiguresAndText.cs:222
+msgid "List of images shown before"
+msgstr "Seznam že prikazanih slik"
 
 #: ../src/Games/Memory/MemoryFigures.cs:54
 msgid "Memorize figures"
@@ -4628,15 +4689,3 @@ msgstr "_Pogled"
 
 #~ msgid "{0}) "
 #~ msgstr "{0}) "
-
-#~ msgid "Triangle"
-#~ msgstr "Trikotnik"
-
-#~ msgid "Square"
-#~ msgstr "Kvadrat"
-
-#~ msgid "Pentagon"
-#~ msgstr "Petkotnik"
-
-#~ msgid "Circle"
-#~ msgstr "Krog"
