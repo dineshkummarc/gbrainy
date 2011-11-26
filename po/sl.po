@@ -9,8 +9,8 @@ msgstr ""
 "Project-Id-Version: gbrainy master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gbrainy&keywords=I18N+L10N&component=general\n"
 "POT-Creation-Date: 2011-11-23 19:42+0000\n"
-"PO-Revision-Date: 2011-11-25 17:40+0100\n"
-"Last-Translator: Matej Urbančič <mateju@svn.gnome.org>\n"
+"PO-Revision-Date: 2011-11-26 11:19+0200\n"
+"Last-Translator: Andrej Žnidaršič <andrej.znidarsic@gmail.com>\n"
 "Language-Team: Slovenian <gnome-si@googlegroups.com>\n"
 "Language: sl\n"
 "MIME-Version: 1.0\n"
@@ -3012,22 +3012,22 @@ msgstr[2] "Imamo {0} metrski kos blaga."
 msgstr[3] "Imamo {0} metrski kos blaga."
 
 #: ../src/Games/Logic/PuzzleCounting.cs:68
-#, fuzzy, csharp-format
+#, csharp-format
 msgid "A machine takes {0} second to cut 1 meter of this fabric. How many seconds does the machine take to cut the entire piece of fabric into 1 meter pieces?"
 msgid_plural "A machine takes {0} seconds to cut 1 meter of this fabric. How many seconds does the machine take to cut the entire piece of fabric into 1 meter pieces?"
-msgstr[0] "Naprava A za rez metrskega kosa blaga potrebuje {0} sekund. Koliko sekund potrebuje naprava A za razrez celotnega blaga na metrske kose?"
-msgstr[1] "Naprava A za rez metrskega kosa blaga potrebuje {0} sekundo. Koliko sekund potrebuje naprava A za razrez celotnega blaga na metrske kose?"
-msgstr[2] "Naprava A za rez metrskega kosa blaga potrebuje {0} sekundi. Koliko sekund potrebuje naprava A za razrez celotnega blaga na metrske kose?"
-msgstr[3] "Naprava A za rez metrskega kosa blaga potrebuje {0} sekunde. Koliko sekund potrebuje naprava A za razrez celotnega blaga na metrske kose?"
+msgstr[0] "Naprava za rez metrskega kosa blaga potrebuje {0} sekund. Koliko sekund potrebuje naprava za razrez celotnega blaga na metrske kose?"
+msgstr[1] "Naprava za rez metrskega kosa blaga potrebuje {0} sekundo. Koliko sekund potrebuje naprava za razrez celotnega blaga na metrske kose?"
+msgstr[2] "Naprava za rez metrskega kosa blaga potrebuje {0} sekundi. Koliko sekund potrebuje naprava za razrez celotnega blaga na metrske kose?"
+msgstr[3] "Naprava za rez metrskega kosa blaga potrebuje {0} sekunde. Koliko sekund potrebuje naprava za razrez celotnega blaga na metrske kose?"
 
 #: ../src/Games/Logic/PuzzleCounting.cs:72
-#, fuzzy, csharp-format
+#, csharp-format
 msgid "With the cut number {0}, the machine creates two 1 meter pieces."
 msgid_plural "With the cut number {0}, the machine creates two 1 meter pieces."
-msgstr[0] "Z {0} rezi, naprava A ustvari dva metrska kosa."
-msgstr[1] "Z {0} rezi, naprava A ustvari dva metrska kosa."
-msgstr[2] "Z {0} rezi, naprava A ustvari dva metrska kosa."
-msgstr[3] "Z {0} rezi, naprava A ustvari dva metrska kosa."
+msgstr[0] "Z rezom št. {0} naprava ustvari dva metrska kosa."
+msgstr[1] "Z rezom št. {0} naprava ustvari dva metrska kosa."
+msgstr[2] "Z rezom št. {0} naprava ustvari dva metrska kosa."
+msgstr[3] "Z rezom št. {0} naprava ustvari dva metrska kosa."
 
 #: ../src/Games/Logic/PuzzleCounting.cs:85
 #, csharp-format
@@ -3349,7 +3349,7 @@ msgstr "Predstavljajte si, da srečate majhno število ljudi."
 
 #: ../src/Games/Logic/PuzzleHandshakes.cs:46
 msgid "Using n as the total number of people, the first person handshakes n-1 people, the second n-2 people, etc. The result is the sum of the first n-1 consecutive numbers: 1+2+3+...+(n-1)."
-msgstr ""
+msgstr "Če je n število ljudi, se prva oseba rokuje z n-1 ljudmi, druga z n-2 ljudmi, itd. Rezultat je vsota prvih n-1 zaporednih števil: 1+2+3+..+(n-1)."
 
 #: ../src/Games/Logic/PuzzleLargerShape.cs:113
 msgid "Larger shape"
@@ -3881,9 +3881,8 @@ msgstr "Listi naj se prekrivajo."
 
 #. Translators: the translated version should not take more characters that the English original
 #: ../src/Games/Logic/PuzzleSquareSheets.cs:43
-#, fuzzy
 msgid "A full sized square of paper (yellow), a 3/4 of the whole size square of paper (blue) in the bottom right corner, another 3/4 square of paper (green) in the top left corner and a 1/4 square of paper (red) in the top left corner."
-msgstr "Kvadrat polne velikosti papirja, 3/4 celega kvadrata papirja v spodnjem desnem kotu, 3/4 kvadrata papirja v zgornjem levem kotu in 1/4 kvadrata papirja v zgornjem levem kotu."
+msgstr "Kvadrat polne velikosti papirja (rumeno), 3/4 celega kvadrata papirja v spodnjem desnem kotu (modro), 3/4 kvadrata papirja v zgornjem levem kotu (zeleno) in 1/4 kvadrata papirja v zgornjem levem kotu (rdeče)."
 
 #: ../src/Games/Logic/PuzzleTetris.cs:34
 msgid "Tetris"
@@ -3947,13 +3946,13 @@ msgstr "Formula za razdaljo je 'razdalja = hitrost x čas'."
 #. - mph (miles per hour). You must localize this using the right unit of speed for your locale
 #. - The translated string should not use more characters than the original sentence
 #: ../src/Games/Logic/PuzzleTrains.cs:81
-#, fuzzy, csharp-format
+#, csharp-format
 msgid "A train leaves the station traveling at {0} mph. {1} hour later a second train leaves the station traveling in the same direction at {2} mph. How many hours does it take the second train, since it starts moving, to overtake the first train?"
 msgid_plural "A train leaves the station traveling at {0} mph. {1} hours later a second train leaves the station traveling in the same direction at {2} mph. How many hours does it take the second train, since it starts moving, to overtake the first train?"
-msgstr[0] "Vlak zapusti postajo s hitrostjo {0} kilometrov na uro. {1} ur kasneje železniško postajo zapusti drugi vlak, ki potuje v isti smeri s hitrostjo {2} kilometrov na uro. Koliko ur po odhodu prvega vlaka drugi vlak dohiti prvi vlak?"
-msgstr[1] "Vlak zapusti postajo s hitrostjo {0} kilometrov na uro. {1} uro kasneje železniško postajo zapusti drugi vlak, ki potuje v isti smeri s hitrostjo {2} kilometrov na uro. Koliko ur po odhodu prvega vlaka drugi vlak dohiti prvi vlak?"
-msgstr[2] "Vlak zapusti postajo s hitrostjo {0} kilometrov na uro. {1} uri kasneje železniško postajo zapusti drugi vlak, ki potuje v isti smeri s hitrostjo {2} kilometrov na uro. Koliko ur po odhodu prvega vlaka drugi vlak dohiti prvi vlak?"
-msgstr[3] "Vlak zapusti postajo s hitrostjo {0} kilometrov na uro. {1} ure kasneje železniško postajo zapusti drugi vlak, ki potuje v isti smeri s hitrostjo {2} kilometrov na uro.Koliko ur po odhodu prvega vlaka drugi vlak dohiti prvi vlak?"
+msgstr[0] "Vlak zapusti postajo s hitrostjo {0} kilometrov na uro. {1} ur kasneje železniško postajo zapusti drugi vlak, ki potuje v isti smeri s hitrostjo {2} kilometrov na uro. Koliko ur po odhodu s postaje drugi vlak dohiti prvi vlak?"
+msgstr[1] "Vlak zapusti postajo s hitrostjo {0} kilometrov na uro. {1} uro kasneje železniško postajo zapusti drugi vlak, ki potuje v isti smeri s hitrostjo {2} kilometrov na uro. Koliko ur po odhodu s postaje drugi vlak dohiti prvi vlak?"
+msgstr[2] "Vlak zapusti postajo s hitrostjo {0} kilometrov na uro. {1} uri kasneje železniško postajo zapusti drugi vlak, ki potuje v isti smeri s hitrostjo {2} kilometrov na uro. Koliko ur po odhodu s postaje drugi vlak dohiti prvi vlak?"
+msgstr[3] "Vlak zapusti postajo s hitrostjo {0} kilometrov na uro. {1} ure kasneje železniško postajo zapusti drugi vlak, ki potuje v isti smeri s hitrostjo {2} kilometrov na uro.Koliko ur po odhodu s postaje drugi vlak dohiti prvi vlak?"
 
 #: ../src/Games/Logic/PuzzleTrains.cs:85
 msgid "You can calculate the answer by multiplying the speed of the first train by the time and dividing it by the difference of speeds."
@@ -4128,9 +4127,9 @@ msgid "Memorize figures and text"
 msgstr "Zapomnite si slike in besedilo"
 
 #: ../src/Games/Memory/MemoryFiguresAndText.cs:84
-#, fuzzy, csharp-format
+#, csharp-format
 msgid "The list below enumerates the figures shown in the previous image except for one. Which is the missing figure? Answer {0}, {1}, {2} or {3}."
-msgstr "Na spodnjem seznamu so vse prej prikazane slike razen ene. Katera slika manjka? Mogoči odgovori so trikotnik, kvadrat, petkotnik in krog."
+msgstr "Na spodnjem seznamu so vse prej prikazane slike razen ene. Katera slika manjka? Mogoči odgovori so {0}, {1}, {2} in {3}."
 
 #: ../src/Games/Memory/MemoryFiguresAndText.cs:222
 msgid "List of images shown before"
