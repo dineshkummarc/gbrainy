@@ -37,7 +37,8 @@ namespace gbrainy.Clients.Classical.Dialogs
 		[GtkBeans.Builder.Object] Gtk.RadioButton rb_medium;
 		[GtkBeans.Builder.Object] Gtk.RadioButton rb_master;
 		[GtkBeans.Builder.Object] Gtk.ComboBox themes_combobox;
-		[GtkBeans.Builder.Object] Gtk.CheckButton english_checkbutton;
+		[GtkBeans.Builder.Object] Gtk.CheckButton englishcheckbutton;
+		[GtkBeans.Builder.Object] Gtk.CheckButton loadextensionscheckbutton;
 
 		const int COLUMN_VALUE = 1;
 		PlayerHistory history;
@@ -50,7 +51,8 @@ namespace gbrainy.Clients.Classical.Dialogs
 			maxstoredspinbutton.Value = Preferences.Get <int> (Preferences.MaxStoredGamesKey);
 			minplayedspinbutton.Value = Preferences.Get <int> (Preferences.MinPlayedGamesKey);
 			colorblindcheckbutton.Active = Preferences.Get <bool> (Preferences.ColorBlindKey);
-			english_checkbutton.Active = Preferences.Get <bool> (Preferences.EnglishKey);
+			englishcheckbutton.Active = Preferences.Get <bool> (Preferences.EnglishKey);
+			loadextensionscheckbutton.Active = Preferences.Get <bool> (Preferences.LoadPlugginsKey);
 
 			switch ((GameDifficulty) Preferences.Get <int> (Preferences.DifficultyKey)) {
 			case GameDifficulty.Easy:
@@ -125,7 +127,8 @@ namespace gbrainy.Clients.Classical.Dialogs
 			Preferences.Set <int>  (Preferences.MaxStoredGamesKey, (int) maxstoredspinbutton.Value);
 			Preferences.Set <int>  (Preferences.MinPlayedGamesKey, (int) minplayedspinbutton.Value);
 			Preferences.Set <bool> (Preferences.ColorBlindKey, colorblindcheckbutton.Active);
-			Preferences.Set <bool> (Preferences.EnglishKey, english_checkbutton.Active);
+			Preferences.Set <bool> (Preferences.EnglishKey, englishcheckbutton.Active);
+			Preferences.Set <bool> (Preferences.LoadPlugginsKey, loadextensionscheckbutton.Active);
 
 			TreeIter iter;
 			themes_combobox.GetActiveIter (out iter);

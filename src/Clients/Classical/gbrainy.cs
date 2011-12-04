@@ -73,6 +73,7 @@ namespace gbrainy.Clients.Classical
 		bool full_screen;
 		GameSession.Types initial_session;
 		ITranslations translations;
+		static bool pluggins_loaded;
 
 		public readonly int MIN_TRANSLATION = 80;
 
@@ -117,7 +118,12 @@ namespace gbrainy.Clients.Classical
 			gm.LoadAssemblyGames (Defines.GAME_ASSEMBLY);
 			gm.LoadVerbalAnalogies (System.IO.Path.Combine (Defines.DATA_DIR, Defines.VERBAL_ANALOGIES));
 			gm.LoadGamesFromXml (System.IO.Path.Combine (Defines.DATA_DIR, Defines.GAMES_FILE));
-			gm.LoadPlugins ();
+
+			if (Preferences.Get <bool> (Preferences.LoadPlugginsKey))
+			{			
+				gm.LoadPlugins ();
+				pluggins_loaded = true;
+			}
 		}
 
 		void BuildUI ()
@@ -194,7 +200,11 @@ namespace gbrainy.Clients.Classical
 
 		#if MONO_ADDINS
 			extensions_menuitem.Activated += delegate (object sender, EventArgs ar) 
-			{ 
+			{
+				if (pluggins_loaded == false)
+				{			
+					session.GameManager.LoadPlugins ();
+				}
 				Mono.Addins.Gui.AddinManagerWindow.Run (app_window);
 				GameManagerPreload (session.GameManager);
 				CustomGameDialog.Clear ();

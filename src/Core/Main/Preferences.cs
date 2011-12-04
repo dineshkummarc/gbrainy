@@ -42,6 +42,7 @@ namespace gbrainy.Core.Main
 		public const string ThemeKey = "Theme";
 		public const string EnglishKey = "English";
 		public const string EnglishVersionKey = "EnglishVersion";
+		public const string LoadPlugginsKey = "LoadExtensions";
 
 		static Preferences ()
 		{
@@ -139,6 +140,7 @@ namespace gbrainy.Core.Main
 			defaults.Add (ThemeKey, "notebook");
 			defaults.Add (EnglishVersionKey, string.Empty);
 			defaults.Add (EnglishKey, false.ToString ());
+			defaults.Add (LoadPlugginsKey, false.ToString ());
 		}
 
 		public static void Load ()
