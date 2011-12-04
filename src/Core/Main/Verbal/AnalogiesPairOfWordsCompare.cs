@@ -57,6 +57,26 @@ namespace gbrainy.Core.Main.Verbal
 			}
 		}
 
+		public override string AnswerText {
+			get {
+				string str;
+				string[] items;
+
+				items = Answer.Correct.Split (AnalogiesFactory.Separator);
+
+				str = String.Format (translations.GetPluralString ("The correct answer is {0}.",
+					"The possible correct answers are {0}.", items.Length),
+					Answer.CorrectShow);
+
+				if (String.IsNullOrEmpty (Rationale))
+					return str;
+
+				// Translators: answer + rationale of the answer
+				return String.Format (translations.GetString ("{0} {1}"), str, Rationale);
+			}
+		}
+
+
 		protected override void Initialize ()
 		{
 			Current = GetNext ();
