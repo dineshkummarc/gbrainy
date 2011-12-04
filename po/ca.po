@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gbrainy\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-11-20 16:41+0100\n"
-"PO-Revision-Date: 2011-11-20 16:50+0200\n"
+"POT-Creation-Date: 2011-12-04 16:06+0100\n"
+"PO-Revision-Date: 2011-12-04 16:50+0200\n"
 "Last-Translator: jmas <jmas@softcatala.org>\n"
 "Language-Team: Softcatalà\n"
 "Language: ca\n"
@@ -1938,7 +1938,7 @@ msgid "toy / play | tool"
 msgstr "joguina / jugar | eina"
 
 #: ../data/verbal_analogies.xml.h:340
-msgid "track | railway | rails"
+msgid "track | railway | rails | railroad"
 msgstr "via | ferrovia | rail"
 
 #. Translators: letter refers to letter (in paper form)
@@ -2168,7 +2168,9 @@ msgstr[1] ""
 #. Translators: answer + rationale of the answer
 #. Translators: Concatenating two strings (rationale of answer + extra information).
 #: ../src/Clients/Classical/Dialogs/PlayerHistoryDialog.cs:61
-#: ../src/Core/Main/Game.cs:145 ../src/Games/Logic/PuzzleCountSeries.cs:93
+#: ../src/Core/Main/Game.cs:145
+#: ../src/Core/Main/Verbal/AnalogiesPairOfWordsCompare.cs:75
+#: ../src/Games/Logic/PuzzleCountSeries.cs:93
 #, csharp-format
 msgid "{0} {1}"
 msgstr "{0} {1}"
@@ -2179,32 +2181,32 @@ msgstr "{0} {1}"
 msgid "Total"
 msgstr "Total"
 
-#: ../src/Clients/Classical/Dialogs/PreferencesDialog.cs:112
+#: ../src/Clients/Classical/Dialogs/PreferencesDialog.cs:118
 msgid "You are about to delete the player's game session history."
 msgstr "Esteu a punt de suprimir l'historial de partides del jugador."
 
-#: ../src/Clients/Classical/Dialogs/PreferencesDialog.cs:113
+#: ../src/Clients/Classical/Dialogs/PreferencesDialog.cs:119
 msgid ""
 "If you proceed, you will lose the history of the previous game sessions. Do "
 "you want to continue?"
 msgstr ""
 "Si continueu, perdreu l'historial de les partides prèvies. Voleu continuar?"
 
-#: ../src/Clients/Classical/Dialogs/PreferencesDialog.cs:114
+#: ../src/Clients/Classical/Dialogs/PreferencesDialog.cs:120
 msgid "_Delete"
 msgstr "_Suprimeix"
 
-#: ../src/Clients/Classical/gbrainy.cs:426
+#: ../src/Clients/Classical/gbrainy.cs:436
 #: ../src/Clients/WebForms/Game.aspx.cs:245
 msgid "Congratulations."
 msgstr "Enhorabona."
 
-#: ../src/Clients/Classical/gbrainy.cs:428
+#: ../src/Clients/Classical/gbrainy.cs:438
 #: ../src/Clients/WebForms/Game.aspx.cs:249
 msgid "Incorrect answer."
 msgstr "Resposta incorrecta."
 
-#: ../src/Clients/Classical/gbrainy.cs:483
+#: ../src/Clients/Classical/gbrainy.cs:493
 msgid ""
 "Once you have an answer type it in the \"Answer:\" entry box and press the "
 "\"OK\" button."
@@ -2212,11 +2214,11 @@ msgstr ""
 "Un cop tingueu la resposta introduïu-la al quadre «Resposta:» i premeu el "
 "botó «D'acord»."
 
-#: ../src/Clients/Classical/gbrainy.cs:513
+#: ../src/Clients/Classical/gbrainy.cs:523
 msgid "The level of translation of gbrainy for your language is low."
 msgstr "El nivell de traducció del gbrainy al vostre idioma és baix."
 
-#: ../src/Clients/Classical/gbrainy.cs:514
+#: ../src/Clients/Classical/gbrainy.cs:524
 msgid ""
 "You may be exposed to partially translated games making it more difficult to "
 "play. If you prefer to play in English, there is an option for doing so in "
@@ -2226,17 +2228,17 @@ msgstr ""
 "sigui més difícil. Si preferiu jugar en anglès, hi ha una opció a les "
 "Preferències del gbrainy per fer-ho."
 
-#: ../src/Clients/Classical/gbrainy.cs:610
+#: ../src/Clients/Classical/gbrainy.cs:620
 #: ../src/Clients/Classical/Widgets/Toolbar.cs:143
 msgid "Pause"
 msgstr "Pausa"
 
-#: ../src/Clients/Classical/gbrainy.cs:615
+#: ../src/Clients/Classical/gbrainy.cs:625
 msgid "Resume"
 msgstr "Reprèn"
 
 # csharp-format
-#: ../src/Clients/Classical/gbrainy.cs:765
+#: ../src/Clients/Classical/gbrainy.cs:775
 #, csharp-format
 msgid "Startup time {0}"
 msgstr "Temps d'iniciació {0}"
@@ -2630,11 +2632,13 @@ msgstr "{0}, {1}, {2} o {3}"
 msgid "Figure {0}"
 msgstr "Figura {0}"
 
-#
 #: ../src/Core/Main/Game.cs:138
+#: ../src/Core/Main/Verbal/AnalogiesPairOfWordsCompare.cs:67
 #, csharp-format
 msgid "The correct answer is {0}."
-msgstr "La resposta correcta és {0}."
+msgid_plural "The possible correct answers are {0}."
+msgstr[0] "La resposta correcta és {0}."
+msgstr[1] "Les possibles respostes correctes són {0}."
 
 #: ../src/Core/Main/GameManager.cs:251
 msgid "Extensions database:"
@@ -2854,7 +2858,7 @@ msgstr ""
 "Donada la relació entre les dues paraules de sota, quina paraula té la "
 "mateixa relació amb «{0}»?"
 
-#: ../src/Core/Main/Verbal/AnalogiesPairOfWordsCompare.cs:92
+#: ../src/Core/Main/Verbal/AnalogiesPairOfWordsCompare.cs:112
 #: ../src/Core/Main/Verbal/AnalogiesPairOfWordsOptions.cs:125
 #, csharp-format
 msgid "Words: {0}"
@@ -3871,8 +3875,8 @@ msgid ""
 "people, the second n-2 people, etc. The result is the sum of the first n-1 "
 "consecutive numbers: 1+2+3+...+(n-1)."
 msgstr ""
-"Utilitzant n com el total de persones, la primera persona es presenta "
-"a n-1, la segona persona a n-2, etc. El resultat és la suma dels primers n-1 "
+"Utilitzant n com el total de persones, la primera persona es presenta a n-1, "
+"la segona persona a n-2, etc. El resultat és la suma dels primers n-1 "
 "nombres consecutius: 1+2+3+...+(n-1)."
 
 #: ../src/Games/Logic/PuzzleLargerShape.cs:113
@@ -4222,7 +4226,7 @@ msgstr "9a"
 msgid "22nd"
 msgstr "22a"
 
-#: ../src/Games/Logic/PuzzlePeopleTable.cs:113
+#: ../src/Games/Logic/PuzzlePeopleTable.cs:85
 msgid "Two people in the table sitting across each other"
 msgstr "Dues persones a la taula assegudes una davant de l'altra"
 
@@ -5530,18 +5534,22 @@ msgid "Preferences"
 msgstr "Preferències"
 
 #: ../src/Clients/Classical/Dialogs/ui/PreferencesDialog.ui.h:13
+msgid "Search and load extensions when starting"
+msgstr "Cerca i carrega les extensions en iniciar"
+
+#: ../src/Clients/Classical/Dialogs/ui/PreferencesDialog.ui.h:14
 msgid "Show a countdown message"
 msgstr "Mostra un missatge de compte enrere"
 
-#: ../src/Clients/Classical/Dialogs/ui/PreferencesDialog.ui.h:14
+#: ../src/Clients/Classical/Dialogs/ui/PreferencesDialog.ui.h:15
 msgid "Skip games that use colors (for colorblind users)"
 msgstr "Omet jocs que usen colors (per a usuaris daltònics)"
 
-#: ../src/Clients/Classical/Dialogs/ui/PreferencesDialog.ui.h:15
+#: ../src/Clients/Classical/Dialogs/ui/PreferencesDialog.ui.h:16
 msgid "Theme:"
 msgstr "Tema:"
 
-#: ../src/Clients/Classical/Dialogs/ui/PreferencesDialog.ui.h:16
+#: ../src/Clients/Classical/Dialogs/ui/PreferencesDialog.ui.h:17
 msgid "Time in seconds to memorize the challenge:"
 msgstr "Temps en segons per memoritzar el repte:"
 
@@ -5582,8 +5590,8 @@ msgid "Memory Trainers Only"
 msgstr "Només entrenadors de memòria"
 
 #: ../src/Clients/Classical/gbrainy.ui.h:10
-msgid "Mental Calculation Trainers Only"
-msgstr "Només entrenadors de càlcul mental"
+msgid "Mental Calculation Only"
+msgstr "Només càlcul mental"
 
 #: ../src/Clients/Classical/gbrainy.ui.h:11
 msgid "Orientation"
@@ -5644,4 +5652,3 @@ msgstr "P_ista"
 #: ../src/Clients/Classical/gbrainy.ui.h:27
 msgid "_View"
 msgstr "_Visualitza"
-
