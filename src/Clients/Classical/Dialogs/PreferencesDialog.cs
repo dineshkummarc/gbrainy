@@ -89,6 +89,10 @@ namespace gbrainy.Clients.Classical.Dialogs
 				}
 				more = store.IterNext (ref iter);
 			}
+
+			#if !MONO_ADDINS
+				loadextensionscheckbutton.Visible = false;
+			#endif
 		}
 
 		private GameDifficulty Difficulty {
