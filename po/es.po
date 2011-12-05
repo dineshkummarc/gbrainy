@@ -5,23 +5,23 @@
 # (c) 2007 Santiago Martinez Varela, 2007.
 # Eduardo Retamales <eretamales@gnome.cl>, 2007, 2008.
 # Joaquín Ignacio Aramendía <samsagax@gmail.com>, 2011.
-# Daniel Mustieles <daniel.mustieles@gmail.com>, 2010, 2011.
 # Jorge González <jorgegonz@svn.gnome.org>, 2007, 2008, 2010, 2011.
+# Daniel Mustieles <daniel.mustieles@gmail.com>, 2010, 2011.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gbrainy.master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=gbrainy&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2011-11-17 19:41+0000\n"
-"PO-Revision-Date: 2011-11-20 10:38+0100\n"
-"Last-Translator: Jorge González <jorgegonz@svn.gnome.org>\n"
-"Language-Team: Español; Castellano <gnome-es-list@gnome.org>\n"
+"POT-Creation-Date: 2011-12-04 14:09+0000\n"
+"PO-Revision-Date: 2011-12-05 16:59+0100\n"
+"Last-Translator: Daniel Mustieles <daniel.mustieles@gmail.com>\n"
+"Language-Team: Español <gnome-es-list@gnome.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.4\n"
-"Plural-Forms: nplurals=2; plural=(n!=1);\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: ../data/games.xml.h:1
 msgid ""
@@ -1588,14 +1588,12 @@ msgstr ""
 #: ../data/verbal_analogies.xml.h:240
 msgid "Which of the following words is closest to the meaning of 'unhappy'?"
 msgstr ""
-"¿Cuál de las siguientes palabras es la más cercana en significado a "
-"«infeliz»?"
+"¿Cuál de las siguientes palabras es la más cercana en significado a «infeliz»?"
 
 #: ../data/verbal_analogies.xml.h:241
 msgid "Which of the following words is the closest in meaning to 'censure'?"
 msgstr ""
-"¿Cuál de las siguientes palabras es la más cercana en significado a "
-"«censura»?"
+"¿Cuál de las siguientes palabras es la más cercana en significado a «censura»?"
 
 #: ../data/verbal_analogies.xml.h:242
 msgid "Which of the following words means fear of people?"
@@ -1952,8 +1950,9 @@ msgid "toy / play | tool"
 msgstr "juguete / jugar | herramienta"
 
 #: ../data/verbal_analogies.xml.h:340
-msgid "track | railway | rails"
-msgstr "vía | vía férrea"
+#| msgid "track | railway | rails"
+msgid "track | railway | rails | railroad"
+msgstr "vía | vía férrea | raíles | ferrocarril"
 
 #. Translators: letter refers to letter (in paper form)
 #: ../data/verbal_analogies.xml.h:342
@@ -2193,7 +2192,9 @@ msgstr[1] ""
 #. Translators: answer + rationale of the answer
 #. Translators: Concatenating two strings (rationale of answer + extra information).
 #: ../src/Clients/Classical/Dialogs/PlayerHistoryDialog.cs:61
-#: ../src/Core/Main/Game.cs:145 ../src/Games/Logic/PuzzleCountSeries.cs:93
+#: ../src/Core/Main/Game.cs:145
+#: ../src/Core/Main/Verbal/AnalogiesPairOfWordsCompare.cs:75
+#: ../src/Games/Logic/PuzzleCountSeries.cs:93
 #, csharp-format
 msgid "{0} {1}"
 msgstr "{0} {1}"
@@ -2204,12 +2205,12 @@ msgstr "{0} {1}"
 msgid "Total"
 msgstr "Total"
 
-#: ../src/Clients/Classical/Dialogs/PreferencesDialog.cs:112
+#: ../src/Clients/Classical/Dialogs/PreferencesDialog.cs:118
 msgid "You are about to delete the player's game session history."
 msgstr ""
 "Estás a punto de eliminar el histórico de sesiones de partidas del jugador."
 
-#: ../src/Clients/Classical/Dialogs/PreferencesDialog.cs:113
+#: ../src/Clients/Classical/Dialogs/PreferencesDialog.cs:119
 msgid ""
 "If you proceed, you will lose the history of the previous game sessions. Do "
 "you want to continue?"
@@ -2217,22 +2218,22 @@ msgstr ""
 "Si continuas, perderás el histórico de las anteriores sesiones de partidas. "
 "¿Quieres continuar?"
 
-#: ../src/Clients/Classical/Dialogs/PreferencesDialog.cs:114
+#: ../src/Clients/Classical/Dialogs/PreferencesDialog.cs:120
 msgid "_Delete"
 msgstr "_Eliminar"
 
-#: ../src/Clients/Classical/gbrainy.cs:426
+#: ../src/Clients/Classical/gbrainy.cs:436
 #: ../src/Clients/WebForms/Game.aspx.cs:245
 msgid "Congratulations."
 msgstr "Enhorabuena."
 
-#: ../src/Clients/Classical/gbrainy.cs:428
+#: ../src/Clients/Classical/gbrainy.cs:438
 #: ../src/Clients/WebForms/Game.aspx.cs:249
 msgid "Incorrect answer."
 msgstr "Respuesta incorrecta."
 
 #
-#: ../src/Clients/Classical/gbrainy.cs:483
+#: ../src/Clients/Classical/gbrainy.cs:493
 msgid ""
 "Once you have an answer type it in the \"Answer:\" entry box and press the "
 "\"OK\" button."
@@ -2240,11 +2241,11 @@ msgstr ""
 "Una vez que tengas la respuesta escríbela en «Respuesta:» y pulsa el botón "
 "«Aceptar»."
 
-#: ../src/Clients/Classical/gbrainy.cs:513
+#: ../src/Clients/Classical/gbrainy.cs:523
 msgid "The level of translation of gbrainy for your language is low."
 msgstr "El nivel de traducción de gbrainy en su idioma es bajo."
 
-#: ../src/Clients/Classical/gbrainy.cs:514
+#: ../src/Clients/Classical/gbrainy.cs:524
 msgid ""
 "You may be exposed to partially translated games making it more difficult to "
 "play. If you prefer to play in English, there is an option for doing so in "
@@ -2254,16 +2255,16 @@ msgstr ""
 "difíciles de jugar. Si prefiere jugar en inglés, hay una opción para hacerlo "
 "en las preferencias de gbrainy."
 
-#: ../src/Clients/Classical/gbrainy.cs:610
+#: ../src/Clients/Classical/gbrainy.cs:620
 #: ../src/Clients/Classical/Widgets/Toolbar.cs:143
 msgid "Pause"
 msgstr "Pausar"
 
-#: ../src/Clients/Classical/gbrainy.cs:615
+#: ../src/Clients/Classical/gbrainy.cs:625
 msgid "Resume"
 msgstr "Reanudar"
 
-#: ../src/Clients/Classical/gbrainy.cs:765
+#: ../src/Clients/Classical/gbrainy.cs:775
 #, csharp-format
 msgid "Startup time {0}"
 msgstr "Tiempo de inicio {0}"
@@ -2474,7 +2475,7 @@ msgstr[1] "{0} actualizaciones disponibles"
 msgid "Open Location"
 msgstr "Abrir ubicación"
 
-#: ../src/Clients/Classical/Widgets/GameDrawingArea.cs:126
+#: ../src/Clients/Classical/Widgets/GameDrawingArea.cs:127
 #: ../src/Core/Main/GameSession.cs:184
 msgid "Paused"
 msgstr "Pausado"
@@ -2542,12 +2543,10 @@ msgid "End"
 msgstr "Finalizar"
 
 #: ../src/Clients/WebForms/Game.aspx.cs:172
-#| msgid "_New Game"
 msgid "Next Game"
 msgstr "Siguiente partida"
 
 #: ../src/Clients/WebForms/Game.aspx.cs:173
-#| msgid "Answer:"
 msgid "Answer"
 msgstr "Respuesta"
 
@@ -2653,9 +2652,13 @@ msgid "Figure {0}"
 msgstr "Figura {0}"
 
 #: ../src/Core/Main/Game.cs:138
+#: ../src/Core/Main/Verbal/AnalogiesPairOfWordsCompare.cs:67
 #, csharp-format
+#| msgid "The correct answer is {0}."
 msgid "The correct answer is {0}."
-msgstr "La respuesta correcta es {0}."
+msgid_plural "The possible correct answers are {0}."
+msgstr[0] "La respuesta correcta es {0}."
+msgstr[1] "Las respuestas correctas posibles son {0}."
 
 #: ../src/Core/Main/GameManager.cs:251
 msgid "Extensions database:"
@@ -2874,7 +2877,7 @@ msgstr ""
 "Dada la relación entre las dos palabras de abajo, ¿qué palabra tiene la "
 "misma relación con «{0}»?"
 
-#: ../src/Core/Main/Verbal/AnalogiesPairOfWordsCompare.cs:92
+#: ../src/Core/Main/Verbal/AnalogiesPairOfWordsCompare.cs:112
 #: ../src/Core/Main/Verbal/AnalogiesPairOfWordsOptions.cs:125
 #, csharp-format
 msgid "Words: {0}"
@@ -2907,40 +2910,49 @@ msgstr "Puntuación"
 
 #: ../src/Core/Views/FinishView.cs:152
 #, csharp-format
-#| msgid "Games won: {0} ({1} played)"
-msgid "Games won: {0} ({1} played)"
-msgid_plural "Games won: {0} ({1} played)"
-msgstr[0] "Partidas ganadas: {0} ({1} jugada)"
-msgstr[1] "Partidas ganadas: {0} ({1} jugadas)"
+msgid "{0} played"
+msgid_plural "{0} played"
+msgstr[0] "{0} jugado"
+msgstr[1] "{0} jugados"
 
-#: ../src/Core/Views/FinishView.cs:157
+#: ../src/Core/Views/FinishView.cs:156
+#, csharp-format
+#| msgid "Games won: {0} ({1} played)"
+#| msgid_plural "Games won: {0} ({1} played)"
+msgid "Games won: {0} ({1})"
+msgid_plural "Games won: {0} ({1})"
+msgstr[0] "Partidas ganadas: {0} ({1})"
+msgstr[1] "Partidas ganadas: {0} ({1})"
+
+#: ../src/Core/Views/FinishView.cs:160
 #, csharp-format
 #| msgid "{0}. Games won: {1} ({2} played)"
-msgid "{0}. Games won: {1} ({2} played)"
-msgid_plural "{0}. Games won: {1} ({2} played)"
-msgstr[0] "{0}. Partidas ganadas: {1} ({2} jugada)"
-msgstr[1] "{0}. Partidas ganadas: {1} ({2} jugadas)"
+#| msgid_plural "{0}. Games won: {1} ({2} played)"
+msgid "{0}. Games won: {1} ({2})"
+msgid_plural "{0}. Games won: {1} ({2})"
+msgstr[0] "{0}. Partidas ganadas: {1} ({2})"
+msgstr[1] "{0}. Partidas ganadas: {1} ({2})"
 
-#: ../src/Core/Views/FinishView.cs:164
+#: ../src/Core/Views/FinishView.cs:166
 #, csharp-format
 msgid "Time played {0} (average per game {1})"
 msgstr "Tiempo jugado {0} (media por partida {1})"
 
 #. Translators: translated string should not be longer that the English original (space restriction on the UI)
-#: ../src/Core/Views/FinishView.cs:173
+#: ../src/Core/Views/FinishView.cs:175
 msgid "For details on how gbrainy's scoring works refer to the help."
 msgstr ""
 "Para detalles de cómo funciona la puntuación en gbrainy consulte la ayuda."
 
-#: ../src/Core/Views/FinishView.cs:185
+#: ../src/Core/Views/FinishView.cs:187
 msgid "Tips for your next games"
 msgstr "Consejos para tus siguientes partidas"
 
-#: ../src/Core/Views/FinishView.cs:213
+#: ../src/Core/Views/FinishView.cs:215
 msgid "Congratulations! New personal record"
 msgstr "¡Enhorabuena! Récord personal nuevo."
 
-#: ../src/Core/Views/FinishView.cs:223
+#: ../src/Core/Views/FinishView.cs:225
 #, csharp-format
 msgid ""
 "By scoring {0} in logic puzzle games you have established a new personal "
@@ -2949,7 +2961,7 @@ msgstr ""
 "Al puntuar {0} en los puzles de lógica has establecido un récord personal "
 "nuevo. Tu récord anterior era {1}."
 
-#: ../src/Core/Views/FinishView.cs:229
+#: ../src/Core/Views/FinishView.cs:231
 #, csharp-format
 msgid ""
 "By scoring {0} in calculation games you have established a new personal "
@@ -2958,7 +2970,7 @@ msgstr ""
 "Al puntuar {0} en juegos de cálculo has establecido un récord personal "
 "nuevo. Tu récord anterior era {1}."
 
-#: ../src/Core/Views/FinishView.cs:235
+#: ../src/Core/Views/FinishView.cs:237
 #, csharp-format
 msgid ""
 "By scoring {0} in memory games you have established a new personal record. "
@@ -2967,7 +2979,7 @@ msgstr ""
 "Al puntuar {0} en los juegos de memoria has establecido un récord personal "
 "nuevo. Tu récord anterior era {1}."
 
-#: ../src/Core/Views/FinishView.cs:241
+#: ../src/Core/Views/FinishView.cs:243
 #, csharp-format
 msgid ""
 "By scoring {0} in verbal analogies you have established a new personal "
@@ -3535,8 +3547,8 @@ msgid ""
 "What is the probability of getting a '2' or a '6' in a single throw of an "
 "unmodified 6 sided die? Answer using a fraction (e.g.: 1/2)."
 msgstr ""
-"¿Cuál es la probabilidad de obtener un «2» o un «6» en un solo lanzamiento "
-"de un dado no cargado de 6 caras? Responde usando una fracción (ej.: 1/2)."
+"¿Cuál es la probabilidad de obtener un «2» o un «6» en un solo lanzamiento de "
+"un dado no cargado de 6 caras? Responde usando una fracción (ej.: 1/2)."
 
 #: ../src/Games/Logic/PuzzleDice.cs:56
 msgid "There are 2 of 6 possibilities."
@@ -3580,8 +3592,8 @@ msgid ""
 "There is 1 of 6 possibilities of getting a '6' on the first die and the same "
 "for the second die."
 msgstr ""
-"Existe 1 de 6 probabilidades de obtener un «6» en el primer dado y las "
-"mismas para el segundo dado."
+"Existe 1 de 6 probabilidades de obtener un «6» en el primer dado y las mismas "
+"para el segundo dado."
 
 #: ../src/Games/Logic/PuzzleDice.cs:73
 msgid "Dice"
@@ -3669,8 +3681,8 @@ msgid ""
 "figures and 'F' that there are two figures."
 msgstr ""
 "«A» indica que las figuras se superponen, «B» que son cuadrados, «C» que son "
-"círculos, «D» que las figuras están separadas, «E» que hay tres figuras y "
-"«F» que hay dos figuras."
+"círculos, «D» que las figuras están separadas, «E» que hay tres figuras y «F» "
+"que hay dos figuras."
 
 #: ../src/Games/Logic/PuzzleFigurePattern.cs:40
 msgid "Figure pattern"
@@ -4225,7 +4237,7 @@ msgstr "9º"
 msgid "22nd"
 msgstr "22º"
 
-#: ../src/Games/Logic/PuzzlePeopleTable.cs:113
+#: ../src/Games/Logic/PuzzlePeopleTable.cs:85
 msgid "Two people in the table sitting across each other"
 msgstr "Dos personas en la mesa sentadas a cada lado"
 
@@ -4625,15 +4637,20 @@ msgstr "Las hojas no se deben superponer."
 
 #. Translators: the translated version should not take more characters that the English original
 #: ../src/Games/Logic/PuzzleSquareSheets.cs:43
+#| msgid ""
+#| "A full sized square of paper (yellow), a 3/4 of the whole size square of "
+#| "paper in the bottom right corner (blue), another 3/4 square of paper "
+#| "(green) in the top left corner and a 1/4 square of paper (red) in the top "
+#| "left corner."
 msgid ""
 "A full sized square of paper (yellow), a 3/4 of the whole size square of "
-"paper in the bottom right corner (blue), another 3/4 square of paper (green) "
+"paper (blue) in the bottom right corner, another 3/4 square of paper (green) "
 "in the top left corner and a 1/4 square of paper (red) in the top left "
 "corner."
 msgstr ""
 "Un cuadrado de papel (amarillo) de tamaño completo, unos 3/4 del papel en la "
-"parte inferior derecha (azul), otros 3/4 en la parte superior izquierda "
-"(verde) y 1/4 en la parte superior izquierda (rojo)."
+"esquina inferior derecha (azul), otros 3/4 en la esquina superior izquierda "
+"(verde) y 1/4 en la esquina superior izquierda (rojo)."
 
 #: ../src/Games/Logic/PuzzleTetris.cs:34
 msgid "Tetris"
@@ -5536,18 +5553,22 @@ msgid "Preferences"
 msgstr "Preferencias"
 
 #: ../src/Clients/Classical/Dialogs/ui/PreferencesDialog.ui.h:13
+msgid "Search and load extensions when starting"
+msgstr "Buscar y cargar extensiones al iniciar"
+
+#: ../src/Clients/Classical/Dialogs/ui/PreferencesDialog.ui.h:14
 msgid "Show a countdown message"
 msgstr "Mostrar el mensaje del tiempo restante"
 
-#: ../src/Clients/Classical/Dialogs/ui/PreferencesDialog.ui.h:14
+#: ../src/Clients/Classical/Dialogs/ui/PreferencesDialog.ui.h:15
 msgid "Skip games that use colors (for colorblind users)"
 msgstr "Omitir los juegos que usan colores"
 
-#: ../src/Clients/Classical/Dialogs/ui/PreferencesDialog.ui.h:15
+#: ../src/Clients/Classical/Dialogs/ui/PreferencesDialog.ui.h:16
 msgid "Theme:"
 msgstr "Tema:"
 
-#: ../src/Clients/Classical/Dialogs/ui/PreferencesDialog.ui.h:16
+#: ../src/Clients/Classical/Dialogs/ui/PreferencesDialog.ui.h:17
 msgid "Time in seconds to memorize the challenge:"
 msgstr "Tiempo en segundos para memorizar el desafío:"
 
@@ -5589,8 +5610,9 @@ msgid "Memory Trainers Only"
 msgstr "Sólo entrenadores de memoria"
 
 #: ../src/Clients/Classical/gbrainy.ui.h:10
-msgid "Mental Calculation Trainers Only"
-msgstr "Sólo entrenadores de cálculo mental"
+#| msgid "Mental Calculation"
+msgid "Mental Calculation Only"
+msgstr "Sólo cálculo mental"
 
 #: ../src/Clients/Classical/gbrainy.ui.h:11
 msgid "Orientation"
@@ -5652,6 +5674,9 @@ msgstr "_Pista"
 msgid "_View"
 msgstr "_Ver"
 
+#~ msgid "Mental Calculation Trainers Only"
+#~ msgstr "Sólo entrenadores de cálculo mental"
+
 #~ msgid "{0}) "
 #~ msgstr "{0}) "
 
@@ -5668,22 +5693,22 @@ msgstr "_Ver"
 #~ "If p &lt; x &lt; q and r &lt; y &lt; s. Which of the following options "
 #~ "makes x &lt; y true? [option_answers]"
 #~ msgstr ""
-#~ "Si «p &lt; x &lt; q» y «r &lt; y &lt; s». ¿Cuál de las siguientes "
-#~ "opciones hace que «x &lt; y» sea cierto? [option_answers]"
+#~ "Si «p &lt; x &lt; q» y «r &lt; y &lt; s». ¿Cuál de las siguientes opciones "
+#~ "hace que «x &lt; y» sea cierto? [option_answers]"
 
 #~ msgid ""
 #~ "If the variable r is smaller than q then the condition x &gt; y is always "
 #~ "true."
 #~ msgstr ""
-#~ "La variable «r» es menor que «q», entonces la condición «x &lt; y» "
-#~ "siempre es cierta."
+#~ "La variable «r» es menor que «q», entonces la condición «x &lt; y» siempre "
+#~ "es cierta."
 
 #~ msgid ""
 #~ "If the variable s is bigger than p then the condition x &lt; y is always "
 #~ "true."
 #~ msgstr ""
-#~ "La variable «r» es mayor que «p», entonces la condición «x &lt; y» "
-#~ "siempre es cierta."
+#~ "La variable «r» es mayor que «p», entonces la condición «x &lt; y» siempre "
+#~ "es cierta."
 
 # Se refiere a un tiro al blanco?
 #~ msgid "Blackboard"
@@ -5712,8 +5737,8 @@ msgstr "_Ver"
 #~ "The variable p is smaller than x and s is bigger than y. If p is bigger "
 #~ "than s then the condition x &gt; y is true."
 #~ msgstr ""
-#~ "La variable «p» es menor que «x» y «s» es mayor que «y». Si «p» es mayor "
-#~ "que «s» entonces la condición «x &gt; y» es cierta."
+#~ "La variable «p» es menor que «x» y «s» es mayor que «y». Si «p» es mayor que "
+#~ "«s» entonces la condición «x &gt; y» es cierta."
 
 #~ msgid "[option_prefix] p > s"
 #~ msgstr "[option_prefix] p > s"
@@ -5946,9 +5971,6 @@ msgstr "_Ver"
 
 #~ msgid "zoo"
 #~ msgstr "zoo"
-
-#~ msgid "Mental Calculation"
-#~ msgstr "Cálculo mental"
 
 #~ msgid "ant / insect"
 #~ msgstr "hormiga / insecto"
