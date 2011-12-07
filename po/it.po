@@ -12,8 +12,8 @@ msgstr ""
 "Project-Id-Version: gbrainy.HEAD\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=gbrainy&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2011-11-22 09:55+0000\n"
-"PO-Revision-Date: 2011-11-22 17:15+0100\n"
+"POT-Creation-Date: 2011-12-05 17:14+0000\n"
+"PO-Revision-Date: 2011-12-07 19:15+0100\n"
 "Last-Translator: Sergio Zanchetta <primes2h@ubuntu.com>\n"
 "Language-Team: Italian <tp@lists.linux.it>\n"
 "MIME-Version: 1.0\n"
@@ -1951,7 +1951,7 @@ msgid "toy / play | tool"
 msgstr "Giocattolo / Giocare | Attrezzo"
 
 #: ../data/verbal_analogies.xml.h:340
-msgid "track | railway | rails"
+msgid "track | railway | rails | railroad"
 msgstr "Binario | Ferrovia | Binari"
 
 #. Translators: letter refers to letter (in paper form)
@@ -2190,7 +2190,9 @@ msgstr[1] "È basato sui risultati delle ultime {0} sessioni di gioco salvate."
 #. Translators: answer + rationale of the answer
 #. Translators: Concatenating two strings (rationale of answer + extra information).
 #: ../src/Clients/Classical/Dialogs/PlayerHistoryDialog.cs:61
-#: ../src/Core/Main/Game.cs:145 ../src/Games/Logic/PuzzleCountSeries.cs:93
+#: ../src/Core/Main/Game.cs:145
+#: ../src/Core/Main/Verbal/AnalogiesPairOfWordsCompare.cs:75
+#: ../src/Games/Logic/PuzzleCountSeries.cs:93
 #, csharp-format
 msgid "{0} {1}"
 msgstr "{0} {1}"
@@ -2201,11 +2203,11 @@ msgstr "{0} {1}"
 msgid "Total"
 msgstr "Totale"
 
-#: ../src/Clients/Classical/Dialogs/PreferencesDialog.cs:112
+#: ../src/Clients/Classical/Dialogs/PreferencesDialog.cs:118
 msgid "You are about to delete the player's game session history."
 msgstr "Stai per eliminare la cronologia delle sessioni di gioco."
 
-#: ../src/Clients/Classical/Dialogs/PreferencesDialog.cs:113
+#: ../src/Clients/Classical/Dialogs/PreferencesDialog.cs:119
 msgid ""
 "If you proceed, you will lose the history of the previous game sessions. Do "
 "you want to continue?"
@@ -2213,33 +2215,33 @@ msgstr ""
 "Se procedi, perderai la cronologia delle precedenti sessioni di gioco. "
 "Continuare?"
 
-#: ../src/Clients/Classical/Dialogs/PreferencesDialog.cs:114
+#: ../src/Clients/Classical/Dialogs/PreferencesDialog.cs:120
 msgid "_Delete"
 msgstr "Eli_mina"
 
-#: ../src/Clients/Classical/gbrainy.cs:426
+#: ../src/Clients/Classical/gbrainy.cs:436
 #: ../src/Clients/WebForms/Game.aspx.cs:245
 msgid "Congratulations."
 msgstr "Congratulazioni."
 
 #
-#: ../src/Clients/Classical/gbrainy.cs:428
+#: ../src/Clients/Classical/gbrainy.cs:438
 #: ../src/Clients/WebForms/Game.aspx.cs:249
 msgid "Incorrect answer."
 msgstr "Risposta errata."
 
-#: ../src/Clients/Classical/gbrainy.cs:483
+#: ../src/Clients/Classical/gbrainy.cs:493
 msgid ""
 "Once you have an answer type it in the \"Answer:\" entry box and press the "
 "\"OK\" button."
 msgstr ""
 "Quando sai cosa rispondere scrivilo nella casella «Risposta:» e premi «OK»."
 
-#: ../src/Clients/Classical/gbrainy.cs:513
+#: ../src/Clients/Classical/gbrainy.cs:523
 msgid "The level of translation of gbrainy for your language is low."
 msgstr "Il livello di traduzione di gbrainy per la tua lingua è basso."
 
-#: ../src/Clients/Classical/gbrainy.cs:514
+#: ../src/Clients/Classical/gbrainy.cs:524
 msgid ""
 "You may be exposed to partially translated games making it more difficult to "
 "play. If you prefer to play in English, there is an option for doing so in "
@@ -2249,16 +2251,16 @@ msgstr ""
 "partita. Se preferisci giocare in inglese, c'è una opzione specifica nelle "
 "«Preferenze» di gbrainy."
 
-#: ../src/Clients/Classical/gbrainy.cs:610
+#: ../src/Clients/Classical/gbrainy.cs:620
 #: ../src/Clients/Classical/Widgets/Toolbar.cs:143
 msgid "Pause"
 msgstr "Sospendi"
 
-#: ../src/Clients/Classical/gbrainy.cs:615
+#: ../src/Clients/Classical/gbrainy.cs:625
 msgid "Resume"
 msgstr "Riprendi"
 
-#: ../src/Clients/Classical/gbrainy.cs:765
+#: ../src/Clients/Classical/gbrainy.cs:775
 #, csharp-format
 msgid "Startup time {0}"
 msgstr "Tempo di avvio {0}"
@@ -2648,9 +2650,12 @@ msgstr "Figura {0}"
 
 #
 #: ../src/Core/Main/Game.cs:138
+#: ../src/Core/Main/Verbal/AnalogiesPairOfWordsCompare.cs:67
 #, csharp-format
 msgid "The correct answer is {0}."
-msgstr "La risposta corretta è «{0}»."
+msgid_plural "The possible correct answers are {0}."
+msgstr[0] "La risposta corretta è «{0}»."
+msgstr[1] "La risposte corrette possibili sono «{0}»."
 
 #: ../src/Core/Main/GameManager.cs:251
 msgid "Extensions database:"
@@ -2874,7 +2879,7 @@ msgstr ""
 "Data la relazione tra le due parole sottostanti, quale parola ha la stessa "
 "relazione con «{0}»?"
 
-#: ../src/Core/Main/Verbal/AnalogiesPairOfWordsCompare.cs:92
+#: ../src/Core/Main/Verbal/AnalogiesPairOfWordsCompare.cs:112
 #: ../src/Core/Main/Verbal/AnalogiesPairOfWordsOptions.cs:125
 #, csharp-format
 msgid "Words: {0}"
@@ -3352,8 +3357,8 @@ msgid ""
 "To what number should the large handle of the '{0}' clock point? Answer "
 "using numbers."
 msgstr ""
-"A quale numero dovrebbe puntare la lancetta grande dell'orologio nella "
-"«{0}»? Rispondi usando un numero."
+"A quale numero dovrebbe puntare la lancetta grande dell'orologio nella «{0}»? "
+"Rispondi usando un numero."
 
 #: ../src/Games/Logic/PuzzleClocks.cs:51
 #, csharp-format
@@ -3682,9 +3687,9 @@ msgid ""
 "circles, 'D' that the figures are separated, 'E' that there are three "
 "figures and 'F' that there are two figures."
 msgstr ""
-"«A» indica che le figure si sovrappongono, «B» che sono quadrati, «C» che "
-"sono cerchi, «D» che le figure sono separate, «E» che ci sono tre figure ed "
-"«F» che ci sono due figure."
+"«A» indica che le figure si sovrappongono, «B» che sono quadrati, «C» che sono "
+"cerchi, «D» che le figure sono separate, «E» che ci sono tre figure ed «F» che "
+"ci sono due figure."
 
 #: ../src/Games/Logic/PuzzleFigurePattern.cs:40
 msgid "Figure pattern"
@@ -4983,8 +4988,8 @@ msgstr ""
 msgid ""
 "What percentage of all Shiny Cars produced worldwide are sold in Europe?"
 msgstr ""
-"Che percentuale di «Auto splendenti» prodotte in tutto il mondo viene "
-"venduta in Europa?"
+"Che percentuale di «Auto splendenti» prodotte in tutto il mondo viene venduta "
+"in Europa?"
 
 #: ../src/Games/Memory/MemoryFacts.cs:135
 #, csharp-format
@@ -5598,18 +5603,22 @@ msgid "Preferences"
 msgstr "Preferenze"
 
 #: ../src/Clients/Classical/Dialogs/ui/PreferencesDialog.ui.h:13
+msgid "Search and load extensions when starting"
+msgstr "Cercare e caricare le estensioni all'avvio"
+
+#: ../src/Clients/Classical/Dialogs/ui/PreferencesDialog.ui.h:14
 msgid "Show a countdown message"
 msgstr "Mostrare un conto alla rovescia"
 
-#: ../src/Clients/Classical/Dialogs/ui/PreferencesDialog.ui.h:14
+#: ../src/Clients/Classical/Dialogs/ui/PreferencesDialog.ui.h:15
 msgid "Skip games that use colors (for colorblind users)"
 msgstr "Saltare i giochi che usano colori (per utenti daltonici)"
 
-#: ../src/Clients/Classical/Dialogs/ui/PreferencesDialog.ui.h:15
+#: ../src/Clients/Classical/Dialogs/ui/PreferencesDialog.ui.h:16
 msgid "Theme:"
 msgstr "Tema:"
 
-#: ../src/Clients/Classical/Dialogs/ui/PreferencesDialog.ui.h:16
+#: ../src/Clients/Classical/Dialogs/ui/PreferencesDialog.ui.h:17
 msgid "Time in seconds to memorize the challenge:"
 msgstr "Tempo in secondi per memorizzare la sfida:"
 
@@ -5651,7 +5660,7 @@ msgid "Memory Trainers Only"
 msgstr "Solo esercizi di memoria"
 
 #: ../src/Clients/Classical/gbrainy.ui.h:10
-msgid "Mental Calculation Trainers Only"
+msgid "Mental Calculation Only"
 msgstr "Solo esercizi di calcolo mentale"
 
 #: ../src/Clients/Classical/gbrainy.ui.h:11
