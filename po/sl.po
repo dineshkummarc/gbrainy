@@ -8,9 +8,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gbrainy master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gbrainy&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2011-11-23 19:42+0000\n"
-"PO-Revision-Date: 2011-11-26 11:19+0200\n"
-"Last-Translator: Andrej Žnidaršič <andrej.znidarsic@gmail.com>\n"
+"POT-Creation-Date: 2011-12-07 20:46+0000\n"
+"PO-Revision-Date: 2011-12-08 21:56+0100\n"
+"Last-Translator: Matej Urbančič <mateju@svn.gnome.org>\n"
 "Language-Team: Slovenian <gnome-si@googlegroups.com>\n"
 "Language: sl\n"
 "MIME-Version: 1.0\n"
@@ -1762,8 +1762,8 @@ msgid "toy / play | tool"
 msgstr "igrača / igra | orodje"
 
 #: ../data/verbal_analogies.xml.h:340
-msgid "track | railway | rails"
-msgstr "proga | železnica | tiri"
+msgid "track | railway | rails | railroad"
+msgstr "proga | tramvaj | tiri | vlak"
 
 #. Translators: letter refers to letter (in paper form)
 #: ../data/verbal_analogies.xml.h:342
@@ -1963,6 +1963,7 @@ msgstr[3] "Prikazuje rezultate zadnjih {0} shranjenih sej iger."
 #. Translators: Concatenating two strings (rationale of answer + extra information).
 #: ../src/Clients/Classical/Dialogs/PlayerHistoryDialog.cs:61
 #: ../src/Core/Main/Game.cs:145
+#: ../src/Core/Main/Verbal/AnalogiesPairOfWordsCompare.cs:75
 #: ../src/Games/Logic/PuzzleCountSeries.cs:93
 #, csharp-format
 msgid "{0} {1}"
@@ -1974,50 +1975,50 @@ msgstr "{0} {1}"
 msgid "Total"
 msgstr "Skupaj"
 
-#: ../src/Clients/Classical/Dialogs/PreferencesDialog.cs:112
+#: ../src/Clients/Classical/Dialogs/PreferencesDialog.cs:118
 msgid "You are about to delete the player's game session history."
 msgstr "Ste pred izbrisom igralčeve zgodovine iger."
 
-#: ../src/Clients/Classical/Dialogs/PreferencesDialog.cs:113
+#: ../src/Clients/Classical/Dialogs/PreferencesDialog.cs:119
 msgid "If you proceed, you will lose the history of the previous game sessions. Do you want to continue?"
 msgstr "V kolikor nadaljujete, boste izgubili zgodovino prejšnjih sej iger. Ali želite nadaljevati?"
 
-#: ../src/Clients/Classical/Dialogs/PreferencesDialog.cs:114
+#: ../src/Clients/Classical/Dialogs/PreferencesDialog.cs:120
 msgid "_Delete"
 msgstr "_Izbriši"
 
-#: ../src/Clients/Classical/gbrainy.cs:426
+#: ../src/Clients/Classical/gbrainy.cs:436
 #: ../src/Clients/WebForms/Game.aspx.cs:245
 msgid "Congratulations."
 msgstr "Čestitke."
 
-#: ../src/Clients/Classical/gbrainy.cs:428
+#: ../src/Clients/Classical/gbrainy.cs:438
 #: ../src/Clients/WebForms/Game.aspx.cs:249
 msgid "Incorrect answer."
 msgstr "Napačen odgovor."
 
-#: ../src/Clients/Classical/gbrainy.cs:483
+#: ../src/Clients/Classical/gbrainy.cs:493
 msgid "Once you have an answer type it in the \"Answer:\" entry box and press the \"OK\" button."
 msgstr "Ko ste prepričani v odgovor, ga vnesite v vnosno polje \"Odgovor:\" in pritisnite gumb \"V redu\"."
 
-#: ../src/Clients/Classical/gbrainy.cs:513
+#: ../src/Clients/Classical/gbrainy.cs:523
 msgid "The level of translation of gbrainy for your language is low."
 msgstr "Raven prevodov gbrainy za vaš jezik je nizka."
 
-#: ../src/Clients/Classical/gbrainy.cs:514
+#: ../src/Clients/Classical/gbrainy.cs:524
 msgid "You may be exposed to partially translated games making it more difficult to play. If you prefer to play in English, there is an option for doing so in gbrainy's Preferences."
 msgstr "Morda boste videli delno prevedene igre, kar jih lahko naredi težje za igranje. Če želite igrati v angleščini, je ta možnost na voljo v možnostih gbrainy."
 
-#: ../src/Clients/Classical/gbrainy.cs:610
+#: ../src/Clients/Classical/gbrainy.cs:620
 #: ../src/Clients/Classical/Widgets/Toolbar.cs:143
 msgid "Pause"
 msgstr "Premor"
 
-#: ../src/Clients/Classical/gbrainy.cs:615
+#: ../src/Clients/Classical/gbrainy.cs:625
 msgid "Resume"
 msgstr "Nadaljuj"
 
-#: ../src/Clients/Classical/gbrainy.cs:765
+#: ../src/Clients/Classical/gbrainy.cs:775
 #, csharp-format
 msgid "Startup time {0}"
 msgstr "Čas zaganjanja {0}"
@@ -2411,9 +2412,14 @@ msgid "Figure {0}"
 msgstr "Slika {0}"
 
 #: ../src/Core/Main/Game.cs:138
+#: ../src/Core/Main/Verbal/AnalogiesPairOfWordsCompare.cs:67
 #, csharp-format
 msgid "The correct answer is {0}."
-msgstr "Pravilen odgovor je {0}."
+msgid_plural "The possible correct answers are {0}."
+msgstr[0] "Pravilni odgovori so {0}."
+msgstr[1] "Pravilen odgovor je {0}."
+msgstr[2] "Pravilna odgovora sta {0}."
+msgstr[3] "Pravilni odgovori so {0}."
 
 #: ../src/Core/Main/GameManager.cs:251
 msgid "Extensions database:"
@@ -2602,7 +2608,7 @@ msgstr "Primerjava para besed št.{0}"
 msgid "Given the relationship between the two words below, which word has the same relationship to '{0}'?"
 msgstr "Katera beseda je z besedo '{0}' v enakem razmerju kot spodnji besedi?"
 
-#: ../src/Core/Main/Verbal/AnalogiesPairOfWordsCompare.cs:92
+#: ../src/Core/Main/Verbal/AnalogiesPairOfWordsCompare.cs:112
 #: ../src/Core/Main/Verbal/AnalogiesPairOfWordsOptions.cs:125
 #, csharp-format
 msgid "Words: {0}"
@@ -4571,18 +4577,22 @@ msgid "Preferences"
 msgstr "Možnosti"
 
 #: ../src/Clients/Classical/Dialogs/ui/PreferencesDialog.ui.h:13
+msgid "Search and load extensions when starting"
+msgstr "Poišči in naloži razširitve ob zagonu."
+
+#: ../src/Clients/Classical/Dialogs/ui/PreferencesDialog.ui.h:14
 msgid "Show a countdown message"
 msgstr "Prikaži sporočilo odštevanja"
 
-#: ../src/Clients/Classical/Dialogs/ui/PreferencesDialog.ui.h:14
+#: ../src/Clients/Classical/Dialogs/ui/PreferencesDialog.ui.h:15
 msgid "Skip games that use colors (for colorblind users)"
 msgstr "Preskoči igre, ki uporabljajo barve (prijazno do barvno slepih uporabnikov)"
 
-#: ../src/Clients/Classical/Dialogs/ui/PreferencesDialog.ui.h:15
+#: ../src/Clients/Classical/Dialogs/ui/PreferencesDialog.ui.h:16
 msgid "Theme:"
 msgstr "Tema:"
 
-#: ../src/Clients/Classical/Dialogs/ui/PreferencesDialog.ui.h:16
+#: ../src/Clients/Classical/Dialogs/ui/PreferencesDialog.ui.h:17
 msgid "Time in seconds to memorize the challenge:"
 msgstr "Čas za pomnjenje izziva v sekundah:"
 
@@ -4623,7 +4633,7 @@ msgid "Memory Trainers Only"
 msgstr "Le trening pomnjenja"
 
 #: ../src/Clients/Classical/gbrainy.ui.h:10
-msgid "Mental Calculation Trainers Only"
+msgid "Mental Calculation Only"
 msgstr "Le trening miselnega računanja"
 
 #: ../src/Clients/Classical/gbrainy.ui.h:11
