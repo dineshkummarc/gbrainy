@@ -12,8 +12,8 @@ msgstr ""
 "Project-Id-Version: gbrainy\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=gbrainy&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2011-11-20 15:48+0000\n"
-"PO-Revision-Date: 2011-11-22 10:53+0100\n"
+"POT-Creation-Date: 2011-12-04 14:09+0000\n"
+"PO-Revision-Date: 2011-12-14 10:00+0100\n"
 "Last-Translator: Marek Černocký <marek@manet.cz>\n"
 "Language-Team: Czech <gnome-cs-list@gnome.org>\n"
 "MIME-Version: 1.0\n"
@@ -1935,7 +1935,8 @@ msgid "toy / play | tool"
 msgstr "hračka / hrát si | nástroj"
 
 #: ../data/verbal_analogies.xml.h:340
-msgid "track | railway | rails"
+#| msgid "track | railway | rails"
+msgid "track | railway | rails | railroad"
 msgstr "koleje | trať | železniční trať"
 
 #. Translators: letter refers to letter (in paper form)
@@ -2164,7 +2165,9 @@ msgstr[2] "Je sestaven z výsledků {0} posledních zaznamenaných herních seze
 #. Translators: answer + rationale of the answer
 #. Translators: Concatenating two strings (rationale of answer + extra information).
 #: ../src/Clients/Classical/Dialogs/PlayerHistoryDialog.cs:61
-#: ../src/Core/Main/Game.cs:145 ../src/Games/Logic/PuzzleCountSeries.cs:93
+#: ../src/Core/Main/Game.cs:145
+#: ../src/Core/Main/Verbal/AnalogiesPairOfWordsCompare.cs:75
+#: ../src/Games/Logic/PuzzleCountSeries.cs:93
 #, csharp-format
 msgid "{0} {1}"
 msgstr "{0} {1}"
@@ -2175,11 +2178,11 @@ msgstr "{0} {1}"
 msgid "Total"
 msgstr "Celkem"
 
-#: ../src/Clients/Classical/Dialogs/PreferencesDialog.cs:112
+#: ../src/Clients/Classical/Dialogs/PreferencesDialog.cs:118
 msgid "You are about to delete the player's game session history."
 msgstr "Chystáte se smazat historii herních sezení hráče."
 
-#: ../src/Clients/Classical/Dialogs/PreferencesDialog.cs:113
+#: ../src/Clients/Classical/Dialogs/PreferencesDialog.cs:119
 msgid ""
 "If you proceed, you will lose the history of the previous game sessions. Do "
 "you want to continue?"
@@ -2187,21 +2190,21 @@ msgstr ""
 "Pokud budete souhlasit, přijdete o historii předchozích herních sezení. "
 "Chcete pokračovat?"
 
-#: ../src/Clients/Classical/Dialogs/PreferencesDialog.cs:114
+#: ../src/Clients/Classical/Dialogs/PreferencesDialog.cs:120
 msgid "_Delete"
 msgstr "_Smazat"
 
-#: ../src/Clients/Classical/gbrainy.cs:426
+#: ../src/Clients/Classical/gbrainy.cs:436
 #: ../src/Clients/WebForms/Game.aspx.cs:245
 msgid "Congratulations."
 msgstr "Blahopřejeme."
 
-#: ../src/Clients/Classical/gbrainy.cs:428
+#: ../src/Clients/Classical/gbrainy.cs:438
 #: ../src/Clients/WebForms/Game.aspx.cs:249
 msgid "Incorrect answer."
 msgstr "Nesprávná odpověď."
 
-#: ../src/Clients/Classical/gbrainy.cs:483
+#: ../src/Clients/Classical/gbrainy.cs:493
 msgid ""
 "Once you have an answer type it in the \"Answer:\" entry box and press the "
 "\"OK\" button."
@@ -2209,11 +2212,11 @@ msgstr ""
 "Pokud znáte odpověď, napište ji do políčka „Odpověď:“ a stiskněte tlačítko "
 "„OK“."
 
-#: ../src/Clients/Classical/gbrainy.cs:513
+#: ../src/Clients/Classical/gbrainy.cs:523
 msgid "The level of translation of gbrainy for your language is low."
 msgstr "Do vašeho jazyka je aplikace gbrainy přeložená jen z malé části."
 
-#: ../src/Clients/Classical/gbrainy.cs:514
+#: ../src/Clients/Classical/gbrainy.cs:524
 msgid ""
 "You may be exposed to partially translated games making it more difficult to "
 "play. If you prefer to play in English, there is an option for doing so in "
@@ -2222,16 +2225,16 @@ msgstr ""
 "Pouze částečný překlad hry může její hraní značně ztížit. Pokud chcete hrát "
 "raději v angličtině, můžete si tak nastavit v předvolbách aplikace gbrainy."
 
-#: ../src/Clients/Classical/gbrainy.cs:610
+#: ../src/Clients/Classical/gbrainy.cs:620
 #: ../src/Clients/Classical/Widgets/Toolbar.cs:143
 msgid "Pause"
 msgstr "Přestávka"
 
-#: ../src/Clients/Classical/gbrainy.cs:615
+#: ../src/Clients/Classical/gbrainy.cs:625
 msgid "Resume"
 msgstr "Pokračovat"
 
-#: ../src/Clients/Classical/gbrainy.cs:765
+#: ../src/Clients/Classical/gbrainy.cs:775
 #, csharp-format
 msgid "Startup time {0}"
 msgstr "Začněte v bodě {0}"
@@ -2624,9 +2627,14 @@ msgid "Figure {0}"
 msgstr "Obrázek {0}"
 
 #: ../src/Core/Main/Game.cs:138
+#: ../src/Core/Main/Verbal/AnalogiesPairOfWordsCompare.cs:67
 #, csharp-format
+#| msgid "The correct answer is {0}."
 msgid "The correct answer is {0}."
-msgstr "Správná odpověď je {0}."
+msgid_plural "The possible correct answers are {0}."
+msgstr[0] "Správná odpověď je {0}."
+msgstr[1] "Možné správné odpovědi jsou {0}."
+msgstr[2] "Možné správné odpovědi jsou {0}."
 
 #: ../src/Core/Main/GameManager.cs:251
 msgid "Extensions database:"
@@ -2842,7 +2850,7 @@ msgid ""
 "relationship to '{0}'?"
 msgstr "Níže je dán vztah mezi párem slov. Jaké slovo má stejný vztah k „{0}“?"
 
-#: ../src/Core/Main/Verbal/AnalogiesPairOfWordsCompare.cs:92
+#: ../src/Core/Main/Verbal/AnalogiesPairOfWordsCompare.cs:112
 #: ../src/Core/Main/Verbal/AnalogiesPairOfWordsOptions.cs:125
 #, csharp-format
 msgid "Words: {0}"
@@ -4201,7 +4209,7 @@ msgstr "9."
 msgid "22nd"
 msgstr "22."
 
-#: ../src/Games/Logic/PuzzlePeopleTable.cs:113
+#: ../src/Games/Logic/PuzzlePeopleTable.cs:85
 msgid "Two people in the table sitting across each other"
 msgstr "Dva lidé za stolem sedící naproti sobě"
 
@@ -5552,18 +5560,22 @@ msgid "Preferences"
 msgstr "Předvolby"
 
 #: ../src/Clients/Classical/Dialogs/ui/PreferencesDialog.ui.h:13
+msgid "Search and load extensions when starting"
+msgstr "Při spuštění vyhledat a načíst rozšíření"
+
+#: ../src/Clients/Classical/Dialogs/ui/PreferencesDialog.ui.h:14
 msgid "Show a countdown message"
 msgstr "Zobrazovat odpočítávání"
 
-#: ../src/Clients/Classical/Dialogs/ui/PreferencesDialog.ui.h:14
+#: ../src/Clients/Classical/Dialogs/ui/PreferencesDialog.ui.h:15
 msgid "Skip games that use colors (for colorblind users)"
 msgstr "Přeskočit hry používající barvy (vhodné pro barvoslepé uživatele)"
 
-#: ../src/Clients/Classical/Dialogs/ui/PreferencesDialog.ui.h:15
+#: ../src/Clients/Classical/Dialogs/ui/PreferencesDialog.ui.h:16
 msgid "Theme:"
 msgstr "Motiv:"
 
-#: ../src/Clients/Classical/Dialogs/ui/PreferencesDialog.ui.h:16
+#: ../src/Clients/Classical/Dialogs/ui/PreferencesDialog.ui.h:17
 msgid "Time in seconds to memorize the challenge:"
 msgstr "Čas v sekundách na zapamatování:"
 
@@ -5604,7 +5616,8 @@ msgid "Memory Trainers Only"
 msgstr "Jen paměťová cvičení"
 
 #: ../src/Clients/Classical/gbrainy.ui.h:10
-msgid "Mental Calculation Trainers Only"
+#| msgid "Mental Calculation Trainers Only"
+msgid "Mental Calculation Only"
 msgstr "Jen cvičení na počítání z hlavy"
 
 #: ../src/Clients/Classical/gbrainy.ui.h:11
