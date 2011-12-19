@@ -37,7 +37,7 @@ namespace gbrainy.Games.Logic
 		GameType gametype;
 
 		public override string Name {
-			get {return translations.GetString ("Trains");}
+			get {return Translations.GetString ("Trains");}
 		}
 
 		public override string Question {
@@ -49,7 +49,7 @@ namespace gbrainy.Games.Logic
 		}
 
 		public override string Tip {
-			get { return translations.GetString ("The distance formula is 'distance = rate x time'.");}
+			get { return Translations.GetString ("The distance formula is 'distance = rate x time'.");}
 		}
 
 		protected override void Initialize ()
@@ -78,11 +78,11 @@ namespace gbrainy.Games.Logic
 					// Translators:
 					//  - mph (miles per hour). You must localize this using the right unit of speed for your locale
 					// - The translated string should not use more characters than the original sentence
-					translations.GetPluralString ("A train leaves the station traveling at {0} mph. {1} hour later a second train leaves the station traveling in the same direction at {2} mph. How many hours does it take the second train, since it starts moving, to overtake the first train?",
+					Translations.GetPluralString ("A train leaves the station traveling at {0} mph. {1} hour later a second train leaves the station traveling in the same direction at {2} mph. How many hours does it take the second train, since it starts moving, to overtake the first train?",
 						"A train leaves the station traveling at {0} mph. {1} hours later a second train leaves the station traveling in the same direction at {2} mph. How many hours does it take the second train, since it starts moving, to overtake the first train?", (int) hours),
 						speed_a, hours, speed_b);
 
-				answer = translations.GetString ("You can calculate the answer by multiplying the speed of the first train by the time and dividing it by the difference of speeds.");
+				answer = Translations.GetString ("You can calculate the answer by multiplying the speed of the first train by the time and dividing it by the difference of speeds.");
 				break;
 			}
 			case GameType.Meet:
@@ -98,12 +98,12 @@ namespace gbrainy.Games.Logic
 				question = String.Format (
 					// Translators:
 					//  - mph (miles per hour) and miles must be localized this using the right unit of speed for your locale
-					translations.GetPluralString ("Two trains separated by {0} mile are heading towards each other on straight parallel tracks. One travels at {1} mph and the other at {2} mph. In how many hours will they meet?",
+					Translations.GetPluralString ("Two trains separated by {0} mile are heading towards each other on straight parallel tracks. One travels at {1} mph and the other at {2} mph. In how many hours will they meet?",
 						"Two trains separated by {0} miles are heading towards each other on straight parallel tracks. One travels at {1} mph and the other at {2} mph. In how many hours will they meet?",
 						(int) distance),
 						distance, speed_a, speed_b);
 
-				answer = translations.GetString ("You can calculate the answer by dividing the distance by the sum of both speeds.");
+				answer = Translations.GetString ("You can calculate the answer by dividing the distance by the sum of both speeds.");
 				break;
 			}
 			case GameType.Apart:
@@ -120,12 +120,12 @@ namespace gbrainy.Games.Logic
 				question = String.Format (
 					// Translators:
 					//  - mph (miles per hour) and miles must be localized this using the right unit of speed for your locale
-					translations.GetPluralString ("Two trains on straight parallel tracks leave from the same point and time traveling in opposite directions at {0} and {1} mph respectively. In how many hours will they be {2} mile apart?",
+					Translations.GetPluralString ("Two trains on straight parallel tracks leave from the same point and time traveling in opposite directions at {0} and {1} mph respectively. In how many hours will they be {2} mile apart?",
 						"Two trains on straight parallel tracks leave from the same point and time traveling in opposite directions at {0} and {1} mph respectively. In how many hours will they be {2} miles apart?",
 						(int) distance),
 						speed_a, speed_b, distance);
 
-				answer = translations.GetString ("You can calculate the answer by dividing the distance by the sum of both speeds.");
+				answer = Translations.GetString ("You can calculate the answer by dividing the distance by the sum of both speeds.");
 				break;
 			}
 			default:

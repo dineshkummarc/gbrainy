@@ -54,21 +54,21 @@ namespace gbrainy.Games.Logic
 		};
 
 		public override string Name {
-			get {return translations.GetString ("Triangles with numbers");}
+			get {return Translations.GetString ("Triangles with numbers");}
 		}
 
 		public override string Question {
-			get {return translations.GetString ("Which number should replace the question mark below?");} 
+			get {return Translations.GetString ("Which number should replace the question mark below?");} 
 		}
 
 
 		public override string Tip {
-			get { return translations.GetString ("All the triangles share a property and are independent of the rest.");}
+			get { return Translations.GetString ("All the triangles share a property and are independent of the rest.");}
 		}
 
 		public override string Rationale {
 			get {
-				return String.Format (translations.GetString ("The result of multiplying the two numbers inside every triangle is {0}."), answer_number);
+				return String.Format (Translations.GetString ("The result of multiplying the two numbers inside every triangle is {0}."), answer_number);
 			}
 		}
 

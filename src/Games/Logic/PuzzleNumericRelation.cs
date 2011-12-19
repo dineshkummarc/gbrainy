@@ -43,15 +43,15 @@ namespace gbrainy.Games.Logic
 		};
 
 		public override string Name {
-			get {return translations.GetString ("Numeric relation");}
+			get {return Translations.GetString ("Numeric relation");}
 		}
 
 		public override string Question {
-			get {return translations.GetString ("What number should replace the question mark?");} 
+			get {return Translations.GetString ("What number should replace the question mark?");} 
 		}
 
 		public override string Tip {
-			get { return translations.GetString ("The numbers are related arithmetically.");}
+			get { return Translations.GetString ("The numbers are related arithmetically.");}
 		}
 
 		public override string Rationale {
@@ -59,11 +59,11 @@ namespace gbrainy.Games.Logic
 				switch (formula) {
 				case Formula.AllAdding:
 					// Translators: {0} is always replaced by the number 3
-					return String.Format (translations.GetString ("Every group of {0} numbers sums exactly {1}."), group_size, sum_value);
+					return String.Format (Translations.GetString ("Every group of {0} numbers sums exactly {1}."), group_size, sum_value);
 				case Formula.ThirdMultiply:
-					return translations.GetString ("Divide the sequence in groups of three numbers. Every third number is calculated by multiplying by the two previous ones.");
+					return Translations.GetString ("Divide the sequence in groups of three numbers. Every third number is calculated by multiplying by the two previous ones.");
 				case Formula.ThirdSubstracting:
-					return translations.GetString ("Divide the sequence in groups of three numbers. Every third number is calculated by subtracting the second number from the first.");
+					return Translations.GetString ("Divide the sequence in groups of three numbers. Every third number is calculated by subtracting the second number from the first.");
 				default:
 					throw new InvalidOperationException ("Invalid Value");
 				}

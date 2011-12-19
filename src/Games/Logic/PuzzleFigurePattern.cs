@@ -37,22 +37,22 @@ namespace gbrainy.Games.Logic
 		};
 
 		public override string Name {
-			get {return translations.GetString ("Figure pattern");}
+			get {return Translations.GetString ("Figure pattern");}
 		}
 
 		public override string Question {
 			get {return String.Format (
-				translations.GetString ("What figure should replace the question mark? Answer {0}, {1} or {2}."),
+				Translations.GetString ("What figure should replace the question mark? Answer {0}, {1} or {2}."),
 				Answer.GetMultiOption (0), Answer.GetMultiOption (1), Answer.GetMultiOption (2));}
 		}
 
 		public override string Tip {
-			get { return translations.GetString ("The third figure of every row involves somehow combining the first two figures.");}
+			get { return Translations.GetString ("The third figure of every row involves somehow combining the first two figures.");}
 		}
 
 		public override string Rationale {
 			get {
-				return translations.GetString ("Superpose the first and second figures and remove the lines that they have in common, then rotate the resulting figure 45 degrees.");
+				return Translations.GetString ("Superpose the first and second figures and remove the lines that they have in common, then rotate the resulting figure 45 degrees.");
 			}
 		}
 
@@ -188,7 +188,7 @@ namespace gbrainy.Games.Logic
 			gr.Stroke ();
 	
 			gr.MoveTo (0.05, y - 0.01 + space_y);
-			gr.ShowPangoText (translations.GetString ("Choose one of the following:"));
+			gr.ShowPangoText (Translations.GetString ("Choose one of the following:"));
 
 			// Answers
 			x = org_x;

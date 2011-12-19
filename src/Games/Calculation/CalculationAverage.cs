@@ -35,7 +35,7 @@ namespace gbrainy.Games.Calculation
 		double correct;
 
 		public override string Name {
-			get {return translations.GetString ("Average");}
+			get {return Translations.GetString ("Average");}
 		}
 
 		public override GameTypes Type {
@@ -52,17 +52,17 @@ namespace gbrainy.Games.Calculation
 				nums += numbers [numbers.Length - 1];
 
 				return String.Format (
-					translations.GetString ("Given the numbers: {0}. Which of the following numbers is closest to the average? Answer {1}, {2}, {3} or {4}."), nums,
+					Translations.GetString ("Given the numbers: {0}. Which of the following numbers is closest to the average? Answer {1}, {2}, {3} or {4}."), nums,
 					Answer.GetMultiOption (0), Answer.GetMultiOption (1), Answer.GetMultiOption (2), Answer.GetMultiOption (3));}
 		}
 
 		public override string Tip {
-			get { return translations.GetString ("The average of a list of numbers is their sum divided by the number of numbers in the list.");}
+			get { return Translations.GetString ("The average of a list of numbers is their sum divided by the number of numbers in the list.");}
 		}
 
 		public override string Rationale {
 			get {
-				return String.Format (translations.GetString ("The result of the operation is {0}."),
+				return String.Format (Translations.GetString ("The result of the operation is {0}."),
 					correct);
 			}
 		}
@@ -182,7 +182,7 @@ namespace gbrainy.Games.Calculation
 			gr.SetPangoLargeFontSize ();
 
 			gr.MoveTo (0.1, 0.15);
-			gr.ShowPangoText (translations.GetString ("Choose one of the following:"));
+			gr.ShowPangoText (Translations.GetString ("Choose one of the following:"));
 		}
 	}
 }

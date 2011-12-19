@@ -26,13 +26,12 @@ namespace gbrainy.Core.Main
 {
 	public class GameTips
 	{
-		ITranslations translations;
 		ArrayListIndicesRandom random_indices;
 		int idx = 0;
 
 		public GameTips (ITranslations translations)
 		{
-			this.translations = translations;
+			Translations = translations;
 		}
 	
 		public int Count {
@@ -51,39 +50,41 @@ namespace gbrainy.Core.Main
 			}
 		}
 
+		private ITranslations Translations { get; set; }
+
 		public string GetTip (int tip)
 		{
 			switch (tip) {
 			case 0:
-				return translations.GetString ("Read the instructions carefully and identify the data and given clues.");
+				return Translations.GetString ("Read the instructions carefully and identify the data and given clues.");
 			case 1:
-				return translations.GetString ("To score the player gbrainy uses the time and tips needed to complete each game.");
+				return Translations.GetString ("To score the player gbrainy uses the time and tips needed to complete each game.");
 			case 2:
-				return translations.GetString ("In logic games, elements that may seem irrelevant can be very important.");
+				return Translations.GetString ("In logic games, elements that may seem irrelevant can be very important.");
 			case 3:
-				return translations.GetString ("Try to approach a problem from different angles.");
+				return Translations.GetString ("Try to approach a problem from different angles.");
 			case 4:
-				return translations.GetString ("Do not be afraid of making mistakes, they are part of the learning process.");
+				return Translations.GetString ("Do not be afraid of making mistakes, they are part of the learning process.");
 			case 5:
-				return translations.GetString ("Do all the problems, even the difficult ones. Improvement comes from challeging yourself.");
+				return Translations.GetString ("Do all the problems, even the difficult ones. Improvement comes from challeging yourself.");
 			case 6:
-				return translations.GetString ("Play on a daily basis, you will notice progress soon.");
+				return Translations.GetString ("Play on a daily basis, you will notice progress soon.");
 			case 7: // Translators: Custom Game Selection is a menu option
-				return translations.GetString ("Use the 'Custom Game Selection' to choose exactly which games you want to play.");
+				return Translations.GetString ("Use the 'Custom Game Selection' to choose exactly which games you want to play.");
 			case 8:
-				return translations.GetString ("Use the Settings to adjust the difficulty level of the game.");
+				return Translations.GetString ("Use the Settings to adjust the difficulty level of the game.");
 			case 9:
-				return translations.GetString ("Association of elements is a common technique for remembering things.");
+				return Translations.GetString ("Association of elements is a common technique for remembering things.");
 			case 10:
-				return translations.GetString ("Grouping elements into categories is a common technique for remembering things.");
+				return Translations.GetString ("Grouping elements into categories is a common technique for remembering things.");
 			case 11:
-				return translations.GetString ("Build acronyms using the first letter of each fact to be remembered.");
+				return Translations.GetString ("Build acronyms using the first letter of each fact to be remembered.");
 			case 12:
-				return translations.GetString ("The enjoyment obtained from a puzzle is proportional to the time spent on it.");
+				return Translations.GetString ("The enjoyment obtained from a puzzle is proportional to the time spent on it.");
 			case 13:
-				return translations.GetString ("Think of breaking down every problem into simpler components.");
+				return Translations.GetString ("Think of breaking down every problem into simpler components.");
 			case 14:
-				return translations.GetString ("When answering verbal analogies pay attention to the verb tense.");
+				return Translations.GetString ("When answering verbal analogies pay attention to the verb tense.");
 			default:
 				throw new InvalidOperationException ();
 			}

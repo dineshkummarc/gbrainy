@@ -56,82 +56,82 @@ namespace gbrainy.Games.Logic
 			Answer.CheckAttributes |= GameAnswerCheckAttributes.MultiOption;
 			predicates = new Predicate []
 			{
-				new Predicate (String.Format (translations.GetString ("If all painters are artists and some citizens of Barcelona are artists. Which of the following conclusions is correct? Answer {0}, {1}, {2} or {3}."),
+				new Predicate (String.Format (Translations.GetString ("If all painters are artists and some citizens of Barcelona are artists. Which of the following conclusions is correct? Answer {0}, {1}, {2} or {3}."),
 						Answer.GetMultiOption (0), Answer.GetMultiOption (1), Answer.GetMultiOption (2), Answer.GetMultiOption (3)),
-					translations.GetString ("Some citizens of Barcelona are painters"),
-					translations.GetString ("All citizens of Barcelona are painters"),
-					translations.GetString ("No citizen of Barcelona is a painter"),
-					translations.GetString ("None of the other options"),
+					Translations.GetString ("Some citizens of Barcelona are painters"),
+					Translations.GetString ("All citizens of Barcelona are painters"),
+					Translations.GetString ("No citizen of Barcelona is a painter"),
+					Translations.GetString ("None of the other options"),
 					3),
 
-				new Predicate (String.Format (translations.GetString ("If no ill artist is happy and some artists are happy. Which of the following conclusions is correct? Answer {0}, {1}, {2} or {3}."),
+				new Predicate (String.Format (Translations.GetString ("If no ill artist is happy and some artists are happy. Which of the following conclusions is correct? Answer {0}, {1}, {2} or {3}."),
 						Answer.GetMultiOption (0), Answer.GetMultiOption (1), Answer.GetMultiOption (2), Answer.GetMultiOption (3)),
-					translations.GetString ("Some artist are not ill"),
-					translations.GetString ("Some painters are not artists"),
-					translations.GetString ("All artists are happy"),
-					translations.GetString ("None of the other options"),
+					Translations.GetString ("Some artist are not ill"),
+					Translations.GetString ("Some painters are not artists"),
+					Translations.GetString ("All artists are happy"),
+					Translations.GetString ("None of the other options"),
 					0),
 
-				new Predicate (String.Format (translations.GetString ("People that travel always buy a map. You are not going to travel. Which of the following conclusions is correct? Answer {0}, {1}, {2} or {3}."),
+				new Predicate (String.Format (Translations.GetString ("People that travel always buy a map. You are not going to travel. Which of the following conclusions is correct? Answer {0}, {1}, {2} or {3}."),
 					Answer.GetMultiOption (0), Answer.GetMultiOption (1), Answer.GetMultiOption (2), Answer.GetMultiOption (3)),
-					translations.GetString ("You do not have any map"),
-					translations.GetString ("You do not buy a map"),
-					translations.GetString ("All people have a map"),
-					translations.GetString ("None of the other options"),
+					Translations.GetString ("You do not have any map"),
+					Translations.GetString ("You do not buy a map"),
+					Translations.GetString ("All people have a map"),
+					Translations.GetString ("None of the other options"),
 					3),
 
-				new Predicate (String.Format (translations.GetString ("If you whistle if you are happy and you always smile when you whistle, which of the following conclusions is correct? Answer {0}, {1}, {2} or {3}."),
+				new Predicate (String.Format (Translations.GetString ("If you whistle if you are happy and you always smile when you whistle, which of the following conclusions is correct? Answer {0}, {1}, {2} or {3}."),
 					Answer.GetMultiOption (0), Answer.GetMultiOption (1), Answer.GetMultiOption (2), Answer.GetMultiOption (3)),
-					translations.GetString ("You smile if you are happy"),
-					translations.GetString ("You are only happy if you whistle"),
-					translations.GetString ("You whistle if you are not happy"),
-					translations.GetString ("None of the other options"),
+					Translations.GetString ("You smile if you are happy"),
+					Translations.GetString ("You are only happy if you whistle"),
+					Translations.GetString ("You whistle if you are not happy"),
+					Translations.GetString ("None of the other options"),
 					0),
 
-				new Predicate (String.Format (translations.GetString ("If your course is always honest and your course is always the best policy, which of the following conclusions is correct? Answer {0}, {1}, {2} or {3}."),
+				new Predicate (String.Format (Translations.GetString ("If your course is always honest and your course is always the best policy, which of the following conclusions is correct? Answer {0}, {1}, {2} or {3}."),
 					Answer.GetMultiOption (0), Answer.GetMultiOption (1), Answer.GetMultiOption (2), Answer.GetMultiOption (3)),
-					translations.GetString ("Honesty is sometimes the best policy"),
-					translations.GetString ("Honesty is always the best policy"),
-					translations.GetString ("Honesty is not always the best policy"),
-					translations.GetString ("Some of the best policies are dishonest"),
+					Translations.GetString ("Honesty is sometimes the best policy"),
+					Translations.GetString ("Honesty is always the best policy"),
+					Translations.GetString ("Honesty is not always the best policy"),
+					Translations.GetString ("Some of the best policies are dishonest"),
 					0),
 
-				new Predicate (String.Format (translations.GetString ("If no old misers are cheerful and some old misers are thin, which of the following conclusions is correct? Answer {0}, {1}, {2} or {3}."),
+				new Predicate (String.Format (Translations.GetString ("If no old misers are cheerful and some old misers are thin, which of the following conclusions is correct? Answer {0}, {1}, {2} or {3}."),
 					Answer.GetMultiOption (0), Answer.GetMultiOption (1), Answer.GetMultiOption (2), Answer.GetMultiOption (3)),
-					translations.GetString ("Some thin people are not cheerful"),
-					translations.GetString ("Thin people are not cheerful"),
-					translations.GetString ("Cheerful people are not thin"),
-					translations.GetString ("Some cheerful people are not thin"),
+					Translations.GetString ("Some thin people are not cheerful"),
+					Translations.GetString ("Thin people are not cheerful"),
+					Translations.GetString ("Cheerful people are not thin"),
+					Translations.GetString ("Some cheerful people are not thin"),
 					0),
 
-				new Predicate (String.Format (translations.GetString ("If all pigs are fat and nothing that is fed on barley-water is fat, which of the following conclusions is correct? Answer {0}, {1}, {2} or {3}."),
+				new Predicate (String.Format (Translations.GetString ("If all pigs are fat and nothing that is fed on barley-water is fat, which of the following conclusions is correct? Answer {0}, {1}, {2} or {3}."),
 					Answer.GetMultiOption (0), Answer.GetMultiOption (1), Answer.GetMultiOption (2), Answer.GetMultiOption (3)),
-					translations.GetString ("All animals fed on barley-water are non pigs"),
-					translations.GetString ("No pigs are fed on barley-water"),
-					translations.GetString ("Pigs are not fed on barley-water"),
-					translations.GetString ("All the other options"),
+					Translations.GetString ("All animals fed on barley-water are non pigs"),
+					Translations.GetString ("No pigs are fed on barley-water"),
+					Translations.GetString ("Pigs are not fed on barley-water"),
+					Translations.GetString ("All the other options"),
 					3),
 
-				new Predicate (String.Format (translations.GetString ("If some pictures are first attempts and no first attempts are really good, which of the following conclusions is correct? Answer {0}, {1}, {2} or {3}."),
+				new Predicate (String.Format (Translations.GetString ("If some pictures are first attempts and no first attempts are really good, which of the following conclusions is correct? Answer {0}, {1}, {2} or {3}."),
 					Answer.GetMultiOption (0), Answer.GetMultiOption (1), Answer.GetMultiOption (2), Answer.GetMultiOption (3)),
-					translations.GetString ("Some bad pictures are not first attempts"),
-					translations.GetString ("Some pictures are not really good"),
-					translations.GetString ("All bad pictures are first attempts"),
-					translations.GetString ("All the others"),
+					Translations.GetString ("Some bad pictures are not first attempts"),
+					Translations.GetString ("Some pictures are not really good"),
+					Translations.GetString ("All bad pictures are first attempts"),
+					Translations.GetString ("All the others"),
 					1),
 
-				new Predicate (String.Format (translations.GetString ("If you have been out for a walk and you are feeling better, which of the following conclusions is correct? Answer {0}, {1}, {2} or {3}."),
+				new Predicate (String.Format (Translations.GetString ("If you have been out for a walk and you are feeling better, which of the following conclusions is correct? Answer {0}, {1}, {2} or {3}."),
 					Answer.GetMultiOption (0), Answer.GetMultiOption (1), Answer.GetMultiOption (2), Answer.GetMultiOption (3)),
-					translations.GetString ("To feel better, you must go out for a walk"),
-					translations.GetString ("If you go out for a walk, you will feel better"),
-					translations.GetString ("Some who go out for a walk feel better"),
-					translations.GetString ("No one feels better who does not go out for a walk"),
+					Translations.GetString ("To feel better, you must go out for a walk"),
+					Translations.GetString ("If you go out for a walk, you will feel better"),
+					Translations.GetString ("Some who go out for a walk feel better"),
+					Translations.GetString ("No one feels better who does not go out for a walk"),
 					2),
 			};
 		}
 
 		public override string Name {
-			get {return translations.GetString ("Predicate Logic");}
+			get {return Translations.GetString ("Predicate Logic");}
 		}
 
 		public override string Question {
@@ -180,7 +180,7 @@ namespace gbrainy.Games.Logic
 					int option = random_indices [data];
 
 					e.Context.SetPangoNormalFontSize ();
-					e.Context.DrawStringWithWrapping (0.05, 0.02, String.Format (translations.GetString ("{0}) {1}"), Answer.GetMultiOption (data),
+					e.Context.DrawStringWithWrapping (0.05, 0.02, String.Format (Translations.GetString ("{0}) {1}"), Answer.GetMultiOption (data),
 						predicates[question].options[option].ToString ()), 0.8 - DrawAreaX);
 					e.Context.Stroke ();
 				};
@@ -193,7 +193,7 @@ namespace gbrainy.Games.Logic
 
 			gr.SetPangoLargeFontSize ();
 			gr.MoveTo (0.1, DrawAreaY);
-			gr.ShowPangoText (translations.GetString ("Choose one of the following:"));
+			gr.ShowPangoText (Translations.GetString ("Choose one of the following:"));
 		}
 	}
 }

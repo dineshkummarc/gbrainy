@@ -33,13 +33,12 @@ namespace gbrainy.Clients.Classical
 		string [] args;
 		int [] play_list;
 		bool cont_execution;
-		ITranslations translations;
 
 		public static readonly char GAME_SEPARATOR = ',';
 
 		public CommandLine (ITranslations translations, string [] args)
 		{
-			this.translations = translations;
+			Translations = translations;
 			this.args = args;
 			RandomOrder = true;
 			play_list = new int [0];
@@ -54,6 +53,8 @@ namespace gbrainy.Clients.Classical
 		}
 
 		public bool RandomOrder { get; set; }
+
+		ITranslations Translations {get; set;}
 
 		public void Parse ()
 		{
@@ -125,7 +126,7 @@ namespace gbrainy.Clients.Classical
 					continue;
 
 				Game game = (Game) Activator.CreateInstance (games[i].TypeOf, true);
-				game.translations = translations;
+				game.Translations = Translations;
 				game.Variant = games[i].Variant;
 				Console.WriteLine (" {0}", game.Name);
 			}
@@ -142,7 +143,7 @@ namespace gbrainy.Clients.Classical
 			for (int i = 0; i < games.Length; i++)
 			{
 				Game game = (Game) Activator.CreateInstance (games[i].TypeOf, true);
-				game.translations = translations;
+				game.Translations = Translations;
 				game.Variant = games[i].Variant;
 
 				try

@@ -29,7 +29,6 @@ namespace gbrainy.Core.Views
 	public class FinishView : IDrawable
 	{
 		GameSession session;
-		ITranslations translations;
 		const int tips_shown = 4;
 		const double smaller_font = 0.018;
 
@@ -38,9 +37,11 @@ namespace gbrainy.Core.Views
 		List <string> tips;
 		GameTips game_tips;
 
+		private ITranslations Translations { get; set; }
+
 		public FinishView (ITranslations translations, GameSession session)
 		{
-			this.translations = translations;
+			Translations = translations;
 			this.session = session;
 			tips = new List <string> ();
 			cached_sessionid = -1;
@@ -98,35 +99,35 @@ namespace gbrainy.Core.Views
 
 			x = x + space_x;
 			DrawBar (gr, x, y + area_h, bar_w, bar_h, session.History.TotalScore);
-			gr.DrawTextCentered (x + bar_w / 2, y + area_h + 0.03, translations.GetString ("Total"));
+			gr.DrawTextCentered (x + bar_w / 2, y + area_h + 0.03, Translations.GetString ("Total"));
 
 			x = x + space_x * 2;
 
 			if (session.History.LogicPlayed > 0)
 				DrawBar (gr, x, y + area_h, bar_w, bar_h, session.History.LogicScore);
 
-			gr.DrawTextCentered (x + bar_w / 2, y + area_h + 0.03, translations.GetString ("Logic")); 
+			gr.DrawTextCentered (x + bar_w / 2, y + area_h + 0.03, Translations.GetString ("Logic")); 
 
 			x = x + space_x * 2;
 
 			if (session.History.MathPlayed > 0)
 				DrawBar (gr, x, y + area_h, bar_w, bar_h, session.History.MathScore);
 
-			gr.DrawTextCentered (x + bar_w / 2, y + area_h + 0.03, translations.GetString ("Calculation"));
+			gr.DrawTextCentered (x + bar_w / 2, y + area_h + 0.03, Translations.GetString ("Calculation"));
 
 			x = x + space_x * 2;
 
 			if (session.History.MemoryPlayed > 0)
 				DrawBar (gr, x, y + area_h, bar_w, bar_h, session.History.MemoryScore);
 
-			gr.DrawTextCentered (x + bar_w / 2, y + area_h + 0.03, translations.GetString ("Memory"));
+			gr.DrawTextCentered (x + bar_w / 2, y + area_h + 0.03, Translations.GetString ("Memory"));
 
 			x = x + space_x * 2;
 
 			if (session.History.VerbalPlayed > 0)
 				DrawBar (gr, x, y + area_h, bar_w, bar_h, session.History.VerbalScore);
 
-			gr.DrawTextCentered (x + bar_w / 2, y + area_h + 0.03, translations.GetString ("Verbal"));
+			gr.DrawTextCentered (x + bar_w / 2, y + area_h + 0.03, Translations.GetString ("Verbal"));
 		}
 
 		public void Draw (CairoContextEx gr, int area_width, int area_height, bool rtl)
@@ -141,29 +142,29 @@ namespace gbrainy.Core.Views
 			gr.Color = new Cairo.Color (0, 0, 0, 1);
 
 			gr.MoveTo (x, y);
-			gr.ShowPangoText (translations.GetString ("Score"), false, -1, 0);
+			gr.ShowPangoText (Translations.GetString ("Score"), false, -1, 0);
 			DrawBand (gr, 0.03, y - 0.01);
 
 			y += 0.08;
 			gr.MoveTo (x, y);
 	
-			s = session.History.GetResult (translations);
+			s = session.History.GetResult (Translations);
 
-			played = String.Format (translations.GetPluralString ("{0} played", "{0} played", session.History.GamesPlayed), 
+			played = String.Format (Translations.GetPluralString ("{0} played", "{0} played", session.History.GamesPlayed), 
 				session.History.GamesPlayed);
 
 			if (s == string.Empty) {
-				gr.ShowPangoText (String.Format (translations.GetPluralString ("Games won: {0} ({1})",
+				gr.ShowPangoText (String.Format (Translations.GetPluralString ("Games won: {0} ({1})",
 					"Games won: {0} ({1})", session.History.GamesWon), session.History.GamesWon, played));
 			}
 			else {
-				gr.ShowPangoText (String.Format (translations.GetPluralString ("{0}. Games won: {1} ({2})",
+				gr.ShowPangoText (String.Format (Translations.GetPluralString ("{0}. Games won: {1} ({2})",
 					"{0}. Games won: {1} ({2})", session.History.GamesWon),	s, session.History.GamesWon, played));
 			}
 
 			y += 0.06;
 			gr.MoveTo (x, y);
-			gr.ShowPangoText (String.Format (translations.GetString ("Time played {0} (average per game {1})"), session.GameTime, session.TimePerGame));
+			gr.ShowPangoText (String.Format (Translations.GetString ("Time played {0} (average per game {1})"), session.GameTime, session.TimePerGame));
 		
 			y += 0.09;
 			DrawColumnBarGraphic (gr, x, y);
@@ -172,7 +173,7 @@ namespace gbrainy.Core.Views
 			gr.MoveTo (x, y);
 			gr.SetPangoFontSize (smaller_font);
 			// Translators: translated string should not be longer that the English original (space restriction on the UI)
-			gr.ShowPangoText (translations.GetString ("For details on how gbrainy's scoring works refer to the help."));
+			gr.ShowPangoText (Translations.GetString ("For details on how gbrainy's scoring works refer to the help."));
 
 			y += 0.07;
 			gr.SetPangoNormalFontSize ();
@@ -184,7 +185,7 @@ namespace gbrainy.Core.Views
 			if (records.Count == 0) {
 				bool caching = cached_sessionid != session.ID;
 	
-				gr.ShowPangoText (translations.GetString ("Tips for your next games"), false, -1, 0);
+				gr.ShowPangoText (Translations.GetString ("Tips for your next games"), false, -1, 0);
 				DrawBand (gr, 0.03, y - 0.01);
 
 				y += 0.08;
@@ -212,7 +213,7 @@ namespace gbrainy.Core.Views
 					cached_sessionid = session.ID;
 			} 
 			else  {
-				gr.ShowPangoText (translations.GetString ("Congratulations! New personal record"), false, -1, 0);
+				gr.ShowPangoText (Translations.GetString ("Congratulations! New personal record"), false, -1, 0);
 				DrawBand (gr, 0.03, y - 0.01);
 
 				y += 0.08;
@@ -221,25 +222,25 @@ namespace gbrainy.Core.Views
 				{
 					switch (records[i].GameType) {
 					case GameTypes.LogicPuzzle:
-						s = String.Format (translations.
+						s = String.Format (Translations.
 							GetString ("By scoring {0} in logic puzzle games you have established a new personal record. Your previous record was {1}."),
 							records[i].NewScore,
 							records[i].PreviousScore);
 						break;
 					case GameTypes.Calculation:
-						s = String.Format (translations.
+						s = String.Format (Translations.
 							GetString ("By scoring {0} in calculation games you have established a new personal record. Your previous record was {1}."),
 							records[i].NewScore,
 							records[i].PreviousScore);
 						break;
 					case GameTypes.Memory:
-						s = String.Format (translations.
+						s = String.Format (Translations.
 							GetString ("By scoring {0} in memory games you have established a new personal record. Your previous record was {1}."),
 							records[i].NewScore,
 							records[i].PreviousScore);
 						break;
 					case GameTypes.VerbalAnalogy:
-						s = String.Format (translations.
+						s = String.Format (Translations.
 							GetString ("By scoring {0} in verbal analogies you have established a new personal record. Your previous record was {1}."),
 							records[i].NewScore,
 							records[i].PreviousScore);

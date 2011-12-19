@@ -113,21 +113,21 @@ namespace gbrainy.Core.Main
 				// For languages represented with the Latin alphabet use
 				// the same than English
 			case 0: // First possible answer for a series (e.g.: Figure A)
-				return translations.GetString ("A");
+				return Translations.GetString ("A");
 			case 1: // Second possible answer for a series
-				return translations.GetString ("B");
+				return Translations.GetString ("B");
 			case 2: // Third possible answer for a series
-				return translations.GetString ("C");
+				return Translations.GetString ("C");
 			case 3: // Fourth possible answer for a series
-				return translations.GetString ("D");
+				return Translations.GetString ("D");
 			case 4: // Fifth possible answer for a series
-				return translations.GetString ("E");
+				return Translations.GetString ("E");
 			case 5: // Sixth possible answer for a series
-				return translations.GetString ("F");
+				return Translations.GetString ("F");
 			case 6: // Seventh possible answer for a series
-				return translations.GetString ("G");
+				return Translations.GetString ("G");
 			case 7: // Eighth possible answer for a series
-				return translations.GetString ("H");
+				return Translations.GetString ("H");
 				// When adding new items update MAX_POSSIBLE_ANSWER accordingly
 			default:
 				throw new ArgumentOutOfRangeException ("Do not have an option for this answer");
@@ -143,15 +143,15 @@ namespace gbrainy.Core.Main
 				throw new InvalidOperationException ("You need more than 1 answer to select from");
 			case 2:
 				// Translators. This is the list of valid answers, like A or B.
-				return String.Format (translations.GetString ("{0} or {1}"),
+				return String.Format (Translations.GetString ("{0} or {1}"),
 					GetMultiOption (0), GetMultiOption (1));
 			case 3:
 				// Translators. This is the list of valid answers, like A, B or C.
-				return String.Format (translations.GetString ("{0}, {1} or {2}"),
+				return String.Format (Translations.GetString ("{0}, {1} or {2}"),
 					GetMultiOption (0), GetMultiOption (1), GetMultiOption (2));
 			case 4:
 				// Translators. This is the list of valid answers, like A, B, C or D.
-				return String.Format (translations.GetString ("{0}, {1}, {2} or {3}"),
+				return String.Format (Translations.GetString ("{0}, {1}, {2} or {3}"),
 					GetMultiOption (0), GetMultiOption (1), GetMultiOption (2), GetMultiOption (3));
 			default:
 				throw new InvalidOperationException ("Number of multiple options not supported");
@@ -160,7 +160,7 @@ namespace gbrainy.Core.Main
 
 		public string GetFigureName (int answer)
 		{
-			return String.Format (translations.GetString ("Figure {0}"), GetMultiOptionInternal (answer));
+			return String.Format (Translations.GetString ("Figure {0}"), GetMultiOptionInternal (answer));
 		}
 
 		public bool CheckAnswer (string answer)

@@ -155,26 +155,26 @@ namespace gbrainy.Games.Logic
 		}
 
 		public override string Name {
-			get {return translations.GetString ("Related numbers");}
+			get {return Translations.GetString ("Related numbers");}
 		}
 
 		public override string Question {
-			get {return translations.GetString ("In the grid below, which number should replace the question mark?");}
+			get {return Translations.GetString ("In the grid below, which number should replace the question mark?");}
 		}
 
 		public override string Tip {
-			get { return translations.GetString ("The pattern is arithmetical and works horizontally."); }
+			get { return Translations.GetString ("The pattern is arithmetical and works horizontally."); }
 		}
 
 		public override string Rationale {
 			get {
 				switch (operation) {
 				case Operation.AddHalf:
-					return translations.GetString ("The number in the middle of every row is half of the sum of the other numbers in the row.");
+					return Translations.GetString ("The number in the middle of every row is half of the sum of the other numbers in the row.");
 				case Operation.Add:
-					return translations.GetString ("The number in the middle of every row is the sum of the other numbers in the row.");
+					return Translations.GetString ("The number in the middle of every row is the sum of the other numbers in the row.");
 				case Operation.AddDouble:
-					return translations.GetString ("The number in the middle of every row is the double of the sum of the other numbers in the row.");
+					return Translations.GetString ("The number in the middle of every row is the double of the sum of the other numbers in the row.");
 				default:
 					throw new InvalidOperationException ("Invalid value");
 				}

@@ -72,14 +72,13 @@ namespace gbrainy.Clients.Classical
 		bool low_res;
 		bool full_screen;
 		GameSession.Types initial_session;
-		ITranslations translations;
 		static bool pluggins_loaded;
 
 		public readonly int MIN_TRANSLATION = 80;
 
 		public GtkClient (ITranslations translations)
 		{
-			this.translations = translations;
+			Translations = translations;
 			if (Preferences.Get <bool> (Preferences.EnglishKey) == false)
 			{
 				translations.Init ("gbrainy", Defines.GNOME_LOCALE_DIR);
@@ -97,12 +96,14 @@ namespace gbrainy.Clients.Classical
 			set { initial_session = value; }
 		}
 
+		ITranslations Translations {get; set;}
+
 		public void Initialize ()
 		{
-			session = new GameSession (translations);
+			session = new GameSession (Translations);
 			
 			GameManagerPreload (session.GameManager);
-			Console.WriteLine (session.GameManager.GetGamesSummary (translations));
+			Console.WriteLine (session.GameManager.GetGamesSummary (Translations));
 
 			session.PlayList.ColorBlind = Preferences.Get <bool> (Preferences.ColorBlindKey);
 			session.DrawRequest += SessionDrawRequest;
@@ -433,9 +434,9 @@ namespace gbrainy.Clients.Classical
 
 			correct = session.ScoreGame (answer_entry.Text);
 			if (correct)
-				answer = translations.GetString ("Congratulations.");
+				answer = Translations.GetString ("Congratulations.");
 			else
-				answer = translations.GetString ("Incorrect answer.");
+				answer = Translations.GetString ("Incorrect answer.");
 
 			session.EnableTimer = false;
 			answer_entry.Text = String.Empty;
@@ -483,19 +484,19 @@ namespace gbrainy.Clients.Classical
 		void OnNewGame (GameSession.Types type)
 		{
 			// If the translation is lower than MIN_TRANSLATION explain that running the English version is an option
-			if (ShowTranslationWarning ())
-				Translations ();
+			if (ShouldShowTranslationWarning ())
+				ShowTranslationWarning ();
 
 			session.Type = type;
 			session.New ();
 			GetNextGame ();
 			GameSensitiveUI ();
-			UpdateSolution (translations.GetString ("Once you have an answer type it in the \"Answer:\" entry box and press the \"OK\" button."),
+			UpdateSolution (Translations.GetString ("Once you have an answer type it in the \"Answer:\" entry box and press the \"OK\" button."),
 				GameDrawingArea.SolutionType.Tip);
 			UpdateStatusBar ();
 		}
 
-		public bool ShowTranslationWarning ()
+		public bool ShouldShowTranslationWarning ()
 		{
 			// Notify the user once per version only
 			if (String.Compare (Preferences.Get <string> (Preferences.EnglishVersionKey), Defines.VERSION, 0) == 0)
@@ -512,7 +513,7 @@ namespace gbrainy.Clients.Classical
 			return false;
 		}
 
-		void Translations ()
+		void ShowTranslationWarning ()
 		{		
 			HigMessageDialog dlg;
 	
@@ -520,8 +521,8 @@ namespace gbrainy.Clients.Classical
 				Gtk.DialogFlags.DestroyWithParent,
 				Gtk.MessageType.Warning,
 				Gtk.ButtonsType.Ok,
-				translations.GetString ("The level of translation of gbrainy for your language is low."),
-				translations.GetString ("You may be exposed to partially translated games making it more difficult to play. If you prefer to play in English, there is an option for doing so in gbrainy's Preferences."));
+				Translations.GetString ("The level of translation of gbrainy for your language is low."),
+				Translations.GetString ("You may be exposed to partially translated games making it more difficult to play. If you prefer to play in English, there is an option for doing so in gbrainy's Preferences."));
 		
 			try {
 	 			dlg.Run ();
@@ -549,7 +550,7 @@ namespace gbrainy.Clients.Classical
 		{
 			PdfExportDialog pdf;
 
-			pdf = new PdfExportDialog (session.GameManager, translations);
+			pdf = new PdfExportDialog (session.GameManager, Translations);
 			pdf.Run ();
 			pdf.Destroy ();
 		}
@@ -558,7 +559,7 @@ namespace gbrainy.Clients.Classical
 		{
 			PreferencesDialog dialog;
 
-			dialog = new PreferencesDialog (translations, session.PlayerHistory);
+			dialog = new PreferencesDialog (Translations, session.PlayerHistory);
 			if ((Gtk.ResponseType) dialog.Run () == ResponseType.Ok) {
 				session.Difficulty = (GameDifficulty) Preferences.Get <int> (Preferences.DifficultyKey);
 				session.PlayList.ColorBlind = Preferences.Get <bool> (Preferences.ColorBlindKey);
@@ -573,7 +574,7 @@ namespace gbrainy.Clients.Classical
 		{
 			CustomGameDialog dialog;
 
-			dialog = new CustomGameDialog (translations, session);
+			dialog = new CustomGameDialog (Translations, session);
 			dialog.Run ();
 			dialog.Destroy ();
 
@@ -617,12 +618,12 @@ namespace gbrainy.Clients.Classical
 			if (pause) {
 				drawing_area.Paused = false;
 				toolbar.PauseButton.StockId = "pause";
-				toolbar.PauseButton.Label = translations.GetString ("Pause");
+				toolbar.PauseButton.Label = Translations.GetString ("Pause");
 				ActiveInputControls (true);
 			} else {
 				drawing_area.Paused = true;
 				toolbar.PauseButton.StockId = "resume";
-				toolbar.PauseButton.Label = translations.GetString ("Resume");
+				toolbar.PauseButton.Label = Translations.GetString ("Resume");
 				ActiveInputControls (false);
 			}
 			UpdateStatusBar ();
@@ -699,7 +700,7 @@ namespace gbrainy.Clients.Classical
 		{
 			PlayerHistoryDialog dialog;
 
-			dialog = new PlayerHistoryDialog (translations, session.PlayerHistory);
+			dialog = new PlayerHistoryDialog (Translations, session.PlayerHistory);
 			dialog.Run ();
 			dialog.Destroy ();
 		}

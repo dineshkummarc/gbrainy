@@ -43,11 +43,10 @@ namespace gbrainy.Core.Views
 		readonly Cairo.Color axis_color = new Cairo.Color (0.8, 0.8, 0.8);
 		readonly Cairo.Color desc_color = new Color (0.3, 0.3, 0.3);
 		PlayerHistory history;
-		ITranslations translations;
 
 		public PlayerHistoryView (ITranslations translations, PlayerHistory history)
 		{
-			this.translations = translations;
+			Translations = translations;
 			this.history = history;
 			ShowLogic = ShowMemory = ShowCalculation = ShowVerbal = true;
 		}
@@ -57,6 +56,7 @@ namespace gbrainy.Core.Views
 		public bool ShowMemory { get; set; }
 		public bool ShowCalculation { get; set; }
 		public bool ShowVerbal { get; set; }
+		private ITranslations Translations { get; set; }
 
 		void DrawAxisDescription (CairoContextEx cr, double x, double y, string description)
 		{
@@ -82,7 +82,7 @@ namespace gbrainy.Core.Views
 			cr.Stroke ();
 			cr.Color = text_color;
 			cr.MoveTo (x + line_size + offset_x, y - 0.01);
-			cr.ShowPangoText (translations.GetString ("Total"));
+			cr.ShowPangoText (Translations.GetString ("Total"));
 			cr.Stroke ();
 
 			cr.Color = logic_color;
@@ -91,7 +91,7 @@ namespace gbrainy.Core.Views
 			cr.Stroke ();
 			cr.Color = text_color;
 			cr.MoveTo (x + line_size + offset_x, y - 0.01 + second_row);
-			cr.ShowPangoText (GameTypesDescription.GetLocalized (translations, GameTypes.LogicPuzzle));
+			cr.ShowPangoText (GameTypesDescription.GetLocalized (Translations, GameTypes.LogicPuzzle));
 			cr.Stroke ();
 
 			x += space_hor;
@@ -101,7 +101,7 @@ namespace gbrainy.Core.Views
 			cr.Stroke ();
 			cr.Color = text_color;
 			cr.MoveTo (x + line_size + offset_x, y - 0.01);
-			cr.ShowPangoText (GameTypesDescription.GetLocalized (translations, GameTypes.Memory));
+			cr.ShowPangoText (GameTypesDescription.GetLocalized (Translations, GameTypes.Memory));
 			cr.Stroke ();
 
 			cr.Color = math_color;
@@ -110,7 +110,7 @@ namespace gbrainy.Core.Views
 			cr.Stroke ();
 			cr.Color = text_color;
 			cr.MoveTo (x + line_size + offset_x, y - 0.01 + second_row);
-			cr.ShowPangoText (GameTypesDescription.GetLocalized (translations, GameTypes.Calculation));
+			cr.ShowPangoText (GameTypesDescription.GetLocalized (Translations, GameTypes.Calculation));
 			cr.Stroke ();
 
 			x += space_hor;
@@ -120,7 +120,7 @@ namespace gbrainy.Core.Views
 			cr.Stroke ();
 			cr.Color = text_color;
 			cr.MoveTo (x + line_size + offset_x, y - 0.01);
-			cr.ShowPangoText (GameTypesDescription.GetLocalized (translations, GameTypes.VerbalAnalogy));
+			cr.ShowPangoText (GameTypesDescription.GetLocalized (Translations, GameTypes.VerbalAnalogy));
 			cr.Stroke ();
 
 			cr.LineWidth = old_width;
@@ -273,8 +273,8 @@ namespace gbrainy.Core.Views
 			DrawLegend (cr, x + grid_offsetx, y + area_h + 0.06);
 			DrawGrid (cr, grid_x, grid_y);
 
-			DrawAxisDescription (cr, x + area_w + 0.01, 0.78, translations.GetString ("Time"));
-			DrawAxisDescription (cr, 0, 0.03, translations.GetString ("Score"));
+			DrawAxisDescription (cr, x + area_w + 0.01, 0.78, Translations.GetString ("Time"));
+			DrawAxisDescription (cr, 0, 0.03, Translations.GetString ("Score"));
 		}
 	}
 }

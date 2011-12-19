@@ -51,24 +51,24 @@ namespace gbrainy.Games.Memory
 
 		internal class FigureTypeConverter
 		{
-			ITranslations translations;
+			ITranslations Translations {get; set;}
 
 			internal FigureTypeConverter (ITranslations translations)
 			{
-				this.translations = translations;
+				Translations = translations;
 			}
 
 			internal string ToString (FigureType type)
 			{
 				switch (type) {
 				case FigureType.Triangle:
-					return translations.GetString ("Triangle");
+					return Translations.GetString ("Triangle");
 				case FigureType.Square:
-					return translations.GetString ("Square");
+					return Translations.GetString ("Square");
 				case FigureType.Pentagon:
-					return translations.GetString ("Pentagon");
+					return Translations.GetString ("Pentagon");
 				case FigureType.Circle:
-					return translations.GetString ("Circle");
+					return Translations.GetString ("Circle");
 				default:
 					throw new InvalidOperationException ();
 				}
@@ -76,11 +76,11 @@ namespace gbrainy.Games.Memory
 		}
 
 		public override string Name {
-			get {return translations.GetString ("Memorize figures and text");}
+			get {return Translations.GetString ("Memorize figures and text");}
 		}
 
 		public override string MemoryQuestion {
-			get { return String.Format (translations.GetString 
+			get { return String.Format (Translations.GetString 
 				("The list below enumerates the figures shown in the previous image except for one. Which is the missing figure? Answer {0}, {1}, {2} or {3}."),
 				Answer.GetMultiOption (0), Answer.GetMultiOption (1), Answer.GetMultiOption (2), Answer.GetMultiOption (3));
 			}
@@ -88,7 +88,7 @@ namespace gbrainy.Games.Memory
 
 		protected override void Initialize ()
 		{
-			converter = new FigureTypeConverter (translations);
+			converter = new FigureTypeConverter (Translations);
 
 			switch (CurrentDifficulty) {
 			case GameDifficulty.Easy:
@@ -139,7 +139,7 @@ namespace gbrainy.Games.Memory
 					int d = (int) e.Data;
 					e.Context.SetPangoLargeFontSize ();
 					e.Context.MoveTo (0.07, 0.02);
-					e.Context.ShowPangoText (String.Format (translations.GetString ("{0}) {1}"), Answer.GetMultiOption (d),
+					e.Context.ShowPangoText (String.Format (Translations.GetString ("{0}) {1}"), Answer.GetMultiOption (d),
 						converter.ToString (answers[d])));
 				};
 			}
@@ -216,10 +216,10 @@ namespace gbrainy.Games.Memory
 
 			gr.SetPangoLargeFontSize ();
 			gr.MoveTo (0, 0.4);
-			gr.ShowPangoText (translations.GetString ("Choose one of the following:"));
+			gr.ShowPangoText (Translations.GetString ("Choose one of the following:"));
 
 			gr.MoveTo (0, 0.08);
-			gr.ShowPangoText (translations.GetString ("List of images shown before"));
+			gr.ShowPangoText (Translations.GetString ("List of images shown before"));
 		}
 
 		public override void DrawObjectToMemorize (CairoContextEx gr, int area_width, int area_height, bool rtl)

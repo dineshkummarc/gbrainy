@@ -34,7 +34,7 @@ namespace gbrainy.Games.Calculation
 		private int which;
 
 		public override string Name {
-			get {return translations.GetString ("Closer fraction");}
+			get {return Translations.GetString ("Closer fraction");}
 		}
 
 		public override GameTypes Type {
@@ -43,7 +43,7 @@ namespace gbrainy.Games.Calculation
 
 		public override string Question {
 			get {return String.Format (
-				translations.GetString ("Which of the following numbers is closer to {0}? Answer {1}, {2}, {3} or {4}."),
+				Translations.GetString ("Which of the following numbers is closer to {0}? Answer {1}, {2}, {3} or {4}."),
 				String.Format ("{0:##0.###}", question_num),
 				Answer.GetMultiOption (0), Answer.GetMultiOption (1), Answer.GetMultiOption (2), Answer.GetMultiOption (3));}
 		}
@@ -52,7 +52,7 @@ namespace gbrainy.Games.Calculation
 			get {
 				int ans_idx = random_indices[which];
 
-				return String.Format (translations.GetString ("The result of the operation {0} / {1} is '{2}'."),
+				return String.Format (Translations.GetString ("The result of the operation {0} / {1} is '{2}'."),
 					options[ans_idx * 2], options[(ans_idx * 2) + 1], String.Format ("{0:##0.###}", question_num));
 			}
 		}
@@ -161,7 +161,7 @@ namespace gbrainy.Games.Calculation
 
 					e.Context.SetPangoLargeFontSize ();
 					e.Context.MoveTo (0.02, 0.02);
-					e.Context.ShowPangoText (String.Format (translations.GetString ("{0}) {1}"), Answer.GetMultiOption (n) ,
+					e.Context.ShowPangoText (String.Format (Translations.GetString ("{0}) {1}"), Answer.GetMultiOption (n) ,
 						options [indx * 2] +  " / " + options [(indx  * 2) +1]));
 				};
 			}
@@ -174,7 +174,7 @@ namespace gbrainy.Games.Calculation
 			gr.SetPangoLargeFontSize ();
 
 			gr.MoveTo (0.1, 0.15);
-			gr.ShowPangoText (translations.GetString ("Choose one of the following:"));
+			gr.ShowPangoText (Translations.GetString ("Choose one of the following:"));
 		}
 	}
 }

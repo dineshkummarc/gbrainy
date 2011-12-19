@@ -38,7 +38,7 @@ namespace gbrainy.Games.Logic
 		GameType gametype;
 
 		public override string Name {
-			get {return translations.GetString ("Counting");}
+			get {return Translations.GetString ("Counting");}
 		}
 
 		public override string Question {
@@ -61,15 +61,15 @@ namespace gbrainy.Games.Logic
 				var = 2 + random.Next (5);
 				total = 50 + random.Next (100);
 				question = String.Format (
-					translations.GetPluralString ("We have a {0} meter piece of fabric.", "We have a {0} meters piece of fabric.", total),
+					Translations.GetPluralString ("We have a {0} meter piece of fabric.", "We have a {0} meters piece of fabric.", total),
 					total);
 				question += " ";
 				question += String.Format (
-					translations.GetPluralString ("A machine takes {0} second to cut 1 meter of this fabric. How many seconds does the machine take to cut the entire piece of fabric into 1 meter pieces?",
+					Translations.GetPluralString ("A machine takes {0} second to cut 1 meter of this fabric. How many seconds does the machine take to cut the entire piece of fabric into 1 meter pieces?",
 						"A machine takes {0} seconds to cut 1 meter of this fabric. How many seconds does the machine take to cut the entire piece of fabric into 1 meter pieces?"
 						, var), var);
 				answer = String.Format (
-					translations.GetPluralString ("With the cut number {0}, the machine creates two 1 meter pieces.",
+					Translations.GetPluralString ("With the cut number {0}, the machine creates two 1 meter pieces.",
 						"With the cut number {0}, the machine creates two 1 meter pieces.", total - 1),
 						total - 1);
 
@@ -81,14 +81,14 @@ namespace gbrainy.Games.Logic
 				ans = 4 * total - 4;
 				question = String.Format (
 					// Translators: {0} is a number
-					translations.GetPluralString (
+					Translations.GetPluralString (
 						"A fence is built to enclose a square shaped region. {0} fence pole is used in each side of the square. How many fence poles are used in total?",
 						"A fence is built to enclose a square shaped region. {0} fence poles are used in each side of the square. How many fence poles are used in total?",
 						total),
 					total);
 					// Translators: {0} is a number
 				answer = String.Format (
-					translations.GetPluralString (
+					Translations.GetPluralString (
 						"There is {0} fence pole since the poles on the corners of the square are shared.",
 						"There are {0} fence poles since the poles on the corners of the square are shared.",
 						ans)
@@ -101,14 +101,14 @@ namespace gbrainy.Games.Logic
 				ans = total;
 				question = String.Format (
 					// Translators: {0} is a number
-					translations.GetPluralString (
+					Translations.GetPluralString (
 						"Wrapping an anniversary present costs one monetary unit. The anniversary present costs {0} monetary unit more than the cost to wrap it. How much does it cost to both purchase and wrap the present?",
 						"Wrapping an anniversary present costs one monetary unit. The anniversary present costs {0} monetary units more than the cost to wrap it. How much does it cost to both purchase and wrap the present?",
 						present),
 					present);
 
 				answer = String.Format (
-					translations.GetPluralString (
+					Translations.GetPluralString (
 					"It is the cost of the present, {0} monetary unit, plus one monetary unit of the wrapping.",
 					"It is the cost of the present, {0} monetary units, plus one monetary unit of the wrapping.",
 					present + 1), present + 1);

@@ -51,12 +51,12 @@ namespace gbrainy.Games.Memory
 		}
 
 		public override string Name {
-			get {return translations.GetString ("Memorize figures");}
+			get {return Translations.GetString ("Memorize figures");}
 		}
 
 		public override string MemoryQuestion {
 			get { 
-				return translations.GetString ("In which cell is the other figure like the one shown below? Answer the cell number." );}
+				return Translations.GetString ("In which cell is the other figure like the one shown below? Answer the cell number." );}
 		}
 
 		protected override void Initialize ()

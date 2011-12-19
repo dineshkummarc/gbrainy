@@ -38,7 +38,7 @@ namespace gbrainy.Games.Logic
 		GameType gametype;
 
 		public override string Name {
-			get {return translations.GetString ("Percentage");}
+			get {return Translations.GetString ("Percentage");}
 		}
 
 		public override string Question {
@@ -71,7 +71,7 @@ namespace gbrainy.Games.Logic
 				}  while (paid != Math.Truncate (paid));
 
 				question = String.Format (
-					translations.GetPluralString (
+					Translations.GetPluralString (
 						"After getting {0}% discount you have paid {1} monetary unit for a TV set. What was the original price of the TV set?",
 						"After getting {0}% discount you have paid {1} monetary units for a TV set. What was the original price of the TV set?",
 						(int) paid),
@@ -92,7 +92,7 @@ namespace gbrainy.Games.Logic
 
 			
 				question = String.Format (
-					translations.GetPluralString (
+					Translations.GetPluralString (
 						"John's shop had sales of {0} monetary unit. This was an increase of {1}% over last month. What were last month sales?",
 						"John's shop had sales of {0} monetary units. This was an increase of {1}% over last month. What were last month sales?",	
 						(int) sales),
@@ -111,10 +111,10 @@ namespace gbrainy.Games.Logic
 				} while (percentage != Math.Truncate (percentage));
 			
 				question = String.Format (
-					translations.GetString ("The amount of water in a bucket decreases by {0}%. By what percentage must the amount of water increase to reach its original value?"),
+					Translations.GetString ("The amount of water in a bucket decreases by {0}%. By what percentage must the amount of water increase to reach its original value?"),
 					decrease);
 
-				answer = translations.GetString ("The objective is to obtain the same total amount.");
+				answer = Translations.GetString ("The objective is to obtain the same total amount.");
 				ans = (int) percentage;
 				svg_image = "bucket.svg";
 				break;

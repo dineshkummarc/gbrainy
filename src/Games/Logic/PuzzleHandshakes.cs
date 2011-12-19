@@ -29,21 +29,21 @@ namespace gbrainy.Games.Logic
 		int people, handshakes;
 
 		public override string Name {
-			get {return translations.GetString ("Handshakes");}
+			get {return Translations.GetString ("Handshakes");}
 		}
 
 		public override string Question {
 			get {return String.Format (
-				translations.GetString ("All attendees to a party are introduced to one another. {0} handshakes are made in total. How many people are attending the party?"), 				handshakes);
+				Translations.GetString ("All attendees to a party are introduced to one another. {0} handshakes are made in total. How many people are attending the party?"), 				handshakes);
 			}
 		}
 
 		public override string Tip {
-			get { return translations.GetString ("Try to imagine a situation in which you are meeting a small number of people.");}
+			get { return Translations.GetString ("Try to imagine a situation in which you are meeting a small number of people.");}
 		}
 
 		public override string Rationale {
-			get { return translations.GetString ("Using n as the total number of people, the first person handshakes n-1 people, the second n-2 people, etc. The result is the sum of the first n-1 consecutive numbers: 1+2+3+...+(n-1).");}
+			get { return Translations.GetString ("Using n as the total number of people, the first person handshakes n-1 people, the second n-2 people, etc. The result is the sum of the first n-1 consecutive numbers: 1+2+3+...+(n-1).");}
 		}
 		protected override void Initialize ()
 		{

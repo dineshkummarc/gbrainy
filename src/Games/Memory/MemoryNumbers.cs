@@ -32,11 +32,11 @@ namespace gbrainy.Games.Memory
 		class Challenge
 		{
 			protected static int [] numbers;
-			protected ITranslations translations;
+			protected ITranslations Translations {get; set;}
 
 			public Challenge (ITranslations translations)
 			{
-				this.translations = translations;
+				Translations = translations;
 			}
 
 			public static int[] Numbers {
@@ -62,7 +62,7 @@ namespace gbrainy.Games.Memory
 
 			public override string Question {
 				get {
-					return translations.GetString ("How many odd numbers were in the previous image? Answer using numbers.");
+					return Translations.GetString ("How many odd numbers were in the previous image? Answer using numbers.");
 				}
 			}
 
@@ -87,7 +87,7 @@ namespace gbrainy.Games.Memory
 
 			public override string Question {
 				get {
-					return translations.GetString ("How many even numbers were in the previous image? Answer using numbers.");
+					return Translations.GetString ("How many even numbers were in the previous image? Answer using numbers.");
 				}
 			}
 
@@ -112,7 +112,7 @@ namespace gbrainy.Games.Memory
 
 			public override string Question {
 				get {
-					return translations.GetString ("How many numbers with more than one digit were in the previous image? Answer using numbers.");
+					return Translations.GetString ("How many numbers with more than one digit were in the previous image? Answer using numbers.");
 				}
 			}
 
@@ -129,7 +129,7 @@ namespace gbrainy.Games.Memory
 		}
 
 		public override string Name {
-			get {return translations.GetString  ("Memorize numbers");}
+			get {return Translations.GetString  ("Memorize numbers");}
 		}
 
 		public override string MemoryQuestion {
@@ -163,13 +163,13 @@ namespace gbrainy.Games.Memory
 
 			switch (random.Next (num_games)) {
 			case 0:
-				current_game = new ChallengeOdds (translations);
+				current_game = new ChallengeOdds (Translations);
 				break;
 			case 1:
-				current_game = new ChallengeEvens (translations);
+				current_game = new ChallengeEvens (Translations);
 				break;
 			case 2:
-				current_game = new ChallengeTwoDigits (translations);
+				current_game = new ChallengeTwoDigits (Translations);
 				break;
 			}
 

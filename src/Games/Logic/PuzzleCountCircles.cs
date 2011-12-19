@@ -42,15 +42,15 @@ namespace gbrainy.Games.Logic
 		ItemCircle[] circles;
 
 		public override string Name {
-			get {return translations.GetString ("Count circles");}
+			get {return Translations.GetString ("Count circles");}
 		}
 
 		public override string Question {
-			get {return translations.GetString ("How many circles do you count?");} 
+			get {return Translations.GetString ("How many circles do you count?");} 
 		}
 
 		public override string Tip {
-			get { return translations.GetString ("It is an easy exercise if you systematically count the circles.");}
+			get { return Translations.GetString ("It is an easy exercise if you systematically count the circles.");}
 		}
 
 		protected override void Initialize ()

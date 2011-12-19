@@ -32,12 +32,12 @@ namespace gbrainy.Games.Memory
 		private int answer;
 
 		public override string Name {
-			get {return translations.GetString ("Memorize words");}
+			get {return Translations.GetString ("Memorize words");}
 		}
 
 		public override string MemoryQuestion {
 			get { 
-				return translations.GetString ("There is a missing word from the previous list. Which one is the missing word?");}
+				return Translations.GetString ("There is a missing word from the previous list. Which one is the missing word?");}
 		}
 
 		protected override void Initialize ()
@@ -46,53 +46,53 @@ namespace gbrainy.Games.Memory
 			words = new List <string> (total_words);
 
 			// Body parts
-			words.Add (translations.GetString ("wrist"));
-			words.Add (translations.GetString ("elbow"));
-			words.Add (translations.GetString ("armpit"));
-			words.Add (translations.GetString ("hand"));
-			words.Add (translations.GetString ("chest"));
+			words.Add (Translations.GetString ("wrist"));
+			words.Add (Translations.GetString ("elbow"));
+			words.Add (Translations.GetString ("armpit"));
+			words.Add (Translations.GetString ("hand"));
+			words.Add (Translations.GetString ("chest"));
 			
 			//Fishes
-			words.Add (translations.GetString ("sardine"));
-			words.Add (translations.GetString ("trout"));
-			words.Add (translations.GetString ("monkfish"));
-			words.Add (translations.GetString ("cod"));
-			words.Add (translations.GetString ("salmon"));
+			words.Add (Translations.GetString ("sardine"));
+			words.Add (Translations.GetString ("trout"));
+			words.Add (Translations.GetString ("monkfish"));
+			words.Add (Translations.GetString ("cod"));
+			words.Add (Translations.GetString ("salmon"));
 
 			// Vegetables
-			words.Add (translations.GetString ("potato"));
-			words.Add (translations.GetString ("ginger"));			
-			words.Add (translations.GetString ("pepper"));
-			words.Add (translations.GetString ("garlic"));
-			words.Add (translations.GetString ("pumpkin"));
+			words.Add (Translations.GetString ("potato"));
+			words.Add (Translations.GetString ("ginger"));			
+			words.Add (Translations.GetString ("pepper"));
+			words.Add (Translations.GetString ("garlic"));
+			words.Add (Translations.GetString ("pumpkin"));
 
 			// Bicycle
-			words.Add (translations.GetString ("brake"));
-			words.Add (translations.GetString ("pedal"));
-			words.Add (translations.GetString ("chain"));			
-			words.Add (translations.GetString ("wheel"));
-			words.Add (translations.GetString ("handlebar"));
+			words.Add (Translations.GetString ("brake"));
+			words.Add (Translations.GetString ("pedal"));
+			words.Add (Translations.GetString ("chain"));			
+			words.Add (Translations.GetString ("wheel"));
+			words.Add (Translations.GetString ("handlebar"));
 
 			// Music
-			words.Add (translations.GetString ("drummer"));
-			words.Add (translations.GetString ("speaker"));
-			words.Add (translations.GetString ("lyrics"));
-			words.Add (translations.GetString ("beat"));			
-			words.Add (translations.GetString ("song"));
+			words.Add (Translations.GetString ("drummer"));
+			words.Add (Translations.GetString ("speaker"));
+			words.Add (Translations.GetString ("lyrics"));
+			words.Add (Translations.GetString ("beat"));			
+			words.Add (Translations.GetString ("song"));
 
 			// Weather
-			words.Add (translations.GetString ("cloud"));
-			words.Add (translations.GetString ("rain"));
-			words.Add (translations.GetString ("storm"));
-			words.Add (translations.GetString ("fog"));
-			words.Add (translations.GetString ("rainbow"));
+			words.Add (Translations.GetString ("cloud"));
+			words.Add (Translations.GetString ("rain"));
+			words.Add (Translations.GetString ("storm"));
+			words.Add (Translations.GetString ("fog"));
+			words.Add (Translations.GetString ("rainbow"));
 
 			// Animals
-			words.Add (translations.GetString ("rabbit"));
-			words.Add (translations.GetString ("mouse"));
-			words.Add (translations.GetString ("monkey"));
-			words.Add (translations.GetString ("bear"));
-			words.Add (translations.GetString ("wolf"));
+			words.Add (Translations.GetString ("rabbit"));
+			words.Add (Translations.GetString ("mouse"));
+			words.Add (Translations.GetString ("monkey"));
+			words.Add (Translations.GetString ("bear"));
+			words.Add (Translations.GetString ("wolf"));
 
 			switch (CurrentDifficulty) {
 			case GameDifficulty.Easy:

@@ -26,21 +26,21 @@ namespace gbrainy.Games.Logic
 		const double width = 0.4, height = 0.4; 
 
 		public override string Name {
-			get {return translations.GetString ("Square sheets");}
+			get {return Translations.GetString ("Square sheets");}
 		}
 
 		public override string Question {
-			get {return translations.GetString ("What is the minimum number of square sheets of paper of any size required to create the figure? Lines indicate frontiers between different sheets.");}
+			get {return Translations.GetString ("What is the minimum number of square sheets of paper of any size required to create the figure? Lines indicate frontiers between different sheets.");}
 		}
 
 		public override string Tip {
-			get { return translations.GetString ("The sheets should overlap.");}
+			get { return Translations.GetString ("The sheets should overlap.");}
 		}
 
 		public override string Rationale {
 			get {
 				// Translators: the translated version should not take more characters that the English original
-				return translations.GetString ("A full sized square of paper (yellow), a 3/4 of the whole size square of paper (blue) in the bottom right corner, another 3/4 square of paper (green) in the top left corner and a 1/4 square of paper (red) in the top left corner.");
+				return Translations.GetString ("A full sized square of paper (yellow), a 3/4 of the whole size square of paper (blue) in the bottom right corner, another 3/4 square of paper (green) in the top left corner and a 1/4 square of paper (red) in the top left corner.");
 			}
 		}
 
@@ -77,7 +77,7 @@ namespace gbrainy.Games.Logic
 
 		void DrawAnswer (CairoContextEx gr, double x, double y)
 		{
-			ColorPalette palette = new ColorPalette (translations);
+			ColorPalette palette = new ColorPalette (Translations);
 			gr.Save ();
 
 			// A full sized square of paper

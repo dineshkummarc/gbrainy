@@ -28,20 +28,20 @@ namespace gbrainy.Games.Logic
 	{
 		int type;
 		public override string Name {
-			get {return translations.GetString ("Triangles");}
+			get {return Translations.GetString ("Triangles");}
 		}
 
 		public override string Question {
-			get {return translations.GetString ("How many triangles of any size do you count in the figure below?");} 
+			get {return Translations.GetString ("How many triangles of any size do you count in the figure below?");} 
 		}
 
 		public override string Tip {
-			get { return translations.GetString ("A triangle can be embedded inside another triangle.");}
+			get { return Translations.GetString ("A triangle can be embedded inside another triangle.");}
 		}
 
 		public override string Rationale {
 			get {
-				return String.Format (translations.GetString ("The triangles are made by connecting the following points: {0}"),
+				return String.Format (Translations.GetString ("The triangles are made by connecting the following points: {0}"),
 					(type == 0) ? "bdc, dcf, dfg, abd, ade, edg, acg, abg, bcg, afg, ecg, acd, acf, ace, adg, cdg." : 
 					"dcf, ade, acg, afg, ecg, acd, acf, ace.");
 			}

@@ -45,7 +45,7 @@ namespace gbrainy.Games.Memory
 		}
 
 		public override string Name {
-			get {return translations.GetString ("Memorize facts");}
+			get {return Translations.GetString ("Memorize facts");}
 		}
 
 		public override string MemoryQuestion {
@@ -103,12 +103,12 @@ namespace gbrainy.Games.Memory
 				fact.fact = String.Format (
 					// Translators: {0} is replaced by a number, {1} by a year (like 1940)
 					// Day in English does not need to be plural
-					translations.GetPluralString ("Shiny Cars had already announced a {0} day production halt next month, but before then it had not halted production since {1}.",
+					Translations.GetPluralString ("Shiny Cars had already announced a {0} day production halt next month, but before then it had not halted production since {1}.",
 					"Shiny Cars had already announced a {0} day production halt next month, but before then it had not halted production since {1}.",
 					fact.answers [0]),
 					fact.answers [0], fact.answers [1]);
-				fact.questions [0] = translations.GetString ("How many days did Shiny Cars halt its production for?");
-				fact.questions [1] = translations.GetString ("In what year did Shiny Cars last halt its production?");
+				fact.questions [0] = Translations.GetString ("How many days did Shiny Cars halt its production for?");
+				fact.questions [1] = Translations.GetString ("In what year did Shiny Cars last halt its production?");
 				break;
 			case 1:
 				fact.Initialize (2);
@@ -116,26 +116,26 @@ namespace gbrainy.Games.Memory
 				fact.answers [1] = 1914 + random.Next (50);
 				fact.fact = String.Format (
 					// Translators: {0} is replaced by a number, {1} by a year (like 1940)
-					translations.GetString ("Shiny Cars sales fell {0}% this past December, the worst decline since {1}."),
+					Translations.GetString ("Shiny Cars sales fell {0}% this past December, the worst decline since {1}."),
 					fact.answers [0], fact.answers [1]);
-				fact.questions [0] = translations.GetString ("By how much did company sales fall last December?");
-				fact.questions [1] = translations.GetString ("In what year was Shiny Cars sales total lower than that of last December?");
+				fact.questions [0] = Translations.GetString ("By how much did company sales fall last December?");
+				fact.questions [1] = Translations.GetString ("In what year was Shiny Cars sales total lower than that of last December?");
 				break;
 			case 2:
 				fact.Initialize (1);
 				fact.answers [0] = 10 + random.Next (30);
-				fact.fact = String.Format (translations.GetString ("About {0}% of Shiny Cars produced worldwide are sold in Europe."),
+				fact.fact = String.Format (Translations.GetString ("About {0}% of Shiny Cars produced worldwide are sold in Europe."),
 					fact.answers [0]);
-				fact.questions [0] = translations.GetString ("What percentage of all Shiny Cars produced worldwide are sold in Europe?");
+				fact.questions [0] = Translations.GetString ("What percentage of all Shiny Cars produced worldwide are sold in Europe?");
 				break;
 			case 3:
 				fact.Initialize (2);
 				fact.answers [0] = 10 + random.Next (30);
 				fact.answers [1] = 100 - (1 + random.Next (10)) - fact.answers [0];
-				fact.fact = String.Format (translations.GetString ("About {0}% of Shiny Cars use diesel, {1}% use gasoline and the remainder use electricity."),
+				fact.fact = String.Format (Translations.GetString ("About {0}% of Shiny Cars use diesel, {1}% use gasoline and the remainder use electricity."),
 					fact.answers [0], fact.answers [1]);
-				fact.questions [0] = translations.GetString ("What percentage of Shiny Cars use diesel?");
-				fact.questions [1] = translations.GetString ("What percentage of Shiny Cars use gasoline?");
+				fact.questions [0] = Translations.GetString ("What percentage of Shiny Cars use diesel?");
+				fact.questions [1] = Translations.GetString ("What percentage of Shiny Cars use gasoline?");
 				break;
 			default:
 				throw new Exception ("Invalid index value");

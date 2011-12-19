@@ -33,7 +33,7 @@ namespace gbrainy.Games.Calculation
 		double num, den, percentage, correct;
 
 		public override string Name {
-			get {return translations.GetString ("Proportions");}
+			get {return Translations.GetString ("Proportions");}
 		}
 
 		public override GameTypes Type {
@@ -43,7 +43,7 @@ namespace gbrainy.Games.Calculation
 		public override string Question {
 			get {
 				return String.Format (
-					translations.GetString ("What is {0}% of {1}/{2}? Answer {3}, {4}, {5} or {6}."), 
+					Translations.GetString ("What is {0}% of {1}/{2}? Answer {3}, {4}, {5} or {6}."), 
 					percentage, num, den, Answer.GetMultiOption (0), Answer.GetMultiOption (1), Answer.GetMultiOption (2), Answer.GetMultiOption (3));}
 		}
 
@@ -127,7 +127,7 @@ namespace gbrainy.Games.Calculation
 			gr.SetPangoLargeFontSize ();
 
 			gr.MoveTo (0.1, 0.15);
-			gr.ShowPangoText (translations.GetString ("Choose one of the following:"));
+			gr.ShowPangoText (Translations.GetString ("Choose one of the following:"));
 		}
 	}
 }

@@ -66,7 +66,7 @@ namespace gbrainy.Clients.Classical.Dialogs
 
 			treeview.Model = games_store;
 			game = (Game) Activator.CreateInstance (games [0].TypeOf, true);
-			game.translations = Translations;
+			game.Translations = Translations;
 			game.Variant = 0;
 			game.Begin ();
 			drawing_area.Drawable = game;
@@ -92,7 +92,7 @@ namespace gbrainy.Clients.Classical.Dialogs
 					continue;
 
 				game = (Game) Activator.CreateInstance (games [i].TypeOf, true);
-				game.translations = Translations;
+				game.Translations = Translations;
 				game.Variant = games [i].Variant;
 				type = GameTypesDescription.GetLocalized (Translations, game.Type);
 				games_store.AppendValues (game.Name, type, true, game, i);

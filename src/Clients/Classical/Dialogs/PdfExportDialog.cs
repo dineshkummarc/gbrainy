@@ -165,7 +165,7 @@ namespace gbrainy.Clients.Classical.Dialogs
 			for (int n = 0; n < num_games; n++)
 			{
 				games [n] = session.PlayList.GetPuzzle ();
-				games [n].translations = translations;
+				games [n].Translations = Translations;
 			}
 
 			if (PdfExporter.GeneratePdf (games, gamespage, filename) == true) {

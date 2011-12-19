@@ -31,11 +31,11 @@ namespace gbrainy.Games.Calculation
 		private char oper1, oper2;
 
 		public override string Name {
-			get {return translations.GetString ("Operators");}
+			get {return Translations.GetString ("Operators");}
 		}
 
 		public override string Tip {
-			get {return String.Format( translations.GetString ("The first operator is {0}."), oper1);}
+			get {return String.Format( Translations.GetString ("The first operator is {0}."), oper1);}
 		}
 
 		public override GameTypes Type {
@@ -43,7 +43,7 @@ namespace gbrainy.Games.Calculation
 		}
 
 		public override string Question {
-			get {return String.Format (translations.GetString ("Which operators make {0}, {1}, and {2} equal {3}? Answer using '+-/*'."), number_a, number_b, number_c, total);}
+			get {return String.Format (Translations.GetString ("Which operators make {0}, {1}, and {2} equal {3}? Answer using '+-/*'."), number_a, number_b, number_c, total);}
 		}
 
 		static private double ProcessOperation (double total, double number, char op)
@@ -106,7 +106,7 @@ namespace gbrainy.Games.Calculation
 			Answer.Correct = String.Format ("{0} | {1}", oper1, oper2);
 			Answer.CheckExpression = "[+*-/]";
 			Answer.CheckAttributes |= GameAnswerCheckAttributes.MatchAll;
-			Answer.CorrectShow = String.Format (translations.GetString ("{0} and {1}"), oper1, oper2);
+			Answer.CorrectShow = String.Format (Translations.GetString ("{0} and {1}"), oper1, oper2);
 		}
 
 		public override void Draw (CairoContextEx gr, int area_width, int area_height, bool rtl)

@@ -37,7 +37,7 @@ namespace gbrainy.Games.Calculation
 		};
 
 		public override string Name {
-			get {return translations.GetString ("Two numbers");}
+			get {return Translations.GetString ("Two numbers");}
 		}
 
 		public override GameTypes Type {
@@ -48,9 +48,9 @@ namespace gbrainy.Games.Calculation
 			get {
 				switch (type) {
 				case SubGameTypes.Addition:
-					return String.Format (translations.GetString ("Which two numbers when added are {0} and when multiplied are {1}? Answer using two numbers (e.g.: 1 and 2)."), op1, op2);
+					return String.Format (Translations.GetString ("Which two numbers when added are {0} and when multiplied are {1}? Answer using two numbers (e.g.: 1 and 2)."), op1, op2);
 				case SubGameTypes.Subtraction:
-					return String.Format (translations.GetString ("Which two numbers when subtracted are {0} and when multiplied are {1}? Answer using two numbers (e.g.: 1 and 2)."), op1, op2);
+					return String.Format (Translations.GetString ("Which two numbers when subtracted are {0} and when multiplied are {1}? Answer using two numbers (e.g.: 1 and 2)."), op1, op2);
 				default:
 					throw new InvalidOperationException ();
 				}
@@ -97,7 +97,7 @@ namespace gbrainy.Games.Calculation
 			op2 = number_a * number_b;
 			Answer.Correct = String.Format ("{0} | {1}", number_a, number_b);
 			Answer.CheckExpression = "[-0-9]+";
-			Answer.CorrectShow = String.Format (translations.GetString ("{0} and {1}"), number_a, number_b);
+			Answer.CorrectShow = String.Format (Translations.GetString ("{0} and {1}"), number_a, number_b);
 		}
 
 		public override void Draw (CairoContextEx gr, int area_width, int area_height, bool rtl)
@@ -111,17 +111,17 @@ namespace gbrainy.Games.Calculation
 
 			switch (type) {
 			case SubGameTypes.Addition:
-				gr.ShowPangoText (String.Format (translations.GetString ("x + y = {0}"), op1));
+				gr.ShowPangoText (String.Format (Translations.GetString ("x + y = {0}"), op1));
 				break;
 			case SubGameTypes.Subtraction:
-				gr.ShowPangoText (String.Format (translations.GetString ("x - y = {0}"), op1));
+				gr.ShowPangoText (String.Format (Translations.GetString ("x - y = {0}"), op1));
 				break;
 			default:
 				throw new InvalidOperationException ();
 			}
 
 			gr.MoveTo (x, DrawAreaY + 0.44);
-			gr.ShowPangoText (String.Format (translations.GetString ("x * y = {0}"), op2));
+			gr.ShowPangoText (String.Format (Translations.GetString ("x * y = {0}"), op2));
 		}
 
 		public override bool CheckAnswer (string answer)

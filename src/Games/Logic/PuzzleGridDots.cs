@@ -202,12 +202,12 @@ namespace gbrainy.Games.Logic
 		};
 
 		public override string Name {
-			get {return translations.GetString ("Square with dots");}
+			get {return Translations.GetString ("Square with dots");}
 		}
 
 		public override string Question {
 			get {return (String.Format (
-				translations.GetString ("Which is the next logical figure in the sequence? Answer {0}, {1} or {2}."),
+				Translations.GetString ("Which is the next logical figure in the sequence? Answer {0}, {1} or {2}."),
 				Answer.GetMultiOption (0), Answer.GetMultiOption (1), Answer.GetMultiOption (2)));}
 		}
 
@@ -216,9 +216,9 @@ namespace gbrainy.Games.Logic
 			get {
 				switch (puzzle_index) {
 				case 0:
-					return translations.GetString ("From the top-left figure, the top-left circle moves down, the bottom-left circle moves up, the bottom-right moves diagonally up-left and the top-right moves diagonally down-left.");
+					return Translations.GetString ("From the top-left figure, the top-left circle moves down, the bottom-left circle moves up, the bottom-right moves diagonally up-left and the top-right moves diagonally down-left.");
 				case 2:
-					return translations.GetString
+					return Translations.GetString
 					("From the top-left figure, the figure is rotated counterclockwise 90 degrees.");
 				case 1: // TODO
 				default:
@@ -337,7 +337,7 @@ namespace gbrainy.Games.Logic
 
 			y += figure_size + 0.10;
 			gr.MoveTo (x, y - 0.02);
-			gr.ShowPangoText (translations.GetString ("Choose one of the following:"));
+			gr.ShowPangoText (Translations.GetString ("Choose one of the following:"));
 		}
 	}
 }

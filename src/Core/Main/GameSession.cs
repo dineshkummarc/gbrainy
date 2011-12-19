@@ -61,7 +61,6 @@ namespace gbrainy.Core.Main
 		private int id;
 		private GameSessionHistoryExtended history;
 		private GameSessionPlayList play_list;
-		private ITranslations translations;
 		
 		public event EventHandler DrawRequest;
 		public event EventHandler <UpdateUIStateEventArgs> UpdateUIElement;
@@ -69,7 +68,7 @@ namespace gbrainy.Core.Main
 	
 		public GameSession (ITranslations translations)
 		{
-			this.translations = translations;
+			Translations = translations;
 			id = 0;
 			game_manager = new GameManager ();
 			play_list = new GameSessionPlayList (game_manager);
@@ -172,6 +171,8 @@ namespace gbrainy.Core.Main
 			}
 		}
 
+		private ITranslations Translations { get; set; }
+
 		public string StatusText {
 			get {
 				if (Status == SessionStatus.NotPlaying || Status == SessionStatus.Finished)
@@ -179,18 +180,18 @@ namespace gbrainy.Core.Main
 
 				string played, time, game;
 
-				played = String.Format (translations.GetString ("Games played: {0} (Score: {1})"), history.GamesPlayed, history.TotalScore);
-				time = String.Format (translations.GetString ("Time: {0}"),
-					paused == false ? GameTime : translations.GetString ("Paused"));
+				played = String.Format (Translations.GetString ("Games played: {0} (Score: {1})"), history.GamesPlayed, history.TotalScore);
+				time = String.Format (Translations.GetString ("Time: {0}"),
+					paused == false ? GameTime : Translations.GetString ("Paused"));
 
 				if (CurrentGame != null) {
 					// Translators: {0} is the name of the game
-	 				game = String.Format (translations.GetString ("Game: {0}"), CurrentGame.Name);
+	 				game = String.Format (Translations.GetString ("Game: {0}"), CurrentGame.Name);
 					// Translators: text in the status bar: games played - time - game name
-					return String.Format (translations.GetString ("{0} - {1} - {2}"), played, time, game);
+					return String.Format (Translations.GetString ("{0} - {1} - {2}"), played, time, game);
 				} else {
 					// Translators: text in the status bar: games played - time
-					return String.Format (translations.GetString ("{0} - {1}"), played, time);
+					return String.Format (Translations.GetString ("{0} - {1}"), played, time);
 				}	
 			}
 		}
@@ -241,7 +242,7 @@ namespace gbrainy.Core.Main
 
 				history.GamesPlayed++;
 				CurrentGame = play_list.GetPuzzle ();
-				CurrentGame.translations = translations;
+				CurrentGame.Translations = Translations;
 				CurrentGame.SynchronizingObject = SynchronizingObject;
 				CurrentGame.DrawRequest += GameDrawRequest;
 				CurrentGame.UpdateUIElement += GameUpdateUIElement;

@@ -42,11 +42,11 @@ namespace gbrainy.Games.Logic
 		}
 
 		public override string Name {
-			get {return translations.GetString ("Divide circles");}
+			get {return Translations.GetString ("Divide circles");}
 		}
 
 		public override string Question {
-			get {return translations.GetString ("In the last figure, in how many regions is the circle divided into when all dots are connected?");} 
+			get {return Translations.GetString ("In the last figure, in how many regions is the circle divided into when all dots are connected?");} 
 		}
 
 		protected override void Initialize ()
@@ -176,7 +176,7 @@ namespace gbrainy.Games.Logic
 		
 		string HasNRegionString (int regions)
 		{
-			return String.Format (translations.GetPluralString ("Has {0} region", 
+			return String.Format (Translations.GetPluralString ("Has {0} region", 
 				"Has {0} regions", regions), regions);
 			
 		}

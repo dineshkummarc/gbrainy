@@ -27,7 +27,7 @@ namespace gbrainy.Core.Main
 	public class ColorPalette
 	{
 		double alpha;
-		ITranslations translations;
+		ITranslations Translations { get; set; }
 
 		public enum Id
 		{
@@ -50,7 +50,7 @@ namespace gbrainy.Core.Main
 
 		public ColorPalette (ITranslations translations)
 		{
-			this.translations = translations;
+			Translations = translations;
 			alpha = 1;
 			LoadColorArrays ();
 		}
@@ -69,14 +69,14 @@ namespace gbrainy.Core.Main
 			};
 
 			ColorName = new string[] {
-				translations.GetString ("red"),
-				translations.GetString ("green"),
-				translations.GetString ("blue"),
-				translations.GetString ("yellow"),
-				translations.GetString ("magenta"),
-				translations.GetString ("orange"),
-				translations.GetString ("black"),
-				translations.GetString ("white")
+				Translations.GetString ("red"),
+				Translations.GetString ("green"),
+				Translations.GetString ("blue"),
+				Translations.GetString ("yellow"),
+				Translations.GetString ("magenta"),
+				Translations.GetString ("orange"),
+				Translations.GetString ("black"),
+				Translations.GetString ("white")
 			};
 		}
 

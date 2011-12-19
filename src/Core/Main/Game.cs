@@ -57,7 +57,7 @@ namespace gbrainy.Core.Main
 
 		// At some point, we may move this to constructor injection
 		ITranslations _translations;
-		public ITranslations translations { 
+		public ITranslations Translations {
 			set {  
 				_translations = value;
 				answer.Translations = value;
@@ -135,14 +135,14 @@ namespace gbrainy.Core.Main
 			get {
 				string str;
 
-				str = String.Format (translations.GetString ("The correct answer is {0}."),
+				str = String.Format (Translations.GetString ("The correct answer is {0}."),
 				                     Answer.CorrectShow);
 
 				if (String.IsNullOrEmpty (Rationale))
 					return str;
 
 				// Translators: answer + rationale of the answer
-				return String.Format (translations.GetString ("{0} {1}"), str, Rationale);
+				return String.Format (Translations.GetString ("{0} {1}"), str, Rationale);
 			}
 		}
 

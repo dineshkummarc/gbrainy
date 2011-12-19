@@ -42,11 +42,11 @@ namespace gbrainy.Games.Logic
 		};
 
 		public override string Name {
-			get {return translations.GetString ("Cube");}
+			get {return Translations.GetString ("Cube");}
 		}
 
 		public override string Question {
-			get {return String.Format (translations.GetString ("When you fold the figure below as a cube, which face on the figure is opposite the face with a {0} drawn on it? Answer the number written on the face."), question);} 
+			get {return String.Format (Translations.GetString ("When you fold the figure below as a cube, which face on the figure is opposite the face with a {0} drawn on it? Answer the number written on the face."), question);} 
 		}
 
 		protected override void Initialize ()

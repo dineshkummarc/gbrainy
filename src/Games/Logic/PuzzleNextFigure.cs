@@ -50,19 +50,19 @@ namespace gbrainy.Games.Logic
 		};
 
 		public override string Name {
-			get {return translations.GetString ("Next figure");}
+			get {return Translations.GetString ("Next figure");}
 		}
 
 		public override string Question {
 			get {return String.Format (
-				translations.GetString ("Which is the next logical figure in the sequence? Answer {0}, {1} or {2}."),
+				Translations.GetString ("Which is the next logical figure in the sequence? Answer {0}, {1} or {2}."),
 				Answer.GetMultiOption (0), Answer.GetMultiOption (1), Answer.GetMultiOption (2));} 
 		}
 
 
 		public override string Rationale {
 			get {
-				return translations.GetString ("From first figure, the top circle advances by two positions clockwise, while the left circle goes backwards one position.");
+				return Translations.GetString ("From first figure, the top circle advances by two positions clockwise, while the left circle goes backwards one position.");
 			}
 		}
 
@@ -163,7 +163,7 @@ namespace gbrainy.Games.Logic
 		
 			y += figure_size + 0.06;
 			gr.MoveTo (x, y);
-			gr.ShowPangoText (translations.GetString ("Choose one of the following:"));
+			gr.ShowPangoText (Translations.GetString ("Choose one of the following:"));
 			gr.Stroke ();
 		}
 	}

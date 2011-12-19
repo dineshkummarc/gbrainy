@@ -31,18 +31,18 @@ namespace gbrainy.Games.Logic
 		private const double rect_witdh = 0.04, rect_height = 0.04, space_figures = 0.22;
 
 		public override string Name {
-			get {return translations.GetString ("Tetris");}
+			get {return Translations.GetString ("Tetris");}
 		}
 
 		public override string Question {
 			get {return String.Format (
-				translations.GetString ("What figure completes the set below? Answer {0}, {1} or {2}."),
+				Translations.GetString ("What figure completes the set below? Answer {0}, {1} or {2}."),
 				Answer.GetMultiOption (0), Answer.GetMultiOption (1), Answer.GetMultiOption (2));}
 		}
 
 		public override string Rationale {
 			get {
-				return translations.GetString ("It is the figure that completes all possible combinations with four blocks without taking into account rotations.");
+				return Translations.GetString ("It is the figure that completes all possible combinations with four blocks without taking into account rotations.");
 			}
 		}
 
@@ -168,7 +168,7 @@ namespace gbrainy.Games.Logic
 			}
 
 			gr.MoveTo (0.1, 0.4 - 0.02);
-			gr.ShowPangoText (translations.GetString ("Choose one of the following:"));
+			gr.ShowPangoText (Translations.GetString ("Choose one of the following:"));
 		}
 	}
 }

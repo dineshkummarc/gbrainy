@@ -37,20 +37,20 @@ namespace gbrainy.Games.Logic
 		}
 
 		public override string Name {
-			get {return translations.GetString ("Figures and text");}
+			get {return Translations.GetString ("Figures and text");}
 		}
 
 		public override string Question {
-			get {return translations.GetString ("The figures and the text are related. What text should go under the last figure?");} 
+			get {return Translations.GetString ("The figures and the text are related. What text should go under the last figure?");} 
 		}
 
 		public override string Tip {
-			get { return translations.GetString ("Every character of the text represents a property of the figure.");}
+			get { return Translations.GetString ("Every character of the text represents a property of the figure.");}
 		}
 
 		public override string Rationale {
 			get {
-				return translations.GetString ("'A' indicates that the figures overlap, 'B' that are squares, 'C' that are circles, 'D' that the figures are separated, 'E' that there are three figures and 'F' that there are two figures.");
+				return Translations.GetString ("'A' indicates that the figures overlap, 'B' that are squares, 'C' that are circles, 'D' that the figures are separated, 'E' that there are three figures and 'F' that there are two figures.");
 			}
 		}
 

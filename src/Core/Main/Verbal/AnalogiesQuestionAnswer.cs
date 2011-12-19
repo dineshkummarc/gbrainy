@@ -33,7 +33,7 @@ namespace gbrainy.Core.Main.Verbal
 		}
 
 		public override string Name {
-			get { return String.Format (translations.GetString ("Question and answer #{0}"), Variant);}
+			get { return String.Format (Translations.GetString ("Question and answer #{0}"), Variant);}
 		}
 
 		public override Dictionary <int, Analogy> List {

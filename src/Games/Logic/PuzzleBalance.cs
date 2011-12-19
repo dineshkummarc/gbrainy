@@ -46,21 +46,21 @@ namespace gbrainy.Games.Logic
 		private const double figure_width = 0.1, figure_height = 0.1, space_width = 0.05, space_height = 0;
 
 		public override string Name {
-			get {return translations.GetString ("Balance");}
+			get {return Translations.GetString ("Balance");}
 		}
 
 		public override string Question {
-			get {return translations.GetString ("Using triangles only, how many triangles are needed in the right part of the last figure to keep it balanced?");}
+			get {return Translations.GetString ("Using triangles only, how many triangles are needed in the right part of the last figure to keep it balanced?");}
 		}
 
 		public override string Rationale {
 			get {
-				return translations.GetString ("Every circle is equivalent to two triangles and every square to three triangles.");
+				return Translations.GetString ("Every circle is equivalent to two triangles and every square to three triangles.");
 			}
 		}
 
 		public override string Tip {
-			get { return translations.GetString ("Every circle is equivalent two triangles.");}
+			get { return Translations.GetString ("Every circle is equivalent two triangles.");}
 		}
 
 		protected override void Initialize ()

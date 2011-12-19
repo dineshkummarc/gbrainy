@@ -50,7 +50,7 @@ namespace gbrainy.Core.Main
 
 		public override string Question {
 			get {
-				return translations.GetString ("Memorize the objects below in the given time");
+				return Translations.GetString ("Memorize the objects below in the given time");
 			}
 		}
 
@@ -74,7 +74,7 @@ namespace gbrainy.Core.Main
 				return;
 			}
 
-			downview = new CountDownView (translations, OnCountDownFinish);
+			downview = new CountDownView (Translations, OnCountDownFinish);
 			downview.SynchronizingObject = SynchronizingObject;
 			downview.DrawRequest += OnCountDownRedraw;
 			downview.Start ();
@@ -217,7 +217,7 @@ namespace gbrainy.Core.Main
 			double width = 0.04, height = 0.6;
 			const double w = 0.003, h = 0.003;
 
-			gr.DrawTextCentered (x + (width / 2), y + height + 0.05, translations.GetString ("Time left"));
+			gr.DrawTextCentered (x + (width / 2), y + height + 0.05, Translations.GetString ("Time left"));
 			gr.Stroke ();
 
 			gr.Save ();

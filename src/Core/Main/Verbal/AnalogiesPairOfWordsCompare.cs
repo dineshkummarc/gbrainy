@@ -36,7 +36,7 @@ namespace gbrainy.Core.Main.Verbal
 		}
 
 		public override string Name {
-			get { return String.Format (translations.GetString ("Pair of words compare #{0}"), Variant);}
+			get { return String.Format (Translations.GetString ("Pair of words compare #{0}"), Variant);}
 		}
 
 		public override Dictionary <int, Analogy> List {
@@ -51,7 +51,7 @@ namespace gbrainy.Core.Main.Verbal
 				if (Current.answers == null)
 					return Current.question;
 
-				return String.Format (translations.GetString (
+				return String.Format (Translations.GetString (
 					"Given the relationship between the two words below, which word has the same relationship to '{0}'?"),
 					sample);
 			}
@@ -64,7 +64,7 @@ namespace gbrainy.Core.Main.Verbal
 
 				items = Answer.Correct.Split (AnalogiesFactory.Separator);
 
-				str = String.Format (translations.GetPluralString ("The correct answer is {0}.",
+				str = String.Format (Translations.GetPluralString ("The correct answer is {0}.",
 					"The possible correct answers are {0}.", items.Length),
 					Answer.CorrectShow);
 
@@ -72,7 +72,7 @@ namespace gbrainy.Core.Main.Verbal
 					return str;
 
 				// Translators: answer + rationale of the answer
-				return String.Format (translations.GetString ("{0} {1}"), str, Rationale);
+				return String.Format (Translations.GetString ("{0} {1}"), str, Rationale);
 			}
 		}
 
@@ -109,7 +109,7 @@ namespace gbrainy.Core.Main.Verbal
 
 			gr.SetPangoLargeFontSize ();
 			gr.DrawTextCentered (0.5, y + 0.25,
-				String.Format (translations.GetString ("Words: {0}"), samples));
+				String.Format (Translations.GetString ("Words: {0}"), samples));
 		}
 	}
 }

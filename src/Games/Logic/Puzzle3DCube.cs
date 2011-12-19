@@ -28,15 +28,15 @@ namespace gbrainy.Games.Logic
 		int rows, columns, depth;
 
 		public override string Name {
-			get {return translations.GetString ("3D Cube");}
+			get {return Translations.GetString ("3D Cube");}
 		}
 
 		public override string Question {
-			get {return translations.GetString ("How many small cubes does it take to build the large cube below? Answer using a number.");}
+			get {return Translations.GetString ("How many small cubes does it take to build the large cube below? Answer using a number.");}
 		}
 
 		public override string Tip {
-			get { return translations.GetString ("A cube is a regular solid object having six congruent square faces.");}
+			get { return Translations.GetString ("A cube is a regular solid object having six congruent square faces.");}
 		}
 
 		protected override void Initialize ()

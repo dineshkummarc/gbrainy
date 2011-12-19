@@ -38,7 +38,7 @@ namespace gbrainy.Games.Calculation
 		private int max_operations;
 
 		public override string Name {
-			get {return translations.GetString ("Arithmetical operations");}
+			get {return Translations.GetString ("Arithmetical operations");}
 		}
 
 		public override GameTypes Type {
@@ -46,7 +46,7 @@ namespace gbrainy.Games.Calculation
 		}
 
 		public override string Question {
-			get {return translations.GetString ("What is the result of the following operation?");} 
+			get {return Translations.GetString ("What is the result of the following operation?");} 
 		}
 
 		protected override void Initialize ()

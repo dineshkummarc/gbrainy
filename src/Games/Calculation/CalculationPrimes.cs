@@ -64,7 +64,7 @@ namespace gbrainy.Games.Calculation
 		};
 
 		public override string Name {
-			get {return translations.GetString ("Primes");}
+			get {return Translations.GetString ("Primes");}
 		}
 
 		public override GameTypes Type {
@@ -73,17 +73,17 @@ namespace gbrainy.Games.Calculation
 
 		public override string Question {
 			get { return String.Format (
-				translations.GetString ("Which of the following numbers is a prime? A prime number is a positive integer that has exactly two different positive divisors, 1 and itself. Answer {0}, {1}, {2} or {3}."),
+				Translations.GetString ("Which of the following numbers is a prime? A prime number is a positive integer that has exactly two different positive divisors, 1 and itself. Answer {0}, {1}, {2} or {3}."),
 				Answer.GetMultiOption (0), Answer.GetMultiOption (1), Answer.GetMultiOption (2), Answer.GetMultiOption (3));}
 		}
 
 		public override string Tip {
-			get { return translations.GetString ("If the sum of all digits in a given number is divisible by 3, then so is the number. For example 15 = 1 + 5 = 6, which is divisible by 3.");}
+			get { return Translations.GetString ("If the sum of all digits in a given number is divisible by 3, then so is the number. For example 15 = 1 + 5 = 6, which is divisible by 3.");}
 		}
 
 		public override string Rationale {
 			get { 
-				return String.Format (translations.GetString ("The number {0} is a primer number."), answer);
+				return String.Format (Translations.GetString ("The number {0} is a primer number."), answer);
 			}
 		}
 
@@ -148,7 +148,7 @@ namespace gbrainy.Games.Calculation
 			gr.SetPangoLargeFontSize ();
 
 			gr.MoveTo (0.1, 0.15);
-			gr.ShowPangoText (translations.GetString ("Choose one of the following:"));
+			gr.ShowPangoText (Translations.GetString ("Choose one of the following:"));
 		}
 
 		short GenerateNonPrime ()

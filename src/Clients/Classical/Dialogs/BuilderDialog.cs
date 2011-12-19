@@ -23,14 +23,12 @@ namespace gbrainy.Clients.Classical.Dialogs
 {
 	public class BuilderDialog : Gtk.Dialog
 	{
-		ITranslations translations;
-
-		protected ITranslations Translations { get {return translations; }}
+		protected ITranslations Translations { get; private set;}
 
 		public BuilderDialog (ITranslations translations, string resourceName, string dialogName) : 
 			this ((System.Reflection.Assembly) null, resourceName, dialogName)
 		{
-			this.translations = translations;
+			Translations = translations;
 		}
 
 		public BuilderDialog (System.Reflection.Assembly assembly, string resourceName, string dialogName) : 

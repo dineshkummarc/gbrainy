@@ -50,12 +50,12 @@ namespace gbrainy.Games.Logic
 		string [] equations;
 
 		public override string Name {
-			get {return translations.GetString ("Ostracism");}
+			get {return Translations.GetString ("Ostracism");}
 		}
 
 		public override string Question {
 			get {return String.Format (
-				translations.GetString ("Which element does not belong to the group? It is not related to any arithmetical of the numbers. Answer {0}, {1}, {2}, {3} or {4}."),
+				Translations.GetString ("Which element does not belong to the group? It is not related to any arithmetical of the numbers. Answer {0}, {1}, {2}, {3} or {4}."),
 				Answer.GetMultiOption (0), Answer.GetMultiOption (1), Answer.GetMultiOption (2), Answer.GetMultiOption (3), Answer.GetMultiOption (4));}
 		}
 
@@ -63,9 +63,9 @@ namespace gbrainy.Games.Logic
 			get {
 				switch (gametype) {
 				case GameType.Equations:
-					return translations.GetString ("The criteria for deciding if an equation belongs to the group is not arithmetical.");
+					return Translations.GetString ("The criteria for deciding if an equation belongs to the group is not arithmetical.");
 				case GameType.Numbers:
-					return translations.GetString ("Consider that every number that belongs to the group has two parts that are related.");
+					return Translations.GetString ("Consider that every number that belongs to the group has two parts that are related.");
 				default:
 					throw new InvalidOperationException ();
 				}
@@ -76,9 +76,9 @@ namespace gbrainy.Games.Logic
 			get {
 				switch (gametype) {
 				case GameType.Equations:
-					return translations.GetString ("In all the other equations the digits from the left side also appear on the right side.");
+					return Translations.GetString ("In all the other equations the digits from the left side also appear on the right side.");
 				case GameType.Numbers:
-					return translations.GetString ("In all the other numbers the last three digits are the square of the first two digits.");
+					return Translations.GetString ("In all the other numbers the last three digits are the square of the first two digits.");
 				default:
 					throw new InvalidOperationException ();
 				}
@@ -161,7 +161,7 @@ namespace gbrainy.Games.Logic
 					e.Context.SetPangoLargeFontSize ();
 					e.Context.MoveTo (0.05, 0.02);
 					// Translators: this "option) answer" for example "a) "21 x 60 = 1260". This should not be changed for most of the languages
-					e.Context.ShowPangoText (String.Format (translations.GetString ("{0}) {1}"), Answer.GetMultiOption (n), equations [random_indices[n]]));
+					e.Context.ShowPangoText (String.Format (Translations.GetString ("{0}) {1}"), Answer.GetMultiOption (n), equations [random_indices[n]]));
 				};
 			}
 		}
@@ -173,7 +173,7 @@ namespace gbrainy.Games.Logic
 			gr.SetPangoLargeFontSize ();
 
 			gr.MoveTo (0.1, 0.15);
-			gr.ShowPangoText (translations.GetString ("Choose one of the following:"));
+			gr.ShowPangoText (Translations.GetString ("Choose one of the following:"));
 		}
 	}
 }

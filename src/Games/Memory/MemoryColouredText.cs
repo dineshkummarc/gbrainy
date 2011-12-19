@@ -32,7 +32,7 @@ namespace gbrainy.Games.Memory
 		private ArrayListIndicesRandom color_order;
 
 		public override string Name {
-			get {return translations.GetString ("Colored text");}
+			get {return Translations.GetString ("Colored text");}
 		}
 
 		public override bool UsesColors {
@@ -41,7 +41,7 @@ namespace gbrainy.Games.Memory
 
 		public override string MemoryQuestion {
 			get { 
-				return String.Format (translations.GetString ("What was the color of the text that said '{0}'?"), question_colorname);}
+				return String.Format (Translations.GetString ("What was the color of the text that said '{0}'?"), question_colorname);}
 		}
 
 		protected override void Initialize ()
@@ -60,7 +60,7 @@ namespace gbrainy.Games.Memory
 				break;
 			}
 
-			palette = new ColorPalette (translations);
+			palette = new ColorPalette (Translations);
 
 			// It is not acceptable that all the random colors names match the right colors
 			while (done == false) {

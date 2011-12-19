@@ -70,7 +70,7 @@ namespace gbrainy.Core.Main.Xml
 		}
 
 		public override string Name {
-			get { return translations.GetString (game.Name); }
+			get { return Translations.GetString (game.Name); }
 		}
 
 		public override string Question {
@@ -84,10 +84,10 @@ namespace gbrainy.Core.Main.Xml
 		public override string Tip {
 			get {
 				if (game.Variants.Count > 0 && game.Variants[current.Variant].Tip != null)
-					return translations.GetString (game.Variants[current.Variant].Tip);
+					return Translations.GetString (game.Variants[current.Variant].Tip);
 				else
 					if (String.IsNullOrEmpty (game.Tip) == false)
-						return translations.GetString (game.Tip);
+						return Translations.GetString (game.Tip);
 					else
 						return null;
 			}
@@ -213,7 +213,7 @@ namespace gbrainy.Core.Main.Xml
 				Answer.SetMultiOptionAnswer (option_answer, answer);
 
 				// Translators {0}: list of options (A, B, C)
-				string answers = String.Format (translations.GetString ("Answer {0}."),
+				string answers = String.Format (Translations.GetString ("Answer {0}."),
 					Answer.GetMultiOptionsPossibleAnswers (xml_drawing.Options.Count));
 				question = question.Replace (option_answers, answers);
 			}
@@ -279,7 +279,7 @@ namespace gbrainy.Core.Main.Xml
 			if (String.IsNullOrEmpty (str))
 				return str;
 
-			return translations.GetString (str);
+			return Translations.GetString (str);
 		}
 
 		// Protect from calling with null + resolve plurals
@@ -291,7 +291,7 @@ namespace gbrainy.Core.Main.Xml
 			if (localizable.IsPlural () == false)
 				return CatalogGetString (localizable.String);
 
-			return translations.GetPluralString (localizable.String, localizable.PluralString, localizable.ValueComputed);
+			return Translations.GetPluralString (localizable.String, localizable.PluralString, localizable.ValueComputed);
 		}
 
 		// Replace compiler service variables

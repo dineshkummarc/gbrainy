@@ -73,7 +73,7 @@ namespace gbrainy.Core.Main.Verbal
 				if (i + 1 < items.Length) {
 					// Translators: this the separator used when concatenating multiple possible answers for verbal analogies
 					// For example: "Possible correct answers are: sleep, rest."
-					str += translations.GetString (", ");
+					str += Translations.GetString (", ");
 				}
 			}
 			Answer.CorrectShow = str;
@@ -115,7 +115,7 @@ namespace gbrainy.Core.Main.Verbal
 					if (GetText.StringExists (analogy.answers [indices[i]]) == false)
 						localized = false;
 
-					answers [i] = translations.GetString (analogy.answers [indices[i]]);
+					answers [i] = Translations.GetString (analogy.answers [indices[i]]);
 					if (indices[i] == analogy.right)
 						new_right = i;
 				}
@@ -129,13 +129,13 @@ namespace gbrainy.Core.Main.Verbal
 				localized = false;
 
 			if (localized == true) {
-				analogy.question = translations.GetString (analogy.question);
+				analogy.question = Translations.GetString (analogy.question);
 
 				if (String.IsNullOrEmpty (analogy.tip) == false)
-					analogy.tip = translations.GetString (analogy.tip);
+					analogy.tip = Translations.GetString (analogy.tip);
 
 				if (String.IsNullOrEmpty (analogy.rationale) == false)
-					analogy.rationale = translations.GetString (analogy.rationale);
+					analogy.rationale = Translations.GetString (analogy.rationale);
 			} else {
 
 				// Get analogy again

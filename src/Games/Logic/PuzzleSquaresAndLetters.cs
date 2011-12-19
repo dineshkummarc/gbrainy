@@ -31,16 +31,16 @@ namespace gbrainy.Games.Logic
 		private const int figures = 3;
 
 		public override string Name {
-			get {return translations.GetString ("Squares and letters");}
+			get {return Translations.GetString ("Squares and letters");}
 		}
 
 		public override string Question {
-			get {return translations.GetString ("The letters around the squares follow a pattern. Which letter should replace the question mark in the last square?");} 
+			get {return Translations.GetString ("The letters around the squares follow a pattern. Which letter should replace the question mark in the last square?");} 
 		}
 
 		public override string Rationale {
 			get {
-				return String.Format (translations.GetString ("Every letter is calculated by taking the alphabetical position of the previous character and adding {0} to it in order to get the position of the next letter."), step);
+				return String.Format (Translations.GetString ("Every letter is calculated by taking the alphabetical position of the previous character and adding {0} to it in order to get the position of the next letter."), step);
 			}
 		}
 

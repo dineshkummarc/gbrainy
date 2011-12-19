@@ -42,16 +42,16 @@ namespace gbrainy.Games.Logic
 		}
 
 		public override string Name {
-			get {return translations.GetString ("People at a table");}
+			get {return Translations.GetString ("People at a table");}
 		}
 
 		public override string Question {
-			get {return String.Format (translations.GetString ("A group of people are sitting at a round table spaced out evenly. How many people are there if the {0} person is across from the {1}?"), ques1, ques2);} 
+			get {return String.Format (Translations.GetString ("A group of people are sitting at a round table spaced out evenly. How many people are there if the {0} person is across from the {1}?"), ques1, ques2);} 
 		}
 
 		public override string Rationale {
 			get {
-				return translations.GetString ("Subtracting the two positions you find out how many people are seated half way around the table. Doubling this number leaves you with the total amount of people.");
+				return Translations.GetString ("Subtracting the two positions you find out how many people are seated half way around the table. Doubling this number leaves you with the total amount of people.");
 			}
 		}
 
@@ -59,18 +59,18 @@ namespace gbrainy.Games.Logic
 		{
 			switch (random.Next (3)) {
 			case 0:
-				ques1 = translations.GetString ("5th");
-				ques2 = translations.GetString ("19th");
+				ques1 = Translations.GetString ("5th");
+				ques2 = Translations.GetString ("19th");
 				Answer.Correct = "28";
 				break;
 			case 1:
-				ques1 = translations.GetString ("4th");
-				ques2 = translations.GetString ("12th");
+				ques1 = Translations.GetString ("4th");
+				ques2 = Translations.GetString ("12th");
 				Answer.Correct = "16";
 				break;
 			case 2:
-				ques1 = translations.GetString ("9th");
-				ques2 = translations.GetString ("22nd");
+				ques1 = Translations.GetString ("9th");
+				ques2 = Translations.GetString ("22nd");
 				Answer.Correct = "26";
 				break;
 			}			
@@ -82,7 +82,7 @@ namespace gbrainy.Games.Logic
 			gr.DrawImageFromAssembly ("people_table.svg", 0.2, 0.2, 0.6, 0.6);
 
 			gr.DrawTextCentered (0.5, 0.85,
-				translations.GetString ("Two people in the table sitting across each other"));
+				Translations.GetString ("Two people in the table sitting across each other"));
 
 		}
 	}
