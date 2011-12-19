@@ -77,7 +77,7 @@ namespace gbrainy.Test.Clients.Classical
 					continue;
 
 				Game game = (Game) Activator.CreateInstance (games[i].TypeOf, true);
-				game.translations = translations;
+				game.Translations = translations;
 				game.Variant = games[i].Variant;
 
 				if (cand_idx > 0)

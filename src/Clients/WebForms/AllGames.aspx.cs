@@ -125,7 +125,7 @@ namespace gbrainy.Clients.WebForms
 					continue;
 		
 				game = (gbrainy.Core.Main.Game) Activator.CreateInstance (games [i].TypeOf, true);
-				game.translations = translations;
+				game.Translations = translations;
 				game.Variant = games [i].Variant;
 				game.Begin ();								
 				string file = CreateImage (game, i);

@@ -42,14 +42,14 @@ namespace gbrainy.Clients.Classical.Dialogs
 
 		BrowseFile file;
 		GameManager manager;
-		ITranslations translations;
+		PdfExporter pdfExporter;
 		const int COLUMN_VALUE = 1;
 		const int DEF_SIDEVALUE = 4;
 
 		public PdfExportDialog (GameManager manager, ITranslations translations) : base (translations, "PdfExportDialog.ui", "pdfexportbox")
 		{
+			pdfExporter = new PdfExporter (translations);
 			this.manager = manager;
-			this.translations = translations;
 			games_spinbutton.Value = 10;
 			checkbox_logic.Active = checkbox_calculation.Active = checkbox_verbal.Active = true;
 
@@ -91,7 +91,7 @@ namespace gbrainy.Clients.Classical.Dialogs
 			layout_combo.PackStart (layout_cell, true);
 			layout_combo.SetCellDataFunc (layout_cell, ComboBoxCellFunc);
 
-			int [] per_side = PdfExporter.PagesPerSide;
+			int [] per_side = pdfExporter.PagesPerSide;
 
 			for (int i = 0; i < per_side.Length; i++)
 				layout_store.AppendValues (per_side[i].ToString (), per_side[i]);
@@ -156,7 +156,7 @@ namespace gbrainy.Clients.Classical.Dialogs
 			MessageType msg_type;
 
 			games = new Game [num_games];
-			session = new GameSession (translations);
+			session = new GameSession (Translations);
 			session.GameManager = manager;
 			session.PlayList.ColorBlind = colorblind;
 			session.PlayList.Difficulty = difficulty;
@@ -168,7 +168,7 @@ namespace gbrainy.Clients.Classical.Dialogs
 				games [n].Translations = Translations;
 			}
 
-			if (PdfExporter.GeneratePdf (games, gamespage, filename) == true) {
+			if (pdfExporter.GeneratePdf (games, gamespage, filename) == true) {
 				msg = Catalog.GetString ("The PDF file has been exported correctly.");
 				msg_type = MessageType.Info;
 			} else {

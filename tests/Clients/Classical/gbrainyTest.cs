@@ -48,9 +48,7 @@ namespace gbrainy.Test.Clients.Classical
 		[TestFixtureSetUp]
 		public void Construct ()
 		{
-			RegisterDefaultServices ();
 			translations =  new TranslationsTest ();
-			ServiceLocator.Instance.RegisterService (typeof (ITranslations), translations);
 		}
 
 		[Test]
@@ -61,7 +59,7 @@ namespace gbrainy.Test.Clients.Classical
 			Preferences.Clear ();
 
 			translations.Percentage = client.MIN_TRANSLATION;
-			Assert.AreEqual (false, client.ShowTranslationWarning ());
+			Assert.AreEqual (false, client.ShouldShowTranslationWarning ());
 		}
 
 		[Test]
@@ -72,8 +70,8 @@ namespace gbrainy.Test.Clients.Classical
 			Preferences.Clear ();
 
 			translations.Percentage = client.MIN_TRANSLATION - 1;
-			Assert.AreEqual (true, client.ShowTranslationWarning ());
-			Assert.AreEqual (false, client.ShowTranslationWarning ());
+			Assert.AreEqual (true, client.ShouldShowTranslationWarning ());
+			Assert.AreEqual (false, client.ShouldShowTranslationWarning ());
 		}
 
 		[Test]
@@ -84,9 +82,9 @@ namespace gbrainy.Test.Clients.Classical
 			Preferences.Clear ();
 
 			translations.Percentage = client.MIN_TRANSLATION - 1;
-			Assert.AreEqual (true, client.ShowTranslationWarning ());
+			Assert.AreEqual (true, client.ShouldShowTranslationWarning ());
 			Preferences.Set <string> (Preferences.EnglishVersionKey, "n.n.n");
-			Assert.AreEqual (true, client.ShowTranslationWarning ());
+			Assert.AreEqual (true, client.ShouldShowTranslationWarning ());
 		}
 	}
 }

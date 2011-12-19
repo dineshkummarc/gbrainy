@@ -502,7 +502,7 @@ namespace gbrainy.Clients.Classical
 			if (String.Compare (Preferences.Get <string> (Preferences.EnglishVersionKey), Defines.VERSION, 0) == 0)
 				return false;
 
-			int percentage = ServiceLocator.Instance.GetService <ITranslations> ().TranslationPercentage;
+			int percentage = Translations.TranslationPercentage;
 			if (percentage > 0 && percentage < MIN_TRANSLATION)
 			{
 				Preferences.Set <string> (Preferences.EnglishVersionKey, Defines.VERSION);

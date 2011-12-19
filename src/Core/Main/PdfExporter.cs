@@ -26,20 +26,27 @@ using gbrainy.Core.Services;
 namespace gbrainy.Core.Main
 {
 	// Generates a single PDF document with the selected games
-	static public class PdfExporter
+	public class PdfExporter
 	{
-		static readonly int width = 400, height = 400, margin = 20, question_height = 100;
-		static readonly int page_margin = 20; // space between vertical and hortizontal pages
-		static readonly int page_width = width + page_margin;
-		static readonly int page_height = height + question_height + page_margin;
-		static int [] pages_side = {1, 2, 4};
+		const int width = 400, height = 400, margin = 20, question_height = 100;
+		const int page_margin = 20; // space between vertical and hortizontal pages
+		const int page_width = width + page_margin;
+		const int page_height = height + question_height + page_margin;
+		readonly int [] pages_side = {1, 2, 4};
 
-		static public int [] PagesPerSide
+		ITranslations Translations { get; set;}
+
+		public PdfExporter (ITranslations translations)
+		{
+			Translations = translations;
+		}
+
+		public int [] PagesPerSide
 		{
 			get { return pages_side; }
 		}
 
-		static public bool GeneratePdf (Game [] games, int games_page, string file)
+		public bool GeneratePdf (Game [] games, int games_page, string file)
 		{
 			int columns, rows;
 			switch (games_page) {
@@ -82,7 +89,7 @@ namespace gbrainy.Core.Main
 			}
 		}
 
-		static void GenerateQuestions (CairoContextEx cr, Game [] games, int columns, int rows)
+		void GenerateQuestions (CairoContextEx cr, Game [] games, int columns, int rows)
 		{
 			int x, y, page;
 			Game puzzle;
@@ -102,7 +109,7 @@ namespace gbrainy.Core.Main
 
 				// Translators: {0} is the game number and {1} the game question or answer
 				// The number is used as reference when looking for the game solution in the PDF
-				str = String.Format (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Game #{0}. {1}"), i + 1, puzzle.Question);
+				str = String.Format (Translations.GetString ("Game #{0}. {1}"), i + 1, puzzle.Question);
 
 				// Draw question
 				cr.SetPangoFontSize (12);
@@ -119,7 +126,7 @@ namespace gbrainy.Core.Main
 					cr.Save ();
 					cr.SetPangoFontSize (0.02);
 					cr.MoveTo (0.05, 0.95);
-					cr.ShowPangoText (String.Format (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Created by gbrainy {0}"), Defines.VERSION));
+					cr.ShowPangoText (String.Format (Translations.GetString ("Created by gbrainy {0}"), Defines.VERSION));
 					cr.Stroke ();
 					cr.Restore ();
 				}				
@@ -142,7 +149,7 @@ namespace gbrainy.Core.Main
 				cr.ShowPage ();
 		}
 
-		static void GenerateAnswers (CairoContextEx cr, Game [] games, int columns, int rows)
+		void GenerateAnswers (CairoContextEx cr, Game [] games, int columns, int rows)
 		{
 			int x, y, page;
 			string str;
@@ -154,8 +161,7 @@ namespace gbrainy.Core.Main
 
 			// Draw solution title
 			cr.SetPangoFontSize (20);
-			cr.DrawStringWithWrapping (x + margin, y + margin,
-				ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Solutions"), width - margin);
+			cr.DrawStringWithWrapping (x + margin, y + margin, Translations.GetString ("Solutions"), width - margin);
 			y += space_lines;
 			cr.Stroke ();
 
@@ -163,7 +169,7 @@ namespace gbrainy.Core.Main
 			cr.UseMarkup = true;
 			for (int i = 0; i < games.Length; i++)
 			{
-				str = String.Format (ServiceLocator.Instance.GetService <ITranslations> ().GetString ("Game #{0}. {1}"), i + 1, games[i].AnswerText);
+				str = String.Format (Translations.GetString ("Game #{0}. {1}"), i + 1, games[i].AnswerText);
 
 				// Draw Solution
 				cr.DrawStringWithWrapping (x + margin, y + margin, str, width - margin);
