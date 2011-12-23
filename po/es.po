@@ -13,8 +13,8 @@ msgstr ""
 "Project-Id-Version: gbrainy.master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=gbrainy&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2011-12-04 14:09+0000\n"
-"PO-Revision-Date: 2011-12-05 16:59+0100\n"
+"POT-Creation-Date: 2011-12-05 17:14+0000\n"
+"PO-Revision-Date: 2011-12-23 16:16+0100\n"
 "Last-Translator: Daniel Mustieles <daniel.mustieles@gmail.com>\n"
 "Language-Team: Español <gnome-es-list@gnome.org>\n"
 "MIME-Version: 1.0\n"
@@ -472,11 +472,11 @@ msgid_plural ""
 "truck weights 15 units less that half of the weight of the heavier truck, "
 "what is the weight of the lighter truck? [option_answers]"
 msgstr[0] ""
-"Tienes dos camiones cuyo peso total es de [add] unidad. Si el camión mas "
+"Tienes dos camiones cuyo peso total es de [add] unidad. Si el camión más "
 "ligero pesa 15 unidades menos que la mitad del peso del camión más pesado, "
 "¿cuánto pesa el camión más ligero? [option_answers]"
 msgstr[1] ""
-"Tienes dos camiones cuyo peso total es de [add] unidades. Si el camión mas "
+"Tienes dos camiones cuyo peso total es de [add] unidades. Si el camión más "
 "ligero pesa 15 unidades menos que la mitad del peso del camión más pesado, "
 "¿cuánto pesa el camión más ligero? [option_answers]"
 
@@ -1911,7 +1911,7 @@ msgstr "hablar / gritar | disgustar"
 #. Translators: 'tear' and 'rip' are used as verbs (to tear / to rip). Tear as in "To pull apart or into pieces by force" (not lacrimation)
 #: ../data/verbal_analogies.xml.h:328
 msgid "tear | rip"
-msgstr "desgarro | rotura"
+msgstr "desgarrar | romper"
 
 #: ../data/verbal_analogies.xml.h:329
 msgid "tears / eyes | sweat"
@@ -1950,7 +1950,6 @@ msgid "toy / play | tool"
 msgstr "juguete / jugar | herramienta"
 
 #: ../data/verbal_analogies.xml.h:340
-#| msgid "track | railway | rails"
 msgid "track | railway | rails | railroad"
 msgstr "vía | vía férrea | raíles | ferrocarril"
 
@@ -2654,7 +2653,6 @@ msgstr "Figura {0}"
 #: ../src/Core/Main/Game.cs:138
 #: ../src/Core/Main/Verbal/AnalogiesPairOfWordsCompare.cs:67
 #, csharp-format
-#| msgid "The correct answer is {0}."
 msgid "The correct answer is {0}."
 msgid_plural "The possible correct answers are {0}."
 msgstr[0] "La respuesta correcta es {0}."
@@ -2725,7 +2723,7 @@ msgstr "Resultados decepcionantes"
 #: ../src/Core/Main/GameTips.cs:58
 msgid "Read the instructions carefully and identify the data and given clues."
 msgstr ""
-"Lee las instrucciones cuidadosamente e identifica dos datos y pistas dadas."
+"Lee las instrucciones cuidadosamente e identifica los datos y pistas dadas."
 
 #: ../src/Core/Main/GameTips.cs:60
 msgid ""
@@ -2912,13 +2910,11 @@ msgstr "Puntuación"
 #, csharp-format
 msgid "{0} played"
 msgid_plural "{0} played"
-msgstr[0] "{0} jugado"
-msgstr[1] "{0} jugados"
+msgstr[0] "{0} jugada"
+msgstr[1] "{0} jugadas"
 
 #: ../src/Core/Views/FinishView.cs:156
 #, csharp-format
-#| msgid "Games won: {0} ({1} played)"
-#| msgid_plural "Games won: {0} ({1} played)"
 msgid "Games won: {0} ({1})"
 msgid_plural "Games won: {0} ({1})"
 msgstr[0] "Partidas ganadas: {0} ({1})"
@@ -2926,8 +2922,6 @@ msgstr[1] "Partidas ganadas: {0} ({1})"
 
 #: ../src/Core/Views/FinishView.cs:160
 #, csharp-format
-#| msgid "{0}. Games won: {1} ({2} played)"
-#| msgid_plural "{0}. Games won: {1} ({2} played)"
 msgid "{0}. Games won: {1} ({2})"
 msgid_plural "{0}. Games won: {1} ({2})"
 msgstr[0] "{0}. Partidas ganadas: {1} ({2})"
@@ -4186,9 +4180,8 @@ msgid ""
 "Which of the following figures cannot be drawn without crossing any previous "
 "lines nor lifting the pencil? Answer {0}, {1}, {2}, {3} or {4}."
 msgstr ""
-"¿Cuál de las siguientes figuras no se puede dibujar sin cruzar cualquiera de "
-"las líneas anteriores o levantar el bolígrafo? Responde {0}, {1}, {2}, {3} o "
-"{4}."
+"¿Cuál de las siguientes figuras no se puede dibujar sin cruzar alguna de las "
+"líneas anteriores o levantar el bolígrafo? Responde {0}, {1}, {2}, {3} o {4}."
 
 #: ../src/Games/Logic/PuzzlePeopleTable.cs:45
 msgid "People at a table"
@@ -4637,11 +4630,6 @@ msgstr "Las hojas no se deben superponer."
 
 #. Translators: the translated version should not take more characters that the English original
 #: ../src/Games/Logic/PuzzleSquareSheets.cs:43
-#| msgid ""
-#| "A full sized square of paper (yellow), a 3/4 of the whole size square of "
-#| "paper in the bottom right corner (blue), another 3/4 square of paper "
-#| "(green) in the top left corner and a 1/4 square of paper (red) in the top "
-#| "left corner."
 msgid ""
 "A full sized square of paper (yellow), a 3/4 of the whole size square of "
 "paper (blue) in the bottom right corner, another 3/4 square of paper (green) "
@@ -5610,7 +5598,6 @@ msgid "Memory Trainers Only"
 msgstr "Sólo entrenadores de memoria"
 
 #: ../src/Clients/Classical/gbrainy.ui.h:10
-#| msgid "Mental Calculation"
 msgid "Mental Calculation Only"
 msgstr "Sólo cálculo mental"
 
