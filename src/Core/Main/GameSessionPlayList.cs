@@ -155,7 +155,7 @@ namespace gbrainy.Core.Main
 				verbal_indices.AddRange (indices.Where (a => all_games[a].GameType == GameTypes.VerbalAnalogy));
 
 			CreateListWithDistributedGameTypes (logic_indices, calculation_indices, memory_indices, verbal_indices);
-			UpdateEnumerator ();
+			enumerator = play_list.GetEnumerator ();
 		}
 
 		void CreateListWithDistributedGameTypes (List <int> logic_indices, List <int> calculation_indices, List <int> memory_indices,
