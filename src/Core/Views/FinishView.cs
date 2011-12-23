@@ -150,6 +150,7 @@ namespace gbrainy.Core.Views
 	
 			s = session.History.GetResult (Translations);
 
+			// Translator: This will be part of the sentence "Games won: 10 (6 played)"
 			played = String.Format (Translations.GetPluralString ("{0} played", "{0} played", session.History.GamesPlayed), 
 				session.History.GamesPlayed);
 
