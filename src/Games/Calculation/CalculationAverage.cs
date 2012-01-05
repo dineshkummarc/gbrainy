@@ -116,7 +116,7 @@ namespace gbrainy.Games.Calculation
 			while (options_next < options_cnt) {
 				double ans;
 
-				ans = correct + random.Next (dist);
+				ans = correct + random.Next (-dist, dist +1);
 				duplicated = false;
 
 				// No repeated answers
