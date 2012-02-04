@@ -83,7 +83,7 @@ namespace gbrainy.Games.Calculation
 
 		public override string Rationale {
 			get { 
-				return String.Format (Translations.GetString ("The number {0} is a primer number."), answer);
+				return String.Format (Translations.GetString ("The number {0} is a prime number."), answer);
 			}
 		}
 
