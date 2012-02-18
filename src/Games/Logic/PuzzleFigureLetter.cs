@@ -41,7 +41,7 @@ namespace gbrainy.Games.Logic
 		}
 
 		public override string Question {
-			get {return Translations.GetString ("The figures and the text are related. What text should go under the last figure?");} 
+			get {return Translations.GetString ("The figures and the texts are related. What text should go under the last figure?");} 
 		}
 
 		public override string Tip {
