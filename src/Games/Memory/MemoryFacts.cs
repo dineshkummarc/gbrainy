@@ -119,7 +119,9 @@ namespace gbrainy.Games.Memory
 					Translations.GetString ("Shiny Cars sales fell {0}% this past December, the worst decline since {1}."),
 					fact.answers [0], fact.answers [1]);
 				fact.questions [0] = Translations.GetString ("By how much did company sales fall last December?");
-				fact.questions [1] = Translations.GetString ("In what year was Shiny Cars sales total lower than that of last December?");
+				fact.questions [1] = String.Format(
+					Translations.GetString ("Shiny Cars sales fell {0}% this past December. This is the worst decline since which year?"),
+					fact.answers [0]);
 				break;
 			case 2:
 				fact.Initialize (1);
