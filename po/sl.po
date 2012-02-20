@@ -8,9 +8,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gbrainy master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gbrainy&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2012-02-16 08:22+0000\n"
-"PO-Revision-Date: 2012-02-17 21:10+0100\n"
-"Last-Translator: Matej Urbančič <mateju@svn.gnome.org>\n"
+"POT-Creation-Date: 2012-02-19 04:48+0000\n"
+"PO-Revision-Date: 2012-02-19 14:27+0200\n"
+"Last-Translator: Andrej Žnidaršič <andrej.znidarsic@gmail.com>\n"
 "Language-Team: Slovenian <gnome-si@googlegroups.com>\n"
 "Language: sl\n"
 "MIME-Version: 1.0\n"
@@ -70,8 +70,8 @@ msgid "Every game is an independent event with 2 possible results. The total num
 msgstr "Vsaka igra je neodvisna od druge z 2 mogočima rezultatoma. Skupno število možnosti je 2 na [games]."
 
 #: ../data/games.xml.h:13
-msgid "In every match you eliminate one player, you need the total number of games minus 1 to find out the winner."
-msgstr "V vsaki tekmi je izločen en igralec. Za določitev zmagovalca potrebujete celotno število igralcev minus 1."
+msgid "In every match you eliminate one player. Therefore, the result is the total number of player minus one."
+msgstr "V vsaki tekmi je izločen en igralec. Za določitev zmagovalca potrebujete celotno število igralcev minus ena."
 
 #: ../data/games.xml.h:14
 msgid "Bank interest"
@@ -349,8 +349,8 @@ msgid "[option_prefix] r < q"
 msgstr "[option_prefix] r < q"
 
 #: ../data/games.xml.h:83
-msgid "If x &gt; y, then x &gt; q &lt; and y &gt; r so r &lt; q is true."
-msgstr "Če je x &gt; y, pote je  x &gt; q &lt; in y &gt; r. Zato je r &lt; q pravilna izjava."
+msgid "If x &gt; y, then r &lt; y &lt; x &lt; q, so r &lt; q is true."
+msgstr "Če je x &gt; y, potem je r &lt; y &lt; x &lt; 1. Zato je r &lt; q pravilna izjava."
 
 #: ../data/games.xml.h:84
 msgid "Odd number"
@@ -377,8 +377,8 @@ msgid "[option_prefix] (x - y) * 2"
 msgstr "[option_prefix] (x - y) * 2"
 
 #: ../data/games.xml.h:90
-msgid "Since x is always an even number, multiplying it by 2 always produces an even number. Adding an even number to an odd number (y) always produces an odd number."
-msgstr "Ker je x vedno sodo število, množenje z 2 vedno proizvede sodo število. Dodajanje sodega števila lihemu številu (y) vedno proizvede liho število."
+msgid "Multiplication of two even numbers always produces an even number, so x multiplied by 2 is even. Adding an odd number (y) to that even number always produces an odd number."
+msgstr "Ker je s sodimi števili vedno da sodo število, zato je x pomnožen z 2 sod. Dodajanje lihega števila (y) sodemu vedno da liho število."
 
 #: ../data/games.xml.h:91
 msgid "Warehouse"
@@ -3207,7 +3207,7 @@ msgid "Figures and text"
 msgstr "Slike in besedilo"
 
 #: ../src/Games/Logic/PuzzleFigureLetter.cs:44
-msgid "The figures and the text are related. What text should go under the last figure?"
+msgid "The figures and the texts are related. What text should go under the last figure?"
 msgstr "Slike in besedilo so povezane. Katero besedilo naj gre pod zadnjo sliko?"
 
 #: ../src/Games/Logic/PuzzleFigureLetter.cs:48
@@ -4087,29 +4087,30 @@ msgstr "Prodaja bleščečih avtomobilov je lanskega decembra upadla za {0}%, na
 msgid "By how much did company sales fall last December?"
 msgstr "Za koliko je upadla prodaja lanskega decembra?"
 
-#: ../src/Games/Memory/MemoryFacts.cs:122
-msgid "In what year was Shiny Cars sales total lower than that of last December?"
-msgstr "Katerega leta so bleščeči avtomobili zabeležili nižjo skupno prodajo kot lanskega decembra?"
+#: ../src/Games/Memory/MemoryFacts.cs:123
+#, csharp-format
+msgid "Shiny Cars sales fell {0}% this past December. This is the worst decline since which year?"
+msgstr "Prodaja bleščečih avtomobilov je lanskega decembra upadla za {0}%. To je največji upad od katerega leta?"
 
-#: ../src/Games/Memory/MemoryFacts.cs:127
+#: ../src/Games/Memory/MemoryFacts.cs:129
 #, csharp-format
 msgid "About {0}% of Shiny Cars produced worldwide are sold in Europe."
 msgstr "Okoli {0}% bleščečih avtomobilov je prodanih v Evropi."
 
-#: ../src/Games/Memory/MemoryFacts.cs:129
+#: ../src/Games/Memory/MemoryFacts.cs:131
 msgid "What percentage of all Shiny Cars produced worldwide are sold in Europe?"
 msgstr "Koliko odstotkov bleščečih avtomobilov je prodanih v Evropi?"
 
-#: ../src/Games/Memory/MemoryFacts.cs:135
+#: ../src/Games/Memory/MemoryFacts.cs:137
 #, csharp-format
 msgid "About {0}% of Shiny Cars use diesel, {1}% use gasoline and the remainder use electricity."
 msgstr "Okoli {0}% bleščečih avtomobilov uporablja dizel, {1}% bencin, preostanek pa uporablja elektriko."
 
-#: ../src/Games/Memory/MemoryFacts.cs:137
+#: ../src/Games/Memory/MemoryFacts.cs:139
 msgid "What percentage of Shiny Cars use diesel?"
 msgstr "Koliko odstotkov bleščečih avtomobilov uporablja dizel?"
 
-#: ../src/Games/Memory/MemoryFacts.cs:138
+#: ../src/Games/Memory/MemoryFacts.cs:140
 msgid "What percentage of Shiny Cars use gasoline?"
 msgstr "Koliko odstotkov bleščečih avtomobilov uporablja bencin?"
 
@@ -4696,6 +4697,12 @@ msgstr "_Naprej"
 #: ../src/Clients/Classical/gbrainy.ui.h:28
 msgid "_Tip"
 msgstr "N_amig"
+
+#~ msgid ""
+#~ "In what year was Shiny Cars sales total lower than that of last December?"
+#~ msgstr ""
+#~ "Katerega leta so bleščeči avtomobili zabeležili nižjo skupno prodajo kot "
+#~ "lanskega decembra?"
 
 #~ msgid "{0}) "
 #~ msgstr "{0}) "
