@@ -1,7 +1,7 @@
 # Define gbrainy version
 m4_define([gbrainy_version_major], [2])
 m4_define([gbrainy_version_minor], [1])
-m4_define([gbrainy_version_revision], [1])
+m4_define([gbrainy_version_revision], [2])
 
 m4_define([concat], $1$2$3$4)
 
