@@ -1,5 +1,5 @@
 # This file is distributed under the same license as the PACKAGE package.
-# (c) 2007-2011 Jordi Mas i Hernandez
+# (c) 2007-2012 Jordi Mas i Hernandez
 # Correccions per Gil Forcada, Sílvia Miranda, David Planella, Albert Juhé, Siegfried-Angel Gevatter i Pau Iranzo.
 # N.T.:
 # - Segons el context traduïm "Game" com a joc o partida.
@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gbrainy\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-12-04 16:06+0100\n"
-"PO-Revision-Date: 2011-12-04 16:50+0200\n"
+"POT-Creation-Date: 2012-03-05 20:50+0100\n"
+"PO-Revision-Date: 2012-03-05 22:59+0100\n"
 "Last-Translator: jmas <jmas@softcatala.org>\n"
 "Language-Team: Softcatalà\n"
 "Language: ca\n"
@@ -224,9 +224,9 @@ msgstr ""
 "quina de les opcions següents és correcta? [option_answers]"
 
 #: ../data/games.xml.h:33
-msgid "If x &gt; y, then x &gt; q &lt; and y &gt; r so r &lt; q is true."
+msgid "If x &gt; y, then r &lt; y &lt; x &lt; q, so r &lt; q is true."
 msgstr ""
-"Si «x &gt; y», llavors «x &gt; q &lt;» i «y &gt; r» així que «r &lt; q» és "
+"Si «x &gt; y», llavors «r &lt; y &lt»; «x &lt; q», així que «r &lt; q» és "
 "cert."
 
 #: ../data/games.xml.h:34
@@ -261,11 +261,11 @@ msgstr ""
 
 #: ../data/games.xml.h:38
 msgid ""
-"In every match you eliminate one player, you need the total number of games "
-"minus 1 to find out the winner."
+"In every match you eliminate one player. Therefore, the result is the total "
+"number of player minus one."
 msgstr ""
-"En tots els partits s'elimina un dels jugadors, per trobar el guanyador cal "
-"restar 1 al nombre total de partits."
+"A cada partit s'elimina un jugador. Llavors, el resultat és el total de "
+"jugadors menys u."
 
 #: ../data/games.xml.h:39
 msgid ""
@@ -340,10 +340,20 @@ msgid "Multiple number"
 msgstr "Nombre múltiple"
 
 #: ../data/games.xml.h:52
+msgid ""
+"Multiplication of two even numbers always produces an even number, so x "
+"multiplied by 2 is even. Adding an odd number (y) to that even number always "
+"produces an odd number."
+msgstr ""
+"La multiplicació de dos nombres parells és sempre un nombre parell, així que "
+"x multiplicat per 2 és parell. Sumar un nombre parell a un nombre senar "
+"(«y») sempre produeix un nombre senar."
+
+#: ../data/games.xml.h:53
 msgid "Odd number"
 msgstr "Nombre senar"
 
-#: ../data/games.xml.h:53
+#: ../data/games.xml.h:54
 msgid ""
 "On the dartboard below, where would you need to throw the darts to add 120 "
 "points in 5 throws? Answer using a list of numbers (e.g.: 4, 5, 6, 3, 2)"
@@ -351,12 +361,12 @@ msgstr ""
 "A la diana de sota, on heu de llançar els dards per sumar 120 punts en 5 "
 "tirades? Responeu usant una llista de nombres (p. ex. 4, 5, 6, 3, 2)"
 
-#: ../data/games.xml.h:54
+#: ../data/games.xml.h:55
 msgid "Only 3 of the 4 numbers in the dartboard are used to add 120 points."
 msgstr ""
 "Només 3 dels 4 nombres en la diana són necessaris per afegir 120 punts."
 
-#: ../data/games.xml.h:55
+#: ../data/games.xml.h:56
 msgid ""
 "Out of [people] people, [brothers] have brothers, [sisters] have sisters and "
 "[both] have both. How many people have neither brothers nor sisters?"
@@ -365,27 +375,17 @@ msgstr ""
 "germanes i [both] tenen germanes i germanes. Quantes persones no tenen ni "
 "germans ni germanes?"
 
-#: ../data/games.xml.h:56
+#: ../data/games.xml.h:57
 msgid "Palindromic years"
 msgstr "Anys capicua"
 
-#: ../data/games.xml.h:57
+#: ../data/games.xml.h:58
 msgid "Password"
 msgstr "Contrasenya"
 
-#: ../data/games.xml.h:58
+#: ../data/games.xml.h:59
 msgid "Simple equations"
 msgstr "Equacions simples"
-
-#: ../data/games.xml.h:59
-msgid ""
-"Since x is always an even number, multiplying it by 2 always produces an "
-"even number. Adding an even number to an odd number (y) always produces an "
-"odd number."
-msgstr ""
-"Atès que «x» és sempre un nombre parell, multiplicant-lo per 2 sempre "
-"resulta en un nombre parell. Sumar un nombre parell a un nombre senar («y») "
-"sempre produeix un nombre senar."
 
 #: ../data/games.xml.h:60
 msgid "Tennis game"
@@ -470,11 +470,11 @@ msgid_plural ""
 msgstr[0] ""
 "Teniu dos camions que tenen un pes total de [add] unitat. Si el camió més "
 "lleuger pesa 15 unitats menys que la meitat del pes del camió més pesat, "
-"quin és el més del camió més lleuger? [option_answers]"
+"quin és el pes del camió més lleuger? [option_answers]"
 msgstr[1] ""
 "Teniu dos camions que tenen un pes total de [add] unitats. Si el camió més "
 "lleuger pesa 15 unitats menys que la meitat del pes del camió més pesat, "
-"quin és el més del camió més lleuger? [option_answers]"
+"quin és el pes del camió més lleuger? [option_answers]"
 
 #: ../data/games.xml.h:76
 #, no-c-format
@@ -689,7 +689,7 @@ msgstr "Abstinència"
 msgid "Acclaimed"
 msgstr "Aclamat"
 
-#. Translators: Acrophobia of having a panic attack
+#. Translators: Acrophobia is fear of heights
 #: ../data/verbal_analogies.xml.h:11
 msgid "Acrophobia"
 msgstr "Acrofòbia"
@@ -1987,38 +1987,38 @@ msgstr "canell | braç"
 msgid "write / pen | eat"
 msgstr "escriure / bolígraf | menjar"
 
-#: ../src/Clients/Classical/CommandLine.cs:99
+#: ../src/Clients/Classical/CommandLine.cs:100
 #, csharp-format
 msgid "Unknown command line parameter {0}"
 msgstr "El paràmetre de línia de comandes {0} és desconegut"
 
 #. Translators: {0} is a date
-#: ../src/Clients/Classical/CommandLine.cs:109
+#: ../src/Clients/Classical/CommandLine.cs:110
 #, csharp-format
 msgid "(built on {0})"
 msgstr "(muntat al {0})"
 
-#: ../src/Clients/Classical/CommandLine.cs:120
+#: ../src/Clients/Classical/CommandLine.cs:121
 msgid "List of available games"
 msgstr "Llista de jocs disponibles"
 
-#: ../src/Clients/Classical/CommandLine.cs:171
+#: ../src/Clients/Classical/CommandLine.cs:172
 msgid "Usage: gbrainy [options]"
 msgstr "Ús: gbrainy [opcions]"
 
-#: ../src/Clients/Classical/CommandLine.cs:172
+#: ../src/Clients/Classical/CommandLine.cs:173
 msgid "  --version\t\t\tPrint version information."
 msgstr "  --version\t\t\tMostra informació sobre la versió."
 
-#: ../src/Clients/Classical/CommandLine.cs:173
+#: ../src/Clients/Classical/CommandLine.cs:174
 msgid "  --help\t\t\tPrint this usage message."
 msgstr "  --help\t\t\tImprimeix aquest missatge."
 
-#: ../src/Clients/Classical/CommandLine.cs:174
+#: ../src/Clients/Classical/CommandLine.cs:175
 msgid "  --gamelist\t\t\tShows the list of available games."
 msgstr "  --gamelist\t\t\tMostra la llista de jocs disponibles."
 
-#: ../src/Clients/Classical/CommandLine.cs:175
+#: ../src/Clients/Classical/CommandLine.cs:176
 msgid ""
 "  --customgame [game1, gameN]\tSpecifies a list of games to play during a "
 "custom game."
@@ -2026,14 +2026,14 @@ msgstr ""
 "  --customgame [game1, gameN]\tEspecifica la llista de jocs personalitzada "
 "per a una sessió."
 
-#: ../src/Clients/Classical/CommandLine.cs:176
+#: ../src/Clients/Classical/CommandLine.cs:177
 msgid ""
 "  --norandom \t\t\tThe custom game list provided will not be randomized."
 msgstr ""
 "  --norandom \t\t\tLa llista personalitzada de jocs proporcionada no serà "
 "generada aleatòriament."
 
-#: ../src/Clients/Classical/CommandLine.cs:177
+#: ../src/Clients/Classical/CommandLine.cs:178
 msgid "  --versions \t\t\tShow dependencies."
 msgstr "  --versions \t\t\tMostra les dependències."
 
@@ -2062,10 +2062,10 @@ msgid ""
 "any later version.\n"
 "\n"
 msgstr ""
-"Aquest programa és programari lliure; es pot redistribuir i/o modificar "
-"sota els termes de la Llicència Pública General GNU tal com ha estat "
-"publicada per la Free Software Foundation; ja sigui la versió 2 de la "
-"Llicència o (si ho preferiu) qualsevol versió posterior.\n"
+"Aquest programa és programari lliure; es pot redistribuir i/o modificar sota "
+"els termes de la Llicència Pública General GNU tal com ha estat publicada "
+"per la Free Software Foundation; ja sigui la versió 2 de la Llicència o (si "
+"ho preferiu) qualsevol versió posterior.\n"
 "\n"
 
 #: ../src/Clients/Classical/Dialogs/AboutDialog.cs:67
@@ -2176,7 +2176,7 @@ msgid "{0} {1}"
 msgstr "{0} {1}"
 
 #: ../src/Clients/Classical/Dialogs/PlayerHistoryDialog.cs:67
-#: ../src/Core/Views/FinishView.cs:101
+#: ../src/Core/Views/FinishView.cs:102
 #: ../src/Core/Views/PlayerHistoryView.cs:85
 msgid "Total"
 msgstr "Total"
@@ -2196,17 +2196,17 @@ msgstr ""
 msgid "_Delete"
 msgstr "_Suprimeix"
 
-#: ../src/Clients/Classical/gbrainy.cs:436
+#: ../src/Clients/Classical/gbrainy.cs:437
 #: ../src/Clients/WebForms/Game.aspx.cs:245
 msgid "Congratulations."
 msgstr "Enhorabona."
 
-#: ../src/Clients/Classical/gbrainy.cs:438
+#: ../src/Clients/Classical/gbrainy.cs:439
 #: ../src/Clients/WebForms/Game.aspx.cs:249
 msgid "Incorrect answer."
 msgstr "Resposta incorrecta."
 
-#: ../src/Clients/Classical/gbrainy.cs:493
+#: ../src/Clients/Classical/gbrainy.cs:494
 msgid ""
 "Once you have an answer type it in the \"Answer:\" entry box and press the "
 "\"OK\" button."
@@ -2214,31 +2214,31 @@ msgstr ""
 "Un cop tingueu la resposta introduïu-la al quadre «Resposta:» i premeu el "
 "botó «D'acord»."
 
-#: ../src/Clients/Classical/gbrainy.cs:523
+#: ../src/Clients/Classical/gbrainy.cs:524
 msgid "The level of translation of gbrainy for your language is low."
 msgstr "El nivell de traducció del gbrainy al vostre idioma és baix."
 
-#: ../src/Clients/Classical/gbrainy.cs:524
+#: ../src/Clients/Classical/gbrainy.cs:525
 msgid ""
 "You may be exposed to partially translated games making it more difficult to "
 "play. If you prefer to play in English, there is an option for doing so in "
 "gbrainy's Preferences."
 msgstr ""
-"És possible que es mostrin jocs parcialment traduïts. Això fa que jugar al gbrainy pugui ser "
-"sigui més difícil. Si preferiu jugar en anglès, hi ha una opció a les "
-"Preferències del gbrainy per fer-ho."
+"És possible que es mostrin jocs parcialment traduïts. Això fa que jugar al "
+"gbrainy pugui ser sigui més difícil. Si preferiu jugar en anglès, hi ha una "
+"opció a les Preferències del gbrainy per fer-ho."
 
-#: ../src/Clients/Classical/gbrainy.cs:620
+#: ../src/Clients/Classical/gbrainy.cs:621
 #: ../src/Clients/Classical/Widgets/Toolbar.cs:143
 msgid "Pause"
 msgstr "Pausa"
 
-#: ../src/Clients/Classical/gbrainy.cs:625
+#: ../src/Clients/Classical/gbrainy.cs:626
 msgid "Resume"
 msgstr "Reprèn"
 
 # csharp-format
-#: ../src/Clients/Classical/gbrainy.cs:775
+#: ../src/Clients/Classical/gbrainy.cs:776
 #, csharp-format
 msgid "Startup time {0}"
 msgstr "Temps d'iniciació {0}"
@@ -2452,7 +2452,7 @@ msgid "Open Location"
 msgstr "Obre ubicació"
 
 #: ../src/Clients/Classical/Widgets/GameDrawingArea.cs:127
-#: ../src/Core/Main/GameSession.cs:184
+#: ../src/Core/Main/GameSession.cs:185
 msgid "Paused"
 msgstr "En pausa"
 
@@ -2472,13 +2472,13 @@ msgstr ""
 "Jugueu a jocs que desafien les vostres habilitats de raonament i pensament"
 
 #: ../src/Clients/Classical/Widgets/Toolbar.cs:124
-#: ../src/Core/Main/GameTypes.cs:45 ../src/Core/Views/FinishView.cs:108
+#: ../src/Core/Main/GameTypes.cs:45 ../src/Core/Views/FinishView.cs:109
 #: ../src/Clients/Classical/Dialogs/ui/PdfExportDialog.ui.h:8
 msgid "Logic"
 msgstr "Lògica"
 
 #: ../src/Clients/Classical/Widgets/Toolbar.cs:128
-#: ../src/Core/Main/GameTypes.cs:49 ../src/Core/Views/FinishView.cs:115
+#: ../src/Core/Main/GameTypes.cs:49 ../src/Core/Views/FinishView.cs:116
 #: ../src/Clients/Classical/Dialogs/ui/PdfExportDialog.ui.h:6
 msgid "Calculation"
 msgstr "Càlcul"
@@ -2488,7 +2488,7 @@ msgid "Play games that challenge your mental calculation skills"
 msgstr "Jugueu a jocs que desafien les vostres habilitats de càlcul mental"
 
 #: ../src/Clients/Classical/Widgets/Toolbar.cs:133
-#: ../src/Core/Main/GameTypes.cs:47 ../src/Core/Views/FinishView.cs:122
+#: ../src/Core/Main/GameTypes.cs:47 ../src/Core/Views/FinishView.cs:123
 msgid "Memory"
 msgstr "Memòria"
 
@@ -2497,7 +2497,7 @@ msgid "Play games that challenge your short term memory"
 msgstr "Jugueu a jocs que desafien la vostra memòria a curt termini"
 
 #: ../src/Clients/Classical/Widgets/Toolbar.cs:138
-#: ../src/Core/Main/GameTypes.cs:51 ../src/Core/Views/FinishView.cs:129
+#: ../src/Core/Main/GameTypes.cs:51 ../src/Core/Views/FinishView.cs:130
 #: ../src/Clients/Classical/Dialogs/ui/PdfExportDialog.ui.h:17
 msgid "Verbal"
 msgstr "Verbal"
@@ -2654,30 +2654,30 @@ msgstr ""
 "{0} jocs registrats: {1} trencaclosques lògics, {2} entrenadors de càlcul "
 "mental, {3} entrenadors de memòria, {4} analogies verbals"
 
-#: ../src/Core/Main/GameSession.cs:182
+#: ../src/Core/Main/GameSession.cs:183
 #, csharp-format
 msgid "Games played: {0} (Score: {1})"
 msgstr "Jocs: {0} (puntuació: {1})"
 
-#: ../src/Core/Main/GameSession.cs:183
+#: ../src/Core/Main/GameSession.cs:184
 #, csharp-format
 msgid "Time: {0}"
 msgstr "Temps: {0}"
 
 #. Translators: {0} is the name of the game
-#: ../src/Core/Main/GameSession.cs:188
+#: ../src/Core/Main/GameSession.cs:189
 #, csharp-format
 msgid "Game: {0}"
 msgstr "Joc: {0}"
 
 #. Translators: text in the status bar: games played - time - game name
-#: ../src/Core/Main/GameSession.cs:190
+#: ../src/Core/Main/GameSession.cs:191
 #, csharp-format
 msgid "{0} - {1} - {2}"
 msgstr "{0} - {1} - {2}"
 
 #. Translators: text in the status bar: games played - time
-#: ../src/Core/Main/GameSession.cs:193
+#: ../src/Core/Main/GameSession.cs:194
 #, csharp-format
 msgid "{0} - {1}"
 msgstr "{0} - {1}"
@@ -2702,13 +2702,13 @@ msgstr "Resultats pobres"
 msgid "Disappointing results"
 msgstr "Resultats decebedors"
 
-#: ../src/Core/Main/GameTips.cs:58
+#: ../src/Core/Main/GameTips.cs:59
 msgid "Read the instructions carefully and identify the data and given clues."
 msgstr ""
 "Llegiu les instruccions amb deteniment i identifiqueu les dades i pistes "
 "donades."
 
-#: ../src/Core/Main/GameTips.cs:60
+#: ../src/Core/Main/GameTips.cs:61
 msgid ""
 "To score the player gbrainy uses the time and tips needed to complete each "
 "game."
@@ -2716,23 +2716,23 @@ msgstr ""
 "Per puntuar al jugador gbrainy utilitza el temps i les pistes utilitzades "
 "per a resoldre cada joc."
 
-#: ../src/Core/Main/GameTips.cs:62
+#: ../src/Core/Main/GameTips.cs:63
 msgid ""
 "In logic games, elements that may seem irrelevant can be very important."
 msgstr ""
 "En els jocs de lògica, els elements que semblen irrellevants poden ser força "
 "importants."
 
-#: ../src/Core/Main/GameTips.cs:64
+#: ../src/Core/Main/GameTips.cs:65
 msgid "Try to approach a problem from different angles."
 msgstr "Proveu d'aproximar-vos al problema des de diferents angles."
 
-#: ../src/Core/Main/GameTips.cs:66
+#: ../src/Core/Main/GameTips.cs:67
 msgid ""
 "Do not be afraid of making mistakes, they are part of the learning process."
 msgstr "Gaudiu fent errades, és part del procés d'aprenentatge."
 
-#: ../src/Core/Main/GameTips.cs:68
+#: ../src/Core/Main/GameTips.cs:69
 msgid ""
 "Do all the problems, even the difficult ones. Improvement comes from "
 "challeging yourself."
@@ -2740,12 +2740,12 @@ msgstr ""
 "Feu tots els problemes, fins i tot els difícils. La millora prové d'afrontar "
 "els reptes."
 
-#: ../src/Core/Main/GameTips.cs:70
+#: ../src/Core/Main/GameTips.cs:71
 msgid "Play on a daily basis, you will notice progress soon."
 msgstr "Jugueu diàriament, us adonareu del vostre progrés en poc temps."
 
 #. Translators: Custom Game Selection is a menu option
-#: ../src/Core/Main/GameTips.cs:72
+#: ../src/Core/Main/GameTips.cs:73
 msgid ""
 "Use the 'Custom Game Selection' to choose exactly which games you want to "
 "play."
@@ -2754,36 +2754,36 @@ msgstr ""
 "exactament quins jocs voleu entrenar."
 
 #
-#: ../src/Core/Main/GameTips.cs:74 ../src/Core/Views/WelcomeView.cs:150
+#: ../src/Core/Main/GameTips.cs:75 ../src/Core/Views/WelcomeView.cs:151
 msgid "Use the Settings to adjust the difficulty level of the game."
 msgstr ""
 "Utilitzeu les Preferències per ajustar el nivell de dificultat del joc."
 
-#: ../src/Core/Main/GameTips.cs:76
+#: ../src/Core/Main/GameTips.cs:77
 msgid "Association of elements is a common technique for remembering things."
 msgstr "L'associació d'elements és una tècnica habitual per recordar coses."
 
-#: ../src/Core/Main/GameTips.cs:78
+#: ../src/Core/Main/GameTips.cs:79
 msgid ""
 "Grouping elements into categories is a common technique for remembering "
 "things."
 msgstr "L'agrupació d'elements és una tècnica habitual per recordar coses."
 
-#: ../src/Core/Main/GameTips.cs:80
+#: ../src/Core/Main/GameTips.cs:81
 msgid "Build acronyms using the first letter of each fact to be remembered."
 msgstr "Construïu acrònims usant la primera lletra de cada fet a recordar."
 
-#: ../src/Core/Main/GameTips.cs:82
+#: ../src/Core/Main/GameTips.cs:83
 msgid ""
 "The enjoyment obtained from a puzzle is proportional to the time spent on it."
 msgstr ""
 "El plaer obtingut d'un trencaclosques és proporcional al temps dedicat."
 
-#: ../src/Core/Main/GameTips.cs:84
+#: ../src/Core/Main/GameTips.cs:85
 msgid "Think of breaking down every problem into simpler components."
 msgstr "Penseu en com dividir cada problema en parts més simples."
 
-#: ../src/Core/Main/GameTips.cs:86
+#: ../src/Core/Main/GameTips.cs:87
 msgid "When answering verbal analogies pay attention to the verb tense."
 msgstr "Quan respongueu a analogies verbals pareu atenció al temps verbal."
 
@@ -2798,17 +2798,17 @@ msgstr "Temps restant"
 # csharp-format
 #. Translators: {0} is the game number and {1} the game question or answer
 #. The number is used as reference when looking for the game solution in the PDF
-#: ../src/Core/Main/PdfExporter.cs:105 ../src/Core/Main/PdfExporter.cs:166
+#: ../src/Core/Main/PdfExporter.cs:112 ../src/Core/Main/PdfExporter.cs:172
 #, csharp-format
 msgid "Game #{0}. {1}"
 msgstr "Joc nº {0}. {1}"
 
-#: ../src/Core/Main/PdfExporter.cs:122
+#: ../src/Core/Main/PdfExporter.cs:129
 #, csharp-format
 msgid "Created by gbrainy {0}"
 msgstr "Creat amb el gbrainy {0}"
 
-#: ../src/Core/Main/PdfExporter.cs:158
+#: ../src/Core/Main/PdfExporter.cs:164
 msgid "Solutions"
 msgstr "Solucions"
 
@@ -2880,56 +2880,57 @@ msgstr "Pregunta i resposta nº {0}"
 msgid "Answer {0}."
 msgstr "Responeu {0}."
 
-#: ../src/Core/Views/CountDownView.cs:79
+#: ../src/Core/Views/CountDownView.cs:80
 msgid "Get ready to memorize the next objects..."
 msgstr "Prepareu-vos per memoritzar els objectes següents..."
 
-#: ../src/Core/Views/FinishView.cs:144
+#: ../src/Core/Views/FinishView.cs:145
 #: ../src/Core/Views/PlayerHistoryView.cs:277
 msgid "Score"
 msgstr "Puntuació"
 
-#: ../src/Core/Views/FinishView.cs:152
+#. Translator: This will be part of the sentence "Games won: 10 (6 played)"
+#: ../src/Core/Views/FinishView.cs:154
 #, csharp-format
 msgid "{0} played"
 msgid_plural "{0} played"
 msgstr[0] "{0} jugat"
 msgstr[1] "{0} jugats"
 
-#: ../src/Core/Views/FinishView.cs:156
+#: ../src/Core/Views/FinishView.cs:158
 #, csharp-format
 msgid "Games won: {0} ({1})"
 msgid_plural "Games won: {0} ({1})"
 msgstr[0] "Jocs guanyats: {0} ({1})"
 msgstr[1] "Jocs guanyats: {0} ({1})"
 
-#: ../src/Core/Views/FinishView.cs:160
+#: ../src/Core/Views/FinishView.cs:162
 #, csharp-format
 msgid "{0}. Games won: {1} ({2})"
 msgid_plural "{0}. Games won: {1} ({2})"
 msgstr[0] "{0}. Jocs guanyats: {1} ({2})"
 msgstr[1] "{0}. Jocs guanyats: {1} ({2})"
 
-#: ../src/Core/Views/FinishView.cs:166
+#: ../src/Core/Views/FinishView.cs:168
 #, csharp-format
 msgid "Time played {0} (average per game {1})"
 msgstr "Duració de la partida: {0} (mitjana per joc {1})"
 
 #. Translators: translated string should not be longer that the English original (space restriction on the UI)
-#: ../src/Core/Views/FinishView.cs:175
+#: ../src/Core/Views/FinishView.cs:177
 msgid "For details on how gbrainy's scoring works refer to the help."
 msgstr ""
 "Per detalls de com funciona la puntuació del gbrainy consulteu l'ajuda."
 
-#: ../src/Core/Views/FinishView.cs:187
+#: ../src/Core/Views/FinishView.cs:189
 msgid "Tips for your next games"
 msgstr "Consells per a les properes partides"
 
-#: ../src/Core/Views/FinishView.cs:215
+#: ../src/Core/Views/FinishView.cs:217
 msgid "Congratulations! New personal record"
 msgstr "Enhorabona! Nou record personal"
 
-#: ../src/Core/Views/FinishView.cs:225
+#: ../src/Core/Views/FinishView.cs:227
 #, csharp-format
 msgid ""
 "By scoring {0} in logic puzzle games you have established a new personal "
@@ -2938,7 +2939,7 @@ msgstr ""
 "En puntuar {0} als trencaclosques lògics heu assolit un nou record personal. "
 "El vostre record anterior era {1}."
 
-#: ../src/Core/Views/FinishView.cs:231
+#: ../src/Core/Views/FinishView.cs:233
 #, csharp-format
 msgid ""
 "By scoring {0} in calculation games you have established a new personal "
@@ -2947,7 +2948,7 @@ msgstr ""
 "En puntuar {0} als jocs de càlcul mental heu assolit un nou record personal. "
 "El vostre record anterior era {1}."
 
-#: ../src/Core/Views/FinishView.cs:237
+#: ../src/Core/Views/FinishView.cs:239
 #, csharp-format
 msgid ""
 "By scoring {0} in memory games you have established a new personal record. "
@@ -2956,7 +2957,7 @@ msgstr ""
 "En puntuar {0} als jocs de memòria heu assolit un nou record personal. El "
 "vostre record anterior era {1}."
 
-#: ../src/Core/Views/FinishView.cs:243
+#: ../src/Core/Views/FinishView.cs:245
 #, csharp-format
 msgid ""
 "By scoring {0} in verbal analogies you have established a new personal "
@@ -2969,13 +2970,13 @@ msgstr ""
 msgid "Time"
 msgstr "Temps"
 
-#: ../src/Core/Views/WelcomeView.cs:63
+#: ../src/Core/Views/WelcomeView.cs:64
 msgid "Logic puzzles. Challenge your reasoning and thinking skills."
 msgstr ""
 "Trencaclosques lògics. Desafieu les vostres habilitats de raonament i "
 "pensament."
 
-#: ../src/Core/Views/WelcomeView.cs:84
+#: ../src/Core/Views/WelcomeView.cs:85
 msgid ""
 "Mental calculation. Arithmetical operations that test your mental "
 "calculation abilities."
@@ -2983,21 +2984,21 @@ msgstr ""
 "Càlcul mental. Operacions aritmètiques que posen a prova les vostres "
 "habilitats de càlcul mental."
 
-#: ../src/Core/Views/WelcomeView.cs:105
+#: ../src/Core/Views/WelcomeView.cs:106
 msgid "Memory trainers. To prove your short term memory."
 msgstr "Entrenadors de memòria. Per posar a prova la memòria a curt termini."
 
-#: ../src/Core/Views/WelcomeView.cs:126
+#: ../src/Core/Views/WelcomeView.cs:127
 msgid "Verbal analogies. Challenge your verbal aptitude."
 msgstr "Analogies verbals. Desafieu les vostres aptituds verbals."
 
 #. Translators: {0} is the version number of the program
-#: ../src/Core/Views/WelcomeView.cs:142
+#: ../src/Core/Views/WelcomeView.cs:143
 #, csharp-format
 msgid "Welcome to gbrainy {0}"
 msgstr "Us donem la benvinguda al gbrainy {0}"
 
-#: ../src/Core/Views/WelcomeView.cs:146
+#: ../src/Core/Views/WelcomeView.cs:147
 msgid ""
 "gbrainy is a brain teaser game and trainer to have fun and to keep your "
 "brain trained. It includes:"
@@ -3138,7 +3139,7 @@ msgstr ""
 
 #: ../src/Games/Calculation/CalculationPrimes.cs:86
 #, csharp-format
-msgid "The number {0} is a primer number."
+msgid "The number {0} is a prime number."
 msgstr "El nombre {0} és un nombre primer."
 
 #: ../src/Games/Calculation/CalculationProportions.cs:36
@@ -3649,10 +3650,10 @@ msgstr "Figures i text"
 
 #: ../src/Games/Logic/PuzzleFigureLetter.cs:44
 msgid ""
-"The figures and the text are related. What text should go under the last "
+"The figures and the texts are related. What text should go under the last "
 "figure?"
 msgstr ""
-"Les figures i el text estan relacionats. Quin text correspon a l'última "
+"Les figures i els textos estan relacionades. Quin text correspon a l'última "
 "figura?"
 
 #: ../src/Games/Logic/PuzzleFigureLetter.cs:48
@@ -4908,26 +4909,28 @@ msgstr ""
 msgid "By how much did company sales fall last December?"
 msgstr "Quan van caure les vendes de l'empresa el desembre passat?"
 
-#: ../src/Games/Memory/MemoryFacts.cs:122
+#: ../src/Games/Memory/MemoryFacts.cs:123
+#, csharp-format
 msgid ""
-"In what year was Shiny Cars sales total lower than that of last December?"
+"Shiny Cars sales fell {0}% this past December. This is the worst decline "
+"since which year?"
 msgstr ""
-"A quin any van ser les vendes de Cotxes Lluents inferiors a les del desembre "
-"passat?"
+"Les vendes de Cotxes Lluents van caure un {0}% el desembre passat. Aquesta "
+"és la pitjor caiguda des de l'any?"
 
-#: ../src/Games/Memory/MemoryFacts.cs:127
+#: ../src/Games/Memory/MemoryFacts.cs:129
 #, csharp-format
 msgid "About {0}% of Shiny Cars produced worldwide are sold in Europe."
 msgstr ""
 "Aproximadament el {0}% dels Cotxes Lluents produïts al món es venen a Europa."
 
-#: ../src/Games/Memory/MemoryFacts.cs:129
+#: ../src/Games/Memory/MemoryFacts.cs:131
 msgid ""
 "What percentage of all Shiny Cars produced worldwide are sold in Europe?"
 msgstr ""
 "Quin percentatge dels Cotxes Lluents produïts al món es venen a Europa?"
 
-#: ../src/Games/Memory/MemoryFacts.cs:135
+#: ../src/Games/Memory/MemoryFacts.cs:137
 #, csharp-format
 msgid ""
 "About {0}% of Shiny Cars use diesel, {1}% use gasoline and the remainder use "
@@ -4936,11 +4939,11 @@ msgstr ""
 "Aproximadament el {0}% dels Cotxes Lluents usen dièsel, el {1}% usen benzina "
 "i els restants usen electricitat."
 
-#: ../src/Games/Memory/MemoryFacts.cs:137
+#: ../src/Games/Memory/MemoryFacts.cs:139
 msgid "What percentage of Shiny Cars use diesel?"
 msgstr "Quin percentatge dels Cotxes Lluents usen dièsel?"
 
-#: ../src/Games/Memory/MemoryFacts.cs:138
+#: ../src/Games/Memory/MemoryFacts.cs:140
 msgid "What percentage of Shiny Cars use gasoline?"
 msgstr "Quin percentatge dels Cotxes Lluents usen benzina?"
 
@@ -5002,38 +5005,38 @@ msgstr ""
 "o {3}."
 
 # csharp-format
-#: ../src/Games/Memory/MemoryIndications.cs:132
+#: ../src/Games/Memory/MemoryIndications.cs:133
 #, csharp-format
 msgid "Start at point number {0}"
 msgstr "Inicia al punt número {0}"
 
-#: ../src/Games/Memory/MemoryIndications.cs:136
+#: ../src/Games/Memory/MemoryIndications.cs:137
 msgid "Move right"
 msgstr "Mou a la dreta"
 
-#: ../src/Games/Memory/MemoryIndications.cs:138
+#: ../src/Games/Memory/MemoryIndications.cs:139
 msgid "Move left"
 msgstr "Mou a l'esquerra"
 
-#: ../src/Games/Memory/MemoryIndications.cs:140
+#: ../src/Games/Memory/MemoryIndications.cs:141
 msgid "Move up"
 msgstr "Mou amunt"
 
-#: ../src/Games/Memory/MemoryIndications.cs:142
+#: ../src/Games/Memory/MemoryIndications.cs:143
 msgid "Move down"
 msgstr "Mou avall"
 
-#: ../src/Games/Memory/MemoryIndications.cs:147
+#: ../src/Games/Memory/MemoryIndications.cs:148
 #, csharp-format
 msgid "End at point {0}"
 msgstr "Finalitza al punt {0}"
 
-#: ../src/Games/Memory/MemoryIndications.cs:161
+#: ../src/Games/Memory/MemoryIndications.cs:162
 msgid "Memorize indications"
 msgstr "Memoritzeu indicacions"
 
 # csharp-format
-#: ../src/Games/Memory/MemoryIndications.cs:167
+#: ../src/Games/Memory/MemoryIndications.cs:168
 #, csharp-format
 msgid ""
 "Which of the following graphics represents the indications previously given? "
@@ -5483,8 +5486,8 @@ msgid ""
 "This option allows to export a set of games in a PDF file. You can complete "
 "the puzzles without a computer."
 msgstr ""
-"Aquesta opció permet exportar un conjunt de jocs a un fitxer PDF per poder-hi "
-"jugar sense un ordinador."
+"Aquesta opció permet exportar un conjunt de jocs a un fitxer PDF per poder-"
+"hi jugar sense un ordinador."
 
 #: ../src/Clients/Classical/Dialogs/ui/PdfExportDialog.ui.h:16
 msgid "Total number of games:"
@@ -5652,3 +5655,4 @@ msgstr "P_ista"
 #: ../src/Clients/Classical/gbrainy.ui.h:27
 msgid "_View"
 msgstr "_Visualitza"
+
