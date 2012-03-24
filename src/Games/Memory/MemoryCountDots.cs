@@ -30,6 +30,7 @@ namespace gbrainy.Games.Memory
 		private const int MINDOTS = 1;
 		private const int MAXDOTS = 25;
 		private int maxdotscolor;
+		private int question_color;
 
 		private ArrayListIndicesRandom location_order;
 		private ColorPalette palette;
@@ -49,7 +50,7 @@ namespace gbrainy.Games.Memory
 				return String.Format (
 					// Translators: {0} is the name of the color. The color name is always singular
 					Translations.GetString ("How many dots of {0} color were in the previous image? Answer using numbers."),
-					palette.Name (0));
+					palette.Name (question_color));
 			}
 		}
 
@@ -71,6 +72,7 @@ namespace gbrainy.Games.Memory
 			location_order.Initialize();
 
 			palette = new ColorPalette (Translations);
+			question_color = random.Next (palette.Count);
 
 			// dotsPerColor is compared with iterator of dots. (this iterator is 0 based, so I
 			// have to substract 1 to make dotsPerColor contents 0 based.
@@ -80,8 +82,11 @@ namespace gbrainy.Games.Memory
 				before = dotsPerColor[i];
 			}
 
-			Answer.Correct = (dotsPerColor[0]+1).ToString ();
-		
+			if (question_color == 0)
+				Answer.Correct = (dotsPerColor[question_color] + 1).ToString ();
+			else
+				Answer.Correct = (dotsPerColor[question_color] - dotsPerColor[question_color - 1]).ToString ();
+
 			base.Initialize ();
 		}
 
@@ -126,7 +131,7 @@ namespace gbrainy.Games.Memory
 			pos_y = y + center_square;
 			pos_x = x + center_square;
 
-			for (int i = 0,itcolor=0; i < MAXDOTS && itcolor<palette.Count; i++)
+			for (int i = 0,itcolor=0; i < NUMCOLUMNS*NUMCOLUMNS && itcolor<palette.Count; i++)
 			{
 				int dx,dy;
 				Color color = palette.Cairo(itcolor);
