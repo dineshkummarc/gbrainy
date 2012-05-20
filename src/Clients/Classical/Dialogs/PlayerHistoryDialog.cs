@@ -29,13 +29,13 @@ namespace gbrainy.Clients.Classical.Dialogs
 {
 	public class PlayerHistoryDialog : BuilderDialog
 	{
-		[GtkBeans.Builder.Object] Box history_preview;
-		[GtkBeans.Builder.Object] Label label_playerhistory;
-		[GtkBeans.Builder.Object] Gtk.CheckButton checkbutton_total;
-		[GtkBeans.Builder.Object] Gtk.CheckButton checkbutton_memory;
-		[GtkBeans.Builder.Object] Gtk.CheckButton checkbutton_logic;
-		[GtkBeans.Builder.Object] Gtk.CheckButton checkbutton_calculation;
-		[GtkBeans.Builder.Object] Gtk.CheckButton checkbutton_verbal;
+		[Builder.Object] Box history_preview;
+		[Builder.Object] Label label_playerhistory;
+		[Builder.Object] Gtk.CheckButton checkbutton_total;
+		[Builder.Object] Gtk.CheckButton checkbutton_memory;
+		[Builder.Object] Gtk.CheckButton checkbutton_logic;
+		[Builder.Object] Gtk.CheckButton checkbutton_calculation;
+		[Builder.Object] Gtk.CheckButton checkbutton_verbal;
 
 		CairoPreview drawing_area;
 
@@ -116,7 +116,7 @@ namespace gbrainy.Clients.Classical.Dialogs
 				get { return view; }
 			}
 
-			protected override bool OnExposeEvent (Gdk.EventExpose args)
+			protected override bool OnDrawn (Cairo.Context cc)
 			{
 				if(!IsRealized)
 					return false;
@@ -124,10 +124,11 @@ namespace gbrainy.Clients.Classical.Dialogs
 				int w, h, nw, nh;
 				double x = 0, y = 0;
 
-				Cairo.Context cc = Gdk.CairoHelper.Create (args.Window);
 				CairoContextEx cr = new CairoContextEx (cc.Handle);
 				cr.PangoFontDescription = PangoContext.FontDescription;
-				args.Window.GetSize (out w, out h);
+
+				w = Window.Width;
+				h = Window.Height;
 
 				nh = nw = Math.Min (w, h);
 
@@ -144,9 +145,8 @@ namespace gbrainy.Clients.Classical.Dialogs
 
 				view.Draw (cr, nw, nh, Direction == Gtk.TextDirection.Rtl);
 
-				((IDisposable)cc).Dispose();
 				((IDisposable)cr).Dispose();
-	   			return base.OnExposeEvent(args);
+				return true;
 			}
 		}
 	}

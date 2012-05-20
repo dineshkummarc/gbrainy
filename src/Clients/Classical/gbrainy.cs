@@ -40,30 +40,30 @@ namespace gbrainy.Clients.Classical
 {
 	public class GtkClient
 	{
-		[GtkBeans.Builder.Object("gbrainy")] Gtk.Window app_window;
-		[GtkBeans.Builder.Object] Gtk.CheckMenuItem showtoolbar_menuitem;
-		[GtkBeans.Builder.Object] Box drawing_vbox;
-		[GtkBeans.Builder.Object] Gtk.HBox main_hbox;
-		[GtkBeans.Builder.Object] Gtk.VBox framework_vbox;
-		[GtkBeans.Builder.Object] Gtk.Entry answer_entry;
-		[GtkBeans.Builder.Object] Gtk.Button answer_button;
-		[GtkBeans.Builder.Object] Gtk.Label answer_label;
-		[GtkBeans.Builder.Object] Gtk.Button tip_button;
-		[GtkBeans.Builder.Object] Gtk.Button next_button;
-		[GtkBeans.Builder.Object] Gtk.Statusbar statusbar;
-		[GtkBeans.Builder.Object] Gtk.MenuBar menubar;
-		[GtkBeans.Builder.Object] Gtk.MenuItem pause_menuitem;
-		[GtkBeans.Builder.Object] Gtk.MenuItem finish_menuitem;
-		[GtkBeans.Builder.Object] Gtk.MenuItem newgame_menuitem;
-		[GtkBeans.Builder.Object] Gtk.MenuItem allgames_menuitem;
-		[GtkBeans.Builder.Object] Gtk.MenuItem logic_menuitem;
-		[GtkBeans.Builder.Object] Gtk.MenuItem calculation_menuitem;
-		[GtkBeans.Builder.Object] Gtk.MenuItem memory_menuitem;
-		[GtkBeans.Builder.Object] Gtk.MenuItem verbal_menuitem;
-		[GtkBeans.Builder.Object] Gtk.MenuItem extensions_menuitem;
-		[GtkBeans.Builder.Object] Gtk.RadioMenuItem vertical_radiomenuitem;
-		[GtkBeans.Builder.Object] Gtk.RadioMenuItem horizontal_radiomenuitem;
-		[GtkBeans.Builder.Object] Gtk.MenuItem toolbar_orientation_menuitem;
+		[Builder.Object("gbrainy")] Gtk.Window app_window;
+		[Builder.Object] Gtk.CheckMenuItem showtoolbar_menuitem;
+		[Builder.Object] Box drawing_vbox;
+		[Builder.Object] Gtk.HBox main_hbox;
+		[Builder.Object] Gtk.VBox framework_vbox;
+		[Builder.Object] Gtk.Entry answer_entry;
+		[Builder.Object] Gtk.Button answer_button;
+		[Builder.Object] Gtk.Label answer_label;
+		[Builder.Object] Gtk.Button tip_button;
+		[Builder.Object] Gtk.Button next_button;
+		[Builder.Object] Gtk.Statusbar statusbar;
+		[Builder.Object] Gtk.MenuBar menubar;
+		[Builder.Object] Gtk.MenuItem pause_menuitem;
+		[Builder.Object] Gtk.MenuItem finish_menuitem;
+		[Builder.Object] Gtk.MenuItem newgame_menuitem;
+		[Builder.Object] Gtk.MenuItem allgames_menuitem;
+		[Builder.Object] Gtk.MenuItem logic_menuitem;
+		[Builder.Object] Gtk.MenuItem calculation_menuitem;
+		[Builder.Object] Gtk.MenuItem memory_menuitem;
+		[Builder.Object] Gtk.MenuItem verbal_menuitem;
+		[Builder.Object] Gtk.MenuItem extensions_menuitem;
+		[Builder.Object] Gtk.RadioMenuItem vertical_radiomenuitem;
+		[Builder.Object] Gtk.RadioMenuItem horizontal_radiomenuitem;
+		[Builder.Object] Gtk.MenuItem toolbar_orientation_menuitem;
 
 		Widgets.Toolbar toolbar;
 
@@ -131,7 +131,7 @@ namespace gbrainy.Clients.Classical
 		{
 			bool show_toolbar;
 
-			GtkBeans.Builder builder = new GtkBeans.Builder ("gbrainy.ui");
+			Builder builder = new Builder ("gbrainy.ui");
 			builder.Autoconnect (this);
 
 			show_toolbar = Preferences.Get <bool> (Preferences.ToolbarShowKey) == true && low_res == false;
@@ -206,7 +206,7 @@ namespace gbrainy.Clients.Classical
 				{			
 					session.GameManager.LoadPlugins ();
 				}
-				Mono.Addins.Gui.AddinManagerWindow.Run (app_window);
+				//Mono.Addins.Gui.AddinManagerWindow.Run (app_window);
 				GameManagerPreload (session.GameManager);
 				CustomGameDialog.Clear ();
 			};

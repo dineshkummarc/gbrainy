@@ -32,8 +32,8 @@ namespace gbrainy.Clients.Classical.Dialogs
 	{
 		// This is static to allow to preserve the selection in different instances
 		static ListStore games_store;
-		[GtkBeans.Builder.Object] Gtk.TreeView treeview;
-		[GtkBeans.Builder.Object] Box preview_vbox;
+		[Builder.Object] Gtk.TreeView treeview;
+		[Builder.Object] Box preview_vbox;
 		GameDrawingArea drawing_area;
 		GameSession session;
 		GameLocator [] games;

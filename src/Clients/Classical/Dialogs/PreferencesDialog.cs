@@ -28,17 +28,17 @@ namespace gbrainy.Clients.Classical.Dialogs
 {
 	public class PreferencesDialog : BuilderDialog
 	{
-		[GtkBeans.Builder.Object] Gtk.SpinButton prefspinbutton;
-		[GtkBeans.Builder.Object] Gtk.SpinButton maxstoredspinbutton;
-		[GtkBeans.Builder.Object] Gtk.SpinButton minplayedspinbutton;
-		[GtkBeans.Builder.Object] Gtk.CheckButton prefcheckbutton;
-		[GtkBeans.Builder.Object] Gtk.CheckButton colorblindcheckbutton;
-		[GtkBeans.Builder.Object] Gtk.RadioButton rb_easy;
-		[GtkBeans.Builder.Object] Gtk.RadioButton rb_medium;
-		[GtkBeans.Builder.Object] Gtk.RadioButton rb_master;
-		[GtkBeans.Builder.Object] Gtk.ComboBox themes_combobox;
-		[GtkBeans.Builder.Object] Gtk.CheckButton englishcheckbutton;
-		[GtkBeans.Builder.Object] Gtk.CheckButton loadextensionscheckbutton;
+		[Builder.Object] Gtk.SpinButton prefspinbutton;
+		[Builder.Object] Gtk.SpinButton maxstoredspinbutton;
+		[Builder.Object] Gtk.SpinButton minplayedspinbutton;
+		[Builder.Object] Gtk.CheckButton prefcheckbutton;
+		[Builder.Object] Gtk.CheckButton colorblindcheckbutton;
+		[Builder.Object] Gtk.RadioButton rb_easy;
+		[Builder.Object] Gtk.RadioButton rb_medium;
+		[Builder.Object] Gtk.RadioButton rb_master;
+		[Builder.Object] Gtk.ComboBox themes_combobox;
+		[Builder.Object] Gtk.CheckButton englishcheckbutton;
+		[Builder.Object] Gtk.CheckButton loadextensionscheckbutton;
 
 		const int COLUMN_VALUE = 1;
 		PlayerHistory history;

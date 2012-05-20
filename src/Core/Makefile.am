@@ -94,7 +94,6 @@ $(srcdir)/gbrainy.addin.xml
 
 REFS =  \
 	-r:System \
-	-r:Mono.Cairo.dll		\
 	-r:Mono.Posix			\
 	-r:Mono.CSharp.dll		\
 	 $(GBRAINY_LIBS)    		\

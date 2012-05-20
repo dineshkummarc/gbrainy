@@ -37,12 +37,12 @@ namespace gbrainy.Clients.Classical.Dialogs
 			                 string          header,
 			                 string          msg) : base ()
 		{
-			HasSeparator = false;
+			//HasSeparator = false;
 			BorderWidth = 5;
 			Resizable = false;
 			Title = string.Empty;
 
-			VBox.Spacing = 12;
+			//VBox.Spacing = 12;
 			ActionArea.Layout = Gtk.ButtonBoxStyle.End;
 
 			accel_group = new Gtk.AccelGroup ();
@@ -51,7 +51,7 @@ namespace gbrainy.Clients.Classical.Dialogs
 			Gtk.HBox hbox = new Gtk.HBox (false, 12);
 			hbox.BorderWidth = 5;
 			hbox.Show ();
-			VBox.PackStart (hbox, false, false, 0);
+			//VBox.PackStart (hbox, false, false, 0);
 
 			switch (type) {
 			case Gtk.MessageType.Error:

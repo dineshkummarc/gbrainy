@@ -87,8 +87,8 @@ $(top_srcdir)/data/game-graphics/shop.svg
 
 
 REFS =  \
+	 $(GBRAINY_LIBS) \
 	-r:System \
-	-r:Mono.Cairo.dll		\
 	-r:Mono.Posix			\
 	-r:.././gbrainy.Core.dll
 

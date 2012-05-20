@@ -19,7 +19,6 @@
 
 using System;
 using Gtk;
-using Cairo;
 using Mono.Unix;
 using gbrainy.Core.Libraries;
 
@@ -80,18 +79,18 @@ namespace gbrainy.Clients.Classical.Widgets
 			QueueDraw ();
 		}
 
-		protected override bool OnExposeEvent (Gdk.EventExpose args)
+		protected override bool OnDrawn (Cairo.Context cc)
 		{
 			if (!IsRealized)
 				return false;
 
 			int w, h, total_w, total_h;
 
-			Cairo.Context cc = Gdk.CairoHelper.Create (args.Window);
 			CairoContextEx cr = new CairoContextEx (cc.Handle);
 			cr.PangoFontDescription = PangoContext.FontDescription;
 
-			args.Window.GetSize (out total_w, out total_h);
+			total_w = Window.Width;
+			total_h = Window.Height;
 
 			h = total_h - question_high;
 			if (UseSolutionArea)
@@ -133,12 +132,11 @@ namespace gbrainy.Clients.Classical.Widgets
 				// Draw the game area
 				cr.Translate (OffsetX, OffsetY);
 				cr.SetPangoNormalFontSize ();
-				cr.Color = new Color (1, 1, 1, 0.5);
+				cr.Color = new Cairo.Color (1, 1, 1, 0.5);
 				Drawable.Draw (cr, DrawingSquare, DrawingSquare, Direction == Gtk.TextDirection.Rtl);
 				cr.Stroke ();
 			}
 
-			((IDisposable)cc).Dispose();
 			((IDisposable)cr).Dispose();
 			return true;
 		}
@@ -201,7 +199,7 @@ namespace gbrainy.Clients.Classical.Widgets
 			box_height_scaled = Math.Max (height_str, (double) solution_high / (double) height);
 
 			// Draw black box
-			cr.Color = new Color (0.1, 0.1, 0.1);
+			cr.Color = new Cairo.Color (0.1, 0.1, 0.1);
 
 			cr.Rectangle (text_margin,
 				1 - box_height_scaled - text_margin,
@@ -211,7 +209,7 @@ namespace gbrainy.Clients.Classical.Widgets
 			cr.Stroke ();
 
 			// Draw text and icon
-			cr.Color = new Color (1, 1, 1);
+			cr.Color = new Cairo.Color (1, 1, 1);
 
 			if (Direction == Gtk.TextDirection.Rtl)
 			{

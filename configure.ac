@@ -1,7 +1,7 @@
 # Define gbrainy version
 m4_define([gbrainy_version_major], [2])
 m4_define([gbrainy_version_minor], [1])
-m4_define([gbrainy_version_revision], [3])
+m4_define([gbrainy_version_revision], [9])
 
 m4_define([concat], $1$2$3$4)
 
@@ -70,7 +70,7 @@ fi
 
 dnl -- check for various mono assemblies that we need.
 
-needed_assemblies="Mono.Posix Mono.Cairo Mono.CSharp"
+needed_assemblies="Mono.Posix Mono.CSharp"
 for i in $needed_assemblies; do
   AC_MSG_CHECKING([for $i.dll])
   if test ! \( -e `$PKG_CONFIG --variable=prefix mono`/lib/mono/2.0/$i.dll -o -e `$PKG_CONFIG --variable=prefix mono`/lib64/mono/2.0/$i.dll \); then
@@ -93,7 +93,7 @@ MONO_ADDINS=0.3
 PKG_CHECK_MODULES(GBRAINY_CORE, mono >= $MONO_REQUIRED)
 
 
-PKG_CHECK_MODULES(GBRAINY, gtk-sharp-2.0 >= $GTKSHARP_REQUIRED)
+PKG_CHECK_MODULES(GBRAINY, gtk-sharp-3.0 >= $GTKSHARP_REQUIRED)
 AC_SUBST(GBRAINY_LIBS)
 
 AC_ARG_ENABLE(addins, AC_HELP_STRING([--disable-addins], [Disable mono-addins support]), , enable_addins="yes")
@@ -176,7 +176,7 @@ fi
 
 dnl -- Enable web client build
 
-AC_ARG_ENABLE(enable_webclient, AC_HELP_STRING([--enable-webclient], [Enable Web client build]),,enable_webclient=yes)
+AC_ARG_ENABLE(enable_webclient, AC_HELP_STRING([--enable-webclient], [Enable Web client build]),,enable_webclient=no)
 
 AM_CONDITIONAL(ENABLE_WEBCLIENT, test "x$enable_webclient" != "xno")
 
